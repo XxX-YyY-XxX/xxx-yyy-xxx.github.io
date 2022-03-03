@@ -4,4 +4,4 @@ Primarily for user site first. May branch out later.
 
 ...This is the main page now. Pain.
 
-/testdir/index.md
+[link test](/testdir/index.md)
