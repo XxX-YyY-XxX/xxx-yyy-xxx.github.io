@@ -2,4 +2,4 @@
 
 Dumpster for questions scraped from the lounge.
 
-[#Technical Help](/GFL/technical)
+# [Technical Help](/GFL/technical)

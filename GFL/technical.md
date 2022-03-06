@@ -1,8 +1,8 @@
-#Technical Help
+# Technical Help
 
 >I'm having a problem and it's \*insert problem here*.
 
-<iframe  title="YouTube video player" width="480" height="390" src="youtube.com/v/p85xwZ_OLX0?html5=1" frameborder="0"></iframe>
+<iframe  title="YouTube video player" width="480" height="390" src="https://youtu.be/p85xwZ_OLX0" frameborder="0"></iframe>
 
 [Powercycling means literally closing/exiting/terminating the app, then launching it back up.](https://www.youtube.com/watch?v=p85xwZ_OLX0&feature=youtu.be) If that still doesn't solve it, the following questions could. Or do the following then restart.
 
@@ -12,7 +12,7 @@ FB and Twitter is said to be responsive enough. Or you can use [this](https://fo
 
 >My game freezes on a night map. What happened?
 
-~~Griffin sabotaged your friend support because they are all you need.~~ Griffin apologized for the sabotage. They now allow you to call a friend. Though, if it still happens, Griffin lied.
+It shouldn't happen anymore but if it does... try not to rely on friend echelons.
 
 >The tutorial froze. What should I do?
 
@@ -24,7 +24,7 @@ Mostly desync and having "invalid" inputs. Just restart it.
 
 >How does GFL check the screen ratio?
 
-[Here.](https://old.reddit.com/r/girlsfrontline/comments/fgagxl/weekly_commanders_lounge_march_10_2020/fkegq2v/)
+[Here.](https://www.reddit.com/r/girlsfrontline/comments/fgagxl/weekly_commanders_lounge_march_10_2020/fkegq2v/)
 
 >Game keeps getting stuck in the title screen. Fetching server, download screen...
 
@@ -36,7 +36,7 @@ QooApp or Apkpure.
 
 >Update progress is stuck at 90%/100%. What should I do?
 
-Wait a minute, change WiFi connection, change to data, use VPN, restart client, [do a manual patch](https://github.com/lloyddunamis/gfl_manualpatch/blob/main/FullResource_readme), [delete some files](https://mobile.twitter.com/Synexcu/status/1310117595094216709?s=19), or reinstall (with minimum data first).
+Wait a minute, change WiFi connection, change to data, use VPN, restart client, [do a manual patch](https://github.com/lloyddunamis/gfl_manualpatch/blob/main/FullResource_readme), [delete some files](https://twitter.com/Synexcu/status/1310117595094216709?s=19), or reinstall (with minimum data first).
 
 >Enemy mortar keeps shooting me and I don't know who the target is.
 
@@ -52,7 +52,7 @@ Go through the process again then back out at the payment screen. If it fails, c
 
 >How much storage does this game consume?
 
-Iphones? Sub 10GB apparently because no compression and trash files. Android? Sub 5GB. And if the game wants to piss you off? Double of those, because dupe spaghetti.
+Should be around 5-6GB. Double, and it's classic dupe spaghetti.
 
 >My game is lagging. Is there a way to make this playable?
 
