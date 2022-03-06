@@ -2,7 +2,7 @@
 
 >I'm having a problem with \*insert problem here*. What should I do?
 
-<iframe width="640" height="380" src="https://www.youtube.com/embed/p85xwZ_OLX0" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/p85xwZ_OLX0" frameborder="0" allowfullscreen></iframe>
 
 If that still doesn't solve it, the following questions could. Or do the following then restart.
 
