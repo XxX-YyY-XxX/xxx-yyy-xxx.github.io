@@ -2,9 +2,9 @@
 
 >I'm having a problem with \*insert problem here*. What should I do?
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/p85xwZ_OLX0" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/p85xwZ_OLX0" frameborder="0" allowfullscreen></iframe>
 
-[Powercycling means literally closing/exiting/terminating the app, then launching it back up.](https://www.youtube.com/watch?v=p85xwZ_OLX0&feature=youtu.be) If that still doesn't solve it, the following questions could. Or do the following then restart.
+If that still doesn't solve it, the following questions could. Or do the following then restart.
 
 >Where to go for tech support?
 
