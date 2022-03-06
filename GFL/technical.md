@@ -1,8 +1,8 @@
 # Technical Help
 
->I'm having a problem and it's \*insert problem here*.
+>I'm having a problem with \*insert problem here*. What should I do?
 
-<iframe src="https://youtu.be/p85xwZ_OLX0" frameborder="0"></iframe>
+<video src="https://youtu.be/p85xwZ_OLX0"></video>
 
 [Powercycling means literally closing/exiting/terminating the app, then launching it back up.](https://www.youtube.com/watch?v=p85xwZ_OLX0&feature=youtu.be) If that still doesn't solve it, the following questions could. Or do the following then restart.
 
@@ -17,6 +17,8 @@ It shouldn't happen anymore but if it does... try not to rely on friend echelons
 >The tutorial froze. What should I do?
 
 Eh, it happens. Consensus is just skip it. Apparently it bricks on devices wider than 16:9 landscape mode.
+
+...Is what I would say, but client updates might have fixed it already. Haven't checked.
 
 >I got an "Illegal Action Detected" warning. What happened?
 
