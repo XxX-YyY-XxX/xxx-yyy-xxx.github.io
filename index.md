@@ -1,3 +1,3 @@
 This is the main page now. B)
 
-[GFL FAQs](/GFL/index.md)
+[GFL FAQs](/GFL/index)

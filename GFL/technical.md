@@ -2,7 +2,7 @@
 
 >I'm having a problem and it's \*insert problem here*.
 
-<iframe  title="YouTube video player" width="480" height="390" src="https://youtu.be/p85xwZ_OLX0" frameborder="0"></iframe>
+<iframe src="https://youtu.be/p85xwZ_OLX0" frameborder="0"></iframe>
 
 [Powercycling means literally closing/exiting/terminating the app, then launching it back up.](https://www.youtube.com/watch?v=p85xwZ_OLX0&feature=youtu.be) If that still doesn't solve it, the following questions could. Or do the following then restart.
 
