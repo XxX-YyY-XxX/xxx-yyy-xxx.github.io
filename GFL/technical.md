@@ -20,9 +20,11 @@
 >
 > ...Is what I would say, but client updates might have fixed it already. Haven't checked.
 
+@ Clarify
+
 ### I got an "Illegal Action Detected" warning. What happened?
 
-> Mostly desync and having "invalid" inputs. Just restart it.
+> Mostly desyncs and having "invalid" inputs. Just restart it.
 
 ### How does GFL check the screen ratio?
 
