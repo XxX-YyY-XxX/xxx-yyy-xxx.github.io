@@ -26,17 +26,17 @@
 
 > Mostly desyncs and having "invalid" inputs. Just restart it.
 
-### How does GFL check the screen ratio?
+### How can I make GFL have a taller interface so I can see more dolls on-screen in the armory?
 
-> [Here.](https://www.reddit.com/r/girlsfrontline/comments/fgagxl/weekly_commanders_lounge_march_10_2020/fkegq2v/)
+> By changing screen resolution/aspect ratio.
 
 ### Game keeps getting stuck in the title screen. Fetching server, download screen...
 
 > Switch between WiFi/Data. Else use VPN.
-a
+
 ### Game is not available in my Play Store. How can I play this game?
 
-> F. QooApp or Apkpure.
+> QooApp or Apkpure.
 
 ### Update progress is stuck at 90%/100%. What should I do?
 
