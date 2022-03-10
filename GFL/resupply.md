@@ -12,15 +12,11 @@
 
 ### How do I get Black Cards?
 
-> Just gift the duplicate costume. Nice and simple.
-
-@ Visual
+> Just give the duplicate costume. Nice and simple.
 
 ### Where are the skins? I can't find them.
 
-> Go to the Dorms, then Warehouse at the bottom-right, then Gifts tab at top. If you still don't see them, restart client.
-
-@ Visual
+> ![Dorms > Warehouse > Gifts](/GFL/assets/SkinLocation.png)
 
 ### What if I don't have the doll I have costume for?
 
@@ -32,9 +28,7 @@
 
 ### I want to clean my furniture inventory. How do I do that?
 
-> Dorm>Furniture>Trash Icon>Take your pick.
-
-@ Visual
+> ![Trash Icon](/GFL/assets/FurnitureTrash.png)
 
 ### How does the Radiant Collection rate work?
 
