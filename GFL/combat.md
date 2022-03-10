@@ -14,17 +14,21 @@
 >
 > Skills cannot activate when they cannot shoot, i.e. SG/MG reloading, dolls moving, no enemy in range, no ammo/ration.
 
+@ Clarify
+
 ### Does retreating a doll during battle/skirmish have an effect on affection points?
 
 > Nope. They ONLY lose some if they or other dolls in the group died during mob battles. And auto-battles DO NOT decrease/affect^(w/e the case may be) affection points.
 
+@ Clarify
+
 ### Do HP shields stack?
 
-![TLDR: Yes.](/GFL/assets/HPShield.jpeg)
+> TLDR: Yes.
+>
+> ![u/UnironicWeeaboo strikes again.](/GFL/assets/HPShield.jpeg)
 
-> [Yes.](https://m.imgur.com/FBXXJ6E) Still no idea what is older in single frame simultaneous activation, but eh, too improbable.
-
-@ Visual
+@ Compact
 
 ### How do I deal with enemies with armor?
 
@@ -32,20 +36,19 @@
 
 ### Do debuffs stick if I retreat my dolls?
 
-> Rudimentary testing says no. Also applies to enemy side on-screen effects like molotovs, smoke, grenade, stun.
+> Rudimentary testing says no. Mainly applies to enemy side on-screen effects like molotovs, smoke, grenade, stun, etc.
 
 ### Can I change which dolls get targetted by the enemy?
 
-> [By echelon positioning.](https://old.reddit.com/r/girlsfrontline/comments/g11mag/weekly_commanders_lounge_april_14_2020/fny91zz/)
-[In-depth study on positioning, targeting, and some peculiar requirements involving acquire dates.](https://docs.google.com/document/d/1LPqpSCNWiu1HJOnK1FOB1o30FSwTQRQvcK-tAjO4SSI/)
+> [By echelon positioning.](https://www.reddit.com/r/girlsfrontline/comments/g11mag/weekly_commanders_lounge_april_14_2020/fny91zz/)
+>
+> [In-depth study on positioning, targeting, and some peculiar requirements involving acquire dates.](https://docs.google.com/document/d/1LPqpSCNWiu1HJOnK1FOB1o30FSwTQRQvcK-tAjO4SSI/)
 
-### Why do people sometimes kite diagonally downward?
-
-> Sometimes because you'd also want to kite the lower portion, sometimes to not get the top portion's aggro...
+@ Fix
 
 ### I keep fat-fingering my kiting. Any help?
 
-> Is it really fat-fingering or you're just tapping at the wrong place? Because to move a doll, you tap on their feet, not on their body.
+> To move a doll, you tap on their feet, not on their body. Or use emulators.
 
 ### Can I zoom out during combat?
 
@@ -53,7 +56,9 @@
 
 ### Is there any way to reset my battles so I can get a win?
 
-> [Just make sure that your team can actually take them on.](https://old.reddit.com/r/girlsfrontline/comments/htyqeq/lounge_faqs_v2/fzmca22/)
+> [Just make sure that your team can actually take them on.](https://www.reddit.com/r/girlsfrontline/comments/htyqeq/lounge_faqs_v2/fzmca22/)
+
+@ Fix
 
 ### How do I stop my dolls from retreating on critical damage?
 

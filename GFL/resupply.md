@@ -7,7 +7,7 @@
 ### T-Doll Costumes available now?
 
 > [Gamepress list.](https://gamepress.gg/girlsfrontline/t-doll-costumes-list) Has a list of unobtainable costumes.
-
+>
 > [Redditor u/ConductorBichir's list.](https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ/edit#gid=1593777261) Includes complete dorm set special effect.
 
 ### How do I get Black Cards?
@@ -50,7 +50,7 @@
 
 > L2D 
 > - Reactive/full Live2D (the one where their eyes follow your touch).
-
+>
 > Simplified L2D
 > - Animations on loop, except when they talk.
 
@@ -73,7 +73,7 @@
 ### What are the furniture sets as of now?
 
 > [Everyhting CN has to offer.](http://www.gfwiki.org/w/%E5%AE%B6%E5%85%B7)
-
+>
 > [Tells you which furnitures are available to which banner... probably.](https://mzh.moegirl.org.cn/%E5%B0%91%E5%A5%B3%E5%89%8D%E7%BA%BF/%E5%AE%B6%E5%85%B7#)
 
 @ Clarify
