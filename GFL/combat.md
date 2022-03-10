@@ -26,7 +26,7 @@
 
 > TLDR: Yes.
 >
-> ![u/UnironicWeeaboo strikes again.](/GFL/assets/HPShield.jpeg)
+> ![u/UnironicWeeaboo strikes again.](/GFL/assets/images/HPShield.png)
 
 @ Compact
 
