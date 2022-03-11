@@ -13,3 +13,6 @@ Dumpster for questions scraped from the lounge.
 
 # [Combat/Battle/Skirmish](/GFL/combat)*
 - Kiting, tile and skill buffs and debuffs, and battlefield interactions.
+
+# [Story](/GFL/story)*
+- Lore, major events, timeline, and costume stories.
