@@ -53,6 +53,7 @@
 > <iframe src="https://www.youtube.com/embed/videoseries?list=PL4Z0akElhimzHHiVMCozfUn1B6tYKjwPR" width="640" height="360" frameborder="0">Playlist by redditor u/paperrabbit.</iframe>
 >
 > [Google Docs version.](https://docs.google.com/document/d/1W5JzUGaC_fL5itce05WnkHcu7wX_sEn2vQlbgQNeKAk/)
+
 ### Why can't I read the Griffin Stories?
 
 > 2 things. Either you haven't redeemed your points from the STAR tab, or you lack one of the dolls.
