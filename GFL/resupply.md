@@ -1,4 +1,4 @@
-# Resupply/Costumes/Furnitures
+# Resupply/Costumes/Furniture
 
 ### Are there any sort of guides on how and when to roll?
 
@@ -22,7 +22,7 @@
 
 > Make Kalina wear it and give it when the owner comes home.
 
-### Where can I get furnitures for my dorms?
+### Where can I get furniture for my dorms?
 
 > Collateral of skin pulling, aka Resupply. Or Expedition shop.
 
@@ -68,7 +68,7 @@
 
 > [Everyhting CN has to offer.](http://www.gfwiki.org/w/%E5%AE%B6%E5%85%B7)
 >
-> [Tells you which furnitures are available to which banner... probably.](https://mzh.moegirl.org.cn/%E5%B0%91%E5%A5%B3%E5%89%8D%E7%BA%BF/%E5%AE%B6%E5%85%B7#)
+> [Tells you which furniture are available to which banner... probably.](https://mzh.moegirl.org.cn/%E5%B0%91%E5%A5%B3%E5%89%8D%E7%BA%BF/%E5%AE%B6%E5%85%B7#)
 
 @ Clarify
 
@@ -78,6 +78,6 @@
 
 @ Clarify
 
-### I missed some event furnitures that can be acquired from crates. Will I ever have a chance to get them again?
+### I missed some event furniture that can be acquired from crates. Will I ever have a chance to get them again?
 
 > Yes. Wait for them in the Black Market Exchange.
