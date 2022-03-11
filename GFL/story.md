@@ -2,15 +2,15 @@
 
 ### I missed a major event, will it come back?
 
-> 6 months minimum after their release they get added to the Campaign tab. For collabs... hope for the best.
+> 6 months minimum after their release, they get added to the Campaign tab. For collabs... hope for the best.
 
 ### What's the sequence of the stories?
 
-> [CuriousCanidae's overview.](https://drive.google.com/file/d/1Gm5kl_ep0MY29WPxBd-CqQrtAmDtzxSO/view) Note that some of these are in the wrong order, or so they say.
+> [Redditor u/CuriousCanidae's overview.](https://drive.google.com/file/d/1Gm5kl_ep0MY29WPxBd-CqQrtAmDtzxSO/view) Note that some of these are in the wrong order, or so they say.
 
 ### How to read the story again? It's not available in the story playback in Index.
 
-> Settings>Game>Story Playback then play the stage again. Or just Youtube it.
+> Settings>Game>Story Playback then play the stage again. Or just Youtube it. This also applies to nodes with story/cutscene snippets.
 
 @ Visual
 
@@ -42,13 +42,11 @@
 >
 > 13. [Shoul's Story Scenes Playlists.](https://www.youtube.com/channel/UC_JmwXOfYqOKpGGtc5gcVmw)
 
-@ Fix
-
 ### How do I unlock Chapter 4 of Continuum Turbulence?
 
 > By completing all nodes and paths, including bad ends.
 
-### Is there a compilation of anniv adjutant lines?
+### Is there a compilation of anniversary adjutant lines?
 
 > <iframe src="https://www.youtube.com/embed/videoseries?list=PL4Z0akElhimzHHiVMCozfUn1B6tYKjwPR" width="640" height="360" frameborder="0">Playlist by redditor u/paperrabbit.</iframe>
 >
