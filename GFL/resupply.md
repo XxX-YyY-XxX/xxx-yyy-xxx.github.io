@@ -16,7 +16,7 @@
 
 ### Where are the skins? I can't find them.
 
-> ![Dorms > Warehouse > Gifts](/GFL/assets/images/SkinLocation.png)
+> ![](/GFL/assets/images/SkinLocation.png "Dorms > Warehouse > Gifts")
 
 ### What if I don't have the doll I have costume for?
 
@@ -28,7 +28,7 @@
 
 ### I want to clean my furniture inventory. How do I do that?
 
-> ![Trash Icon](/GFL/assets/images/FurnitureTrash.png)
+> ![](/GFL/assets/images/FurnitureTrash.png "Trash Icon")
 
 ### How does the Radiant Collection rate work?
 

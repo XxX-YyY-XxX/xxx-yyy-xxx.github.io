@@ -16,3 +16,6 @@ Dumpster for questions scraped from the lounge.
 
 # [Story](/GFL/story)*
 - Lore, major events, timeline, and costume stories.
+
+# [Expedition/Forward Basecamp](/GFL/expedition)*
+- Expedition compositions, requirements, and tips.

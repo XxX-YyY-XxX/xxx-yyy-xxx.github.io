@@ -26,7 +26,7 @@
 
 > TLDR: Yes.
 >
-> ![u/UnironicWeeaboo strikes again.](/GFL/assets/images/HPShield.png)
+> ![](/GFL/assets/images/HPShield.png "From u/UnironicWeeaboo")
 
 @ Compact
 
