@@ -6,7 +6,7 @@
 >
 > [GFC Primer.](https://www.gflcorner.com/expedition-system-mini-guide/)
 >
-> [ATM Guide.](https://gfl.matsuda.tips/post/weareabsolutenotlostiswear)
+> [ATM Guide.](https://gfl.matsuda.tips/post/weareabsolutenotlostiswear) Important note is that FB unlocks at Commander Lv. 20.
 
 ### What should I buy from the black market?
 
