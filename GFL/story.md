@@ -52,6 +52,6 @@
 >
 > [Google Docs version.](https://docs.google.com/document/d/1W5JzUGaC_fL5itce05WnkHcu7wX_sEn2vQlbgQNeKAk/)
 
-### Why can't I read the Griffin Stories?
+### Why can't I read the Griffin Stories/Bookshelf of Memories?
 
 > 2 things. Either you haven't redeemed your points from the STAR tab, or you lack one of the dolls.
