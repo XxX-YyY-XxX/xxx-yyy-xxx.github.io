@@ -19,3 +19,6 @@ Dumpster for questions scraped from the lounge.
 
 # [Expedition/Forward Basecamp](/GFL/expedition)*
 - Expedition compositions, requirements, and tips.
+
+# [Heavy Ordnance Corps](/GFL/hoc)*
+- Fire supports, chip placements, and usage.
