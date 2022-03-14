@@ -43,7 +43,7 @@
 
 ### Will I lose the tile buffs if my dolls retreated/moved/lose link/die ?
 
-> <iframe width="640" height="360" src="https://www.youtube.com/embed/tQRqcTDmAKE" frameborder="0" class="tooltip" allowfullscreen><span class="tooltiptext">Courtesy of redditor u/UnironicWeeaboo</span></iframe>
+> <div class="tooltip"><iframe width="640" height="360" src="https://www.youtube.com/embed/tQRqcTDmAKE" frameborder="0" allowfullscreen><span class="tooltiptext">Courtesy of redditor u/UnironicWeeaboo</span></iframe></div>
 >
 > TLDW: No.
 >
