@@ -20,3 +20,6 @@
 
 # [Heavy Ordnance Corps](/GFL/hoc)*
 - Fire supports, chip placements, and usage.
+
+# [Resource Management](/GFL/currencies)
+- Gems, tokens, tickets acquisition and usage.
