@@ -90,7 +90,7 @@
 
 > ![List.](/GFL/assets/images/ResourceCap.png)
 >
-> Even then, all resources can be obtained without regards to max capacity through daily gifts, mission rewards, and whaling ^ (probably).
+> Even then, all resources can be obtained without regards to max capacity through daily gifts, mission rewards, and whaling.
 
 ### I'm in core hell. How do I get some more?
 
