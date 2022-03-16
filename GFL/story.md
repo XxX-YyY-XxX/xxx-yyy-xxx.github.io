@@ -16,31 +16,13 @@
 
 ### Where can I read the MOD, costume, event stories etc?
 
-> 01. [GF Translated Story Material (+ other stuff).](https://drive.google.com/drive/folders/14sNze_lnv5EwL1bl_g3IOVQIo6GGYUJp) Linked into by 3 and 4.
->
-> 02. [Costume Stories.](https://drive.google.com/drive/folders/13AiWn_jgIxWUTK2T7EVjFV8Rkk6jptEs)
->
-> 03. [GF Translations.](https://drive.google.com/drive/folders/14bAuWaGbagJwucmlit3EkXFqMRV9NHZO) Has links to other materials.
->
-> 04. [The Official #gf-loreroom Information Index.](https://docs.google.com/spreadsheets/d/1LYV05D7kGTKp_FS7cJrNrJlVxeRAnFVnr6vCTo5F-YM) Also has links to other materials.
->
-> 05. [Confidential Files.](https://docs.google.com/document/d/1JyJ-o9gHCeCdN2h8PhhRdFczejLs6Wve8dziQZUSEGk) AKA the lore document.
->
-> 06. [Confidential Files 2: New and Emerging Forms of Threat.](https://drive.google.com/drive/folders/17_9Tu-90ZWrvlHPzgWbVwSQebJ4nHiR7)
->
-> 07. [The Background History of Girls’ Frontline.](https://twitter.com/YZsFerrari/status/1379877420732448777)
->
-> 08. [DoctuhD's Girls Frontline Summary: Isomer-Polarized Light.](https://docs.google.com/document/d/1yn0sjoktIb2f-KC6bxn3R0qpCUChBPpIQuERcLmBHbg)
->
-> 09. [IOPWiki Lore.](https://iopwiki.com/wiki/Lore)
->
-> 10. [Redditor u/RhythmLunatic's GFL Cutscene Interpreter](https://gfl.amaryllisworks.pw/)
->
-> 11. [Gamepress Lore Directory.](https://gamepress.gg/girlsfrontline/lore-directory)
->
-> 12. [Girls' Frontline Full Story Comprehension Playlist.](https://youtube.com/playlist?list=PL9y52Flm1yM-tJJoom2zfrWTpaO1mTw8M) Translated up to Isomer.
->
-> 13. [Shoul's Story Scenes Playlists.](https://www.youtube.com/channel/UC_JmwXOfYqOKpGGtc5gcVmw)
+> | Compilations | Lore | Major Events | Others |
+> | --- | --- | --- | --- |
+> | [GF Translated Story Material (+ other stuff)](https://drive.google.com/drive/folders/14sNze_lnv5EwL1bl_g3IOVQIo6GGYUJp "Linked into by the links below") | [Confidential Files](https://docs.google.com/document/d/1JyJ-o9gHCeCdN2h8PhhRdFczejLs6Wve8dziQZUSEGk) | [GFL Cutscene Interpreter](https://gfl.amaryllisworks.pw/ "By redditor u/RhythmLunatic") | [Costume Stories](https://drive.google.com/drive/folders/13AiWn_jgIxWUTK2T7EVjFV8Rkk6jptEs) |
+> | [GF Translations](https://drive.google.com/drive/folders/14bAuWaGbagJwucmlit3EkXFqMRV9NHZO) | [Confidential Files 2: New and Emerging Forms of Threat](https://drive.google.com/drive/folders/17_9Tu-90ZWrvlHPzgWbVwSQebJ4nHiR7) | [Shoul's Story Scenes Playlists](https://www.youtube.com/channel/UC_JmwXOfYqOKpGGtc5gcVmw) ||
+> | [The Official #gf-loreroom Information Index](https://docs.google.com/spreadsheets/d/1LYV05D7kGTKp_FS7cJrNrJlVxeRAnFVnr6vCTo5F-YM) | [The Background History of Girls’ Frontline](https://twitter.com/YZsFerrari/status/1379877420732448777) | [Girls' Frontline Full Story Comprehension Playlist](https://youtube.com/playlist?list=PL9y52Flm1yM-tJJoom2zfrWTpaO1mTw8M "Translated up to Isomer") ||
+> || [IOPWiki Lore](https://iopwiki.com/wiki/Lore) | [DoctuhD's Girls Frontline Summary](https://docs.google.com/document/d/1yn0sjoktIb2f-KC6bxn3R0qpCUChBPpIQuERcLmBHbg "Isomer-Polarized Light") ||
+> || [Gamepress Lore Directory](https://gamepress.gg/girlsfrontline/lore-directory) |||
 
 ### How do I unlock Chapter 4 of Continuum Turbulence?
 
@@ -55,3 +37,7 @@
 ### Why can't I read the Griffin Stories/Bookshelf of Memories?
 
 > 2 things. Either you haven't redeemed your points from the STAR tab, or you lack one of the dolls.
+
+### What's the blurb for the Listening Post?
+
+> <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/t42t86/weekly_commanders_lounge_march_01_2022/hz2dti3/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="435" width="640" scrolling="no"></iframe>
