@@ -1,6 +1,4 @@
-# GIRLS' FRONTLINE LOUNGE FAQS
-
-Dumpster for questions scraped from the lounge.
+# Girls' Frontline Reddit Lounge FAQs
 
 # [Technical Help](/GFL/technical)*
 - Troubleshooting, bug reports, and customer support.
