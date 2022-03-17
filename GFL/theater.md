@@ -13,8 +13,8 @@
 > [Gamepress Guide Part 1.](https://gamepress.gg/girlsfrontline/theater-7-overhaul-guide-new-mechanics-new-enemies-same-pain) The updated theater version.
 >
 > [Gamepress Guide Part 2.](https://gamepress.gg/girlsfrontline/theater-7-combat-guide) Still good for Theater 8.
-
-TLDR is 5-6 Defense Drills in a row, twice per day, with differing battle effects and restrictions applied. And scouting gambling where you pick one zone.
+>
+> TLDR is 5-6 Defense Drills in a row, twice per day, with differing battle effects and restrictions applied. And scouting gambling where you pick one zone.
 
 ### Do I have to save HOC charges and Fairy points for the boss?
 
