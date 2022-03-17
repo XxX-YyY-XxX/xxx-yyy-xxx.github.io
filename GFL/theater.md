@@ -26,18 +26,11 @@
 
 ### How much CE do I need for a good score?
 
-> You know the times when people say CE is useless? This is not one of those times.
->
-> | Class | Estimated Maximum |
-> | --- | --- |
-> | RF | 7000 |
-> | HG | 4500 |
-> | AR | 7500 |
-> | SMG | 6000 |
-> | MG | 13000 |
-> | SG | 8000 |
+> For dolls, MODs and oaths take the forefrnt with advantaged dolls having +20% CE than usual.
 >
 > For fairies, they only need to be 5★ and Lv. 100.
+>
+> For HOCs, maxed out PA is better in stack but worse in battle.
 
 ### I can't beat the current stage. Is this it for me?
 
