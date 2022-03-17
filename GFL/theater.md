@@ -30,12 +30,12 @@ TLDR is 5-6 Defense Drills in a row, twice per day, with differing battle effect
 >
 > | Class | Estimated Maximum |
 > | --- | --- |
-> | RF | <div style="text-align: center;">7000</div> |
-> | HG | <div style="text-align: center;">4500</div> |
-> | AR | <div style="text-align: center;">7500</div> |
-> | SMG | <div style="text-align: center;">6000</div> |
-> | MG | <div style="text-align: center;">13000</div> |
-> | SG | <div style="text-align: center;">8000</div> |
+> | RF | 7000 |
+> | HG | 4500 |
+> | AR | 7500 |
+> | SMG | 6000 |
+> | MG | 13000 |
+> | SG | 8000 |
 >
 > For fairies, they only need to be 5★ and Lv. 100.
 
