@@ -1,6 +1,6 @@
 # Girls' Frontline Reddit Lounge FAQs
 
-# [Technical Help](/GFL/technical)*
+# [Technical Help](/GFL/technical)
 - Troubleshooting, bug reports, and customer support.
 
 # [Resupply/Costumes/Furniture](/GFL/resupply)*
@@ -23,3 +23,6 @@
 
 # [Resource Management](/GFL/currencies)
 - Gems, tokens, tickets, MARP acquisition and usage.
+
+# [Theater](/GFL/theater)
+- Theater guides, battles, and formations.

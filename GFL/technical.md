@@ -14,6 +14,7 @@
 
 > It shouldn't happen anymore but if it does... try not to rely on friend echelons.
 
+<!--
 ### The tutorial froze. What should I do?
 
 > Eh, it happens. Consensus is just skip it. Apparently it bricks on devices wider than 16:9 landscape mode.
@@ -21,6 +22,7 @@
 > ...Is what I would say, but client updates might have fixed it already. Haven't checked.
 
 @ Clarify
+-->
 
 ### I got an "Illegal Action Detected" warning. What happened?
 
