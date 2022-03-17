@@ -2,7 +2,7 @@
 
 ### How to do Theater?
 
-> Note that advantaged dolls no longer makes or breaks the run and echelon formation is 1 team + backups.
+> Note that advantaged dolls no longer make or break the run and echelon formation is 1 team + backups.
 >
 > [IOPWiki Guide.](https://iopwiki.com/wiki/Theater_Mode)
 >
