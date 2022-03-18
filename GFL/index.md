@@ -26,3 +26,6 @@
 
 # [Theater](/GFL/theater)
 - Theater guides, battles, and formations.
+
+# [Tactical Dolls](/GFL/tdolls)*
+- Doll analysis, acquisition, affections, and stat adjustments.
