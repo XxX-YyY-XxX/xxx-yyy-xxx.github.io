@@ -28,4 +28,4 @@
 - Theater guides, battles, and formations.
 
 # [Tactical Dolls](/GFL/tdolls)*
-- Doll analysis, acquisition, affections, and stat adjustments.
+- Doll analysis, acquisition, builds and loadouts, and affections.
