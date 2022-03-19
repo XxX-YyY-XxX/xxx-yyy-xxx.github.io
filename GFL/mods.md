@@ -10,7 +10,7 @@
 
 ### What's the Fire Control Core for?
 
-> Necessary for modding 5★ dolls.
+> Necessary for modding 5★ into 6★ dolls.
 
 ### What's the time frame for modding dolls?
 
