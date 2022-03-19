@@ -29,3 +29,6 @@
 
 # [Tactical Dolls](/GFL/tdolls)*
 - Doll analysis, acquisition, builds and loadouts, and affections.
+
+# [Neural Upgrade/MOD](/GFL/mods)
+- Upgrade guide, mods list, and extra details.
