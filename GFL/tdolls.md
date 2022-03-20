@@ -22,7 +22,7 @@
 
 ### Which doll should I get with True Core Masks?
 
-> ![](/GFL/assets/images/VeryReliableTCMGuide.jpeg "Note that you can only use it on craftable dolls, so no P22(drop only) or Deagle(event reward)")
+> ![](/GFL/assets/images/VeryReliableTCMGuide.png "Note that you can only use it on craftable dolls, so no P22(drop only) or Deagle(event reward)")
 
 ### How do I know the final value of the doll stats? And what are the caps for each stat?
 
