@@ -32,3 +32,6 @@
 
 # [Neural Upgrade/MOD](/GFL/mods)
 - Upgrade guide, mods list, and extra details.
+
+# [Events](/GFL/events)*
+- Major, minor, and mini events.
