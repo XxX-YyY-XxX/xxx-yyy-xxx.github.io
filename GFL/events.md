@@ -54,7 +54,7 @@
 
 ### What's a rescue event?
 
-> Events where you get to farm for [sought-after 4-5★ dolls](/GFL/tdolls.md/#is-there-a-comprehensive-list-of-limited-event-dolls) in the story chapters 1-6.
+> Events where you get to farm for [sought-after 4-5★ dolls](/GFL/tdolls#is-there-a-comprehensive-list-of-limited-event-dolls) in the story chapters 1-6.
 
 ### Can I get limited event dolls during rescue events using autobattles?
 

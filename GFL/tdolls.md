@@ -130,7 +130,7 @@
 >
 > As for the missing monthlies, just wait for a new event/campaign.
 
-### Is there a comprehensive list of Limited Event Dolls? {#is-there-a-comprehensive-list-of-limited-event-dolls}
+### Is there a comprehensive list of Limited Event Dolls?
 
 > [From redditor u/BigStupidJellyfish_.](https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls.html)
 >
