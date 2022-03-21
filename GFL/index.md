@@ -36,5 +36,5 @@
 # [Events](/GFL/events)*
 - Major, minor, and mini events.
 
-# [Fairies](/GFL/fairies)
+# [Fairies](/GFL/fairies)*
 - Fairy guides and usage.
