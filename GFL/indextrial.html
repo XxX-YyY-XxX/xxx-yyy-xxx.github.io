@@ -57,13 +57,6 @@
                     </form>
                 </div>
                 
-                <!-- <fieldset>
-                    <legend><h3>Questions</h3></legend>
-                    Answers
-                    <br></br>
-                    Tags:<span class="tags">jkl;</span>
-                </fieldset> -->
-
                 <div id="qna">
 
                 </div>
@@ -74,7 +67,12 @@
 
                     for (var i = 0; i < 5; i++)
                     {
-                        boxes += '<p>test</p>'//`<fieldset><legend><h3>Questions</h3></legend>Answers<br></br>Tags:<span class="tags">${i}</span></fieldset>`;
+                        boxes += ```<fieldset>
+                            <legend><h3>Questions</h3></legend>
+                            Answers
+                            <br></br>
+                            Tags:<span class="tags">${i}</span>
+                            </fieldset>```;
                     }
 
                     wrap.innerHTML = boxes;
