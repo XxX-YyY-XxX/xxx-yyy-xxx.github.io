@@ -38,5 +38,8 @@
 }
 
 .tags {
+  display: fit-content;
+  border-radius: 25px;
+  border: aqua;
   color: aqua;
 }
