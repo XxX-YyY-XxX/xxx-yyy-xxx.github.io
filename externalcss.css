@@ -37,8 +37,7 @@
   opacity: 1;
 }
 
-.tags {
-  display: fit-content;
+span.tags {
   border-radius: 25px;
   border: aqua;
   color: aqua;
