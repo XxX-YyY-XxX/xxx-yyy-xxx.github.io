@@ -61,18 +61,33 @@
 
                 </div>
 
-                <script>
+                <script>                        //run on pressing search
                     var wrap = document.getElementById("qna");
                     var boxes = '';
+                    //var qnaArray
+
+                    //phrase == search by matching words
+                    //searchTag == search by matching tags using "tag: tags"
+
+                    /*
+                    qnaArray.forEach(element => {
+                        if (phrase in element.questions || phrase in element.answers || searchTag in element.tags)
+                        {
+                            boxes += `items`;//print output
+                        }
+                    });*/
 
                     for (var i = 0; i < 5; i++)
                     {
-                        boxes += `<fieldset>
-                            <legend><h3>Questions</h3></legend>
-                            Answers
-                            <br></br>
-                            Tags:<span class="tags">${i}</span>
-                            </fieldset>`;
+                        if (true)
+                        {
+                            boxes += `<fieldset>
+                                <legend><h3>Questions</h3></legend>
+                                Answers
+                                <br></br>
+                                Tags:<span class="tags">${i}</span>
+                                </fieldset>`;
+                        }
                     }
 
                     wrap.innerHTML = boxes;
