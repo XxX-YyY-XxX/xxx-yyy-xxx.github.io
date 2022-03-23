@@ -38,3 +38,6 @@
 
 # [Fairies](/GFL/fairies)*
 - Fairy guides and usage.
+
+# [Third Party](/GFL/apps)*
+- Emulators, GFL Chip Calculator, and GFAlarm.
