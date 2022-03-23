@@ -76,14 +76,12 @@
                 <div id="qna"></div>
 
                 <script>
-                    var wrap = document.getElementById("qna");
-
                     for (var i = 0; i < 5; i++)
                     {
-                        boxes += '<fieldset><legend><h3>Questions</h3></legend>Answers<br></br>Tags:<span class="tags">' + i + '</span></fieldset>';
+                        boxes += '<p>test</p>'//`<fieldset><legend><h3>Questions</h3></legend>Answers<br></br>Tags:<span class="tags">${i}</span></fieldset>`;
                     }
 
-                    wrap.innerHTML = boxes;
+                    document.getElementById("qna").innerHTML = boxes;
                 </script>
 
             </section>
