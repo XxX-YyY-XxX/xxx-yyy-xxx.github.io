@@ -42,5 +42,5 @@
 # [Third Party](/GFL/apps)*
 - Emulators, GFL Chip Calculator, and GFAlarm.
 
-# [Auto-Battles](/GFL/autobattles)
+# [Auto-Battles](/GFL/autobattles)*
 - Auto-battle cards, rewards, and efficient maps.

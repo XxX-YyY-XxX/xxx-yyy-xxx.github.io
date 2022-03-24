@@ -50,50 +50,53 @@
 
         <div class="container">
             <section id="main_content">
-                <div class="search-container">
-                    <form action="/action_page.php">
-                        <input type="text" placeholder="Search.." name="search">
-                        <button type="submit">Search</button>
-                    </form>
-                </div>
+
+                <p>Use <code>Tags: </code> to search using tags, <code>,</code> for multiple tags.</p>
+
+                <form action="javascript:findCard()">
+                    <input type="text" placeholder="Search..." id="search-text">
+                    <input type="submit">
+                </form>
                 
-                <div id="qna">
-
-                </div>
-
-                <script>                        //run on pressing search
-                    var wrap = document.getElementById("qna");
-                    var boxes = '';
-                    //var qnaArray
-
-                    //phrase == search by matching words
-                    //searchTag == search by matching tags using "tag: tags"
-
-                    
-                    /*qnaArray.forEach(element => {
-                        if (phrase in element.questions || phrase in element.answers || element.tags.includes(searchTag))
-                        {
-                            boxes += `items`;//print output
-                        }
-                    });*/
-
-                    for (var i = 0; i < 5; i++)
-                    {
-                        if (true)
-                        {
-                            boxes += `<fieldset>
-                                <legend><h3>Questions</h3></legend>
-                                Answers
-                                <br></br>
-                                Tags:<span class="tags">${i}</span>
-                                </fieldset>`;
-                        }
-                    }
-
-                    wrap.innerHTML = boxes;
-                </script>
+                <div id="qna"></div>
 
             </section>
         </div>
+
+        <script src="/GFL/cards.json"></script>
+        <script type="text/javascript" src="/externaljavascript.js"></script>
+        <script>
+            //const questionCards = require('/GFL/cards.json');
+            const searchText = document.getElementById('search-text').value;
+            const cardField = document.getElementById("qna");
+            var boxes = '';
+
+            cardField.innerHTML = `${IsSubsetOf([], [])}`
+
+            function findCard() {                                         //run on pressing search
+                if (phrase.includes('Tags: ')) {
+                    const cardTags = searchText.replace('Tags: ', '').replace(' ', '').split(',');
+                } else {
+                    const phrase = `/${searchText}/i`
+                }
+    
+                for (const cards of questionCards) {
+                    const matchTags = cardTags.every(val => cards.tags.includes(val));
+    
+                    if (cards.questions.search(phrase) > -1 || cards.answers.search(phrase) > -1 || matchTags) {
+                        var tagList = element.tags.map(tagObject => {`<span class="tags">${tagObject}</span>`})
+    
+                        boxes += `<fieldset>
+                            <legend><h3>${cards.questions}</h3></legend>
+                            <blockquote>${cards.answers}</blockquote>
+                            <br></br>
+                            Tags: ${tagList.join()}
+                            </fieldset>`;
+                    }
+                }
+    
+                cardField.innerHTML = boxes;
+            }
+        </script>
     </body>
 </html>

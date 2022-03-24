@@ -37,6 +37,8 @@
 
 > Yes. Also stated in-game through loading screens that you can do so.
 
+@ Visual
+
 ### Is the monthly autobattle card worth it?
 
 > Well, considering exp shown in autobattle window is the total undistributed exp, one team basically gets 2x exp than no monthly card. And you can also do it for one more echelon.
