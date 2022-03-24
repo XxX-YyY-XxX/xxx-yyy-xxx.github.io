@@ -69,9 +69,9 @@
                     //phrase == search by matching words
                     //searchTag == search by matching tags using "tag: tags"
 
-                    /*
-                    qnaArray.forEach(element => {
-                        if (phrase in element.questions || phrase in element.answers || searchTag in element.tags)
+                    
+                    /*qnaArray.forEach(element => {
+                        if (phrase in element.questions || phrase in element.answers || element.tags.includes(searchTag))
                         {
                             boxes += `items`;//print output
                         }

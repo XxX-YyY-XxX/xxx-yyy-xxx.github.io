@@ -9,6 +9,7 @@
 ### Do auto-battles count for "Defeat Enemies"?
 
 > No.
+<!-- See [question in sys mech] -->
 
 ### What do I do with unused Keycards during the bingo event?
 
