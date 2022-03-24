@@ -71,8 +71,6 @@
             const cardField = document.getElementById("qna");
             var boxes = '';
 
-            cardField.innerHTML = `${IsSubsetOf([], [])}`
-
             function findCard() {                                         //run on pressing search
                 if (phrase.includes('Tags: ')) {
                     const cardTags = searchText.replace('Tags: ', '').replace(' ', '').split(',');
@@ -80,11 +78,9 @@
                     const phrase = `/${searchText}/i`
                 }
     
-                for (const cards of questionCards) {
-                    const matchTags = cardTags.every(val => cards.tags.includes(val));
-    
-                    if (cards.questions.search(phrase) > -1 || cards.answers.search(phrase) > -1 || matchTags) {
-                        var tagList = element.tags.map(tagObject => {`<span class="tags">${tagObject}</span>`})
+                for (const cards of questionCards) {    
+                    if (cards.questions.search(phrase) > -1 || cards.answers.search(phrase) > -1 || IsSubsetOf(cardTags, cards.tags)) {
+                        var tagList = cards.tags.map(tagObject => {`<span class="tags">${tagObject}</span>`})
     
                         boxes += `<fieldset>
                             <legend><h3>${cards.questions}</h3></legend>
