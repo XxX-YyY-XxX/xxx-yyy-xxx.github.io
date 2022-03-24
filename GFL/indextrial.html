@@ -63,15 +63,29 @@
             </section>
         </div>
 
-        <script src="/GFL/cards.json"></script>
+        <!--script src="/GFL/cards.json"></script-->
         <script type="text/javascript" src="/externaljavascript.js"></script>
         <script>
             //const questionCards = require('/GFL/cards.json');
+            //const questionCards = JSON.parse('/GFL/cards.json');
             const searchText = document.getElementById('search-text').value;
             const cardField = document.getElementById("qna");
             var boxes = '';
 
-            function findCard() {                                         //run on pressing search
+            const questionCards = fetch('/GFL/cards.json')
+                .then(response => response.json() )
+                .then(data => appendData(data) )
+                .catch(err => console.log(err) );
+
+  
+
+            function a(){
+                cardField.innerHTML = 'hgd';
+            }
+
+            a();
+
+            /* function findCard() {                                         //run on pressing search
                 if (phrase.includes('Tags: ')) {
                     const cardTags = searchText.replace('Tags: ', '').replace(' ', '').split(',');
                 } else {
@@ -92,7 +106,7 @@
                 }
     
                 cardField.innerHTML = boxes;
-            }
+            } */
         </script>
     </body>
 </html>
