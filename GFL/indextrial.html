@@ -53,7 +53,7 @@
 
                 <p>Use <code>Tags:</code> to search using tags.</p>
 
-                <form onsubmit="findCard()">
+                <form onsubmit="findCards()">
                     <input type="text" placeholder="Search..." id="search-text">
                     <input type="submit">
                 </form>
@@ -67,10 +67,6 @@
         <script type="text/javascript" src="/externaljavascript.js"></script>
         <script>
             //const questionCards = require('/GFL/cards.json');
-            const searchText = document.getElementById('search-text');
-            const cardField = document.getElementById("qna");
-            var boxes = '';
-            var questionCards;
 
             /* const questionCards = fetch('/GFL/cards.json')
                 .then(response => response.json() )
@@ -78,36 +74,98 @@
                 .catch(err => console.log(err) );
             */
 
-            var oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+            /* var oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             oXHR.onreadystatechange = function() {
                 if (oXHR.readyState === 4 && oXHR.status == "200")
                     questionCards = JSON.parse(this.responseText);
             };
             oXHR.overrideMimeType("application/json");
             oXHR.open("GET", "/GFL/cards.json", true);          // true = ASYNCHRONOUS REQUEST (DESIRABLE), false = SYNCHRONOUS REQUEST.
-            oXHR.send();
+            oXHR.send(); */
 
-            function findCard() {                                         //run on pressing search
-                if (phrase.includes('Tags:')) {
-                    const cardTags = searchText.value.replace('Tags:', '').split(' ').filter(singleTags => singleTags !== '');
-                } else {
-                    const phrase = `/${searchText.value}/i`
+            var boxes = '';
+            var questionCards;
+
+            questionCards = [
+                {
+                    "questions" : "a",
+                    "answers" : "1",
+                    "tags" : ["z"]
+                },
+                {
+                    "questions" : "b",
+                    "answers" : "2",
+                    "tags" : ["y"]
+                },
+                {
+                    "questions" : "c",
+                    "answers" : "3",
+                    "tags" : ["x"]
+                },
+                {
+                    "questions" : "d",
+                    "answers" : "4",
+                    "tags" : ["w"]
+                },
+                {
+                    "questions" : "e",
+                    "answers" : "5",
+                    "tags" : ["v"]
                 }
-    
-                for (const cards of questionCards) {    
+            ]
+            
+            if (sessionStorage.outputCards) {
+                document.getElementById("qna").innerHTML = sessionStorage.outputCards;
+            } else {
+                randomCards();
+                document.getElementById("qna").innerHTML = boxes;
+            }            
+
+            function findCards() {                                         //run on pressing search
+                let searchText = document.getElementById('search-text').value;
+
+                if (searchText.includes('Tags:')) {
+                    const cardTags = searchText.replace('Tags:', '').split(' ').filter(singleTags => singleTags !== '');
+                } else {
+                    const phrase = `/${searchText}/i`
+                }
+
+                for (let cards of questionCards) {    
                     if (cards.questions.search(phrase) > -1 || cards.answers.search(phrase) > -1 || IsSubsetOf(cardTags, cards.tags)) {
-                        let tagList = cards.tags.map(tagObject => {`<span class="tags">${tagObject}</span>`});
-    
-                        boxes += `<fieldset>
-                            <legend><h3>${cards.questions}</h3></legend>
-                            <blockquote>${cards.answers}</blockquote>
-                            <br></br>
-                            Tags: ${tagList.join()}
-                            </fieldset>`;
+                        boxes += setQuestionBoxes(cards)
                     }
                 }
-    
-                cardField.innerHTML = boxes;
+
+                if (typeof(Storage) !== "undefined") {
+                    sessionStorage.outputCards = boxes;
+                } else {
+                    sessionStorage.outputCards = "Sorry, your browser does not support web storage...";
+                } 
+            }
+
+            function randomCards() {
+                let maxValue = questionCards.length;
+                var indices = []
+
+                for (let i = 0; i < 5; i++) {
+                    do {
+                        var newItem = Math.floor(Math.random() * maxValue)
+                    } while (indices.includes(newItem))
+                    indices.push(newItem);
+                }
+
+                for (let index of indices) {
+                    boxes += setQuestionBoxes(questionCards[index])
+                }
+            }
+
+            function setQuestionBoxes(cards) {
+                return `<fieldset>
+                    <legend><h3>${cards.questions}</h3></legend>
+                    <blockquote>${cards.answers}</blockquote>
+                    <br></br>
+                    Tags: ${cards.tags.map(tagObject => {`<span class="tags">${tagObject}</span>`}).join()}
+                    </fieldset>`;
             }
         </script>
     </body>
