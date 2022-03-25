@@ -51,9 +51,9 @@
         <div class="container">
             <section id="main_content">
 
-                <p>Use <code>Tags: </code> to search using tags, <code>,</code> for multiple tags.</p>
+                <p>Use <code>Tags:</code> to search using tags.</p>
 
-                <form action="javascript:findCard()">
+                <form onsubmit="findCard()">
                     <input type="text" placeholder="Search..." id="search-text">
                     <input type="submit">
                 </form>
@@ -67,34 +67,36 @@
         <script type="text/javascript" src="/externaljavascript.js"></script>
         <script>
             //const questionCards = require('/GFL/cards.json');
-            //const questionCards = JSON.parse('/GFL/cards.json');
-            const searchText = document.getElementById('search-text').value;
+            const searchText = document.getElementById('search-text');
             const cardField = document.getElementById("qna");
             var boxes = '';
+            var questionCards;
 
-            const questionCards = fetch('/GFL/cards.json')
+            /* const questionCards = fetch('/GFL/cards.json')
                 .then(response => response.json() )
                 .then(data => appendData(data) )
                 .catch(err => console.log(err) );
+            */
 
-  
+            var oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+            oXHR.onreadystatechange = function() {
+                if (oXHR.readyState === 4 && oXHR.status == "200")
+                    questionCards = JSON.parse(this.responseText);
+            };
+            oXHR.overrideMimeType("application/json");
+            oXHR.open("GET", "/GFL/cards.json", true);          // true = ASYNCHRONOUS REQUEST (DESIRABLE), false = SYNCHRONOUS REQUEST.
+            oXHR.send();
 
-            function a(){
-                cardField.innerHTML = 'hgd';
-            }
-
-            a();
-
-            /* function findCard() {                                         //run on pressing search
-                if (phrase.includes('Tags: ')) {
-                    const cardTags = searchText.replace('Tags: ', '').replace(' ', '').split(',');
+            function findCard() {                                         //run on pressing search
+                if (phrase.includes('Tags:')) {
+                    const cardTags = searchText.value.replace('Tags:', '').split(' ').filter(singleTags => singleTags !== '');
                 } else {
-                    const phrase = `/${searchText}/i`
+                    const phrase = `/${searchText.value}/i`
                 }
     
                 for (const cards of questionCards) {    
                     if (cards.questions.search(phrase) > -1 || cards.answers.search(phrase) > -1 || IsSubsetOf(cardTags, cards.tags)) {
-                        var tagList = cards.tags.map(tagObject => {`<span class="tags">${tagObject}</span>`})
+                        let tagList = cards.tags.map(tagObject => {`<span class="tags">${tagObject}</span>`});
     
                         boxes += `<fieldset>
                             <legend><h3>${cards.questions}</h3></legend>
@@ -106,7 +108,7 @@
                 }
     
                 cardField.innerHTML = boxes;
-            } */
+            }
         </script>
     </body>
 </html>
