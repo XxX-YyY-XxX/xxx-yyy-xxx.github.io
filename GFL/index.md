@@ -44,3 +44,6 @@
 
 # [Auto-Battles](/GFL/autobattles)*
 - Auto-battle cards, rewards, and efficient maps.
+
+# [Tactical Doll Skills](/GFL/skills)*
+- Skill issues, explanations, and interactions.
