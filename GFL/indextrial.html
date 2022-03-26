@@ -63,7 +63,8 @@
             </section>
         </div>
 
-        <script src="/GFL/cards.json"></script>
+        <script type="text/javascript" src="/GFL/tempcard.js"></script>
+        <!--script src="/GFL/cards.json"></script-->
         <script type="text/javascript" src="/externaljavascript.js"></script>
         <script>
             /* const questionCards = fetch('/GFL/cards.json')
@@ -74,7 +75,7 @@
 
             /* var oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             oXHR.onreadystatechange = function() {
-                if (oXHR.readyState === 4 && oXHR.status == "200")
+                if (oXHR.readyState === 4 && oXHR.status == 200)
                     questionCards = JSON.parse(this.responseText);
             };
             oXHR.overrideMimeType("application/json");
@@ -83,12 +84,12 @@
 
             const cardField = document.getElementById("qna");
             var boxes = '';
-            var questionCards;
+            var questionCards = data;
 
             //import questionCards from '/GFL/cards.json';
             //questionCards = JSON.parse(questionCards);
 
-            const fetchJson = async () => {
+            /* const fetchJson = async () => {
                 try {
                     const data = await fetch('/GFL/cards.json');
                     questionCards = await data.json();  
@@ -97,38 +98,8 @@
                 }
             };
 
-            fetchJson();
+            fetchJson(); */
             
-            //Tags: 
-
-            /* questionCards = [
-                {
-                    "questions" : "a",
-                    "answers" : "1",
-                    "tags" : ["z", "s"]
-                },
-                {
-                    "questions" : "b",
-                    "answers" : "2",
-                    "tags" : ["y"]
-                },
-                {
-                    "questions" : "c",
-                    "answers" : "3",
-                    "tags" : [""]
-                },
-                {
-                    "questions" : "d",
-                    "answers" : "4",
-                    "tags" : ["w"]
-                },
-                {
-                    "questions" : "e",
-                    "answers" : "5",
-                    "tags" : []
-                }
-            ] */
-
             if (sessionStorage.outputCards == null) {
                 randomCards();
                 cardField.innerHTML = boxes;
