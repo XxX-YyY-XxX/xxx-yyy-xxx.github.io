@@ -155,3 +155,7 @@
 ### Is there a way to inventorize my dolls?
 
 > [Armory manager.](https://docs.google.com/spreadsheets/d/1X-ZnlXabFQSk6_nTd94pu6Ww3KqWCc1ABt-gTkJy99s)
+
+### How do I need to build Vector to no damage 13-4?
+
+> [tempkaridc calculator.](https://tempkaridc.github.io/gf/vec)
