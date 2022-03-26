@@ -51,7 +51,7 @@
         <div class="container">
             <section id="main_content">
 
-                <p>Use <code>Tags:</code> to search using tags.</p>
+                <!--p>Use <code>Tags:</code> to search using tags.</p-->
 
                 <form onsubmit="findCards()">
                     <input type="text" placeholder="Search..." id="search-text">
@@ -83,8 +83,11 @@
             oXHR.open("GET", "/GFL/cards.json", true);          // true = ASYNCHRONOUS REQUEST (DESIRABLE), false = SYNCHRONOUS REQUEST.
             oXHR.send(); */
 
+            const cardField = document.getElementById("qna");
             var boxes = '';
             var questionCards;
+
+            //Tags: 
 
             questionCards = [
                 {
@@ -100,7 +103,7 @@
                 {
                     "questions" : "c",
                     "answers" : "3",
-                    "tags" : ["x"]
+                    "tags" : [""]
                 },
                 {
                     "questions" : "d",
@@ -110,42 +113,57 @@
                 {
                     "questions" : "e",
                     "answers" : "5",
-                    "tags" : ["v"]
+                    "tags" : []
                 }
             ]
-            
-            if (sessionStorage.outputCards) {
-                document.getElementById("qna").innerHTML = sessionStorage.outputCards;
-            } else {
+
+            if (sessionStorage.outputCards == null) {
                 randomCards();
-                document.getElementById("qna").innerHTML = boxes;
-            }            
+                cardField.innerHTML = boxes;
+            } else if (sessionStorage.outputCards != null) {
+                searchedCards();
+                cardField.innerHTML = boxes;
+            } else {
+                cardField.innerHTML = 'Wierd jank: ' + sessionStorage.outputCards;
+            }
 
-            function findCards() {                                         //run on pressing search
-                let searchText = document.getElementById('search-text').value;
+            function findCards() {                                              //Runs on submit
+                sessionStorage.outputCards = document.getElementById('search-text').value;
+            }
 
-                if (searchText.includes('Tags:')) {
-                    const cardTags = searchText.replace('Tags:', '').split(' ').filter(singleTags => singleTags !== '');
-                } else {
-                    const phrase = `/${searchText}/i`
-                }
+            function searchedCards() {
+                let searchText = sessionStorage.outputCards;
+                //var cardTags;
+                boxes = '';
 
-                for (let cards of questionCards) {    
-                    if (cards.questions.search(phrase) > -1 || cards.answers.search(phrase) > -1 || IsSubsetOf(cardTags, cards.tags)) {
-                        boxes += setQuestionBoxes(cards)
+                /* if (searchText.includes('Tags:')) {
+                    cardTags = searchText.replace('Tags:', '');//.split(' ').filter(singleTags => singleTags !== '');
+                } else { */
+                let phrase = new RegExp(searchText, 'i');
+                //}
+
+                for (let cards of questionCards) {
+                    /* if (cardTags != null) {
+                        subsetCheck = IsSubsetOf(cardTags, cards.tags);
+                    } else {
+                        subsetCheck = false;
+                    } */
+                    //boxes += subsetCheck + ' ';
+                    if (cards.questions.search(phrase) > -1 || cards.answers.search(phrase) > -1) {// || subsetCheck) {
+                        boxes += setQuestionBoxes(cards);
                     }
                 }
 
-                if (typeof(Storage) !== "undefined") {
+                /*if (typeof(Storage) !== "undefined") {
                     sessionStorage.outputCards = boxes;
                 } else {
                     sessionStorage.outputCards = "Sorry, your browser does not support web storage...";
-                } 
+                } */            
             }
 
             function randomCards() {
                 let maxValue = questionCards.length;
-                var indices = []
+                var indices = [];
 
                 for (let i = 0; i < 5; i++) {
                     do {
@@ -155,7 +173,7 @@
                 }
 
                 for (let index of indices) {
-                    boxes += setQuestionBoxes(questionCards[index])
+                    boxes += setQuestionBoxes(questionCards[index]);
                 }
             }
 
