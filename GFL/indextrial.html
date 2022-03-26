@@ -83,11 +83,22 @@
 
             const cardField = document.getElementById("qna");
             var boxes = '';
-            //var questionCards;
+            var questionCards;
 
-            import questionCards from '/GFL/cards.json';
+            //import questionCards from '/GFL/cards.json';
             //questionCards = JSON.parse(questionCards);
 
+            const fetchJson = async () => {
+                try {
+                    const data = await fetch('/GFL/cards.json');
+                    questionCards = await data.json();  
+                } catch (error) {
+                    console.log(error);
+                }
+            };
+
+            fetchJson();
+            
             //Tags: 
 
             /* questionCards = [
