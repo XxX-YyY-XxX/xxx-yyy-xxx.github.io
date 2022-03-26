@@ -63,7 +63,7 @@
             </section>
         </div>
 
-        <!--script src="/GFL/cards.json"></script-->
+        <script src="/GFL/cards.json"></script>
         <script type="text/javascript" src="/externaljavascript.js"></script>
         <script>
             //const questionCards = require('/GFL/cards.json');
@@ -85,11 +85,11 @@
 
             const cardField = document.getElementById("qna");
             var boxes = '';
-            var questionCards;
+            var questionCards = JSON.parse('/GFL/cards.json');
 
             //Tags: 
 
-            questionCards = [
+            /* questionCards = [
                 {
                     "questions" : "a",
                     "answers" : "1",
@@ -115,7 +115,7 @@
                     "answers" : "5",
                     "tags" : []
                 }
-            ]
+            ] */
 
             if (sessionStorage.outputCards == null) {
                 randomCards();
