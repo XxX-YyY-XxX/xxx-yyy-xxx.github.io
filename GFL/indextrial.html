@@ -90,7 +90,7 @@
                 {
                     "questions" : "a",
                     "answers" : "1",
-                    "tags" : ["z"]
+                    "tags" : ["z", "s"]
                 },
                 {
                     "questions" : "b",
@@ -160,11 +160,13 @@
             }
 
             function setQuestionBoxes(cards) {
+                //let tagList = cards.tags.map(tagObject => {`<span class="tags">${tagObject}</span>`})
+                
                 return `<fieldset>
                     <legend><h3>${cards.questions}</h3></legend>
                     <blockquote>${cards.answers}</blockquote>
                     <br></br>
-                    Tags: ${cards.tags.map(tagObject => {`<span class="tags">${tagObject}</span>`}).join()}
+                    Tags: <span class="tags">${cards.tags}</span>
                     </fieldset>`;
             }
         </script>
