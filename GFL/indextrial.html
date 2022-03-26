@@ -67,11 +67,7 @@
         <!--script src="/GFL/cards.json"></script-->
         <script type="text/javascript" src="/externaljavascript.js"></script>
         <script>
-            /* const questionCards = fetch('/GFL/cards.json')
-                .then(response => response.json() )
-                .then(data => appendData(data) )
-                .catch(err => console.log(err) );
-            */
+            //const questionCards = fetch('/GFL/cards.json').json()
 
             /* var oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             oXHR.onreadystatechange = function() {
@@ -81,10 +77,6 @@
             oXHR.overrideMimeType("application/json");
             oXHR.open("GET", "/GFL/cards.json", true);          // true = ASYNCHRONOUS REQUEST (DESIRABLE), false = SYNCHRONOUS REQUEST.
             oXHR.send(); */
-
-            const cardField = document.getElementById("qna");
-            var boxes = '';
-            var questionCards = data;
 
             //import questionCards from '/GFL/cards.json';
             //questionCards = JSON.parse(questionCards);
@@ -99,6 +91,10 @@
             };
 
             fetchJson(); */
+
+            const cardField = document.getElementById("qna");
+            const questionCards = data;
+            var boxes = '';
             
             if (sessionStorage.outputCards == null) {
                 randomCards();
@@ -117,7 +113,6 @@
             function searchedCards() {
                 let searchText = sessionStorage.outputCards;
                 //var cardTags;
-                boxes = '';
 
                 /* if (searchText.includes('Tags:')) {
                     cardTags = searchText.replace('Tags:', '');//.split(' ').filter(singleTags => singleTags !== '');
