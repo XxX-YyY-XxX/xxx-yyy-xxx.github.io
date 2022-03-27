@@ -64,12 +64,12 @@
         </div>
 
         <script type="text/javascript" src="/GFL/tempcard.js"></script>
-        <script type="text/json" src="/GFL/cards.json"></script>
+        <!--script type="text/json" src="/GFL/cards.json"></script-->
         <script type="text/javascript" src="/externaljavascript.js"></script>
         <script>
-            fetch('/GFL/cards.json')
+            /* fetch('/GFL/cards.json')
                 .then(response => response.json())
-                .then(file => questionCards = file);
+                .then(file => questionCards = file); */
 
             /* var oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             oXHR.onreadystatechange = function() {
@@ -95,7 +95,7 @@
             fetchJson(); */
 
             const cardField = document.getElementById("qna");
-            //const questionCards = data;
+            const questionCards = data;
             var boxes = '';
             
             if (sessionStorage.outputCards == null) {
