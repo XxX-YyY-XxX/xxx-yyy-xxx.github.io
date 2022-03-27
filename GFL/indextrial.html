@@ -104,7 +104,7 @@
             } else if (sessionStorage.outputCards != null) {
                 searchedCards();
                 cardField.innerHTML = boxes;
-            } else {
+            } else {                                                            //Catch
                 cardField.innerHTML = 'Wierd jank: ' + sessionStorage.outputCards;
             }
 
@@ -114,20 +114,17 @@
 
             function searchedCards() {
                 let searchText = sessionStorage.outputCards;
-                //var cardTags;
-                //var phrase;
                 var matchCheck;
 
-                //replace(/ /g, ' + ');
                 if (searchText.includes('Tags:')) {
                     let cardTags = searchText.replace('Tags:', '').split(' ').filter(singleTags => singleTags != '');
-                    matchCheck = function(cards) {
-                        return IsSubsetOf(cardTags, cards.tags);
+                    matchCheck = function(card) {
+                        return IsSubsetOf(cardTags, card.tags);
                     }
                 } else {
                     let phrase = new RegExp(searchText, 'i');
-                    matchCheck = function(cards) {
-                        return cards.questions.search(phrase) > -1 || cards.answers.search(phrase) > -1;
+                    matchCheck = function(card) {
+                        return card.questions.search(phrase) > -1 || card.answers.search(phrase) > -1;
                     }
                 }
 
@@ -136,12 +133,6 @@
                         boxes += setQuestionBoxes(cards);
                     }
                 }
-
-                /*if (typeof(Storage) !== "undefined") {
-                    sessionStorage.outputCards = boxes;
-                } else {
-                    sessionStorage.outputCards = "Sorry, your browser does not support web storage...";
-                } */            
             }
 
             function randomCards() {
