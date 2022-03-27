@@ -65,3 +65,7 @@
 ### There's too many dolls with unique skills. How do they all work?
 
 > [Bilibili guide to doll skills.](https://www.bilibili.com/read/readlist/rl100361) May not exactly be up-to-date.
+
+### Can the Liu clones get stat buffs?
+
+> Yes, via tile scans. Note that the clones are not classified as any gun types.
