@@ -50,3 +50,6 @@
 
 # [Protocol Assimilation/Coalition Echelons](/GFL/coalition)*
 - Assimilation (mostly) pulling guides.
+
+# [Equipment](/GFL/equipments)
+- Equipment loadouts, special equipments, and upgrades.

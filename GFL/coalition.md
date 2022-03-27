@@ -80,9 +80,9 @@
 
 ### Is there any way to rewatch the tutorial?
 
-> <iframe width="640" height="360" src="https://www.youtube.com/embed/tD7JgQcIQHM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+> <iframe width="640" height="360" src="https://www.youtube.com/embed/tD7JgQcIQHM" frameborder="0" allowfullscreen></iframe>
 >
-> <iframe width="640" height="360" src="https://www.youtube.com/embed/_s9ZY5wDLYE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+> <iframe width="640" height="360" src="https://www.youtube.com/embed/_s9ZY5wDLYE" frameborder="0" allowfullscreen></iframe>
 
 ### What happens to the reshuffle/refresh timer when the banner changes?
 

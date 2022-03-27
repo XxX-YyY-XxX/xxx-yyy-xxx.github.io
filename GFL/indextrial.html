@@ -120,7 +120,7 @@
                 let phrase = new RegExp(searchText, 'i');
                 //}
 
-                for (let cards of questionCards) {
+                for (const cards of questionCards) {
                     /* if (cardTags != null) {
                         subsetCheck = IsSubsetOf(cardTags, cards.tags);
                     } else {
@@ -150,7 +150,7 @@
                     indices.push(newItem);
                 }
 
-                for (let index of indices) {
+                for (const index of indices) {
                     boxes += setQuestionBoxes(questionCards[index]);
                 }
             }
