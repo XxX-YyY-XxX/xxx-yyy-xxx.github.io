@@ -27,7 +27,6 @@
 ### Is there a list of Monthly Special Equipment?
 
 > <iframe width="100%" height="500" src="https://docs.google.com/spreadsheets/d/1u2sXat4FD7jFLdjMLrq5zIiDrGJMEVaGvB2z2JysxLI/preview?pli=1" frameborder="0"></iframe>
-<!-- [Check the tab for Monthly SPEQs.](https://docs.google.com/spreadsheets/d/1u2sXat4FD7jFLdjMLrq5zIiDrGJMEVaGvB2z2JysxLI) -->
 
 ### How do I use these new equipment properly?
 

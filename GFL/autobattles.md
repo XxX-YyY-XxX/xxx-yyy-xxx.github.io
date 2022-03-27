@@ -6,7 +6,7 @@
 
 ### Which map is best for auto-battles?
 
-> [List of auto-battle statistics.](https://docs.google.com/spreadsheets/d/1e_1oAa9Qm_tmWqbgFQca8ohzo29qcjctIwyIU9Mc1H0/)
+> <iframe width="100%" height="500" src="https://docs.google.com/spreadsheets/d/1e_1oAa9Qm_tmWqbgFQca8ohzo29qcjctIwyIU9Mc1H0/preview?pli=1" frameborder="0"></iframe>
 
 ### What does total exp in the auto-battle completion mean?
 

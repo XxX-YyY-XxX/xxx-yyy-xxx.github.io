@@ -154,7 +154,7 @@
 
 ### Is there a way to inventorize my dolls?
 
-> [Armory manager.](https://docs.google.com/spreadsheets/d/1X-ZnlXabFQSk6_nTd94pu6Ww3KqWCc1ABt-gTkJy99s)
+> <iframe width="100%" height="500" src="https://docs.google.com/spreadsheets/d/1X-ZnlXabFQSk6_nTd94pu6Ww3KqWCc1ABt-gTkJy99s/preview?pli=1" frameborder="0"></iframe>
 
 ### How do I need to build Vector to no damage 13-4?
 

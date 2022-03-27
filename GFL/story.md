@@ -6,7 +6,10 @@
 
 ### What's the sequence of the stories?
 
-> [Redditor u/CuriousCanidae's overview.](https://drive.google.com/file/d/1Gm5kl_ep0MY29WPxBd-CqQrtAmDtzxSO/view) Note that some of these are in the wrong order, or so they say.
+> <iframe width="100%" height="500" src="https://docs.google.com/spreadsheets/d/1Gm5kl_ep0MY29WPxBd-CqQrtAmDtzxSO/preview?pli=1" frameborder="0">Redditor u/CuriousCanidae's overview.</iframe>
+>
+> Note that some of these are in the wrong order, or so they say.
+
 
 ### How to read the story again? It's not available in the story playback in Index.
 
