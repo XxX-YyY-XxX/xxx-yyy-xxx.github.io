@@ -116,27 +116,26 @@
                 let searchText = sessionStorage.outputCards;
                 var cardTags;
                 var phrase;
+                var matchCheck;
 
                 //replace(/ /g, ' + ');
                 if (searchText.includes('Tags:')) {
                     cardTags = searchText.replace('Tags:', '').split(' ').filter(singleTags => singleTags != '');
+                    matchCheck = function(cards) {
+                        return IsSubsetOf(cardTags, cards.tags);
+                    }
                 } else {
-                    let phrase = new RegExp(searchText, 'i');
+                    phrase = new RegExp(searchText, 'i');
+                    matchCheck = function(cards) {
+                        return cards.questions.search(phrase) > -1 || cards.answers.search(phrase) > -1;
+                    }
                 }
 
-                boxes = cardTags;
-
-                //for (const cards of questionCards) {
-                    /* if (cardTags != null) {
-                        subsetCheck = IsSubsetOf(cardTags, cards.tags);
-                    } else {
-                        subsetCheck = false;
-                    } */
-                    //boxes += subsetCheck + ' ';
-                //    if (cards.questions.search(phrase) > -1 || cards.answers.search(phrase) > -1) {// || subsetCheck) {
-                //        boxes += setQuestionBoxes(cards);
-                //    }
-                //}
+                for (const cards of questionCards) {
+                    if (matchCheck(cards)) {
+                        boxes += setQuestionBoxes(cards);
+                    }
+                }
 
                 /*if (typeof(Storage) !== "undefined") {
                     sessionStorage.outputCards = boxes;
