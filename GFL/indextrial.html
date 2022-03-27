@@ -116,10 +116,11 @@
                 let searchText = sessionStorage.outputCards;
                 //var cardTags;
 
-                boxes = searchText.replace(/ /g, ' + ');
+                boxes = searchText.split(' ');
 
+                //replace(/ /g, ' + ');
                 //if (searchText.includes('Tags:')) {
-                //cardTags = searchText.replace('Tags:', '');//.split(' ').filter(singleTags => singleTags !== '');
+                //cardTags = searchText.replace('Tags:', '').split(' ').filter(singleTags => singleTags !== '');
                 //} else {
                 //let phrase = new RegExp(searchText, 'i');
                 //}
