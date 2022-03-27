@@ -116,7 +116,7 @@
                 let searchText = sessionStorage.outputCards;
                 //var cardTags;
 
-                boxes = searchText.replace(' ', ' + ');
+                boxes = searchText.replace(/ /g, ' + ');
 
                 //if (searchText.includes('Tags:')) {
                 //cardTags = searchText.replace('Tags:', '');//.split(' ').filter(singleTags => singleTags !== '');
