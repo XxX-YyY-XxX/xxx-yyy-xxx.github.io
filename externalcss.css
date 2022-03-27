@@ -1,6 +1,6 @@
 .tooltip {
   position: relative;
-  display: inline-block;
+  /* display: inline-block; */
   border-bottom: 1px dotted black;
 }
 
@@ -37,8 +37,12 @@
   opacity: 1;
 }
 
-span.tags {
+span.tags {                                                         /* Might change to button */
   border-radius: 25px;
   border: aqua;
   color: aqua;
+}
+
+code {
+  color: red;
 }

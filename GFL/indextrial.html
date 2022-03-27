@@ -51,7 +51,7 @@
         <div class="container">
             <section id="main_content">
 
-                <!--p>Use <code>Tags:</code> to search using tags.</p-->
+                <p>Use <code>Tags:</code> at the start to search using tags. Use Space to separate tags. Tags are case-sensitive.</p>
 
                 <form onsubmit="findCards()">
                     <input type="text" placeholder="Search..." id="search-text">
@@ -114,18 +114,18 @@
 
             function searchedCards() {
                 let searchText = sessionStorage.outputCards;
-                var cardTags;
-                var phrase;
+                //var cardTags;
+                //var phrase;
                 var matchCheck;
 
                 //replace(/ /g, ' + ');
                 if (searchText.includes('Tags:')) {
-                    cardTags = searchText.replace('Tags:', '').split(' ').filter(singleTags => singleTags != '');
+                    let cardTags = searchText.replace('Tags:', '').split(' ').filter(singleTags => singleTags != '');
                     matchCheck = function(cards) {
                         return IsSubsetOf(cardTags, cards.tags);
                     }
                 } else {
-                    phrase = new RegExp(searchText, 'i');
+                    let phrase = new RegExp(searchText, 'i');
                     matchCheck = function(cards) {
                         return cards.questions.search(phrase) > -1 || cards.answers.search(phrase) > -1;
                     }
