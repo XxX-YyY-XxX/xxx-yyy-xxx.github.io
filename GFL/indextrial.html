@@ -114,11 +114,12 @@
 
             function searchedCards() {
                 let searchText = sessionStorage.outputCards;
-                //var cardTags;
+                var cardTags;
+                var phrase;
 
                 //replace(/ /g, ' + ');
                 if (searchText.includes('Tags:')) {
-                    let cardTags = searchText.replace('Tags:', '').split(' ').filter(singleTags => singleTags != '');
+                    cardTags = searchText.replace('Tags:', '').split(' ').filter(singleTags => singleTags != '');
                 } else {
                     let phrase = new RegExp(searchText, 'i');
                 }
