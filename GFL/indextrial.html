@@ -116,23 +116,25 @@
                 let searchText = sessionStorage.outputCards;
                 //var cardTags;
 
-                /* if (searchText.includes('Tags:')) {
-                    cardTags = searchText.replace('Tags:', '');//.split(' ').filter(singleTags => singleTags !== '');
-                } else { */
-                let phrase = new RegExp(searchText, 'i');
+                boxes = searchText;
+
+                //if (searchText.includes('Tags:')) {
+                //cardTags = searchText.replace('Tags:', '');//.split(' ').filter(singleTags => singleTags !== '');
+                //} else {
+                //let phrase = new RegExp(searchText, 'i');
                 //}
 
-                for (const cards of questionCards) {
+                //for (const cards of questionCards) {
                     /* if (cardTags != null) {
                         subsetCheck = IsSubsetOf(cardTags, cards.tags);
                     } else {
                         subsetCheck = false;
                     } */
                     //boxes += subsetCheck + ' ';
-                    if (cards.questions.search(phrase) > -1 || cards.answers.search(phrase) > -1) {// || subsetCheck) {
-                        boxes += setQuestionBoxes(cards);
-                    }
-                }
+                //    if (cards.questions.search(phrase) > -1 || cards.answers.search(phrase) > -1) {// || subsetCheck) {
+                //        boxes += setQuestionBoxes(cards);
+                //    }
+                //}
 
                 /*if (typeof(Storage) !== "undefined") {
                     sessionStorage.outputCards = boxes;
