@@ -75,7 +75,7 @@
                 randomCards();
                 cardField.innerHTML = boxes;
             } else if (sessionStorage.outputCards != null) {
-                searchedCards();
+                searchCards();
                 cardField.innerHTML = boxes;
             } else {                                                            //Catch
                 cardField.innerHTML = 'Wierd jank: ' + sessionStorage.outputCards;
@@ -85,19 +85,19 @@
                 sessionStorage.outputCards = document.getElementById('search-text').value;
             }
 
-            function searchedCards() {
+            function searchCards() {
                 let searchText = sessionStorage.outputCards;
                 var matchCheck;
 
                 if (searchText.includes('Tags:')) {
-                    let cardTags = searchText.replace('Tags:', '').split(' ').filter(singleTags => singleTags != '');
+                    let cardTags = searchText.replace('Tags:', '').split(' ').filter(Boolean);
                     matchCheck = function(card) {
                         return IsSubsetOf(cardTags, card.tags);
                     }
                 } else {
                     let phrase = new RegExp(searchText, 'i');
                     matchCheck = function(card) {
-                        return card.questions.search(phrase) > -1 || card.answers.search(phrase) > -1;
+                        return phrase.test(card.questions) || phrase.test(card.answers);
                     }
                 }
 

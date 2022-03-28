@@ -3,8 +3,12 @@ const tags = {
 };
 Object.freeze(tags)
 
-function image(link, onLoadFail = '', onHover = '') {
- return `<img src="${link}" alt="${onLoadFail}" title="${onHover}" />`
+function image(link, onHover = '', onLoadFail = 'Image cannot be loaded.') {
+    if (onHover) {
+        return `<img src="${link}" alt="${onLoadFail}" title="${onHover}" />`        
+    } else {
+        return `<img src="${link}" alt="${onLoadFail}" />`
+    }
 }
 
 data = [

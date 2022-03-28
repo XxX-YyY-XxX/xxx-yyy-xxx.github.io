@@ -46,3 +46,13 @@ span.tags {                                                         /* Might cha
 code {
   color: yellow;
 }
+
+.widescreen {
+  padding-top: 56.25%;
+}
+
+@media screen and (max-width: 640px) {
+  .widescreen {
+    width: 100%;
+  }
+}
