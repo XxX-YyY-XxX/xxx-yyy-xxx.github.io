@@ -127,8 +127,8 @@
                 
                 return `<fieldset>
                     <legend><h3>${cards.questions}</h3></legend>
-                    <blockquote>${cards.answers}</blockquote>
-                    <hr>
+                    ${cards.answers}
+                    <hr style="border-top: 1px dashed;">
                     Tags: <span class="tags">${cards.tags}</span>
                     </fieldset>`;
             }

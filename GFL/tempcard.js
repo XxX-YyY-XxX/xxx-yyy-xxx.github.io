@@ -1,13 +1,17 @@
 const tags = {
-
+    SF : 'SangvisFerri'
 };
 Object.freeze(tags)
 
+function image(link, onHover = '', onLoadFail = '') {
+ return `<img src="${link}" alt="${onLoadFail}" title="${onHover}" />`
+}
+
 data = [
     {
-        "questions" : "a",
-        "answers" : "1",
-        "tags" : ["z", "s"]
+        questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
+        answers : `<p><img src="/GFL/assets/images/SFEnemy.png" alt="" title="Note that Jupiter Cannons count as unarmored machine type" /></p>`,
+        tags : [tags.SF]
     },
     {
         "questions" : "b",
@@ -30,3 +34,6 @@ data = [
         "tags" : []
     }
 ]
+
+
+
