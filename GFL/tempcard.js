@@ -11,7 +11,7 @@ data = [
     {
         questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
         answers : `<p>${image('/GFL/assets/images/SFEnemy.png')}</p>
-        <p>Note that Jupiter Cannons count as unarmored machine type</p>`,
+        <p>Note that Jupiter Cannons count as unarmored machine type.</p>`,
         tags : [tags.SF]
     },
     {
