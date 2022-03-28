@@ -10,7 +10,7 @@ function image(link, onHover = '', onLoadFail = '') {
 data = [
     {
         questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
-        answers : `<p><img src="/GFL/assets/images/SFEnemy.png" alt="" title="Note that Jupiter Cannons count as unarmored machine type" /></p>`,
+        answers : `<p>${image('/GFL/assets/images/SFEnemy.png', 'Note that Jupiter Cannons count as unarmored machine type')}</p>`,
         tags : [tags.SF]
     },
     {
@@ -21,7 +21,7 @@ data = [
     {
         "questions" : "c",
         "answers" : "3",
-        "tags" : [""]
+        "tags" : ["y", "f"]
     },
     {
         "questions" : "d",
