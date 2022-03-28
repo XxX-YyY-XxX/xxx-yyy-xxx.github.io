@@ -53,3 +53,6 @@
 
 # [Equipment](/GFL/equipments)
 - Equipment loadouts, special equipments, and upgrades.
+
+# [Terminologies](/GFL/terms)
+- Explanations and guides.
