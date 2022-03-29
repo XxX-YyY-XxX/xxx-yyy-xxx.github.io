@@ -17,8 +17,9 @@ code {
 
 .tags {
   color: aqua;
-/*   border: aqua;
   background: darkblue;
+  outline-color: aqua;
+/*   border: aqua;
   
   align-items: center;
   border-radius: 5rem;

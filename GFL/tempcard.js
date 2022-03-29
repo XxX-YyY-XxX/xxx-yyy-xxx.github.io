@@ -22,23 +22,23 @@ function link(linkText, link) {
 const data = [
     {
         questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
-        answers : `<p>${image('/GFL/assets/images/SFEnemy.png')}</p>
-        <p>Note that Jupiter Cannons count as unarmored machine type.</p>`,
+        answers : `${image('/GFL/assets/images/SFEnemy.png')}<br>
+        Note that Jupiter Cannons count as unarmored machine type.`,
         tags : [tags.SF]
     },
     {
         questions : `Will there be problems with switching between multiple devices regularly?`,
-        answers : `<p>Only if you think that manually logging in every switch is a problem.</p>`,
+        answers : `Only if you think that manually logging in every switch is a problem.`,
         tags : [tags.ACCT]
     },
     {
         questions : `Where to go for tech support?`,
-        answers : `<p>FB and Twitter is said to be responsive enough. Or you can use ${link('this', 'https://forms.gle/bZNnQeh5sJaD3pim8')} for reporting.</p>`,
+        answers : `FB and Twitter is said to be responsive enough. Or you can use ${link('this', 'https://forms.gle/bZNnQeh5sJaD3pim8')} for reporting.`,
         tags : [tags.TECH, tags["3P"]]
     },
     {
         questions : ``,
-        answers : `<p></p>`,
+        answers : ``,
         tags : []
     },
     {
