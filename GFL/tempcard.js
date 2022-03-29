@@ -10,11 +10,7 @@ const tags = {
 Object.freeze(tags)
 
 function image(link, onHover = '', onLoadFail = 'Image cannot be loaded.') {
-    if (onHover) {
-        return `<img src="${link}" alt="${onLoadFail}" title="${onHover}" />`        
-    } else {
-        return `<img src="${link}" alt="${onLoadFail}" />`
-    }
+    return `<img src="${link}" alt="${onLoadFail}" ${onHover ? `title="${onHover}"` : ''}>`
 }
 
 function link(linkText, link) {
