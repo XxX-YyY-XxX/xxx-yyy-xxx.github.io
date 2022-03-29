@@ -39,7 +39,7 @@ const data = [
         tags : [tags.TECH, tags["3P"]]
     },
     {
-        questions : `Which Simulation is better to focus on?`,
+        questions : `Which combat sim is better to focus on?`,
         answers : `Data. Always data.`,
         tags : [tags.SIMS, tags.RSC]
     },
