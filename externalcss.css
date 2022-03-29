@@ -1,6 +1,43 @@
-.tooltip {
+code {
+  color: yellow;
+}
+
+.widescreen {
+  width: 100%;
+  max-width: 640px;
+  /* padding-top: 56.25%; */
+  aspect-ratio: 16/9;
+}
+
+/* @media screen and (max-width: 640px) {
+  .widescreen {
+    width: 100%;
+  }
+} */
+
+.tags {
+  color: aqua;
+/*   border: aqua;
+  background: darkblue;
+  
+  align-items: center;
+  border-radius: 5rem;
+  display: inline-flex;
+  display: -ms-inline-flexbox;
+  -ms-flex-align: center;
+  font-size: 90%;
+  height: 1.2rem;
+  line-height: .8rem;
+  margin: 0.1rem;
+  max-width: 100%;
+  padding: 0.2rem 0.4rem;
+  text-decoration: none;
+  vertical-align: middle;
+ */}
+
+/* .tooltip {
   position: relative;
-  /* display: inline-block; */
+  /* display: inline-block;
   border-bottom: 1px dotted black;
 }
 
@@ -35,27 +72,4 @@
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
-}
-
-span.tags {                                                         /* Might change to button */
-  border-radius: 25px;
-  border: aqua;
-  color: aqua;
-}
-
-code {
-  color: yellow;
-}
-
-.widescreen {
-  width: 100%;
-  max-width: 640px;
-  /* padding-top: 56.25%; */
-  aspect-ratio: 16/9;
-}
-
-/* @media screen and (max-width: 640px) {
-  .widescreen {
-    width: 100%;
-  }
 } */
