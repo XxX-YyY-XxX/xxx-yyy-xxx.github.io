@@ -125,13 +125,11 @@
             }
 
             function setQuestionBoxes(cards) {
-                let tagList = cards.tags.map(tagObject => `<span class="tags">${tagObject}</span>` )
-
                 return `<br><fieldset>
                     <legend><h3>${cards.questions}</h3></legend>
                     ${cards.answers}
                     <hr style="border-top: 1px dashed;">
-                    Tags: ${tagList.join(' ')}
+                    Tags: ${cards.tags.map(tagObject => `<span class="tags">${tagObject}</span>` ).join(' ')}
                     </fieldset>`;
             }
         </script>
