@@ -3,7 +3,9 @@ const tags = {
     SF : 'SangvisFerri',
     ACCT : 'AccountManagement',
     TECH : 'Troubleshooting',
-    '3P' : 'ThirdParty'
+    '3P' : 'ThirdParty',
+    SIMS : 'CombatSimulations',
+    RSC : 'Resources/Currency'
 };
 Object.freeze(tags)
 
@@ -37,19 +39,24 @@ const data = [
         tags : [tags.TECH, tags["3P"]]
     },
     {
+        questions : `Which Simulation is better to focus on?`,
+        answers : `Data. Always data.`,
+        tags : [tags.SIMS, tags.RSC]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
     },
     {
-        "questions" : "e",
-        "answers" : "5",
-        "tags" : []
-    },
-    {
         questions : ``,
         answers : `<p></p>`,
         tags : []
-    }
+    },
+    {
+        questions : ``,
+        answers : ``,
+        tags : []
+    },
 ]
 Object.freeze(data);

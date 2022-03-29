@@ -17,13 +17,15 @@ code {
 
 .tags {
   color: aqua;
-  font-size: 90%;
-  background: darkblue;
-/*   border: aqua;
+  background: red;
+  padding: 0.2rem 0.4rem;
+  border-radius: 10rem;
+
+  /*   border: aqua;
   outline-color: aqua;
+  font-size: 90%;
   
   align-items: center;
-  border-radius: 5rem;
   display: inline-flex;
   display: -ms-inline-flexbox;
   -ms-flex-align: center;
@@ -31,7 +33,6 @@ code {
   line-height: .8rem;
   margin: 0.1rem;
   max-width: 100%;
-  padding: 0.2rem 0.4rem;
   text-decoration: none;
   vertical-align: middle;
  */}
