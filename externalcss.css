@@ -20,9 +20,10 @@ code {
   background: transparent;
   border-radius: 10rem;
   outline: 2px solid aqua;
-  /*   border: aqua;
+  padding: 1px;
+  
+  /*
   font-size: 90%;
-  padding: 0.2rem 0.4rem;
   
   align-items: center;
   display: inline-flex;
@@ -30,7 +31,6 @@ code {
   -ms-flex-align: center;
   height: 1.2rem;
   line-height: .8rem;
-  margin: 0.1rem;
   max-width: 100%;
   text-decoration: none;
   vertical-align: middle;
