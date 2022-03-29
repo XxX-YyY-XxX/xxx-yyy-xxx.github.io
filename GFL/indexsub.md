@@ -56,3 +56,6 @@
 
 # [Terminologies](/GFL/terms)
 - Explanations and guides.
+
+# [Dormitories](/GFL/dorms)
+- Friend batteries, pets, and posters.
