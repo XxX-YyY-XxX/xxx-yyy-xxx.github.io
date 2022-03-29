@@ -1,13 +1,5 @@
 # Neural Upgrade/MOD
 
-### How do Neural Upgrades work?
-
-> [Gamepress guide.](https://gamepress.gg/girlsfrontline/gfl-explained-neural-upgrade)
->
-> [Matsuda guide.](https://gfl.matsuda.tips/post/modding)
->
-> [GFC guide.](https://www.gflcorner.com/neural/)
-
 ### What's the Fire Control Core for?
 
 > Necessary for modding 5★ into 6★ dolls.
