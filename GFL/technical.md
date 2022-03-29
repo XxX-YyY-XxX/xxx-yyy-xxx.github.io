@@ -6,10 +6,6 @@
 >
 > If that still doesn't solve it, the following questions could. Or do the following then restart.
 
-### Where to go for tech support?
-
-> FB and Twitter is said to be responsive enough. Or you can use [this](https://forms.gle/bZNnQeh5sJaD3pim8) for reporting.
-
 ### My game freezes on a night map. What happened?
 
 > It shouldn't happen anymore but if it does... try not to rely on friend echelons.
