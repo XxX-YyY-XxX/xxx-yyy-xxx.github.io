@@ -5,7 +5,10 @@ const tags = {
     TECH : 'Troubleshooting',
     '3P' : 'ThirdParty',
     SIMS : 'CombatSimulations',
-    RSC : 'Resources/Currency'
+    RSC : 'Resources/Currency',
+    MOD : 'NeuralUpgrade',
+    NEWB : 'NewbieGuide',
+    PRIME : 'TopicPrimer'
 };
 Object.freeze(tags)
 
@@ -40,13 +43,15 @@ const data = [
         tags : [tags.SIMS, tags.RSC]
     },
     {
-        questions : ``,
-        answers : ``,
-        tags : []
+        questions : `How do Neural Upgrades/MODs work?`,
+        answers : `${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/gfl-explained-neural-upgrade')}<br>
+        ${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/modding')}<br>
+        ${link('GFC guide.', 'https://www.gflcorner.com/neural')}`,
+        tags : [tags.MOD, tags.PRIME]
     },
     {
         questions : ``,
-        answers : `<p></p>`,
+        answers : ``,
         tags : []
     },
     {
