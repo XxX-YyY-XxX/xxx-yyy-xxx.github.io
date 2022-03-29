@@ -18,12 +18,12 @@ code {
 .tags {
   color: aqua;
   background: red;
-  padding: 0.2rem 0.4rem;
   border-radius: 10rem;
-
+  outline: 2px solid aqua;
+  
   /*   border: aqua;
-  outline-color: aqua;
   font-size: 90%;
+  padding: 0.2rem 0.4rem;
   
   align-items: center;
   display: inline-flex;
