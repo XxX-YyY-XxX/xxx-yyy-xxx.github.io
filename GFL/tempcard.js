@@ -1,5 +1,7 @@
 const tags = {
-    SF : 'SangvisFerri'
+    EMPTY : 'Others',
+    SF : 'SangvisFerri',
+    ACCT : 'AccountManagement'
 };
 Object.freeze(tags)
 
@@ -11,17 +13,17 @@ function image(link, onHover = '', onLoadFail = 'Image cannot be loaded.') {
     }
 }
 
-data = [
+const data = [
     {
         questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
-        answers : `<p>${image('/GFL/assets/images/SFEnemy.png')}</p>
+        answers : `${image('/GFL/assets/images/SFEnemy.png')}
         <p>Note that Jupiter Cannons count as unarmored machine type.</p>`,
         tags : [tags.SF]
     },
     {
-        "questions" : "b",
-        "answers" : "2",
-        "tags" : ["y"]
+        questions : `Will there be problems with switching between multiple devices regularly?`,
+        answers : `Only if you think that manually logging in every switch is a problem.`,
+        tags : [tags.ACCT]
     },
     {
         "questions" : "c",
@@ -39,6 +41,7 @@ data = [
         "tags" : []
     }
 ]
+Object.freeze(data);
 
 /* questions : ``,
 answers : `<p></p>`,

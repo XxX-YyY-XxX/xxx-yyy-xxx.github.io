@@ -119,3 +119,7 @@
 ### I didn't get \*insert reward here*. I checked my inventory but they're not there. How do I get them?
 
 > Have you checked the quests? What about the mail? If you did and they're still not there, either restart or wait for a few days.
+
+### How many combat reports should I have ideally?
+
+> 660 CRs to raise a doll from Lv.1 to Lv.90. As for how much is the recommended stock, if your main source of raising dolls is map leveling/corpse dragging, you'll get a truck load of them before you know it.
