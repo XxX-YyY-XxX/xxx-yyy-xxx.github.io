@@ -17,16 +17,16 @@ code {
 
 .tags {
   color: aqua;
+  font-size: 90%;
+/*   border: aqua;
   background: darkblue;
   outline-color: aqua;
-/*   border: aqua;
   
   align-items: center;
   border-radius: 5rem;
   display: inline-flex;
   display: -ms-inline-flexbox;
   -ms-flex-align: center;
-  font-size: 90%;
   height: 1.2rem;
   line-height: .8rem;
   margin: 0.1rem;
