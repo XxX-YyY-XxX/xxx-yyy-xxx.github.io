@@ -71,11 +71,11 @@ const data = [
         answers : `Beat X-6 Normal of the last chapter again. If it still doesn't appear after that, restart client.`,
         tags : [tags.MAIN, tags.TECH]
     },
-/*     {
+    {
         questions : `Which emulators are good for GFL?`,
         answers : `${orderedList('Mumu.', 'Memu.', 'LDPlayer', 'Nox.', 'Bluestacks.')}`,
         tags : [tags.EMU]
-    }, */
+    },
     {
         questions : ``,
         answers : ``,
