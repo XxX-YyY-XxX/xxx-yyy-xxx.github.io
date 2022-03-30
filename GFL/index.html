@@ -71,13 +71,11 @@
             const questionCards = data;
             
             if (sessionStorage.outputCards == null) {
-                //let temp = ;
-                cardField.innerHTML = randomCards();//temp;
+                cardField.innerHTML = randomCards();
             } else if (sessionStorage.outputCards != null) {
-                //let temp = 
-                cardField.innerHTML = searchCards();//temp;
+                cardField.innerHTML = searchCards();
             } else {                                                            //Catch
-                cardField.innerHTML = 'Wierd jank: ' + sessionStorage.outputCards;
+                cardField.innerHTML = 'Weird jank: ' + sessionStorage.outputCards;
             }
 
             function findCards() {                                              //Runs on submit
@@ -85,7 +83,7 @@
             }
 
             function searchCards() {
-                let searchText = sessionStorage.outputCards;
+                const searchText = sessionStorage.outputCards;
                 var matchCheck;
                 var output = '';
 
@@ -98,7 +96,7 @@
                     if (searchText) {
                         let phrase = new RegExp(searchText, 'i');
                         matchCheck = function(card) {
-                            return phrase.test(card.questions) || phrase.test(card.answers);
+                            return phrase.test(card.questions) || phrase.test(card.answers);        //Remove HTML tags
                         }
                     } else {
                         return 'Empty search.';
@@ -115,7 +113,7 @@
             }
 
             function randomCards() {
-                let maxValue = questionCards.length;
+                const maxValue = questionCards.length;
                 var indices = [];
                 var output = '';
 
