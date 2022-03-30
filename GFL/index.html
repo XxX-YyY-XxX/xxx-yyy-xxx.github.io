@@ -69,14 +69,13 @@
         <script>
             const cardField = document.getElementById("qna");
             const questionCards = data;
-            //var boxes = '';
             
             if (sessionStorage.outputCards == null) {
                 let temp = randomCards();
-                cardField.innerHTML = temp;//boxes;
+                cardField.innerHTML = temp;
             } else if (sessionStorage.outputCards != null) {
                 let temp = searchCards();
-                cardField.innerHTML = temp;//boxes;
+                cardField.innerHTML = temp;
             } else {                                                            //Catch
                 cardField.innerHTML = 'Wierd jank: ' + sessionStorage.outputCards;
             }
@@ -102,22 +101,17 @@
                             return phrase.test(card.questions) || phrase.test(card.answers);
                         }
                     } else {
-                        //boxes = 'Empty search.'
                         return 'Empty search.';
                     }
                 }
 
                 for (const cards of questionCards) {
                     if (matchCheck(cards)) {
-                        /* boxes */ output += setQuestionBoxes(cards);
+                        output += setQuestionBoxes(cards);
                     }
                 }
 
-                if (output) {
-                    return output;
-                } else {
-                    return 'No matches found.';
-                }
+                return output || 'No matches found.';
             }
 
             function randomCards() {
@@ -133,7 +127,7 @@
                 }
 
                 for (const index of indices) {
-                    /* boxes */ output += setQuestionBoxes(questionCards[index]);
+                    output += setQuestionBoxes(questionCards[index]);
                 }
 
                 return output;
