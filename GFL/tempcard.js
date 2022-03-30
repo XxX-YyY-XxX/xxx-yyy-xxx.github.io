@@ -8,7 +8,8 @@ const tags = {
     RSC : 'Resources/Currency',
     MOD : 'NeuralUpgrade',
     NEWB : 'NewbieGuide',
-    PRIME : 'TopicPrimer'
+    PRIME : 'TopicPrimer',
+    MAIN : 'CombatMissions',
 };
 Object.freeze(tags)
 
@@ -50,9 +51,14 @@ const data = [
         tags : [tags.MOD, tags.PRIME]
     },
     {
-        questions : ``,
-        answers : ``,
-        tags : []
+        questions : `How do I get more Quick Training Contracts?`,
+        answers : `Monthlies only.`,
+        tags : [tags.RSC]
+    },
+    {
+        questions : `I can't access the new chapter even though I already cleared the prerequisite map.`,
+        answers : `Beat X-6 Normal of the last chapter again. If it still doesn't appear after that, restart client.`,
+        tags : [tags.MAIN, tags.TECH]
     },
     {
         questions : ``,
