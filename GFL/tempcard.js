@@ -22,15 +22,11 @@ function link(linkText, link) {
     return `<a href="${link}">${linkText}</a>`;
 }
 
-/* function itemList(argsList) {
-    return argsList.map(val => `<li>${val}</li>`).join('\n');
-}
-
 function orderedList() {
     return `<ol>
-    ${itemList(arguments)}
+    ${Array.from(arguments).map(val => `<li>${val}</li>`).join('\n')}
     </ol>`;
-} */
+}
 
 const data = [
     {
@@ -71,11 +67,11 @@ const data = [
         answers : `Beat X-6 Normal of the last chapter again. If it still doesn't appear after that, restart client.`,
         tags : [tags.MAIN, tags.TECH]
     },
-/*     {
+    {
         questions : `Which emulators are good for GFL?`,
         answers : `${orderedList('Mumu.', 'Memu.', 'LDPlayer', 'Nox.', 'Bluestacks.')}`,
         tags : [tags.EMU]
-    }, */
+    },
     {
         questions : ``,
         answers : ``,
