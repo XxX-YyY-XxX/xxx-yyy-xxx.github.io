@@ -22,15 +22,15 @@ function link(linkText, link) {
     return `<a href="${link}">${linkText}</a>`;
 }
 
-function list(argumentList) {
-    return argumentList.map(val => `<li>${val}</li>`).join('\n');
+/* function itemList(argsList) {
+    return argsList.map(val => `<li>${val}</li>`).join('\n');
 }
 
 function orderedList() {
     return `<ol>
-    ${list(arguments)}
+    ${(itemList(arguments)}
     </ol>`;
-}
+} */
 
 const data = [
     {
