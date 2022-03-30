@@ -23,13 +23,13 @@ function link(linkText, link) {
 }
 
 function list(argumentList) {
-    return argumentList.map(val => `<li>${val}</li>`).join('\n')
+    return argumentList.map(val => `<li>${val}</li>`).join('\n');
 }
 
 function orderedList() {
     return `<ol>
     ${list(arguments)}
-    </ol>`
+    </ol>`;
 }
 
 const data = [

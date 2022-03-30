@@ -86,8 +86,8 @@
 
             function searchCards() {
                 let searchText = sessionStorage.outputCards;
-                let matchCheck;
-                let output = '';
+                var matchCheck;
+                var output = '';
 
                 if (searchText.includes('Tags:')) {
                     let cardTags = searchText.replace('Tags:', '').split(' ').filter(Boolean);
@@ -116,8 +116,8 @@
 
             function randomCards() {
                 let maxValue = questionCards.length;
-                let indices = [];
-                let output = '';
+                var indices = [];
+                var output = '';
 
                 for (let i = 0; i < 3; i++) {
                     do {
