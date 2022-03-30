@@ -23,9 +23,7 @@ function link(linkText, link) {
 }
 
 function orderedList() {
-    return `<ol>
-    ${Array.from(arguments).map(val => `<li>${val}</li>`).join('\n')}
-    </ol>`;
+    return `<ol>${Array.from(arguments).map(val => `<li>${val}</li>`).join('')}</ol>`;
 }
 
 const data = [

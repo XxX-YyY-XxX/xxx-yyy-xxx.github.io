@@ -84,19 +84,18 @@
 
             function searchCards() {
                 const searchText = sessionStorage.outputCards;
-                var matchCheck;
                 var output = '';
 
                 if (searchText.includes('Tags:')) {
-                    let cardTags = searchText.replace('Tags:', '').split(' ').filter(Boolean);
-                    matchCheck = function(card) {
+                    const cardTags = searchText.replace('Tags:', '').split(' ').filter(Boolean);
+                    var matchCheck = function(card) {
                         return IsSubsetOf(cardTags, card.tags);
                     }
                 } else {
                     if (searchText) {
-                        let phrase = new RegExp(searchText, 'i');
-                        matchCheck = function(card) {
-                            return phrase.test(removeHTMLTag(card.questions)) || phrase.test(removeHTMLTag(card.answers)); //Warning: May remove non-HTML <???> strings
+                        const phrase = new RegExp(searchText, 'i');
+                        var matchCheck = function(card) {
+                            return phrase.test(card.questions) || phrase.test(removeHTMLTag(card.answers)); //Warning: May remove non-HTML <???> strings
                         }
                     } else {
                         return 'Empty search.';
