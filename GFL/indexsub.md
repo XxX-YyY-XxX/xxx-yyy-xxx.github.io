@@ -62,3 +62,6 @@
 
 # [Commander Wardrobe](/GFL/wardrobe)*
 - Costume skills, availability, and gender change.
+
+# [Factory Production](/GFL/factory)*
+- Production recipes and heavy construction efficiency.
