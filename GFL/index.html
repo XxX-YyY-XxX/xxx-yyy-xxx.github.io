@@ -69,14 +69,14 @@
         <script>
             const cardField = document.getElementById("qna");
             const questionCards = data;
-            var boxes = '';
+            //var boxes = '';
             
             if (sessionStorage.outputCards == null) {
-                randomCards();
-                cardField.innerHTML = boxes;
+                let temp = randomCards();
+                cardField.innerHTML = temp;//boxes;
             } else if (sessionStorage.outputCards != null) {
-                searchCards();
-                cardField.innerHTML = boxes;
+                let temp = searchCards();
+                cardField.innerHTML = temp;//boxes;
             } else {                                                            //Catch
                 cardField.innerHTML = 'Wierd jank: ' + sessionStorage.outputCards;
             }
@@ -88,6 +88,7 @@
             function searchCards() {
                 let searchText = sessionStorage.outputCards;
                 var matchCheck;
+                var output = '';
 
                 if (searchText.includes('Tags:')) {
                     let cardTags = searchText.replace('Tags:', '').split(' ').filter(Boolean);
@@ -101,21 +102,28 @@
                             return phrase.test(card.questions) || phrase.test(card.answers);
                         }
                     } else {
-                        boxes = 'Empty search.'
-                        return;
+                        //boxes = 'Empty search.'
+                        return 'Empty search.';
                     }
                 }
 
                 for (const cards of questionCards) {
                     if (matchCheck(cards)) {
-                        boxes += setQuestionBoxes(cards);
+                        /* boxes */ output += setQuestionBoxes(cards);
                     }
+                }
+
+                if (output) {
+                    return output;
+                } else {
+                    return 'No matches found.';
                 }
             }
 
             function randomCards() {
                 let maxValue = questionCards.length;
                 var indices = [];
+                var output = '';
 
                 for (let i = 0; i < 3; i++) {
                     do {
@@ -125,8 +133,10 @@
                 }
 
                 for (const index of indices) {
-                    boxes += setQuestionBoxes(questionCards[index]);
+                    /* boxes */ output += setQuestionBoxes(questionCards[index]);
                 }
+
+                return output;
             }
 
             function setQuestionBoxes(cards) {
