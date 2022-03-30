@@ -69,14 +69,11 @@
         <script>
             const cardField = document.getElementById("qna");
             const questionCards = data;
-            var boxes = '';
             
             if (sessionStorage.outputCards == null) {
-                randomCards();
-                cardField.innerHTML = boxes;
+                cardField.innerHTML = randomCards();
             } else if (sessionStorage.outputCards != null) {
-                searchCards();
-                cardField.innerHTML = boxes;
+                cardField.innerHTML = searchCards();
             } else {                                                            //Catch
                 cardField.innerHTML = 'Wierd jank: ' + sessionStorage.outputCards;
             }
@@ -87,7 +84,8 @@
 
             function searchCards() {
                 let searchText = sessionStorage.outputCards;
-                var matchCheck;
+                let matchCheck;
+                let output = '';
 
                 if (searchText.includes('Tags:')) {
                     let cardTags = searchText.replace('Tags:', '').split(' ').filter(Boolean);
@@ -101,21 +99,23 @@
                             return phrase.test(card.questions) || phrase.test(card.answers);
                         }
                     } else {
-                        boxes = 'Empty search.'
-                        return;
+                        return 'Empty search.';
                     }
                 }
 
                 for (const cards of questionCards) {
                     if (matchCheck(cards)) {
-                        boxes += setQuestionBoxes(cards);
+                        output += setQuestionBoxes(cards);
                     }
                 }
+
+                return output;
             }
 
             function randomCards() {
                 let maxValue = questionCards.length;
-                var indices = [];
+                let indices = [];
+                let output = '';
 
                 for (let i = 0; i < 3; i++) {
                     do {
@@ -125,16 +125,18 @@
                 }
 
                 for (const index of indices) {
-                    boxes += setQuestionBoxes(questionCards[index]);
+                    output += setQuestionBoxes(questionCards[index]);
                 }
+
+                return output;
             }
 
             function setQuestionBoxes(cards) {
                 return `<br><fieldset>
                     <legend><h3>${cards.questions}</h3></legend>
                     ${cards.answers}
-                    <hr style="border-top: 1px dashed;">
-                    Tags: ${cards.tags.map(tagObject => `<span class="tags">${tagObject}</span>` ).join(' ')}
+                    <hr>
+                    Tags: ${cards.tags.map(val => `<span class="tags">${val}</span>` ).join(' ')}
                     </fieldset>`;
             }
         </script>

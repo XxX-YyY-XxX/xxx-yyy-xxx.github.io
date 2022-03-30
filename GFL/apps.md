@@ -8,16 +8,6 @@
 
 > Recommended more like.
 
-### Which emulators are good for GFL?
-
-<!-- > 1. Mumu <!-- II -->
-<!-- > 2. LDPlayer <!-- I -->
-<!-- > 3. Nox <!--  -->
-<!-- > 4. Memu <!--  -->
-<!-- > 5. Bluestacks <!--  -->
-
-> <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/t7e9a1/need_help_with_pc_download/hzhbxht/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="407" width="640" scrolling="no"></iframe>
-
 ### Any substitute for [brainlets damage](http://brainlets.moe/gf/sim/) [sim](https://brainlets.moe/)?
 
 > [Github version](https://github.com/umang-p/brainlets) and 

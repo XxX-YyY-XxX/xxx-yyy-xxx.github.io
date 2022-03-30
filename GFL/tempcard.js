@@ -10,6 +10,7 @@ const tags = {
     NEWB : 'NewbieGuide',
     PRIME : 'TopicPrimer',
     MAIN : 'CombatMissions',
+    EMU : 'Emulators',
 };
 Object.freeze(tags)
 
@@ -19,6 +20,16 @@ function image(link, onHover = '', onLoadFail = 'Image cannot be loaded.') {
 
 function link(linkText, link) {
     return `<a href="${link}">${linkText}</a>`;
+}
+
+function list(argumentList) {
+    return argumentList.map(val => `<li>${val}</li>`).join('\n')
+}
+
+function orderedList() {
+    return `<ol>
+    ${list(arguments)}
+    </ol>`
 }
 
 const data = [
@@ -59,6 +70,11 @@ const data = [
         questions : `I can't access the new chapter even though I already cleared the prerequisite map.`,
         answers : `Beat X-6 Normal of the last chapter again. If it still doesn't appear after that, restart client.`,
         tags : [tags.MAIN, tags.TECH]
+    },
+    {
+        questions : `Which emulators are good for GFL?`,
+        answers : `${orderedList('Mumu.', 'Memu.', 'LDPlayer', 'Nox.', 'Bluestacks.')}`,
+        tags : [tags.EMU]
     },
     {
         questions : ``,

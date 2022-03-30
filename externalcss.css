@@ -35,6 +35,10 @@ legend h3 {
   margin: 0px;
 }
 
+fieldset hr {
+  border-top: 1px dashed;
+}
+
 .gdoc {
   width: 100%;
   aspect-ratio: 1/1;
