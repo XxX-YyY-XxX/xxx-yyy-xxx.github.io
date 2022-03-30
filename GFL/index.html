@@ -71,9 +71,11 @@
             const questionCards = data;
             
             if (sessionStorage.outputCards == null) {
-                cardField.innerHTML = randomCards();
+                let temp = randomCards();
+                cardField.innerHTML = temp;
             } else if (sessionStorage.outputCards != null) {
-                cardField.innerHTML = searchCards();
+                let temp = searchCards();
+                cardField.innerHTML = temp;
             } else {                                                            //Catch
                 cardField.innerHTML = 'Wierd jank: ' + sessionStorage.outputCards;
             }
