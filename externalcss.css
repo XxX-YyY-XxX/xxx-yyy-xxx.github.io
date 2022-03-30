@@ -31,8 +31,8 @@ code {
  */
 }
 
-legend {
-  top: -20px;
+legend h3 {
+  margin: 0px;
 }
 
 .gdoc {

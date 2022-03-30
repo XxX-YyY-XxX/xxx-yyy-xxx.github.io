@@ -53,7 +53,7 @@
                 <p><h1><a href="/GFL/indexsub">Link to topics repository.</a></h1></p>
 
                 <p>Use <code>Tags:</code> at the start to search using tags. Use Space to separate tags. Tags are case-sensitive.</p>
-                <!-- Radio button to switch between word search and tag search. Checkbox for each tag. -->
+                <!-- Radio button to switch between word search and tag search. Checkbox for each tag. CSS to hide. -->
                 <form onsubmit="findCards()">
                     <input type="text" placeholder="Search..." id="search-text">
                     <input type="submit">
@@ -95,9 +95,14 @@
                         return IsSubsetOf(cardTags, card.tags);
                     }
                 } else {
-                    let phrase = new RegExp(searchText, 'i');
-                    matchCheck = function(card) {
-                        return phrase.test(card.questions) || phrase.test(card.answers);
+                    if (searchText) {
+                        let phrase = new RegExp(searchText, 'i');
+                        matchCheck = function(card) {
+                            return phrase.test(card.questions) || phrase.test(card.answers);
+                        }
+                    } else {
+                        boxes = 'Empty search.'
+                        return;
                     }
                 }
 
