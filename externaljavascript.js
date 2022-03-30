@@ -2,6 +2,10 @@ function IsSubsetOf(subset, mainset) {
     return subset.every(val => mainset.includes(val));
 }
 
+function removeHTMLTag(string) {
+    return string.replace(/(<([^>]+)>)/ig, '');
+}
+
 //replace(/ /g, ' + ');
 
 /*if (typeof(Storage) !== "undefined") {

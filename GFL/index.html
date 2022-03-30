@@ -96,7 +96,7 @@
                     if (searchText) {
                         let phrase = new RegExp(searchText, 'i');
                         matchCheck = function(card) {
-                            return phrase.test(card.questions) || phrase.test(card.answers);        //Remove HTML tags
+                            return phrase.test(removeHTMLTag(card.questions)) || phrase.test(removeHTMLTag(card.answers)); //Warning: May remove non-HTML <???> strings
                         }
                     } else {
                         return 'Empty search.';
