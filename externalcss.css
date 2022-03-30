@@ -14,7 +14,7 @@ code {
   background: transparent;
   border-radius: 10rem;
   outline: 2px solid aqua;
-  padding: 2px;
+  padding: 2px 3px;
   
   /*
   font-size: 90%;
@@ -29,6 +29,10 @@ code {
   text-decoration: none;
   vertical-align: middle;
  */
+}
+
+legend {
+  top: 0px;
 }
 
 /* .tooltip {

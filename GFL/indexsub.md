@@ -59,3 +59,6 @@
 
 # [Dormitories](/GFL/dorms)
 - Friend batteries, pets, and posters.
+
+# [Commander Wardrobe](/GFL/wardrobe)*
+- Costume skills, availability, and gender change.
