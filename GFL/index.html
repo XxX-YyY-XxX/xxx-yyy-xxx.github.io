@@ -69,15 +69,16 @@
         <script>
             const cardField = document.getElementById("qna");
             const questionCards = data;
+            var box = '';
             
             if (sessionStorage.outputCards == null) {
                 let temp = randomCards();
-                cardField.innerHTML = temp;
+                cardField.innerHTML = box;
             } else if (sessionStorage.outputCards != null) {
                 let temp = searchCards();
-                cardField.innerHTML = temp;
+                cardField.innerHTML = box;
             } else {                                                            //Catch
-                cardField.innerHTML = 'Wierd jank: ' + sessionStorage.outputCards;
+                cardField.innerHTML = 'Weird jank: ' + sessionStorage.outputCards;
             }
 
             function findCards() {                                              //Runs on submit
@@ -107,7 +108,7 @@
 
                 for (const cards of questionCards) {
                     if (matchCheck(cards)) {
-                        output += setQuestionBoxes(cards);
+                        box += setQuestionBoxes(cards);
                     }
                 }
 
@@ -127,7 +128,7 @@
                 }
 
                 for (const index of indices) {
-                    output += setQuestionBoxes(questionCards[index]);
+                    box += setQuestionBoxes(questionCards[index]);
                 }
 
                 return output;
