@@ -13,6 +13,9 @@ const tags = {
     EMU : 'Emulators',
     TDOLL : 'TacticalDolls',
     EQUIP : 'Equipments',
+    APPLE : 'AppleDevices',
+    ANDROID : 'AndroidDevices',
+    ANNIV : 'Anniversary',
 };
 Object.freeze(tags)
 
@@ -76,6 +79,16 @@ const data = [
         questions : `What do I need to consider when using the #2 Chip equipment?`,
         answers : `${link(image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png', '', `u/BigStupidJellyfish_'s chip usage flowchart.`), 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')}`,
         tags : [tags.TDOLL, tags.EQUIP]
+    },
+    {
+        questions : `How can I play GFL if Apple Store doesn't have it?`,
+        answers : `Use Android, use emulator, use VPN, use jailbreak.`,
+        tags : [tags.APPLE, tags.ANDROID, tags.EMU]
+    },
+    {
+        questions : `When is the anniversary?`,
+        answers : `May 8. Basically around the second week of May.`,
+        tags : [tags.ANNIV]
     },
     {
         questions : ``,
