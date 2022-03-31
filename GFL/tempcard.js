@@ -46,7 +46,7 @@ const data = [
     {
         questions : `Where to go for tech support?`,
         answers : `FB and Twitter is said to be responsive enough. Or you can use ${link('this', 'https://forms.gle/bZNnQeh5sJaD3pim8')} for reporting.`,
-        tags : [dataTags.TECH, tags["3P"]]
+        tags : [dataTags.TECH, dataTags["3P"]]
     },
     {
         questions : `Which combat sim is better to focus on?`,
