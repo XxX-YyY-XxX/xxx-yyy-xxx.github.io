@@ -72,12 +72,6 @@
 
 @ Clarify
 
-### What's the gacha rate for costumes?
-
-> [Can someone translate?](http://gf.ppgame.com/web/pc/info.html?id=740) As I see it, list 1 is normal t-doll prod, list 2 is heavy t-doll prod, list 3 is normal equip prod, list 4 is costume gacha, list 5 is heavy equip prod.
-
-@ Clarify
-
 ### I missed some event furniture that can be acquired from crates. Will I ever have a chance to get them again?
 
 > Yes. Wait for them in the Black Market Exchange.
