@@ -17,7 +17,7 @@ const dataTags = {
     ANDROID : 'AndroidDevices',
     ANNIV : 'Anniversary',
 };
-Object.freeze(tags)
+Object.freeze(dataTags)
 
 function image(link, onHover = '', onLoadFail = 'Image cannot be loaded.') {
     return `<img src="${link}" alt="${onLoadFail}" ${onHover ? `title="${onHover}"` : ''}>`

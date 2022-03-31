@@ -69,10 +69,10 @@
         <script type="text/javascript" src="/externaljavascript.js"></script>
         <script>
             const cardField = document.getElementById('qna');
-            const tagsField = document.getElementById('tagsList');
+            //const tagsField = document.getElementById('tagsList');
             const questionCards = data;
 
-            tagsField.innerHTML = `${Object.values(dataTags).map(val => `<span class="tags">${val}</span>` ).join(' ')}`;
+            //tagsField.innerHTML = `${Object.values(dataTags).map(val => `<span class="tags">${val}</span>` ).join(' ')}`;
             
             if (sessionStorage.outputCards == null) {
                 cardField.innerHTML = randomCards();
