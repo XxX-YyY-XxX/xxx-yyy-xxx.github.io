@@ -11,6 +11,8 @@ const tags = {
     PRIME : 'TopicPrimer',
     MAIN : 'CombatMissions',
     EMU : 'Emulators',
+    TDOLL : 'TacticalDolls',
+    EQUIP : 'Equipments',
 };
 Object.freeze(tags)
 
@@ -69,6 +71,11 @@ const data = [
         questions : `Which emulators are good for GFL?`,
         answers : `${orderedList('Mumu.', 'Memu.', 'LDPlayer', 'Nox.', 'Bluestacks.')}`,
         tags : [tags.EMU]
+    },
+    {
+        questions : `What do I need to consider when using the #2 Chip equipment?`,
+        answers : `${link(image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png', '', `u/BigStupidJellyfish_'s chip usage flowchart.`), 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')}`,
+        tags : [tags.TDOLL, tags.EQUIP]
     },
     {
         questions : ``,

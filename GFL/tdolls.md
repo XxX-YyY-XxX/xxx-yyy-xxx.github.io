@@ -7,6 +7,10 @@
 > [Matsuda Quips.](https://gfl.matsuda.tips/dolls/)
 >
 > [Gamepress Overview.](https://www.gamepress.gg/girlsfrontline/tier-list)
+>
+> [KR Wiki.](https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0/%EC%9D%B8%ED%98%95%EB%8F%84%EA%B0%90)
+>
+> [Fatalchapter's bilibili guide.](https://www.bilibili.com/read/readlist/rl100361) Updated up to Jashin dolls. 
 
 ### Which dolls should I duplicate?
 
