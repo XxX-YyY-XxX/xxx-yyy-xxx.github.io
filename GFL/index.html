@@ -54,6 +54,7 @@
 
                 <p>Use <code>Tags:</code> at the start to search using tags. Use Space to separate tags. Tags are case-sensitive.</p>
                 <!-- Radio button to switch between word search and tag search. Checkbox for each tag. CSS to hide. -->
+                <div id="tagsList"></div>
                 <form onsubmit="findCards()">
                     <input type="text" placeholder="Search..." id="search-text">
                     <input type="submit">
@@ -67,8 +68,11 @@
         <!--script type="text/json" src="/GFL/cards.json"></script-->
         <script type="text/javascript" src="/externaljavascript.js"></script>
         <script>
-            const cardField = document.getElementById("qna");
+            const cardField = document.getElementById('qna');
+            const tagsField = document.getElementById('tagsList');
             const questionCards = data;
+
+            tagsField.innerHTML = `${Object.values(dataTags).map(val => `<span class="tags">${val}</span>` ).join(' ')}`;
             
             if (sessionStorage.outputCards == null) {
                 cardField.innerHTML = randomCards();
