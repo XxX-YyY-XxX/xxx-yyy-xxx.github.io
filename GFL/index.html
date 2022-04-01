@@ -61,6 +61,12 @@
             background: aqua;
             color: black;
         }
+
+        #tags-list {
+            line-height: 25px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
     </style>
 
     <body>
@@ -77,14 +83,12 @@
 
                 <p>Use <code>Tags:</code> at the start to search using tags. Use Space to separate tags. Tags are case-sensitive.</p>
                 
-                <!--div id="search-input-type">
-                    <input type="radio" id="text-input" name="input-type" value="text" checked="checked">
-                    <label for="text-input">Search by keywords.</label>
-                    <input type="radio" id="tag-input" name="input-type" value="tag">
-                    <label for="tag-input">Search by tags.</label>
-                </div!-->
+                <div id="search-input-type">
+                    <label><input type="radio" id="text-input" name="input-type" value="text" checked="checked">Search by keywords.</label>
+                    <label><input type="radio" id="tag-input" name="input-type" value="tag">Search by tags.</label>
+                </div>
                 <!-- CSS to hide. -->
-                <div id="tags-list" style="line-height: 25px; text-align: justify;"></div>
+                <div id="tags-list"></div>
 
                 <div id="search-box">
                     <form onsubmit="findCards()">
