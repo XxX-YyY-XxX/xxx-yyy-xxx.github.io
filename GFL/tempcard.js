@@ -119,7 +119,7 @@ const cardData = [
         answers : `${link('GFC GDoc.', 'https://docs.google.com/spreadsheets/d/1ah2JO6ggWuVaBho9yxgDMC-ucEKA8C42SBkjIlnIcWk')} Up to Chapter 11.<br>
         ${link(`Redditor u/elgatoroid's calculator.`, 'https://gfl-logistics.neko.gg/')} Up to Chapter 11.<br>
         ${link('Tempkaridc calculator.', 'https://tempkaridc.github.io/gf/')} Up to Chapter 13.`,
-        tags : [dataTags.LOGI, dataTags.RSC]
+        tags : [dataTags.LOGI, dataTags.RSC, dataTags["3P"]]
     },
     {
         questions : ``,
