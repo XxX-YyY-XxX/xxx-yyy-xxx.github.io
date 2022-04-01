@@ -123,9 +123,11 @@
                 document.getElementById('search-text').style.display = 'inline';
                 document.getElementById('tags-list').style.display = 'none';
                 searchTextField.value = '';
-                document.querySelectorAll('input[type="checkbox"]').forEach(val =>
-                    val.checked = false
-                );
+                for (const element of document.getElementsByTagName('input')) {
+                    if (element.type == 'checkbox') {
+                        element.checked = false;
+                    }
+                }
             }
 
             function tagMode() {
