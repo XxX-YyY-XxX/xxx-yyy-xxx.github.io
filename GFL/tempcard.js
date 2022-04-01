@@ -16,6 +16,7 @@ const dataTags = {
     APPLE : 'AppleDevices',
     ANDROID : 'AndroidDevices',
     ANNIV : 'Anniversary',
+    THEATER : 'Theater',
 };
 Object.freeze(dataTags)
 
@@ -72,7 +73,7 @@ const data = [
     },
     {
         questions : `Which emulators are good for GFL?`,
-        answers : `${orderedList('Mumu.', 'Memu.', 'LDPlayer', 'Nox.', 'Bluestacks.')}`,
+        answers : `${orderedList('Mumu.', 'Memu.', 'LDPlayer.', 'Nox.', 'Bluestacks.')}`,
         tags : [dataTags.EMU]
     },
     {
@@ -89,6 +90,17 @@ const data = [
         questions : `When is the anniversary?`,
         answers : `May 8. Basically around the second week of May.`,
         tags : [dataTags.ANNIV]
+    },
+    {
+        questions : `How to do Theater/Theatre?`,
+        answers : `Note that advantaged dolls no longer make or break the run and echelon formation is 1 team + backups.<br>
+        ${link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Theater_Mode')}<br>
+        ${link('GFC Guide.', 'https://www.gflcorner.com/theater-system-introduction-by-gfc/')}<br>
+        ${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/rng_backstabbing')}<br>
+        ${link('Gamepress Guide Part 1.', 'https://gamepress.gg/girlsfrontline/theater-7-overhaul-guide-new-mechanics-new-enemies-same-pain')} The updated theater version.<br>
+        ${link('Gamepress Guide Part 2.', 'https://gamepress.gg/girlsfrontline/theater-7-combat-guide')} Still good for Theater 8.<br>
+        TLDR is 5-6 Defense Drills in a row, twice per day, with differing battle effects. Do scouting bets where you pick one zone. Dump points on construction for easier battles.`,
+        tags : [dataTags.THEATER, dataTags.PRIME]
     },
     {
         questions : ``,

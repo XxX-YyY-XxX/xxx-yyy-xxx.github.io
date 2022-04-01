@@ -1,21 +1,5 @@
 # Theater
 
-### How to do Theater?
-
-> Note that advantaged dolls no longer make or break the run and echelon formation is 1 team + backups.
->
-> [IOPWiki Guide.](https://iopwiki.com/wiki/Theater_Mode)
->
-> [GFC Guide.](https://www.gflcorner.com/theater-system-introduction-by-gfc/)
->
-> [Matsuda guide.](https://gfl.matsuda.tips/post/rng_backstabbing) 
->
-> [Gamepress Guide Part 1.](https://gamepress.gg/girlsfrontline/theater-7-overhaul-guide-new-mechanics-new-enemies-same-pain) The updated theater version.
->
-> [Gamepress Guide Part 2.](https://gamepress.gg/girlsfrontline/theater-7-combat-guide) Still good for Theater 8.
->
-> TLDR is 5-6 Defense Drills in a row, twice per day, with differing battle effects and restrictions applied. And scouting gambling where you pick one zone.
-
 ### Do I have to save HOC charges and Fairy points for the boss?
 
 > Nope. Joins boss battle regardless of charges. Replenishes on next raid. Go ham.
