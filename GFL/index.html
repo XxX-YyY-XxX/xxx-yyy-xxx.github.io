@@ -81,20 +81,16 @@
         <div class="container">
             <section id="main_content">
                 <p><h1><a href="/GFL/indexsub">Link to topics repository.</a></h1></p>
-
-                <p>Use <code>Tags:</code> at the start to search using tags. Use Space to separate tags. Tags are case-sensitive.</p>
                 
                 <div id="search-input-type">
-                    <label><input type="radio" id="text-input" name="input-type" onclick="textMode()" checked="checked">Search by keywords.</label>
-                    <label><input type="radio" id="tag-input" name="input-type" onclick="tagMode()">Search by tags.</label>
+                    <label><input type="radio" id="text-input" name="input-type" onclick="textMode()" checked="checked">Search by keywords</label>
+                    <label><input type="radio" id="tag-input" name="input-type" onclick="tagMode()">Search by tags</label>
                 </div>
 
                 <form onsubmit="findCards()">
                     <div id="tags-list" style="display: none;"></div>
 
-                    <div id="search-box">
-                        <input type="text" placeholder="Search..." id="search-text">
-                    </div>
+                    <span id="search-box"><input type="text" placeholder="Search..." id="search-text"></span>
                     <input type="submit">
                 </form>
     
