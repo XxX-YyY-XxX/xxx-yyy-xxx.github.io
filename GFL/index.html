@@ -123,10 +123,9 @@
                 document.getElementById('search-text').style.display = 'inline';
                 document.getElementById('tags-list').style.display = 'none';
                 searchTextField.value = '';
-                for (const element of document.getElementsByTagName('input')) {
-                    if (element.type == 'checkbox') {
-                        element.checked = false;
-                    }
+                for (const element of document.getElementsByClassName('selectedTag')) {
+                    element.className = 'tags unselectedTag';
+                    element.checked = false;
                 }
             }
 
