@@ -89,15 +89,15 @@
                     <label><input type="radio" id="tag-input" name="input-type" onclick="tagMode()">Search by tags.</label>
                 </div>
 
-                <div id="tags-list" style="display: none;"></div>
+                <form onsubmit="findCards()">
+                    <div id="tags-list" style="display: none;"></div>
 
-                <div id="search-box">
-                    <form onsubmit="findCards()">
+                    <div id="search-box">
                         <input type="text" placeholder="Search..." id="search-text">
-                        <input type="submit">
-                    </form>
-                </div>
-
+                    </div>
+                    <input type="submit">
+                </form>
+    
                 <div id="qna"></div>
             </section>
         </div>
@@ -106,6 +106,7 @@
         <!--script type="text/json" src="/GFL/cards.json"></script-->
         <script type="text/javascript" src="/externaljavascript.js"></script>
         <script>
+            const searchTextField = document.getElementById('search-text');
             const cardField = document.getElementById('qna');
             const questionCards = data;
 
@@ -123,28 +124,27 @@
             function textMode() {
                 document.getElementById('search-box').style.display = 'block';
                 document.getElementById('tags-list').style.display = 'none';
+                searchTextField.value = '';
             }
 
             function tagMode() {
                 document.getElementById('search-box').style.display = 'none';
                 document.getElementById('tags-list').style.display = 'block';
+                searchTextField.value = 'Tags:';
             }
-
-            var tagSearchList = '';
 
             function toggleTag(tagCheckbox) {
                 if (tagCheckbox.checked) {
                     document.getElementById(tagCheckbox.id + '-label').className = 'tags selectedTag';
-                    tagSearchList += ' ' + tagCheckbox.id;
+                    searchTextField.value += ' ' + tagCheckbox.id;
                 } else {
                     document.getElementById(tagCheckbox.id + '-label').className = 'tags unselectedTag';
-                    tagSearchList = tagSearchList.replace(' ' + tagCheckbox.id, '')
+                    searchTextField.value = searchTextField.value.replace(' ' + tagCheckbox.id, '')
                 }
-                console.log(tagSearchList);
             }
 
             function findCards() {                                              //Runs on submit
-                sessionStorage.outputCards = document.getElementById('search-text').value;
+                sessionStorage.outputCards = searchTextField.value;
             }
 
             function searchCards() {
@@ -153,8 +153,12 @@
 
                 if (searchText.includes('Tags:')) {
                     const cardTags = searchText.replace('Tags:', '').split(' ').filter(Boolean);
-                    var matchCheck = function(card) {
-                        return IsSubsetOf(cardTags, card.tags);
+                    if (cardTags) {
+                        var matchCheck = function(card) {
+                            return IsSubsetOf(cardTags, card.tags);
+                        }
+                    } else {
+                        return 'Empty search.';
                     }
                 } else {
                     if (searchText) {
