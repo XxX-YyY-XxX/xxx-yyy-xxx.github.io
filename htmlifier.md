@@ -35,7 +35,3 @@
 ### Censored arts?
 
 > [Bichir list](https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ/edit#gid=904223610)
-
-### What's the drop rate for the tickets in logistics?
-
-> [Updated as of Chapter 11.](https://docs.google.com/spreadsheets/d/1ah2JO6ggWuVaBho9yxgDMC-ucEKA8C42SBkjIlnIcWk/htmlview#)

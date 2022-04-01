@@ -50,12 +50,6 @@
 
 > Every anniversary and major events.
 
-### Is there a list of which logistics to do if I want to prioritize certain resources?
-
-> [Redditor u/elgatoroid's calculator.](https://gfl-logistics.neko.gg/) Note that it only goes up to Chapter 11.
->
-> [Tempkaridc calculator.](https://tempkaridc.github.io/gf/)
-
 ### Which should I prioritize in the Data Room, Combat Reports or Special Combat Reports?
 
 > SCRs primarily because you can just EXP sim, corpse drag, and auto-battle the dolls, and also because basecamp sells far more CR than SCR. Note that you'd need 5000 SCRs to fully level a fresh HOC.

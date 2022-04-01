@@ -86,12 +86,11 @@
             <section id="main_content">
                 <p><h1><a href="/GFL/indexsub">Link to topics repository.</a></h1></p>
                 
-                <div>
-                    <label><input type="radio" id="text-input" name="input-type" onclick="textMode()" checked="checked">Search by keywords</label>
-                    <label><input type="radio" id="tag-input" name="input-type" onclick="tagMode()">Search by tags</label>
-                </div>
+                <label><input type="radio" id="text-input" name="input-type" onclick="textMode()" checked="checked">Search by keywords</label>
+                <label><input type="radio" id="tag-input" name="input-type" onclick="tagMode()">Search by tags</label>
 
                 <form onsubmit="findCards()">
+                    <!-- Fix tag monstrosity. -->
                     <div id="tags-list" style="display: none;"></div>
 
                     <span id="search-box"><input type="text" placeholder="Search..." id="search-text"></span>

@@ -18,6 +18,7 @@ const dataTags = {
     ANNIV : 'Anniversary',
     THEATER : 'Theater',
     ENHANCE : 'Enhancements',
+    LOGI : 'Logistics',
 };
 Object.freeze(dataTags)
 
@@ -112,6 +113,13 @@ const cardData = [
         questions : `Would the equipment I'm enhancing get bonus points if I use an enhanced fodder?`,
         answers : `No.`,
         tags : [dataTags.EQUIP, dataTags.ENHANCE]
+    },
+    {
+        questions : `Is there a list of which logistics to do if I want to prioritize certain resources?`,
+        answers : `${link('GFC GDoc.', 'https://docs.google.com/spreadsheets/d/1ah2JO6ggWuVaBho9yxgDMC-ucEKA8C42SBkjIlnIcWk')} Up to Chapter 11.<br>
+        ${link(`Redditor u/elgatoroid's calculator.`, 'https://gfl-logistics.neko.gg/')} Up to Chapter 11.<br>
+        ${link('Tempkaridc calculator.', 'https://tempkaridc.github.io/gf/')} Up to Chapter 13.`,
+        tags : [dataTags.LOGI, dataTags.RSC]
     },
     {
         questions : ``,
