@@ -124,8 +124,8 @@
                 document.getElementById('tags-list').style.display = 'none';
                 searchTextField.value = '';
                 for (const element of document.getElementsByClassName('selectedTag')) {
+                    document.getElementById(element.id.replace('-label', '')).checked = false;
                     element.className = 'tags unselectedTag';
-                    element.checked = false;
                 }
             }
 
