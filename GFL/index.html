@@ -50,7 +50,7 @@
             outline: 2px solid aqua;
             border-radius: 10rem;
             padding: 2px 3px;
-            display: inline-grid;
+            display: inline-grid;                       /* For making the tag buttons stay together on wrap. */
         }
 
         .card-tags, .selectedTag {
@@ -64,7 +64,7 @@
         }
 
         #search-text {
-            width: 100%;
+            width: calc(100% - 80px);
         }
 
         #tags-list {
@@ -79,6 +79,7 @@
                 <a id="a-title" href="/"><h1>Random Scraps</h1></a>
                 <h2>Girls' Frontline Reddit Lounge FAQs</h2>
             </div>
+            <!-- Menu Buttons -->
         </header>
 
         <div class="container">
@@ -91,7 +92,7 @@
                 <form onsubmit="findCards()">
                     <div id="tags-list"></div>
 
-                    <input type="text" placeholder="Search..." id="search-text">
+                    <input type="text" id="search-text" placeholder="Search...">
                     <input type="submit">
                 </form>
     
