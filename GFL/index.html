@@ -44,13 +44,13 @@
         input[type="checkbox"]{
             appearance: none;
             margin: 0px;
-            padding-left: -1px;
         }
 
         .tags {
             outline: 2px solid aqua;
             border-radius: 10rem;
             padding: 2px 3px;
+            display: inline-grid;
         }
 
         .card-tags, .selectedTag {
@@ -63,14 +63,13 @@
             color: black;
         }
 
-        #tags-list {
-            line-height: 25px;
-            text-align: center;
-            /* text-justify: inter-word; */
+        #search-text {
+            width: 100%;
         }
 
-        #search-box {
-            width: 100%;
+        #tags-list {
+            text-align: center;
+            display: none;
         }
     </style>
 
@@ -90,10 +89,9 @@
                 <label><input type="radio" id="tag-input" name="input-type" onclick="tagMode()">Search by tags</label>
 
                 <form onsubmit="findCards()">
-                    <!-- Fix tag monstrosity. -->
-                    <div id="tags-list" style="display: none;"></div>
+                    <div id="tags-list"></div>
 
-                    <span id="search-box"><input type="text" placeholder="Search..." id="search-text"></span>
+                    <input type="text" placeholder="Search..." id="search-text">
                     <input type="submit">
                 </form>
     
@@ -121,13 +119,13 @@
             }
 
             function textMode() {
-                document.getElementById('search-box').style.display = 'inline';
+                document.getElementById('search-text').style.display = 'inline';
                 document.getElementById('tags-list').style.display = 'none';
                 searchTextField.value = '';
             }
 
             function tagMode() {
-                document.getElementById('search-box').style.display = 'none';
+                document.getElementById('search-text').style.display = 'none';
                 document.getElementById('tags-list').style.display = 'block';
                 searchTextField.value = 'Tags:';
             }
