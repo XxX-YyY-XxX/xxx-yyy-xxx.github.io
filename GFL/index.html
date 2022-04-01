@@ -86,7 +86,7 @@
             <section id="main_content">
                 <p><h1><a href="/GFL/indexsub">Link to topics repository.</a></h1></p>
                 
-                <label><input type="radio" id="text-input" name="input-type" onclick="textMode()" checked="checked">Search by keywords</label>
+                <label><input type="radio" id="text-input" name="input-type" onclick="textMode()" checked>Search by keywords</label>
                 <label><input type="radio" id="tag-input" name="input-type" onclick="tagMode()">Search by tags</label>
 
                 <form onsubmit="findCards()">
@@ -123,6 +123,9 @@
                 document.getElementById('search-text').style.display = 'inline';
                 document.getElementById('tags-list').style.display = 'none';
                 searchTextField.value = '';
+                document.querySelectorAll('input[type="checkbox"]').forEach(val =>
+                    val.checked = false
+                );
             }
 
             function tagMode() {
