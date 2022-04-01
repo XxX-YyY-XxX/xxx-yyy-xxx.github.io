@@ -40,6 +40,29 @@
         <!-- End Jekyll SEO tag -->
     </head>
 
+    <style>
+        input[type="checkbox"]{
+            appearance: none;
+            margin: 0px;
+        }
+
+        .tags {
+            outline: 2px solid aqua;
+            border-radius: 10rem;
+            padding: 2px 3px;
+        }
+
+        .card-tags, .selectedTag {
+            background: transparent;
+            color: aqua;
+        }
+
+        .unselectedTag {
+            background: aqua;
+            color: black;
+        }
+    </style>
+
     <body>
         <header>
             <div class="container">
@@ -61,7 +84,7 @@
                     <label for="tag-input">Search by tags.</label>
                 </div!-->
                 <!-- Checkbox for each tag. CSS to hide. -->
-                <div id="tags-list"></div>
+                <div id="tags-list" style="line-height: 25px;"></div>
 
                 <div id="search-box">
                     <form onsubmit="findCards()">
@@ -148,7 +171,7 @@
                     <legend><h3>${cards.questions}</h3></legend>
                     ${cards.answers}
                     <hr>
-                    Tags: ${cards.tags.map(val => `<span class="tags">${val}</span>` ).join(' ')}
+                    Tags: ${cards.tags.map(val => `<span class="tags card-tags">${val}</span>` ).join(' ')}
                     </fieldset>`;
             }
         </script>

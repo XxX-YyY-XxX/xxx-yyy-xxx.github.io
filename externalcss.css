@@ -2,36 +2,7 @@ code {
   color: yellow;
 }
 
-.widescreen {
-  width: 100%;
-  max-width: 640px;
-  /* padding-top: 56.25%; */
-  aspect-ratio: 16/9;
-}
-
-.tags {
-  color: aqua;
-  background: transparent;
-  border-radius: 10rem;
-  outline: 2px solid aqua;
-  padding: 2px 3px;
-  
-  /*
-  font-size: 90%;
-  
-  align-items: center;
-  display: inline-flex;
-  display: -ms-inline-flexbox;
-  -ms-flex-align: center;
-  height: 1.2rem;
-  line-height: .8rem;
-  max-width: 100%;
-  text-decoration: none;
-  vertical-align: middle;
- */
-}
-
-legend h3 {
+legend h3, fieldset ol {
   margin: 0px;
 }
 
@@ -43,14 +14,30 @@ fieldset hr {
   border-top: 1px dashed;
 }
 
-fieldset ol {
-  margin: 0px;
-}
-
 .gdoc {
   width: 100%;
   aspect-ratio: 1/1;
 }
+
+.widescreen {
+  width: 100%;
+  max-width: 640px;
+  /* padding-top: 56.25%; */
+  aspect-ratio: 16/9;
+}
+
+/*font-size: 90%;
+  
+  align-items: center;
+  display: inline-flex;
+  display: -ms-inline-flexbox;
+  -ms-flex-align: center;
+  height: 1.2rem;
+  line-height: .8rem;
+  max-width: 100%;
+  text-decoration: none;
+  vertical-align: middle;
+*/
 
 /* .tooltip {
   position: relative;
