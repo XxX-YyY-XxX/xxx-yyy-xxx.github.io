@@ -32,6 +32,3 @@
 >- Probability of 3-star furniture: 54%
 
 ---
-### Censored arts?
-
-> [Bichir list](https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ/edit#gid=904223610)

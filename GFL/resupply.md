@@ -8,7 +8,7 @@
 
 > [Gamepress list.](https://gamepress.gg/girlsfrontline/t-doll-costumes-list) Has a list of unobtainable costumes.
 >
-> [Redditor u/ConductorBichir's list.](https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ/edit#gid=1593777261) Includes complete dorm set special effect.
+> [Redditor u/ConductorBichir's list.](https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ/edit#gid=1593777261) Includes complete dorm set special effect and censor comparison of doll's default art.
 
 ### How do I get Black Cards?
 
