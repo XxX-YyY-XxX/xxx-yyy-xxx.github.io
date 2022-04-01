@@ -44,6 +44,7 @@
         input[type="checkbox"]{
             appearance: none;
             margin: 0px;
+            padding-left: -1px;
         }
 
         .tags {
@@ -64,8 +65,8 @@
 
         #tags-list {
             line-height: 25px;
-            text-align: justify;
-            text-justify: inter-word;
+            text-align: center;
+            /* text-justify: inter-word; */
         }
     </style>
 
@@ -84,11 +85,11 @@
                 <p>Use <code>Tags:</code> at the start to search using tags. Use Space to separate tags. Tags are case-sensitive.</p>
                 
                 <div id="search-input-type">
-                    <label><input type="radio" id="text-input" name="input-type" value="text" checked="checked">Search by keywords.</label>
-                    <label><input type="radio" id="tag-input" name="input-type" value="tag">Search by tags.</label>
+                    <label><input type="radio" id="text-input" name="input-type" onclick="textMode()" checked="checked">Search by keywords.</label>
+                    <label><input type="radio" id="tag-input" name="input-type" onclick="tagMode()">Search by tags.</label>
                 </div>
-                <!-- CSS to hide. -->
-                <div id="tags-list"></div>
+
+                <div id="tags-list" style="display: none;"></div>
 
                 <div id="search-box">
                     <form onsubmit="findCards()">
@@ -117,6 +118,16 @@
                 cardField.innerHTML = searchCards();
             } else {                                                            //Catch
                 cardField.innerHTML = 'Weird jank: ' + sessionStorage.outputCards;
+            }
+
+            function textMode() {
+                document.getElementById('search-box').style.display = 'block';
+                document.getElementById('tags-list').style.display = 'none';
+            }
+
+            function tagMode() {
+                document.getElementById('search-box').style.display = 'none';
+                document.getElementById('tags-list').style.display = 'block';
             }
 
             var tagSearchList = '';
