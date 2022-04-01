@@ -68,6 +68,10 @@
             text-align: center;
             /* text-justify: inter-word; */
         }
+
+        #search-box {
+            width: 100%;
+        }
     </style>
 
     <body>
@@ -104,10 +108,10 @@
         <script>
             const searchTextField = document.getElementById('search-text');
             const cardField = document.getElementById('qna');
-            const questionCards = data;
+            const questionCards = cardData;
 
             document.getElementById('tags-list').innerHTML = Object.values(dataTags).map(val => 
-            `<label class="tags unselectedTag" id="${val}-label"><input type="checkbox" id="${val}" onclick="toggleTag(this)">${val}</label>` ).join('');
+            `<label class="tags unselectedTag" id="${val}-label"><input type="checkbox" id="${val}" onclick="toggleTag(this)">${val}</label>` ).join(' ');
             
             if (sessionStorage.outputCards == null) {
                 cardField.innerHTML = randomCards();
@@ -118,7 +122,7 @@
             }
 
             function textMode() {
-                document.getElementById('search-box').style.display = 'block';
+                document.getElementById('search-box').style.display = 'inline';
                 document.getElementById('tags-list').style.display = 'none';
                 searchTextField.value = '';
             }

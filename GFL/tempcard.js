@@ -33,7 +33,7 @@ function orderedList() {
     return `<ol>${Array.from(arguments).map(val => `<li>${val}</li>`).join('')}</ol>`;
 }
 
-const data = [
+const cardData = [
     {
         questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
         answers : `${image('/GFL/assets/images/SFEnemy.png')}<br>
@@ -109,7 +109,7 @@ const data = [
         tags : [dataTags.MAIN]
     },
     {
-        questions : `Would the equipment I'm enhancing get bonus points if I used an enhanced fodder?`,
+        questions : `Would the equipment I'm enhancing get bonus points if I use an enhanced fodder?`,
         answers : `No.`,
         tags : [dataTags.EQUIP, dataTags.ENHANCE]
     },
@@ -119,4 +119,4 @@ const data = [
         tags : []
     },
 ]
-Object.freeze(data);
+Object.freeze(cardData);
