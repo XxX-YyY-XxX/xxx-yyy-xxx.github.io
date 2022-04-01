@@ -17,6 +17,7 @@ const dataTags = {
     ANDROID : 'AndroidDevices',
     ANNIV : 'Anniversary',
     THEATER : 'Theater',
+    ENHANCE : 'Enhancements',
 };
 Object.freeze(dataTags)
 
@@ -52,7 +53,7 @@ const data = [
     {
         questions : `Which combat sim is better to focus on?`,
         answers : `Data. Always data.`,
-        tags : [dataTags.SIMS, dataTags.RSC]
+        tags : [dataTags.SIMS, dataTags.RSC, dataTags.NEWB]
     },
     {
         questions : `How do Neural Upgrades/MODs work?`,
@@ -106,6 +107,11 @@ const data = [
         questions : `How do I unlock Chapter 0?`,
         answers : `Beat Chapter 4 Emergency Map 4.`,
         tags : [dataTags.MAIN]
+    },
+    {
+        questions : `Would the equipment I'm enhancing get bonus points if I used an enhanced fodder?`,
+        answers : `No.`,
+        tags : [dataTags.EQUIP, dataTags.ENHANCE]
     },
     {
         questions : ``,
