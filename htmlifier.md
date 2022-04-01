@@ -36,3 +36,7 @@
 > `List all equipments first.`
 >
 > https://docs.google.com/spreadsheets/d/1Rn7Hx7750FqqBJ-PX3wayd3DhofqIEWrwk8b3tNZFYc/edit#gid=459298452
+
+### Censored arts?
+
+> [Bichir list](https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ/edit#gid=904223610)

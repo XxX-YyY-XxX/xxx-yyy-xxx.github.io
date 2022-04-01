@@ -83,8 +83,8 @@
                     <input type="radio" id="tag-input" name="input-type" value="tag">
                     <label for="tag-input">Search by tags.</label>
                 </div!-->
-                <!-- Checkbox for each tag. CSS to hide. -->
-                <div id="tags-list" style="line-height: 25px;"></div>
+                <!-- CSS to hide. -->
+                <div id="tags-list" style="line-height: 25px; text-align: justify;"></div>
 
                 <div id="search-box">
                     <form onsubmit="findCards()">
@@ -125,6 +125,7 @@
                     document.getElementById(tagCheckbox.id + '-label').className = 'tags unselectedTag';
                     tagSearchList = tagSearchList.replace(' ' + tagCheckbox.id, '')
                 }
+                console.log(tagSearchList);
             }
 
             function findCards() {                                              //Runs on submit
