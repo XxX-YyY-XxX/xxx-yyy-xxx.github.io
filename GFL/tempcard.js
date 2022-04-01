@@ -93,14 +93,19 @@ const data = [
     },
     {
         questions : `How to do Theater/Theatre?`,
-        answers : `Note that advantaged dolls no longer make or break the run and echelon formation is 1 team + backups.<br>
-        ${link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Theater_Mode')}<br>
+        answers : `${link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Theater_Mode')}<br>
         ${link('GFC Guide.', 'https://www.gflcorner.com/theater-system-introduction-by-gfc/')}<br>
         ${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/rng_backstabbing')}<br>
         ${link('Gamepress Guide Part 1.', 'https://gamepress.gg/girlsfrontline/theater-7-overhaul-guide-new-mechanics-new-enemies-same-pain')} The updated theater version.<br>
         ${link('Gamepress Guide Part 2.', 'https://gamepress.gg/girlsfrontline/theater-7-combat-guide')} Still good for Theater 8.<br>
-        TLDR is 5-6 Defense Drills in a row, twice per day, with differing battle effects. Do scouting bets where you pick one zone. Dump points on construction for easier battles.`,
+        TLDR is 5-6 Defense Drills in a row, twice per day, with differing battle effects. Do scouting bets where you pick one zone. Dump points on construction for easier battles.<br>
+        Note that advantaged dolls no longer make or break the run and echelon formation is 1 team + backups.`,
         tags : [dataTags.THEATER, dataTags.PRIME]
+    },
+    {
+        questions : `How do I unlock Chapter 0?`,
+        answers : `Beat Chapter 4 Emergency Map 4.`,
+        tags : [dataTags.MAIN]
     },
     {
         questions : ``,
