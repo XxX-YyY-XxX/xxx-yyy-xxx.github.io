@@ -84,9 +84,9 @@
 
         <div class="container">
             <section id="main_content">
-                <p><h1><a href="/GFL/indexsub">Link to topics repository.</a></h1></p>
+                <p><h1><a href="/GFL/indexsub">Link to topics repository</a></h1></p>
                 
-                <label><input type="radio" id="text-input" name="input-type" onclick="textMode()" checked>Search by keywords</label>
+                <label><input type="radio" id="text-input" name="input-type" onclick="textMode()" checked>Search by keyword</label>
                 <label><input type="radio" id="tag-input" name="input-type" onclick="tagMode()">Search by tags</label>
 
                 <form onsubmit="findCards()">
@@ -124,8 +124,11 @@
                 document.getElementById('tags-list').style.display = 'none';
                 searchTextField.value = '';
                 for (const element of document.getElementsByClassName('selectedTag')) {
-                    document.getElementById(element.id.replace('-label', '')).checked = false;
                     element.className = 'tags unselectedTag';
+                    document.getElementById(element.id.replace('-label', '')).checked = false;
+                }
+                if (document.getElementsByClassName('selectedTag')) {                                       //Shouldn't even be here.
+                    textMode();
                 }
             }
 
