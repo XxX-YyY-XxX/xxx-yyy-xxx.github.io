@@ -104,7 +104,8 @@
             const cardField = document.getElementById('qna');
             const questionCards = data;
 
-            document.getElementById('tags-list').innerHTML = Object.values(dataTags).map(val => `<span class="tags">${val}</span>` ).join(' ');
+            document.getElementById('tags-list').innerHTML = Object.values(dataTags).map(val => 
+            `<label class="tags unselectedTag" id="${val}-label"><input type="checkbox" id="${val}" onclick="toggleTag(this)">${val}</label>` ).join(' ');
             
             if (sessionStorage.outputCards == null) {
                 cardField.innerHTML = randomCards();
@@ -112,6 +113,18 @@
                 cardField.innerHTML = searchCards();
             } else {                                                            //Catch
                 cardField.innerHTML = 'Weird jank: ' + sessionStorage.outputCards;
+            }
+
+            var tagSearchList = '';
+
+            function toggleTag(tagCheckbox) {
+                if (tagCheckbox.checked) {
+                    document.getElementById(tagCheckbox.id + '-label').className = 'tags selectedTag';
+                    tagSearchList += ' ' + tagCheckbox.id;
+                } else {
+                    document.getElementById(tagCheckbox.id + '-label').className = 'tags unselectedTag';
+                    tagSearchList = tagSearchList.replace(' ' + tagCheckbox.id, '')
+                }
             }
 
             function findCards() {                                              //Runs on submit
