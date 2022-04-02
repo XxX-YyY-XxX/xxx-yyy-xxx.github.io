@@ -20,6 +20,7 @@ const dataTags = {
     LOGI : 'Logistics',
     BATTLE : 'Skirmishes',      //The battle mode where everyone shoots at one another.
     IMPT : 'Important',         //Things new players would need for late-game. Append answers with 'Importance:' and an explanation why.
+    EXPED : 'ForwardBasecamp',
 };
 Object.freeze(dataTags)
 
@@ -139,6 +140,14 @@ const cardData = [
         The endgame now goes to MODs and oaths.<br>
         The CE you see on each doll when toggling the Boss CE button is the adjusted number with the 20% CE bonus.`,
         tags : [dataTags.TDOLL, dataTags.THEATER]
+    },
+    {
+        questions : `What is Expedition/Forward Basecamp?`,
+        answers : `${link('Gamepress Detailed Guide.', 'https://gamepress.gg/girlsfrontline/gfl-explained-basecamp-and-exploration')}<br>
+        ${link('GFC Primer.', 'https://www.gflcorner.com/expedition-system-mini-guide/')}<br>
+        ${link('ATM Guide.', 'https://gfl.matsuda.tips/post/weareabsolutenotlostiswear')}<br>
+        Important note is that FB unlocks at Commander Lv. 20.`,
+        tags : [dataTags.EXPED, dataTags.PRIME]
     },
     {
         questions : ``,

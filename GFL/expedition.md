@@ -1,13 +1,5 @@
 # Expedition/Forward Basecamp
 
-### What is Forward Basecamp?
-
-> [Gamepress Detailed Guide.](https://gamepress.gg/girlsfrontline/gfl-explained-basecamp-and-exploration)
->
-> [GFC Primer.](https://www.gflcorner.com/expedition-system-mini-guide/)
->
-> [ATM Guide.](https://gfl.matsuda.tips/post/weareabsolutenotlostiswear) Important note is that FB unlocks at Commander Lv. 20.
-
 ### What should I buy from the black market?
 
 > Fire Control Cores, Dummy Cores, both Combat Reports, to name a few.
@@ -55,3 +47,13 @@
 ### Which expedition duration should I do to maximize efficiency?
 
 > 8 hours. More chances to get into hidden areas.
+
+### What is the priority for each currency?
+
+> Toy Block (least useful IMO) - Furnitures, batteries if really strapped.
+>
+> Buttstock (Most needed) - FCCs, CR/SCR if needed.
+>
+> Acorns - SPEQs.
+>
+> Bottle - Cores, effects for posterity.
