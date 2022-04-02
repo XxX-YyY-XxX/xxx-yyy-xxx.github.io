@@ -123,18 +123,14 @@
                 document.getElementById('search-text').style.display = 'inline';
                 document.getElementById('tags-list').style.display = 'none';
                 searchTextField.value = '';
-                var truthTags = Array.from(document.getElementsByClassName('selectedTag'));
-                do {
-                    console.log(truthTags);
-                    for (const element of truthTags) {
-                        element.className = 'tags unselectedTag';
-                        document.getElementById(element.id.replace('-label', '')).checked = false;
-                    }
-                    truthTags = truthTags.filter(val => val.className == 'tags selectedTag')
-                    //if (document.getElementsByClassName('selectedTag')) {                                       //Shouldn't even be here.
-                    //    textMode();
-                    //}
-                } while (truthTags.length > 0)
+                //var truthTags = ;
+                //do {
+                for (const element of Array.from(document.getElementsByClassName('selectedTag'))) {
+                    element.className = 'tags unselectedTag';
+                    document.getElementById(element.id.replace('-label', '')).checked = false;
+                }
+                //    truthTags = truthTags.filter(val => val.className == 'tags selectedTag')
+                //} while (truthTags.length > 0)
             }
 
             function tagMode() {
