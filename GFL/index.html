@@ -172,7 +172,7 @@
                     if (searchText) {
                         const phrase = new RegExp(searchText, 'i');
                         var matchCheck = function(card) {
-                            return phrase.test(card.questions) || phrase.test(removeHTMLTag(card.answers)); //Warning: May remove non-HTML <???> strings
+                            return phrase.test(card.questions) || phrase.test(RemoveHTMLTag(card.answers)); //Warning: May remove non-HTML <???> strings
                         }
                     } else {
                         return 'Empty search.';
@@ -195,7 +195,7 @@
 
                 for (let i = 0; i < 3; i++) {
                     do {
-                        var newItem = Math.floor(Math.random() * maxValue)
+                        var newItem = RandomInteger(0, maxValue);//Math.floor(Math.random() * maxValue)
                     } while (indices.includes(newItem))
                     indices.push(newItem);
                 }

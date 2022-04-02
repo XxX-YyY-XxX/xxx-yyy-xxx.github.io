@@ -1,9 +1,16 @@
+const epsilon = 10 ** -10;
+
 function IsSubsetOf(subset, mainset) {
     return subset.every(val => mainset.includes(val));
 }
 
-function removeHTMLTag(string) {
+function RemoveHTMLTag(string) {
     return string.replace(/(<([^>]+)>)/ig, '');
+}
+
+function RandomInteger(start, end) {
+    const range = end - start - epsilon;
+    return start + Math.floor(Math.random() * range);
 }
 
 //replace(/ /g, ' + ');
