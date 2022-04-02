@@ -1,15 +1,15 @@
 const dataTags = {
-    EMPTY : 'Others',
-    SF : 'SangvisFerri',
+    EMPTY : 'Others',                                   //Default tag if I dunno what to put.
+    SF : 'SangvisFerri',                                //Mainly involves SF
     ACCT : 'AccountManagement',
     TECH : 'Troubleshooting',
     '3P' : 'ThirdParty',
     SIMS : 'CombatSimulations',
     RSC : 'Resources/Currency',
     MOD : 'NeuralUpgrade',
-    NEWB : 'NewbieGuide',
-    PRIME : 'TopicPrimer',
-    MAIN : 'CombatMissions',
+    NEWB : 'NewbieGuide',                               //Things new/early-game players should know.
+    PRIME : 'TopicPrimer',                              //Explanation of a specific system it's paired with. Usually made up of links. Must be the first box of it's paired tag.
+    MAIN : 'CombatMissions',                            //Main missions aka Chapters.
     EMU : 'Emulators',
     TDOLL : 'TacticalDolls',
     EQUIP : 'Equipments',
@@ -17,8 +17,9 @@ const dataTags = {
     ANDROID : 'AndroidDevices',
     ANNIV : 'Anniversary',
     THEATER : 'Theater',
-    ENHANCE : 'Enhancements',
     LOGI : 'Logistics',
+    BATTLE : 'Skirmishes',
+    IMPT : 'Important',                                 //Things new players would need for late-game. Append answers with 'Importance:' and an explanation why.
 };
 Object.freeze(dataTags)
 
@@ -112,14 +113,24 @@ const cardData = [
     {
         questions : `Would the equipment I'm enhancing get bonus points if I use an enhanced fodder?`,
         answers : `No.`,
-        tags : [dataTags.EQUIP, dataTags.ENHANCE]
+        tags : [dataTags.EQUIP]
     },
     {
         questions : `Is there a list of which logistics to do if I want to prioritize certain resources?`,
         answers : `${link('GFC GDoc.', 'https://docs.google.com/spreadsheets/d/1ah2JO6ggWuVaBho9yxgDMC-ucEKA8C42SBkjIlnIcWk')} Up to Chapter 11.<br>
         ${link(`Redditor u/elgatoroid's calculator.`, 'https://gfl-logistics.neko.gg/')} Up to Chapter 11.<br>
         ${link('Tempkaridc calculator.', 'https://tempkaridc.github.io/gf/')} Up to Chapter 13.`,
-        tags : [dataTags.LOGI, dataTags.RSC, dataTags["3P"]]
+        tags : [dataTags.LOGI, dataTags.RSC]
+    },
+    {
+        questions : `What is kiting?`,
+        answers : `Kiting, in general, is the method of moving your tanks rightwards to make the enemy aim at them then moving leftwards to make the enemy walk towards you, while your DPS constantly shoots them. This is effective because most enemies have aim time where they do nothing, and range where you have to be in their sights to start aiming. Therefore, lengthening the lifespans of your dolls, especially the tanks.<br>
+        ${link('GFC guide.','https://www.gflcorner.com/battle-controls/')}<br>
+        ${link('Mitsu video guide.', 'https://youtu.be/ITUtRuF4TLY')}<br>
+        ${link(`u/Reikyu09's reddit post.`, 'https://redd.it/8o18an')}<br>
+        <br>
+        Importance: Enables late-game strategies beyond just strong armory.`,
+        tags : [dataTags.BATTLE, dataTags.IMPT]
     },
     {
         questions : ``,

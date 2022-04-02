@@ -1,15 +1,5 @@
 # Terminologies
 
-### Kiting
-
-> Kiting, in general, is the method of moving your tanks rightwards to make the enemy aim at them then moving leftwards to make the enemy walk towards you, while your DPS constantly shoots them. This is effective because most enemies have aim time where they do nothing, and range where you have to be in their sights to start aiming. Therefore, lengthening the lifespans of your dolls, especially the tanks.
->
-> [GFC guide.](https://www.gflcorner.com/battle-controls/) 
->
-> [Mitsu video guide](https://youtu.be/ITUtRuF4TLY)
->
-> [u/Reikyu09's reddit post.](https://redd.it/8o18an)
-
 ### Corpse Dragging
 
 > Corpse Dragging, also called Poor Run or Beggar Run, is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.
@@ -29,3 +19,11 @@
 ### Corpse Whipping
 
 > The act of overkilling a dummy link by a huge amount. This is generally the reason why ROF based guns are favored against low link HP enemies.
+
+### Combat Effectiveness Stacking
+
+> The process of stacking the useless number<!-- As useless as Aqua --> as high as possible, battle performance be damned.
+>
+> ARSMG = 30-40k, RFHG = 40-50k, MGSG = 100k+ average max CE, including maxed fairies, equips, mods, oaths, and formation bonuses.
+>
+> It's main purpose is for Theater Bosses and being on top of the Friend List.
