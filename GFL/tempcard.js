@@ -1,25 +1,25 @@
 const dataTags = {
-    EMPTY : 'Others',                                   //Default tag if I dunno what to put.
-    SF : 'SangvisFerri',                                //Mainly involves SF
+    EMPTY : 'Others',           //Default tag if I dunno what to put.
+    SF : 'SangvisFerri',        //Mainly involves SF.
     ACCT : 'AccountManagement',
     TECH : 'Troubleshooting',
     '3P' : 'ThirdParty',
     SIMS : 'CombatSimulations',
     RSC : 'Resources/Currency',
     MOD : 'NeuralUpgrade',
-    NEWB : 'NewbieGuide',                               //Things new/early-game players should know.
-    PRIME : 'TopicPrimer',                              //Explanation of a specific system it's paired with. Usually made up of links. Must be the first box of it's paired tag.
-    MAIN : 'CombatMissions',                            //Main missions aka Chapters.
+    NEWB : 'NewbieGuide',       //Things new/early-game players should know.
+    PRIME : 'TopicPrimer',      //Explanation of the specific system it's paired with. Usually made up of links. Must be the first box of it's paired tag.
+    MAIN : 'CombatMissions',    //Main missions aka Chapters.
     EMU : 'Emulators',
-    TDOLL : 'TacticalDolls',
+    TDOLL : 'TacticalDolls',    //Anything that directly involves Tactical Dolls.
     EQUIP : 'Equipments',
     APPLE : 'AppleDevices',
     ANDROID : 'AndroidDevices',
     ANNIV : 'Anniversary',
     THEATER : 'Theater',
     LOGI : 'Logistics',
-    BATTLE : 'Skirmishes',
-    IMPT : 'Important',                                 //Things new players would need for late-game. Append answers with 'Importance:' and an explanation why.
+    BATTLE : 'Skirmishes',      //The battle mode where everyone shoots at one another.
+    IMPT : 'Important',         //Things new players would need for late-game. Append answers with 'Importance:' and an explanation why.
 };
 Object.freeze(dataTags)
 
@@ -102,7 +102,7 @@ const cardData = [
         ${link('Gamepress Guide Part 1.', 'https://gamepress.gg/girlsfrontline/theater-7-overhaul-guide-new-mechanics-new-enemies-same-pain')} The updated theater version.<br>
         ${link('Gamepress Guide Part 2.', 'https://gamepress.gg/girlsfrontline/theater-7-combat-guide')} Still good for Theater 8.<br>
         TLDR is 5-6 Defense Drills in a row, twice per day, with differing battle effects. Do scouting bets where you pick one zone. Dump points on construction for easier battles.<br>
-        Note that advantaged dolls no longer make or break the run and echelon formation is 1 team + backups.`,
+        Echelon formations are now 1 team + backups.`,
         tags : [dataTags.THEATER, dataTags.PRIME]
     },
     {
@@ -131,6 +131,14 @@ const cardData = [
         <br>
         Importance: Enables late-game strategies beyond just strong armory.`,
         tags : [dataTags.BATTLE, dataTags.IMPT]
+    },
+    {
+        questions : `Do I still need to use advantaged dolls for Theater?`,
+        answers : `Not as much as before. They no longer make or break the CE, though they do get stat boosts.<br>
+        HG = 20% CDR, SMG/SG = 15% Arm, 50% EVA, AR/RF/MG = 20% FP, 20% ACC.<br>
+        The endgame now goes to MODs and oaths.<br>
+        The CE you see on each doll when toggling the Boss CE button is the adjusted number with the 20% CE bonus.`,
+        tags : [dataTags.TDOLL, dataTags.THEATER]
     },
     {
         questions : ``,
