@@ -49,7 +49,7 @@
         .tags {
             outline: 2px solid aqua;
             border-radius: 10rem;
-            padding: 2px 3px;
+            padding: 0px 3px;
             display: inline-grid;                       /* For making the tag buttons stay together on wrap. */
         }
 
@@ -64,7 +64,7 @@
         }
 
         #search-text {
-            width: calc(100% - 80px);
+            width: calc(100% - 76px);
         }
 
         #tags-list {
@@ -123,13 +123,17 @@
                 document.getElementById('search-text').style.display = 'inline';
                 document.getElementById('tags-list').style.display = 'none';
                 searchTextField.value = '';
-                for (const element of document.getElementsByClassName('selectedTag')) {
-                    element.className = 'tags unselectedTag';
-                    document.getElementById(element.id.replace('-label', '')).checked = false;
-                }
-                if (document.getElementsByClassName('selectedTag')) {                                       //Shouldn't even be here.
-                    textMode();
-                }
+                var truthTags = document.getElementsByClassName('selectedTag');
+                do {
+                    for (const element of truthTags) {
+                        element.className = 'tags unselectedTag';
+                        document.getElementById(element.id.replace('-label', '')).checked = false;
+                    }
+                    truthTags = truthTags.filter(val => val.className == 'tags selectedTag')
+                    //if (document.getElementsByClassName('selectedTag')) {                                       //Shouldn't even be here.
+                    //    textMode();
+                    //}
+                } while (truthTags)
             }
 
             function tagMode() {
