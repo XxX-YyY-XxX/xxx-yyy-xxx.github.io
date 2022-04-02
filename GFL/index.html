@@ -125,6 +125,7 @@
                 searchTextField.value = '';
                 var truthTags = Array.from(document.getElementsByClassName('selectedTag'));
                 do {
+                    console.log(truthTags);
                     for (const element of truthTags) {
                         element.className = 'tags unselectedTag';
                         document.getElementById(element.id.replace('-label', '')).checked = false;
