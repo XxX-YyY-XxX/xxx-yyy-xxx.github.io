@@ -1,26 +1,27 @@
 const dataTags = {
-    EMPTY : 'Others',           //Default tag if I dunno what to put.
-    SF : 'SangvisFerri',        //Mainly involves SF.
+    EMPTY : 'Others',               //Default tag if I dunno what to put.
+    SF : 'SangvisFerri',            //Mainly involves SF.
     ACCT : 'AccountManagement',
     TECH : 'Troubleshooting',
     '3P' : 'ThirdParty',
     SIMS : 'CombatSimulations',
     RSC : 'Resources/Currency',
     MOD : 'NeuralUpgrade',
-    NEWB : 'NewbieGuide',       //Things new/early-game players should know.
-    PRIME : 'TopicPrimer',      //Explanation of the specific system it's paired with. Usually made up of links. Must be the first box of it's paired tag.
-    MAIN : 'CombatMissions',    //Main missions aka Chapters.
+    NEWB : 'NewbieGuide',           //Things new/early-game players should know.
+    PRIME : 'TopicPrimer',          //Explanation of the specific system it's paired with. Usually made up of links. Must be the first box of it's paired tag.
+    MAIN : 'CombatMissions',        //Main missions aka Chapters.
     EMU : 'Emulators',
-    TDOLL : 'TacticalDolls',    //Anything that directly involves Tactical Dolls.
+    TDOLL : 'TacticalDolls',        //Anything that directly involves Tactical Dolls.
     EQUIP : 'Equipments',
-    APPLE : 'AppleDevices',
+    APPLE : 'AppleDevices',         //Anything primarily concerning iOS devices.
     ANDROID : 'AndroidDevices',
     ANNIV : 'Anniversary',
     THEATER : 'Theater',
     LOGI : 'Logistics',
-    BATTLE : 'Skirmishes',      //The battle mode where everyone shoots at one another.
-    IMPT : 'Important',         //Things new players would need for late-game. Append answers with 'Importance:' and an explanation why.
+    BATTLE : 'Skirmishes',          //The battle mode where everyone shoots at one another.
+    IMPT : 'Important',             //Things new players would need for late-game. Append answers with 'Importance:' and an explanation why.
     EXPED : 'ForwardBasecamp',
+    SYSMECH : 'SystemMechanics',    //Explanation on underlying mechanics of the game.
 };
 Object.freeze(dataTags)
 
@@ -148,6 +149,12 @@ const cardData = [
         ${link('ATM Guide.', 'https://gfl.matsuda.tips/post/weareabsolutenotlostiswear')}<br>
         Important note is that FB unlocks at Commander Lv. 20.`,
         tags : [dataTags.EXPED, dataTags.PRIME]
+    },
+    {
+        questions : `For limited-time bonuses (i.e. auto-battles, logistics), when are the rewards calculated?`,
+        answers : `If the runs can be cancelled without penalty, rewards are calculated at the end. Very noticeable with the "Use Battery" bingo mission when exp-training HOCs.<br>
+        If they can't be cancelled, or is cancellable with a penalty or cost, calculated at the start. Primary example is exped rewards.`,
+        tags : [dataTags.SYSMECH]
     },
     {
         questions : ``,
