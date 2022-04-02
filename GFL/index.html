@@ -123,14 +123,10 @@
                 document.getElementById('search-text').style.display = 'inline';
                 document.getElementById('tags-list').style.display = 'none';
                 searchTextField.value = '';
-                //var truthTags = ;
-                //do {
                 for (const element of Array.from(document.getElementsByClassName('selectedTag'))) {
-                    element.className = 'tags unselectedTag';
                     document.getElementById(element.id.replace('-label', '')).checked = false;
+                    element.className = 'tags unselectedTag';
                 }
-                //    truthTags = truthTags.filter(val => val.className == 'tags selectedTag')
-                //} while (truthTags.length > 0)
             }
 
             function tagMode() {
