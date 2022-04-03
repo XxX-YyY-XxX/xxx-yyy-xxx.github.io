@@ -12,7 +12,7 @@ const dataTags = {
     MAIN : 'CombatMissions',        //Main missions aka Chapters.
     EMU : 'Emulators',
     TDOLL : 'TacticalDolls',        //Anything that directly involves Tactical Dolls.
-    EQUIP : 'Equipments',
+    EQUIP : 'Equipments',           //Attachments on units.
     APPLE : 'AppleDevices',         //Anything primarily concerning iOS devices.
     ANDROID : 'AndroidDevices',
     ANNIV : 'Anniversary',
@@ -22,7 +22,8 @@ const dataTags = {
     IMPT : 'Important',             //Things new players would need for late-game. Append answers with 'Importance:' and an explanation why.
     EXPED : 'ForwardBasecamp',
     SYSMECH : 'SystemMechanics',    //Explanation on underlying mechanics of the game.
-    PA : 'ProtocolAssimilation',    //PA pulling, coalition echelons, coalition drills.
+    PA : 'ProtocolAssimilation',    //PA pulling and coalition drills.
+    COALITION : 'CoalitionUnits',   //PA counterpart of Tactical Dolls.
 };
 Object.freeze(dataTags)
 
@@ -161,14 +162,18 @@ const cardData = [
         questions : `Are there any general guides for Protocol Assimilation/Coalition Units?`,
         answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
-        ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-first-impressions-revamped')}<br>
-        ${link(image('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096', 'Rudimentary pulling and tier list guide'), 'https://twitter.com/CleistaCeleste/status/1409824210571214849')}`,
+        ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-first-impressions-revamped')}`,
         tags : [dataTags.PA, dataTags.PRIME]
     },
     {
         questions : `How does Armor Penetration work?`,
         answers : `${link('Matsuda explanation.', 'https://gfl.matsuda.tips/post/armour')}`,
         tags : [dataTags.BATTLE]
+    },
+    {
+        questions : `Is there a guide on who to pull for and how?`,
+        answers : `${link(image('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096', 'Rudimentary pulling and tier list guide'), 'https://twitter.com/CleistaCeleste/status/1409824210571214849')}`,
+        tags : [dataTags.PA]
     },
     {
         questions : ``,
