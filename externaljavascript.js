@@ -4,13 +4,12 @@ function IsSubsetOf(subset, mainset) {
     return subset.every(val => mainset.includes(val));
 }
 
-function RemoveHTMLTag(string) {
-    return string.replace(/(<([^>]+)>)/ig, '');
+function RemoveHTMLTag(htmlString) {                                        //May remove non-HTML <???> strings
+    return htmlString.replace(/(<([^>]+)>)/ig, '');
 }
 
-function RandomInteger(start, end) {
-    const range = end - start - epsilon;
-    return start + Math.floor(Math.random() * range);
+function RandomInteger(min, max) {                                          //Math.random() = [0...1)
+    return Math.floor(Math.random() * (max - min)) + min;
 }
 
 //replace(/ /g, ' + ');
