@@ -3,7 +3,7 @@ const dataTags = {
     SF : 'SangvisFerri',            //Mainly involves SF. Might phase out.
     ACCT : 'AccountManagement',
     TECH : 'Troubleshooting',       //For resolving issues that shouldn't even happen.
-    '3P' : 'ThirdParty',
+    '3P' : 'ThirdParty',            //Applications that directly interact with the game. Safe until said otherwise.
     SIMS : 'CombatSimulations',
     RSC : 'Resources/Currency',     //MARP, tickets, cores, etc.
     MOD : 'NeuralUpgrade',
@@ -27,7 +27,7 @@ const dataTags = {
 };
 Object.freeze(dataTags)
 
-function image(link, onHover = '', onLoadFail = 'Image cannot be loaded.') {
+function image(link, onHover = '', onLoadFail = 'Image loading failed.') {
     return `<img src="${link}" alt="${onLoadFail}" ${onHover ? `title="${onHover}"` : ''}>`
 }
 
