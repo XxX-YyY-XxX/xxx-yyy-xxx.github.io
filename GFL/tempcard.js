@@ -2,10 +2,10 @@ const dataTags = {
     EMPTY : 'Others',               //Default tag if I dunno what to put.
     SF : 'SangvisFerri',            //Mainly involves SF.
     ACCT : 'AccountManagement',
-    TECH : 'Troubleshooting',
+    TECH : 'Troubleshooting',       //For resolving issues that shouldn't even happen.
     '3P' : 'ThirdParty',
     SIMS : 'CombatSimulations',
-    RSC : 'Resources/Currency',
+    RSC : 'Resources/Currency',     //MARP, tickets, cores, etc.
     MOD : 'NeuralUpgrade',
     NEWB : 'NewbieGuide',           //Things new/early-game players should know.
     PRIME : 'TopicPrimer',          //Explanation of the specific system it's paired with. Usually made up of links. Must be the first box of it's paired tag.
@@ -167,7 +167,7 @@ const cardData = [
     {
         questions : `There's too much to read for Protocol Assimilation. Is there a TLDR for it?`,
         answers : `Miniature pulling and tier list guide.<br>
-        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Since SF Capture comes to <a href="https://twitter.com/hashtag/GirlsFrontline?src=hash&amp;ref_src=twsrc%5Etfw">#GirlsFrontline</a> EN today, here&#39;s a tl;dr infographic &amp; tier list.<br><br>If you want more info, follow the link/QR Code inside. <a href="https://t.co/rBeGW671n2">pic.twitter.com/rBeGW671n2</a></p>&mdash; Cleista Celeste (@CleistaCeleste) <a href="https://twitter.com/CleistaCeleste/status/1409824210571214849?ref_src=twsrc%5Etfw">June 29, 2021</a></blockquote>`,
+        ${link(image('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096'), 'https://twitter.com/CleistaCeleste/status/1409824210571214849')}`, //<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Since SF Capture comes to <a href="https://twitter.com/hashtag/GirlsFrontline?src=hash&amp;ref_src=twsrc%5Etfw">#GirlsFrontline</a> EN today, here&#39;s a tl;dr infographic &amp; tier list.<br><br>If you want more info, follow the link/QR Code inside. <a href="https://t.co/rBeGW671n2">pic.twitter.com/rBeGW671n2</a></p>&mdash; Cleista Celeste (@CleistaCeleste) <a href="https://twitter.com/CleistaCeleste/status/1409824210571214849?ref_src=twsrc%5Etfw">June 29, 2021</a></blockquote>
         tags : [dataTags.PA]
     },
     {
@@ -177,3 +177,4 @@ const cardData = [
     },
 ]
 Object.freeze(cardData);
+
