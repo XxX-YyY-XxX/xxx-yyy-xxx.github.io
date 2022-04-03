@@ -1,6 +1,6 @@
 const dataTags = {
     EMPTY : 'Others',               //Default tag if I dunno what to put.
-    SF : 'SangvisFerri',            //Mainly involves SF.
+    SF : 'SangvisFerri',            //Mainly involves SF. Might phase out.
     ACCT : 'AccountManagement',
     TECH : 'Troubleshooting',       //For resolving issues that shouldn't even happen.
     '3P' : 'ThirdParty',
@@ -22,7 +22,7 @@ const dataTags = {
     IMPT : 'Important',             //Things new players would need for late-game. Append answers with 'Importance:' and an explanation why.
     EXPED : 'ForwardBasecamp',
     SYSMECH : 'SystemMechanics',    //Explanation on underlying mechanics of the game.
-    PA : 'ProtocolAssimilation',
+    PA : 'ProtocolAssimilation',    //PA pulling, coalition echelons, coalition drills.
 };
 Object.freeze(dataTags)
 
@@ -149,7 +149,7 @@ const cardData = [
         ${link('GFC Primer.', 'https://www.gflcorner.com/expedition-system-mini-guide/')}<br>
         ${link('ATM Guide.', 'https://gfl.matsuda.tips/post/weareabsolutenotlostiswear')}<br>
         Important note is that FB unlocks at Commander Lv. 20.`,
-        tags : [dataTags.EXPED, dataTags.PRIME]
+        tags : [dataTags.EXPED, dataTags.PRIME, dataTags.NEWB]
     },
     {
         questions : `For limited-time bonuses (i.e. auto-battles, logistics), when are the rewards calculated?`,
@@ -162,8 +162,7 @@ const cardData = [
         answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
         ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-first-impressions-revamped')}<br>
-        <h4>Rudimentary pulling and tier list guide.</h4><br>
-        ${link(image('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096'), 'https://twitter.com/CleistaCeleste/status/1409824210571214849')}`,
+        ${link(image('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096', 'Rudimentary pulling and tier list guide'), 'https://twitter.com/CleistaCeleste/status/1409824210571214849')}`,
         tags : [dataTags.PA, dataTags.PRIME]
     },
     {
