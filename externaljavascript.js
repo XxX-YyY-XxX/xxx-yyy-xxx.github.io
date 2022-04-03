@@ -44,3 +44,5 @@ oXHR.send(); */
 };
 
 fetchJson();*/
+
+/* <!--script type="text/json" src="/GFL/cards.json"></script--> */

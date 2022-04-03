@@ -165,6 +165,11 @@ const cardData = [
         tags : [dataTags.PA, dataTags.PRIME]
     },
     {
+        questions : `There's too much to read for Protocol Assimilation. Is there a TLDR for it?`,
+        answers : `<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Since SF Capture comes to <a href="https://twitter.com/hashtag/GirlsFrontline?src=hash&amp;ref_src=twsrc%5Etfw">#GirlsFrontline</a> EN today, here&#39;s a tl;dr infographic &amp; tier list.<br><br>If you want more info, follow the link/QR Code inside. <a href="https://t.co/rBeGW671n2">pic.twitter.com/rBeGW671n2</a></p>&mdash; Cleista Celeste (@CleistaCeleste) <a href="https://twitter.com/CleistaCeleste/status/1409824210571214849?ref_src=twsrc%5Etfw">June 29, 2021</a></blockquote>`,
+        tags : [dataTags.PA]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
