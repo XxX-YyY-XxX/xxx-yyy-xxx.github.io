@@ -1,3 +1,5 @@
+< [Back](/GFL/mainpage)
+
 # Tactical Doll Skills
 
 ### Can M4A1's cannon proc crit?

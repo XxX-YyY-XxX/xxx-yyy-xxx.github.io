@@ -1,3 +1,5 @@
+< [Back](/GFL/mainpage)
+
 # Combat/Battle/Skirmish
 
 ### Will I lose the tile buffs if my dolls retreated/moved/lose link/die ?

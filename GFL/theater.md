@@ -1,3 +1,5 @@
+< [Back](/GFL/mainpage)
+
 # Theater
 
 ### Do I have to save HOC charges and Fairy points for the boss?

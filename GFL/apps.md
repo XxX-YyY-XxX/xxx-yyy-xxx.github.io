@@ -1,3 +1,5 @@
+< [Back](/GFL/mainpage)
+
 # Third Party
 
 ### I've heard of GFAlarm. Is it safe to use?

@@ -1,3 +1,5 @@
+< [Back](/GFL/mainpage)
+
 # Terminologies
 
 ### Corpse Dragging

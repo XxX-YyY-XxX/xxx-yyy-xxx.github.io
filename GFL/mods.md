@@ -1,3 +1,5 @@
+< [Back](/GFL/mainpage)
+
 # Neural Upgrade/MOD
 
 ### What's the Fire Control Core for?

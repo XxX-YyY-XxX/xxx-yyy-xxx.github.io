@@ -1,3 +1,5 @@
+< [Back](/GFL/mainpage)
+
 # Equipment
 
 ### Is it fine to use green equips?

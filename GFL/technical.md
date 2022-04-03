@@ -1,3 +1,5 @@
+< [Back](/GFL/mainpage)
+
 # Technical Help
 
 ### I'm having a problem with \*insert problem here*. What should I do?

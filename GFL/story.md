@@ -1,3 +1,5 @@
+< [Back](/GFL/mainpage)
+
 # Story
 
 ### I missed a major event, will it come back?

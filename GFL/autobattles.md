@@ -1,3 +1,5 @@
+< [Back](/GFL/mainpage)
+
 # Auto-battles
 
 ### What are auto-battles for?

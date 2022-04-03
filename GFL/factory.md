@@ -1,3 +1,5 @@
+< [Back](/GFL/mainpage)
+
 # Factory Production
 
 ### Is there a voodoo recipe for \*insert pennies here*?

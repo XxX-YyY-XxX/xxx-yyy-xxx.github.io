@@ -1,3 +1,5 @@
+< [Back](/GFL/mainpage)
+
 # Resupply/Costumes/Furniture
 
 ### Are there any sort of guides on how and when to roll?

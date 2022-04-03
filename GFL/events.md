@@ -1,3 +1,5 @@
+< [Back](/GFL/mainpage)
+
 # Events
 
 ### Why didn't I complete "Consume 100 batteries" for the bingo mission when I EXP trained my HOCs?

@@ -1,3 +1,5 @@
+< [Back](/GFL/mainpage)
+
 # Dormitories
 
 ### How do friend batteries work?
