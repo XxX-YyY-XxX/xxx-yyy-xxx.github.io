@@ -140,7 +140,7 @@ const cardData = [
         answers : `Not as much as before. They no longer make or break the CE, though they do get stat boosts.<br>
         HG = 20% CDR, SMG/SG = 15% Arm, 50% EVA, AR/RF/MG = 20% FP, 20% ACC.<br>
         The endgame now goes to MODs and oaths.<br>
-        The CE you see on each doll when toggling the Boss CE button is the adjusted number with the 20% CE bonus for advantaged dolls.`,
+        The CE you see on each doll when toggling the Boss CE button is the adjusted number, with the advantaged dolls having 20% bonus CE accounted for.`,
         tags : [dataTags.TDOLL, dataTags.THEATER]
     },
     {
