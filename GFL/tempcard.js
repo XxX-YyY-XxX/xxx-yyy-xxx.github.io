@@ -166,10 +166,14 @@ const cardData = [
         tags : [dataTags.PA, dataTags.PRIME]
     },
     {
+        questions : `How does Armor Penetration work?`,
+        answers : `${link('Matsuda explanation.', 'https://gfl.matsuda.tips/post/armour')}`,
+        tags : [dataTags.BATTLE]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
     },
 ]
 Object.freeze(cardData);
-
