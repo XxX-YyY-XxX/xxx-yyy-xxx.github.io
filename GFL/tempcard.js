@@ -173,7 +173,7 @@ const cardData = [
     {
         questions : `Is there a guide on who to pull for and how?`,
         answers : `${link(image('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096', 'Rudimentary pulling and tier list guide'), 'https://twitter.com/CleistaCeleste/status/1409824210571214849')}`,
-        tags : [dataTags.PA]
+        tags : [dataTags.PA, dataTags.COALITION]
     },
     {
         questions : ``,
