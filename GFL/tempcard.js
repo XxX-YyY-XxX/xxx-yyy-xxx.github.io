@@ -3,7 +3,7 @@ const dataTags = {
     SF : 'SangvisFerri',            //Mainly involves SF. Might phase out.
     ACCT : 'AccountManagement',
     TECH : 'Troubleshooting',       //For resolving issues that shouldn't even happen.
-    '3P' : 'ThirdParty',            //Applications that directly interact with the game. Safe until said otherwise.
+    '3P' : 'ThirdParty',            //Non-dev-made applications that are recommended to use. Safe until said otherwise.
     SIMS : 'CombatSimulations',
     RSC : 'Resources/Currency',     //MARP, tickets, cores, etc.
     MOD : 'NeuralUpgrade',
@@ -15,7 +15,7 @@ const dataTags = {
     EQUIP : 'Equipments',           //Attachments on units.
     APPLE : 'AppleDevices',         //Anything primarily concerning iOS devices.
     ANDROID : 'AndroidDevices',
-    ANNIV : 'Anniversary',
+    ANNIV : 'Anniversary',          //Anything concerning the game's anniversary.
     THEATER : 'Theater',
     LOGI : 'Logistics',
     BATTLE : 'Skirmishes',          //The battle mode where everyone shoots at one another.
