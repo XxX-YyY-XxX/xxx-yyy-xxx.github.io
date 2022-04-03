@@ -22,6 +22,7 @@ const dataTags = {
     IMPT : 'Important',             //Things new players would need for late-game. Append answers with 'Importance:' and an explanation why.
     EXPED : 'ForwardBasecamp',
     SYSMECH : 'SystemMechanics',    //Explanation on underlying mechanics of the game.
+    PA : 'ProtocolAssimilation',
 };
 Object.freeze(dataTags)
 
@@ -155,6 +156,13 @@ const cardData = [
         answers : `If the runs can be cancelled without penalty, rewards are calculated at the end. Very noticeable with the "Use Battery" bingo mission when exp-training HOCs.<br>
         If they can't be cancelled, or is cancellable with a penalty or cost, calculated at the start. Primary example is exped rewards.`,
         tags : [dataTags.SYSMECH]
+    },
+    {
+        questions : `Are there any general guides for Protocol Assimilation/Coalition Units?`,
+        answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
+        ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
+        ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-first-impressions-revamped')}`,
+        tags : [dataTags.PA, dataTags.PRIME]
     },
     {
         questions : ``,
