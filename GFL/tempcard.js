@@ -235,9 +235,3 @@ const cardData = [
     },
 ]
 Object.freeze(cardData);
-
-/* ### How can I save the enemy composition for later practice?
-
-> Long press the enemy on the map and you'll see the Add Target button on the top-left, pause while in battle to see the Add Target button on the bottom-left, or Add Target appears after losing a battle.
->
-> Use the Custom Packet Forger in GFAlarm to fight enemies by ID, acquired from [GFLMaps](https://pengupengupengu.github.io/gflmaps/), and entered [here](https://imgur.com/PjXW14n). Works for comps that has been loaded into the client. */

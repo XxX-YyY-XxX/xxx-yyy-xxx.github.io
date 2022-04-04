@@ -30,6 +30,18 @@
 
 ### Is there any way to reset my battles so I can get a win?
 
-> [Just make sure that your team can actually take them on.](https://www.reddit.com/r/girlsfrontline/comments/htyqeq/lounge_faqs_v2/fzmca22/)
+> Turn off WiFi during battle. You can still finish the fight with no connection. Though be wary of connection timeouts so do it near the end.
+>
+> If you don't like the result or you lost, exit client, turn on WiFi, re-enter client, take the fight again.
+>
+> If satisfied ~~or saving your sanity~~, turn on WiFi after the battle finished.
 
-@ Fix
+### How can I save the enemy composition for later practice?
+
+> Add Target
+> - Long press the enemy on the map and you'll see the Add Target button on the top-left.
+> - Pause while in battle to see the Add Target button on the bottom-left. 
+> - Add Target appears on the bottom-left after losing a battle.
+>
+> GFAlarm
+> - Use the Custom Packet Forger to fight enemies by ID taken from [GFLMaps](https://pengupengupengu.github.io/gflmaps/), and entered [here](https://imgur.com/PjXW14n). Works for comps that has been loaded into the client.
