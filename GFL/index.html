@@ -202,15 +202,21 @@
 
             function randomCards() {
                 const maxValue = questionCards.length - 1;
-                var indices = [];
+                //var indices = [];
                 var output = '';
 
-                for (let i = 0; i < 3; i++) {
+                /* for (let i = 0; i < 3; i++) {
                     do {
                         var newItem = RandomInteger(0, maxValue);
                     } while (indices.includes(newItem))
                     indices.push(newItem);
-                }
+                } */
+
+                var indices = new Set();
+
+                do {
+                    indices.add(RandomInteger(0, maxValue));
+                } while (indices.size < 3)
 
                 for (const index of indices) {
                     output += setQuestionBoxes(questionCards[index]);
