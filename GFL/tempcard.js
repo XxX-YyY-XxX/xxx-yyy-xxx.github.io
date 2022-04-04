@@ -24,6 +24,10 @@ const dataTags = {
     SYSMECH : 'SystemMechanics',    //Explanation on underlying mechanics of the game.
     PA : 'ProtocolAssimilation',    //PA pulling and coalition drills.
     COALITION : 'CoalitionUnits',   //PA counterpart of Tactical Dolls.
+    ENEMY : 'EnemyUnits',
+    FAIRY : 'Fairies',
+    HOC : 'HeavyOrdnanceCorps',
+    FST : 'FireSupportTeam',        //Rockets and mortars, the first of the HOC.
 };
 Object.freeze(dataTags)
 
@@ -171,9 +175,32 @@ const cardData = [
         tags : [dataTags.BATTLE]
     },
     {
-        questions : `Is there a guide on who to pull for and how?`,
+        questions : `Is there a guide on which Coalition unit to pull for and how?`,
         answers : `${link(image('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096', 'Rudimentary pulling and tier list guide'), 'https://twitter.com/CleistaCeleste/status/1409824210571214849')}`,
         tags : [dataTags.PA, dataTags.COALITION]
+    },
+    {
+        questions : `What are Fairies?`,
+        answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/fairies')}<br>
+        ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Technical_Fairies')} Unupdated rework skills.<br>
+        ${link('GFC guide Part 1.', 'https://www.gflcorner.com/fairy/')} Fairies up to CT only.<br>
+        ${link('GFC guide Part 2.', 'https://docs.google.com/spreadsheets/d/1x6_YysDi0h89jKE9vEW2_fbxi7gG7XV5jjJqX8O41rw')} Unupdated fairy list.`,
+        tags : [dataTags.FAIRY, dataTags.PRIME]
+    },
+    {
+        questions : `How to HOC?`,
+        answers : `${link('Gamepress Guide.', 'https://gamepress.gg/girlsfrontline/gfl-explained-hoc-combat-basics')}<br>
+        ${link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Heavy_Ordnance_Corps')}<br>
+        ${link('Matsuda Guide.', 'https://gfl.matsuda.tips/post/hocs')}<br>
+        ${link('GFC Guide.', 'https://www.gflcorner.com/hoc-guide-by-gfc/')}<br>
+        ${link(`Ceia's Video Guide.`, 'https://youtu.be/rsFyXRDAi6I')}<br>
+        ${link(`Redditor u/Xealiouth's Guide.`, 'https://redd.it/95nrou')}`,
+        tags : [dataTags.HOC, dataTags.PRIME]
+    },
+    {
+        questions : `Is there a penalty for using HOC charges and Fairy points in Theater battles?`,
+        answers : `Nope. Joins boss battle regardless of charges and has no bearing on final score. Go ham.`,
+        tags : [dataTags.THEATER, dataTags.HOC, dataTags.FAIRY]
     },
     {
         questions : ``,

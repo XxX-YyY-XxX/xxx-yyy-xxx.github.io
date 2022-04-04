@@ -2,10 +2,6 @@
 
 # Theater
 
-### Do I have to save HOC charges and Fairy points for the boss?
-
-> Nope. Joins boss battle regardless of charges. Replenishes on next raid. Go ham.
-
 ### What does "Settle Reward" do? It sounds ominous.
 
 > More like "Settlement Reward". Just shows you things you'll get once Theater ends.

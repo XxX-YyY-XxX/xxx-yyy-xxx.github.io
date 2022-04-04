@@ -2,20 +2,6 @@
 
 # Heavy Ordnance Corps
 
-### How to HOC?
-
-> [Gamepress Guide.](https://gamepress.gg/girlsfrontline/gfl-explained-hoc-combat-basics)
->
-> [GFWiki Guide.](https://iopwiki.com/wiki/Heavy_Ordnance_Corps)
->
-> [Matsuda Guide.](https://gfl.matsuda.tips/post/hocs)
->
-> [GFC Guide.](https://www.gflcorner.com/hoc-guide-by-gfc/)
->
-> [Ceia's Video Guide.](https://youtu.be/rsFyXRDAi6I)
->
-> [Redditor u/Xealiouth's Guide.](https://redd.it/95nrou)
-
 ### How high should my Reload stat be to have an effect in attack speed?
 
 > [Redditor u/CuriousCanidae's guide.](https://drive.google.com/file/d/1M-RdLwrkQvwobF2Z-wPnI8mqjZAEMYYi/view) Note: Lacks PP-93.

@@ -2,16 +2,6 @@
 
 # Fairies
 
-### What are fairies?
-
-> [Matsuda guide.](https://gfl.matsuda.tips/post/fairies) 
->
-> [GFC guide Part 1.](https://www.gflcorner.com/fairy/) Unupdated skills.
->
-> [GFC guide Part 2.](https://docs.google.com/spreadsheets/d/1x6_YysDi0h89jKE9vEW2_fbxi7gG7XV5jjJqX8O41rw)
->
-> [IOPWiki guide.](https://iopwiki.com/wiki/Technical_Fairies) Unupdated skills.
-
 ### Can fairies be recovered from Index?
 
 > No, unfortunately.
