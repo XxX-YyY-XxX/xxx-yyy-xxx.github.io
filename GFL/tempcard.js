@@ -253,7 +253,7 @@ const cardData = [
         answers : `Add Target<br>
         ${unorderedList(`Long press the enemy on the map and you'll see the button on the top-left.`, 'Pause while in battle to see the button on the bottom-left.', 'Button appears on the bottom-left after losing a battle.')}<br>
         GFAlarm<br>
-        ${unorderedList(`Use the Custom Packet Forger to fight enemies by ID taken from GFLMaps, and entered here.<br>
+        ${unorderedList(`Use GFLMaps to take the enemy IDs you want to fight and enter them in the Custom Target Train under Packet Forger.<br>
         ${image('/GFL/assets/images/GFAlarmCTT.png')}<br>
         Works for comps that has been loaded into the client.`)}`,
         tags : [dataTags.ENEMY, dataTags.BATTLE, dataTags.MAP, dataTags["3P"]]
