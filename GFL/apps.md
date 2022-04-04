@@ -19,10 +19,6 @@
 
 > [Netlify timer.](https://gftimers.netlify.app/) Note that ranking updates one hour after Kalina's Daily Gift.
 
-### Is there a way to know the deployed enemies and map layout?
-
-> [Pengu site.](https://pengupengupengu.github.io/gflmaps/)
-
 ### Why does this game download the game files when I open it?
 
 > Either you just open it up at the most opportune of times or you close the Bluestacks emulator directly before closing the GFL app.

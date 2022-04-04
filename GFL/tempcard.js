@@ -33,6 +33,7 @@ const dataTags = {
     SEASON : 'SeasonalEvents',      //Story events that happen each New Year, X-mas, Halloween, etc.
     MINI : 'MiniEvents',            //Bingo, Point Event, etc.
     EVENT : 'StoryEvents',          //For questions that apply to Major, Collab, and Seasonal Events.
+    MAP : 'FieldMap',               //Node-based overworld.
 };
 Object.freeze(dataTags)
 
@@ -235,8 +236,13 @@ const cardData = [
         answers : `Turn off WiFi during battle. You can still finish the fight with no connection. Though be wary of connection timeouts so do it near the end.<br>
         If you don't like the result or you lost, exit client, turn on WiFi, re-enter client, take the fight again.<br>
         If satisfied ${strikethrough('or saving your sanity')}, turn on WiFi after the battle finished.<br>
-        ${importance('Enables fail-safe for harder fights.')}`,
+        ${importance('Enables fail-safe for harder than hard fights.')}`,
         tags : [dataTags.BATTLE, dataTags.IMPT]
+    },
+    {
+        questions : `Is there a way to know the initially deployed enemy units and map layout?`,
+        answers : `${link('GFLMaps site.', 'https://pengupengupengu.github.io/gflmaps/')}`,
+        tags : [dataTags["3P"], dataTags.MAP]
     },
     {
         questions : ``,
