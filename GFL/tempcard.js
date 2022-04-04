@@ -48,6 +48,14 @@ function orderedList() {
     return `<ol>${Array.from(arguments).map(val => `<li>${val}</li>`).join('')}</ol>`;
 }
 
+function strikethrough(string) {
+    return `<del>${string}</del>`;
+}
+
+function importance(reasoning) {
+    return `<br>Importance: ${reasoning}`;
+}
+
 const cardData = [
     {
         questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
@@ -141,8 +149,7 @@ const cardData = [
         ${link('GFC guide.','https://www.gflcorner.com/battle-controls/')}<br>
         ${link('Mitsu video guide.', 'https://youtu.be/ITUtRuF4TLY')}<br>
         ${link(`u/Reikyu09's reddit post.`, 'https://redd.it/8o18an')}<br>
-        <br>
-        Importance: Enables late-game strategies beyond just strong armory.`,
+        ${importance('Enables late-game strategies beyond just strong armory.')}`,
         tags : [dataTags.BATTLE, dataTags.IMPT]
     },
     {
@@ -224,9 +231,12 @@ const cardData = [
         tags : [dataTags["3P"]]
     },
     {
-        questions : ``,
-        answers : ``,
-        tags : []
+        questions : `Is there any way to reset my battles so I can get a win?`,
+        answers : `Turn off WiFi during battle. You can still finish the fight with no connection. Though be wary of connection timeouts so do it near the end.<br>
+        If you don't like the result or you lost, exit client, turn on WiFi, re-enter client, take the fight again.<br>
+        If satisfied ${strikethrough('or saving your sanity')}, turn on WiFi after the battle finished.<br>
+        ${importance('Enables fail-safe for harder fights.')}`,
+        tags : [dataTags.BATTLE, dataTags.IMPT]
     },
     {
         questions : ``,

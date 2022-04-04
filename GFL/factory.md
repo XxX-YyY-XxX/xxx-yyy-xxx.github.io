@@ -28,14 +28,6 @@
 
 @ Clarify
 
-### Is there any way to reset my battles so I can get a win?
-
-> Turn off WiFi during battle. You can still finish the fight with no connection. Though be wary of connection timeouts so do it near the end.
->
-> If you don't like the result or you lost, exit client, turn on WiFi, re-enter client, take the fight again.
->
-> If satisfied ~~or saving your sanity~~, turn on WiFi after the battle finished.
-
 ### How can I save the enemy composition for later practice?
 
 > Add Target
