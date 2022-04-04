@@ -2,14 +2,6 @@
 
 # Third Party
 
-### I've heard of GFAlarm. Is it safe to use?
-
-> [Gamepress breakdown.](https://gamepress.gg/girlsfrontline/how-use-gfalarm-girls-frontline-alarm)
-
-### Is it fine to use [GFCalc](/GFL/hoc#which-hoc-chips-should-i-use)?
-
-> Recommended more like.
-
 ### Any substitute for [brainlets damage](http://brainlets.moe/gf/sim/) [sim](https://brainlets.moe/)?
 
 > [Github version](https://github.com/umang-p/brainlets) and 

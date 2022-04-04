@@ -25,6 +25,8 @@
 > [Browser Chip Calc by FatalChapter.](https://hycdes.com/pages/GFT_ChipCal-EN.html)
 >
 > ![](https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/2020-01/hoc-chip-shape-minmax-example.jpg "5-block chips that can be disassembled (Taken from Gamepress).")
+>
+> These apps are safe for your account.
 
 ### Which HOCs should I raise first?
 

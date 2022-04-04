@@ -56,12 +56,6 @@
 
 > You'd have to zoom in first. If you mean zooming well outside the doll's shooting range, then no.
 
-### Is there any way to reset my battles so I can get a win?
-
-> [Just make sure that your team can actually take them on.](https://www.reddit.com/r/girlsfrontline/comments/htyqeq/lounge_faqs_v2/fzmca22/)
-
-@ Fix
-
 ### How do I stop my dolls from retreating on critical damage?
 
 > Heavy Damage Protection off in Game Settings or in Combat Pause Settings.

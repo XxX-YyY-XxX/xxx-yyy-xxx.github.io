@@ -208,6 +208,22 @@ const cardData = [
         tags : [dataTags.THEATER, dataTags.HOC, dataTags.FAIRY]
     },
     {
+        questions : `Can I save the event currencies for the next event?`,
+        answers : `No can do. Dissolves into nothingness one week after the event is finished.`,
+        tags : [dataTags.RSC, dataTags.EVENT]
+    },
+    {
+        questions : `How do I get a higher success rate for logistics?`,
+        answers : `Just doll levels.<br>
+        ${link('Matsuda formula.', 'https://gfl.matsuda.tips/post/logistics1')} Remember to floor the mean average for a more accurate number.`,
+        tags : [dataTags.LOGI, dataTags.TDOLL]
+    },  //Ask if floored after + 15 for great success purposes.
+    {
+        questions : `I've heard of GFAlarm. Is it safe to use?`,
+        answers : `${link('Gamepress breakdown.', 'https://gamepress.gg/girlsfrontline/how-use-gfalarm-girls-frontline-alarm')}`,
+        tags : [dataTags["3P"]]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
@@ -219,3 +235,9 @@ const cardData = [
     },
 ]
 Object.freeze(cardData);
+
+/* ### How can I save the enemy composition for later practice?
+
+> Long press the enemy on the map and you'll see the Add Target button on the top-left, pause while in battle to see the Add Target button on the bottom-left, or Add Target appears after losing a battle.
+>
+> Use the Custom Packet Forger in GFAlarm to fight enemies by ID, acquired from [GFLMaps](https://pengupengupengu.github.io/gflmaps/), and entered [here](https://imgur.com/PjXW14n). Works for comps that has been loaded into the client. */
