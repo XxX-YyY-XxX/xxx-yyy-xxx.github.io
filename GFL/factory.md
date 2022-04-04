@@ -27,3 +27,13 @@
 > G11: 297, 297, 297, 31
 
 @ Clarify
+
+### How do I get a higher success rate for logistics?
+
+> [Levels.](https://gfl.matsuda.tips/post/logistics1) Just levels. CE is trash, rarity does jack.  [Big brain computation here.] (https://old.reddit.com/r/girlsfrontline/comments/lkz5at/weekly_commanders_lounge_february_16_2021/goa2ub2/)
+
+### How can I save the enemy composition for later practice?
+
+> Long press the enemy on the map and you'll see the Add Target button on the top-left, pause while in battle to see the Add Target button on the bottom-left, or Add Target appears after losing a battle.
+>
+> Use the Custom Packet Forger in GFAlarm to fight enemies by ID, acquired from [GFLMaps](https://pengupengupengu.github.io/gflmaps/), and entered [here](https://imgur.com/PjXW14n). Works for comps that has been loaded into the client.
