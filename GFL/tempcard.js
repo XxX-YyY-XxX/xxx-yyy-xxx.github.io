@@ -49,6 +49,10 @@ function orderedList() {
     return `<ol>${Array.from(arguments).map(val => `<li>${val}</li>`).join('')}</ol>`;
 }
 
+function unorderedList() {
+    return `<ul>${Array.from(arguments).map(val => `<li>${val}</li>`).join('')}</ul>`;
+}
+
 function strikethrough(string) {
     return `<del>${string}</del>`;
 }
@@ -243,6 +247,16 @@ const cardData = [
         questions : `Is there a way to know the initially deployed enemy units and map layout?`,
         answers : `${link('GFLMaps site.', 'https://pengupengupengu.github.io/gflmaps/')}`,
         tags : [dataTags["3P"], dataTags.MAP]
+    },
+    {
+        questions : `How can I save the enemy composition for later practice?`,
+        answers : `Add Target<br>
+        ${unorderedList(`Long press the enemy on the map and you'll see the button on the top-left.`, 'Pause while in battle to see the button on the bottom-left.', 'Button appears on the bottom-left after losing a battle.')}<br>
+        GFAlarm<br>
+        ${unorderedList(`Use the Custom Packet Forger to fight enemies by ID taken from GFLMaps, and entered here.<br>
+        ${image('/GFL/assets/images/GFAlarmCTT.png')}<br>
+        Works for comps that has been loaded into the client.`)}`,
+        tags : [dataTags.ENEMY, dataTags.BATTLE, dataTags.MAP, dataTags["3P"]]
     },
     {
         questions : ``,

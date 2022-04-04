@@ -27,13 +27,3 @@
 > G11: 297, 297, 297, 31
 
 @ Clarify
-
-### How can I save the enemy composition for later practice?
-
-> Add Target
-> - Long press the enemy on the map and you'll see the Add Target button on the top-left.
-> - Pause while in battle to see the Add Target button on the bottom-left. 
-> - Add Target appears on the bottom-left after losing a battle.
->
-> GFAlarm
-> - Use the Custom Packet Forger to fight enemies by ID taken from [GFLMaps](https://pengupengupengu.github.io/gflmaps/), and entered [here](https://imgur.com/PjXW14n). Works for comps that has been loaded into the client.
