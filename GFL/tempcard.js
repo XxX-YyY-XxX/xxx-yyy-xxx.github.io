@@ -28,6 +28,11 @@ const dataTags = {
     FAIRY : 'Fairies',
     HOC : 'HeavyOrdnanceCorps',
     FST : 'FireSupportTeam',        //Rockets and mortars, the first of the HOC.
+    MAJOR : 'MajorEvents',          //Part of the main story. The ones added to the Campaign tab.
+    COLLAB : 'Collaboration',
+    SEASON : 'SeasonalEvents',      //Story events that happen each New Year, X-mas, Halloween, etc.
+    MINI : 'MiniEvents',            //Bingo, Point Event, etc.
+    EVENT : 'StoryEvents',          //For questions that apply to Major, Collab, and Seasonal Events.
 };
 Object.freeze(dataTags)
 
@@ -201,6 +206,11 @@ const cardData = [
         questions : `Is there a penalty for using HOC charges and Fairy points in Theater battles?`,
         answers : `Nope. Joins boss battle regardless of charges and has no bearing on final score. Go ham.`,
         tags : [dataTags.THEATER, dataTags.HOC, dataTags.FAIRY]
+    },
+    {
+        questions : ``,
+        answers : ``,
+        tags : []
     },
     {
         questions : ``,
