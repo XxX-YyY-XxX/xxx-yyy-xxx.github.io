@@ -2,10 +2,6 @@
 
 # Factory Production
 
-### Is there a voodoo recipe for \*insert pennies here*?
-
-> [Github GF Database.](https://gf-db.github.io/gfdb/index.html) Freedom of information, just add net connection.
-
 ### When should I do T-Doll Heavy Production?
 
 > Preferably during rate-ups. Low priority otherwise since it's use at this stage of the game is for getting non 5★ SGs.
@@ -27,14 +23,3 @@
 > G11: 297, 297, 297, 31
 
 @ Clarify
-
-https://old.reddit.com/r/girlsfrontline/comments/t9bw95/weekly_commanders_lounge_march_08_2022/i0ldmbf/
-
-https://old.reddit.com/r/girlsfrontline/comments/t9bw95/weekly_commanders_lounge_march_08_2022/i0key9x/
-
-https://old.reddit.com/r/girlsfrontline/comments/t9bw95/weekly_commanders_lounge_march_08_2022/i0mxwam/
-
-https://old.reddit.com/r/girlsfrontline/comments/t9bw95/weekly_commanders_lounge_march_08_2022/i0mpotc/
-
-https://old.reddit.com/r/girlsfrontline/comments/t9bw95/weekly_commanders_lounge_march_08_2022/i0nbzsa/
-

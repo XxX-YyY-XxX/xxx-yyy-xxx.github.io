@@ -4,7 +4,7 @@ const dataTags = {
     ACCT : 'AccountManagement',
     TECH : 'Troubleshooting',       //For resolving issues that shouldn't even happen.
     '3P' : 'ThirdParty',            //Non-dev-made applications that are recommended to use. Safe until said otherwise.
-    SIMS : 'CombatSimulations',
+    SIMS : 'CombatSimulations',     //Capsule, Data, EXP, Neural, DefDrill, CoaDrill, Target Practice
     RSC : 'Resources/Currency',     //MARP, tickets, cores, etc.
     MOD : 'NeuralUpgrade',
     NEWB : 'NewbieGuide',           //Things new/early-game players should know.
@@ -34,6 +34,7 @@ const dataTags = {
     MINI : 'MiniEvents',            //Bingo, Point Event, etc.
     EVENT : 'StoryEvents',          //For questions that apply to Major, Collab, and Seasonal Events.
     MAP : 'FieldMap',               //Node-based overworld.
+    PROD : 'FactoryProduction',
 };
 Object.freeze(dataTags)
 
@@ -257,6 +258,16 @@ const cardData = [
         ${image('/GFL/assets/images/GFAlarmCTT.png')}<br>
         Works for comps that has been loaded into the client.`)}`,
         tags : [dataTags.ENEMY, dataTags.BATTLE, dataTags.MAP, dataTags["3P"]]
+    },
+    {
+        questions : `How do I connect to GFAlarm with an emulator?`,
+        answers : `Enter the GFAlarm proxy address to ProxyDroid or Drony.`,
+        tags : [dataTags["3P"], dataTags.EMU]
+    },
+    {
+        questions : `Is there a voodoo recipe for *insert pennies here*?`,
+        answers : `${link('Github Database.', 'https://gf-db.github.io/')} Freedom of information, just add net connection.`,
+        tags : [dataTags.PROD]
     },
     {
         questions : ``,

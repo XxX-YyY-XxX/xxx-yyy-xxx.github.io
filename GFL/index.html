@@ -202,17 +202,8 @@
 
             function randomCards() {
                 const maxValue = questionCards.length - 1;
-                //var indices = [];
-                var output = '';
-
-                /* for (let i = 0; i < 3; i++) {
-                    do {
-                        var newItem = RandomInteger(0, maxValue);
-                    } while (indices.includes(newItem))
-                    indices.push(newItem);
-                } */
-
                 var indices = new Set();
+                var output = '';
 
                 do {
                     indices.add(RandomInteger(0, maxValue));
