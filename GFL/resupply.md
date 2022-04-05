@@ -79,3 +79,36 @@
 ### I missed some event furniture that can be acquired from crates. Will I ever have a chance to get them again?
 
 > Yes. Wait for them in the Black Market Exchange.
+
+# For questions without proper answers yet.
+
+### What's the gacha rate for costumes?
+
+>Normal T-Doll Production:
+>- Probability of 5-star humanoid: 3%
+>- Probability of 4-star humanoid: 10%
+>- Probability of 3-star humanoid: 27%
+>- Probability of 2-star humanoid: 60%
+>
+>Heavy T-Doll Production:
+>| Rarity | Gear 1 | Gear 2 | Gear 3 |
+>| --- | --- | --- | --- |
+>| 5 | 15% | 20% | 25% |
+>| 4 | 45% | 60% | 75% |
+>| 3 | 40% | 20% | 0% |
+>
+>Normal Equipment Production:
+>- Probability of 5-star equipment: 6.5%
+>- Probability of 4-star equipment: 15%
+>- Probability of 3-star equipment: 30%
+>- Probability of 2-star equipment: 48.5%
+>
+>*The above probabilities are all average probabilities. Depending on the construction formula, the probabilities of each star will fluctuate up and down.
+>
+>Resupply Rates:
+>- Probability of humanoid dress up: 2%
+>- Probability of 5-star furniture: 8%
+>- Probability of 4-star furniture: 36%
+>- Probability of 3-star furniture: 54%
+
+---
