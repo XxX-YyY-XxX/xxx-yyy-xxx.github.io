@@ -89,33 +89,31 @@
     </style>
 
     <body>
-        <header>
-            <div class="container">
-                <a id="a-title" href="/"><h1>Random Scraps</h1></a>
-                <h2>Girls' Frontline Reddit Lounge FAQs</h2>
+        <header class="container">
+            <a id="a-title" href="/"><h1>Random Scraps</h1></a>
+            <h2>Girls' Frontline Reddit Lounge FAQs</h2>
 
-                <p>&lt; <a href="../">Back</a></p>
+            <section id="downloads">
+                <a href="../" class="btn btn-github"><span class="icon"></span> Back</a>
                 <!-- Menu Buttons -->
-            </div>
+            </section>
         </header>
 
-        <div class="container">
-            <section id="main_content">
-                <p><h1><a href="/GFL/mainpage">Link to topics repository</a></h1></p>
-                
-                <label><input type="radio" id="text-input" name="input-type" onclick="textMode()" checked>Search by keyword</label>
-                <label><input type="radio" id="tag-input" name="input-type" onclick="tagMode()">Search by tags</label>
+        <section id="main_content" class="container">
+            <p><h1><a href="/GFL/mainpage">Link to topics repository</a></h1></p>
+            
+            <label><input type="radio" id="text-input" name="input-type" onclick="textMode()" checked>Search by keyword</label>
+            <label><input type="radio" id="tag-input" name="input-type" onclick="tagMode()">Search by tags</label>
 
-                <form onsubmit="findCards()">
-                    <div id="tags-list"></div>
+            <form onsubmit="findCards()">
+                <div id="tags-list"></div>
 
-                    <input type="text" id="search-text" placeholder="Search...">
-                    <input type="submit">
-                </form>
-    
-                <div id="qna"></div>
-            </section>
-        </div>
+                <input type="text" id="search-text" placeholder="Search...">
+                <input type="submit">
+            </form>
+
+            <div id="qna"></div>
+        </section>
 
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         <script type="text/javascript" src="/externaljavascript.js"></script>
