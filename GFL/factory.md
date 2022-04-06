@@ -2,10 +2,6 @@
 
 # Factory Production
 
-### When should I do T-Doll Heavy Production?
-
-> Preferably during rate-ups. Low priority otherwise since it's use at this stage of the game is for getting non 5★ SGs.
-
 ### How much higher is fairy rate-up?
 
 > <iframe width="100%" height="500" src="https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI/preview?pli=1" frameborder="0">Redditor u/ConductorBichir's list.</iframe>

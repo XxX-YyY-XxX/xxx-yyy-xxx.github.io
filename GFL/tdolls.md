@@ -2,18 +2,6 @@
 
 # Tactical Dolls
 
-### Is XXX doll good?
-
-> [GFC Doll Analytics.](https://docs.google.com/spreadsheets/d/10LJdksnM3zipOb72IneJD7WVp3765JYJEGg0LnodzDI) If you don't know how to navigate this one, you're not alone.
->
-> [Matsuda Quips.](https://gfl.matsuda.tips/dolls/)
->
-> [Gamepress Overview.](https://www.gamepress.gg/girlsfrontline/tier-list)
->
-> [KR Wiki.](https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0/%EC%9D%B8%ED%98%95%EB%8F%84%EA%B0%90)
->
-> [Fatalchapter's bilibili guide.](https://www.bilibili.com/read/readlist/rl100361) Updated up to Jashin dolls. 
-
 ### Which dolls should I duplicate?
 
 > [Matsuda Notes.](https://gfl.matsuda.tips/post/worthwhiledupes)
@@ -165,3 +153,7 @@
 ### How do I need to build Vector to no damage 13-4?
 
 > [tempkaridc calculator.](https://tempkaridc.github.io/gf/vec)
+
+### How to effectively CE Stack my echelon?
+
+> [Reddit link.](https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i0s9044/)

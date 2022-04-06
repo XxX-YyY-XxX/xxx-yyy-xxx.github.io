@@ -1,6 +1,5 @@
 const dataTags = {
     EMPTY : 'Others',               //Default tag if I dunno what to put.
-    SF : 'SangvisFerri',            //Mainly involves SF. Might phase out.
     ACCT : 'AccountManagement',
     TECH : 'Troubleshooting',       //For resolving issues that shouldn't even happen.
     '3P' : 'ThirdParty',            //Non-dev-made applications that are recommended to use. Safe until said otherwise.
@@ -35,8 +34,11 @@ const dataTags = {
     EVENT : 'StoryEvents',          //For questions that apply to Major, Collab, and Seasonal Events.
     MAP : 'FieldMap',               //Node-based overworld.
     PROD : 'FactoryProduction',
+    SIDE : 'SideStory',             //Extra stories.
 };
 Object.freeze(dataTags)
+
+const star = '★';
 
 function image(link, onHover = '', onLoadFail = 'Image loading failed.') {
     return `<img src="${link}" alt="${onLoadFail}" ${onHover ? `title="${onHover}"` : ''}>`
@@ -58,16 +60,12 @@ function strikethrough(string) {
     return `<del>${string}</del>`;
 }
 
-function importance(reasoning) {
-    return `<br>Importance: ${reasoning}`;
-}
-
 const cardData = [
     {
         questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
         answers : `${image('/GFL/assets/images/SFEnemy.png')}<br>
         Note that Jupiter Cannons count as unarmored machine type.`,
-        tags : [dataTags.SF]
+        tags : [dataTags.ENEMY]
     },
     {
         questions : `Will there be problems with switching between multiple devices regularly?`,
@@ -93,8 +91,8 @@ const cardData = [
     },
     {
         questions : `How do I get more Quick Training Contracts?`,
-        answers : `Monthlies only.`,
-        tags : [dataTags.RSC]
+        answers : `Monthlies and Keycard Event.`,
+        tags : [dataTags.RSC, dataTags.MINI]
     },
     {
         questions : `I can't access the new chapter even though I already cleared the prerequisite map.`,
@@ -154,8 +152,7 @@ const cardData = [
         answers : `Kiting, in general, is the method of moving your tanks rightwards to make the enemy aim at them then moving leftwards to make the enemy walk towards you, while your DPS constantly shoots them. This is effective because most enemies have aim time where they do nothing, and range where you have to be in their sights to start aiming. Therefore, lengthening the lifespans of your dolls, especially the tanks.<br>
         ${link('GFC guide.','https://www.gflcorner.com/battle-controls/')}<br>
         ${link('Mitsu video guide.', 'https://youtu.be/ITUtRuF4TLY')}<br>
-        ${link(`u/Reikyu09's reddit post.`, 'https://redd.it/8o18an')}<br>
-        ${importance('Enables late-game strategies beyond just strong armory.')}`,
+        ${link(`u/Reikyu09's reddit post.`, 'https://redd.it/8o18an')}`,
         tags : [dataTags.BATTLE, dataTags.IMPT]
     },
     {
@@ -181,7 +178,7 @@ const cardData = [
         tags : [dataTags.SYSMECH]
     },
     {
-        questions : `Are there any general guides for Protocol Assimilation/Coalition Units?`,
+        questions : `Are there any general guides for Protocol Assimilation/Coalition Units/SF Capture?`,
         answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
         ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-first-impressions-revamped')}`,
@@ -240,14 +237,13 @@ const cardData = [
         questions : `Is there any way to reset my battles so I can get a win?`,
         answers : `Turn off WiFi during battle. You can still finish the fight with no connection. Though be wary of connection timeouts so do it near the end.<br>
         If you don't like the result or you lost, exit client, turn on WiFi, re-enter client, take the fight again.<br>
-        If satisfied ${strikethrough('or saving your sanity')}, turn on WiFi after the battle finished.<br>
-        ${importance('Enables fail-safe for harder than hard fights.')}`,
+        If satisfied ${strikethrough('or saving your sanity')}, turn on WiFi after the battle finished.`,
         tags : [dataTags.BATTLE, dataTags.IMPT]
     },
     {
-        questions : `Is there a way to know the initially deployed enemy units and map layout?`,
+        questions : `Is there a way to know the map layout and its spawnable enemy units?`,
         answers : `${link('GFLMaps site.', 'https://pengupengupengu.github.io/gflmaps/')}`,
-        tags : [dataTags["3P"], dataTags.MAP]
+        tags : [dataTags["3P"], dataTags.MAP, dataTags.ENEMY]
     },
     {
         questions : `How can I save the enemy composition for later practice?`,
@@ -268,6 +264,40 @@ const cardData = [
         questions : `Is there a voodoo recipe for *insert pennies here*?`,
         answers : `${link('Github Database.', 'https://gf-db.github.io/')} Freedom of information, just add net connection.`,
         tags : [dataTags.PROD]
+    },
+    {
+        questions : `Is there a way for my game to feel smoother?`,
+        answers : `${link('Decompressed obb.', 'https://redd.it/mroqui')} Removes damage numbers, the main source of in-battle lag.`,
+        tags : [dataTags.BATTLE]
+    },
+    {
+        questions : `What's the Fire Control Component used for?`,
+        answers : `Upgrading 5${star} dolls to 6${star} through modding.`,
+        tags : [dataTags.RSC, dataTags.MOD, dataTags.TDOLL]
+    },
+    {
+        questions : `What is Bookshelf of Memories?`,
+        answers : `Sidestories for the featured dolls. Rewards Friend Gossips or Unity Skills.`,
+        tags : [dataTags.SIDE]
+    },
+    {
+        questions : `What is Central Data for?`,
+        answers : `Unlocking the corresponding FST, promoting said FST, and used as a Data Patch if 5${star}.`,
+        tags : [dataTags.RSC, dataTags.HOC]
+    },
+    {
+        questions : `Is XXX doll good?`,
+        answers : `${link('GFC Doll Analytics.', 'https://docs.google.com/spreadsheets/d/10LJdksnM3zipOb72IneJD7WVp3765JYJEGg0LnodzDI')}<br>
+        ${link('Matsuda Quips.', 'https://gfl.matsuda.tips/dolls/')}<br>
+        ${link('Gamepress Overview.', 'https://www.gamepress.gg/girlsfrontline/tier-list')}<br>
+        ${link('KR Wiki.', 'https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0/%EC%9D%B8%ED%98%95%EB%8F%84%EA%B0%90')}<br>
+        ${link(`Fatalchapter's bilibili guide.`, 'https://www.bilibili.com/read/readlist/rl100361')} Updated up to Jashin dolls.`,
+        tags : [dataTags.TDOLL, dataTags.NEWB]
+    },
+    {
+        questions : `When should I do T-Doll Heavy Production?`,
+        answers : `Preferably during rate-ups due to its high costs. Low priority otherwise since it's use at this stage of the game is for getting non-5${star} SGs and them not being widely used.`,
+        tags : [dataTags.TDOLL, dataTags.PROD]
     },
     {
         questions : ``,
