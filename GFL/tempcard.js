@@ -1,5 +1,5 @@
 const dataTags = {
-    EMPTY : 'Others',               //Default tag if I dunno what to put.
+    EMPTY : 'Others',               //Default tag if I dunno what to put. Probably useless, but just in case.
     ACCT : 'AccountManagement',
     TECH : 'Troubleshooting',       //For resolving issues that shouldn't even happen.
     '3P' : 'ThirdParty',            //Non-dev-made applications that are recommended to use. Safe until said otherwise.
@@ -9,7 +9,7 @@ const dataTags = {
     NEWB : 'NewbieGuide',           //Things new/early-game players should know.
     PRIME : 'TopicPrimer',          //Explanation of the specific system it's paired with. Usually made up of links. Must be the first box of it's paired tag.
     MAIN : 'CombatMissions',        //Main missions aka Chapters.
-    EMU : 'Emulators',
+    EMU : 'Emulators',              //Anytihing related to emulators.
     TDOLL : 'TacticalDolls',        //Anything that directly involves Tactical Dolls.
     EQUIP : 'Equipments',           //Attachments on units.
     APPLE : 'AppleDevices',         //Anything primarily concerning iOS devices.
@@ -18,12 +18,12 @@ const dataTags = {
     THEATER : 'Theater',
     LOGI : 'Logistics',
     BATTLE : 'Skirmishes',          //The battle mode where everyone shoots at one another.
-    IMPT : 'Important',             //Things new players would need for late-game. Append answers with 'Importance:' and an explanation why.
+    IMPT : 'Important',             //Things new players would need for late-game. Mostly consists of things not explained by the game.
     EXPED : 'ForwardBasecamp',
     SYSMECH : 'SystemMechanics',    //Explanation on underlying mechanics of the game.
     PA : 'ProtocolAssimilation',    //PA pulling and coalition drills.
     COALITION : 'CoalitionUnits',   //PA counterpart of Tactical Dolls.
-    ENEMY : 'EnemyUnits',
+    ENEMY : 'EnemyUnits',           //For things that primarily interact with enemy units.
     FAIRY : 'Fairies',
     HOC : 'HeavyOrdnanceCorps',
     FST : 'FireSupportTeam',        //Rockets and mortars, the first of the HOC.
