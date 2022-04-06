@@ -227,7 +227,7 @@ const cardData = [
         answers : `Just doll levels.<br>
         ${link('Matsuda formula.', 'https://gfl.matsuda.tips/post/logistics1')} Remember to floor the mean average for a more accurate number.`,
         tags : [dataTags.LOGI, dataTags.TDOLL]
-    },  //Ask if floored after + 15 for great success purposes.
+    },
     {
         questions : `I've heard of GFAlarm. Is it safe to use?`,
         answers : `${link('Gamepress breakdown.', 'https://gamepress.gg/girlsfrontline/how-use-gfalarm-girls-frontline-alarm')}`,
@@ -238,7 +238,7 @@ const cardData = [
         answers : `Turn off WiFi during battle. You can still finish the fight with no connection. Though be wary of connection timeouts so do it near the end.<br>
         If you don't like the result or you lost, exit client, turn on WiFi, re-enter client, take the fight again.<br>
         If satisfied ${strikethrough('or saving your sanity')}, turn on WiFi after the battle finished.`,
-        tags : [dataTags.BATTLE, dataTags.IMPT]
+        tags : [dataTags.BATTLE]
     },
     {
         questions : `Is there a way to know the map layout and its spawnable enemy units?`,
@@ -298,6 +298,11 @@ const cardData = [
         questions : `When should I do T-Doll Heavy Production?`,
         answers : `Preferably during rate-ups due to its high costs. Low priority otherwise since it's use at this stage of the game is for getting non-5${star} SGs and them not being widely used.`,
         tags : [dataTags.TDOLL, dataTags.PROD]
+    },
+    {
+        questions : `How do I fill up/unlock enemies in the Enemy Index?`,
+        answers : `Just fight them. Win or lose, we get them.`,
+        tags : [dataTags.ENEMY]
     },
     {
         questions : ``,
