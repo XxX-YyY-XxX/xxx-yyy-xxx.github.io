@@ -279,7 +279,7 @@ const cardData = [
         questions : `What is Bookshelf of Memories?`,
         answers : `Sidestories for the featured dolls. Rewards Friend Gossips or Unity Skills.`,
         tags : [dataTags.SIDE]
-    },
+    },  //Get Friend Gossips list and Unity Skill pairings.
     {
         questions : `What is Central Data for?`,
         answers : `Unlocking the corresponding FST, promoting said FST, and used as a Data Patch if 5${star}.`,
