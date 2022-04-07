@@ -30,12 +30,6 @@
 
 > [Imgur album.](https://imgur.com/a/JYEgQBO)
 
-### How do I use these new equipment properly?
-
-> [u/BigStupidJellyfish_'s general equip guide.](https://big-stupid-jellyfish.github.io/GFMath/pages/newquip)
->
-> [General equipment infographic.](/GFL/assets/images/EquipInfograph.png)
-
 ### How many pieces of each equipment should I keep?
 
 > Estimates...
@@ -63,3 +57,7 @@
 > IOP Maximum Ammo Box                        AmmoBox     10
 > Type 3 Armor Plate                          Armor       10
 > Thermoptic Camouflage Cape                  Cape        20
+
+### How do I use these new equipment properly?
+
+> [u/BigStupidJellyfish_'s general equip guide.](https://big-stupid-jellyfish.github.io/GFMath/pages/newquip)

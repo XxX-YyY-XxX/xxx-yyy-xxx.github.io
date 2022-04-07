@@ -60,12 +60,6 @@
 
 > ![](/GFL/assets/images/EXPCutoff.png "EXP gains per map and their no-penalty threshold")
 
-### What scope should I use on ARs?
-
-> Crit scope at day, PEQ at night. ASVAL mod is just crit scope mostly. STAR and SOP has crit scope as default and holo(SPEQ)/PEQ during day/night.
-
-@ Fix
-
 ### How do you set L2Ds for adjutants?
 
 > Does her costume have one? Is she strictly on a single adjutant slot? Is the L2D toggle in settings on? Is the L2D toggle in adjutant postioning on?
@@ -97,12 +91,6 @@
 ### Why is there a blue negative number in my doll stat page?
 
 > Negative affection because you let them die. Apologize and gib kek or 4evr suffr.
-
-### How do I maximize the efficiency of my RFHG echelon's ROF?
-
-> [...I'll just leave it here.](https://old.reddit.com/r/girlsfrontline/comments/j1v3lw/weekly_commanders_lounge_september_29_2020/g77fkvr/)
-
-@ Fix <!-- [](#damage-sim) -->
 
 ### How do I see a detailed version of a doll's stat?
 
@@ -153,6 +141,8 @@
 ### How do I need to build Vector to no damage 13-4?
 
 > [tempkaridc calculator.](https://tempkaridc.github.io/gf/vec)
+>
+> [xVarz spreadsheet for different draggers.](https://docs.google.com/spreadsheets/d/1cuZPF-r1e6TyE4Rj2DNkSEova7Tc-Cczs7RaoAK2vII)
 
 ### How to effectively CE Stack my echelon?
 

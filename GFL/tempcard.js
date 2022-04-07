@@ -48,16 +48,17 @@ function link(linkText, link) {
     return `<a href="${link}">${linkText}</a>`;
 }
 
-function orderedList() {
-    return `<ol>${Array.from(arguments).map(val => `<li>${val}</li>`).join('')}</ol>`;
-}
-
-function unorderedList() {
-    return `<ul>${Array.from(arguments).map(val => `<li>${val}</li>`).join('')}</ul>`;
+function list(ordered, ...any) {
+    const htmlElem = ordered ? 'ol' : 'ul';
+    return `<${htmlElem}>${any.map(val => `<li>${val}</li>`).join('')}</${htmlElem}>`;
 }
 
 function strikethrough(string) {
     return `<del>${string}</del>`;
+}
+
+function code(string) {
+    return `<code>${string}<code>`;
 }
 
 const cardData = [
@@ -101,7 +102,7 @@ const cardData = [
     },
     {
         questions : `Which emulators are good for GFL?`,
-        answers : `${orderedList('Mumu.', 'Memu.', 'LDPlayer.', 'Nox.', 'Bluestacks.')}`,
+        answers : `${list(true, 'Mumu.', 'Memu.', 'LDPlayer.', 'Nox.', 'Bluestacks.')}`,
         tags : [dataTags.EMU]
     },
     {
@@ -143,7 +144,8 @@ const cardData = [
     {
         questions : `Is there a list of which logistics to do if I want to prioritize certain resources?`,
         answers : `${link('GFC GDoc.', 'https://docs.google.com/spreadsheets/d/1ah2JO6ggWuVaBho9yxgDMC-ucEKA8C42SBkjIlnIcWk')} Up to Chapter 11.<br>
-        ${link(`Redditor u/elgatoroid's calculator.`, 'https://gfl-logistics.neko.gg/')} Up to Chapter 11.<br>
+        ${link("Redditor u/elgatoroid's calculator.", 'https://gfl-logistics.neko.gg/')} Up to Chapter 11.<br>
+        ${link('GFGFork site.', 'https://gfgfork.github.io/gf/main')} Up to Chapter 12.<br>
         ${link('Tempkaridc calculator.', 'https://tempkaridc.github.io/gf/')} Up to Chapter 13.`,
         tags : [dataTags.LOGI, dataTags.RSC]
     },
@@ -152,7 +154,7 @@ const cardData = [
         answers : `Kiting, in general, is the method of moving your tanks rightwards to make the enemy aim at them then moving leftwards to make the enemy walk towards you, while your DPS constantly shoots them. This is effective because most enemies have aim time where they do nothing, and range where you have to be in their sights to start aiming. Therefore, lengthening the lifespans of your dolls, especially the tanks.<br>
         ${link('GFC guide.','https://www.gflcorner.com/battle-controls/')}<br>
         ${link('Mitsu video guide.', 'https://youtu.be/ITUtRuF4TLY')}<br>
-        ${link(`u/Reikyu09's reddit post.`, 'https://redd.it/8o18an')}`,
+        ${link("u/Reikyu09's reddit post.", 'https://redd.it/8o18an')}`,
         tags : [dataTags.BATTLE, dataTags.IMPT]
     },
     {
@@ -208,8 +210,8 @@ const cardData = [
         ${link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Heavy_Ordnance_Corps')}<br>
         ${link('Matsuda Guide.', 'https://gfl.matsuda.tips/post/hocs')}<br>
         ${link('GFC Guide.', 'https://www.gflcorner.com/hoc-guide-by-gfc/')}<br>
-        ${link(`Ceia's Video Guide.`, 'https://youtu.be/rsFyXRDAi6I')}<br>
-        ${link(`Redditor u/Xealiouth's Guide.`, 'https://redd.it/95nrou')}`,
+        ${link("Ceia's Video Guide.", 'https://youtu.be/rsFyXRDAi6I')}<br>
+        ${link("Redditor u/Xealiouth's Guide.", 'https://redd.it/95nrou')}`,
         tags : [dataTags.HOC, dataTags.PRIME]
     },
     {
@@ -227,7 +229,7 @@ const cardData = [
         answers : `Just doll levels.<br>
         ${link('Matsuda formula.', 'https://gfl.matsuda.tips/post/logistics1')} Remember to floor the mean average for a more accurate number.`,
         tags : [dataTags.LOGI, dataTags.TDOLL]
-    },
+    },  //Get rate-up formula
     {
         questions : `I've heard of GFAlarm. Is it safe to use?`,
         answers : `${link('Gamepress breakdown.', 'https://gamepress.gg/girlsfrontline/how-use-gfalarm-girls-frontline-alarm')}`,
@@ -248,11 +250,12 @@ const cardData = [
     {
         questions : `How can I save the enemy composition for later practice?`,
         answers : `Add Target<br>
-        ${unorderedList(`Long press the enemy on the map and you'll see the button on the top-left.`, 'Pause while in battle to see the button on the bottom-left.', 'Button appears on the bottom-left after losing a battle.')}<br>
+        ${list(false, "Long press the enemy on the map and you'll see the button on the top-left.", 'Pause while in battle to see the button on the bottom-left.', 'Button appears on the bottom-left after losing a battle.')}<br>
         GFAlarm<br>
-        ${unorderedList(`Use GFLMaps to take the enemy IDs you want to fight and enter them in the Custom Target Train under Packet Forger.<br>
+        ${list(false, `Use GFLMaps to take the enemy IDs you want to fight and enter them in the Custom Target Train under Packet Forger.<br>
         ${image('/GFL/assets/images/GFAlarmCTT.png')}<br>
-        Works for comps that has been loaded into the client.`)}`,
+        Works for comps that has been loaded into the client.`)}<br>
+        ${link('Matsuda recommendations.', 'https://gfl.matsuda.tips/post/everything-sucks-forever')}`,
         tags : [dataTags.ENEMY, dataTags.BATTLE, dataTags.MAP, dataTags["3P"]]
     },
     {
@@ -291,7 +294,7 @@ const cardData = [
         ${link('Matsuda Quips.', 'https://gfl.matsuda.tips/dolls/')}<br>
         ${link('Gamepress Overview.', 'https://www.gamepress.gg/girlsfrontline/tier-list')}<br>
         ${link('KR Wiki.', 'https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0/%EC%9D%B8%ED%98%95%EB%8F%84%EA%B0%90')}<br>
-        ${link(`Fatalchapter's bilibili guide.`, 'https://www.bilibili.com/read/readlist/rl100361')} Updated up to Jashin dolls.`,
+        ${link("Fatalchapter's bilibili guide.", 'https://www.bilibili.com/read/readlist/rl100361')} Updated up to Jashin dolls.`,
         tags : [dataTags.TDOLL, dataTags.NEWB]
     },
     {
@@ -303,6 +306,18 @@ const cardData = [
         questions : `How do I fill up/unlock enemies in the Enemy Index?`,
         answers : `Just fight them. Win or lose, we get them.`,
         tags : [dataTags.ENEMY]
+    },
+    {
+        questions : `What equipments should I use on my dolls for battle purposes?`,
+        answers : `${image('/GFL/assets/images/EquipInfograph.png')}<br>
+        AS-Val at night follows the day schema. M4 SOPMOD II is SPEQ + VFL/PEQ. M16 is SPEQ + Exo/Armor.`,
+        tags : [dataTags.TDOLL, dataTags.EQUIP]
+    },
+    {
+        questions : `How do I maximize the efficiency of my RFHG echelon's ROF?`,
+        answers : `${link("u/BigStupidJellyfish_'s ROF calc.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/rof-calc')}<br>
+        ${link('GFC Spreadsheet.', 'https://docs.google.com/spreadsheets/d/1k74SCGGMHtwbl8gmTaETLsa8t12A7dWdj0V1tjdMD4Y')}`,
+        tags : [dataTags.TDOLL, dataTags.BATTLE]
     },
     {
         questions : ``,
