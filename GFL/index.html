@@ -132,7 +132,7 @@
                 </label>` 
             ).join(' ');
 
-            const searchParams = new URLSearchParams(location.search)
+            const searchParams = new URLSearchParams(location.search);
 
             /* if (sessionStorage.outputCards == null) {
                 cardField.innerHTML = randomCards();
@@ -144,10 +144,8 @@
 
             if (searchParams.has('search') || searchParams.has('tags')) {       //Test
                 cardField.innerHTML = searchCards();
-                //searchTextField.value = 'searched';
             } else {
                 cardField.innerHTML = randomCards();
-                //searchTextField.value = 'randomed';
             }
 
             function textMode() {

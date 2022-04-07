@@ -62,12 +62,12 @@ function code(string) {
     return `<code>${string}<code>`;
 }
 
-function googledoc(docLink, attributes = {}) {
-    var output = '';
+function googledoc(docLink/* , attributes = {} */) {
+    /* var output = '';
     for (const [keys, values] of attributes.entries()) {
         output += `${keys}="${values}"`;
-    }
-    return `<iframe class="gdoc" ${output} src="${docLink}/preview?pli=1" frameborder="0"></iframe>`
+    } */
+    return `<iframe class="gdoc" src="${docLink}/preview?pli=1" frameborder="0"></iframe>`
 }
 
 const cardData = [
@@ -341,9 +341,9 @@ const cardData = [
     },
     {
         questions : `How high is fairy rate-up?`,
-        answers : `${googledoc('https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI', {'style' : 'max-height=600px;'})}`,
+        answers : `${googledoc('https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI')}`,
         tags : [dataTags.FAIRY, dataTags.PROD]
-    },  //Redditor u/ConductorBichir's list IIRC
+    },  //Redditor u/ConductorBichir's list IIRC, , {'style' : 'max-height=600px;'}
     {
         questions : ``,
         answers : ``,
