@@ -62,8 +62,12 @@ function code(string) {
     return `<code>${string}<code>`;
 }
 
-function googledoc(docLink) {
-    return `<iframe class="gdoc" src="${docLink}/preview?pli=1" frameborder="0"></iframe>`
+function googledoc(docLink, attributes = {}) {
+    var output = '';
+    for (const [keys, values] of attributes.entries()) {
+        output += `${keys}="${values}"`;
+    }
+    return `<iframe class="gdoc" ${output} src="${docLink}/preview?pli=1" frameborder="0"></iframe>`
 }
 
 const cardData = [
@@ -315,8 +319,8 @@ const cardData = [
     },
     {
         questions : `What equipments should I use on my dolls for battle purposes?`,
-        answers : `${image('/GFL/assets/images/EquipInfograph.png')}<br>
-        AS-Val at night follows the day schema. M4 SOPMOD II is SPEQ + VFL/PEQ. M16 is SPEQ + Exo/Armor.`,
+        answers : `${link(image('/GFL/assets/images/EquipInfograph.png'), 'https://big-stupid-jellyfish.github.io/GFMath/pages/newquip')}<br>
+        AS-Val at night follows the day schema. SOP is SPEQ + VFL/PEQ. M16 is SPEQ + Exo/Armor.`,
         tags : [dataTags.TDOLL, dataTags.EQUIP]
     },
     {
@@ -337,7 +341,7 @@ const cardData = [
     },
     {
         questions : `How high is fairy rate-up?`,
-        answers : `${googledoc('https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI')}`,
+        answers : `${googledoc('https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI', {'style' : 'max-height=600px;'})}`,
         tags : [dataTags.FAIRY, dataTags.PROD]
     },  //Redditor u/ConductorBichir's list IIRC
     {
