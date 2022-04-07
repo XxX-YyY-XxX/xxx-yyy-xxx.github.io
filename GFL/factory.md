@@ -2,10 +2,6 @@
 
 # Factory Production
 
-### How much higher is fairy rate-up?
-
-> <iframe width="100%" height="500" src="https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI/preview?pli=1" frameborder="0">Redditor u/ConductorBichir's list.</iframe>
-
 ### How can I save my own voodoo recipe?
 
 > Craft from production using your own recipe and take the item. Wait for 10 minutes for the voodoo list to refresh. Look for it.

@@ -62,6 +62,10 @@ function code(string) {
     return `<code>${string}<code>`;
 }
 
+function googledoc(docLink) {
+    return `<iframe class="gdoc" src="${docLink}/preview?pli=1" frameborder="0"></iframe>`
+}
+
 const cardData = [
     {
         questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
@@ -272,7 +276,7 @@ const cardData = [
     {
         questions : `Is there a way for my game to feel smoother?`,
         answers : `${link('Decompressed obb.', 'https://redd.it/mroqui')} Removes damage numbers, the main source of in-battle lag.<br>
-        ${link('DIY compression.', 'https://www.reddit.com/r/girlsfrontline/comments/lvwwtv/weekly_commanders_lounge_march_02_2021/gpugenl/')}`,
+        ${link('DIY decompression.', 'https://www.reddit.com/r/girlsfrontline/comments/lvwwtv/weekly_commanders_lounge_march_02_2021/gpugenl/')}`,
         tags : [dataTags.BATTLE]
     },
     {
@@ -331,6 +335,11 @@ const cardData = [
         answers : `${link('Matsuda notes.', 'https://gfl.matsuda.tips/post/worthwhiledupes')}`,
         tags : [dataTags.TDOLL]
     },
+    {
+        questions : `How high is fairy rate-up?`,
+        answers : `${googledoc('https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI')}`,
+        tags : [dataTags.FAIRY, dataTags.PROD]
+    },  //Redditor u/ConductorBichir's list IIRC
     {
         questions : ``,
         answers : ``,
