@@ -144,8 +144,10 @@
 
             if (searchParams.has('search') || searchParams.has('tags')) {       //Test
                 cardField.innerHTML = searchCards();
+                searchTextField.value = 'searched';
             } else {
                 cardField.innerHTML = randomCards();
+                searchTextField.value = 'randomed';
             }
 
             function textMode() {
