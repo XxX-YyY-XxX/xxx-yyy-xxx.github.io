@@ -123,6 +123,7 @@
         <script type="text/javascript" src="/GFL/tempcard.js"></script>
         <script>
             const searchTextField = document.getElementById('search-text');
+            const searchParams = new URLSearchParams(location.search);
             const cardField = document.getElementById('qna');
             const questionCards = cardData;
 
@@ -132,17 +133,7 @@
                 </label>` 
             ).join(' ');
 
-            const searchParams = new URLSearchParams(location.search);
-
-            /* if (sessionStorage.outputCards == null) {
-                cardField.innerHTML = randomCards();
-            } else if (sessionStorage.outputCards != null) {
-                cardField.innerHTML = searchCards();
-            } else {                                                            //Catch
-                cardField.innerHTML = 'Weird jank: ' + sessionStorage.outputCards;
-            } */
-
-            if (searchParams.has('search') || searchParams.has('tags')) {       //Test
+            if (searchParams.has('search') || searchParams.has('tags')) {
                 cardField.innerHTML = searchCards();
             } else {
                 cardField.innerHTML = randomCards();
@@ -174,26 +165,23 @@
                 }
             }
 
-            function findCards() {                                              //Runs on submit
-                //sessionStorage.outputCards = searchTextField.value;
-                if (searchTextField.value.includes('Tags:')) {
+            function findCards() {
+                const searchValue = searchTextField.value;
+                if (searchValue.includes('Tags:')) {
                     searchParams.delete('search');
-                    searchParams.set('tags', searchTextField.value.slice(6));
+                    searchParams.set('tags', searchValue.slice(6));
                 } else {
                     searchParams.delete('tags');
-                    searchParams.set('search', searchTextField.value);
+                    searchParams.set('search', searchValue);
                 }
                 window.open(location.pathname + '?' + searchParams);
                 window.close();
             }
 
             function searchCards() {
-                //const searchText = sessionStorage.outputCards;
                 var output = '';
 
-                //if (searchText.includes('Tags:')) {
                 if (searchParams.has('tags')) {
-                    //const cardTags = searchText.replace('Tags:', '').split(' ').filter(Boolean);
                     const cardTags = searchParams.get('tags').split(' ').filter(Boolean);
                     if (cardTags) {
                         var matchCheck = function(card) {
@@ -203,10 +191,9 @@
                         return 'Empty search.';
                     }
                 } else {
-                    //if (searchText) {
-                    if (searchParams.get('search')) {
-                        //const phrase = new RegExp(searchText, 'i');
-                        const phrase = new RegExp(searchParams.get('search'), 'i');
+                    let searchText = searchParams.get('search');
+                    if (searchText) {
+                        const phrase = new RegExp(searchText, 'i');
                         var matchCheck = function(card) {
                             return phrase.test(card.questions) || phrase.test(RemoveHTMLTag(card.answers));
                         }
@@ -226,7 +213,7 @@
 
             function randomCards() {
                 const maxValue = questionCards.length - 1;
-                var indices = new Set();
+                const indices = new Set();
                 var output = '';
 
                 do {
