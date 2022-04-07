@@ -62,12 +62,13 @@ function code(string) {
     return `<code>${string}<code>`;
 }
 
-function googledoc(docLink/* , attributes = {} */) {
+function googledoc(docLink) {
+    /* , attributes = {} */
     /* var output = '';
     for (const [keys, values] of attributes.entries()) {
         output += `${keys}="${values}"`;
     } */
-    return `<iframe class="gdoc" src="${docLink}/preview?pli=1" frameborder="0"></iframe>`
+    return `<iframe class="gdoc" src="${docLink}/preview?pli=1" frameborder="0"></iframe>`;
 }
 
 const cardData = [
@@ -116,7 +117,7 @@ const cardData = [
     },
     {
         questions : `What do I need to consider when using the #2 Chip equipment?`,
-        answers : `${link(image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png', '', `u/BigStupidJellyfish_'s chip usage flowchart.`), 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')}`,
+        answers : `${link(image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png', '', "u/BigStupidJellyfish_'s chip usage flowchart."), 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')}`,
         tags : [dataTags.TDOLL, dataTags.EQUIP]
     },
     {
