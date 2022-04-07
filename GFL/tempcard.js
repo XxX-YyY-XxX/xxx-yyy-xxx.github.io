@@ -35,6 +35,7 @@ const dataTags = {
     MAP : 'FieldMap',               //Node-based overworld.
     PROD : 'FactoryProduction',
     SIDE : 'SideStory',             //Extra stories.
+    SKILL : 'Skills',
 };
 Object.freeze(dataTags)
 
@@ -252,7 +253,7 @@ const cardData = [
         answers : `Add Target<br>
         ${list(false, "Long press the enemy on the map and you'll see the button on the top-left.", 'Pause while in battle to see the button on the bottom-left.', 'Button appears on the bottom-left after losing a battle.')}<br>
         GFAlarm<br>
-        ${list(false, `Use GFLMaps to take the enemy IDs you want to fight and enter them in the Custom Target Train under Packet Forger.<br>
+        ${list(false, `Use GFLMaps to take the enemy IDs you want to fight and enter them in the Custom Target Train under Packet Forger, with IDs separated by commas.<br>
         ${image('/GFL/assets/images/GFAlarmCTT.png')}<br>
         Works for comps that has been loaded into the client.`)}<br>
         ${link('Matsuda recommendations.', 'https://gfl.matsuda.tips/post/everything-sucks-forever')}`,
@@ -270,7 +271,8 @@ const cardData = [
     },
     {
         questions : `Is there a way for my game to feel smoother?`,
-        answers : `${link('Decompressed obb.', 'https://redd.it/mroqui')} Removes damage numbers, the main source of in-battle lag.`,
+        answers : `${link('Decompressed obb.', 'https://redd.it/mroqui')} Removes damage numbers, the main source of in-battle lag.<br>
+        ${link('DIY compression.', 'https://www.reddit.com/r/girlsfrontline/comments/lvwwtv/weekly_commanders_lounge_march_02_2021/gpugenl/')}`,
         tags : [dataTags.BATTLE]
     },
     {
@@ -318,6 +320,16 @@ const cardData = [
         answers : `${link("u/BigStupidJellyfish_'s ROF calc.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/rof-calc')}<br>
         ${link('GFC Spreadsheet.', 'https://docs.google.com/spreadsheets/d/1k74SCGGMHtwbl8gmTaETLsa8t12A7dWdj0V1tjdMD4Y')}`,
         tags : [dataTags.TDOLL, dataTags.BATTLE]
+    },
+    {
+        questions : `How do I get some Extra Potential Energy for Coalition Drills?`,
+        answers : `Shop.`,
+        tags : [dataTags.RSC, dataTags.PA]
+    },
+    {
+        questions : `Which dolls should I duplicate?`,
+        answers : `${link('Matsuda notes.', 'https://gfl.matsuda.tips/post/worthwhiledupes')}`,
+        tags : [dataTags.TDOLL]
     },
     {
         questions : ``,

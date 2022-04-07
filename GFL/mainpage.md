@@ -67,4 +67,4 @@
 - Production recipes and heavy construction efficiency.
 
 # Unconfirmed Phased Out
-- [001](/GFL/technical#my-game-freezes-on-a-night-map-what-happened)
+- [001](/univasset/Favicon.png)

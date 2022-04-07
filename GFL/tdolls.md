@@ -2,10 +2,6 @@
 
 # Tactical Dolls
 
-### Which dolls should I duplicate?
-
-> [Matsuda Notes.](https://gfl.matsuda.tips/post/worthwhiledupes)
-
 ### Why are the guns' names excluding their manufacturer names?
 
 > <blockquote class="twitter-tweet"><p lang="en" dir="ltr">We modified some names to avoid licensing risk. We thank you for your understanding.</p>&mdash; Girls&#39; Frontline-EN Official (@GirlsFrontlineE) <a href="https://twitter.com/GirlsFrontlineE/status/1001058278728548354?ref_src=twsrc%5Etfw">May 28, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -147,3 +143,13 @@
 ### How to effectively CE Stack my echelon?
 
 > [Reddit link.](https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i0s9044/)
+
+### What's the best comp for ASVAL MOD?
+
+> [In general, Python for constant damage buff, Nagant Revolver MOD or Fervor Talent for 0th second damage buff, STAR for night self-buff crit, UMP45 for tiles, and whoever else.](https://docs.google.com/spreadsheets/u/0/d/1N6nSGRSXCWSM_x8tipzg80E327VDIlFLgC1dVrwvLXk)
+>
+> [GFAnalysis infographic.](https://www.gflanalysis.com/w/images/thumb/1/1d/Uptime.jpg/1788px-Uptime.jpg)
+
+### What should I know about P90's skill?
+
+> [Google doc.](https://docs.google.com/document/d/1j5YzAAZ-_Q1bXMUvFKGUWnGgqwacatABv0u-MmY0JLw)
