@@ -132,23 +132,24 @@
                 </label>` 
             ).join(' ');
 
-            var searchParams = new URLSearchParams(location.search);
-            
-            /* if (sessionStorage.outputCards == null) {
+            /* const url = new URL(location.href);
+            var searchParams = url.searchParams; */
+
+            if (sessionStorage.outputCards == null) {
                 cardField.innerHTML = randomCards();
             } else if (sessionStorage.outputCards != null) {
                 cardField.innerHTML = searchCards();
             } else {                                                            //Catch
                 cardField.innerHTML = 'Weird jank: ' + sessionStorage.outputCards;
-            } */
+            }
 
-            if (searchParams.has('search') || searchParams.has('tags')) {       //Test
+            /* if (searchParams.has('search') || searchParams.has('tags')) {       //Test
                 cardField.innerHTML = searchCards();
                 searchTextField.value = 'searched';
             } else {
                 cardField.innerHTML = randomCards();
                 searchTextField.value = 'randomed';
-            }
+            } */
 
             function textMode() {
                 document.getElementById('search-text').style.display = 'inline';
@@ -177,24 +178,24 @@
             }
 
             function findCards() {                                              //Runs on submit
-                //sessionStorage.outputCards = searchTextField.value;
-                if (searchTextField.value.includes('Tags:')) {
+                sessionStorage.outputCards = searchTextField.value;
+                /* if (searchTextField.value.includes('Tags:')) {
                     searchParams.delete('search');
                     searchParams.set('tags', searchTextField.value.slice(6));
                 } else {
                     searchParams.delete('tags');
                     searchParams.set('search', searchTextField.value);
-                }
+                } */
             }
 
             function searchCards() {
-                //const searchText = sessionStorage.outputCards;
+                const searchText = sessionStorage.outputCards;
                 var output = '';
 
-                //if (searchText.includes('Tags:')) {
-                if (searchParams.has('tags')) {
-                    //const cardTags = searchText.replace('Tags:', '').split(' ').filter(Boolean);
-                    const cardTags = searchParams.get('tags').split(' ').filter(Boolean);
+                if (searchText.includes('Tags:')) {
+                //if (searchParams.has('tags')) {
+                    const cardTags = searchText.replace('Tags:', '').split(' ').filter(Boolean);
+                    //const cardTags = searchParams.get('tags').split(' ').filter(Boolean);
                     if (cardTags) {
                         var matchCheck = function(card) {
                             return IsSubsetOf(cardTags, card.tags);
@@ -203,10 +204,10 @@
                         return 'Empty search.';
                     }
                 } else {
-                    //if (searchText) {
-                    if (searchParams.get('search')) {
-                        //const phrase = new RegExp(searchText, 'i');
-                        const phrase = new RegExp(searchParams.get('search'), 'i');
+                    if (searchText) {
+                    //if (searchParams.get('search')) {
+                        const phrase = new RegExp(searchText, 'i');
+                        //const phrase = new RegExp(searchParams.get('search'), 'i');
                         var matchCheck = function(card) {
                             return phrase.test(card.questions) || phrase.test(RemoveHTMLTag(card.answers));
                         }
