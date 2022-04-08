@@ -15,3 +15,12 @@
 > G11: 297, 297, 297, 31
 
 @ Clarify
+
+https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i0wr7x1/
+
+https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i0xb1py/
+
+https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i101gqc/
+
+https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i0zwewu/
+

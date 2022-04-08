@@ -36,6 +36,7 @@ const dataTags = {
     PROD : 'FactoryProduction',
     SIDE : 'SideStory',             //Extra stories.
     SKILL : 'Skills',
+    TRIVIA : 'Trivia',              //Things that people shouldn't even be bothered with but, here we are.
 };
 Object.freeze(dataTags)
 

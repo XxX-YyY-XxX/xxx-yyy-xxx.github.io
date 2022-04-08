@@ -107,7 +107,7 @@
                 
                 <label><input type="radio" id="text-input" name="input-type" onclick="textMode()" checked>Search by keyword</label>
                 <label><input type="radio" id="tag-input" name="input-type" onclick="tagMode()">Search by tags</label>
-                <!--  onsubmit="findCards()" -->
+
                 <form>
                     <div id="tags-list"></div>
 
@@ -153,7 +153,6 @@
             function tagMode() {
                 document.getElementById('search-text').style.display = 'none';
                 document.getElementById('tags-list').style.display = 'block';
-                //searchTextField.value = 'Tags:';
                 searchTextField.value = '';
                 searchTextField.name = 'tags'
             }
@@ -161,29 +160,11 @@
             function toggleTag(tagCheckbox) {
                 if (tagCheckbox.checked) {
                     document.getElementById(tagCheckbox.id + '-label').className = 'tags selectedTag';
-                    searchTextField.value += ' ' + tagCheckbox.id;
+                    searchTextField.value += tagCheckbox.id + ' ';
                 } else {
                     document.getElementById(tagCheckbox.id + '-label').className = 'tags unselectedTag';
-                    searchTextField.value = searchTextField.value.replace(' ' + tagCheckbox.id, '')
+                    searchTextField.value = searchTextField.value.replace(tagCheckbox.id + ' ', '')
                 }
-            }
-
-            function findCards() {
-                const searchValue = searchTextField.value;
-                /* const searchOutput = searchValue.includes('Tags:') ? {'tags' : searchValue.slice(6)} : {'search' : searchValue};
-                window.open(location.pathname + '?' + new URLSearchParams(searchOutput)); */
-                if (searchValue.includes('Tags:')) {
-                    //var searchOutput = new URLSearchParams({'tags' : searchValue.slice(6)})
-                    searchParams.delete('search');
-                    searchParams.set('tags', searchValue.slice(6));
-                } else {
-                    //var searchOutput = new URLSearchParams({'search' : searchValue})
-                    searchParams.delete('tags');
-                    searchParams.set('search', searchValue);
-                }
-                window.open(location.pathname + '?' + searchParams);
-                window.close();
-                //history.pushState(null, '', location.pathname + '?' + searchParams);
             }
 
             function searchCards() {
