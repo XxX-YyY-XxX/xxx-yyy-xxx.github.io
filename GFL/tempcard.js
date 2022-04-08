@@ -354,6 +354,12 @@ const cardData = [
         tags : [dataTags.TDOLL, dataTags.MAIN, dataTags.EVENT]
     },
     {
+        questions : `What does the term Limited in dolls in the chapters mean?`,
+        answers : `Only limited to that particular map, nowhere else. Not limited by time, but by place.<br>
+        Unless there's a Rescue Event/Boss Bully, but that's something else.`,
+        tags : [dataTags.MAIN, dataTags.TDOLL]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []

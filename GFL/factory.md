@@ -20,27 +20,8 @@ https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge
 
 https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i0xb1py/
 
-https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i101gqc/
-
 ### Where can I get the limited drop in a particular map?
 
 > Enter the map>Combat Info>Rewards>Tap the one you want to get>Look for glowing enemies in the map>Defeat said enemies. You can also S Rank the map for an additional chance.
 
 @ Visual
-
-### What does the term Limited in dolls in the chapters mean?
-
-> Only limited to that particular map, nowhere else. Not limited by time, but by place.
->
-> Unless there's a Rescue Event/Boss Bully, but that's something else.
-
-
-
-I usually average 100 runs a drop. Also, they're not limited in time. They're limited to that individual mission. G17 farming isn't worth it unless you're a chinese human calculator.
-
-permalinkembedsaveparentreportgive awardreply
-
-[–]ArcticTerra056 1 point 21 days ago 
-Ohhhh, so 1-6 is the only node that Glock 17 will drop from? Can it be made via T-doll production as well or is it literally only from 1-6.
-
-Also I’m just a fan of collecting things, and I like Glocks so I’m morally obligated lmfao.
