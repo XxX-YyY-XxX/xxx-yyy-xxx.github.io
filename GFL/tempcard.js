@@ -351,7 +351,7 @@ const cardData = [
     {
         questions : `What's the drop rate for farmable dolls?`,
         answers : `Limited dolls on chapters have 0.8% drop rate on normal and 1% on emergency. Event farms have around 1%. 5${star} on normal maps have rates way below 1%... usually. Their droprates at Chapter 10 onwards seem to have higher rates.`,
-        tags : []
+        tags : [dataTags.TDOLL, dataTags.MAIN, dataTags.EVENT]
     },
     {
         questions : ``,
