@@ -172,7 +172,7 @@
 
                 if (searchParams.has('tags')) {
                     const cardTags = searchParams.get('tags').split(' ').filter(Boolean);
-                    if (cardTags) {
+                    if (cardTags.length > 0) {
                         var matchCheck = function(card) {
                             return IsSubsetOf(cardTags, card.tags);
                         }
