@@ -345,7 +345,7 @@ const cardData = [
     },
     {
         questions : `How high is fairy rate-up?`,
-        answers : `${googledoc('https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI', 800)}`,
+        answers : `${googledoc('https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI', 586)}`,
         tags : [dataTags.FAIRY, dataTags.PROD]
     },  //Redditor u/ConductorBichir's list IIRC
     {
