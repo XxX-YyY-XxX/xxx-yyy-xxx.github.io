@@ -367,6 +367,16 @@ const cardData = [
         tags : [dataTags.EVENT]
     },
     {
+        questions : `How do I remove HOCs from Target Practice?`,
+        answers : `Unselect them like how you selected them.`,
+        tags : [dataTags.SIMS, dataTags.HOC]
+    },
+    {
+        questions : `How can I save my own voodoo recipe?`,
+        answers : `${list(true, 'Craft from production using your own recipe.', 'Take the item.', 'Wait for 10 minutes for the voodoo list to refresh.', 'Look for it.')}`,
+        tags : [dataTags.PROD]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
