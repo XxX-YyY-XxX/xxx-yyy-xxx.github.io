@@ -107,11 +107,11 @@
                 
                 <label><input type="radio" id="text-input" name="input-type" onclick="textMode()" checked>Search by keyword</label>
                 <label><input type="radio" id="tag-input" name="input-type" onclick="tagMode()">Search by tags</label>
-
-                <form onsubmit="findCards()">
+                <!--  onsubmit="findCards()" -->
+                <form>
                     <div id="tags-list"></div>
 
-                    <input type="text" id="search-text" placeholder="Search...">
+                    <input type="text" id="search-text" placeholder="Search..." name="search">
                     <input type="submit">
                 </form>
 
@@ -143,6 +143,7 @@
                 document.getElementById('search-text').style.display = 'inline';
                 document.getElementById('tags-list').style.display = 'none';
                 searchTextField.value = '';
+                searchTextField.name = 'search';
                 for (const element of Array.from(document.getElementsByClassName('selectedTag'))) {
                     document.getElementById(element.id.replace('-label', '')).checked = false;
                     element.className = 'tags unselectedTag';
@@ -152,7 +153,9 @@
             function tagMode() {
                 document.getElementById('search-text').style.display = 'none';
                 document.getElementById('tags-list').style.display = 'block';
-                searchTextField.value = 'Tags:';
+                //searchTextField.value = 'Tags:';
+                searchTextField.value = '';
+                searchTextField.name = 'tags'
             }
 
             function toggleTag(tagCheckbox) {
