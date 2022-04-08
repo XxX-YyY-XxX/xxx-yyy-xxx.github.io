@@ -27,9 +27,9 @@ const dataTags = {
     FAIRY : 'Fairies',
     HOC : 'HeavyOrdnanceCorps',
     FST : 'FireSupportTeam',        //Rockets and mortars, the first of the HOC.
-    MAJOR : 'MajorEvents',          //Part of the main story. The ones added to the Campaign tab.
+    /* MAJOR : 'MajorEvents',          //Part of the main story. The ones added to the Campaign tab.
     COLLAB : 'Collaboration',
-    SEASON : 'SeasonalEvents',      //Story events that happen each New Year, X-mas, Halloween, etc.
+    SEASON : 'SeasonalEvents',      //Story events that happen each New Year, X-mas, Halloween, etc. */
     MINI : 'MiniEvents',            //Bingo, Point Event, etc.
     EVENT : 'StoryEvents',          //For questions that apply to Major, Collab, and Seasonal Events.
     MAP : 'FieldMap',               //Node-based overworld.
@@ -358,6 +358,13 @@ const cardData = [
         answers : `Only limited to that particular map, nowhere else. Not limited by time, but by place.<br>
         Unless there's a Rescue Event/Boss Bully, but that's something else.`,
         tags : [dataTags.MAIN, dataTags.TDOLL]
+    },
+    {
+        questions : `Do events get a rerun? And if so, when?`,
+        answers : `Major events get a permanent rerun called Campaign Missions.<br>
+        Seasonal events get one when it's their time.<br>
+        Collabs are subject to their holders whims.`,
+        tags : [dataTags.EVENT]
     },
     {
         questions : ``,
