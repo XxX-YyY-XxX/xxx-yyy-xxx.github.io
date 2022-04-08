@@ -16,10 +16,6 @@
 
 @ Clarify
 
-https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i0wr7x1/
-
-https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i0xb1py/
-
 ### Where can I get the limited drop in a particular map?
 
 > Enter the map>Combat Info>Rewards>Tap the one you want to get>Look for glowing enemies in the map>Defeat said enemies. You can also S Rank the map for an additional chance.
