@@ -64,13 +64,12 @@ function code(string) {
     return `<code>${string}<code>`;
 }
 
-function googledoc(docLink) {
-    /* , max-height */
-    /* var output = '';
-    for (const [keys, values] of attributes.entries()) {
-        output += `${keys}="${values}"`;
-    } */
-    return `<iframe class="gdoc" src="${docLink}/preview?pli=1" frameborder="0"></iframe>`;
+function googledoc(docLink, maxHeightPixels = 0) {
+    var style = '';
+    if (maxHeightPixels) {
+        style = `style="max-height: ${maxHeightPixels}px;" `
+    }
+    return `<iframe class="gdoc" ${style}src="${docLink}/preview?pli=1" frameborder="0"></iframe>`;
 }
 //#endregion
 
@@ -345,7 +344,7 @@ const cardData = [
     },
     {
         questions : `How high is fairy rate-up?`,
-        answers : `${googledoc('https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI')}`,
+        answers : `${googledoc('https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI', 100)}`,
         tags : [dataTags.FAIRY, dataTags.PROD]
     },  //Redditor u/ConductorBichir's list IIRC, , {'style' : 'max-height=600px;'}
     {
