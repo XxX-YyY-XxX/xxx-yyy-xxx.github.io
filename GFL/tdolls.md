@@ -6,10 +6,6 @@
 
 > <blockquote class="twitter-tweet"><p lang="en" dir="ltr">We modified some names to avoid licensing risk. We thank you for your understanding.</p>&mdash; Girls&#39; Frontline-EN Official (@GirlsFrontlineE) <a href="https://twitter.com/GirlsFrontlineE/status/1001058278728548354?ref_src=twsrc%5Etfw">May 28, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-### What's the drop rate for farmable dolls?
-
-> Limited dolls on chapters have 0.8% drop rate on normal and 1% on emergency. Event farms have around 1%. 5★ on normal maps have rates way below 1%... usually. Droprates at Chapter 10 and above seem to have higher rates.
-
 ### Which doll should I get with True Core Masks?
 
 > ![](/GFL/assets/images/VeryReliableTCMGuide.png "Note that you can only use it on craftable dolls, so no P22(drop only) or Deagle(event reward)")
@@ -77,12 +73,6 @@
 > [EN Wiki.](https://iopwiki.com/wiki/)
 >
 > [KR "Wiki".](https://gfl.zzzzz.kr/dolls.php?lang=en) Includes in-depth stat analysis.
-
-### Where can I get the limited drop in a particular map?
-
-> Enter the map>Combat Info>Rewards>Tap the one you want to get>Look for glowing enemies in the map>Defeat said enemies. You can also S Rank the map for an additional chance.
-
-@ Visual
 
 ### Why is there a blue negative number in my doll stat page?
 

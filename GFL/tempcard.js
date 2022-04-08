@@ -37,6 +37,7 @@ const dataTags = {
     SIDE : 'SideStory',             //Extra stories.
     SKILL : 'Skills',
     TRIVIA : 'Trivia',              //Things that people shouldn't even be bothered with but, here we are.
+    LEDOLL : 'CycleDropDolls',      //Dolls that were once mini event/crate/completion rewards that now wander the rerun hell.
 };
 Object.freeze(dataTags)
 
@@ -344,9 +345,14 @@ const cardData = [
     },
     {
         questions : `How high is fairy rate-up?`,
-        answers : `${googledoc('https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI', 100)}`,
+        answers : `${googledoc('https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI', 500)}`,
         tags : [dataTags.FAIRY, dataTags.PROD]
-    },  //Redditor u/ConductorBichir's list IIRC, , {'style' : 'max-height=600px;'}
+    },  //Redditor u/ConductorBichir's list IIRC
+    {
+        questions : `What's the drop rate for farmable dolls?`,
+        answers : `Limited dolls on chapters have 0.8% drop rate on normal and 1% on emergency. Event farms have around 1%. 5${star} on normal maps have rates way below 1%... usually. Their droprates at Chapter 10 onwards seem to have higher rates.`,
+        tags : []
+    },
     {
         questions : ``,
         answers : ``,
