@@ -167,15 +167,20 @@
 
             function findCards() {
                 const searchValue = searchTextField.value;
+                /* const searchOutput = searchValue.includes('Tags:') ? {'tags' : searchValue.slice(6)} : {'search' : searchValue};
+                window.open(location.pathname + '?' + new URLSearchParams(searchOutput)); */
                 if (searchValue.includes('Tags:')) {
+                    //var searchOutput = new URLSearchParams({'tags' : searchValue.slice(6)})
                     searchParams.delete('search');
                     searchParams.set('tags', searchValue.slice(6));
                 } else {
+                    //var searchOutput = new URLSearchParams({'search' : searchValue})
                     searchParams.delete('tags');
                     searchParams.set('search', searchValue);
                 }
                 window.open(location.pathname + '?' + searchParams);
                 window.close();
+                //history.pushState(null, '', location.pathname + '?' + searchParams);
             }
 
             function searchCards() {

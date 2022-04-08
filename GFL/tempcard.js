@@ -41,6 +41,7 @@ Object.freeze(dataTags)
 
 const star = '★';
 
+//#region Functions
 function image(link, onHover = '', onLoadFail = 'Image loading failed.') {
     return `<img src="${link}" alt="${onLoadFail}" ${onHover ? `title="${onHover}"` : ''}>`
 }
@@ -63,13 +64,14 @@ function code(string) {
 }
 
 function googledoc(docLink) {
-    /* , attributes = {} */
+    /* , max-height */
     /* var output = '';
     for (const [keys, values] of attributes.entries()) {
         output += `${keys}="${values}"`;
     } */
     return `<iframe class="gdoc" src="${docLink}/preview?pli=1" frameborder="0"></iframe>`;
 }
+//#endregion
 
 const cardData = [
     {
