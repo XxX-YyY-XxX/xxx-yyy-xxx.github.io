@@ -14,10 +14,6 @@
 
 > <iframe width="100%" height="500" src="https://docs.google.com/spreadsheets/d/1u2sXat4FD7jFLdjMLrq5zIiDrGJMEVaGvB2z2JysxLI/preview?pli=1" frameborder="0">Redditor u/ConductorBichir's list.</iframe>
 
-### If I Mod my T-doll, is Level 100 still considered max level?
-
-> Thankfully, this is where common sense wins. In short, **NO**.
-
 ### Who should I MOD first?
 
 > [Gamepress guide.](https://gamepress.gg/girlsfrontline/neural-upgrade-priority-guide)

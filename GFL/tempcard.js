@@ -394,6 +394,11 @@ const cardData = [
         tags : [dataTags.OTHER, dataTags.IMPT]
     },
     {
+        questions : `If I MOD my T-Doll, is Level 100 still considered max level?`,
+        answers : `Thankfully, this is where common sense wins. In short, **NO**.`,
+        tags : [dataTags.MOD]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
