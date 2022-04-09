@@ -103,10 +103,10 @@
 
         <div class="container">
             <section id="main_content">
-                <p><h1><a href="/GFL/mainpage">Link to topics repository</a></h1></p>
+                <p><h1><a href="./mainpage">Link to topics repository</a></h1></p>
                 
-                <label><input type="radio" id="text-input" name="input-type" onclick="textMode()" checked>Search by keyword</label>
-                <label><input type="radio" id="tag-input" name="input-type" onclick="tagMode()">Search by tags</label>
+                <label><input type="radio" id="search-input" name="input-type" onclick="switchInputMode(this)" checked>Search by keyword</label>
+                <label><input type="radio" id="tags-input" name="input-type" onclick="switchInputMode(this)">Search by tags</label>
 
                 <form>
                     <div id="tags-list"></div>
@@ -115,31 +115,27 @@
                     <input type="submit">
                 </form>
 
-                <div id="qna"></div>
+                <div id="cards-field"></div>
             </section>
         </div>
 
         <script type="text/javascript" src="/externaljavascript.js"></script>
         <script type="text/javascript" src="/GFL/tempcard.js"></script>
         <script>
+            const toggleableTagsField = document.getElementById('tags-list');
             const searchTextField = document.getElementById('search-text');
             const searchParams = new URLSearchParams(location.search);
-            const cardField = document.getElementById('qna');
             const questionCards = cardData;
 
-            document.getElementById('tags-list').innerHTML = Object.values(dataTags).map(val => 
+            toggleableTagsField.innerHTML = Object.values(dataTags).map(val => 
                 `<label class="tags unselectedTag" id="${val}-label">
                     <input type="checkbox" id="${val}" onclick="toggleTag(this)">${val}
                 </label>` 
             ).join(' ');
 
-            if (searchParams.has('search') || searchParams.has('tags')) {
-                cardField.innerHTML = searchCards();
-            } else {
-                cardField.innerHTML = randomCards();
-            }
+            document.getElementById('cards-field').innerHTML = (searchParams.has('search') || searchParams.has('tags')) ? searchCards() : randomCards();
 
-            function textMode() {
+            /* function textMode() {
                 document.getElementById('search-text').style.display = 'inline';
                 document.getElementById('tags-list').style.display = 'none';
                 searchTextField.value = '';
@@ -155,6 +151,28 @@
                 document.getElementById('tags-list').style.display = 'block';
                 searchTextField.value = '';
                 searchTextField.name = 'tags'
+            } */
+
+            function switchInputMode(radioButton) {
+                searchTextField.name = radioButton.id.replace('-input', '');
+                searchTextField.value = '';                        
+                switch (radioButton.id) {
+                    case 'tags-input':
+                        searchTextField.style.display = 'none';
+                        toggleableTagsField.style.display = 'block';
+                        break;
+                    case 'search-input':
+                        searchTextField.style.display = 'inline';
+                        toggleableTagsField.style.display = 'none';
+                        for (const element of Array.from(document.getElementsByClassName('selectedTag'))) {
+                            document.getElementById(element.id.replace('-label', '')).checked = false;
+                            element.className = 'tags unselectedTag';
+                        }                        
+                        break;                
+                    default:
+                        console.log(radioButton.id);
+                        break;
+                }
             }
 
             function toggleTag(tagCheckbox) {

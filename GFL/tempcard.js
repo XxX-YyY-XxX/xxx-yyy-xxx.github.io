@@ -66,10 +66,9 @@ function code(string) {
 }
 
 function googledoc(docLink, maxHeightPixels = 0) {
-    var style = '';
-    if (maxHeightPixels) {
-        style = `style="max-height: ${maxHeightPixels}px;" `
-    }
+    //var style = '';
+    const style = maxHeightPixels ? `style="max-height: ${maxHeightPixels}px;" ` : '';
+    //if (maxHeightPixels) { style = `style="max-height: ${maxHeightPixels}px;" `; }
     return `<iframe class="gdoc" ${style}src="${docLink}/preview?pli=1" frameborder="0"></iframe>`;
 }
 //#endregion
@@ -77,7 +76,7 @@ function googledoc(docLink, maxHeightPixels = 0) {
 const cardData = [
     {
         questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
-        answers : `${image('/GFL/assets/images/SFEnemy.png')}<br>
+        answers : `${image('./assets/images/SFEnemy.png')}<br>
         Note that Jupiter Cannons count as unarmored machine type.`,
         tags : [dataTags.ENEMY]
     },
@@ -266,7 +265,7 @@ const cardData = [
         ${list(false, "Long press the enemy on the map and you'll see the button on the top-left.", 'Pause while in battle to see the button on the bottom-left.', 'Button appears on the bottom-left after losing a battle.')}<br>
         GFAlarm<br>
         ${list(false, `Use GFLMaps to take the enemy IDs you want to fight and enter them in the Custom Target Train under Packet Forger, with IDs separated by commas.<br>
-        ${image('/GFL/assets/images/GFAlarmCTT.png', 'From u/UnironicWeeaboo')}<br>
+        ${image('./assets/images/GFAlarmCTT.png', 'From u/UnironicWeeaboo')}<br>
         Works for comps that has been loaded into the client.`)}<br>
         ${link('Matsuda recommendations.', 'https://gfl.matsuda.tips/post/everything-sucks-forever')}`,
         tags : [dataTags.ENEMY, dataTags.BATTLE, dataTags.MAP, dataTags["3P"]]
@@ -323,12 +322,12 @@ const cardData = [
     },
     {
         questions : `What equipments should I use on my dolls for battle purposes?`,
-        answers : `${link(image('/GFL/assets/images/EquipInfograph.png'), 'https://big-stupid-jellyfish.github.io/GFMath/pages/newquip')}<br>
+        answers : `${link(image('./assets/images/EquipInfograph.png'), 'https://big-stupid-jellyfish.github.io/GFMath/pages/newquip')}<br>
         AS-Val at night follows the day schema. SOP is SPEQ + VFL/PEQ. M16 is SPEQ + Exo/Armor.`,
         tags : [dataTags.TDOLL, dataTags.EQUIP]
     },
     {
-        questions : `How do I maximize the efficiency of my RFHG echelon's ROF?`,
+        questions : `How do I maximize the efficiency of my echelon's ROF?`,
         answers : `${link("u/BigStupidJellyfish_'s ROF calc.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/rof-calc')}<br>
         ${link('GFC Spreadsheet.', 'https://docs.google.com/spreadsheets/d/1k74SCGGMHtwbl8gmTaETLsa8t12A7dWdj0V1tjdMD4Y')}`,
         tags : [dataTags.TDOLL, dataTags.BATTLE]
@@ -342,7 +341,7 @@ const cardData = [
         questions : `Which dolls should I duplicate?`,
         answers : `${link('Matsuda notes.', 'https://gfl.matsuda.tips/post/worthwhiledupes')}`,
         tags : [dataTags.TDOLL]
-    },
+    },  //Toss-up between floor(floor(mean of doll levels in echelon) * 0.45) + 15 + floor(floor(mean of doll levels in echelon) * 0.15) + 15 and floor(floor(mean of doll levels in echelon) * 0.6) + 15
     {
         questions : `How high is fairy rate-up?`,
         answers : `${googledoc('https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI', 586)}`,
