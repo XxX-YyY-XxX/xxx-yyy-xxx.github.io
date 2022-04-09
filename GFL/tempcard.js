@@ -38,6 +38,7 @@ const dataTags = {
     SKILL : 'Skills',
     TRIVIA : 'Trivia',              //Things that people shouldn't even be bothered with but, here we are.
     LEDOLL : 'CycleDropDolls',      //Dolls that were once mini event/crate/completion rewards that now wander the rerun hell.
+    LOVE : 'Affection',             //
 };
 Object.freeze(dataTags)
 
@@ -374,6 +375,11 @@ const cardData = [
         questions : `How can I save my own voodoo recipe?`,
         answers : `${list(true, 'Craft from production using your own recipe.', 'Take the item.', 'Wait for 10 minutes for the voodoo list to refresh.', 'Look for it.')}`,
         tags : [dataTags.PROD]
+    },
+    {
+        questions : `If a unit in my coalition echelon dies, will the rest of the team's affection drop too?`,
+        answers : `No. Affection only drops if the unit itself kicks it.`,
+        tags : [dataTags.COALITION, dataTags.LOVE]
     },
     {
         questions : ``,
