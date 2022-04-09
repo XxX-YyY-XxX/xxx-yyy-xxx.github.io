@@ -124,7 +124,7 @@ const cardData = [
     {
         questions : `How can I play GFL if Apple Store doesn't have it?`,
         answers : `Use Android, use emulator, use VPN, use jailbreak.`,
-        tags : [dataTags.APPLE, dataTags.EMU]
+        tags : [dataTags.APPLE]
     },
     {
         questions : `When is the anniversary?`,
@@ -236,12 +236,6 @@ const cardData = [
         tags : [dataTags.RSC, dataTags.STORY]
     },
     {
-        questions : `How do I get a higher success rate for logistics?`,
-        answers : `Just doll levels.<br>
-        ${link('Matsuda formula.', 'https://gfl.matsuda.tips/post/logistics1')} Remember to floor the mean average for a more accurate number.`,
-        tags : [dataTags.LOGI, dataTags.TDOLL]
-    },  //Get rate-up formula
-    {
         questions : `I've heard of GFAlarm. Is it safe to use?`,
         answers : `${link('Gamepress breakdown.', 'https://gamepress.gg/girlsfrontline/how-use-gfalarm-girls-frontline-alarm')}`,
         tags : [dataTags["3P"]]
@@ -340,7 +334,7 @@ const cardData = [
         questions : `Which dolls should I duplicate?`,
         answers : `${link('Matsuda notes.', 'https://gfl.matsuda.tips/post/worthwhiledupes')}`,
         tags : [dataTags.TDOLL]
-    },  //Toss-up between floor(floor(mean of doll levels in echelon) * 0.45) + 15 + floor(floor(mean of doll levels in echelon) * 0.15) + 15 and floor(floor(mean of doll levels in echelon) * 0.6) + 15
+    },
     {
         questions : `How high is fairy rate-up?`,
         answers : `${googledoc('https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI', 586)}`,

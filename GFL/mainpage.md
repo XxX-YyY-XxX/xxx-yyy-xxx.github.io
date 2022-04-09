@@ -63,10 +63,9 @@
 # [Commander Wardrobe](/GFL/wardrobe)*
 - Costume skills, availability, and gender change.
 
-# [Factory Production](/GFL/factory)*
-- Production recipes and heavy construction efficiency.
+# For Fixing and Peer Review
 
-# Unconfirmed Phased Out
+## Clarify
 
 ### Is there a recipe that focuses on a single doll?
 
@@ -76,10 +75,20 @@
 >
 > G11: 297, 297, 297, 31
 
-@ Clarify
+### How do I get a higher success rate for logistics?
+
+> Just doll levels.
+>
+> [Matsuda formula.](https://gfl.matsuda.tips/post/logistics1) Remember to floor the mean average for a more accurate number.
+>
+> Toss-up between
+>
+> `floor(floor(mean of doll levels in echelon) * 0.45) + 15 + floor(floor(mean of doll levels in echelon) * 0.15) + 15`
+>
+> and `floor(floor(mean of doll levels in echelon) * 0.6) + 15` for logistics rate-up formula.
+
+## Visual
 
 ### Where can I get the limited drop/equipment in a particular map?
 
 > Enter the map>Combat Info>Rewards>Tap the one you want to get>Look for glowing enemies in the map>Defeat said enemies. You can also S Rank the map for an additional chance.
-
-@ Visual
