@@ -27,17 +27,17 @@ const dataTags = {
     FAIRY : 'Fairies',
     HOC : 'HeavyOrdnanceCorps',
     //FST : 'FireSupportTeam',        //Rockets and mortars, the first of the HOC.
-    /* MAJOR : 'MajorEvents',          //Part of the main story. The ones added to the Campaign tab.
-    COLLAB : 'Collaboration',
-    SEASON : 'SeasonalEvents',      //Story events that happen each New Year, X-mas, Halloween, etc. */
+    //MAJOR : 'MajorEvents',          //Part of the main story. The ones added to the Campaign tab.
+    //COLLAB : 'Collaboration',
+    //SEASON : 'SeasonalEvents',      //Story events that happen each New Year, X-mas, Halloween, etc.
     MINI : 'MiniEvents',            //Bingo, Point Event, etc.
     STORY : 'StoryEvents',          //For questions that apply to Major, Collab, and Seasonal Events.
     MAP : 'FieldMap',               //Node-based overworld.
     PROD : 'FactoryProduction',
     SIDE : 'SideStory',             //Extra stories.
-    /* SKILL : 'Skills',
-    TRIVIA : 'Trivia',              //Things that people shouldn't even be bothered with but, here we are.
-    LEDOLL : 'CycleDropDolls',      //Dolls that were once mini event/crate/completion rewards that now wander the rerun hell. */
+    //SKILL : 'Skills',
+    //TRIVIA : 'Trivia',              //Things that people shouldn't even be bothered with but, here we are.
+    //LEDOLL : 'CycleDropDolls',      //Dolls that were once mini event/crate/completion rewards that now wander the rerun hell.
     LOVE : 'Affection',             //
 };
 Object.freeze(dataTags)
@@ -45,14 +45,17 @@ Object.freeze(dataTags)
 const star = '★';
 
 //#region Functions
+/** @param {URLString} link */
 function image(link, onHover = '', onLoadFail = 'Image loading failed.') {
     return `<img src="${link}" alt="${onLoadFail}" ${onHover ? `title="${onHover}"` : ''}>`
 }
 
+/** @param {URLString} link */
 function link(linkText, link) {
     return `<a href="${link}">${linkText}</a>`;
 }
 
+/** @param {boolean} ordered */
 function list(ordered, ...any) {
     const htmlElem = ordered ? 'ol' : 'ul';
     return `<${htmlElem}>${any.map(val => `<li>${val}</li>`).join('')}</${htmlElem}>`;
@@ -66,6 +69,7 @@ function code(string) {
     return `<code>${string}<code>`;
 }
 
+/** @param {URLString} docLink */
 function googledoc(docLink, maxHeightPixels = 0) {
     const style = maxHeightPixels ? `style="max-height: ${maxHeightPixels}px;" ` : '';
     return `<iframe class="gdoc" ${style}src="${docLink}/preview?pli=1" frameborder="0"></iframe>`;
