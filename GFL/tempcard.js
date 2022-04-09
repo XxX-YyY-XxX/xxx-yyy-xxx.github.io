@@ -1,5 +1,5 @@
 const dataTags = {
-    EMPTY : 'Others',               //Default tag if I dunno what to put. Probably useless, but just in case.
+    OTHER : 'Others',               //Default tag if I dunno what to put. Probably useless, but just in case.
     ACCT : 'AccountManagement',
     TECH : 'Troubleshooting',       //For resolving issues that shouldn't even happen.
     '3P' : 'ThirdParty',            //Non-dev-made applications that are recommended to use. Safe until said otherwise.
@@ -67,9 +67,7 @@ function code(string) {
 }
 
 function googledoc(docLink, maxHeightPixels = 0) {
-    //var style = '';
     const style = maxHeightPixels ? `style="max-height: ${maxHeightPixels}px;" ` : '';
-    //if (maxHeightPixels) { style = `style="max-height: ${maxHeightPixels}px;" `; }
     return `<iframe class="gdoc" ${style}src="${docLink}/preview?pli=1" frameborder="0"></iframe>`;
 }
 //#endregion
@@ -380,6 +378,20 @@ const cardData = [
         questions : `If a unit in my coalition echelon dies, will the rest of the team's affection drop too?`,
         answers : `No. Affection only drops if the unit itself kicks it.`,
         tags : [dataTags.COALITION, dataTags.LOVE]
+    },
+    {
+        questions : `How can I resupply a single doll and not the whole echelon?`,
+        answers : `The Trifectra of Free Repair compels you. Or just do a one-man echelon (this one's a corpse drag staple).`,
+        tags : [dataTags.TDOLL, dataTags.MAP]
+    },
+    {
+        questions : `What is Corpse Dragging>`,
+        answers : `Corpse Dragging, also called Poor Run or Beggar Run, is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.<br>
+        ${link("Ceia's 0-2 drag guide. Docs Edition.", 'https://docs.google.com/document/u/0/d/1PkxJ7ObdGW_cS_qbzAxQ_hoC1SFse3HNYWlnywZfPuo')}<br>
+        ${link("Ceia's 0-2 drag guide. Vids Edition.", 'https://youtu.be/vqvPpO1vKqw')}<br>
+        ${link('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide')}<br>
+        ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/optimizing-leveling-introduction')}`,
+        tags : [dataTags.OTHER, dataTags.IMPT]
     },
     {
         questions : ``,
