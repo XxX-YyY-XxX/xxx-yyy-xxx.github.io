@@ -135,24 +135,6 @@
 
             document.getElementById('cards-field').innerHTML = (searchParams.has('search') || searchParams.has('tags')) ? searchCards() : randomCards();
 
-            /* function textMode() {
-                document.getElementById('search-text').style.display = 'inline';
-                document.getElementById('tags-list').style.display = 'none';
-                searchTextField.value = '';
-                searchTextField.name = 'search';
-                for (const element of Array.from(document.getElementsByClassName('selectedTag'))) {
-                    document.getElementById(element.id.replace('-label', '')).checked = false;
-                    element.className = 'tags unselectedTag';
-                }
-            }
-
-            function tagMode() {
-                document.getElementById('search-text').style.display = 'none';
-                document.getElementById('tags-list').style.display = 'block';
-                searchTextField.value = '';
-                searchTextField.name = 'tags'
-            } */
-
             function switchInputMode(radioButton) {
                 searchTextField.name = radioButton.id.replace('-input', '');
                 searchTextField.value = '';                        

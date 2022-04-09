@@ -1,6 +1,6 @@
 const dataTags = {
     OTHER : 'Others',               //Default tag if I dunno what to put. Probably useless, but just in case.
-    ACCT : 'AccountManagement',
+    ACCT : 'AccountManagement',     //Anything concerning account data and integrity.
     TECH : 'Troubleshooting',       //For resolving issues that shouldn't even happen.
     '3P' : 'ThirdParty',            //Non-dev-made applications that are recommended to use. Safe until said otherwise.
     SIMS : 'CombatSimulations',     //Capsule, Data, EXP, Neural, DefDrill, CoaDrill, Target Practice
@@ -397,6 +397,16 @@ const cardData = [
         questions : `If I MOD my T-Doll, is Level 100 still considered max level?`,
         answers : `Thankfully, this is where common sense wins. In short, **NO**.`,
         tags : [dataTags.MOD]
+    },
+    {
+        questions : `As a newbie, is it worth to go for gold medals?`,
+        answers : `Not exactly. Blaze through chapters first to get your account running, then come back when you have at least 2 working echelons.`,
+        tags : [dataTags.NEWB, dataTags.MAIN]
+    },
+    {
+        questions : `Can I transfer my Google Account to a Sunborn one?`,
+        answers : `It's a one-way street from there.`,
+        tags : [dataTags.ACCT]
     },
     {
         questions : ``,
