@@ -5,7 +5,7 @@ const dataTags = {
     '3P' : 'ThirdParty',            //Non-dev-made applications that are recommended to use. Safe until said otherwise.
     SIMS : 'CombatSimulations',     //Capsule, Data, EXP, Neural, DefDrill, CoaDrill, Target Practice
     RSC : 'Resources/Currency',     //MARP, tickets, cores, etc.
-    MOD : 'NeuralUpgrade',
+    MOD : 'NeuralUpgrade',          //MODding dolls and its resources.
     NEWB : 'NewbieGuide',           //Things new/early-game players should know.
     PRIME : 'TopicPrimer',          //Explanation of the specific system it's paired with. Usually made up of links. Must be the first box of it's paired tag.
     MAIN : 'CombatMissions',        //Main missions aka Chapters.
@@ -13,7 +13,7 @@ const dataTags = {
     TDOLL : 'TacticalDolls',        //Anything that directly involves Tactical Dolls.
     EQUIP : 'Equipments',           //Attachments on units.
     APPLE : 'AppleDevices',         //Anything primarily concerning iOS devices.
-    ANDROID : 'AndroidDevices',
+    //ANDROID : 'AndroidDevices',
     ANNIV : 'Anniversary',          //Anything concerning the game's anniversary.
     THEATER : 'Theater',
     LOGI : 'Logistics',
@@ -26,18 +26,18 @@ const dataTags = {
     ENEMY : 'EnemyUnits',           //For things that primarily interact with enemy units.
     FAIRY : 'Fairies',
     HOC : 'HeavyOrdnanceCorps',
-    FST : 'FireSupportTeam',        //Rockets and mortars, the first of the HOC.
+    //FST : 'FireSupportTeam',        //Rockets and mortars, the first of the HOC.
     /* MAJOR : 'MajorEvents',          //Part of the main story. The ones added to the Campaign tab.
     COLLAB : 'Collaboration',
     SEASON : 'SeasonalEvents',      //Story events that happen each New Year, X-mas, Halloween, etc. */
     MINI : 'MiniEvents',            //Bingo, Point Event, etc.
-    EVENT : 'StoryEvents',          //For questions that apply to Major, Collab, and Seasonal Events.
+    STORY : 'StoryEvents',          //For questions that apply to Major, Collab, and Seasonal Events.
     MAP : 'FieldMap',               //Node-based overworld.
     PROD : 'FactoryProduction',
     SIDE : 'SideStory',             //Extra stories.
-    SKILL : 'Skills',
+    /* SKILL : 'Skills',
     TRIVIA : 'Trivia',              //Things that people shouldn't even be bothered with but, here we are.
-    LEDOLL : 'CycleDropDolls',      //Dolls that were once mini event/crate/completion rewards that now wander the rerun hell.
+    LEDOLL : 'CycleDropDolls',      //Dolls that were once mini event/crate/completion rewards that now wander the rerun hell. */
     LOVE : 'Affection',             //
 };
 Object.freeze(dataTags)
@@ -233,7 +233,7 @@ const cardData = [
     {
         questions : `Can I save the event currencies for the next event?`,
         answers : `No can do. Dissolves into nothingness one week after the event is finished.`,
-        tags : [dataTags.RSC, dataTags.EVENT]
+        tags : [dataTags.RSC, dataTags.STORY]
     },
     {
         questions : `How do I get a higher success rate for logistics?`,
@@ -349,7 +349,7 @@ const cardData = [
     {
         questions : `What's the drop rate for farmable dolls?`,
         answers : `Limited dolls on chapters have 0.8% drop rate on normal and 1% on emergency. Event farms have around 1%. 5${star} on normal maps have rates way below 1%... usually. Their droprates at Chapter 10 onwards seem to have higher rates.`,
-        tags : [dataTags.TDOLL, dataTags.MAIN, dataTags.EVENT]
+        tags : [dataTags.TDOLL, dataTags.MAIN, dataTags.STORY]
     },
     {
         questions : `What does the term Limited in dolls in the chapters mean?`,
@@ -362,7 +362,7 @@ const cardData = [
         answers : `Major events get a permanent rerun called Campaign Missions.<br>
         Seasonal events get one when it's their time.<br>
         Collabs are subject to their holders whims.`,
-        tags : [dataTags.EVENT]
+        tags : [dataTags.STORY]
     },
     {
         questions : `How do I remove HOCs from Target Practice?`,
