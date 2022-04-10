@@ -17,3 +17,5 @@
 > ARSMG = 30-40k, RFHG = 40-50k, MGSG = 100k+ average max CE, including maxed fairies, equips, mods, oaths, and formation bonuses.
 >
 > It's main purpose is for Theater Bosses and being on top of the Friend List.
+
+**Bold**
