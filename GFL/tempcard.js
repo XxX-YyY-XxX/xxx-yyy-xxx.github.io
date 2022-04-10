@@ -41,7 +41,7 @@ const dataTags = {
     LOVE : 'Affection',             //
     TIER : 'TierList',              //May not technically be one, just overall description on who is stronger than who.
 };
-dataTags = Object.freeze(dataTags);
+Object.freeze(dataTags);
 
 const star = '★';
 
@@ -438,14 +438,14 @@ const cardData = [
     {
         questions : `Which HOC FSTs should I raise first?`,
         answers : `${table(['Rank', 'To Lv. 60', `To 5${star}`, 'To Max Iter'],
-        ['01', 'BGM-71', 'AT4',    '2B14'],
+        ['01', 'BGM-71', 'AT4',    '2B14'  ],
         ['02', 'Mk 153', 'Mk 153', 'Mk 153'],
-        ['03', 'AT4',    '2B14',   'M2'],
-        ['04', '2B14',   'M2',     'AT4'],
+        ['03', 'AT4',    '2B14',   'M2'    ],
+        ['04', '2B14',   'M2',     'AT4'   ],
         ['05', 'M2',     'AGS-30', 'AGS-30'],
         ['06', 'AGS-30', 'BGM-71', 'BGM-71'],
         ['07', 'QLZ-04', 'QLZ-04', 'QLZ-04'],
-        ['08', 'PP-93',  'PP-93',  'PP-93'])}`,
+        ['08', 'PP-93',  'PP-93',  'PP-93' ])}`,
         tags : [dataTags.HOC, dataTags.FST, dataTags.TIER]
     },  //Rudimentary rankings. Last place reserved for incomplete FSTs.
     {
@@ -454,4 +454,4 @@ const cardData = [
         tags : []
     },
 ]
-cardData = Object.freeze(cardData);
+Object.freeze(cardData);
