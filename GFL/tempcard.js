@@ -62,14 +62,6 @@ function list(ordered, ...any) {
     return `<${htmlElem}>${any.map(val => `<li>${val}</li>`).join('')}</${htmlElem}>`;
 }
 
-function strikethrough(string) {
-    return `<del>${string}</del>`;
-}
-
-function code(string) {
-    return `<code>${string}<code>`;
-}
-
 /** @param {URLString} docLink */
 function googledoc(docLink, maxHeightPixels = 0) {
     const style = maxHeightPixels ? `style="max-height: ${maxHeightPixels}px;" ` : '';
@@ -87,8 +79,30 @@ function table(headerArray, ...arrayOfArrays) {
     </table>`;
 }
 
-function bold(string) {
-    return `<strong>${string}</strong>`;
+const textStyle = {
+    STRIKE : 0,
+    CODE : 1,
+    BOLD : 2,
+}
+
+/** @param {textStyle} style*/
+function altTextStyle(string, style) {                                          //change to compounding
+    switch (style) {
+        case textStyle.STRIKE:
+            var htmlElem = 'del';
+            break;
+        case textStyle.CODE:
+            var htmlElem = 'code';
+            break;
+        case textStyle.BOLD:
+            var htmlElem = 'strong';
+            break;
+        default:
+            var htmlElem = 'p';
+            console.log(style)
+            break;
+    }
+    return `<${htmlElem}>${string}</${htmlElem}>`
 }
 //#endregion
 
@@ -265,7 +279,7 @@ const cardData = [
         questions : `Is there any way to reset my battles so I can get a win?`,
         answers : `Turn off WiFi during battle. You can still finish the fight with no connection. Though be wary of connection timeouts so do it near the end.<br>
         If you don't like the result or you lost, exit client, turn on WiFi, re-enter client, take the fight again.<br>
-        If satisfied ${strikethrough('or saving your sanity')}, turn on WiFi after the battle finished.`,
+        If satisfied ${altTextStyle('or saving your sanity', textStyle.STRIKE)}, turn on WiFi after the battle finished.`,
         tags : [dataTags.BATTLE]
     },
     {
@@ -410,7 +424,7 @@ const cardData = [
     },
     {
         questions : `If I MOD my T-Doll, is Level 100 still considered max level?`,
-        answers : `Thankfully, this is where common sense wins. In short, **NO**.`,
+        answers : `Thankfully, this is where common sense wins. In short, ${altTextStyle('NO', textStyle.BOLD)}`,
         tags : [dataTags.MOD]
     },
     {
@@ -448,6 +462,15 @@ const cardData = [
         ['08', 'PP-93',  'PP-93',  'PP-93' ])}`,
         tags : [dataTags.HOC, dataTags.FST, dataTags.TIER]
     },  //Rudimentary rankings. Last place reserved for incomplete FSTs.
+    {
+        questions : `What are Main and Off Tanks?`,
+        answers : `Main tanks<br>
+        - Guns that have survivability skills (i.e. smoke, eva boost, stun etc.) and generally situated at the middle of the pack.<br>
+        Off tanks<br>
+        - Guns that generally have damage skills (i.e. molotov, grenade, damage boost etc.), or a secondary damage soaker in some instances, and is situated at either middle-top or middle-bottom.<br>
+        All of these usually refer to SMGs.`,
+        tags : [dataTags.OTHER]
+    },
     {
         questions : ``,
         answers : ``,
