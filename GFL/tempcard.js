@@ -79,30 +79,18 @@ function table(headerArray, ...arrayOfArrays) {
     </table>`;
 }
 
-const textStyle = {
-    STRIKE : 0,
-    CODE : 1,
-    BOLD : 2,
-}
+const textStyle = Object.freeze({
+    STRIKE : 'del',
+    CODE : 'code',
+    BOLD : 'strong',
+});
 
-/** @param {textStyle} style*/
-function altTextStyle(string, style) {                                          //change to compounding
-    switch (style) {
-        case textStyle.STRIKE:
-            var htmlElem = 'del';
-            break;
-        case textStyle.CODE:
-            var htmlElem = 'code';
-            break;
-        case textStyle.BOLD:
-            var htmlElem = 'strong';
-            break;
-        default:
-            var htmlElem = 'p';
-            console.log(style)
-            break;
+/** @param {textStyle[]} styles @param {string} string*/
+function altTextStyle(string, ...styles) {
+    for (const htmlElem of styles) {
+        string = `<${htmlElem}>${string}</${htmlElem}>`;
     }
-    return `<${htmlElem}>${string}</${htmlElem}>`
+    return string;
 }
 //#endregion
 
