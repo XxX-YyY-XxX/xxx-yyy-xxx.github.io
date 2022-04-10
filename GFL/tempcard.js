@@ -80,15 +80,15 @@ function googledoc(docLink, maxHeightPixels = 0) {
 function table(headerArray, ...arrayOfArrays) {
     headerArray = headerArray ? `<thead><tr>${headerArray.map(val => `<th>${val}</th>`).join('')}</tr></thead>` : '';
     return `<table>
-    ${headerArray}
-    <tbody>
-    ${arrayOfArrays.map(val1 => `<tr>${val1.map(val2 => `<td>${val2}</td>`).join('')}</tr>`).join('')}
-    </tbody>    
-    </table>`
+        ${headerArray}
+        <tbody>
+            ${arrayOfArrays.map(val1 => `<tr>${val1.map(val2 => `<td>${val2}</td>`).join('')}</tr>`).join('')}
+        </tbody>    
+    </table>`;
 }
 
 function bold(string) {
-    return `<strong>${string}</strong>`
+    return `<strong>${string}</strong>`;
 }
 //#endregion
 
