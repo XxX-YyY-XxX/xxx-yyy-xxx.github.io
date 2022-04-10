@@ -424,7 +424,7 @@ const cardData = [
     },
     {
         questions : `If I MOD my T-Doll, is Level 100 still considered max level?`,
-        answers : `Thankfully, this is where common sense wins. In short, ${altTextStyle('NO', textStyle.BOLD)}`,
+        answers : `Thankfully, this is where common sense wins. In short, ${altTextStyle('NO', textStyle.BOLD)}.`,
         tags : [dataTags.MOD]
     },
     {
