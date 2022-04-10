@@ -28,17 +28,6 @@
 >
 > These apps are safe for your account.
 
-### Which HOCs should I raise first?
-
-> 1. 2B14
-> 2. BGM-71 (doesn't need iteration to be effective)
-> 3. M2
-> 4. Mk 153
-> 5. AT4
-> 6. AGS-30 (needs iteration to compete with others)
-> 7. QLZ-04
-> 8. PP-93
-
 ### When do I get to unlock the whole HOC grid/matrix/board?
 
 > At full promotion. The yellow ★★★★★ one.

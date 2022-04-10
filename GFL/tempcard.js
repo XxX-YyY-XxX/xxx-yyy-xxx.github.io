@@ -26,7 +26,7 @@ const dataTags = {
     ENEMY : 'EnemyUnits',           //For things that primarily interact with enemy units.
     FAIRY : 'Fairies',
     HOC : 'HeavyOrdnanceCorps',
-    //FST : 'FireSupportTeam',        //Rockets and mortars, the first of the HOC.
+    FST : 'FireSupportTeam',        //Rockets and mortars, the first of the HOC.
     //MAJOR : 'MajorEvents',          //Part of the main story. The ones added to the Campaign tab.
     //COLLAB : 'Collaboration',
     //SEASON : 'SeasonalEvents',      //Story events that happen each New Year, X-mas, Halloween, etc.
@@ -39,8 +39,9 @@ const dataTags = {
     //TRIVIA : 'Trivia',              //Things that people shouldn't even be bothered with but, here we are.
     //LEDOLL : 'CycleDropDolls',      //Dolls that were once mini event/crate/completion rewards that now wander the rerun hell.
     LOVE : 'Affection',             //
+    TIER : 'TierList',              //May not technically be one, just overall description on who is stronger than who.
 };
-Object.freeze(dataTags)
+dataTags = Object.freeze(dataTags);
 
 const star = '★';
 
@@ -73,6 +74,21 @@ function code(string) {
 function googledoc(docLink, maxHeightPixels = 0) {
     const style = maxHeightPixels ? `style="max-height: ${maxHeightPixels}px;" ` : '';
     return `<iframe class="gdoc" ${style}src="${docLink}/preview?pli=1" frameborder="0"></iframe>`;
+}
+
+/** @param {Array} headerArray @param {Array[]} arrayOfArrays */
+function table(headerArray, ...arrayOfArrays) {
+    headerArray = headerArray ? `<thead><tr>${headerArray.map(val => `<th>${val}</th>`).join('')}</tr></thead>` : '';
+    return `<table>
+    ${headerArray}
+    <tbody>
+    ${arrayOfArrays.map(val1 => `<tr>${val1.map(val2 => `<td>${val2}</td>`).join('')}</tr>`).join('')}
+    </tbody>    
+    </table>`
+}
+
+function bold(string) {
+    return `<strong>${string}</strong>`
 }
 //#endregion
 
@@ -210,7 +226,7 @@ const cardData = [
     {
         questions : `Is there a guide on which Coalition unit to pull for and how?`,
         answers : `${link(image('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096', 'Rudimentary pulling and tier list guide'), 'https://twitter.com/CleistaCeleste/status/1409824210571214849')}`,
-        tags : [dataTags.PA, dataTags.COALITION]
+        tags : [dataTags.PA, dataTags.COALITION, dataTags.TIER]
     },
     {
         questions : `What are Fairies?`,
@@ -306,7 +322,7 @@ const cardData = [
         ${link('Gamepress Overview.', 'https://www.gamepress.gg/girlsfrontline/tier-list')}<br>
         ${link('KR Wiki.', 'https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0/%EC%9D%B8%ED%98%95%EB%8F%84%EA%B0%90')}<br>
         ${link("Fatalchapter's bilibili guide.", 'https://www.bilibili.com/read/readlist/rl100361')} Updated up to Jashin dolls.`,
-        tags : [dataTags.TDOLL, dataTags.NEWB]
+        tags : [dataTags.TDOLL, dataTags.TIER]
     },
     {
         questions : `When should I do T-Doll Heavy Production?`,
@@ -408,9 +424,34 @@ const cardData = [
         tags : [dataTags.ACCT]
     },
     {
+        questions : `Does anyone know how to CE stack using GFAlarm?`,
+        answers : `${list(true,
+            'GFAlarm.',
+            'File Save under Settings tab.',
+            'Check "Save Theater Optimize Team".',
+            'Open GFL under GFAlarm proxy (up to main screen).',
+            'Go to the GFAlarm folder.',
+            'Info folder.',
+            '{Username}_{UID}__theater_optimize_team.csv for current armory.')}`,
+        tags : [dataTags["3P"], dataTags.THEATER]
+    },
+    {
+        questions : `Which HOC FSTs should I raise first?`,
+        answers : `${table(['Rank', 'To Lv. 60', `To 5${star}`, 'To Max Iter'],
+        ['01', 'BGM-71', 'AT4',    '2B14'],
+        ['02', 'Mk 153', 'Mk 153', 'Mk 153'],
+        ['03', 'AT4',    '2B14',   'M2'],
+        ['04', '2B14',   'M2',     'AT4'],
+        ['05', 'M2',     'AGS-30', 'AGS-30'],
+        ['06', 'AGS-30', 'BGM-71', 'BGM-71'],
+        ['07', 'QLZ-04', 'QLZ-04', 'QLZ-04'],
+        ['08', 'PP-93',  'PP-93',  'PP-93'])}`,
+        tags : [dataTags.HOC, dataTags.FST, dataTags.TIER]
+    },  //Rudimentary rankings. Last place reserved for incomplete FSTs.
+    {
         questions : ``,
         answers : ``,
         tags : []
     },
 ]
-Object.freeze(cardData);
+cardData = Object.freeze(cardData);
