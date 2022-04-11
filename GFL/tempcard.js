@@ -1,4 +1,4 @@
-const dataTags = {
+const dataTags = Object.freeze({
     OTHER : 'Others',               //Default tag if I dunno what to put. Probably useless, but just in case.
     ACCT : 'AccountManagement',     //Anything concerning account data and integrity.
     TECH : 'Troubleshooting',       //For resolving issues that shouldn't even happen.
@@ -40,8 +40,7 @@ const dataTags = {
     //LEDOLL : 'CycleDropDolls',      //Dolls that were once mini event/crate/completion rewards that now wander the rerun hell.
     LOVE : 'Affection',             //
     TIER : 'TierList',              //May not technically be one, just overall description on who is stronger than who.
-};
-Object.freeze(dataTags);
+});
 
 const star = '★';
 
@@ -83,6 +82,7 @@ const textStyle = Object.freeze({
     STRIKE : 'del',
     CODE : 'code',
     BOLD : 'strong',
+    ITALICS : 'em',
 });
 
 /** @param {textStyle[]} styles @param {string} string*/
@@ -94,7 +94,7 @@ function altTextStyle(string, ...styles) {
 }
 //#endregion
 
-const cardData = [
+const cardData = Object.freeze([
     {
         questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
         answers : `${image('./assets/images/SFEnemy.png')}<br>
@@ -460,9 +460,16 @@ const cardData = [
         tags : [dataTags.OTHER]
     },
     {
+        questions : `How are people just rolling in 5${star} fairies?`,
+        answers : `${altTextStyle('Even dust, when piled up, can become a mountain.', textStyle.ITALICS)}<br>
+        Good logistics upkeep and rolling HECs everyday. Just think of crafting them a side thing that doesn't take a lot of attention.<br>
+        For perspective on how long to raise one:<br>
+        ${image('./assets/images/FairyRaising.png', 'From u/UnironicWeeaboo')}`,
+        tags : [dataTags.FAIRY, dataTags.PROD]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
     },
-]
-Object.freeze(cardData);
+]);
