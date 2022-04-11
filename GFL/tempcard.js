@@ -78,13 +78,6 @@ function table(headerArray, ...arrayOfArrays) {
     </table>`;
 }
 
-/* const textStyle = Object.freeze({
-    STRIKE : 'del',
-    CODE : 'code',
-    BOLD : 'strong',
-    ITALICS : 'em',
-}); */
-
 class TextStyle {
     static STRIKE = 'del';
     static ITALIC = 'em';
@@ -92,7 +85,7 @@ class TextStyle {
     static CODE = 'code';
 }
 
-/** @param {TextStyle[]} styles @param {string} string*/
+/** @param {TextStyle[]} styles @param {string} string */
 function altTextStyle(string, ...styles) {
     for (const htmlElem of styles) {
         string = `<${htmlElem}>${string}</${htmlElem}>`;
@@ -132,7 +125,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `How do I get more Quick Training Contracts?`,
-        answers : `Monthlies and Keycard Event.`,
+        answers : `End of daily log-ins, Keycard Event, gem shop.`,
         tags : [dataTags.RSC, dataTags.MINI]
     },
     {
@@ -478,6 +471,17 @@ const cardData = Object.freeze([
         questions : `How high is a certain doll's pull rate during rate-ups?`,
         answers : `Something like Targeted > General >>> Normal.`,
         tags : [dataTags.TDOLL, dataTags.PROD]
+    },
+    {
+        questions : `What are the resources I can get from Kalina's Daily Gift?`,
+        answers : `${image('./assets/images/DailyGift.png')}<br>
+        Gift amount apparently scales with her affection.`,
+        tags : [dataTags.RSC]
+    },
+    {
+        questions : `What is Corpse Whipping?`,
+        answers : `The act of overkilling a dummy link by a huge amount. This is generally the reason why ROF-based guns are favored against low link-HP enemies.`,
+        tags : [dataTags.BATTLE]
     },
     {
         questions : ``,

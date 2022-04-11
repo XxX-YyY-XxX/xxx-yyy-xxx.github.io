@@ -60,10 +60,6 @@
 
 > Logistics and limiting production to 4 a day. The last one basically applies to long-time players though.
 
-### Where can I get Quick Training Contracts?
-
-> End of monthly log-in, event rewards, gem shop.
-
 ### When are double oath certificates available?
 
 > Valentine's, White Day, Qixi/Tanabata, and Christmas.
@@ -101,10 +97,6 @@
 > <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/q1rscp/weekly_commanders_lounge_october_05_2021/hg41790/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="259" width="640" scrolling="no"></iframe>
 >
 > [Related.](https://old.reddit.com/r/girlsfrontline/comments/mzjdl5/weekly_commanders_lounge_april_27_2021/gwrie7y/)
-
-### What are the resources I can get from Kalina's Daily Gift?
-
-> ![](/GFL/assets/images/DailyGift.png "Seems to scale with her affection") 
 
 ### If I bought a Monthly Gem Card, do I get them immediately every day or do I have to log-in?
 
