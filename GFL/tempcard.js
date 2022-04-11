@@ -78,14 +78,21 @@ function table(headerArray, ...arrayOfArrays) {
     </table>`;
 }
 
-const textStyle = Object.freeze({
+/* const textStyle = Object.freeze({
     STRIKE : 'del',
     CODE : 'code',
     BOLD : 'strong',
     ITALICS : 'em',
-});
+}); */
 
-/** @param {textStyle[]} styles @param {string} string*/
+class TextStyle {
+    static STRIKE = 'del';
+    static ITALIC = 'em';
+    static BOLD = 'strong';
+    static CODE = 'code';
+}
+
+/** @param {TextStyle[]} styles @param {string} string*/
 function altTextStyle(string, ...styles) {
     for (const htmlElem of styles) {
         string = `<${htmlElem}>${string}</${htmlElem}>`;
@@ -267,7 +274,7 @@ const cardData = Object.freeze([
         questions : `Is there any way to reset my battles so I can get a win?`,
         answers : `Turn off WiFi during battle. You can still finish the fight with no connection. Though be wary of connection timeouts so do it near the end.<br>
         If you don't like the result or you lost, exit client, turn on WiFi, re-enter client, take the fight again.<br>
-        If satisfied ${altTextStyle('or saving your sanity', textStyle.STRIKE)}, turn on WiFi after the battle finished.`,
+        If satisfied ${altTextStyle('or saving your sanity', TextStyle.STRIKE)}, turn on WiFi after the battle finished.`,
         tags : [dataTags.BATTLE]
     },
     {
@@ -412,7 +419,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `If I MOD my T-Doll, is Level 100 still considered max level?`,
-        answers : `Thankfully, this is where common sense wins. In short, ${altTextStyle('NO', textStyle.BOLD)}.`,
+        answers : `Thankfully, this is where common sense wins. In short, ${altTextStyle('NO', TextStyle.BOLD)}.`,
         tags : [dataTags.MOD]
     },
     {
@@ -461,7 +468,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `How are people just rolling in 5${star} fairies?`,
-        answers : `${altTextStyle('Even dust, when piled up, can become a mountain.', textStyle.ITALICS)}<br>
+        answers : `${altTextStyle('Even dust, when piled up, can become a mountain.', TextStyle.ITALIC)}<br>
         Good logistics upkeep and rolling HECs everyday. Just think of crafting them a side thing that doesn't take a lot of attention.<br>
         For perspective on how long to raise one:<br>
         ${image('./assets/images/FairyRaising.png', 'From u/UnironicWeeaboo')}`,
