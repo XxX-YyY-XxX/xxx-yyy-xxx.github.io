@@ -468,11 +468,16 @@ const cardData = Object.freeze([
     },
     {
         questions : `How are people just rolling in 5${star} fairies?`,
-        answers : `${altTextStyle('Even dust, when piled up, can become a mountain.', TextStyle.ITALIC)}<br>
+        answers : `<p>${altTextStyle('Even dust, when piled up, can become a mountain.', TextStyle.ITALIC)}</p>
         Good logistics upkeep and rolling HECs everyday. Just think of crafting them a side thing that doesn't take a lot of attention.<br>
         For perspective on how long to raise one:<br>
         ${image('./assets/images/FairyRaising.png', 'From u/UnironicWeeaboo')}`,
         tags : [dataTags.FAIRY, dataTags.PROD]
+    },
+    {
+        questions : `How high is a certain doll's pull rate during rate-ups?`,
+        answers : `Something like Targeted > General >>> Normal.`,
+        tags : [dataTags.TDOLL, dataTags.PROD]
     },
     {
         questions : ``,
