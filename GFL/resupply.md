@@ -82,8 +82,6 @@
 
 # For questions without proper answers yet.
 
-### What's the gacha rate for costumes?
-
 >Normal T-Doll Production:
 >- Probability of 5-star humanoid: 3%
 >- Probability of 4-star humanoid: 10%
@@ -104,11 +102,3 @@
 >- Probability of 2-star equipment: 48.5%
 >
 >*The above probabilities are all average probabilities. Depending on the construction formula, the probabilities of each star will fluctuate up and down.
->
->Resupply Rates:
->- Probability of humanoid dress up: 2%
->- Probability of 5-star furniture: 8%
->- Probability of 4-star furniture: 36%
->- Probability of 3-star furniture: 54%
-
----

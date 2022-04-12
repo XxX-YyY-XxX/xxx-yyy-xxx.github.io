@@ -112,12 +112,6 @@
 
 > Basically, swaps sizes. Technically, swaps all stats aside from size. If both sides are upgraded, say Lv. 31 and Lv. 23, they become 23 and 31, not 1 and 31+. Check the unit lock to prevent foddering th raised one.
 
-### Why is the PA notification (right side) always lit up?
-
-> Most likely because RL is still in the pool. Please confirm.
-
-@ Clarify
-
 ### Do I need Dummy Cores for upgrading Coalition Units?
 
 > No. They have their own resources.

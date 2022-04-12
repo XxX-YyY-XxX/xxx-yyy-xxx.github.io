@@ -85,7 +85,11 @@
 >
 > `floor(floor(mean of doll levels in echelon) * 0.45) + 15 + floor(floor(mean of doll levels in echelon) * 0.15) + 15`
 >
-> and `floor(floor(mean of doll levels in echelon) * 0.6) + 15` for logistics rate-up formula.
+> and
+>
+> `floor(floor(mean of doll levels in echelon) * 0.6) + 15`
+>
+> for logistics rate-up formula.
 
 ## Visual
 

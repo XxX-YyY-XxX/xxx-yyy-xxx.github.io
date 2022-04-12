@@ -64,10 +64,6 @@
 
 > Crit damage is buffed and crit chance always procs.
 
-### Can the Liu clones get stat buffs?
-
-> Yes, via tile scans. Note that the clones are not classified as any gun types.
-
 ### What is vulnerability?
 
 > A debuff that amplifies all damage recieved from all sources after armor calculation.

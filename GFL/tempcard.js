@@ -35,11 +35,12 @@ const dataTags = Object.freeze({
     MAP : 'FieldMap',               //Node-based overworld.
     PROD : 'FactoryProduction',
     SIDE : 'SideStory',             //Extra stories.
-    //SKILL : 'Skills',
-    //TRIVIA : 'Trivia',              //Things that people shouldn't even be bothered with but, here we are.
+    SKILL : 'Skills',               //Unit skills.
+    TRIVIA : 'Trivia',              //Things that people shouldn't even be bothered with but, here we are.
     //LEDOLL : 'CycleDropDolls',      //Dolls that were once mini event/crate/completion rewards that now wander the rerun hell.
     LOVE : 'Affection',             //
     TIER : 'TierList',              //May not technically be one, just overall description on who is stronger than who.
+    RESUPPLY : 'Ressuply',
 });
 
 const star = '★';
@@ -483,6 +484,26 @@ const cardData = Object.freeze([
         questions : `Is there a tier list for good PA units?`,
         answers : `${image('./assets/images/SFTier.png')}`,
         tags : [dataTags.COALITION, dataTags.TIER]
+    },
+    {
+        questions : `What's the gacha rate for costumes?`,
+        answers : `${table(['Item', 'Rate'],
+        ['Costumes', '02.00%'],
+        [`5${star} furniture`, '08.00%'],
+        [`4${star} furniture`, '34.20%'],
+        [`4${star} gifts/cakes`, '01.80%'],
+        [`3${star} furniture`, '54.00%'])}`,
+        tags : [dataTags.RESUPPLY]
+    },
+    {
+        questions : `Can the Liu clones get stat buffs?`,
+        answers : `${link('IOPWiki Trivia section says yes.', 'https://iopwiki.com/wiki/General_Liu#Trivia')}`,
+        tags : [dataTags.TDOLL, dataTags.SKILL]
+    },
+    {
+        questions : `Why is the PA notification in the home screen always lit up?`,
+        answers : `There are available pulls left to burn.`,
+        tags : [dataTags.PA, dataTags.TRIVIA]
     },
     {
         questions : ``,
