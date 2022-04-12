@@ -93,6 +93,10 @@ function altTextStyle(string, ...styles) {
     }
     return string;
 }
+
+function spoiler(summaryName, details) {
+    return `<details><summary>${summaryName}</summary>${details}</details>`;
+}
 //#endregion
 
 const cardData = Object.freeze([
@@ -482,7 +486,8 @@ const cardData = Object.freeze([
     },
     {
         questions : `Is there a tier list for good PA units?`,
-        answers : `${image('./assets/images/SFTier.png')}`,
+        answers : `${image('./assets/images/SFTier.png')}<br>
+        ${link('Gamepress units guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units')} Use the search bar if a certain PA unit is unavailable in the page.`,
         tags : [dataTags.COALITION, dataTags.TIER]
     },
     {
@@ -504,6 +509,18 @@ const cardData = Object.freeze([
         questions : `Why is the PA notification in the home screen always lit up?`,
         answers : `There are available pulls left to burn.`,
         tags : [dataTags.PA, dataTags.TRIVIA]
+    },
+    {
+        questions : `What are Black Beans/Red Beans?`,
+        answers : `Golyat and Golyat+, respectively.`,
+        tags : [dataTags.ENEMY]
+    },
+    {
+        questions : `What is Combat Effectiveness Stacking?`,
+        answers : `The process of stacking the useless number as high as possible, battle performance be damned.<br>
+        ARSMG = 30-50k, RFHG = 40-60k, MGSG = 100k+ average max CE, including maxed fairies, equips, mods, oaths, and formation bonuses.<br>
+        It's main purpose is for Theater Bosses and being on top of the Friend List.`,
+        tags : [dataTags.OTHER]
     },
     {
         questions : ``,

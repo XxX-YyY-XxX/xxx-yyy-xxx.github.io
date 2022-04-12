@@ -1,4 +1,4 @@
-< [Back](/GFL/mainpage)
+< [Back](./mainpage)
 
 # Commander Wardrobe
 
