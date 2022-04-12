@@ -303,10 +303,10 @@ const cardData = Object.freeze([
         tags : [dataTags.BATTLE]
     },
     {
-        questions : `What's the Fire Control Component used for?`,
+        questions : `What's the Fire Control Component (FCC) used for?`,
         answers : `Upgrading 5${star} dolls to 6${star} through modding.`,
         tags : [dataTags.RSC, dataTags.MOD, dataTags.TDOLL]
-    },    
+    },
     {
         questions : `What is Bookshelf of Memories?`,
         answers : `Sidestories for the featured dolls. Rewards Friend Gossips or Unity Skills.`,
