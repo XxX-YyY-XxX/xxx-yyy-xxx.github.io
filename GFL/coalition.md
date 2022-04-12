@@ -2,10 +2,6 @@
 
 # Protocol Assimilation/Coalition Echelons
 
-### Is there a tier list for good PA units?
-
-> ![](/GFL/assets/images/SFTier.png "Not fully updated")
-
 ### How do I build Coalition echelons?
 
 > [For your flowcharting needs.](https://redd.it/rkvisq)

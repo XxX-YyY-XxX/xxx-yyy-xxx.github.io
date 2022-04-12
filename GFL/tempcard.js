@@ -217,18 +217,14 @@ const cardData = Object.freeze([
         questions : `Are there any general guides for Protocol Assimilation/Coalition Units/SF Capture?`,
         answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
-        ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-first-impressions-revamped')}`,
+        ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-first-impressions-revamped')}<br>
+        ${link("Cleista's rudimentary pulling and tier list guide", 'https://twitter.com/CleistaCeleste/status/1409824210571214849')}`,
         tags : [dataTags.PA, dataTags.PRIME]
     },
     {
         questions : `How does Armor Penetration work?`,
         answers : `${link('Matsuda explanation.', 'https://gfl.matsuda.tips/post/armour')}`,
         tags : [dataTags.BATTLE]
-    },
-    {
-        questions : `Is there a guide on which Coalition unit to pull for and how?`,
-        answers : `${link(image('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096', 'Rudimentary pulling and tier list guide'), 'https://twitter.com/CleistaCeleste/status/1409824210571214849')}`,
-        tags : [dataTags.PA, dataTags.COALITION, dataTags.TIER]
     },
     {
         questions : `What are Fairies?`,
@@ -482,6 +478,11 @@ const cardData = Object.freeze([
         questions : `What is Corpse Whipping?`,
         answers : `The act of overkilling a dummy link by a huge amount. This is generally the reason why ROF-based guns are favored against low link-HP enemies.`,
         tags : [dataTags.BATTLE]
+    },
+    {
+        questions : `Is there a tier list for good PA units?`,
+        answers : `${image('./assets/images/SFTier.png')}`,
+        tags : [dataTags.COALITION, dataTags.TIER]
     },
     {
         questions : ``,
