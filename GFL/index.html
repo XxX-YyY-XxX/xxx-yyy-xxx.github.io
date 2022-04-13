@@ -197,12 +197,15 @@
                 }
             }
 
+            /** @param {HTMLElement} tagCheckbox */
             function toggleTag(tagCheckbox) {
                 if (tagCheckbox.checked) {
-                    document.getElementById(tagCheckbox.id + '-label').className = 'tags selectedTag';
+                    tagCheckbox.parentElement.className = 'tags selectedTag';
+                    //document.getElementById(tagCheckbox.id + '-label').className = 'tags selectedTag';
                     searchTextField.value += tagCheckbox.id + ' ';
                 } else {
-                    document.getElementById(tagCheckbox.id + '-label').className = 'tags unselectedTag';
+                    tagCheckbox.parentElement.className = 'tags unselectedTag';
+                    //document.getElementById(tagCheckbox.id + '-label').className = 'tags unselectedTag';
                     searchTextField.value = searchTextField.value.replace(tagCheckbox.id + ' ', '')
                 }
             }
