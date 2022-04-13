@@ -97,7 +97,7 @@ function altTextStyle(string, ...styles) {
     return string;
 }
 
-function spoiler(summaryName, details) {
+function spoilerSummary(summaryName, details) {
     return `<details><summary>${summaryName}</summary>${details}</details>`;
 }
 //#endregion
@@ -217,8 +217,10 @@ const cardData = Object.freeze([
     },
     {
         questions : `For limited-time bonuses (i.e. auto-battles, logistics), when are the rewards calculated?`,
-        answers : `If the runs can be cancelled without penalty, rewards are calculated at the end. Very noticeable with the "Use Battery" bingo mission when exp-training HOCs.<br>
-        If they can't be cancelled, or is cancellable with a penalty or cost, calculated at the start. Primary example is exped rewards.`,
+        answers : `If the runs can be cancelled without penalty, rewards are calculated at the end.<br>
+        ${spoilerSummary('Examples:', list(false, 'The "Use Battery" bingo mission when exp-training HOCs.'))}<br>
+        If they can't be cancelled, or is cancellable with a penalty or cost, calculated at the start.<br>
+        ${spoilerSummary('Examples:', list(false, 'Expedition rewards.'))}`,
         tags : [dataTags.SYSMECH]
     },
     {
@@ -546,6 +548,11 @@ const cardData = Object.freeze([
         answers : `${googledoc('https://docs.google.com/spreadsheets/d/1e_1oAa9Qm_tmWqbgFQca8ohzo29qcjctIwyIU9Mc1H0')}<br>
         ${link('For the doc link.', 'https://docs.google.com/spreadsheets/d/1e_1oAa9Qm_tmWqbgFQca8ohzo29qcjctIwyIU9Mc1H0')}`,
         tags : [dataTags.AUTO]
+    },
+    {
+        questions : `Where can I fight Goliath Factories?`,
+        answers : `In your dreams. Or maybe a custom enemy ID. Thing is, it's for PA purposes only.`,
+        tags : [dataTags.ENEMY]
     },
     {
         questions : ``,
