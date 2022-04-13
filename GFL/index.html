@@ -41,7 +41,7 @@
     </head>
 
     <style>
-        input[type="checkbox"]{
+        input[type="checkbox"], input[type="radio"] {
             appearance: none;
             margin: 0px;
         }
@@ -56,6 +56,7 @@
             text-shadow: 0 0 5px rgba(240, 78, 205, 0.5);
         }
 
+        /* #region Tags */
         .tags {
             outline: 2px solid aqua;
             border-radius: 10rem;
@@ -78,6 +79,7 @@
             background: aqua;
             color: black;
         }
+        /* #endregion */
 
         .twitter-tweet iframe {                         /* Needs more responsive solution. Works on first load only. */
             width: inherit;
@@ -88,6 +90,26 @@
             aspect-ratio: 1/1;
         }
 
+        /* #region Input Type Selector */
+        #input-type-container {
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .flex-label {
+            background-color: darkgreen;
+            padding: 10px 0px;
+            flex: 50%;
+        }
+
+        .flex-checked {
+            background-color: transparent;
+            padding: 10px 0px;
+            flex: 50%;
+        }
+
         #search-text {
             width: calc(100% - 76px);
         }
@@ -96,6 +118,7 @@
             text-align: center;
             display: none;                              /* Makes class hidden on default. */
         }
+        /* #endregion */
     </style>
 
     <body>
@@ -115,8 +138,10 @@
             <section id="main_content">
                 <p><h1><a href="./mainpage">Link to topics repository</a></h1></p>
                 
-                <label><input type="radio" id="search-input" name="input-type" onclick="switchInputMode(this)" checked>Search by keyword</label>
-                <label><input type="radio" id="tags-input" name="input-type" onclick="switchInputMode(this)">Search by tags</label>
+                <div id="input-type-container">
+                    <label class="flex-checked" id="search-label"><input type="radio" id="search-input" name="input-type" onclick="switchInputMode(this)" checked>Keyword</label>
+                    <label class="flex-label" id="tags-label"><input type="radio" id="tags-input" name="input-type" onclick="switchInputMode(this)">Tags</label>
+                </div>
 
                 <form>
                     <div id="tags-list"></div>
@@ -132,10 +157,12 @@
         <script type="text/javascript" src="/externaljavascript.js"></script>
         <script type="text/javascript" src="/GFL/tempcard.js"></script>
         <script>
+            //#region Constants and Variables
             const toggleableTagsField = document.getElementById('tags-list');
             const searchTextField = document.getElementById('search-text');
             const searchParams = new URLSearchParams(location.search);
             const questionCards = cardData;
+            //#endregion
 
             toggleableTagsField.innerHTML = Object.values(dataTags).map(val => 
                 `<label class="tags unselectedTag" id="${val}-label">
@@ -147,15 +174,19 @@
 
             function switchInputMode(radioButton) {
                 searchTextField.name = radioButton.id.replace('-input', '');
-                searchTextField.value = '';                        
+                searchTextField.value = '';
                 switch (radioButton.id) {
                     case 'tags-input':
                         searchTextField.style.display = 'none';
                         toggleableTagsField.style.display = 'block';
+                        document.getElementById('search-label').className = 'flex-label';
+                        document.getElementById('tags-label').className = 'flex-checked';
                         break;
                     case 'search-input':
                         searchTextField.style.display = 'inline';
                         toggleableTagsField.style.display = 'none';
+                        document.getElementById('search-label').className = 'flex-checked';
+                        document.getElementById('tags-label').className = 'flex-label';
                         for (const element of Array.from(document.getElementsByClassName('selectedTag'))) {
                             document.getElementById(element.id.replace('-label', '')).checked = false;
                             element.className = 'tags unselectedTag';
