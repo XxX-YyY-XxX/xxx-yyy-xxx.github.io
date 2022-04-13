@@ -40,7 +40,7 @@ const dataTags = Object.freeze({
     //LEDOLL : 'CycleDropDolls',      //Dolls that were once mini event/crate/completion rewards that now wander the rerun hell.
     LOVE : 'Affection',             //
     TIER : 'TierList',              //May not technically be one, just overall description on who is stronger than who.
-    RESUPPLY : 'Ressuply',
+    RESUPPLY : 'Resupply',          //Dorm gacha.
 });
 
 const star = '★';
