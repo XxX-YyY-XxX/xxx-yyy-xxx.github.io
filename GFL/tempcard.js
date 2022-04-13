@@ -42,6 +42,8 @@ const dataTags = Object.freeze({
     TIER : 'TierList',              //May not technically be one, just overall description on who is stronger than who.
     RESUPPLY : 'Resupply',          //Dorm gacha.
     OATH : 'OathSystem',            //Marriage.
+    FRIEND : 'Friends',
+    AUTO : 'AutoBattles',
 });
 
 const star = '★';
@@ -533,6 +535,17 @@ const cardData = Object.freeze([
         questions : `What does oathing a doll do?`,
         answers : `Additional line for oath, higher affection cap, double EXP gain (map EXP, auto-battles, CRs) on MODs, complete repair and resupply (one-time only), stat bonuses for damage/evasion/accuracy (because higher affection cap).`,
         tags : [dataTags.TDOLL, dataTags.OATH]
+    },
+    {
+        questions : `How do I get more support echelons?`,
+        answers : `Add friends. Post your UID on a GFL community board and someone would ${altTextStyle('surely', TextStyle.STRIKE)}probably add you.`,
+        tags : [dataTags.FRIEND]
+    },
+    {
+        questions : `Which map is best for auto-battles?`,
+        answers : `${googledoc('https://docs.google.com/spreadsheets/d/1e_1oAa9Qm_tmWqbgFQca8ohzo29qcjctIwyIU9Mc1H0')}<br>
+        ${link('For the doc link.', 'https://docs.google.com/spreadsheets/d/1e_1oAa9Qm_tmWqbgFQca8ohzo29qcjctIwyIU9Mc1H0')}`,
+        tags : [dataTags.AUTO]
     },
     {
         questions : ``,
