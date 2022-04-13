@@ -164,7 +164,7 @@
             //#endregion
 
             toggleableTagsField.innerHTML = Object.values(dataTags).map(val => 
-                `<label class="tags unselectedTag" id="${val}-label">
+                `<label class="tags unselectedTag">
                     <input type="checkbox" id="${val}" onclick="toggleTag(this)">${val}
                 </label>` 
             ).join(' ');
@@ -199,13 +199,12 @@
 
             /** @param {HTMLElement} tagCheckbox */
             function toggleTag(tagCheckbox) {
+                const parentLabel = tagCheckbox.parentElement;
                 if (tagCheckbox.checked) {
-                    tagCheckbox.parentElement.className = 'tags selectedTag';
-                    //document.getElementById(tagCheckbox.id + '-label').className = 'tags selectedTag';
+                    parentLabel.className = 'tags selectedTag';
                     searchTextField.value += tagCheckbox.id + ' ';
                 } else {
-                    tagCheckbox.parentElement.className = 'tags unselectedTag';
-                    //document.getElementById(tagCheckbox.id + '-label').className = 'tags unselectedTag';
+                    parentLabel.className = 'tags unselectedTag';
                     searchTextField.value = searchTextField.value.replace(tagCheckbox.id + ' ', '')
                 }
             }
