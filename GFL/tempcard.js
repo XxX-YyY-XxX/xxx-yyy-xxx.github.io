@@ -523,6 +523,12 @@ const cardData = Object.freeze([
         tags : [dataTags.OTHER]
     },
     {
+        questions : `What does the PA chip Pilfer do?`,
+        answers : `Allows players to have a ${link('chance', 'https://cdn.discordapp.com/attachments/950390063630524477/959042653738135582/Screenshot_20220331-194555_Girls_Frontline.jpg')} of getting ${link('S-Rank drops', 'https://youtu.be/t6Vu72cajO0')} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
+        Combine this with the ability to fight on one ammo bar to get two chances on one enemy.`,
+        tags : [dataTags.COALITION, dataTags.EQUIP]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
