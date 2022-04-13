@@ -138,8 +138,8 @@
                 <p><h1><a href="./mainpage">Link to topics repository</a></h1></p>
                 
                 <div id="input-type-container">
-                    <label class="flex-checked" id="search-label"><input type="radio" id="search-input" name="input-type" onclick="switchInputMode(this)" checked><h2>Keyword</h2></label>
-                    <label class="flex-label" id="tags-label"><input type="radio" id="tags-input" name="input-type" onclick="switchInputMode(this)"><h2>Tags</h2></label>
+                    <label class="flex-checked" id="search-label"><input type="radio" id="search-input" name="input-type" onclick="switchInputMode(this)" value="search" checked><h2>Keyword</h2></label>
+                    <label class="flex-label" id="tags-label"><input type="radio" id="tags-input" name="input-type" onclick="switchInputMode(this)" value="tags"><h2>Tags</h2></label>
                 </div>
 
                 <form>
@@ -174,18 +174,19 @@
             function switchInputMode(radioButton) {
                 searchTextField.name = radioButton.id.replace('-input', '');
                 searchTextField.value = '';
+                Array.from(document.getElementsByClassName('flex-checked'))[0].className = 'flex-label';
                 switch (radioButton.id) {
                     case 'tags-input':
                         searchTextField.style.display = 'none';
                         toggleableTagsField.style.display = 'block';
-                        document.getElementById('search-label').className = 'flex-label';
+                        //document.getElementById('search-label').className = 'flex-label';
                         document.getElementById('tags-label').className = 'flex-checked';
                         break;
                     case 'search-input':
                         searchTextField.style.display = 'inline';
                         toggleableTagsField.style.display = 'none';
                         document.getElementById('search-label').className = 'flex-checked';
-                        document.getElementById('tags-label').className = 'flex-label';
+                        //document.getElementById('tags-label').className = 'flex-label';
                         for (const element of Array.from(document.getElementsByClassName('selectedTag'))) {
                             document.getElementById(element.id.replace('-label', '')).checked = false;
                             element.className = 'tags unselectedTag';
