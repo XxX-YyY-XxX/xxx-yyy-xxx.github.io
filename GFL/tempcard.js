@@ -228,7 +228,7 @@ const cardData = Object.freeze([
         answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
         ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-first-impressions-revamped')}<br>
-        ${link("Cleista's rudimentary pulling and tier list guide", 'https://twitter.com/CleistaCeleste/status/1409824210571214849')}`,
+        ${link("Cleista's rudimentary pulling and tier list guide.", 'https://twitter.com/CleistaCeleste/status/1409824210571214849')}`,
         tags : [dataTags.PA, dataTags.PRIME]
     },
     {
