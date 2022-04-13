@@ -171,22 +171,22 @@
 
             document.getElementById('cards-field').innerHTML = (searchParams.has('search') || searchParams.has('tags')) ? searchCards() : randomCards();
 
+            /** @param {HTMLElement} radioButton */
             function switchInputMode(radioButton) {
                 searchTextField.name = radioButton.id.replace('-input', '');
                 searchTextField.value = '';
                 Array.from(document.getElementsByClassName('flex-checked'))[0].className = 'flex-label';
+                radioButton.parentElement.className = 'flex-checked';
                 switch (radioButton.id) {
                     case 'tags-input':
                         searchTextField.style.display = 'none';
                         toggleableTagsField.style.display = 'block';
-                        //document.getElementById('search-label').className = 'flex-label';
-                        document.getElementById('tags-label').className = 'flex-checked';
+                        //document.getElementById('tags-label').className = 'flex-checked';
                         break;
                     case 'search-input':
                         searchTextField.style.display = 'inline';
                         toggleableTagsField.style.display = 'none';
-                        document.getElementById('search-label').className = 'flex-checked';
-                        //document.getElementById('tags-label').className = 'flex-label';
+                        //document.getElementById('search-label').className = 'flex-checked';
                         for (const element of Array.from(document.getElementsByClassName('selectedTag'))) {
                             document.getElementById(element.id.replace('-label', '')).checked = false;
                             element.className = 'tags unselectedTag';
