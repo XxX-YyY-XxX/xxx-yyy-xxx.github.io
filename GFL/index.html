@@ -98,13 +98,13 @@
         }
 
         .flex-label {
-            background-color: darkgreen;
+            background-color: transparent;
             line-height: 10px;
             flex: 50%;
         }
 
         .flex-checked {
-            background-color: transparent;
+            background-color: darkgreen;
             line-height: 10px;
             flex: 50%;
         }
@@ -138,8 +138,8 @@
                 <p><h1><a href="./mainpage">Link to topics repository</a></h1></p>
                 
                 <div id="input-type-container">
-                    <label class="flex-checked"><input type="radio" id="search-input" name="input-type" onclick="switchInputMode(this)" value="search" checked><h2>Keyword</h2></label>
-                    <label class="flex-label"><input type="radio" id="tags-input" name="input-type" onclick="switchInputMode(this)" value="tags"><h2>Tags</h2></label>
+                    <label class="flex-checked"><input type="radio" name="input-type" onclick="switchInputMode(this)" value="search" checked><h2>Keyword</h2></label>
+                    <label class="flex-label"><input type="radio" name="input-type" onclick="switchInputMode(this)" value="tags"><h2>Tags</h2></label>
                 </div>
 
                 <form>
@@ -177,14 +177,11 @@
                 searchTextField.value = '';
                 Array.from(document.getElementsByClassName('flex-checked'))[0].className = 'flex-label';
                 radioButton.parentElement.className = 'flex-checked';
-                //switch (radioButton.id) {
                 switch (radioButton.value) {
-                    //case 'tags-input':
                     case 'tags':
                         searchTextField.style.display = 'none';
                         toggleableTagsField.style.display = 'block';
                         break;
-                    //case 'search-input':
                     case 'search':
                         searchTextField.style.display = 'inline';
                         toggleableTagsField.style.display = 'none';
