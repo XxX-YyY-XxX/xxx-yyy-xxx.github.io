@@ -41,6 +41,7 @@ const dataTags = Object.freeze({
     LOVE : 'Affection',             //
     TIER : 'TierList',              //May not technically be one, just overall description on who is stronger than who.
     RESUPPLY : 'Resupply',          //Dorm gacha.
+    OATH : 'OathSystem',            //Marriage.
 });
 
 const star = '★';
@@ -458,7 +459,7 @@ const cardData = Object.freeze([
         Off tanks<br>
         - Guns that generally have damage skills (i.e. molotov, grenade, damage boost etc.), or a secondary damage soaker in some instances, and is situated at either middle-top or middle-bottom.<br>
         All of these usually refer to SMGs.`,
-        tags : [dataTags.OTHER]
+        tags : [dataTags.OTHER, dataTags.IMPT]
     },
     {
         questions : `How are people just rolling in 5${star} fairies?`,
@@ -527,6 +528,11 @@ const cardData = Object.freeze([
         answers : `Allows players to have a ${link('chance', 'https://cdn.discordapp.com/attachments/950390063630524477/959042653738135582/Screenshot_20220331-194555_Girls_Frontline.jpg')} of getting ${link('S-Rank drops', 'https://youtu.be/t6Vu72cajO0')} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
         Combine this with the ability to fight on one ammo bar to get two chances on one enemy.`,
         tags : [dataTags.COALITION, dataTags.EQUIP]
+    },
+    {
+        questions : `What does oathing a doll do?`,
+        answers : `Additional line for oath, higher affection cap, double EXP gain (map EXP, auto-battles, CRs) on MODs, complete repair and resupply (one-time only), stat bonuses for damage/evasion/accuracy (because higher affection cap).`,
+        tags : [dataTags.TDOLL, dataTags.OATH]
     },
     {
         questions : ``,

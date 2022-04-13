@@ -24,10 +24,6 @@
 
 > <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/cgpt7y/weekly_commanders_lounge_july_23_2019/ev0gw64/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="619" width="640" scrolling="no"></iframe>
 
-### What does oathing a doll do?
-
-> Additional line for oath, higher affection cap, double EXP gain (map EXP, auto-battles, CRs) on MODs, complete repair and resupply (one-time only), stat bonuses for damage/evasion/accuracy (because higher affection cap).
-
 ### The speech bubble hearts, SKK. What do they mean?
 
 > Dorm? Tap them to gain ¼ of an affection.
