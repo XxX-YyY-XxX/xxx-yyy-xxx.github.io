@@ -200,12 +200,15 @@
             /** @param {HTMLElement} tagCheckbox */
             function toggleTag(tagCheckbox) {
                 const parentLabel = tagCheckbox.parentElement;
+                const tagName = parentLabel.innerText;
                 if (tagCheckbox.checked) {
                     parentLabel.className = 'tags selectedTag';
-                    searchTextField.value += tagCheckbox.id + ' ';
+                    //searchTextField.value += tagCheckbox.id + ' ';
+                    searchTextField.value += tagName + ' ';
                 } else {
                     parentLabel.className = 'tags unselectedTag';
-                    searchTextField.value = searchTextField.value.replace(tagCheckbox.id + ' ', '')
+                    //searchTextField.value = searchTextField.value.replace(tagCheckbox.id + ' ', '')
+                    searchTextField.value = searchTextField.value.replace(tagName + ' ', '');
                 }
             }
 
