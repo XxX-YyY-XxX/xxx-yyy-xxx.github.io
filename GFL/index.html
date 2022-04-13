@@ -173,25 +173,23 @@
 
             /** @param {HTMLElement} radioButton */
             function switchInputMode(radioButton) {
-                //searchTextField.name = radioButton.id.replace('-input', '');
                 searchTextField.name = radioButton.value;
                 searchTextField.value = '';
                 Array.from(document.getElementsByClassName('flex-checked'))[0].className = 'flex-label';
                 radioButton.parentElement.className = 'flex-checked';
-                switch (radioButton.id) {
-                //switch (radioButton.value) {
-                    case 'tags-input':
-                    //case 'tags':
+                //switch (radioButton.id) {
+                switch (radioButton.value) {
+                    //case 'tags-input':
+                    case 'tags':
                         searchTextField.style.display = 'none';
                         toggleableTagsField.style.display = 'block';
                         break;
-                    case 'search-input':
-                    //case 'search':
+                    //case 'search-input':
+                    case 'search':
                         searchTextField.style.display = 'inline';
                         toggleableTagsField.style.display = 'none';
                         for (const element of Array.from(document.getElementsByClassName('selectedTag'))) {
                             element.firstElementChild.checked = false
-                            //document.getElementById(element.id.replace('-label', '')).checked = false;
                             element.className = 'tags unselectedTag';
                         }
                         break;
