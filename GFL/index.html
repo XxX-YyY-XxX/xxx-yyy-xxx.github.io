@@ -165,8 +165,8 @@
 
             toggleableTagsField.innerHTML = Object.values(dataTags).map(val => 
                 `<label class="tags unselectedTag">
-                    <input type="checkbox" id="${val}" onclick="toggleTag(this)">${val}
-                </label>` 
+                    <input type="checkbox" onclick="toggleTag(this)">${val}
+                </label>`
             ).join(' ');
 
             document.getElementById('cards-field').innerHTML = (searchParams.has('search') || searchParams.has('tags')) ? searchCards() : randomCards();
@@ -200,15 +200,13 @@
             /** @param {HTMLElement} tagCheckbox */
             function toggleTag(tagCheckbox) {
                 const parentLabel = tagCheckbox.parentElement;
-                const tagName = parentLabel.innerText;
+                const tagName = parentLabel.innerText + ' ';
                 if (tagCheckbox.checked) {
                     parentLabel.className = 'tags selectedTag';
-                    //searchTextField.value += tagCheckbox.id + ' ';
-                    searchTextField.value += tagName + ' ';
+                    searchTextField.value += tagName;
                 } else {
                     parentLabel.className = 'tags unselectedTag';
-                    //searchTextField.value = searchTextField.value.replace(tagCheckbox.id + ' ', '')
-                    searchTextField.value = searchTextField.value.replace(tagName + ' ', '');
+                    searchTextField.value = searchTextField.value.replace(tagName, '');
                 }
             }
 
