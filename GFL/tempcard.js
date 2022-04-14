@@ -561,8 +561,15 @@ const cardData = Object.freeze([
         ['Tier 1', '2.5-2.7%', '1.6/2.5-3.3%', '0.5/1-1.5%'],
         ['Tier 2', '1.2-1.5%', '1.9/2.7-4%', '0.8/1-2%'],
         ['Tier 3', '0%', '3-5.5%', '1-1.9%'],
-        ['Special Rate', '', 'Super-Shorty', 'FP-6'])}`,
+        ['Special Rate', '', 'Super-Shorty', 'FP-6'])}<br>
+        Overall SG rate is 50% every tier.`,
         tags : [dataTags.PROD, dataTags.TDOLL]
+    },
+    {
+        questions : `I can't beat the current stage. Is this it for me?`,
+        answers : `For the triple stages, just fall back to the last boss node you can handle. These nodes can mitigate the "Cleared Stage" penalty so it's worth more than non-boss higher node.<br>
+        For Core stage, highest node clearable.`,
+        tags : [dataTags.THEATER]
     },
     {
         questions : ``,

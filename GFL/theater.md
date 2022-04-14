@@ -14,10 +14,6 @@
 >
 > For HOCs, maxed out PA is better in stack but worse in battle.
 
-### I can't beat the current stage. Is this it for me?
-
-> Nope. Just fall back to the last boss node you can handle. These nodes can mitigate the "beaten stage" penalty so it's worth more than non-boss higher node.
-
 ### I wasn't able to place high enough to 5★ the reward HOC. Is there another way to get their central data?
 
 > Odd numbered theater? Even the Top 1 can't anyway.
