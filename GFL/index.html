@@ -154,7 +154,7 @@
         </div>
 
         <script type="text/javascript" src="/externaljavascript.js"></script>
-        <script type="text/javascript" src="/GFL/tempcard.js"></script>
+        <script type="text/javascript" src="./tempcard.js"></script>
         <script>
             //#region Constants and Variables
             const toggleableTagsField = document.getElementById('tags-list');
@@ -175,7 +175,7 @@
             function switchInputMode(radioButton) {
                 searchTextField.name = radioButton.value;
                 searchTextField.value = '';
-                Array.from(document.getElementsByClassName('flex-checked'))[0].className = 'flex-label';
+                UniqueClassElement('flex-checked').className = 'flex-label';
                 radioButton.parentElement.className = 'flex-checked';
                 switch (radioButton.value) {
                     case 'tags':
@@ -211,21 +211,23 @@
 
             function searchCards() {
                 var output = '';
+                var matchCheck;
 
                 if (searchParams.has('tags')) {
                     const cardTags = searchParams.get('tags').split(' ').filter(Boolean);
                     if (cardTags.length > 0) {
-                        var matchCheck = function(card) {
+                        /** @returns {boolean} */
+                        matchCheck = function(card) {
                             return IsSubsetOf(cardTags, card.tags);
                         }
                     } else {
                         return 'Empty search.';
                     }
                 } else {
-                    let searchText = searchParams.get('search');
+                    const searchText = searchParams.get('search');
                     if (searchText) {
                         const phrase = new RegExp(searchText, 'i');
-                        var matchCheck = function(card) {
+                        matchCheck = function(card) {
                             return phrase.test(card.questions) || phrase.test(RemoveHTMLTag(card.answers));
                         }
                     } else {

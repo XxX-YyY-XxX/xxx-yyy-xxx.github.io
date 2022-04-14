@@ -1,15 +1,23 @@
 const epsilon = 10 ** -10;
 
+/** @returns {boolean} */
 function IsSubsetOf(subset, mainset) {
     return subset.every(val => mainset.includes(val));
 }
 
+/** @param {string} htmlString @returns {string} */
 function RemoveHTMLTag(htmlString) {                                        //May remove non-HTML <???> strings
     return htmlString.replace(/(<([^>]+)>)/ig, '');
 }
 
+/** @param {number} min @param {number} max @returns {number} */
 function RandomInteger(min, max) {                                          //Math.random() = [0...1)
     return Math.floor(Math.random() * (max - min)) + min;
+}
+
+/** @param {string} className */
+function UniqueClassElement(className) {
+    return Array.from(document.getElementsByClassName(className))[0]
 }
 
 //replace(/ /g, ' + ');
