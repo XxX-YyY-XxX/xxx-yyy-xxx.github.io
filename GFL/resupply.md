@@ -2,10 +2,6 @@
 
 # Resupply/Costumes/Furniture
 
-### Are there any sort of guides on how and when to roll?
-
-> [In-depth guide, tips, tricks, and primers.](https://big-stupid-jellyfish.github.io/GFMath/pages/gacha)
-
 ### T-Doll Costumes available now?
 
 > [Gamepress list.](https://gamepress.gg/girlsfrontline/t-doll-costumes-list) Has a list of unobtainable costumes.

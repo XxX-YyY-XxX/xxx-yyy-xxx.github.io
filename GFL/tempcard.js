@@ -44,6 +44,7 @@ const dataTags = Object.freeze({
     OATH : 'OathSystem',            //Marriage.
     FRIEND : 'Friends',
     AUTO : 'AutoBattles',
+    SKIN : 'DollCostumes',          //Primary money sink.
 });
 
 const star = '★';
@@ -361,7 +362,8 @@ const cardData = Object.freeze([
     },
     {
         questions : `Which dolls should I duplicate?`,
-        answers : `${link('Matsuda notes.', 'https://gfl.matsuda.tips/post/worthwhiledupes')}`,
+        answers : `${link('Matsuda notes.', 'https://gfl.matsuda.tips/post/worthwhiledupes')}<br>
+        ${link('Gamepress suggestions.', 'https://gamepress.gg/girlsfrontline/t-doll-duping-guide')} Some details may not be applicable.`,
         tags : [dataTags.TDOLL]
     },
     {
@@ -496,13 +498,18 @@ const cardData = Object.freeze([
         tags : [dataTags.COALITION, dataTags.TIER]
     },
     {
+        questions : `Are there any sort of guides on how and when to roll for skins?`,
+        answers : `${link('BigStupidJellyfish guide.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/gacha')}`,
+        tags : [dataTags.RESUPPLY, dataTags.SKIN, dataTags.PRIME]
+    },
+    {
         questions : `What's the gacha rate for costumes?`,
         answers : `${table(['Item', 'Rate'],
-        ['Costumes', '02.00%'],
-        [`5${star} furniture`, '08.00%'],
-        [`4${star} furniture`, '34.20%'],
-        [`4${star} gifts/cakes`, '01.80%'],
-        [`3${star} furniture`, '54.00%'])}`,
+        ['Costumes',                '02.00%'],
+        [`5${star} furniture`,      '08.00%'],
+        [`4${star} furniture`,      '34.20%'],
+        [`4${star} gifts/cakes`,    '01.80%'],
+        [`3${star} furniture`,      '54.00%'])}`,
         tags : [dataTags.RESUPPLY]
     },
     {
