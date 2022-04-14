@@ -555,6 +555,16 @@ const cardData = Object.freeze([
         tags : [dataTags.ENEMY]
     },
     {
+        questions : `For T-Doll Heavy Construction, how much worth is Tier 1 to Tier 2 or 3?`,
+        answers : `Individual SG rate as of Feb 28-Mar 8, 2022 (Normal)<br>
+        ${table(['Tiers', `3${star}`, `4${star}`, `5${star}`],
+        ['Tier 1', '2.5-2.7%', '1.6/2.5-3.3%', '0.5/1-1.5%'],
+        ['Tier 2', '1.2-1.5%', '1.9/2.7-4%', '0.8/1-2%'],
+        ['Tier 3', '0%', '3-5.5%', '1-1.9%'],
+        ['Special Rate', '', 'Super-Shorty', 'FP-6'])}`,
+        tags : [dataTags.PROD, dataTags.TDOLL]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
