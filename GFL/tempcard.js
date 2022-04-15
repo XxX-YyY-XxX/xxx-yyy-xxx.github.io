@@ -45,6 +45,7 @@ const dataTags = Object.freeze({
     FRIEND : 'Friends',
     AUTO : 'AutoBattles',
     SKIN : 'DollCostumes',          //Primary money sink.
+    LVL : 'Leveling',           //Mostly Corpse Drag.
 });
 
 const star = '★';
@@ -181,7 +182,7 @@ const cardData = Object.freeze([
     {
         questions : `Would the equipment I'm enhancing get bonus points if I use an enhanced fodder?`,
         answers : `No.`,
-        tags : [dataTags.EQUIP]
+        tags : [dataTags.EQUIP, dataTags.LVL]
     },
     {
         questions : `Is there a list of which logistics to do if I want to prioritize certain resources?`,
@@ -416,12 +417,12 @@ const cardData = Object.freeze([
         ${link("Ceia's 0-2 drag guide. Vids Edition.", 'https://youtu.be/vqvPpO1vKqw')}<br>
         ${link('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide')}<br>
         ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/optimizing-leveling-introduction')}`,
-        tags : [dataTags.OTHER, dataTags.IMPT]
+        tags : [dataTags.OTHER, dataTags.IMPT, dataTags.LVL]
     },
     {
         questions : `If I MOD my T-Doll, is Level 100 still considered max level?`,
         answers : `Thankfully, this is where common sense wins. In short, ${altTextStyle('NO', TextStyle.BOLD)}.`,
-        tags : [dataTags.MOD]
+        tags : [dataTags.MOD, dataTags.LVL]
     },
     {
         questions : `As a newbie, is it worth to go for gold medals?`,
@@ -582,6 +583,16 @@ const cardData = Object.freeze([
         questions : `Which facilities should I prioritize for battery expenditures?`,
         answers : `${list(true, 'Forward Basecamp.', 'Protocol Control Centre.', 'Intelligence Room.', 'Fairy Chamber.', 'Firing Range (Garage).', 'Data Room.', 'Rescue Station.')}`,
         tags : [dataTags.NEWB]
+    },
+    {
+        questions : `What do I need for 8-1N Zas drag?`,
+        answers : `${googledoc('https://docs.google.com/spreadsheets/d/1VT52c-_m4zTx-OFRPcxE9iFmmJY_AMC7CyJT1B7FLt8')}`,
+        tags : [dataTags.TDOLL, dataTags.LVL]
+    },
+    {
+        questions : `Is there a tier list for fairies?`,
+        answers : `${link("Imgur album of Sijun's list.", 'https://imgur.com/a/pfSSel9')}`,
+        tags : [dataTags.FAIRY, dataTags.TIER]
     },
     {
         questions : ``,
