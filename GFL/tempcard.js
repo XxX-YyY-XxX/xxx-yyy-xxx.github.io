@@ -406,7 +406,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `How can I resupply a single doll and not the whole echelon?`,
-        answers : `The Trifectra of Free Repair compels you. Or just do a one-man echelon (this one's a corpse drag staple).`,
+        answers : `The Trifectra of Rejuvenation compels you. Or just do a one-man echelon (this one's a corpse drag staple).`,
         tags : [dataTags.TDOLL, dataTags.MAP]
     },
     {
@@ -577,6 +577,11 @@ const cardData = Object.freeze([
         answers : `For the triple stages, just fall back to the last boss node you can handle. These nodes can mitigate the "Cleared Stage" penalty so it's worth more than non-boss higher node.<br>
         For Core stage, highest node clearable.`,
         tags : [dataTags.THEATER]
+    },
+    {
+        questions : `Which facilities should I prioritize for battery expenditures?`,
+        answers : `${list(true, 'Forward Basecamp.', 'Protocol Control Centre.', 'Intelligence Room.', 'Fairy Chamber.', 'Firing Range (Garage).', 'Data Room.', 'Rescue Station.')}`,
+        tags : [dataTags.NEWB]
     },
     {
         questions : ``,

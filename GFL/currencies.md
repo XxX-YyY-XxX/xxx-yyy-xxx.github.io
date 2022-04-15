@@ -64,16 +64,6 @@
 
 > Valentine's, White Day, Qixi/Tanabata, and Christmas.
 
-### Which facilities should I prioritize for battery expenditures?
-
-> 1. Forward Basecamp
-> 2. Intelligence Room
-> 3. Protocol Control Centre
-> 4. Firing Range (Garage)
-> 5. Fairy Chamber
-> 6. Data Room
-> 7. Rescue Station
-
 ### Where can I get calibration tickets?
 
 > Defense Drill, expeditions, shop, mini-events, log-in.
