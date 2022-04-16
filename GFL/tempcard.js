@@ -431,10 +431,10 @@ const cardData = Object.freeze([
         tags : [dataTags.MOD, dataTags.LVL]
     },
     {
-        questions : `As a newbie, is it worth to go for gold medals?`,
-        answers : `Not exactly. Blaze through chapters first to get your account running, then come back when you have at least 2 working echelons.`,
+        questions : `I can't get the gold and silver maps because the enemies keep running all over me. How do I get them?`,
+        answers : `Not now. Blaze through chapters first to get your account running, then come back to it later when you have at least 2 strong (Lv. 90, 5 links) echelons.`,
         tags : [dataTags.NEWB, dataTags.MAIN]
-    },
+    },  // You can get this quickly through Newbie Career Quests. And you can complete the quests faster if you use friend/support echelons.
     {
         questions : `Can I transfer my Google Account to a Sunborn one?`,
         answers : `It's a one-way street from there.`,
