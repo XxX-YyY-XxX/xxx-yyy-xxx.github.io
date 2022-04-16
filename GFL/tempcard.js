@@ -68,9 +68,14 @@ function list(ordered, ...any) {
 }
 
 /** @param {URLString} docLink */
-function googledoc(docLink, maxHeightPixels = 0) {
+function googleEmbed(docLink, maxHeightPixels = 0) {
     const style = maxHeightPixels ? `style="max-height: ${maxHeightPixels}px;" ` : '';
     return `<iframe class="gdoc" ${style}src="${docLink}/preview?pli=1" frameborder="0"></iframe>`;
+}
+
+/** @param permalink ...comments/${permalink}/?...*/
+function redditEmbed(permalink) {                                       //needs more fix
+    return `<iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/${permalink}/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="278" width="640" scrolling="no"></iframe>`
 }
 
 /** @param {Array} headerArray @param {Array[]} arrayOfArrays */
@@ -288,9 +293,10 @@ const cardData = Object.freeze([
         answers : `Add Target<br>
         ${list(false, "Long press the enemy on the map and you'll see the button on the top-left.", 'Pause while in battle to see the button on the bottom-left.', 'Button appears on the bottom-left after losing a battle.')}<br>
         GFAlarm<br>
-        ${list(false, `Use GFLMaps to take the enemy IDs you want to fight and enter them in the Custom Target Train under Packet Forger, with IDs separated by commas.<br>
-        ${image('./assets/images/GFAlarmCTT.png', 'From u/UnironicWeeaboo')}<br>
-        Works for comps that has been loaded into the client.`)}<br>
+        ${list(false, 
+            `Use GFLMaps to take the enemy IDs you want to fight and enter them in the Custom Target Train under Packet Forger, with IDs separated by commas.<br>
+            ${image('./assets/images/GFAlarmCTT.png', 'From u/UnironicWeeaboo')}<br>
+            Works for comps that has been loaded into the client and is ${spoilerSummary('very safe.', redditEmbed('tqur46/weekly_commanders_lounge_march_29_2022/i312oo2'))}`)}<br>
         ${link('Matsuda recommendations.', 'https://gfl.matsuda.tips/post/everything-sucks-forever')}`,
         tags : [dataTags.ENEMY, dataTags.BATTLE, dataTags.MAP, dataTags["3P"]]
     },
@@ -369,7 +375,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `How high is fairy rate-up?`,
-        answers : `${googledoc('https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI', 586)}`,
+        answers : `${googleEmbed('https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI', 586)}`,
         tags : [dataTags.FAIRY, dataTags.PROD]
     },  //Redditor u/ConductorBichir's list IIRC
     {
@@ -553,7 +559,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `Which map is best for auto-battles?`,
-        answers : `${googledoc('https://docs.google.com/spreadsheets/d/1e_1oAa9Qm_tmWqbgFQca8ohzo29qcjctIwyIU9Mc1H0')}<br>
+        answers : `${googleEmbed('https://docs.google.com/spreadsheets/d/1e_1oAa9Qm_tmWqbgFQca8ohzo29qcjctIwyIU9Mc1H0')}<br>
         ${link('For the doc link.', 'https://docs.google.com/spreadsheets/d/1e_1oAa9Qm_tmWqbgFQca8ohzo29qcjctIwyIU9Mc1H0')}`,
         tags : [dataTags.AUTO]
     },
@@ -586,13 +592,24 @@ const cardData = Object.freeze([
     },
     {
         questions : `What do I need for 8-1N Zas drag?`,
-        answers : `${googledoc('https://docs.google.com/spreadsheets/d/1VT52c-_m4zTx-OFRPcxE9iFmmJY_AMC7CyJT1B7FLt8')}`,
+        answers : `${googleEmbed('https://docs.google.com/spreadsheets/d/1VT52c-_m4zTx-OFRPcxE9iFmmJY_AMC7CyJT1B7FLt8')}`,
         tags : [dataTags.TDOLL, dataTags.LVL]
     },
     {
         questions : `Is there a tier list for fairies?`,
         answers : `${link("Imgur album of Sijun's list.", 'https://imgur.com/a/pfSSel9')}`,
         tags : [dataTags.FAIRY, dataTags.TIER]
+    },
+    {
+        questions : `Do the purchaseable items in the Expedition Black Market ever change?`,
+        answers : `No.`,
+        tags : [dataTags.EXPED]
+    },
+    {
+        questions : `Which dolls should I use for expedition?`,
+        answers : `${image('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/inline-images/expedition-advantaged-dolls_0.jpg', 'Taken from Gamepress')}<br>
+        And dummy links are not taken into account.`,
+        tags : [dataTags.EXPED, dataTags.TDOLL]
     },
     {
         questions : ``,

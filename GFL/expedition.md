@@ -8,12 +8,6 @@
 
 @ Visual
 
-### Which dolls should I use for expedition?
-
-> ![](https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/inline-images/expedition-advantaged-dolls_0.jpg "Taken from Gamepress")
->
-> And dummy links are not taken into account.
-
 ### Can I deploy two or three of the same pets in expedition?
 
 > Actually, that is the method used by min-maxers regarding advantaged pets.
