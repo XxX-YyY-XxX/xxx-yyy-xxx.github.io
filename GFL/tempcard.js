@@ -45,7 +45,9 @@ const dataTags = Object.freeze({
     FRIEND : 'Friends',
     AUTO : 'AutoBattles',
     SKIN : 'DollCostumes',          //Primary money sink.
-    LVL : 'Leveling',           //Mostly Corpse Drag.
+    LVL : 'Leveling',               //Mostly Corpse Drag.
+    ECH : 'EchelonFormation',       //
+    PET : 'Pets',                   //ANIMAL
 });
 
 const star = '★';
@@ -75,7 +77,8 @@ function googleEmbed(docLink, maxHeightPixels = 0) {
 
 /** @param permalink ...comments/${permalink}/?...*/
 function redditEmbed(permalink) {                                       //needs more fix
-    return `<iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/${permalink}/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="278" width="640" scrolling="no"></iframe>`
+    return `<iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/${permalink}/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="278" width="640" scrolling="no"></iframe><br>
+    <https://old.reddit.com/r/girlsfrontline/comments/${permalink}/>`
 }
 
 /** @param {Array} headerArray @param {Array[]} arrayOfArrays */
@@ -409,12 +412,12 @@ const cardData = Object.freeze([
     {
         questions : `If a unit in my coalition echelon dies, will the rest of the team's affection drop too?`,
         answers : `No. Affection only drops if the unit itself kicks it.`,
-        tags : [dataTags.COALITION, dataTags.LOVE]
+        tags : [dataTags.COALITION, dataTags.LOVE, dataTags.ECH]
     },
     {
         questions : `How can I resupply a single doll and not the whole echelon?`,
         answers : `The Trifectra of Rejuvenation compels you. Or just do a one-man echelon (this one's a corpse drag staple).`,
-        tags : [dataTags.TDOLL, dataTags.MAP]
+        tags : [dataTags.TDOLL, dataTags.MAP, dataTags.ECH]
     },
     {
         questions : `What is Corpse Dragging?`,
@@ -555,7 +558,7 @@ const cardData = Object.freeze([
     {
         questions : `How do I get more support echelons?`,
         answers : `Add friends. Post your UID on a GFL community board and someone would ${altTextStyle('surely', TextStyle.STRIKE)}probably add you.`,
-        tags : [dataTags.FRIEND]
+        tags : [dataTags.FRIEND, dataTags.ECH]
     },
     {
         questions : `Which map is best for auto-battles?`,
@@ -619,6 +622,29 @@ const cardData = Object.freeze([
             "Storage slots especially if you're a collector. Or whenever you're getting annoyed with the pop-up.",
             'Your Mileage May Vary (YMMV).')}`,
         tags : [dataTags.NEWB, dataTags.RSC]
+    },
+    {
+        questions : `What teams should I build?`,
+        answers : ` 2 AR-SMGs first, then RF-HG, then MGSG if you want. The team should be Lv. 90 5-links before going for the next team.`,
+        tags : [dataTags.NEWB, dataTags.ECH]
+    },
+    {
+        questions : `Which HOC chips should I use?`,
+        answers : `${link('Reddit guide for desktop calc.', 'https://redd.it/fnh1ey')}<br>
+        ${link('Google Docs guide.', 'https://docs.google.com/document/d/1pR6g-mgsy22_MhRPASL9c1wDoCuxfUwr-DCCMYmb7Ss')}<br>
+        ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/guide-gfchipcalc-hoc-calculator-optimization-tool')}<br>
+        ${link('Chip Calc versions page.', 'https://github.com/Bunnyspa/GFChipCalc/releases')} If the proxy method doesn't work, use 7.3.0 or GFAlarm.<br>
+        ${link('Android Chip Calc download page.', 'https://bunnyspa.github.io/gfl/chipcalc')}<br>
+        ${link('Alternate link for Android Chip Calc.', 'https://apkpure.com/girls-frontline-chip-calculator/bunnyspa.gfl.chipcalc/versions')}<br>
+        ${link('Browser Chip Calc by FatalChapter.', 'https://hycdes.com/pages/GFT_ChipCal-EN.html')}<br>
+        ${link('5-block chips that can be disassembled (Taken from Gamepress).', 'https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/2020-01/hoc-chip-shape-minmax-example.jpg')}<br>
+        These apps are safe for your account.`,
+        tags : [dataTags["3P"], dataTags.HOC, dataTags.EQUIP]
+    },
+    {
+        questions : `How does the Rescue Station work?`,
+        answers : `${link('DMesse guide.', 'http://dmesse.egloos.com/m/3588696')}`,
+        tags : [dataTags.PET]
     },
     {
         questions : ``,

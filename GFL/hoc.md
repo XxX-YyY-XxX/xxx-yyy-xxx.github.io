@@ -8,26 +8,6 @@
 >
 > Or just have the chip calc do the heavy lifting.
 
-### Which HOC chips should I use?
-
-> [Reddit guide for desktop calc.](https://redd.it/fnh1ey)
->
-> [Google Docs guide.](https://docs.google.com/document/d/1pR6g-mgsy22_MhRPASL9c1wDoCuxfUwr-DCCMYmb7Ss)
->
-> [Gamepress guide.](https://gamepress.gg/girlsfrontline/guide-gfchipcalc-hoc-calculator-optimization-tool)
->
-> [Chip Calc versions page.](https://github.com/Bunnyspa/GFChipCalc/releases) If the proxy method doesn't work, use 7.3.0 or GFAlarm.
->
-> [Android Chip Calc download page.](https://bunnyspa.github.io/gfl/chipcalc)
->
-> [Alternate link for Android Chip Calc.](https://apkpure.com/girls-frontline-chip-calculator/bunnyspa.gfl.chipcalc/versions)
->
-> [Browser Chip Calc by FatalChapter.](https://hycdes.com/pages/GFT_ChipCal-EN.html)
->
-> ![](https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/2020-01/hoc-chip-shape-minmax-example.jpg "5-block chips that can be disassembled (Taken from Gamepress).")
->
-> These apps are safe for your account.
-
 ### When do I get to unlock the whole HOC grid/matrix/board?
 
 > At full promotion. The yellow ★★★★★ one.
