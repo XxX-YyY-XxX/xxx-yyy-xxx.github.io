@@ -612,6 +612,15 @@ const cardData = Object.freeze([
         tags : [dataTags.EXPED, dataTags.TDOLL]
     },
     {
+        questions : `Where to use gems?`,
+        answers : `${list(true,
+            'Echelon slots up to 6 minimum, 8 for actually constant (ranking not included) logistics.',
+            '5 dorms for batteries, enough to upgrade important facilities. More than that is your call.',
+            "Storage slots especially if you're a collector. Or whenever you're getting annoyed with the pop-up.",
+            'Your Mileage May Vary (YMMV).')}`,
+        tags : [dataTags.NEWB, dataTags.RSC]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []

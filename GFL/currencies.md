@@ -2,13 +2,6 @@
 
 # Resource Management
 
-### Where to use gems?
-
-> 1. Echelon slots up to 6 minimum, 8 for actually constant (ranking not included) logistics.
-> 2. 5 dorms for batteries. More than that and diminishing returns are bigger.
-> 3. T-Doll storage slots especially if you're a collector. Or whenever you're getting annoyed with the pop-up.
-> 4. Your Mileage May Vary (YMMV).
-
 ### How are the limited bonus gems for the monrhly card applied?
 
 > Only within the time the event is ongoing, which is for a week. Note that it immediately becomes active as long as a monthly gem is active, old or new purchase.
