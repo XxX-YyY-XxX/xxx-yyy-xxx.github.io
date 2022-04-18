@@ -425,7 +425,8 @@ const cardData = Object.freeze([
         ${link("Ceia's 0-2 drag guide. Docs Edition.", 'https://docs.google.com/document/u/0/d/1PkxJ7ObdGW_cS_qbzAxQ_hoC1SFse3HNYWlnywZfPuo')}<br>
         ${link("Ceia's 0-2 drag guide. Vids Edition.", 'https://youtu.be/vqvPpO1vKqw')}<br>
         ${link('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide')}<br>
-        ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/optimizing-leveling-introduction')}`,
+        ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/optimizing-leveling-introduction')}<br>
+        ${link('GFLCorner guide.', 'https://www.gflcorner.com/efficient-leveling-guide/')}`,
         tags : [dataTags.OTHER, dataTags.IMPT, dataTags.LVL]
     },
     {
@@ -487,7 +488,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `How high is a certain doll's pull rate during rate-ups?`,
-        answers : `Something like Targeted > General >>> Normal.`,
+        answers : `Something like Anchored > Targeted > General >>> Normal.`,
         tags : [dataTags.TDOLL, dataTags.PROD]
     },
     {
@@ -633,7 +634,7 @@ const cardData = Object.freeze([
         answers : `${link('Reddit guide for desktop calc.', 'https://redd.it/fnh1ey')}<br>
         ${link('Google Docs guide.', 'https://docs.google.com/document/d/1pR6g-mgsy22_MhRPASL9c1wDoCuxfUwr-DCCMYmb7Ss')}<br>
         ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/guide-gfchipcalc-hoc-calculator-optimization-tool')}<br>
-        ${link('Chip Calc versions page.', 'https://github.com/Bunnyspa/GFChipCalc/releases')} If the proxy method doesn't work, use 7.3.0 or GFAlarm.<br>
+        ${link('Chip Calc versions page.', 'https://github.com/Bunnyspa/GFChipCalc/releases')} If the proxy method doesn't work, use 7.3.0 or import the {username}_{UID}_user_info.json from GFAlarm.<br>
         ${link('Android Chip Calc download page.', 'https://bunnyspa.github.io/gfl/chipcalc')}<br>
         ${link('Alternate link for Android Chip Calc.', 'https://apkpure.com/girls-frontline-chip-calculator/bunnyspa.gfl.chipcalc/versions')}<br>
         ${link('Browser Chip Calc by FatalChapter.', 'https://hycdes.com/pages/GFT_ChipCal-EN.html')}<br>
@@ -645,6 +646,22 @@ const cardData = Object.freeze([
         questions : `How does the Rescue Station work?`,
         answers : `${link('DMesse guide.', 'http://dmesse.egloos.com/m/3588696')}`,
         tags : [dataTags.PET]
+    },
+    {
+        questions : `How often do general rate-ups occur?`,
+        answers : `January, May, September`,
+        tags : [dataTags.PROD]
+    },
+    {
+        questions : `Do autobattles give affection?`,
+        answers : `A tiny bit.`,
+        tags : [dataTags.AUTO, dataTags.LOVE]
+    },
+    {
+        questions : `Do support echelons use equipment?`,
+        answers : `Equipments used, formation, and apparently costumes too are saved instances.<br>
+        Doll levels, equipment levels, skill levels, and chibis aren't. Meaning supports can be saved then leveled afterwards.`,
+        tags : [dataTags.FRIEND, dataTags.ECH]
     },
     {
         questions : ``,
