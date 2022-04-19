@@ -604,7 +604,8 @@ const cardData = Object.freeze([
     {
         questions : `Is there a tier list for fairies?`,
         answers : `${image('./assets/images/FairyTier.png', "Sijun's list")}<br>
-        For the equipments, top number is the recommended quantity, bottom number is the reserve quantity.`,
+        For the equipments, top number is the recommended quantity, bottom number is the reserve quantity.<br>
+        ${link(`u/UnironicWeeaboo's spreadsheet.`, 'https://docs.google.com/spreadsheets/d/1RORciafqtspkxy3fqBrFdKIxVfanV2-fLl9FlvY3QtM')}`,
         tags : [dataTags.FAIRY, dataTags.TIER, dataTags.EQUIP]
     },  //https://imgur.com/a/pfSSel9
     {
