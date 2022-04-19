@@ -88,12 +88,6 @@
 
 > Nope. They're merely DPS and health multiplier basically. Pretty much used as the equivalent of limit-break fodders in other gachas.
 
-### Can I get the monthly log-in dolls again? If so, where?
-
-> [Farmable dolls in campaign maps, especially the 3★ ones (aka the monthly dolls). Also includes clear rewards.](https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards.html)
->
-> As for the missing monthlies, just wait for a new event/campaign.
-
 ### Is there a comprehensive list of Limited Event Dolls?
 
 > [From redditor u/BigStupidJellyfish_.](https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls.html)

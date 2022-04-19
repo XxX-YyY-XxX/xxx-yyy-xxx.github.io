@@ -48,6 +48,7 @@ const dataTags = Object.freeze({
     LVL : 'Leveling',               //Mostly Corpse Drag.
     ECH : 'EchelonFormation',       //
     PET : 'Pets',                   //ANIMAL
+    CAMPAIGN : 'CampaignMissions',  //Permanent Major Events
 });
 
 const star = '★';
@@ -664,6 +665,12 @@ const cardData = Object.freeze([
         answers : `Equipments used, formation, and apparently costumes too are saved instances.<br>
         Doll levels, equipment levels, skill levels, and chibis aren't. Meaning supports can be saved then leveled afterwards.`,
         tags : [dataTags.FRIEND, dataTags.ECH]
+    },
+    {
+        questions : `Can I get the monthly log-in dolls again? If so, where?`,
+        answers : `${link(`Farmable dolls in campaign maps, especially the 3${star} ones (aka the monthly dolls). Also includes the new clear rewards.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards')}<br>
+        As for the missing monthlies, just wait for a new event/campaign.`,
+        tags : [dataTags.TDOLL, dataTags.CAMPAIGN]
     },
     {
         questions : ``,
