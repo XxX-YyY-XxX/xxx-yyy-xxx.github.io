@@ -111,6 +111,14 @@ function altTextStyle(string, ...styles) {
 function spoilerSummary(summaryName, details) {
     return `<details><summary>${summaryName}</summary>${details}</details>`;
 }
+
+function descriptionList(...dictOfArray) {
+    var descs = '';
+    for (const object of dictOfArray) {
+        descs += `<dt>${object}</dt>` + dictOfArray[object].map(val => `<dd>${val}</dd>`).join('');
+    }
+    return `<dl>${descs}</dl>`;
+}
 //#endregion
 
 const cardData = Object.freeze([
