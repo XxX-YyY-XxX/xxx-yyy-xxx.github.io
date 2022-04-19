@@ -601,9 +601,10 @@ const cardData = Object.freeze([
     },
     {
         questions : `Is there a tier list for fairies?`,
-        answers : `${link("Imgur album of Sijun's list.", 'https://imgur.com/a/pfSSel9')}`,
-        tags : [dataTags.FAIRY, dataTags.TIER]
-    },
+        answers : `${image('./assets/images/FairyTier.png', "Sijun's list")}<br>
+        For the equipments, top number is the recommended quantity, bottom number is the reserve quantity.`,
+        tags : [dataTags.FAIRY, dataTags.TIER, dataTags.EQUIP]
+    },  //https://imgur.com/a/pfSSel9
     {
         questions : `Do the purchaseable items in the Expedition Black Market ever change?`,
         answers : `No.`,
