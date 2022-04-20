@@ -689,6 +689,16 @@ const cardData = Object.freeze([
         tags : [dataTags.RSC, dataTags.CAMPAIGN, dataTags.MAJOR]
     },
     {
+        questions : `Does losing in Electronic Warfare actually do anything?`,
+        answers : `Losing Fairy and HOC charges if used and lost.`,
+        tags : [dataTags.THEATER, dataTags.FAIRY, dataTags.HOC]
+    },
+    {
+        questions : `How do tilescan skills work?`,
+        answers : `Real-time scanning of dolls on own tiles when activating their skills. Meaning setup formation can have them with no dolls on top of their tiles and when they activate their skills in battle, whoever are on top of their bufftiles will get the effects of their skill. Note that their bufftiles basically move with them.`,
+        tags : [dataTags.TDOLL, dataTags.SKILL]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []

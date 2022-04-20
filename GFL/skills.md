@@ -14,10 +14,6 @@
 
 > [Apparently it's coded like an explosive/grenade](https://iopwiki.com/wiki/KSVK). Main shot can miss and crit, while resulting explosion can't.
 
-### How do tilescan skills work?
-
-> Real-time scanning of dolls on own tiles when activating their skills. Meaning setup formation can have them with no dolls on top of their tiles and when they activate their skills in battle, whoever are on top of their bufftiles will get the effects of their skill.
-
 ### How does a certain doll's skill work?
 
 > [M1897 Mod.](https://old.reddit.com/r/girlsfrontline/comments/osihvd/weekly_commanders_lounge_july_27_2021/h72czw7/) 
