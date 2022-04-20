@@ -24,7 +24,7 @@ const dataTags = Object.freeze({
     FAIRY : 'Fairies',
     HOC : 'HeavyOrdnanceCorps',
     FST : 'FireSupportTeam',        //Rockets and mortars, the first of the HOC.
-    //MAJOR : 'MajorEvents',          //Part of the main story. The ones added to the Campaign tab.
+    MAJOR : 'MajorEvents',          //Part of the main story. The ones added to the Campaign tab.
     //COLLAB : 'Collaboration',
     //SEASON : 'SeasonalEvents',      //Story events that happen each New Year, X-mas, Halloween, etc.
     MINI : 'MiniEvents',            //Bingo, Point Event, etc.
@@ -193,11 +193,11 @@ const cardData = Object.freeze([
         Echelon formations are now 1 team + backups.`,
         tags : [dataTags.THEATER, dataTags.PRIME]
     },
-    /* {
+    {
         questions : `How do I unlock Chapter 0?`,
         answers : `Beat Chapter 4 Emergency Map 4.`,
         tags : [dataTags.MAIN]
-    },  Probably Night 4? */
+    },
     {
         questions : `Would the equipment I'm enhancing get bonus points if I use an enhanced fodder?`,
         answers : `No.`,
@@ -682,6 +682,11 @@ const cardData = Object.freeze([
         answers : `${link(`Farmable dolls in campaign maps, especially the 3${star} ones (aka the monthly dolls). Also includes the new clear rewards.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards')}<br>
         As for the missing monthlies, just wait for a new event/campaign.`,
         tags : [dataTags.TDOLL, dataTags.CAMPAIGN]
+    },
+    {
+        questions : `Can I get a True Core Mask (TCM) from campaigns?`,
+        answers : `Nope. So skip the current major event's story if you have to and reap the rewards.`,
+        tags : [dataTags.RSC, dataTags.CAMPAIGN, dataTags.MAJOR]
     },
     {
         questions : ``,
