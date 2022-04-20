@@ -3,12 +3,10 @@ const dataTags = Object.freeze({
     ACCT : 'AccountManagement',     //Anything concerning account data and integrity.
     TECH : 'Troubleshooting',       //For resolving issues that shouldn't even happen.
     '3P' : 'ThirdParty',            //Non-dev-made applications that are recommended to use. Safe until said otherwise.
-    SIMS : 'CombatSimulations',     //Capsule, Data, EXP, Neural, DefDrill, CoaDrill, Target Practice
     RSC : 'Resources/Currency',     //MARP, tickets, cores, etc.
     MOD : 'NeuralUpgrade',          //MODding dolls and its resources.
     NEWB : 'NewbieGuide',           //Things new/early-game players should know.
     PRIME : 'TopicPrimer',          //Explanation of the specific system it's paired with. Usually made up of links. Must be the first box of it's paired tag.
-    MAIN : 'CombatMissions',        //Main missions aka Chapters.
     EMU : 'Emulators',              //Anytihing related to emulators.
     TDOLL : 'TacticalDolls',        //Anything that directly involves Tactical Dolls.
     EQUIP : 'Equipments',           //Attachments on units.
@@ -16,7 +14,6 @@ const dataTags = Object.freeze({
     //ANDROID : 'AndroidDevices',
     ANNIV : 'Anniversary',          //Anything concerning the game's anniversary.
     THEATER : 'Theater',
-    LOGI : 'Logistics',
     BATTLE : 'Skirmishes',          //The battle mode where everyone shoots at one another.
     IMPT : 'Important',             //Things new players would need for late-game. Mostly consists of things not explained by the game.
     EXPED : 'ForwardBasecamp',
@@ -48,6 +45,11 @@ const dataTags = Object.freeze({
     LVL : 'Leveling',               //Mostly Corpse Drag.
     ECH : 'EchelonFormation',       //
     PET : 'Pets',                   //ANIMAL
+    FURN : 'Furniture',             //
+    //Combat Tabs
+    MAIN : 'CombatMissions',        //Main missions aka Chapters.
+    LOGI : 'Logistics',             //Main source of MARP.
+    SIMS : 'CombatSimulations',     //Capsule, Data, EXP, Neural, DefDrill, CoaDrill, Target Practice
     CAMPAIGN : 'CampaignMissions',  //Permanent Major Events
 });
 
@@ -112,7 +114,7 @@ function spoilerSummary(summaryName, details) {
     return `<details><summary>${summaryName}</summary>${details}</details>`;
 }
 
-function descriptionList(...dictOfArray) {
+function descriptionList(dictOfArray) {
     var descs = '';
     for (const object of dictOfArray) {
         descs += `<dt>${object}</dt>` + dictOfArray[object].map(val => `<dd>${val}</dd>`).join('');
@@ -191,11 +193,11 @@ const cardData = Object.freeze([
         Echelon formations are now 1 team + backups.`,
         tags : [dataTags.THEATER, dataTags.PRIME]
     },
-    {
+    /* {
         questions : `How do I unlock Chapter 0?`,
         answers : `Beat Chapter 4 Emergency Map 4.`,
         tags : [dataTags.MAIN]
-    },
+    },  Probably Night 4? */
     {
         questions : `Would the equipment I'm enhancing get bonus points if I use an enhanced fodder?`,
         answers : `No.`,
@@ -531,7 +533,7 @@ const cardData = Object.freeze([
         [`4${star} furniture`,      '34.20%'],
         [`4${star} gifts/cakes`,    '01.80%'],
         [`3${star} furniture`,      '54.00%'])}`,
-        tags : [dataTags.RESUPPLY]
+        tags : [dataTags.RESUPPLY, dataTags.SKIN, dataTags.FURN]
     },
     {
         questions : `Can the Liu clones get stat buffs?`,
