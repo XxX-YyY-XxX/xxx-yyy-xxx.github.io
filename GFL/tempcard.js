@@ -725,8 +725,10 @@ const cardData = Object.freeze([
     {
         questions : `T-Doll Costumes available now?`,
         answers : `u/ConductorBichir spreadsheets.<br>
-        ${spoilerSummary('Costume Banners.', googleEmbed('https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ'))} Includes furniture set and its complete set special effect.<br>
-        ${spoilerSummary('Tactical Doll Skins.', googleEmbed('https://docs.google.com/spreadsheets/d/1fEnzlpQk5Jvja5PwzlpDn2ypqP3BHcGftqWWOLnK17E'))} Contains censor comparison of doll's default art.`,
+        ${spoilerSummary('Costume Banners.', googleEmbed('https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ'))}<br>
+        Includes furniture set and its complete set special effect.<br>
+        ${spoilerSummary('Tactical Doll Skins.', googleEmbed('https://docs.google.com/spreadsheets/d/1fEnzlpQk5Jvja5PwzlpDn2ypqP3BHcGftqWWOLnK17E'))}<br>
+        Contains censor comparison of doll's default art.`,
         tags : [dataTags.SKIN, dataTags.TDOLL, dataTags.RESUPPLY]
     },
     {
