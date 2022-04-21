@@ -135,6 +135,8 @@
 
         <div class="container">
             <section id="main_content">
+                <p>v 1.<span id="version-number"></span></p>
+
                 <p><h1><a href="./mainpage">Link to topics repository</a></h1></p>
                 
                 <div id="input-type-container">
@@ -162,6 +164,8 @@
             const searchParams = new URLSearchParams(location.search);
             const questionCards = cardData;
             //#endregion
+
+            document.getElementById('version-number').innerHTML = questionCards.length;
 
             toggleableTagsField.innerHTML = Object.values(dataTags).map(val => 
                 `<label class="tags unselectedTag">
