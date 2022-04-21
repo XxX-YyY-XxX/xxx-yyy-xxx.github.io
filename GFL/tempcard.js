@@ -701,8 +701,14 @@ const cardData = Object.freeze([
     },
     {
         questions : `Who should I MOD first?`,
-        answers : `${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/neural-upgrade-priority-guide')}`,
+        answers : `${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/neural-upgrade-priority-guide')}<br>
+        ${link('CN MOD list.', 'https://imgur.com/a/LFcfOgg')}`,
         tags : [dataTags.MOD, dataTags.TIER]
+    },
+    {
+        questions : `My resources (Manpower, Ammunitions, Rations, Parts) are uncomfortably low? Where can I get some?`,
+        answers : `Most efficient and consistent is logistics. Though you can get them through the shop, quest and event rewards, campaign/major story node clears, and random nodes.`,
+        tags : [dataTags.RSC, dataTags.LOGI]
     },
     {
         questions : ``,

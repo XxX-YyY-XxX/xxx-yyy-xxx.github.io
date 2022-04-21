@@ -37,10 +37,6 @@
 
 > As in more than 30 a day? No. It being a 2 month distribution? Yes.
 
-### My resources (Manpower, Ammunitions, Rations, Parts) are uncomfortably low? Where can I get some?
-
-> Most efficient and consistent is logistics. Though you can get them through the shop, quest and event rewards, and random nodes.
-
 ### How often will we get a True Core Mask?
 
 > Every anniversary and major events.
