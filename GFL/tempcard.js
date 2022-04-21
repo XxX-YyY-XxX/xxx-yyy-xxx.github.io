@@ -73,7 +73,7 @@ function list(ordered, ...any) {
     return `<${htmlElem}>${any.map(val => `<li>${val}</li>`).join('')}</${htmlElem}>`;
 }
 
-/** @param {URLString} docLink */
+/** @param {URLString} docLink Ends in alphanumeric */
 function googleEmbed(docLink, maxHeightPixels = 0) {
     const style = maxHeightPixels ? `style="max-height: ${maxHeightPixels}px;" ` : '';
     return `<iframe class="gdoc" ${style}src="${docLink}/preview?pli=1" frameborder="0"></iframe>`;
@@ -439,7 +439,8 @@ const cardData = Object.freeze([
         ${link("Ceia's 0-2 drag guide. Vids Edition.", 'https://youtu.be/vqvPpO1vKqw')}<br>
         ${link('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide')}<br>
         ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/optimizing-leveling-introduction')}<br>
-        ${link('GFLCorner guide.', 'https://www.gflcorner.com/efficient-leveling-guide/')}`,
+        ${link('GFLCorner guide.', 'https://www.gflcorner.com/efficient-leveling-guide/')}<br>
+        ${link('DMesse guide.', 'http://dmesse.egloos.com/m/3567918')}`,
         tags : [dataTags.IMPT, dataTags.LVL]
     },
     {
@@ -714,6 +715,19 @@ const cardData = Object.freeze([
         questions : `How do I get Platinum and Nova Medals?`,
         answers : `From whatever Major/Seasonal/Collab Event running right now. Platinum are for 5${star} dolls and Nova are for dolls 4${star} and below.`,
         tags : [dataTags.RSC, dataTags.STORY, dataTags.TDOLL]
+    },
+    {
+        questions : `How do I level my girls?`,
+        answers : `First is grinding them on leveling maps.<br>
+        Second is using Combat Reports. You can get them in the Forward Basecamp or through the Data Room. You can give them by going to the Dorm>Warehouse>Gift tab or going to your owned doll profile and tapping the + button by the EXP bar. Note that they are not affected by dummy link EXP multiplier. They give 3000 fixed EXP per report.`,
+        tags : [dataTags.TDOLL, dataTags.LVL]
+    },  //Last one is the EXP mode combat sim. Total EXP per run is divided equally between all dolls present, max-leveled or not
+    {
+        questions : `T-Doll Costumes available now?`,
+        answers : `u/ConductorBichir spreadsheets.<br>
+        ${spoilerSummary('Costume Banners.', googleEmbed('https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ'))} Includes furniture set and its complete set special effect.<br>
+        ${spoilerSummary('Tactical Doll Skins.', googleEmbed('https://docs.google.com/spreadsheets/d/1fEnzlpQk5Jvja5PwzlpDn2ypqP3BHcGftqWWOLnK17E'))} Contains censor comparison of doll's default art.`,
+        tags : [dataTags.SKIN, dataTags.TDOLL, dataTags.RESUPPLY]
     },
     {
         questions : ``,
