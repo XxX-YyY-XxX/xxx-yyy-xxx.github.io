@@ -711,6 +711,11 @@ const cardData = Object.freeze([
         tags : [dataTags.RSC, dataTags.LOGI]
     },
     {
+        questions : `How do I get Platinum and Nova Medals?`,
+        answers : `From whatever Major/Seasonal/Collab Event running right now. Platinum are for 5${star} dolls and Nova are for dolls 4${star} and below.`,
+        tags : [dataTags.RSC, dataTags.STORY, dataTags.TDOLL]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
