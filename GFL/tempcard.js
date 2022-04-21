@@ -3,13 +3,10 @@ const dataTags = Object.freeze({
     ACCT : 'AccountManagement',     //Anything concerning account data and integrity.
     TECH : 'Troubleshooting',       //For resolving issues that shouldn't even happen.
     '3P' : 'ThirdParty',            //Non-dev-made applications that are recommended to use. Safe until said otherwise.
-    RSC : 'Resources/Currency',     //MARP, tickets, cores, etc.
     MOD : 'NeuralUpgrade',          //MODding dolls and its resources.
     NEWB : 'NewbieGuide',           //Things new/early-game players should know.
     PRIME : 'TopicPrimer',          //Explanation of the specific system it's paired with. Usually made up of links. Must be the first box of it's paired tag.
     EMU : 'Emulators',              //Anytihing related to emulators.
-    TDOLL : 'TacticalDolls',        //Anything that directly involves Tactical Dolls.
-    EQUIP : 'Equipments',           //Attachments on units.
     APPLE : 'AppleDevices',         //Anything primarily concerning iOS devices.
     //ANDROID : 'AndroidDevices',
     ANNIV : 'Anniversary',          //Anything concerning the game's anniversary.
@@ -19,9 +16,7 @@ const dataTags = Object.freeze({
     EXPED : 'ForwardBasecamp',
     SYSMECH : 'SystemMechanics',    //Explanation on underlying mechanics of the game.
     PA : 'ProtocolAssimilation',    //PA pulling and coalition drills.
-    COALITION : 'CoalitionUnits',   //PA counterpart of Tactical Dolls.
     ENEMY : 'EnemyUnits',           //For things that primarily interact with enemy units.
-    FAIRY : 'Fairies',
     HOC : 'HeavyOrdnanceCorps',
     FST : 'FireSupportTeam',        //Rockets and mortars, the first of the HOC.
     MAJOR : 'MajorEvents',          //Part of the main story. The ones added to the Campaign tab.
@@ -51,6 +46,12 @@ const dataTags = Object.freeze({
     LOGI : 'Logistics',             //Main source of MARP.
     SIMS : 'CombatSimulations',     //Capsule, Data, EXP, Neural, DefDrill, CoaDrill, Target Practice
     CAMPAIGN : 'CampaignMissions',  //Permanent Major Events
+    //Armory Tabs
+    TDOLL : 'TacticalDolls',        //Anything that directly involves Tactical Dolls.
+    COALITION : 'CoalitionUnits',   //PA counterpart of Tactical Dolls.
+    EQUIP : 'Equipments',           //Attachments on units.
+    RSC : 'Resources/Currency',     //MARP, tickets, cores, etc.
+    FAIRY : 'Fairies',              //Sixth man of the team.
 });
 
 const star = '★';
@@ -439,7 +440,7 @@ const cardData = Object.freeze([
         ${link('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide')}<br>
         ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/optimizing-leveling-introduction')}<br>
         ${link('GFLCorner guide.', 'https://www.gflcorner.com/efficient-leveling-guide/')}`,
-        tags : [dataTags.OTHER, dataTags.IMPT, dataTags.LVL]
+        tags : [dataTags.IMPT, dataTags.LVL]
     },
     {
         questions : `If I MOD my T-Doll, is Level 100 still considered max level?`,
@@ -696,7 +697,12 @@ const cardData = Object.freeze([
     {
         questions : `How do tilescan skills work?`,
         answers : `Real-time scanning of dolls on own tiles when activating their skills. Meaning setup formation can have them with no dolls on top of their tiles and when they activate their skills in battle, whoever are on top of their bufftiles will get the effects of their skill. Note that their bufftiles basically move with them.`,
-        tags : [dataTags.TDOLL, dataTags.SKILL]
+        tags : [dataTags.TDOLL, dataTags.SKILL, dataTags.IMPT]
+    },
+    {
+        questions : `Who should I MOD first?`,
+        answers : `${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/neural-upgrade-priority-guide')}`,
+        tags : [dataTags.MOD, dataTags.TIER]
     },
     {
         questions : ``,
