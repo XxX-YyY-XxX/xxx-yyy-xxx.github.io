@@ -737,6 +737,12 @@ const cardData = Object.freeze([
         tags : [dataTags.LVL, dataTags.TDOLL]
     },
     {
+        questions : `How do I get a higher success rate for logistics?`,
+        answers : `${altTextStyle('floor(mean of doll levels in echelon) * 0.45 + 15', TextStyle.CODE)} for normal logistics and<br>
+        ${altTextStyle('floor(mean of doll levels in echelon) * 0.6 + 30', TextStyle.CODE)} for rate-up logistics`,
+        tags : [dataTags.LOGI, dataTags.TDOLL]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []

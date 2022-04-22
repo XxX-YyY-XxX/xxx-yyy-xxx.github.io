@@ -75,22 +75,6 @@
 >
 > G11: 297, 297, 297, 31
 
-### How do I get a higher success rate for logistics?
-
-> Just doll levels.
->
-> [Matsuda formula.](https://gfl.matsuda.tips/post/logistics1) Remember to floor the mean average for a more accurate number.
->
-> Toss-up between
->
-> `floor(floor(mean of doll levels in echelon) * 0.45) + 15 + floor(floor(mean of doll levels in echelon) * 0.15) + 15`
->
-> and
->
-> `floor(floor(mean of doll levels in echelon) * 0.6) + 15`
->
-> for logistics rate-up formula.
-
 ## Visual
 
 ### Where can I get the limited drop/equipment in a particular map?
