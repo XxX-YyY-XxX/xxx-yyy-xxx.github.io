@@ -114,12 +114,6 @@
 
 > <iframe width="100%" height="500" src="https://docs.google.com/spreadsheets/d/1X-ZnlXabFQSk6_nTd94pu6Ww3KqWCc1ABt-gTkJy99s/preview?pli=1" frameborder="0"></iframe>
 
-### How do I need to build Vector to no damage 13-4?
-
-> [tempkaridc calculator.](https://tempkaridc.github.io/gf/vec)
->
-> [xVarz spreadsheet for different draggers.](https://docs.google.com/spreadsheets/d/1cuZPF-r1e6TyE4Rj2DNkSEova7Tc-Cczs7RaoAK2vII)
-
 ### How to effectively CE Stack my echelon?
 
 > [Reddit link.](https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i0s9044/)

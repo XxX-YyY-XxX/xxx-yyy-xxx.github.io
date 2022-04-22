@@ -200,6 +200,12 @@ const cardData = Object.freeze([
         tags : [dataTags.MAIN]
     },
     {
+        questions : `How do I level my girls?`,
+        answers : `First is grinding them on leveling maps.<br>
+        Second is using Combat Reports. You can get them in the Forward Basecamp or through the Data Room. You can give them by going to the Dorm>Warehouse>Gift tab or going to your owned doll profile and tapping the + button by the EXP bar. Note that they are not affected by dummy link EXP multiplier. They give 3000 fixed EXP per report.`,
+        tags : [dataTags.TDOLL, dataTags.LVL, dataTags.NEWB, dataTags.PRIME]
+    },  //Last one is the EXP mode combat sim. Total EXP per run is divided equally between all dolls present, max-leveled or not
+    {
         questions : `Would the equipment I'm enhancing get bonus points if I use an enhanced fodder?`,
         answers : `No.`,
         tags : [dataTags.EQUIP, dataTags.LVL]
@@ -703,7 +709,7 @@ const cardData = Object.freeze([
     {
         questions : `Who should I MOD first?`,
         answers : `${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/neural-upgrade-priority-guide')}<br>
-        ${link('CN MOD list.', 'https://imgur.com/a/LFcfOgg')}`,
+        ${link('CN MOD list.', 'https://imgur.com/a/lzQbr6M')}`,
         tags : [dataTags.MOD, dataTags.TIER]
     },
     {
@@ -717,19 +723,18 @@ const cardData = Object.freeze([
         tags : [dataTags.RSC, dataTags.STORY, dataTags.TDOLL]
     },
     {
-        questions : `How do I level my girls?`,
-        answers : `First is grinding them on leveling maps.<br>
-        Second is using Combat Reports. You can get them in the Forward Basecamp or through the Data Room. You can give them by going to the Dorm>Warehouse>Gift tab or going to your owned doll profile and tapping the + button by the EXP bar. Note that they are not affected by dummy link EXP multiplier. They give 3000 fixed EXP per report.`,
-        tags : [dataTags.TDOLL, dataTags.LVL]
-    },  //Last one is the EXP mode combat sim. Total EXP per run is divided equally between all dolls present, max-leveled or not
-    {
         questions : `T-Doll Costumes available now?`,
         answers : `u/ConductorBichir spreadsheets.<br>
-        ${spoilerSummary('Costume Banners.', googleEmbed('https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ'))}<br>
-        Includes furniture set and its complete set special effect.<br>
-        ${spoilerSummary('Tactical Doll Skins.', googleEmbed('https://docs.google.com/spreadsheets/d/1fEnzlpQk5Jvja5PwzlpDn2ypqP3BHcGftqWWOLnK17E'))}<br>
-        Contains censor comparison of doll's default art.`,
+        ${spoilerSummary('Costume Banners. Includes furniture set and its complete set special effect.', googleEmbed('https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ'))}<br>
+        ${spoilerSummary("Tactical Doll Skins. Contains censor comparison of doll's default art.", googleEmbed('https://docs.google.com/spreadsheets/d/1fEnzlpQk5Jvja5PwzlpDn2ypqP3BHcGftqWWOLnK17E'))}`,
         tags : [dataTags.SKIN, dataTags.TDOLL, dataTags.RESUPPLY]
+    },
+    {
+        questions : `How do I need to build Vector to no damage 13-4?`,
+        answers : `${link('tempkaridc calculator.', 'https://tempkaridc.github.io/gf/vec')}<br>
+        ${link('xVarz spreadsheet for different draggers.', 'https://docs.google.com/spreadsheets/d/1cuZPF-r1e6TyE4Rj2DNkSEova7Tc-Cczs7RaoAK2vII')}<br>
+        ${link('Infographic.', 'https://cdn.discordapp.com/attachments/564028599682727937/929724568258629642/134.png')}`,
+        tags : [dataTags.LVL, dataTags.TDOLL]
     },
     {
         questions : ``,
