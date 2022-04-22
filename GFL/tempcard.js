@@ -213,7 +213,7 @@ const cardData = Object.freeze([
     {
         questions : `Is there a list of which logistics to do if I want to prioritize certain resources?`,
         answers : `${link('GFC GDoc.', 'https://docs.google.com/spreadsheets/d/1ah2JO6ggWuVaBho9yxgDMC-ucEKA8C42SBkjIlnIcWk')} Up to Chapter 11.<br>
-        ${link("Redditor u/elgatoroid's calculator.", 'https://gfl-logistics.neko.gg/')} Up to Chapter 11.<br>
+        ${link("u/elgatoroid's calculator.", 'https://gfl-logistics.neko.gg/')} Up to Chapter 11.<br>
         ${link('GFGFork site.', 'https://gfgfork.github.io/gf/main')} Up to Chapter 12.<br>
         ${link('Tempkaridc calculator.', 'https://tempkaridc.github.io/gf/')} Up to Chapter 13.<br>
         ${link("u/tehcavy's spreadsheet.", 'https://docs.google.com/spreadsheets/d/1N-PvxbrZJqg-upImk5uwEmB9GcCrNqjmVgdY00cdvS8')} Up to Chapter 13.`,
@@ -739,7 +739,7 @@ const cardData = Object.freeze([
     {
         questions : `How do I get a higher success rate for logistics?`,
         answers : `${altTextStyle('floor(mean of doll levels in echelon) * 0.45 + 15', TextStyle.CODE)} for normal logistics and<br>
-        ${altTextStyle('floor(mean of doll levels in echelon) * 0.6 + 30', TextStyle.CODE)} for rate-up logistics.`,
+        ${altTextStyle('floor(mean of doll levels in echelon) * 0.60 + 30', TextStyle.CODE)} for rate-up logistics.`,
         tags : [dataTags.LOGI, dataTags.TDOLL]
     },
     {
