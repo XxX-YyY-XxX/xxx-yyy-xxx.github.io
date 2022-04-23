@@ -760,6 +760,11 @@ const cardData = Object.freeze([
         tags : [dataTags.FAIRY]
     },
     {
+        questions : `Where can I get a specific doll?`,
+        answers : `For starters, check the index entry of that doll. There should be a panel that tells you where they can be obtained.`,
+        tags : [dataTags.TDOLL]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
