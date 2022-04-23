@@ -743,6 +743,11 @@ const cardData = Object.freeze([
         tags : [dataTags.LOGI, dataTags.TDOLL]
     },
     {
+        questions : `What do they mean by bamboo?`,
+        answers : `Bamboos are, in general, rifles with skills like Locked Shot, Steady Shot, Interdiction Shot, and the likes, wherein off cooldown, they have a charge gauge that dictates how powerful the skillshot is on activation. They're usually used to deal massive damage to a target, especially if coupled with FP buffers.`,
+        tags : [dataTags.TDOLL, dataTags.SKILL, dataTags.IMPT]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
