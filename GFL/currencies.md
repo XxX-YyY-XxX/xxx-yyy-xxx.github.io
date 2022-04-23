@@ -57,12 +57,6 @@
 
 > Defense Drill, expeditions, shop, mini-events, log-in.
 
-### What are the resources that has a defined cap and how much can they store?
-
-> ![List.](/GFL/assets/images/ResourceCap.png)
->
-> Even then, all resources can be obtained without regards to max capacity through daily gifts, mission rewards, and whaling.
-
 ### I'm in core hell. How do I get some more?
 
 > [Matsuda guide.](https://gfl.matsuda.tips/post/its_still_not_enough_fuck) Run any daytime leveling maps for combined core and exp farming. You can also farm during core rate-up by using the handgun recipe.

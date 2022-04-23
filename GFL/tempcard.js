@@ -748,6 +748,17 @@ const cardData = Object.freeze([
         tags : [dataTags.TDOLL, dataTags.SKILL, dataTags.IMPT]
     },
     {
+        questions : `What are the resources that has a defined cap and how much can they store?`,
+        answers : `${image('./assets/images/ResourceCap.png')}<br>
+        Even then, all resources can be obtained without regards to max capacity through daily gifts, mission rewards, and whaling.`,
+        tags : [dataTags.RSC]
+    },
+    {
+        questions : ``,
+        answers : ``,
+        tags : []
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
