@@ -74,9 +74,10 @@ function list(ordered, ...any) {
 }
 
 /** @param {URLString} docLink Ends in alphanumeric */
-function googleEmbed(docLink, maxHeightPixels = 0) {
+function googleEmbed(docLink, maxHeightPixels = 0) {                    //Arrow disappears on multiple GDocs
     const style = maxHeightPixels ? `style="max-height: ${maxHeightPixels}px;" ` : '';
-    return `<iframe class="gdoc" ${style}src="${docLink}/preview?pli=1" frameborder="0"></iframe>`;
+    return `<iframe class="gdoc" ${style}src="${docLink}/preview?pli=1" frameborder="0"></iframe><br>
+    ${link('<span>Alternative Link.</span>', docLink)}`;
 }
 
 /** @param permalink ...comments/${permalink}/?...*/
