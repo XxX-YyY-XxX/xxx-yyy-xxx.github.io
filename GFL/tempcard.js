@@ -74,14 +74,14 @@ function list(ordered, ...any) {
 }
 
 /** @param {URLString} docLink Ends in alphanumeric */
-function googleEmbed(docLink, maxHeightPixels = 0) {                    //Arrow disappears on multiple GDocs
+function googleEmbed(docLink, maxHeightPixels = 0) {                    //Arrow disappears on multiple GDocs, apparently due to slowding.
     const style = maxHeightPixels ? `style="max-height: ${maxHeightPixels}px;" ` : '';
     return `<iframe class="gdoc" ${style}src="${docLink}/preview?pli=1" frameborder="0"></iframe><br>
-    ${link('<span>Alternative Link.</span>', docLink)}`;
+    ${link('Alternative Link.', docLink)}`;
 }
 
 /** @param permalink ...comments/${permalink}/?...*/
-function redditEmbed(permalink) {                                       //needs more fix
+function redditEmbed(permalink) {                                       //needs more fix, how to check support
     return `<iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/${permalink}/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="278" width="640" scrolling="no"></iframe><br>
     <https://old.reddit.com/r/girlsfrontline/comments/${permalink}/>`
 }
