@@ -611,7 +611,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `Which facilities should I prioritize for battery expenditures?`,
-        answers : `${list(true, 'Forward Basecamp.', 'Protocol Control Centre.', 'Intelligence Room.', 'Fairy Chamber.', 'Firing Range (Garage).', 'Data Room.', 'Rescue Station.')}`,
+        answers : `${list(true, 'Forward Basecamp.', 'Protocol Control Centre.', 'Intelligence Room.', 'Firing Range (Garage).', 'Fairy Chamber.', 'Data Room.', 'Rescue Station.')}`,
         tags : [dataTags.NEWB]
     },
     {
@@ -754,9 +754,9 @@ const cardData = Object.freeze([
         tags : [dataTags.RSC]
     },
     {
-        questions : ``,
-        answers : ``,
-        tags : []
+        questions : `When should I begin trying to produce fairies?`,
+        answers : `When you have sufficient income for 4 resources and cores. Ideally ASAP since raising one to 5${star} takes a considerable amount of time.`,
+        tags : [dataTags.FAIRY]
     },
     {
         questions : ``,
