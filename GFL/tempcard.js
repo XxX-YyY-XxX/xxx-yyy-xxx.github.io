@@ -248,9 +248,9 @@ const cardData = Object.freeze([
         questions : `For limited-time bonuses (i.e. auto-battles, logistics), when are the rewards calculated?`,
         answers : `If the runs can be cancelled without penalty, rewards are calculated at the end.<br>
         ${spoilerSummary('Examples:', list(false, 'The "Use Battery" bingo mission when exp-training HOCs.'))}<br>
-        If they can't be cancelled, or is cancellable with a penalty or cost, calculated at the start.<br>
-        ${spoilerSummary('Examples:', list(false, 'Expedition rewards.'))}`,
-        tags : [dataTags.SYSMECH]
+        If they can't be cancelled, or is cancellable with a penalty or cost (ie quick tickets), calculated at the start.<br>
+        ${spoilerSummary('Examples:', list(false, 'Expedition rewards.', 'Productions.'))}`,
+        tags : [dataTags.SYSMECH, dataTags.MINI, dataTags.EXPED, dataTags.PROD]
     },
     {
         questions : `Are there any general guides for Protocol Assimilation/Coalition Units/SF Capture?`,
