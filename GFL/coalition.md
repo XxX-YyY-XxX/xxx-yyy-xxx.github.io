@@ -52,10 +52,6 @@
 
 @ Visual
 
-### When is the 10 Svarog aid bundle in the shop available?
-
-> Everytime there is a new banner.
-
 ### If the Ringleader appears for a capture, will I guarantee her when I use Svarog aid?
 
 > No. It pulls from the entire pool where the entire pool is the X in the X/100 units.

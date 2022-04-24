@@ -765,6 +765,21 @@ const cardData = Object.freeze([
         tags : [dataTags.TDOLL]
     },
     {
+        questions : `Is there a way to buy a missed day for daily log-ins?`,
+        answers : `No chance.`,
+        tags : [dataTags.OTHER]
+    },
+    {
+        questions : `I'm trying to clear the newbie career quests but I haven't gotten the rewards yet. Did I miss something?`,
+        answers : `Those quests are not retroactive and should be cleared in sequence. Try clearing them from the top.`,
+        tags : [dataTags.NEWB]
+    },
+    {
+        questions : `How can I get some more Svarog High Altitude Bombing Aid Commissions?`,
+        answers : `Weekly quest (8 standard captures), daily log-in, major events, shop (whenever a new banner starts).`,
+        tags : [dataTags.RSC, dataTags.PA]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
