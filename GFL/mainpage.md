@@ -80,3 +80,7 @@
 ### Where can I get the limited drop/equipment in a particular map?
 
 > Enter the map>Combat Info>Rewards>Tap the one you want to get>Look for glowing enemies in the map>Defeat said enemies. You can also S Rank the map for an additional chance.
+
+### I see people have their Tdolls as their avatar in other peoples dorms. How do you do that?
+
+> In dorm, bottom-left, top-right, uncheck third checkbox.
