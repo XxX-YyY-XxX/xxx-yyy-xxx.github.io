@@ -1,26 +1,25 @@
 const epsilon = 10 ** -10;
 
-/** @returns {boolean} */
+/** @param {Array} subset @param {Array} mainset */
 function IsSubsetOf(subset, mainset) {
     return subset.every(val => mainset.includes(val));
 }
 
-/** @param {string} htmlString @returns {string} */
+/** @param {string} htmlString */
 function RemoveHTMLTag(htmlString) {                                        //May remove non-HTML <???> strings
     return htmlString.replace(/(<([^>]+)>)/ig, '');
 }
 
-/** @param {number} min @param {number} max @returns {number} */
+/** @param {number} min @param {number} max */
 function RandomInteger(min, max) {                                          //Math.random() = [0...1)
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-/** @param {string} className */
+/** @param {string} className @returns Null if no or multiple elements found. */
 function UniqueClassElement(className) {
-    return Array.from(document.getElementsByClassName(className))[0]
+    const output = Array.from(document.getElementsByClassName(className));
+    return output.length == 1 ? output[0] : null;
 }
-
-//replace(/ /g, ' + ');
 
 /*if (typeof(Storage) !== "undefined") {
     sessionStorage.outputCards = boxes;

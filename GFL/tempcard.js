@@ -60,7 +60,7 @@ const star = '★';
 
 //#region Functions
 /** @param {URLString} link */
-function image(link, onHover = '', onLoadFail = 'Image loading failed.') {
+function image(link, onHover = null, onLoadFail = 'Image loading failed.') {
     return `<img src="${link}" alt="${onLoadFail}" ${onHover ? `title="${onHover}"` : ''}>`
 }
 
@@ -78,8 +78,8 @@ function list(ordered, ...any) {
 /** @param {URLString} docLink Ends in alphanumeric */
 function googleEmbed(docLink, maxHeightPixels = 0) {                    //Arrow disappears on multiple GDocs, apparently due to slowding, might use figcaptions.
     const style = maxHeightPixels ? `style="max-height: ${maxHeightPixels}px;" ` : '';
-    return `<iframe class="gdoc" ${style}src="${docLink}/preview?pli=1" frameborder="0"></iframe><br>
-    ${link('Alternative Link.', docLink)}`;
+    return `<figure><iframe class="gdoc" ${style}src="${docLink}/preview?pli=1" frameborder="0"></iframe>
+    <figcaption>${link('Alternative Link.', docLink)}</figcaption></figure>`;
 }
 
 /** @param permalink ...comments/${permalink}/?...*/
@@ -587,8 +587,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `Which map is best for auto-battles?`,
-        answers : `${googleEmbed('https://docs.google.com/spreadsheets/d/1e_1oAa9Qm_tmWqbgFQca8ohzo29qcjctIwyIU9Mc1H0')}<br>
-        ${link('For the doc link.', 'https://docs.google.com/spreadsheets/d/1e_1oAa9Qm_tmWqbgFQca8ohzo29qcjctIwyIU9Mc1H0')}`,
+        answers : `${googleEmbed('https://docs.google.com/spreadsheets/d/1e_1oAa9Qm_tmWqbgFQca8ohzo29qcjctIwyIU9Mc1H0')}`,
         tags : [dataTags.AUTO]
     },
     {

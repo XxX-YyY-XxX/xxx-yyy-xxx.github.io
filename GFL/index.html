@@ -46,18 +46,22 @@
             margin: 0px;
         }
 
-        details {
-            display: inline;
+        dl {
+            margin: 0px;
         }
 
-        details[open] {
-            display: block;
+        .twitter-tweet iframe {                         /* Needs more responsive solution. Works on first load only. */
+            max-width: inherit !important;
         }
 
-        summary {
-            display: inline;
-            color: rgb(233, 161, 152);
-            text-shadow: 0 0 5px rgb(255 181 253 / 50%);
+        .gdoc {
+            width: 100%;
+            aspect-ratio: 1/1;
+        }
+
+        figcaption {
+            font-size: 1px;
+            text-align: center;
         }
 
         /* #region Tags */
@@ -85,20 +89,6 @@
         }
         /* #endregion */
 
-        .twitter-tweet iframe {                         /* Needs more responsive solution. Works on first load only. */
-            max-width: inherit !important;
-        }
-
-        .gdoc {
-            width: 100%;
-            aspect-ratio: 1/1;
-        }
-
-        .gdoc + a {
-            font-size: 1px;
-            text-align: center;
-        }
-
         /* #region Input Type Selector */
         #input-type-container {
             display: flex;
@@ -125,6 +115,22 @@
         #tags-list {
             text-align: center;
             display: none;                              /* Makes class hidden on default. */
+        }
+        /* #endregion */
+
+        /* #region Hidden Summary */
+        details {
+            display: inline;
+        }
+
+        details[open] {
+            display: block;
+        }
+
+        summary {
+            display: inline;
+            color: rgb(233, 161, 152);
+            text-shadow: 0 0 5px rgb(255 181 253 / 50%);
         }
         /* #endregion */
     </style>
