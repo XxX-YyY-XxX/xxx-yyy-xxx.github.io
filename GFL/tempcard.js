@@ -118,8 +118,8 @@ function spoilerSummary(summaryName, details) {
 
 function descriptionList(dictOfArray) {
     var descs = '';
-    for (const object of dictOfArray) {
-        descs += `<dt>${object}</dt>` + dictOfArray[object].map(val => `<dd>${val}</dd>`).join('');
+    for (const descObject in dictOfArray) {
+        descs += `<dt>${descObject}</dt>` + dictOfArray[descObject].map(val => `<dd>${val}</dd>`).join('');
     }
     return `<dl>${descs}</dl>`;
 }
@@ -493,7 +493,7 @@ const cardData = Object.freeze([
         ['08', 'PP-93',  'PP-93',  'PP-93' ])}`,
         tags : [dataTags.HOC, dataTags.FST, dataTags.TIER]
     },  //Rudimentary rankings. Last place reserved for incomplete FSTs.
-    {
+    /* {
         questions : `What are Main and Off Tanks?`,
         answers : `Main tanks<br>
         - Guns that have survivability skills (i.e. smoke, eva boost, stun etc.) and generally situated at the middle of the pack.<br>
@@ -501,14 +501,14 @@ const cardData = Object.freeze([
         - Guns that generally have damage skills (i.e. molotov, grenade, damage boost etc.), or a secondary damage soaker in some instances, and is situated at either middle-top or middle-bottom.<br>
         All of these usually refer to SMGs.`,
         tags : [dataTags.OTHER, dataTags.IMPT]
-    },
-    /* {
+    }, */
+    {
         questions : `What are Main Tanks and Off Tanks?`,
         answers : `${descriptionList({'Main Tanks' : ['Guns that have survivability skills (i.e. smoke, eva boost, stun etc.).', 'Generally situated at the middle of the pack.'],
         'Off Tanks' : ['Guns that generally have damage skills (i.e. molotov, grenade, damage boost etc.) and/or a secondary damage soaker in some instances.', 'Situated at either middle-top or middle-bottom.']})}<br>
         All of these usually refer to SMGs.`,
         tags : [dataTags.ECH, dataTags.IMPT]
-    }, */
+    },
     {
         questions : `How are people just rolling in 5${star} fairies?`,
         answers : `<p>${altTextStyle('Even dust, when piled up, can become a mountain.', TextStyle.ITALIC)}</p>
