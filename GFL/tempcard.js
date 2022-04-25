@@ -76,10 +76,12 @@ function list(ordered, ...any) {
 }
 
 /** @param {URLString} docLink Ends in alphanumeric */
-function googleEmbed(docLink, maxHeightPixels = 0) {                    //Arrow disappears on multiple GDocs, apparently due to slowding, might use figcaptions.
+function googleEmbed(docLink, maxHeightPixels = 0) {                    //Arrow disappears on multiple GDocs, apparently due to slowding
     const style = maxHeightPixels ? `style="max-height: ${maxHeightPixels}px;" ` : '';
-    return `<figure><iframe class="gdoc" ${style}src="${docLink}/preview?pli=1" frameborder="0"></iframe>
-    <figcaption>${link('Alternative Link.', docLink)}</figcaption></figure>`;
+    return `<figure>
+        <iframe class="gdoc" ${style}src="${docLink}/preview?pli=1"></iframe>
+        <figcaption>${link('Alternative Link', docLink)}</figcaption>
+    </figure>`;
 }
 
 /** @param permalink ...comments/${permalink}/?...*/
