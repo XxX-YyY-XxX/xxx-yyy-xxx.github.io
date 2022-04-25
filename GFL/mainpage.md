@@ -84,5 +84,3 @@
 ### I see people have their Tdolls as their avatar in other peoples dorms. How do you do that?
 
 > In dorm, bottom-left, top-right, uncheck third checkbox.
-
-`code check`
