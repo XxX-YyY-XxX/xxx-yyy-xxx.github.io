@@ -464,7 +464,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `I can't get the gold and silver maps because the enemies keep running all over me. How do I get them?`,
-        answers : `Not now. Blaze through chapters first to get your account running, then come back to it later when you have at least 2 strong (Lv. 90, 5 links) echelons.`,
+        answers : `Not now. Blaze through chapters until 7-6 first to get your account running, then come back to it later when you have at least 2 strong (Lv. 90, 5 links) echelons.`,
         tags : [dataTags.NEWB, dataTags.MAIN]
     },  // You can get this quickly through Newbie Career Quests. And you can complete the quests faster if you use friend/support echelons.
     {
