@@ -316,7 +316,7 @@ const cardData = Object.freeze([
     {
         questions : `How can I save the enemy composition for later practice?`,
         answers : `Add Target<br>
-        ${list(false, "Long press the enemy on the map and you'll see the button on the top-left.", 'Pause while in battle to see the button on the bottom-left.', 'Button appears on the bottom-left after losing a battle.')}<br>
+        ${list(false, "Long press the enemy on the map and you'll see the button on the top-left.", 'Pause while in battle to see the button on the bottom-left.', 'Button appears on the bottom-left after losing a battle.', 'Adds the current enemy formation to the Target Practice in the Combat Sims.')}<br>
         GFAlarm<br>
         ${list(false, 
             `Use GFLMaps to take the enemy IDs you want to fight and enter them in the Custom Target Train under Packet Forger, with IDs separated by commas.<br>
@@ -787,6 +787,11 @@ const cardData = Object.freeze([
         questions : `How can I get some more Svarog High Altitude Bombing Aid Commissions?`,
         answers : `Weekly quest (8 standard captures), daily log-in, major events, shop (whenever a new banner starts).`,
         tags : [dataTags.RSC, dataTags.PA]
+    },
+    {
+        questions : `Recipe for Parachute/Paradrop Fairy?`,
+        answers : `2000/500/2000/1000`,
+        tags : [dataTags.FAIRY, dataTags.PROD]
     },
     {
         questions : ``,
