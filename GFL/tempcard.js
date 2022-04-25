@@ -52,6 +52,8 @@ const dataTags = Object.freeze({
     EQUIP : 'Equipments',           //Attachments on units.
     RSC : 'Resources/Currency',     //MARP, tickets, cores, etc.
     FAIRY : 'Fairies',              //Sixth man of the team.
+    //Facilities
+    //Devices
 });
 
 const star = '★';
@@ -74,7 +76,7 @@ function list(ordered, ...any) {
 }
 
 /** @param {URLString} docLink Ends in alphanumeric */
-function googleEmbed(docLink, maxHeightPixels = 0) {                    //Arrow disappears on multiple GDocs, apparently due to slowding.
+function googleEmbed(docLink, maxHeightPixels = 0) {                    //Arrow disappears on multiple GDocs, apparently due to slowding, might use figcaptions.
     const style = maxHeightPixels ? `style="max-height: ${maxHeightPixels}px;" ` : '';
     return `<iframe class="gdoc" ${style}src="${docLink}/preview?pli=1" frameborder="0"></iframe><br>
     ${link('Alternative Link.', docLink)}`;
@@ -119,7 +121,7 @@ function spoilerSummary(summaryName, details) {
 function descriptionList(dictOfArray) {
     var descs = '';
     for (const descObject in dictOfArray) {
-        descs += `<dt>${descObject}</dt>` + dictOfArray[descObject].map(val => `<dd>${val}</dd>`).join('');
+        descs += `<dt>${descObject}</dt>` + dictOfArray[descObject].map(val => `<dd>~ ${val}</dd>`).join('');
     }
     return `<dl>${descs}</dl>`;
 }
@@ -493,15 +495,6 @@ const cardData = Object.freeze([
         ['08', 'PP-93',  'PP-93',  'PP-93' ])}`,
         tags : [dataTags.HOC, dataTags.FST, dataTags.TIER]
     },  //Rudimentary rankings. Last place reserved for incomplete FSTs.
-    /* {
-        questions : `What are Main and Off Tanks?`,
-        answers : `Main tanks<br>
-        - Guns that have survivability skills (i.e. smoke, eva boost, stun etc.) and generally situated at the middle of the pack.<br>
-        Off tanks<br>
-        - Guns that generally have damage skills (i.e. molotov, grenade, damage boost etc.), or a secondary damage soaker in some instances, and is situated at either middle-top or middle-bottom.<br>
-        All of these usually refer to SMGs.`,
-        tags : [dataTags.OTHER, dataTags.IMPT]
-    }, */
     {
         questions : `What are Main Tanks and Off Tanks?`,
         answers : `${descriptionList({'Main Tanks' : ['Guns that have survivability skills (i.e. smoke, eva boost, stun etc.).', 'Generally situated at the middle of the pack.'],
