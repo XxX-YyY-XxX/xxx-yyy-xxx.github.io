@@ -28,7 +28,6 @@ const dataTags = Object.freeze({
     PROD : 'FactoryProduction',
     SIDE : 'SideStory',             //Extra stories.
     SKILL : 'Skills',               //Unit skills.
-    TRIVIA : 'Trivia',              //Things that people shouldn't even be bothered with but, here we are.
     //LEDOLL : 'CycleDropDolls',      //Dolls that were once mini event/crate/completion rewards that now wander the rerun hell.
     LOVE : 'Affection',             //
     TIER : 'TierList',              //May not technically be one, just overall description on who is stronger than who.
@@ -86,8 +85,7 @@ function googleEmbed(docLink, maxHeightPixels = 0) {                    //Arrow 
 
 /** @param permalink ...comments/${permalink}/?...*/
 function redditEmbed(permalink) {                                       //needs more fix, how to check support
-    return `<iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/${permalink}/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="278" width="640" scrolling="no"></iframe><br>
-    <https://old.reddit.com/r/girlsfrontline/comments/${permalink}/>`
+    return `<iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/${permalink}/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="278" width="640" scrolling="no" alt="Epic Fail"></iframe>`
 }
 
 /** @param {Array} headerArray @param {Array[]} arrayOfArrays */
@@ -558,7 +556,7 @@ const cardData = Object.freeze([
     {
         questions : `Why is the PA notification in the home screen always lit up?`,
         answers : `There are available pulls left to burn.`,
-        tags : [dataTags.PA, dataTags.TRIVIA]
+        tags : [dataTags.PA]
     },
     {
         questions : `What are Black Beans/Red Beans?`,
