@@ -54,9 +54,6 @@
 # [Equipment](/GFL/equipments)
 - Equipment loadouts, special equipments, and upgrades.
 
-# [Terminologies](/GFL/terms)
-- Explanations and guides.
-
 # [Dormitories](/GFL/dorms)
 - Friend batteries, pets, and posters.
 
@@ -84,3 +81,5 @@
 ### I see people have their Tdolls as their avatar in other peoples dorms. How do you do that?
 
 > In dorm, bottom-left, top-right, uncheck third checkbox.
+
+<./story>

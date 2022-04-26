@@ -85,7 +85,8 @@ function googleEmbed(docLink, maxHeightPixels = 0) {                    //Arrow 
 
 /** @param permalink ...comments/${permalink}/?...*/
 function redditEmbed(permalink) {                                       //needs more fix, how to check support
-    return `<iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/${permalink}/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="278" width="640" scrolling="no" alt="Epic Fail"></iframe>`
+    return `
+    <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/${permalink}/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="278" width="640" scrolling="no" alt="Epic Fail"></iframe>`
 }
 
 /** @param {Array} headerArray @param {Array[]} arrayOfArrays */
