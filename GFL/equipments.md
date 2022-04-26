@@ -6,18 +6,6 @@
 
 > Advised to use if lack gold ones. Do calibration only on gold ones for calibration ticket efficiency. Otherwise, fine to level them up.
 
-### Which is more efficient for enhancing equipment, equip enhance parts or fodder equips?
-
-> Yes. It's a matter of resource cost per point raised.
-
-### What's the MAX in blue box in equipment mean?
-
-> Highest calibration aka highest base stat of that particular equipment. You can calibrate in the Research menu.
-
-### Will I be able to get maximum calibration or is that part of RNG?
-
-> The only RNG in equipment calibration is how many tickets wasted before maxing.
-
 ### Does AA-12's SPEQ count as a slug?
 
 > No, apparently due to lacking ×3 damage.

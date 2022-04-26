@@ -789,6 +789,12 @@ const cardData = Object.freeze([
         tags : [dataTags.FAIRY, dataTags.PROD]
     },
     {
+        questions : `What does equipment calibration and enhancement do?`,
+        answers : `Equipment Calibration raises the equipment's base stat. The RNG dictates how many calib tickets are wasted before maxing. When it's on its highest calibration, a MAX in blue box appears on said equipment.<br>
+        Equipment Enhancement multiplies the base stat up to Lv. 10. Doesn't matter if Equip Enhancement Pills or fodder equips are used, it's merely a matter of resource cost per point raised.`,
+        tags : [dataTags.EQUIP, dataTags.LVL, dataTags.NEWB]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
