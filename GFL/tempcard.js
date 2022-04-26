@@ -37,7 +37,7 @@ const dataTags = Object.freeze({
     FRIEND : 'Friends',
     AUTO : 'AutoBattles',
     SKIN : 'DollCostumes',          //Primary money sink.
-    LVL : 'Leveling',               //Mostly Corpse Drag.
+    LV : 'Leveling',               //Mostly Corpse Drag.
     ECH : 'EchelonFormation',       //
     PET : 'Pets',                   //ANIMAL
     FURN : 'Furniture',             //
@@ -131,6 +131,20 @@ function descriptionList(dictOfArray) {
 
 const cardData = Object.freeze([
     //#region Topic Primers
+    {
+        questions : `How do I level my girls?`,
+        answers : `First is grinding them on leveling maps.<br>
+        Second is using Combat Reports. You can get them in the Forward Basecamp or through the Data Room. You can give them by going to the Dorm>Warehouse>Gift tab or going to your owned doll profile and tapping the + button by the EXP bar. They give 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.`,
+        tags : [dataTags.TDOLL, dataTags.LV, dataTags.NEWB, dataTags.PRIME]
+    },  //Last one is the EXP mode combat sim. Total EXP per run is divided equally between all dolls present, max-leveled or not
+    {
+        questions : `What is Expedition/Forward Basecamp?`,
+        answers : `${link('Gamepress Detailed Guide.', 'https://gamepress.gg/girlsfrontline/gfl-explained-basecamp-and-exploration')}<br>
+        ${link('GFC Primer.', 'https://www.gflcorner.com/expedition-system-mini-guide/')}<br>
+        ${link('ATM Guide.', 'https://gfl.matsuda.tips/post/weareabsolutenotlostiswear')}<br>
+        Important note is that FB unlocks at Commander Lv. 20.`,
+        tags : [dataTags.EXPED, dataTags.PRIME, dataTags.NEWB]
+    },
     //#endregion
     {
         questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
@@ -207,15 +221,9 @@ const cardData = Object.freeze([
         tags : [dataTags.MAIN]
     },
     {
-        questions : `How do I level my girls?`,
-        answers : `First is grinding them on leveling maps.<br>
-        Second is using Combat Reports. You can get them in the Forward Basecamp or through the Data Room. You can give them by going to the Dorm>Warehouse>Gift tab or going to your owned doll profile and tapping the + button by the EXP bar. Note that they are not affected by dummy link EXP multiplier. They give 3000 fixed EXP per report.`,
-        tags : [dataTags.TDOLL, dataTags.LVL, dataTags.NEWB, dataTags.PRIME]
-    },  //Last one is the EXP mode combat sim. Total EXP per run is divided equally between all dolls present, max-leveled or not
-    {
         questions : `Would the equipment I'm enhancing get bonus points if I use an enhanced fodder?`,
         answers : `No.`,
-        tags : [dataTags.EQUIP, dataTags.LVL]
+        tags : [dataTags.EQUIP, dataTags.LV]
     },
     {
         questions : `Is there a list of which logistics to do if I want to prioritize certain resources?`,
@@ -243,14 +251,6 @@ const cardData = Object.freeze([
         tags : [dataTags.TDOLL, dataTags.THEATER]
     },
     {
-        questions : `What is Expedition/Forward Basecamp?`,
-        answers : `${link('Gamepress Detailed Guide.', 'https://gamepress.gg/girlsfrontline/gfl-explained-basecamp-and-exploration')}<br>
-        ${link('GFC Primer.', 'https://www.gflcorner.com/expedition-system-mini-guide/')}<br>
-        ${link('ATM Guide.', 'https://gfl.matsuda.tips/post/weareabsolutenotlostiswear')}<br>
-        Important note is that FB unlocks at Commander Lv. 20.`,
-        tags : [dataTags.EXPED, dataTags.PRIME, dataTags.NEWB]
-    },
-    {
         questions : `For limited-time bonuses (i.e. auto-battles, logistics), when are the rewards calculated?`,
         answers : `If the runs can be cancelled without penalty, rewards are calculated at the end.<br>
         ${spoilerSummary('Examples:', list(false, 'The "Use Battery" bingo mission when exp-training HOCs.'))}<br>
@@ -270,7 +270,7 @@ const cardData = Object.freeze([
     {
         questions : `How does Armor Penetration work?`,
         answers : `${link('Matsuda explanation.', 'https://gfl.matsuda.tips/post/armour')}`,
-        tags : [dataTags.BATTLE]
+        tags : [dataTags.BATTLE, dataTags.SYSMECH]
     },
     {
         questions : `What are Fairies?`,
@@ -292,7 +292,8 @@ const cardData = Object.freeze([
     },
     {
         questions : `Is there a penalty for using HOC charges and Fairy points in Theater battles?`,
-        answers : `Nope. Joins boss battle regardless of charges and has no bearing on final score. Go ham.`,
+        answers : `Nope. Joins boss battle regardless of charges and has no bearing on final score. Go ham.<br>
+        Except if you used them and lost that battle, they won't be refunded, even in Electronic Warfare.`,
         tags : [dataTags.THEATER, dataTags.HOC, dataTags.FAIRY]
     },
     {
@@ -455,12 +456,12 @@ const cardData = Object.freeze([
         ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/optimizing-leveling-introduction')}<br>
         ${link('GFLCorner guide.', 'https://www.gflcorner.com/efficient-leveling-guide/')}<br>
         ${link('DMesse guide.', 'http://dmesse.egloos.com/m/3567918')}`,
-        tags : [dataTags.IMPT, dataTags.LVL]
+        tags : [dataTags.IMPT, dataTags.LV]
     },
     {
         questions : `If I MOD my T-Doll, is Level 100 still considered max level?`,
         answers : `Thankfully, this is where common sense wins. In short, ${altTextStyle('NO', TextStyle.BOLD)}.`,
-        tags : [dataTags.MOD, dataTags.LVL]
+        tags : [dataTags.MOD, dataTags.LV]
     },
     {
         questions : `I can't get the gold and silver maps because the enemies keep running all over me. How do I get them?`,
@@ -622,7 +623,7 @@ const cardData = Object.freeze([
     {
         questions : `What do I need for 8-1N Zas drag?`,
         answers : `${googleEmbed('https://docs.google.com/spreadsheets/d/1VT52c-_m4zTx-OFRPcxE9iFmmJY_AMC7CyJT1B7FLt8')}`,
-        tags : [dataTags.TDOLL, dataTags.LVL]
+        tags : [dataTags.TDOLL, dataTags.LV]
     },
     {
         questions : `Is there a tier list for fairies?`,
@@ -702,11 +703,6 @@ const cardData = Object.freeze([
         tags : [dataTags.RSC, dataTags.CAMPAIGN, dataTags.MAJOR]
     },
     {
-        questions : `Does losing in Electronic Warfare actually do anything?`,
-        answers : `Losing Fairy and HOC charges if used and lost.`,
-        tags : [dataTags.THEATER, dataTags.FAIRY, dataTags.HOC]
-    },
-    {
         questions : `How do tilescan skills work?`,
         answers : `Real-time scanning of dolls on own tiles when activating their skills. Meaning setup formation can have them with no dolls on top of their tiles and when they activate their skills in battle, whoever are on top of their bufftiles will get the effects of their skill. Note that their bufftiles basically move with them.`,
         tags : [dataTags.TDOLL, dataTags.SKILL, dataTags.IMPT]
@@ -739,13 +735,13 @@ const cardData = Object.freeze([
         answers : `${link('tempkaridc calculator.', 'https://tempkaridc.github.io/gf/vec')}<br>
         ${link('xVarz spreadsheet for different draggers.', 'https://docs.google.com/spreadsheets/d/1cuZPF-r1e6TyE4Rj2DNkSEova7Tc-Cczs7RaoAK2vII')}<br>
         ${link('Infographic.', 'https://cdn.discordapp.com/attachments/564028599682727937/929724568258629642/134.png')}`,
-        tags : [dataTags.LVL, dataTags.TDOLL]
+        tags : [dataTags.LV, dataTags.TDOLL]
     },
     {
         questions : `How do I get a higher success rate for logistics?`,
         answers : `${altTextStyle('floor(mean of doll levels in echelon) * 0.45 + 15', TextStyle.CODE)} for normal logistics and<br>
         ${altTextStyle('floor(mean of doll levels in echelon) * 0.60 + 30', TextStyle.CODE)} for rate-up logistics.`,
-        tags : [dataTags.LOGI, dataTags.TDOLL]
+        tags : [dataTags.LOGI]
     },
     {
         questions : `What do they mean by bamboo?`,
@@ -792,7 +788,7 @@ const cardData = Object.freeze([
         questions : `What does equipment calibration and enhancement do?`,
         answers : `Equipment Calibration raises the equipment's base stat. The RNG dictates how many calib tickets are wasted before maxing. When it's on its highest calibration, a MAX in blue box appears on said equipment.<br>
         Equipment Enhancement multiplies the base stat up to Lv. 10. Doesn't matter if Equip Enhancement Pills or fodder equips are used, it's merely a matter of resource cost per point raised.`,
-        tags : [dataTags.EQUIP, dataTags.LVL, dataTags.NEWB]
+        tags : [dataTags.EQUIP, dataTags.LV, dataTags.NEWB]
     },
     {
         questions : ``,
