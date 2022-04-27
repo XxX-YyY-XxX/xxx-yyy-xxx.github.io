@@ -75,12 +75,22 @@ function list(ordered, ...any) {
 }
 
 /** @param {URLString} docLink Ends in alphanumeric */
-function googleEmbed(docLink, maxHeightPixels = 0) {                    //Arrow disappears on multiple GDocs, apparently due to slowding
+function googleEmbed(docLink, maxHeightPixels = 0) {                    //Arrow disappears on multiple GDocs, apparently due to slowding, use reload
     const style = maxHeightPixels ? `style="max-height: ${maxHeightPixels}px;" ` : '';
     return `<figure>
-        <iframe class="gdoc" ${style}src="${docLink}/preview?pli=1"></iframe>
+        <iframe class="gdoc" ${style}src="${docLink}/preview?pli=1"></iframe><br>
+        <button type="button" onclick="reloadGoogleFrame(this)">Reload Frame</button>
         <figcaption>${link('Alternative Link', docLink)}</figcaption>
     </figure>`;
+}
+
+/** @param {HTMLElement} button */
+function reloadGoogleFrame(button) {
+    const iframe = button.previousElementSibling;
+    iframe.contentWindow.location.reload();
+    /* var tmp_src = iframe.src;
+    iframe.src = '';
+    iframe.src = tmp_src; */
 }
 
 /** @param permalink ...comments/${permalink}/?...*/
@@ -117,7 +127,7 @@ function altTextStyle(string, ...styles) {
 
 function spoilerSummary(summaryName, details) {
     return `<details><summary>${summaryName}</summary>${details}</details>`;
-}
+}   //ontoggle
 
 function descriptionList(dictOfArray) {
     var descs = '';
