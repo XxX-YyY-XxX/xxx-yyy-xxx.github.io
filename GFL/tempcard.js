@@ -85,8 +85,8 @@ function googleEmbed(docLink, maxHeightPixels = 0) {                    //Arrow 
 
 /** @param permalink ...comments/${permalink}/?...*/
 function redditEmbed(permalink) {                                       //needs more fix, how to check support
-    return `
-    <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/${permalink}/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="278" width="640" scrolling="no" alt="Epic Fail"></iframe>`
+    return `<a href="https://old.reddit.com/r/girlsfrontline/comments/${permalink}/">For load fail purposes.</a><br>
+    <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/${permalink}/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="278" width="640" scrolling="no"></iframe>`
 }
 
 /** @param {Array} headerArray @param {Array[]} arrayOfArrays */
@@ -789,6 +789,12 @@ const cardData = Object.freeze([
         Equipment Enhancement multiplies the base stat up to Lv. 10. Doesn't matter if Equip Enhancement Pills or fodder equips are used, it's merely a matter of resource cost per point raised.`,
         tags : [dataTags.EQUIP, dataTags.LV, dataTags.NEWB]
     },
+    {
+        questions : `Does Hanyang Type 88 still do skipping stones?`,
+        answers : `<amp-iframe width=640 height=301 sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" layout="responsive" resizable frameborder="0" src="https://www.redditmedia.com/r/girlsfrontline/comments/qkzc9s/weekly_commanders_lounge_november_02_2021/hjvcbmt/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark"> <amp-img layout="fill" src="https://rebed.redditmedia.com/assets/03657792c480fd6bbb7bef821c859742.svg" placeholder></amp-img> <div overflow>Click to expand</div> </amp-iframe><br>
+        Apparently also appens on tiles 7 and 9.`,
+        tags : [dataTags.TDOLL, dataTags.SKILL]
+    },  //reddit fix
     {
         questions : ``,
         answers : ``,
