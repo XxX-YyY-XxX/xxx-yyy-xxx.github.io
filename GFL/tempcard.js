@@ -335,7 +335,7 @@ const cardData = Object.freeze([
         ${list(false, 
             `Use GFLMaps to take the enemy IDs you want to fight and enter them in the Custom Target Train under Packet Forger, with IDs separated by commas.<br>
             ${image('./assets/images/GFAlarmCTT.png', 'From u/UnironicWeeaboo')}<br>
-            Works for comps that has been loaded into the client and is ${spoilerSummary('very safe.', redditEmbed('tqur46/weekly_commanders_lounge_march_29_2022/i312oo2'))}`)}<br>
+            Works for comps that has been loaded into the client and is ${link('very safe.', 'https://old.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i312oo2/')}`)}<br>
         ${link('Matsuda recommendations.', 'https://gfl.matsuda.tips/post/everything-sucks-forever')}`,
         tags : [dataTags.ENEMY, dataTags.BATTLE, dataTags.MAP, dataTags["3P"]]
     },
