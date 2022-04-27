@@ -2,12 +2,6 @@
 
 # Events
 
-### Why didn't I complete "Consume 100 batteries" for the bingo mission when I EXP trained my HOCs?
-
-> Because you can get them back, that's what. It only counts when the training is finished, meaning there's no way to take it back.
-
-@ Link
-
 ### Do auto-battles count for "Defeat Enemies"?
 
 > No.
@@ -18,10 +12,6 @@
 > Keep them. You'll get 5 Calibration Tickets per 1 Unused Keycard. Points go to trash. Source: Game info tab.
 
 @ Visual
-
-### Will the current event currency carry over to the next event?
-
-> No. Event currencies are for the current ones only.
 
 ### When will my event medals expire?
 
@@ -36,10 +26,6 @@
 > Tap the bottom-right arrow at the main screen.
 
 @ Visual
-
-### I wasn't able to clear the event. Will I still get the clear rewards when they get added to Campaign?
-
-> Nope. Gutted rewards compared to original. Free shit is free shit, and doll rewards gets cycled to Limited Dolls.
 
 ### What's the optimal way of clearing ~~Bingo~~ Key Card Events?
 

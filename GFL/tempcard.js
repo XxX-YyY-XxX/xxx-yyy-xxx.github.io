@@ -296,7 +296,7 @@ const cardData = Object.freeze([
         tags : [dataTags.THEATER, dataTags.HOC, dataTags.FAIRY]
     },
     {
-        questions : `Can I save the event currencies for the next event?`,
+        questions : `Will the current event currency carry over to the next event?`,
         answers : `No can do. Dissolves into nothingness one week after the event is finished.`,
         tags : [dataTags.RSC, dataTags.STORY]
     },
@@ -697,8 +697,8 @@ const cardData = Object.freeze([
         tags : [dataTags.TDOLL, dataTags.CAMPAIGN]
     },
     {
-        questions : `Can I get a True Core Mask (TCM) from campaigns?`,
-        answers : `Nope. So skip the current major event's story if you have to and reap the rewards.`,
+        questions : `I wasn't able to clear the event. Will I still get the clear rewards when they get added to Campaign?`,
+        answers : `Nope. Gutted rewards compared to original, even True Core Masks (TCM). Free shit is free shit though, and doll rewards gets cycled to Limited Dolls. So skip the current major event's story if you have to and reap the rewards.`,
         tags : [dataTags.RSC, dataTags.CAMPAIGN, dataTags.MAJOR]
     },
     {
@@ -791,7 +791,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `Does Hanyang Type 88 still do skipping stones?`,
-        answers : `<amp-iframe width=640 height=301 sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" layout="responsive" resizable frameborder="0" src="https://www.redditmedia.com/r/girlsfrontline/comments/qkzc9s/weekly_commanders_lounge_november_02_2021/hjvcbmt/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark"> <amp-img layout="fill" src="https://rebed.redditmedia.com/assets/03657792c480fd6bbb7bef821c859742.svg" placeholder></amp-img> <div overflow>Click to expand</div> </amp-iframe><br>
+        answers : `<iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/qkzc9s/weekly_commanders_lounge_november_02_2021/hjvcbmt/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="301" width="640" scrolling="no"></iframe><br>
         Apparently also appens on tiles 7 and 9.`,
         tags : [dataTags.TDOLL, dataTags.SKILL]
     },  //reddit fix
