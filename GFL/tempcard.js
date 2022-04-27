@@ -86,7 +86,7 @@ function googleEmbed(docLink, maxHeightPixels = 0) {                    //Arrow 
 
 /** @param {HTMLElement} button */
 function reloadGoogleFrame(button) {
-    const iframe = button.previousElementSibling;
+    const iframe = button.parentElement.firstElementChild;
     iframe.contentWindow.location.reload();
     /* var tmp_src = iframe.src;
     iframe.src = '';
@@ -96,7 +96,7 @@ function reloadGoogleFrame(button) {
 /** @param permalink ...comments/${permalink}/?...*/
 function redditEmbed(permalink) {                                       //needs more fix, how to check support
     return `<a href="https://old.reddit.com/r/girlsfrontline/comments/${permalink}/">For load fail purposes.</a><br>
-    <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/${permalink}/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="278" width="640" scrolling="no"></iframe>`
+    <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/${permalink}/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="278" width="640" scrolling="no">Epic Fail</iframe>`
 }
 
 /** @param {Array} headerArray @param {Array[]} arrayOfArrays */
