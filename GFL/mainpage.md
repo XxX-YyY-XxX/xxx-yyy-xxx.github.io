@@ -82,4 +82,4 @@
 
 > In dorm, bottom-left, top-right, uncheck third checkbox.
 
-<https://images.google.com/
+<https://images.google.com/>
