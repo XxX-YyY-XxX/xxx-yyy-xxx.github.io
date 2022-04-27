@@ -796,6 +796,11 @@ const cardData = Object.freeze([
         tags : [dataTags.TDOLL, dataTags.SKILL]
     },  //reddit fix
     {
+        questions : `How viable is 2AR2SMG1HG?`,
+        answers : `Depends on if there is no good AR-buffing AR for position 4. If there is one, 3AR1SMG1HG is a thing.`,
+        tags : [dataTags.TDOLL, dataTags.ECH]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
