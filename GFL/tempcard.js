@@ -625,7 +625,7 @@ const cardData = Object.freeze([
         tags : [dataTags.THEATER]
     },
     {
-        questions : `Which facilities should I prioritize for battery expenditures?`,
+        questions : `Which facilities/base upgrades should I prioritize for battery expenditures?`,
         answers : `${list(true, 'Forward Basecamp.', 'Protocol Control Centre.', 'Intelligence Room.', 'Firing Range (Garage).', 'Fairy Chamber.', 'Data Room.', 'Rescue Station.')}`,
         tags : [dataTags.NEWB]
     },
