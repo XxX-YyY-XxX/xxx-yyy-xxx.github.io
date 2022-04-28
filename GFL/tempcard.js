@@ -719,7 +719,7 @@ const cardData = Object.freeze([
     {
         questions : `Who should I MOD first?`,
         answers : `${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/neural-upgrade-priority-guide')}<br>
-        ${link('CN MOD list.', 'https://imgur.com/a/lzQbr6M')}`,
+        ${spoilerSummary('CN MOD list.', image('./assets/images/CNMODTier.png'))}`,
         tags : [dataTags.MOD, dataTags.TIER]
     },
     {
