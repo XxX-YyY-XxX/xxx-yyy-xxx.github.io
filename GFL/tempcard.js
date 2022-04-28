@@ -577,7 +577,7 @@ const cardData = Object.freeze([
     {
         questions : `What is Combat Effectiveness Stacking?`,
         answers : `The process of stacking the useless number as high as possible, battle performance be damned.<br>
-        ARSMG = 30-50k, RFHG = 40-60k, MGSG = 100k+ average max CE, including maxed fairies, equips, mods, oaths, and formation bonuses.<br>
+        ARSMG = 50-70k, RFHG = 40-60k, MGSG = 100k+ average max CE, including maxed fairies, equips, mods, oaths, and formation bonuses.<br>
         It's main purpose is for Theater Bosses and being on top of the Friend List.`,
         tags : [dataTags.OTHER]
     },
