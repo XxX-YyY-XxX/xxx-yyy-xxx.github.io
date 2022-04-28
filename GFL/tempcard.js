@@ -498,9 +498,9 @@ const cardData = Object.freeze([
         questions : `Which HOC FSTs should I raise first?`,
         answers : `${table(['Rank', 'To Lv. 60', `To 5${star}`, 'To Max Iter'],
         ['01', 'BGM-71', 'AT4',    '2B14'  ],
-        ['02', 'Mk 153', 'Mk 153', 'Mk 153'],
-        ['03', 'AT4',    '2B14',   'M2'    ],
-        ['04', '2B14',   'M2',     'AT4'   ],
+        ['02', '2B14',   '2B14',   'Mk 153'],
+        ['03', 'Mk 153', 'Mk 153', 'M2'    ],
+        ['04', 'AT4',    'M2',     'AT4'   ],
         ['05', 'M2',     'AGS-30', 'AGS-30'],
         ['06', 'AGS-30', 'BGM-71', 'BGM-71'],
         ['07', 'QLZ-04', 'QLZ-04', 'QLZ-04'],
@@ -737,7 +737,7 @@ const cardData = Object.freeze([
         answers : `u/ConductorBichir spreadsheets.<br>
         ${spoilerSummary('Costume Banners.', googleEmbed('https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ'))} Includes furniture set and its complete set special effect.<br>
         ${spoilerSummary("Tactical Doll Skins.", googleEmbed('https://docs.google.com/spreadsheets/d/1fEnzlpQk5Jvja5PwzlpDn2ypqP3BHcGftqWWOLnK17E'))} Contains censor comparison of doll's default art.`,
-        tags : [dataTags.SKIN, dataTags.TDOLL, dataTags.RESUPPLY]
+        tags : [dataTags.SKIN, dataTags.RESUPPLY]
     },
     {
         questions : `How do I need to build Vector to no damage 13-4?`,
@@ -802,13 +802,18 @@ const cardData = Object.freeze([
     {
         questions : `Does Hanyang Type 88 still do skipping stones?`,
         answers : `<iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/qkzc9s/weekly_commanders_lounge_november_02_2021/hjvcbmt/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="301" width="640" scrolling="no"></iframe><br>
-        Apparently also appens on tiles 7 and 9.`,
+        Apparently also happens on tiles 7 and 9.`,
         tags : [dataTags.TDOLL, dataTags.SKILL]
     },  //reddit fix
     {
         questions : `How viable is 2AR2SMG1HG?`,
         answers : `Depends on if there is no good AR-buffing AR for position 4. If there is one, 3AR1SMG1HG is a thing.`,
         tags : [dataTags.TDOLL, dataTags.ECH]
+    },
+    {
+        questions : `I've heard news about GFL 2. Is GFL 1 being phased out/abandoned?`,
+        answers : `Not anytime soon. The plan is for them to be played simultaneously.`,
+        tags : [dataTags.OTHER]
     },
     {
         questions : ``,
