@@ -75,21 +75,13 @@ function list(ordered, ...any) {
 }
 
 /** @param {URLString} docLink Ends in alphanumeric */
-function googleEmbed(docLink, maxHeightPixels = 0) {                    //Arrow disappears on multiple GDocs, apparently due to slowding, use reload
-    const style = maxHeightPixels ? `style="max-height: ${maxHeightPixels}px;" ` : '';
+function googleEmbed(docLink, maxHeightPixels = 0) {
+    const style = maxHeightPixels ? `style="max-height: ${maxHeightPixels}px;"` : '';
     return `<figure>
-        <iframe class="gdoc" ${style}src="${docLink}/preview?pli=1"></iframe><br>
-        <figcaption><a onclick="reloadGoogleFrame(this)">Reload Frame</a> \| ${link('Alternative Link', docLink)}</figcaption>
+        <iframe class="gdoc" src="${docLink}/preview?pli=1" ${style}></iframe><br>
+        <figcaption><a onclick="reloadIFrame(this.parentElement.parentElement.firstElementChild)">Reload Frame</a> \| ${link('Alternative Link', docLink)}</figcaption>
     </figure>`;
 }   //<button type="button" ></button>
-
-/** @param {HTMLElement} button */
-function reloadGoogleFrame(button) {
-    const iframe = button.parentElement.parentElement.firstElementChild;
-    var tmp_src = iframe.src;
-    iframe.src = '';
-    iframe.src = tmp_src;
-}
 
 /** @param permalink ...comments/${permalink}/?...*/
 function redditEmbed(permalink) {                                       //needs more fix, how to check support

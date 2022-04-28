@@ -21,6 +21,13 @@ function UniqueClassElement(className) {
     return output.length == 1 ? output[0] : null;
 }
 
+/** @param {HTMLElement} iframeElement*/
+function reloadIFrame(iframeElement) {
+    var temp = iframeElement.src;
+    iframeElement.src = '';
+    iframeElement.src = temp;
+}
+
 /*if (typeof(Storage) !== "undefined") {
     sessionStorage.outputCards = boxes;
 } else {
