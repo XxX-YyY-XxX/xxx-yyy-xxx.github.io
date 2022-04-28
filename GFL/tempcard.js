@@ -3,7 +3,6 @@ const dataTags = Object.freeze({
     ACCT : 'AccountManagement',     //Anything concerning account data and integrity.
     TECH : 'Troubleshooting',       //For resolving issues that shouldn't even happen.
     '3P' : 'ThirdParty',            //Non-dev-made applications that are recommended to use. Safe until said otherwise.
-    MOD : 'NeuralUpgrade',          //MODding dolls and its resources.
     NEWB : 'NewbieGuide',           //Things new/early-game players should know.
     PRIME : 'TopicPrimer',          //Explanation of the specific system it's paired with. Usually made up of links. Must be the first box of it's paired tag.
     EMU : 'Emulators',              //Anytihing related to emulators.
@@ -13,19 +12,14 @@ const dataTags = Object.freeze({
     THEATER : 'Theater',
     BATTLE : 'Skirmishes',          //The battle mode where everyone shoots at one another.
     IMPT : 'Important',             //Things new players would need for late-game. Mostly consists of things not explained by the game.
-    EXPED : 'ForwardBasecamp',
     SYSMECH : 'SystemMechanics',    //Explanation on underlying mechanics of the game.
-    PA : 'ProtocolAssimilation',    //PA pulling and coalition drills.
     ENEMY : 'EnemyUnits',           //For things that primarily interact with enemy units.
-    HOC : 'HeavyOrdnanceCorps',
-    FST : 'FireSupportTeam',        //Rockets and mortars, the first of the HOC.
     MAJOR : 'MajorEvents',          //Part of the main story. The ones added to the Campaign tab.
     //COLLAB : 'Collaboration',
     //SEASON : 'SeasonalEvents',      //Story events that happen each New Year, X-mas, Halloween, etc.
     MINI : 'MiniEvents',            //Bingo, Point Event, etc.
     STORY : 'StoryEvents',          //For questions that apply to Major, Collab, and Seasonal Events.
     MAP : 'FieldMap',               //Node-based overworld.
-    PROD : 'FactoryProduction',
     SIDE : 'SideStory',             //Extra stories.
     SKILL : 'Skills',               //Unit skills.
     //LEDOLL : 'CycleDropDolls',      //Dolls that were once mini event/crate/completion rewards that now wander the rerun hell.
@@ -37,7 +31,6 @@ const dataTags = Object.freeze({
     AUTO : 'AutoBattles',
     SKIN : 'DollCostumes',          //Primary money sink.
     LV : 'Leveling',               //Mostly Corpse Drag.
-    ECH : 'EchelonFormation',       //
     PET : 'Pets',                   //ANIMAL
     FURN : 'Furniture',             //
     //Combat Tabs
@@ -51,7 +44,14 @@ const dataTags = Object.freeze({
     EQUIP : 'Equipments',           //Attachments on units.
     RSC : 'Resources/Currency',     //MARP, tickets, cores, etc.
     FAIRY : 'Fairies',              //Sixth man of the team.
+    FST : 'FireSupportTeam',        //Rockets and mortars, the first of the HOC.
     //Facilities
+    ECH : 'EchelonFormation',       //
+    PROD : 'FactoryProduction',
+    MOD : 'NeuralUpgrade',          //MODding dolls and its resources.
+    HOC : 'HeavyOrdnanceCorps',
+    EXPED : 'ForwardBasecamp',
+    PA : 'ProtocolAssimilation',    //PA pulling and coalition drills.
     //Devices
 });
 
@@ -814,6 +814,11 @@ const cardData = Object.freeze([
         questions : `I've heard news about GFL 2. Is GFL 1 being phased out/abandoned?`,
         answers : `Not anytime soon. The plan is for them to be played simultaneously.`,
         tags : [dataTags.OTHER]
+    },
+    {
+        questions : `What does upgrading the Rescue Station do? Are there certain pets attainable only with higher-level facilities?`,
+        answers : `${image('./assets/images/PetSale.png')}`,
+        tags : [dataTags.PET]
     },
     {
         questions : ``,
