@@ -80,7 +80,7 @@ function googleEmbed(docLink, maxHeightPixels = 0) {
     const style = maxHeightPixels ? `style="max-height: ${maxHeightPixels}px;"` : '';
     return `<figure>
         <iframe class="gdoc" src="${docLink}/preview?pli=1" ${style}></iframe><br>
-        <figcaption><a onclick="reloadIFrame(this.parentElement.parentElement.firstElementChild)">Reload Frame</a> \| ${link('Alternative Link', docLink)}</figcaption>
+        <figcaption><a onclick="reloadIFrame(this.parentElement.parentElement.firstElementChild)">Reload Frame</a> \| ${link('Source Link', docLink)}</figcaption>
     </figure>`;
 }   //<button type="button" ></button>
 

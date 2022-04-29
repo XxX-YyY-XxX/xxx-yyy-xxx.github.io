@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <include virtual="/univasset/styleheader.html"></include>
+        <div id="stylesheets"></div>
 
         <!-- Begin Jekyll SEO tag v2.8.0 -->
         <title>Starters Guide | GFL</title>
@@ -19,6 +19,16 @@
         <script type="application/ld+json">
         {"@context":"https://schema.org","@type":"WebSite","description":"Collection of whatever.","headline":"Random Scraps","name":"Random Scraps","url":"https://xxx-yyy-xxx.github.io/"}</script>
         <!-- End Jekyll SEO tag -->
+
+        <script>
+            fetch("/univasset/styleheader.html")
+                .then(response => {
+                    return response.text()
+                })
+                .then(data => {
+                    document.getElementById('stylesheets').innerHTML = data;
+                });
+        </script>
     </head>
 
     <body>
@@ -46,3 +56,4 @@
 
 <!-- object name="styleheader" type="text/html" data="/univasset/styleheader.html"></object -->
 <!-- embed type="text/html" src="/univasset/styleheader.html" -->
+<!-- #include virtual="/univasset/styleheader.html" -->
