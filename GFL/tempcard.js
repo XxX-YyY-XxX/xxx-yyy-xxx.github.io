@@ -791,10 +791,10 @@ const cardData = Object.freeze([
     },
     {
         questions : `Does Hanyang Type 88 still do skipping stones?`,
-        answers : `<iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/qkzc9s/weekly_commanders_lounge_november_02_2021/hjvcbmt/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="301" width="640" scrolling="no"></iframe><br>
+        answers : `${link('Yes she does.', 'https://www.reddit.com/r/girlsfrontline/comments/qkzc9s/weekly_commanders_lounge_november_02_2021/hjvcbmt/')}
         Apparently also happens on tiles 7 and 9.`,
         tags : [dataTags.TDOLL, dataTags.SKILL]
-    },  //reddit fix
+    },  //reddit fix    
     {
         questions : `How viable is 2AR2SMG1HG?`,
         answers : `Depends on if there is no good AR-buffing AR for position 4. If there is one, 3AR1SMG1HG is a thing.`,
