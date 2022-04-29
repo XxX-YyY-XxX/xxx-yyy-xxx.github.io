@@ -9,7 +9,6 @@ const dataTags = Object.freeze({
     APPLE : 'AppleDevices',         //Anything primarily concerning iOS devices.
     //ANDROID : 'AndroidDevices',
     ANNIV : 'Anniversary',          //Anything concerning the game's anniversary.
-    THEATER : 'Theater',
     BATTLE : 'Skirmishes',          //The battle mode where everyone shoots at one another.
     IMPT : 'Important',             //Things new players would need for late-game. Mostly consists of things not explained by the game.
     SYSMECH : 'SystemMechanics',    //Explanation on underlying mechanics of the game.
@@ -18,28 +17,30 @@ const dataTags = Object.freeze({
     //COLLAB : 'Collaboration',
     //SEASON : 'SeasonalEvents',      //Story events that happen each New Year, X-mas, Halloween, etc.
     MINI : 'MiniEvents',            //Bingo, Point Event, etc.
-    STORY : 'StoryEvents',          //For questions that apply to Major, Collab, and Seasonal Events.
     MAP : 'FieldMap',               //Node-based overworld.
     SIDE : 'SideStory',             //Extra stories.
     SKILL : 'Skills',               //Unit skills.
-    //LEDOLL : 'CycleDropDolls',      //Dolls that were once mini event/crate/completion rewards that now wander the rerun hell.
     LOVE : 'Affection',             //
     TIER : 'TierList',              //May not technically be one, just overall description on who is stronger than who.
     RESUPPLY : 'Resupply',          //Dorm gacha.
     OATH : 'OathSystem',            //Marriage.
     FRIEND : 'Friends',
     AUTO : 'AutoBattles',
-    SKIN : 'DollCostumes',          //Primary money sink.
-    LV : 'Leveling',               //Mostly Corpse Drag.
+    SKIN : 'Costumes',              //Primary money sink.
+    LV : 'Leveling',                //Mostly Corpse Drag.
     PET : 'Pets',                   //ANIMAL
     FURN : 'Furniture',             //
-    //Combat Tabs
+    //#region Combat Tabs
+    STORY : 'StoryEvents',          //For questions that apply to Major, Collab, and Seasonal Events.
     MAIN : 'CombatMissions',        //Main missions aka Chapters.
     LOGI : 'Logistics',             //Main source of MARP.
     SIMS : 'CombatSimulations',     //Capsule, Data, EXP, Neural, DefDrill, CoaDrill, Target Practice
     CAMPAIGN : 'CampaignMissions',  //Permanent Major Events
+    THEATER : 'Theater',
+    //#endregion
     //Armory Tabs
     TDOLL : 'TacticalDolls',        //Anything that directly involves Tactical Dolls.
+    LEDOLL : 'CycleDropDolls',      //Dolls that were once mini event/crate/completion rewards that now wander the rerun hell.
     COALITION : 'CoalitionUnits',   //PA counterpart of Tactical Dolls.
     EQUIP : 'Equipments',           //Attachments on units.
     RSC : 'Resources/Currency',     //MARP, tickets, cores, etc.
@@ -698,8 +699,8 @@ const cardData = Object.freeze([
     },
     {
         questions : `I wasn't able to clear the event. Will I still get the clear rewards when they get added to Campaign?`,
-        answers : `Nope. Gutted rewards compared to original, even True Core Masks (TCM). Free shit is free shit though, and doll rewards gets cycled to Limited Dolls. So skip the current major event's story if you have to and reap the rewards.`,
-        tags : [dataTags.RSC, dataTags.CAMPAIGN, dataTags.MAJOR]
+        answers : `Nope. Gutted rewards compared to original, even True Core Masks (TCM). Free shit is free shit though, and doll/crate rewards gets cycled to Limited Dolls. So skip the current major event's story if you have to and reap the rewards.`,
+        tags : [dataTags.RSC, dataTags.CAMPAIGN, dataTags.MAJOR, dataTags.LEDOLL]
     },
     {
         questions : `How do tilescan skills work?`,
