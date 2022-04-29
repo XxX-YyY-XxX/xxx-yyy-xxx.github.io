@@ -715,7 +715,7 @@ const cardData = Object.freeze([
     {
         questions : `My resources (Manpower, Ammunitions, Rations, Parts) are uncomfortably low? Where can I get some?`,
         answers : `Most efficient and consistent is logistics. Though you can get them through the shop, quest and event rewards, campaign/major story node clears, and random nodes.`,
-        tags : [dataTags.RSC, dataTags.LOGI]
+        tags : [dataTags.RSC, dataTags.LOGI, dataTags.NEWB]
     },
     {
         questions : `How do I get Platinum and Nova Medals?`,
@@ -827,6 +827,11 @@ const cardData = Object.freeze([
         answers : `Being in the leader slot in a battle echelon, being the MVP of a battle echelon, collecting daily hearts in dorms, cakes/lollipops/icecreams, passive regen by being in a dorm, gifting skins.<br>
         ${link('Write-up on how what affects affection.', 'https://www.reddit.com/r/girlsfrontline/comments/cgpt7y/weekly_commanders_lounge_july_23_2019/ev0gw64/')}`,
         tags : [dataTags.LOVE]
+    },
+    {
+        questions : `As a beginner, is it worth to use batteries for combat reports?`,
+        answers : `Probably if surplus EXP is maxed out, otherwise doubt it.`,
+        tags : [dataTags.NEWB, dataTags.RSC]
     },
     {
         questions : ``,
