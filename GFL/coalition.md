@@ -104,10 +104,6 @@
 
 > Drop the pool until you have 3/100 then use Svarog tickets.
 
-### How does Symmetric Infusion work exactly?
-
-> Basically, swaps sizes. Technically, swaps all stats aside from size. If both sides are upgraded, say Lv. 31 and Lv. 23, they become 23 and 31, not 1 and 31+. Check the unit lock to prevent foddering th raised one.
-
 ### Do I need Dummy Cores for upgrading Coalition Units?
 
 > No. They have their own resources.
