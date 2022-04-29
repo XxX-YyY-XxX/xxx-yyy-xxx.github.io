@@ -806,9 +806,15 @@ const cardData = Object.freeze([
         tags : [dataTags.OTHER]
     },
     {
-        questions : `What does upgrading the Rescue Station do? Are there certain pets attainable only with higher-level facilities?`,
-        answers : `${image('./assets/images/PetSale.png')}`,
+        questions : `What are all the available pets right now?`,
+        answers : `${image('./assets/images/PetSale.png')}<br>
+        If you see a pet that is not on this list, it's a Cafe Story reward, collab pet, or event reward that haven't been added yet to the station.`,
         tags : [dataTags.PET]
+    },
+    {
+        questions : `How do friend batteries work?`,
+        answers : `Friend batteries recharge at 3am and 3pm UTC-8. The number of charges/batteries depends on the number of dorms your friend has. Use Netlify if you want to know when it resets. And as the name suggests, it only appears on your friend's dorms, not on any strangers (especially on a Random Visit).`,
+        tags : [dataTags.FRIEND, dataTags.RSC]
     },
     {
         questions : ``,
