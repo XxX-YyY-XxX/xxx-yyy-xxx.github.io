@@ -20,10 +20,6 @@
 
 > Only on the main screen as an adjutant, unless you want them critically damaged forever.
 
-### How are affections calculated?
-
-> <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/cgpt7y/weekly_commanders_lounge_july_23_2019/ev0gw64/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="619" width="640" scrolling="no"></iframe>
-
 ### The speech bubble hearts, SKK. What do they mean?
 
 > Dorm? Tap them to gain ¼ of an affection.

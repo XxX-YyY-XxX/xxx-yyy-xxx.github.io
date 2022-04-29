@@ -817,6 +817,18 @@ const cardData = Object.freeze([
         tags : [dataTags.FRIEND, dataTags.RSC]
     },
     {
+        questions : `What recipes should I use for my production?`,
+        answers : `${link('Applicable Reddit Post.', 'https://redd.it/gfmelo')}<br>
+        For the new equips, 150/151/50/50 (with armor), 150/151/10/50 (without armor).`,
+        tags : [dataTags.PROD]
+    },
+    {
+        questions : `Whats the best way of farming affection?`,
+        answers : `Being in the leader slot in a battle echelon, being the MVP of a battle echelon, collecting daily hearts in dorms, cakes/lollipops/icecreams, passive regen by being in a dorm, gifting skins.<br>
+        ${link('Write-up on how what affects affection.', 'https://www.reddit.com/r/girlsfrontline/comments/cgpt7y/weekly_commanders_lounge_july_23_2019/ev0gw64/')}`,
+        tags : [dataTags.LOVE]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
