@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        {% include /univasset/styleheader.html %}
+        <div w3-include-html="content.html"></div>
 
         <!-- Begin Jekyll SEO tag v2.8.0 -->
         <title>Random Scraps | Collection of whatever.</title>
@@ -19,6 +19,37 @@
         <script type="application/ld+json">
         {"@context":"https://schema.org","@type":"WebSite","description":"Collection of whatever.","headline":"Random Scraps","name":"Random Scraps","url":"https://xxx-yyy-xxx.github.io/"}</script>
         <!-- End Jekyll SEO tag -->
+
+        <script>
+            function includeHTML() {
+                /* Loop through a collection of all HTML elements: */
+                var z = document.getElementsByTagName("*");
+                for (let i = 0; i < z.length; i++) {
+                    var element = z[i];
+                    /*search for elements with a certain atrribute:*/
+                    var file = element.getAttribute("w3-include-html");
+                    if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4) {
+                        if (this.status == 200) {element.innerHTML = this.responseText;}
+                        if (this.status == 404) {element.innerHTML = "Page not found.";}
+                        /* Remove the attribute, and call this function once more: */
+                        element.removeAttribute("w3-include-html");
+                        includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                    }
+                }
+            }
+
+            includeHTML();
+            </script>
     </head>
 
     <body>

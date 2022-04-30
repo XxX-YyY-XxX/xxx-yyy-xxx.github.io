@@ -62,6 +62,13 @@
 
 # For Fixing and Peer Review
 
+## Fix
+
+### Any substitute for [brainlets damage](http://brainlets.moe/gf/sim/) [sim](https://brainlets.moe/)?
+
+> [Github version](https://github.com/umang-p/brainlets) and 
+[non-English version](https://hycdes.com/pages/GFT_Echelon.html) for starters. [ATM](https://gfl.matsuda.tips/combatsim/) has one too. [Hycdes.](https://hycdes.com/pages/GFT_Echelon-EN.html) You can use [this](https://github.com/neko-gg/gfl-combat-simulator/releases/tag/v0.6)^(by elgatoroid) to train yourself with specific comps. [GFAlarm](https://old.reddit.com/r/girlsfrontline/comments/mzp707/polarised_light_megathread/gza8jng/) can be used as one too.
+
 ## Clarify
 
 ### Is there a recipe that focuses on a single doll?

@@ -2,13 +2,6 @@
 
 # Third Party
 
-### Any substitute for [brainlets damage](http://brainlets.moe/gf/sim/) [sim](https://brainlets.moe/)?
-
-> [Github version](https://github.com/umang-p/brainlets) and 
-[non-English version](https://hycdes.com/pages/GFT_Echelon.html) for starters. [ATM](https://gfl.matsuda.tips/combatsim/) has one too. [Hycdes.](https://hycdes.com/pages/GFT_Echelon-EN.html) You can use [this](https://github.com/neko-gg/gfl-combat-simulator/releases/tag/v0.6)^(by elgatoroid) to train yourself with specific comps. [GFAlarm](https://old.reddit.com/r/girlsfrontline/comments/mzp707/polarised_light_megathread/gza8jng/) can be used as one too.
-
-@ Fix
-
 ### Are keybinds bannable?
 
 > <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/grht76/monthly_qa/fs239z8/?depth=2&amp;showmore=false&amp;embed=true&amp;context=1&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="332" width="640" scrolling="no"></iframe>
