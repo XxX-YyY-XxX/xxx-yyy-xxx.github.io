@@ -68,6 +68,10 @@
 
 > [Github version](https://github.com/umang-p/brainlets) and 
 [non-English version](https://hycdes.com/pages/GFT_Echelon.html) for starters. [ATM](https://gfl.matsuda.tips/combatsim/) has one too. [Hycdes.](https://hycdes.com/pages/GFT_Echelon-EN.html) You can use [this](https://github.com/neko-gg/gfl-combat-simulator/releases/tag/v0.6)^(by elgatoroid) to train yourself with specific comps. [GFAlarm](https://old.reddit.com/r/girlsfrontline/comments/mzp707/polarised_light_megathread/gza8jng/) can be used as one too.
+>
+> [Gamepress guide](https://gamepress.gg/girlsfrontline/how-use-gf-battle-tester-girls-frontline-battle-tester) for the battle tester.
+>
+>
 
 ## Clarify
 

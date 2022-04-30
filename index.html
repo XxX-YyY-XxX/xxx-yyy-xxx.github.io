@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <div w3-include-html="content.html"></div>
+        <div w3-include-html="/univasset/styleheader.html"></div>
 
         <!-- Begin Jekyll SEO tag v2.8.0 -->
         <title>Random Scraps | Collection of whatever.</title>
@@ -34,7 +34,7 @@
                     xhttp.onreadystatechange = function() {
                         if (this.readyState == 4) {
                         if (this.status == 200) {element.innerHTML = this.responseText;}
-                        if (this.status == 404) {element.innerHTML = "Page not found.";}
+                        if (this.status == 404) {element.innerHTML = file + " not found.";}
                         /* Remove the attribute, and call this function once more: */
                         element.removeAttribute("w3-include-html");
                         includeHTML();
