@@ -46,7 +46,7 @@
             margin: 0px;
         }
 
-        dl {
+        dl, table, figure {
             margin: 0px;
         }
 
@@ -58,10 +58,6 @@
             width: 100%;
             aspect-ratio: 1/1;
             border: 0px;
-        }
-
-        figure {
-            margin: 0px;
         }
 
         figcaption {
@@ -203,7 +199,7 @@
 
             document.getElementById('version-number').innerHTML = questionCards.length;
 
-            toggleableTagsField.innerHTML = Object.values(dataTags).map(val => 
+            toggleableTagsField.innerHTML = Object.values(dataTags).sort().map(val => 
                 `<label class="tags unselectedTag">
                     <input type="checkbox" onclick="toggleTag(this)">${val}
                 </label>`
