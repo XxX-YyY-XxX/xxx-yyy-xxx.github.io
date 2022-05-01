@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <div id="stylesheets"></div>
+        <!-- div id="stylesheets"></div -->
+        <include src="/univasset/styleheader.html" />
 
         <!-- Begin Jekyll SEO tag v2.8.0 -->
         <title>Starters Guide | GFL</title>
@@ -21,12 +22,15 @@
         <!-- End Jekyll SEO tag -->
 
         <script>
-            fetch("/univasset/styleheader.html")
+            var include = document.getElementsByTagName('include')[0]
+            fetch(include.getAttribute('src'))
+            //fetch("/univasset/styleheader.html")
                 .then(response => {
                     return response.text()
                 })
                 .then(data => {
-                    document.getElementById('stylesheets').innerHTML = data;
+                    //document.getElementById('stylesheets').innerHTML = data;
+                    include.outerHTML = data;
                 });
         </script>
     </head>
