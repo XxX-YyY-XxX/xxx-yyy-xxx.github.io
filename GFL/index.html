@@ -131,9 +131,16 @@
             display: block;
         }
 
-        summary {
+        details summary {
             cursor: pointer;
             display: inline;
+            color: rgb(233, 161, 152);
+            text-shadow: 0 0 5px rgb(255 181 253 / 50%);
+        }
+
+        details[open] summary {
+            cursor: pointer;
+            display: block;
             color: rgb(233, 161, 152);
             text-shadow: 0 0 5px rgb(255 181 253 / 50%);
         }
