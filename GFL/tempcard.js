@@ -90,6 +90,12 @@ function redditEmbed(permalink) {                                       //needs 
     <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/${permalink}/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="278" width="640" scrolling="no"></iframe>`
 }
 
+/** @param {string} shortlink */
+function youtubeEmbed(shortlink) {
+    const identifier = shortlink.split('/').pop();
+    return `<iframe class="ytvid" src="https://www.youtube.com/embed/${identifier}" allowfullscreen></iframe>`
+}
+
 /** @param {Array} headerArray @param {Array[]} arrayOfArrays */
 function table(headerArray, ...arrayOfArrays) {
     headerArray = headerArray ? `<thead><tr>${headerArray.map(val => `<th>${val}</th>`).join('')}</tr></thead>` : '';
@@ -286,8 +292,8 @@ const cardData = Object.freeze([
         ${link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Heavy_Ordnance_Corps')}<br>
         ${link('Matsuda Guide.', 'https://gfl.matsuda.tips/post/hocs')}<br>
         ${link('GFC Guide.', 'https://www.gflcorner.com/hoc-guide-by-gfc/')}<br>
-        ${link("Ceia's Video Guide.", 'https://youtu.be/rsFyXRDAi6I')}<br>
-        ${link("Redditor u/Xealiouth's Guide.", 'https://redd.it/95nrou')}`,
+        ${spoilerSummary("Ceia's Video Guide.", youtubeEmbed('https://youtu.be/rsFyXRDAi6I'))}<br>
+        ${link("u/Xealiouth's Guide.", 'https://redd.it/95nrou')}`,
         tags : [dataTags.HOC, dataTags.PRIME]
     },
     {
