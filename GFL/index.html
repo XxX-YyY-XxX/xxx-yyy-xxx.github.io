@@ -48,6 +48,7 @@
             width: 100%;
             aspect-ratio: 16/9;
             border: 0px;
+            display: block;
         }
 
         figcaption {
@@ -130,17 +131,10 @@
         details[open] {
             display: block;
         }
-
-        details summary {
+        
+        summary {
             cursor: pointer;
             display: inline;
-            color: rgb(233, 161, 152);
-            text-shadow: 0 0 5px rgb(255 181 253 / 50%);
-        }
-
-        details[open] summary {
-            cursor: pointer;
-            display: block;
             color: rgb(233, 161, 152);
             text-shadow: 0 0 5px rgb(255 181 253 / 50%);
         }

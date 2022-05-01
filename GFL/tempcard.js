@@ -84,16 +84,16 @@ function googleEmbed(docLink, maxHeightPixels = 0) {
     </figure>`;
 }   //<button type="button" ></button>
 
+/** @param {URLString} shortlink */
+function youtubeEmbed(shortlink) {
+    const identifier = shortlink.split('/').pop();
+    return `<iframe class="ytvid" src="https://www.youtube.com/embed/${identifier}" allowfullscreen></iframe>`
+}
+
 /** @param permalink ...comments/${permalink}/?...*/
 function redditEmbed(permalink) {                                       //needs more fix, how to check support
     return `<a href="https://old.reddit.com/r/girlsfrontline/comments/${permalink}/">For load fail purposes.</a><br>
     <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/${permalink}/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="278" width="640" scrolling="no"></iframe>`
-}
-
-/** @param {string} shortlink */
-function youtubeEmbed(shortlink) {
-    const identifier = shortlink.split('/').pop();
-    return `<iframe class="ytvid" src="https://www.youtube.com/embed/${identifier}" allowfullscreen></iframe>`
 }
 
 /** @param {Array} headerArray @param {Array[]} arrayOfArrays */
