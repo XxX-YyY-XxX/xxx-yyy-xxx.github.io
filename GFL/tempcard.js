@@ -396,8 +396,8 @@ const cardData = Object.freeze([
     {
         questions : `How do I maximize the efficiency of my echelon's ROF?`,
         answers : `${link("u/BigStupidJellyfish_'s ROF calc.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/rof-calc')}<br>
-        ${link('GFC Spreadsheet.', 'https://docs.google.com/spreadsheets/d/1k74SCGGMHtwbl8gmTaETLsa8t12A7dWdj0V1tjdMD4Y')}`,
-        tags : [dataTags.TDOLL, dataTags.BATTLE]
+        ${spoilerSummary('GFC Spreadsheet.', googleEmbed('https://docs.google.com/spreadsheets/d/1k74SCGGMHtwbl8gmTaETLsa8t12A7dWdj0V1tjdMD4Y'))}`,
+        tags : [dataTags.TDOLL, dataTags.BATTLE, dataTags.SYSMECH]
     },
     {
         questions : `How do I get some Extra Potential Energy for Coalition Drills?`,
