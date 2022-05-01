@@ -30,7 +30,7 @@
                 })
                 .then(data => {
                     //document.getElementById('stylesheets').innerHTML = data;
-                    include.outerHTML = data;
+                    include.parentElement.innerHTML = include.parentElement.innerHTML.replace(/(<include([^>]+)>)/ig, data)
                 });
         </script>
     </head>
