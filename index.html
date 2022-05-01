@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <div w3-include-html="/univasset/styleheader.html"></div>
+        <include src="/univasset/scripts/styleheader.html"></include>
         <link rel="stylesheet" href="/assets/css/style.css?v=2d3b5126dd9bdaf552f3aef918356c51b10c15a9">
-        <link rel="stylesheet" href="/univasset/externalcss.css">
-        <link rel="icon" type="image/png" href="/univasset/Favicon.png">
+        <link rel="stylesheet" href="/univasset/scripts/externalcss.css">
+        <link rel="icon" type="image/png" href="/univasset/images/Favicon.png">
 
         <!-- Begin Jekyll SEO tag v2.8.0 -->
         <title>Random Scraps | Collection of whatever.</title>
@@ -22,46 +22,6 @@
         <script type="application/ld+json">
         {"@context":"https://schema.org","@type":"WebSite","description":"Collection of whatever.","headline":"Random Scraps","name":"Random Scraps","url":"https://xxx-yyy-xxx.github.io/"}</script>
         <!-- End Jekyll SEO tag -->
-
-        <script>
-            function includeHTML() {
-                /* Loop through a collection of all HTML elements: */
-                const z = document.getElementsByTagName("*");
-                for (let i = 0; i < z.length; i++) {
-                    const element = z[i];
-                    /*search for elements with a certain atrribute:*/
-                    const file = element.getAttribute("w3-include-html");
-                    if (file) {
-                        /* Make an HTTP request using the attribute value as the file name: */
-                        const xhttp = new XMLHttpRequest();
-                        xhttp.onreadystatechange = function() {
-                            if (this.readyState == 4) {
-                                switch (this.status) {
-                                    case 200:
-                                        element.innerHTML = this.responseText;
-                                        break;
-                                    case 404:
-                                        element.innerHTML = file + " not found.";
-                                        break;
-                                    default:
-                                        element.innerHTML = this.status;
-                                        break;
-                                }
-                                /* Remove the attribute, and call this function once more: */
-                                element.removeAttribute("w3-include-html");
-                                includeHTML();
-                            }
-                        }
-                        xhttp.open("GET", file, true);
-                        xhttp.send();
-                        /* Exit the function: */
-                        return;
-                    }
-                }
-            }
-
-            includeHTML();
-        </script>
     </head>
 
     <body>
@@ -77,5 +37,7 @@
                 <p><h1><a href="/GFL">Link to GFL FAQs</a></h1></p>
             </section>
         </div>
+
+        <script type="text/javascript" src="/univasset/scripts/includeHTML.js"></script>
     </body>
 </html>
