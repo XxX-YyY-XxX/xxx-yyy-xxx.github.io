@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <include src="/univasset/styleheader.html"></include>
+        <include src="/univasset/scripts/styleheader.html"></include>
+        <link rel="stylesheet" href="/assets/css/style.css?v=2d3b5126dd9bdaf552f3aef918356c51b10c15a9">
+        <link rel="stylesheet" href="/univasset/scripts/externalcss.css">
+        <link rel="icon" type="image/png" href="/univasset/images/Favicon.png">
 
         <!-- Begin Jekyll SEO tag v2.8.0 -->
         <title>Starters Guide | GFL</title>
@@ -19,21 +22,6 @@
         <script type="application/ld+json">
         {"@context":"https://schema.org","@type":"WebSite","description":"Collection of whatever.","headline":"Random Scraps","name":"Random Scraps","url":"https://xxx-yyy-xxx.github.io/"}</script>
         <!-- End Jekyll SEO tag -->
-
-        <script>
-            var include = document.getElementsByTagName('include')[0]
-            var link = include.getAttribute('src');
-            fetch(link)
-                .then(response => {
-                    return response.text()
-                })
-                .then(data => {
-                    include.outerHTML = data;
-                    //const regex = new RegExp(`(<include([^>]+)${link}([^>]+)>)`, 'ig');
-                    //include.parentElement.innerHTML = include.parentElement.innerHTML.replace(regex, data);
-                    //include.parentElement.innerHTML = include.parentElement.innerHTML.replace(/(<include([^>]+)>)/ig, data)
-                });
-        </script>
     </head>
 
     <body>
@@ -56,6 +44,8 @@
                 <p>The only gacha in this game is cosmetics. Characters/Units/Dolls in this game do not go on a rotating banner, instead once they enter the "gacha pool", they're available permanently. In essence, this game is not a gacha game in terms of unit pulling.</p>
             </section>
         </div>
+
+        <script type="text/javascript" src="/univasset/scripts/includeHTML.js"></script>
     </body>
 </html>
 
