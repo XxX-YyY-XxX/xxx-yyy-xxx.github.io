@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- div id="stylesheets"></div -->
-        <include src="/univasset/styleheader.html" />
+        <include src="/univasset/styleheader.html"></include>
 
         <!-- Begin Jekyll SEO tag v2.8.0 -->
         <title>Starters Guide | GFL</title>
@@ -23,14 +22,16 @@
 
         <script>
             var include = document.getElementsByTagName('include')[0]
-            fetch(include.getAttribute('src'))
-            //fetch("/univasset/styleheader.html")
+            var link = include.getAttribute('src');
+            fetch(link)
                 .then(response => {
                     return response.text()
                 })
                 .then(data => {
-                    //document.getElementById('stylesheets').innerHTML = data;
-                    include.parentElement.innerHTML = include.parentElement.innerHTML.replace(/(<include([^>]+)>)/ig, data)
+                    include.outerHTML = data;
+                    //const regex = new RegExp(`(<include([^>]+)${link}([^>]+)>)`, 'ig');
+                    //include.parentElement.innerHTML = include.parentElement.innerHTML.replace(regex, data);
+                    //include.parentElement.innerHTML = include.parentElement.innerHTML.replace(/(<include([^>]+)>)/ig, data)
                 });
         </script>
     </head>
