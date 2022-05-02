@@ -1,4 +1,29 @@
 const dataTags = Object.freeze({
+    //#region Combat Tabs
+        STORY : 'StoryEvents',          //For questions that apply to Major, Collab, and Seasonal Events.
+        MAIN : 'CombatMissions',        //Main missions aka Chapters.
+        LOGI : 'Logistics',             //Main source of MARP.
+        SIMS : 'CombatSimulations',     //Capsule, Data, EXP, Neural, DefDrill, CoaDrill, Target Practice
+        CAMPAIGN : 'CampaignMissions',  //Permanent Major Events
+        THEATER : 'Theater',            //Backstab central
+    //#endregion
+    //#region Armory Tabs
+        TDOLL : 'TacticalDolls',        //Anything that directly involves Tactical Dolls.
+        LEDOLL : 'CycleDropDolls',      //Dolls that were once mini event/crate/completion rewards that now wander the rerun hell.
+        COALITION : 'CoalitionUnits',   //PA counterpart of Tactical Dolls.
+        EQUIP : 'Equipments',           //Attachments on units.
+        RSC : 'Resources/Currency',     //MARP, tickets, cores, etc.
+        FAIRY : 'Fairies',              //Sixth man of the team.
+        FST : 'FireSupportTeam',        //Rockets and mortars, the first of the HOC.
+    //#endregion
+    //#region Facilities
+        ECH : 'EchelonFormation',       //Deployable teams
+        PROD : 'FactoryProduction',     //Unit Gacha 1.0
+        MOD : 'NeuralUpgrade',          //MODding dolls and its resources.
+        HOC : 'HeavyOrdnanceCorps',     //FST division only for now.
+        EXPED : 'ForwardBasecamp',      //Lazy leveling
+        PA : 'ProtocolAssimilation',    //PA pulling and coalition drills.
+    //#endregion
     OTHER : 'Others',               //Default tag if I dunno what to put. Probably useless, but just in case.
     ACCT : 'AccountManagement',     //Anything concerning account data and integrity.
     TECH : 'Troubleshooting',       //For resolving issues that shouldn't even happen.
@@ -30,29 +55,7 @@ const dataTags = Object.freeze({
     LV : 'Leveling',                //Mostly Corpse Drag.
     PET : 'Pets',                   //ANIMAL
     FURN : 'Furniture',             //
-    //#region Combat Tabs
-    STORY : 'StoryEvents',          //For questions that apply to Major, Collab, and Seasonal Events.
-    MAIN : 'CombatMissions',        //Main missions aka Chapters.
-    LOGI : 'Logistics',             //Main source of MARP.
-    SIMS : 'CombatSimulations',     //Capsule, Data, EXP, Neural, DefDrill, CoaDrill, Target Practice
-    CAMPAIGN : 'CampaignMissions',  //Permanent Major Events
-    THEATER : 'Theater',
-    //#endregion
-    //Armory Tabs
-    TDOLL : 'TacticalDolls',        //Anything that directly involves Tactical Dolls.
-    LEDOLL : 'CycleDropDolls',      //Dolls that were once mini event/crate/completion rewards that now wander the rerun hell.
-    COALITION : 'CoalitionUnits',   //PA counterpart of Tactical Dolls.
-    EQUIP : 'Equipments',           //Attachments on units.
-    RSC : 'Resources/Currency',     //MARP, tickets, cores, etc.
-    FAIRY : 'Fairies',              //Sixth man of the team.
-    FST : 'FireSupportTeam',        //Rockets and mortars, the first of the HOC.
-    //Facilities
-    ECH : 'EchelonFormation',       //
-    PROD : 'FactoryProduction',
-    MOD : 'NeuralUpgrade',          //MODding dolls and its resources.
-    HOC : 'HeavyOrdnanceCorps',
-    EXPED : 'ForwardBasecamp',
-    PA : 'ProtocolAssimilation',    //PA pulling and coalition drills.
+    CMDR : 'Commander',             //"Self-insert"
     //Devices
 });
 
@@ -735,7 +738,7 @@ const cardData = Object.freeze([
         answers : `u/ConductorBichir spreadsheets.<br>
         ${spoilerSummary('Costume Banners.', googleEmbed('https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ'))} Includes furniture set and its complete set special effect.<br>
         ${spoilerSummary("Tactical Doll Skins.", googleEmbed('https://docs.google.com/spreadsheets/d/1fEnzlpQk5Jvja5PwzlpDn2ypqP3BHcGftqWWOLnK17E'))} Contains censor comparison for each unit.`,
-        tags : [dataTags.SKIN, dataTags.RESUPPLY]
+        tags : [dataTags.TDOLL, dataTags.SKIN, dataTags.RESUPPLY]
     },
     {
         questions : `How do I need to build Vector to no damage 13-4?`,
@@ -859,6 +862,12 @@ const cardData = Object.freeze([
         ${altTextStyle('Double Adjutant', TextStyle.QOUTE)}<br>
         Pick one.`,
         tags : [dataTags.SKIN]
+    },
+    {
+        questions : `How do I unlock special effects on commanders like flame auras etc.?`,
+        answers : `${list(true, "Get a complete 5-slot from a set. Doesn't matter if male only or female only.",
+        'Get their rare color variants.')}`,
+        tags : [dataTags.CMDR, dataTags.SKIN]
     },
     {
         questions : ``,
