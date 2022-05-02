@@ -56,6 +56,7 @@ const dataTags = Object.freeze({
     PET : 'Pets',                   //ANIMAL
     FURN : 'Furniture',             //
     CMDR : 'Commander',             //"Self-insert"
+    OJ : 'LuffberryChess',          //PVP sidegame
     //Devices
 });
 
@@ -868,6 +869,12 @@ const cardData = Object.freeze([
         answers : `${list(true, "Get a complete 5-slot from a set. Doesn't matter if male only or female only.",
         'Get their rare color variants.')}`,
         tags : [dataTags.CMDR, dataTags.SKIN]
+    },
+    {
+        questions : `What is Luffberry Chess?`,
+        answers : `GFL version of 100% Orange Juice, I guess?<br>
+        And it's called "chess" only because boardgame.`,
+        tags : [dataTags.OJ]
     },
     {
         questions : ``,
