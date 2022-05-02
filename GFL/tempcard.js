@@ -157,6 +157,8 @@ const cardData = Object.freeze([
         tags : [dataTags.EXPED, dataTags.PRIME, dataTags.NEWB]
     },
     //#endregion
+    //#region Tier Lists
+    //#endregion
     {
         questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
         answers : `${image('./assets/images/SFEnemy.png')}<br>
@@ -875,6 +877,12 @@ const cardData = Object.freeze([
         answers : `GFL version of 100% Orange Juice, I guess?<br>
         And it's called "chess" only because boardgame.`,
         tags : [dataTags.OJ]
+    },
+    {
+        questions : `Which dolls have a MOD in the older servers?`,
+        answers : `u/ConductorBichir's list.<br>
+        ${googleEmbed('https://docs.google.com/spreadsheets/d/1u2sXat4FD7jFLdjMLrq5zIiDrGJMEVaGvB2z2JysxLI')}`,
+        tags : [dataTags.MOD]
     },
     {
         questions : ``,

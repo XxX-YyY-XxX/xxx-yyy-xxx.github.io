@@ -6,10 +6,6 @@
 
 > From their release until EOS.
 
-### Which dolls have a Mod in the older servers?
-
-> <iframe width="100%" height="500" src="https://docs.google.com/spreadsheets/d/1u2sXat4FD7jFLdjMLrq5zIiDrGJMEVaGvB2z2JysxLI/preview?pli=1" frameborder="0">Redditor u/ConductorBichir's list.</iframe>
-
 ### Can I use duplicates to raise my doll's MOD level?
 
 > Yes, unless you're modding 2★ dolls. First, go to factory then dismantle all dupes. When you get enough cores, you can use them to raise MOD levels.
