@@ -87,7 +87,7 @@ function googleEmbed(docLink, maxHeightPixels = 0) {
 /** @param {URLString} shortlink */
 function youtubeEmbed(shortlink) {
     const identifier = shortlink.split('/').pop();
-    return `<iframe class="ytvid" src="https://www.youtube.com/embed/${identifier}" allowfullscreen></iframe>`
+    return `<iframe class="ytvid" src="https://www.youtube.com/embed/${identifier}"></iframe>`
 }
 
 /** @param permalink ...comments/${permalink}/?...*/
@@ -112,6 +112,7 @@ class TextStyle {
     static ITALIC = 'em';
     static BOLD = 'strong';
     static CODE = 'code';
+    static QOUTE = 'blockquote';
 }
 
 /** @param {TextStyle[]} styles @param {string} string */
@@ -494,9 +495,9 @@ const cardData = Object.freeze([
     {
         questions : `Which HOC FSTs should I raise first?`,
         answers : `${table(['Rank', 'To Lv. 60', `To 5${star}`, 'To Max Iter'],
-        ['01', 'BGM-71', 'AT4',    '2B14'  ],
-        ['02', '2B14',   '2B14',   'Mk 153'],
-        ['03', 'Mk 153', 'Mk 153', 'M2'    ],
+        ['01', 'BGM-71', '2B14',   '2B14'  ],
+        ['02', '2B14',   'Mk 153', 'Mk 153'],
+        ['03', 'Mk 153', 'AT4',    'M2'    ],
         ['04', 'AT4',    'M2',     'AT4'   ],
         ['05', 'M2',     'AGS-30', 'AGS-30'],
         ['06', 'AGS-30', 'BGM-71', 'BGM-71'],
@@ -733,7 +734,7 @@ const cardData = Object.freeze([
         questions : `T-Doll Costumes available now?`,
         answers : `u/ConductorBichir spreadsheets.<br>
         ${spoilerSummary('Costume Banners.', googleEmbed('https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ'))} Includes furniture set and its complete set special effect.<br>
-        ${spoilerSummary("Tactical Doll Skins.", googleEmbed('https://docs.google.com/spreadsheets/d/1fEnzlpQk5Jvja5PwzlpDn2ypqP3BHcGftqWWOLnK17E'))} Contains censor comparison of doll's default art.`,
+        ${spoilerSummary("Tactical Doll Skins.", googleEmbed('https://docs.google.com/spreadsheets/d/1fEnzlpQk5Jvja5PwzlpDn2ypqP3BHcGftqWWOLnK17E'))} Contains censor comparison for each unit.`,
         tags : [dataTags.SKIN, dataTags.RESUPPLY]
     },
     {
@@ -851,6 +852,13 @@ const cardData = Object.freeze([
         questions : `Is the package in the shop worth it?`,
         answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/energy-packages')}`,
         tags : [dataTags.OTHER]
+    },
+    {
+        questions : `Can I put 2 L2D skins in the double adjutant slot?`,
+        answers : `${altTextStyle('L2D mode', TextStyle.QOUTE)}<br>
+        ${altTextStyle('Double Adjutant', TextStyle.QOUTE)}<br>
+        Pick one.`,
+        tags : [dataTags.SKIN]
     },
     {
         questions : ``,
