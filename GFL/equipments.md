@@ -10,10 +10,6 @@
 
 > No, apparently due to lacking ×3 damage.
 
-### Is there a list of Monthly Special Equipment?
-
-> <iframe width="100%" height="500" src="https://docs.google.com/spreadsheets/d/1u2sXat4FD7jFLdjMLrq5zIiDrGJMEVaGvB2z2JysxLI/preview?pli=1" frameborder="0"></iframe>
-
 ### How good are 9A-91's SPEQs?
 
 > [Imgur album.](https://imgur.com/a/JYEgQBO)
@@ -45,7 +41,3 @@
 > IOP Maximum Ammo Box                        AmmoBox     10
 > Type 3 Armor Plate                          Armor       10
 > Thermoptic Camouflage Cape                  Cape        20
-
-### How do I use these new equipment properly?
-
-> [u/BigStupidJellyfish_'s general equip guide.](https://big-stupid-jellyfish.github.io/GFMath/pages/newquip)

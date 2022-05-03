@@ -12,6 +12,7 @@ const dataTags = Object.freeze({
         LEDOLL : 'CycleDropDolls',      //Dolls that were once mini event/crate/completion rewards that now wander the rerun hell.
         COALITION : 'CoalitionUnits',   //PA counterpart of Tactical Dolls.
         EQUIP : 'Equipments',           //Attachments on units.
+        SPEQ : 'SpecialEquipments',     //Equips specific to a doll.
         RSC : 'Resources/Currency',     //MARP, tickets, cores, etc.
         FAIRY : 'Fairies',              //Sixth man of the team.
         FST : 'FireSupportTeam',        //Rockets and mortars, the first of the HOC.
@@ -362,7 +363,7 @@ const cardData = Object.freeze([
     {
         questions : `What's the Fire Control Component (FCC) used for?`,
         answers : `Upgrading 5${star} dolls to 6${star} through modding.`,
-        tags : [dataTags.RSC, dataTags.MOD, dataTags.TDOLL]
+        tags : [dataTags.RSC, dataTags.MOD]
     },
     {
         questions : `What is Bookshelf of Memories?`,
@@ -880,13 +881,13 @@ const cardData = Object.freeze([
     },
     {
         questions : `Which dolls have a MOD in the older servers?`,
-        answers : `u/ConductorBichir's list.<br>
+        answers : `u/ConductorBichir's list. Includes all Special Equpments.<br>
         ${googleEmbed('https://docs.google.com/spreadsheets/d/1u2sXat4FD7jFLdjMLrq5zIiDrGJMEVaGvB2z2JysxLI')}`,
-        tags : [dataTags.MOD]
+        tags : [dataTags.MOD, dataTags.SPEQ]
     },
     {
         questions : `Is there a list of doll farming routes for each map?`,
-        answers : `Compilation of all farm routes for limited dolls on both campaign and main story by u/rcpz93.<br>
+        answers : `Compilation of all farm routes for limited dolls and equipments on both campaign and main story by u/rcpz93.<br>
         ${googleEmbed('https://docs.google.com/document/d/1GUcA1ZHYVKBhTspdRYPIkECVZRoLFvqDnLrgrFb6VcU')}`,
         tags : [dataTags.MAIN, dataTags.CAMPAIGN]
     },
@@ -895,6 +896,11 @@ const cardData = Object.freeze([
         answers : `${link('Flowchart post.', 'https://redd.it/rkvisq')}<br>
         ${link('Gamepress list of units and build suggestions.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units')}`,
         tags : [dataTags.COALITION, dataTags.ECH]
+    },
+    {
+        questions : `Are there any meta compositions?`,
+        answers : `${link("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv')} Shouldn't be a gospel but a good starting point nonetheless.`,
+        tags : [dataTags.ECH]
     },
     {
         questions : ``,
