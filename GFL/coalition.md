@@ -2,17 +2,8 @@
 
 # Protocol Assimilation/Coalition Echelons
 
-### How do I build Coalition echelons?
+### Where can I get Extra Impulse?
 
-> [For your flowcharting needs.](https://redd.it/rkvisq)
->
-> [Gamepress list of units and build suggestions.](https://gamepress.gg/girlsfrontline/protocol-assimilation-units) Use the search bar if they're not listed.
-
-### Where can I get Svarog Aid Commissions/Tickets and Extra Impulse?
-
-> Svarog Tickets
-> - 2 from monthly log-ins, 1 from weekly quests, gem shop every banner change, event rewards.
->
 > Extra Impulse
 > - Monthlies, achievements, and events for Extra.
 

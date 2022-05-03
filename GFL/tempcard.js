@@ -91,7 +91,7 @@ function googleEmbed(docLink, maxHeightPixels = 0) {
 /** @param {URLString} shortlink */
 function youtubeEmbed(shortlink) {
     const identifier = shortlink.split('/').pop();
-    return `<iframe class="ytvid" src="https://www.youtube.com/embed/${identifier}"></iframe>`
+    return `<iframe class="ytvid" src="https://www.youtube.com/embed/${identifier}" allowfullscreen></iframe>`
 }
 
 /** @param permalink ...comments/${permalink}/?...*/
@@ -889,6 +889,12 @@ const cardData = Object.freeze([
         answers : `Compilation of all farm routes for limited dolls on both campaign and main story by u/rcpz93.<br>
         ${googleEmbed('https://docs.google.com/document/d/1GUcA1ZHYVKBhTspdRYPIkECVZRoLFvqDnLrgrFb6VcU')}`,
         tags : [dataTags.MAIN, dataTags.CAMPAIGN]
+    },
+    {
+        questions : `How do I build Coalition echelons?`,
+        answers : `${link('Flowchart post.', 'https://redd.it/rkvisq')}<br>
+        ${link('Gamepress list of units and build suggestions.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units')}`,
+        tags : [dataTags.COALITION, dataTags.ECH]
     },
     {
         questions : ``,
