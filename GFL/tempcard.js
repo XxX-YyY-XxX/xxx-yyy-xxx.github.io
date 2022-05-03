@@ -744,7 +744,7 @@ const cardData = Object.freeze([
         tags : [dataTags.TDOLL, dataTags.SKIN, dataTags.RESUPPLY]
     },
     {
-        questions : `How do I need to build Vector to no damage 13-4?`,
+        questions : `How do I build Vector to no-damage 13-4?`,
         answers : `${link('tempkaridc calculator.', 'https://tempkaridc.github.io/gf/vec')}<br>
         ${link('xVarz spreadsheet for different draggers.', 'https://docs.google.com/spreadsheets/d/1cuZPF-r1e6TyE4Rj2DNkSEova7Tc-Cczs7RaoAK2vII')}<br>
         ${link('Infographic.', 'https://cdn.discordapp.com/attachments/564028599682727937/929724568258629642/134.png')}`,
@@ -883,6 +883,12 @@ const cardData = Object.freeze([
         answers : `u/ConductorBichir's list.<br>
         ${googleEmbed('https://docs.google.com/spreadsheets/d/1u2sXat4FD7jFLdjMLrq5zIiDrGJMEVaGvB2z2JysxLI')}`,
         tags : [dataTags.MOD]
+    },
+    {
+        questions : `Is there a list of doll farming routes for each map?`,
+        answers : `Compilation of all farm routes for limited dolls on both campaign and main story by u/rcpz93.<br>
+        ${googleEmbed('https://docs.google.com/document/d/1GUcA1ZHYVKBhTspdRYPIkECVZRoLFvqDnLrgrFb6VcU')}`,
+        tags : [dataTags.MAIN, dataTags.CAMPAIGN]
     },
     {
         questions : ``,
