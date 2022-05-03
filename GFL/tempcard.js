@@ -851,7 +851,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `How does Symmetric Infusion work exactly?`,
-        answers : `${descriptionList({'Cognitive Infusion' : ['Basically, swaps sizes. Technically, swaps all stats aside from size. If both sides are upgraded, say Lv. 31 and Lv. 23, they become 23 and 31, not 1 and 31+. Check the unit lock to prevent foddering th raised one.'], 
+        answers : `${descriptionList({'Cognitive Infusion' : ['Basically, swaps sizes. Technically, swaps all stats aside from size. If both sides are upgraded, say Lv. 31 and Lv. 23, they become 23 and 31, not 1 and 31+.'], 
         'Golden Infusion' : ['Swaps the golden status between the two units, nothing more, nothing less.']})}`,
         tags : [dataTags.PA]
     },  //@Visual
