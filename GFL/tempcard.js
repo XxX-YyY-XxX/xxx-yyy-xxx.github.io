@@ -351,14 +351,14 @@ const cardData = Object.freeze([
     },
     {
         questions : `Is there a voodoo recipe for *insert pennies here*?`,
-        answers : `${link('Github Database.', 'https://gf-db.github.io/')} Freedom of information, just add net connection.`,
+        answers : `${link('Github Database.', 'https://gf-db.github.io/')} Freedom of information, just add internet connection.`,
         tags : [dataTags.PROD]
     },
     {
         questions : `Is there a way for my game to feel smoother?`,
         answers : `${link('Decompressed obb.', 'https://redd.it/mroqui')} Removes damage numbers, the main source of in-battle lag.<br>
         ${link('DIY decompression.', 'https://www.reddit.com/r/girlsfrontline/comments/lvwwtv/weekly_commanders_lounge_march_02_2021/gpugenl/')}`,
-        tags : [dataTags.BATTLE]
+        tags : [dataTags.OTHER]
     },
     {
         questions : `What's the Fire Control Component (FCC) used for?`,
@@ -887,10 +887,10 @@ const cardData = Object.freeze([
     },
     {
         questions : `Is there a list of doll farming routes for each map?`,
-        answers : `Compilation of all farm routes for limited dolls and equipments on both campaign and main story by u/rcpz93.<br>
+        answers : `Compilation of all farm routes for limited dolls and equipments on both campaign and main story.<br>
         ${googleEmbed('https://docs.google.com/document/d/1GUcA1ZHYVKBhTspdRYPIkECVZRoLFvqDnLrgrFb6VcU')}`,
         tags : [dataTags.MAIN, dataTags.CAMPAIGN]
-    },
+    },  //By u/rcpz93 most likely
     {
         questions : `How do I build Coalition echelons?`,
         answers : `${link('Flowchart post.', 'https://redd.it/rkvisq')}<br>
