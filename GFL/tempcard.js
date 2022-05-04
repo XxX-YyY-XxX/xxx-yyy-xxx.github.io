@@ -58,6 +58,7 @@ const dataTags = Object.freeze({
     FURN : 'Furniture',             //
     CMDR : 'Commander',             //"Self-insert"
     OJ : 'LuffberryChess',          //PVP sidegame
+    LORE : 'Story/Lore',            //Main meat of the series
     //Devices
 });
 
@@ -901,6 +902,29 @@ const cardData = Object.freeze([
         questions : `Are there any meta compositions?`,
         answers : `${link("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv')} Shouldn't be a gospel but a good starting point nonetheless.`,
         tags : [dataTags.ECH]
+    },
+    {
+        questions : `What's the chronological order for the story?`,
+        answers : `u/pointblanksniper's observations.<br>
+        ${link('Overall.', 'https://old.reddit.com/r/girlsfrontline/comments/sm75vk/where_can_i_see_mirror_stage_story_line/hvvpppk/')}<br>
+        ${link('Night Chpaters.', 'https://old.reddit.com/r/girlsfrontline/comments/scouvz/questions_regarding_404/hu995o6/')}`,
+        tags : [dataTags.LORE]
+    },  //@Fix
+    {
+        questions : `Is it possible to earn previously missed hidden achievements in Campaign Missions?`,
+        answers : `Yes.`,
+        tags : [dataTags.CAMPAIGN]
+    },
+    {
+        questions : `If I delete my unused speqs, will I be able to recover them?`,
+        answers : `Since 2.09, dismantled SPEQs can now be recovered.<br>
+        Note: Dismantling before version update means End void.`,
+        tags : [dataTags.SPEQ]
+    },
+    {
+        questions : `Is a way to expand the armory, or are you stuck with doll 100 slots forever?`,
+        answers : `${list(false, 'Shop>Items>Infrastructure>T-Doll slots +10.', 'Tap the locked echelon button.')}`,
+        tags : [dataTags.OTHER]
     },
     {
         questions : ``,

@@ -6,13 +6,6 @@
 
 > 6 months minimum after their release, they get added to the Campaign tab. For collabs... hope for the best.
 
-### What's the sequence of the stories?
-
-> <iframe width="100%" height="500" src="https://docs.google.com/spreadsheets/d/1Gm5kl_ep0MY29WPxBd-CqQrtAmDtzxSO/preview?pli=1" frameborder="0">Redditor u/CuriousCanidae's overview.</iframe>
->
-> Note that some of these are in the wrong order, or so they say.
-
-
 ### How to read the story again? It's not available in the story playback in Index.
 
 > Settings>Game>Story Playback then play the stage again. Or just Youtube it. This also applies to nodes with story/cutscene snippets.
@@ -26,7 +19,7 @@
 > | [GF Translated Story Material (+ other stuff)](https://drive.google.com/drive/folders/14sNze_lnv5EwL1bl_g3IOVQIo6GGYUJp "Linked into by the links below") | [Confidential Files](https://docs.google.com/document/d/1JyJ-o9gHCeCdN2h8PhhRdFczejLs6Wve8dziQZUSEGk) | [u/RhythmLunatic's GFL Cutscene Interpreter](https://gfl.amaryllisworks.pw/) | [Costume Stories](https://drive.google.com/drive/folders/13AiWn_jgIxWUTK2T7EVjFV8Rkk6jptEs) |
 > | [GF Translations](https://drive.google.com/drive/folders/14bAuWaGbagJwucmlit3EkXFqMRV9NHZO) | [Confidential Files 2: New and Emerging Forms of Threat](https://drive.google.com/drive/folders/17_9Tu-90ZWrvlHPzgWbVwSQebJ4nHiR7) | [Shoul's Story Scenes Playlists](https://www.youtube.com/channel/UC_JmwXOfYqOKpGGtc5gcVmw) ||
 > | [The Official #gf-loreroom Information Index](https://docs.google.com/spreadsheets/d/1LYV05D7kGTKp_FS7cJrNrJlVxeRAnFVnr6vCTo5F-YM) | [The Background History of Girls’ Frontline](https://twitter.com/YZsFerrari/status/1379877420732448777) | [Girls' Frontline Full Story Comprehension Playlist](https://youtube.com/playlist?list=PL9y52Flm1yM-tJJoom2zfrWTpaO1mTw8M "Translated up to Isomer") ||
-> || [IOPWiki Lore](https://iopwiki.com/wiki/Lore) | [u/DoctuhD's Girls Frontline Summary](https://docs.google.com/document/d/1yn0sjoktIb2f-KC6bxn3R0qpCUChBPpIQuERcLmBHbg "Isomer-Polarized Light") ||
+> | [Campaign Stuff](https://drive.google.com/drive/folders/15EjxktNclESJ6e6rb5udNxOaczNTPZVZ) | [IOPWiki Lore](https://iopwiki.com/wiki/Lore) | [u/DoctuhD's Girls Frontline Summary](https://docs.google.com/document/d/1yn0sjoktIb2f-KC6bxn3R0qpCUChBPpIQuERcLmBHbg "Isomer-Polarized Light") ||
 > || [Gamepress Lore Directory](https://gamepress.gg/girlsfrontline/lore-directory) |||
 
 ### How do I unlock Chapter 4 of Continuum Turbulence?
