@@ -23,7 +23,8 @@ const dataTags = Object.freeze({
         ECH : 'EchelonFormation',       //Deployable teams
         PROD : 'FactoryProduction',     //Unit Gacha 1.0
         MOD : 'NeuralUpgrade',          //MODding dolls and its resources.
-        RESUPPLY : 'Resupply',          //Dorm gacha.
+        DORM : 'Dormitories',           //Battery charger.
+            RESUPPLY : 'Resupply',      //Dorm gacha.
             SKIN : 'Costumes',          //Primary money sink.
             FURN : 'Furniture',         //"Dorm Equipments"
         HOC : 'HeavyOrdnanceCorps',     //FST division only for now.
@@ -480,7 +481,7 @@ const cardData = Object.freeze([
         tags : [dataTags.MOD, dataTags.LV]
     },
     {
-        questions : `I can't get the gold and silver maps because the enemies keep running all over me. How do I get them?`,
+        questions : `I can't get the gold (S Rank) and silver medals in maps because the enemies keep running all over me. How do I get them?`,
         answers : `Not now. Blaze through chapters until 7-6 first to get your account running, then come back to it later when you have at least 2 strong (Lv. 90, 5 links) echelons.`,
         tags : [dataTags.NEWB, dataTags.MAIN]
     },  // You can get this quickly through Newbie Career Quests. And you can complete the quests faster if you use friend/support echelons.
@@ -931,6 +932,30 @@ const cardData = Object.freeze([
         questions : `Should I dummy link my dolls when corpse dragging?`,
         answers : `Recommended. Each link gives an additional 0.5x multiplier.`,
         tags : [dataTags.LV]
+    },
+    {
+        questions : `I want to F2PBTW. How do I do that?`,
+        answers : `${descriptionList({
+            'Gems' : ['Daily log-ins (300 monthly).', 
+                'Sharing in FB/Twitter (30 weekly). You can cancel it at the last minute.',
+                'S-Ranking Normal (10) and Emergency (30) Chapters.',
+                'Achievements.',
+                'Mini-Events. Includes, but is not limited to, Point Events, Keycard Events (Bingo), etc.',
+                'Ranking participation.'],
+            'Tokens' : [link('Dailies (7 daily) and weeklies (5 weekly).', 'https://dmesse.egloos.com/m/3594243'),
+                'Expedition.',
+                'Logistics (~19 weekly).',
+                'Achievements.',
+                'Mini-Events.',
+                'Shop. Especially when there is a seasonal/collab/major event going on. Packages are also good.',
+                'Maintenance (10 weekly) and Apolotokens.']
+        })}`,
+        tags : [dataTags.ITEM, dataTags.MAIN, dataTags.MINI, dataTags.EXPED, dataTags.LOGI, dataTags.STORY]
+    },
+    {
+        questions : `Why aren't my dorm batteries appearing?`,
+        answers : `If it's not within 11:00-14:00, 17:00-20:00, and 22:00-01:00 UTC-8, restart app.`,
+        tags : [dataTags.DORM, dataTags.ITEM, dataTags.TECH]
     },
     {
         questions : ``,

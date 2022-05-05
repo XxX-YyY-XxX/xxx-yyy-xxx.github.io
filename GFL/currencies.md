@@ -6,25 +6,6 @@
 
 > Only within the time the event is ongoing, which is for a week. Note that it immediately becomes active as long as a monthly gem is active, old or new purchase.
 
-### I want to F2PBTW. How do I do that?
-
-> Gems
-> - Daily log-ins.
-> - Sharing in FB/Twitter. You can cancel it at the last minute.
-> - S-Ranking Normal and Emergency.
-> - Achievements.
-> - Mini-Events. Includes, but is not limited to, Point Events, Keycard Events (Bingo), etc.
-> - Ranking participation.
->
-> Tokens: (Which by weekly is about 70 minimum if everything below are done.)
-> - [Dailies. Weeklies.](https://dmesse.egloos.com/m/3594243)
-> - Expedition.
-> - Logistics.
-> - Achievements.
-> - Mini-Events.
-> - Shop. Especially when there is a seasonal/collab/major event going on.
-> - Maintenance and Apolotokens.
-
 ### Where can I use Calibration Tickets?
 
 > Equipment Calibration, Fairy Talent Calibration, HOC Chip Rotation, More Anticipation...

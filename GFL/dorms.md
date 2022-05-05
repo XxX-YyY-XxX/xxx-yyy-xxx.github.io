@@ -2,10 +2,6 @@
 
 # Dormitories
 
-### Why aren't my dorm batteries appearing?
-
-> It's not their time to appear yet.
-
 ### Which dolls appear in which dorms?
 
 > Echelon position corresponds to dorm positions i.e. Echelon 1 in Dorm 1, Echelon 2 in Dorm 2, etc.
