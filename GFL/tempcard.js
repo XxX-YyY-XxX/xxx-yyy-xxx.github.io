@@ -160,6 +160,15 @@ const cardData = Object.freeze([
         Important note is that FB unlocks at Commander Lv. 20.`,
         tags : [dataTags.EXPED, dataTags.PRIME, dataTags.NEWB]
     },
+    {
+        questions : `Are there any general guides for Protocol Assimilation/Coalition Units/SF Capture?`,
+        answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
+        ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
+        ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-first-impressions-revamped')}<br>
+        ${spoilerSummary("Cleista's basic Twitter guide.", link(image('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096'), 'https://twitter.com/CleistaCeleste/status/1409824210571214849'))}<br>
+        Apparently, this unlocks after beating 7-5 Normal.`,
+        tags : [dataTags.PA, dataTags.PRIME]
+    },
     //#endregion
     //#region Tier Lists
     //#endregion
@@ -274,15 +283,6 @@ const cardData = Object.freeze([
         If they can't be cancelled, or is cancellable with a penalty or cost (ie quick tickets), calculated at the start.<br>
         ${spoilerSummary('Examples:', list(false, 'Expedition rewards.', 'Productions.'))}`,
         tags : [dataTags.SYSMECH, dataTags.MINI, dataTags.EXPED, dataTags.PROD]
-    },
-    {
-        questions : `Are there any general guides for Protocol Assimilation/Coalition Units/SF Capture?`,
-        answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
-        ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
-        ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-first-impressions-revamped')}<br>
-        ${spoilerSummary("Cleista's basic Twitter guide.", link(image('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096'), 'https://twitter.com/CleistaCeleste/status/1409824210571214849'))}<br>
-        Apparently, this unlocks after beating 7-5 Normal.`,
-        tags : [dataTags.PA, dataTags.PRIME]
     },
     {
         questions : `How does Armor Penetration work?`,
@@ -591,7 +591,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `What does the PA chip Pilfer do?`,
-        answers : `Allows players to have a ${spoilerSummary('chance', image('./assets/images/PIlferRNG.png') + '<br>Context: PIlfer subject to RNG.')} of getting ${spoilerSummary('S-Rank drops', youtubeEmbed('https://youtu.be/t6Vu72cajO0') + '<br>Context: Coalition Medals require S-Rank battles.')} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
+        answers : `Allows players to have a ${spoilerSummary('chance', image('./assets/images/PIlferRNG.png') + '<br>' + altTextStyle('Context: PIlfer subject to RNG.', TextStyle.QOUTE))} of getting ${spoilerSummary('S-Rank drops', youtubeEmbed('https://youtu.be/t6Vu72cajO0') + altTextStyle('Context: Coalition Medals require S-Rank battles.', TextStyle.QOUTE))} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
         Combine this with the ability to fight on one ammo bar to get two chances on one enemy.`,
         tags : [dataTags.COALITION, dataTags.EQUIP]
     },
@@ -956,6 +956,12 @@ const cardData = Object.freeze([
         questions : `Why aren't my dorm batteries appearing?`,
         answers : `If it's not within 11:00-14:00, 17:00-20:00, and 22:00-01:00 UTC-8, restart app.`,
         tags : [dataTags.DORM, dataTags.ITEM, dataTags.TECH]
+    },
+    {
+        questions : `What are Extra Impulses and where can I get them?`,
+        answers : `Stockable versions of Regular Impulses.<br>
+        You can get them through monthlies, achievements, and events.`,
+        tags : [dataTags.PA, dataTags.ITEM]
     },
     {
         questions : ``,

@@ -2,13 +2,6 @@
 
 # Protocol Assimilation/Coalition Echelons
 
-### Where can I get Extra Impulse?
-
-> Extra Impulse
-> - Monthlies, achievements, and events for Extra.
-
-@ Fix
-
 ### What would be the best strat for pulling?
 
 > - Save Svarog (bottom-right) and Extra Impulses (top-right, the +N next to Regular Impulses) until you get to the pool you want to pull. Regular Impulses are free real estate.
