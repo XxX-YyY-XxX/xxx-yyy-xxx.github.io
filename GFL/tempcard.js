@@ -675,15 +675,15 @@ const cardData = Object.freeze([
     {
         questions : `Which HOC chips should I use?`,
         answers : `${link('Reddit guide for desktop calc.', 'https://redd.it/fnh1ey')}<br>
-        ${link('Google Docs guide.', 'https://docs.google.com/document/d/1pR6g-mgsy22_MhRPASL9c1wDoCuxfUwr-DCCMYmb7Ss')}<br>
+        ${spoilerSummary('Google Docs guide.', googleEmbed('https://docs.google.com/document/d/1pR6g-mgsy22_MhRPASL9c1wDoCuxfUwr-DCCMYmb7Ss'))}<br>
         ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/guide-gfchipcalc-hoc-calculator-optimization-tool')}<br>
         ${link('Chip Calc versions page.', 'https://github.com/Bunnyspa/GFChipCalc/releases')} If the proxy method doesn't work, use 7.3.0 or import the {username}_{UID}_user_info.json from GFAlarm.<br>
         ${link('Android Chip Calc download page.', 'https://bunnyspa.github.io/gfl/chipcalc')}<br>
         ${link('Alternate link for Android Chip Calc.', 'https://apkpure.com/girls-frontline-chip-calculator/bunnyspa.gfl.chipcalc/versions')}<br>
         ${link('Browser Chip Calc by FatalChapter.', 'https://hycdes.com/pages/GFT_ChipCal-EN.html')}<br>
-        ${link('5-block chips that can be disassembled (Taken from Gamepress).', 'https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/2020-01/hoc-chip-shape-minmax-example.jpg')}<br>
+        ${spoilerSummary('5-block chips that can be disassembled.', image('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/2020-01/hoc-chip-shape-minmax-example.jpg', 'Taken from Gamepress'))}<br>
         These apps are safe for your account.`,
-        tags : [dataTags["3P"], dataTags.HOC, dataTags.EQUIP]
+        tags : [dataTags["3P"], dataTags.HOC, dataTags.FST, dataTags.EQUIP]
     },
     {
         questions : `How does the Rescue Station work?`,
