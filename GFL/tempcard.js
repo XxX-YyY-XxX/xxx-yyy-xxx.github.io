@@ -1,7 +1,9 @@
 const dataTags = Object.freeze({
     //#region Combat Tabs
         STORY : 'StoryEvents',          //For questions that apply to Major, Collab, and Seasonal Events.
+            MAJOR : 'MajorEvents',      //Part of the main story. The ones added to the Campaign tab.
         MAIN : 'CombatMissions',        //Main missions aka Chapters.
+            AUTO : 'AutoBattles',       //Lazy farming.
         LOGI : 'Logistics',             //Main source of MARP.
         SIMS : 'CombatSimulations',     //Capsule, Data, EXP, Neural, DefDrill, CoaDrill, Target Practice
         CAMPAIGN : 'CampaignMissions',  //Permanent Major Events
@@ -9,11 +11,11 @@ const dataTags = Object.freeze({
     //#endregion
     //#region Armory Tabs
         TDOLL : 'TacticalDolls',        //Anything that directly involves Tactical Dolls.
-        LEDOLL : 'CycleDropDolls',      //Dolls that were once mini event/crate/completion rewards that now wander the rerun hell.
+            LEDOLL : 'CycleDropDolls',  //Dolls that were once mini event/crate/completion rewards that now wander the rerun hell.
         COALITION : 'CoalitionUnits',   //PA counterpart of Tactical Dolls.
         EQUIP : 'Equipments',           //Attachments on units.
-        SPEQ : 'SpecialEquipments',     //Equips specific to a doll.
-        RSC : 'Resources/Currency',     //MARP, tickets, cores, etc.
+            SPEQ : 'SpecialEquipments', //Equips specific to a doll.
+        ITEM : 'ConsumableItems',       //Tickets, cores, gems, batteries, shop items...
         FAIRY : 'Fairies',              //Sixth man of the team.
         FST : 'FireSupportTeam',        //Rockets and mortars, the first of the HOC.
     //#endregion
@@ -21,6 +23,9 @@ const dataTags = Object.freeze({
         ECH : 'EchelonFormation',       //Deployable teams
         PROD : 'FactoryProduction',     //Unit Gacha 1.0
         MOD : 'NeuralUpgrade',          //MODding dolls and its resources.
+        RESUPPLY : 'Resupply',          //Dorm gacha.
+            SKIN : 'Costumes',          //Primary money sink.
+            FURN : 'Furniture',         //"Dorm Equipments"
         HOC : 'HeavyOrdnanceCorps',     //FST division only for now.
         EXPED : 'ForwardBasecamp',      //Lazy leveling
         PA : 'ProtocolAssimilation',    //PA pulling and coalition drills.
@@ -39,7 +44,6 @@ const dataTags = Object.freeze({
     IMPT : 'Important',             //Things new players would need for late-game. Mostly consists of things not explained by the game.
     SYSMECH : 'SystemMechanics',    //Explanation on underlying mechanics of the game.
     ENEMY : 'EnemyUnits',           //For things that primarily interact with enemy units.
-    MAJOR : 'MajorEvents',          //Part of the main story. The ones added to the Campaign tab.
     //COLLAB : 'Collaboration',
     //SEASON : 'SeasonalEvents',      //Story events that happen each New Year, X-mas, Halloween, etc.
     MINI : 'MiniEvents',            //Bingo, Point Event, etc.
@@ -48,17 +52,14 @@ const dataTags = Object.freeze({
     SKILL : 'Skills',               //Unit skills.
     LOVE : 'Affection',             //
     TIER : 'TierList',              //May not technically be one, just overall description on who is stronger than who.
-    RESUPPLY : 'Resupply',          //Dorm gacha.
     OATH : 'OathSystem',            //Marriage.
     FRIEND : 'Friends',
-    AUTO : 'AutoBattles',
-    SKIN : 'Costumes',              //Primary money sink.
     LV : 'Leveling',                //Mostly Corpse Drag.
     PET : 'Pets',                   //ANIMAL
-    FURN : 'Furniture',             //
     CMDR : 'Commander',             //"Self-insert"
     OJ : 'LuffberryChess',          //PVP sidegame
     LORE : 'Story/Lore',            //Main meat of the series
+    MARP : 'FourResources',         //Manpower, Ammunition, Rations, Parts
     //Devices
 });
 
@@ -180,7 +181,7 @@ const cardData = Object.freeze([
     {
         questions : `Which combat sim is better to focus on?`,
         answers : `Data. Always data.`,
-        tags : [dataTags.SIMS, dataTags.RSC, dataTags.NEWB]
+        tags : [dataTags.SIMS, dataTags.ITEM, dataTags.NEWB]
     },
     {
         questions : `How do Neural Upgrades/MODs work?`,
@@ -192,7 +193,7 @@ const cardData = Object.freeze([
     {
         questions : `How do I get more Quick Training Contracts?`,
         answers : `End of daily log-ins, Keycard Event, gem shop.`,
-        tags : [dataTags.RSC, dataTags.MINI]
+        tags : [dataTags.ITEM, dataTags.MINI]
     },
     {
         questions : `I can't access the new chapter even though I already cleared the prerequisite map.`,
@@ -247,7 +248,7 @@ const cardData = Object.freeze([
         ${link('GFGFork site.', 'https://gfgfork.github.io/gf/main')} Up to Chapter 12.<br>
         ${link('Tempkaridc calculator.', 'https://tempkaridc.github.io/gf/')} Up to Chapter 13.<br>
         ${link("u/tehcavy's spreadsheet.", 'https://docs.google.com/spreadsheets/d/1N-PvxbrZJqg-upImk5uwEmB9GcCrNqjmVgdY00cdvS8')} Up to Chapter 13.`,
-        tags : [dataTags.LOGI, dataTags.RSC]
+        tags : [dataTags.LOGI, dataTags.MARP, dataTags.ITEM]
     },
     {
         questions : `What is kiting?`,
@@ -314,7 +315,7 @@ const cardData = Object.freeze([
     {
         questions : `Will the current event currency carry over to the next event?`,
         answers : `No can do. Dissolves into nothingness one week after the event is finished.`,
-        tags : [dataTags.RSC, dataTags.STORY]
+        tags : [dataTags.ITEM, dataTags.STORY]
     },
     {
         questions : `I've heard of GFAlarm. Is it safe to use?`,
@@ -364,7 +365,7 @@ const cardData = Object.freeze([
     {
         questions : `What's the Fire Control Component (FCC) used for?`,
         answers : `Upgrading 5${star} dolls to 6${star} through modding.`,
-        tags : [dataTags.RSC, dataTags.MOD]
+        tags : [dataTags.ITEM, dataTags.MOD]
     },
     {
         questions : `What is Bookshelf of Memories?`,
@@ -374,7 +375,7 @@ const cardData = Object.freeze([
     {
         questions : `What is Central Data for?`,
         answers : `Unlocking the corresponding FST, promoting said FST, and used as a Data Patch if 5${star}.`,
-        tags : [dataTags.RSC, dataTags.HOC]
+        tags : [dataTags.ITEM, dataTags.HOC]
     },
     {
         questions : `Is XXX doll good?`,
@@ -411,7 +412,7 @@ const cardData = Object.freeze([
     {
         questions : `How do I get some Extra Potential Energy for Coalition Drills?`,
         answers : `Shop.`,
-        tags : [dataTags.RSC, dataTags.PA]
+        tags : [dataTags.ITEM, dataTags.PA]
     },
     {
         questions : `Which dolls should I duplicate?`,
@@ -537,7 +538,7 @@ const cardData = Object.freeze([
         questions : `What are the resources I can get from Kalina's Daily Gift?`,
         answers : `${image('./assets/images/DailyGift.png')}<br>
         Gift amount apparently scales with her affection.`,
-        tags : [dataTags.RSC]
+        tags : [dataTags.MARP, dataTags.ITEM]
     },
     {
         questions : `What is Corpse Whipping?`,
@@ -665,11 +666,11 @@ const cardData = Object.freeze([
             '5 dorms for batteries, enough to upgrade important facilities. More than that is your call.',
             "Storage slots especially if you're a collector. Or whenever you're getting annoyed with the pop-up.",
             'Your Mileage May Vary (YMMV).')}`,
-        tags : [dataTags.NEWB, dataTags.RSC]
+        tags : [dataTags.NEWB, dataTags.ITEM]
     },
     {
         questions : `What teams/echelons should I build?`,
-        answers : ` 2 AR-SMGs first, then RF-HG, then MGSG if you want. The team should be Lv. 90 5-links before going for the next team.`,
+        answers : ` 2 ARSMGs first, then RFHG, then MGSG if you want. The first team should be Lv. 90 5-links before going for the next team.`,
         tags : [dataTags.NEWB, dataTags.ECH]
     },
     {
@@ -715,7 +716,7 @@ const cardData = Object.freeze([
     {
         questions : `I wasn't able to clear the event. Will I still get the clear rewards when they get added to Campaign?`,
         answers : `Nope. Gutted rewards compared to original, even True Core Masks (TCM). Free shit is free shit though, and doll/crate rewards gets cycled to Limited Dolls. So skip the current major event's story if you have to and reap the rewards.`,
-        tags : [dataTags.RSC, dataTags.CAMPAIGN, dataTags.MAJOR, dataTags.LEDOLL]
+        tags : [dataTags.MARP, dataTags.ITEM, dataTags.CAMPAIGN, dataTags.MAJOR, dataTags.LEDOLL]
     },
     {
         questions : `How do tilescan skills work?`,
@@ -731,12 +732,12 @@ const cardData = Object.freeze([
     {
         questions : `My resources (Manpower, Ammunitions, Rations, Parts) are uncomfortably low? Where can I get some?`,
         answers : `Most efficient and consistent is logistics. Though you can get them through the shop, quest and event rewards, campaign/major story node clears, and random nodes.`,
-        tags : [dataTags.RSC, dataTags.LOGI, dataTags.NEWB]
+        tags : [dataTags.MARP, dataTags.LOGI, dataTags.NEWB]
     },
     {
         questions : `How do I get Platinum and Nova Medals?`,
         answers : `From whatever Major/Seasonal/Collab Event running right now. Platinum are for 5${star} dolls and Nova are for dolls 4${star} and below.`,
-        tags : [dataTags.RSC, dataTags.STORY, dataTags.TDOLL]
+        tags : [dataTags.ITEM, dataTags.STORY, dataTags.TDOLL]
     },
     {
         questions : `T-Doll Costumes available now?`,
@@ -767,7 +768,7 @@ const cardData = Object.freeze([
         questions : `What are the resources that has a defined cap and how much can they store?`,
         answers : `${image('./assets/images/ResourceCap.png')}<br>
         Even then, all resources can be obtained without regards to max capacity through daily gifts, mission rewards, and whaling.`,
-        tags : [dataTags.RSC]
+        tags : [dataTags.MARP, dataTags.ITEM]
     },
     {
         questions : `When should I begin trying to produce fairies?`,
@@ -792,7 +793,7 @@ const cardData = Object.freeze([
     {
         questions : `How can I get some more Svarog High Altitude Bombing Aid Commissions?`,
         answers : `Weekly quest (8 standard captures), daily log-in, major events, shop (whenever a new banner starts).`,
-        tags : [dataTags.RSC, dataTags.PA]
+        tags : [dataTags.ITEM, dataTags.PA]
     },
     {
         questions : `Recipe for Parachute/Paradrop Fairy?`,
@@ -830,7 +831,7 @@ const cardData = Object.freeze([
     {
         questions : `How do friend batteries work?`,
         answers : `Friend batteries recharge at 3am and 3pm UTC-8. The number of charges/batteries depends on the number of dorms your friend has. Use Netlify if you want to know when it resets. And as the name suggests, it only appears on your friend's dorms, not on any strangers (especially on a Random Visit).`,
-        tags : [dataTags.FRIEND, dataTags.RSC]
+        tags : [dataTags.FRIEND, dataTags.ITEM]
     },
     {
         questions : `What recipes should I use for my production?`,
@@ -848,7 +849,7 @@ const cardData = Object.freeze([
     {
         questions : `As a beginner, is it worth to use batteries for combat reports?`,
         answers : `Probably if surplus EXP is maxed out, otherwise doubt it.`,
-        tags : [dataTags.NEWB, dataTags.RSC]
+        tags : [dataTags.NEWB, dataTags.ITEM]
     },
     {
         questions : `How does Symmetric Infusion work exactly?`,
@@ -925,6 +926,11 @@ const cardData = Object.freeze([
         questions : `Is a way to expand the armory, or are you stuck with doll 100 slots forever?`,
         answers : `${list(false, 'Shop>Items>Infrastructure>T-Doll slots +10.', 'Tap the locked echelon button.')}`,
         tags : [dataTags.OTHER]
+    },
+    {
+        questions : `Should I dummy link my dolls when corpse dragging?`,
+        answers : `Recommended. Each link gives an additional 0.5x multiplier.`,
+        tags : [dataTags.LV]
     },
     {
         questions : ``,
