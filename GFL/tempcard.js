@@ -989,4 +989,25 @@ const cardData = Object.freeze([
         answers : `Mostly desyncs and having "invalid" inputs. Just restart it.`,
         tags : [dataTags.TECH]
     },
+    {
+        questions : `I can't deploy a friend echelon. What do I do?`,
+        answers : `${image('./assets/images/InitialDeploySupports.png')}<br>
+        Either after operation start, a client restart, or a no due to limit.`,
+        tags : [dataTags.FRIEND, dataTags.ECH, dataTags.TECH]
+    },
+    {
+        questions : `Can someone explain why Anchored Construction won't let me change to another doll after I got my anchored?`,
+        answers : `Once your anchor has dug in, ther's no way to get it out.`,
+        tags : [dataTags.PROD]
+    },
+    {
+        questions : `How do I find Ouroburos in Operation Cube 1-4?`,
+        answers : `${link('Oreo Finder.', 'https://kyouko.moe/urouro/#')}`,
+        tags : [dataTags.CAMPAIGN]
+    },
+    {
+        questions : ``,
+        answers : ``,
+        tags : []
+    },
 ]);
