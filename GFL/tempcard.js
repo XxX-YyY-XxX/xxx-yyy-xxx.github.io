@@ -909,7 +909,7 @@ const cardData = Object.freeze([
         questions : `What's the chronological order for the story?`,
         answers : `u/pointblanksniper's observations.<br>
         ${link('Overall.', 'https://old.reddit.com/r/girlsfrontline/comments/sm75vk/where_can_i_see_mirror_stage_story_line/hvvpppk/')}<br>
-        ${link('Night Chpaters.', 'https://old.reddit.com/r/girlsfrontline/comments/scouvz/questions_regarding_404/hu995o6/')}`,
+        ${link('Night Chapters.', 'https://old.reddit.com/r/girlsfrontline/comments/scouvz/questions_regarding_404/hu995o6/')}`,
         tags : [dataTags.LORE]
     },  //@Fix
     {
@@ -968,6 +968,11 @@ const cardData = Object.freeze([
         answers : `With the advent of Expeditions and Newbie Career Quests, you get enough dummy cores right off the bat. Don't overspend still.`,
         tags : [dataTags.ITEM]
     },
+    {
+        questions : `What is Anchored Construction?`,
+        answers : `${link('Pity System for new production dolls.', 'https://redd.it/szdua2')} Appears on the rate-up for them. Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate-up.`,
+        tags : [dataTags.PROD, dataTags.IMPT]
+    },  //@Too many to fix
     {
         questions : ``,
         answers : ``,
