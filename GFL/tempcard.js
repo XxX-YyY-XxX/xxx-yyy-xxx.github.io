@@ -873,7 +873,9 @@ const cardData = Object.freeze([
     {
         questions : `How do I unlock special effects on commanders like flame auras etc.?`,
         answers : `${list(true, "Get a complete 5-slot from a set. Doesn't matter if male only or female only.",
-        'Get their rare color variants.')}`,
+        'Get their rare color variants.',
+        '???',
+        'Profit.')}`,
         tags : [dataTags.CMDR, dataTags.SKIN]
     },
     {
@@ -971,7 +973,7 @@ const cardData = Object.freeze([
     {
         questions : `What is Anchored Construction?`,
         answers : `${link('Pity System for new production dolls.', 'https://redd.it/szdua2')} Appears on the rate-up for them. Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate-up.`,
-        tags : [dataTags.PROD, dataTags.IMPT]
+        tags : [dataTags.PROD, dataTags.IMPT, dataTags.TECH]
     },  //@Too many to fix
     {
         questions : `What's the rate-up increment for Anchored Construction?`,
