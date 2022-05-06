@@ -964,6 +964,11 @@ const cardData = Object.freeze([
         tags : [dataTags.PA, dataTags.ITEM]
     },
     {
+        questions : `Read a guide that said to use a team of 2${star} & 3${star} dolls until I get enough cores to spend. Is it still worth doing it now?`,
+        answers : `With the advent of Expeditions and Newbie Career Quests, you get enough dummy cores right off the bat. Don't overspend still.`,
+        tags : [dataTags.ITEM]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
