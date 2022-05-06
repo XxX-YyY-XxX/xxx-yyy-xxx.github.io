@@ -52,19 +52,6 @@
             max-width: inherit !important;
         }
 
-        .gdoc {
-            width: 100%;
-            aspect-ratio: 1/1;
-            border: 0px;
-        }
-
-        .ytvid {
-            width: 100%;
-            aspect-ratio: 16/9;
-            border: 0px;
-            display: block;
-        }
-
         figcaption {
             font-size: 1px;
             text-align: center;
@@ -72,11 +59,6 @@
 
         dd {
             margin-inline-start: 10px;
-        }
-
-        fieldset a {
-            cursor: pointer;
-            text-decoration: none;
         }
 
         tr:nth-child(even) {
@@ -151,6 +133,40 @@
             display: inline;
             color: rgb(233, 161, 152);
             text-shadow: 0 0 5px rgb(255 181 253 / 50%);
+        }
+        /* #endregion */
+
+        /* #region Fieldset */
+        fieldset {
+            margin-top: 5px;
+        }
+
+        legend h3, fieldset ol, fieldset ul {
+            margin: 0px;
+        }
+
+        fieldset hr {
+            border-top: 1px dashed;
+        }
+
+        fieldset a {
+            cursor: pointer;
+            text-decoration: none;
+        }
+        /* #endregion */
+
+        /* #region Embed Class */
+        .gdoc {
+            width: 100%;
+            aspect-ratio: 1/1;
+            border: 0px;
+        }
+
+        .ytvid {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border: 0px;
+            display: block;
         }
         /* #endregion */
     </style>

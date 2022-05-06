@@ -1,15 +1,3 @@
-legend h3, fieldset ol {
-  margin: 0px;
-}
-
-fieldset {
-  margin-top: 5px;
-}
-
-fieldset hr {
-  border-top: 1px dashed;
-}
-
 code {
   background: rgba(0,0,0,0.9);
   border: 1px solid rgba(255,255,255,0.15);
