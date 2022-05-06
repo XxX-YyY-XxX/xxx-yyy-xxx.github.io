@@ -52,8 +52,8 @@ const dataTags = Object.freeze({
     SIDE : 'SideStory',             //Extra stories.
     SKILL : 'Skills',               //Unit skills.
     LOVE : 'Affection',             //
+        OATH : 'OathSystem',        //Marriage.
     TIER : 'TierList',              //May not technically be one, just overall description on who is stronger than who.
-    OATH : 'OathSystem',            //Marriage.
     FRIEND : 'Friends',
     LV : 'Leveling',                //Mostly Corpse Drag.
     PET : 'Pets',                   //ANIMAL
@@ -135,6 +135,7 @@ function spoilerSummary(summaryName, details) {
     return `<details><summary>${summaryName}</summary>${details}</details>`;
 }   //ontoggle
 
+/** @param dictOfArray \{key : descriptions[]} */
 function descriptionList(dictOfArray) {
     var descs = '';
     for (const descObject in dictOfArray) {
@@ -151,7 +152,7 @@ const cardData = Object.freeze([
         answers : `First is grinding them on leveling maps.<br>
         Second is using Combat Reports. You can get them in the Forward Basecamp or through the Data Room. You can give them by going to the Dorm>Warehouse>Gift tab or going to your owned doll profile and tapping the + button by the EXP bar. They give 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.`,
         tags : [dataTags.TDOLL, dataTags.LV, dataTags.NEWB, dataTags.PRIME]
-    },  //Last one is the EXP mode combat sim. Total EXP per run is divided equally between all dolls present, max-leveled or not
+    },  //Last one is the EXP mode combat sim. Total EXP per run is divided equally between all dolls present, max-leveled or not. Changes at 2.09.
     {
         questions : `What is Expedition/Forward Basecamp?`,
         answers : `${link('Gamepress Detailed Guide.', 'https://gamepress.gg/girlsfrontline/gfl-explained-basecamp-and-exploration')}<br>
@@ -977,15 +978,15 @@ const cardData = Object.freeze([
     },  //@Too many to fix
     {
         questions : `What's the rate-up increment for Anchored Construction?`,
-        answers : `${table(['Target', 'Estimated Increment'],
-        ['4' + star,    '0.396%'],
-        ['5' + star,    '0.083%'],
-        ['Starter',     '0.19%'])}`,
+        answers : `${table(['Target','Base Rate', 'Estimated Increment'],
+        ['4' + star,    '???',  '0.396%'],
+        ['5' + star,    '???',  '0.083%'],
+        ['Starter',     '???',  '0.19%'])}`,
         tags : [dataTags.PROD]
-    },  //@Finalize starter
+    },  //@Finalize starter and base rates
     {
-        questions : ``,
-        answers : ``,
-        tags : []
+        questions : `I got an "Illegal Action Detected" warning. What happened?`,
+        answers : `Mostly desyncs and having "invalid" inputs. Just restart it.`,
+        tags : [dataTags.TECH]
     },
 ]);
