@@ -974,6 +974,14 @@ const cardData = Object.freeze([
         tags : [dataTags.PROD, dataTags.IMPT]
     },  //@Too many to fix
     {
+        questions : `What's the rate-up increment for Anchored Construction?`,
+        answers : `${table(['Target', 'Estimated Increment'],
+        ['4' + star,    '0.396%'],
+        ['5' + star,    '0.083%'],
+        ['Starter',     '0.19%'])}`,
+        tags : [dataTags.PROD]
+    },  //@Finalize starter
+    {
         questions : ``,
         answers : ``,
         tags : []
