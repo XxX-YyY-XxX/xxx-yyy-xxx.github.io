@@ -429,8 +429,8 @@ const cardData = Object.freeze([
     },  //Redditor u/ConductorBichir's list IIRC
     {
         questions : `What's the drop rate for farmable dolls?`,
-        answers : `Limited dolls on chapters have 0.8% drop rate on normal and 1% on emergency. Event farms have around 1%. 5${star} on normal maps have rates way below 1%... usually. Their droprates at Chapter 10 onwards seem to have higher rates.`,
-        tags : [dataTags.TDOLL, dataTags.MAIN, dataTags.STORY]
+        answers : `Limited dolls on chapters aproximately have 0.8% drop rate on normal and 1% on emergency. Event farms have around 1%. 5${star} on normal maps have rates way below 1%... usually. Their droprates at Chapter 10 onwards seem to have higher rates. As for SPEQs, probably 1% too.`,
+        tags : [dataTags.TDOLL, dataTags.MAIN, dataTags.STORY, dataTags.SPEQ]
     },
     {
         questions : `What does the term Limited in dolls in the chapters mean?`,
@@ -1004,6 +1004,17 @@ const cardData = Object.freeze([
         questions : `How do I find Ouroburos in Operation Cube 1-4?`,
         answers : `${link('Oreo Finder.', 'https://kyouko.moe/urouro/#')}`,
         tags : [dataTags.CAMPAIGN]
+    },
+    {
+        questions : `Which HOC can destroy buildings?`,
+        answers : `All of them. Building damage uses the Pierce stat, which is also used for destroying Force Shields.<br>
+        As for which class is best for the job, ATWs.`,
+        tags : [dataTags.HOC]
+    },
+    {
+        questions : `What does "Rescue 5 T-Dolls" mean?`,
+        answers : `Getting them as drops.`,
+        tags : [dataTags.OTHER]
     },
     {
         questions : ``,

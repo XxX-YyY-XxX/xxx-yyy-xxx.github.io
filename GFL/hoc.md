@@ -12,10 +12,6 @@
 
 > At full promotion. The yellow ★★★★★ one.
 
-### Which HOC can destroy buildings?
-
-> All of them. Building damage uses the Pierce stat.
-
 ### How can I get Data Patches?
 
 > Either from the Code Refactoring menu in the Garage or getting a 5★'d HOC's Core Data.
