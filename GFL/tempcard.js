@@ -686,7 +686,7 @@ const cardData = Object.freeze([
         ${link('Browser Chip Calc by FatalChapter.', 'https://hycdes.com/pages/GFT_ChipCal-EN.html')}<br>
         ${spoilerSummary('5-block chips that can be disassembled.', image('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/2020-01/hoc-chip-shape-minmax-example.jpg', 'Taken from Gamepress'))}<br>
         These apps are safe for your account.`,
-        tags : [dataTags["3P"], dataTags.HOC, dataTags.FST, dataTags.EQUIP]
+        tags : [dataTags["3P"], dataTags.HOC, dataTags.FST, dataTags.EQUIP, dataTags.IMPT]
     },
     {
         questions : `How does the Rescue Station work?`,
