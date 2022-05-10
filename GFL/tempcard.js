@@ -170,8 +170,21 @@ const cardData = Object.freeze([
         Apparently, this unlocks after beating 7-5 Normal.`,
         tags : [dataTags.PA, dataTags.PRIME]
     },
+    {
+        questions : `How do Neural Upgrades/MODs work?`,
+        answers : `${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/gfl-explained-neural-upgrade')}<br>
+        ${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/modding')}<br>
+        ${link('GFC guide.', 'https://www.gflcorner.com/neural')}`,
+        tags : [dataTags.MOD, dataTags.PRIME]
+    },
     //#endregion
     //#region Tier Lists
+    {
+        questions : `Who should I prioritize to MOD first?`,
+        answers : `${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/neural-upgrade-priority-guide')}<br>
+        ${spoilerSummary('CN MOD list.', image('./assets/images/CNMODTier.png'))}`,
+        tags : [dataTags.MOD, dataTags.TIER]
+    },
     //#endregion
     {
         questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
@@ -193,13 +206,6 @@ const cardData = Object.freeze([
         questions : `Which combat sim is better to focus on?`,
         answers : `Data. Always data.`,
         tags : [dataTags.SIMS, dataTags.ITEM, dataTags.NEWB]
-    },
-    {
-        questions : `How do Neural Upgrades/MODs work?`,
-        answers : `${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/gfl-explained-neural-upgrade')}<br>
-        ${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/modding')}<br>
-        ${link('GFC guide.', 'https://www.gflcorner.com/neural')}`,
-        tags : [dataTags.MOD, dataTags.PRIME]
     },
     {
         questions : `How do I get more Quick Training Contracts?`,
@@ -724,12 +730,6 @@ const cardData = Object.freeze([
         questions : `How do tilescan skills work?`,
         answers : `Real-time scanning of dolls on own tiles when activating their skills. Meaning setup formation can have them with no dolls on top of their tiles and when they activate their skills in battle, whoever are on top of their bufftiles will get the effects of their skill. Note that their bufftiles basically move with them.`,
         tags : [dataTags.TDOLL, dataTags.SKILL, dataTags.IMPT]
-    },
-    {
-        questions : `Who should I MOD first?`,
-        answers : `${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/neural-upgrade-priority-guide')}<br>
-        ${spoilerSummary('CN MOD list.', image('./assets/images/CNMODTier.png'))}`,
-        tags : [dataTags.MOD, dataTags.TIER]
     },
     {
         questions : `My resources (Manpower, Ammunitions, Rations, Parts) are uncomfortably low? Where can I get some?`,
