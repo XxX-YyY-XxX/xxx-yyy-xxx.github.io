@@ -1023,6 +1023,11 @@ const cardData = Object.freeze([
         tags : [dataTags.TDOLL]
     },  //@Visual
     {
+        questions : `Is a particular doll already available in the EN server?`,
+        answers : `Check Index.`,
+        tags : [dataTags.TDOLL]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
