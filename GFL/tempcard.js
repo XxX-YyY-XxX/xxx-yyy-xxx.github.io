@@ -616,7 +616,7 @@ const cardData = Object.freeze([
     {
         questions : `Which map is best for auto-battles?`,
         answers : `${googleEmbed('https://docs.google.com/spreadsheets/d/1e_1oAa9Qm_tmWqbgFQca8ohzo29qcjctIwyIU9Mc1H0')}`,
-        tags : [dataTags.AUTO]
+        tags : [dataTags.AUTO, dataTags.LV]
     },
     {
         questions : `Where can I fight Goliath Factories?`,
@@ -1017,6 +1017,11 @@ const cardData = Object.freeze([
         answers : `Getting them as drops.`,
         tags : [dataTags.OTHER]
     },
+    {
+        questions : `Where can I see doll voicelines?`,
+        answers : `Doll Index Page>Top left as speaker. If it's missing, check if you downloaded the voice pack yet. Or just go to IOPWiki.`,
+        tags : [dataTags.TDOLL]
+    },  //@Visual
     {
         questions : ``,
         answers : ``,

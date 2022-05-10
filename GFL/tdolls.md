@@ -100,12 +100,6 @@
 >
 > Note that is just a base guideline and not a rule. Or just copy from others.
 
-### Where can I see doll voicelines?
-
-> Doll Index Page>Top left as speaker. If it's missing, check if you downloaded the voice pack yet. Or just go to IOPWiki.
-
-@ Visual
-
 ### Is there a way to inventorize my dolls?
 
 > <iframe width="100%" height="500" src="https://docs.google.com/spreadsheets/d/1X-ZnlXabFQSk6_nTd94pu6Ww3KqWCc1ABt-gTkJy99s/preview?pli=1" frameborder="0"></iframe>
