@@ -224,7 +224,8 @@ const cardData = Object.freeze([
     },
     {
         questions : `What do I need to consider when using the #2 Chip equipment?`,
-        answers : `${link(image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png', '', "u/BigStupidJellyfish_'s chip usage flowchart."), 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')}`,
+        answers : `${link(image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png', '', "u/BigStupidJellyfish_'s chip usage flowchart."), 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')}<br>
+        ${googleEmbed('https://docs.google.com/spreadsheets/d/14xV50MSMBFGgN75E-Gy10WtzACb_KZdpxRKCYQ6FDQA')}`,
         tags : [dataTags.TDOLL, dataTags.EQUIP]
     },
     {
