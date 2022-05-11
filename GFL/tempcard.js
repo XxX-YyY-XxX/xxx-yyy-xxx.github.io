@@ -31,12 +31,13 @@ const dataTags = Object.freeze({
         EXPED : 'ForwardBasecamp',      //Lazy leveling
         PA : 'ProtocolAssimilation',    //PA pulling and coalition drills.
     //#endregion
-    OTHER : 'Others',               //Default tag if I dunno what to put. Probably useless, but just in case.
+    MISC : 'Miscellaneous',         //Default tag if I dunno what to put. Should be useless, but meh.
     ACCT : 'AccountManagement',     //Anything concerning account data and integrity.
     TECH : 'Troubleshooting',       //For resolving issues that shouldn't even happen.
     '3P' : 'ThirdParty',            //Non-dev-made applications that are recommended to use. Safe until said otherwise.
     NEWB : 'NewbieGuide',           //Things new/early-game players should know.
     PRIME : 'TopicPrimer',          //Explanation of the specific system it's paired with. Usually made up of links. Must be the first box of it's paired tag.
+    TIER : 'TierList',              //May not technically be one, just overall description on who is stronger than who.
     EMU : 'Emulators',              //Anytihing related to emulators.
     APPLE : 'AppleDevices',         //Anything primarily concerning iOS devices.
     //ANDROID : 'AndroidDevices',
@@ -53,7 +54,6 @@ const dataTags = Object.freeze({
     SKILL : 'Skills',               //Unit skills.
     LOVE : 'Affection',             //
         OATH : 'OathSystem',        //Marriage.
-    TIER : 'TierList',              //May not technically be one, just overall description on who is stronger than who.
     FRIEND : 'Friends',
     LV : 'Leveling',                //Mostly Corpse Drag.
     PET : 'Pets',                   //ANIMAL
@@ -370,7 +370,7 @@ const cardData = Object.freeze([
         questions : `Is there a way for my game to feel smoother?`,
         answers : `${link('Decompressed obb.', 'https://redd.it/mroqui')} Removes damage numbers, the main source of in-battle lag.<br>
         ${link('DIY decompression.', 'https://www.reddit.com/r/girlsfrontline/comments/lvwwtv/weekly_commanders_lounge_march_02_2021/gpugenl/')}`,
-        tags : [dataTags.OTHER]
+        tags : [dataTags.MISC]
     },
     {
         questions : `What's the Fire Control Component (FCC) used for?`,
@@ -596,7 +596,7 @@ const cardData = Object.freeze([
         answers : `The process of stacking the useless number as high as possible, battle performance be damned.<br>
         ARSMG = 50-70k, RFHG = 40-60k, MGSG = 100k+ average max CE, including maxed fairies, equips, mods, oaths, and formation bonuses.<br>
         It's main purpose is for Theater Bosses and being on top of the Friend List.`,
-        tags : [dataTags.OTHER]
+        tags : [dataTags.MISC]
     },
     {
         questions : `What does the PA chip Pilfer do?`,
@@ -788,7 +788,7 @@ const cardData = Object.freeze([
     {
         questions : `Is there a way to buy a missed day for daily log-ins?`,
         answers : `No chance.`,
-        tags : [dataTags.OTHER]
+        tags : [dataTags.MISC]
     },
     {
         questions : `I'm trying to clear the newbie career quests but I haven't gotten the rewards yet. Did I miss something?`,
@@ -825,7 +825,7 @@ const cardData = Object.freeze([
     {
         questions : `I've heard news about GFL 2. Is GFL 1 being phased out/abandoned?`,
         answers : `Not anytime soon. The plan is for them to be played simultaneously.`,
-        tags : [dataTags.OTHER]
+        tags : [dataTags.MISC]
     },
     {
         questions : `What are all the available pets right now?`,
@@ -865,7 +865,7 @@ const cardData = Object.freeze([
     {
         questions : `Is the package in the shop worth it?`,
         answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/energy-packages')}`,
-        tags : [dataTags.OTHER]
+        tags : [dataTags.MISC]
     },
     {
         questions : `Can I put 2 L2D skins in the double adjutant slot?`,
@@ -932,7 +932,7 @@ const cardData = Object.freeze([
     {
         questions : `Is a way to expand the armory, or are you stuck with doll 100 slots forever?`,
         answers : `${list(false, 'Shop>Items>Infrastructure>T-Doll slots +10.', 'Tap the locked echelon button.')}`,
-        tags : [dataTags.OTHER]
+        tags : [dataTags.MISC]
     },
     {
         questions : `Should I dummy link my dolls when corpse dragging?`,
@@ -1017,7 +1017,7 @@ const cardData = Object.freeze([
     {
         questions : `What does "Rescue 5 T-Dolls" mean?`,
         answers : `Getting them as drops.`,
-        tags : [dataTags.OTHER]
+        tags : [dataTags.MISC]
     },
     {
         questions : `Where can I see doll voicelines?`,
@@ -1039,6 +1039,11 @@ const cardData = Object.freeze([
         questions : `I'm trying to contact support and one of the infos they need is Account ID. Where can I see it?`,
         answers : `UID that is present in your commander screen or intro card.`,
         tags : [dataTags.TECH]
+    },
+    {
+        questions : `Where can I get doll/fairy costume art?`,
+        answers : `${link('36base Github Repository.', 'https://github.com/36base/girlsfrontline-resources')}`,
+        tags : [dataTags.MISC]
     },
     {
         questions : ``,
