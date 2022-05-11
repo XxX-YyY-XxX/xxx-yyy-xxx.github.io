@@ -166,7 +166,8 @@ const cardData = Object.freeze([
         answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
         ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-first-impressions-revamped')}<br>
-        ${spoilerSummary("Cleista's basic Twitter guide.", link(image('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096'), 'https://twitter.com/CleistaCeleste/status/1409824210571214849'))}<br>
+        ${spoilerSummary("Cleista's basic Twitter guide.", link(image('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096'), 'https://twitter.com/CleistaCeleste/status/1409824210571214849')
+         + `<br>Applicable mainly for "I really want to get this ringleader."`)}<br>
         Apparently, this unlocks after beating 7-5 Normal.`,
         tags : [dataTags.PA, dataTags.PRIME]
     },
@@ -1033,6 +1034,11 @@ const cardData = Object.freeze([
         answers : `At 90 and above, gives stat bonuses indicated by pink numbers. At 10 below, gives stat penalties indicated by blue numbers.<br>
         It also enables oathing at 100.`,
         tags : [dataTags.LOVE]
+    },
+    {
+        questions : `I'm trying to contact support and one of the infos they need is Account ID. Where can I see it?`,
+        answers : `UID that is present in your commander screen or intro card.`,
+        tags : [dataTags.TECH]
     },
     {
         questions : ``,
