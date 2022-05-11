@@ -615,7 +615,8 @@ const cardData = Object.freeze([
     },
     {
         questions : `Which map is best for auto-battles?`,
-        answers : `${googleEmbed('https://docs.google.com/spreadsheets/d/1e_1oAa9Qm_tmWqbgFQca8ohzo29qcjctIwyIU9Mc1H0')}`,
+        answers : `Includes EXP per fight and level threshold to EXP penalty.<br>
+        ${googleEmbed('https://docs.google.com/spreadsheets/d/1e_1oAa9Qm_tmWqbgFQca8ohzo29qcjctIwyIU9Mc1H0')}`,
         tags : [dataTags.AUTO, dataTags.LV]
     },
     {
@@ -1026,6 +1027,12 @@ const cardData = Object.freeze([
         questions : `Is a particular doll already available in the EN server?`,
         answers : `Check Index.`,
         tags : [dataTags.TDOLL]
+    },
+    {
+        questions : `What does Affection do?`,
+        answers : `At 90 and above, gives stat bonuses indicated by pink numbers. At 10 below, gives stat penalties indicated by blue numbers.<br>
+        It also enables oathing at 100.`,
+        tags : [dataTags.LOVE]
     },
     {
         questions : ``,

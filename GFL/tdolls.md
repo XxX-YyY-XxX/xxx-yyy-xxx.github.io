@@ -66,10 +66,6 @@
 >
 > [KR "Wiki".](https://gfl.zzzzz.kr/dolls.php?lang=en) Includes in-depth stat analysis.
 
-### Why is there a blue negative number in my doll stat page?
-
-> Negative affection because you let them die. Apologize and gib kek or 4evr suffr.
-
 ### How do I see a detailed version of a doll's stat?
 
 > Formation>Show Equip. The stats are above the equip boxes.
