@@ -1055,6 +1055,14 @@ const cardData = Object.freeze([
         tags : [dataTags.OATH]
     },
     {
+        questions : `What does "Event" mean on the left side of the mission select screen?`,
+        answers : `Combat Missions: SPEQ rate up for X-4N or Special Rescue Event for X-6.<br>
+        Combat/Campaign: 1.5x EXP, also includes the currently running event maps.<br>
+        Logistics: Great Success Rate Up aka. higher rewards are more frequent.<br>
+        Combat sim: All simulations unlocked.`,
+        tags : [dataTags.MAIN, dataTags.CAMPAIGN, dataTags.LOGI, dataTags.SIMS]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
