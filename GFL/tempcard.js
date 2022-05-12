@@ -437,8 +437,9 @@ const cardData = Object.freeze([
     },  //Redditor u/ConductorBichir's list IIRC
     {
         questions : `What's the drop rate for farmable dolls?`,
-        answers : `Limited dolls on chapters aproximately have 0.8% drop rate on normal and 1% on emergency. Event farms have around 1%. 5${star} on normal maps have rates way below 1%... usually. Their droprates at Chapter 10 onwards seem to have higher rates. As for SPEQs, probably 1% too.`,
-        tags : [dataTags.TDOLL, dataTags.MAIN, dataTags.STORY, dataTags.SPEQ]
+        answers : `Limited dolls on chapters aproximately have 0.8% drop rate on normal and 1% on emergency. Event farms have around 1%. 5${star} on normal maps have rates way below 1%... usually. Their droprates at Chapter 10 onwards seem to have higher rates. As for SPEQs, probably 1% too.<br>
+        Ig you plan to farm a 5${star} doll in Combat Missions, just do Productions. You'll get more chances there.`,
+        tags : [dataTags.TDOLL, dataTags.MAIN, dataTags.STORY, dataTags.SPEQ, dataTags.PROD]
     },
     {
         questions : `What does the term Limited in dolls in the chapters mean?`,
@@ -918,6 +919,9 @@ const cardData = Object.freeze([
         ${link('Night Chapters.', 'https://old.reddit.com/r/girlsfrontline/comments/scouvz/questions_regarding_404/hu995o6/')}`,
         tags : [dataTags.LORE]
     },  //@Fix
+    /*
+        https://old.reddit.com/r/girlsfrontline/comments/sc8jed/weekly_commanders_lounge_january_25_2022/hupfxsr/
+    */
     {
         questions : `Is it possible to earn previously missed hidden achievements in Campaign Missions?`,
         answers : `Yes.`,
@@ -1006,7 +1010,7 @@ const cardData = Object.freeze([
     {
         questions : `How do I find Ouroburos in Operation Cube 1-4?`,
         answers : `${link('Oreo Finder.', 'https://kyouko.moe/urouro/#')}`,
-        tags : [dataTags.CAMPAIGN]
+        tags : [dataTags.CAMPAIGN, dataTags.ENEMY, dataTags["3P"]]
     },
     {
         questions : `Which HOC can destroy buildings?`,
@@ -1044,6 +1048,11 @@ const cardData = Object.freeze([
         questions : `Where can I get doll/fairy costume art?`,
         answers : `${link('36base Github Repository.', 'https://github.com/36base/girlsfrontline-resources')}`,
         tags : [dataTags.MISC]
+    },
+    {
+        questions : `Which oath packages are better?`,
+        answers : `2.09 Week 1 Package > Double Oath Package (Valentine's, White Day, <!-- Qixi/Tanabata,  -->Christmas), New Year's Package`,
+        tags : [dataTags.OATH]
     },
     {
         questions : ``,

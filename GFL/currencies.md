@@ -30,10 +30,6 @@
 
 > Logistics and limiting production to 4 a day. The last one basically applies to long-time players though.
 
-### When are double oath certificates available?
-
-> Valentine's, White Day, Qixi/Tanabata, and Christmas.
-
 ### Where can I get calibration tickets?
 
 > Defense Drill, expeditions, shop, mini-events, log-in.
