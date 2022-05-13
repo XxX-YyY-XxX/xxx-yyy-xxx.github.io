@@ -1076,7 +1076,7 @@ const cardData = Object.freeze([
     },  //Condolensces to u/headphone_question's wallet.
     {
         questions : `Why do people use M16 as tank for 0-2 corpse dragging?`,
-        answers : `Can use Armor/SPEQ to give herself armor, and T-Exo for reducing the number of hits taken.`,
+        answers : `Can use Armor/SPEQ to reduce damage taken to 1, and T-Exo for reducing the number of hits taken.`,
         tags : [dataTags.LV]
     },
     {
