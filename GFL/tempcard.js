@@ -1063,11 +1063,21 @@ const cardData = Object.freeze([
         tags : [dataTags.MAIN, dataTags.CAMPAIGN, dataTags.LOGI, dataTags.SIMS]
     },
     {
-        questions : `Can someone remind me what the difference is between Charge, Destroy, and Defend commands for coalition units?`,
+        questions : `Can someone tell me what the difference is between Charge, Destroy, and Defend commands for coalition units?`,
         answers : `Lets melee units ${altTextStyle('Charge', TextStyle.BOLD)} down the lane.<br>
         Lets melee units approach and ${altTextStyle('Destroy', TextStyle.BOLD)} the nearest enemy.<br>
         Return and ${altTextStyle('Defend', TextStyle.BOLD)} the grid position.`,
         tags : [dataTags.COALITION, dataTags.BATTLE]
+    },
+    {
+        questions : `How many Tactical Doll slots can I have?`,
+        answers : `Up to 1000.`,
+        tags : [dataTags.MISC]
+    },  //Condolensces to u/headphone_question's wallet.
+    {
+        questions : `Why do people use M16 as tank for 0-2 corpse dragging?`,
+        answers : `Can use Armor/SPEQ to give herself armor, and T-Exo for reducing the number of hits taken.`,
+        tags : [dataTags.LV]
     },
     {
         questions : ``,
