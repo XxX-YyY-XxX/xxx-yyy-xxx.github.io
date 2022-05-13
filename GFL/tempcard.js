@@ -1063,6 +1063,13 @@ const cardData = Object.freeze([
         tags : [dataTags.MAIN, dataTags.CAMPAIGN, dataTags.LOGI, dataTags.SIMS]
     },
     {
+        questions : `Can someone remind me what the difference is between Charge, Destroy, and Defend commands for coalition units?`,
+        answers : `Lets melee units ${altTextStyle('Charge', TextStyle.BOLD)} down the lane.<br>
+        Lets melee units approach and ${altTextStyle('Destroy', TextStyle.BOLD)} the nearest enemy.<br>
+        Return and ${altTextStyle('Defend', TextStyle.BOLD)} the grid position.`,
+        tags : [dataTags.COALITION, dataTags.BATTLE]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
