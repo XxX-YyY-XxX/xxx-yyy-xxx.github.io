@@ -178,6 +178,14 @@ const cardData = Object.freeze([
         ${link('GFC guide.', 'https://www.gflcorner.com/neural')}`,
         tags : [dataTags.MOD, dataTags.PRIME]
     },
+    {
+        questions : `What are Fairies?`,
+        answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/fairies')}<br>
+        ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Technical_Fairies')} Unupdated rework skills.<br>
+        ${link('GFC guide Part 1.', 'https://www.gflcorner.com/fairy/')} Fairies up to CT only.<br>
+        ${spoilerSummary('GFC guide Part 2.', googleEmbed('https://docs.google.com/spreadsheets/d/1x6_YysDi0h89jKE9vEW2_fbxi7gG7XV5jjJqX8O41rw'))} Unupdated fairy list.`,
+        tags : [dataTags.FAIRY, dataTags.PRIME]
+    },
     //#endregion
     //#region Tier Lists
     {
@@ -297,14 +305,6 @@ const cardData = Object.freeze([
         questions : `How does Armor Penetration work?`,
         answers : `${link('Matsuda explanation.', 'https://gfl.matsuda.tips/post/armour')}`,
         tags : [dataTags.BATTLE, dataTags.SYSMECH]
-    },
-    {
-        questions : `What are Fairies?`,
-        answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/fairies')}<br>
-        ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Technical_Fairies')} Unupdated rework skills.<br>
-        ${link('GFC guide Part 1.', 'https://www.gflcorner.com/fairy/')} Fairies up to CT only.<br>
-        ${link('GFC guide Part 2.', 'https://docs.google.com/spreadsheets/d/1x6_YysDi0h89jKE9vEW2_fbxi7gG7XV5jjJqX8O41rw')} Unupdated fairy list.`,
-        tags : [dataTags.FAIRY, dataTags.PRIME]
     },
     {
         questions : `How to HOC?`,
