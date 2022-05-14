@@ -777,9 +777,9 @@ const cardData = Object.freeze([
         tags : [dataTags.MARP, dataTags.ITEM]
     },
     {
-        questions : `When should I begin trying to produce fairies?`,
+        questions : `When should I begin trying to produce fairies/do Heavy Equipment Constructions (HEC)?`,
         answers : `When you have sufficient income for 4 resources and cores. Ideally ASAP since raising one to 5${star} takes a considerable amount of time.`,
-        tags : [dataTags.FAIRY]
+        tags : [dataTags.FAIRY, dataTags.PROD]
     },
     {
         questions : `Where can I get a specific doll?`,
