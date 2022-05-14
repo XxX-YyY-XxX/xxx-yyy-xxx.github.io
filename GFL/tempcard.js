@@ -1080,6 +1080,14 @@ const cardData = Object.freeze([
         tags : [dataTags.LV]
     },
     {
+        questions : `Why are the doll skills not activating?`,
+        answers : `Is the auto skill button on? Is it on forced manual? Is it a flare skill?<br>
+        Active skills cannot activate when they cannot shoot, i.e. reloading, dolls moving, no enemy in range, no ammo/ration, in-between shot cooldowns.<br>
+        Passive skills on the other hand will not activate only if they have no ammo or ration. This inculdes Slug's 3x damage and Flash's -3 damage.<br>
+        Note though that there are a handful of exceptions.`,
+        tags : [dataTags.TDOLL, dataTags.SKILL]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []

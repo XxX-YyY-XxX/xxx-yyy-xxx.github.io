@@ -10,14 +10,6 @@
 >
 > On that note, retreating dolls who had their buffs activate will not remove said buff. Also, tile buffs don't degrade even if your dummy count does.
 
-### Why are the doll skills not activating?
-
-> Is the auto skill button on? Is it on forced manual? Is it a flare skill?
->
-> Skills cannot activate when they cannot shoot, i.e. SG/MG reloading, dolls moving, no enemy in range, no ammo/ration.
-
-@ Clarify
-
 ### Does retreating a doll during battle/skirmish have an effect on affection points?
 
 > Nope. They ONLY lose some if they or other dolls in the group died during mob battles. And auto-battles DO NOT decrease/affect^(w/e the case may be)^ affection points.
