@@ -985,12 +985,13 @@ const cardData = Object.freeze([
     },  //@Too many to fix
     {
         questions : `What's the rate-up increment for Anchored Construction?`,
-        answers : `${table(['Target','Base Rate', 'Estimated Increment'],
-        ['4' + star,    '???',  '0.396%'],
-        ['5' + star,    '???',  '0.083%'],
-        ['Starter',     '???',  '0.19%'])}`,
+        answers : `${table(['Target', 'Estimated Increment'],
+        ['4' + star,  '0.396%'],
+        ['5' + star,  '0.083%'],
+        ['Starter',   '0.19%'])}
+        ${link('Base rate shown per doll is more or less their true rates.','https://old.reddit.com/r/girlsfrontline/comments/s6s9xj/weekly_commanders_lounge_january_18_2022/htmbjuc/')}`,
         tags : [dataTags.PROD]
-    },  //@Finalize starter and base rates
+    },
     {
         questions : `I got an "Illegal Action Detected" warning. What happened?`,
         answers : `Mostly desyncs and having "invalid" inputs. Just restart it.`,
