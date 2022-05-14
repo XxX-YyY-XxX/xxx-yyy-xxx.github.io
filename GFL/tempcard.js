@@ -189,7 +189,7 @@ const cardData = Object.freeze([
     {
         questions : `What is Luffberry Chess?`,
         answers : `GFL version of 100% Orange Juice, I guess?<br>
-        And it's called "chess" only because boardgame.
+        And it's called "chess" only because boardgame.<br>
         ${link("u/fortis_99's tips.", 'https://redd.it/rz4uye')}`,
         tags : [dataTags.OJ, dataTags.PRIME]
     },
