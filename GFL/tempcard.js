@@ -42,7 +42,6 @@ const dataTags = Object.freeze({
     APPLE : 'AppleDevices',         //Anything primarily concerning iOS devices.
     //ANDROID : 'AndroidDevices',
     ANNIV : 'Anniversary',          //Anything concerning the game's anniversary.
-    BATTLE : 'Skirmishes',          //The battle mode where everyone shoots at one another.
     IMPT : 'Important',             //Things new players would need for late-game. Mostly consists of things not explained by the game.
     SYSMECH : 'SystemMechanics',    //Explanation on underlying mechanics of the game.
     ENEMY : 'EnemyUnits',           //For things that primarily interact with enemy units.
@@ -50,12 +49,13 @@ const dataTags = Object.freeze({
     //SEASON : 'SeasonalEvents',      //Story events that happen each New Year, X-mas, Halloween, etc.
     MINI : 'MiniEvents',            //Bingo, Point Event, etc.
     MAP : 'FieldMap',               //Node-based overworld.
+        BATTLE : 'Skirmishes',      //The battle mode where everyone shoots at one another.
     SIDE : 'SideStory',             //Extra stories.
     SKILL : 'Skills',               //Unit skills.
     LOVE : 'Affection',             //
         OATH : 'OathSystem',        //Marriage.
     FRIEND : 'Friends',
-    LV : 'Leveling',                //Mostly Corpse Drag.
+    LEVEL : 'Leveling',                //Mostly Corpse Drag.
     PET : 'Pets',                   //ANIMAL
     CMDR : 'Commander',             //"Self-insert"
     OJ : 'LuffberryChess',          //PVP sidegame
@@ -151,7 +151,7 @@ const cardData = Object.freeze([
         questions : `How do I level my girls?`,
         answers : `First is grinding them on leveling maps.<br>
         Second is using Combat Reports. You can get them in the Forward Basecamp or through the Data Room. You can give them by going to the Dorm>Warehouse>Gift tab or going to your owned doll profile and tapping the + button by the EXP bar. They give 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.`,
-        tags : [dataTags.TDOLL, dataTags.LV, dataTags.NEWB, dataTags.PRIME]
+        tags : [dataTags.TDOLL, dataTags.LEVEL, dataTags.NEWB, dataTags.PRIME]
     },  //Last one is the EXP mode combat sim. Total EXP per run is divided equally between all dolls present, max-leveled or not. Changes at 2.09.
     {
         questions : `What is Expedition/Forward Basecamp?`,
@@ -185,6 +185,13 @@ const cardData = Object.freeze([
         ${link('GFC guide Part 1.', 'https://www.gflcorner.com/fairy/')} Fairies up to CT only.<br>
         ${spoilerSummary('GFC guide Part 2.', googleEmbed('https://docs.google.com/spreadsheets/d/1x6_YysDi0h89jKE9vEW2_fbxi7gG7XV5jjJqX8O41rw'))} Unupdated fairy list.`,
         tags : [dataTags.FAIRY, dataTags.PRIME]
+    },
+    {
+        questions : `What is Luffberry Chess?`,
+        answers : `GFL version of 100% Orange Juice, I guess?<br>
+        And it's called "chess" only because boardgame.
+        ${link("u/fortis_99's tips.", 'https://redd.it/rz4uye')}`,
+        tags : [dataTags.OJ, dataTags.PRIME]
     },
     //#endregion
     //#region Tier Lists
@@ -266,7 +273,7 @@ const cardData = Object.freeze([
     {
         questions : `Would the equipment I'm enhancing get bonus points if I use an enhanced fodder?`,
         answers : `No.`,
-        tags : [dataTags.EQUIP, dataTags.LV]
+        tags : [dataTags.EQUIP, dataTags.LEVEL]
     },
     {
         questions : `Is there a list of which logistics to do if I want to prioritize certain resources?`,
@@ -483,12 +490,12 @@ const cardData = Object.freeze([
         ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/optimizing-leveling-introduction')}<br>
         ${link('GFLCorner guide.', 'https://www.gflcorner.com/efficient-leveling-guide/')}<br>
         ${link('DMesse guide.', 'http://dmesse.egloos.com/m/3567918')}`,
-        tags : [dataTags.IMPT, dataTags.LV]
+        tags : [dataTags.IMPT, dataTags.LEVEL]
     },
     {
         questions : `If I MOD my T-Doll, is Level 100 still considered max level?`,
         answers : `Thankfully, this is where common sense wins. In short, ${altTextStyle('NO', TextStyle.BOLD)}.`,
-        tags : [dataTags.MOD, dataTags.LV]
+        tags : [dataTags.MOD, dataTags.LEVEL]
     },
     {
         questions : `I can't get the gold (S Rank) and silver medals in maps because the enemies keep running all over me. How do I get them?`,
@@ -619,7 +626,7 @@ const cardData = Object.freeze([
         questions : `Which map is best for auto-battles?`,
         answers : `Includes EXP per fight and level threshold to EXP penalty.<br>
         ${googleEmbed('https://docs.google.com/spreadsheets/d/1e_1oAa9Qm_tmWqbgFQca8ohzo29qcjctIwyIU9Mc1H0')}`,
-        tags : [dataTags.AUTO, dataTags.LV]
+        tags : [dataTags.AUTO, dataTags.LEVEL]
     },
     {
         questions : `Where can I fight Goliath Factories?`,
@@ -651,7 +658,7 @@ const cardData = Object.freeze([
     {
         questions : `What do I need for 8-1N Zas drag?`,
         answers : `${googleEmbed('https://docs.google.com/spreadsheets/d/1VT52c-_m4zTx-OFRPcxE9iFmmJY_AMC7CyJT1B7FLt8')}`,
-        tags : [dataTags.TDOLL, dataTags.LV]
+        tags : [dataTags.TDOLL, dataTags.LEVEL]
     },
     {
         questions : `Is there a tier list for fairies?`,
@@ -757,7 +764,7 @@ const cardData = Object.freeze([
         answers : `${link('tempkaridc calculator.', 'https://tempkaridc.github.io/gf/vec')}<br>
         ${link('xVarz spreadsheet for different draggers.', 'https://docs.google.com/spreadsheets/d/1cuZPF-r1e6TyE4Rj2DNkSEova7Tc-Cczs7RaoAK2vII')}<br>
         ${link('Infographic.', 'https://cdn.discordapp.com/attachments/564028599682727937/929724568258629642/134.png')}`,
-        tags : [dataTags.LV, dataTags.TDOLL]
+        tags : [dataTags.LEVEL, dataTags.TDOLL]
     },
     {
         questions : `How do I get a higher success rate for logistics?`,
@@ -810,7 +817,7 @@ const cardData = Object.freeze([
         questions : `What does equipment calibration and enhancement do?`,
         answers : `Equipment Calibration raises the equipment's base stat. The RNG dictates how many calib tickets are wasted before maxing. When it's on its highest calibration, a MAX in blue box appears on said equipment.<br>
         Equipment Enhancement multiplies the base stat up to Lv. 10. Doesn't matter if Equip Enhancement Pills or fodder equips are used, it's merely a matter of resource cost per point raised.`,
-        tags : [dataTags.EQUIP, dataTags.LV, dataTags.NEWB]
+        tags : [dataTags.EQUIP, dataTags.LEVEL, dataTags.NEWB]
     },
     {
         questions : `Does Hanyang Type 88 still do skipping stones?`,
@@ -884,12 +891,6 @@ const cardData = Object.freeze([
         tags : [dataTags.CMDR, dataTags.SKIN]
     },
     {
-        questions : `What is Luffberry Chess?`,
-        answers : `GFL version of 100% Orange Juice, I guess?<br>
-        And it's called "chess" only because boardgame.`,
-        tags : [dataTags.OJ]
-    },
-    {
         questions : `Which dolls have a MOD in the older servers?`,
         answers : `u/ConductorBichir's list. Includes all Special Equpments.<br>
         ${googleEmbed('https://docs.google.com/spreadsheets/d/1u2sXat4FD7jFLdjMLrq5zIiDrGJMEVaGvB2z2JysxLI')}`,
@@ -941,7 +942,7 @@ const cardData = Object.freeze([
     {
         questions : `Should I dummy link my dolls when corpse dragging?`,
         answers : `Recommended. Each link gives an additional 0.5x multiplier.`,
-        tags : [dataTags.LV]
+        tags : [dataTags.LEVEL]
     },
     {
         questions : `I want to F2PBTW. How do I do that?`,
@@ -1078,7 +1079,7 @@ const cardData = Object.freeze([
     {
         questions : `Why do people use M16 as tank for 0-2 corpse dragging?`,
         answers : `Can use Armor/SPEQ to reduce damage taken to 1, and T-Exo for reducing the number of hits taken.`,
-        tags : [dataTags.LV]
+        tags : [dataTags.LEVEL]
     },
     {
         questions : `Why are the doll skills not activating?`,
@@ -1086,7 +1087,7 @@ const cardData = Object.freeze([
         Active skills cannot activate when they cannot shoot, i.e. reloading, dolls moving, no enemy in range, no ammo/ration, in-between shot cooldowns.<br>
         Passive skills on the other hand will not activate only if they have no ammo or ration. This inculdes Slug's 3x damage and Flash's -3 damage.<br>
         Note though that there are a handful of exceptions.`,
-        tags : [dataTags.TDOLL, dataTags.SKILL]
+        tags : [dataTags.TDOLL, dataTags.SKILL, dataTags.IMPT]
     },
     {
         questions : ``,
