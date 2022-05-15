@@ -560,7 +560,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `What is Corpse Whipping?`,
-        answers : `The act of overkilling a dummy link by a huge amount. This is generally the reason why ROF-based guns are favored against low link-HP enemies.`,
+        answers : `The act of overkilling a dummy link by a huge amount. Especially egregious if 2 RFs hit an enemy on its deathbed. This is generally the reason why ROF-based guns are favored against low link-HP enemies.`,
         tags : [dataTags.BATTLE]
     },
     {
@@ -951,7 +951,7 @@ const cardData = Object.freeze([
                 'Sharing in FB/Twitter (30 weekly). You can cancel it at the last minute.',
                 'S-Ranking Normal (10) and Emergency (30) Chapters.',
                 'Achievements.',
-                'Mini-Events. Includes, but is not limited to, Point Events, Keycard Events (Bingo), etc.',
+                'Mini-Events, mainly, Keycard Events (Bingo).',
                 'Ranking participation.'],
             'Tokens' : [link('Dailies (7 daily) and weeklies (5 weekly).', 'https://dmesse.egloos.com/m/3594243'),
                 'Expedition.',
@@ -1085,9 +1085,14 @@ const cardData = Object.freeze([
         questions : `Why are the doll skills not activating?`,
         answers : `Is the auto skill button on? Is it on forced manual? Is it a flare skill?<br>
         Active skills cannot activate when they cannot shoot, i.e. reloading, dolls moving, no enemy in range, no ammo/ration, in-between shot cooldowns.<br>
-        Passive skills on the other hand will not activate only if they have no ammo or ration. This inculdes Slug's 3x damage and Flash's -3 damage.<br>
+        Passive skills on the other hand will not activate only if they have no ammo or ration. This includes Slug's 3x damage and Flash's -3 damage.<br>
         Note though that there are a handful of exceptions.`,
         tags : [dataTags.TDOLL, dataTags.SKILL, dataTags.IMPT]
+    },
+    {
+        questions : `How and why does a StrawberryPython team work so well?`,
+        answers : `${googleEmbed('https://docs.google.com/document/d/105DXX2AlMB_wX0JpKGjPGsJ_zjsKOz_0bbd5ZshUx_o')}`,
+        tags : [dataTags.ECH]
     },
     {
         questions : ``,
