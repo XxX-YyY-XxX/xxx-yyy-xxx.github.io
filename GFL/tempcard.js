@@ -1117,11 +1117,20 @@ const cardData = Object.freeze([
         tags : [dataTags.COALITION]
     },
     {
+        questions : `How can I get my favorite gun/doll?`,
+        answers : `${descriptionList({'Factory Production' : [],
+        'Rescue Drops' : [],
+        'Clear Rewards' : []})}`,
+        tags : [dataTags.TDOLL]
+    },  //@Mega fix
+    {
+        questions : `What do advantaged dolls in combat map mean?`,
+        answers : `20% FP boost for AR, RF, MG. 20% EVA boost for SMG, HG, SG.`,
+        tags : [dataTags.MAP, dataTags.TDOLL]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
     },
 ]);
-
-
-
