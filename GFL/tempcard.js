@@ -251,7 +251,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `When is the anniversary?`,
-        answers : `May 8. Basically around the second week of May.`,
+        answers : `May 8 for EN server.`,
         tags : [dataTags.ANNIV]
     },
     {
@@ -445,7 +445,7 @@ const cardData = Object.freeze([
     {
         questions : `What's the drop rate for farmable dolls?`,
         answers : `Limited dolls on chapters aproximately have 0.8% drop rate on normal and 1% on emergency. Event farms have around 1%. 5${star} on normal maps have rates way below 1%... usually. Their droprates at Chapter 10 onwards seem to have higher rates. As for SPEQs, probably 1% too.<br>
-        Ig you plan to farm a 5${star} doll in Combat Missions, just do Productions. You'll get more chances there.`,
+        If you plan to farm a 5${star} doll in Combat Missions, just do Productions. You'll get more chances there.`,
         tags : [dataTags.TDOLL, dataTags.MAIN, dataTags.STORY, dataTags.SPEQ, dataTags.PROD]
     },
     {
@@ -1104,6 +1104,13 @@ const cardData = Object.freeze([
         As for how to download it, check the sidebar of ${link('this', 'https://old.reddit.com/r/girlsfrontline/')} link under Downloads.`,
         tags : [dataTags.MISC]
     },  //@Totally gonna fix
+    {
+        questions : `How do general rate-ups work?`,
+        answers : `There are 2 sets of rate-ups per general rate-up.<br>
+        First is the HOC rate-up, where every 2 days is a specific FST's day for rate-up. Note that only that FST's rate is increased within the Central Data pool. The core data rate remains the same.<br>
+        Second is the tried amd tested Production rate-up. Goes from Normal Doll, Normal Equip, Heavy Doll, Heavy Equip. Pulling chance for all 4${star} and 5${star} are increased.`,
+        tags : [dataTags.PROD, dataTags.HOC, dataTags.FST, dataTags.TDOLL, dataTags.EQUIP]
+    },
     {
         questions : ``,
         answers : ``,
