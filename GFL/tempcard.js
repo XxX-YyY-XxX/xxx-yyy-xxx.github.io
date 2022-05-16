@@ -201,6 +201,12 @@ const cardData = Object.freeze([
         ${spoilerSummary('CN MOD list.', image('./assets/images/CNMODTier.png'))}`,
         tags : [dataTags.MOD, dataTags.TIER]
     },
+    {
+        questions : `Is there a tier list for good PA units?`,
+        answers : `${image('./assets/images/SFTier.png')}<br>
+        ${link('Gamepress units guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units')} Use the search bar if a certain PA unit is unavailable in the page.`,
+        tags : [dataTags.COALITION, dataTags.TIER]
+    },
     //#endregion
     {
         questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
@@ -562,12 +568,6 @@ const cardData = Object.freeze([
         questions : `What is Corpse Whipping?`,
         answers : `The act of overkilling a dummy link by a huge amount. Especially egregious if 2 RFs hit an enemy on its deathbed. This is generally the reason why ROF-based guns are favored against low link-HP enemies.`,
         tags : [dataTags.BATTLE]
-    },
-    {
-        questions : `Is there a tier list for good PA units?`,
-        answers : `${image('./assets/images/SFTier.png')}<br>
-        ${link('Gamepress units guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units')} Use the search bar if a certain PA unit is unavailable in the page.`,
-        tags : [dataTags.COALITION, dataTags.TIER]
     },
     {
         questions : `Are there any sort of guides on how and when to roll for skins?`,
@@ -1110,6 +1110,11 @@ const cardData = Object.freeze([
         First is the HOC rate-up, where every 2 days is a specific FST's day for rate-up. Note that only that FST's rate is increased within the Central Data pool. The core data rate remains the same.<br>
         Second is the tried amd tested Production rate-up. Goes from Normal Doll, Normal Equip, Heavy Doll, Heavy Equip. Pulling chance for all 4${star} and 5${star} are increased.`,
         tags : [dataTags.PROD, dataTags.HOC, dataTags.FST, dataTags.TDOLL, dataTags.EQUIP]
+    },  //@Check for errors
+    {
+        questions : `How do I scrap coalition units? I'm lost.`,
+        answers : `Factory > Retirement (Disassemble) > Fourth + symbol.`,
+        tags : [dataTags.COALITION]
     },
     {
         questions : ``,
@@ -1117,3 +1122,6 @@ const cardData = Object.freeze([
         tags : []
     },
 ]);
+
+
+
