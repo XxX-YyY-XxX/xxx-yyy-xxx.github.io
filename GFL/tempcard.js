@@ -1095,6 +1095,16 @@ const cardData = Object.freeze([
         tags : [dataTags.ECH]
     },
     {
+        questions : `The client in the Play Store is in a language I can't understand. Is there a way to download other server clients?`,
+        answers : `CN - China (Bilibili and DigitalSky)<br>
+        TW - Taiwan, Malaysia, Singapore<br>
+        JP - Japan<br>
+        KR - Korea<br>
+        EN - Everything else<br>
+        As for how to download it, check the sidebar of ${link('this', 'https://old.reddit.com/r/girlsfrontline/')} link under Downloads.`,
+        tags : [dataTags.MISC]
+    },  //@Totally gonna fix
+    {
         questions : ``,
         answers : ``,
         tags : []
