@@ -855,10 +855,10 @@ const cardData = Object.freeze([
     {
         questions : `Whats the best way of farming affection?`,
         answers : `Being in the leader slot in a battle echelon, being the MVP of a battle echelon, collecting daily hearts in dorms, cakes/lollipops/icecreams, passive regen by being in a dorm, gifting skins.<br>
-        ${link('Write-up on how what affects affection.', 'https://www.reddit.com/r/girlsfrontline/comments/cgpt7y/weekly_commanders_lounge_july_23_2019/ev0gw64/')}<br>
-        ${link('Additional info on dorm affection.', 'https://old.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i29h382/')}`,
+        ${link('Write-up on what affects affection.', 'https://www.reddit.com/r/girlsfrontline/comments/cgpt7y/weekly_commanders_lounge_july_23_2019/ev0gw64/')}<br>
+        ${link('Additional info on dorm affection.', 'https://www.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i29h382/')}`,
         tags : [dataTags.LOVE]
-    },  //@Fix
+    },
     {
         questions : `As a beginner, is it worth to use batteries for combat reports?`,
         answers : `Probably if surplus EXP is maxed out, otherwise doubt it.`,
