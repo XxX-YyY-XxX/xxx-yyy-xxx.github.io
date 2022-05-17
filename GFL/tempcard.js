@@ -65,6 +65,7 @@ const dataTags = Object.freeze({
 });
 
 const star = '★';
+const lessEqual = '≤';
 
 //#region Functions
 /** @param {URLString} link */
@@ -1127,6 +1128,13 @@ const cardData = Object.freeze([
         questions : `What do advantaged dolls in combat map mean?`,
         answers : `20% FP boost for AR, RF, MG. 20% EVA boost for SMG, HG, SG.`,
         tags : [dataTags.MAP, dataTags.TDOLL]
+    },
+    {
+        questions : `How many Quick Autobattle Tickets does it cost per stage?`,
+        answers : `${lessEqual} 1 hour: 1 ticket<br>
+        1-2 hours: 2 tickets<br>
+        2+ hours: 3 tickets`,
+        tags : [dataTags.AUTO, dataTags.ITEM]
     },
     {
         questions : ``,
