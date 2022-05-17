@@ -1,4 +1,5 @@
-for (const include of document.getElementsByTagName('include')) {
+//Add "include inside of include"
+for (const include of Array.from(document.getElementsByTagName('include'))) {
     fetch(include.getAttribute('src'))
         .then(response => {
             return response.text()

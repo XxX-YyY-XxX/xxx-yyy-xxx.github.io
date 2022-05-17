@@ -1141,7 +1141,7 @@ const cardData = Object.freeze([
         answers : `Restarts from the top. Meaning refreshing just hours before Ringleader change has the same effect as refreshing 2 days ago.<br>
         Reports suggest that the timer after the change doesn't start until opening the bombing screen.`,
         tags : [dataTags.PA]
-    },  //@Test
+    },  //@Test - Check refresh timer after hours of banner change
     {
         questions : ``,
         answers : ``,
