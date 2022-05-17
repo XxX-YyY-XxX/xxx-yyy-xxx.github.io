@@ -54,10 +54,6 @@
 >
 > <iframe width="640" height="360" src="https://www.youtube.com/embed/_s9ZY5wDLYE" frameborder="0" allowfullscreen></iframe>
 
-### What happens to the reshuffle/refresh timer when the banner changes?
-
-> Restarts from the top. Meaning refreshing just hours before Ringleader change has the same effect as refreshing 2 days ago.
-
 ### How do I get duplicate ringleaders?
 
 > If you successfully captured the RL, there is a "Reset Pool" button beside the Svarog button. This allows you to refresh the pool back to 100 for another round of RL pulling. Dupe RLs are autofed to your first copy. Any more pulls of the same RL with full petal is an autoscrap.

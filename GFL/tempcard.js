@@ -1137,6 +1137,12 @@ const cardData = Object.freeze([
         tags : [dataTags.AUTO, dataTags.ITEM]
     },
     {
+        questions : `What happens to the reshuffle/refresh timer when the banner changes?`,
+        answers : `Restarts from the top. Meaning refreshing just hours before Ringleader change has the same effect as refreshing 2 days ago.<br>
+        Reports suggest that the timer after the change doesn't start until opening the bombing screen.`,
+        tags : [dataTags.PA]
+    },  //@Test
+    {
         questions : ``,
         answers : ``,
         tags : []
