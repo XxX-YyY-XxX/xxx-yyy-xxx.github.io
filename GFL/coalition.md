@@ -118,10 +118,6 @@
 
 > Daily gifts, failed captures, PA store.
 
-### Where can I see stat previews of of PA units?
-
-> <iframe width="100%" height="500" src="https://docs.google.com/spreadsheets/d/1TYKbdjuOdOMsvaaIduWW_8FF0tm27BjwKbC4uggl1wE/preview?pli=1" frameborder="0"></iframe>
-
 ### What are Petri Dishes for?
 
 > Raising Coalition units' rarity.

@@ -1148,6 +1148,16 @@ const cardData = Object.freeze([
         tags : [dataTags.COALITION, dataTags.MAP]
     },
     {
+        questions : `Anyone know what type of equipment "Medals" is?`,
+        answers : `For now, placeholder. No equipment of its type exists yet.`,
+        tags : [dataTags.EQUIP]
+    },
+    {
+        questions : `Where can I see stat previews of of PA units?`,
+        answers : `${googleEmbed('https://docs.google.com/spreadsheets/d/1TYKbdjuOdOMsvaaIduWW_8FF0tm27BjwKbC4uggl1wE')}`,
+        tags : []
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
