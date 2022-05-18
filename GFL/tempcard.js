@@ -832,11 +832,6 @@ const cardData = Object.freeze([
         tags : [dataTags.TDOLL, dataTags.ECH]
     },
     {
-        questions : `I've heard news about GFL 2. Is GFL 1 being phased out/abandoned?`,
-        answers : `Not anytime soon. The plan is for them to be played simultaneously.`,
-        tags : [dataTags.MISC]
-    },
-    {
         questions : `What are all the available pets right now?`,
         answers : `${image('./assets/images/PetSale.png')}<br>
         If you see a pet that is not on this list, it's a Cafe Story reward, collab pet, or event reward that haven't been added yet to the station.`,
@@ -1155,7 +1150,7 @@ const cardData = Object.freeze([
     {
         questions : `Where can I see stat previews of of PA units?`,
         answers : `${googleEmbed('https://docs.google.com/spreadsheets/d/1TYKbdjuOdOMsvaaIduWW_8FF0tm27BjwKbC4uggl1wE')}`,
-        tags : []
+        tags : [dataTags.COALITION]
     },
     {
         questions : ``,
