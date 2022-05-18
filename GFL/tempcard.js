@@ -1143,6 +1143,11 @@ const cardData = Object.freeze([
         tags : [dataTags.PA]
     },  //@Test - Check refresh timer after hours of banner change
     {
+        questions : `Do links matter regarding the amount of resources a coalition unit would take on resupply?`,
+        answers : `From a single-link Dinergate to an entire gunner stack, they all take 360 Ammo/Ration.`,
+        tags : [dataTags.COALITION, dataTags.MAP]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
