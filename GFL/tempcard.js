@@ -1153,6 +1153,11 @@ const cardData = Object.freeze([
         tags : [dataTags.COALITION]
     },
     {
+        questions : `I haven't seen this icon/card BG before. Where can I get some of it?`,
+        answers : `Most likely a Cafe Costume Side Story reward.`,
+        tags : [dataTags.MISC]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
