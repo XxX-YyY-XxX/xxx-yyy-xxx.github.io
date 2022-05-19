@@ -1165,6 +1165,11 @@ const cardData = Object.freeze([
         tags : [dataTags.ITEM]
     },
     {
+        questions : `Any way to increase commander level really quickly?`,
+        answers : `Leveling dolls through leveling maps.`,
+        tags : [dataTags.CMDR, dataTags.LEVEL]
+    },  //@Test - exact values per doll leveling
+    {
         questions : ``,
         answers : ``,
         tags : []
