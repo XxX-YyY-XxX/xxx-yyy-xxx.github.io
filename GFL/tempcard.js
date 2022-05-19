@@ -912,8 +912,8 @@ const cardData = Object.freeze([
     {
         questions : `What's the chronological order for the story?`,
         answers : `u/pointblanksniper's observations.<br>
-        ${link('Overall.', 'https://old.reddit.com/r/girlsfrontline/comments/sm75vk/where_can_i_see_mirror_stage_story_line/hvvpppk/')}<br>
-        ${link('Night Chapters.', 'https://old.reddit.com/r/girlsfrontline/comments/scouvz/questions_regarding_404/hu995o6/')}`,
+        ${link('Overall.', 'https://www.reddit.com/r/girlsfrontline/comments/sm75vk/where_can_i_see_mirror_stage_story_line/hvvpppk/')}<br>
+        ${link('Night Chapters.', 'https://www.reddit.com/r/girlsfrontline/comments/scouvz/questions_regarding_404/hu995o6/')}`,
         tags : [dataTags.LORE]
     },  //@Fix
     /*
