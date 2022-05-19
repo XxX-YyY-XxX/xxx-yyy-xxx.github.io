@@ -966,8 +966,8 @@ const cardData = Object.freeze([
     },
     {
         questions : `What are Extra Impulses and where can I get them?`,
-        answers : `Stockable versions of Regular Impulses.<br>
-        You can get them through monthlies, achievements, and events.`,
+        answers : `Stockable versions of Electronic Impulses.<br>
+        You can get them through daily log-ins, weekly quests, achievements, and events.`,
         tags : [dataTags.PA, dataTags.ITEM]
     },
     {
