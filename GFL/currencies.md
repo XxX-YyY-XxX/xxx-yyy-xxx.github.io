@@ -34,10 +34,6 @@
 
 > Defense Drill, expeditions, shop, mini-events, log-in.
 
-### I'm in core hell. How do I get some more?
-
-> [Matsuda guide.](https://gfl.matsuda.tips/post/its_still_not_enough_fuck) Run any daytime leveling maps for combined core and exp farming. You can also farm during core rate-up by using the handgun recipe.
-
 ### When do we get discounted tokens?
 
 > Around x-mas, cny, anni, April 16 week, and the likes.

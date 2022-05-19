@@ -1158,6 +1158,13 @@ const cardData = Object.freeze([
         tags : [dataTags.MISC]
     },
     {
+        questions : `I'm in dummy core hell. How do I get some more?`,
+        answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/its_still_not_enough_fuck')}<br>
+        ${link('BigStupidJellyfish write-up.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/core-rates')}<br>
+        Run any daytime leveling maps for combined core and exp farming. You can also farm during core rate-up by using the handgun recipe.`,
+        tags : [dataTags.ITEM]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
