@@ -61,6 +61,7 @@ const dataTags = Object.freeze({
     OJ : 'LuffberryChess',          //PVP sidegame
     LORE : 'Story/Lore',            //Main meat of the series
     MARP : 'FourResources',         //Manpower, Ammunition, Rations, Parts
+    REF : 'References',             //Reference compilations
     //Devices
 });
 
@@ -197,16 +198,24 @@ const cardData = Object.freeze([
     //#endregion
     //#region Tier Lists
     {
+        questions : `Is there a tier list for good PA units?`,
+        answers : `${image('./assets/images/SFTier.png')}<br>
+        ${link('Gamepress units guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units')} Use the search bar if a certain PA unit is unavailable in the page.`,
+        tags : [dataTags.COALITION, dataTags.TIER]
+    },
+    {
         questions : `Who should I prioritize to MOD first?`,
         answers : `${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/neural-upgrade-priority-guide')}<br>
         ${spoilerSummary('CN MOD list.', image('./assets/images/CNMODTier.png'))}`,
         tags : [dataTags.MOD, dataTags.TIER]
     },
+    //#endregion
+    //#region Compilations
     {
-        questions : `Is there a tier list for good PA units?`,
-        answers : `${image('./assets/images/SFTier.png')}<br>
-        ${link('Gamepress units guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units')} Use the search bar if a certain PA unit is unavailable in the page.`,
-        tags : [dataTags.COALITION, dataTags.TIER]
+        questions : `Which dolls have a MOD in the older servers?`,
+        answers : `u/ConductorBichir's list. Includes all Special Equpments.<br>
+        ${googleEmbed('https://docs.google.com/spreadsheets/d/1u2sXat4FD7jFLdjMLrq5zIiDrGJMEVaGvB2z2JysxLI')}`,
+        tags : [dataTags.MOD, dataTags.SPEQ, dataTags.REF]
     },
     //#endregion
     {
@@ -887,12 +896,6 @@ const cardData = Object.freeze([
         tags : [dataTags.CMDR, dataTags.SKIN]
     },
     {
-        questions : `Which dolls have a MOD in the older servers?`,
-        answers : `u/ConductorBichir's list. Includes all Special Equpments.<br>
-        ${googleEmbed('https://docs.google.com/spreadsheets/d/1u2sXat4FD7jFLdjMLrq5zIiDrGJMEVaGvB2z2JysxLI')}`,
-        tags : [dataTags.MOD, dataTags.SPEQ]
-    },
-    {
         questions : `Is there a list of doll farming routes for each map?`,
         answers : `Compilation of all farm routes for limited dolls and equipments on both campaign and main story.<br>
         ${googleEmbed('https://docs.google.com/document/d/1GUcA1ZHYVKBhTspdRYPIkECVZRoLFvqDnLrgrFb6VcU')}`,
@@ -1169,6 +1172,11 @@ const cardData = Object.freeze([
         answers : `Leveling dolls through leveling maps.`,
         tags : [dataTags.CMDR, dataTags.LEVEL]
     },  //@Test - exact values per doll leveling
+    {
+        questions : `How do I switch accounts?`,
+        answers : `Settings>Manage Accounts>Log out, then on the log-in screen, switch accounts.`,
+        tags : [dataTags.ACCT]
+    },
     {
         questions : ``,
         answers : ``,
