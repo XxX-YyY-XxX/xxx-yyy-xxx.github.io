@@ -926,10 +926,10 @@ const cardData = Object.freeze([
     },
     {
         questions : `If I delete my unused speqs, will I be able to recover them?`,
-        answers : `Since 2.09, dismantled SPEQs can now be recovered.<br>
+        answers : `Since 2.09, dismantled/disassembled SPEQs can now be recovered/retrieved.<br>
         Note: Dismantling before version update means End void.`,
         tags : [dataTags.SPEQ]
-    },
+    },  //@Future proofing
     {
         questions : `Is a way to expand the armory, or are you stuck with doll 100 slots forever?`,
         answers : `${list(false, 'Shop>Items>Infrastructure>T-Doll slots +10.', 'Tap the locked echelon button.')}`,
@@ -977,9 +977,9 @@ const cardData = Object.freeze([
     },
     {
         questions : `What is Anchored Construction?`,
-        answers : `${link('Pity System for new production dolls.', 'https://redd.it/szdua2')} Appears on the rate-up for them. Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate-up.`,
+        answers : `${link('Pity System for newly added production dolls.', 'https://redd.it/szdua2')} Appears on the rate-up for them which is on Saturdays and Sundays. Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate-up.`,
         tags : [dataTags.PROD, dataTags.IMPT, dataTags.TECH]
-    },  //@Too many to fix
+    },  //@Too many to fix, @Visual
     {
         questions : `What's the rate-up increment for Anchored Construction?`,
         answers : `${table(['Target', 'Estimated Increment'],
