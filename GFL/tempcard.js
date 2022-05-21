@@ -435,8 +435,8 @@ const cardData = Object.freeze([
         questions : `What equipments should I use on my dolls for battle purposes?`,
         answers : `${spoilerSummary('General equipments.', `${link(image('./assets/images/EquipInfograph.png'), 'https://big-stupid-jellyfish.github.io/GFMath/pages/newquip')}<br>
         AS-Val at night follows the day schema. SOP and STAR is SPEQ + VFL/PEQ. M16 is SPEQ + Exo/Armor.`)}<br>
-        ${'#2 Chip equipment.', `${link(image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png', '', "u/BigStupidJellyfish_'s chip usage flowchart."), 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')}<br>
-        ${googleEmbed('https://docs.google.com/spreadsheets/d/14xV50MSMBFGgN75E-Gy10WtzACb_KZdpxRKCYQ6FDQA')}`}`,
+        ${spoilerSummary('#2 Chip equipment.', `${link(image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png'), 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')}<br>
+        ${googleEmbed('https://docs.google.com/spreadsheets/d/14xV50MSMBFGgN75E-Gy10WtzACb_KZdpxRKCYQ6FDQA')}`)}`,
         tags : [dataTags.TDOLL, dataTags.EQUIP]
     },
     {
