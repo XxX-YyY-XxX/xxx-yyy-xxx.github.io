@@ -412,12 +412,12 @@ const cardData = Object.freeze([
     },
     {
         questions : `Is XXX doll good?`,
-        answers : `${link('GFC Doll Analytics.', 'https://docs.google.com/spreadsheets/d/10LJdksnM3zipOb72IneJD7WVp3765JYJEGg0LnodzDI')}<br>
+        answers : `${spoilerSummary('GFC Doll Analytics.', googleEmbed('https://docs.google.com/spreadsheets/d/10LJdksnM3zipOb72IneJD7WVp3765JYJEGg0LnodzDI'))}<br>
         ${link('Matsuda Quips.', 'https://gfl.matsuda.tips/dolls/')}<br>
         ${link('Gamepress Overview.', 'https://www.gamepress.gg/girlsfrontline/tier-list')}<br>
         ${link('KR Wiki.', 'https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0/%EC%9D%B8%ED%98%95%EB%8F%84%EA%B0%90')}<br>
         ${link("Fatalchapter's bilibili guide.", 'https://www.bilibili.com/read/readlist/rl100361')} Updated up to Jashin dolls.<br>
-        ${link("Sijun's list", 'https://old.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1rph1l/')} Translated by u/ConductorBichir.`,
+        ${link("Sijun's list.", 'https://old.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1rph1l/')} Translated by u/ConductorBichir.`,
         tags : [dataTags.TDOLL, dataTags.TIER]
     },
     {

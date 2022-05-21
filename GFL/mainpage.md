@@ -90,3 +90,8 @@
 ### I see people have their Tdolls as their avatar in other peoples dorms. How do you do that?
 
 > In dorm, bottom-left, top-right, uncheck third checkbox.
+
+[Official Discord](https://discord.gg/gfen)
+
+[2.09 Newbie Features](https://redd.it/ry6fv0)
+
