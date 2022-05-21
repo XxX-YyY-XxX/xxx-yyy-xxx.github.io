@@ -1199,6 +1199,11 @@ const cardData = Object.freeze([
         tags : [dataTags.LORE]
     },
     {
+        questions : `What's the use case for 5HGs?`,
+        answers : `Good single target burst damage. Quick movespeed. Consumes minimal resources.`,
+        tags : [dataTags.ECH]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
