@@ -1200,6 +1200,11 @@ const cardData = Object.freeze([
         tags : [dataTags.ECH]
     },
     {
+        questions : `What're the rewards for the Defense Drill?`,
+        answers : `${link('Matsuda Guide and Line-up, circa 2.08.', 'https://gfl.matsuda.tips/post/defdrill')}`,
+        tags : [dataTags.SIMS]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
