@@ -423,7 +423,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `When should I do T-Doll Heavy Production?`,
-        answers : `Preferably during rate-ups due to its high costs. Low priority otherwise since it's use at this stage of the game is for getting non-5${star} SGs and them not being widely used.`,
+        answers : `Preferably during rate ups due to its high costs. Low priority otherwise since it's use at this stage of the game is for getting non-5${star} SGs and them not being widely used.`,
         tags : [dataTags.TDOLL, dataTags.PROD]
     },
     {
@@ -457,7 +457,7 @@ const cardData = Object.freeze([
         tags : [dataTags.TDOLL]
     },
     {
-        questions : `How high is fairy rate-up?`,
+        questions : `How high is fairy rate up?`,
         answers : `${googleEmbed('https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI', 586)}`,
         tags : [dataTags.FAIRY, dataTags.PROD]
     },  //Redditor u/ConductorBichir's list IIRC
@@ -567,7 +567,7 @@ const cardData = Object.freeze([
         tags : [dataTags.FAIRY, dataTags.PROD]
     },
     {
-        questions : `How high is a certain doll's pull rate during rate-ups?`,
+        questions : `How high is a certain doll's pull rate during rate ups?`,
         answers : `Something like Anchored > Targeted > General >>> Normal.`,
         tags : [dataTags.TDOLL, dataTags.PROD]
     },
@@ -717,7 +717,7 @@ const cardData = Object.freeze([
         tags : [dataTags.PET]
     },
     {
-        questions : `How often do general rate-ups occur?`,
+        questions : `How often do general rate ups occur?`,
         answers : `January, May, September`,
         tags : [dataTags.PROD]
     },
@@ -775,7 +775,7 @@ const cardData = Object.freeze([
     {
         questions : `How do I get a higher success rate for logistics?`,
         answers : `${altTextStyle('floor(mean of doll levels in echelon) * 0.45 + 15', TextStyle.CODE)} for normal logistics and<br>
-        ${altTextStyle('floor(mean of doll levels in echelon) * 0.60 + 30', TextStyle.CODE)} for rate-up logistics.`,
+        ${altTextStyle('floor(mean of doll levels in echelon) * 0.60 + 30', TextStyle.CODE)} for rate up logistics.`,
         tags : [dataTags.LOGI]
     },
     {
@@ -976,11 +976,11 @@ const cardData = Object.freeze([
     },
     {
         questions : `What is Anchored Construction?`,
-        answers : `${link('Pity System for newly added production dolls.', 'https://redd.it/szdua2')} Appears on the rate-up for them which is on Saturdays and Sundays. Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate-up.`,
+        answers : `${link('Pity System for newly added production dolls.', 'https://redd.it/szdua2')} Appears on the rate up for them which is on Saturdays and Sundays. Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate up.`,
         tags : [dataTags.PROD, dataTags.IMPT, dataTags.TECH]
     },  //@Too many to fix, @Visual
     {
-        questions : `What's the rate-up increment for Anchored Construction?`,
+        questions : `What's the rate up increment for Anchored Construction?`,
         answers : `${table(['Target', 'Estimated Increment'],
         ['4' + star,  '0.396%'],
         ['5' + star,  '0.083%'],
@@ -1100,10 +1100,10 @@ const cardData = Object.freeze([
         tags : [dataTags.MISC]
     },  //@Totally gonna fix
     {
-        questions : `How do general rate-ups work?`,
-        answers : `There are 2 sets of rate-ups per general rate-up.<br>
-        First is the HOC rate-up, where every 2 days is a specific FST's day for rate-up. Note that only that FST's rate is increased within the Central Data pool. The core data rate remains the same.<br>
-        Second is the tried amd tested Production rate-up. Goes from Normal Doll, Normal Equip, Heavy Doll, Heavy Equip. Pulling chance for all 4${star} and 5${star} are increased.`,
+        questions : `How do general rate ups work?`,
+        answers : `There are 2 sets of rate ups per general rate up.<br>
+        First is the HOC rate up, where every 2 days is a specific FST's day for rate up. Note that only that FST's rate is increased within the Central Data pool. The core data rate remains the same.<br>
+        Second is the tried amd tested Production rate up. Goes from Normal Doll, Normal Equip, Heavy Doll, Heavy Equip. Pulling chance for all 4${star} and 5${star} are increased.`,
         tags : [dataTags.PROD, dataTags.HOC, dataTags.FST, dataTags.TDOLL, dataTags.EQUIP]
     },  //@Check for errors
     {
@@ -1160,7 +1160,7 @@ const cardData = Object.freeze([
         questions : `I'm in dummy core hell. How do I get some more?`,
         answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/its_still_not_enough_fuck')}<br>
         ${link('BigStupidJellyfish write-up.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/core-rates')}<br>
-        Run any daytime leveling maps for combined core and exp farming. You can also farm during core rate-up by using the handgun recipe.`,
+        Run any daytime leveling maps for combined core and exp farming. You can also farm during core rate up by using the handgun recipe.`,
         tags : [dataTags.ITEM]
     },
     {
