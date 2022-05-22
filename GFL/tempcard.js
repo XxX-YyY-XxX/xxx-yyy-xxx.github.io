@@ -189,6 +189,16 @@ const cardData = Object.freeze([
         tags : [dataTags.FAIRY, dataTags.PRIME]
     },
     {
+        questions : `How to HOC?`,
+        answers : `${link('Gamepress Guide.', 'https://gamepress.gg/girlsfrontline/gfl-explained-hoc-combat-basics')}<br>
+        ${link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Heavy_Ordnance_Corps')}<br>
+        ${link('Matsuda Guide.', 'https://gfl.matsuda.tips/post/hocs')}<br>
+        ${link('GFC Guide.', 'https://www.gflcorner.com/hoc-guide-by-gfc/')}<br>
+        ${spoilerSummary("Ceia's Video Guide.", youtubeEmbed('https://youtu.be/rsFyXRDAi6I'))}<br>
+        ${link("u/Xealiouth's Guide.", 'https://redd.it/95nrou')}`,
+        tags : [dataTags.HOC, dataTags.PRIME]
+    },
+    {
         questions : `What is Luffberry Chess?`,
         answers : `GFL version of 100% Orange Juice, I guess?<br>
         And it's called "chess" only because boardgame.<br>
@@ -329,16 +339,6 @@ const cardData = Object.freeze([
         questions : `How does Armor Penetration work?`,
         answers : `${link('Matsuda explanation.', 'https://gfl.matsuda.tips/post/armour')}`,
         tags : [dataTags.BATTLE, dataTags.SYSMECH]
-    },
-    {
-        questions : `How to HOC?`,
-        answers : `${link('Gamepress Guide.', 'https://gamepress.gg/girlsfrontline/gfl-explained-hoc-combat-basics')}<br>
-        ${link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Heavy_Ordnance_Corps')}<br>
-        ${link('Matsuda Guide.', 'https://gfl.matsuda.tips/post/hocs')}<br>
-        ${link('GFC Guide.', 'https://www.gflcorner.com/hoc-guide-by-gfc/')}<br>
-        ${spoilerSummary("Ceia's Video Guide.", youtubeEmbed('https://youtu.be/rsFyXRDAi6I'))}<br>
-        ${link("u/Xealiouth's Guide.", 'https://redd.it/95nrou')}`,
-        tags : [dataTags.HOC, dataTags.PRIME]
     },
     {
         questions : `Is there a penalty for using HOC charges and Fairy points in Theater battles?`,
