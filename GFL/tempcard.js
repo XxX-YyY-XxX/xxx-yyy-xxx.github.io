@@ -240,6 +240,11 @@ const cardData = Object.freeze([
         answers : `When you have sufficient income for 4 resources and cores. Ideally ASAP since raising one to 5${star} takes a considerable amount of time.`,
         tags : [dataTags.FAIRY, dataTags.PROD, dataTags.IMPT]
     },
+    {
+        questions : `Is fairy leveling for increasing rarity only?`,
+        answers : `Mainly yes, but there is a gradual aura boost where a Lv.20 is better than Lv.1 even at 1${star}. And increasing rarity is very important, from increasing the aura stat cap, to making the talent proc more consistently. Not to mention that you can cap them to Lv.100 even as a 1${star} so there's no hurry to raise their rarity.`,
+        tags : [dataTags.FAIRY, dataTags.LEVEL, dataTags.IMPT]
+    },
     //#endregion
     {
         questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
@@ -1205,11 +1210,6 @@ const cardData = Object.freeze([
         questions : `What're the rewards for the Defense Drill?`,
         answers : `${link('Matsuda Guide and Line-up, circa 2.08.', 'https://gfl.matsuda.tips/post/defdrill')}`,
         tags : [dataTags.SIMS]
-    },
-    {
-        questions : `Is fairy leveling for increasing rarity only?`,
-        answers : `Mainly yes, but there is a gradual aura boost where a Lv.20 is better than Lv.1 even at 1${star}. And increasing rarity is very important, from increasing the aura stat cap, to making the talent proc more consistently. Not to mention that you can cap them to Lv.100 even as a 1${star} so there's no hurry to raise their rarity.`,
-        tags : [dataTags.FAIRY, dataTags.LEVEL, dataTags.IMPT]
     },
     {
         questions : ``,
