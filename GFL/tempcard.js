@@ -234,6 +234,13 @@ const cardData = Object.freeze([
         tags : [dataTags.MOD, dataTags.SPEQ, dataTags.REF]
     },
     //#endregion
+    //#region Important Details
+    {
+        questions : `When should I begin trying to produce fairies/do Heavy Equipment Constructions (HEC)?`,
+        answers : `When you have sufficient income for 4 resources and cores. Ideally ASAP since raising one to 5${star} takes a considerable amount of time.`,
+        tags : [dataTags.FAIRY, dataTags.PROD, dataTags.IMPT]
+    },
+    //#endregion
     {
         questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
         answers : `${image('./assets/images/SFEnemy.png')}<br>
@@ -787,11 +794,6 @@ const cardData = Object.freeze([
         answers : `${image('./assets/images/ResourceCap.png')}<br>
         Even then, all resources can be obtained without regards to max capacity through daily gifts, mission rewards, and whaling.`,
         tags : [dataTags.MARP, dataTags.ITEM]
-    },
-    {
-        questions : `When should I begin trying to produce fairies/do Heavy Equipment Constructions (HEC)?`,
-        answers : `When you have sufficient income for 4 resources and cores. Ideally ASAP since raising one to 5${star} takes a considerable amount of time.`,
-        tags : [dataTags.FAIRY, dataTags.PROD]
     },
     {
         questions : `Where can I get a specific doll?`,
