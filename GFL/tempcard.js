@@ -86,10 +86,9 @@ function list(ordered, ...any) {
 }
 
 /** @param {URLString} docLink Ends in alphanumeric */
-function googleEmbed(docLink, maxHeightPixels = 0) {
-    const style = maxHeightPixels ? `style="max-height: ${maxHeightPixels}px;"` : '';
+function googleEmbed(docLink) {
     return `<figure>
-        <iframe class="gdoc" src="${docLink}/preview?pli=1" ${style}></iframe><br>
+        <iframe class="gdoc" src="${docLink}/preview?pli=1"></iframe><br>
         <figcaption><a onclick="reloadIFrame(this.parentElement.parentElement.firstElementChild)">Reload Frame</a> \| ${link('Source Link', docLink)}</figcaption>
     </figure>`;
 }   //<button type="button" ></button>
@@ -458,7 +457,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `How high is fairy rate up?`,
-        answers : `${googleEmbed('https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI', 586)}`,
+        answers : `${googleEmbed('https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI')}`,
         tags : [dataTags.FAIRY, dataTags.PROD]
     },  //Redditor u/ConductorBichir's list IIRC
     {
@@ -833,7 +832,7 @@ const cardData = Object.freeze([
     },  //reddit fix    
     {
         questions : `How viable is 2AR2SMG1HG?`,
-        answers : `Depends on if there is no good AR-buffing AR for position 4. If there is one, 3AR1SMG1HG is a thing.`,
+        answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/2v3ar')}`,
         tags : [dataTags.TDOLL, dataTags.ECH]
     },
     {
@@ -1203,6 +1202,11 @@ const cardData = Object.freeze([
         questions : `What're the rewards for the Defense Drill?`,
         answers : `${link('Matsuda Guide and Line-up, circa 2.08.', 'https://gfl.matsuda.tips/post/defdrill')}`,
         tags : [dataTags.SIMS]
+    },
+    {
+        questions : `Is fairy leveling for increasing rarity only?`,
+        answers : `Mainly yes, but there is a gradual aura boost where a Lv.20 is better than Lv.1 even at 1${star}. And increasing rarity is very important, from increasing the aura stat cap, to making the talent proc more consistently. Not to mention that you can cap them to Lv.100 even as a 1${star} so there's no hurry to raise their rarity.`,
+        tags : [dataTags.FAIRY, dataTags.LEVEL, dataTags.IMPT]
     },
     {
         questions : ``,
