@@ -832,7 +832,8 @@ const cardData = Object.freeze([
     },  //reddit fix    
     {
         questions : `How viable is 2AR2SMG1HG?`,
-        answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/2v3ar')}`,
+        answers : `${link('BigStupidJellyfish analysis vs. 3AR2SMG.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/2v3ar')}<br>
+        Depends on if there is no good AR-buffing AR for position 4. If there is one, 3AR1SMG1HG is a thing, specially for night maps.`,
         tags : [dataTags.TDOLL, dataTags.ECH]
     },
     {
