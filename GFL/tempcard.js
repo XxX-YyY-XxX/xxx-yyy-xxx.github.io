@@ -937,7 +937,7 @@ const cardData = Object.freeze([
         tags : [dataTags.SPEQ]
     },  //@Future proofing
     {
-        questions : `Is a way to expand the armory, or are you stuck with doll 100 slots forever?`,
+        questions : `Is there a way to expand the armory, or am I stuck with 100 doll slots forever?`,
         answers : `${list(false, 'Shop>Items>Infrastructure>T-Doll slots +10.', 'Tap the locked echelon button.')}`,
         tags : [dataTags.MISC]
     },
