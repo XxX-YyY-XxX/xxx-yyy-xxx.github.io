@@ -6,10 +6,6 @@
 
 > <blockquote class="twitter-tweet"><p lang="en" dir="ltr">We modified some names to avoid licensing risk. We thank you for your understanding.</p>&mdash; Girls&#39; Frontline-EN Official (@GirlsFrontlineE) <a href="https://twitter.com/GirlsFrontlineE/status/1001058278728548354?ref_src=twsrc%5Etfw">May 28, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-### Which doll should I get with True Core Masks?
-
-> ![](/GFL/assets/images/VeryReliableTCMGuide.png "Note that you can only use it on craftable dolls, so no P22(drop only) or Deagle(event reward)")
-
 ### How do I know the final value of the doll stats? And what are the caps for each stat?
 
 > [Matsuda Formula.](https://gfl.matsuda.tips/post/basicformula)

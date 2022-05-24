@@ -932,10 +932,9 @@ const cardData = Object.freeze([
     },
     {
         questions : `If I delete my unused speqs, will I be able to recover them?`,
-        answers : `Since 2.09, dismantled/disassembled SPEQs can now be recovered/retrieved.<br>
-        Note: Dismantling before version update means End void.`,
+        answers : `Since 2.09, dismantled/disassembled SPEQs can now be recovered/retrieved.`,
         tags : [dataTags.SPEQ]
-    },  //@Future proofing
+    },
     {
         questions : `Is there a way to expand the armory, or am I stuck with 100 doll slots forever?`,
         answers : `${list(false, 'Shop>Items>Infrastructure>T-Doll slots +10.', 'Tap the locked echelon button.')}`,
@@ -1188,13 +1187,14 @@ const cardData = Object.freeze([
                 link('The Official #gf-loreroom Information Index', 'https://docs.google.com/spreadsheets/d/1LYV05D7kGTKp_FS7cJrNrJlVxeRAnFVnr6vCTo5F-YM'),
                 link('Campaign Stuff', 'https://drive.google.com/drive/folders/15EjxktNclESJ6e6rb5udNxOaczNTPZVZ'),
                 link('Costume Stories', 'https://drive.google.com/drive/folders/13AiWn_jgIxWUTK2T7EVjFV8Rkk6jptEs'),
-                link('GFL Manga', 'https://drive.google.com/drive/folders/1fEYYxtXAFTfyovwW-WRvNOpbXTu1_hlk')],
+                link('GFL Manga', 'https://drive.google.com/drive/folders/1fEYYxtXAFTfyovwW-WRvNOpbXTu1_hlk'),
+                link("u/TheGreyGhost00's Reddit Outline", 'https://redd.it/uwdiro')],
             'Lore' : [link('Confidential Files', 'https://docs.google.com/document/d/1JyJ-o9gHCeCdN2h8PhhRdFczejLs6Wve8dziQZUSEGk'),
                 link('Confidential Files 2: New and Emerging Forms of Threat', 'https://drive.google.com/drive/folders/17_9Tu-90ZWrvlHPzgWbVwSQebJ4nHiR7'),
                 link("The Background History of Girls' Frontline", 'https://twitter.com/YZsFerrari/status/1379877420732448777'),
                 link('IOPWiki Lore', 'https://iopwiki.com/wiki/Lore'),
                 link('Gamepress Lore Directory', 'https://gamepress.gg/girlsfrontline/lore-directory')],
-            'Major Events' : [link("u/RhythmLunatic's GFL Cutscene Interpreter", 'https://gfl.amaryllisworks.pw'),
+            'Main Story' : [link("u/RhythmLunatic's GFL Cutscene Interpreter", 'https://gfl.amaryllisworks.pw'),
                 link("Shoul's Story Scenes Playlists", 'https://www.youtube.com/channel/UC_JmwXOfYqOKpGGtc5gcVmw'),
                 link("Girls' Frontline Full Story Comprehension Playlist Translated up to Isomer", 'https://youtube.com/playlist?list=PL9y52Flm1yM-tJJoom2zfrWTpaO1mTw8M'),
                 link("u/DoctuhD's Girls Frontline Summary from Isomer to Polarized Light", 'https://docs.google.com/document/d/1yn0sjoktIb2f-KC6bxn3R0qpCUChBPpIQuERcLmBHbg')]
@@ -1210,6 +1210,20 @@ const cardData = Object.freeze([
         questions : `What're the rewards for the Defense Drill?`,
         answers : `${link('Matsuda Guide and Line-up, circa 2.08.', 'https://gfl.matsuda.tips/post/defdrill')}`,
         tags : [dataTags.SIMS]
+    },
+    {
+        questions : `Which doll should I get with True Core Masks?`,
+        answers : `${image('./assets/images/VeryReliableTCMGuide.png')}<br>
+        Note that you can only use it on craftable dolls, so no P22(drop only) or Deagle(event reward)`,
+        tags : [dataTags.ITEM]
+    },
+    {
+        questions : `What would I need when building night ARSMGs?`,
+        answers : `AR: Any.<br>
+        SMG: Direct-fire SMGs are a hard sell because of low base ACC and night ACC penalty.<br>
+        HG: Used for expanding vision 1 node away. Stack with Illumination Fairy.<br>
+        PEQ: Mainly used by ARs since SMGs are mostly either tank or AoE. 4${star} is a good stopgap.`,
+        tags : [dataTags.ECH, dataTags.TDOLL]
     },
     {
         questions : ``,
