@@ -207,6 +207,15 @@ const cardData = Object.freeze([
     //#endregion
     //#region Tier Lists
     {
+        questions : `Is XXX doll good?`,
+        answers : `${link('Matsuda Quips.', 'https://gfl.matsuda.tips/dolls/')}<br>
+        ${link('Gamepress Overview.', 'https://www.gamepress.gg/girlsfrontline/tier-list')}<br>
+        ${link('KR Wiki.', 'https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0/%EC%9D%B8%ED%98%95%EB%8F%84%EA%B0%90')}<br>
+        ${link("Fatalchapter's bilibili guide.", 'https://www.bilibili.com/read/readlist/rl100361')} Updated up to Jashin dolls.<br>
+        ${link("Sijun's list.", 'https://old.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1rph1l/')} Translated by u/ConductorBichir.`,
+        tags : [dataTags.TDOLL, dataTags.TIER]
+    },
+    {
         questions : `Is there a tier list for good PA units?`,
         answers : `${image('./assets/images/SFTier.png')}<br>
         ${link('Gamepress units guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units')} Use the search bar if a certain PA unit is unavailable in the page.`,
@@ -421,15 +430,6 @@ const cardData = Object.freeze([
         questions : `What is Central Data for?`,
         answers : `Unlocking the corresponding FST, promoting said FST, and used as a Data Patch if 5${star}.`,
         tags : [dataTags.ITEM, dataTags.HOC]
-    },
-    {
-        questions : `Is XXX doll good?`,
-        answers : `${link('Matsuda Quips.', 'https://gfl.matsuda.tips/dolls/')}<br>
-        ${link('Gamepress Overview.', 'https://www.gamepress.gg/girlsfrontline/tier-list')}<br>
-        ${link('KR Wiki.', 'https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0/%EC%9D%B8%ED%98%95%EB%8F%84%EA%B0%90')}<br>
-        ${link("Fatalchapter's bilibili guide.", 'https://www.bilibili.com/read/readlist/rl100361')} Updated up to Jashin dolls.<br>
-        ${link("Sijun's list.", 'https://old.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1rph1l/')} Translated by u/ConductorBichir.`,
-        tags : [dataTags.TDOLL, dataTags.TIER]
     },
     {
         questions : `When should I do T-Doll Heavy Production?`,
@@ -910,7 +910,7 @@ const cardData = Object.freeze([
         tags : [dataTags.COALITION, dataTags.ECH]
     },
     {
-        questions : `Are there any meta compositions?`,
+        questions : `Are there any meta line-ups/team compositions?`,
         answers : `${link("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv')} Shouldn't be a gospel but a good starting point nonetheless.`,
         tags : [dataTags.ECH]
     },
@@ -1228,6 +1228,17 @@ const cardData = Object.freeze([
         questions : `Which T-Doll would be better to anchor for the rate up?`,
         answers : `On one hand, 4${star} can't be TCM'd. On the other hand, 5${star} have low construction rates. And it also depends on the skills of said dolls.`,
         tags : [dataTags.PROD, dataTags.TDOLL]
+    },
+    {
+        questions : `What does each gun class do?`,
+        answers : `${table(['Class', 'Roles', 'Target Priority', 'Caveat'],
+        ['Assualt Rifle (AR)', 'Anti-Swarm<br>Anti-Boss', 'Frontline', 'Weak to armored enemies'],
+        ['Submachine Gun (SMG)', 'Evasion Tank<br>Anti-Swarm', 'Frontline', 'Accuracy is non-existent'],
+        ['Rifle (RF)', 'Anti-Armor', 'Backline', 'Weak to swarms'],
+        ['Handgun (HG)', 'Buffer<br>Debuffer', '???', 'Cannot facetank'],
+        ['Machine Gun (MG)', 'Opening Volley', 'Random', 'Reloads at around 6s'],
+        ['Shotgun (SG)', 'Armor Tank', 'Frontline', 'Poor evasion'])}`,
+        tags : [dataTags.TDOLL, dataTags.NEWB]
     },
     {
         questions : ``,
