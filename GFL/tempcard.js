@@ -424,8 +424,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `Is XXX doll good?`,
-        answers : `${spoilerSummary('GFC Doll Analytics.', googleEmbed('https://docs.google.com/spreadsheets/d/10LJdksnM3zipOb72IneJD7WVp3765JYJEGg0LnodzDI'))}<br>
-        ${link('Matsuda Quips.', 'https://gfl.matsuda.tips/dolls/')}<br>
+        answers : `${link('Matsuda Quips.', 'https://gfl.matsuda.tips/dolls/')}<br>
         ${link('Gamepress Overview.', 'https://www.gamepress.gg/girlsfrontline/tier-list')}<br>
         ${link('KR Wiki.', 'https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0/%EC%9D%B8%ED%98%95%EB%8F%84%EA%B0%90')}<br>
         ${link("Fatalchapter's bilibili guide.", 'https://www.bilibili.com/read/readlist/rl100361')} Updated up to Jashin dolls.<br>
@@ -1224,6 +1223,11 @@ const cardData = Object.freeze([
         HG: Used for expanding vision 1 node away. Stack with Illumination Fairy.<br>
         PEQ: Mainly used by ARs since SMGs are mostly either tank or AoE. 4${star} is a good stopgap.`,
         tags : [dataTags.ECH, dataTags.TDOLL]
+    },
+    {
+        questions : `Which T-Doll would be better to anchor for the rate up?`,
+        answers : `On one hand, 4${star} can't be TCM'd. On the other hand, 5${star} have low construction rates. And it also depends on the skills of said dolls.`,
+        tags : [dataTags.PROD, dataTags.TDOLL]
     },
     {
         questions : ``,
