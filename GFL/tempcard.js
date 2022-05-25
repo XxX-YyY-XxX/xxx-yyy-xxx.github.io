@@ -1239,7 +1239,7 @@ const cardData = Object.freeze([
         ['Machine Gun (MG)', 'Opening Volley', 'Random', 'Reloads at around 6s'],
         ['Shotgun (SG)', 'Armor Tank', 'Frontline', 'Poor evasion'])}`,
         tags : [dataTags.TDOLL, dataTags.NEWB]
-    },
+    },  //@Add info
     {
         questions : ``,
         answers : ``,
