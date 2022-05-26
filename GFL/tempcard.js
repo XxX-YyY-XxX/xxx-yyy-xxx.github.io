@@ -1247,6 +1247,11 @@ const cardData = Object.freeze([
         tags : [dataTags.TDOLL, dataTags.SKILL]
     },
     {
+        questions : `What's the time frame for modding dolls?`,
+        answers : `From their release until EOS.`,
+        tags : [dataTags.MOD]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
