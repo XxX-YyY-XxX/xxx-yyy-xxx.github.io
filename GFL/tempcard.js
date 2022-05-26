@@ -458,7 +458,7 @@ const cardData = Object.freeze([
     {
         questions : `How do I get some Extra Potential Energy for Coalition Drills?`,
         answers : `Shop.`,
-        tags : [dataTags.ITEM, dataTags.PA]
+        tags : [dataTags.ITEM, dataTags.PA, dataTags.SIMS]
     },
     {
         questions : `Which dolls should I duplicate?`,
