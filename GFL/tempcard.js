@@ -1213,6 +1213,7 @@ const cardData = Object.freeze([
     {
         questions : `Which doll should I get with True Core Masks?`,
         answers : `${image('./assets/images/VeryReliableTCMGuide.png')}<br>
+        ${image('./assets/images/SeriousTCMGuide.png')}<br>
         Note that you can only use it on craftable dolls, so no P22(drop only) or Deagle(event reward).`,
         tags : [dataTags.ITEM]
     },
