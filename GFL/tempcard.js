@@ -1242,6 +1242,11 @@ const cardData = Object.freeze([
         tags : [dataTags.TDOLL, dataTags.NEWB]
     },  //@Add info
     {
+        questions : `How does AK-15's skill actually work?`,
+        answers : `${link("BigStupidJellyfish_'s analysis.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/ak15')}`,
+        tags : [dataTags.TDOLL, dataTags.SKILL]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
