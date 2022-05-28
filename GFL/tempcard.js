@@ -1251,6 +1251,12 @@ const cardData = Object.freeze([
         tags : [dataTags.MOD]
     },
     {
+        questions : `Will I get the rewards after adding a returning commander as friend for the callback event?`,
+        answers : `${image('./assets/images/CallbackSupporter.png')}<br>
+        ${image('./assets/images/CallbackReturner.png')}`,
+        tags : [dataTags.FRIEND]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
