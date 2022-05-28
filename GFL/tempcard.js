@@ -261,6 +261,13 @@ const cardData = Object.freeze([
         answers : `Mainly yes, but there is a gradual aura boost where a Lv.20 is better than Lv.1 even at 1${star}. And increasing rarity is very important, from increasing the aura stat cap, to making the talent proc more consistently. Not to mention that you can cap them to Lv.100 even as a 1${star} so there's no hurry to raise their rarity.`,
         tags : [dataTags.FAIRY, dataTags.LEVEL, dataTags.IMPT]
     },
+    {
+        questions : `What is Anchored Construction?`,
+        answers : `${link('Pity System for newly added production dolls.', 'https://redd.it/szdua2')} Appears on the rate up for them which is on Saturdays and Sundays. Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate up.<br>
+        ${altTextStyle('Points of Interest:', TextStyle.BOLD)}<br>
+        ${list(false, 'Anchor rate-up is closed once a doll has been anchored.')}`,
+        tags : [dataTags.PROD, dataTags.IMPT, dataTags.TECH]
+    },  //@Too many to fix, @Visual
     //#endregion
     {
         questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
@@ -975,11 +982,6 @@ const cardData = Object.freeze([
         tags : [dataTags.ITEM]
     },
     {
-        questions : `What is Anchored Construction?`,
-        answers : `${link('Pity System for newly added production dolls.', 'https://redd.it/szdua2')} Appears on the rate up for them which is on Saturdays and Sundays. Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate up.`,
-        tags : [dataTags.PROD, dataTags.IMPT, dataTags.TECH]
-    },  //@Too many to fix, @Visual
-    {
         questions : `What's the rate up increment for Anchored Construction?`,
         answers : `${table(['Target', 'Estimated Increment'],
         ['4' + star,  '0.396%'],
@@ -998,11 +1000,6 @@ const cardData = Object.freeze([
         answers : `${image('./assets/images/InitialDeploySupports.png')}<br>
         Either after operation start, a client restart, or a no due to limit.`,
         tags : [dataTags.FRIEND, dataTags.ECH, dataTags.TECH]
-    },
-    {
-        questions : `Can someone explain why Anchored Construction won't let me change to another doll after I got my anchored?`,
-        answers : `Once your anchor has dug in, ther's no way to get it out.`,
-        tags : [dataTags.PROD]
     },
     {
         questions : `How do I find Ouroburos in Operation Cube 1-4?`,
@@ -1253,7 +1250,7 @@ const cardData = Object.freeze([
         tags : [dataTags.FRIEND]
     },
     {
-        questions : `Are the previous monthly Special Equipments obtainable in any other way?`,
+        questions : `Are the previous monthly Special Equipments obtainable in some way?`,
         answers : `No word as of now.`,
         tags : [dataTags.SPEQ]
     },
