@@ -150,10 +150,17 @@ const cardData = Object.freeze([
     //#region Topic Primers
     {
         questions : `How do I level my girls?`,
-        answers : `First is grinding them on leveling maps.<br>
+        answers : `First is grinding them on leveling maps, mainly through ${spoilerSummary('corpse dragging', 
+        `Also called Poor Run or Beggar Run, is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.<br>
+        ${link("Ceia's 0-2 drag guide. Docs Edition.", 'https://docs.google.com/document/u/0/d/1PkxJ7ObdGW_cS_qbzAxQ_hoC1SFse3HNYWlnywZfPuo')}<br>
+        ${link("Ceia's 0-2 drag guide. Vids Edition.", 'https://youtu.be/vqvPpO1vKqw')}<br>
+        ${link('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide')}<br>
+        ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/optimizing-leveling-introduction')}<br>
+        ${link('GFLCorner guide.', 'https://www.gflcorner.com/efficient-leveling-guide/')}<br>
+        ${link('DMesse guide.', 'http://dmesse.egloos.com/m/3567918')}`)}.<br>
         Second is using Combat Reports. You can get them in the Forward Basecamp or through the Data Room. You can give them by going to the Dorm>Warehouse>Gift tab or going to your owned doll profile and tapping the + button by the EXP bar. They give 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.`,
         tags : [dataTags.TDOLL, dataTags.LEVEL, dataTags.NEWB, dataTags.PRIME]
-    },  //Last one is the EXP mode combat sim. Total EXP per run is divided equally between all dolls present, max-leveled or not. Changes at 2.09.
+    },
     {
         questions : `What is Expedition/Forward Basecamp?`,
         answers : `${link('Gamepress Detailed Guide.', 'https://gamepress.gg/girlsfrontline/gfl-explained-basecamp-and-exploration')}<br>
@@ -508,17 +515,6 @@ const cardData = Object.freeze([
         questions : `How can I resupply a single doll and not the whole echelon?`,
         answers : `The Trifectra of Rejuvenation compels you. Or just do a one-man echelon (this one's a corpse drag staple).`,
         tags : [dataTags.TDOLL, dataTags.MAP, dataTags.ECH]
-    },
-    {
-        questions : `What is Corpse Dragging?`,
-        answers : `Corpse Dragging, also called Poor Run or Beggar Run, is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.<br>
-        ${link("Ceia's 0-2 drag guide. Docs Edition.", 'https://docs.google.com/document/u/0/d/1PkxJ7ObdGW_cS_qbzAxQ_hoC1SFse3HNYWlnywZfPuo')}<br>
-        ${link("Ceia's 0-2 drag guide. Vids Edition.", 'https://youtu.be/vqvPpO1vKqw')}<br>
-        ${link('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide')}<br>
-        ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/optimizing-leveling-introduction')}<br>
-        ${link('GFLCorner guide.', 'https://www.gflcorner.com/efficient-leveling-guide/')}<br>
-        ${link('DMesse guide.', 'http://dmesse.egloos.com/m/3567918')}`,
-        tags : [dataTags.IMPT, dataTags.LEVEL]
     },
     {
         questions : `If I MOD my T-Doll, is Level 100 still considered max level?`,
