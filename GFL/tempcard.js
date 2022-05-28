@@ -245,7 +245,7 @@ const cardData = Object.freeze([
     //#region Compilations
     {
         questions : `Which dolls have a MOD in the older servers?`,
-        answers : `u/ConductorBichir's list. Includes all Special Equpments.<br>
+        answers : `u/ConductorBichir's list. Includes all Special Equipments.<br>
         ${googleEmbed('https://docs.google.com/spreadsheets/d/1u2sXat4FD7jFLdjMLrq5zIiDrGJMEVaGvB2z2JysxLI')}`,
         tags : [dataTags.MOD, dataTags.SPEQ, dataTags.REF]
     },
@@ -700,7 +700,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `What teams/echelons should I build?`,
-        answers : ` 2 ARSMGs first, then RFHG, then MGSG if you want. The first team should be Lv. 90 5-links before going for the next team.`,
+        answers : ` 2 ARSMGs first for general content, then RFHG for lategame, then MGSG if you want to deal with specialized enemies. The first team should ideally be Lv. 90 5-links before going for the next team.`,
         tags : [dataTags.NEWB, dataTags.ECH]
     },
     {
@@ -1253,8 +1253,16 @@ const cardData = Object.freeze([
         tags : [dataTags.FRIEND]
     },
     {
+        questions : `Are the previous monthly Special Equipments obtainable in any other way?`,
+        answers : `No word as of now.`,
+        tags : [dataTags.SPEQ]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
     },
 ]);
+
+
+
