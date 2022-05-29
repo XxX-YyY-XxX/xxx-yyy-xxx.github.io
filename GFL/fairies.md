@@ -28,12 +28,6 @@
 
 @ Visual
 
-### Is there a good way to raise a Parachute Fairy?
-
-> [markhydroxyl's github notes.](https://github.com/markhydroxyl/GFL-notes/blob/main/tls/nga_raising_paras.md)
->
-> [Fairy Development Calculator.](https://docs.google.com/spreadsheets/d/1Zcz6Yp3sduhUXY9jo2HCX4pOdiIQioZcS8v6xMK01Pk/)
-
 ### How do fairy talents work?
 
 > Activates at the start of battle but activates after the echelon's fairy skll. As for it's effects, aside from Fervor (which boosts at 0s, 8s, 16s mark), exactly what it says (i.e. unlimited if no limit was stated).

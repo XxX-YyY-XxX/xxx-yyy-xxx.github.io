@@ -1255,11 +1255,15 @@ const cardData = Object.freeze([
         tags : [dataTags.SPEQ]
     },
     {
+        questions : `Is there an efficient way of raising a Parachute Fairy?`,
+        answers : `${link("markhydroxyl's github notes.", 'https://github.com/markhydroxyl/GFL-notes/blob/main/tls/nga_raising_paras.md')}<br>
+        ${link('Logistics for HEC crafting.', 'https://github.com/markhydroxyl/GFL-notes/blob/main/tls/nga_hec_logis.md')}<br>
+        ${spoilerSummary('Fairy Development Calculator.', googleEmbed('https://docs.google.com/spreadsheets/d/1Zcz6Yp3sduhUXY9jo2HCX4pOdiIQioZcS8v6xMK01Pk'))}`,
+        tags : []
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
     },
 ]);
-
-
-
