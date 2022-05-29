@@ -959,7 +959,7 @@ const cardData = Object.freeze([
                 'Expedition.',
                 'Logistics (~19 weekly).',
                 'Achievements.',
-                'Mini-Events.',
+                'Mini-Events: Point Event (70).',
                 'Shop. Especially when there is a seasonal/collab/major event going on. Packages are also good.',
                 'Maintenance (10 weekly) and Apolotokens.']
         })}`,
