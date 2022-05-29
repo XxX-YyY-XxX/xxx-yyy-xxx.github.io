@@ -828,7 +828,9 @@ const cardData = Object.freeze([
     },
     {
         questions : `What does equipment calibration and enhancement do?`,
-        answers : `Equipment Calibration raises the equipment's base stat. The RNG dictates how many calib tickets are wasted before maxing. When it's on its highest calibration, a MAX in blue box appears on said equipment.<br>
+        answers : `${image('./assets/images/EquipCalibEnhance.png')}<br>
+        Meaning calibration and enhancement are independent of each other.<br>
+        Equipment Calibration raises the equipment's base stat. The RNG dictates how many calib tickets are wasted before maxing. When it's on its highest calibration, a MAX in blue box appears on said equipment.<br>
         Equipment Enhancement multiplies the base stat up to Lv. 10. Doesn't matter if Equip Enhancement Pills or fodder equips are used, it's merely a matter of resource cost per point raised.`,
         tags : [dataTags.EQUIP, dataTags.LEVEL, dataTags.NEWB]
     },
@@ -1260,6 +1262,11 @@ const cardData = Object.freeze([
         ${link('Logistics for HEC crafting.', 'https://github.com/markhydroxyl/GFL-notes/blob/main/tls/nga_hec_logis.md')}<br>
         ${spoilerSummary('Fairy Development Calculator.', googleEmbed('https://docs.google.com/spreadsheets/d/1Zcz6Yp3sduhUXY9jo2HCX4pOdiIQioZcS8v6xMK01Pk'))}`,
         tags : []
+    },
+    {
+        questions : `Which HOC/FSTs have L2Ds?`,
+        answers : `AT4, BGM-71, AGS-30`,
+        tags : [dataTags.FST]
     },
     {
         questions : ``,
