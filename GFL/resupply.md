@@ -6,10 +6,6 @@
 
 > Just give the duplicate costume. Nice and simple.
 
-### Where are the skins? I can't find them.
-
-> ![](/GFL/assets/images/SkinLocation.png "Dorms > Warehouse > Gifts")
-
 ### What if I don't have the doll I have costume for?
 
 > Make Kalina wear it and give it when the owner comes home.

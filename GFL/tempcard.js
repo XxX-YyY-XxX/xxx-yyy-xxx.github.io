@@ -1269,6 +1269,11 @@ const cardData = Object.freeze([
         tags : [dataTags.FST]
     },
     {
+        questions : `Where are the skins? I can't find them.`,
+        answers : `${image('./assets/images/SkinLocation.png', 'Dorms > Warehouse > Gifts')}`,
+        tags : [dataTags.SKIN]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
