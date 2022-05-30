@@ -476,9 +476,10 @@ const cardData = Object.freeze([
     {
         questions : `Which dolls should I duplicate?`,
         answers : `${link('Matsuda notes.', 'https://gfl.matsuda.tips/post/worthwhiledupes')}<br>
-        ${link('Gamepress suggestions.', 'https://gamepress.gg/girlsfrontline/t-doll-duping-guide')} Some details may not be applicable.`,
+        ${link('Gamepress suggestions.', 'https://gamepress.gg/girlsfrontline/t-doll-duping-guide')} Some details may not be applicable.<br>
+        ${spoilerSummary('Discord recommendations.', image('./assets/images/RecommendedDupeGuns.png'))}`,
         tags : [dataTags.TDOLL]
-    },
+    },  //Jesse, Varz, etc.
     {
         questions : `How high is fairy rate up?`,
         answers : `${googleEmbed('https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI')}`,

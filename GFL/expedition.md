@@ -30,7 +30,11 @@
 
 ### What are T-doll effects available in the older servers?
 
-> Global already has everything they have.
+> ~~Global already has everything they have.~~ Apparently new items have been added there.
+>
+> "Old servers have 6 new ones, floating flowers and ground effect lighting they stole from NFS Underground. They also removed the numbers from the players 2,3&4 effects. Bonus: 3 Kalina costumes, 2 hats and a whole pile of SPEQs and event furniture."
+>
+> -u/ConductorBichir
 
 ### I'm getting a "resource full" warning. What would that item be?
 
