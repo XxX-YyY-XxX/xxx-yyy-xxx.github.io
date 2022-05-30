@@ -2,6 +2,7 @@ const dataTags = Object.freeze({
     //#region Combat Tabs
         STORY : 'StoryEvents',          //For questions that apply to Major, Collab, and Seasonal Events.
             MAJOR : 'MajorEvents',      //Part of the main story. The ones added to the Campaign tab.
+            COLLAB : 'Collaboration',   //"He liked it."
         MAIN : 'CombatMissions',        //Main missions aka Chapters.
             AUTO : 'AutoBattles',       //Lazy farming.
         LOGI : 'Logistics',             //Main source of MARP.
@@ -45,7 +46,6 @@ const dataTags = Object.freeze({
     IMPT : 'Important',             //Things new players would need for late-game. Mostly consists of things not explained by the game.
     SYSMECH : 'SystemMechanics',    //Explanation on underlying mechanics of the game.
     ENEMY : 'EnemyUnits',           //For things that primarily interact with enemy units.
-    //COLLAB : 'Collaboration',
     //SEASON : 'SeasonalEvents',      //Story events that happen each New Year, X-mas, Halloween, etc.
     MINI : 'MiniEvents',            //Bingo, Point Event, etc.
     MAP : 'FieldMap',               //Node-based overworld.
@@ -55,7 +55,7 @@ const dataTags = Object.freeze({
     LOVE : 'Affection',             //
         OATH : 'OathSystem',        //Marriage.
     FRIEND : 'Friends',
-    LEVEL : 'Leveling',                //Mostly Corpse Drag.
+    LEVEL : 'Leveling',             //Mostly Corpse Drag.
     PET : 'Pets',                   //ANIMAL
     CMDR : 'Commander',             //"Self-insert"
     OJ : 'LuffberryChess',          //PVP sidegame
@@ -716,7 +716,7 @@ const cardData = Object.freeze([
         answers : `${link('Reddit guide for desktop calc.', 'https://redd.it/fnh1ey')}<br>
         ${spoilerSummary('Google Docs guide.', googleEmbed('https://docs.google.com/document/d/1pR6g-mgsy22_MhRPASL9c1wDoCuxfUwr-DCCMYmb7Ss'))}<br>
         ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/guide-gfchipcalc-hoc-calculator-optimization-tool')}<br>
-        ${link('Chip Calc versions page.', 'https://github.com/Bunnyspa/GFChipCalc/releases')} If the proxy method doesn't work, use 7.3.0 or import the {username}_{UID}_user_info.json from GFAlarm.<br>
+        ${link('GFChipCalc versions page.', 'https://github.com/Bunnyspa/GFChipCalc/releases')} If the proxy method doesn't work, use 7.3.0 or import the {username}_{UID}_user_info.json from GFAlarm.<br>
         ${link('Android Chip Calc download page.', 'https://bunnyspa.github.io/gfl/chipcalc')}<br>
         ${link('Alternate link for Android Chip Calc.', 'https://apkpure.com/girls-frontline-chip-calculator/bunnyspa.gfl.chipcalc/versions')}<br>
         ${link('Browser Chip Calc by FatalChapter.', 'https://hycdes.com/pages/GFT_ChipCal-EN.html')}<br>
@@ -1273,6 +1273,21 @@ const cardData = Object.freeze([
         questions : `Where are the skins? I can't find them.`,
         answers : `${image('./assets/images/SkinLocation.png', 'Dorms > Warehouse > Gifts')}`,
         tags : [dataTags.SKIN]
+    },
+    {
+        questions : `What should I do during a collab?`,
+        answers : `Farm event specific currencies (NOT Platinum or Nova medals), get all collab characters, their Special Equipments, and the fairy, grind for the dolls you don't have yet. Combat reports and affection boosters are low on the shop priority list.`,
+        tags : [dataTags.COLLAB]
+    },
+    {
+        questions : `For the datasheet GFAlarm generated for Theater, which is more important, combat effectiveness or predicted damage?`,
+        answers : `Predicted damage.`,
+        tags : [dataTags.THEATER, dataTags["3P"]]
+    },
+    {
+        questions : `Update progress is stuck at 90%/100%. What should I do?`,
+        answers : `Wait a minute, change WiFi connection, change to data, use VPN, restart client, delete cache, ${link('do a manual patch', 'https://github.com/lloyddunamis/gfl_manualpatch/blob/main/FullResource_readme')}, ${link('delete some files', 'https://twitter.com/Synexcu/status/1310117595094216709?s=19')}, reinstall (with minimum data first), phone restart, or a combination of any of the above coupled with sheer determination to do it for days on end.`,
+        tags : [dataTags.TECH]
     },
     {
         questions : ``,

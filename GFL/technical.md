@@ -14,10 +14,6 @@
 
 > QooApp or Apkpure.
 
-### Update progress is stuck at 90%/100%. What should I do?
-
-> Wait a minute, change WiFi connection, change to data, use VPN, restart client, [do a manual patch](https://github.com/lloyddunamis/gfl_manualpatch/blob/main/FullResource_readme), [delete some files](https://twitter.com/Synexcu/status/1310117595094216709?s=19), or reinstall (with minimum data first).
-
 ### Enemy mortar keeps shooting me and I don't know who the target is.
 
 > Battle Simplification in Settings is set to on probably.
