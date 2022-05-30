@@ -1290,6 +1290,12 @@ const cardData = Object.freeze([
         tags : [dataTags.TECH]
     },
     {
+        questions : `What are these General Data I keep getting?`,
+        answers : `Used for FSTs that are not yet 5${star}. Limitations being only usable to FSTs in the gacha pool, and the data can't be used for iteration.<br>
+        If you plan to big brain with this, churn your FST-specific central data to patches first, because they're the priority data to use before general data.`,
+        tags : [dataTags.ITEM, dataTags.HOC, dataTags.FST]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []

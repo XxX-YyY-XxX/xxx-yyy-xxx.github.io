@@ -20,12 +20,6 @@
 
 > For Iterating FSTs beyond yellow 5★. They have to be level 100 and at 5★ for Iteration to be available.
 
-### What are these General Data I keep getting?
-
-> Used for HOCs that are not yet 5★. Limitations being only usable to HOCs in the gacha pool, and the data can't be used for iteration.
->
-> If you plan to big brain with this, churn your HOC-specific central data first to patches, because they're the priority data to use before general data.
-
 ### How do HOC skills work?
 
 > Depends. Either by timer or by number of shots fired. And all skills are active, meaning no need to choose which one you'll use.
