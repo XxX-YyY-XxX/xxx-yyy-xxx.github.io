@@ -1299,14 +1299,21 @@ const cardData = Object.freeze([
     {
         questions : `Just noticed that the Black Market Shop in the Forward Basecamp has a Costumes tab. Anyone know what that's about?`,
         answers : `Shop for previous event only cosmetics.<br>
-        ${image('./assets/images/BlackMarketCostumes.png')}<br>
-        Currently released items in the older servers (by u/UnironicWeeaboo).`,
+        ${image('./assets/images/BlackMarketCostumes.png', 'From u/UnironicWeeaboo')}<br>
+        Currently released items in the older servers.`,
         tags : [dataTags.EXPED]
     },
     {
         questions : `Should I try getting all ringleaders or should I just save for who I want?`,
         answers : `Ideally, yes. Statistically, getting all ringleaders on their first run is through luck or money. As an F2P, you could probably get a Ringleader every other month.`,
         tags : [dataTags.PA, dataTags.COALITION]
+    },
+    {
+        questions : `I'm getting a "resource full" warning. What would that item be?`,
+        answers : `${image('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/inline-images/expedition-loot-rack.jpg', 'Taken from Gamepress')}<br>
+        If the Mid Rewards rack is not empty, look at your armory.<br>
+        If it's the End Rewards, check your Black Market currencies.`,
+        tags : [dataTags.EXPED, dataTags.ITEM]
     },
     {
         questions : ``,

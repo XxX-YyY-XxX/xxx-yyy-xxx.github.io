@@ -36,14 +36,6 @@
 >
 > -u/ConductorBichir
 
-### I'm getting a "resource full" warning. What would that item be?
-
-> ![](https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/inline-images/expedition-loot-rack.jpg "Taken from Gamepress")
->
-> If the Mid Rewards rack is not empty, look at your armory.
->
-> If it's the End Rewards, check your Black Market currencies.
-
 ### Which expedition duration should I do to maximize efficiency?
 
 > 8 hours. More chances to get into hidden areas.
