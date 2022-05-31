@@ -81,6 +81,17 @@
 >
 > G11: 297, 297, 297, 31
 
+### When all doll DPS contribution is equal, who becomes the MVP?
+
+> By acquire sequence. Or maybe skill position. Collab units might take priority. MODding may or may not "refresh" MVP priority.
+>
+> Case 1:
+>   Acquire order: G36c > 56R > XM3 > RMB > AK15
+>   MVP: ~~RMB~~AK15
+> Case 2:
+>   Acquire order: G36c > 56R > XM3 > RMB > Jashin
+>   MVP: Jashin
+
 ## Visual
 
 ### Where can I get the limited drop/equipment in a particular map?
