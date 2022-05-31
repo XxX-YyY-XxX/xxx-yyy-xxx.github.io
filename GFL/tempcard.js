@@ -150,14 +150,14 @@ const cardData = Object.freeze([
     //#region Topic Primers
     {
         questions : `How do I level my girls?`,
-        answers : `First is grinding them on leveling maps, mainly through ${spoilerSummary('corpse dragging', 
+        answers : `First is grinding them on leveling maps, mainly through ${spoilerSummary('corpse dragging.', 
         `<br>Also called Poor Run or Beggar Run, is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.<br>
         ${link("Ceia's 0-2 drag guide. Docs Edition.", 'https://docs.google.com/document/u/0/d/1PkxJ7ObdGW_cS_qbzAxQ_hoC1SFse3HNYWlnywZfPuo')}<br>
         ${link("Ceia's 0-2 drag guide. Vids Edition.", 'https://youtu.be/vqvPpO1vKqw')}<br>
         ${link('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide')}<br>
         ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/optimizing-leveling-introduction')}<br>
         ${link('GFLCorner guide.', 'https://www.gflcorner.com/efficient-leveling-guide/')}<br>
-        ${link('DMesse guide.', 'http://dmesse.egloos.com/m/3567918')}`)}.<br>
+        ${link('DMesse guide.', 'http://dmesse.egloos.com/m/3567918')}`)}<br>
         Second is using Combat Reports. You can get them in the Forward Basecamp or through the Data Room. You can give them by going to the Dorm>Warehouse>Gift tab or going to your owned doll profile and tapping the + button by the EXP bar. They give 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.`,
         tags : [dataTags.TDOLL, dataTags.LEVEL, dataTags.NEWB, dataTags.PRIME]
     },
@@ -426,7 +426,8 @@ const cardData = Object.freeze([
     },
     {
         questions : `Is there a way for my game to feel smoother?`,
-        answers : `${link('Decompressed obb.', 'https://redd.it/mroqui')} Removes damage numbers, the main source of in-battle lag.<br>
+        answers : `${link('Gamepress article.', 'https://gamepress.gg/girlsfrontline/fixing-gfl-client-lag-possible-workarounds')}<br>
+        ${link('Decompressed obb.', 'https://redd.it/mroqui')} Removes damage numbers, the main source of in-battle lag.<br>
         ${link('DIY decompression.', 'https://www.reddit.com/r/girlsfrontline/comments/lvwwtv/weekly_commanders_lounge_march_02_2021/gpugenl/')}`,
         tags : [dataTags.MISC]
     },
@@ -1294,6 +1295,18 @@ const cardData = Object.freeze([
         answers : `Used for FSTs that are not yet 5${star}. Limitations being only usable to FSTs in the gacha pool, and the data can't be used for iteration.<br>
         If you plan to big brain with this, churn your FST-specific central data to patches first, because they're the priority data to use before general data.`,
         tags : [dataTags.ITEM, dataTags.HOC, dataTags.FST]
+    },
+    {
+        questions : `Just noticed that the Black Market Shop in the Forward Basecamp has a Costumes tab. Anyone know what that's about?`,
+        answers : `Shop for previous event only cosmetics.<br>
+        ${image('./assets/images/BlackMarketCostumes.png')}<br>
+        Currently released items in the older servers (by u/UnironicWeeaboo).`,
+        tags : [dataTags.EXPED]
+    },
+    {
+        questions : `Should I try getting all ringleaders or should I just save for who I want?`,
+        answers : `Ideally, yes. Statistically, getting all ringleaders on their first run is through luck or money. As an F2P, you could probably get a Ringleader every other month.`,
+        tags : [dataTags.PA, dataTags.COALITION]
     },
     {
         questions : ``,
