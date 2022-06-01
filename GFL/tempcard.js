@@ -1327,8 +1327,16 @@ const cardData = Object.freeze([
         tags : [dataTags.MAP]
     },
     {
+        questions : `Is it worth it to reset the pool once I got the Ringleader?`,
+        answers : `Depends on if you want the remaining units.`,
+        tags : [dataTags.PA]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
     },
 ]);
+
+
+
