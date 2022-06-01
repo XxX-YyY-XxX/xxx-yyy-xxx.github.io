@@ -13,10 +13,6 @@
 
 @ Visual
 
-### When will my event medals expire?
-
-> One week after the end of said event.
-
 ### Will the \*insert ranking reward here* be available in the future?
 
 > Only if they rerun ranking maps.

@@ -382,7 +382,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `Will the current event currency carry over to the next event?`,
-        answers : `No can do. Dissolves into nothingness one week after the event is finished.`,
+        answers : `No can do. Dissolves into nothingness one week after its corresponding event is finished.`,
         tags : [dataTags.ITEM, dataTags.STORY]
     },
     {
@@ -1342,6 +1342,3 @@ const cardData = Object.freeze([
         tags : []
     },
 ]);
-
-
-
