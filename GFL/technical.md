@@ -26,10 +26,6 @@
 
 > Go through the process again then back out at the payment screen. If it fails, contact support first if you're planning a refund.
 
-### How much storage does this game consume?
-
-> Should be around 5-6GB. Double, and it's classic dupe spaghetti.
-
 ### My game is lagging. Is there a way to make this playable?
 
 > [Gamepress guide to fixing client lag.](https://gamepress.gg/girlsfrontline/fixing-gfl-client-lag-possible-workarounds)
