@@ -922,7 +922,7 @@ const cardData = Object.freeze([
         tags : [dataTags.COALITION, dataTags.ECH]
     },
     {
-        questions : `Are there any meta line-ups/team compositions?`,
+        questions : `Are there any meta line-ups/echelon formation/team compositions?`,
         answers : `${link("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv')} Shouldn't be a gospel but a good starting point nonetheless.`,
         tags : [dataTags.ECH]
     },
@@ -1330,6 +1330,11 @@ const cardData = Object.freeze([
         questions : `Is it worth it to reset the pool once I got the Ringleader?`,
         answers : `Depends on if you want the remaining units.`,
         tags : [dataTags.PA]
+    },
+    {
+        questions : `Does cooldown reduction also reduce initial cooldown?`,
+        answers : `Yes.`,
+        tags : [dataTags.SYSMECH, dataTags.TDOLL, dataTags.SKILL]
     },
     {
         questions : ``,
