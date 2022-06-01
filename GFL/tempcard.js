@@ -1316,6 +1316,11 @@ const cardData = Object.freeze([
         tags : [dataTags.EXPED, dataTags.ITEM]
     },
     {
+        questions : `I'm trying to S-Rank the stage and I got the kill requirements but I can't get the gold medal. What gives?`,
+        answers : `Allied/support/friend echelons do not count. There's a counter on the bottom-left and the white number is what's being counted.`,
+        tags : [dataTags.MAP]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
