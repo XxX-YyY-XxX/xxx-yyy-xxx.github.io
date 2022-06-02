@@ -105,3 +105,12 @@
 [Official Discord](https://discord.gg/gfen)
 
 [2.09 Newbie Features](https://redd.it/ry6fv0)
+
+## Check
+
+Alternate way to saving a target:
+
+Tap the radar button right above "Planning Mode" the screen will have a scanning animation. Tap on Dana and you can save her as a target after tapping "Add Target". You can use this information in the future though.
+Tap the radar button again to move your echelons or terminate mission.
+
+-----

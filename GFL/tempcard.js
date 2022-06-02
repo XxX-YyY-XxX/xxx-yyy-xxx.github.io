@@ -414,7 +414,7 @@ const cardData = Object.freeze([
             Works for comps that has been loaded into the client and is ${link('very safe.', 'https://old.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i312oo2/')}`)}<br>
         ${link('Matsuda recommendations.', 'https://gfl.matsuda.tips/post/everything-sucks-forever')}`,
         tags : [dataTags.ENEMY, dataTags.BATTLE, dataTags.MAP, dataTags["3P"]]
-    },
+    },  //@Visual
     {
         questions : `How do I connect to GFAlarm with an emulator?`,
         answers : `Enter the GFAlarm proxy address to ProxyDroid or Drony.`,
@@ -918,17 +918,6 @@ const cardData = Object.freeze([
         tags : [dataTags.MAIN, dataTags.CAMPAIGN]
     },  //By u/rcpz93 most likely
     {
-        questions : `How do I build Coalition echelons?`,
-        answers : `${link('Flowchart post.', 'https://redd.it/rkvisq')}<br>
-        ${link('Gamepress list of units and build suggestions.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units')}`,
-        tags : [dataTags.COALITION, dataTags.ECH]
-    },
-    {
-        questions : `Are there any meta line-ups/echelon formation/team compositions?`,
-        answers : `${link("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv')} Shouldn't be a gospel but a good starting point nonetheless.`,
-        tags : [dataTags.ECH]
-    },
-    {
         questions : `What's the chronological order for the story?`,
         answers : `u/pointblanksniper's observations.<br>
         ${link('Overall.', 'https://www.reddit.com/r/girlsfrontline/comments/sm75vk/where_can_i_see_mirror_stage_story_line/hvvpppk/')}<br>
@@ -1342,6 +1331,17 @@ const cardData = Object.freeze([
         questions : `What's the uncensor recipe?`,
         answers : `522/320/404/137 for EN, 666/666/666/666 everywhere else... probably.`,
         tags : [dataTags.MISC]
+    },
+    {
+        questions : `Is there a guide on how to build echelons/team compositions?`,
+        answers : `${descriptionList({
+            'Mixed' : [image('./assets/images/EchelonComps.png')],
+            'Coalition Echelons' : [link('Reddit flowchart post.', 'https://redd.it/rkvisq'),
+                link('Gamepress list of units and build suggestions.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units')],
+            'Griffin Tactical Doll Echelons' : [link("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv')]
+        })}<br>
+        Shouldn't be a gospel but a good starting point nonetheless.`,
+        tags : [dataTags.ECH, dataTags.COALITION, dataTags.TDOLL]
     },
     {
         questions : ``,
