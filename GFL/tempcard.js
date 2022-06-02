@@ -1122,8 +1122,8 @@ const cardData = Object.freeze([
         questions : `How can I get my favorite gun/doll?`,
         answers : `${descriptionList({'Factory Production' : [],
         'Rescue Drops' : [],
-        'Clear Rewards' : []})}`,
-        tags : [dataTags.TDOLL]
+        'Clear Rewards' : [link("BigStupidJellyfish's Event Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls#:%7E:text=JS05,2021%2DMarch')]})}`,
+        tags : [dataTags.TDOLL, dataTags.LEDOLL]
     },  //@Mega fix
     {
         questions : `What do advantaged dolls in combat map mean?`,
