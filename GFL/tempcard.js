@@ -170,12 +170,13 @@ const cardData = Object.freeze([
         tags : [dataTags.EXPED, dataTags.PRIME, dataTags.NEWB]
     },
     {
-        questions : `Are there any general guides for Protocol Assimilation/Coalition Units/SF Capture?`,
+        questions : `Are there any general guides for Protocol Assimilation/Coalition Units/SF Capture Operation?`,
         answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
         ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-first-impressions-revamped')}<br>
-        ${spoilerSummary("Cleista's basic Twitter guide.", link(image('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096'), 'https://twitter.com/CleistaCeleste/status/1409824210571214849')
-         + `<br>Applicable mainly for "I really want to get this ringleader."`)}<br>
+        ${spoilerSummary("Cleista's basic Twitter guide.", 
+            `${link(image('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096'), 'https://twitter.com/CleistaCeleste/status/1409824210571214849')}<br>
+            Applicable mainly for "I really want to get this ringleader."`)}<br>
         Apparently, this unlocks after beating 7-5 Normal.`,
         tags : [dataTags.PA, dataTags.PRIME]
     },
@@ -804,8 +805,9 @@ const cardData = Object.freeze([
         tags : [dataTags.TDOLL, dataTags.SKILL, dataTags.IMPT]
     },
     {
-        questions : `What are the resources that has a defined cap and how much can they store?`,
+        questions : `What are the resources that has a defined max capacity and how much can they store?`,
         answers : `${image('./assets/images/ResourceCap.png')}<br>
+        Train Coin = Training Data, Furniture Coin = Tokens<br>
         Even then, all resources can be obtained without regards to max capacity through daily gifts, mission rewards, and whaling.`,
         tags : [dataTags.MARP, dataTags.ITEM]
     },
