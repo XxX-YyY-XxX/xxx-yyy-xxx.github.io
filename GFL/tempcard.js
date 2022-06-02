@@ -1337,6 +1337,11 @@ const cardData = Object.freeze([
         tags : [dataTags.SYSMECH, dataTags.TDOLL, dataTags.SKILL]
     },
     {
+        questions : `What's the uncensor recipe?`,
+        answers : `522/320/404/137 for EN, 666/666/666/666 everywhere else... probably.`,
+        tags : [dataTags.MISC]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
