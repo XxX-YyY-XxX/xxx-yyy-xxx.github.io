@@ -1222,8 +1222,8 @@ const cardData = Object.freeze([
     {
         questions : `What would I need when building night ARSMGs?`,
         answers : `AR: Any.<br>
-        SMG: Direct-fire SMGs are a hard sell because of low base ACC and night ACC penalty.<br>
-        HG: Used for expanding vision 1 node away. Stack with Illumination Fairy.<br>
+        SMG: Direct-fire SMGs are hard to sell because of low base ACC and night ACC penalty, so molotovs or grenades.<br>
+        HG: Used for expanding vision 1 node away. Stacks with Illumination Fairy.<br>
         PEQ: Mainly used by ARs since SMGs are mostly either tank or AoE. 4${star} is a good stopgap.`,
         tags : [dataTags.ECH, dataTags.TDOLL]
     },
