@@ -22,10 +22,6 @@
 
 > Popular answer: Memory Leaks. Restart client is always the default option.
 
-### Just bought a gem pack/monthly card but I didn't get it yet. What do I do?
-
-> Go through the process again then back out at the payment screen. If it fails, contact support first if you're planning a refund.
-
 ### My game is lagging. Is there a way to make this playable?
 
 > [Gamepress guide to fixing client lag.](https://gamepress.gg/girlsfrontline/fixing-gfl-client-lag-possible-workarounds)

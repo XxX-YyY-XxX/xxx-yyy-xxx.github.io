@@ -1355,6 +1355,11 @@ const cardData = Object.freeze([
         tags : [dataTags.SKIN]
     },
     {
+        questions : `Just bought a gem pack/monthly card but I didn't get it yet. What do I do?`,
+        answers : `Go through the process again then back out at the payment screen. If it fails, contact support first if you're planning a refund.`,
+        tags : [dataTags.TECH]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
