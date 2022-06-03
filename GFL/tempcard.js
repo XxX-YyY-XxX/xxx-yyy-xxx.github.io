@@ -846,7 +846,8 @@ const cardData = Object.freeze([
     },
     {
         questions : `Does Hanyang Type 88 still do skipping stones?`,
-        answers : `${link('Yes she does.', 'https://www.reddit.com/r/girlsfrontline/comments/qkzc9s/weekly_commanders_lounge_november_02_2021/hjvcbmt/')}
+        answers : `${link('Yes she does.', 'https://www.reddit.com/r/girlsfrontline/comments/qkzc9s/weekly_commanders_lounge_november_02_2021/hjvcbmt/')}<br>
+        ${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/hanyangle-2')}<br>
         Apparently also happens on tiles 7 and 9.`,
         tags : [dataTags.TDOLL, dataTags.SKILL]
     },  //reddit fix    
@@ -1342,6 +1343,11 @@ const cardData = Object.freeze([
         })}<br>
         Shouldn't be a gospel but a good starting point nonetheless.`,
         tags : [dataTags.ECH, dataTags.COALITION, dataTags.TDOLL]
+    },
+    {
+        questions : `Anyone have a nice infographic for equipment priority and how many to have ideally?`,
+        answers : `${image('./assets/images/EqupTier.png')}`,
+        tags : [dataTags.EQUIP, dataTags.TDOLL, dataTags.TIER]
     },
     {
         questions : ``,
