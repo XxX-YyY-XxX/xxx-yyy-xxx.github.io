@@ -1,11 +1,26 @@
 code {
-  background: rgba(0,0,0,0.9);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 0px 3px;
   margin: 0px -3px;
   color: #aa759f;
   border-radius: 2px;
 }
+
+/* #region GFL Button */
+.btn-gfl {
+  background: -webkit-linear-gradient(rgba(8, 183, 49, 0.3), rgba(0, 0, 0, 0.3));
+}
+
+.btn-gfl:hover {
+  background: -webkit-linear-gradient(rgba(8, 183, 49, 0.6), rgba(0, 0, 0, 0.8));
+}
+
+.btn-gfl .icon {
+  opacity: 0.6;
+  background: url("/univasset/images/greenbottle.png") 0 0 no-repeat
+}
+/* #endregion */
 
 /*font-size: 90%;
   
@@ -63,19 +78,3 @@ code {
     width: 100%;
   }
 } */
-
-.btn-gfl {
-  /* background: -webkit-linear-gradient(top, rgba(8, 183, 49, 0.3), rgba(0, 100, 0, 0.3) 50%, rgba(4, 105, 7, 0.3) 50%, rgba(0, 0, 0, 0.3)); */
-  background: -webkit-linear-gradient(rgba(8, 183, 49, 0.3), rgba(0, 0, 0, 0.3));
-}
-
-.btn-gfl:hover {
-  /* background: -webkit-linear-gradient(top, rgba(8, 183, 49, 0.6), rgba(0, 100, 0, 0.6) 50%, rgba(4, 105, 7, 0.8) 50%, rgba(0, 0, 0, 0.8)); */
-  background: -webkit-linear-gradient(rgba(8, 183, 49, 0.6), rgba(0, 0, 0, 0.8));
-
-}
-
-.btn-gfl .icon {
-  opacity: 0.6;
-  background: url("/univasset/images/greenbottle.png") 0 0 no-repeat
-}
