@@ -44,10 +44,6 @@
 
 > Resupply.
 
-### When will the costumes go to the Black Card Exchange?
-
-> After around 2 banners.
-
 ### How can I obtain the wedding/oath skins for some T-dolls?
 
 > Oath skins? Watchu smoking? There's no oath skins, only gacha/free/paid skins.

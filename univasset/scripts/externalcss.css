@@ -84,14 +84,21 @@ code {
   font-size: 13px;
   text-decoration: none;
   text-shadow: 0 -1px 0 rgba(0,0,0,0.75);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05)}
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05)
+}
   
 .btn:hover {
   background:-webkit-linear-gradient(top, rgba(40,40,40,0.6), rgba(35,35,35,0.6) 50%, rgba(10,10,10,0.8) 50%, rgba(0,0,0,0.8));
 }
 
 .btn-gfl {
-  
+  background: -webkit-linear-gradient(top, rgba(40, 40, 40, 0.3), rgba(35,35,35,0.3) 50%, rgba(10,10,10,0.3) 50%, rgba(0,0,0,0.3));
+  border: 2px solid rgba(0,0,0,0.7);
+  border-bottom: 2px solid rgba(0,0,0,0.7);
+  border-top: 2px solid #000;
+  color: rgba(255,255,255,0.8);
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.75);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05)
 }
 
 .btn-gfl .icon {

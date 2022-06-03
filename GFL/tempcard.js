@@ -1350,6 +1350,11 @@ const cardData = Object.freeze([
         tags : [dataTags.EQUIP, dataTags.TDOLL, dataTags.TIER]
     },
     {
+        questions : `When will the costumes go to the Black Card Exchange?`,
+        answers : `After around 2 banners.`,
+        tags : [dataTags.SKIN]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
