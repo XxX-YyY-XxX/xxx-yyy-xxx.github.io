@@ -65,8 +65,8 @@ const dataTags = Object.freeze({
     //Devices
 });
 
-const star = '★';
 const lessEqual = '≤';
+const star = '★';
 
 //#region Functions
 /** @param {URLString} link */
