@@ -1360,6 +1360,12 @@ const cardData = Object.freeze([
         tags : [dataTags.TECH]
     },
     {
+        questions : `If I scrapped my only copy of a doll, can I get them back?`,
+        answers : `First of all, how dare you?<br>
+        Second of all, yes you can. Can also work on ${spoilerSummary('collab units', image('./assets/images/CollabScrap.png', 'From u/Angelic_Force'))}.`,
+        tags : [dataTags.TDOLL, dataTags.COLLAB, dataTags.SYSMECH]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
