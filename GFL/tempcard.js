@@ -242,6 +242,11 @@ const cardData = Object.freeze([
         ${link(`u/UnironicWeeaboo's spreadsheet.`, 'https://docs.google.com/spreadsheets/d/1RORciafqtspkxy3fqBrFdKIxVfanV2-fLl9FlvY3QtM')}`,
         tags : [dataTags.FAIRY, dataTags.TIER, dataTags.EQUIP]
     },  //https://imgur.com/a/pfSSel9
+    {
+        questions : `Anyone have a nice infographic for equipment priority and how many to have ideally?`,
+        answers : `${image('./assets/images/EqupTier.png')}`,
+        tags : [dataTags.EQUIP, dataTags.TDOLL, dataTags.TIER]
+    },
     //#endregion
     //#region Compilations
     {
@@ -1345,11 +1350,6 @@ const cardData = Object.freeze([
         tags : [dataTags.ECH, dataTags.COALITION, dataTags.TDOLL]
     },
     {
-        questions : `Anyone have a nice infographic for equipment priority and how many to have ideally?`,
-        answers : `${image('./assets/images/EqupTier.png')}`,
-        tags : [dataTags.EQUIP, dataTags.TDOLL, dataTags.TIER]
-    },
-    {
         questions : `When will the costumes go to the Black Card Exchange?`,
         answers : `After around 2 banners.`,
         tags : [dataTags.SKIN]
@@ -1364,6 +1364,11 @@ const cardData = Object.freeze([
         answers : `First of all, how dare you?<br>
         Second of all, yes you can. Can also work on ${spoilerSummary('collab units', image('./assets/images/CollabScrap.png', 'From u/Angelic_Force'))}.`,
         tags : [dataTags.TDOLL, dataTags.COLLAB, dataTags.SYSMECH]
+    },
+    {
+        questions : `Does AA-12's SPEQ count as a slug?`,
+        answers : `No, apparently due to lacking x3 damage.`,
+        tags : [dataTags.SPEQ]
     },
     {
         questions : ``,
