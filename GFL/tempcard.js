@@ -1381,6 +1381,13 @@ const cardData = Object.freeze([
         tags : [dataTags.COALITION]
     },
     {
+        questions : `Where can I see the costumes I have acquired?`,
+        answers : `${list(false,
+            'Commander Stat Card > Adjutants > Filter > Unlocked. Works for doll you have in inventory.',
+            'Index > Furniture > Posters. Works for costumes that have been gifted/given.')}`,
+        tags : [dataTags.SKIN, dataTags.TDOLL]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
