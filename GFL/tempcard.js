@@ -1393,6 +1393,15 @@ const cardData = Object.freeze([
         tags : [dataTags.OJ, dataTags.FURN, dataTags.SKIN]
     },
     {
+        questions : `General tips on defeating deathstacks?`,
+        answers : `For the most part, you don't. But if you really want to, this is the epitome of "CE is useless", "what dolls, formation, fairy to use depend on what you're going against", and "learn kiting". Just don't expect to come out of unscathed.<br>
+        ${descriptionList({'Swarm deathstacks' : ['Usually AoE pierce such as Kord, Type 88, KSVK with HOC support and tank/delay fairies.',
+                'Kill them all before they kill you.'],
+            'Golyat+ deathstacks' : ['Either stun+smoke or forceshields.']
+            })}`,
+        tags : []
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
