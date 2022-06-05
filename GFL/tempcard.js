@@ -426,8 +426,8 @@ const cardData = Object.freeze([
         tags : [dataTags["3P"], dataTags.EMU]
     },
     {
-        questions : `Is there a voodoo recipe for *insert pennies here*?`,
-        answers : `${link('Github Database.', 'https://gf-db.github.io/')} Freedom of information, just add internet connection.`,
+        questions : `Is there a list of voodoo recipes and their crafting rates for *insert pennies here*?`,
+        answers : `${link('GFDB Github Database.', 'https://gf-db.github.io/')} Freedom of information, just add internet connection.`,
         tags : [dataTags.PROD]
     },
     {
@@ -1386,6 +1386,11 @@ const cardData = Object.freeze([
             'Commander Stat Card > Adjutants > Filter > Unlocked. Works for doll you have in inventory.',
             'Index > Furniture > Posters. Works for costumes that have been gifted/given.')}`,
         tags : [dataTags.SKIN, dataTags.TDOLL]
+    },
+    {
+        questions : `Does Luffberry Chess have any exclusive rewards?`,
+        answers : `${link('Icons, furnitures, and as of 2.09, skins.', 'https://old.reddit.com/r/girlsfrontline/comments/uhb3jo/weekly_commanders_lounge_may_03_2022/i7kg6bu/')}`,
+        tags : [dataTags.OJ, dataTags.FURN, dataTags.SKIN]
     },
     {
         questions : ``,
