@@ -2,10 +2,6 @@
 
 # Fairies
 
-### Can fairies be recovered from Index?
-
-> No, unfortunately.
-
 ### Is the Rescue Fairy's skill actually good?
 
 > <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/mgausk/weekly_commanders_lounge_march_30_2021/gsxx3gr/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="199" width="640" scrolling="no"></iframe>

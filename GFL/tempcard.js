@@ -1402,6 +1402,11 @@ const cardData = Object.freeze([
         tags : []
     },
     {
+        questions : `Can fairies be recovered from Index?`,
+        answers : `No, unfortunately.`,
+        tags : [dataTags.FAIRY]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
