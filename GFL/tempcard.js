@@ -1371,6 +1371,16 @@ const cardData = Object.freeze([
         tags : [dataTags.SPEQ]
     },
     {
+        questions : `When are True Core Masks given out?`,
+        answers : `One every major event and anniversary.`,
+        tags : [dataTags.ITEM, dataTags.MAJOR, dataTags.ANNIV]
+    },
+    {
+        questions : `For Coalition Units, should I skip raising units that are below XL size?`,
+        answers : `I say skip raising if you're satisfied with the units you have. Otherwise raise a unit regardless of size if you need them. Symmetric Infusion can cover the size problem.`,
+        tags : [dataTags.COALITION]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
