@@ -1412,6 +1412,16 @@ const cardData = Object.freeze([
         tags : [dataTags.PA, dataTags.ITEM, dataTags.COALITION]
     },
     {
+        questions : `Can I get gold tier fairy talents through calibration?`,
+        answers : `Pretty much the main way of getting it.`,
+        tags : [dataTags.FAIRY]
+    },
+    {
+        questions : `What are Prototype Fairies used for?`,
+        answers : `Enhancing other fairies. They act like dupes in a sense that they give 100 enhancement EXP a pop, or 150 with matching talents.`,
+        tags : [dataTags.FAIRY]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []

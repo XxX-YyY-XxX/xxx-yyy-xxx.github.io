@@ -8,10 +8,6 @@
 >
 > Note that it only works on dolls, not equipments.
 
-### What are Prototype Fairies used for?
-
-> Enhancing other fairies. They act like dupes in a sense that they give 100 enhancement EXP a pop, or 150 with matching talents.
-
 ### How do I use Construction Fairy effectively?
 
 > Deploy on a node next to an enemy, then take a defensive stance.
