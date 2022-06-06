@@ -217,7 +217,7 @@ const cardData = Object.freeze([
     {
         questions : `Is XXX doll good?`,
         answers : `${link('Matsuda Quips.', 'https://gfl.matsuda.tips/dolls/')}<br>
-        ${link('Gamepress Overview.', 'https://www.gamepress.gg/girlsfrontline/tier-list')}<br>
+        ${link('Gamepress Overview.', 'https://gamepress.gg/girlsfrontline/t-dolls-list')}<br>
         ${link('KR Wiki.', 'https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0/%EC%9D%B8%ED%98%95%EB%8F%84%EA%B0%90')}<br>
         ${link("Fatalchapter's bilibili guide.", 'https://www.bilibili.com/read/readlist/rl100361')} Updated up to Jashin dolls.<br>
         ${link("Sijun's list.", 'https://old.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1rph1l/')} Translated by u/ConductorBichir.`,
@@ -1405,6 +1405,11 @@ const cardData = Object.freeze([
         questions : `Can fairies be recovered from Index?`,
         answers : `No, unfortunately.`,
         tags : [dataTags.FAIRY]
+    },
+    {
+        questions : `Is there anything similar to the True Core Mask but for Coalition units?`,
+        answers : `PA shop. 800 supernovas.`,
+        tags : [dataTags.PA, dataTags.ITEM, dataTags.COALITION]
     },
     {
         questions : ``,
