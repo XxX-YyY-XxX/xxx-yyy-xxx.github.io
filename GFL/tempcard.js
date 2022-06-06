@@ -502,7 +502,7 @@ const cardData = Object.freeze([
         questions : `What's the drop rate for farmable dolls?`,
         answers : `Limited dolls on chapters aproximately have 0.8% drop rate on normal and 1% on emergency. Event farms have around 1%. 5${star} on normal maps have rates way below 1%... usually. Their droprates at Chapter 10 onwards seem to have higher rates. As for SPEQs, probably 1% too.<br>
         If you plan to farm a 5${star} doll in Combat Missions, just do Productions. You'll get more chances there.`,
-        tags : [dataTags.TDOLL, dataTags.MAIN, dataTags.STORY, dataTags.SPEQ, dataTags.PROD]
+        tags : [dataTags.TDOLL, dataTags.MAIN, dataTags.STORY, dataTags.SPEQ]
     },
     {
         questions : `What does the term Limited in dolls in the chapters mean?`,
@@ -874,7 +874,7 @@ const cardData = Object.freeze([
         tags : [dataTags.FRIEND, dataTags.ITEM]
     },
     {
-        questions : `What recipes should I use for my production?`,
+        questions : `Is there an optimal recipe guide I could use for my production?`,
         answers : `${link('Applicable Reddit Post.', 'https://redd.it/gfmelo')}<br>
         For the new equips, 150/151/50/50 (with armor), 150/151/10/50 (without armor).`,
         tags : [dataTags.PROD]
@@ -1399,7 +1399,7 @@ const cardData = Object.freeze([
                 'Kill them all before they kill you.'],
             'Golyat+ deathstacks' : ['Either stun+smoke or forceshields.']
             })}`,
-        tags : []
+        tags : [dataTags.ENEMY]
     },
     {
         questions : `Can fairies be recovered from Index?`,
