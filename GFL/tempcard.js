@@ -225,7 +225,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `Is there a tier list for good PA units?`,
-        answers : `${image('./assets/images/SFTier.png')}<br>
+        answers : `${link("u/CheneyQWER's tier list.", 'https://redd.it/uirvxz')}<br>
         ${link('Gamepress units guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units')} Use the search bar if a certain PA unit is unavailable in the page.`,
         tags : [dataTags.COALITION, dataTags.TIER]
     },
@@ -1107,7 +1107,7 @@ const cardData = Object.freeze([
         questions : `How do general rate ups work?`,
         answers : `There are 2 sets of rate ups per general rate up.<br>
         First is the HOC rate up, where every 2 days is a specific FST's day for rate up. Note that only that FST's rate is increased within the Central Data pool. The core data rate remains the same.<br>
-        Second is the tried amd tested Production rate up. Goes from Normal Doll, Normal Equip, Heavy Doll, Heavy Equip. Pulling chance for all 4${star} and 5${star} are increased.`,
+        Second is the tried amd tested Production rate up. Goes from Normal Doll, Normal Equip, Heavy Doll, Heavy Equip. Pulling chance for all 4${star} and 5${star} are increased. IOP equipment crafts are also affected.`,
         tags : [dataTags.PROD, dataTags.HOC, dataTags.FST, dataTags.TDOLL, dataTags.EQUIP]
     },  //@Check for errors
     {
@@ -1421,6 +1421,11 @@ const cardData = Object.freeze([
         answers : `Enhancing other fairies. They act like dupes in a sense that they give 100 enhancement EXP a pop, or 150 with matching talents.`,
         tags : [dataTags.FAIRY]
     },
+    {
+        questions : `Where can I redeem the event boxes?`,
+        answers : `Main Screen > Event > Time-Limited Event Tab > Supply Boxes.`,
+        tags : [dataTags.MISC]
+    },  //@Visual
     {
         questions : ``,
         answers : ``,
