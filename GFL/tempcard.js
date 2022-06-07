@@ -28,7 +28,7 @@ const dataTags = Object.freeze({
             RESUPPLY : 'Resupply',      //Dorm gacha.
             SKIN : 'Costumes',          //Primary money sink.
             FURN : 'Furniture',         //"Dorm Equipments"
-        HOC : 'HeavyOrdnanceCorps',     //FST division only for now.
+        HOC : 'HeavyOrdnanceCorps',     //FST and Coalition divisions.
         EXPED : 'ForwardBasecamp',      //Lazy leveling
         PA : 'ProtocolAssimilation',    //PA pulling and coalition drills.
     //#endregion
@@ -52,9 +52,9 @@ const dataTags = Object.freeze({
         BATTLE : 'Skirmishes',      //The battle mode where everyone shoots at one another.
     SIDE : 'SideStory',             //Extra stories.
     SKILL : 'Skills',               //Unit skills.
-    LOVE : 'Affection',             //
+    LOVE : 'Affection',             //Keep it high.
         OATH : 'OathSystem',        //Marriage.
-    FRIEND : 'Friends',
+    FRIEND : 'Friends',             //
     LEVEL : 'Leveling',             //Mostly Corpse Drag.
     PET : 'Pets',                   //ANIMAL
     CMDR : 'Commander',             //"Self-insert"
