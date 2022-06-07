@@ -32,10 +32,6 @@
 
 @ Visual
 
-### Do I keep the drops if I terminate/restart?
-
-> "Recently acquired" option in the armory says yes.
-
 ### Why do I get the lack of ammo/ration warning and sometimes not?
 
 > You'll get the warning when you lack either of them, when you can see the enemy, and when you engage them first in battle.

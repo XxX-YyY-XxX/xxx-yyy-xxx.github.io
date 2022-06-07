@@ -67,6 +67,7 @@ const dataTags = Object.freeze({
 
 const lessEqual = '≤';
 const star = '★';
+const tm = '™️';
 
 //#region Functions
 /** @param {URLString} link */
@@ -1117,10 +1118,12 @@ const cardData = Object.freeze([
     },
     {
         questions : `How can I get my favorite gun/doll?`,
-        answers : `${descriptionList({'Factory Production' : [],
-        'Rescue Drops' : [],
-        'Clear Rewards' : [link("BigStupidJellyfish's Event Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls#:%7E:text=JS05,2021%2DMarch')]})}`,
-        tags : [dataTags.TDOLL, dataTags.LEDOLL]
+        answers : `${descriptionList({
+            'Factory Production' : [`5${star} dolls that can drop here are the only ones redeemable through True Core Masks, bar spaghetti.`],
+            'Rescue Drops' : [],
+            'Clear Rewards' : [link("BigStupidJellyfish's Event Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls#:%7E:text=JS05,2021%2DMarch')]
+        })}`,
+        tags : [dataTags.TDOLL, dataTags.LEDOLL, dataTags.PROD]
     },  //@Mega fix
     {
         questions : `What do advantaged dolls in combat map mean?`,
@@ -1394,11 +1397,11 @@ const cardData = Object.freeze([
     },
     {
         questions : `General tips on defeating deathstacks?`,
-        answers : `For the most part, you don't. But if you really want to, this is the epitome of "CE is useless", "what dolls, formation, fairy to use depend on what you're going against", and "learn kiting". Just don't expect to come out of unscathed.<br>
+        answers : `For the most part, you don't. But if you really want to, this is the epitome of "CE is useless", "what dolls, formation, fairy to use depend on what you're going against", and "learn kiting". Just don't expect to come out of it unscathed.<br>
         ${descriptionList({'Swarm deathstacks' : ['Usually AoE pierce such as Kord, Type 88, KSVK with HOC support and tank/delay fairies.',
                 'Kill them all before they kill you.'],
             'Golyat+ deathstacks' : ['Either stun+smoke or forceshields.']
-            })}`,
+        })}`,
         tags : [dataTags.ENEMY]
     },
     {
@@ -1426,6 +1429,16 @@ const cardData = Object.freeze([
         answers : `Main Screen > Event > Time-Limited Event Tab > Supply Boxes.`,
         tags : [dataTags.MISC]
     },  //@Visual
+    {
+        questions : `Will the TCM icons become available in the Friend Shop?`,
+        answers : `Yes, otherwise SOON${tm}.`,
+        tags : [dataTags.MISC]
+    },
+    {
+        questions : `Do I keep the drops if I terminate/restart?`,
+        answers : `"Recently acquired" option in the armory says yes.`,
+        tags : [dataTags.TDOLL, dataTags.MAP]
+    },
     {
         questions : ``,
         answers : ``,
