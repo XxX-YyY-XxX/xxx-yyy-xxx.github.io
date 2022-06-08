@@ -90,7 +90,7 @@ function list(ordered, ...any) {
 /** @param {URLString} docLink Ends in alphanumeric */
 function googleEmbed(docLink) {
     return `<figure>
-        <iframe class="gdoc" src="${docLink}/preview?pli=1"></iframe><br>
+        <iframe src="${docLink}/preview?pli=1"></iframe>
         <figcaption><a onclick="reloadIFrame(this.parentElement.parentElement.firstElementChild)">Reload Frame</a> \| ${link('Source Link', docLink)}</figcaption>
     </figure>`;
 }   //<button type="button" ></button>
@@ -98,7 +98,7 @@ function googleEmbed(docLink) {
 /** @param {URLString} videoID Youtube video or playlist ID*/
 function youtubeEmbed(videoID) {
     identifier = videoID.length == 11 ? videoID : `videoseries?list=${videoID}`
-    return `<iframe class="ytvid" src="https://www.youtube.com/embed/${identifier}" allowfullscreen></iframe>`
+    return `<iframe src="https://www.youtube.com/embed/${identifier}" allowfullscreen></iframe>`
 }
 
 /** @param permalink ...comments/${permalink}/?...*/
