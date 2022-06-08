@@ -167,13 +167,15 @@
         /* #endregion */
 
         /* #region Embed Class */
-        .gdoc {
+        /* .gdoc */
+        iframe[src*="docs.google.com"] {
             width: 100%;
             aspect-ratio: 1/1;
             border: 0px;
         }
 
-        .ytvid {
+        /* .ytvid */
+        iframe[src*="www.youtube.com"] {
             width: 100%;
             aspect-ratio: 16/9;
             border: 0px;

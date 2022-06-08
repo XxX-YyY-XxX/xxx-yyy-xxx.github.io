@@ -95,9 +95,9 @@ function googleEmbed(docLink) {
     </figure>`;
 }   //<button type="button" ></button>
 
-/** @param {URLString} shortlink */
-function youtubeEmbed(shortlink) {
-    const identifier = shortlink.split('/').pop();
+/** @param {URLString} videoID Youtube video or playlist ID*/
+function youtubeEmbed(videoID) {
+    identifier = videoID.length == 11 ? videoID : `videoseries?list=${videoID}`
     return `<iframe class="ytvid" src="https://www.youtube.com/embed/${identifier}" allowfullscreen></iframe>`
 }
 
@@ -203,7 +203,7 @@ const cardData = Object.freeze([
         ${link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Heavy_Ordnance_Corps')}<br>
         ${link('Matsuda Guide.', 'https://gfl.matsuda.tips/post/hocs')}<br>
         ${link('GFC Guide.', 'https://www.gflcorner.com/hoc-guide-by-gfc/')}<br>
-        ${spoilerSummary("Ceia's Video Guide.", youtubeEmbed('https://youtu.be/rsFyXRDAi6I'))}<br>
+        ${spoilerSummary("Ceia's Video Guide.", youtubeEmbed('rsFyXRDAi6I'))}<br>
         ${link("u/Xealiouth's Guide.", 'https://redd.it/95nrou')}`,
         tags : [dataTags.HOC, dataTags.PRIME]
     },
@@ -650,7 +650,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `What does the PA chip Pilfer do?`,
-        answers : `Allows players to have a ${spoilerSummary('chance', image('./assets/images/PIlferRNG.png') + '<br>' + altTextStyle('Context: PIlfer subject to RNG.', TextStyle.QOUTE))} of getting ${spoilerSummary('S-Rank drops', youtubeEmbed('https://youtu.be/t6Vu72cajO0') + altTextStyle('Context: Coalition Medals require S-Rank battles.', TextStyle.QOUTE))} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
+        answers : `Allows players to have a ${spoilerSummary('chance', image('./assets/images/PIlferRNG.png') + '<br>' + altTextStyle('Context: PIlfer subject to RNG.', TextStyle.QOUTE))} of getting ${spoilerSummary('S-Rank drops', youtubeEmbed('t6Vu72cajO0') + altTextStyle('Context: Coalition Medals require S-Rank battles.', TextStyle.QOUTE))} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
         Combine this with the ability to fight on one ammo bar to get two chances on one enemy.`,
         tags : [dataTags.COALITION, dataTags.EQUIP]
     },
@@ -1446,6 +1446,17 @@ const cardData = Object.freeze([
         answers : `Events > Supply Boxes Banner`,
         tags : [dataTags.ANNIV]
     },  //@Visual
+    {
+        questions : `Found out that there are seasonal lines for some dolls. How do I trigger them?`,
+        answers : `Set them as your adjutant wearing the appropriate costume for the occasion.`,
+        tags : [dataTags.TDOLL, dataTags.SKIN]
+    },  //@Clarify
+    {
+        questions : `Is there a compilation of anniversary adjutant lines?`,
+        answers : `${youtubeEmbed('PL4Z0akElhimzHHiVMCozfUn1B6tYKjwPR')}<br>
+        ${googleEmbed('https://docs.google.com/document/d/1W5JzUGaC_fL5itce05WnkHcu7wX_sEn2vQlbgQNeKAk')}`,
+        tags : [dataTags.LORE, dataTags.ANNIV]
+    },  //@Playlist by redditor u/paperrabbit.
     {
         questions : ``,
         answers : ``,
