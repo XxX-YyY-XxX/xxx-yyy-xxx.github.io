@@ -710,7 +710,7 @@ const cardData = Object.freeze([
     {
         questions : `Which dolls should I use for expedition?`,
         answers : `${image('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/inline-images/expedition-advantaged-dolls_0.jpg', 'Taken from Gamepress')}<br>
-        And dummy links are not taken into account.`,
+        Dummy links and skill levels are not taken into account.`,
         tags : [dataTags.EXPED, dataTags.TDOLL]
     },
     {
