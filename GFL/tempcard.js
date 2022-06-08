@@ -63,6 +63,7 @@ const dataTags = Object.freeze({
     MARP : 'FourResources',         //Manpower, Ammunition, Rations, Parts
     REF : 'References',             //Reference compilations
     //Devices
+    CE : 'CombatEffectiveness',     //"CE is useless"
 });
 
 const lessEqual = '≤';
@@ -562,8 +563,9 @@ const cardData = Object.freeze([
             'Open GFL under GFAlarm proxy (up to main screen).',
             'Go to the GFAlarm folder.',
             'Info folder.',
-            '{Username}_{UID}__theater_optimize_team.csv for current armory.')}`,
-        tags : [dataTags["3P"], dataTags.THEATER]
+            '{Username}_{UID}__theater_optimize_team.csv for current armory.',
+            'Use predicted damage instead of combat effectiveness.')}`,
+        tags : [dataTags["3P"], dataTags.THEATER, dataTags.CE]
     },
     {
         questions : `Which HOC FSTs should I raise first?`,
@@ -644,7 +646,7 @@ const cardData = Object.freeze([
         answers : `The process of stacking the useless number as high as possible, battle performance be damned.<br>
         ARSMG = 50-70k, RFHG = 40-60k, MGSG = 100k+ average max CE, including maxed fairies, equips, mods, oaths, and formation bonuses.<br>
         It's main purpose is for Theater Bosses and being on top of the Friend List.`,
-        tags : [dataTags.MISC]
+        tags : [dataTags.CE]
     },
     {
         questions : `What does the PA chip Pilfer do?`,
@@ -1287,11 +1289,6 @@ const cardData = Object.freeze([
         tags : [dataTags.COLLAB]
     },
     {
-        questions : `For the datasheet GFAlarm generated for Theater, which is more important, combat effectiveness or predicted damage?`,
-        answers : `Predicted damage.`,
-        tags : [dataTags.THEATER, dataTags["3P"]]
-    },
-    {
         questions : `Update progress is stuck at 90%/100%. What should I do?`,
         answers : `Wait a minute, change WiFi connection, change to data, use VPN, restart client, delete cache, ${link('do a manual patch', 'https://github.com/lloyddunamis/gfl_manualpatch/blob/main/FullResource_readme')}, ${link('delete some files', 'https://twitter.com/Synexcu/status/1310117595094216709?s=19')}, reinstall (with minimum data first), phone restart, or a combination of any of the above coupled with sheer determination to do it for days on end.`,
         tags : [dataTags.TECH]
@@ -1438,6 +1435,11 @@ const cardData = Object.freeze([
         questions : `Do I keep the drops if I terminate/restart?`,
         answers : `"Recently acquired" option in the armory says yes.`,
         tags : [dataTags.TDOLL, dataTags.MAP]
+    },
+    {
+        questions : `What is Combat Effectiveness?`,
+        answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ce')}`,
+        tags : [dataTags.CE]
     },
     {
         questions : ``,
