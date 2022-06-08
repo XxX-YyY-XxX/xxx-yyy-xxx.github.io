@@ -1442,6 +1442,11 @@ const cardData = Object.freeze([
         tags : [dataTags.CE]
     },
     {
+        questions : `Where can I open the anniversary supply boxes?`,
+        answers : `Events > Supply Boxes Banner`,
+        tags : [dataTags.ANNIV]
+    },  //@Visual
+    {
         questions : ``,
         answers : ``,
         tags : []
