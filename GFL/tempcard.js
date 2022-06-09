@@ -1041,7 +1041,7 @@ const cardData = Object.freeze([
                 'If a doll dies in a non-boss fight, that particular doll will lose 10 points. Everyone else loses 5 points.'],
             'Coalition Units' : ['If a unit dies in battle, only that unit will lose affection.',
                 'Enables oathing at 100 for ringleaders only.'],
-            'Kalina' : ['Raised through daily hearts or spending gems<-- on non-infrastructures-->.']
+            'Kalina' : ['Raised through daily hearts or spending gems<!-- on non-infrastructures-->.']
         })}`,
         tags : [dataTags.LOVE, dataTags.PRIME, dataTags.OATH, dataTags.TDOLL, dataTags.COALITION]
     },  //@Merge
