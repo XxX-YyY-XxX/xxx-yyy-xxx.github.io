@@ -1458,6 +1458,16 @@ const cardData = Object.freeze([
         tags : [dataTags.LORE, dataTags.ANNIV]
     },  //@Playlist by redditor u/paperrabbit.
     {
+        questions : `My team says Ammo/Ration depleted. How do I fill it up?`,
+        answers : `${list(true,
+            'Stand on a captured Command Center, captured open Heliport, captured open Heavy Heliport, or Cache Box.',
+            'Double-tap the echelon standing on it.',
+            'Yellow Resupply button on the bottom-right.')}<br>
+        If you have auto-resupply on, they will be automatically supplied at the start of your turn if they stand on nodes that can resupply them.<br>
+        Note that the act of resupplying in and of itself costs you only rations and ammo. AP will not be consumed.`,
+        tags : [dataTags.TDOLL, dataTags.MAP, dataTags.NEWB, dataTags.IMPT]
+    },  //@Visual
+    {
         questions : ``,
         answers : ``,
         tags : []

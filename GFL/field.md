@@ -2,16 +2,6 @@
 
 # Field Map
 
-### My team says Ammo/Ration depleted. How do I fill it up?
-
-> Move them to helipad, heavy helipad, HQ, or nodes with box drawn on them. Double-tap them. Resupply is yellow button at the bottom right.
->
-> If you have auto-resupply on, they will be automatically supplied at the start of your turn if they stand on nodes that can resupply them.
->
-> Note that the act of resupplying in and of itself costs you only rations and ammo. AP will not be consumed.
-
-@ Visual
-
 ### I just had a skirmish and saw that my team isn't in proper formation. Can I fix it without quitting the map?
 
 > [*me not caring enough to paraphrase it*](https://old.reddit.com/r/girlsfrontline/comments/e8nuro/weekly_commanders_lounge_december_10_2019/fb6xvhz/)
