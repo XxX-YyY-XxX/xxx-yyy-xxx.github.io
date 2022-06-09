@@ -1485,6 +1485,12 @@ const cardData = Object.freeze([
         tags : [dataTags.MAP, dataTags.TECH]
     },  //@Visual
     {
+        questions : `When should I start doing night chapters?`,
+        answers : `Anytime. Unlock them by completing the next chapter's last emergency map (i.e. 11-4e unlocks 10-1n). Remember to equip PEQs to negate the accuracy penalty and bring HGs for map vision. ARSMG should be fine for the first few night maps.<br>
+        ${link("BigStupidJellyfish_ requirements breakdown.", 'https://old.reddit.com/r/girlsfrontline/comments/pf1dsb/weekly_commanders_lounge_august_31_2021/hb4b257/')}`,
+        tags : [dataTags.MAIN]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
