@@ -1044,7 +1044,7 @@ const cardData = Object.freeze([
             'Kalina' : ['Raised through daily hearts or spending gems<-- on non-infrastructures-->.']
         })}`,
         tags : [dataTags.LOVE, dataTags.OATH, dataTags.TDOLL, dataTags.COALITION]
-    },
+    },  //@Merge
     {
         questions : `I'm trying to contact support and one of the infos they need is Account ID. Where can I see it?`,
         answers : `UID that is present in your commander screen or intro card.`,
@@ -1469,6 +1469,16 @@ const cardData = Object.freeze([
         Note that the act of resupplying in and of itself costs you only rations and ammo. AP will not be consumed.`,
         tags : [dataTags.TDOLL, dataTags.MAP, dataTags.NEWB, dataTags.IMPT]
     },  //@Visual
+    {
+        questions : `What does the glitter/sparkle in my coalition unit's portrait mean? Their sprites also has a golden aura around it.`,
+        answers : `Shiny. And the very reason Golden Infusion is a thing.`,
+        tags : [dataTags.COALITION]
+    },
+    {
+        questions : `My audio is gone when I exit the app and return to it. What's happening?`,
+        answers : `Just iOS things. One way to get around it is client restart.`,
+        tags : [dataTags.APPLE, dataTags.TECH]
+    },
     {
         questions : ``,
         answers : ``,
