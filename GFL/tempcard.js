@@ -1043,7 +1043,7 @@ const cardData = Object.freeze([
                 'Enables oathing at 100 for ringleaders only.'],
             'Kalina' : ['Raised through daily hearts or spending gems<-- on non-infrastructures-->.']
         })}`,
-        tags : [dataTags.LOVE, dataTags.OATH, dataTags.TDOLL, dataTags.COALITION]
+        tags : [dataTags.LOVE, dataTags.PRIME, dataTags.OATH, dataTags.TDOLL, dataTags.COALITION]
     },  //@Merge
     {
         questions : `I'm trying to contact support and one of the infos they need is Account ID. Where can I see it?`,
@@ -1479,6 +1479,11 @@ const cardData = Object.freeze([
         answers : `Just iOS things. One way to get around it is client restart.`,
         tags : [dataTags.APPLE, dataTags.TECH]
     },
+    {
+        questions : `How do I throw/get Abandonded Goliaths/interact with consoles?`,
+        answers : `There should be panels on thhe left side of the screen. If they don't appear, restart app.`,
+        tags : [dataTags.MAP, dataTags.TECH]
+    },  //@Visual
     {
         questions : ``,
         answers : ``,
