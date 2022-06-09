@@ -11,7 +11,3 @@
 ### When will dorm battery, daily gift, friend battery reset?
 
 > [Netlify timer.](https://gftimers.netlify.app/) Note that ranking updates one hour after Kalina's Daily Gift.
-
-### Why does this game download the game files when I open it?
-
-> Either you just open it up at the most opportune of times or you close the Bluestacks emulator directly before closing the GFL app.

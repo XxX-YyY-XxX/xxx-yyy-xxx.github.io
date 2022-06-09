@@ -1491,6 +1491,11 @@ const cardData = Object.freeze([
         tags : [dataTags.MAIN]
     },
     {
+        questions : `Why is this game downloading game files when I open it?`,
+        answers : `Either you're just booting it up at the most opportune of times or you closed the Bluestacks emulator directly before closing the GFL app.`,
+        tags : [dataTags.EMU]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
