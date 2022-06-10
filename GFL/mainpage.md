@@ -39,9 +39,6 @@
 # [Fairies](/GFL/fairies)*
 - Fairy guides and usage.
 
-# [Third Party](/GFL/apps)*
-- Emulators, GFL Chip Calculator, and GFAlarm.
-
 # [Auto-Battles](/GFL/autobattles)*
 - Auto-battle cards, rewards, and efficient maps.
 
@@ -114,3 +111,13 @@ Tap the radar button right above "Planning Mode" the screen will have a scanning
 Tap the radar button again to move your echelons or terminate mission.
 
 -----
+
+< [Back](/GFL/mainpage)
+
+# Third Party
+
+### Are keybinds bannable?
+
+> <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/grht76/monthly_qa/fs239z8/?depth=2&amp;showmore=false&amp;embed=true&amp;context=1&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="332" width="640" scrolling="no"></iframe>
+>
+> A lot of emulator players still use them, especially for [kiting](https://old.reddit.com/r/girlsfrontline/comments/hmqhw8/weekly_commanders_lounge_july_07_2020/fxgu8g8/), so if you're willing to take the risk, go for it. Macros ARE a bannable offense, full stop.

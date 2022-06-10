@@ -1497,6 +1497,21 @@ const cardData = Object.freeze([
         tags : [dataTags.EMU]
     },
     {
+        questions : `I can't log-in with Facebook. What are my options?`,
+        answers : `One solution is through the FB app.`,
+        tags : [dataTags.TECH]
+    },
+    {
+        questions : `I don't know how to change the AI behaviour of my support/friend echelon, anyone can help me?`,
+        answers : `Tap on them and there should be options at their feet.`,
+        tags : [dataTags.FRIEND, dataTags.ECH, dataTags.MAP]
+    },  //@Visual
+    {
+        questions : `When will dorm battery, daily gift, friend battery reset?`,
+        answers : `${link('Netlify timer.', 'https://gftimers.netlify.app')} Note that ranking updates one hour after Kalina's Daily Gift.`,
+        tags : [dataTags.DORM, dataTags.FRIEND, dataTags["3P"]]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
