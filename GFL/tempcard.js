@@ -1125,11 +1125,11 @@ const cardData = Object.freeze([
         questions : `How can I get my favorite gun/doll?`,
         answers : `${descriptionList({
             'Factory Production' : [`5${star} dolls that can drop here are the only ones redeemable through True Core Masks, bar spaghetti.`],
-            'Rescue Drops' : [],
-            'Clear Rewards' : [link("BigStupidJellyfish's Event Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls#:%7E:text=JS05,2021%2DMarch')]
+            'Rescue Drops' : ['Dolls that are farmable and debuted in a major event is farmable in campaign.'],
+            'Event Rewards' : [link("BigStupidJellyfish's Event Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls')]
         })}`,
-        tags : [dataTags.TDOLL, dataTags.LEDOLL, dataTags.PROD]
-    },  //@Mega fix
+        tags : [dataTags.TDOLL, dataTags.LEDOLL, dataTags.PROD, dataTags.MAJOR, dataTags.CAMPAIGN, dataTags.MINI]
+    },
     {
         questions : `What do advantaged dolls in combat map mean?`,
         answers : `20% FP boost for AR, RF, MG. 20% EVA boost for SMG, HG, SG.`,
@@ -1456,10 +1456,10 @@ const cardData = Object.freeze([
     },  //@Clarify
     {
         questions : `Is there a compilation of anniversary adjutant lines?`,
-        answers : `${youtubeEmbed('PL4Z0akElhimzHHiVMCozfUn1B6tYKjwPR')}<br>
+        answers : `${youtubeEmbed('PLoDB_FcnOA5zXkZ9XmQMTog1F7uIRZ_Qa')}<br>
         ${googleEmbed('https://docs.google.com/document/d/1W5JzUGaC_fL5itce05WnkHcu7wX_sEn2vQlbgQNeKAk')}`,
         tags : [dataTags.LORE, dataTags.ANNIV]
-    },  //@Playlist by redditor u/paperrabbit.
+    },  //@PL4Z0akElhimzHHiVMCozfUn1B6tYKjwPR playlist by redditor u/paperrabbit. New by u/ConductorBichir.
     {
         questions : `My team says Ammo/Ration depleted. How do I fill it up?`,
         answers : `${list(true,
