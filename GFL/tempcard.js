@@ -17,6 +17,7 @@ const dataTags = Object.freeze({
         EQUIP : 'Equipments',           //Attachments on units.
             SPEQ : 'SpecialEquipments', //Equips specific to a doll.
         ITEM : 'ConsumableItems',       //Tickets, cores, gems, batteries, shop items...
+            TCM : 'TrueCoreMask',       //Used to redeem 5 star prod dolls.
         FAIRY : 'Fairies',              //Sixth man of the team.
         FST : 'FireSupportTeam',        //Rockets and mortars, the first of the HOC.
     //#endregion
@@ -778,7 +779,7 @@ const cardData = Object.freeze([
     {
         questions : `I wasn't able to clear the event. Will I still get the clear rewards when they get added to Campaign?`,
         answers : `Nope. Gutted rewards compared to original, even True Core Masks (TCM). Free shit is free shit though, and doll/crate rewards gets cycled to Limited Dolls. So skip the current major event's story if you have to and reap the rewards.`,
-        tags : [dataTags.MARP, dataTags.ITEM, dataTags.CAMPAIGN, dataTags.MAJOR, dataTags.LEDOLL]
+        tags : [dataTags.MARP, dataTags.ITEM, dataTags.CAMPAIGN, dataTags.MAJOR, dataTags.LEDOLL, dataTags.TCM]
     },
     {
         questions : `How do tilescan skills work?`,
@@ -1128,7 +1129,7 @@ const cardData = Object.freeze([
             'Rescue Drops' : ['Dolls that are farmable and debuted in a major event is farmable in campaign.'],
             'Event Rewards' : [link("BigStupidJellyfish's Event Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls')]
         })}`,
-        tags : [dataTags.TDOLL, dataTags.LEDOLL, dataTags.PROD, dataTags.MAJOR, dataTags.CAMPAIGN, dataTags.MINI]
+        tags : [dataTags.TDOLL, dataTags.LEDOLL, dataTags.PROD, dataTags.MAJOR, dataTags.CAMPAIGN, dataTags.MINI, dataTags.TCM]
     },
     {
         questions : `What do advantaged dolls in combat map mean?`,
@@ -1222,7 +1223,7 @@ const cardData = Object.freeze([
         answers : `${image('./assets/images/VeryReliableTCMGuide.png')}<br>
         ${image('./assets/images/SeriousTCMGuide.png')}<br>
         Note that you can only use it on craftable dolls, so no P22(drop only) or Deagle(event reward).`,
-        tags : [dataTags.ITEM]
+        tags : [dataTags.TCM]
     },
     {
         questions : `What would I need when building night ARSMGs?`,
@@ -1235,7 +1236,7 @@ const cardData = Object.freeze([
     {
         questions : `Which T-Doll would be better to anchor for the rate up?`,
         answers : `On one hand, 4${star} can't be TCM'd. On the other hand, 5${star} have low construction rates. And it also depends on the skills of said dolls.`,
-        tags : [dataTags.PROD, dataTags.TDOLL]
+        tags : [dataTags.PROD, dataTags.TDOLL, dataTags.TCM]
     },
     {
         questions : `What does each gun class do?`,
@@ -1376,7 +1377,7 @@ const cardData = Object.freeze([
     {
         questions : `When are True Core Masks given out?`,
         answers : `One every major event and anniversary.`,
-        tags : [dataTags.ITEM, dataTags.MAJOR, dataTags.ANNIV]
+        tags : [dataTags.TCM, dataTags.MAJOR, dataTags.ANNIV]
     },
     {
         questions : `For Coalition Units, should I skip raising units that are below XL size?`,
@@ -1412,7 +1413,7 @@ const cardData = Object.freeze([
     {
         questions : `Is there anything similar to the True Core Mask but for Coalition units?`,
         answers : `PA shop. 800 supernovas.`,
-        tags : [dataTags.PA, dataTags.ITEM, dataTags.COALITION]
+        tags : [dataTags.PA, dataTags.ITEM, dataTags.COALITION, dataTags.TCM]
     },
     {
         questions : `Can I get gold tier fairy talents through calibration?`,
@@ -1432,7 +1433,7 @@ const cardData = Object.freeze([
     {
         questions : `Will the TCM icons become available in the Friend Shop?`,
         answers : `Yes, otherwise SOON${tm}.`,
-        tags : [dataTags.MISC]
+        tags : [dataTags.TCM]
     },
     {
         questions : `Do I keep the drops if I terminate/restart?`,
