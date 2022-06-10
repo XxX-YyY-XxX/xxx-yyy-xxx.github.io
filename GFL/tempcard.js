@@ -161,7 +161,7 @@ const cardData = Object.freeze([
         ${link('GFLCorner guide.', 'https://www.gflcorner.com/efficient-leveling-guide/')}<br>
         ${link('DMesse guide.', 'http://dmesse.egloos.com/m/3567918')}`)}.<br>
         Second is using Combat Reports. You can get them in the Forward Basecamp or through the Data Room. You can give them by going to the Dorm>Warehouse>Gift tab or going to your owned doll profile and tapping the + button by the EXP bar. They give 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.`,
-        tags : [dataTags.TDOLL, dataTags.LEVEL, dataTags.NEWB, dataTags.PRIME]
+        tags : [dataTags.TDOLL, dataTags.LEVEL, dataTags.PRIME, dataTags.NEWB]
     },
     {
         questions : `What is Expedition/Forward Basecamp?`,
@@ -208,6 +208,35 @@ const cardData = Object.freeze([
         tags : [dataTags.HOC, dataTags.PRIME]
     },
     {
+        questions : `How to do Theater/Theatre?`,
+        answers : `${link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Theater_Mode')}<br>
+        ${link('GFC Guide.', 'https://www.gflcorner.com/theater-system-introduction-by-gfc/')}<br>
+        ${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/rng_backstabbing')}<br>
+        ${link('Gamepress Guide Part 1.', 'https://gamepress.gg/girlsfrontline/theater-7-overhaul-guide-new-mechanics-new-enemies-same-pain')} The updated theater version.<br>
+        ${link('Gamepress Guide Part 2.', 'https://gamepress.gg/girlsfrontline/theater-7-combat-guide')} Still good for Theater 8.<br>
+        TLDR is 5-6 Defense Drills in a row, twice per day, with differing battle effects. Do scouting bets where you pick one zone. Dump points on construction for easier battles.<br>
+        Echelon formations are now 1 team + backups.`,
+        tags : [dataTags.THEATER, dataTags.PRIME]
+    },
+    {
+        questions : `Are there any sort of guides on how and when to roll for skins?`,
+        answers : `${link('BigStupidJellyfish guide.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/gacha')}`,
+        tags : [dataTags.RESUPPLY, dataTags.SKIN, dataTags.PRIME]
+    },
+    {
+        questions : `What does Affection do?`,
+        answers : `${descriptionList({
+            'Tactical Dolls' : ['At 90 and above, gives stat bonuses indicated by pink numbers.',
+                'At 10 below, gives stat penalties indicated by blue numbers.',
+                'Enables oathing at 100.',
+                'If a doll dies in a non-boss fight, that particular doll will lose 10 points. Everyone else loses 5 points.'],
+            'Coalition Units' : ['If a unit dies in battle, only that unit will lose affection.',
+                'Enables oathing at 100 for ringleaders only.'],
+            'Kalina' : ['Raised through daily hearts or spending gems<!-- on non-infrastructures-->.']
+        })}`,
+        tags : [dataTags.LOVE, dataTags.PRIME, dataTags.OATH, dataTags.TDOLL, dataTags.COALITION]
+    },  //@Merge
+    {
         questions : `What is Luffberry Chess?`,
         answers : `GFL version of 100% Orange Juice, I guess?<br>
         And it's called "chess" only because boardgame.<br>
@@ -249,6 +278,19 @@ const cardData = Object.freeze([
         answers : `${image('./assets/images/EqupTier.png')}`,
         tags : [dataTags.EQUIP, dataTags.TDOLL, dataTags.TIER]
     },
+    {
+        questions : `Which HOC FSTs should I raise first?`,
+        answers : `${table(['Rank', 'To Lv. 60', `To 5${star}`, 'To Max Iter'],
+        ['01', 'BGM-71', '2B14',   '2B14'  ],
+        ['02', '2B14',   'Mk 153', 'Mk 153'],
+        ['03', 'Mk 153', 'AT4',    'M2'    ],
+        ['04', 'AT4',    'M2',     'AT4'   ],
+        ['05', 'M2',     'AGS-30', 'AGS-30'],
+        ['06', 'AGS-30', 'BGM-71', 'BGM-71'],
+        ['07', 'QLZ-04', 'QLZ-04', 'QLZ-04'],
+        ['08', 'PP-93',  'PP-93',  'PP-93' ])}`,
+        tags : [dataTags.HOC, dataTags.FST, dataTags.TIER]
+    },  //Rudimentary rankings. Last place reserved for incomplete FSTs.
     //#endregion
     //#region Compilations
     {
@@ -263,6 +305,21 @@ const cardData = Object.freeze([
         questions : `When should I begin trying to produce fairies/do Heavy Equipment Constructions (HEC)?`,
         answers : `When you have sufficient income for 4 resources and cores. Ideally ASAP since raising one to 5${star} takes a considerable amount of time.`,
         tags : [dataTags.FAIRY, dataTags.PROD, dataTags.IMPT]
+    },
+    {
+        questions : `What is kiting?`,
+        answers : `Kiting, in general, is the method of moving your tanks rightwards to make the enemy aim at them then moving leftwards to make the enemy walk towards you, while your DPS constantly shoots them. This is effective because most enemies have aim time where they do nothing, and range where you have to be in their sights to start aiming. Therefore, lengthening the lifespans of your dolls, especially the tanks.<br>
+        ${link('GFC guide.','https://www.gflcorner.com/battle-controls/')}<br>
+        ${link('Mitsu video guide.', 'https://youtu.be/ITUtRuF4TLY')}<br>
+        ${link("u/Reikyu09's reddit post.", 'https://redd.it/8o18an')}`,
+        tags : [dataTags.BATTLE, dataTags.IMPT]
+    },
+    {
+        questions : `What are Main Tanks and Off Tanks?`,
+        answers : `${descriptionList({'Main Tanks' : ['Guns that have survivability skills (i.e. smoke, eva boost, stun etc.).', 'Generally situated at the middle of the pack.'],
+        'Off Tanks' : ['Guns that generally have damage skills (i.e. molotov, grenade, damage boost etc.) and/or a secondary damage soaker in some instances.', 'Situated at either middle-top or middle-bottom.']})}<br>
+        All of these usually refer to SMGs.`,
+        tags : [dataTags.ECH, dataTags.IMPT]
     },
     {
         questions : `Is fairy leveling for increasing rarity only?`,
@@ -324,17 +381,6 @@ const cardData = Object.freeze([
         tags : [dataTags.ANNIV]
     },
     {
-        questions : `How to do Theater/Theatre?`,
-        answers : `${link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Theater_Mode')}<br>
-        ${link('GFC Guide.', 'https://www.gflcorner.com/theater-system-introduction-by-gfc/')}<br>
-        ${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/rng_backstabbing')}<br>
-        ${link('Gamepress Guide Part 1.', 'https://gamepress.gg/girlsfrontline/theater-7-overhaul-guide-new-mechanics-new-enemies-same-pain')} The updated theater version.<br>
-        ${link('Gamepress Guide Part 2.', 'https://gamepress.gg/girlsfrontline/theater-7-combat-guide')} Still good for Theater 8.<br>
-        TLDR is 5-6 Defense Drills in a row, twice per day, with differing battle effects. Do scouting bets where you pick one zone. Dump points on construction for easier battles.<br>
-        Echelon formations are now 1 team + backups.`,
-        tags : [dataTags.THEATER, dataTags.PRIME]
-    },
-    {
         questions : `How do I unlock Chapter 0?`,
         answers : `Beat Chapter 4 Emergency Map 4.`,
         tags : [dataTags.MAIN]
@@ -352,14 +398,6 @@ const cardData = Object.freeze([
         ${link('Tempkaridc calculator.', 'https://tempkaridc.github.io/gf/')} Up to Chapter 13.<br>
         ${link("u/tehcavy's spreadsheet.", 'https://docs.google.com/spreadsheets/d/1N-PvxbrZJqg-upImk5uwEmB9GcCrNqjmVgdY00cdvS8')} Up to Chapter 13.`,
         tags : [dataTags.LOGI, dataTags.MARP, dataTags.ITEM]
-    },
-    {
-        questions : `What is kiting?`,
-        answers : `Kiting, in general, is the method of moving your tanks rightwards to make the enemy aim at them then moving leftwards to make the enemy walk towards you, while your DPS constantly shoots them. This is effective because most enemies have aim time where they do nothing, and range where you have to be in their sights to start aiming. Therefore, lengthening the lifespans of your dolls, especially the tanks.<br>
-        ${link('GFC guide.','https://www.gflcorner.com/battle-controls/')}<br>
-        ${link('Mitsu video guide.', 'https://youtu.be/ITUtRuF4TLY')}<br>
-        ${link("u/Reikyu09's reddit post.", 'https://redd.it/8o18an')}`,
-        tags : [dataTags.BATTLE, dataTags.IMPT]
     },
     {
         questions : `Do I still need to use advantaged dolls for Theater?`,
@@ -563,26 +601,6 @@ const cardData = Object.freeze([
         tags : [dataTags["3P"], dataTags.THEATER, dataTags.CE]
     },
     {
-        questions : `Which HOC FSTs should I raise first?`,
-        answers : `${table(['Rank', 'To Lv. 60', `To 5${star}`, 'To Max Iter'],
-        ['01', 'BGM-71', '2B14',   '2B14'  ],
-        ['02', '2B14',   'Mk 153', 'Mk 153'],
-        ['03', 'Mk 153', 'AT4',    'M2'    ],
-        ['04', 'AT4',    'M2',     'AT4'   ],
-        ['05', 'M2',     'AGS-30', 'AGS-30'],
-        ['06', 'AGS-30', 'BGM-71', 'BGM-71'],
-        ['07', 'QLZ-04', 'QLZ-04', 'QLZ-04'],
-        ['08', 'PP-93',  'PP-93',  'PP-93' ])}`,
-        tags : [dataTags.HOC, dataTags.FST, dataTags.TIER]
-    },  //Rudimentary rankings. Last place reserved for incomplete FSTs.
-    {
-        questions : `What are Main Tanks and Off Tanks?`,
-        answers : `${descriptionList({'Main Tanks' : ['Guns that have survivability skills (i.e. smoke, eva boost, stun etc.).', 'Generally situated at the middle of the pack.'],
-        'Off Tanks' : ['Guns that generally have damage skills (i.e. molotov, grenade, damage boost etc.) and/or a secondary damage soaker in some instances.', 'Situated at either middle-top or middle-bottom.']})}<br>
-        All of these usually refer to SMGs.`,
-        tags : [dataTags.ECH, dataTags.IMPT]
-    },
-    {
         questions : `How are people just rolling in 5${star} fairies?`,
         answers : `<p>${altTextStyle('Even dust, when piled up, can become a mountain.', TextStyle.ITALIC)}</p>
         Good logistics upkeep and rolling HECs everyday. Just think of crafting them a side thing that doesn't take a lot of attention.<br>
@@ -605,11 +623,6 @@ const cardData = Object.freeze([
         questions : `What is Corpse Whipping?`,
         answers : `The act of overkilling a dummy link by a huge amount. Especially egregious if 2 RFs hit an enemy on its deathbed. This is generally the reason why ROF-based guns are favored against low link-HP enemies.`,
         tags : [dataTags.BATTLE]
-    },
-    {
-        questions : `Are there any sort of guides on how and when to roll for skins?`,
-        answers : `${link('BigStupidJellyfish guide.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/gacha')}`,
-        tags : [dataTags.RESUPPLY, dataTags.SKIN, dataTags.PRIME]
     },
     {
         questions : `What's the gacha rate for costumes?`,
@@ -830,8 +843,9 @@ const cardData = Object.freeze([
         tags : [dataTags.NEWB]
     },
     {
-        questions : `How can I get some more Svarog High Altitude Bombing Aid Commissions?`,
-        answers : `Weekly quest (8 standard captures), daily log-in, major events, shop (whenever a new banner starts).`,
+        questions : `What does Svarog High Altitude Bombing Aid Commissions do and how do I get more of them?`,
+        answers : `Pulls from the entire pool where the entire pool is the X in the X/100 units.<br>
+        Weekly quest (8 standard captures), daily log-in, major events, shop (whenever a new banner starts).`,
         tags : [dataTags.ITEM, dataTags.PA]
     },
     {
@@ -1032,19 +1046,6 @@ const cardData = Object.freeze([
         answers : `Check Index.`,
         tags : [dataTags.TDOLL]
     },
-    {
-        questions : `What does Affection do?`,
-        answers : `${descriptionList({
-            'Tactical Dolls' : ['At 90 and above, gives stat bonuses indicated by pink numbers.',
-                'At 10 below, gives stat penalties indicated by blue numbers.',
-                'Enables oathing at 100.',
-                'If a doll dies in a non-boss fight, that particular doll will lose 10 points. Everyone else loses 5 points.'],
-            'Coalition Units' : ['If a unit dies in battle, only that unit will lose affection.',
-                'Enables oathing at 100 for ringleaders only.'],
-            'Kalina' : ['Raised through daily hearts or spending gems<!-- on non-infrastructures-->.']
-        })}`,
-        tags : [dataTags.LOVE, dataTags.PRIME, dataTags.OATH, dataTags.TDOLL, dataTags.COALITION]
-    },  //@Merge
     {
         questions : `I'm trying to contact support and one of the infos they need is Account ID. Where can I see it?`,
         answers : `UID that is present in your commander screen or intro card.`,
@@ -1470,8 +1471,8 @@ const cardData = Object.freeze([
         tags : [dataTags.TDOLL, dataTags.MAP, dataTags.NEWB, dataTags.IMPT]
     },  //@Visual
     {
-        questions : `What does the glitter/sparkle in my coalition unit's portrait mean? Their sprites also has a golden aura around it.`,
-        answers : `Shiny. And the very reason Golden Infusion is a thing.`,
+        questions : `What does the ${link('glitter/sparkle', './assets/images/ShinyIndicator.png')} in my coalition unit's portrait mean? Their sprites also has a golden aura/glow around it.`,
+        answers : `A shiny ${altTextStyle('pokemon', TextStyle.STRIKE)} coalition unit. And the very reason Golden Infusion is a thing.`,
         tags : [dataTags.COALITION]
     },
     {

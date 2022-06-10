@@ -36,10 +36,6 @@
 
 @ Visual
 
-### If the Ringleader appears for a capture, will I guarantee her when I use Svarog aid?
-
-> No. It pulls from the entire pool where the entire pool is the X in the X/100 units.
-
 ### What is Peak Value Analysis?
 
 > Dummy-linking basically. But dupes are required.
@@ -69,16 +65,6 @@
 ### When will <insert unit/ringleader> appear?
 
 > ![](/GFL/assets/images/SFSched.png "Basically the order of release")
-
-### I see a golden glow on my Coalition unit. What's it for?
-
-> Lazy cosmetic difference stating that it's a shiny ~~pokemon~~ unit.
->
-> [Indicators.](https://i.imgur.com/sJlfoCY.png)
->
-> You can give it to another unit in the same place with Symmetric Infusion.
-
-@ Visual
 
 ### Can I increase the ringleader's 25% capture rate?
 
