@@ -1428,7 +1428,7 @@ const cardData = Object.freeze([
     {
         questions : `Where can I redeem the event boxes?`,
         answers : `Main Screen > Event > Time-Limited Event Tab > Supply Boxes.`,
-        tags : [dataTags.MISC]
+        tags : [dataTags.ANNIV]
     },  //@Visual
     {
         questions : `Will the TCM icons become available in the Friend Shop?`,
@@ -1445,11 +1445,6 @@ const cardData = Object.freeze([
         answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ce')}`,
         tags : [dataTags.CE]
     },
-    {
-        questions : `Where can I open the anniversary supply boxes?`,
-        answers : `Events > Supply Boxes Banner`,
-        tags : [dataTags.ANNIV]
-    },  //@Visual
     {
         questions : `Found out that there are seasonal lines for some dolls. How do I trigger them?`,
         answers : `Set them as your adjutant wearing the appropriate costume for the occasion.`,
