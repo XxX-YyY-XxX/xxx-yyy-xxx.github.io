@@ -5,6 +5,7 @@ var includes;
 while (includes = Array.from(document.getElementsByTagName('include'))) {
     for (const include of includes) {
         var file = include.getAttribute('src');
+        console.log(file)
         //if (file.endsWith('.html')) 
         fetch(file)
             .then(response => {
