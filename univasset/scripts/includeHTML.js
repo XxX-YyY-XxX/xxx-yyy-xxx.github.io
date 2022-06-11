@@ -1,8 +1,8 @@
 //Add "include inside of include"
 //const external = importScripts('/univasset/scripts/externaljavascript.js')
 
-var includes;
-while (includes = Array.from(document.getElementsByTagName('include'))) {
+var includes = Array.from(document.getElementsByTagName('include'));
+while (includes) {
     for (const include of includes) {
         var file = include.getAttribute('src');
         console.log(file)
@@ -15,7 +15,7 @@ while (includes = Array.from(document.getElementsByTagName('include'))) {
                 include.outerHTML = data;
             });                
     }
-    //includes = Array.from(document.getElementsByTagName('include'));
+    includes = Array.from(document.getElementsByTagName('include'));
 }
 
 /*
