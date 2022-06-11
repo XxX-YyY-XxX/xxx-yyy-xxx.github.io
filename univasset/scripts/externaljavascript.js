@@ -22,10 +22,17 @@ function UniqueClassElement(className) {
 }
 
 /** @param {HTMLElement} iframeElement*/
-function reloadIFrame(iframeElement) {
+function ReloadIFrame(iframeElement) {
     var temp = iframeElement.src;
     iframeElement.src = '';
     iframeElement.src = temp;
+}
+
+/** @param {string} path @returns Path with no extension, extension */
+function SplitExt(path) {
+    var list = path.split('.');
+    var extension = `.${list[list.length - 1]}`
+    return [path.replace(extension, ''), extension]
 }
 
 /*if (typeof(Storage) !== "undefined") {

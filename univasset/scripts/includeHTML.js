@@ -1,15 +1,14 @@
 //Add "include inside of include"/ Nested includes
-//const external = importScripts('/univasset/scripts/externaljavascript.js')
+//importScripts('/univasset/scripts/externaljavascript.js')
 
 function includeFile() {
     for (const include of Array.from(document.getElementsByTagName('include'))) {
-        var file = include.getAttribute('src');
-        //if (file.endsWith('.html')) 
-        fetch(file)
+        fetch(include.getAttribute('src'))
             .then(response => {
                 return response.text()
             })
             .then(data => {
+                //Check for nested include
                 include.outerHTML = data;
             });                
     }    
