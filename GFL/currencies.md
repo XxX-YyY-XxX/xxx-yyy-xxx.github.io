@@ -18,10 +18,6 @@
 
 > As in more than 30 a day? No. It being a 2 month distribution? Yes.
 
-### How often will we get a True Core Mask?
-
-> Every anniversary and major events.
-
 ### Which should I prioritize in the Data Room, Combat Reports or Special Combat Reports?
 
 > SCRs primarily because you can just EXP sim, corpse drag, and auto-battle the dolls, and also because basecamp sells far more CR than SCR. Note that you'd need 5000 SCRs to fully level a fresh HOC.
@@ -51,10 +47,6 @@
 ### Anyone knows what resources and how much do we get for a failed PA capture?
 
 > ![](/GFL/assets/images/CaptureFail.png "Slashes are because probability")
-
-### I didn't get \*insert reward here*. I checked my inventory but they're not there. How do I get them?
-
-> Have you checked the quests? What about the mail? If you did and they're still not there, either restart or wait for a few days.
 
 ### How many combat reports should I have ideally?
 

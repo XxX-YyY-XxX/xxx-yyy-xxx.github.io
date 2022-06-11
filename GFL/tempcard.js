@@ -463,7 +463,8 @@ const cardData = Object.freeze([
     },  //@Visual
     {
         questions : `How do I connect to GFAlarm with an emulator?`,
-        answers : `Enter the GFAlarm proxy address to ProxyDroid or Drony.`,
+        answers : `Enter the GFAlarm proxy address to ProxyDroid or Drony.<br>
+        ${link("u/Signal_Abroad1427's google-fu for Bluestacks.", 'https://old.reddit.com/r/girlsfrontline/comments/umdikk/weekly_commanders_lounge_may_10_2022/i8hj47h/')}`,
         tags : [dataTags["3P"], dataTags.EMU]
     },
     {
@@ -1422,7 +1423,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `What are Prototype Fairies used for?`,
-        answers : `Enhancing other fairies. They act like dupes in a sense that they give 100 enhancement EXP a pop, or 150 with matching talents.`,
+        answers : `Enhancing other fairies. They act like dupes in a sense that they give 100 enhancement EXP a pop, or 150 with matching talents. Recommended to use on expensive craft fairies.`,
         tags : [dataTags.FAIRY]
     },
     {
@@ -1511,6 +1512,13 @@ const cardData = Object.freeze([
         questions : `Visited a random dorm and they had a different audio playing, what caused that?`,
         answers : `Specific furniture with a specific doll or a complete furniture set.`,
         tags : [dataTags.DORM, dataTags.FURN]
+    },
+    {
+        questions : `I didn't get *insert reward here*. I checked my inventory but they're not there. How do I get them?`,
+        answers : `Have you checked the quests?<br>
+        What about the mail? Stage clear rewards are sent there.<br>
+        If you did and they're still not there, either restart or wait for a few days.`,
+        tags : [dataTags.MISC, dataTags.TECH]
     },
     {
         questions : ``,

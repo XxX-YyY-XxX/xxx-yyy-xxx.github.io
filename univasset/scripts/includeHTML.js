@@ -1,15 +1,21 @@
 //Add "include inside of include"
-for (const include of Array.from(document.getElementsByTagName('include'))) {
-    fetch(include.getAttribute('src'))
-        .then(response => {
-            return response.text()
-        })
-        .then(data => {
-            include.outerHTML = data;
-        });                
-}
+//const external = importScripts('/univasset/scripts/externaljavascript.js')
 
-//<div w3-include-html="/univasset/styleheader.html"></div>
+var includes;
+while (includes = Array.from(document.getElementsByTagName('include'))) {
+    for (const include of includes) {
+        var file = include.getAttribute('src');
+        file.endsWith('.html')
+        fetch(file)
+            .then(response => {
+                return response.text()
+            })
+            .then(data => {
+                include.outerHTML = data;
+            });                
+    }
+    //includes = Array.from(document.getElementsByTagName('include'));
+}
 
 /*
 function includeHTML() {
