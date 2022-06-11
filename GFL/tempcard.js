@@ -1513,6 +1513,11 @@ const cardData = Object.freeze([
         tags : [dataTags.DORM, dataTags.FRIEND, dataTags["3P"]]
     },
     {
+        questions : `Visited a random dorm and they had a different audio playing, what caused that?`,
+        answers : `Specific furniture with a specific doll or a complete furniture set.`,
+        tags : [dataTags.DORM, dataTags.FURN]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []

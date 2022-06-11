@@ -18,6 +18,14 @@ https://old.reddit.com/r/girlsfrontline/comments/umdikk/weekly_commanders_lounge
 
 https://old.reddit.com/r/girlsfrontline/comments/umdikk/weekly_commanders_lounge_may_10_2022/i8k03fn/
 
-https://old.reddit.com/r/girlsfrontline/comments/umdikk/weekly_commanders_lounge_may_10_2022/i8nfnqa/
+[–]AgentDesignatedDec0y 1 point 27 days ago 
 
------
+
+permalinkembedsavereportreply
+
+[–]705583|14 Dorms|XP Tryhard|Cores:14,434headphone_question 2 points 27 days ago 
+It's probably a piece of furniture those commanders had. It's also likely that those commanders have a full set that came with that particular piece of furniture. I'm not very sure exactly which piece of furniture changes the music, but I know that those pieces come from a furniture set you can get from gacha
+
+One example would be the orchestra dorm set. Another is the rock concert dorm set. I could be mistaken, but it could be the central stage furniture piece that changes the music
+
+permalinkembedsaveparentreportreply
