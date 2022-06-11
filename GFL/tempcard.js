@@ -35,6 +35,12 @@ const dataTags = Object.freeze({
         EXPED : 'ForwardBasecamp',      //Lazy leveling
         PA : 'ProtocolAssimilation',    //PA pulling and coalition drills.
     //#endregion
+    //#region Devices
+    APPLE : 'AppleDevices',         //Anything primarily concerning iOS devices.
+    EMU : 'Emulators',              //Anytihing related to emulators.
+    //ANDROID : 'AndroidDevices',
+
+    //#endregion
     MISC : 'Miscellaneous',         //Default tag if I dunno what to put. Should be useless, but meh.
     ACCT : 'AccountManagement',     //Anything concerning account data and integrity.
     TECH : 'Troubleshooting',       //For resolving issues that shouldn't even happen.
@@ -42,9 +48,6 @@ const dataTags = Object.freeze({
     NEWB : 'NewbieGuide',           //Things new/early-game players should know.
     PRIME : 'TopicPrimer',          //Explanation of the specific system it's paired with. Usually made up of links. Must be the first box of it's paired tag.
     TIER : 'TierList',              //May not technically be one, just overall description on who is stronger than who.
-    EMU : 'Emulators',              //Anytihing related to emulators.
-    APPLE : 'AppleDevices',         //Anything primarily concerning iOS devices.
-    //ANDROID : 'AndroidDevices',
     ANNIV : 'Anniversary',          //Anything concerning the game's anniversary.
     IMPT : 'Important',             //Things new players would need for late-game. Mostly consists of things not explained by the game.
     SYSMECH : 'SystemMechanics',    //Explanation on underlying mechanics of the game.
@@ -65,7 +68,6 @@ const dataTags = Object.freeze({
     LORE : 'Story/Lore',            //Main meat of the series
     MARP : 'FourResources',         //Manpower, Ammunition, Rations, Parts
     REF : 'References',             //Reference compilations
-    //Devices
     CE : 'CombatEffectiveness',     //"CE is useless"
 });
 
@@ -104,11 +106,11 @@ function youtubeEmbed(videoID) {
     return `<iframe src="https://www.youtube.com/embed/${identifier}" allowfullscreen></iframe>`
 }
 
-/** @param permalink ...comments/${permalink}/?...*/
+/** @param permalink ...comments/${permalink}/?...*
 function redditEmbed(permalink) {                                       //needs more fix, how to check support
     return `<a href="https://old.reddit.com/r/girlsfrontline/comments/${permalink}/">For load fail purposes.</a><br>
     <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/${permalink}/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="278" width="640" scrolling="no"></iframe>`
-}
+}*/
 
 /** @param {Array} headerArray @param {Array[]} arrayOfArrays */
 function table(headerArray, ...arrayOfArrays) {
