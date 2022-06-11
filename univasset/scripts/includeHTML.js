@@ -1,54 +1,24 @@
 //Add "include inside of include"/ Nested includes
 //const external = importScripts('/univasset/scripts/externaljavascript.js')
 
-for (const include of Array.from(document.getElementsByTagName('include'))) {
-    var file = include.getAttribute('src');
-    console.log(file)
-    //if (file.endsWith('.html')) 
-    fetch(file)
-        .then(response => {
-            return response.text()
-        })
-        .then(data => {
-            include.outerHTML = data;
-        });                
+function includeFile() {
+    for (const include of Array.from(document.getElementsByTagName('include'))) {
+        var file = include.getAttribute('src');
+        //if (file.endsWith('.html')) 
+        fetch(file)
+            .then(response => {
+                return response.text()
+            })
+            .then(data => {
+                include.outerHTML = data;
+            });                
+    }    
 }
 
+includeFile();
 
-/*
-function includeHTML() {
-    const z = document.getElementsByTagName("*");
-    for (let i = 0; i < z.length; i++) {
-        const element = z[i];
-        const file = element.getAttribute("w3-include-html");
-        if (file) {
-            const xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4) {
-                    switch (this.status) {
-                        case 200:
-                            element.innerHTML = this.responseText;
-                            break;
-                        case 404:
-                            element.innerHTML = file + " not found.";
-                            break;
-                        default:
-                            element.innerHTML = this.status;
-                            break;
-                    }
-                    element.removeAttribute("w3-include-html");
-                    includeHTML();
-                }
-            }
-            xhttp.open("GET", file, true);
-            xhttp.send();
-            return;
-        }
-    }
-}
-
-includeHTML();
-*/
+//var a = new DOMParser()
+//a.parseFromString()
 
 //<iframe src="/univasset/styleheader.html" onload="this.insertAdjacentHTML('afterend', (this.contentDocument.body||this.contentDocument).innerHTML);this.remove()"></iframe>
 //<object name="styleheader" type="text/html" data="/univasset/styleheader.html"></object>
