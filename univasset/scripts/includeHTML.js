@@ -1,22 +1,19 @@
-//Add "include inside of include"
+//Add "include inside of include"/ Nested includes
 //const external = importScripts('/univasset/scripts/externaljavascript.js')
 
-var includes = Array.from(document.getElementsByTagName('include'));
-while (includes) {
-    for (const include of includes) {
-        var file = include.getAttribute('src');
-        console.log(file)
-        //if (file.endsWith('.html')) 
-        fetch(file)
-            .then(response => {
-                return response.text()
-            })
-            .then(data => {
-                include.outerHTML = data;
-            });                
-    }
-    includes = Array.from(document.getElementsByTagName('include'));
+for (const include of Array.from(document.getElementsByTagName('include'))) {
+    var file = include.getAttribute('src');
+    console.log(file)
+    //if (file.endsWith('.html')) 
+    fetch(file)
+        .then(response => {
+            return response.text()
+        })
+        .then(data => {
+            include.outerHTML = data;
+        });                
 }
+
 
 /*
 function includeHTML() {
