@@ -5,7 +5,7 @@ var includes;
 while (includes = Array.from(document.getElementsByTagName('include'))) {
     for (const include of includes) {
         var file = include.getAttribute('src');
-        file.endsWith('.html')
+        //if (file.endsWith('.html')) 
         fetch(file)
             .then(response => {
                 return response.text()
