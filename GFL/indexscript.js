@@ -1,3 +1,5 @@
+importScripts('/univasset/scripts/externaljavascript.js')
+
 //#region Constants and Variables
 const toggleableTagsField = document.getElementById('tags-list');
 const searchTextField = document.getElementById('search-text');

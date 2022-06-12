@@ -35,6 +35,11 @@ function SplitExt(path) {
     return [path.replace(extension, ''), extension]
 }
 
+
+
+
+
+
 /*if (typeof(Storage) !== "undefined") {
     sessionStorage.outputCards = boxes;
 } else {
