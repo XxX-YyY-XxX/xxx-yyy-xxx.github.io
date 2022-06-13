@@ -1,35 +1,35 @@
 const epsilon = 10 ** -10;
 
 /** @param {Array} subset @param {Array} mainset */
-export function IsSubsetOf(subset, mainset) {
+function IsSubsetOf(subset, mainset) {
     return subset.every(val => mainset.includes(val));
 }
 
 /** @param {string} htmlString */
-export function RemoveHTMLTag(htmlString) {                                        //May remove non-HTML <???> strings
+function RemoveHTMLTag(htmlString) {                                        //May remove non-HTML <???> strings
     return htmlString.replace(/(<([^>]+)>)/ig, '');
 }
 
 /** @param {number} min @param {number} max */
-export function RandomInteger(min, max) {                                          //Math.random() = [0...1)
+function RandomInteger(min, max) {                                          //Math.random() = [0...1)
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
 /** @param {string} className @returns Null if no or multiple elements found. */
-export function UniqueClassElement(className) {
+function UniqueClassElement(className) {
     const output = Array.from(document.getElementsByClassName(className));
     return output.length == 1 ? output[0] : null;
 }
 
 /** @param {HTMLElement} iframeElement*/
-export function ReloadIFrame(iframeElement) {
+function ReloadIFrame(iframeElement) {
     var temp = iframeElement.src;
     iframeElement.src = '';
     iframeElement.src = temp;
 }
 
 /** @param {string} path @returns Path with no extension, extension */
-export function SplitExt(path) {
+function SplitExt(path) {
     var list = path.split('.');
     var extension = `.${list[list.length - 1]}`
     return [path.replace(extension, ''), extension]

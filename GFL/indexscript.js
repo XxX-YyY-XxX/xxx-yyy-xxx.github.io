@@ -1,4 +1,4 @@
-import {IsSubsetOf, RemoveHTMLTag, RandomInteger, UniqueClassElement} from '/univasset/scripts/externaljavascript.js'
+//import {IsSubsetOf, RemoveHTMLTag, RandomInteger, UniqueClassElement} from '/univasset/scripts/externaljavascript.js'
 
 //#region Constants and Variables
 const toggleableTagsField = document.getElementById('tags-list');
