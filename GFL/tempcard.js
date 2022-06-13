@@ -1,4 +1,4 @@
-importScripts('/univasset/scripts/externaljavascript.js')
+import {ReloadIFrame} from '/univasset/scripts/externaljavascript.js'
 
 const dataTags = Object.freeze({
     //#region Combat Tabs
