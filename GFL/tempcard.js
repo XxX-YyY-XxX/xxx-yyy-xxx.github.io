@@ -280,7 +280,8 @@ const cardData = Object.freeze([
         questions : `Is there a tier list for fairies?`,
         answers : `${image('./assets/images/FairyTier.png', "Sijun's list")}<br>
         For the equipments, top number is the recommended quantity, bottom number is the reserve quantity.<br>
-        ${link(`u/UnironicWeeaboo's spreadsheet.`, 'https://docs.google.com/spreadsheets/d/1RORciafqtspkxy3fqBrFdKIxVfanV2-fLl9FlvY3QtM')}`,
+        ${link(`u/UnironicWeeaboo's spreadsheet.`, 'https://docs.google.com/spreadsheets/d/1RORciafqtspkxy3fqBrFdKIxVfanV2-fLl9FlvY3QtM')}<br>
+        ${link('u/BigStupidJellyfish_ review.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/fairy-reviews')}`,
         tags : [dataTags.FAIRY, dataTags.TIER, dataTags.EQUIP]
     },  //https://imgur.com/a/pfSSel9
     {
@@ -1534,6 +1535,11 @@ const cardData = Object.freeze([
         questions : `What are the chances on getting a specific fairy talent?`,
         answers : `${link('u/BigStupidJellyfish_ analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/talent-data')}`,
         tags : [dataTags.FAIRY]
+    },
+    {
+        questions : `Why is the event map still here? It should've ended, right?`,
+        answers : `Happens if you didn't close the app throughout maintenance. Can still be played and drop limited dolls.<!-- u/BigStupidJellyfish_ -->`,
+        tags : [dataTags.STORY]
     },
     {
         questions : ``,
