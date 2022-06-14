@@ -158,7 +158,7 @@ const cardData = Object.freeze([
     {
         questions : `I can't access/press/see things, what do I do?`,
         answers : `Have you tried restarting your application? This should be the default response to everything.`,
-        tags : [dataTags.TECH, dataTags.PRIME, dataTags,IMPT]
+        tags : [dataTags.TECH, dataTags.PRIME, dataTags.IMPT]
     },
     {
         questions : `How do I level my girls?`,
