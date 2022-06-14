@@ -156,6 +156,11 @@ function descriptionList(dictOfArray) {
 const cardData = Object.freeze([
     //#region Topic Primers
     {
+        questions : `I can't access/press/see things, what do I do?`,
+        answers : `Have you tried restarting your application? This should be the default response to everything.`,
+        tags : [dataTags.TECH, dataTags.PRIME, dataTags,IMPT]
+    },
+    {
         questions : `How do I level my girls?`,
         answers : `First is grinding them on leveling maps, mainly through ${spoilerSummary('corpse dragging', 
         `Also called Poor Run or Beggar Run, is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.<br>
@@ -1369,9 +1374,10 @@ const cardData = Object.freeze([
         tags : [dataTags.TECH]
     },
     {
-        questions : `If I scrapped my only copy of a doll, can I get them back?`,
+        questions : `If I scrapped/retired my only copy of a doll, can I recover/get them back?`,
         answers : `First of all, how dare you?<br>
-        Second of all, yes you can. Can also work on ${spoilerSummary('collab units', image('./assets/images/CollabScrap.png', 'From u/Angelic_Force'))}.`,
+        Second of all, yes you can. Can also work on ${spoilerSummary('collab units', image('./assets/images/CollabScrap.png', 'From u/Angelic_Force'))}.<br>
+        Can only work once a week, costs however much is needed for a x1 dummy-link, and scrapped dupes are poof.`,
         tags : [dataTags.TDOLL, dataTags.COLLAB, dataTags.SYSMECH]
     },
     {
@@ -1523,6 +1529,11 @@ const cardData = Object.freeze([
         What about the mail? Stage clear rewards are sent there.<br>
         If you did and they're still not there, either restart or wait for a few days.`,
         tags : [dataTags.MISC, dataTags.TECH]
+    },
+    {
+        questions : `What are the chances on getting a specific fairy talent?`,
+        answers : `${link('u/BigStupidJellyfish_ analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/talent-data')}`,
+        tags : [dataTags.FAIRY]
     },
     {
         questions : ``,
