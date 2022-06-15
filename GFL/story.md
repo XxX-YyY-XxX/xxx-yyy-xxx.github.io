@@ -2,10 +2,6 @@
 
 # Story
 
-### I missed a major event, will it come back?
-
-> 6 months minimum after their release, they get added to the Campaign tab. For collabs... hope for the best.
-
 ### How to read the story again? It's not available in the story playback in Index.
 
 > Settings>Game>Story Playback then play the stage again. Or just Youtube it. This also applies to nodes with story/cutscene snippets.

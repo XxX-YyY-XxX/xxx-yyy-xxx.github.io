@@ -1542,6 +1542,11 @@ const cardData = Object.freeze([
         tags : [dataTags.STORY]
     },
     {
+        questions : `I missed a major event, will it come back?`,
+        answers : `6 months minimum after their release, they get added to the Campaign tab. For collabs... hope for the best.`,
+        tags : [dataTags.MAJOR, dataTags.CAMPAIGN]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
