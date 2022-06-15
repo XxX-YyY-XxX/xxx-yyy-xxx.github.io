@@ -1566,6 +1566,11 @@ const cardData = Object.freeze([
         tags : []
     },  //@Trim Image
     {
+        questions : `What exactly are Friend Gossips?`,
+        answers : `Unique dialogues when two paired dolls are in the double adjutant.`,
+        tags : [dataTags.MISC]
+    },  //<!-- Confirmed Pairs: -->
+    {
         questions : ``,
         answers : ``,
         tags : []
