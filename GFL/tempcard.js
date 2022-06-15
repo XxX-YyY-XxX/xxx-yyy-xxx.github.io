@@ -1563,7 +1563,7 @@ const cardData = Object.freeze([
         questions : `Do HP shields stack?`,
         answers : `TLDR: Yes.<br>
         ${image('./assets/images/HPShield.png', 'From u/UnironicWeeaboo')}`,
-        tags : []
+        tags : [dataTags.BATTLE, dataTags.SKILL]
     },  //@Trim Image
     {
         questions : `What exactly are Friend Gossips?`,
