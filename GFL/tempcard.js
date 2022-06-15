@@ -1560,6 +1560,12 @@ const cardData = Object.freeze([
         tags : [dataTags.PA, dataTags.COALITION, dataTags.OATH, dataTags.TECH]
     },
     {
+        questions : `Do HP shields stack?`,
+        answers : `TLDR: Yes.<br>
+        ${image('./assets/images/HPShield.png', 'From u/UnironicWeeaboo')}`,
+        tags : []
+    },  //@Trim Image
+    {
         questions : ``,
         answers : ``,
         tags : []

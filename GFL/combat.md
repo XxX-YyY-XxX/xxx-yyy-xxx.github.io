@@ -16,14 +16,6 @@
 
 @ Clarify
 
-### Do HP shields stack?
-
-> TLDR: Yes.
->
-> ![](/GFL/assets/images/HPShield.png "From u/UnironicWeeaboo")
-
-@ Compact
-
 ### How do I deal with enemies with armor?
 
 > Use dolls that can equip AP ammo.
