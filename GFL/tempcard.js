@@ -163,7 +163,7 @@ const cardData = Object.freeze([
     {
         questions : `How do I level my girls?`,
         answers : `First is grinding them on leveling maps, mainly through ${spoilerSummary('corpse dragging', 
-        `Also called Poor Run or Beggar Run, is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.<br>
+        `Also called Poor Run or Beggar Run, it is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.<br>
         ${link("Ceia's 0-2 drag guide. Docs Edition.", 'https://docs.google.com/document/u/0/d/1PkxJ7ObdGW_cS_qbzAxQ_hoC1SFse3HNYWlnywZfPuo')}<br>
         ${link("Ceia's 0-2 drag guide. Vids Edition.", 'https://youtu.be/vqvPpO1vKqw')}<br>
         ${link('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide')}<br>
@@ -1184,6 +1184,7 @@ const cardData = Object.freeze([
         questions : `I'm in dummy core hell. How do I get some more?`,
         answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/its_still_not_enough_fuck')}<br>
         ${link('BigStupidJellyfish write-up.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/core-rates')}<br>
+        ${link("u/UnironicWeeaboo's easier 11-6.", 'https://old.reddit.com/r/girlsfrontline/comments/u1tr33/weekly_commanders_lounge_april_12_2022/i5178cy/')}
         Run any daytime leveling maps for combined core and exp farming. You can also farm during core rate up by using the handgun recipe.`,
         tags : [dataTags.ITEM]
     },
@@ -1212,12 +1213,12 @@ const cardData = Object.freeze([
                 link("The Background History of Girls' Frontline", 'https://twitter.com/YZsFerrari/status/1379877420732448777'),
                 link('IOPWiki Lore', 'https://iopwiki.com/wiki/Lore'),
                 link('Gamepress Lore Directory', 'https://gamepress.gg/girlsfrontline/lore-directory')],
-            'Main Story' : [link("u/RhythmLunatic's GFL Cutscene Interpreter", 'https://gfl.amaryllisworks.pw'),
+            'Main Story' : [link("u/RhythmLunatic's GFL Cutscene Interpreter (including collabs)", 'https://gfl.amaryllisworks.pw'),
                 link("Shoul's Story Scenes Playlists", 'https://www.youtube.com/channel/UC_JmwXOfYqOKpGGtc5gcVmw'),
                 link("Girls' Frontline Full Story Comprehension Playlist Translated up to Isomer", 'https://youtube.com/playlist?list=PL9y52Flm1yM-tJJoom2zfrWTpaO1mTw8M'),
                 link("u/DoctuhD's Girls Frontline Summary from Isomer to Polarized Light", 'https://docs.google.com/document/d/1yn0sjoktIb2f-KC6bxn3R0qpCUChBPpIQuERcLmBHbg')]
         })}`,
-        tags : [dataTags.LORE]
+        tags : [dataTags.LORE, dataTags.COLLAB]
     },
     {
         questions : `What's the use case for 5HGs?`,
