@@ -1547,6 +1547,18 @@ const cardData = Object.freeze([
         tags : [dataTags.MAJOR, dataTags.CAMPAIGN]
     },
     {
+        questions : `Is there a list of game terms and their abbreviations? And is there any for dolls' nicknames?`,
+        answers : `${link('u/BigStupidJellyfish_.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/terms')} Includes in-game and community terms.<br>
+        ${link('u/Kipdid.', 'https://old.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge_may_17_2022/i9fmiwm/')}<br>
+        ${link('u/totestemp', 'https://old.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge_may_17_2022/i972mqd/')}`,
+        tags : [dataTags.MISC]
+    },
+    {
+        questions : `How do I oath Ringleaders?`,
+        answers : `Through the Formations route or the Armory route, with 100 Affection in hand, just like the Dolls. Going through the Protocol Control Center route is reported to be bugged.`,
+        tags : [dataTags.PA, dataTags.COALITION, dataTags.OATH, dataTags.TECH]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
