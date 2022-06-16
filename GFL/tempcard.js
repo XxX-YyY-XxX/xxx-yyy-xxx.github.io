@@ -1254,7 +1254,7 @@ const cardData = Object.freeze([
         ['Submachine Gun (SMG)', 'Evasion Tank<br>Anti-Swarm', 'Frontline', 'Accuracy is non-existent'],
         ['Rifle (RF)', 'Anti-Armor', 'Backline', 'Weak to swarms<br>Affected by night penalty'],
         ['Handgun (HG)', 'Buffer<br>Debuffer', '???', 'Cannot facetank'],
-        ['Machine Gun (MG)', 'Opening Volley', 'Random', 'Reloads/Stops shooting at around 6s'],
+        ['Machine Gun (MG)', 'Opening Volley', 'Random', 'Reloads/Stops shooting at around 6s<br>Weak to high evasion'],
         ['Shotgun (SG)', 'Armor Tank', 'Frontline', 'Poor evasion'])}`,
         tags : [dataTags.TDOLL, dataTags.NEWB]
     },  //@Add info
@@ -1357,7 +1357,7 @@ const cardData = Object.freeze([
             'Mixed' : [image('./assets/images/EchelonComps.png')],
             'Coalition Echelons' : [link('Reddit flowchart post.', 'https://redd.it/rkvisq'),
                 link('Gamepress list of units and build suggestions.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units')],
-            'Griffin Tactical Doll Echelons' : [link("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv')]
+            'Tactical Doll Echelons' : [link("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv')]
         })}<br>
         Shouldn't be a gospel but a good starting point nonetheless.`,
         tags : [dataTags.ECH, dataTags.COALITION, dataTags.TDOLL]
