@@ -557,12 +557,6 @@ const cardData = Object.freeze([
         tags : [dataTags.TDOLL, dataTags.MAIN, dataTags.STORY, dataTags.SPEQ]
     },
     {
-        questions : `What does the term Limited in dolls in the chapters mean?`,
-        answers : `Only limited to that particular map, nowhere else. Not limited by time, but by place.<br>
-        Unless there's a Rescue Event/Boss Bully, but that's something else.`,
-        tags : [dataTags.MAIN, dataTags.TDOLL]
-    },
-    {
         questions : `Do events get a rerun? And if so, when?`,
         answers : `Major events get a permanent rerun called Campaign Missions.<br>
         Seasonal events get one when it's their time.<br>
@@ -1138,10 +1132,12 @@ const cardData = Object.freeze([
         questions : `How can I get my favorite gun/doll?`,
         answers : `${descriptionList({
             'Factory Production' : [`5${star} dolls that can drop here are the only ones redeemable through True Core Masks, bar spaghetti.`],
-            'Rescue Drops' : ['Dolls that are farmable and debuted in a major event is farmable in campaign.'],
+            'Rescue Drops' : ['For "Limited" dolls in Combat Missions, they are limited to that particular map. Not limited by time, but by place. Until Rescue Event happens.',
+                'Dolls that are farmable and debuted in a major event is farmable in campaign.',
+                'During collabs, major events, side events, and Rescue Event/Boss Bully, event rewards become temporarily available for farming.'],
             'Event Rewards' : [link("BigStupidJellyfish's Event Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls')]
         })}`,
-        tags : [dataTags.TDOLL, dataTags.LEDOLL, dataTags.PROD, dataTags.MAJOR, dataTags.CAMPAIGN, dataTags.MINI, dataTags.TCM]
+        tags : [dataTags.TDOLL, dataTags.LEDOLL, dataTags.PROD, dataTags.MAJOR, dataTags.CAMPAIGN, dataTags.MINI, dataTags.TCM, dataTags.MAIN]
     },
     {
         questions : `What do advantaged dolls in combat map mean?`,
@@ -1256,7 +1252,7 @@ const cardData = Object.freeze([
         answers : `${table(['Class', 'Roles', 'Target Priority', 'Caveat'],
         ['Assualt Rifle (AR)', 'Anti-Swarm<br>Anti-Boss', 'Frontline', 'Weak to armored enemies'],
         ['Submachine Gun (SMG)', 'Evasion Tank<br>Anti-Swarm', 'Frontline', 'Accuracy is non-existent'],
-        ['Rifle (RF)', 'Anti-Armor', 'Backline', 'Weak to swarms'],
+        ['Rifle (RF)', 'Anti-Armor', 'Backline', 'Weak to swarms<br>Affected by night penalty'],
         ['Handgun (HG)', 'Buffer<br>Debuffer', '???', 'Cannot facetank'],
         ['Machine Gun (MG)', 'Opening Volley', 'Random', 'Reloads/Stops shooting at around 6s'],
         ['Shotgun (SG)', 'Armor Tank', 'Frontline', 'Poor evasion'])}`,
@@ -1276,7 +1272,7 @@ const cardData = Object.freeze([
         questions : `Will I get the rewards after adding a returning commander as friend for the callback event?`,
         answers : `${image('./assets/images/CallbackSupporter.png')}<br>
         ${image('./assets/images/CallbackReturner.png')}`,
-        tags : [dataTags.FRIEND]
+        tags : [dataTags.FRIEND, dataTags.ITEM, dataTags.MARP]
     },
     {
         questions : `Are the previous monthly Special Equipments obtainable in some way?`,
@@ -1288,7 +1284,7 @@ const cardData = Object.freeze([
         answers : `${link("markhydroxyl's github notes.", 'https://github.com/markhydroxyl/GFL-notes/blob/main/tls/nga_raising_paras.md')}<br>
         ${link('Logistics for HEC crafting.', 'https://github.com/markhydroxyl/GFL-notes/blob/main/tls/nga_hec_logis.md')}<br>
         ${spoilerSummary('Fairy Development Calculator.', googleEmbed('https://docs.google.com/spreadsheets/d/1Zcz6Yp3sduhUXY9jo2HCX4pOdiIQioZcS8v6xMK01Pk'))}`,
-        tags : []
+        tags : [dataTags.FAIRY, dataTags.LEVEL]
     },
     {
         questions : `Which HOC/FSTs have L2Ds?`,
