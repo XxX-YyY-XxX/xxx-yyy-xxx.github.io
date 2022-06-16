@@ -12,11 +12,3 @@ https://old.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge
 
 https://old.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge_may_17_2022/i9c0fwp/
 
-https://old.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge_may_17_2022/i9c9kv6/
-
-https://old.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge_may_17_2022/i9dhuuy/
-
-https://old.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge_may_17_2022/i9dfmyh/
-
------
-

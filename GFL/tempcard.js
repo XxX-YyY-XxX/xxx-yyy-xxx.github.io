@@ -1571,6 +1571,11 @@ const cardData = Object.freeze([
         tags : [dataTags.MISC]
     },  //<!-- Confirmed Pairs: -->
     {
+        questions : `How do I use True Core Masks?`,
+        answers : `Shop > Event Tab > True Core Mask Sub-tab`,
+        tags : [dataTags.TCM]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
