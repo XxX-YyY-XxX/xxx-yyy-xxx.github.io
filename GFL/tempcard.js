@@ -998,7 +998,8 @@ const cardData = Object.freeze([
     },
     {
         questions : `Why aren't my dorm batteries appearing?`,
-        answers : `If it's not within 11:00-14:00, 17:00-20:00, and 22:00-01:00 UTC-8, restart app.`,
+        answers : `If it's not within 11:00-14:00, 17:00-20:00, and 22:00-01:00 UTC-8, restart app.<br>
+        You'll know that it's collection time if the dorm button has a number on top of it (for the facility shortcuts) or Dorm No.1 flashes pink/purple in the BASE button.`,
         tags : [dataTags.DORM, dataTags.ITEM, dataTags.TECH]
     },
     {
