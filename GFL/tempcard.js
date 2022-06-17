@@ -173,7 +173,7 @@ const cardData = Object.freeze([
             ${link('DMesse guide.', 'http://dmesse.egloos.com/m/3567918')}`)}.<br>
         Second is using ${spoilerSummary('Combat Reports', list(false,
             'Acquired through Forward Basecamp, Data Room, the shop during events, or as a reward.',
-            'Can be gifted going to the Dorm>Warehouse>Gift tab or going to your owned doll profile and tapping the + button by the EXP bar.',
+            "Can be gifted by going to the Dorm>Warehouse>Gift tab or going to your owned doll's profile and tapping the + button by the EXP bar.",
             'Gives 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.'))}.`,
         tags : [dataTags.TDOLL, dataTags.LEVEL, dataTags.PRIME, dataTags.NEWB]
     },
