@@ -18,12 +18,6 @@
 
 > ![](/GFL/assets/images/FurnitureTrash.png "Trash Icon")
 
-### How does the Radiant Collection rate work?
-
-> For normal rate, 2% divided by the number of banners in the radiant is the chance of pulling a skin from a specific banner.
->
-> Pro-tip: Don't. Radiant is akin to the standard banner in gachas.
-
 ### I won't be using the costume. How can I scrap it?
 
 > I bring this news with a heavy heart that it is impossible. Deal with it.

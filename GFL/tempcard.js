@@ -166,7 +166,7 @@ const cardData = Object.freeze([
             `Also called Poor Run or Beggar Run, it is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.<br>
             ${spoilerSummary("Ceia's 0-2 drag guide.", 
                 `${youtubeEmbed('vqvPpO1vKqw')}<br>
-                ${googleEmbed('https://docs.google.com/document/u/0/d/1PkxJ7ObdGW_cS_qbzAxQ_hoC1SFse3HNYWlnywZfPuo')}`)}
+                ${googleEmbed('https://docs.google.com/document/u/0/d/1PkxJ7ObdGW_cS_qbzAxQ_hoC1SFse3HNYWlnywZfPuo')}`)}<br>
             ${link('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide')}<br>
             ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/optimizing-leveling-introduction')}<br>
             ${link('GFLCorner guide.', 'https://www.gflcorner.com/efficient-leveling-guide/')}<br>
@@ -1587,6 +1587,17 @@ const cardData = Object.freeze([
             'Equipment Enhancement Pills')}`,
         tags : [dataTags.EXPED, dataTags.ITEM]
     },  //@Visual
+    {
+        questions : `Is Radiant Collection worth it?`,
+        answers : `Not in the slightest. For early game furnishing, the Black Market is better since you can get a 5${star} bonus.<br>
+        Rates being 2% divided by the number of sets in the radiant is the chance of pulling a skin from a specific banner. Aside from the fact that no exchange tickets and no L2D.<br>`,
+        tags : [dataTags.RESUPPLY, dataTags.FURN, dataTags.EXPED, dataTags.SKIN]
+    },
+    {
+        questions : `What are pets used for?`,
+        answers : `Extra comfort for dorms and raises chance to go to a specific expedition biome.`,
+        tags : [dataTags.PET, dataTags.DORM, dataTags.EXPED]
+    },
     {
         questions : ``,
         answers : ``,
