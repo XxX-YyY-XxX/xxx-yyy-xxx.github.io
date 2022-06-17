@@ -1573,6 +1573,17 @@ const cardData = Object.freeze([
         tags : [dataTags.TCM]
     },
     {
+        questions : `What should I prioritize buying from the black market?`,
+        answers : `${list(true,
+            'Fire Control Cores',
+            'Dummy Cores',
+            'Standard Combat Reports',
+            'Special Combat Reports',
+            'Doll Enhancement Pills',
+            'Equipment Enhancement Pills')}`,
+        tags : [dataTags.EXPED, dataTags.ITEM]
+    },  //@Visual
+    {
         questions : ``,
         answers : ``,
         tags : []

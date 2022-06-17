@@ -2,12 +2,6 @@
 
 # Expedition/Forward Basecamp
 
-### What should I buy from the black market?
-
-> Fire Control Cores, Dummy Cores, both Combat Reports, to name a few.
-
-@ Visual
-
 ### Can I deploy two or three of the same pets in expedition?
 
 > Actually, that is the method used by min-maxers regarding advantaged pets.
