@@ -108,7 +108,7 @@ function youtubeEmbed(videoID) {
 
 /** @param permalink ...comments/${permalink}/?...*
 function redditEmbed(permalink) {                                       //needs more fix, how to check support
-    return `<a href="https://old.reddit.com/r/girlsfrontline/comments/${permalink}/">For load fail purposes.</a><br>
+    return `<a href="https://www.reddit.com/r/girlsfrontline/comments/${permalink}/">For load fail purposes.</a><br>
     <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/${permalink}/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="278" width="640" scrolling="no"></iframe>`
 }*/
 
@@ -270,7 +270,7 @@ const cardData = Object.freeze([
         ${link('Gamepress Overview.', 'https://gamepress.gg/girlsfrontline/t-dolls-list')}<br>
         ${link('KR Wiki.', 'https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0/%EC%9D%B8%ED%98%95%EB%8F%84%EA%B0%90')}<br>
         ${link("Fatalchapter's bilibili guide.", 'https://www.bilibili.com/read/readlist/rl100361')} Updated up to Jashin dolls.<br>
-        ${link("Sijun's list.", 'https://old.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1rph1l/')} Translated by u/ConductorBichir.`,
+        ${link("Sijun's list.", 'https://www.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1rph1l/')} Translated by u/ConductorBichir.`,
         tags : [dataTags.TDOLL, dataTags.TIER]
     },
     {
@@ -482,14 +482,14 @@ const cardData = Object.freeze([
         ${list(false, 
             `Use GFLMaps to take the enemy IDs you want to fight and enter them in the Custom Target Train under Packet Forger, with IDs separated by commas.<br>
             ${image('./assets/images/GFAlarmCTT.png', 'From u/UnironicWeeaboo')}<br>
-            Works for comps that has been loaded into the client and is ${link('very safe.', 'https://old.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i312oo2/')}`)}<br>
+            Works for comps that has been loaded into the client and is ${link('very safe.', 'https://www.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i312oo2/')}`)}<br>
         ${link('Matsuda recommendations.', 'https://gfl.matsuda.tips/post/everything-sucks-forever')}`,
         tags : [dataTags.ENEMY, dataTags.BATTLE, dataTags.MAP, dataTags["3P"]]
     },  //@Visual
     {
         questions : `How do I connect to GFAlarm with an emulator?`,
         answers : `Enter the GFAlarm proxy address to ProxyDroid or Drony.<br>
-        ${link("u/Signal_Abroad1427's google-fu for Bluestacks.", 'https://old.reddit.com/r/girlsfrontline/comments/umdikk/weekly_commanders_lounge_may_10_2022/i8hj47h/')}`,
+        ${link("u/Signal_Abroad1427's google-fu for Bluestacks.", 'https://www.reddit.com/r/girlsfrontline/comments/umdikk/weekly_commanders_lounge_may_10_2022/i8hj47h/')}`,
         tags : [dataTags["3P"], dataTags.EMU]
     },
     {
@@ -964,7 +964,7 @@ const cardData = Object.freeze([
         tags : [dataTags.LORE]
     },  //@Fix
     /*
-        https://old.reddit.com/r/girlsfrontline/comments/sc8jed/weekly_commanders_lounge_january_25_2022/hupfxsr/
+        https://www.reddit.com/r/girlsfrontline/comments/sc8jed/weekly_commanders_lounge_january_25_2022/hupfxsr/
     */
     {
         questions : `Is it possible to earn previously missed hidden achievements in Campaign Missions?`,
@@ -1028,7 +1028,7 @@ const cardData = Object.freeze([
         ['4' + star,  '0.396%'],
         ['5' + star,  '0.083%'],
         ['Starter',   '0.19%'])}
-        ${link('Base rate shown per doll is more or less their true rates.','https://old.reddit.com/r/girlsfrontline/comments/s6s9xj/weekly_commanders_lounge_january_18_2022/htmbjuc/')}`,
+        ${link('Base rate shown per doll is more or less their true rates.','https://www.reddit.com/r/girlsfrontline/comments/s6s9xj/weekly_commanders_lounge_january_18_2022/htmbjuc/')}`,
         tags : [dataTags.PROD]
     },
     {
@@ -1128,7 +1128,7 @@ const cardData = Object.freeze([
         JP - Japan<br>
         KR - Korea<br>
         EN - Everything else<br>
-        As for how to download it, check the sidebar of ${link('this', 'https://old.reddit.com/r/girlsfrontline/')} link under Downloads.`,
+        As for how to download it, check the sidebar of ${link('this', 'https://www.reddit.com/r/girlsfrontline/')} link under Downloads.`,
         tags : [dataTags.MISC]
     },  //@Totally gonna fix
     {
@@ -1196,7 +1196,7 @@ const cardData = Object.freeze([
         questions : `I'm in dummy core hell. How do I get some more?`,
         answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/its_still_not_enough_fuck')}<br>
         ${link('BigStupidJellyfish write-up.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/core-rates')}<br>
-        ${link("u/UnironicWeeaboo's easier 11-6.", 'https://old.reddit.com/r/girlsfrontline/comments/u1tr33/weekly_commanders_lounge_april_12_2022/i5178cy/')}
+        ${link("u/UnironicWeeaboo's easier 11-6.", 'https://www.reddit.com/r/girlsfrontline/comments/u1tr33/weekly_commanders_lounge_april_12_2022/i5178cy/')}
         Run any daytime leveling maps for combined core and exp farming. You can also farm during core rate up by using the handgun recipe.`,
         tags : [dataTags.ITEM]
     },
@@ -1411,7 +1411,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `Does Luffberry Chess have any exclusive rewards?`,
-        answers : `${link('Icons, furnitures, and as of 2.09, skins.', 'https://old.reddit.com/r/girlsfrontline/comments/uhb3jo/weekly_commanders_lounge_may_03_2022/i7kg6bu/')}`,
+        answers : `${link('Icons, furnitures, and as of 2.09, skins.', 'https://www.reddit.com/r/girlsfrontline/comments/uhb3jo/weekly_commanders_lounge_may_03_2022/i7kg6bu/')}`,
         tags : [dataTags.OJ, dataTags.FURN, dataTags.SKIN]
     },
     {
@@ -1502,7 +1502,7 @@ const cardData = Object.freeze([
     {
         questions : `When should I start doing night chapters?`,
         answers : `Anytime. Unlock them by completing the next chapter's last emergency map (i.e. 11-4e unlocks 10-1n). Remember to equip PEQs to negate the accuracy penalty and bring HGs for map vision. ARSMG should be fine for the first few night maps.<br>
-        ${link("BigStupidJellyfish_ requirements breakdown.", 'https://old.reddit.com/r/girlsfrontline/comments/pf1dsb/weekly_commanders_lounge_august_31_2021/hb4b257/')}`,
+        ${link("BigStupidJellyfish_ requirements breakdown.", 'https://www.reddit.com/r/girlsfrontline/comments/pf1dsb/weekly_commanders_lounge_august_31_2021/hb4b257/')}`,
         tags : [dataTags.MAIN]
     },
     {
@@ -1555,8 +1555,8 @@ const cardData = Object.freeze([
     {
         questions : `Is there a list of game terms and their abbreviations? And is there any for dolls' nicknames?`,
         answers : `${link('u/BigStupidJellyfish_.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/terms')} Includes in-game and community terms.<br>
-        ${link('u/Kipdid.', 'https://old.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge_may_17_2022/i9fmiwm/')}<br>
-        ${link('u/totestemp', 'https://old.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge_may_17_2022/i972mqd/')}`,
+        ${link('u/Kipdid.', 'https://www.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge_may_17_2022/i9fmiwm/')}<br>
+        ${link('u/totestemp', 'https://www.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge_may_17_2022/i972mqd/')}`,
         tags : [dataTags.MISC]
     },
     {
@@ -1611,6 +1611,12 @@ const cardData = Object.freeze([
         questions : `How hard am I gimping myself by not duping any T-Dolls?`,
         answers : `As hard as mixing red and yellow rather than buying orange.`,
         tags : [dataTags.TDOLL]
+    },
+    {
+        questions : `Are keybinds bannable?`,
+        answers : `${link('Highly recommended against using keybinds.', 'https://www.reddit.com/r/girlsfrontline/comments/grht76/monthly_qa/fs239z8/')}<br>
+        A lot of emulator players still use them, especially for ${link('kiting', 'https://www.reddit.com/r/girlsfrontline/comments/hmqhw8/weekly_commanders_lounge_july_07_2020/fxgu8g8/')}, so if you're willing to take the risk, go for it. Macros ARE a bannable offense, full stop.`,
+        tags : [dataTags.EMU]
     },
     {
         questions : ``,
