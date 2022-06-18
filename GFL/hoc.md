@@ -37,11 +37,3 @@
 ### What's the rate for HOC rate-up?
 
 > No exact numbers, but note that it only increases the chance of getting a particular HOC's Central Data. Rate for Data as a whole remains unchanged.
-
-### How do I strengthen FSTs?
-
-> - Leveling up mostly be CR.
-> - Skill levels.
-> - Iterations (only available at LV100 and 5★).
-> - Enhancements using pills.
-> - Chips.

@@ -10,9 +10,3 @@ https://old.reddit.com/r/girlsfrontline/comments/uwlnur/weekly_commanders_lounge
 
 https://old.reddit.com/r/girlsfrontline/comments/uwlnur/weekly_commanders_lounge_may_24_2022/i9x2t65/
 
-https://old.reddit.com/r/girlsfrontline/comments/uwlnur/weekly_commanders_lounge_may_24_2022/i9wpzyg/
-
-https://old.reddit.com/r/girlsfrontline/comments/uwlnur/weekly_commanders_lounge_may_24_2022/i9wpkzt/
-
-https://old.reddit.com/r/girlsfrontline/comments/uwlnur/weekly_commanders_lounge_may_24_2022/i9wbo89/
-

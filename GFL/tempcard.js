@@ -1598,6 +1598,21 @@ const cardData = Object.freeze([
         tags : [dataTags.PET, dataTags.DORM, dataTags.EXPED]
     },
     {
+        questions : `How do I strengthen FSTs?`,
+        answers : `${list(false,
+            'Leveling up mostly by SCR',
+            'Iterations (only available at LV100 and 5★)',
+            'Enhancements using pills',
+            'Skill levels',
+            'Tetrimino chips')}`,
+        tags : [dataTags.FST, dataTags.LEVEL]
+    },
+    {
+        questions : `How hard am I gimping myself by not duping any T-Dolls?`,
+        answers : `As hard as mixing red and yellow rather than buying orange.`,
+        tags : [dataTags.TDOLL]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
