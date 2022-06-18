@@ -67,7 +67,7 @@ const dataTags = Object.freeze({
     OJ : 'LuffberryChess',          //PVP sidegame
     LORE : 'Story/Lore',            //Main meat of the series
     MARP : 'FourResources',         //Manpower, Ammunition, Rations, Parts
-    REF : 'References',             //Reference compilations
+    REF : 'Compilation',            //Reference compilations
     CE : 'CombatEffectiveness',     //"CE is useless"
 });
 
@@ -233,9 +233,14 @@ const cardData = Object.freeze([
         tags : [dataTags.THEATER, dataTags.PRIME]
     },
     {
+        questions : `What's a True Core Mask and how do I use it?`,
+        answers : `${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/true-core-mask-revamped-who-get')}`,
+        tags : [dataTags.TCM, dataTags.PRIME]
+    },
+    {
         questions : `Are there any sort of guides on how and when to roll for skins?`,
         answers : `${link('BigStupidJellyfish guide.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/gacha')}`,
-        tags : [dataTags.RESUPPLY, dataTags.SKIN, dataTags.PRIME]
+        tags : [dataTags.RESUPPLY, dataTags.TDOLL, dataTags.SKIN, dataTags.PRIME]
     },
     {
         questions : `What does Affection do?`,
@@ -306,6 +311,12 @@ const cardData = Object.freeze([
         ['08', 'PP-93',  'PP-93',  'PP-93' ])}`,
         tags : [dataTags.HOC, dataTags.FST, dataTags.TIER]
     },  //Rudimentary rankings. Last place reserved for incomplete FSTs.
+    {
+        questions : `Which doll should I get with True Core Masks?`,
+        answers : `${image('./assets/images/VeryReliableTCMGuide.png')}<br>
+        ${image('./assets/images/SeriousTCMGuide.png')}`,
+        tags : [dataTags.TCM, dataTags.TIER]
+    },
     //#endregion
     //#region Compilations
     {
@@ -1232,13 +1243,6 @@ const cardData = Object.freeze([
         tags : [dataTags.SIMS]
     },
     {
-        questions : `Which doll should I get with True Core Masks?`,
-        answers : `${image('./assets/images/VeryReliableTCMGuide.png')}<br>
-        ${image('./assets/images/SeriousTCMGuide.png')}<br>
-        Note that you can only use it on craftable dolls, so no P22(drop only) or Deagle(event reward).`,
-        tags : [dataTags.TCM]
-    },
-    {
         questions : `What would I need when building night ARSMGs?`,
         answers : `AR: Any.<br>
         SMG: Direct-fire SMGs are hard to sell because of low base ACC and night ACC penalty, so molotovs or grenades.<br>
@@ -1571,11 +1575,6 @@ const cardData = Object.freeze([
         answers : `Unique dialogues when two paired dolls are in the double adjutant.`,
         tags : [dataTags.MISC]
     },  //<!-- Confirmed Pairs: -->
-    {
-        questions : `How do I use True Core Masks?`,
-        answers : `Shop > Event Tab > True Core Mask Sub-tab`,
-        tags : [dataTags.TCM]
-    },
     {
         questions : `What should I prioritize buying from the black market?`,
         answers : `${list(true,
