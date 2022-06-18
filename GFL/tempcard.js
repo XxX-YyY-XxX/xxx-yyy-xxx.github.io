@@ -112,7 +112,7 @@ function redditEmbed(permalink) {                                       //needs 
     <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/${permalink}/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="278" width="640" scrolling="no"></iframe>`
 }*/
 
-/** @param {Array} headerArray @param {Array[]} arrayOfArrays */
+/** @param {Array} headerArray Nullable value @param {Array[]} arrayOfArrays */
 function table(headerArray, ...arrayOfArrays) {
     headerArray = headerArray ? `<thead><tr>${headerArray.map(val => `<th>${val}</th>`).join('')}</tr></thead>` : '';
     return `<table>
