@@ -1589,7 +1589,7 @@ const cardData = Object.freeze([
     {
         questions : `Is Radiant Collection worth it?`,
         answers : `Not in the slightest. For early game furnishing, the Black Market is better since you can get a 5${star} bonus.<br>
-        Rates being 2% divided by the number of sets in the radiant is the chance of pulling a skin from a specific banner. Aside from the fact that no exchange tickets and no L2D.<br>`,
+        Rates being 2% divided by the number of costumes in the radiant is the chance of pulling a specific skin. Aside from the fact that no exchange tickets and no L2D.<br>`,
         tags : [dataTags.RESUPPLY, dataTags.FURN, dataTags.EXPED, dataTags.SKIN]
     },
     {
