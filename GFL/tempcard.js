@@ -1629,6 +1629,12 @@ const cardData = Object.freeze([
         tags : [dataTags.MAP]
     },
     {
+        questions : `What are the best deals for RL money?`,
+        answers : `${list(false,
+            'Monthly gems card')}`,
+        tags : [dataTags.MISC]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
