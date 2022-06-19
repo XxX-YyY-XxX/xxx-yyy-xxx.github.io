@@ -1619,6 +1619,16 @@ const cardData = Object.freeze([
         tags : [dataTags.EMU]
     },
     {
+        questions : `Can C-93's passive trigger with self-debuffs?`,
+        answers : `Yes.`,
+        tags : [dataTags.TDOLL, dataTags.SKILL]
+    },
+    {
+        questions : `Why do I get the "Ammo/Ration depleted" warning and sometimes not?`,
+        answers : `You'll get the warning when you lack either of them, when you can see the enemy, and when you engage them first in battle.`,
+        tags : [dataTags.MAP]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []

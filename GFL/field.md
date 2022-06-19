@@ -21,7 +21,3 @@
 > - Retreating Support Echelons does not prevent you from gold medals, nor does support kills (shown in green +#) count towards.
 
 @ Visual
-
-### Why do I get the lack of ammo/ration warning and sometimes not?
-
-> You'll get the warning when you lack either of them, when you can see the enemy, and when you engage them first in battle.
