@@ -62,10 +62,6 @@
 
 > Good? Yes. Necessary? Not really, since they be powerful enough already.
 
-### When will <insert unit/ringleader> appear?
-
-> ![](/GFL/assets/images/SFSched.png "Basically the order of release")
-
 ### Can I increase the ringleader's 25% capture rate?
 
 > Drop the pool until you have 3/100 then use Svarog tickets.

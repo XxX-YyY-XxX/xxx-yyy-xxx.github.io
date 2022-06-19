@@ -1635,6 +1635,11 @@ const cardData = Object.freeze([
         tags : [dataTags.MISC]
     },
     {
+        questions : `What's the release order for PA banners?`,
+        answers : `${googleEmbed('https://docs.google.com/spreadsheets/d/1nwlyZxoYaC44idP8SnAjk1OgQX4ND0lIzG3_Fs1We_0')}`,
+        tags : [dataTags.PA, dataTags.COALITION]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
