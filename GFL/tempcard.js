@@ -69,6 +69,7 @@ const dataTags = Object.freeze({
     MARP : 'FourResources',         //Manpower, Ammunition, Rations, Parts
     REF : 'Compilation',            //Reference compilations
     CE : 'CombatEffectiveness',     //"CE is useless"
+    //KALINA : "Kalina",
 });
 
 const lessEqual = '≤';
@@ -530,15 +531,14 @@ const cardData = Object.freeze([
         tags : [dataTags.ENEMY]
     },
     {
-        questions : `What equipments should I use on my dolls for battle purposes?`,
+        questions : `What best-in-slot (BiS) equipments should I use on my dolls?`,
         answers : `${spoilerSummary('General equipments.', `${link(image('./assets/images/EquipInfograph.png'), 'https://big-stupid-jellyfish.github.io/GFMath/pages/newquip')}<br>AS-Val at night follows the day schema. SOP and STAR is SPEQ + VFL/PEQ. M16 is SPEQ + Exo/Armor.`)}<br>
-        ${spoilerSummary('#2 Chip equipment.', 
-            list(false,
-                spoilerSummary('BigStupidJellyfish_', 
-                    `${link(image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png'), 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')}<br>
-                    ${googleEmbed('https://docs.google.com/spreadsheets/d/14xV50MSMBFGgN75E-Gy10WtzACb_KZdpxRKCYQ6FDQA')}`),
-                spoilerSummary('mis', googleEmbed('https://docs.google.com/spreadsheets/d/1c0JhaSX9WyL3EB-7RCDE4NrfzR1YuWdYWidQ_06-PrQ'))
-            ))}<br>
+        ${spoilerSummary('#2 Chip equipment.', list(false,
+            spoilerSummary('BigStupidJellyfish_', 
+                `${link(image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png'), 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')}<br>
+                ${googleEmbed('https://docs.google.com/spreadsheets/d/14xV50MSMBFGgN75E-Gy10WtzACb_KZdpxRKCYQ6FDQA')}`),
+            spoilerSummary('mis', googleEmbed('https://docs.google.com/spreadsheets/d/1c0JhaSX9WyL3EB-7RCDE4NrfzR1YuWdYWidQ_06-PrQ'))
+        ))}<br>
         ${spoilerSummary('AP thresholds.', image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/newquip/armor-reference.png'))}`,
         tags : [dataTags.TDOLL, dataTags.EQUIP, dataTags.ENEMY]
     },
@@ -789,12 +789,6 @@ const cardData = Object.freeze([
         answers : `Equipments used, formation, and apparently costumes too are saved instances.<br>
         Doll levels, equipment levels, skill levels, and chibis aren't. Meaning supports can be saved then leveled afterwards.`,
         tags : [dataTags.FRIEND, dataTags.ECH]
-    },
-    {
-        questions : `Can I get the monthly log-in dolls again? If so, where?`,
-        answers : `${link(`Farmable dolls in campaign maps, especially the 3${star} ones (aka the monthly dolls). Also includes the new clear rewards.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards')}<br>
-        As for the missing monthlies, just wait for a new event/campaign.`,
-        tags : [dataTags.TDOLL, dataTags.CAMPAIGN]
     },
     {
         questions : `I wasn't able to clear the event. Will I still get the clear rewards when they get added to Campaign?`,
@@ -1148,11 +1142,12 @@ const cardData = Object.freeze([
         answers : `${descriptionList({
             'Factory Production' : [`5${star} dolls that can drop here are the only ones redeemable through True Core Masks, bar spaghetti.`],
             'Rescue Drops' : ['For "Limited" dolls in Combat Missions, they are limited to that particular map. Not limited by time, but by place. Until Rescue Event happens.',
-                'Dolls that are farmable and debuted in a major event is farmable in campaign.',
+                link(`Farmable dolls in campaign maps, both 3${star} monthlies and debut dolls.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
                 'During collabs, major events, side events, and Rescue Event/Boss Bully, event rewards become temporarily available for farming.'],
-            'Event Rewards' : [link("BigStupidJellyfish's Event Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls')]
+            'Event Rewards' : [link("BigStupidJellyfish's Event Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls')],
+            'Shop' : ['Mostly applicable to collab dolls or by using TCM.']
         })}`,
-        tags : [dataTags.TDOLL, dataTags.LEDOLL, dataTags.PROD, dataTags.MAJOR, dataTags.CAMPAIGN, dataTags.MINI, dataTags.TCM, dataTags.MAIN]
+        tags : [dataTags.TDOLL, dataTags.LEDOLL, dataTags.PROD, dataTags.MAJOR, dataTags.CAMPAIGN, dataTags.MINI, dataTags.TCM, dataTags.MAIN, dataTags.COLLAB]
     },
     {
         questions : `What do advantaged dolls in combat map mean?`,
