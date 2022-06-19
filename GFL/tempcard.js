@@ -844,7 +844,7 @@ const cardData = Object.freeze([
     {
         questions : `What are the resources that has a defined max capacity and how much can they store?`,
         answers : `${image('./assets/images/ResourceCap.png')}<br>
-        Train Coin = Training Data, Furniture Coin = Tokens<br>
+        Train Coin = Training Data, Furniture Coin = Tokens, Memory Pieces = Neural Fragments<br>
         Even then, all resources can be obtained without regards to max capacity through daily gifts, mission rewards, and whaling.`,
         tags : [dataTags.MARP, dataTags.ITEM]
     },
@@ -1640,8 +1640,13 @@ const cardData = Object.freeze([
         tags : [dataTags.PA, dataTags.COALITION]
     },
     {
+        questions : `Should I keep equipping capes to RFs?`,
+        answers : `${link('Yes.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/myths#capes')}`,
+        tags : [dataTags.TDOLL, dataTags.EQUIP]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
     },
-]);
+]); 
