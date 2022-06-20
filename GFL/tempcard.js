@@ -858,7 +858,7 @@ const cardData = Object.freeze([
         tags : [dataTags.NEWB]
     },
     {
-        questions : `What does Svarog High Altitude Bombing Aid Commissions do and how do I get more of them?`,
+        questions : `What does Svarog High Altitude EMP Bombing Aid Commissions do and how do I get more of them?`,
         answers : `Pulls from the entire pool where the entire pool is the X in the X/100 units.<br>
         Weekly quest (8 standard captures), daily log-in, major events, shop (whenever a new banner starts).`,
         tags : [dataTags.ITEM, dataTags.PA]
@@ -1648,6 +1648,13 @@ const cardData = Object.freeze([
         questions : `How do I get duplicate ringleaders?`,
         answers : `If you successfully captured the RL, there is a "Reset Pool" button beside the Svarog button. This allows you to refresh the pool back to 100 for another round of RL pulling. Dupe RLs are autofed to your first copy. Any more pulls of the same RL with full petal is an autoscrap.`,
         tags : [dataTags.COALITION, dataTags.PA]
+    },
+    {
+        questions : `How many ways can I terminate the current mission?`,
+        answers : `${list(false,
+            'Terminate mission button on the top-left of the field map.',
+            "Combat Missions/Campaign/Event Map > the mission you're currently doing > Terminate.")}`,
+        tags : [dataTags.MAIN, dataTags.CAMPAIGN, dataTags.STORY]
     },
     {
         questions : ``,
