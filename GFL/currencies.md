@@ -26,10 +26,6 @@
 
 > Logistics and limiting production to 4 a day. The last one basically applies to long-time players though.
 
-### Where can I get calibration tickets?
-
-> Defense Drill, expeditions, shop, mini-events, log-in.
-
 ### When do we get discounted tokens?
 
 > Around x-mas, cny, anni, April 16 week, and the likes.

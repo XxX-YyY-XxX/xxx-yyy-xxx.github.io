@@ -1640,8 +1640,13 @@ const cardData = Object.freeze([
         tags : [dataTags.TDOLL, dataTags.EQUIP]
     },
     {
+        questions : `Where can I get calibration tickets?`,
+        answers : `Defense Drill, expeditions, shop, mini-events, log-in.`,
+        tags : [dataTags.ITEM, dataTags.SIMS, dataTags.EXPED, dataTags.MINI]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
     },
-]); 
+]);
