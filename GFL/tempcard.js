@@ -321,6 +321,13 @@ const cardData = Object.freeze([
     //#endregion
     //#region Compilations
     {
+        questions : `T-Doll Costumes available now?`,
+        answers : `u/ConductorBichir spreadsheets.<br>
+        ${spoilerSummary('Costume Banners.', googleEmbed('https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ'))} Includes furniture set and its complete set special effect.<br>
+        ${spoilerSummary("Tactical Doll Skins.", googleEmbed('https://docs.google.com/spreadsheets/d/1fEnzlpQk5Jvja5PwzlpDn2ypqP3BHcGftqWWOLnK17E'))} Contains censor comparison for each unit.`,
+        tags : [dataTags.TDOLL, dataTags.SKIN, dataTags.RESUPPLY, dataTags.REF]
+    },
+    {
         questions : `Which dolls have a MOD in the older servers?`,
         answers : `u/ConductorBichir's list. Includes all Special Equipments.<br>
         ${googleEmbed('https://docs.google.com/spreadsheets/d/1u2sXat4FD7jFLdjMLrq5zIiDrGJMEVaGvB2z2JysxLI')}`,
@@ -811,13 +818,6 @@ const cardData = Object.freeze([
         tags : [dataTags.ITEM, dataTags.STORY, dataTags.TDOLL]
     },
     {
-        questions : `T-Doll Costumes available now?`,
-        answers : `u/ConductorBichir spreadsheets.<br>
-        ${spoilerSummary('Costume Banners.', googleEmbed('https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ'))} Includes furniture set and its complete set special effect.<br>
-        ${spoilerSummary("Tactical Doll Skins.", googleEmbed('https://docs.google.com/spreadsheets/d/1fEnzlpQk5Jvja5PwzlpDn2ypqP3BHcGftqWWOLnK17E'))} Contains censor comparison for each unit.`,
-        tags : [dataTags.TDOLL, dataTags.SKIN, dataTags.RESUPPLY]
-    },
-    {
         questions : `How do I build Vector to no-damage 13-4?`,
         answers : `${link('tempkaridc calculator.', 'https://tempkaridc.github.io/gf/vec')}<br>
         ${link('xVarz spreadsheet for different draggers.', 'https://docs.google.com/spreadsheets/d/1cuZPF-r1e6TyE4Rj2DNkSEova7Tc-Cczs7RaoAK2vII')}<br>
@@ -1191,7 +1191,7 @@ const cardData = Object.freeze([
         questions : `I'm in dummy core hell. How do I get some more?`,
         answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/its_still_not_enough_fuck')}<br>
         ${link('BigStupidJellyfish write-up.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/core-rates')}<br>
-        ${link("u/UnironicWeeaboo's easier 11-6.", 'https://www.reddit.com/r/girlsfrontline/comments/u1tr33/weekly_commanders_lounge_april_12_2022/i5178cy/')}
+        ${link("u/UnironicWeeaboo's easier 11-6.", 'https://www.reddit.com/r/girlsfrontline/comments/u1tr33/weekly_commanders_lounge_april_12_2022/i5178cy/')}<br>
         Run any daytime leveling maps for combined core and exp farming. You can also farm during core rate up by using the handgun recipe.`,
         tags : [dataTags.ITEM]
     },
