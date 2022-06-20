@@ -172,11 +172,16 @@ const cardData = Object.freeze([
             ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/optimizing-leveling-introduction')}<br>
             ${link('GFLCorner guide.', 'https://www.gflcorner.com/efficient-leveling-guide/')}<br>
             ${link('DMesse guide.', 'http://dmesse.egloos.com/m/3567918')}`)}.<br>
-        Second is using ${spoilerSummary('Combat Reports', list(false,
+        Second is using ${spoilerSummary('Combat Reports (CR)', list(false,
             'Acquired through Forward Basecamp, Data Room, the shop during events, or as a reward.',
             "Can be gifted by going to the Dorm>Warehouse>Gift tab or going to your owned doll's profile and tapping the + button by the EXP bar.",
             'Gives 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.'))}.`,
         tags : [dataTags.TDOLL, dataTags.LEVEL, dataTags.PRIME, dataTags.NEWB]
+    },
+    {
+        questions : `What is Combat Effectiveness?`,
+        answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ce')}`,
+        tags : [dataTags.CE, dataTags.PRIME]
     },
     {
         questions : `What is Expedition/Forward Basecamp?`,
@@ -1452,11 +1457,6 @@ const cardData = Object.freeze([
         questions : `Do I keep the drops if I terminate/restart?`,
         answers : `"Recently acquired" option in the armory says yes.`,
         tags : [dataTags.TDOLL, dataTags.MAP]
-    },
-    {
-        questions : `What is Combat Effectiveness?`,
-        answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ce')}`,
-        tags : [dataTags.CE]
     },
     {
         questions : `Found out that there are seasonal lines for some dolls. How do I trigger them?`,
