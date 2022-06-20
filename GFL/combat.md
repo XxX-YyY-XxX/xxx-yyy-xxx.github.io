@@ -32,10 +32,6 @@
 
 @ Fix
 
-### I keep fat-fingering my kiting. Any help?
-
-> To move a doll, you tap on their feet, not on their body. Or use emulators.
-
 ### Can I zoom out during combat?
 
 > You'd have to zoom in first. If you mean zooming well outside the doll's shooting range, then no.

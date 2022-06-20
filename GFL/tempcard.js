@@ -1657,6 +1657,11 @@ const cardData = Object.freeze([
         tags : [dataTags.MAIN, dataTags.CAMPAIGN, dataTags.STORY]
     },
     {
+        questions : `I keep fat-fingering my kiting. Any help?`,
+        answers : `To move a doll, you would have to drag their feet, not on their body.`,
+        tags : [dataTags.BATTLE]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
