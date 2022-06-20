@@ -12,7 +12,3 @@ https://old.reddit.com/r/girlsfrontline/comments/uwlnur/weekly_commanders_lounge
 
 https://old.reddit.com/r/girlsfrontline/comments/uwlnur/weekly_commanders_lounge_may_24_2022/iaeeev8/
 
-https://old.reddit.com/r/girlsfrontline/comments/uwlnur/weekly_commanders_lounge_may_24_2022/iahj0ln/
-
-https://old.reddit.com/r/girlsfrontline/comments/uwlnur/weekly_commanders_lounge_may_24_2022/iahi1j2/
-

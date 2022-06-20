@@ -1645,6 +1645,11 @@ const cardData = Object.freeze([
         tags : [dataTags.ITEM, dataTags.SIMS, dataTags.EXPED, dataTags.MINI]
     },
     {
+        questions : `How do I get duplicate ringleaders?`,
+        answers : `If you successfully captured the RL, there is a "Reset Pool" button beside the Svarog button. This allows you to refresh the pool back to 100 for another round of RL pulling. Dupe RLs are autofed to your first copy. Any more pulls of the same RL with full petal is an autoscrap.`,
+        tags : [dataTags.COALITION, dataTags.PA]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []

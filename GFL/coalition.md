@@ -50,10 +50,6 @@
 >
 > <iframe width="640" height="360" src="https://www.youtube.com/embed/_s9ZY5wDLYE" frameborder="0" allowfullscreen></iframe>
 
-### How do I get duplicate ringleaders?
-
-> If you successfully captured the RL, there is a "Reset Pool" button beside the Svarog button. This allows you to refresh the pool back to 100 for another round of RL pulling. Dupe RLs are autofed to your first copy. Any more pulls of the same RL with full petal is an autoscrap.
-
 ### What does size imply in regards to PA units?
 
 > Stats. Bigger is better. Also subject to RNG, by impulse or svarog capture, or by kernel shop.
