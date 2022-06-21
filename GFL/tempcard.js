@@ -1139,7 +1139,7 @@ const cardData = Object.freeze([
         tags : [dataTags.PROD, dataTags.HOC, dataTags.FST, dataTags.TDOLL, dataTags.EQUIP]
     },  //@Check for errors
     {
-        questions : `How do I scrap coalition units? I'm lost.`,
+        questions : `How do I scrap/retire coalition units? I'm lost.`,
         answers : `Factory > Retirement (Disassemble) > Fourth + symbol.`,
         tags : [dataTags.COALITION]
     },
@@ -1678,7 +1678,3 @@ const cardData = Object.freeze([
         tags : []
     },
 ]);
-
-
-
-
