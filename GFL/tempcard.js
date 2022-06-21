@@ -449,10 +449,15 @@ const cardData = Object.freeze([
     },
     {
         questions : `For limited-time bonuses (i.e. auto-battles, logistics), when are the rewards calculated?`,
-        answers : `If the runs can be cancelled without penalty, rewards are calculated at the end.<br>
-        ${spoilerSummary('Examples:', list(false, 'The "Use Battery" bingo mission when exp-training HOCs.'))}<br>
-        If they can't be cancelled, or is cancellable with a penalty or cost (ie quick tickets), calculated at the start.<br>
-        ${spoilerSummary('Examples:', list(false, 'Expedition rewards.', 'Productions.'))}`,
+        answers : `${descriptionList({
+           'If the runs can be cancelled without penalty, rewards are calculated at the end.' : [
+                'The "Use Battery" bingo mission when exp-training HOCs.'
+            ],
+           "If they can't be cancelled, or is cancellable with a penalty or cost (ie quick tickets), calculated at the start." : [
+                'Expedition rewards.',
+                'Productions.'
+           ]
+        })}`,
         tags : [dataTags.SYSMECH, dataTags.MINI, dataTags.EXPED, dataTags.PROD]
     },
     {
@@ -490,13 +495,15 @@ const cardData = Object.freeze([
     },
     {
         questions : `How can I save the enemy composition for later practice?`,
-        answers : `Add Target<br>
-        ${list(false, "Long press the enemy on the map and you'll see the button on the top-left.", 'Pause while in battle to see the button on the bottom-left.', 'Button appears on the bottom-left after losing a battle.', 'Adds the current enemy formation to the Target Practice in the Combat Sims.')}<br>
-        GFAlarm<br>
-        ${list(false, 
-            `Use GFLMaps to take the enemy IDs you want to fight and enter them in the Custom Target Train under Packet Forger, with IDs separated by commas.<br>
-            ${image('./assets/images/GFAlarmCTT.png', 'From u/UnironicWeeaboo')}<br>
-            Works for comps that has been loaded into the client and is ${link('very safe.', 'https://www.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i312oo2/')}`)}<br>
+        answers : `${descriptionList({
+            'Add Target' : ["Long press the enemy on the map and you'll see the button on the top-left.",
+                'Pause while in battle to see the button on the bottom-left.',
+                'Button appears on the bottom-left after losing a battle.',
+                'Adds the current enemy formation to the Target Practice in the Combat Sims.'],
+            'GFAlarm' : ['Use GFLMaps to take the enemy IDs you want to fight and enter them in the Custom Target Train under Packet Forger, with IDs separated by commas.',
+                image('./assets/images/GFAlarmCTT.png', 'From u/UnironicWeeaboo'),
+                `Works for comps that has been loaded into the client and is ${link('very safe', 'https://www.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i312oo2/')}.`]
+        })}<br>
         ${link('Matsuda recommendations.', 'https://gfl.matsuda.tips/post/everything-sucks-forever')}`,
         tags : [dataTags.ENEMY, dataTags.BATTLE, dataTags.MAP, dataTags["3P"]]
     },  //@Visual
@@ -1418,7 +1425,8 @@ const cardData = Object.freeze([
     {
         questions : `General tips on defeating deathstacks?`,
         answers : `For the most part, you don't. But if you really want to, this is the epitome of "CE is useless", "what dolls, formation, fairy to use depend on what you're going against", and "learn kiting". Just don't expect to come out of it unscathed.<br>
-        ${descriptionList({'Swarm deathstacks' : ['Usually AoE pierce such as Kord, Type 88, KSVK with HOC support and tank/delay fairies.',
+        ${descriptionList({
+            'Swarm deathstacks' : ['Usually AoE pierce such as Kord, Type 88, KSVK with HOC support and tank/delay fairies.',
                 'Kill them all before they kill you.'],
             'Golyat+ deathstacks' : ['Either stun+smoke or forceshields.']
         })}`,
