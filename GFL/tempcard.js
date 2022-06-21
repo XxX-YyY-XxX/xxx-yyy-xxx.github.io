@@ -75,6 +75,7 @@ const dataTags = Object.freeze({
 const lessEqual = '≤';
 const star = '★';
 const tm = '™️';
+//🍰
 
 //#region Functions
 /** @param {URLString} link */
@@ -1660,6 +1661,11 @@ const cardData = Object.freeze([
         questions : `I keep fat-fingering my kiting. Any help?`,
         answers : `To move a doll, you would have to drag their feet, not on their body.`,
         tags : [dataTags.BATTLE]
+    },
+    {
+        questions : `When will the ringleader capture special animation start playing?`,
+        answers : `When they get captured with Svarog's airstrikes.`,
+        tags : [dataTags.PA, dataTags.COALITION]
     },
     {
         questions : ``,
