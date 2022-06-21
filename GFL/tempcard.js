@@ -1668,8 +1668,17 @@ const cardData = Object.freeze([
         tags : [dataTags.PA, dataTags.COALITION]
     },
     {
+        questions : `Is there any particular reason why not to overextend on crafting for dailies?`,
+        answers : `Rate ups. They exist. They take our contracts and quick prods.`,
+        tags : [dataTags.PROD]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
     },
 ]);
+
+
+
+

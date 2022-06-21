@@ -6,19 +6,6 @@ https://old.reddit.com/r/girlsfrontline/comments/uwlnur/weekly_commanders_lounge
 
 https://old.reddit.com/r/girlsfrontline/comments/uwlnur/weekly_commanders_lounge_may_24_2022/iaj5xxq/
 
-https://old.reddit.com/r/girlsfrontline/comments/uwlnur/weekly_commanders_lounge_may_24_2022/iajcicq/
-
-https://old.reddit.com/r/girlsfrontline/comments/uwlnur/weekly_commanders_lounge_may_24_2022/iajnlsn/
-
-https://old.reddit.com/r/girlsfrontline/comments/uwlnur/weekly_commanders_lounge_may_24_2022/iam092q/
-
-https://old.reddit.com/r/girlsfrontline/comments/uwlnur/weekly_commanders_lounge_may_24_2022/ialyz36/
-
-https://old.reddit.com/r/girlsfrontline/comments/uwlnur/weekly_commanders_lounge_may_24_2022/ialrldx/
-
-
-
-
 
 
 
