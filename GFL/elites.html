@@ -50,17 +50,7 @@
         <div class="container">
             <section id="main_content">
                 <div id="output">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Elites</th>
-                                <th>Non-Elites</th>
-                            </tr>
-                        </thead>
-                        <tbody>
 
-                        </tbody>
-                    </table>
                 </div>
             </section>
         </div>
@@ -68,7 +58,7 @@
         <script type="text/javascript" src="/univasset/scripts/includefile.js"></script>
         <script>
             var output = document.getElementById('output');
-            var tablebody = document.getElementsByTagName('tbody')[0];
+            //var tablebody = document.getElementsByTagName('tbody')[0];
 
             fetch('https://raw.githubusercontent.com/randomqwerty/GFLData/main/en/stc/enemy_character_type.json')
                 .then(response => response.text())
@@ -79,9 +69,20 @@
                         [elite, nonelite][Number(String(units.passive_skill).includes('200304'))].add(units.code)
                     }
                     for (const array of zip(elite, nonelite)) {
-                        rows += `<tr>${array.map(val => `<td>${val}</td>`)}</tr>`;
+                        rows += `<tr><td>${array[0]}</td><td>${array[1]}</td></tr>`;
                     }
-                    tablebody.innerHTML = rows;
+                    output.innerHTML = `<table>
+                        <thead>
+                            <tr>
+                                <th>Elites</th>
+                                <th>Non-Elites</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${rows}
+                        </tbody>
+                    </table>`;
+                    //tablebody.innerHTML = rows;
                 })
 
             /** @param {boolean} extend @param {Array[]} arrays*/
@@ -99,7 +100,7 @@
                 }
 
                 for (let index = 0; index < length; index++) {
-                    var output = []
+                    var output = [];                    
                     for (const item of arrays) {
                         output.push(item[index])
                     }

@@ -1,6 +1,6 @@
 //importScripts('/univasset/scripts/externaljavascript.js')
 
-/** @param {Document} htmlString */
+/** @param {string} htmlString */
 function nestedInclude(htmlString, ...params) {
     const doc = new DOMParser().parseFromString(htmlString, "text/html");
     for (const include of Array.from(doc.getElementsByTagName('include'))) {
@@ -17,7 +17,12 @@ function nestedInclude(htmlString, ...params) {
     return doc.documentElement.innerHTML;
 }
 
-function getParams() {
+/** @param {string} htmlString */
+function getParams(htmlString, params) {
+    const doc = new DOMParser().parseFromString(htmlString, "text/html");
+    for (const getparam of Array.from(doc.getElementsByTagName('getparam'))) {
+        var key = getparam.getAttribute('key')
+    }
     /*         params = include.getAttribute('params');
         if (params) {
             paramsList = params.split(',')
