@@ -1,5 +1,8 @@
+//#region Constants
 const epsilon = 10 ** -10;
+//#endregion
 
+//#region Functions
 /** @param {Array} subset @param {Array} mainset */
 function IsSubsetOf(subset, mainset) {
     return subset.every(val => mainset.includes(val));
@@ -34,7 +37,34 @@ function SplitExt(path) {
     var index = path.lastIndexOf('.');
     return [path.slice(0, index), path.slice(index)]
 }
+//#endregion
 
+//#region Generators
+/** @param {boolean} extend @param {Iterable[]} iterables */
+function* Zip(extend, ...iterables) {
+    iterables = iterables.map(arr => Array.from(arr))
+
+    if (extend) {
+        var maxlength = 0;
+        var cap = Math.max;
+    } else {
+        var maxlength = Number.POSITIVE_INFINITY;
+        var cap = Math.min;
+    }
+
+    for (const item of iterables) {
+        maxlength = cap(maxlength, item.length)
+    }
+
+    for (let index = 0; index < maxlength; index++) {
+        var output = [];
+        for (const item of iterables) {
+            output.push(item[index])
+        }
+        yield output
+    }
+}
+//#endregion
 
 
 /*if (typeof(Storage) !== "undefined") {
@@ -42,8 +72,6 @@ function SplitExt(path) {
 } else {
     sessionStorage.outputCards = "Sorry, your browser does not support web storage...";
 } */            
-
-//fetch('/GFL/cards.json').then(response => response.json()).then(file => questionCards = file);
 
 /*var oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
 oXHR.onreadystatechange = function() {
