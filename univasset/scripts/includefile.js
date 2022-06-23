@@ -26,8 +26,6 @@ function includeFile() {
 
 includeFile();
 
-
-
 //var a = new DOMParser()
 //a.parseFromString()
 
