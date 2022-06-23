@@ -65,7 +65,6 @@
 
         <script type="text/javascript" src="/univasset/scripts/includefile.js"></script>
         <script>
-            //var output = document.getElementById('output');
             var tablebody = document.getElementsByTagName('tbody')[0];
 
             fetch('https://raw.githubusercontent.com/randomqwerty/GFLData/main/en/stc/enemy_character_type.json')
@@ -77,9 +76,9 @@
                         [elite, nonelite][Number(String(units.passive_skill).includes('200304'))].add(units.code)
                     }
                     for (const array of zip(elite, nonelite)) {
+                        console.log('Array', array)
                         rows += `<tr><td>${array[0]}</td><td>${array[1]}</td></tr>`;
                     }
-                    //output.innerHTML = ``;
                     tablebody.innerHTML = rows;
                 });
 
@@ -91,21 +90,20 @@
                     length = Math.max(length, item.length)
                 }
 
-                console.log('Before:', arrays)
-
                 for (const item of arrays) {
                     if (item.length < length) {
                         item.fill('', item.length)
                     }
                 }
 
-                console.log('After:', arrays)
-
                 for (let index = 0; index < length; index++) {
                     var output = [];                    
                     for (const item of arrays) {
                         output.push(item[index])
                     }
+
+                    console.log('Output:', output)
+
                     yield output
                 }
             }

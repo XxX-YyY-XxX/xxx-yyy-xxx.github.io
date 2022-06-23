@@ -1,42 +1,50 @@
 //importScripts('/univasset/scripts/externaljavascript.js')
 
 /** @param {string} htmlString */
-function nestedInclude(htmlString, ...params) {
+function nestedInclude(htmlString, params) {
     const doc = new DOMParser().parseFromString(htmlString, "text/html");
+
     for (const include of Array.from(doc.getElementsByTagName('include'))) {
-        //var params = JSON.parse(include.getAttribute('params'))
         fetch(include.getAttribute('src'))
             .then(response => response.text())
             .then(data => {
-                //while (data.test('</include>')) {
+                var param = JSON.parse(include.getAttribute('param'));
+                if (param !== null) {
+                    data = getParams(data, param)
+                }            
+                //while (data.includes('</include>')) {
                 //    data = nestedInclude(data);
                 //}
-                include.outerHTML = data;
+                htmlString.replace(include.outerHTML, data);
             });
     }
-    return doc.documentElement.innerHTML;
+
+    return htmlString;
 }
 
 /** @param {string} htmlString */
 function getParams(htmlString, params) {
     const doc = new DOMParser().parseFromString(htmlString, "text/html");
+
     for (const getparam of Array.from(doc.getElementsByTagName('getparam'))) {
-        var key = getparam.getAttribute('key')
+        htmlString.replace(getparam.outerHTML, params[getparam.getAttribute('key')])
     }
-    /*         params = include.getAttribute('params');
-        if (params) {
-            paramsList = params.split(',')
-        }
- */
+
+    //nested parameter for include
+
+    return htmlString;
 }
 
 for (const include of Array.from(document.getElementsByTagName('include'))) {
-    //var params = JSON.parse(include.getAttribute('params'))
     fetch(include.getAttribute('src'))
         .then(response => response.text())
         .then(data => {
-            //while (data.test('</include>')) {
-            //    data = nestedInclude(data);
+            //var param = JSON.parse(include.getAttribute('param'));
+            //if (param !== null) {
+            //    data = getParams(data, param)
+            //}        
+            //while (data.includes('</include>')) {
+            //    data = nestedInclude(data, params);
             //}
             include.outerHTML = data;
         });
