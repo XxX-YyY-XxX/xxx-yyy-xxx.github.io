@@ -1,7 +1,7 @@
 //importScripts('/univasset/scripts/externaljavascript.js')
 
 /** @param {Document} htmlString */
-function nestedInclude(htmlString) {
+function nestedInclude(htmlString, ...params) {
     const doc = new DOMParser().parseFromString(htmlString, "text/html");
     for (const include of Array.from(doc.getElementsByTagName('include'))) {
         //var params = JSON.parse(include.getAttribute('params'))

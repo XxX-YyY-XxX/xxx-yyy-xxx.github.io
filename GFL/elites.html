@@ -72,17 +72,20 @@
             var jsonList = [{}];
 
             fetch('https://raw.githubusercontent.com/randomqwerty/GFLData/main/en/stc/enemy_character_type.json')
-                .then(response => JSON.parse(response))
-                //.then(jsonString => JSON.parse(jsonString))
-                .then(jsonObject => {jsonList = jsonObject})
+                .then(response => response.text())
+                .then(jsonString => JSON.parse(jsonString))
+                //.then(jsonObject => {jsonList = jsonObject})
+                .then(jsonObject => {console.log(jsonObject)})
 
-            console.log(jsonList)
+            //console.log(jsonList)
 
-            console.log(6 % 2 == 0)
+            for (let index = 0; index < 10; index++) {
+                console.log(['no', 'yes'][Number(index % 2 == 0)])
+            }
 
-            console.log(Number(6 % 2 == 0))
 
-            console.log(Number(5 % 2 == 0))
+
+
 
 
 
@@ -128,9 +131,6 @@
 
             tablebody.innerHTML = rows;
 
-            for (let index = 0; index < 10; index++) {
-                console.log(['no', 'yes'][index % 2 == 0])
-            }
 
 
             /** @param {boolean} extend @param {Array[]} arrays*/
