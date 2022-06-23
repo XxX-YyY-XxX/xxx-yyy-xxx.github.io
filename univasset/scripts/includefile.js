@@ -12,21 +12,21 @@ function getParams() {
  */
 }
 
-function includeFile(...docs) {
-    if (docs) {document = docs[0]}
-    
-    for (const include of Array.from(document.getElementsByTagName('include'))) {
+/** @param {Document} doc */
+function includeFile(doc) {    
+    for (const include of Array.from(doc.getElementsByTagName('include'))) {
         //var params = JSON.parse(include.getAttribute('params'))
         fetch(include.getAttribute('src'))
             .then(response => response.text())
             .then(data => {
                 //Check for nested include and params
+                //parse string to html
                 include.outerHTML = data;
             });
     }
 }
 
-includeFile();
+includeFile(document);
 
 
 /* function textFromHTMLString(html, target) {
