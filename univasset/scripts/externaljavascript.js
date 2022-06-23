@@ -37,9 +37,6 @@ function SplitExt(path) {
 
 
 
-
-
-
 /*if (typeof(Storage) !== "undefined") {
     sessionStorage.outputCards = boxes;
 } else {
