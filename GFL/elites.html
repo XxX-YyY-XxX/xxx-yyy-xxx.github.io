@@ -76,6 +76,8 @@
                 .then(jsonString => JSON.parse(jsonString))
                 .then(jsonObject => {jsonList = jsonObject})
 
+            console.log(jsonList)
+
             var elite = [];
             var nonelite = [];
             for (const units of jsonList) {
@@ -86,7 +88,6 @@
                 }
             }
 
-            console.log(elite)
 
             var rows = "";
             for (const array of zip(elite, nonelite)) {
