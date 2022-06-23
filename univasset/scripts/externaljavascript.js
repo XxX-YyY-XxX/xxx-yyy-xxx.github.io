@@ -29,10 +29,10 @@ function ReloadIFrame(iframeElement) {
 }
 
 /** @param {string} path @returns Path with no extension, extension */
+//lastIndexOf+slice > split+replace
 function SplitExt(path) {
-    var list = path.split('.');
-    var extension = `.${list[list.length - 1]}`
-    return [path.replace(extension, ''), extension]
+    var index = path.lastIndexOf('.');
+    return [path.slice(0, index), path.slice(index)]
 }
 
 
