@@ -37,6 +37,8 @@ for (const include of Array.from(document.getElementsByTagName('include'))) {
         });
 }
 
+//<getparam key="0"></getparam>
+//<include src="/univasset/scripts/mainpagebuttons.html" params="[]"></include>
 
 
 /* function textFromHTMLString(html, target) {
