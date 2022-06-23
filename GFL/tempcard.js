@@ -587,9 +587,12 @@ const cardData = Object.freeze([
     },  //Redditor u/ConductorBichir's list IIRC
     {
         questions : `What's the drop rate for farmable dolls?`,
-        answers : `Limited dolls on chapters aproximately have 0.8% drop rate on normal and 1% on emergency. Event farms have around 1%. 5${star} on normal maps have rates way below 1%... usually. Their droprates at Chapter 10 onwards seem to have higher rates. As for SPEQs, probably 1% too.<br>
+        answers : `Limited dolls on chapters aproximately have 0.8% drop rate on normal and 1% on emergency.<br>
+        Event farms have around 1%, which also carries over to campaign missions.<br>
+        5${star} on normal maps have rates way below 1%... usually. Their droprates at Chapter 10 onwards seem to have higher rates.<br>
+        As for SPEQs, probably 1% too.<br>
         If you plan to farm a 5${star} doll in Combat Missions, just do Productions. You'll get more chances there.`,
-        tags : [dataTags.TDOLL, dataTags.MAIN, dataTags.STORY, dataTags.SPEQ]
+        tags : [dataTags.TDOLL, dataTags.MAIN, dataTags.STORY, dataTags.SPEQ, dataTags.MAJOR, dataTags.CAMPAIGN]
     },
     {
         questions : `Do events get a rerun? And if so, when?`,
@@ -1679,6 +1682,11 @@ const cardData = Object.freeze([
         questions : `Is there any particular reason why not to overextend on crafting for dailies?`,
         answers : `Rate ups. They exist. They take our contracts and quick prods.`,
         tags : [dataTags.PROD]
+    },
+    {
+        questions : `Can I farm for the equipment/doll without clearing the map first?`,
+        answers : `Yes, but better to clear it to remove the objectives pop-up.`,
+        tags : [dataTags.SPEQ, dataTags.TDOLL]
     },
     {
         questions : ``,

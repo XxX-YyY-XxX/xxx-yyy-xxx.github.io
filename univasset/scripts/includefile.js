@@ -1,5 +1,9 @@
-//Add "include inside of include"/ Nested includes
 //importScripts('/univasset/scripts/externaljavascript.js')
+
+function nestedInclude() {
+    //Add "include inside of include"/ Nested includes
+    return
+}
 
 function includeFile() {
     for (const include of Array.from(document.getElementsByTagName('include'))) {
@@ -10,16 +14,24 @@ function includeFile() {
             .then(data => {
                 //Check for nested include
                 include.outerHTML = data;
-            });                
-    }    
+            });
+
+        //params attribute
+
+/*         params = include.getAttribute('params');
+        if (params) {
+            paramsList = params.split(',')
+        }
+ */    }
 }
 
 includeFile();
 
+
+
 //var a = new DOMParser()
 //a.parseFromString()
 
-//<iframe src="/univasset/styleheader.html" onload="this.insertAdjacentHTML('afterend', (this.contentDocument.body||this.contentDocument).innerHTML);this.remove()"></iframe>
 //<object name="styleheader" type="text/html" data="/univasset/styleheader.html"></object>
 //<embed type="text/html" src="/univasset/styleheader.html">
 //<!-- #include virtual="/univasset/styleheader.html" -->
