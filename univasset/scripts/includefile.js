@@ -2,27 +2,26 @@
 
 function nestedInclude() {
     //Add "include inside of include"/ Nested includes
-    return
+}
+
+function getParams() {
+    /*         params = include.getAttribute('params');
+        if (params) {
+            paramsList = params.split(',')
+        }
+ */
 }
 
 function includeFile() {
     for (const include of Array.from(document.getElementsByTagName('include'))) {
+        //params attribute
         fetch(include.getAttribute('src'))
-            .then(response => {
-                return response.text()
-            })
+            .then(response => response.text())
             .then(data => {
-                //Check for nested include
+                //Check for nested include and params
                 include.outerHTML = data;
             });
-
-        //params attribute
-
-/*         params = include.getAttribute('params');
-        if (params) {
-            paramsList = params.split(',')
-        }
- */    }
+    }
 }
 
 includeFile();

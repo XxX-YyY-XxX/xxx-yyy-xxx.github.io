@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/univasset/scripts/externalcss.css">
+        
+        <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+            <!-- Setup theme-color -->
+
+            <!-- start theme color meta headers -->
+            <meta name="theme-color" content="#151515">
+            <meta name="msapplication-navbutton-color" content="#151515">
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+            <!-- end theme color meta headers -->
+
+            <!-- Setup Google Analytics -->
+
+            <link rel="icon" type="image/png" href="/univasset/images/favicon.png" />
+        <!-- end custom head snippets -->
+        
+        <!-- Begin Jekyll SEO tag v2.8.0 -->
+        <title>Elites and Non-Elites | GFL</title>
+        <meta name="generator" content="Jekyll v3.9.0" />
+        <meta property="og:title" content="Random Scraps" />
+        <meta property="og:locale" content="en_US" />
+        <meta name="description" content="Collection of whatever." />
+        <meta property="og:description" content="Collection of whatever." />
+        <link rel="canonical" href="https://xxx-yyy-xxx.github.io/" />
+        <meta property="og:url" content="https://xxx-yyy-xxx.github.io/" />
+        <meta property="og:site_name" content="Random Scraps" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <meta property="twitter:title" content="Random Scraps" />
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","description":"Collection of whatever.","headline":"Random Scraps","name":"Random Scraps","url":"https://xxx-yyy-xxx.github.io/"}</script>
+        <!-- End Jekyll SEO tag -->
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <a id="a-title" href="/"><h1>Random Scraps</h1></a>
+                <h2>List of Elite and Non-elite Units</h2>
+
+                <include src="/univasset/scripts/mainpagebuttons.html"></include>
+            </div>
+        </header>
+
+        <div class="container">
+            <section id="main_content">
+                <div id="output"></div>
+            </section>
+        </div>
+
+        <script type="text/javascript" src="/univasset/scripts/includefile.js"></script>
+        <script>
+            output = document.getElementById('output');
+
+            fetch('https://raw.githubusercontent.com/randomqwerty/GFLData/main/en/stc/enemy_character_type.json')
+                .then(response => response.text())
+                //.then(jsonString => JSON.parse(jsonString))
+                .then(text => {output.innerHTML = text});
+            
+        </script>
+    </body>
+</html>
