@@ -1,5 +1,76 @@
 //importScripts('/univasset/scripts/externaljavascript.js')
 
+for (const include of Array.from(document.getElementsByTagName('include'))) {
+    fetch(include.getAttribute('src'))
+        .then(response => response.text())
+        .then(data => data.includes('</include>') ? nestedTags(data, include.getAttribute('param')) : data)
+        .then(html => {include.outerHTML = html;});
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** @param {string} htmlString @param {string} params */
+function nestedTags(htmlString, params) {
+    var doc = new DOMParser().parseFromString(htmlString, "text/html");
+
+    //Parameter setting
+    if (params != null) {
+        const json = JSON.parse(params);
+        for (const include of Array.from(doc.getElementsByTagName('include'))) {
+            let key, param;
+
+            if ((key = include.getAttribute('key')) != null) {
+                htmlString.replace(include.outerHTML, json[parseInt(key)])
+            } else if ((param = include.getAttribute('param')) != null) {
+                let tempson = JSON.parse(param);
+
+                for (let index = 0; index < tempson.length; index++) {
+                    if (Number.isInteger(tempson[index])) {
+                        tempson[index] = json[tempson[index]];
+                    }
+                }
+
+                let tempstr = include.outerHTML;
+                include.param = JSON.stringify(tempson);
+                htmlString.replace(tempstr, include.outerHTML);
+            }
+        }
+    }
+
+    //Nested include src
+
+    return htmlString;
+}
+
+
+
+
+
+//<include key="0"></include>
+//<include src="/univasset/scripts/mainpagebuttons.html" param="[0, '8']"></include>
+
+
+
+
+
+
+
+
+
+
 /** @param {string} htmlString */
 function nestedInclude(htmlString, params) {
     const doc = new DOMParser().parseFromString(htmlString, "text/html");
@@ -9,7 +80,7 @@ function nestedInclude(htmlString, params) {
             .then(response => response.text())
             .then(data => {
                 var param = JSON.parse(include.getAttribute('param'));
-                if (param !== null) {
+                if (param != null) {
                     data = getParams(data, param)
                 }            
                 //while (data.includes('</include>')) {
@@ -22,36 +93,8 @@ function nestedInclude(htmlString, params) {
     return htmlString;
 }
 
-/** @param {string} htmlString */
-function getParams(htmlString, params) {
-    const doc = new DOMParser().parseFromString(htmlString, "text/html");
 
-    for (const getparam of Array.from(doc.getElementsByTagName('getparam'))) {
-        htmlString.replace(getparam.outerHTML, params[getparam.getAttribute('key')])
-    }
 
-    //nested parameter for include
-
-    return htmlString;
-}
-
-for (const include of Array.from(document.getElementsByTagName('include'))) {
-    fetch(include.getAttribute('src'))
-        .then(response => response.text())
-        .then(data => {
-            //var param = JSON.parse(include.getAttribute('param'));
-            //if (param !== null) {
-            //    data = getParams(data, param)
-            //}        
-            //while (data.includes('</include>')) {
-            //    data = nestedInclude(data, params);
-            //}
-            include.outerHTML = data;
-        });
-}
-
-//<getparam key="0"></getparam>
-//<include src="/univasset/scripts/mainpagebuttons.html" params="[]"></include>
 
 
 /* function textFromHTMLString(html, target) {
