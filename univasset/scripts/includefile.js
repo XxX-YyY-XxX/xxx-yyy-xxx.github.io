@@ -1,7 +1,20 @@
 //importScripts('/univasset/scripts/externaljavascript.js')
 
-function nestedInclude() {
-    //Add "include inside of include"/ Nested includes
+/** @param {Document} htmlString */
+function nestedInclude(htmlString) {
+    const doc = new DOMParser().parseFromString(htmlString, "text/html");
+    for (const include of Array.from(doc.getElementsByTagName('include'))) {
+        //var params = JSON.parse(include.getAttribute('params'))
+        fetch(include.getAttribute('src'))
+            .then(response => response.text())
+            .then(data => {
+                //while (data.test('</include>')) {
+                //    data = nestedInclude(data);
+                //}
+                include.outerHTML = data;
+            });
+    }
+    return doc.documentElement.innerHTML;
 }
 
 function getParams() {
@@ -12,52 +25,38 @@ function getParams() {
  */
 }
 
-/** @param {Document} doc */
-function includeFile(doc) {    
-    for (const include of Array.from(doc.getElementsByTagName('include'))) {
-        //var params = JSON.parse(include.getAttribute('params'))
-        fetch(include.getAttribute('src'))
-            .then(response => response.text())
-            .then(data => {
-                //Check for nested include and params
-                //parse string to html
-                include.outerHTML = data;
-            });
-    }
+for (const include of Array.from(document.getElementsByTagName('include'))) {
+    //var params = JSON.parse(include.getAttribute('params'))
+    fetch(include.getAttribute('src'))
+        .then(response => response.text())
+        .then(data => {
+            //while (data.test('</include>')) {
+            //    data = nestedInclude(data);
+            //}
+            include.outerHTML = data;
+        });
 }
 
-includeFile(document);
 
 
 /* function textFromHTMLString(html, target) {
-    if (!html || !target) {
-        return false;
-    }
-    else {
-        var fragment = document.createDocumentFragment(),
-            container = document.createElement('div');
-        container.innerHTML = html;
-        fragment.appendChild(container);
-        var targets = fragment.firstChild.getElementsByTagName(target),
-            result = [];
+    var fragment = document.createDocumentFragment();
+    var container = document.createElement('div');
+    container.innerHTML = html;
+    fragment.appendChild(container);
+    var targets = fragment.firstChild.getElementsByTagName(target),
+        result = [];
 
-        for (var i = 0, len = targets.length; i<len; i++) {
-            result.push(targets[i].textContent || targets[i].innerText);
-        }
-        return result;        
+    for (var i = 0, len = targets.length; i<len; i++) {
+        result.push(targets[i].textContent || targets[i].innerText);
     }
+    return result;        
 }
 
 var htmlString = '<html><head><title>Some title</title></head><body><p>Some text, in a paragraph!</p></body></html>';
 
-var titleText = textFromHTMLString(htmlString, 'title');
+console.log(textFromHTMLString(htmlString, 'title'));​ */
 
-console.log(titleText);​ */
-
-/* function htmlDecode(input) {
-    let doc = new DOMParser().parseFromString(input, "text/html");
-    return doc.documentElement.textContent;
-} */
 
 /**
  * @param {String} HTML representing a single element
