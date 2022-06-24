@@ -39,7 +39,7 @@ function nestedTags(htmlString, params) {
             if ((key = include.getAttribute('key')) != null) {
                 console.log(include.outerHTML);
                 console.log(json[parseInt(key)]);
-                htmlString.replace(include.outerHTML, json[parseInt(key)]);
+                htmlString = htmlString.replace(include.outerHTML, json[parseInt(key)]);
             } else if ((param = include.getAttribute('param')) != null) {
                 let tempson = JSON.parse(param);
 
