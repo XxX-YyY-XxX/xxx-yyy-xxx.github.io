@@ -1689,6 +1689,11 @@ const cardData = Object.freeze([
         tags : [dataTags.SPEQ, dataTags.TDOLL]
     },
     {
+        questions : `Is Sniper Fairy any good?`,
+        answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/sniper-rework')}`,
+        tags : [dataTags.FAIRY]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
