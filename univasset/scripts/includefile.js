@@ -1,7 +1,7 @@
 for (const include of Array.from(document.getElementsByTagName('include'))) {
     fetch(include.getAttribute('src'))
         .then(response => response.text())
-        .then(data => data.includes('</include>') ? nestedTags(data, include.getAttribute('param')) : data)
+        .then(data => nestedTags(data, include.textContent))
         .then(html => {include.outerHTML = html;});
 }
 
@@ -10,17 +10,17 @@ function nestedTags(htmlString, params) {
     //console.log('Before: ', htmlString);
 
     //Parameter setting
-    if (params != null) {
-        const json = JSON.parse(params);
+    if (params) {
+        const json = JSON.parse(`[${params}]`);
         const doc = new DOMParser().parseFromString(htmlString, "text/html");
         for (const include of Array.from(doc.getElementsByTagName('include'))) {
             let key, param;
 
             if ((key = include.getAttribute('key')) != null) {
                 htmlString = htmlString.replace(include.outerHTML, json[parseInt(key)]);
-            } else if ((param = include.getAttribute('param')) != null) {
+            } else if ((param = include.textContent)) {
                 //Untested
-                let tempson = JSON.parse(param);
+                let tempson = JSON.parse(`[${param}]`);
 
                 for (let index = 0; index < tempson.length; index++) {
                     if (Number.isInteger(tempson[index])) {
@@ -41,23 +41,23 @@ function nestedTags(htmlString, params) {
     if (htmlString.includes('</include>')) {
         const doc = new DOMParser().parseFromString(htmlString, "text/html");
 
-    /*for (const include of Array.from(doc.getElementsByTagName('include'))) {
-        fetch(include.getAttribute('src'))
-            .then(response => response.text())
-            .then(data => {
-                var param = JSON.parse(include.getAttribute('param'));
-                if (param != null) {
-                    data = getParams(data, param)
-                }            
-                //while (data.includes('</include>')) {
-                //    data = nestedInclude(data);
-                //}
-                htmlString.replace(include.outerHTML, data);
-            });
-    } */
+        /*for (const include of Array.from(doc.getElementsByTagName('include'))) {
+            fetch(include.getAttribute('src'))
+                .then(response => response.text())
+                .then(data => {
+                    var param = JSON.parse(include.getAttribute('param'));
+                    if (param != null) {
+                        data = getParams(data, param)
+                    }            
+                    //while (data.includes('</include>')) {
+                    //    data = nestedInclude(data);
+                    //}
+                    htmlString.replace(include.outerHTML, data);
+                });
+        } */
 
 
-    //May need recursion
+        //May need recursion
     }
 
     //console.log('After: ', htmlString);

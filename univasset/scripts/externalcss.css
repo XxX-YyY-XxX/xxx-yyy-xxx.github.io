@@ -13,6 +13,10 @@ code {
 tr:nth-child(even) {
   background-color: rgba(85, 107, 47, 0.25);
 }
+
+include {
+  display: none;
+}
 /* #endregion */
 
 /* #region GFL Button */

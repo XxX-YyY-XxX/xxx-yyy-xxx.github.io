@@ -40,31 +40,43 @@ function SplitExt(path) {
 //#endregion
 
 //#region Generators
-/** @param {boolean} extend @param {Iterable[]} iterables */
+/** @param {boolean} extend @param {Iterable[]} iterables @returns "Tuple" of values from each array */
 function* Zip(extend, ...iterables) {
-    iterables = iterables.map(arr => Array.from(arr))
+    var arrayOfArrays = iterables.map(arr => Array.from(arr))
 
-    if (extend) {
-        var maxlength = 0;
-        var cap = Math.max;
-    } else {
-        var maxlength = Number.POSITIVE_INFINITY;
-        var cap = Math.min;
-    }
+    //if (extend) {
+    //    var maxlength = 0;
+    //    var cap = Math.max;
+    //} else {
+    //    var maxlength = Number.POSITIVE_INFINITY;
+    //    var cap = Math.min;
+    //}
 
-    for (const item of iterables) {
-        maxlength = cap(maxlength, item.length)
-    }
+    var maxlength = (extend ? Math.max : Math.min)(...arrayOfArrays.map(arr => arr.length))
+
+    //for (const item of iterables) {
+    //    maxlength = cap(maxlength, item.length)
+    //}
 
     for (let index = 0; index < maxlength; index++) {
         var output = [];
-        for (const item of iterables) {
+        for (const item of arrayOfArrays) {
             output.push(item[index])
         }
         yield output
     }
 }
 //#endregion
+
+
+
+
+
+
+
+
+
+
 
 
 /*if (typeof(Storage) !== "undefined") {
