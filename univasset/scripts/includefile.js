@@ -1,30 +1,30 @@
 for (const include of Array.from(document.getElementsByTagName('include'))) {
     fetch(include.getAttribute('src'))
         .then(response => response.text())
-        .then(data => nestedTags(data, include.textContent))
+        .then(data => nestedInclude(data, include.textContent))
         .then(html => {include.outerHTML = html;});
 }
 
 /** @param {string} htmlString @param {string} params */
-function nestedTags(htmlString, params) {
+function nestedInclude(htmlString, params) {
     //console.log('Before: ', htmlString);
 
     //Parameter setting
     if (params) {
-        const json = JSON.parse(`[${params}]`);
+        const strArr = JSON.parse(`[${params}]`);
         const doc = new DOMParser().parseFromString(htmlString, "text/html");
         for (const include of Array.from(doc.getElementsByTagName('include'))) {
             let key, param;
 
             if ((key = include.getAttribute('key')) != null) {
-                htmlString = htmlString.replace(include.outerHTML, json[parseInt(key)]);
+                htmlString = htmlString.replace(include.outerHTML, strArr[parseInt(key)]);
             } else if ((param = include.textContent)) {
                 //Untested
                 let tempson = JSON.parse(`[${param}]`);
 
                 for (let index = 0; index < tempson.length; index++) {
                     if (Number.isInteger(tempson[index])) {
-                        tempson[index] = json[tempson[index]];
+                        tempson[index] = strArr[tempson[index]];
                     }
                 }
 
@@ -40,6 +40,8 @@ function nestedTags(htmlString, params) {
     //Source fetching
     if (htmlString.includes('</include>')) {
         const doc = new DOMParser().parseFromString(htmlString, "text/html");
+
+        console.log('Some fuckery happened:', htmlString)
 
         /*for (const include of Array.from(doc.getElementsByTagName('include'))) {
             fetch(include.getAttribute('src'))
@@ -70,7 +72,7 @@ function nestedTags(htmlString, params) {
 
 
 //<include key="0"></include>
-//<include src="/univasset/scripts/mainpagebuttons.html" param='[0, "8"]'></include>
+//<include src="/univasset/scripts/mainpagebuttons.html">0, "8"</include>
 
 
 
@@ -80,8 +82,7 @@ function nestedTags(htmlString, params) {
 
 
 //document.createElement('template');
-
-
+//document.createDocumentFragment()
 
 
 
