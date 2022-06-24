@@ -1154,7 +1154,7 @@ const cardData = Object.freeze([
         tags : [dataTags.COALITION]
     },
     {
-        questions : `How can I get my favorite gun/doll?`,
+        questions : `How can I get my favorite gun/doll/unit/character?`,
         answers : `${descriptionList({
             'Factory Production' : [`5${star} dolls that can drop here are the only ones redeemable through True Core Masks, bar spaghetti.`],
             'Rescue Drops' : ['For "Limited" dolls in Combat Missions, they are limited to that particular map. Not limited by time, but by place. Until Rescue Event happens.',
@@ -1692,6 +1692,19 @@ const cardData = Object.freeze([
         questions : `Is Sniper Fairy any good?`,
         answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/sniper-rework')}`,
         tags : [dataTags.FAIRY]
+    },
+    {
+        questions : `How do I strengthen T-Dolls?`,
+        answers : `${descriptionList({
+            'As an individual unit' : ['Leveling up',
+                'Equipments',
+                'Skill Levels',
+                'MODs'],
+            'As a team' : ['Tile synergy',
+                'Skill synergy',
+                'Fairies']
+        })}`,
+        tags : [dataTags.TDOLL, dataTags.LEVEL]
     },
     {
         questions : ``,

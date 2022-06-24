@@ -5,7 +5,7 @@ for (const include of Array.from(document.getElementsByTagName('include'))) {
         .then(response => response.text())
         .then(data => data.includes('</include>') ? nestedTags(data, include.getAttribute('param')) : data)
         .then(html => {
-            console.log(data.includes('</include>'));
+            console.log(html.includes('</include>'));
             include.outerHTML = html;});
 }
 
