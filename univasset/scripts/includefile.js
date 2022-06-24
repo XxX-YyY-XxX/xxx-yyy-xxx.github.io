@@ -4,9 +4,7 @@ for (const include of Array.from(document.getElementsByTagName('include'))) {
     fetch(include.getAttribute('src'))
         .then(response => response.text())
         .then(data => data.includes('</include>') ? nestedTags(data, include.getAttribute('param')) : data)
-        .then(html => {
-            console.log(html.includes('</include>'));
-            include.outerHTML = html;});
+        .then(html => {include.outerHTML = html;});
 }
 
 
@@ -28,6 +26,10 @@ for (const include of Array.from(document.getElementsByTagName('include'))) {
 function nestedTags(htmlString, params) {
     var doc = new DOMParser().parseFromString(htmlString, "text/html");
 
+    console.log(params)
+
+    console.log('Before: ', htmlString);
+
     //Parameter setting
     if (params != null) {
         const json = JSON.parse(params);
@@ -35,7 +37,9 @@ function nestedTags(htmlString, params) {
             let key, param;
 
             if ((key = include.getAttribute('key')) != null) {
-                htmlString.replace(include.outerHTML, json[parseInt(key)])
+                console.log(include.outerHTML);
+                console.log(json[parseInt(key)]);
+                htmlString.replace(include.outerHTML, json[parseInt(key)]);
             } else if ((param = include.getAttribute('param')) != null) {
                 let tempson = JSON.parse(param);
 
@@ -51,6 +55,8 @@ function nestedTags(htmlString, params) {
             }
         }
     }
+
+    console.log('After: ', htmlString);
 
     //Nested include src
 

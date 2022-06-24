@@ -1070,7 +1070,7 @@ const cardData = Object.freeze([
     },
     {
         questions : `Where can I see doll voicelines?`,
-        answers : `Doll Index Page>Top left as speaker. If it's missing, check if you downloaded the voice pack yet. Or just go to IOPWiki.`,
+        answers : `Doll Index Page>Top left as speaker. If it's missing, check if you downloaded the voice pack yet. Or just go to IOPWiki. Though some do not have voices yet.`,
         tags : [dataTags.TDOLL]
     },  //@Visual
     {
@@ -1160,7 +1160,7 @@ const cardData = Object.freeze([
             'Rescue Drops' : ['For "Limited" dolls in Combat Missions, they are limited to that particular map. Not limited by time, but by place. Until Rescue Event happens.',
                 link(`Farmable dolls in campaign maps, both 3${star} monthlies and debut dolls.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
                 'During collabs, major events, side events, and Rescue Event/Boss Bully, event rewards become temporarily available for farming.'],
-            'Event Rewards' : [link("BigStupidJellyfish's Event Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls')],
+            'Event Rewards' : [link("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls')],
             'Shop' : ['Mostly applicable to collab dolls or by using TCM.']
         })}`,
         tags : [dataTags.TDOLL, dataTags.LEDOLL, dataTags.PROD, dataTags.MAJOR, dataTags.CAMPAIGN, dataTags.MINI, dataTags.TCM, dataTags.MAIN, dataTags.COLLAB]
