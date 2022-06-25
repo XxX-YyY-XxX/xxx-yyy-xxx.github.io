@@ -342,6 +342,18 @@ const cardData = Object.freeze([
     //#endregion
     //#region Important Details
     {
+        questions : `How can I get my favorite gun/doll/unit/character?`,
+        answers : `${descriptionList({
+            'Factory Production' : [`5${star} dolls that can drop here are the only ones redeemable through True Core Masks, bar spaghetti.`],
+            'Rescue Drops' : ['For "Limited" dolls in Combat Missions, they are limited to that particular map. Not limited by time, but by place. Until Rescue Event happens.',
+                link(`Farmable dolls in campaign maps, both 3${star} monthlies and debut dolls.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
+                'During collabs, major events, side events, and Rescue Event/Boss Bully, event rewards become temporarily available for farming.'],
+            'Event Rewards' : [link("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls')],
+            'Shop' : ['Mostly applicable to collab dolls or by using TCM.']
+        })}`,
+        tags : [dataTags.TDOLL, dataTags.IMPT, dataTags.LEDOLL, dataTags.PROD, dataTags.MAJOR, dataTags.CAMPAIGN, dataTags.MINI, dataTags.TCM, dataTags.MAIN, dataTags.COLLAB]
+    },
+    {
         questions : `When should I begin trying to produce fairies/do Heavy Equipment Constructions (HEC)?`,
         answers : `When you have sufficient income for 4 resources and cores. Ideally ASAP since raising one to 5${star} takes a considerable amount of time.`,
         tags : [dataTags.FAIRY, dataTags.PROD, dataTags.IMPT]
@@ -1155,18 +1167,6 @@ const cardData = Object.freeze([
         tags : [dataTags.COALITION]
     },
     {
-        questions : `How can I get my favorite gun/doll/unit/character?`,
-        answers : `${descriptionList({
-            'Factory Production' : [`5${star} dolls that can drop here are the only ones redeemable through True Core Masks, bar spaghetti.`],
-            'Rescue Drops' : ['For "Limited" dolls in Combat Missions, they are limited to that particular map. Not limited by time, but by place. Until Rescue Event happens.',
-                link(`Farmable dolls in campaign maps, both 3${star} monthlies and debut dolls.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
-                'During collabs, major events, side events, and Rescue Event/Boss Bully, event rewards become temporarily available for farming.'],
-            'Event Rewards' : [link("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls')],
-            'Shop' : ['Mostly applicable to collab dolls or by using TCM.']
-        })}`,
-        tags : [dataTags.TDOLL, dataTags.LEDOLL, dataTags.PROD, dataTags.MAJOR, dataTags.CAMPAIGN, dataTags.MINI, dataTags.TCM, dataTags.MAIN, dataTags.COLLAB]
-    },
-    {
         questions : `What do advantaged dolls in combat map mean?`,
         answers : `20% FP boost for AR, RF, MG. 20% EVA boost for SMG, HG, SG.`,
         tags : [dataTags.MAP, dataTags.TDOLL]
@@ -1395,7 +1395,7 @@ const cardData = Object.freeze([
     {
         questions : `If I scrapped/retired my only copy of a doll, can I recover/get them back?`,
         answers : `First of all, how dare you?<br>
-        Second of all, yes you can. Can also work on ${spoilerSummary('collab units', image('./assets/images/CollabScrap.png', 'From u/Angelic_Force'))}.<br>
+        Second of all, yes you can. Can also work on ${spoilerSummary('collab units', image('./assets/images/CollabScrap.png', 'From u/Angelic_Force'))} and the AR Team.<br>
         Can only work once a week, costs however much is needed for a x1 dummy-link, and scrapped dupes are poof.`,
         tags : [dataTags.TDOLL, dataTags.COLLAB, dataTags.SYSMECH]
     },
