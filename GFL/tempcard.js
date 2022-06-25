@@ -349,6 +349,7 @@ const cardData = Object.freeze([
     {
         questions : `What is kiting?`,
         answers : `Kiting, in general, is the method of moving your tanks rightwards to make the enemy aim at them then moving leftwards to make the enemy walk towards you, while your DPS constantly shoots them. This is effective because most enemies have aim time where they do nothing, and range where you have to be in their sights to start aiming. Therefore, lengthening the lifespans of your dolls, especially the tanks.<br>
+        Sometimes called wiggling which in this context means moving your DPS to retarget.<br>
         ${link('GFC guide.','https://www.gflcorner.com/battle-controls/')}<br>
         ${link('Mitsu video guide.', 'https://youtu.be/ITUtRuF4TLY')}<br>
         ${link("u/Reikyu09's reddit post.", 'https://redd.it/8o18an')}`,
