@@ -1,0 +1,140 @@
+@import "/univasset/scripts/externalcss.css";
+
+input[type="checkbox"], input[type="radio"] {
+    appearance: none;
+    margin: 0px;
+}
+
+dl, table, figure, blockquote {
+    margin: 0px;
+}
+
+.twitter-tweet iframe {                         /* Needs more responsive solution. Works on first load only. */
+    max-width: inherit !important;
+}
+
+figcaption {
+    font-size: 1px;
+    text-align: center;
+    display: block;
+}
+
+dd {
+    margin-inline-start: 10px;
+}
+
+.inline-img {
+    display: inline;
+    height: 10px;
+    width: auto;
+}
+
+/* #region Tags */
+.tags {
+    outline: 2px solid aqua;
+    border-radius: 10rem;
+    padding: 0px 3px;
+    display: inline-grid;                       /* For making the tag buttons stay together on wrap. */
+}
+
+.card-tags {
+    background: transparent;
+    color: aqua;
+    line-height: 20px;
+}
+
+.selectedTag {
+    background: transparent;
+    color: aqua;
+}
+
+.unselectedTag {
+    background: aqua;
+    color: black;
+}
+/* #endregion */
+
+/* #region Input Type Selector */
+#input-type-container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.flex-label {
+    background-color: transparent;
+    line-height: 10px;
+    flex: 50%;
+}
+
+.flex-checked {
+    background-color: darkgreen;
+    line-height: 10px;
+    flex: 50%;
+}
+
+#search-text {
+    width: calc(100% - 76px);
+}
+
+#tags-list {
+    text-align: center;
+    display: none;                              /* Makes class hidden on default. */
+}
+/* #endregion */
+
+/* #region Hidden Summary */
+details {
+    display: inline;
+}
+
+details[open] {
+    display: block;
+}
+
+summary {
+    cursor: pointer;
+    display: inline;
+    color: rgb(233, 161, 152);
+    text-shadow: 0 0 5px rgb(255 181 253 / 50%);
+}
+
+details[open] summary {
+    text-align: center;
+    display: block;
+}
+/* #endregion */
+
+/* #region Fieldset */
+fieldset {
+    margin-top: 5px;
+}
+
+legend h3, fieldset ol, fieldset ul {
+    margin: 0px;
+}
+
+fieldset hr {
+    border-top: 1px dashed;
+}
+
+fieldset a {
+    cursor: pointer;
+    text-decoration: none;
+}
+/* #endregion */
+
+/* #region Embed */
+iframe[src*="docs.google.com"] {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border: 0px;
+}
+
+iframe[src*="www.youtube.com"] {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: 0px;
+    display: block;
+}
+/* #endregion */
