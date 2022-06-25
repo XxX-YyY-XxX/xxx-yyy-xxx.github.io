@@ -73,7 +73,7 @@
                     }
 
                     for (const [unitE, unitNE] of Zip(true, elite, nonelite)) {
-                        rows += `<tr><td>${unitE}</td><td>${unitNE}</td></tr>`;
+                        rows += `<tr><td>${unitE}</td><td>${unitNE ?? ''}</td></tr>`;
                     }
 
                     return rows;})

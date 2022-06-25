@@ -1,3 +1,5 @@
+//HTML only for now
+
 for (const include of Array.from(document.getElementsByTagName('include'))) {
     fetch(include.getAttribute('src'))
         .then(response => response.text())
@@ -13,12 +15,13 @@ function nestedInclude(htmlString, params) {
     if (params) {
         const strArr = JSON.parse(`[${params}]`);
         const doc = new DOMParser().parseFromString(htmlString, "text/html");
+
         for (const include of Array.from(doc.getElementsByTagName('include'))) {
             let key, param;
 
-            if ((key = include.getAttribute('key')) != null) {
+            if (key = include.getAttribute('key')) {
                 htmlString = htmlString.replace(include.outerHTML, strArr[parseInt(key)]);
-            } else if ((param = include.textContent)) {
+            } else if (param = include.textContent) {
                 //Untested
                 let tempson = JSON.parse(`[${param}]`);
 
@@ -28,9 +31,9 @@ function nestedInclude(htmlString, params) {
                     }
                 }
 
-                let tempstr = include.outerHTML;
-                include.param = JSON.stringify(tempson);
-                htmlString = htmlString.replace(tempstr, include.outerHTML);
+                let origOuter = include.outerHTML;
+                include.textContent = JSON.stringify(tempson).slice(1, -1);
+                htmlString = htmlString.replace(origOuter, include.outerHTML);
             }
         }
     }
@@ -39,27 +42,15 @@ function nestedInclude(htmlString, params) {
 
     //Source fetching
     if (htmlString.includes('</include>')) {
+        //Untested
         const doc = new DOMParser().parseFromString(htmlString, "text/html");
 
-        console.log('Some fuckery happened:', htmlString)
-
-        /*for (const include of Array.from(doc.getElementsByTagName('include'))) {
+        for (const include of Array.from(doc.getElementsByTagName('include'))) {
             fetch(include.getAttribute('src'))
                 .then(response => response.text())
-                .then(data => {
-                    var param = JSON.parse(include.getAttribute('param'));
-                    if (param != null) {
-                        data = getParams(data, param)
-                    }            
-                    //while (data.includes('</include>')) {
-                    //    data = nestedInclude(data);
-                    //}
-                    htmlString.replace(include.outerHTML, data);
-                });
-        } */
-
-
-        //May need recursion
+                .then(data => nestedInclude(data, include.textContent))
+                .then(html => {htmlString = htmlString.replace(include.outerHTML, html);});
+        }
     }
 
     //console.log('After: ', htmlString);

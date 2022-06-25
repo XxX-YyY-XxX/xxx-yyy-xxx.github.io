@@ -40,11 +40,7 @@ function SplitExt(path) {
 //#endregion
 
 //#region Generators
-/**
- * @param {boolean} extend true to extend short arrays with 'undefined', false to clip long arrays
- * @param {Iterable[]} iterables
- * @returns "Tuple" of values from each array
- */
+/** @param {boolean} extend @param {Iterable[]} iterables @returns "Tuple" of values from each array */
 function* Zip(extend, ...iterables) {
     const arrayOfArrays = iterables.map(arr => Array.from(arr))
     const maxlength = (extend ? Math.max : Math.min)(...arrayOfArrays.map(arr => arr.length))
