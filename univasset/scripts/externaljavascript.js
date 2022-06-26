@@ -2,10 +2,8 @@
 /** Close to zero value. */
 const epsilon = 10 ** -10;
 /** Reusable element for offscreen DOM. */
-const dummyHTML = new DOMParser().parseFromString('', 'text/html').body;//new Document().createElement('template');//
+const dummyHTML = new DOMParser().parseFromString('', 'text/html').body;
 //#endregion
-
-//console.log(new DOMParser().parseFromString('', 'text/html').contentType);
 
 //#region Enumerators
 /** For HTML tag removal. */
@@ -25,9 +23,6 @@ function IsSubsetOf(subset, mainset) {
 
 /** @param {string} htmlString @param {HTMLSearch} removalMethod */
 function RemoveHTMLTag(htmlString, removalMethod = HTMLSearch.QUICK) {
-    //HTML parsing needs fix
-    dummyHTML.innerHTML = htmlString;
-    console.log('Parsed:', dummyHTML.textContent);
     switch (removalMethod) {
         case HTMLSearch.PRECISE:
             dummyHTML.innerHTML = htmlString;
@@ -35,6 +30,7 @@ function RemoveHTMLTag(htmlString, removalMethod = HTMLSearch.QUICK) {
         case HTMLSearch.QUICK:
             return htmlString.replace(/(<([^>]+)>)/ig, '');
         default:
+            console.warn('HTMLSearch unknown value.')
             return '';
     }
 }
@@ -86,8 +82,7 @@ function* Zip(extend, ...iterables) {
 
 
 
-
-
+//export {IsSubsetOf, RemoveHTMLTag, RandomInteger, UniqueClassElement, ReloadIFrame, SplitExt, Zip};
 
 
 
