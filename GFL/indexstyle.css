@@ -20,6 +20,7 @@ figcaption {
 }
 
 dd {
+    list-style-image: url(/univasset/images/redbullet.png);
     margin-inline-start: 10px;
 }
 
@@ -138,7 +139,3 @@ iframe[src*="www.youtube.com"] {
     display: block;
 }
 /* #endregion */
-
-dd {
-    list-style-image: url(/univasset/images/redbullet.png);
-}

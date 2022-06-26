@@ -5,8 +5,6 @@ const epsilon = 10 ** -10;
 const dummyHTML = new Document().createElement('template');
 //#endregion
 
-console.log(dummyHTML)
-
 //#region Enumerators
 /** For HTML tag removal. */
 class HTMLSearch {
@@ -25,6 +23,7 @@ function IsSubsetOf(subset, mainset) {
 
 /** @param {string} htmlString @param {HTMLSearch} removalMethod */
 function RemoveHTMLTag(htmlString, removalMethod = HTMLSearch.QUICK) {
+    //HTML parsing needs fix
     dummyHTML.innerHTML = htmlString;
     console.log('Parsed:', dummyHTML.textContent);
     switch (removalMethod) {
