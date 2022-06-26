@@ -1,10 +1,11 @@
-//import {IsSubsetOf, RemoveHTMLTag, RandomInteger, UniqueClassElement} from '/univasset/scripts/externaljavascript.js'
+import {IsSubsetOf, RemoveHTMLTag, RandomInteger, UniqueClassElement, ReloadIFrame} from '/univasset/scripts/externaljavascript.js';
+import {cardData as questionCards, dataTags} from "./tempcard.js";
 
 //#region Constants and Variables
 const toggleableTagsField = document.getElementById('tags-list');
 const searchTextField = document.getElementById('search-text');
 const searchParams = new URLSearchParams(location.search);
-const questionCards = cardData;
+//const questionCards = cardData;
 //#endregion
 
 document.getElementById('version-number').innerHTML = questionCards.length;
@@ -62,6 +63,7 @@ function searchCards() {
     if (searchParams.has('tags')) {
         const cardTags = searchParams.get('tags').split(' ').filter(Boolean);
         if (cardTags.length > 0) {
+            /** @returns {boolean} */
             matchCheck = function(card) {
                 return IsSubsetOf(cardTags, card.tags);
             }

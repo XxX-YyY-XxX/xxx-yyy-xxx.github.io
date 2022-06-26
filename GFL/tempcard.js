@@ -1,6 +1,4 @@
-//import {ReloadIFrame} from '/univasset/scripts/externaljavascript.js'
-
-const dataTags = Object.freeze({
+export const dataTags = Object.freeze({
     //#region Combat Tabs
         STORY : 'StoryEvents',          //For questions that apply to Major, Collab, and Seasonal Events.
             MAJOR : 'MajorEvents',      //Part of the main story. The ones added to the Campaign tab.
@@ -155,7 +153,7 @@ function descriptionList(dictOfArray) {
 }
 //#endregion
 
-const cardData = Object.freeze([
+export const cardData = Object.freeze([
     //#region Topic Primers
     {
         questions : `I can't access/press/see things, what do I do?`,
