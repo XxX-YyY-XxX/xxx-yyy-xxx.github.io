@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!--script defer type="text/javascript" src="/univasset/scripts/externaljavascript.js"></script-->
         <script defer type="text/javascript" src="/univasset/scripts/includefile.js"></script>
         <script type="module">
             import {Zip} from '/univasset/scripts/externaljavascript.js';
 
             fetch('https://raw.githubusercontent.com/randomqwerty/GFLData/main/en/stc/enemy_character_type.json')
-                //.then(response => response.text())
-                //.then(jsonString => JSON.parse(jsonString))
                 .then(response => response.json())
                 .then(jsonObject => {
                     var elite = new Set(), nonelite = new Set(), rows = "";

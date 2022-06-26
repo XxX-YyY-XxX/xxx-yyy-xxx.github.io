@@ -96,7 +96,7 @@ function list(ordered, ...any) {
 function googleEmbed(docLink) {
     return `<figure>
         <iframe src="${docLink}/preview?pli=1"></iframe>
-        <figcaption><a onclick="ReloadIFrame(this.parentElement.parentElement.firstElementChild)">Reload Frame</a> \| ${link('Source Link', docLink)}</figcaption>
+        <figcaption><a onclick="ReloadIFrame(this)">Reload Frame</a> \| ${link('Source Link', docLink)}</figcaption>
     </figure>`;
 }   //<button type="button" ></button>
 

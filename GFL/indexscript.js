@@ -1,13 +1,13 @@
-import {IsSubsetOf, RemoveHTMLTag, RandomInteger, UniqueClassElement, ReloadIFrame} from '/univasset/scripts/externaljavascript.js';
+import {IsSubsetOf, RemoveHTMLTag, RandomInteger, UniqueClassElement} from '/univasset/scripts/externaljavascript.js';
 import {cardData as questionCards, dataTags} from "./tempcard.js";
 
-//#region Constants and Variables
+//#region Constants
 const toggleableTagsField = document.getElementById('tags-list');
 const searchTextField = document.getElementById('search-text');
 const searchParams = new URLSearchParams(location.search);
-//const questionCards = cardData;
 //#endregion
 
+//#region Initialize
 document.getElementById('version-number').innerHTML = questionCards.length;
 
 toggleableTagsField.innerHTML = Object.values(dataTags).sort().map(val => 
@@ -17,45 +17,9 @@ toggleableTagsField.innerHTML = Object.values(dataTags).sort().map(val =>
 ).join(' ');
 
 document.getElementById('cards-field').innerHTML = (searchParams.has('search') || searchParams.has('tags')) ? searchCards() : randomCards();
+//#endregion
 
-/** @param {HTMLElement} radioButton */
-function switchInputMode(radioButton) {
-    searchTextField.name = radioButton.value;
-    searchTextField.value = '';
-    UniqueClassElement('flex-checked').className = 'flex-label';
-    radioButton.parentElement.className = 'flex-checked';
-    switch (radioButton.value) {
-        case 'tags':
-            searchTextField.style.display = 'none';
-            toggleableTagsField.style.display = 'block';
-            break;
-        case 'search':
-            searchTextField.style.display = 'inline';
-            toggleableTagsField.style.display = 'none';
-            for (const element of Array.from(document.getElementsByClassName('selectedTag'))) {
-                element.firstElementChild.checked = false
-                element.className = 'tags unselectedTag';
-            }
-            break;
-        default:
-            console.log(radioButton.value);
-            break;
-    }
-}
-
-/** @param {HTMLElement} tagCheckbox */
-function toggleTag(tagCheckbox) {
-    const parentLabel = tagCheckbox.parentElement;
-    const tagName = parentLabel.innerText + ' ';
-    if (tagCheckbox.checked) {
-        parentLabel.className = 'tags selectedTag';
-        searchTextField.value += tagName;
-    } else {
-        parentLabel.className = 'tags unselectedTag';
-        searchTextField.value = searchTextField.value.replace(tagName, '');
-    }
-}
-
+//#region Private Functions
 function searchCards() {
     var output = '';
     var matchCheck;
@@ -115,3 +79,44 @@ function setQuestionBoxes(cards) {
         Tags: ${cards.tags.map(val => `<span class="tags card-tags">${val}</span>` ).join(' ')}
         </fieldset>`;
 }
+//#endregion
+
+//#region Public Functions
+/** @param {HTMLElement} radioButton */
+export function switchInputMode(radioButton) {
+    searchTextField.name = radioButton.value;
+    searchTextField.value = '';
+    UniqueClassElement('flex-checked').className = 'flex-label';
+    radioButton.parentElement.className = 'flex-checked';
+    switch (radioButton.value) {
+        case 'tags':
+            searchTextField.style.display = 'none';
+            toggleableTagsField.style.display = 'block';
+            break;
+        case 'search':
+            searchTextField.style.display = 'inline';
+            toggleableTagsField.style.display = 'none';
+            for (const element of Array.from(document.getElementsByClassName('selectedTag'))) {
+                element.firstElementChild.checked = false
+                element.className = 'tags unselectedTag';
+            }
+            break;
+        default:
+            console.log(radioButton.value);
+            break;
+    }
+}
+
+/** @param {HTMLElement} tagCheckbox */
+export function toggleTag(tagCheckbox) {
+    const parentLabel = tagCheckbox.parentElement;
+    const tagName = parentLabel.innerText + ' ';
+    if (tagCheckbox.checked) {
+        parentLabel.className = 'tags selectedTag';
+        searchTextField.value += tagName;
+    } else {
+        parentLabel.className = 'tags unselectedTag';
+        searchTextField.value = searchTextField.value.replace(tagName, '');
+    }
+}
+//#endregion
