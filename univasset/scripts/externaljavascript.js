@@ -2,7 +2,7 @@
 /** Close to zero value. */
 const epsilon = 10 ** -10;
 /** Reusable element for offscreen DOM. */
-const dummyHTML = new Document().body;//new DOMParser().parseFromString('', 'text/html').body;
+const dummyHTML = new Document().createElement('template');//new DOMParser().parseFromString('', 'text/html').body;
 //new Document().body;
 //#endregion
 
