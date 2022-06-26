@@ -2,12 +2,11 @@
 /** Close to zero value. */
 const epsilon = 10 ** -10;
 /** Reusable element for offscreen DOM. */
-const dummyHTML = new Document().createElement('template');//new DOMParser().parseFromString('', 'text/html').body;
-//new Document().body;
+const dummyHTML = new DOMParser().parseFromString('', 'text/html').body;//new Document().createElement('template');//
 //#endregion
 
-console.log(new Document().contentType)
-console.log(new Document().doctype)
+console.log(new DOMParser().parseFromString('', 'text/html').contentType)
+console.log(new DOMParser().parseFromString('', 'text/html').doctype.name)
 
 //#region Enumerators
 /** For HTML tag removal. */
