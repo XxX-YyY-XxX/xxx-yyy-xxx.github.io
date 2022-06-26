@@ -78,12 +78,12 @@ const tm = '™️';
 //🍰
 
 //#region Functions
-/** @param {URLString} link */
+/** @param {string} link */
 function image(link, onHover = null, onLoadFail = 'Image loading failed.') {
     return `<img src="${link}" alt="${onLoadFail}" ${onHover ? `title="${onHover}"` : ''}>`
 }
 
-/** @param {URLString} link */
+/** @param {string} link */
 function link(linkText, link) {
     return `<a href="${link}">${linkText}</a>`;
 }
@@ -94,7 +94,7 @@ function list(ordered, ...any) {
     return `<${htmlElem}>${any.map(val => `<li>${val}</li>`).join('')}</${htmlElem}>`;
 }
 
-/** @param {URLString} docLink Ends in alphanumeric */
+/** @param {string} docLink Ends in alphanumeric */
 function googleEmbed(docLink) {
     return `<figure>
         <iframe src="${docLink}/preview?pli=1"></iframe>
@@ -102,9 +102,9 @@ function googleEmbed(docLink) {
     </figure>`;
 }   //<button type="button" ></button>
 
-/** @param {URLString} videoID Youtube video or playlist ID*/
+/** @param {string} videoID Youtube video or playlist ID*/
 function youtubeEmbed(videoID) {
-    identifier = videoID.length == 11 ? videoID : `videoseries?list=${videoID}`
+    var identifier = videoID.length == 11 ? videoID : `videoseries?list=${videoID}`
     return `<iframe src="https://www.youtube.com/embed/${identifier}" allowfullscreen></iframe>`
 }
 
@@ -145,11 +145,11 @@ function spoilerSummary(summaryName, details) {
     return `<details><summary>${summaryName}</summary>${details}</details>`;
 }   //ontoggle
 
-/** @param dictOfArray \{key : descriptions[]} */
+/** @param {Object} dictOfArray \{key : descriptions[]} */
 function descriptionList(dictOfArray) {
     var descs = '';
     for (const descObject in dictOfArray) {
-        descs += `<dt>${descObject}</dt>` + dictOfArray[descObject].map(val => `<dd>~ ${val}</dd>`).join('');
+        descs += `<dt>${descObject}</dt>` + dictOfArray[descObject].map(val => `<dd>${val}</dd>`).join('');
     }
     return `<dl>${descs}</dl>`;
 }

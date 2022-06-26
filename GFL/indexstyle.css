@@ -24,6 +24,11 @@ dd {
     /* margin-inline-start: 10px; */
 }
 
+dd::before {
+    content: "+ ";
+    contain: initial;
+}
+
 /* dd::marker {
     unicode-bidi: isolate;
     font-variant-numeric: tabular-nums;
