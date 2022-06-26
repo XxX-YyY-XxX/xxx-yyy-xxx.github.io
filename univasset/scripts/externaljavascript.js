@@ -6,6 +6,9 @@ const dummyHTML = new Document().body;//new DOMParser().parseFromString('', 'tex
 //new Document().body;
 //#endregion
 
+console.log(new Document().contentType)
+console.log(new Document().doctype)
+
 //#region Enumerators
 /** For HTML tag removal. */
 class HTMLSearch {
