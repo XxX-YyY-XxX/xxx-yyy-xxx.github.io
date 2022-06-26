@@ -1,4 +1,4 @@
-import {IsSubsetOf, RemoveHTMLTag, RandomInteger, UniqueClassElement} from '/univasset/scripts/externaljavascript.js';
+import {IsSubsetOf, RemoveHTMLTag, RandomInteger, UniqueClassElement, ReloadIFrame as reload} from '/univasset/scripts/externaljavascript.js';
 import {cardData as questionCards, dataTags} from "./tempcard.js";
 
 //#region Constants
@@ -82,8 +82,13 @@ function setQuestionBoxes(cards) {
 //#endregion
 
 //#region Public Functions
-/** @param {HTMLElement} radioButton */
-export function switchInputMode(radioButton) {
+/** @param {HTMLElement} element */
+window.ReloadIFrame = function(element) {
+    reload(element.parentElement.previousElementSibling);//.parentElement.firstElementChild)
+}
+
+/** @param {HTMLInputElement} radioButton */
+window.switchInputMode = function(radioButton) {
     searchTextField.name = radioButton.value;
     searchTextField.value = '';
     UniqueClassElement('flex-checked').className = 'flex-label';
@@ -107,8 +112,8 @@ export function switchInputMode(radioButton) {
     }
 }
 
-/** @param {HTMLElement} tagCheckbox */
-export function toggleTag(tagCheckbox) {
+/** @param {HTMLInputElement} tagCheckbox */
+window.toggleTag = function(tagCheckbox) {
     const parentLabel = tagCheckbox.parentElement;
     const tagName = parentLabel.innerText + ' ';
     if (tagCheckbox.checked) {

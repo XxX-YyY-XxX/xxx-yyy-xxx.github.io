@@ -3,15 +3,6 @@
     <head>
         <script defer type="text/javascript" src="/univasset/scripts/includefile.js"></script>
         <script type="module" src="./indexscript.js"></script>
-        <script type="module">
-            import {ReloadIFrame as reload} from "/univasset/scripts/externaljavascript.js";
-            import {switchInputMode, toggleTag} from "./indexscript.js";
-
-            /** @param {Element} element */
-            function ReloadIFrame(element) {
-                reload(element.parentElement.previousElementSibling);//.parentElement.firstElementChild)
-            }
-        </script>
         
         <meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
