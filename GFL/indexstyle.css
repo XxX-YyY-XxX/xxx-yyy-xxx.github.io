@@ -20,18 +20,18 @@ figcaption {
 }
 
 dd {
-    list-style-image: url(/univasset/images/redbullet.png);
-    margin-inline-start: 10px;
+    list-style-type: "+";/* url(/univasset/images/redbullet.png); */
+    /* margin-inline-start: 10px; */
 }
 
-dd::marker {
+/* dd::marker {
     unicode-bidi: isolate;
     font-variant-numeric: tabular-nums;
     text-transform: none;
     text-indent: 0px !important;
     text-align: start !important;
     text-align-last: start !important;
-}
+} */
 
 .inline-img {
     display: inline;
