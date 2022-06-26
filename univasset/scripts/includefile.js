@@ -17,13 +17,13 @@ function nestedInclude(htmlString, params) {
         const doc = new DOMParser().parseFromString(htmlString, "text/html");
 
         for (const include of Array.from(doc.getElementsByTagName('include'))) {
-            let key, param;
+            let key, childparam;
 
             if (key = include.getAttribute('key')) {
                 htmlString = htmlString.replace(include.outerHTML, strArr[parseInt(key)]);
-            } else if (param = include.textContent) {
+            } else if (childparam = include.textContent) {
                 //Untested
-                let tempson = JSON.parse(`[${param}]`);
+                let tempson = JSON.parse(`[${childparam}]`);
 
                 for (let index = 0; index < tempson.length; index++) {
                     if (Number.isInteger(tempson[index])) {
@@ -34,7 +34,7 @@ function nestedInclude(htmlString, params) {
                 let origOuter = include.outerHTML;
                 include.textContent = JSON.stringify(tempson).slice(1, -1);
                 htmlString = htmlString.replace(origOuter, include.outerHTML);
-            }
+            } //else {No parameter calls}
         }
     }
 
