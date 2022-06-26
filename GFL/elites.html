@@ -22,9 +22,8 @@
                     return rows;})
                 .then(html => {
                     /** @param {Element} tablebody */
-                    rowvalues = function(tablebody) {tablebody.innerHTML = html}})
-                .catch(error => console.log(error))
-                
+                    return function(tablebody) {tablebody.innerHTML = html}})
+                .then(func => {rowvalues = func});
         </script>
 
         <meta charset='utf-8'>
@@ -63,7 +62,7 @@
         <!-- End Jekyll SEO tag -->
     </head>
 
-    <body onload="rowvalues(this)">
+    <body>
         <include src="/univasset/scripts/mainpagebuttons.html">"List of Elite and Non-elite Units"</include>
 
         <div class="container">
@@ -84,5 +83,7 @@
                 Taken from <a href="https://github.com/randomqwerty/GFLData/blob/main/en/stc/enemy_character_type.json">randomqwerty/GFLData</a>.
             </section>
         </div>
+
+        <script>rowvalues(document.getElementsByTagName('tbody')[0])</script>
     </body>
 </html>

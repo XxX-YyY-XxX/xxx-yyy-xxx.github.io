@@ -138,3 +138,7 @@ iframe[src*="www.youtube.com"] {
     display: block;
 }
 /* #endregion */
+
+dd {
+    list-style-image: url(/univasset/images/redbullet.png);
+}
