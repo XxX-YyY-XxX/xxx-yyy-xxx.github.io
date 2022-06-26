@@ -1,5 +1,18 @@
 //#region Constants
+/** Close to zero value. */
 const epsilon = 10 ** -10;
+/** Reusable element for offscreen DOM. */
+const dummyHTML = new Document().createElement('template');
+//#endregion
+
+//#region Enumerators
+/** For HTML tag removal. */
+class HTMLSearch {
+    /** @property Uses regex for quick and dirty searches. */
+    static QUICK = 0
+    /** @property Uses HTML parsing for precise element matching. */
+    static PRECISE = 1
+}
 //#endregion
 
 //#region Functions
@@ -8,9 +21,19 @@ function IsSubsetOf(subset, mainset) {
     return subset.every(val => mainset.includes(val));
 }
 
-/** @param {string} htmlString */
-function RemoveHTMLTag(htmlString) {                                        //May remove non-HTML <???> strings
-    return htmlString.replace(/(<([^>]+)>)/ig, '');
+/** @param {string} htmlString @param {HTMLSearch} removalMethod */
+function RemoveHTMLTag(htmlString, removalMethod = HTMLSearch.QUICK) {
+    dummyHTML.innerHTML = htmlString;
+    console.log(dummyHTML.textContent);
+    switch (removalMethod) {
+        case HTMLSearch.PRECISE:
+            dummyHTML.innerHTML = htmlString;
+            return dummyHTML.textContent ?? '';
+        case HTMLSearch.QUICK:
+            return htmlString.replace(/(<([^>]+)>)/ig, '');
+        default:
+            return '';
+    }
 }
 
 /** @param {number} min @param {number} max */
@@ -34,19 +57,20 @@ function ReloadIFrame(iframeElement) {
 /** @param {string} path @returns Path with no extension, extension */
 //lastIndexOf+slice > split+replace
 function SplitExt(path) {
+    //remove base url to prevent false positive
     var index = path.lastIndexOf('.');
     return [path.slice(0, index), path.slice(index)]
 }
 //#endregion
 
 //#region Generators
-/** @param {boolean} extend @param {Iterable[]} iterables @returns "Tuple" of values from each array */
+/** @param {boolean} extend @param {Iterable[]} iterables @returns "Tuple" of index and values from each array */
 function* Zip(extend, ...iterables) {
     const arrayOfArrays = iterables.map(arr => Array.from(arr))
     const maxlength = (extend ? Math.max : Math.min)(...arrayOfArrays.map(arr => arr.length))
 
     for (let index = 0; index < maxlength; index++) {
-        var output = [];
+        var output = [index];
         for (const item of arrayOfArrays) {
             output.push(item[index])
         }

@@ -956,7 +956,7 @@ const cardData = Object.freeze([
     {
         questions : `Is the package in the shop worth it?`,
         answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/energy-packages')}`,
-        tags : [dataTags.MISC]
+        tags : [dataTags.ITEM, dataTags.OATH]
     },
     {
         questions : `Can I put 2 L2D skins in the double adjutant slot?`,
@@ -1706,6 +1706,12 @@ const cardData = Object.freeze([
                 'Fairies']
         })}`,
         tags : [dataTags.TDOLL, dataTags.LEVEL]
+    },
+    {
+        questions : `Is there any Live2D viewer for GFL?`,
+        answers : `${link('Pengu', 'https://pengupengupengu.github.io/live2d-viewer-web/')}. Don't know how this works.<br>
+        Or tryi IOPWiki.`,
+        tags : [dataTags.MISC]
     },
     {
         questions : ``,
