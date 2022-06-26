@@ -5,16 +5,15 @@ const epsilon = 10 ** -10;
 const dummyHTML = new DOMParser().parseFromString('', 'text/html').body;//new Document().createElement('template');//
 //#endregion
 
-console.log(new DOMParser().parseFromString('', 'text/html').contentType)
-console.log(new DOMParser().parseFromString('', 'text/html').doctype.name)
+//console.log(new DOMParser().parseFromString('', 'text/html').contentType);
 
 //#region Enumerators
 /** For HTML tag removal. */
 class HTMLSearch {
     /** @property Uses regex for quick and dirty searches. */
-    static QUICK = 0
+    static QUICK = 0;
     /** @property Uses HTML parsing for precise element matching. */
-    static PRECISE = 1
+    static PRECISE = 1;
 }
 //#endregion
 
