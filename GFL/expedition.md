@@ -10,18 +10,6 @@
 
 > Only if you didn't do one. If you did and no visible loot, restart app.
 
-# Which pet corresponds to which exploration material?
-
-> Cat - Bricks/City; Dog - Buttstock/Snowfield; Bird - Acorn/Forest; Misc - Fluid/Wasteland
->
-> Then use the corresponding food that gives higher chance to visit a locale for a near 100% visit.
-
-@ Visual
-
-### If advantaged dolls change mid-expedition, which one determines your rewards, the advantaged on the start of exploration or at the end?
-
-> The start of the expedition.
-
 ### What are T-doll effects available in the older servers?
 
 > ~~Global already has everything they have.~~ Apparently new items have been added there.

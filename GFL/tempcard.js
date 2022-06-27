@@ -508,15 +508,17 @@ export const cardData = Object.freeze([
     {
         questions : `How can I save the enemy composition for later practice?`,
         answers : `${descriptionList({
-            'Add Target' : ["Long press the enemy on the map and you'll see the button on the top-left.",
+            'Add Target' : [
+                "Long press the enemy on the map and you'll see the button on the top-left.",
                 'Pause while in battle to see the button on the bottom-left.',
                 'Button appears on the bottom-left after losing a battle.',
                 'Adds the current enemy formation to the Target Practice in the Combat Sims.'],
-            'GFAlarm' : ['Use GFLMaps to take the enemy IDs you want to fight and enter them in the Custom Target Train under Packet Forger, with IDs separated by commas.',
+            'GFAlarm' : [
+                'Use GFLMaps to take the enemy IDs you want to fight and enter them in the Custom Target Train under Packet Forger, with IDs separated by commas.',
                 image('./assets/images/GFAlarmCTT.png', 'From u/UnironicWeeaboo'),
-                `Works for comps that has been loaded into the client and is ${link('very safe', 'https://www.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i312oo2/')}.`]
-        })}<br>
-        ${link('Matsuda recommendations.', 'https://gfl.matsuda.tips/post/everything-sucks-forever')}`,
+                `Works for comps that has been loaded into the client and is ${link('very safe', 'https://www.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i312oo2/')}.`],
+            '<a href="https://gfl.matsuda.tips/post/everything-sucks-forever">Matsuda recommendations</a>' : []
+        })}`,
         tags : [dataTags.ENEMY, dataTags.BATTLE, dataTags.MAP, dataTags["3P"]]
     },  //@Visual
     {
@@ -1719,6 +1721,22 @@ export const cardData = Object.freeze([
         Or tryi IOPWiki.`,
         tags : [dataTags.MISC]
     },
+    {
+        questions : `How long would visitors stay in my dormitory?`,
+        answers : `${link('u/BigStupidJellyfish_ says 8 hours.', 'https://old.reddit.com/r/girlsfrontline/comments/v6pt9o/weekly_commanders_lounge_june_07_2022/ibyvjnm/')}`,
+        tags : [dataTags.DORM]
+    },
+    {
+        questions : `Which exped location gives which resources and which pet is best for each?`,
+        answers : `${table(
+            ['Pets', 'Location', 'Currency', 'Ration'],
+            ['Cat', 'City', 'Toy Brick', '???'],
+            ['Dog', 'Snowfield', 'Buttstock', '???'],
+            ['Bird', 'Forest', 'Acorn', '???'],
+            ['Misc', 'Wasteland', 'Collapse', '???']
+        )}`,
+        tags : [dataTags.EXPED, dataTags.PET, dataTags.ITEM]
+    },  //@Visual
     {
         questions : ``,
         answers : ``,
