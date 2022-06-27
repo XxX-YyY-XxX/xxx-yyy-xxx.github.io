@@ -19,21 +19,10 @@ figcaption {
     display: block;
 }
 
-/* dt {
-    display: list-item;
-    list-style-type: disc;
-} */
-
 dd {
     display: list-item;
-    /* list-style-type: circle; *//* url(/univasset/images/redbullet.png); */
-    margin-inline-start: 10px;
+    margin-inline-start: 20px;
 }
-
-/* dd::before {
-    content: "+ ";
-    contain: initial;
-} */
 
 .inline-img {
     display: inline;

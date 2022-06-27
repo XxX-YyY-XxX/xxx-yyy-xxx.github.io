@@ -1,6 +1,8 @@
 <!-- #region Inside -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" href="/univasset/images/favicon.png" />
+<!-- link rel="canonical" href="https://xxx-yyy-xxx.github.io/GFL/technical.html" / -->
+<!-- meta property="og:url" content="https://xxx-yyy-xxx.github.io/GFL/technical.html" / -->
 
 <meta charset='utf-8' />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,13 +19,29 @@
 <!-- #endregion -->
 
 <!-- #region Outside -->
-<link rel="canonical" href="https://xxx-yyy-xxx.github.io/GFL/technical.html" />
-<meta property="og:url" content="https://xxx-yyy-xxx.github.io/GFL/technical.html" />
-<meta name="description" content="GFL FAQs first. Might add things later." />
-<meta property="og:description" content="GFL FAQs first. Might add things later." />    
 <title>Random Scraps | GFL FAQs first. Might add things later.</title>
 <link rel="stylesheet" href="/assets/css/style.css?v=d4bd63df67a739c7254be8c01189b85a2c8b839c">
+
+<meta name="description" content="GFL FAQs first. Might add things later." />
+<meta property="og:description" content="GFL FAQs first. Might add things later." />    
 <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"WebPage","description":"GFL FAQs first. Might add things later.","headline":"Random Scraps","url":"https://xxx-yyy-xxx.github.io/GFL/technical.html"}
 </script>
 <!-- #endregion  -->
+
+<script>
+    const temp = document.createElement('template');
+    const URLstr = location.href.split('?')[0].split('#')[0];
+
+    var link = document.createElement('link');
+    link.rel = 'canonical';
+    link.href = URLstr;
+    temp.appendChild(link)
+
+    var meta = document.createElement('meta');
+    meta.property = 'og:url';
+    meta.content = URLstr;
+    temp.appendChild(meta)
+
+    document.head.appendChild(temp.content);
+</script>
