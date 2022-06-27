@@ -19,15 +19,21 @@ figcaption {
     display: block;
 }
 
+/* dt {
+    display: list-item;
+    list-style-type: disc;
+} */
+
 dd {
-    list-style-type: "+";/* url(/univasset/images/redbullet.png); */
+    display: list-item;
+    /* list-style-type: circle; *//* url(/univasset/images/redbullet.png); */
     margin-inline-start: 10px;
 }
 
-dd::before {
+/* dd::before {
     content: "+ ";
     contain: initial;
-}
+} */
 
 .inline-img {
     display: inline;

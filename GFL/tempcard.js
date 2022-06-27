@@ -359,10 +359,11 @@ export const cardData = Object.freeze([
     {
         questions : `What is kiting?`,
         answers : `Kiting, in general, is the method of moving your tanks rightwards to make the enemy aim at them then moving leftwards to make the enemy walk towards you, while your DPS constantly shoots them. This is effective because most enemies have aim time where they do nothing, and range where you have to be in their sights to start aiming. Therefore, lengthening the lifespans of your dolls, especially the tanks.<br>
+        This is the reason why putting your whole team at the back of the grid is preferable.<br>
         Sometimes called wiggling which in this context means moving your DPS to retarget.<br>
-        ${link('GFC guide.','https://www.gflcorner.com/battle-controls/')}<br>
-        ${link('Mitsu video guide.', 'https://youtu.be/ITUtRuF4TLY')}<br>
-        ${link("u/Reikyu09's reddit post.", 'https://redd.it/8o18an')}`,
+        ${link('GFC guide','https://www.gflcorner.com/battle-controls/')}<br>
+        ${spoilerSummary('Mitsu video guide', youtubeEmbed('ITUtRuF4TLY'))}<br>
+        ${link("u/Reikyu09's reddit post", 'https://redd.it/8o18an')}`,
         tags : [dataTags.BATTLE, dataTags.IMPT]
     },
     {
@@ -757,9 +758,16 @@ export const cardData = Object.freeze([
     },
     {
         questions : `Which facilities/base upgrades should I prioritize for battery expenditures?`,
-        answers : `${list(true, 'Forward Basecamp.', 'Protocol Control Centre.', 'Intelligence Room.', 'Firing Range (Garage).', 'Fairy Chamber.', 'Data Room.', 'Rescue Station.')}`,
+        answers : `${list(true,
+            'Forward Basecamp',
+            'Protocol Control Centre',
+            'Intelligence Room',
+            'Firing Range (Garage)',
+            'Fairy Chamber',
+            'Data Room',
+            'Rescue Station')}`,
         tags : [dataTags.NEWB]
-    },
+    },  //@Upgrade priority per facility
     {
         questions : `What do I need for 8-1N Zas drag?`,
         answers : `${googleEmbed('https://docs.google.com/spreadsheets/d/1VT52c-_m4zTx-OFRPcxE9iFmmJY_AMC7CyJT1B7FLt8')}`,
