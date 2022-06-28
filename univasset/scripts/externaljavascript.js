@@ -63,17 +63,25 @@ export function SplitExt(path) {
 //#endregion
 
 //#region Generators
-/** @param {boolean} extend @param {Iterable[]} iterables @returns "Tuple" of index and values from each array */
+/** @param {boolean} extend @param {Iterable[]} iterables @returns "Tuple" of values from each array */
 export function* Zip(extend, ...iterables) {
     const arrayOfArrays = iterables.map(arr => Array.from(arr))
     const maxlength = (extend ? Math.max : Math.min)(...arrayOfArrays.map(arr => arr.length))
 
     for (let index = 0; index < maxlength; index++) {
-        var output = [index];
-        for (const item of arrayOfArrays) {
+        var output = [];
+        for (const item of arrayOfArrays)
             output.push(item[index])
-        }
         yield output
+    }
+}
+
+/** @param {Iterable} iterable*/
+export function* Enumerate(iterable) {
+    var index = 0;
+    for (const value of iterable) {
+        yield [index, value];
+        index++;
     }
 }
 //#endregion
