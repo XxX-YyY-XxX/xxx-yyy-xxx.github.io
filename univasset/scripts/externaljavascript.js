@@ -63,7 +63,9 @@ export function SplitExt(path) {
 //#endregion
 
 //#region Generators
-/** @param {boolean} extend @param {Iterable[]} iterables @returns "Tuple" of values from each array */
+/** @param {boolean} extend true to extend, false to clip
+ * @param {Iterable[]} iterables order of iterables = order of output
+ * @returns "Tuple" of values from each array */
 export function* Zip(extend, ...iterables) {
     const arrayOfArrays = iterables.map(arr => Array.from(arr))
     const maxlength = (extend ? Math.max : Math.min)(...arrayOfArrays.map(arr => arr.length))
@@ -76,7 +78,7 @@ export function* Zip(extend, ...iterables) {
     }
 }
 
-/** @param {Iterable} iterable*/
+/** @param {Iterable} iterable @returns index, value*/
 export function* Enumerate(iterable) {
     var index = 0;
     for (const value of iterable) {
@@ -107,18 +109,5 @@ oXHR.onreadystatechange = function() {
 oXHR.overrideMimeType("application/json");
 oXHR.open("GET", "/GFL/cards.json", true);          // true = ASYNCHRONOUS REQUEST (DESIRABLE), false = SYNCHRONOUS REQUEST.
 oXHR.send(); */
-
-/* const fetchJson = async () => {
-    try {
-        const data = await fetch('/GFL/cards.json');
-        questionCards = await data.json();  
-    } catch (error) {
-        console.log(error);
-    }
-};
-
-fetchJson();*/
-
-/* <!--script type="text/json" src="/GFL/cards.json"></script--> */
 
 //iframe.contentWindow.location.reload();
