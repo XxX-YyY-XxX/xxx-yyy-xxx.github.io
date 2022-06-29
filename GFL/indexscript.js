@@ -14,7 +14,7 @@ document.getElementById('version-number').innerHTML = cardData.length;
 
 toggleableTagsField.innerHTML = Object.values(dTag).sort().map(tag => 
     `<label class="${unselected}">
-        <input type="checkbox" onclick="toggleTag(this)">${tag.val}
+        <input type="checkbox" onclick="toggleTag(this)" value="${tag.val}">${tag.val}
         <span class="tooltiptext">${tag.desc}</span>
     </label>`
 ).join(' ');
@@ -118,7 +118,7 @@ window.switchInputMode = function(radioButton) {
 /** @param {HTMLInputElement} tagCheckbox */
 window.toggleTag = function(tagCheckbox) {
     const parentLabel = tagCheckbox.parentElement;
-    const tagName = parentLabel.innerText + ' ';
+    const tagName = tagCheckbox.value + ' ';
     if (tagCheckbox.checked) {
         parentLabel.className = selected;
         searchTextField.value += tagName;
