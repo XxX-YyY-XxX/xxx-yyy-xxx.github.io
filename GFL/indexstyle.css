@@ -144,11 +144,11 @@ iframe[src*="www.youtube.com"] {
 
 .tooltip {
     position: relative;
-    display: inline;
+    /* display: inline; */
 }
 
 .tooltip .tooltiptext {
-    width: 300px;
+    width: 400px;
     background-color: #555;
     color: #fff;
     text-align: center;
@@ -158,12 +158,14 @@ iframe[src*="www.youtube.com"] {
     z-index: 1;
     bottom: 100%;
     left: 50%;
-    margin-left: -150px;
+    margin-left: -200px;
+    visibility: visible;
     opacity: 0;
     transition: opacity 0.5s;
 }
     
 .tooltip:hover .tooltiptext {
+    visibility: hidden;
     opacity: 1;
 }
 
