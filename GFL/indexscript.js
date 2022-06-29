@@ -1,4 +1,4 @@
-import {IsSubsetOf, RemoveHTMLTag, RandomInteger, UniqueClassElement, ReloadIFrame as reload} from '/univasset/scripts/externaljavascript.js';
+import {isSubsetOf, removeHTMLTag, randInt, uniqueClassElement, reloadIFrame as reload} from '/univasset/scripts/externaljavascript.js';
 import {cardData, dTag} from "./tempcard.js";
 
 //#region Constants
@@ -12,7 +12,7 @@ const searchParams = new URLSearchParams(location.search);
 //#region Initialize
 document.getElementById('version-number').innerHTML = cardData.length;
 
-toggleableTagsField.innerHTML = Object.values(dTag).sort((a, b) => {a.val - b.val}).map(tag => 
+toggleableTagsField.innerHTML = Object.values(dTag).sort(a => a.val).map(tag => 
     `<label class="tags tooltip unselectedTag">
         <input type="checkbox" onclick="toggleTag(this)" value="${tag.val}">${tag.val}
         <span class="tooltiptext">${tag.desc}</span>
@@ -32,7 +32,8 @@ function searchCards() {
         if (cardTags.length > 0) {
             /** @returns {boolean} */
             matchCheck = function(card) {
-                return IsSubsetOf(cardTags, card.tags.map(dict => dict.val));
+                return cardTags.subsetOf(card.tags.map(dict => dict.val));
+                //return isSubsetOf(cardTags, card.tags.map(dict => dict.val));
             }
         } else {
             return 'Empty search.';
@@ -42,7 +43,7 @@ function searchCards() {
         if (searchText) {
             const phrase = new RegExp(searchText, 'i');
             matchCheck = function(card) {
-                return phrase.test(RemoveHTMLTag(card.questions)) || phrase.test(RemoveHTMLTag(card.answers));
+                return phrase.test(removeHTMLTag(card.questions)) || phrase.test(removeHTMLTag(card.answers));
             }
         } else {
             return 'Empty search.';
@@ -64,7 +65,7 @@ function randomCards() {
     var output = '';
 
     do {
-        indices.add(RandomInteger(0, maxValue));
+        indices.add(randInt(0, maxValue));
     } while (indices.size < 3)
 
     for (const index of indices) {
@@ -94,7 +95,7 @@ window.ReloadIFrame = function(element) {
 window.switchInputMode = function(radioButton) {
     searchTextField.name = radioButton.value;
     searchTextField.value = '';
-    UniqueClassElement('flex-checked').className = 'flex-label';
+    uniqueClassElement('flex-checked').className = 'flex-label';
     radioButton.parentElement.className = 'flex-checked';
     switch (radioButton.value) {
         case 'tags':
@@ -106,7 +107,6 @@ window.switchInputMode = function(radioButton) {
             toggleableTagsField.style.display = 'none';
             for (const element of Array.from(toggleableTagsField.children)) {
                 element.firstElementChild.checked = false
-                //element.className = unselected;
                 element.classList.add('unselectedTag');
             }
             break;
@@ -121,12 +121,6 @@ window.toggleTag = function(tagCheckbox) {
     const parentLabel = tagCheckbox.parentElement;
     parentLabel.classList.toggle('unselectedTag');
     const tagName = tagCheckbox.value + ' ';
-    if (tagCheckbox.checked) {
-        //parentLabel.className = 'tags tooltip';
-        searchTextField.value += tagName;
-    } else {
-        //parentLabel.className = 'tags tooltip unselectedTag';
-        searchTextField.value = searchTextField.value.replace(tagName, '');
-    }
+    searchTextField.value = tagCheckbox.checked ? searchTextField.value + tagName : searchTextField.value.replace(tagName, '');
 }
 //#endregion
