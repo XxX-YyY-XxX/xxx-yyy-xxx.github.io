@@ -1,17 +1,19 @@
 import {IsSubsetOf, RemoveHTMLTag, RandomInteger, UniqueClassElement, ReloadIFrame as reload} from '/univasset/scripts/externaljavascript.js';
-import {cardData as questionCards, dTag} from "./tempcard.js";
+import {cardData, dTag} from "./tempcard.js";
 
 //#region Constants
 const toggleableTagsField = document.getElementById('tags-list');
 const searchTextField = document.getElementById('search-text');
 const searchParams = new URLSearchParams(location.search);
+const unselected = 'tags tooltip unselectedTag';
+const selected = 'tags tooltip selectedTag';
 //#endregion
 
 //#region Initialize
-document.getElementById('version-number').innerHTML = questionCards.length;
+document.getElementById('version-number').innerHTML = cardData.length;
 
 toggleableTagsField.innerHTML = Object.values(dTag).sort().map(tag => 
-    `<label class="tags tooltip unselectedTag">
+    `<label class="${unselected}">
         <input type="checkbox" onclick="toggleTag(this)">${tag.val}
         <span class="tooltiptext">${tag.desc}</span>
     </label>`
@@ -47,7 +49,7 @@ function searchCards() {
         }
     }
 
-    for (const cards of questionCards) {
+    for (const cards of cardData) {
         if (matchCheck(cards)) {
             output += setQuestionBoxes(cards);
         }
@@ -57,7 +59,7 @@ function searchCards() {
 }
 
 function randomCards() {
-    const maxValue = questionCards.length - 1;
+    const maxValue = cardData.length - 1;
     const indices = new Set();
     var output = '';
 
@@ -66,7 +68,7 @@ function randomCards() {
     } while (indices.size < 3)
 
     for (const index of indices) {
-        output += setQuestionBoxes(questionCards[index]);
+        output += setQuestionBoxes(cardData[index]);
     }
 
     return output;
@@ -85,7 +87,7 @@ function setQuestionBoxes(cards) {
 //#region Public Functions
 /** @param {HTMLElement} element */
 window.ReloadIFrame = function(element) {
-    reload(element.parentElement.previousElementSibling);//.parentElement.firstElementChild)
+    reload(element.parentElement.previousElementSibling);
 }
 
 /** @param {HTMLInputElement} radioButton */
@@ -104,7 +106,7 @@ window.switchInputMode = function(radioButton) {
             toggleableTagsField.style.display = 'none';
             for (const element of Array.from(document.getElementsByClassName('selectedTag'))) {
                 element.firstElementChild.checked = false
-                element.className = 'tags tooltip unselectedTag';
+                element.className = unselected;
             }
             break;
         default:
@@ -118,10 +120,10 @@ window.toggleTag = function(tagCheckbox) {
     const parentLabel = tagCheckbox.parentElement;
     const tagName = parentLabel.innerText + ' ';
     if (tagCheckbox.checked) {
-        parentLabel.className = 'tags tooltip selectedTag';
+        parentLabel.className = selected;
         searchTextField.value += tagName;
     } else {
-        parentLabel.className = 'tags tooltip unselectedTag';
+        parentLabel.className = unselected;
         searchTextField.value = searchTextField.value.replace(tagName, '');
     }
 }

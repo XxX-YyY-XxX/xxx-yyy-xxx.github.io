@@ -1,4 +1,6 @@
 //HTML only for now
+//<include key="0"></include>
+//<include src="/univasset/scripts/mainpagebuttons.html">0, "8"</include>
 
 for (const include of Array.from(document.getElementsByTagName('include'))) {
     fetch(include.getAttribute('src'))
@@ -62,8 +64,6 @@ function nestedInclude(htmlString, params) {
 
 
 
-//<include key="0"></include>
-//<include src="/univasset/scripts/mainpagebuttons.html">0, "8"</include>
 
 
 
