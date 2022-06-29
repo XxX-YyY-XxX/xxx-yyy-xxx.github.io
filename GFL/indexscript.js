@@ -32,7 +32,7 @@ function searchCards() {
         if (cardTags.length > 0) {
             /** @returns {boolean} */
             matchCheck = function(card) {
-                return IsSubsetOf(cardTags, card.tags.val);
+                return IsSubsetOf(cardTags, card.tags.map(dict => dict.val));
             }
         } else {
             return 'Empty search.';
