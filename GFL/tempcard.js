@@ -1,7 +1,8 @@
 export const dataTags = Object.freeze({
     //#region Combat Tabs
-        STORY : 'StoryEvents',          //For questions that apply to Major, Collab, and Seasonal Events.
+        //STORY : 'StoryEvents',          //For questions that apply to Major, Collab, and Seasonal Events.
             MAJOR : 'MajorEvents',      //Part of the main story. The ones added to the Campaign tab.
+            SEASON : 'SeasonalEvents',  //Story events that happen each New Year, X-mas, Halloween, etc.
             COLLAB : 'Collaboration',   //"He liked it."
         MAIN : 'CombatMissions',        //Main missions aka Chapters.
             AUTO : 'AutoBattles',       //Lazy farming.
@@ -37,7 +38,6 @@ export const dataTags = Object.freeze({
     APPLE : 'AppleDevices',         //Anything primarily concerning iOS devices.
     EMU : 'Emulators',              //Anytihing related to emulators.
     //ANDROID : 'AndroidDevices',
-
     //#endregion
     MISC : 'Miscellaneous',         //Default tag if I dunno what to put. Should be useless, but meh.
     ACCT : 'AccountManagement',     //Anything concerning account data and integrity.
@@ -50,7 +50,6 @@ export const dataTags = Object.freeze({
     IMPT : 'Important',             //Things new players would need for late-game. Mostly consists of things not explained by the game.
     SYSMECH : 'SystemMechanics',    //Explanation on underlying mechanics of the game.
     ENEMY : 'EnemyUnits',           //For things that primarily interact with enemy units.
-    //SEASON : 'SeasonalEvents',      //Story events that happen each New Year, X-mas, Halloween, etc.
     MINI : 'MiniEvents',            //Bingo, Point Event, etc.
     MAP : 'FieldMap',               //Node-based overworld.
         BATTLE : 'Skirmishes',      //The battle mode where everyone shoots at one another.
@@ -486,7 +485,7 @@ export const cardData = Object.freeze([
     {
         questions : `Will the current event currency carry over to the next event?`,
         answers : `No can do. Dissolves into nothingness one week after its corresponding event is finished.`,
-        tags : [dataTags.ITEM, dataTags.STORY]
+        tags : [dataTags.ITEM, dataTags.SEASON, dataTags.COLLAB]
     },
     {
         questions : `I've heard of GFAlarm. Is it safe to use?`,
@@ -607,14 +606,14 @@ export const cardData = Object.freeze([
         5${star} on normal maps have rates way below 1%... usually. Their droprates at Chapter 10 onwards seem to have higher rates.<br>
         As for SPEQs, probably 1% too.<br>
         If you plan to farm a 5${star} doll in Combat Missions, just do Productions. You'll get more chances there.`,
-        tags : [dataTags.TDOLL, dataTags.MAIN, dataTags.STORY, dataTags.SPEQ, dataTags.MAJOR, dataTags.CAMPAIGN]
+        tags : [dataTags.TDOLL, dataTags.MAIN, dataTags.SPEQ, dataTags.MAJOR, dataTags.CAMPAIGN, dataTags.SEASON, dataTags.COLLAB]
     },
     {
         questions : `Do events get a rerun? And if so, when?`,
         answers : `Major events get a permanent rerun called Campaign Missions.<br>
         Seasonal events get one when it's their time.<br>
         Collabs are subject to their holders whims.`,
-        tags : [dataTags.STORY]
+        tags : [dataTags.MAJOR, dataTags.CAMPAIGN, dataTags.SEASON, dataTags.COLLAB]
     },
     {
         questions : `How do I remove HOCs from Target Practice?`,
@@ -853,7 +852,7 @@ export const cardData = Object.freeze([
     {
         questions : `How do I get Platinum and Nova Medals?`,
         answers : `From whatever Major/Seasonal/Collab Event running right now. Platinum are for 5${star} dolls and Nova are for dolls 4${star} and below.`,
-        tags : [dataTags.ITEM, dataTags.STORY, dataTags.TDOLL]
+        tags : [dataTags.ITEM, dataTags.TDOLL, dataTags.MAJOR, dataTags.SEASON, dataTags.COLLAB]
     },
     {
         questions : `How do I build Vector to no-damage 13-4?`,
@@ -1032,10 +1031,10 @@ export const cardData = Object.freeze([
                 'Logistics (~19 weekly).',
                 'Achievements.',
                 'Mini-Events: Point Event (70).',
-                'Shop. Especially when there is a seasonal/collab/major event going on. Packages are also good.',
+                'Shop. Especially when there is a seasonal/collab going on. Packages are also good.',
                 'Maintenance (10 weekly) and Apolotokens.']
         })}`,
-        tags : [dataTags.ITEM, dataTags.MAIN, dataTags.MINI, dataTags.EXPED, dataTags.LOGI, dataTags.STORY]
+        tags : [dataTags.ITEM, dataTags.MAIN, dataTags.MINI, dataTags.EXPED, dataTags.LOGI, dataTags.MAJOR, dataTags.SEASON, dataTags.COLLAB]
     },
     {
         questions : `Why aren't my dorm batteries appearing?`,
@@ -1563,7 +1562,7 @@ export const cardData = Object.freeze([
     {
         questions : `Why is the event map still here? It should've ended, right?`,
         answers : `Happens if you didn't close the app throughout maintenance. Can still be played and drop limited dolls.<!-- u/BigStupidJellyfish_ -->`,
-        tags : [dataTags.STORY]
+        tags : [dataTags.MAJOR, dataTags.SEASON, dataTags.COLLAB]
     },
     {
         questions : `I missed a major event, will it come back?`,
@@ -1677,7 +1676,7 @@ export const cardData = Object.freeze([
         answers : `${list(false,
             'Terminate mission button on the top-left of the field map.',
             "Combat Missions/Campaign/Event Map > the mission you're currently doing > Terminate.")}`,
-        tags : [dataTags.MAIN, dataTags.CAMPAIGN, dataTags.STORY]
+        tags : [dataTags.MAIN, dataTags.CAMPAIGN, dataTags.MAJOR, dataTags.SEASON, dataTags.COLLAB]
     },
     {
         questions : `I keep fat-fingering my kiting. Any help?`,
@@ -1739,6 +1738,11 @@ export const cardData = Object.freeze([
         )}`,
         tags : [dataTags.EXPED, dataTags.PET, dataTags.ITEM]
     },  //@Visual
+    {
+        questions : `Does getting S rank in a mission increase the chance of getting the map specific doll in story and events?`,
+        answers : `Yes.`,
+        tags : [dataTags.TDOLL]
+    },
     {
         questions : ``,
         answers : ``,
