@@ -6,7 +6,7 @@ const toggleableTagsField = document.getElementById('tags-list');
 const searchTextField = document.getElementById('search-text');
 const searchParams = new URLSearchParams(location.search);
 const unselected = 'tags tooltip unselectedTag';
-const selected = 'tags tooltip selectedTag';
+const selected = 'tags tooltip';
 //#endregion
 
 //#region Initialize
