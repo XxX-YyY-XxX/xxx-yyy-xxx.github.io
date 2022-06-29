@@ -12,7 +12,7 @@ const searchParams = new URLSearchParams(location.search);
 //#region Initialize
 document.getElementById('version-number').innerHTML = cardData.length;
 
-toggleableTagsField.innerHTML = Object.values(dTag).sort().map(tag => 
+toggleableTagsField.innerHTML = Object.values(dTag).sort((a, b) => {a.val - b.val}).map(tag => 
     `<label class="tags tooltip unselectedTag">
         <input type="checkbox" onclick="toggleTag(this)" value="${tag.val}">${tag.val}
         <span class="tooltiptext">${tag.desc}</span>
