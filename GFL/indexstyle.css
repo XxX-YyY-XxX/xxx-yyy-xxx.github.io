@@ -41,17 +41,10 @@ dd {
 }
 
 .card-tags {
-    /* background: transparent;
-    color: aqua; */
     line-height: 20px;
 }
 
 /* Used in label, not in input */
-/* .selectedTag {
-    background: transparent;
-    color: aqua;
-} */
-
 .unselectedTag {
     background: aqua;
     color: black;

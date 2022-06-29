@@ -5,15 +5,15 @@ import {cardData, dTag} from "./tempcard.js";
 const toggleableTagsField = document.getElementById('tags-list');
 const searchTextField = document.getElementById('search-text');
 const searchParams = new URLSearchParams(location.search);
-const unselected = 'tags tooltip unselectedTag';
-const selected = 'tags tooltip';
+//const unselected = 'tags tooltip unselectedTag';
+//const selected = 'tags tooltip';
 //#endregion
 
 //#region Initialize
 document.getElementById('version-number').innerHTML = cardData.length;
 
 toggleableTagsField.innerHTML = Object.values(dTag).sort().map(tag => 
-    `<label class="${unselected}">
+    `<label class="tags tooltip unselectedTag">
         <input type="checkbox" onclick="toggleTag(this)" value="${tag.val}">${tag.val}
         <span class="tooltiptext">${tag.desc}</span>
     </label>`
@@ -104,9 +104,10 @@ window.switchInputMode = function(radioButton) {
         case 'search':
             searchTextField.style.display = 'inline';
             toggleableTagsField.style.display = 'none';
-            for (const element of Array.from(document.getElementsByClassName('selectedTag'))) {
+            for (const element of Array.from(toggleableTagsField.children)) {
                 element.firstElementChild.checked = false
-                element.className = unselected;
+                //element.className = unselected;
+                element.classList.add('unselectedTag');
             }
             break;
         default:
@@ -118,12 +119,13 @@ window.switchInputMode = function(radioButton) {
 /** @param {HTMLInputElement} tagCheckbox */
 window.toggleTag = function(tagCheckbox) {
     const parentLabel = tagCheckbox.parentElement;
+    parentLabel.classList.toggle('unselectedTag');
     const tagName = tagCheckbox.value + ' ';
     if (tagCheckbox.checked) {
-        parentLabel.className = selected;
+        //parentLabel.className = 'tags tooltip';
         searchTextField.value += tagName;
     } else {
-        parentLabel.className = unselected;
+        //parentLabel.className = 'tags tooltip unselectedTag';
         searchTextField.value = searchTextField.value.replace(tagName, '');
     }
 }
