@@ -1,5 +1,5 @@
 import {IsSubsetOf, RemoveHTMLTag, RandomInteger, UniqueClassElement, ReloadIFrame as reload} from '/univasset/scripts/externaljavascript.js';
-import {cardData as questionCards, dataTags} from "./tempcard.js";
+import {cardData as questionCards, dTag} from "./tempcard.js";
 
 //#region Constants
 const toggleableTagsField = document.getElementById('tags-list');
@@ -10,9 +10,10 @@ const searchParams = new URLSearchParams(location.search);
 //#region Initialize
 document.getElementById('version-number').innerHTML = questionCards.length;
 
-toggleableTagsField.innerHTML = Object.values(dataTags).sort().map(val => 
-    `<label class="tags unselectedTag">
-        <input type="checkbox" onclick="toggleTag(this)">${val}
+toggleableTagsField.innerHTML = Object.values(dTag).sort().map(tag => 
+    `<label class="tags tooltip unselectedTag">
+        <input type="checkbox" onclick="toggleTag(this)">${tag.val}
+        <span class="tooltiptext">${tag.desc}</span>
     </label>`
 ).join(' ');
 
@@ -29,7 +30,7 @@ function searchCards() {
         if (cardTags.length > 0) {
             /** @returns {boolean} */
             matchCheck = function(card) {
-                return IsSubsetOf(cardTags, card.tags);
+                return IsSubsetOf(cardTags, card.tags.val);
             }
         } else {
             return 'Empty search.';
@@ -76,7 +77,7 @@ function setQuestionBoxes(cards) {
         <legend><h3>${cards.questions}</h3></legend>
         ${cards.answers}
         <hr>
-        Tags: ${cards.tags.map(val => `<span class="tags card-tags">${val}</span>` ).join(' ')}
+        Tags: ${cards.tags.map(tag => `<span class="tags card-tags">${tag.val}</span>` ).join(' ')}
         </fieldset>`;
 }
 //#endregion
@@ -103,7 +104,7 @@ window.switchInputMode = function(radioButton) {
             toggleableTagsField.style.display = 'none';
             for (const element of Array.from(document.getElementsByClassName('selectedTag'))) {
                 element.firstElementChild.checked = false
-                element.className = 'tags unselectedTag';
+                element.className = 'tags tooltip unselectedTag';
             }
             break;
         default:
@@ -117,10 +118,10 @@ window.toggleTag = function(tagCheckbox) {
     const parentLabel = tagCheckbox.parentElement;
     const tagName = parentLabel.innerText + ' ';
     if (tagCheckbox.checked) {
-        parentLabel.className = 'tags selectedTag';
+        parentLabel.className = 'tags tooltip selectedTag';
         searchTextField.value += tagName;
     } else {
-        parentLabel.className = 'tags unselectedTag';
+        parentLabel.className = 'tags tooltip unselectedTag';
         searchTextField.value = searchTextField.value.replace(tagName, '');
     }
 }

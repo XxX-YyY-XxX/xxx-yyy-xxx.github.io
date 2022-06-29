@@ -57,6 +57,87 @@
 # [Commander Wardrobe](/GFL/wardrobe)*
 - Costume skills, availability, and gender change.
 
+# Redditor Musings
+
+>BSJ
+>
+> - [Part 1.](https://old.reddit.com/r/girlsfrontline/comments/qg1inu/weekly_commanders_lounge_october_26_2021/hitkjxy/)
+>
+> - [Medusa DPS and SF leveling.](https://old.reddit.com/r/girlsfrontline/comments/qv2svz/weekly_commanders_lounge_november_16_2021/hlkue9q/)
+>
+> - [Shield Fairy rework, DR ranking...](https://old.reddit.com/r/girlsfrontline/comments/t42t86/weekly_commanders_lounge_march_01_2022/hz9p3te/)
+>
+> - [Sniper Exodia.](https://old.reddit.com/r/girlsfrontline/comments/t9bw95/weekly_commanders_lounge_march_08_2022/i0fnsvx/)
+>
+> - [No such thing as too much EVA, he says...](https://old.reddit.com/r/girlsfrontline/comments/r08976/weekly_commanders_lounge_november_23_2021/hm1ah4r/)
+>
+> - [Links dump 1.](https://old.reddit.com/r/girlsfrontline/comments/s17rwt/weekly_commanders_lounge_january_11_2022/ht46bxl/)
+>
+> - [PA data.](https://old.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i39exkd/)
+>
+> - [Bingo spacing.](https://old.reddit.com/r/girlsfrontline/comments/twps7w/weekly_commanders_lounge_april_05_2022/i4czmyf/)
+>
+> - [Fairy and AK-15.](https://old.reddit.com/r/girlsfrontline/comments/sneu7n/weekly_commanders_lounge_february_08_2022/hwpgdcv/)
+>
+> - [Vallhalla girls.](https://old.reddit.com/r/girlsfrontline/comments/u1tr33/weekly_commanders_lounge_april_12_2022/i51ccqd/)
+>
+> - [CE marks.](https://old.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge_may_17_2022/i997401/)
+>
+> - [Skins performance differences.](https://old.reddit.com/r/girlsfrontline/comments/u6ztfo/weekly_commanders_lounge_april_19_2022/i5wvfsh/)
+>
+> - [AK-47 with 2 SPEQs.](https://old.reddit.com/r/girlsfrontline/comments/uwlnur/weekly_commanders_lounge_may_24_2022/iagxp7f/)
+>
+> - [Coalition tanks.](https://old.reddit.com/r/girlsfrontline/comments/uhb3jo/weekly_commanders_lounge_may_03_2022/i7crl87/)
+>
+> - [G41 vs R5.](https://old.reddit.com/r/girlsfrontline/comments/uhb3jo/weekly_commanders_lounge_may_03_2022/i7lfmjp/)
+>
+> - [SPEQs and Webley.](https://old.reddit.com/r/girlsfrontline/comments/rl9oul/weekly_commanders_lounge_december_21_2021/hq64qh3/)
+>
+> - [Message clearing.](https://old.reddit.com/r/girlsfrontline/comments/rqajmv/weekly_commanders_lounge_december_28_2021/hqf9uf6/)
+>
+> - [M200 breakpoints.](https://old.reddit.com/r/girlsfrontline/comments/v1l5po/weekly_commanders_lounge_may_31_2022/ibbyfvn/)
+>
+> - [Damage Calculation.](https://old.reddit.com/r/girlsfrontline/comments/v6pt9o/weekly_commanders_lounge_june_07_2022/ibqsm5o/)
+
+>RoboCat
+>
+> - [???](https://old.reddit.com/r/girlsfrontline/comments/qkzc9s/weekly_commanders_lounge_november_02_2021/hjjynq0/)
+
+>EarSpeaker
+>
+> - [Cheap SG tank.](https://old.reddit.com/r/girlsfrontline/comments/uc7eet/weekly_commanders_lounge_april_26_2022/i6ut0vo/)
+
+>Weeb
+>
+> - [PPK spaghetti.](https://old.reddit.com/r/girlsfrontline/comments/v1l5po/weekly_commanders_lounge_may_31_2022/ib1eu2w/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # For Fixing and Peer Review
 
 ## Fix
