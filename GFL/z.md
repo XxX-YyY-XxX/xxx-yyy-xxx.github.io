@@ -12,11 +12,3 @@ https://old.reddit.com/r/girlsfrontline/comments/pjimek/weekly_commanders_lounge
 
 https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/ictixne/
 
-https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/icu1s8c/
-
-https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/icr2rjx/
-
-https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/icvv1pb/
-
------
-

@@ -540,8 +540,9 @@ export const cardData = Object.freeze([
         tags : [dataTags.MISC]
     },
     {
-        questions : `What's the Fire Control Component (FCC) used for?`,
-        answers : `Upgrading 5${star} dolls to 6${star} through modding.`,
+        questions : `What's the Fire Control Component (FCC) used for and where can I get them?`,
+        answers : `Upgrading 5${star} dolls to 6${star} through modding.<br>
+        Obtainable through Black Market (2 monthly), major events, and special log-ins.`,
         tags : [dataTags.ITEM, dataTags.MOD]
     },
     {
@@ -1502,7 +1503,8 @@ export const cardData = Object.freeze([
     },  //@Visual
     {
         questions : `What does the ${link('glitter/sparkle', './assets/images/ShinyIndicator.png')} in my coalition unit's portrait mean? Their sprites also has a golden aura/glow around it.`,
-        answers : `A shiny ${altTextStyle('pokemon', TextStyle.STRIKE)} coalition unit. And the very reason Golden Infusion is a thing.`,
+        answers : `A shiny ${altTextStyle('pokemon', TextStyle.STRIKE)} coalition unit. And the very reason Golden Infusion is a thing.<br>
+        If put on a Lv.100, XL unit, something special may happen.`,
         tags : [dataTags.COALITION]
     },
     {
