@@ -159,13 +159,13 @@ iframe[src*="www.youtube.com"] {
     bottom: 100%;
     left: 50%;
     margin-left: -200px;
-    visibility: visible;
+    visibility: hidden;
     opacity: 0;
     transition: opacity 0.5s;
 }
     
 .tooltip:hover .tooltiptext {
-    visibility: hidden;
+    visibility: visible;
     opacity: 1;
 }
 
