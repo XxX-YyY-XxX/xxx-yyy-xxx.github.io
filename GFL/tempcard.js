@@ -346,7 +346,7 @@ export const cardData = Object.freeze([
     //#endregion
     //#region Important Details
     {
-        questions : `How can I get my favorite gun/doll/unit/character?`,
+        questions : `Where and how can I get my favorite gun/doll/unit/character?`,
         answers : `${descriptionList({
             'Factory Production' : [`5${star} dolls that can drop here are the only ones redeemable through True Core Masks, bar spaghetti.`],
             'Rescue Drops' : ['For "Limited" dolls in Combat Missions, they are limited to that particular map. Not limited by time, but by place. Until Rescue Event happens.',
@@ -598,7 +598,8 @@ export const cardData = Object.freeze([
         questions : `Which dolls should I duplicate?`,
         answers : `${link('Matsuda notes.', 'https://gfl.matsuda.tips/post/worthwhiledupes')}<br>
         ${link('Gamepress suggestions.', 'https://gamepress.gg/girlsfrontline/t-doll-duping-guide')} Some details may not be applicable.<br>
-        ${spoilerSummary('Discord recommendations.', image('./assets/images/RecommendedDupeGuns.png'))}`,
+        ${spoilerSummary('Discord recommendations.', image('./assets/images/RecommendedDupeGuns.png'))}<br>
+        Note that duplication is not mandatory for progression and ranking.`,
         tags : [dTag.TDOLL]
     },  //Jesse, Varz, etc.
     {
@@ -885,11 +886,6 @@ export const cardData = Object.freeze([
         Train Coin = Training Data, Furniture Coin = Tokens, Memory Pieces = Neural Fragments<br>
         Even then, all resources can be obtained without regards to max capacity through daily gifts, mission rewards, and whaling.`,
         tags : [dTag.MARP, dTag.ITEM]
-    },
-    {
-        questions : `Where can I get a specific doll?`,
-        answers : `For starters, check the index entry of that doll. There should be a panel that tells you where they can be obtained.`,
-        tags : [dTag.TDOLL]
     },
     {
         questions : `Is there a way to buy a missed day for daily log-ins?`,
@@ -1384,7 +1380,7 @@ export const cardData = Object.freeze([
     {
         questions : `What's the uncensor recipe?`,
         answers : `522/320/404/137 for EN, 666/666/666/666 everywhere else... probably.`,
-        tags : [dTag.MISC]
+        tags : [dTag.TDOLL, dTag.SKIN]
     },
     {
         questions : `Is there a guide on how to build echelons/team compositions?`,
@@ -1559,7 +1555,7 @@ export const cardData = Object.freeze([
         answers : `Have you checked the quests?<br>
         What about the mail? Stage clear rewards are sent there.<br>
         If you did and they're still not there, either restart or wait for a few days.`,
-        tags : [dTag.MISC, dTag.TECH]
+        tags : [dTag.TECH]
     },
     {
         questions : `What are the chances on getting a specific fairy talent?`,
@@ -1630,11 +1626,6 @@ export const cardData = Object.freeze([
             'Skill levels',
             'Tetrimino chips')}`,
         tags : [dTag.FST, dTag.LEVEL]
-    },
-    {
-        questions : `How hard am I gimping myself by not duping any T-Dolls?`,
-        answers : `As hard as mixing red and yellow rather than buying orange.`,
-        tags : [dTag.TDOLL]
     },
     {
         questions : `Are keybinds bannable?`,
@@ -1727,7 +1718,7 @@ export const cardData = Object.freeze([
         questions : `Is there any Live2D viewer for GFL?`,
         answers : `${link('Pengu', 'https://pengupengupengu.github.io/live2d-viewer-web/')}. Don't know how this works.<br>
         Or tryi IOPWiki.`,
-        tags : [dTag.MISC]
+        tags : [dTag['3P']]
     },
     {
         questions : `How long would visitors stay in my dormitory?`,
