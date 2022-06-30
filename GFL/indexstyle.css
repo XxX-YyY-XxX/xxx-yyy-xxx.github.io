@@ -1,5 +1,6 @@
 @import "/univasset/scripts/externalcss.css";
 
+/* #region General */
 input[type="checkbox"], input[type="radio"] {
     appearance: none;
     margin: 0px;
@@ -29,6 +30,7 @@ dd {
     height: 10px;
     width: auto;
 }
+/* #endregion */
 
 /* #region Tags */
 .tags {
@@ -77,7 +79,7 @@ dd {
 
 #tags-list {
     text-align: center;
-    display: none;                              /* Makes class hidden on default. */
+    display: none;                              /* Makes class hidden by default. */
 }
 /* #endregion */
 
@@ -166,7 +168,7 @@ iframe[src*="www.youtube.com"] {
 /* If desktop, on top of text */
 /* If mobile, on top of screen */
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 720px) {
     .tooltip .tooltiptext {
         width: 200px;
         margin-left: -100px;

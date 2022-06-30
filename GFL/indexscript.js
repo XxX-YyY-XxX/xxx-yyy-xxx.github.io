@@ -22,16 +22,13 @@ document.getElementById('cards-field').innerHTML = (searchParams.has('search') |
 
 //#region Private Functions
 function searchCards() {
-    var output = '';
-    var matchCheck;
+    var output = '', matchCheck;
 
     if (searchParams.has('tags')) {
         const cardTags = searchParams.get('tags').split(' ').filter(Boolean);
         if (cardTags.length > 0) {
             /** @returns {boolean} */
-            matchCheck = function(card) {
-                return cardTags.subsetOf(card.tags.map(dict => dict.val));
-            }
+            matchCheck = (card) => cardTags.subsetOf(card.tags.map(dict => dict.val));            
         } else {
             return 'Empty search.';
         }
@@ -39,18 +36,15 @@ function searchCards() {
         const searchText = searchParams.get('search');
         if (searchText) {
             const phrase = new RegExp(searchText, 'i');
-            matchCheck = function(card) {
-                return phrase.test(removeHTMLTag(card.questions)) || phrase.test(removeHTMLTag(card.answers));
-            }
+            matchCheck = (card) => phrase.test(removeHTMLTag(card.questions)) || phrase.test(removeHTMLTag(card.answers));
         } else {
             return 'Empty search.';
         }
     }
 
     for (const cards of cardData) {
-        if (matchCheck(cards)) {
+        if (matchCheck(cards))
             output += setQuestionBoxes(cards);
-        }
     }
 
     return output || 'No matches found.';
@@ -90,6 +84,7 @@ window.ReloadIFrame = function(element) {
 
 /** @param {HTMLInputElement} radioButton */
 window.switchInputMode = function(radioButton) {
+    /* May need a big overhaul in the future. */
     searchTextField.name = radioButton.value;
     searchTextField.value = '';
     uniqueClassElement('flex-checked').className = 'flex-label';
@@ -116,8 +111,13 @@ window.switchInputMode = function(radioButton) {
 /** @param {HTMLInputElement} tagCheckbox */
 window.toggleTag = function(tagCheckbox) {
     const parentLabel = tagCheckbox.parentElement;
-    parentLabel.classList.toggle('unselectedTag');
     const tagName = tagCheckbox.value + ' ';
-    searchTextField.value = tagCheckbox.checked ? searchTextField.value + tagName : searchTextField.value.replace(tagName, '');
+    if (tagCheckbox.checked) {
+        searchTextField.value = searchTextField.value + tagName;
+        parentLabel.classList.remove('unselectedTag');
+    } else {
+        searchTextField.value = searchTextField.value.replace(tagName, '');
+        parentLabel.classList.add('unselectedTag');
+    }
 }
 //#endregion

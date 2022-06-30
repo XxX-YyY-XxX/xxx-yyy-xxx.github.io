@@ -25,13 +25,22 @@ export class HTMLSearch {
 //#region Class
 /** (a, b) for ascending, (b, a) for descending */
 export class Compare {
-    /** @param {String[]} keys @returns {Number} */
+    /** @param {String[]} keys supply values in order @returns {Number} */
     static string(a, b, ...keys) {
         for (const key of keys) {
             a = a[key];
             b = b[key];
         }
         return a.localeCompare(b);
+    }
+
+    /** @param {String[]} keys supply values in order @returns {Number} */
+    static number(a, b, ...keys) {
+        for (const key of keys) {
+            a = a[key];
+            b = b[key];
+        }
+        return a - b;
     }
 }
 //#endregion
@@ -116,9 +125,28 @@ function getIterator(iterable) {
     }
 }
 
+/** @param {String} string @param {String} substring */
+function stringToggle(string, substring) {
+    return string.includes(substring) ? string.replace(substring, '') : string + substring;
+}
 
-
-
+/** @param {HTMLInputElement} inputElement @param checked use "checked" class if true (default), "unchecked" otherwise */
+function checkedLabel(inputElement, checked = true) {
+    const parentLabel = inputElement.parentElement;
+    if (inputElement.checked) {
+        if (checked) {
+            parentLabel.classList.add('checked');
+        } else {
+            parentLabel.classList.remove('unchecked');
+        }
+    } else {
+        if (checked) {
+            parentLabel.classList.remove('checked');
+        } else {
+            parentLabel.classList.add('unchecked');
+        }
+    }
+}
 
 
 
