@@ -89,7 +89,8 @@ export function splitExt(path) {
 /** For input elements inside label elements.
  * @param {HTMLInputElement} inputElement */
 export function checkedLabel(inputElement) {
-    inputElement.parentElement.classList.toggle('checked', inputElement.checked)
+    inputElement.parentElement.classList.toggle('checked', inputElement.checked);
+    //return true if successfully toggled, false otherwise
 }
 //#endregion
 

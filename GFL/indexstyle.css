@@ -40,12 +40,6 @@ dd {
     display: inline-grid;                       /* For making the tag buttons stay together on wrap. */
 }
 
-.card-tags {
-    background: transparent;
-    color: aqua;
-    line-height: 20px;
-}
-
 label.tags {
     background: aqua;
     color: black;
@@ -56,11 +50,11 @@ label.tags.checked {
     color: aqua;
 }
 
-/* Used in label, not in input */
-/* .unselectedTag {
-    background: aqua;
-    color: black;
-} */
+.card-tags {
+    background: transparent;
+    color: aqua;
+    line-height: 20px;
+}
 /* #endregion */
 
 /* #region Input Type Selector */
@@ -78,15 +72,15 @@ label.tags.checked {
     /* flex: calc(100% / 2); */
 }
 
-/* .flex-label.checked {
+.flex-label.checked {
     background-color: darkgreen;
-} */
+}
 
-.flex-checked {
+/* .flex-checked {
     background-color: darkgreen;
     line-height: 10px;
     flex: 50%;
-}
+} */
 
 #search-text {
     width: calc(100% - 76px);
@@ -154,6 +148,7 @@ iframe[src*="www.youtube.com"] {
 }
 /* #endregion */
 
+/* #region Tooltip */
 .tooltip {
     position: relative;
 }
@@ -189,3 +184,4 @@ iframe[src*="www.youtube.com"] {
         margin-left: -100px;
     }
 }
+/* #endregion */

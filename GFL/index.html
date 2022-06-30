@@ -60,9 +60,9 @@
                 <p><h1><a href="https://redd.it/l5a6vz">Topics Repository</a></h1></p>
 
                 <div id="input-type-container">
-                    <label class="flex-checked"><input type="radio" name="input-type" onclick="switchInputMode(this)" value="search" checked><h2>Keyword</h2></label>
-                    <label class="flex-label"><input type="radio" name="input-type" onclick="switchInputMode(this)" value="tags"><h2>Tags</h2></label>
-                </div>
+                    <label class="flex-label checked"><input type="radio" name="input-type" onchange="switchInputMode(this)" value="search" checked><h2>Keyword</h2></label>
+                    <label class="flex-label"><input type="radio" name="input-type" onchange="switchInputMode(this)" value="tags"><h2>Tags</h2></label>
+                </div><!-- onclick -->
 
                 <form>
                     <div id="tags-list"></div>

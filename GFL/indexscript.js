@@ -10,7 +10,6 @@ const searchParams = new URLSearchParams(location.search);
 //#region Initialize
 document.getElementById('version-number').innerHTML = cardData.length;
 
-//unselectedTag
 toggleableTagsField.innerHTML = Object.values(dTag).sort((a, b) => Compare.string(a, b, 'val')).map(tag => 
     `<label class="tags tooltip">
         <input type="checkbox" onclick="toggleTag(this)" value="${tag.val}">${tag.val}
@@ -83,15 +82,38 @@ window.ReloadIFrame = function(element) {
     reload(element.parentElement.previousElementSibling);
 }
 
+class InputPair {
+    static search(bool) {
+        searchTextField.style.display = bool ? 'inline' : 'none';
+    }
+
+    static tags(bool) {
+        toggleableTagsField.style.display = bool ? 'block' : 'none';
+        if (!bool) {
+            for (const labeltrue of Array.from(toggleableTagsField.children).filter(label => label.firstElementChild.checked)) {
+                labeltrue.firstElementChild.checked = false
+                labeltrue.classList.remove('checked');
+            }
+        }
+    }
+}
+
 /** @param {HTMLInputElement} radioButton */
 window.switchInputMode = function(radioButton) {
+    checkedLabel(radioButton);
+    InputPair[radioButton.value](radioButton.checked);
+    if (radioButton.checked) {
+        searchTextField.name = radioButton.value;
+        searchTextField.value = '';
+    }
+
+
     /* May need a big overhaul in the future. */
-    searchTextField.name = radioButton.value;
-    searchTextField.value = '';
-    //document.querySelector('.flex-label.checked').classList.remove('checked');
-    uniqueClassElement('flex-checked').className = 'flex-label';
-    radioButton.parentElement.className = 'flex-checked';
-    switch (radioButton.value) {
+    //searchTextField.name = radioButton.value;
+    //searchTextField.value = '';
+    //uniqueClassElement('flex-checked').className = 'flex-label';
+    //radioButton.parentElement.className = 'flex-checked';
+    /* switch (radioButton.value) {
         case 'tags':
             searchTextField.style.display = 'none';
             toggleableTagsField.style.display = 'block';
@@ -107,20 +129,13 @@ window.switchInputMode = function(radioButton) {
         default:
             console.log(radioButton.value);
             break;
-    }
+    } */
 }
 
 /** @param {HTMLInputElement} tagCheckbox */
 window.toggleTag = function(tagCheckbox) {
-    //const parentLabel = tagCheckbox.parentElement;
-    const tagName = tagCheckbox.value + ' ';
     checkedLabel(tagCheckbox);
-    if (tagCheckbox.checked) {
-        searchTextField.value = searchTextField.value + tagName;
-        //parentLabel.classList.remove('unselectedTag');
-    } else {
-        searchTextField.value = searchTextField.value.replace(tagName, '');
-        //parentLabel.classList.add('unselectedTag');
-    }
+    const tagName = tagCheckbox.value + ' ';
+    searchTextField.value = tagCheckbox.checked ? searchTextField.value + tagName : searchTextField.value.replace(tagName, '');
 }
 //#endregion
