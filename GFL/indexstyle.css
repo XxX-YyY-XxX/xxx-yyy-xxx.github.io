@@ -166,7 +166,7 @@ iframe[src*="www.youtube.com"] {
 /* If desktop, on top of text */
 /* If mobile, on top of screen */
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 740px) {
     .tooltip .tooltiptext {
         width: 200px;
         margin-left: -100px;

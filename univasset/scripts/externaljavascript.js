@@ -1,14 +1,16 @@
+//#region Prototypes
+/** @param {Array} mainArray */
+Array.prototype.subsetOf = function(mainArray) {
+    return this.every(val => mainArray.includes(val));
+}
+//#endregion
+
 //#region Constants
 /** Close to zero value. */
 const epsilon = 10 ** -10;
 /** Reusable element for offscreen DOM. */
 const dummyHTML = new DOMParser().parseFromString('', 'text/html').body;
 //#endregion
-
-/** @param {Array} mainArray */
-Array.prototype.subsetOf = function(mainArray) {
-    return this.every(val => mainArray.includes(val));
-}
 
 //#region Enumerators
 /** For HTML tag removal. */
@@ -20,12 +22,21 @@ export class HTMLSearch {
 }
 //#endregion
 
-//#region Functions
-/** @param {Array} subset @param {Array} mainset */
-export function isSubsetOf(subset, mainset) {
-    return subset.every(val => mainset.includes(val));
+//#region Class
+/** (a, b) for ascending, (b, a) for descending */
+export class Compare {
+    /** @param {String[]} keys @returns {Number} */
+    static string(a, b, ...keys) {
+        for (const key of keys) {
+            a = a[key];
+            b = b[key];
+        }
+        return a.localeCompare(b);
+    }
 }
+//#endregion
 
+//#region Functions
 /** @param {string} htmlString @param {HTMLSearch} removalMethod */
 export function removeHTMLTag(htmlString, removalMethod = HTMLSearch.QUICK) {
     switch (removalMethod) {
@@ -104,6 +115,7 @@ function getIterator(iterable) {
         return null;
     }
 }
+
 
 
 

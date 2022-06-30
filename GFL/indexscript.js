@@ -1,18 +1,16 @@
-import {isSubsetOf, removeHTMLTag, randInt, uniqueClassElement, reloadIFrame as reload} from '/univasset/scripts/externaljavascript.js';
+import {Compare, removeHTMLTag, randInt, uniqueClassElement, reloadIFrame as reload} from '/univasset/scripts/externaljavascript.js';
 import {cardData, dTag} from "./tempcard.js";
 
 //#region Constants
 const toggleableTagsField = document.getElementById('tags-list');
 const searchTextField = document.getElementById('search-text');
 const searchParams = new URLSearchParams(location.search);
-//const unselected = 'tags tooltip unselectedTag';
-//const selected = 'tags tooltip';
 //#endregion
 
 //#region Initialize
 document.getElementById('version-number').innerHTML = cardData.length;
 
-toggleableTagsField.innerHTML = Object.values(dTag).sort(a => a.val).map(tag => 
+toggleableTagsField.innerHTML = Object.values(dTag).sort((a, b) => Compare.string(a, b, 'val')).map(tag => 
     `<label class="tags tooltip unselectedTag">
         <input type="checkbox" onclick="toggleTag(this)" value="${tag.val}">${tag.val}
         <span class="tooltiptext">${tag.desc}</span>
@@ -33,7 +31,6 @@ function searchCards() {
             /** @returns {boolean} */
             matchCheck = function(card) {
                 return cardTags.subsetOf(card.tags.map(dict => dict.val));
-                //return isSubsetOf(cardTags, card.tags.map(dict => dict.val));
             }
         } else {
             return 'Empty search.';
