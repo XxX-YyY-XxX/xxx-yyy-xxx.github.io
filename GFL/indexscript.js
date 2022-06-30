@@ -82,18 +82,11 @@ window.ReloadIFrame = function(element) {
     reload(element.parentElement.previousElementSibling);
 }
 
-class InputPair {
-    static search(bool) {
-        if (bool) {
-            InputPair.tags(false);
-        }
+const inputPair = {
+    search(bool) {
         searchTextField.style.display = bool ? 'inline' : 'none';
-    }
-
-    static tags(bool) {
-        if (bool) {
-            InputPair.search(false);
-        }
+    },
+    tags(bool) {
         toggleableTagsField.style.display = bool ? 'block' : 'none';
         if (!bool) {
             for (const labeltrue of Array.from(toggleableTagsField.children).filter(label => label.firstElementChild.checked)) {
@@ -106,36 +99,17 @@ class InputPair {
 
 /** @param {HTMLInputElement} radioButton */
 window.switchInputMode = function(radioButton) {
+    for (const key in inputPair) {
+        if (Object.hasOwnProperty.call(inputPair, key) && key != radioButton.value)
+            inputPair[key](false);
+    }
+    document.querySelector('.flex-label.checked').classList.remove('checked');
     checkedLabel(radioButton);
-    InputPair[radioButton.value](radioButton.checked);
+    inputPair[radioButton.value](radioButton.checked);
     if (radioButton.checked) {
         searchTextField.name = radioButton.value;
         searchTextField.value = '';
     }
-
-
-    /* May need a big overhaul in the future. */
-    //searchTextField.name = radioButton.value;
-    //searchTextField.value = '';
-    //uniqueClassElement('flex-checked').className = 'flex-label';
-    //radioButton.parentElement.className = 'flex-checked';
-    /* switch (radioButton.value) {
-        case 'tags':
-            searchTextField.style.display = 'none';
-            toggleableTagsField.style.display = 'block';
-            break;
-        case 'search':
-            searchTextField.style.display = 'inline';
-            toggleableTagsField.style.display = 'none';
-            for (const element of Array.from(toggleableTagsField.children)) {
-                element.firstElementChild.checked = false
-                element.classList.add('unselectedTag');
-            }
-            break;
-        default:
-            console.log(radioButton.value);
-            break;
-    } */
 }
 
 /** @param {HTMLInputElement} tagCheckbox */
