@@ -84,10 +84,16 @@ window.ReloadIFrame = function(element) {
 
 class InputPair {
     static search(bool) {
+        if (bool) {
+            InputPair.tags(false);
+        }
         searchTextField.style.display = bool ? 'inline' : 'none';
     }
 
     static tags(bool) {
+        if (bool) {
+            InputPair.search(false);
+        }
         toggleableTagsField.style.display = bool ? 'block' : 'none';
         if (!bool) {
             for (const labeltrue of Array.from(toggleableTagsField.children).filter(label => label.firstElementChild.checked)) {
