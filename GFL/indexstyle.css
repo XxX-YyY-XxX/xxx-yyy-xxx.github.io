@@ -180,8 +180,8 @@ iframe[src*="www.youtube.com"] {
 
 @media screen and (max-width: 720px) {
     .tooltip .tooltiptext {
-        width: 200px;
-        margin-left: -100px;
+        width: 100px;
+        margin-left: -50px;
     }
 }
 /* #endregion */
