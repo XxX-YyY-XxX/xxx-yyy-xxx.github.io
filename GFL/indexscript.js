@@ -5,6 +5,7 @@ import {cardData, dTag} from "./tempcard.js";
 const toggleableTagsField = document.getElementById('tags-list');
 const searchTextField = document.getElementById('search-text');
 const searchParams = new URLSearchParams(location.search);
+const radioInputs = Array.from(document.getElementsByName('input-type'));
 //#endregion
 
 //#region Initialize
@@ -93,6 +94,11 @@ const inputPair = {
                 labeltrue.firstElementChild.checked = false
                 labeltrue.classList.remove('checked');
             }
+        }
+    },
+    deselect() {
+        for (const buttons of radioInputs) {
+            
         }
     }
 }
