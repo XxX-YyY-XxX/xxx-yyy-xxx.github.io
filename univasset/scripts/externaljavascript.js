@@ -71,7 +71,7 @@ export function uniqueClassElement(className) {
     return output.length == 1 ? output[0] : null;
 }
 
-/** @param {HTMLElement} iframeElement*/
+/** @param {HTMLIFrameElement} iframeElement*/
 export function reloadIFrame(iframeElement) {
     var temp = iframeElement.src;
     iframeElement.src = '';
@@ -84,6 +84,12 @@ export function splitExt(path) {
     //remove base url to prevent false positive
     var index = path.lastIndexOf('.');
     return [path.slice(0, index), path.slice(index)]
+}
+
+/** For input elements inside label elements.
+ * @param {HTMLInputElement} inputElement */
+export function checkedLabel(inputElement) {
+    inputElement.parentElement.classList.toggle('checked', inputElement.checked)
 }
 //#endregion
 
@@ -130,23 +136,6 @@ function stringToggle(string, substring) {
     return string.includes(substring) ? string.replace(substring, '') : string + substring;
 }
 
-/** @param {HTMLInputElement} inputElement @param checked use "checked" class if true (default), "unchecked" otherwise */
-function checkedLabel(inputElement, checked = true) {
-    const parentLabel = inputElement.parentElement;
-    if (inputElement.checked) {
-        if (checked) {
-            parentLabel.classList.add('checked');
-        } else {
-            parentLabel.classList.remove('unchecked');
-        }
-    } else {
-        if (checked) {
-            parentLabel.classList.remove('checked');
-        } else {
-            parentLabel.classList.add('unchecked');
-        }
-    }
-}
 
 
 
