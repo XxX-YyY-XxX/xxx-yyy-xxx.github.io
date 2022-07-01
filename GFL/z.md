@@ -14,9 +14,3 @@ https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge
 
 https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/id3rbwo/
 
-https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/id4hjg8/
-
-https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/id4yn3q/
-
------
-

@@ -1742,6 +1742,11 @@ export const cardData = Object.freeze([
         tags : [dTag.TDOLL]
     },
     {
+        questions : `What is "ranking" that people are talking about?`,
+        answers : `${link("u/pointblanksniper's essay.", 'https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/id4n4dr/')}`,
+        tags : [dTag.MAJOR]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
