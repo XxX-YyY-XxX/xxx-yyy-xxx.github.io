@@ -64,11 +64,9 @@ label.tags.checked {
     text-align: center;
 }
 
-/* Used in label, not in input */
 .flex-label {
     background-color: transparent;
     line-height: 10px;
-    /* flex: 50%; */
     flex: calc(100% / 2);
 }
 

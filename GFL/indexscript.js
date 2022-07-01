@@ -1,11 +1,11 @@
-import {Compare, removeHTMLTag, randInt, uniqueClassElement, reloadIFrame as reload, checkedLabel} from '/univasset/scripts/externaljavascript.js';
+import {Compare, removeHTMLTag, randInt, reloadIFrame as reload, checkedLabel} from '/univasset/scripts/externaljavascript.js';
 import {cardData, dTag} from "./tempcard.js";
 
 //#region Constants
+const radioInputs = Array.from(document.getElementsByName('input-type'));
 const toggleableTagsField = document.getElementById('tags-list');
 const searchTextField = document.getElementById('search-text');
 const searchParams = new URLSearchParams(location.search);
-const radioInputs = Array.from(document.getElementsByName('input-type'));
 //#endregion
 
 //#region Initialize
@@ -99,19 +99,11 @@ const inputPair = {
 }
 
 window.toggleInput = function() {
-    for (const button of radioInputs) {
-        switchInputMode(button);
-    }
-}
-
-/** @param {HTMLInputElement} radioButton */
-function switchInputMode(radioButton) {
-    //document.querySelector('.flex-label.checked').classList.remove('checked');
-    checkedLabel(radioButton);
-    inputPair[radioButton.value](radioButton.checked);
-    if (radioButton.checked) {
-        searchTextField.name = radioButton.value;
-        searchTextField.value = '';
+    searchTextField.value = '';
+    for (const radioButton of radioInputs) {
+        checkedLabel(radioButton);
+        inputPair[radioButton.value](radioButton.checked);
+        if (radioButton.checked) searchTextField.name = radioButton.value;
     }
 }
 

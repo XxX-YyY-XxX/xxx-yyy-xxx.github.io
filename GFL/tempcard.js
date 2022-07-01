@@ -44,6 +44,12 @@ export const dTag = Object.freeze({
     EMU : Object.freeze({val : 'Emulators', desc : 'Emulator exclusive features.'}),
     //ANDROID : 'AndroidDevices',
     //#endregion
+    //#region Home Tabs
+    CMDR : Object.freeze({val : 'Commander', desc : '"Self-insert."'}),
+    MINI : Object.freeze({val : 'MiniEvents', desc : 'Keycard Events, Point Events, etc.'}),
+    SHOP : Object.freeze({val : 'Shop', desc : 'Buy things here.'}),
+    FRIEND : Object.freeze({val : 'Friends', desc : 'The helpful kind.'}),
+    //#endregion
     MISC : Object.freeze({val : 'Miscellaneous', desc : 'Default tag.'}),
     ACCT : Object.freeze({val : 'AccountManagement', desc : 'Account data and integrity.'}),
     TECH : Object.freeze({val : 'Troubleshooting', desc : 'DIY tech support.'}),
@@ -55,23 +61,19 @@ export const dTag = Object.freeze({
     IMPT : Object.freeze({val : 'Important', desc : 'Things new players would need for late-game.'}),
     SYSMECH : Object.freeze({val : 'SystemMechanics', desc : 'Explanation on underlying mechanics of the game.'}),
     ENEMY : Object.freeze({val : 'EnemyUnits', desc : 'Things regarding enemy info.'}),
-    MINI : Object.freeze({val : 'MiniEvents', desc : 'Keycard Events, Point Events, etc.'}),
     MAP : Object.freeze({val : 'FieldMap', desc : 'Node-based overworld.'}),
         BATTLE : Object.freeze({val : 'Skirmishes', desc : 'Where bullets rain.'}),
     SIDE : Object.freeze({val : 'SideStory', desc : 'Extra stories.'}),
     SKILL : Object.freeze({val : 'Skills', desc : 'Unit skills.'}),
     LOVE : Object.freeze({val : 'Affection', desc : '"Keep it high."'}),
         OATH : Object.freeze({val : 'OathSystem', desc : 'Marriage.'}),
-    FRIEND : Object.freeze({val : 'Friends', desc : 'The helpful kind.'}),
     LEVEL : Object.freeze({val : 'Leveling', desc : 'Mostly Corpse Drag.'}),
     PET : Object.freeze({val : 'Pets', desc : 'Yes.'}),
-    CMDR : Object.freeze({val : 'Commander', desc : '"Self-insert."'}),
     OJ : Object.freeze({val : 'LuffberryChess', desc : 'PVP sidegame.'}),
     LORE : Object.freeze({val : 'Story/Lore', desc : 'Main meat of the series.'}),
     MARP : Object.freeze({val : 'FourResources', desc : 'Manpower, Ammunition, Rations, Parts.'}),
     REF : Object.freeze({val : 'Compilation', desc : 'Reference compilations.'}),
     CE : Object.freeze({val : 'CombatEffectiveness', desc : 'Clutch metric.'}),
-    SHOP : Object.freeze({val : 'Shop', desc : 'Buy things here.'}),
     //KALINA : "Kalina",
 });
 
