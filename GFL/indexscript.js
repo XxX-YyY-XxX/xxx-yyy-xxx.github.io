@@ -95,21 +95,18 @@ const inputPair = {
                 labeltrue.classList.remove('checked');
             }
         }
-    },
-    deselect() {
-        for (const buttons of radioInputs) {
-            
-        }
+    }
+}
+
+window.toggleInput = function() {
+    for (const button of radioInputs) {
+        switchInputMode(button);
     }
 }
 
 /** @param {HTMLInputElement} radioButton */
-window.switchInputMode = function(radioButton) {
-    for (const key in inputPair) {
-        if (Object.hasOwnProperty.call(inputPair, key) && key != radioButton.value)
-            inputPair[key](false);
-    }
-    document.querySelector('.flex-label.checked').classList.remove('checked');
+function switchInputMode(radioButton) {
+    //document.querySelector('.flex-label.checked').classList.remove('checked');
     checkedLabel(radioButton);
     inputPair[radioButton.value](radioButton.checked);
     if (radioButton.checked) {
