@@ -71,15 +71,9 @@ export const dTag = Object.freeze({
     MARP : Object.freeze({val : 'FourResources', desc : 'Manpower, Ammunition, Rations, Parts.'}),
     REF : Object.freeze({val : 'Compilation', desc : 'Reference compilations.'}),
     CE : Object.freeze({val : 'CombatEffectiveness', desc : 'Clutch metric.'}),
+    SHOP : Object.freeze({val : 'Shop', desc : 'Buy things here.'}),
     //KALINA : "Kalina",
 });
-
-/* for (const key in d0) {
-    if (Object.hasOwnProperty.call(d0, key)) {
-        const element = d0[key];
-        
-    }
-} */
 
 //#region Functions
 /** @param {string} link */
@@ -265,7 +259,7 @@ export const cardData = Object.freeze([
             'Kalina' : ['Raised through daily hearts or spending gems<!-- on non-infrastructures-->.']
         })}`,
         tags : [dTag.LOVE, dTag.PRIME, dTag.OATH, dTag.TDOLL, dTag.COALITION]
-    },  //@Merge
+    },
     {
         questions : `What is Luffberry Chess?`,
         answers : `GFL version of 100% Orange Juice, I guess?<br>
@@ -276,7 +270,7 @@ export const cardData = Object.freeze([
     //#endregion
     //#region Tier Lists
     {
-        questions : `Is XXX doll good?`,
+        questions : `Is XXX doll good and is it safe to retire them?`,
         answers : `${link('Matsuda Quips.', 'https://gfl.matsuda.tips/dolls/')}<br>
         ${link('Gamepress Overview.', 'https://gamepress.gg/girlsfrontline/t-dolls-list')}<br>
         ${link('KR Wiki.', 'https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0/%EC%9D%B8%ED%98%95%EB%8F%84%EA%B0%90')}<br>
@@ -355,7 +349,7 @@ export const cardData = Object.freeze([
             'Event Rewards' : [link("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls')],
             'Shop' : ['Mostly applicable to collab dolls or by using TCM.']
         })}`,
-        tags : [dTag.TDOLL, dTag.IMPT, dTag.LEDOLL, dTag.PROD, dTag.MAJOR, dTag.CAMPAIGN, dTag.MINI, dTag.TCM, dTag.MAIN, dTag.COLLAB]
+        tags : [dTag.TDOLL, dTag.IMPT, dTag.LEDOLL, dTag.PROD, dTag.MAJOR, dTag.CAMPAIGN, dTag.MINI, dTag.TCM, dTag.MAIN, dTag.COLLAB, dTag.SHOP]
     },
     {
         questions : `When should I begin trying to produce fairies/do Heavy Equipment Constructions (HEC)?`,
@@ -416,7 +410,7 @@ export const cardData = Object.freeze([
     {
         questions : `How do I get more Quick Training Contracts?`,
         answers : `End of daily log-ins, Keycard Event, gem shop.`,
-        tags : [dTag.ITEM, dTag.MINI]
+        tags : [dTag.ITEM, dTag.MINI, dTag.SHOP]
     },
     {
         questions : `How do I unlock the next chapter?`,
@@ -592,7 +586,7 @@ export const cardData = Object.freeze([
     {
         questions : `How do I get some Extra Potential Energy for Coalition Drills?`,
         answers : `Shop.`,
-        tags : [dTag.ITEM, dTag.PA, dTag.SIMS]
+        tags : [dTag.ITEM, dTag.PA, dTag.SIMS, dTag.SHOP]
     },
     {
         questions : `Which dolls should I duplicate?`,
@@ -786,7 +780,7 @@ export const cardData = Object.freeze([
     {
         questions : `Do the purchaseable items in the Expedition Black Market ever change?`,
         answers : `No.`,
-        tags : [dTag.EXPED]
+        tags : [dTag.EXPED, dTag.SHOP]
     },
     {
         questions : `Which dolls should I use for expedition?`,
@@ -901,7 +895,7 @@ export const cardData = Object.freeze([
         questions : `What does Svarog High Altitude EMP Bombing Aid Commissions do and how do I get more of them?`,
         answers : `Pulls from the entire pool where the entire pool is the X in the X/100 units.<br>
         Weekly quest (8 standard captures), daily log-in, major events, shop (whenever a new banner starts).`,
-        tags : [dTag.ITEM, dTag.PA]
+        tags : [dTag.ITEM, dTag.PA, dTag.SHOP]
     },
     {
         questions : `Recipe for Parachute/Paradrop Fairy?`,
@@ -967,7 +961,7 @@ export const cardData = Object.freeze([
     {
         questions : `Is the package in the shop worth it?`,
         answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/energy-packages')}`,
-        tags : [dTag.ITEM, dTag.OATH]
+        tags : [dTag.ITEM, dTag.OATH, dTag.SHOP]
     },
     {
         questions : `Can I put 2 L2D skins in the double adjutant slot?`,
@@ -1013,7 +1007,7 @@ export const cardData = Object.freeze([
     {
         questions : `Is there a way to expand the armory, or am I stuck with 100 doll slots forever?`,
         answers : `${list(false, 'Shop>Items>Infrastructure>T-Doll slots +10.', 'Tap the locked echelon button.')}`,
-        tags : [dTag.MISC]
+        tags : [dTag.SHOP]
     },
     {
         questions : `Should I dummy link my dolls when corpse dragging?`,
@@ -1037,7 +1031,7 @@ export const cardData = Object.freeze([
                 'Shop. Especially when there is a seasonal/collab going on. Packages are also good.',
                 'Maintenance (10 weekly) and Apolotokens.']
         })}`,
-        tags : [dTag.ITEM, dTag.MAIN, dTag.MINI, dTag.EXPED, dTag.LOGI, dTag.MAJOR, dTag.SEASON, dTag.COLLAB]
+        tags : [dTag.ITEM, dTag.MAIN, dTag.MINI, dTag.EXPED, dTag.LOGI, dTag.MAJOR, dTag.SEASON, dTag.COLLAB, dTag.SHOP]
     },
     {
         questions : `Why aren't my dorm batteries appearing?`,
@@ -1348,7 +1342,7 @@ export const cardData = Object.freeze([
         answers : `Shop for previous event only cosmetics.<br>
         ${image('./assets/images/BlackMarketCostumes.png', 'From u/UnironicWeeaboo')}<br>
         Currently released items in the older servers.`,
-        tags : [dTag.EXPED]
+        tags : [dTag.EXPED, dTag.SHOP]
     },
     {
         questions : `Should I try getting all ringleaders or should I just save for who I want?`,
@@ -1455,7 +1449,7 @@ export const cardData = Object.freeze([
     {
         questions : `Is there anything similar to the True Core Mask but for Coalition units?`,
         answers : `PA shop. 800 supernovas.`,
-        tags : [dTag.PA, dTag.ITEM, dTag.COALITION, dTag.TCM]
+        tags : [dTag.PA, dTag.ITEM, dTag.COALITION, dTag.TCM, dTag.SHOP]
     },
     {
         questions : `Can I get gold tier fairy talents through calibration?`,
@@ -1604,7 +1598,7 @@ export const cardData = Object.freeze([
             'Special Combat Reports',
             'Doll Enhancement Pills',
             'Equipment Enhancement Pills')}`,
-        tags : [dTag.EXPED, dTag.ITEM]
+        tags : [dTag.EXPED, dTag.ITEM, dTag.SHOP]
     },  //@Visual
     {
         questions : `Is Radiant Collection worth it?`,
@@ -1662,7 +1656,7 @@ export const cardData = Object.freeze([
     {
         questions : `Where can I get calibration tickets?`,
         answers : `Defense Drill, expeditions, shop, mini-events, log-in.`,
-        tags : [dTag.ITEM, dTag.SIMS, dTag.EXPED, dTag.MINI]
+        tags : [dTag.ITEM, dTag.SIMS, dTag.EXPED, dTag.MINI, dTag.SHOP]
     },
     {
         questions : `How do I get duplicate ringleaders?`,

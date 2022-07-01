@@ -68,19 +68,13 @@ label.tags.checked {
 .flex-label {
     background-color: transparent;
     line-height: 10px;
-    flex: 50%;
-    /* flex: calc(100% / 2); */
+    /* flex: 50%; */
+    flex: calc(100% / 2);
 }
 
 .flex-label.checked {
     background-color: darkgreen;
 }
-
-/* .flex-checked {
-    background-color: darkgreen;
-    line-height: 10px;
-    flex: 50%;
-} */
 
 #search-text {
     width: calc(100% - 76px);

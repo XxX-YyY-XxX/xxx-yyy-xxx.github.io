@@ -100,6 +100,9 @@
 > - [Damage Calculation.](https://old.reddit.com/r/girlsfrontline/comments/v6pt9o/weekly_commanders_lounge_june_07_2022/ibqsm5o/)
 >
 > - [2.09 Newbie Anchor Rates.](https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/id4yn3q/)
+>
+> - [SG Reload Speed.](https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/icydo4t/)
+
 >RoboCat
 >
 > - [???](https://old.reddit.com/r/girlsfrontline/comments/qkzc9s/weekly_commanders_lounge_november_02_2021/hjjynq0/)
