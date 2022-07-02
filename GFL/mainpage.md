@@ -143,7 +143,63 @@ https://old.reddit.com/r/girlsfrontline/comments/u6ztfo/weekly_commanders_lounge
 
 https://old.reddit.com/r/girlsfrontline/comments/uhb3jo/weekly_commanders_lounge_may_03_2022/i7d81tt/
 
+# Random Info
 
+Red node KCCO mechs count towards the armored enemies mission.
+
+Maximum routing for Planning Mode is 40.
+
+Swapped echelon in ELID zones take no damage.
+
+Dolls obtainable from random nodes.
+
+Feeding cakes to "In Battle" dolls through the dorm.
+
+Do event rankings before the last 3 days of the event to prevent getting cucked by the eventual server overload.
+
+Custom Battle Sim Time Limit: 5 minutes.
+
+FCCs apparently only appears if Neural Upgrade is unlocked.
+
+Beat 2-4N to unlock Defense Drill.
+
+Skill Level 8 is generally a good stopping point for dolls in terms of energy expenditure.
+
+LTLX skill pushback bosses.
+
+If spamming "one-click repair" creates multiple poop-ups, can count towards quests.
+
+Crit rate tile CE scales proportionally with each unit's crit dmg.
+
+Blacklist limit: 50.
+
+# To Do
+
+Go through saved comments and own comments to get friend gossips.
+
+List of non-elite units. Wherein anything not listed is an elite.
+
+Lv. 90 is the highest level-gate for majority of the dolls, due to the 5th link.
+
+Battle strats per boss.
+
+Battle tactics per echelon formation.
+
+Speech bubble emotes.
+
+# Unanswered
+
+List of cafe costume sets.
+
+Official GFL world and political map.
+
+Dolls with oath animations.
+
+# W/E
+
+[I want a frame for this.](https://old.reddit.com/r/girlsfrontline/comments/j1v3lw/weekly_commanders_lounge_september_29_2020/g7mr98t/)
+
+Numbers - 34419187811450531753
 
 
 

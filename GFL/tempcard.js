@@ -382,11 +382,13 @@ export const cardData = Object.freeze([
     },
     {
         questions : `What is Anchored Construction?`,
-        answers : `${link('Pity System for newly added production dolls.', 'https://redd.it/szdua2')} Appears on the rate up for them which is on Saturdays and Sundays. Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate up.<br>
+        answers : `There are two types of Anchored Construction, new dolls and starter.<br>
+        ${link('Pity System for newly added production dolls', 'https://redd.it/szdua2')}. Appears on the rate up for them which is on Saturdays and Sundays. Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate up.<br>
+        ${link(`Pity System for new players ${altTextStyle('and for veterans not bothering with it', TextStyle.STRIKE)}`, 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681')}.
         ${altTextStyle('Points of Interest:', TextStyle.BOLD)}<br>
         ${list(false, 'Anchor rate-up is closed once a doll has been anchored.')}`,
         tags : [dTag.PROD, dTag.IMPT, dTag.TECH]
-    },  //@Too many to fix, @Visual
+    },
     //#endregion
     {
         questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
@@ -765,14 +767,16 @@ export const cardData = Object.freeze([
     {
         questions : `Which facilities/base upgrades should I prioritize for battery expenditures?`,
         answers : `${list(true,
-            'Forward Basecamp',
+            spoilerSummary('Forward Basecamp', list(true, 
+                'Gate Console',
+                'Loot Rack')),
             'Protocol Control Centre',
             'Intelligence Room',
             'Firing Range (Garage)',
             'Fairy Chamber',
             'Data Room',
             'Rescue Station')}`,
-        tags : [dTag.NEWB]
+        tags : [dTag.NEWB, dTag.EXPED, dTag.PA, dTag.HOC, dTag.FAIRY, dTag.PET]
     },  //@Upgrade priority per facility
     {
         questions : `What do I need for 8-1N Zas drag?`,
