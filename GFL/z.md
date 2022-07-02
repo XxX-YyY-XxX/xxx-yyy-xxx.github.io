@@ -6,7 +6,3 @@ https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge
 
 https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/id8t0sm/
 
-https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/id8pzsm/
-
-https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/id8ias2/
-

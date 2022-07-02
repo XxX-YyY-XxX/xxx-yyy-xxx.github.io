@@ -386,7 +386,7 @@ export const cardData = Object.freeze([
         ${link('Pity System for newly added production dolls', 'https://redd.it/szdua2')}. Appears on the rate up for them which is on Saturdays and Sundays. Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate up.<br>
         ${link(`Pity System for new players ${altTextStyle('and for veterans not bothering with it', TextStyle.STRIKE)}`, 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681')}.
         ${altTextStyle('Points of Interest:', TextStyle.BOLD)}<br>
-        ${list(false, 'Anchor rate-up is closed once a doll has been anchored.')}`,
+        ${list(false, 'Anchor rate-up is closed once a doll (two for starter anchor) has been anchored.')}`,
         tags : [dTag.PROD, dTag.IMPT, dTag.TECH]
     },
     //#endregion
@@ -551,9 +551,11 @@ export const cardData = Object.freeze([
     },
     {
         questions : `What is Bookshelf of Memories?`,
-        answers : `Sidestories for the featured dolls. Rewards Friend Gossips or Unity Skills.`,
+        answers : `Sidestories for the featured dolls. Rewards ${spoilerSummary('Friend Gossips',
+            'Unique dialogues when two paired dolls are in the double adjutant.')}
+        or Unity Skills.`,
         tags : [dTag.SIDE]
-    },  //Get Friend Gossips list and Unity Skill pairings.
+    },  //Get Friend Gossips Confirmed Pairs list and Unity Skill pairings.
     {
         questions : `What is Central Data for?`,
         answers : `Unlocking the corresponding FST, promoting said FST, and used as a Data Patch if 5${star}.`,
@@ -1590,11 +1592,6 @@ export const cardData = Object.freeze([
         ${image('./assets/images/HPShield.png', 'From u/UnironicWeeaboo')}`,
         tags : [dTag.BATTLE, dTag.SKILL]
     },  //@Trim Image
-    {
-        questions : `What exactly are Friend Gossips?`,
-        answers : `Unique dialogues when two paired dolls are in the double adjutant.`,
-        tags : [dTag.MISC]
-    },  //<!-- Confirmed Pairs: -->
     {
         questions : `What should I prioritize buying from the black market?`,
         answers : `${list(true,
