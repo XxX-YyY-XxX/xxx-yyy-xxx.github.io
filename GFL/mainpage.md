@@ -102,6 +102,8 @@
 > - [2.09 Newbie Anchor Rates.](https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/id4yn3q/)
 >
 > - [SG Reload Speed.](https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/icydo4t/)
+>
+> - [Newbie Anchor Rate Final.](https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/id8vtq2/)
 
 >RoboCat
 >
@@ -143,6 +145,8 @@ https://old.reddit.com/r/girlsfrontline/comments/u6ztfo/weekly_commanders_lounge
 
 https://old.reddit.com/r/girlsfrontline/comments/uhb3jo/weekly_commanders_lounge_may_03_2022/i7d81tt/
 
+https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/id8tjpd/
+
 # Random Info
 
 Red node KCCO mechs count towards the armored enemies mission.
@@ -173,13 +177,11 @@ Crit rate tile CE scales proportionally with each unit's crit dmg.
 
 Blacklist limit: 50.
 
+Lv. 90 is the highest level-gate for majority of the dolls, due to the 5th link.
+
 # To Do
 
 Go through saved comments and own comments to get friend gossips.
-
-List of non-elite units. Wherein anything not listed is an elite.
-
-Lv. 90 is the highest level-gate for majority of the dolls, due to the 5th link.
 
 Battle strats per boss.
 
