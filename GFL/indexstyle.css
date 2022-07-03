@@ -45,7 +45,7 @@ label.tags {
     color: black;
 }
 
-label.tags.checked, label.tags:has(input:checked) {
+label.tags.checked/* , label.tags:has(input:checked) */ {
     background: transparent;
     color: aqua;
 }
@@ -70,7 +70,7 @@ label.tags.checked, label.tags:has(input:checked) {
     flex: calc(100% / 2);
 }
 
-.flex-label.checked, .flex-label:has(input:checked) {
+.flex-label.checked/* , .flex-label:has(input:checked) */ {
     background-color: darkgreen;
 }
 
@@ -145,7 +145,7 @@ iframe[src*="www.youtube.com"] {
     position: relative;
 }
 
-.tooltiptext {
+.tooltip+.tooltiptext {
     width: 300px;
     background-color: #555;
     color: #fff;
