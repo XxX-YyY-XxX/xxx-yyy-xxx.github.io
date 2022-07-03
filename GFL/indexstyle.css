@@ -10,9 +10,10 @@ dl, table, figure, blockquote {
     margin: 0px;
 }
 
-.twitter-tweet iframe {                         /* Needs more responsive solution. Works on first load only. */
+/* Needs more responsive solution. Works on first load only. */
+/* .twitter-tweet iframe {
     max-width: 100vw !important;
-}
+} */
 
 figcaption {
     font-size: 1px;
@@ -25,11 +26,11 @@ dd {
     margin-inline-start: 20px;
 }
 
-.inline-img {
+/* .inline-img {
     display: inline;
     height: 10px;
     width: auto;
-}
+} */
 /* #endregion */
 
 /* #region Tags */
@@ -93,7 +94,7 @@ details[open] {
     display: block;
 }
 
-summary {
+details summary {
     cursor: pointer;
     display: inline;
     color: rgb(233, 161, 152);
@@ -137,43 +138,5 @@ iframe[src*="www.youtube.com"] {
     aspect-ratio: 16/9;
     border: 0px;
     display: block;
-}
-/* #endregion */
-
-/* #region Tooltip */
-.tooltip {
-    position: relative;
-}
-
-.tooltip .tooltiptext {
-    width: 300px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 8px;
-    padding: 3px;
-    position: absolute;
-    z-index: 1;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -150px;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-    
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-}
-
-/* If desktop, on top of text */
-/* If mobile, on top of screen */
-
-@media screen and (max-width: 720px) {
-    .tooltip .tooltiptext {
-        width: 100px;
-        margin-left: -50px;
-    }
 }
 /* #endregion */

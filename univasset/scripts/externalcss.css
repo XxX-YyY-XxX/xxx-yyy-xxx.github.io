@@ -19,6 +19,67 @@ include {
 }
 /* #endregion */
 
+/* #region Tooltip */
+.tooltip {
+  position: relative;
+}
+
+/* Interactible */
+.tooltip .tooltiptext {
+  width: 300px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 3px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -150px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+  
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Descriptive */
+/* .tooltip + .tooltiptext {
+  width: 300px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 3px;
+  position: relative;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -150px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+  
+.tooltip:hover + .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+} */
+/* If desktop, on top of text */
+/* If mobile, on top of screen */
+
+@media screen and (max-width: 720px) {
+  .tooltip .tooltiptext {
+      width: 100px;
+      margin-left: -50px;
+  }
+}
+/* #endregion */
+
 /* #region GFL Button */
 .btn-gfl {
   background: -webkit-linear-gradient(rgb(12, 184, 50, 0.3), rgba(30, 120, 51, 0.3) 50%, rgba(30, 50, 5, 0.3) 50%, rgba(0, 20, 0, 0.3))
@@ -33,31 +94,3 @@ include {
   background: url("/univasset/images/greenbottle.png") 0 0 no-repeat
 }
 /* #endregion */
-
-
-
-
-
-
-
-
-
-
-
-/*font-size: 90%;
-  
-  align-items: center;
-  display: -ms-inline-flexbox;
-  -ms-flex-align: center;
-  height: 1.2rem;
-  line-height: .8rem;
-  max-width: 100%;
-  text-decoration: none;
-  vertical-align: middle;
-*/
-
-/* @media screen and (max-width: 640px) {
-  .widescreen {
-    width: 100%;
-  }
-} */

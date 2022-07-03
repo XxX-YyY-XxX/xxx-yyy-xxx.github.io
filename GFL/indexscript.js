@@ -13,9 +13,9 @@ document.getElementById('version-number').innerHTML = cardData.length;
 
 //tooltip is only visible when tag is hovered over. 
 toggleableTagsField.innerHTML = Object.values(dTag).sort((a, b) => Compare.string(a, b, 'val')).map(tag => 
-    `<label class="tags">
-        <input type="checkbox" onclick="toggleTag(this)" value="${tag.val}">
-        <span class="tooltip">${tag.val}<span class="tooltiptext">${tag.desc}</span></span>
+    `<label class="tags tooltip">
+        <input type="checkbox" onclick="toggleTag(this)" value="${tag.val}">${tag.val}
+        <span class="tooltiptext">${tag.desc}</span>
     </label>`
 ).join(' ');
 
