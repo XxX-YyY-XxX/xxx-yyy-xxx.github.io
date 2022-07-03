@@ -15,8 +15,7 @@ document.getElementById('version-number').innerHTML = cardData.length;
 toggleableTagsField.innerHTML = Object.values(dTag).sort((a, b) => Compare.string(a, b, 'val')).map(tag => 
     `<label class="tags">
         <input type="checkbox" onclick="toggleTag(this)" value="${tag.val}">
-        <span class="tooltip">${tag.val}</span>
-        <span class="tooltiptext">${tag.desc}</span>
+        <span class="tooltip">${tag.val}<span class="tooltiptext">${tag.desc}</span></span>
     </label>`
 ).join(' ');
 
