@@ -87,10 +87,12 @@ export function splitExt(path) {
 }
 
 /** For input elements inside label elements.
- * @param {HTMLInputElement} inputElement */
+ * @param {HTMLInputElement} inputElement
+ * @returns true if successfully toggled, false otherwise. */
 export function checkedLabel(inputElement) {
+    var oldClasses = inputElement.parentElement.className;
     inputElement.parentElement.classList.toggle('checked', inputElement.checked);
-    //return true if successfully toggled, false otherwise
+    return inputElement.parentElement.className != oldClasses;
 }
 //#endregion
 
@@ -135,6 +137,25 @@ function getIterator(iterable) {
 /** @param {String} string @param {String} substring */
 function stringToggle(string, substring) {
     return string.includes(substring) ? string.replace(substring, '') : string + substring;
+}
+
+//Needs to be per input
+class ToggleCheck {
+    #lastValue;
+    #nowValue;
+
+    get isToggled() {
+        return this.#lastValue != this.#nowValue;
+    }
+
+    set currentValue(value) {
+        this.#lastValue = this.#nowValue;
+        this.#nowValue = value;
+    }
+
+    constructor(initialValue) {
+        this.#nowValue = initialValue;
+    }
 }
 
 

@@ -99,11 +99,9 @@
 >
 > - [Damage Calculation.](https://old.reddit.com/r/girlsfrontline/comments/v6pt9o/weekly_commanders_lounge_june_07_2022/ibqsm5o/)
 >
-> - [2.09 Newbie Anchor Rates.](https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/id4yn3q/)
+> - [2.09 Newbie Anchor Rates.](https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/id4yn3q/) [Part 2.](https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/id6m89a/) [Part 3.](https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/id8vtq2/)
 >
 > - [SG Reload Speed.](https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/icydo4t/)
->
-> - [Newbie Anchor Rate Final.](https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/id8vtq2/)
 
 >RoboCat
 >
@@ -203,7 +201,31 @@ Dolls with oath animations.
 
 Numbers - 34419187811450531753
 
+#GFL Multimedia
 
+[GFL Music Library.](https://girlsfrontline.kr/db/musicplayer/) [Another.](http://gfwiki.org/w/%E9%9F%B3%E4%B9%90%E9%89%B4%E8%B5%8F)
+
+GFL's [free-for-all cursed images compilation.](https://drive.google.com/drive/folders/1CHyWyLqt5L6Db04Jmk2RHXT42IJcbl7A)
+
+[GFL manga](https://drive.google.com/drive/u/0/mobile/folders/1fEYYxtXAFTfyovwW-WRvNOpbXTu1_hlk?usp=sharing&sort=13&direction=a)
+
+[3rd artbook?](https://e-hentai.org/g/1896519/8805f5bb2e/)
+
+[CG/background collection.](https://drive.google.com/drive/u/0/folders/1_tWMqV_8ir2w9JMO3vml2Hc26765094_)
+
+[Chibi Rips and Character Arts.](https://old.reddit.com/r/girlsfrontline/comments/jel95l/weekly_commanders_lounge_october_20_2020/g9fxtzj/) [And the how to's.](https://www.youtube.com/watch?v=9xDh6L1VZnM&feature=youtu.be)
+
+[GFL Loading Screen Splash Arts.](http://www.gfwiki.org/w/CG%E6%94%B6%E5%BD%95)
+
+[tehcavy rips of Division CGs and art.](https://www.imgur.com/a/LUY1lNZ)
+
+[Butterfly in the Cocoon rips.](https://imgur.com/a/gK47A1g) [Extra.](https://i.imgur.com/gicwI3u.png)
+
+[Too lazy to pick this apart.](https://old.reddit.com/r/girlsfrontline/comments/s6s9xj/weekly_commanders_lounge_january_18_2022/htegc0f/)
+
+[ConductorBichir's image assets.](https://drive.google.com/drive/folders/1BNCorYsAoagEf8lIn1n4uMyAI30FJnWv)
+
+[Github resource 1.](https://github.com/Dimbreath/GirlsFrontlineData)
 
 
 

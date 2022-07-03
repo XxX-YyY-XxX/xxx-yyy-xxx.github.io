@@ -14,8 +14,8 @@ document.getElementById('version-number').innerHTML = cardData.length;
 toggleableTagsField.innerHTML = Object.values(dTag).sort((a, b) => Compare.string(a, b, 'val')).map(tag => 
     `<label class="tags tooltip">
         <input type="checkbox" onclick="toggleTag(this)" value="${tag.val}">${tag.val}
-        <span class="tooltiptext">${tag.desc}</span>
-    </label>`
+    </label>
+    <span class="tooltiptext">${tag.desc}</span>`
 ).join(' ');
 
 document.getElementById('cards-field').innerHTML = (searchParams.has('search') || searchParams.has('tags')) ? searchCards() : randomCards();

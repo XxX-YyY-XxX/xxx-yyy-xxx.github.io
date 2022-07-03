@@ -266,7 +266,8 @@ export const cardData = Object.freeze([
         questions : `What is Luffberry Chess?`,
         answers : `GFL version of 100% Orange Juice, I guess?<br>
         And it's called "chess" only because boardgame.<br>
-        ${link("u/fortis_99's tips.", 'https://redd.it/rz4uye')}`,
+        ${link("u/fortis_99's tips.", 'https://redd.it/rz4uye')}<br>
+        ${spoilerSummary("u/StarBase10's doc guide.", googleEmbed('https://docs.google.com/document/d/1BHZ36zTKdQ9gd81a-RAHEzbs9OEgJraSRp5LQv8CB_A'))}`,
         tags : [dTag.OJ, dTag.PRIME]
     },
     //#endregion
@@ -553,7 +554,7 @@ export const cardData = Object.freeze([
         questions : `What is Bookshelf of Memories?`,
         answers : `Sidestories for the featured dolls. Rewards ${spoilerSummary('Friend Gossips',
             'Unique dialogues when two paired dolls are in the double adjutant.')}
-        or Unity Skills.`,
+        or Unity Skills. Found in the Data Room.`,
         tags : [dTag.SIDE]
     },  //Get Friend Gossips Confirmed Pairs list and Unity Skill pairings.
     {
@@ -1009,7 +1010,7 @@ export const cardData = Object.freeze([
     },
     {
         questions : `If I delete my unused speqs, will I be able to recover them?`,
-        answers : `Since 2.09, dismantled/disassembled SPEQs can now be recovered/retrieved.`,
+        answers : `As of 2.09, dismantled/disassembled SPEQs can now be ${spoilerSummary('recovered/retrieved', image('./assets/images/SPEQRecover.png', 'From u/UnironicWeeaboo'))}.`,
         tags : [dTag.SPEQ]
     },
     {
@@ -1742,6 +1743,22 @@ export const cardData = Object.freeze([
         questions : `What is "ranking" that people are talking about?`,
         answers : `${link("u/pointblanksniper's essay.", 'https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/id4n4dr/')}`,
         tags : [dTag.MAJOR]
+    },
+    {
+        questions : `What are Specified Equipment Contracts for and how do I use them?`,
+        answers : `Extra IOP Special Orders. Gets used when the 20 free charges are used up.`,
+        tags : [dTag.ITEM, dTag.EQUIP, dTag.PROD]
+    },
+    {
+        questions : `Is the in-game chip calculator better than GFCalc?`,
+        answers : `IMO no, since it can't maximize strengths, though it is useful for temporary set-ups.<br>
+        To use it properly, enable Preview Max-level Chip Stats.`,
+        tags : [dTag.HOC, dTag.FST, dTag.EQUIP, dTag["3P"]]
+    },
+    {
+        questions : `How do I change my adjutant?`,
+        answers : `Commander Level > Base Management (bottom-left)`,
+        tags : [dTag.MISC]
     },
     {
         questions : ``,
