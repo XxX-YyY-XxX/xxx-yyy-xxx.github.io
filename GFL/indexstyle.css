@@ -145,7 +145,7 @@ iframe[src*="www.youtube.com"] {
     position: relative;
 }
 
-.tooltip+.tooltiptext {
+.tooltip + .tooltiptext {
     width: 300px;
     background-color: #555;
     color: #fff;
