@@ -31,7 +31,7 @@ function nestedInclude(htmlString, params) {
 
             if (key = include.getAttribute('key')) {
                 //check if parameter is string, object, null
-                console.log(typeof strArr[parseInt(key)], typeof strArr[parseInt(key)] === String);
+                console.log(typeof strArr[parseInt(key)], typeof strArr[parseInt(key)] == 'string');
                 htmlString = htmlString.replace(include.outerHTML, strArr[parseInt(key)]);
             } else if (childparam = include.textContent) {
                 //Untested
