@@ -30,9 +30,17 @@ function nestedInclude(htmlString, params) {
             let key, childparam;
 
             if (key = include.getAttribute('key')) {
-                //check if parameter is string, object, null
-                console.log(typeof strArr[parseInt(key)], typeof strArr[parseInt(key)] == 'string');
-                htmlString = htmlString.replace(include.outerHTML, strArr[parseInt(key)]);
+                const paramValue = strArr[parseInt(key)];
+
+                switch (typeof paramValue) {
+                    case 'string':
+                        htmlString = htmlString.replace(include.outerHTML, paramValue);
+                        break;
+                    default:
+                        //check if parameter is object, null
+                        console.log(typeof paramValue/* , typeof paramValue == 'string' */)
+                        break;
+                }
             } else if (childparam = include.textContent) {
                 //Untested
                 let tempson = JSON.parse(`[${childparam}]`);
