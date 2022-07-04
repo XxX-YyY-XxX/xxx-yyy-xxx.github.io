@@ -100,7 +100,7 @@ export function checkedLabel(inputElement) {
 /** @param {boolean} extend true to extend, false to clip
  * @param {Iterable[]} iterables order of iterables = order of output
  * @returns "Tuple" of values from each array */
-export function* Zip(extend, ...iterables) {
+export function* zip(extend, ...iterables) {
     const arrayOfArrays = iterables.map(arr => Array.from(arr))
     const maxlength = (extend ? Math.max : Math.min)(...arrayOfArrays.map(arr => arr.length))
 
@@ -113,7 +113,7 @@ export function* Zip(extend, ...iterables) {
 }
 
 /** @param {Iterable} iterable @returns index, value*/
-export function* Enumerate(iterable) {
+export function* enumerate(iterable) {
     var index = 0;
     for (const value of iterable) {
         yield [index, value];
@@ -122,6 +122,7 @@ export function* Enumerate(iterable) {
 }
 //#endregion
 
+//#region Trial
 /** @param {Iterable} iterable */
 function getIterator(iterable) {
     //if (iterable[Symbol.iterator]() === iterable)
@@ -141,23 +142,19 @@ function stringToggle(string, substring) {
 
 //Needs to be per input
 class ToggleCheck {
-    #lastValue;
-    #nowValue;
-
-    get isToggled() {
-        return this.#lastValue != this.#nowValue;
-    }
-
-    set currentValue(value) {
-        this.#lastValue = this.#nowValue;
-        this.#nowValue = value;
-    }
+    #storedValue;
 
     constructor(initialValue) {
-        this.#nowValue = initialValue;
+        this.#storedValue = initialValue;
+    }
+
+    isToggled(currentValue) {
+        var bool = this.#storedValue != currentValue;
+        this.#storedValue = currentValue;
+        return bool;
     }
 }
-
+//#endregion
 
 
 

@@ -227,7 +227,49 @@ GFL's [free-for-all cursed images compilation.](https://drive.google.com/drive/f
 
 [Github resource 1.](https://github.com/Dimbreath/GirlsFrontlineData)
 
+#Nice Things To Have
 
+[CE Fromula.](https://old.reddit.com/r/girlsfrontline/comments/kqtpcv/weekly_commanders_lounge_january_05_2021/gifxq8v/)
+
+[Pre-mission flavor text.](https://old.reddit.com/r/girlsfrontline/comments/kma337/weekly_commanders_lounge_december_29_2020/ghziik1/)
+
+[Clearing dorm messages.](https://old.reddit.com/r/girlsfrontline/comments/ki11cb/weekly_commanders_lounge_december_22_2020/ghbbuka/)
+
+[TW server HOC proxies.](https://old.reddit.com/r/girlsfrontline/comments/lvwwtv/weekly_commanders_lounge_march_02_2021/gpfqw2r/)
+
+Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr).
+
+[Ceia ruining ranking.](https://i.imgur.com/DJkNxwy_d.webp?maxwidth=640&shape=thumb&fidelity=medium)
+
+[GFL word-count as of PR.](https://mobile.twitter.com/apple54385842/status/1433418671783755778)
+
+[SC Confidential Files.](https://docs.google.com/document/d/e/2PACX-1vSAU8PAHh1bqCzEZawhvDgYKU-wjfVdR7RgomPVZf_-m9feFHYCEWgsBrMeDsPiymRo693_PwEXf6Y3/pub)
+
+[Best time to apply ROF buff.](https://old.reddit.com/r/girlsfrontline/comments/p1krem/weekly_commanders_lounge_august_10_2021/h8kiium/)
+
+[Getting costumes from same set show up in cafe.](https://old.reddit.com/r/girlsfrontline/comments/paivke/weekly_commanders_lounge_august_24_2021/hb13apm/)
+
+[Rescue station current status?](https://old.reddit.com/r/girlsfrontline/comments/paivke/weekly_commanders_lounge_august_24_2021/haitcqz/)
+
+[Chibi sprite grouping.](https://old.reddit.com/r/girlsfrontline/comments/pf1dsb/weekly_commanders_lounge_august_31_2021/hbil6gc/)
+
+[4-3e grind.](https://old.reddit.com/r/girlsfrontline/comments/qkzc9s/weekly_commanders_lounge_november_02_2021/hjchtgu/)
+
+[BSJ's seasonal mail of 2022.](https://imgur.com/a/pfLjyN6)
+[Part 2.](https://imgur.com/a/N1WCQF2)
+[Part 3.](https://imgur.com/a/pGg7AjR)
+
+[Base backgrounds.](https://old.reddit.com/r/girlsfrontline/comments/rau1tq/weekly_commanders_lounge_december_07_2021/hnzj7zh/)
+
+[Highest SF Theatre Score](https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i1lnaiu/)
+
+[Guide to registering on CN.](https://en.gfwiki.com/wiki/Guide:Registration)
+
+[pengu L2D viewer](https://pengupengupengu.github.io/live2d-viewer-web/)
+
+[Merch shops.](https://old.reddit.com/r/girlsfrontline/comments/rg2l32/weekly_commanders_lounge_december_14_2021/hpcn3dk/)
+
+[Debuff checks.](https://old.reddit.com/r/girlsfrontline/comments/v1l5po/weekly_commanders_lounge_may_31_2022/ib9u41r/)
 
 
 
