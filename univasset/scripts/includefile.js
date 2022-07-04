@@ -4,8 +4,8 @@
     Number  = take parameter from parent include
     Array   = ???
     Boolean = ???
-    Object  = ???
-    Null    = ???
+    Object  = change attribute of first child element, outwards progression for nested change
+    Null    = use default value (<include key="0">Default Value</include>)
 */
 //<include key="0"></include>
 //<include src="/univasset/scripts/mainpagebuttons.html">0, "8"</include>
@@ -19,7 +19,7 @@ for (const include of Array.from(document.getElementsByTagName('include'))) {
 
 /** @param {string} htmlString @param {string} params */
 function nestedInclude(htmlString, params) {
-    console.log('Before: ', htmlString);
+    //console.log('Before: ', htmlString);
 
     //Parameter setting
     if (params) {
@@ -31,12 +31,14 @@ function nestedInclude(htmlString, params) {
 
             if (key = include.getAttribute('key')) {
                 //check if parameter is string, object, null
+                console.log(typeof strArr[parseInt(key)], typeof strArr[parseInt(key)] === String);
                 htmlString = htmlString.replace(include.outerHTML, strArr[parseInt(key)]);
             } else if (childparam = include.textContent) {
                 //Untested
                 let tempson = JSON.parse(`[${childparam}]`);
 
                 for (let index = 0; index < tempson.length; index++) {
+                    //what if number as a string?
                     if (Number.isInteger(tempson[index])) {
                         tempson[index] = strArr[tempson[index]];
                     }
@@ -49,7 +51,7 @@ function nestedInclude(htmlString, params) {
         }
     }
 
-    console.log('During: ', htmlString);
+    //console.log('During: ', htmlString);
 
     //Source fetching
     if (htmlString.includes('</include>')) {

@@ -112,13 +112,11 @@ export function* zip(extend, ...iterables) {
     }
 }
 
-/** @param {Iterable} iterable @returns index, value*/
+/** @param {Iterable} iterable @returns index, value */
 export function* enumerate(iterable) {
     var index = 0;
-    for (const value of iterable) {
-        yield [index, value];
-        index++;
-    }
+    for (const value of iterable)
+        yield [index++, value];
 }
 //#endregion
 

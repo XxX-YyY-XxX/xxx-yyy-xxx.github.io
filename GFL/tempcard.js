@@ -166,9 +166,7 @@ export const cardData = Object.freeze([
         questions : `How do I level my girls?`,
         answers : `First is grinding them on leveling maps, mainly through ${spoilerSummary('corpse dragging', 
             `Also called Poor Run or Beggar Run, it is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.<br>
-            ${spoilerSummary("Ceia's 0-2 drag guide.", 
-                `${youtubeEmbed('vqvPpO1vKqw')}<br>
-                ${googleEmbed('https://docs.google.com/document/u/0/d/1PkxJ7ObdGW_cS_qbzAxQ_hoC1SFse3HNYWlnywZfPuo')}`)}<br>
+            ${spoilerSummary("Ceia's 0-2 drag guide.", googleEmbed('https://docs.google.com/document/u/0/d/1PkxJ7ObdGW_cS_qbzAxQ_hoC1SFse3HNYWlnywZfPuo'))}<br>
             ${link('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide')}<br>
             ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/optimizing-leveling-introduction')}<br>
             ${link('GFLCorner guide.', 'https://www.gflcorner.com/efficient-leveling-guide/')}<br>
@@ -178,7 +176,7 @@ export const cardData = Object.freeze([
             "Can be gifted by going to the Dorm>Warehouse>Gift tab or going to your owned doll's profile and tapping the + button by the EXP bar.",
             'Gives 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.'))}.`,
         tags : [dTag.TDOLL, dTag.LEVEL, dTag.PRIME, dTag.NEWB]
-    },
+    },  //youtubeEmbed('vqvPpO1vKqw') - Privated
     {
         questions : `What is Combat Effectiveness?`,
         answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ce')}`,
@@ -699,7 +697,7 @@ export const cardData = Object.freeze([
         [`4${star} furniture`,      '34.20%'],
         [`4${star} gifts/cakes`,    '01.80%'],
         [`3${star} furniture`,      '54.00%'])}`,
-        tags : [dTag.RESUPPLY, dTag.SKIN, dTag.FURN]
+        tags : [dTag.RESUPPLY, dTag.TDOLL, dTag.SKIN, dTag.FURN]
     },
     {
         questions : `Can the Liu clones get stat buffs?`,
@@ -977,7 +975,7 @@ export const cardData = Object.freeze([
         answers : `${altStyle('L2D mode', TextStyle.QOUTE)}<br>
         ${altStyle('Double Adjutant', TextStyle.QOUTE)}<br>
         Pick one.`,
-        tags : [dTag.SKIN]
+        tags : [dTag.TDOLL, dTag.SKIN]
     },
     {
         questions : `How do I unlock special effects on commanders like flame auras etc.?`,
@@ -1328,7 +1326,7 @@ export const cardData = Object.freeze([
     {
         questions : `Where are the skins? I can't find them.`,
         answers : `${image('./assets/images/SkinLocation.png', 'Dorms > Warehouse > Gifts')}`,
-        tags : [dTag.SKIN]
+        tags : [dTag.TDOLL, dTag.SKIN]
     },
     {
         questions : `What should I do during a collab?`,
@@ -1399,7 +1397,7 @@ export const cardData = Object.freeze([
     {
         questions : `When will the costumes go to the Black Card Exchange?`,
         answers : `After around 2 banners.`,
-        tags : [dTag.SKIN]
+        tags : [dTag.TDOLL, dTag.SKIN]
     },
     {
         questions : `Just bought a gem pack/monthly card but I didn't get it yet. What do I do?`,
@@ -1433,12 +1431,12 @@ export const cardData = Object.freeze([
         answers : `${list(false,
             'Commander Stat Card > Adjutants > Filter > Unlocked. Works for doll you have in inventory.',
             'Index > Furniture > Posters. Works for costumes that have been gifted/given.')}`,
-        tags : [dTag.SKIN, dTag.TDOLL]
+        tags : [dTag.TDOLL, dTag.SKIN]
     },
     {
         questions : `Does Luffberry Chess have any exclusive rewards?`,
         answers : `${link('Icons, furnitures, and as of 2.09, skins.', 'https://www.reddit.com/r/girlsfrontline/comments/uhb3jo/weekly_commanders_lounge_may_03_2022/i7kg6bu/')}`,
-        tags : [dTag.OJ, dTag.FURN, dTag.SKIN]
+        tags : [dTag.OJ, dTag.FURN, dTag.TDOLL, dTag.SKIN]
     },
     {
         questions : `General tips on defeating deathstacks?`,
@@ -1608,7 +1606,7 @@ export const cardData = Object.freeze([
         questions : `Is Radiant Collection worth it?`,
         answers : `Not in the slightest. For early game furnishing, the Black Market is better since you can get a 5${star} bonus.<br>
         Rates being 2% divided by the number of costumes in the radiant is the chance of pulling a specific skin. Aside from the fact that no exchange tickets and no L2D.<br>`,
-        tags : [dTag.RESUPPLY, dTag.FURN, dTag.EXPED, dTag.SKIN]
+        tags : [dTag.RESUPPLY, dTag.FURN, dTag.EXPED, dTag.TDOLL, dTag.SKIN]
     },
     {
         questions : `What are pets used for?`,
@@ -1757,7 +1755,8 @@ export const cardData = Object.freeze([
     },
     {
         questions : `How do I change my adjutant?`,
-        answers : `Commander Level > Base Management (bottom-left)`,
+        answers : `Commander Level > Base Management (bottom-left).<br>
+        You can also change each one's background.`,
         tags : [dTag.MISC]
     },
     {
