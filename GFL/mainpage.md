@@ -145,6 +145,8 @@ https://old.reddit.com/r/girlsfrontline/comments/uhb3jo/weekly_commanders_lounge
 
 https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/id8tjpd/
 
+https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/ide5o74/
+
 # Random Info
 
 Red node KCCO mechs count towards the armored enemies mission.
@@ -186,6 +188,8 @@ Battle strats per boss.
 Battle tactics per echelon formation.
 
 Speech bubble emotes.
+
+How to skip tutorial.
 
 # Unanswered
 
@@ -270,6 +274,20 @@ Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr)
 [Merch shops.](https://old.reddit.com/r/girlsfrontline/comments/rg2l32/weekly_commanders_lounge_december_14_2021/hpcn3dk/)
 
 [Debuff checks.](https://old.reddit.com/r/girlsfrontline/comments/v1l5po/weekly_commanders_lounge_may_31_2022/ib9u41r/)
+
+#Account Management
+
+>How do I bind my account?
+
+[Settings>Manage Account>Bind to your preferred account.](https://old.reddit.com/r/girlsfrontline/comments/h9zoat/weekly_commanders_lounge_june_16_2020/fvpm1q8/) You can then change devices provided that you use the same account.
+
+>Can I unbind my Sunborn Account?
+
+AFAIK, can't.
+
+>How do I know when was my registration date?
+
+[Here.](https://old.reddit.com/r/girlsfrontline/comments/s6s9xj/weekly_commanders_lounge_january_18_2022/ht9ller/)
 
 
 

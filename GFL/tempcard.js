@@ -551,7 +551,10 @@ export const cardData = Object.freeze([
     {
         questions : `What is Bookshelf of Memories?`,
         answers : `Sidestories for the featured dolls. Rewards ${spoilerSummary('Friend Gossips',
-            'Unique dialogues when two paired dolls are in the double adjutant.')}
+            `Unique dialogues when two paired dolls are in the double adjutant.<br>
+            ${descriptionList({
+                'Becoming a Star' : ['M4 Spectre', 'P08', 'HK45', 'Stechkin', 'Desert Eagle']
+            })}`)}
         or Unity Skills. Found in the Data Room.`,
         tags : [dTag.SIDE]
     },  //Get Friend Gossips Confirmed Pairs list and Unity Skill pairings.
@@ -1263,7 +1266,11 @@ export const cardData = Object.freeze([
     },
     {
         questions : `What're the rewards for the Defense Drill?`,
-        answers : `${link('Matsuda Guide and Line-up, circa 2.08.', 'https://gfl.matsuda.tips/post/defdrill')}`,
+        answers : `${link('Matsuda Guide and Line-up, circa 2.08.', 'https://gfl.matsuda.tips/post/defdrill')}<br>
+        ${altStyle('2.09 waves', TextStyle.BOLD)}:
+        ${spoilerSummary('Discord Strats.', image('./assets/images/DiscordDefenseDrill.png'))}<br>
+        ${spoilerSummary('General BLT vid.', youtubeEmbed('P-GLrBNvFVs'))}<br>
+        ${spoilerSummary('Ceia vid.', youtubeEmbed('qgbF2eiIzps'))}`,
         tags : [dTag.SIMS]
     },
     {
@@ -1758,6 +1765,16 @@ export const cardData = Object.freeze([
         answers : `Commander Level > Base Management (bottom-left).<br>
         You can also change each one's background.`,
         tags : [dTag.MISC]
+    },
+    {
+        questions : `How do I edit my Friend Card?`,
+        answers : `Friend > ID Card Tab`,
+        tags : [dTag.MISC]
+    },  //@Visual
+    {
+        questions : `How do I dye my commander's clothes?`,
+        answers : `Use an Infinite Surprise Dye or a Colorful Dye on a costume piece. Note that not every piece is dyeable.`,
+        tags : [dTag.CMDR, dTag.SKIN]
     },
     {
         questions : ``,
