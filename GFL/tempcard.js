@@ -1267,7 +1267,7 @@ export const cardData = Object.freeze([
     {
         questions : `What're the rewards for the Defense Drill?`,
         answers : `${link('Matsuda Guide and Line-up, circa 2.08.', 'https://gfl.matsuda.tips/post/defdrill')}<br>
-        ${altStyle('2.09 waves', TextStyle.BOLD)}:
+        ${altStyle('2.09 waves', TextStyle.BOLD)}:<br>
         ${spoilerSummary('Discord Strats.', image('./assets/images/DiscordDefenseDrill.png'))}<br>
         ${spoilerSummary('General BLT vid.', youtubeEmbed('P-GLrBNvFVs'))}<br>
         ${spoilerSummary('Ceia vid.', youtubeEmbed('qgbF2eiIzps'))}`,
