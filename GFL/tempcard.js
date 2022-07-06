@@ -551,11 +551,23 @@ export const cardData = Object.freeze([
     {
         questions : `What is Bookshelf of Memories?`,
         answers : `Sidestories for the featured dolls. Rewards ${spoilerSummary('Friend Gossips',
-            `Unique dialogues when two paired dolls are in the double adjutant.<br>
-            ${descriptionList({
-                'Becoming a Star' : ['M4 Spectre', 'P08', 'HK45', 'Stechkin', 'Desert Eagle']
-            })}`)}
-        or Unity Skills. Found in the Data Room.`,
+            'Unique dialogues when two paired dolls are in the double adjutant.' +
+            descriptionList({
+                'Becoming a Star' : [
+                    'P38 + HK45',
+                    'P38 + SpectreM4',
+                    'P38 + Desert Eagle',
+                    'HK45 + SpectreM4',
+                    'HK45 + Desert Eagle',
+                    'Stechkin + Desert Eagle']})
+            )}
+        or ${spoilerSummary('Unity Skills',
+            'Additional skill when the paired dolls are in the same echelon.' +
+            descriptionList({
+                'Operation Starchaser' : ['Grizzly + PzB29', 'AK-Alfa + M82'],
+                'Her Smile' : ['G36 + Springfield']})
+            )}
+        . Found in the Data Room.`,
         tags : [dTag.SIDE]
     },  //Get Friend Gossips Confirmed Pairs list and Unity Skill pairings.
     {
