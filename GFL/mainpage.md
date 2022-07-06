@@ -110,10 +110,14 @@
 >EarSpeaker
 >
 > - [Cheap SG tank.](https://old.reddit.com/r/girlsfrontline/comments/uc7eet/weekly_commanders_lounge_april_26_2022/i6ut0vo/)
+>
+> - [Top up gem month.](https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/idoig4j/)
 
 >Weeb
 >
 > - [PPK spaghetti.](https://old.reddit.com/r/girlsfrontline/comments/v1l5po/weekly_commanders_lounge_may_31_2022/ib1eu2w/)
+>
+> - [Commander skills score.](https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/idqp247/)
 
 #Android Viability Checks (Mostly on Android 12)
 
@@ -289,7 +293,15 @@ AFAIK, can't.
 
 [Here.](https://old.reddit.com/r/girlsfrontline/comments/s6s9xj/weekly_commanders_lounge_january_18_2022/ht9ller/)
 
+#Echelon Formations
 
+>What's the Double Jupiter formation?
+
+M4 MOD II + self-buff RF (usually IWS) + 3 HG (usually ROF buffers).
+
+>How to fight Judge?
+
+3MG(armor tiles, 2nd+ clip skills)2SG. As long as your SGs take 1DMG from her, you can swap some MGs for HGs.
 
 
 

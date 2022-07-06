@@ -564,7 +564,7 @@ export const cardData = Object.freeze([
         tags : [dTag.ITEM, dTag.HOC]
     },
     {
-        questions : `When should I do T-Doll Heavy Production?`,
+        questions : `When should I do T-Doll Heavy Production/craft shotguns?`,
         answers : `Preferably during rate ups due to its high costs. Low priority otherwise since it's use at this stage of the game is for getting non-5${star} SGs and them not being widely used.`,
         tags : [dTag.TDOLL, dTag.PROD]
     },
@@ -902,8 +902,8 @@ export const cardData = Object.freeze([
         tags : [dTag.NEWB]
     },
     {
-        questions : `What does Svarog High Altitude EMP Bombing Aid Commissions do and how do I get more of them?`,
-        answers : `Pulls from the entire pool where the entire pool is the X in the X/100 units.<br>
+        questions : `What does the Aid Commissions do and how do I get more of them?`,
+        answers : `Also known as Svarog/High Altitude EMP Bombing, it pulls from the entire pool where the entire pool is the X in the X/100 units.<br>
         Weekly quest (8 standard captures), daily log-in, major events, shop (whenever a new banner starts).`,
         tags : [dTag.ITEM, dTag.PA, dTag.SHOP]
     },
@@ -1500,7 +1500,7 @@ export const cardData = Object.freeze([
         answers : `${youtubeEmbed('PLoDB_FcnOA5zXkZ9XmQMTog1F7uIRZ_Qa')}<br>
         ${googleEmbed('https://docs.google.com/document/d/1W5JzUGaC_fL5itce05WnkHcu7wX_sEn2vQlbgQNeKAk')}`,
         tags : [dTag.LORE, dTag.ANNIV]
-    },  //@PL4Z0akElhimzHHiVMCozfUn1B6tYKjwPR playlist by redditor u/paperrabbit. New by u/ConductorBichir.
+    },  //PL4Z0akElhimzHHiVMCozfUn1B6tYKjwPR playlist by redditor u/paperrabbit. New by u/ConductorBichir.
     {
         questions : `My team says Ammo/Ration depleted. How do I fill it up?`,
         answers : `${list(true,
@@ -1761,7 +1761,7 @@ export const cardData = Object.freeze([
         tags : [dTag.HOC, dTag.FST, dTag.EQUIP, dTag["3P"]]
     },
     {
-        questions : `How do I change my adjutant?`,
+        questions : `How do I change my assistant/adjutant?`,
         answers : `Commander Level > Base Management (bottom-left).<br>
         You can also change each one's background.`,
         tags : [dTag.MISC]
@@ -1775,6 +1775,16 @@ export const cardData = Object.freeze([
         questions : `How do I dye my commander's clothes?`,
         answers : `Use an Infinite Surprise Dye or a Colorful Dye on a costume piece. Note that not every piece is dyeable.`,
         tags : [dTag.CMDR, dTag.SKIN]
+    },
+    {
+        questions : `Where can I get a dyeable and free commander costume?`,
+        answers : `Shattered Connexions.`,
+        tags : [dTag.CMDR, dTag.SKIN]
+    },
+    {
+        questions : `Why does the iOS version crash a lot?`,
+        answers : `Grapevine: Mix iOS RAM overload prevention and GFL memory leak, and you have a totally definitely good time.`,
+        tags : [dTag.TECH, dTag.APPLE]
     },
     {
         questions : ``,
