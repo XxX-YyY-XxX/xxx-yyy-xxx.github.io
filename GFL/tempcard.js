@@ -382,8 +382,9 @@ export const cardData = Object.freeze([
     {
         questions : `What is Anchored Construction?`,
         answers : `There are two types of Anchored Construction, new dolls and starter.<br>
-        ${link('Pity System for newly added production dolls', 'https://redd.it/szdua2')}. Appears on the rate up for them which is on Saturdays and Sundays. Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate up.<br>
-        ${link(`Pity System for new players ${altStyle('and for veterans not bothering with it', TextStyle.STRIKE)}`, 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681')}.
+        ${list(false,
+            link('Pity System for newly added production dolls', 'https://redd.it/szdua2') + ". Appears on the rate up for them which is on Saturdays and Sundays. Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate up.",
+            link(`Pity System for new players ${altStyle('and for veterans not bothering with it', TextStyle.STRIKE)}`, 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681') + '.')}<br>
         ${altStyle('Points of Interest:', TextStyle.BOLD)}<br>
         ${list(false, 'Anchor rate-up is closed once a doll (two for starter anchor) has been anchored.')}`,
         tags : [dTag.PROD, dTag.IMPT, dTag.TECH]
@@ -538,7 +539,7 @@ export const cardData = Object.freeze([
     {
         questions : `Is there a way for my game to feel smoother?`,
         answers : `${link('Gamepress article.', 'https://gamepress.gg/girlsfrontline/fixing-gfl-client-lag-possible-workarounds')}<br>
-        ${link('Decompressed obb.', 'https://redd.it/mroqui')} Removes damage numbers, the main source of in-battle lag.<br>
+        ${link('Decompressed obb.', 'https://www.mediafire.com/file/r3iwixgyhkafr77/main.375.com.sunborn.girlsfrontline.en.obb/file')}<br>
         ${link('DIY decompression.', 'https://www.reddit.com/r/girlsfrontline/comments/lvwwtv/weekly_commanders_lounge_march_02_2021/gpugenl/')}`,
         tags : [dTag.MISC]
     },
@@ -560,16 +561,14 @@ export const cardData = Object.freeze([
                     'HK45 + SpectreM4',
                     'HK45 + Desert Eagle',
                     'Stechkin + Desert Eagle']})
-            )}
-        or ${spoilerSummary('Unity Skills',
+            )} or ${spoilerSummary('Unity Skills',
             'Additional skill when the paired dolls are in the same echelon.' +
             descriptionList({
                 'Operation Starchaser' : ['Grizzly + PzB29', 'AK-Alfa + M82'],
                 'Her Smile' : ['G36 + Springfield']})
-            )}
-        . Found in the Data Room.`,
-        tags : [dTag.SIDE]
-    },  //Get Friend Gossips Confirmed Pairs list and Unity Skill pairings.
+            )}. Found in the Data Room.`,
+        tags : [dTag.SIDE, dTag.SKILL]
+    },
     {
         questions : `What is Central Data for?`,
         answers : `Unlocking the corresponding FST, promoting said FST, and used as a Data Patch if 5${star}.`,
@@ -612,8 +611,7 @@ export const cardData = Object.freeze([
         questions : `Which dolls should I duplicate?`,
         answers : `${link('Matsuda notes.', 'https://gfl.matsuda.tips/post/worthwhiledupes')}<br>
         ${link('Gamepress suggestions.', 'https://gamepress.gg/girlsfrontline/t-doll-duping-guide')} Some details may not be applicable.<br>
-        ${spoilerSummary('Discord recommendations.', image('./assets/images/RecommendedDupeGuns.png'))}<br>
-        Note that duplication is not mandatory for progression and ranking.`,
+        ${spoilerSummary('Discord recommendations.', image('./assets/images/RecommendedDupeGuns.png'))}`,
         tags : [dTag.TDOLL]
     },  //Jesse, Varz, etc.
     {
@@ -1797,6 +1795,17 @@ export const cardData = Object.freeze([
         questions : `Why does the iOS version crash a lot?`,
         answers : `Grapevine: Mix iOS RAM overload prevention and GFL memory leak, and you have a totally definitely good time.`,
         tags : [dTag.TECH, dTag.APPLE]
+    },
+    {
+        questions : `How do I do EXP Sim?`,
+        answers : `Deploy one doll that can clear the whole map. Rewards 93 CRs on Advanced.`,
+        tags : [dTag.SIMS]
+    },  //@Check. Add SCR gain.
+    {
+        questions : `What are Data Patches for and how do I get them?`,
+        answers : `Used for iterating FSTs (the red ${star}). Can also be used across all FSTs.<br>
+        You can get them by getting FST-specific Central Data that have been 5${star}'d or by Code Refactoring.`,
+        tags : [dTag.HOC, dTag.FST, dTag.LEVEL, dTag.ITEM]
     },
     {
         questions : ``,

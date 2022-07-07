@@ -102,6 +102,8 @@
 > - [2.09 Newbie Anchor Rates.](https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/id4yn3q/) [Part 2.](https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/id6m89a/) [Part 3.](https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/id8vtq2/)
 >
 > - [SG Reload Speed.](https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/icydo4t/)
+>
+> - [9A-91 SPEQ.](https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/idrpih1/)
 
 >RoboCat
 >
@@ -303,7 +305,55 @@ M4 MOD II + self-buff RF (usually IWS) + 3 HG (usually ROF buffers).
 
 3MG(armor tiles, 2nd+ clip skills)2SG. As long as your SGs take 1DMG from her, you can swap some MGs for HGs.
 
+#Others
 
+>What does the Download Data button in the settings do?
+
+[Basically fairy and equipment texture, and dorm-related stuff.](https://old.reddit.com/r/girlsfrontline/comments/gziv26/weekly_commanders_lounge_june_09_2020/fut4man/)
+
+>Is there a rate-up in this game? If so, how do they work?
+
+[Production Rate-Up Guide.](https://www.gamepress.gg/girlsfrontline/gfl-explained-rate-up)
+
+>How long does it take to max out Kalina's affection?
+
+[A very long time.](https://docs.google.com/spreadsheets/u/0/d/1rshL9qGZfmuacCzjs7GdLN4qNs_ZWRoJNn-1vTwr6hc/htmlview#) Note that you can increase it by collecting an affection point from her at the shop or by buying things from the shop.
+
+>Can I change the censored sprites to uncensored/rejected ones?
+
+Apparently no since it'll replace it back into the default file.
+
+>I bought the L2D background but I saw nothing move. Is this really L2D?
+
+If you won't move then it wouldn't. Yes, panoramic^sorta L2D.
+
+>How do I buy gems if I use APK?
+
+[..."Highly likely to be from APK." I ain't sure, m'kay?](https://old.reddit.com/r/girlsfrontline/comments/mzp707/polarised_light_megathread/gx0p8on/)
+
+>How do I use a True Core Mask?
+
+Shop>Event
+
+>Guides show more echelons deployed than regular heliports in the map. What am I missing?
+
+Heavy Heliports>Top Tab>Choose Echelon.
+
+>I noticed during battle that the skill icons change order. How and why does it change?
+
+[Explanation and how to manipulate it.](https://old.reddit.com/r/girlsfrontline/comments/oeqgwt/weekly_commanders_lounge_july_06_2021/h48qu1v/)
+
+>Are there anymore analyses?
+
+[Github 1.](https://github.com/markhydroxyl/GFL-notes/tree/main/tls)
+
+>How can I start reading Griffin Memories?
+
+Get all the dolls involved in the story. Tap a story and fill the bar at the top to progress. You can fill it up by doing the missions at the right side of the bar.
+
+> Is there a limit to using Friend Echelons?
+
+20\. [This is where you can see how many support calls you have used, courtesy of BSJ.](https://imgur.com/7VHlmlN) The counter rises whenever you deploy a support echelon, win or lose, griffin or friend.
 
 
 
