@@ -148,9 +148,12 @@ function spoilerSummary(summaryName, details) {
 /** @param {Object} dictOfArray \{key : descriptions[]} */
 function descriptionList(dictOfArray) {
     var descs = '';
-    for (const descObject in dictOfArray) {
-        descs += `<dt>${descObject}</dt>` + dictOfArray[descObject].map(val => `<dd>${val}</dd>`).join('');
+    for (const [title, array] of Object.entries(dictOfArray)) {
+        descs += `<dt>${title}</dt>` + array.map(val => `<dd>${val}</dd>`).join('');
     }
+    /* for (const descObject in dictOfArray) {
+        descs += `<dt>${descObject}</dt>` + dictOfArray[descObject].map(val => `<dd>${val}</dd>`).join('');
+    } */
     return `<dl>${descs}</dl>`;
 }
 //#endregion
