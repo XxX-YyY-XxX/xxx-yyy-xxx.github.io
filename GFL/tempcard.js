@@ -1406,12 +1406,13 @@ export const cardData = Object.freeze([
     {
         questions : `Is there a guide on how to build echelons/team compositions?`,
         answers : `${descriptionList({
-            'Mixed' : [image('./assets/images/EchelonComps.png')],
+            'Mixed' : [spoilerSummary("CheneyQWER's infographic.", image('./assets/images/EchelonComps.png'))],
             'Coalition Echelons' : [link('Reddit flowchart post.', 'https://redd.it/rkvisq'),
                 link('Gamepress list of units and build suggestions.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units')],
             'Tactical Doll Echelons' : [link("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv')]
         })}<br>
-        Shouldn't be a gospel but a good starting point nonetheless.`,
+        Shouldn't be a gospel but a good starting point nonetheless.<br>
+        ${link('u/UnironicWeeaboo tips.', 'https://old.reddit.com/r/girlsfrontline/comments/vmhs0x/weekly_commanders_lounge_june_28_2022/ie3bw95/')}`,
         tags : [dTag.ECH, dTag.COALITION, dTag.TDOLL]
     },
     {
@@ -1809,6 +1810,11 @@ export const cardData = Object.freeze([
         answers : `Used for iterating FSTs (the red ${star}). Can also be used across all FSTs.<br>
         You can get them by getting FST-specific Central Data that have been 5${star}'d or by Code Refactoring.`,
         tags : [dTag.HOC, dTag.FST, dTag.LEVEL, dTag.ITEM]
+    },
+    {
+        questions : `Can I get Black Cards if I have a dupe of Luffberry skin?`,
+        answers : `7000 Friend Points, take it or leave it.`,
+        tags : [dTag.TDOLL, dTag.SKIN, dTag.OJ, dTag.ITEM]
     },
     {
         questions : ``,

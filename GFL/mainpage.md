@@ -281,6 +281,8 @@ Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr)
 
 [Debuff checks.](https://old.reddit.com/r/girlsfrontline/comments/v1l5po/weekly_commanders_lounge_may_31_2022/ib9u41r/)
 
+[Buying in Google.](https://old.reddit.com/r/girlsfrontline/comments/vmhs0x/weekly_commanders_lounge_june_28_2022/ie1rojk/)
+
 #Account Management
 
 >How do I bind my account?
@@ -355,7 +357,9 @@ Get all the dolls involved in the story. Tap a story and fill the bar at the top
 
 20\. [This is where you can see how many support calls you have used, courtesy of BSJ.](https://imgur.com/7VHlmlN) The counter rises whenever you deploy a support echelon, win or lose, griffin or friend.
 
+#Totally Random Things
 
+[YZ n GR](https://old.reddit.com/r/girlsfrontline/comments/u6ztfo/weekly_commanders_lounge_april_19_2022/i5d03x7/)
 
 
 
