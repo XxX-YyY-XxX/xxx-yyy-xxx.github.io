@@ -104,8 +104,7 @@ function googleEmbed(docLink) {
 
 /** @param {string} videoID Youtube video or playlist ID*/
 function youtubeEmbed(videoID) {
-    var identifier = videoID.length == 11 ? videoID : `videoseries?list=${videoID}`
-    return `<iframe src="https://www.youtube.com/embed/${identifier}" allowfullscreen></iframe>`
+    return `<iframe src="https://www.youtube.com/embed/${videoID.length == 11 ? videoID : `videoseries?list=${videoID}`}" allowfullscreen></iframe>`
 }
 
 /** @param permalink ...comments/${permalink}/?...*
@@ -116,9 +115,8 @@ function redditEmbed(permalink) {                                       //needs 
 
 /** @param {Array} headerArray Nullable value @param {Array[]} arrayOfArrays */
 function table(headerArray, ...arrayOfArrays) {
-    headerArray = headerArray ? `<thead><tr>${headerArray.map(val => `<th>${val}</th>`).join('')}</tr></thead>` : '';
     return `<table>
-        ${headerArray}
+        ${headerArray ? `<thead><tr>${headerArray.map(val => `<th>${val}</th>`).join('')}</tr></thead>` : ''}
         <tbody>
             ${arrayOfArrays.map(val1 => `<tr>${val1.map(val2 => `<td>${val2}</td>`).join('')}</tr>`).join('')}
         </tbody>    
@@ -147,13 +145,8 @@ function spoilerSummary(summaryName, details) {
 
 /** @param {Object} dictOfArray \{key : descriptions[]} */
 function descriptionList(dictOfArray) {
-/*     var descs = '';
-    for (const [title, array] of Object.entries(dictOfArray)) {
-        descs += `<dt>${title}</dt>` + array.map(val => `<dd>${val}</dd>`).join('');
-    }
-    return `<dl>${descs}</dl>`;*/
     return `<dl>
-        ${Object.entries(dictOfArray).map(([title, array]) => `<dt>${title}</dt>` + array.map(val => `<dd>${val}</dd>`).join('')).join('')}
+        ${Object.entries(dictOfArray).map(([title, array]) => `<dt>${title}</dt>${array.map(val => `<dd>${val}</dd>`).join('')}`).join('')}
     </dl>`;
 }
 //#endregion
@@ -359,6 +352,18 @@ export const cardData = Object.freeze([
         questions : `When should I begin trying to produce fairies/do Heavy Equipment Constructions (HEC)?`,
         answers : `When you have sufficient income for 4 resources and cores. Ideally ASAP since raising one to 5${star} takes a considerable amount of time.`,
         tags : [dTag.FAIRY, dTag.PROD, dTag.IMPT]
+    },
+    {
+        questions : `Is there a guide on how to build echelons/team compositions?`,
+        answers : `${descriptionList({
+            'Mixed' : [spoilerSummary("CheneyQWER's infographic.", image('./assets/images/EchelonComps.png'))],
+            'Coalition Echelons' : [link('Reddit flowchart post.', 'https://redd.it/rkvisq'),
+                link('Gamepress list of units and build suggestions.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units')],
+            'Tactical Doll Echelons' : [link("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv')]
+        })}<br>
+        Shouldn't be a gospel but a good starting point nonetheless.<br>
+        ${link('u/UnironicWeeaboo tips.', 'https://old.reddit.com/r/girlsfrontline/comments/vmhs0x/weekly_commanders_lounge_june_28_2022/ie3bw95/')}`,
+        tags : [dTag.ECH, dTag.COALITION, dTag.TDOLL, dTag.IMPT]
     },
     {
         questions : `What is kiting?`,
@@ -1402,18 +1407,6 @@ export const cardData = Object.freeze([
         questions : `What's the uncensor recipe?`,
         answers : `522/320/404/137 for EN, 666/666/666/666 everywhere else... probably.`,
         tags : [dTag.TDOLL, dTag.SKIN]
-    },
-    {
-        questions : `Is there a guide on how to build echelons/team compositions?`,
-        answers : `${descriptionList({
-            'Mixed' : [spoilerSummary("CheneyQWER's infographic.", image('./assets/images/EchelonComps.png'))],
-            'Coalition Echelons' : [link('Reddit flowchart post.', 'https://redd.it/rkvisq'),
-                link('Gamepress list of units and build suggestions.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units')],
-            'Tactical Doll Echelons' : [link("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv')]
-        })}<br>
-        Shouldn't be a gospel but a good starting point nonetheless.<br>
-        ${link('u/UnironicWeeaboo tips.', 'https://old.reddit.com/r/girlsfrontline/comments/vmhs0x/weekly_commanders_lounge_june_28_2022/ie3bw95/')}`,
-        tags : [dTag.ECH, dTag.COALITION, dTag.TDOLL]
     },
     {
         questions : `When will the costumes go to the Black Card Exchange?`,
