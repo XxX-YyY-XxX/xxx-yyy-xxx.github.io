@@ -502,7 +502,7 @@ export const cardData = Object.freeze([
     },
     {
         questions : `I've heard of GFAlarm. Is it safe to use?`,
-        answers : `${link('Gamepress breakdown.', 'https://gamepress.gg/girlsfrontline/how-use-gfalarm-girls-frontline-alarm')}`,
+        answers : `${link('Gamepress breakdown.', 'https://gamepress.gg/girlsfrontline/how-use-gfalarm-girls-frontline-alarm')} Also useful for getting data of HOc Chips.`,
         tags : [dTag["3P"]]
     },
     {
@@ -1029,8 +1029,8 @@ export const cardData = Object.freeze([
     },
     {
         questions : `If I delete my unused speqs, will I be able to recover them?`,
-        answers : `As of 2.09, dismantled/disassembled SPEQs can now be ${spoilerSummary('recovered/retrieved', image('./assets/images/SPEQRecover.png', 'From u/UnironicWeeaboo'))}.`,
-        tags : [dTag.SPEQ]
+        answers : `As of 2.09, dismantled/disassembled SPEQs can now be ${spoilerSummary('recovered/retrieved', image('./assets/images/SPEQRecover.png', 'From u/UnironicWeeaboo'))}. Collab SPEQs can be found under the Limited tab.`,
+        tags : [dTag.SPEQ, dTag.COLLAB]
     },
     {
         questions : `Is there a way to expand the armory, or am I stuck with 100 doll slots forever?`,
@@ -1808,6 +1808,26 @@ export const cardData = Object.freeze([
         questions : `Can I get Black Cards if I have a dupe of Luffberry skin?`,
         answers : `7000 Friend Points, take it or leave it.`,
         tags : [dTag.TDOLL, dTag.SKIN, dTag.OJ, dTag.ITEM]
+    },
+    {
+        questions : `How exactly does the Devastation Card work?`,
+        answers : `Boosts all out-of-combat damage.`,
+        tags : [dTag.OJ]
+    },
+    {
+        questions : `How does Enhancement work in Luffberry Chess?`,
+        answers : `Gives permanent buffs to a doll.`,
+        tags : [dTag.OJ]
+    },
+    {
+        questions : `How can I get T-Doll skins?`,
+        answers : `${descriptionList({
+            'Shop' : ['Dedicated gem-bought shop.', 'Event shop during seasonal events.'],
+            'Resupply' : ['Banners and Reruns.', 'Black Card Exchange.'],
+            'Mini-events' : ['Mini-events.'],
+            'Ranking Rewards' : ['Arctic Warfare only.']
+        })}`,
+        tags : [dTag.TDOLL, dTag.SKIN]
     },
     {
         questions : ``,

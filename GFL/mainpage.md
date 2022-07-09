@@ -211,7 +211,7 @@ Dolls with oath animations.
 
 Numbers - 34419187811450531753
 
-#GFL Multimedia
+# GFL Multimedia
 
 [GFL Music Library.](https://girlsfrontline.kr/db/musicplayer/) [Another.](http://gfwiki.org/w/%E9%9F%B3%E4%B9%90%E9%89%B4%E8%B5%8F)
 
@@ -237,7 +237,9 @@ GFL's [free-for-all cursed images compilation.](https://drive.google.com/drive/f
 
 [Github resource 1.](https://github.com/Dimbreath/GirlsFrontlineData)
 
-#Nice Things To Have
+[Assets dump.](https://drive.google.com/drive/folders/1h4Vex9N6QU3ru_HbwE7aYtZrbKv3PwQX)
+
+# Nice Things To Have
 
 [CE Fromula.](https://old.reddit.com/r/girlsfrontline/comments/kqtpcv/weekly_commanders_lounge_january_05_2021/gifxq8v/)
 
@@ -283,7 +285,7 @@ Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr)
 
 [Buying in Google.](https://old.reddit.com/r/girlsfrontline/comments/vmhs0x/weekly_commanders_lounge_june_28_2022/ie1rojk/)
 
-#Account Management
+# Account Management
 
 >How do I bind my account?
 
@@ -307,7 +309,7 @@ M4 MOD II + self-buff RF (usually IWS) + 3 HG (usually ROF buffers).
 
 3MG(armor tiles, 2nd+ clip skills)2SG. As long as your SGs take 1DMG from her, you can swap some MGs for HGs.
 
-#Others
+# Others
 
 >What does the Download Data button in the settings do?
 
@@ -357,11 +359,57 @@ Get all the dolls involved in the story. Tap a story and fill the bar at the top
 
 20\. [This is where you can see how many support calls you have used, courtesy of BSJ.](https://imgur.com/7VHlmlN) The counter rises whenever you deploy a support echelon, win or lose, griffin or friend.
 
-#Totally Random Things
+# Totally Random Things
 
 [YZ n GR](https://old.reddit.com/r/girlsfrontline/comments/u6ztfo/weekly_commanders_lounge_april_19_2022/i5d03x7/)
 
+# Newbie Guides
 
+>How's the gameplay like?
+
+Node-based TRPG for maps, RTS for battles.
+
+[Top play.](https://twitter.com/i/status/1388742810623381507)
+
+>I've heard things about Newbie Career Quests. What is it and how do I get it?
+
+[Things that newbie commanders can use to boost their early game.](https://redd.it/co9j0z)
+
+[Available in Quests button>Career Quests tab.](https://gamepress.gg/girlsfrontline/new-career-quests-and-progression-full-list-quest-rewards)
+
+Remember to do them all in order as given by the Career Quest.
+
+>I think I drove myself into a wall not doing things efficiently. Do I have to restart my account to progress better?
+
+Nah. You'll be just fine continuing. Just do things better from now on.
+
+>I can't hit the enemies in night missions. What do I do?
+
+Read the above answer again. Anyway, to elaborate, your accuracy is multiplied by 0.1 so a 100 accuracy which may or may not have a scope equipped will turn to 10. And this is before all skills and buffs are taken into account.
+
+>Help. My Echelon is not good enough to tackle a specific group of enemies.
+
+1. CE is a trash metric in this case.
+
+2. Post your echelon and dolls using Imgur.
+
+3. Do it in the latest [Lounge](https://old.reddit.com/r/girlsfrontline/search/?q=Weekly+Commanders+Lounge+author%3AAutoModerator&sort=new&restrict_sr=on&t=month).
+
+>What would I miss if I start now?
+
+Aside from collab dolls, collab fairies, collab equipments, ID backgrounds, and icons? None that I can think of.
+
+>What should I focus on as a beginner?
+
+At minimum
+
+- 2 ARSMG to help in clearing events, 2 RFHG due to meta, and 1 MGSG for special fights.
+
+- 8 echelons, where 4 are in permanent logistics.
+
+- Forward Basecamp for passive CR and core income.
+
+- Intelligence Center for generating chips which will be the bottleneck for fully maxed HOCS.
 
 
 
