@@ -209,7 +209,8 @@ export const cardData = Object.freeze([
         answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/fairies')}<br>
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Technical_Fairies')} Unupdated rework skills.<br>
         ${link('GFC guide Part 1.', 'https://www.gflcorner.com/fairy/')} Fairies up to CT only.<br>
-        ${spoilerSummary('GFC guide Part 2.', googleEmbed('https://docs.google.com/spreadsheets/d/1x6_YysDi0h89jKE9vEW2_fbxi7gG7XV5jjJqX8O41rw'))} Unupdated fairy list.`,
+        ${spoilerSummary('GFC guide Part 2.', googleEmbed('https://docs.google.com/spreadsheets/d/1x6_YysDi0h89jKE9vEW2_fbxi7gG7XV5jjJqX8O41rw'))} Unupdated fairy list.<br>
+        ${spoilerSummary('Jesse #6406 doc.', googleEmbed('https://docs.google.com/document/d/1dXZkOmAR0SWqL7UKCxmTP2hUPjpoRhskbJHn1ZlpNWc'))}`,
         tags : [dTag.FAIRY, dTag.PRIME]
     },
     {
@@ -475,14 +476,15 @@ export const cardData = Object.freeze([
         questions : `For limited-time bonuses (i.e. auto-battles, logistics), when are the rewards calculated?`,
         answers : `${descriptionList({
            'If the runs can be cancelled without penalty, rewards are calculated at the end.' : [
-                'The "Use Battery" bingo mission when exp-training HOCs.'
+                'The "Use Battery" bingo mission when exp-training HOCs.',
+                'Auto-Battles.'
             ],
            "If they can't be cancelled, or is cancellable with a penalty or cost (ie quick tickets), calculated at the start." : [
                 'Expedition rewards.',
                 'Productions.'
            ]
         })}`,
-        tags : [dTag.SYSMECH, dTag.MINI, dTag.EXPED, dTag.PROD]
+        tags : [dTag.SYSMECH, dTag.MINI, dTag.EXPED, dTag.PROD, dTag.AUTO]
     },
     {
         questions : `How does Armor Penetration work?`,
@@ -959,9 +961,15 @@ export const cardData = Object.freeze([
     },
     {
         questions : `How do friend batteries work?`,
-        answers : `Friend batteries recharge at 3am and 3pm UTC-8. The number of charges/batteries depends on the number of dorms your friend has. Use Netlify if you want to know when it resets. And as the name suggests, it only appears on your friend's dorms, not on any strangers (especially on a Random Visit).`,
+        answers : `${list(false,
+            'Friend batteries recharge at 3am and 3pm UTC-8.',
+            'The amount of charges/batteries depend on the number of dorms your friend has.',
+            'Use Netlify if you want to know when it resets.',
+            'A set number of people can claim one once per cycle.',
+            "As the name suggests, it only appears on your friend's dorms, not on any strangers (especially on a Random Visit)."
+        )}`,
         tags : [dTag.FRIEND, dTag.ITEM]
-    },
+    },  //@Clarify
     {
         questions : `Is there an optimal recipe guide I could use for my production?`,
         answers : `${link('Applicable Reddit Post.', 'https://redd.it/gfmelo')}<br>
@@ -1206,9 +1214,9 @@ export const cardData = Object.freeze([
     },
     {
         questions : `How many Quick Autobattle Tickets does it cost per stage?`,
-        answers : `${lessEqual} 1 hour: 1 ticket<br>
-        1-2 hours: 2 tickets<br>
-        2+ hours: 3 tickets`,
+        answers : `${lessEqual} 1 hour: 1 ticket per run.<br>
+        1-2 hours: 2 tickets per run.<br>
+        2+ hours: 3 tickets per run.`,
         tags : [dTag.AUTO, dTag.ITEM]
     },
     {
@@ -1284,7 +1292,8 @@ export const cardData = Object.freeze([
     },
     {
         questions : `What're the rewards for the Defense Drill?`,
-        answers : `${link('Matsuda Guide and Line-up, circa 2.08.', 'https://gfl.matsuda.tips/post/defdrill')}<br>
+        answers : `Unlocks after clearing 2-4N.<br>
+        ${link('Matsuda Guide and Line-up, circa 2.08.', 'https://gfl.matsuda.tips/post/defdrill')}<br>
         ${altStyle('2.09 waves', TextStyle.BOLD)}:<br>
         ${spoilerSummary('Discord Strats.', image('./assets/images/DiscordDefenseDrill.png'))}<br>
         ${spoilerSummary('General BLT vid.', youtubeEmbed('P-GLrBNvFVs'))}<br>
@@ -1772,7 +1781,7 @@ export const cardData = Object.freeze([
         answers : `Commander Level > Base Management (bottom-left).<br>
         You can also change each one's background.`,
         tags : [dTag.MISC]
-    },
+    },  //@Visual
     {
         questions : `How do I edit my Friend Card?`,
         answers : `Friend > ID Card Tab`,
@@ -1828,6 +1837,16 @@ export const cardData = Object.freeze([
             'Ranking Rewards' : ['Arctic Warfare only.']
         })}`,
         tags : [dTag.TDOLL, dTag.SKIN]
+    },
+    {
+        questions : `How do I know which dolls are in the Targeted rate up?`,
+        answers : `Scrolling banner at the bottom-left of the home screen.`,
+        tags : [dTag.PROD, dTag.TDOLL]
+    },
+    {
+        questions : `What are auto-battles for?`,
+        answers : `Saves your sanity from painful-AF-to-grind-for-drops maps for starters.`,
+        tags : [dTag.AUTO, dTag.PRIME]
     },
     {
         questions : ``,

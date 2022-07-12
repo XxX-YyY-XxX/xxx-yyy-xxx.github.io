@@ -152,6 +152,38 @@ class ToggleCheck {
         return bool;
     }
 }
+
+class RadioButton {
+    //#radioButtons;
+    #radioFunctions;
+    #currentChecked;
+
+    /** @param {string} name Name of the radio group.*/
+    constructor(name) {
+        //this.#radioButtons = Array.from(document.getElementsByName(name));
+        //for (const buttons of this.#radioButtons)
+        for (const buttons of Array.from(document.getElementsByName(name)))
+            if (buttons.checked)
+                this.#currentChecked = buttons;
+    }
+
+    /** @param {string} value Value of the radio element. @param {function} callback Requires HTMLInput parameter. */
+    addFunc(value, callback) {
+        this.#radioFunctions[value] = callback;
+    }
+
+    addmulti(functionsObject) {
+        this.#radioFunctions = functionsObject;
+    }
+
+    run(checkedButton) {
+        if (checkedButton !== this.#currentChecked) {
+            this.#radioFunctions[this.#currentChecked.value](this.#currentChecked);
+            this.#radioFunctions[checkedButton.value](checkedButton);
+            this.#currentChecked = checkedButton;
+        }
+    }
+}
 //#endregion
 
 

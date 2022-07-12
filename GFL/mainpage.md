@@ -104,7 +104,8 @@
 > - [SG Reload Speed.](https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/icydo4t/)
 >
 > - [9A-91 SPEQ.](https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/idrpih1/)
-
+>
+> - [Anti-damage sim propaganda ft. SVCh.](https://old.reddit.com/r/girlsfrontline/comments/vrsp23/weekly_commanders_lounge_july_05_2022/if05cy9/)
 >RoboCat
 >
 > - [???](https://old.reddit.com/r/girlsfrontline/comments/qkzc9s/weekly_commanders_lounge_november_02_2021/hjjynq0/)
@@ -171,8 +172,6 @@ Custom Battle Sim Time Limit: 5 minutes.
 
 FCCs apparently only appears if Neural Upgrade is unlocked.
 
-Beat 2-4N to unlock Defense Drill.
-
 Skill Level 8 is generally a good stopping point for dolls in terms of energy expenditure.
 
 LTLX skill pushback bosses.
@@ -196,6 +195,8 @@ Battle tactics per echelon formation.
 Speech bubble emotes.
 
 How to skip tutorial.
+
+Where to preview L2D backgrounds.
 
 # Unanswered
 
@@ -395,10 +396,6 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 
 3. Do it in the latest [Lounge](https://old.reddit.com/r/girlsfrontline/search/?q=Weekly+Commanders+Lounge+author%3AAutoModerator&sort=new&restrict_sr=on&t=month).
 
->What would I miss if I start now?
-
-Aside from collab dolls, collab fairies, collab equipments, ID backgrounds, and icons? None that I can think of.
-
 >What should I focus on as a beginner?
 
 At minimum
@@ -410,17 +407,6 @@ At minimum
 - Forward Basecamp for passive CR and core income.
 
 - Intelligence Center for generating chips which will be the bottleneck for fully maxed HOCS.
-
-
-
-
-
-
-
-
-
-
-
 
 # For Fixing and Peer Review
 
