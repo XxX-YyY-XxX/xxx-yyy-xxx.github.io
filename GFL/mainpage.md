@@ -154,6 +154,8 @@ https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge
 
 https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/ide5o74/
 
+https://old.reddit.com/r/girlsfrontline/comments/vrsp23/weekly_commanders_lounge_july_05_2022/if1iimg/
+
 # Random Info
 
 Red node KCCO mechs count towards the armored enemies mission.
@@ -241,8 +243,6 @@ GFL's [free-for-all cursed images compilation.](https://drive.google.com/drive/f
 [Assets dump.](https://drive.google.com/drive/folders/1h4Vex9N6QU3ru_HbwE7aYtZrbKv3PwQX)
 
 # Nice Things To Have
-
-[CE Fromula.](https://old.reddit.com/r/girlsfrontline/comments/kqtpcv/weekly_commanders_lounge_january_05_2021/gifxq8v/)
 
 [Pre-mission flavor text.](https://old.reddit.com/r/girlsfrontline/comments/kma337/weekly_commanders_lounge_december_29_2020/ghziik1/)
 

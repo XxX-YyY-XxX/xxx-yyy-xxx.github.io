@@ -6,12 +6,6 @@
 
 > <blockquote class="twitter-tweet"><p lang="en" dir="ltr">We modified some names to avoid licensing risk. We thank you for your understanding.</p>&mdash; Girls&#39; Frontline-EN Official (@GirlsFrontlineE) <a href="https://twitter.com/GirlsFrontlineE/status/1001058278728548354?ref_src=twsrc%5Etfw">May 28, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-### How do I know the final value of the doll stats? And what are the caps for each stat?
-
-> [Matsuda Formula.](https://gfl.matsuda.tips/post/basicformula)
->
-> 99999 for final damage. FOR ROF, it's listed on the formation screen, but in reality, it's by 5, so max for 120 is 116, i.e. 116-120 ROF has no difference. Crit Rate is 100% as per common sense.
-
 ### Can I set the damaged art as default for dolls?
 
 > Only on the main screen as an adjutant, unless you want them critically damaged forever.

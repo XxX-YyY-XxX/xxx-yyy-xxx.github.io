@@ -20,7 +20,7 @@ export const dTag = Object.freeze({
         TDOLL : Object.freeze({val : 'TacticalDolls', desc : 'Anything T-Doll related. Use as secondary tag.'}),
             LEDOLL : Object.freeze({val : 'CycleDropDolls', desc : 'Reward dolls that now wander the rerun hell.'}),
         COALITION : Object.freeze({val : 'CoalitionUnits', desc : 'PA counterpart of Tactical Dolls.'}),
-        EQUIP : Object.freeze({val : 'Equipments', desc : 'Gun attachments.'}),
+        EQUIP : Object.freeze({val : 'Equipments', desc : 'Gun attachments, FST chips, PA chips.'}),
             SPEQ : Object.freeze({val : 'SpecialEquipments', desc : 'Equips specific to a doll.'}),
         ITEM : Object.freeze({val : 'ConsumableItems', desc : 'Tickets, cores, gems, batteries, shop items...'}),
             TCM : Object.freeze({val : 'TrueCoreMask', desc : `Used to redeem 5${star} prod dolls.`}),
@@ -175,7 +175,8 @@ export const cardData = Object.freeze([
     },  //youtubeEmbed('vqvPpO1vKqw') - Privated
     {
         questions : `What is Combat Effectiveness?`,
-        answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ce')}`,
+        answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ce')}<br>
+        ${link('CE Fromula.', 'https://old.reddit.com/r/girlsfrontline/comments/kqtpcv/weekly_commanders_lounge_january_05_2021/gifxq8v/')}`,
         tags : [dTag.CE, dTag.PRIME]
     },
     {
@@ -1853,6 +1854,17 @@ export const cardData = Object.freeze([
         questions : `How do I get Friend ID icons?`,
         answers : `Resupply gacha (10 pulls), shop or clear reward during events, or Friend Shop.`,
         tags : [dTag.MISC]
+    },
+    {
+        questions : `How do I know the final value of the doll stats? And what are the caps for each stat?`,
+        answers : `${link('Matsuda Formula.', 'https://gfl.matsuda.tips/post/basicformula')}<br>
+        99999 for final damage. FOR ROF, it's listed on the formation screen, but in reality, it's by 5, so max for 120 is 116, i.e. 116-120 ROF has no difference. Crit Rate is 100% as per common sense.`,
+        tags : [dTag.SYSMECH, dTag.TDOLL]
+    },
+    {
+        questions : ``,
+        answers : ``,
+        tags : []
     },
     {
         questions : ``,
