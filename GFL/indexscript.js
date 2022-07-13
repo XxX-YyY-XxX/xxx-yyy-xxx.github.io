@@ -2,13 +2,10 @@ import {Compare, RadioButton, removeHTMLTag, randInt, reloadIFrame as reload, ch
 import {cardData, dTag} from "./tempcard.js";
 
 //#region Constants
-//const radioInputs = Array.from(document.getElementsByName('input-type'));
 const toggleableTagsField = document.getElementById('tags-list');
 const searchTextField = document.getElementById('search-text');
 const searchParams = new URLSearchParams(location.search);
 //#region RadioButton
-//doesnt seem to actually run
-console.time('check')
 const inputButtons = new RadioButton('input-type',
     {
         search(button) {
@@ -30,7 +27,6 @@ const inputButtons = new RadioButton('input-type',
         searchTextField.name = button.value;
     }
 );
-console.timeEnd('check')
 //#endregion
 //#endregion
 
@@ -110,31 +106,10 @@ window.ReloadIFrame = function(element) {
     reload(element.parentElement.previousElementSibling);
 }
 
-window.toggleInput = button => inputButtons.run(button);
-
-/* const inputPair = {
-    search(bool) {
-        searchTextField.style.display = bool ? 'inline' : 'none';
-    },
-    tags(bool) {
-        toggleableTagsField.style.display = bool ? 'block' : 'none';
-        if (!bool) {
-            for (const labeltrue of Array.from(toggleableTagsField.children).filter(label => label.firstElementChild.checked)) {
-                labeltrue.firstElementChild.checked = false
-                labeltrue.classList.remove('checked');
-            }
-        }
-    }
+/** @param {HTMLInputElement} radioButton */
+window.toggleInput = function(radioButton) {
+    inputButtons.run(radioButton);
 }
-
-window.toggleInput = function(button) {
-    searchTextField.value = '';
-    for (const radioButton of radioInputs) {
-        checkedLabel(radioButton);
-        inputPair[radioButton.value](radioButton.checked);
-        if (radioButton.checked) searchTextField.name = radioButton.value;
-    }
-} */
 
 /** @param {HTMLInputElement} tagCheckbox */
 window.toggleTag = function(tagCheckbox) {

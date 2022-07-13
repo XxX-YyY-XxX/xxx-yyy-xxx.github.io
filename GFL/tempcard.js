@@ -1369,7 +1369,7 @@ export const cardData = Object.freeze([
         tags : [dTag.COLLAB]
     },
     {
-        questions : `Update progress is stuck at 90%/100%. What should I do?`,
+        questions : `I can't successfully log in. What should I do?`,
         answers : `Wait a minute, change WiFi connection, change to data, use VPN, restart client, delete cache, ${link('do a manual patch', 'https://github.com/lloyddunamis/gfl_manualpatch/blob/main/FullResource_readme')}, ${link('delete some files', 'https://twitter.com/Synexcu/status/1310117595094216709?s=19')}, reinstall (with minimum data first), phone restart, or a combination of any of the above coupled with sheer determination to do it for days on end.`,
         tags : [dTag.TECH]
     },

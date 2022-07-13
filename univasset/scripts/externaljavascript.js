@@ -43,6 +43,37 @@ export class Compare {
         return a - b;
     }
 }
+
+export class RadioButton {
+    #radioFunctions;
+    #currentChecked;
+    #univFunction;
+
+    /** @param {String} name Name of the radio group.
+     * @param perButton \{radioButton.value : function(radioButton) => void }
+     * @param {function(HTMLInputElement)} universal Argument is clicked button. */
+    constructor(name, perButton, universal = function() {}) {
+        //might run the functions on startup instead of set by default
+        //this.#radioFunctions = perButton;
+        for (const buttons of Array.from(document.getElementsByName(name)))
+            if (buttons.checked)    //this.#radioFunctions[buttons.value](buttons);
+                this.#currentChecked = buttons;
+        this.#radioFunctions = perButton;
+        this.#univFunction = universal;
+    }
+
+    /** Runs if clicked button is different from current checked button.
+     * @param {HTMLInputElement} checkedButton */
+    run(checkedButton) {
+        //might throw error if different button group
+        if (checkedButton !== this.#currentChecked) {
+            this.#univFunction(checkedButton);
+            this.#radioFunctions[this.#currentChecked.value](this.#currentChecked);
+            this.#radioFunctions[checkedButton.value](checkedButton);
+            this.#currentChecked = checkedButton;
+        }
+    }
+}
 //#endregion
 
 //#region Functions
@@ -152,49 +183,12 @@ class ToggleCheck {
         return bool;
     }
 }
-
-export class RadioButton {
-    #radioFunctions;
-    #currentChecked;
-    #univFunction;
-
-    /** @param {String} name Name of the radio group.
-     * @param perButton \{radioButton.value : function(radioButton) => void }
-     * @param {function(HTMLInputElement)} universal Argument is clicked button. */
-    constructor(name, perButton, universal = function() {}) {
-        for (const buttons of Array.from(document.getElementsByName(name))) {
-            console.log(buttons.value, buttons.checked)
-            if (buttons.checked)
-                this.#currentChecked = buttons;
-
-        }
-        this.#radioFunctions = perButton;
-        this.#univFunction = universal;
-    }
-
-    /** Runs if clicked button is different from current checked button.
-     * @param {HTMLInputElement} checkedButton */
-    run(checkedButton) {
-        console.log(this.#radioFunctions)
-        console.log(this.#univFunction)
-        //console.log(this.#currentChecked)
-        if (checkedButton !== this.#currentChecked) {
-            this.#univFunction(checkedButton);
-            this.#radioFunctions[this.#currentChecked.value](this.#currentChecked);
-            this.#radioFunctions[checkedButton.value](checkedButton);
-            this.#currentChecked = checkedButton;
-        }
-    }
-}
 //#endregion
 
 
 
-/*if (typeof(Storage) !== "undefined") {
-    sessionStorage.outputCards = boxes;
-} else {
-    sessionStorage.outputCards = "Sorry, your browser does not support web storage...";
-} */            
+
+//sessionStorage.outputCards = typeof(Storage) !== "undefined" ? boxes : "Sorry, your browser does not support web storage...";
 
 /*var oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
 oXHR.onreadystatechange = function() {
