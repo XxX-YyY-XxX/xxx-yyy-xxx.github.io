@@ -1850,6 +1850,11 @@ export const cardData = Object.freeze([
         tags : [dTag.AUTO, dTag.PRIME]
     },
     {
+        questions : `How do I get Friend ID icons?`,
+        answers : `Resupply gacha (10 pulls), shop or clear reward during events, or Friend Shop.`,
+        tags : [dTag.MISC]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []

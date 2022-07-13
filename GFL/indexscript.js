@@ -7,6 +7,8 @@ const toggleableTagsField = document.getElementById('tags-list');
 const searchTextField = document.getElementById('search-text');
 const searchParams = new URLSearchParams(location.search);
 //#region RadioButton
+//doesnt seem to actually run
+console.time('check')
 const inputButtons = new RadioButton('input-type',
     {
         search(button) {
@@ -28,6 +30,7 @@ const inputButtons = new RadioButton('input-type',
         searchTextField.name = button.value;
     }
 );
+console.timeEnd('check')
 //#endregion
 //#endregion
 
@@ -107,7 +110,7 @@ window.ReloadIFrame = function(element) {
     reload(element.parentElement.previousElementSibling);
 }
 
-window.toggleInput = inputButtons.run;
+window.toggleInput = button => inputButtons.run(button);
 
 /* const inputPair = {
     search(bool) {
