@@ -199,7 +199,8 @@ export const cardData = Object.freeze([
     },
     {
         questions : `How do Neural Upgrades/MODs work?`,
-        answers : `${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/gfl-explained-neural-upgrade')}<br>
+        answers : `The only way to raise dolls beyond Lv. 100.<br>
+        ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/gfl-explained-neural-upgrade')}<br>
         ${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/modding')}<br>
         ${link('GFC guide.', 'https://www.gflcorner.com/neural')}`,
         tags : [dTag.MOD, dTag.PRIME]
