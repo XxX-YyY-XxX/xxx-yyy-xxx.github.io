@@ -153,31 +153,27 @@ class ToggleCheck {
     }
 }
 
-class RadioButton {
-    //#radioButtons;
+export class RadioButton {
     #radioFunctions;
     #currentChecked;
+    #univFunction;
 
-    /** @param {string} name Name of the radio group.*/
-    constructor(name) {
-        //this.#radioButtons = Array.from(document.getElementsByName(name));
-        //for (const buttons of this.#radioButtons)
+    /** @param {String} name Name of the radio group.
+     * @param perButton \{radioButton.value : function(radioButton) => void }
+     * @param {function(HTMLInputElement)} universal Argument is clicked button. */
+    constructor(name, perButton, universal = function() {}) {
         for (const buttons of Array.from(document.getElementsByName(name)))
             if (buttons.checked)
                 this.#currentChecked = buttons;
+        this.#radioFunctions = perButton;
+        this.#univFunction = universal;
     }
 
-    /** @param {string} value Value of the radio element. @param {function} callback Requires HTMLInput parameter. */
-    addFunc(value, callback) {
-        this.#radioFunctions[value] = callback;
-    }
-
-    addmulti(functionsObject) {
-        this.#radioFunctions = functionsObject;
-    }
-
+    /** Runs if clicked button is different from current checked button.
+     * @param {HTMLInputElement} checkedButton */
     run(checkedButton) {
         if (checkedButton !== this.#currentChecked) {
+            this.#univFunction(checkedButton);
             this.#radioFunctions[this.#currentChecked.value](this.#currentChecked);
             this.#radioFunctions[checkedButton.value](checkedButton);
             this.#currentChecked = checkedButton;

@@ -1,11 +1,34 @@
-import {Compare, removeHTMLTag, randInt, reloadIFrame as reload, checkedLabel} from '/univasset/scripts/externaljavascript.js';
+import {Compare, RadioButton, removeHTMLTag, randInt, reloadIFrame as reload, checkedLabel} from '/univasset/scripts/externaljavascript.js';
 import {cardData, dTag} from "./tempcard.js";
 
 //#region Constants
-const radioInputs = Array.from(document.getElementsByName('input-type'));
+//const radioInputs = Array.from(document.getElementsByName('input-type'));
 const toggleableTagsField = document.getElementById('tags-list');
 const searchTextField = document.getElementById('search-text');
 const searchParams = new URLSearchParams(location.search);
+//#region RadioButton
+const inputButtons = new RadioButton('input-type',
+    {
+        search(button) {
+            checkedLabel(button);
+            searchTextField.style.display = button.checked ? 'inline' : 'none';
+        },
+        tags(button) {
+            checkedLabel(button);
+            toggleableTagsField.style.display = button.checked ? 'block' : 'none';
+            if (!button.checked) {
+                for (const labeltrue of Array.from(toggleableTagsField.children).filter(label => label.firstElementChild.checked)) {
+                    labeltrue.firstElementChild.checked = false
+                    labeltrue.classList.remove('checked');
+                }
+            }
+        }
+    }, function(button) {
+        searchTextField.value = '';
+        searchTextField.name = button.value;
+    }
+);
+//#endregion
 //#endregion
 
 //#region Initialize
@@ -84,7 +107,9 @@ window.ReloadIFrame = function(element) {
     reload(element.parentElement.previousElementSibling);
 }
 
-const inputPair = {
+window.toggleInput = inputButtons.run;
+
+/* const inputPair = {
     search(bool) {
         searchTextField.style.display = bool ? 'inline' : 'none';
     },
@@ -99,14 +124,14 @@ const inputPair = {
     }
 }
 
-window.toggleInput = function() {
+window.toggleInput = function(button) {
     searchTextField.value = '';
     for (const radioButton of radioInputs) {
         checkedLabel(radioButton);
         inputPair[radioButton.value](radioButton.checked);
         if (radioButton.checked) searchTextField.name = radioButton.value;
     }
-}
+} */
 
 /** @param {HTMLInputElement} tagCheckbox */
 window.toggleTag = function(tagCheckbox) {
