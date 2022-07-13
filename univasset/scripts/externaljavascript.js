@@ -172,6 +172,9 @@ export class RadioButton {
     /** Runs if clicked button is different from current checked button.
      * @param {HTMLInputElement} checkedButton */
     run(checkedButton) {
+        console.log(this.#currentChecked)
+        console.log(this.#radioFunctions)
+        console.log(this.#univFunction)
         if (checkedButton !== this.#currentChecked) {
             this.#univFunction(checkedButton);
             this.#radioFunctions[this.#currentChecked.value](this.#currentChecked);
