@@ -49,10 +49,14 @@ export class RadioButton {
     #currentChecked;
     #univFunction;
 
+    #radioGroup;
+    get radioGroup() {return this.#radioGroup;}
+
     /** @param {String} name Name of the radio group.
      * @param perButton \{radioButton.value : function(radioButton) => void }
      * @param {function(HTMLInputElement)} universal Argument is clicked button. */
     constructor(name, perButton, universal = function() {}) {
+        this.#radioGroup = name;
         //might run the functions on startup instead of set by default
         //this.#radioFunctions = perButton;
         for (const buttons of Array.from(document.getElementsByName(name)))
@@ -63,9 +67,11 @@ export class RadioButton {
     }
 
     /** Runs if clicked button is different from current checked button.
-     * @param {HTMLInputElement} checkedButton */
+     * @param {HTMLInputElement} checkedButton Must be of the same radio group. */
     run(checkedButton) {
-        //might throw error if different button group
+        if (checkedButton.name != this.#radioGroup)
+            throw `Button is not part of the "${this.#radioGroup}" radio group.`
+
         if (checkedButton !== this.#currentChecked) {
             this.#univFunction(checkedButton);
             this.#radioFunctions[this.#currentChecked.value](this.#currentChecked);
@@ -109,7 +115,7 @@ export function reloadIFrame(iframeElement) {
     iframeElement.src = temp;
 }
 
-/** @param {string} path @returns Path with no extension, extension */
+/** @param {string} path @returns [Path with no extension, extension] */
 //lastIndexOf+slice > split+replace
 export function splitExt(path) {
     //remove base url to prevent false positive
