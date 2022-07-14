@@ -45,12 +45,10 @@ export class Compare {
 }
 
 export class RadioButton {
-    #radioFunctions;
     #currentChecked;
+    #radioFunctions;
     #univFunction;
-
     #radioGroup;
-    get radioGroup() {return this.#radioGroup;}
 
     /** @param {String} name Name of the radio group.
      * @param perButton \{radioButton.value : function(radioButton) => void }
@@ -67,10 +65,12 @@ export class RadioButton {
     }
 
     /** Runs if clicked button is different from current checked button.
-     * @param {HTMLInputElement} checkedButton Must be of the same radio group. */
+     * @param {HTMLInputElement} checkedButton Must be of the same radio group.
+     * @throws RadioButtonError if "checkedButton" is from a different button group. */
     run(checkedButton) {
+        //what if no default selected button?
         if (checkedButton.name != this.#radioGroup)
-            throw `Button is not part of the "${this.#radioGroup}" radio group.`
+            throw `RadioButtonError: Button is not part of the "${this.#radioGroup}" radio group.`
 
         if (checkedButton !== this.#currentChecked) {
             this.#univFunction(checkedButton);

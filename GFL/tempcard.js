@@ -176,7 +176,7 @@ export const cardData = Object.freeze([
     {
         questions : `What is Combat Effectiveness?`,
         answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ce')}<br>
-        ${link('CE Fromula.', 'https://old.reddit.com/r/girlsfrontline/comments/kqtpcv/weekly_commanders_lounge_january_05_2021/gifxq8v/')}`,
+        ${link("u/elgatoroid's CE calculation.", 'https://old.reddit.com/r/girlsfrontline/comments/kqtpcv/weekly_commanders_lounge_january_05_2021/gifxq8v/')}`,
         tags : [dTag.CE, dTag.PRIME]
     },
     {
@@ -271,7 +271,8 @@ export const cardData = Object.freeze([
     //#region Tier Lists
     {
         questions : `Is XXX doll good and is it safe to retire them?`,
-        answers : `${link('Matsuda Quips.', 'https://gfl.matsuda.tips/dolls/')}<br>
+        answers : `Tier lists in general are a matter of countering enemies. And since the meta of this game varies wildly from event to event, most people would point to analysis links instead.
+        ${link('Matsuda Quips.', 'https://gfl.matsuda.tips/dolls/')}<br>
         ${link('Gamepress Overview.', 'https://gamepress.gg/girlsfrontline/t-dolls-list')}<br>
         ${link('KR Wiki.', 'https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0/%EC%9D%B8%ED%98%95%EB%8F%84%EA%B0%90')}<br>
         ${link("Fatalchapter's bilibili guide.", 'https://www.bilibili.com/read/readlist/rl100361')} Updated up to Jashin dolls.<br>
