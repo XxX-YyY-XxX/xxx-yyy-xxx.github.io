@@ -247,6 +247,11 @@ export const cardData = Object.freeze([
         tags : [dTag.RESUPPLY, dTag.TDOLL, dTag.SKIN, dTag.PRIME]
     },
     {
+        questions : `What are auto-battles for?`,
+        answers : `Saves your sanity from painful-AF-to-grind-for-drops maps for starters.`,
+        tags : [dTag.AUTO, dTag.PRIME]
+    },
+    {
         questions : `What does Affection do?`,
         answers : `${descriptionList({
             'Tactical Dolls' : ['At 90 and above, gives stat bonuses indicated by pink numbers.',
@@ -927,8 +932,9 @@ export const cardData = Object.freeze([
     {
         questions : `What does the Aid Commissions do and how do I get more of them?`,
         answers : `Also known as Svarog/High Altitude EMP Bombing, it pulls from the entire pool where the entire pool is the X in the X/100 units.<br>
-        Weekly quest (8 standard captures), daily log-in, major events, shop (whenever a new banner starts).`,
-        tags : [dTag.ITEM, dTag.PA, dTag.SHOP]
+        Recommended to pull one at a time since 10-pull is literally 10 1-pulls.<br>
+        Acquired from weekly quest (8 standard captures), daily log-in, major events, shop (whenever a new banner starts).`,
+        tags : [dTag.ITEM, dTag.PA]
     },
     {
         questions : `Recipe for Parachute/Paradrop Fairy?`,
@@ -1847,11 +1853,6 @@ export const cardData = Object.freeze([
         tags : [dTag.PROD, dTag.TDOLL]
     },
     {
-        questions : `What are auto-battles for?`,
-        answers : `Saves your sanity from painful-AF-to-grind-for-drops maps for starters.`,
-        tags : [dTag.AUTO, dTag.PRIME]
-    },
-    {
         questions : `How do I get Friend ID icons?`,
         answers : `Resupply gacha (10 pulls), shop or clear reward during events, or Friend Shop.`,
         tags : [dTag.MISC]
@@ -1863,10 +1864,20 @@ export const cardData = Object.freeze([
         tags : [dTag.SYSMECH, dTag.TDOLL]
     },
     {
-        questions : ``,
-        answers : ``,
-        tags : []
+        questions : `How good are AR-15 and SOP's SPEQs?`,
+        answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/star-buffs')}`,
+        tags : [dTag.SPEQ]
     },
+    {
+        questions : `What are Dream Astralites and where do I get it?`,
+        answers : `Milestone currency for Bookshelf of Memories.`,
+        tags : [dTag.ITEM, dTag.SIDE]
+    },
+    {
+        questions : `Is there a way to quickly unequip dolls?`,
+        answers : `Armory > Equipment > Remove All at bottom-right.`,
+        tags : [dTag.EQUIP]
+    },  //@Visual
     {
         questions : ``,
         answers : ``,
