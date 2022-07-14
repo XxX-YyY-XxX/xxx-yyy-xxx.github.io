@@ -1076,7 +1076,7 @@ export const cardData = Object.freeze([
                 'Shop. Especially when there is a seasonal/collab going on. Packages are also good.',
                 'Maintenance (10 weekly) and Apolotokens.']
         })}`,
-        tags : [dTag.ITEM, dTag.MAIN, dTag.MINI, dTag.EXPED, dTag.LOGI, dTag.MAJOR, dTag.SEASON, dTag.COLLAB, dTag.SHOP]
+        tags : [dTag.ITEM, dTag.RESUPPLY]
     },
     {
         questions : `Why aren't my dorm batteries appearing?`,

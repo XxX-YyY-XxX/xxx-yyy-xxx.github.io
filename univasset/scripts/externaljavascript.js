@@ -66,7 +66,7 @@ export class RadioButton {
 
     /** Runs if clicked button is different from current checked button.
      * @param {HTMLInputElement} checkedButton Must be of the same radio group.
-     * @throws RadioButtonError if "checkedButton" is from a different button group. */
+     * @throws RadioButtonError if "checkedButton" is from a different radio group. */
     run(checkedButton) {
         //what if no default selected button?
         if (checkedButton.name != this.#radioGroup)
