@@ -5,7 +5,6 @@ import {cardData, dTag} from "./tempcard.js";
 const toggleableTagsField = document.getElementById('tags-list');
 const searchTextField = document.getElementById('search-text');
 const searchParams = new URLSearchParams(location.search);
-//#region RadioButton
 const inputButtons = new RadioButton('input-type',
     {
         search(button) {
@@ -27,7 +26,6 @@ const inputButtons = new RadioButton('input-type',
         searchTextField.name = button.value;
     }
 );
-//#endregion
 //#endregion
 
 //#region Initialize

@@ -106,6 +106,7 @@
 > - [9A-91 SPEQ.](https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/idrpih1/)
 >
 > - [Anti-damage sim propaganda ft. SVCh.](https://old.reddit.com/r/girlsfrontline/comments/vrsp23/weekly_commanders_lounge_july_05_2022/if05cy9/)
+
 >RoboCat
 >
 > - [???](https://old.reddit.com/r/girlsfrontline/comments/qkzc9s/weekly_commanders_lounge_november_02_2021/hjjynq0/)
@@ -186,9 +187,7 @@ Blacklist limit: 50.
 
 Lv. 90 is the highest level-gate for majority of the dolls, due to the 5th link.
 
-# To Do
-
-Go through saved comments and own comments to get friend gossips.
+# Unanswered/To Do
 
 Battle strats per boss.
 
@@ -199,8 +198,6 @@ Speech bubble emotes.
 How to skip tutorial.
 
 Where to preview L2D backgrounds.
-
-# Unanswered
 
 List of cafe costume sets.
 
@@ -292,10 +289,6 @@ Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr)
 
 [Settings>Manage Account>Bind to your preferred account.](https://old.reddit.com/r/girlsfrontline/comments/h9zoat/weekly_commanders_lounge_june_16_2020/fvpm1q8/) You can then change devices provided that you use the same account.
 
->Can I unbind my Sunborn Account?
-
-AFAIK, can't.
-
 >How do I know when was my registration date?
 
 [Here.](https://old.reddit.com/r/girlsfrontline/comments/s6s9xj/weekly_commanders_lounge_january_18_2022/ht9ller/)
@@ -326,7 +319,7 @@ M4 MOD II + self-buff RF (usually IWS) + 3 HG (usually ROF buffers).
 
 >Can I change the censored sprites to uncensored/rejected ones?
 
-Apparently no since it'll replace it back into the default file.
+Apparently no since it'll revert back to its default file.
 
 >I bought the L2D background but I saw nothing move. Is this really L2D?
 
@@ -335,10 +328,6 @@ If you won't move then it wouldn't. Yes, panoramic^sorta L2D.
 >How do I buy gems if I use APK?
 
 [..."Highly likely to be from APK." I ain't sure, m'kay?](https://old.reddit.com/r/girlsfrontline/comments/mzp707/polarised_light_megathread/gx0p8on/)
-
->How do I use a True Core Mask?
-
-Shop>Event
 
 >Guides show more echelons deployed than regular heliports in the map. What am I missing?
 
@@ -445,10 +434,6 @@ At minimum
 ### Where can I get the limited drop/equipment in a particular map?
 
 > Enter the map>Combat Info>Rewards>Tap the one you want to get>Look for glowing enemies in the map>Defeat said enemies. You can also S Rank the map for an additional chance.
-
-### I see people have their Tdolls as their avatar in other peoples dorms. How do you do that?
-
-> In dorm, bottom-left, top-right, uncheck third checkbox.
 
 [Official Discord](https://discord.gg/gfen)
 

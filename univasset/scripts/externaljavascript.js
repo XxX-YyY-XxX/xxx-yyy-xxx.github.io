@@ -54,14 +54,12 @@ export class RadioButton {
      * @param perButton \{radioButton.value : function(radioButton) => void }
      * @param {function(HTMLInputElement)} universal Argument is clicked button. */
     constructor(name, perButton, universal = function() {}) {
-        this.#radioGroup = name;
-        //might run the functions on startup instead of set by default
-        //this.#radioFunctions = perButton;
         for (const buttons of Array.from(document.getElementsByName(name)))
-            if (buttons.checked)    //this.#radioFunctions[buttons.value](buttons);
+            if (buttons.checked)
                 this.#currentChecked = buttons;
         this.#radioFunctions = perButton;
         this.#univFunction = universal;
+        this.#radioGroup = name;
     }
 
     /** Runs if clicked button is different from current checked button.

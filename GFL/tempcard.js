@@ -1057,7 +1057,7 @@ export const cardData = Object.freeze([
     {
         questions : `Should I dummy link my dolls when corpse dragging?`,
         answers : `Recommended. Each link gives an additional 0.5x multiplier.`,
-        tags : [dTag.LEVEL]
+        tags : [dTag.TDOLL, dTag.LEVEL]
     },
     {
         questions : `I want to F2PBTW. How do I do that?`,
@@ -1068,7 +1068,7 @@ export const cardData = Object.freeze([
                 'Achievements.',
                 'Mini-Events, mainly, Keycard Events (Bingo).',
                 'Ranking participation.'],
-            'Tokens' : [link('Dailies (7 daily) and weeklies (5 weekly).', 'https://dmesse.egloos.com/m/3594243'),
+            'Tokens' : ['Dailies (7 daily) and weeklies (5 weekly).',
                 'Expedition.',
                 'Logistics (~19 weekly).',
                 'Achievements.',
@@ -1077,7 +1077,7 @@ export const cardData = Object.freeze([
                 'Maintenance (10 weekly) and Apolotokens.']
         })}`,
         tags : [dTag.ITEM, dTag.RESUPPLY]
-    },
+    },  //Site down - https://dmesse.egloos.com/m/3594243
     {
         questions : `Why aren't my dorm batteries appearing?`,
         answers : `If it's not within 11:00-14:00, 17:00-20:00, and 22:00-01:00 UTC-8, restart app.<br>
@@ -1780,8 +1780,9 @@ export const cardData = Object.freeze([
         tags : [dTag.ITEM, dTag.EQUIP, dTag.PROD]
     },
     {
-        questions : `Is the in-game chip calculator better than GFCalc?`,
-        answers : `IMO no, since it can't maximize strengths, though it is useful for temporary set-ups.<br>
+        questions : `Where is the in-game chip calculator and is it better than GFCalc?`,
+        answers : `Under that specific FST's chip page.<br>
+        IMO no, since it can't maximize strengths, though it is useful for temporary set-ups.<br>
         To use it properly, enable Preview Max-level Chip Stats.`,
         tags : [dTag.HOC, dTag.FST, dTag.EQUIP, dTag["3P"]]
     },
@@ -1878,6 +1879,37 @@ export const cardData = Object.freeze([
         answers : `Armory > Equipment > Remove All at bottom-right.`,
         tags : [dTag.EQUIP]
     },  //@Visual
+    {
+        questions : `Is there a chibi viewer for each doll?`,
+        answers : `${link('IOPWiki', 'https://iopwiki.com/wiki/Category:T-Dolls')}<br>
+        ${link('GFWiki', 'http://www.gfwiki.org/w/%E6%88%98%E6%9C%AF%E4%BA%BA%E5%BD%A2%E5%9B%BE%E9%89%B4')}`,
+        tags : [dTag.TDOLL, dTag.MISC]
+    },
+    {
+        questions : `I'm moving overseas. Will there be problems for playing the same account?`,
+        answers : `Each client is tied their specific server.`,
+        tags : [dTag.ACCT]
+    },
+    {
+        questions : `I see people have their Tdolls as their avatar in other people's dorms. How do you do that?`,
+        answers : `In dorm, bottom-left, top-right, uncheck third checkbox.`,
+        tags : [dTag.DORM]
+    },  //@Visual
+    {
+        questions : `Why does the current event not have auto-battles?`,
+        answers : `All currently running "limited" events have no auto-battles, only main chapters and campaign map have those. Why? Engagement, probably.`,
+        tags : [dTag.AUTO, dTag.MAJOR, dTag.SEASON, dTag.COLLAB]
+    },
+    {
+        questions : `Which of the enemies count as an elite?`,
+        answers : `${link('Powered by randomqwerty.', './elites')}`,
+        tags : [dTag.ENEMY]
+    },
+    {
+        questions : `Can I unbind my Sunborn Account?`,
+        answers : `AFAIK, can't.`,
+        tags : [dTag.ACCT]
+    },
     {
         questions : ``,
         answers : ``,
