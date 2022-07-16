@@ -1,6 +1,7 @@
 //#region Prototypes
 /** @param {Array} mainArray */
 Array.prototype.subsetOf = function(mainArray) {
+    //What if duplicate on subset?
     return this.every(val => mainArray.includes(val));
 }
 //#endregion
@@ -52,7 +53,7 @@ export class RadioButton {
 
     /** @param {String} name Name of the radio group.
      * @param perButton \{radioButton.value : function(radioButton) => void }
-     * @param {function(HTMLInputElement)} universal Argument is clicked button. */
+     * @param {function(HTMLInputElement) : void} universal Argument is clicked button. */
     constructor(name, perButton, universal = function() {}) {
         for (const buttons of Array.from(document.getElementsByName(name)))
             if (buttons.checked)
@@ -63,7 +64,7 @@ export class RadioButton {
     }
 
     /** Runs if clicked button is different from current checked button.
-     * @param {HTMLInputElement} checkedButton Must be of the same radio group.
+     * @param {HTMLInputElement} checkedButton Button that was interacted.
      * @throws RadioButtonError if "checkedButton" is from a different radio group. */
     run(checkedButton) {
         //what if no default selected button?
@@ -192,9 +193,8 @@ class ToggleCheck {
 
 
 
-//sessionStorage.outputCards = typeof(Storage) !== "undefined" ? boxes : "Sorry, your browser does not support web storage...";
 
-/*var oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+/*const oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
 oXHR.onreadystatechange = function() {
     if (oXHR.readyState === 4 && oXHR.status == 200)
         questionCards = JSON.parse(this.responseText);
@@ -203,4 +203,6 @@ oXHR.overrideMimeType("application/json");
 oXHR.open("GET", "/GFL/cards.json", true);          // true = ASYNCHRONOUS REQUEST (DESIRABLE), false = SYNCHRONOUS REQUEST.
 oXHR.send(); */
 
+//sessionStorage.outputCards = typeof(Storage) !== null ? boxes : "Sorry, your browser does not support web storage...";
 //iframe.contentWindow.location.reload();
+//<button type="button" ></button>

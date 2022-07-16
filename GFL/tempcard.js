@@ -100,7 +100,7 @@ function googleEmbed(docLink) {
         <iframe src="${docLink}/preview?pli=1"></iframe>
         <figcaption><a onclick="ReloadIFrame(this)">Reload Frame</a> \| ${link('Source Link', docLink)}</figcaption>
     </figure>`;
-}   //<button type="button" ></button>
+}
 
 /** @param {string} videoID Youtube video or playlist ID*/
 function youtubeEmbed(videoID) {
