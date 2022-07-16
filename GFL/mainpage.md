@@ -48,9 +48,6 @@
 # [Protocol Assimilation/Coalition Echelons](/GFL/coalition)*
 - Assimilation (mostly) pulling guides.
 
-# [Equipment](/GFL/equipments)
-- Equipment loadouts, special equipments, and upgrades.
-
 # [Dormitories](/GFL/dorms)
 - Friend batteries, pets, and posters.
 
@@ -78,8 +75,6 @@
 > - [Bingo spacing.](https://old.reddit.com/r/girlsfrontline/comments/twps7w/weekly_commanders_lounge_april_05_2022/i4czmyf/)
 >
 > - [Fairy and AK-15.](https://old.reddit.com/r/girlsfrontline/comments/sneu7n/weekly_commanders_lounge_february_08_2022/hwpgdcv/)
->
-> - [Vallhalla girls.](https://old.reddit.com/r/girlsfrontline/comments/u1tr33/weekly_commanders_lounge_april_12_2022/i51ccqd/)
 >
 > - [CE marks.](https://old.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge_may_17_2022/i997401/)
 >
@@ -445,3 +440,7 @@ Alternate way to saving a target:
 
 Tap the radar button right above "Planning Mode" the screen will have a scanning animation. Tap on Dana and you can save her as a target after tapping "Add Target". You can use this information in the future though.
 Tap the radar button again to move your echelons or terminate mission.
+
+### How good are 9A-91's SPEQs?
+
+> [Imgur album.](https://imgur.com/a/JYEgQBO)

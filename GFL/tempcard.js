@@ -276,12 +276,14 @@ export const cardData = Object.freeze([
     //#region Tier Lists
     {
         questions : `Is XXX doll good and is it safe to retire them?`,
-        answers : `Tier lists in general are a matter of countering enemies. And since the meta of this game varies wildly from event to event, most people would point to analysis links instead.
+        answers : `Tier lists in general are a matter of countering enemies. And since the meta of this game varies wildly from event to event, most people would point to analysis links instead.<br>
         ${link('Matsuda Quips.', 'https://gfl.matsuda.tips/dolls/')}<br>
         ${link('Gamepress Overview.', 'https://gamepress.gg/girlsfrontline/t-dolls-list')}<br>
         ${link('KR Wiki.', 'https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0/%EC%9D%B8%ED%98%95%EB%8F%84%EA%B0%90')}<br>
         ${link("Fatalchapter's bilibili guide.", 'https://www.bilibili.com/read/readlist/rl100361')} Updated up to Jashin dolls.<br>
-        ${link("Sijun's list.", 'https://www.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1rph1l/')} Translated by u/ConductorBichir.`,
+        ${link("Sijun's list.", 'https://www.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1rph1l/')} Translated by u/ConductorBichir.<br>
+        ${spoilerSummary('BigStupidJellyfish analyses.', list(false,
+            link('Vallhalla girls.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/valhalla')))}`,
         tags : [dTag.TDOLL, dTag.TIER]
     },
     {
@@ -802,7 +804,9 @@ export const cardData = Object.freeze([
             spoilerSummary('Forward Basecamp', list(true, 
                 'Gate Console',
                 'Loot Rack')),
-            'Protocol Control Centre',
+            spoilerSummary('Protocol Control Centre', list(true,
+                'Impulse Reactor',
+                'Tactical Chip Research Station')),
             'Intelligence Room',
             'Firing Range (Garage)',
             'Fairy Chamber',
@@ -1332,7 +1336,7 @@ export const cardData = Object.freeze([
         ['Machine Gun (MG)', 'Opening Volley', 'Random', 'Reloads/Stops shooting at around 6s<br>Weak to high evasion'],
         ['Shotgun (SG)', 'Armor Tank', 'Frontline', 'Poor evasion'])}`,
         tags : [dTag.TDOLL, dTag.NEWB]
-    },  //@Add info
+    },
     {
         questions : `How does AK-15's skill actually work?`,
         answers : `${link("BigStupidJellyfish_'s analysis.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/ak15')}`,
@@ -1909,6 +1913,11 @@ export const cardData = Object.freeze([
         questions : `Can I unbind my Sunborn Account?`,
         answers : `AFAIK, can't.`,
         tags : [dTag.ACCT]
+    },
+    {
+        questions : `Is it fine to use green equips?`,
+        answers : `Advised to use if lacking gold equips. Do calibration only on gold ones for calibration ticket efficiency. Otherwise, fine to level them up.`,
+        tags : [dTag.TDOLL, dTag.EQUIP]
     },
     {
         questions : ``,
