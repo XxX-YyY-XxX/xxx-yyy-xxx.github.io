@@ -6,9 +6,6 @@
 # [Resupply/Costumes/Furniture](/GFL/resupply)*
 - Resupply gacha and rates, skin catalouges, and furniture sets.
 
-# [Field Map](/GFL/field)*
-- Combat echelon resupplying and medal conditions.
-
 # [Combat/Battle/Skirmish](/GFL/combat)*
 - Kiting, tile and skill buffs and debuffs, and battlefield interactions.
 
@@ -102,10 +99,6 @@
 >
 > - [Anti-damage sim propaganda ft. SVCh.](https://old.reddit.com/r/girlsfrontline/comments/vrsp23/weekly_commanders_lounge_july_05_2022/if05cy9/)
 
->RoboCat
->
-> - [???](https://old.reddit.com/r/girlsfrontline/comments/qkzc9s/weekly_commanders_lounge_november_02_2021/hjjynq0/)
-
 >EarSpeaker
 >
 > - [Cheap SG tank.](https://old.reddit.com/r/girlsfrontline/comments/uc7eet/weekly_commanders_lounge_april_26_2022/i6ut0vo/)
@@ -118,7 +111,7 @@
 >
 > - [Commander skills score.](https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/idqp247/)
 
-#Android Viability Checks (Mostly on Android 12)
+# Android Viability Checks (Mostly on Android 12)
 
 https://old.reddit.com/r/girlsfrontline/comments/t9bw95/weekly_commanders_lounge_march_08_2022/i0ji2ev/
 
@@ -179,8 +172,6 @@ If spamming "one-click repair" creates multiple poop-ups, can count towards ques
 Crit rate tile CE scales proportionally with each unit's crit dmg.
 
 Blacklist limit: 50.
-
-Lv. 90 is the highest level-gate for majority of the dolls, due to the 5th link.
 
 # Unanswered/To Do
 
@@ -278,6 +269,8 @@ Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr)
 
 [Buying in Google.](https://old.reddit.com/r/girlsfrontline/comments/vmhs0x/weekly_commanders_lounge_june_28_2022/ie1rojk/)
 
+[u/elgatoroid's STC deobfuscator.](https://github.com/neko-gg/girlsfrontline-deobfuscator)
+
 # Account Management
 
 >How do I bind my account?
@@ -288,7 +281,7 @@ Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr)
 
 [Here.](https://old.reddit.com/r/girlsfrontline/comments/s6s9xj/weekly_commanders_lounge_january_18_2022/ht9ller/)
 
-#Echelon Formations
+# Echelon Formations
 
 >What's the Double Jupiter formation?
 
@@ -429,6 +422,10 @@ At minimum
 ### Where can I get the limited drop/equipment in a particular map?
 
 > Enter the map>Combat Info>Rewards>Tap the one you want to get>Look for glowing enemies in the map>Defeat said enemies. You can also S Rank the map for an additional chance.
+
+### I just had a skirmish and saw that my team isn't in proper formation. Can I fix it without quitting the map?
+
+> [*me not caring enough to paraphrase it*](https://old.reddit.com/r/girlsfrontline/comments/e8nuro/weekly_commanders_lounge_december_10_2019/fb6xvhz/)
 
 [Official Discord](https://discord.gg/gfen)
 

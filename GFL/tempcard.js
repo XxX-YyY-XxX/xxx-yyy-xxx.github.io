@@ -283,7 +283,8 @@ export const cardData = Object.freeze([
         ${link("Fatalchapter's bilibili guide.", 'https://www.bilibili.com/read/readlist/rl100361')} Updated up to Jashin dolls.<br>
         ${link("Sijun's list.", 'https://www.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1rph1l/')} Translated by u/ConductorBichir.<br>
         ${spoilerSummary('BigStupidJellyfish analyses.', list(false,
-            link('Vallhalla girls.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/valhalla')))}`,
+            link('Vallhalla girls.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/valhalla'),
+            link('AK-15.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ak15')))}`,
         tags : [dTag.TDOLL, dTag.TIER]
     },
     {
@@ -733,11 +734,6 @@ export const cardData = Object.freeze([
         tags : [dTag.RESUPPLY, dTag.TDOLL, dTag.SKIN, dTag.FURN]
     },
     {
-        questions : `Can the Liu clones get stat buffs?`,
-        answers : `${link('IOPWiki Trivia section says yes.', 'https://iopwiki.com/wiki/General_Liu#Trivia')}`,
-        tags : [dTag.TDOLL, dTag.SKILL]
-    },
-    {
         questions : `Why is the PA notification in the home screen always lit up?`,
         answers : `There are available pulls left to burn.`,
         tags : [dTag.PA]
@@ -953,13 +949,6 @@ export const cardData = Object.freeze([
         Equipment Enhancement multiplies the base stat up to Lv. 10. Doesn't matter if Equip Enhancement Pills or fodder equips are used, it's merely a matter of resource cost per point raised.`,
         tags : [dTag.EQUIP, dTag.LEVEL, dTag.NEWB]
     },
-    {
-        questions : `Does Hanyang Type 88 still do skipping stones?`,
-        answers : `${link('Yes she does.', 'https://www.reddit.com/r/girlsfrontline/comments/qkzc9s/weekly_commanders_lounge_november_02_2021/hjvcbmt/')}<br>
-        ${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/hanyangle-2')}<br>
-        Apparently also happens on tiles 7 and 9.`,
-        tags : [dTag.TDOLL, dTag.SKILL]
-    },  //reddit fix    
     {
         questions : `How viable is 2AR2SMG1HG?`,
         answers : `${link('BigStupidJellyfish analysis vs. 3AR2SMG.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/2v3ar')}<br>
@@ -1338,11 +1327,6 @@ export const cardData = Object.freeze([
         tags : [dTag.TDOLL, dTag.NEWB]
     },
     {
-        questions : `How does AK-15's skill actually work?`,
-        answers : `${link("BigStupidJellyfish_'s analysis.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/ak15')}`,
-        tags : [dTag.TDOLL, dTag.SKILL]
-    },
-    {
         questions : `What's the time frame for modding dolls?`,
         answers : `From their release until EOS.`,
         tags : [dTag.MOD]
@@ -1666,11 +1650,6 @@ export const cardData = Object.freeze([
         tags : [dTag.EMU]
     },
     {
-        questions : `Can C-93's passive trigger with self-debuffs?`,
-        answers : `Yes.`,
-        tags : [dTag.TDOLL, dTag.SKILL]
-    },
-    {
         questions : `Why do I get the "Ammo/Ration depleted" warning and sometimes not?`,
         answers : `You'll get the warning when you lack either of them, when you can see the enemy, and when you engage them first in battle.`,
         tags : [dTag.MAP]
@@ -1739,6 +1718,7 @@ export const cardData = Object.freeze([
             'As an individual unit' : ['Leveling up',
                 'Equipments',
                 'Skill Levels',
+                'Dummy-linking',
                 'MODs'],
             'As a team' : ['Tile synergy',
                 'Skill synergy',
@@ -1918,6 +1898,30 @@ export const cardData = Object.freeze([
         questions : `Is it fine to use green equips?`,
         answers : `Advised to use if lacking gold equips. Do calibration only on gold ones for calibration ticket efficiency. Otherwise, fine to level them up.`,
         tags : [dTag.TDOLL, dTag.EQUIP]
+    },
+    {
+        questions : `How do I get the gold medals in maps?`,
+        answers : `${list(false,
+            'Read the Gold Medal description in the combat summary.',
+            'Never retreat your team from the field map either by losing skirmishes (losses) or manual retreating (withdrawing).',
+            "Never repair fielded teams (red warning at the bottom left tells you this, don't miss it).",
+            'Retreating a doll from the battle phase/skirmish is fine. Really, anything that you SHOULD DO/ SHOULD NOT DO are already listed.',
+            'Retreating Support Echelons does not prevent you from gold medals, nor does support kills (shown in green +#) count towards.')}`,
+        tags : [dTag.MAP]
+    },  //@Visual + Fix + Clarify
+    {
+        questions : `What level is a good stopping point for raising dolls?`,
+        answers : `Lv. 90 is the last level to get a power spike, before MODs, due to the 5th link.`,
+        tags : [dTag.TDOLL, dTag.LEVEL]
+    },
+    {
+        questions : `Which T-Doll skill's quirks should I be aware of?`,
+        answers : `${descriptionList({
+            'General Liu' : [link('Clones can get stat buffs, albeit with restrictions.', 'https://iopwiki.com/wiki/General_Liu#Trivia')],
+            'C-93' : ["Passive can trigger in response to other dolls' self-debuffs."],
+            'Hanyang Type 88' : [link('Can still miss on certain positions.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/hanyangle-2')]
+        })}`,
+        tags : [dTag.TDOLL, dTag.SKILL]
     },
     {
         questions : ``,
