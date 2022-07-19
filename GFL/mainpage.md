@@ -98,6 +98,8 @@
 > - [9A-91 SPEQ.](https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/idrpih1/)
 >
 > - [Anti-damage sim propaganda ft. SVCh.](https://old.reddit.com/r/girlsfrontline/comments/vrsp23/weekly_commanders_lounge_july_05_2022/if05cy9/)
+>
+> - [Data sim data threshold.](https://old.reddit.com/r/girlsfrontline/comments/vx5s4p/weekly_commanders_lounge_july_12_2022/ig9g907/)
 
 >EarSpeaker
 >
@@ -170,8 +172,6 @@ LTLX skill pushback bosses.
 If spamming "one-click repair" creates multiple poop-ups, can count towards quests.
 
 Crit rate tile CE scales proportionally with each unit's crit dmg.
-
-Blacklist limit: 50.
 
 # Unanswered/To Do
 

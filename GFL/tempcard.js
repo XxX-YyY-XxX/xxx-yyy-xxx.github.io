@@ -163,6 +163,7 @@ export const cardData = Object.freeze([
         answers : `First is grinding them on leveling maps, mainly through ${spoilerSummary('corpse dragging', 
             `Also called Poor Run or Beggar Run, it is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.<br>
             ${spoilerSummary("Ceia's 0-2 drag guide.", googleEmbed('https://docs.google.com/document/u/0/d/1PkxJ7ObdGW_cS_qbzAxQ_hoC1SFse3HNYWlnywZfPuo'))}<br>
+            ${spoilerSummary("Ceia's SC 3-1Ex guide.", youtubeEmbed('UdmOZqypu_c'))}<br>
             ${link('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide')}<br>
             ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/optimizing-leveling-introduction')}<br>
             ${link('GFLCorner guide.', 'https://www.gflcorner.com/efficient-leveling-guide/')}<br>
@@ -767,10 +768,10 @@ export const cardData = Object.freeze([
         tags : [dTag.FRIEND, dTag.ECH]
     },
     {
-        questions : `Which map is best for auto-battles?`,
+        questions : `Which map is best for auto-battles, or just leveling in general?`,
         answers : `Includes EXP per fight and level threshold to EXP penalty.<br>
         ${googleEmbed('https://docs.google.com/spreadsheets/d/1e_1oAa9Qm_tmWqbgFQca8ohzo29qcjctIwyIU9Mc1H0')}`,
-        tags : [dTag.AUTO, dTag.LEVEL]
+        tags : [dTag.AUTO, dTag.TDOLL, dTag.LEVEL]
     },
     {
         questions : `Where can I fight Goliath Factories?`,
@@ -1919,9 +1920,20 @@ export const cardData = Object.freeze([
         answers : `${descriptionList({
             'General Liu' : [link('Clones can get stat buffs, albeit with restrictions.', 'https://iopwiki.com/wiki/General_Liu#Trivia')],
             'C-93' : ["Passive can trigger in response to other dolls' self-debuffs."],
-            'Hanyang Type 88' : [link('Can still miss on certain positions.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/hanyangle-2')]
+            'Hanyang Type 88' : [link('Can still miss on certain positions.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/hanyangle-2')],
+            'FX05' : [link('Does not activate skill on max ROF.', 'https://old.reddit.com/r/girlsfrontline/comments/vx5s4p/weekly_commanders_lounge_july_12_2022/ig4n5sr/')]
         })}`,
         tags : [dTag.TDOLL, dTag.SKILL]
+    },
+    {
+        questions : `Why do some attacks ignore my doll's armor/gets orange hits?`,
+        answers : `Enemy has higher AP or they hit with explosive attacks.`,
+        tags : [dTag.ENEMY, dTag.BATTLE]
+    },
+    {
+        questions : `Is there a limit to how many people I can blacklist?`,
+        answers : `50.`,
+        tags : [dTag.MISC]
     },
     {
         questions : ``,
