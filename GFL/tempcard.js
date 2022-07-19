@@ -74,7 +74,7 @@ export const dTag = Object.freeze({
     MARP : Object.freeze({val : 'FourResources', desc : 'Manpower, Ammunition, Rations, Parts.'}),
     REF : Object.freeze({val : 'Compilation', desc : 'Reference compilations.'}),
     CE : Object.freeze({val : 'CombatEffectiveness', desc : 'Clutch metric.'}),
-    //KALINA : "Kalina",
+    KALINA : Object.freeze({val : 'Kalina', desc : 'Overworked logistics officer.'}),
 });
 
 //#region Functions
@@ -95,12 +95,15 @@ function list(ordered, ...any) {
 }
 
 /** @param {string} docLink Ends in alphanumeric */
+//create lazy load using details element
 function googleEmbed(docLink) {
     return `<figure>
         <iframe src="${docLink}/preview?pli=1"></iframe>
-        <figcaption><a onclick="ReloadIFrame(this)">Reload Frame</a> \| ${link('Source Link', docLink)}</figcaption>
+        <figcaption><a onclick="ReloadIFrame(this)">Reload Frame</a> \| <a href="${docLink}">Source Link</a></figcaption>
     </figure>`;
 }
+
+//document.querySelectorAll('')
 
 /** @param {string} videoID Youtube video or playlist ID*/
 function youtubeEmbed(videoID) {
@@ -263,7 +266,7 @@ export const cardData = Object.freeze([
                 'Enables oathing at 100 for ringleaders only.'],
             'Kalina' : ['Raised through daily hearts or spending gems<!-- on non-infrastructures-->.']
         })}`,
-        tags : [dTag.LOVE, dTag.PRIME, dTag.OATH, dTag.TDOLL, dTag.COALITION]
+        tags : [dTag.LOVE, dTag.PRIME, dTag.OATH, dTag.TDOLL, dTag.COALITION, dTag.KALINA]
     },
     {
         questions : `What is Luffberry Chess?`,
@@ -718,7 +721,7 @@ export const cardData = Object.freeze([
         questions : `What are the resources I can get from Kalina's Daily Gift?`,
         answers : `${image('./assets/images/DailyGift.png')}<br>
         Gift amount apparently scales with her affection.`,
-        tags : [dTag.MARP, dTag.ITEM]
+        tags : [dTag.MARP, dTag.ITEM, dTag.KALINA]
     },
     {
         questions : `What is Corpse Whipping?`,
@@ -1937,6 +1940,16 @@ export const cardData = Object.freeze([
         answers : `50.`,
         tags : [dTag.MISC]
     },
+    {
+        questions : `Can I use duplicates to raise my doll's MOD level?`,
+        answers : `Yes, unless you're modding 2★ dolls. First, go to factory then dismantle all dupes. When you get enough cores, you can use them to raise MOD levels.`,
+        tags : [dTag.MOD]
+    },
+    {
+        questions : `How do I bind my account?`,
+        answers : `${link('Settings>Manage Account>Bind to your preferred account.', 'https://old.reddit.com/r/girlsfrontline/comments/h9zoat/weekly_commanders_lounge_june_16_2020/fvpm1q8/')} You can then change devices provided that you use the same account.`,
+        tags : [dTag.ACCT]
+    },  //@Visual
     {
         questions : ``,
         answers : ``,

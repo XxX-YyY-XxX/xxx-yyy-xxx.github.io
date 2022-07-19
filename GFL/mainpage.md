@@ -274,10 +274,6 @@ Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr)
 
 # Account Management
 
->How do I bind my account?
-
-[Settings>Manage Account>Bind to your preferred account.](https://old.reddit.com/r/girlsfrontline/comments/h9zoat/weekly_commanders_lounge_june_16_2020/fvpm1q8/) You can then change devices provided that you use the same account.
-
 >How do I know when was my registration date?
 
 [Here.](https://old.reddit.com/r/girlsfrontline/comments/s6s9xj/weekly_commanders_lounge_january_18_2022/ht9ller/)

@@ -2,10 +2,6 @@
 
 # Neural Upgrade/MOD
 
-### Can I use duplicates to raise my doll's MOD level?
-
-> Yes, unless you're modding 2★ dolls. First, go to factory then dismantle all dupes. When you get enough cores, you can use them to raise MOD levels.
-
 ### I'm planning to use a max level oathed MOD doll to farm surplus exp. Is that a good idea?
 
 > As good an idea as running an unmodded max level doll.
