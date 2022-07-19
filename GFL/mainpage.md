@@ -264,6 +264,7 @@ Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr)
 [pengu L2D viewer](https://pengupengupengu.github.io/live2d-viewer-web/)
 
 [Merch shops.](https://old.reddit.com/r/girlsfrontline/comments/rg2l32/weekly_commanders_lounge_december_14_2021/hpcn3dk/)
+[Part 2.](https://old.reddit.com/r/girlsfrontline/comments/vx5s4p/weekly_commanders_lounge_july_12_2022/ighb8ie/)
 
 [Debuff checks.](https://old.reddit.com/r/girlsfrontline/comments/v1l5po/weekly_commanders_lounge_may_31_2022/ib9u41r/)
 

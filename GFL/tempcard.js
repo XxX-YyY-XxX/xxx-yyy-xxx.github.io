@@ -352,7 +352,8 @@ export const cardData = Object.freeze([
     {
         questions : `Where and how can I get my favorite gun/doll/unit/character?`,
         answers : `${descriptionList({
-            'Factory Production' : [`5${star} dolls that can drop here are the only ones redeemable through True Core Masks, bar spaghetti.`],
+            'Factory Production' : [`5${star} dolls that can drop here are the only ones redeemable through True Core Masks, bar spaghetti.`,
+                spoilerSummary('Gamepress infographic for resource efficient recipes.', image('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/2020-01/rateup-crafting-infographic.jpg'))],
             'Rescue Drops' : ['For "Limited" dolls in Combat Missions, they are limited to that particular map. Not limited by time, but by place. Until Rescue Event happens.',
                 link(`Farmable dolls in campaign maps, both 3${star} monthlies and debut dolls.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
                 'During collabs, major events, side events, and Rescue Event/Boss Bully, event rewards become temporarily available for farming.'],
@@ -1374,7 +1375,7 @@ export const cardData = Object.freeze([
         questions : `What are these General Data I keep getting?`,
         answers : `Used for FSTs that are not yet 5${star}. Limitations being only usable to FSTs in the gacha pool, and the data can't be used for iteration.<br>
         If you plan to big brain with this, churn your FST-specific central data to patches first, because they're the priority data to use before general data.`,
-        tags : [dTag.ITEM, dTag.HOC, dTag.FST]
+        tags : [dTag.HOC, dTag.FST, dTag.ITEM]
     },
     {
         questions : `Just noticed that the Black Market Shop in the Forward Basecamp has a Costumes tab. Anyone know what that's about?`,
@@ -1559,7 +1560,7 @@ export const cardData = Object.freeze([
     },
     {
         questions : `I don't know how to change the AI behaviour of my support/friend echelon, anyone can help me?`,
-        answers : `Tap on them and there should be options at their feet.`,
+        answers : `Double tap them and there should be options at their feet.`,
         tags : [dTag.FRIEND, dTag.ECH, dTag.MAP]
     },  //@Visual
     {
@@ -1638,7 +1639,8 @@ export const cardData = Object.freeze([
         questions : `How do I strengthen FSTs?`,
         answers : `${list(false,
             'Leveling up mostly by SCR',
-            'Iterations (only available at LV100 and 5★)',
+            `Raising ${star}s using their central data or general data`,
+            'Iterations by data patches (only available at LV100 and 5★)',
             'Enhancements using pills',
             'Skill levels',
             'Tetrimino chips')}`,
