@@ -32,7 +32,8 @@ const inputButtons = new RadioButton('input-type',
 document.getElementById('version-number').innerHTML = cardData.length;
 
 //tooltip is only visible when tag is hovered over. 
-toggleableTagsField.innerHTML = Object.values(dTag).sort((a, b) => Compare.string(a, b, 'val')).map(tag => 
+//Compare.string(a, b, x => x.val)
+toggleableTagsField.innerHTML = Object.values(dTag).sort((a, b) => a.val.localeCompare(b.val)).map(tag => 
     `<label class="tags tooltip">
         <input type="checkbox" onclick="toggleTag(this)" value="${tag.val}">${tag.val}
         <span class="tooltiptext">${tag.desc}</span>

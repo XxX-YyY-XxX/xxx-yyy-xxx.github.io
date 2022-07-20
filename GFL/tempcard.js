@@ -673,7 +673,8 @@ export const cardData = Object.freeze([
     },
     {
         questions : `How can I resupply a single doll and not the whole echelon?`,
-        answers : `The Trifectra of Rejuvenation compels you. Or just do a one-man echelon (this one's a corpse drag staple).`,
+        answers : `${altStyle('Single-Doll Echelon', TextStyle.QOUTE)}<br>
+        ${image('./assets/images/OneDollEchelon.png')}`,
         tags : [dTag.TDOLL, dTag.MAP, dTag.ECH]
     },
     {

@@ -25,22 +25,19 @@ export class HTMLSearch {
 
 //#region Class
 /** (a, b) for ascending, (b, a) for descending */
+//dynamic output through input types
 export class Compare {
-    /** @param {String[]} keys supply values in order @returns {Number} */
-    static string(a, b, ...keys) {
-        for (const key of keys) {
-            a = a[key];
-            b = b[key];
-        }
+    /** @param {function(any) : string} key @returns {number} */
+    static string(a, b, key = null) {
+        if (key !== null)
+            [a, b] = [key(a), key(b)];
         return a.localeCompare(b);
     }
 
-    /** @param {String[]} keys supply values in order @returns {Number} */
-    static number(a, b, ...keys) {
-        for (const key of keys) {
-            a = a[key];
-            b = b[key];
-        }
+    /** @param {function(any) : number} key @returns {number} */
+    static number(a, b, key = null) {
+        if (key !== null)
+            [a, b] = [key(a), key(b)];
         return a - b;
     }
 }
