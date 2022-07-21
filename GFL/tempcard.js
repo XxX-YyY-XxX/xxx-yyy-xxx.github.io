@@ -80,11 +80,15 @@ export const dTag = Object.freeze({
 //#region Functions
 /** @param {string} link */
 function image(link, onHover = null, onLoadFail = 'Image loading failed.') {
+    //use figcaption instead of hover
+    //might use details instead
     return `<img src="${link}" alt="${onLoadFail}" ${onHover ? `title="${onHover}"` : ''}>`
 }
 
-/** @param {string} link */
+/** @param {string} linkText Text or image URL. @param {string} link */
 function link(linkText, link) {
+    if (linkText.startsWith('https://') || linkText.startsWith('./assets/images/'))
+        linkText = `<img src="${linkText}" alt="Image loading failed.">`
     return `<a href="${link}">${linkText}</a>`;
 }
 
@@ -197,7 +201,7 @@ export const cardData = Object.freeze([
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
         ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-first-impressions-revamped')}<br>
         ${spoilerSummary("Cleista's basic Twitter guide.", 
-            `${link(image('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096'), 'https://twitter.com/CleistaCeleste/status/1409824210571214849')}<br>
+            `${link('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096', 'https://twitter.com/CleistaCeleste/status/1409824210571214849', 'Mini pulling and tierlist guide.')}<br>
             Applicable mainly for "I really want to get this ringleader."`)}<br>
         Apparently, this unlocks after beating 7-5 Normal.`,
         tags : [dTag.PA, dTag.PRIME]
@@ -375,7 +379,8 @@ export const cardData = Object.freeze([
                         ['12', 'MAT-49',    'N/A'],
                         ['13', 'Defender',  'N/A'])),
                 link(`Farmable dolls in campaign maps, both 3${star} monthlies and debut dolls.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
-                'During collabs, major events, side events, and Rescue Event/Boss Bully, event rewards become temporarily available for farming.'],
+                'During collabs, major events, side events, and Rescue Event/Boss Bully, event rewards become temporarily available for farming.',
+                'Dolls obtainable from random nodes, however unlikely.'],
             'Event Rewards' : [link("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls')],
             'Shop' : ['Mostly applicable to collab dolls or by using TCM.']
         })}<br>
@@ -629,10 +634,10 @@ export const cardData = Object.freeze([
     },
     {
         questions : `What best-in-slot (BiS) equipments should I use on my dolls?`,
-        answers : `${spoilerSummary('General equipments.', `${link(image('./assets/images/EquipInfograph.png'), 'https://big-stupid-jellyfish.github.io/GFMath/pages/newquip')}<br>AS-Val at night follows the day schema. SOP and STAR is SPEQ + VFL/PEQ. M16 is SPEQ + Exo/Armor.`)}<br>
+        answers : `${spoilerSummary('General equipments.', `${link('./assets/images/EquipInfograph.png', 'https://big-stupid-jellyfish.github.io/GFMath/pages/newquip', 'Equipment guide.')}<br>AS-Val at night follows the day schema. SOP and STAR is SPEQ + VFL/PEQ. M16 is SPEQ + Exo/Armor.`)}<br>
         ${spoilerSummary('#2 Chip equipment.', list(false,
             spoilerSummary('BigStupidJellyfish_', 
-                `${link(image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png'), 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')}<br>
+                `${link('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png', 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips', 'Chips flowchart.')}<br>
                 ${googleEmbed('https://docs.google.com/spreadsheets/d/14xV50MSMBFGgN75E-Gy10WtzACb_KZdpxRKCYQ6FDQA')}`),
             spoilerSummary('mis', googleEmbed('https://docs.google.com/spreadsheets/d/1c0JhaSX9WyL3EB-7RCDE4NrfzR1YuWdYWidQ_06-PrQ'))
         ))}<br>
@@ -1620,7 +1625,7 @@ export const cardData = Object.freeze([
         questions : `Is there a list of game terms and their abbreviations? And is there any for dolls' nicknames?`,
         answers : `${link('u/BigStupidJellyfish_.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/terms')} Includes in-game and community terms.<br>
         ${link('u/Kipdid.', 'https://www.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge_may_17_2022/i9fmiwm/')}<br>
-        ${link('u/totestemp', 'https://www.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge_may_17_2022/i972mqd/')}`,
+        ${link('u/totestemp.', 'https://www.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge_may_17_2022/i972mqd/')}`,
         tags : [dTag.MISC]
     },
     {
@@ -1983,6 +1988,12 @@ export const cardData = Object.freeze([
         answers : `MOD stories.`,
         tags : [dTag.SIDE, dTag.MOD]
     },  //@Clarify
+    {
+        questions : `Will I lose the tile buffs if my dolls retreated/moved/lose link/die ?`,
+        answers : `${spoilerSummary('No.', youtubeEmbed('tQRqcTDmAKE'))}<br>
+        On that note, retreating dolls who had their buffs activate will not remove said buff. Also, tile buffs don't degrade even if your dummy count does.`,
+        tags : [dTag.TDOLL, dTag.SKILL, dTag.BATTLE]
+    },
     {
         questions : ``,
         answers : ``,

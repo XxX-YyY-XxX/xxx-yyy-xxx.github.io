@@ -157,8 +157,6 @@ Maximum routing for Planning Mode is 40.
 
 Swapped echelon in ELID zones take no damage.
 
-Dolls obtainable from random nodes.
-
 Feeding cakes to "In Battle" dolls through the dorm.
 
 Do event rankings before the last 3 days of the event to prevent getting cucked by the eventual server overload.

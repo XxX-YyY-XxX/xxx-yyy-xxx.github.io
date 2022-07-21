@@ -2,14 +2,6 @@
 
 # Combat/Battle/Skirmish
 
-### Will I lose the tile buffs if my dolls retreated/moved/lose link/die ?
-
-> <iframe width="640" height="360" src="https://www.youtube.com/embed/tQRqcTDmAKE" frameborder="0" allowfullscreen></iframe>
->
-> TLDW: No.
->
-> On that note, retreating dolls who had their buffs activate will not remove said buff. Also, tile buffs don't degrade even if your dummy count does.
-
 ### Does retreating a doll during battle/skirmish have an effect on affection points?
 
 > Nope. They ONLY lose some if they or other dolls in the group died during mob battles. And auto-battles DO NOT decrease/affect^(w/e the case may be)^ affection points.
