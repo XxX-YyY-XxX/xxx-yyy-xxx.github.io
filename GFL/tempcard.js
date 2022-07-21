@@ -9,7 +9,7 @@ export const dTag = Object.freeze({
             MAJOR : Object.freeze({val : 'MajorEvents', desc : 'Main story. Added to Campaign after a while.'}),
             SEASON : Object.freeze({val : 'SeasonalEvents', desc : 'Happens every New Year, X-mas, Halloween, etc.'}),
             COLLAB : Object.freeze({val : 'Collaboration', desc : 'Reason: "He liked it."'}),
-        MAIN : Object.freeze({val : 'CombatMissions', desc : 'Main missions aka Chapters 1-13.'}),
+        MAIN : Object.freeze({val : 'CombatMissions', desc : 'Main missions aka Chapters 0-13.'}),
             AUTO : Object.freeze({val : 'AutoBattles', desc : 'Lazy farming.'}),
         LOGI : Object.freeze({val : 'Logistics', desc : 'Main source of MARP and tickets.'}),
         SIMS : Object.freeze({val : 'CombatSimulations', desc : 'Place to get upgrade materials.'}),
@@ -264,10 +264,10 @@ export const cardData = Object.freeze([
                 'If a doll dies in a non-boss fight, that particular doll will lose 10 points. Everyone else loses 5 points.'],
             'Coalition Units' : ['If a unit dies in battle, only that unit will lose affection.',
                 'Enables oathing at 100 for ringleaders only.'],
-            'Kalina' : ['Raised through daily hearts or spending gems<!-- on non-infrastructures-->.']
+            'Kalina' : ['Raised through daily hearts or spending gems.']    //Spending gems on infrastructures raises hearts?
         })}`,
         tags : [dTag.LOVE, dTag.PRIME, dTag.OATH, dTag.TDOLL, dTag.COALITION, dTag.KALINA]
-    },
+    },  //@Clarify - https://old.reddit.com/r/girlsfrontline/comments/w2n556/weekly_commanders_lounge_july_19_2022/igti9c1/
     {
         questions : `What is Luffberry Chess?`,
         answers : `GFL version of 100% Orange Juice, I guess?<br>
@@ -357,13 +357,30 @@ export const cardData = Object.freeze([
         answers : `${descriptionList({
             'Factory Production' : [`5${star} dolls that can drop here are the only ones redeemable through True Core Masks, bar spaghetti.`,
                 spoilerSummary('Gamepress infographic for resource efficient recipes.', image('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/2020-01/rateup-crafting-infographic.jpg'))],
-            'Rescue Drops' : ['For "Limited" dolls in Combat Missions, they are limited to that particular map. Not limited by time, but by place. Until Rescue Event happens.',
+            'Rescue Drops' : [
+                spoilerSummary('"Limited" drops in Combat Missions.', 'Limited to that particular map. Not limited by time, but by place. Until Rescue Event happens.' +
+                    table(['Chapter', 'Doll', 'SPEQ'],
+                        ['00', 'N/A',       'N/A'],
+                        ['01', 'G17',       'Springfield AP'],
+                        ['02', 'FMG-9',     'BAR Ammo Box'],
+                        ['03', 'CZ-805',    'AR-15 HV'],
+                        ['04', 'M21',       'MP5 Exo'],
+                        ['05', 'M249SAW',   'Mosin Cape'],
+                        ['06', 'M1A1',      'M16 Armor'],
+                        ['07', 'PSM',       'MG3 Ammo Box'],
+                        ['08', 'SCW',       'FAMAS Optics'],
+                        ['09', 'Ak 5',      'Stechkin Silencer'],
+                        ['10', 'XM3',       'TAR21 Chip'],
+                        ['11', 'Mk46',      'N/A'],
+                        ['12', 'MAT-49',    'N/A'],
+                        ['13', 'Defender',  'N/A'])),
                 link(`Farmable dolls in campaign maps, both 3${star} monthlies and debut dolls.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
                 'During collabs, major events, side events, and Rescue Event/Boss Bully, event rewards become temporarily available for farming.'],
             'Event Rewards' : [link("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls')],
             'Shop' : ['Mostly applicable to collab dolls or by using TCM.']
-        })}`,
-        tags : [dTag.TDOLL, dTag.IMPT, dTag.LEDOLL, dTag.PROD, dTag.MAJOR, dTag.CAMPAIGN, dTag.MINI, dTag.TCM, dTag.MAIN, dTag.COLLAB, dTag.SHOP]
+        })}<br>
+        ${spoilerSummary('Dolls EN are missing.', image('https://cdn.discordapp.com/attachments/951085201658871820/991552853313335456/en_missing_dolls_ms_in_less_than_10_months_edition.png'))}`,
+        tags : [dTag.TDOLL, dTag.IMPT, dTag.LEDOLL, dTag.PROD, dTag.MAJOR, dTag.CAMPAIGN, dTag.MINI, dTag.TCM, dTag.MAIN, dTag.COLLAB, dTag.SHOP, dTag.SPEQ]
     },
     {
         questions : `When should I begin trying to produce fairies/do Heavy Equipment Constructions (HEC)?`,
@@ -1951,6 +1968,21 @@ export const cardData = Object.freeze([
         answers : `${link('Settings>Manage Account>Bind to your preferred account.', 'https://old.reddit.com/r/girlsfrontline/comments/h9zoat/weekly_commanders_lounge_june_16_2020/fvpm1q8/')} You can then change devices provided that you use the same account.`,
         tags : [dTag.ACCT]
     },  //@Visual
+    {
+        questions : `When do I sometimes get 1 defense die in battle?`,
+        answers : `Opponent piece landed on top of your own, signified by a die breaking.`,
+        tags : [dTag.OJ]
+    },  //@In-game manual
+    {
+        questions : `Do SMGs and HGs need to bother with PEQs?`,
+        answers : `Direct-fire guns do.`,
+        tags : [dTag.TDOLL, dTag.EQUIP]
+    },
+    {
+        questions : `What's a T-Doll Memoir?`,
+        answers : `MOD stories.`,
+        tags : [dTag.SIDE, dTag.MOD]
+    },  //@Clarify
     {
         questions : ``,
         answers : ``,

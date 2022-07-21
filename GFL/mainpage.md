@@ -100,6 +100,8 @@
 > - [Anti-damage sim propaganda ft. SVCh.](https://old.reddit.com/r/girlsfrontline/comments/vrsp23/weekly_commanders_lounge_july_05_2022/if05cy9/)
 >
 > - [Data sim data threshold.](https://old.reddit.com/r/girlsfrontline/comments/vx5s4p/weekly_commanders_lounge_july_12_2022/ig9g907/)
+>
+> - [Updates.](https://old.reddit.com/r/girlsfrontline/comments/w2n556/weekly_commanders_lounge_july_19_2022/igs19iq/)
 
 >EarSpeaker
 >
