@@ -201,7 +201,7 @@ export const cardData = Object.freeze([
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
         ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-first-impressions-revamped')}<br>
         ${spoilerSummary("Cleista's basic Twitter guide.", 
-            `${link('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096', 'https://twitter.com/CleistaCeleste/status/1409824210571214849', 'Mini pulling and tierlist guide.')}<br>
+            `${link('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096', 'https://twitter.com/CleistaCeleste/status/1409824210571214849')}<br>
             Applicable mainly for "I really want to get this ringleader."`)}<br>
         Apparently, this unlocks after beating 7-5 Normal.`,
         tags : [dTag.PA, dTag.PRIME]
@@ -380,7 +380,7 @@ export const cardData = Object.freeze([
                         ['13', 'Defender',  'N/A'])),
                 link(`Farmable dolls in campaign maps, both 3${star} monthlies and debut dolls.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
                 'During collabs, major events, side events, and Rescue Event/Boss Bully, event rewards become temporarily available for farming.',
-                'Dolls obtainable from random nodes, however unlikely.'],
+                'Dolls are obtainable from random nodes, however unlikely.'],
             'Event Rewards' : [link("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls')],
             'Shop' : ['Mostly applicable to collab dolls or by using TCM.']
         })}<br>
@@ -634,10 +634,10 @@ export const cardData = Object.freeze([
     },
     {
         questions : `What best-in-slot (BiS) equipments should I use on my dolls?`,
-        answers : `${spoilerSummary('General equipments.', `${link('./assets/images/EquipInfograph.png', 'https://big-stupid-jellyfish.github.io/GFMath/pages/newquip', 'Equipment guide.')}<br>AS-Val at night follows the day schema. SOP and STAR is SPEQ + VFL/PEQ. M16 is SPEQ + Exo/Armor.`)}<br>
+        answers : `${spoilerSummary('General equipments.', `${link('./assets/images/EquipInfograph.png', 'https://big-stupid-jellyfish.github.io/GFMath/pages/newquip')}<br>AS-Val at night follows the day schema. SOP and STAR is SPEQ + VFL/PEQ. M16 is SPEQ + Exo/Armor.`)}<br>
         ${spoilerSummary('#2 Chip equipment.', list(false,
             spoilerSummary('BigStupidJellyfish_', 
-                `${link('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png', 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips', 'Chips flowchart.')}<br>
+                `${link('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png', 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')}<br>
                 ${googleEmbed('https://docs.google.com/spreadsheets/d/14xV50MSMBFGgN75E-Gy10WtzACb_KZdpxRKCYQ6FDQA')}`),
             spoilerSummary('mis', googleEmbed('https://docs.google.com/spreadsheets/d/1c0JhaSX9WyL3EB-7RCDE4NrfzR1YuWdYWidQ_06-PrQ'))
         ))}<br>
