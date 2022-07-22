@@ -261,8 +261,6 @@ Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr)
 
 [Guide to registering on CN.](https://en.gfwiki.com/wiki/Guide:Registration)
 
-[pengu L2D viewer](https://pengupengupengu.github.io/live2d-viewer-web/)
-
 [Merch shops.](https://old.reddit.com/r/girlsfrontline/comments/rg2l32/weekly_commanders_lounge_december_14_2021/hpcn3dk/)
 [Part 2.](https://old.reddit.com/r/girlsfrontline/comments/vx5s4p/weekly_commanders_lounge_july_12_2022/ighb8ie/)
 

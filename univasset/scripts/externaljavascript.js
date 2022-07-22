@@ -181,9 +181,18 @@ class ToggleCheck {
         return bool;
     }
 }
+
+function pageURL() {
+    console.log('window.location.href:', window.location.href);
+    console.log('window.location.pathname:', window.location.pathname);
+    console.log('window.location.origin:', window.location.origin);
+    console.log('window.location.host:', window.location.host);
+    console.log('protocol+host+pathname:', window.location.protocol + '//' + window.location.host + window.location.pathname);
+    
+}
 //#endregion
 
-
+pageURL();
 
 
 

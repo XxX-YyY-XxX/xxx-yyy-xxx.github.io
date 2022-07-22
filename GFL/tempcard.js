@@ -1758,7 +1758,7 @@ export const cardData = Object.freeze([
     {
         questions : `Is there any Live2D viewer for GFL?`,
         answers : `${link('Pengu', 'https://pengupengupengu.github.io/live2d-viewer-web/')}. Don't know how this works.<br>
-        Or tryi IOPWiki.`,
+        Or try IOPWiki.`,
         tags : [dTag['3P']]
     },
     {
@@ -1832,8 +1832,8 @@ export const cardData = Object.freeze([
     },  //@Check. Add SCR gain.
     {
         questions : `What are Data Patches for and how do I get them?`,
-        answers : `Used for iterating FSTs (the red ${star}). Can also be used across all FSTs.<br>
-        You can get them by getting FST-specific Central Data that have been 5${star}'d or by Code Refactoring.`,
+        answers : `Used for iterating FSTs beyond yellow 5${star} (the red ${star}). Can also be used across all FSTs.<br>
+        You can get them by getting a 5${star}'d FST's Central Data or by Code Refactoring in the Garage.`,
         tags : [dTag.HOC, dTag.FST, dTag.LEVEL, dTag.ITEM]
     },
     {

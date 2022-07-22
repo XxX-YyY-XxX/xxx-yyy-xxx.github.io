@@ -12,14 +12,6 @@
 
 > At full promotion. The yellow ★★★★★ one.
 
-### How can I get Data Patches?
-
-> Either from the Code Refactoring menu in the Garage or getting a 5★'d HOC's Core Data.
-
-### What are Data Patches used for?
-
-> For Iterating FSTs beyond yellow 5★. They have to be level 100 and at 5★ for Iteration to be available.
-
 ### How do HOC skills work?
 
 > Depends. Either by timer or by number of shots fired. And all skills are active, meaning no need to choose which one you'll use.
