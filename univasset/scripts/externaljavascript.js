@@ -11,6 +11,8 @@ Array.prototype.subsetOf = function(mainArray) {
 const epsilon = 10 ** -10;
 /** Reusable element for offscreen DOM. */
 const dummyHTML = new DOMParser().parseFromString('', 'text/html').body;
+/** URL of current page. */
+export const pageURL = window.location.origin + window.location.pathname;
 //#endregion
 
 //#region Enumerators
@@ -25,7 +27,6 @@ export class HTMLSearch {
 
 //#region Class
 /** (a, b) for ascending, (b, a) for descending */
-//dynamic output through input types
 export class Compare {
     /** @param {string} a @param {string} b */
     static string(a, b) {
@@ -181,18 +182,7 @@ class ToggleCheck {
         return bool;
     }
 }
-
-function pageURL() {
-    console.log('window.location.href:', window.location.href);
-    console.log('window.location.pathname:', window.location.pathname);
-    console.log('window.location.origin:', window.location.origin);
-    console.log('window.location.host:', window.location.host);
-    console.log('protocol+host+pathname:', window.location.protocol + '//' + window.location.host + window.location.pathname);
-    
-}
 //#endregion
-
-pageURL();
 
 
 
