@@ -26,7 +26,7 @@ export class HTMLSearch {
 //#endregion
 
 //#region Class
-/** (a, b) for ascending, (b, a) for descending */
+/** (a, b) for ascending, (b, a) for descending. */
 export class Compare {
     /** @param {string} a @param {string} b */
     static string(a, b) {
@@ -71,6 +71,14 @@ export class RadioButton {
             this.#radioFunctions[checkedButton.value](checkedButton);
             this.#currentChecked = checkedButton;
         }
+    }
+}
+
+/** For functions that returns a Promise. */
+export class AsyncFunc {
+    /** @param {string} jsonFile */
+    static async getJSON(jsonFile) {
+        return fetch(jsonFile).then(response => response.json());
     }
 }
 //#endregion
@@ -181,11 +189,6 @@ class ToggleCheck {
         this.#storedValue = currentValue;
         return bool;
     }
-}
-
-/** @param {string} jsonFile */
-export function getJSON(jsonFile) {
-    return fetch(jsonFile).then(response => response.json());
 }
 //#endregion
 
