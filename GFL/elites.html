@@ -3,9 +3,9 @@
     <head>
         <script defer type="text/javascript" src="/univasset/scripts/includefile.js"></script>
         <script type="module">
-            import {zip, enumerate} from '/univasset/scripts/externaljavascript.js';
+            import {zip, enumerate, getJSON} from '/univasset/scripts/externaljavascript.js';
 
-            fetch('https://raw.githubusercontent.com/randomqwerty/GFLData/main/en/stc/enemy_character_type.json')
+            /* fetch('https://raw.githubusercontent.com/randomqwerty/GFLData/main/en/stc/enemy_character_type.json')
                 .then(response => response.json())
                 .then(jsonObject => {
                     var elite = new Set(), nonelite = new Set(), rows = "";
@@ -17,12 +17,20 @@
                         rows += `<tr><td>${index + 1}</td><td>${unitE}</td><td>${unitNE ?? ''}</td></tr>`;
 
                     return rows;})
-                .then(html => {document.getElementsByTagName('tbody')[0].innerHTML = html});
+                .then(html => {document.getElementsByTagName('tbody')[0].innerHTML = html}); */
+            const jsonObject = getJSON('https://raw.githubusercontent.com/randomqwerty/GFLData/main/en/stc/enemy_character_type.json');
+            var elite = new Set(), nonelite = new Set(), rows = "";
+                    
+            for (const units of jsonObject)
+                (String(units.passive_skill).includes('200304') ? nonelite : elite).add(units.code)
+
+            for (const [index, [unitE, unitNE]] of enumerate(zip(true, elite, nonelite)))
+                rows += `<tr><td>${index + 1}</td><td>${unitE}</td><td>${unitNE ?? ''}</td></tr>`;
+
+            document.getElementsByTagName('tbody')[0].innerHTML = rows;
         </script>
 
-        <include src="/univasset/scripts/metahead.html"></include>
-
-        <!--meta charset='utf-8'-->
+        <meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/univasset/scripts/externalcss.css">

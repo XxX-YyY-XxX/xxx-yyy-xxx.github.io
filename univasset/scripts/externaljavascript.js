@@ -182,6 +182,11 @@ class ToggleCheck {
         return bool;
     }
 }
+
+/** @param {string} jsonFile */
+export function getJSON(jsonFile) {
+    return await fetch(jsonFile).then(response => response.json());
+}
 //#endregion
 
 

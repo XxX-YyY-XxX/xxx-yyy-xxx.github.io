@@ -2,10 +2,6 @@
 
 # Neural Upgrade/MOD
 
-### I'm planning to use a max level oathed MOD doll to farm surplus exp. Is that a good idea?
-
-> As good an idea as running an unmodded max level doll.
-
 ### I can't see my dolls MOD in the Neural Upgrade tab.
 
 > Maybe because it's not yet released on whatever server you're in right now?

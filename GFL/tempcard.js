@@ -2003,6 +2003,11 @@ export const cardData = Object.freeze([
         tags : [dTag.TDOLL, dTag.SKILL, dTag.BATTLE]
     },
     {
+        questions : `I'm planning to use a max level oathed MOD doll to farm surplus exp. Is that a good idea?`,
+        answers : `As good an idea as running an unmodded max level doll.`,
+        tags : [dTag.TDOLL, dTag.LEVEL]
+    },
+    {
         questions : ``,
         answers : ``,
         tags : []
