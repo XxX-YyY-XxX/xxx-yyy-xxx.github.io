@@ -79,10 +79,16 @@ export const dTag = Object.freeze({
 
 //#region Functions
 /** @param {string} link */
-function image(link, onHover = null, onLoadFail = 'Image loading failed.') {
+function image(link, caption = "") {
     //use figcaption instead of hover
     //might use details instead
-    return `<img src="${link}" alt="${onLoadFail}" ${onHover ? `title="${onHover}"` : ''}>`
+    /* if (caption) {
+        `<figure>
+            <img src="${link}" alt="Image loading failed.">
+            <figcaption>${caption}</figcaption>
+        </figure>`;
+    } */
+    return `<img src="${link}" alt="Image loading failed." ${caption ? `title="${caption}"` : ''}>`
 }
 
 /** @param {string} linkText Text or image URL. @param {string} link */
@@ -370,7 +376,7 @@ export const cardData = Object.freeze([
                         ['03', 'CZ-805',    'AR-15 HV'],
                         ['04', 'M21',       'MP5 Exo'],
                         ['05', 'M249SAW',   'Mosin Cape'],
-                        ['06', 'M1A1',      'M16 Armor'],
+                        ['06', 'M1A1',      'M16 Armor/Exo'],
                         ['07', 'PSM',       'MG3 Ammo Box'],
                         ['08', 'SCW',       'FAMAS Optics'],
                         ['09', 'Ak 5',      'Stechkin Silencer'],
@@ -380,7 +386,7 @@ export const cardData = Object.freeze([
                         ['13', 'Defender',  'N/A'])),
                 link(`Farmable dolls in campaign maps, both 3${star} monthlies and debut dolls.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
                 'During collabs, major events, side events, and Rescue Event/Boss Bully, event rewards become temporarily available for farming.',
-                'Dolls are obtainable from random nodes, however unlikely.'],
+                'Obtainable from random nodes, however unlikely.'],
             'Event Rewards' : [link("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls')],
             'Shop' : ['Mostly applicable to collab dolls or by using TCM.']
         })}<br>
@@ -435,6 +441,14 @@ export const cardData = Object.freeze([
         ${altStyle('Points of Interest:', TextStyle.BOLD)}<br>
         ${list(false, 'Anchor rate-up is closed once a doll (two for starter anchor) has been anchored.')}`,
         tags : [dTag.PROD, dTag.IMPT, dTag.TECH]
+    },
+    {
+        questions : `Why are the doll skills not activating?`,
+        answers : `Is the auto skill button on? Is it on forced manual? Is it a flare skill?<br>
+        Active skills cannot activate when they cannot shoot, i.e. reloading, dolls moving, no enemy in range, no ammo/ration, in-between shot cooldowns.<br>
+        Passive skills on the other hand will not activate only if they have no ammo or ration. This includes Slug's 3x damage and Flash's -3 damage.<br>
+        Note though that there are a handful of exceptions.`,
+        tags : [dTag.TDOLL, dTag.SKILL, dTag.IMPT]
     },
     //#endregion
     {
@@ -1179,36 +1193,30 @@ export const cardData = Object.freeze([
     },
     {
         questions : `What does "Event" mean on the left side of the mission select screen?`,
-        answers : `Combat Missions: SPEQ rate up for X-4N or Special Rescue Event for X-6.<br>
-        Combat/Campaign: 1.5x EXP, also includes the currently running event maps.<br>
-        Logistics: Great Success Rate Up aka. higher rewards are more frequent.<br>
-        Combat sim: All simulations unlocked.`,
+        answers : `${descriptionList({
+            'Combat Missions' : ['SPEQ Rate Up for X-4N', 'Special Rescue Event for X-6'],
+            'Combat and Campaign' : ['1.5x EXP', 'Includes currently running event maps'],
+            'Logistics' : ['Great Success Rate Up aka. higher rewards are more frequent'],
+            'Combat Simulations' : ['Capsule, Data, EXP, Neural Frag rewards multiplied by 2', 'Coalition Drill rewards multiplied by 3']
+        })}`,
         tags : [dTag.MAIN, dTag.CAMPAIGN, dTag.LOGI, dTag.SIMS]
     },
     {
         questions : `Can someone tell me what the difference is between Charge, Destroy, and Defend commands for coalition units?`,
         answers : `Lets melee units ${altStyle('Charge', TextStyle.BOLD)} down the lane.<br>
         Lets melee units approach and ${altStyle('Destroy', TextStyle.BOLD)} the nearest enemy.<br>
-        Return and ${altStyle('Defend', TextStyle.BOLD)} the grid position.`,
+        Return and ${altStyle('Defend', TextStyle.BOLD)} their grid position.`,
         tags : [dTag.COALITION, dTag.BATTLE]
     },
     {
         questions : `How many Tactical Doll slots can I have?`,
-        answers : `Up to 1000.`,
+        answers : `Up to 1200 it seems.`,
         tags : [dTag.MISC]
-    },  //Condolensces to u/headphone_question's wallet.
+    },  //Condolensces to u/headphone_question's wallet. Previously 1000.
     {
         questions : `Why do people use M16 as tank for 0-2 corpse dragging?`,
         answers : `Can use Armor/SPEQ to reduce damage taken to 1, and T-Exo for reducing the number of hits taken.`,
-        tags : [dTag.LEVEL]
-    },
-    {
-        questions : `Why are the doll skills not activating?`,
-        answers : `Is the auto skill button on? Is it on forced manual? Is it a flare skill?<br>
-        Active skills cannot activate when they cannot shoot, i.e. reloading, dolls moving, no enemy in range, no ammo/ration, in-between shot cooldowns.<br>
-        Passive skills on the other hand will not activate only if they have no ammo or ration. This includes Slug's 3x damage and Flash's -3 damage.<br>
-        Note though that there are a handful of exceptions.`,
-        tags : [dTag.TDOLL, dTag.SKILL, dTag.IMPT]
+        tags : [dTag.TDOLL, dTag.LEVEL]
     },
     {
         questions : `How and why does a StrawberryPython team work so well?`,
