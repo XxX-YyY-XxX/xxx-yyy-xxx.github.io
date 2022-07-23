@@ -18,9 +18,9 @@
 
                     return rows;})
                 .then(html => {document.getElementsByTagName('tbody')[0].innerHTML = html}); */
-            const jsonObject = getJSON('https://raw.githubusercontent.com/randomqwerty/GFLData/main/en/stc/enemy_character_type.json');
+            const jsonObject = await getJSON('https://raw.githubusercontent.com/randomqwerty/GFLData/main/en/stc/enemy_character_type.json');
             var elite = new Set(), nonelite = new Set(), rows = "";
-            
+
             for (const units of jsonObject)
                 (String(units.passive_skill).includes('200304') ? nonelite : elite).add(units.code)
 
