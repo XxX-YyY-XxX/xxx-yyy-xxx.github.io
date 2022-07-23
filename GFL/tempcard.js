@@ -78,24 +78,24 @@ export const dTag = Object.freeze({
 });
 
 //#region Functions
+const imgAlt = 'Image loading failed.';
 /** @param {string} link */
 function image(link, caption = "") {
-    //might use details instead
     if (caption) {
         return `<figure>
-            <img src="${link}" alt="Image loading failed.">
+            <img src="${link}" alt="${imgAlt}">
             <figcaption>${caption}</figcaption>
         </figure>`;
     } else {
-        return `<img src="${link}" alt="Image loading failed.">`
+        return `<img src="${link}" alt="${imgAlt}">`
     }
-    //return `<img src="${link}" alt="Image loading failed." ${caption ? `title="${caption}"` : ''}>`
 }
 
+const starters = ['https://', './assets/images/'];
 /** @param {string} linkText Text or image URL. @param {string} link */
 function link(linkText, link) {
-    if (linkText.startsWith('https://') || linkText.startsWith('./assets/images/'))
-        linkText = `<img src="${linkText}" alt="Image loading failed.">`
+    if (starters.some(linkText.startsWith))
+        linkText = `<img src="${linkText}" alt="${imgAlt}">`
     return `<a href="${link}">${linkText}</a>`;
 }
 
@@ -236,10 +236,9 @@ export const cardData = Object.freeze([
         ${link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Heavy_Ordnance_Corps')}<br>
         ${link('Matsuda Guide.', 'https://gfl.matsuda.tips/post/hocs')}<br>
         ${link('GFC Guide.', 'https://www.gflcorner.com/hoc-guide-by-gfc/')}<br>
-        ${spoilerSummary("Ceia's Video Guide.", youtubeEmbed('rsFyXRDAi6I'))}<br>
         ${link("u/Xealiouth's Guide.", 'https://redd.it/95nrou')}`,
         tags : [dTag.HOC, dTag.PRIME]
-    },
+    },  //Privated - rsFyXRDAi6I
     {
         questions : `How to do Theater/Theatre?`,
         answers : `${link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Theater_Mode')}<br>
@@ -710,8 +709,7 @@ export const cardData = Object.freeze([
     },
     {
         questions : `How can I resupply a single doll and not the whole echelon?`,
-        answers : `${altStyle('Single-Doll Echelon', TextStyle.QOUTE)}<br>
-        ${image('./assets/images/OneDollEchelon.png')}`,
+        answers : `${image('./assets/images/OneDollEchelon.png', 'Single-Doll Echelon')}`,
         tags : [dTag.TDOLL, dTag.MAP, dTag.ECH]
     },
     {
@@ -795,7 +793,7 @@ export const cardData = Object.freeze([
     },
     {
         questions : `What does the PA chip Pilfer do?`,
-        answers : `Allows players to have a ${spoilerSummary('chance', image('./assets/images/PIlferRNG.png') + '<br>' + altStyle('Context: PIlfer subject to RNG.', TextStyle.QOUTE))} of getting ${spoilerSummary('S-Rank drops', youtubeEmbed('t6Vu72cajO0') + altStyle('Context: Coalition Medals require S-Rank battles.', TextStyle.QOUTE))} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
+        answers : `Allows players to have a ${spoilerSummary('chance', image('./assets/images/PIlferRNG.png', 'Pilfer subject to RNG'))} of getting ${spoilerSummary('S-Rank drops', youtubeEmbed('t6Vu72cajO0') + altStyle('Context: Coalition Medals require S-Rank battles.', TextStyle.QOUTE))} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
         Combine this with the ability to fight on one ammo bar to get two chances on one enemy.`,
         tags : [dTag.COALITION, dTag.EQUIP]
     },
@@ -957,8 +955,7 @@ export const cardData = Object.freeze([
     },
     {
         questions : `What are the resources that has a defined max capacity and how much can they store?`,
-        answers : `${image('./assets/images/ResourceCap.png')}<br>
-        Train Coin = Training Data, Furniture Coin = Tokens, Memory Pieces = Neural Fragments<br>
+        answers : `${image('./assets/images/ResourceCap.png', 'Train Coin = Training Data | Furniture Coin = Tokens | Memory Pieces = Neural Fragments')}<br>
         Even then, all resources can be obtained without regards to max capacity through daily gifts, mission rewards, and whaling.`,
         tags : [dTag.MARP, dTag.ITEM]
     },
@@ -986,8 +983,7 @@ export const cardData = Object.freeze([
     },
     {
         questions : `What does equipment calibration and enhancement do?`,
-        answers : `${image('./assets/images/EquipCalibEnhance.png')}<br>
-        Meaning calibration and enhancement are independent of each other.<br>
+        answers : `${image('./assets/images/EquipCalibEnhance.png', 'Calibration and enhancement are independent of each other')}<br>
         Equipment Calibration raises the equipment's base stat. The RNG dictates how many calib tickets are wasted before maxing. When it's on its highest calibration, a MAX in blue box appears on said equipment.<br>
         Equipment Enhancement multiplies the base stat up to Lv. 10. Doesn't matter if Equip Enhancement Pills or fodder equips are used, it's merely a matter of resource cost per point raised.`,
         tags : [dTag.EQUIP, dTag.LEVEL, dTag.NEWB]
