@@ -80,15 +80,16 @@ export const dTag = Object.freeze({
 //#region Functions
 /** @param {string} link */
 function image(link, caption = "") {
-    //use figcaption instead of hover
     //might use details instead
-    /* if (caption) {
-        `<figure>
+    if (caption) {
+        return `<figure>
             <img src="${link}" alt="Image loading failed.">
             <figcaption>${caption}</figcaption>
         </figure>`;
-    } */
-    return `<img src="${link}" alt="Image loading failed." ${caption ? `title="${caption}"` : ''}>`
+    } else {
+        return `<img src="${link}" alt="Image loading failed.">`
+    }
+    //return `<img src="${link}" alt="Image loading failed." ${caption ? `title="${caption}"` : ''}>`
 }
 
 /** @param {string} linkText Text or image URL. @param {string} link */
