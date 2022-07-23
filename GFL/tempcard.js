@@ -94,7 +94,7 @@ function image(link, caption = "") {
 const starters = ['https://', './assets/images/'];
 /** @param {string} linkText Text or image URL. @param {string} link */
 function link(linkText, link) {
-    if (starters.some(linkText.startsWith))
+    if (starters.some(val => linkText.startsWith(val)))
         linkText = `<img src="${linkText}" alt="${imgAlt}">`
     return `<a href="${link}">${linkText}</a>`;
 }
