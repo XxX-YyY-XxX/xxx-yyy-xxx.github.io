@@ -278,10 +278,6 @@ Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr)
 
 # Echelon Formations
 
->What's the Double Jupiter formation?
-
-M4 MOD II + self-buff RF (usually IWS) + 3 HG (usually ROF buffers).
-
 >How to fight Judge?
 
 3MG(armor tiles, 2nd+ clip skills)2SG. As long as your SGs take 1DMG from her, you can swap some MGs for HGs.
