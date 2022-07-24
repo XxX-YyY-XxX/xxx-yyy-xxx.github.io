@@ -23,7 +23,7 @@ function nestedInclude(htmlString, params) {
 
     //Parameter setting
     if (params) {
-        const strArr = JSON.parse(`[${params}]`);
+        const strArr = paramAsJSON(params);
         const doc = new DOMParser().parseFromString(htmlString, "text/html");
 
         for (const include of Array.from(doc.getElementsByTagName('include'))) {
@@ -31,19 +31,20 @@ function nestedInclude(htmlString, params) {
 
             if (key = include.getAttribute('key')) {
                 const paramValue = strArr[parseInt(key)];
+                const valueType = typeof paramValue;
 
-                switch (typeof paramValue) {
+                switch (valueType) {
                     case 'string':
                         htmlString = htmlString.replace(include.outerHTML, paramValue);
                         break;
                     default:
                         //check if parameter is object, null
-                        console.log(typeof paramValue/* , typeof paramValue == 'string' */)
+                        console.log(paramValue, valueType, valueType == 'string')
                         break;
                 }
             } else if (childparam = include.textContent) {
                 //Untested
-                let tempson = JSON.parse(`[${childparam}]`);
+                let tempson = paramAsJSON(childparam);
 
                 for (let index = 0; index < tempson.length; index++) {
                     //what if number as a string?
@@ -64,7 +65,7 @@ function nestedInclude(htmlString, params) {
     //Source fetching
     if (htmlString.includes('</include>')) {
         //Untested
-        const doc = new DOMParser().parseFromString(htmlString, "text/html");
+        const doc = new DOMParser().parseFromString(htmlString, "text/html");   //htmlString may already be mutated
 
         for (const include of Array.from(doc.getElementsByTagName('include'))) {
             fetch(include.getAttribute('src'))
@@ -79,7 +80,9 @@ function nestedInclude(htmlString, params) {
     return htmlString;
 }
 
-
+function paramAsJSON(textContent) {
+    return JSON.parse(`[${textContent}]`);
+}
 
 
 

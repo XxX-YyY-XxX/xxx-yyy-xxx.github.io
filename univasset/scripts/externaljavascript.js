@@ -85,17 +85,18 @@ export class AsyncFunc {
 
 //#region Functions
 /** @param {string} htmlString @param {HTMLSearch} removalMethod */
-export function removeHTMLTag(htmlString, removalMethod = HTMLSearch.QUICK) {
-    switch (removalMethod) {
+export function removeHTMLTag(htmlString) {
+    return htmlString.replace(/(<([^>]+)>)/ig, '');
+
+    /* switch (removalMethod) {
         case HTMLSearch.PRECISE:
             dummyHTML.innerHTML = htmlString;
             return dummyHTML.textContent ?? '';
         case HTMLSearch.QUICK:
-            return htmlString.replace(/(<([^>]+)>)/ig, '');
         default:
             console.warn('HTMLSearch unknown value.')
             return '';
-    }
+    } */
 }
 
 /** @param {number} min @param {number} max */

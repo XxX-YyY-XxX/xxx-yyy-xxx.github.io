@@ -187,7 +187,7 @@ export const cardData = Object.freeze([
             "Can be gifted by going to the Dorm>Warehouse>Gift tab or going to your owned doll's profile and tapping the + button by the EXP bar.",
             'Gives 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.'))}.`,
         tags : [dTag.TDOLL, dTag.LEVEL, dTag.PRIME, dTag.NEWB]
-    },  //youtubeEmbed('vqvPpO1vKqw') - Privated
+    },  //Privated - vqvPpO1vKqw
     {
         questions : `What is Combat Effectiveness?`,
         answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ce')}<br>
@@ -207,9 +207,7 @@ export const cardData = Object.freeze([
         answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
         ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-first-impressions-revamped')}<br>
-        ${spoilerSummary("Cleista's basic Twitter guide.", 
-            `${link('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096', 'https://twitter.com/CleistaCeleste/status/1409824210571214849')}<br>
-            Applicable mainly for "I really want to get this ringleader."`)}<br>
+        ${spoilerSummary("Cleista's basic Twitter guide.", link('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096', 'https://twitter.com/CleistaCeleste/status/1409824210571214849'))}<br>
         Apparently, this unlocks after beating 7-5 Normal.`,
         tags : [dTag.PA, dTag.PRIME]
     },
@@ -318,7 +316,10 @@ export const cardData = Object.freeze([
         answers : `${image('./assets/images/FairyTier.png', "Sijun's list")}<br>
         For the equipments, top number is the recommended quantity, bottom number is the reserve quantity.<br>
         ${link(`u/UnironicWeeaboo's spreadsheet.`, 'https://docs.google.com/spreadsheets/d/1RORciafqtspkxy3fqBrFdKIxVfanV2-fLl9FlvY3QtM')}<br>
-        ${link('u/BigStupidJellyfish_ review.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/fairy-reviews')}`,
+        ${spoilerSummary('u/BigStupidJellyfish_ reviews.', list(false,
+            link('General reviews.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/fairy-reviews'),
+            link('Sniper review.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/sniper-rework')
+        ))}`,
         tags : [dTag.FAIRY, dTag.TIER, dTag.EQUIP]
     },  //https://imgur.com/a/pfSSel9
     {
@@ -529,12 +530,10 @@ export const cardData = Object.freeze([
         answers : `${descriptionList({
            'If the runs can be cancelled without penalty, rewards are calculated at the end.' : [
                 'The "Use Battery" bingo mission when exp-training HOCs.',
-                'Auto-Battles.'
-            ],
+                'Auto-Battles.'],
            "If they can't be cancelled, or is cancellable with a penalty or cost (ie quick tickets), calculated at the start." : [
                 'Expedition rewards.',
-                'Productions.'
-           ]
+                'Productions.']
         })}`,
         tags : [dTag.SYSMECH, dTag.MINI, dTag.EXPED, dTag.PROD, dTag.AUTO]
     },
@@ -634,7 +633,7 @@ export const cardData = Object.freeze([
     {
         questions : `What is Central Data for?`,
         answers : `Unlocking the corresponding FST, promoting said FST, and used as a Data Patch if 5${star}.`,
-        tags : [dTag.ITEM, dTag.HOC]
+        tags : [dTag.ITEM, dTag.HOC, dTag.FST]
     },
     {
         questions : `When should I do T-Doll Heavy Production/craft shotguns?`,
@@ -650,11 +649,9 @@ export const cardData = Object.freeze([
         questions : `What best-in-slot (BiS) equipments should I use on my dolls?`,
         answers : `${spoilerSummary('General equipments.', `${link('./assets/images/EquipInfograph.png', 'https://big-stupid-jellyfish.github.io/GFMath/pages/newquip')}<br>AS-Val at night follows the day schema. SOP and STAR is SPEQ + VFL/PEQ. M16 is SPEQ + Exo/Armor.`)}<br>
         ${spoilerSummary('#2 Chip equipment.', list(false,
-            spoilerSummary('BigStupidJellyfish_', 
-                `${link('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png', 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')}<br>
-                ${googleEmbed('https://docs.google.com/spreadsheets/d/14xV50MSMBFGgN75E-Gy10WtzACb_KZdpxRKCYQ6FDQA')}`),
-            spoilerSummary('mis', googleEmbed('https://docs.google.com/spreadsheets/d/1c0JhaSX9WyL3EB-7RCDE4NrfzR1YuWdYWidQ_06-PrQ'))
-        ))}<br>
+            spoilerSummary('BigStupidJellyfish_ doc.', googleEmbed('https://docs.google.com/spreadsheets/d/14xV50MSMBFGgN75E-Gy10WtzACb_KZdpxRKCYQ6FDQA')),
+            spoilerSummary('BigStupidJellyfish_ infograph.', link('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png', 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')),
+            spoilerSummary('mis doc.', googleEmbed('https://docs.google.com/spreadsheets/d/1c0JhaSX9WyL3EB-7RCDE4NrfzR1YuWdYWidQ_06-PrQ'))))}<br>
         ${spoilerSummary('AP thresholds.', image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/newquip/armor-reference.png'))}`,
         tags : [dTag.TDOLL, dTag.EQUIP, dTag.ENEMY]
     },
@@ -704,7 +701,11 @@ export const cardData = Object.freeze([
     },
     {
         questions : `How can I save my own voodoo recipe?`,
-        answers : `${list(true, 'Craft from production using your own recipe.', 'Take the item.', 'Wait for 10 minutes for the voodoo list to refresh.', 'Look for it.')}`,
+        answers : `${list(true,
+            'Craft from production using your own recipe.',
+            'Take the item.',
+            'Wait for 10 minutes for the voodoo list to refresh.',
+            'Look for it.')}`,
         tags : [dTag.PROD]
     },
     {
@@ -1742,11 +1743,6 @@ export const cardData = Object.freeze([
         tags : [dTag.SPEQ, dTag.TDOLL]
     },
     {
-        questions : `Is Sniper Fairy any good?`,
-        answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/sniper-rework')}`,
-        tags : [dTag.FAIRY]
-    },
-    {
         questions : `How do I strengthen T-Dolls?`,
         answers : `${descriptionList({
             'As an individual unit' : ['Leveling up',
@@ -2003,6 +1999,13 @@ export const cardData = Object.freeze([
         questions : `I'm planning to use a max level oathed MOD doll to farm surplus exp. Is that a good idea?`,
         answers : `As good an idea as running an unmodded max level doll.`,
         tags : [dTag.TDOLL, dTag.LEVEL]
+    },
+    {
+        questions : `How long does it take to max out Kalina's affection?`,
+        answers : `A very long time.<br>
+        ${googleEmbed('https://docs.google.com/spreadsheets/u/0/d/1rshL9qGZfmuacCzjs7GdLN4qNs_ZWRoJNn-1vTwr6hc')}<br>
+        You can increase it by collecting an affection point from her at the shop or by buying things from the shop.`,
+        tags : [dTag.KALINA, dTag.LOVE]
     },
     {
         questions : ``,

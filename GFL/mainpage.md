@@ -292,10 +292,6 @@ Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr)
 
 [Production Rate-Up Guide.](https://www.gamepress.gg/girlsfrontline/gfl-explained-rate-up)
 
->How long does it take to max out Kalina's affection?
-
-[A very long time.](https://docs.google.com/spreadsheets/u/0/d/1rshL9qGZfmuacCzjs7GdLN4qNs_ZWRoJNn-1vTwr6hc/htmlview#) Note that you can increase it by collecting an affection point from her at the shop or by buying things from the shop.
-
 >Can I change the censored sprites to uncensored/rejected ones?
 
 Apparently no since it'll revert back to its default file.
