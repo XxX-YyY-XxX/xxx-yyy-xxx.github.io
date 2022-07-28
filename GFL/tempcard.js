@@ -1192,10 +1192,14 @@ export const cardData = Object.freeze([
     {
         questions : `What does "Event" mean on the left side of the mission select screen?`,
         answers : `${descriptionList({
-            'Combat Missions' : ['SPEQ Rate Up for X-4N', 'Special Rescue Event for X-6'],
-            'Combat and Campaign' : ['1.5x EXP', 'Includes currently running event maps'],
+            'Combat Missions' : ['SPEQ Rate Up for X-4N',
+                'Special Rescue Event for X-6'],
+            'Combat and Campaign' : ['1.5x EXP',
+                'Includes currently running event maps'],
             'Logistics' : ['Great Success Rate Up aka. higher rewards are more frequent'],
-            'Combat Simulations' : ['Capsule, Data, EXP, Neural Frag rewards multiplied by 2', 'Coalition Drill rewards multiplied by 3']
+            'Combat Simulations' : ['Capsule, Data, EXP, Neural Frag rewards x2',
+                'Coalition Drill rewards x3',
+                'Limited-time practice targets']
         })}`,
         tags : [dTag.MAIN, dTag.CAMPAIGN, dTag.LOGI, dTag.SIMS]
     },
@@ -2006,6 +2010,11 @@ export const cardData = Object.freeze([
         ${googleEmbed('https://docs.google.com/spreadsheets/u/0/d/1rshL9qGZfmuacCzjs7GdLN4qNs_ZWRoJNn-1vTwr6hc')}<br>
         You can increase it by collecting an affection point from her at the shop or by buying things from the shop.`,
         tags : [dTag.KALINA, dTag.LOVE]
+    },
+    {
+        questions : `I think I drove myself into a wall by not doing things efficiently. Do I have to restart my account to progress better?`,
+        answers : `Nah. You'll be just fine continuing. Just do things better from now on.`,
+        tags : [dTag.NEWB]
     },
     {
         questions : ``,

@@ -276,12 +276,6 @@ Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr)
 
 [Here.](https://old.reddit.com/r/girlsfrontline/comments/s6s9xj/weekly_commanders_lounge_january_18_2022/ht9ller/)
 
-# Echelon Formations
-
->How to fight Judge?
-
-3MG(armor tiles, 2nd+ clip skills)2SG. As long as your SGs take 1DMG from her, you can swap some MGs for HGs.
-
 # Others
 
 >What does the Download Data button in the settings do?
@@ -343,10 +337,6 @@ Node-based TRPG for maps, RTS for battles.
 [Available in Quests button>Career Quests tab.](https://gamepress.gg/girlsfrontline/new-career-quests-and-progression-full-list-quest-rewards)
 
 Remember to do them all in order as given by the Career Quest.
-
->I think I drove myself into a wall not doing things efficiently. Do I have to restart my account to progress better?
-
-Nah. You'll be just fine continuing. Just do things better from now on.
 
 >I can't hit the enemies in night missions. What do I do?
 

@@ -76,7 +76,7 @@ export class RadioButton {
 
 /** For functions that returns a Promise. */
 export class AsyncFunc {
-    /** @param {string} jsonFile @returns Promise of JSON onject. */
+    /** @param {RequestInfo | URL} jsonFile @returns Promise of JSON onject. */
     static async getJSON(jsonFile) {
         return fetch(jsonFile).then(response => response.json());
     }
@@ -99,8 +99,9 @@ export function removeHTMLTag(htmlString) {
     } */
 }
 
-/** @param {number} min @param {number} max */
-export function randInt(min, max) {                                          //Math.random() = [0...1)
+//Math.random() = [0...1)
+/** @param {number} min Inclusive @param {number} max Exclusive */
+export function randInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
@@ -121,6 +122,7 @@ export function reloadIFrame(iframeElement) {
 //lastIndexOf+slice > split+replace
 export function splitExt(path) {
     //remove base url to prevent false positive
+    //(new URL(path)).pathname
     var index = path.lastIndexOf('.');
     return [path.slice(0, index), path.slice(index)]
 }
