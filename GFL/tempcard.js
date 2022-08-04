@@ -1905,7 +1905,7 @@ export const cardData = Object.freeze([
     },
     {
         questions : `I'm moving overseas. Will there be problems for playing the same account?`,
-        answers : `Each client is tied their specific server.`,
+        answers : `Each client is tied to their specific server.`,
         tags : [dTag.ACCT]
     },
     {
