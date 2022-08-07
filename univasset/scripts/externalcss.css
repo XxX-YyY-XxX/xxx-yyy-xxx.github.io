@@ -82,11 +82,11 @@ include {
 
 /* #region GFL Button */
 .btn-gfl {
-  background: -webkit-linear-gradient(rgb(12, 184, 50, 0.3), rgba(30, 120, 51, 0.3) 50%, rgba(30, 50, 5, 0.3) 50%, rgba(0, 20, 0, 0.3))
+  background: -webkit-linear-gradient(rgb(255, 187, 17, 0.3), rgba(170, 130, 0, 0.3) 50%, rgba(10, 10, 10, 0.3) 50%, rgba(0, 0, 0, 0.3))
 }
 
 .btn-gfl:hover {
-  background: -webkit-linear-gradient(rgb(12, 184, 50, 0.6), rgba(30, 120, 51, 0.6) 50%,rgba(30, 50, 5, 0.8) 50%, rgba(0, 20, 0, 0.8))
+  background: -webkit-linear-gradient(rgb(255, 187, 17, 0.6), rgba(170, 130, 0, 0.6) 50%,rgba(10, 10, 10, 0.8) 50%, rgba(0, 0, 0, 0.8))
 }
 
 .btn-gfl .icon {

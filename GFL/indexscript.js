@@ -1,4 +1,4 @@
-import {Compare, RadioButton, removeHTMLTag, randInt, reloadIFrame, checkedLabel} from '/univasset/scripts/externaljavascript.js';
+import {Compare, RadioButton, removeHTMLTag, randInt, checkedLabel} from '/univasset/scripts/externaljavascript.js';
 import {cardData, dTag} from "./tempcard.js";
 
 //#region Constants
@@ -99,11 +99,6 @@ function setQuestionBoxes(cards) {
 //#endregion
 
 //#region Public Functions
-/** @param {HTMLElement} element */
-window.ReloadIFrame = function(element) {
-    reloadIFrame(element.parentElement.previousElementSibling);
-}
-
 /** @param {HTMLInputElement} radioButton */
 window.toggleInput = function(radioButton) {
     inputButtons.run(radioButton);

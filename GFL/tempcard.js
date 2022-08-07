@@ -1,3 +1,5 @@
+import {image, link, list, googleEmbed, youtubeEmbed, table, TextStyle, altStyle, spoilerSummary, descriptionList} from '/univasset/scripts/htmlfunctions.js';
+
 const lessEqual = '≤';
 const star = '★';
 const tm = '™️';
@@ -76,94 +78,6 @@ export const dTag = Object.freeze({
     CE : Object.freeze({val : 'CombatEffectiveness', desc : 'Clutch metric.'}),
     KALINA : Object.freeze({val : 'Kalina', desc : 'Overworked logistics officer.'}),
 });
-
-//#region Functions
-const imgAlt = 'Image loading failed.';
-/** @param {string} link */
-function image(link, caption = "") {
-    if (caption) {
-        return `<figure>
-            <img src="${link}" alt="${imgAlt}">
-            <figcaption>${caption}</figcaption>
-        </figure>`;
-    } else {
-        return `<img src="${link}" alt="${imgAlt}">`
-    }
-}
-
-const starters = ['https://', './assets/images/'];
-/** @param {string} linkText Text or image URL. @param {string} link */
-function link(linkText, link) {
-    if (starters.some(val => linkText.startsWith(val)))
-        linkText = `<img src="${linkText}" alt="${imgAlt}">`
-    return `<a href="${link}">${linkText}</a>`;
-}
-
-/** @param {boolean} ordered */
-function list(ordered, ...any) {
-    const htmlElem = ordered ? 'ol' : 'ul';
-    return `<${htmlElem}>${any.map(val => `<li>${val}</li>`).join('')}</${htmlElem}>`;
-}
-
-/** @param {string} docLink Ends in alphanumeric */
-//create lazy load using details element
-function googleEmbed(docLink) {
-    return `<figure>
-        <iframe src="${docLink}/preview?pli=1"></iframe>
-        <figcaption><a onclick="ReloadIFrame(this)">Reload Frame</a> \| <a href="${docLink}">Source Link</a></figcaption>
-    </figure>`;
-}
-
-//document.querySelectorAll('')
-
-/** @param {string} videoID Youtube video or playlist ID*/
-function youtubeEmbed(videoID) {
-    return `<iframe src="https://www.youtube.com/embed/${videoID.length == 11 ? videoID : `videoseries?list=${videoID}`}" allowfullscreen></iframe>`
-}
-
-/** @param permalink ...comments/${permalink}/?...*
-function redditEmbed(permalink) {                                       //needs more fix, how to check support
-    return `<a href="https://www.reddit.com/r/girlsfrontline/comments/${permalink}/">For load fail purposes.</a><br>
-    <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/${permalink}/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="278" width="640" scrolling="no"></iframe>`
-}*/
-
-/** @param {Array} headerArray Nullable value @param {Array[]} arrayOfArrays */
-function table(headerArray, ...arrayOfArrays) {
-    return `<table>
-        ${headerArray ? `<thead><tr>${headerArray.map(val => `<th>${val}</th>`).join('')}</tr></thead>` : ''}
-        <tbody>
-            ${arrayOfArrays.map(val1 => `<tr>${val1.map(val2 => `<td>${val2}</td>`).join('')}</tr>`).join('')}
-        </tbody>    
-    </table>`;
-}
-
-class TextStyle {
-    static STRIKE = 'del';
-    static ITALIC = 'em';
-    static BOLD = 'strong';
-    static CODE = 'code';
-    static QOUTE = 'blockquote';
-}
-
-/** @param {TextStyle[]} styles @param {string} string */
-function altStyle(string, ...styles) {
-    for (const htmlElem of styles) {
-        string = `<${htmlElem}>${string}</${htmlElem}>`;
-    }
-    return string;
-}
-
-function spoilerSummary(summaryName, details) {
-    return `<details><summary>${summaryName}</summary>${details}</details>`;
-}   //ontoggle
-
-/** @param {Object} dictOfArray \{key : descriptions[]} */
-function descriptionList(dictOfArray) {
-    return `<dl>
-        ${Object.entries(dictOfArray).map(([title, array]) => `<dt>${title}</dt>${array.map(val => `<dd>${val}</dd>`).join('')}`).join('')}
-    </dl>`;
-}
-//#endregion
 
 export const cardData = Object.freeze([
     //#region Topic Primers

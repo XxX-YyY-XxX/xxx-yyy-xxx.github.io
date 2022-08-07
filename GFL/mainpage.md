@@ -350,18 +350,6 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 
 3. Do it in the latest [Lounge](https://old.reddit.com/r/girlsfrontline/search/?q=Weekly+Commanders+Lounge+author%3AAutoModerator&sort=new&restrict_sr=on&t=month).
 
->What should I focus on as a beginner?
-
-At minimum
-
-- 2 ARSMG to help in clearing events, 2 RFHG due to meta, and 1 MGSG for special fights.
-
-- 8 echelons, where 4 are in permanent logistics.
-
-- Forward Basecamp for passive CR and core income.
-
-- Intelligence Center for generating chips which will be the bottleneck for fully maxed HOCS.
-
 # For Fixing and Peer Review
 
 ## Fix
