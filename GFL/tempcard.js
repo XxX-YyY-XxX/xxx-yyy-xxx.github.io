@@ -77,7 +77,7 @@ export const dTag = Object.freeze({
     REF : Object.freeze({val : 'Compilation', desc : 'Reference compilations.'}),
     CE : Object.freeze({val : 'CombatEffectiveness', desc : 'Clutch metric.'}),
     KALINA : Object.freeze({val : 'Kalina', desc : 'Overworked logistics officer.'}),
-    GET : Object.freeze({val : 'Acquisition', desc : 'How to get and where.'}),
+    TAKE : Object.freeze({val : 'Acquisition', desc : 'How to get and where.'}),
 });
 
 export const cardData = Object.freeze([
@@ -307,7 +307,7 @@ export const cardData = Object.freeze([
                 `5${star} dolls available in Production are the only ones elegible for True Core Masks, bar spaghetti.`,]
         })}<br>
         ${spoilerSummary('Dolls EN are missing.', image('https://cdn.discordapp.com/attachments/951085201658871820/991552853313335456/en_missing_dolls_ms_in_less_than_10_months_edition.png'))}`,
-        tags : [dTag.TDOLL, dTag.IMPT, dTag.GET, dTag.SPEQ]
+        tags : [dTag.TDOLL, dTag.IMPT, dTag.TAKE, dTag.SPEQ]
     },
     {
         questions : `When should I begin trying to produce fairies/do Heavy Equipment Constructions (HEC)?`,
@@ -391,7 +391,7 @@ export const cardData = Object.freeze([
     {
         questions : `How do I get more Quick Training Contracts?`,
         answers : `End of daily log-ins, Keycard Event, gem shop.`,
-        tags : [dTag.ITEM, dTag.MINI, dTag.SHOP, dTag.GET]
+        tags : [dTag.ITEM, dTag.MINI, dTag.SHOP, dTag.TAKE]
     },
     {
         questions : `How do I unlock the next chapter?`,
@@ -523,7 +523,7 @@ export const cardData = Object.freeze([
         questions : `What's the Fire Control Component (FCC) used for and where can I get them?`,
         answers : `Upgrading 5${star} dolls to 6${star} through modding.<br>
         Obtainable through Black Market (2 monthly), major events, and special log-ins.`,
-        tags : [dTag.ITEM, dTag.MOD, dTag.GET]
+        tags : [dTag.ITEM, dTag.MOD, dTag.TAKE]
     },
     {
         questions : `What is Bookshelf of Memories?`,
@@ -579,7 +579,7 @@ export const cardData = Object.freeze([
     {
         questions : `How do I get some Extra Potential Energy for Coalition Drills?`,
         answers : `Shop.`,
-        tags : [dTag.ITEM, dTag.PA, dTag.SIMS, dTag.SHOPd, dTag.GET]
+        tags : [dTag.ITEM, dTag.PA, dTag.SIMS, dTag.SHOPd, dTag.TAKE]
     },
     {
         questions : `Which dolls should I duplicate?`,
@@ -844,12 +844,12 @@ export const cardData = Object.freeze([
     {
         questions : `My resources (Manpower, Ammunitions, Rations, Parts) are uncomfortably low? Where can I get some?`,
         answers : `Most efficient and consistent is logistics. Though you can get them through the shop, quest and event/crate rewards, campaign/major story node clears, and random nodes.`,
-        tags : [dTag.MARP, dTag.LOGI, dTag.NEWB, dTag.GET]
+        tags : [dTag.MARP, dTag.LOGI, dTag.NEWB, dTag.TAKE]
     },
     {
         questions : `How do I get Platinum and Nova Medals?`,
         answers : `From whatever Major/Seasonal/Collab Event running right now. Platinum are for 5${star} dolls and Nova are for dolls 4${star} and below.`,
-        tags : [dTag.ITEM, dTag.TDOLL, dTag.MAJOR, dTag.SEASON, dTag.COLLAB, dTag.GET]
+        tags : [dTag.ITEM, dTag.TDOLL, dTag.MAJOR, dTag.SEASON, dTag.COLLAB, dTag.TAKE]
     },
     {
         questions : `How do I build Vector to no-damage 13-4?`,
@@ -890,7 +890,7 @@ export const cardData = Object.freeze([
         answers : `Also known as Svarog/High Altitude EMP Bombing, it pulls from the entire pool where the entire pool is the X in the X/100 units.<br>
         Recommended to pull one at a time since 10-pull is literally 10 1-pulls.<br>
         Acquired from weekly quest (8 standard captures), daily log-in, major events, shop (whenever a new banner starts).`,
-        tags : [dTag.ITEM, dTag.PA, dTag.GET]
+        tags : [dTag.ITEM, dTag.PA, dTag.TAKE]
     },
     {
         questions : `Recipe for Parachute/Paradrop Fairy?`,
@@ -1025,7 +1025,7 @@ export const cardData = Object.freeze([
                 'Shop. Especially when there is a seasonal/collab going on. Packages are also good.',
                 'Maintenance (10 weekly) and Apolotokens.']
         })}`,
-        tags : [dTag.ITEM, dTag.RESUPPLY, dTag.GET]
+        tags : [dTag.ITEM, dTag.RESUPPLY, dTag.TAKE]
     },  //Site down - https://dmesse.egloos.com/m/3594243
     {
         questions : `Why aren't my dorm batteries appearing?`,
@@ -1037,7 +1037,7 @@ export const cardData = Object.freeze([
         questions : `What are Extra Impulses and where can I get them?`,
         answers : `Stockable versions of Electronic Impulses.<br>
         You can get them through daily log-ins, weekly quests, achievements, and events.`,
-        tags : [dTag.PA, dTag.ITEM, dTag.GET]
+        tags : [dTag.PA, dTag.ITEM, dTag.TAKE]
     },
     {
         questions : `Read a guide that said to use a team of 2${star} & 3${star} dolls until I get enough cores to spend. Is it still worth doing it now?`,
@@ -1200,7 +1200,7 @@ export const cardData = Object.freeze([
     {
         questions : `I haven't seen this icon/card BG before. Where can I get some of it?`,
         answers : `Most likely a Cafe Costume Side Story reward.`,
-        tags : [dTag.MISC, dTag.GET]
+        tags : [dTag.MISC, dTag.TAKE]
     },
     {
         questions : `I'm in dummy core hell. How do I get some more?`,
@@ -1208,7 +1208,7 @@ export const cardData = Object.freeze([
         ${link('BigStupidJellyfish write-up.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/core-rates')}<br>
         ${link("u/UnironicWeeaboo's easier 11-6.", 'https://www.reddit.com/r/girlsfrontline/comments/u1tr33/weekly_commanders_lounge_april_12_2022/i5178cy/')}<br>
         Run any daytime leveling maps for combined core and exp farming. You can also farm during core rate up by using the handgun recipe.`,
-        tags : [dTag.ITEM, dTag.GET]
+        tags : [dTag.ITEM, dTag.TAKE]
     },
     {
         questions : `Any way to increase commander level really quickly?`,
@@ -1531,7 +1531,7 @@ export const cardData = Object.freeze([
         answers : `Have you checked the quests?<br>
         What about the mail? Stage clear rewards are sent there.<br>
         If you did and they're still not there, either restart or wait for a few days.`,
-        tags : [dTag.TECH, dTag.GET]
+        tags : [dTag.TECH, dTag.TAKE]
     },
     {
         questions : `What are the chances on getting a specific fairy talent?`,
@@ -1629,7 +1629,7 @@ export const cardData = Object.freeze([
     {
         questions : `Where can I get calibration tickets?`,
         answers : `Defense Drill, expeditions, shop, mini-events, log-in.`,
-        tags : [dTag.ITEM, dTag.SIMS, dTag.EXPED, dTag.MINI, dTag.SHOP, dTag.GET]
+        tags : [dTag.ITEM, dTag.SIMS, dTag.EXPED, dTag.MINI, dTag.SHOP, dTag.TAKE]
     },
     {
         questions : `How do I get duplicate ringleaders?`,
@@ -1740,7 +1740,7 @@ export const cardData = Object.freeze([
     {
         questions : `Where can I get a dyeable and free commander costume?`,
         answers : `Shattered Connexions.`,
-        tags : [dTag.CMDR, dTag.SKIN, dTag.GET]
+        tags : [dTag.CMDR, dTag.SKIN, dTag.TAKE]
     },
     {
         questions : `Why does the iOS version crash a lot?`,
@@ -1756,7 +1756,7 @@ export const cardData = Object.freeze([
         questions : `What are Data Patches for and how do I get them?`,
         answers : `Used for iterating FSTs beyond yellow 5${star} (the red ${star}). Can also be used across all FSTs.<br>
         You can get them by getting a 5${star}'d FST's Central Data or by Code Refactoring in the Garage.`,
-        tags : [dTag.HOC, dTag.FST, dTag.LEVEL, dTag.ITEM, dTag.GET]
+        tags : [dTag.HOC, dTag.FST, dTag.LEVEL, dTag.ITEM, dTag.TAKE]
     },
     {
         questions : `Can I get Black Cards if I have a dupe of Luffberry skin?`,
@@ -1781,7 +1781,7 @@ export const cardData = Object.freeze([
             'Mini-events' : ['Mini-events.'],
             'Ranking Rewards' : ['Arctic Warfare only.']
         })}`,
-        tags : [dTag.TDOLL, dTag.SKIN, dTag.GET]
+        tags : [dTag.TDOLL, dTag.SKIN, dTag.TAKE]
     },
     {
         questions : `How do I know which dolls are in the Targeted rate up?`,
@@ -1791,7 +1791,7 @@ export const cardData = Object.freeze([
     {
         questions : `How do I get Friend ID icons?`,
         answers : `Resupply gacha (10 pulls), shop or clear reward during events, or Friend Shop.`,
-        tags : [dTag.GET]
+        tags : [dTag.TAKE]
     },
     {
         questions : `How do I know the final value of the doll stats? And what are the caps for each stat?`,
@@ -1807,7 +1807,7 @@ export const cardData = Object.freeze([
     {
         questions : `What are Dream Astralites and where do I get it?`,
         answers : `Milestone currency for Bookshelf of Memories.`,
-        tags : [dTag.ITEM, dTag.SIDE, dTag.GET]
+        tags : [dTag.ITEM, dTag.SIDE, dTag.TAKE]
     },
     {
         questions : `Is there a way to quickly unequip dolls?`,
