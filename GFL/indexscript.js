@@ -50,7 +50,7 @@ function searchCards() {
         const cardTags = searchParams.get('tags').split(' ').filter(Boolean);
         if (cardTags.length > 0) {
             /** @returns {boolean} */
-            matchCheck = (card) => {console.log(card); cardTags.subsetOf(card.tags.map(tag => tag.val));}
+            matchCheck = (card) => cardTags.subsetOf(card.tags.map(tag => tag.val));
         } else {
             return 'Empty search.';
         }
