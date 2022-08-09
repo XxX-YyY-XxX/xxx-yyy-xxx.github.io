@@ -89,6 +89,7 @@ function randomCards() {
 }
 
 function setQuestionBoxes(cards) {
+    console.log(cards);
     return `<fieldset>
         <legend><h3>${cards.questions}</h3></legend>
         ${cards.answers}
