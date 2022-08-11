@@ -102,7 +102,8 @@
 > - [Data sim data threshold.](https://old.reddit.com/r/girlsfrontline/comments/vx5s4p/weekly_commanders_lounge_july_12_2022/ig9g907/)
 >
 > - [Updates.](https://old.reddit.com/r/girlsfrontline/comments/w2n556/weekly_commanders_lounge_july_19_2022/igs19iq/)
-
+>
+> - [More doll analysis.](https://old.reddit.com/r/girlsfrontline/comments/w2n556/weekly_commanders_lounge_july_19_2022/ihc1uqc/)
 >EarSpeaker
 >
 > - [Cheap SG tank.](https://old.reddit.com/r/girlsfrontline/comments/uc7eet/weekly_commanders_lounge_april_26_2022/i6ut0vo/)
@@ -114,6 +115,8 @@
 > - [PPK spaghetti.](https://old.reddit.com/r/girlsfrontline/comments/v1l5po/weekly_commanders_lounge_may_31_2022/ib1eu2w/)
 >
 > - [Commander skills score.](https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/idqp247/)
+>
+> - [Smasher cheese.](https://old.reddit.com/r/girlsfrontline/comments/w2n556/weekly_commanders_lounge_july_19_2022/ihcdm9j/)
 
 # Android Viability Checks (Mostly on Android 12)
 
@@ -290,10 +293,6 @@ Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr)
 
 Apparently no since it'll revert back to its default file.
 
->I bought the L2D background but I saw nothing move. Is this really L2D?
-
-If you won't move then it wouldn't. Yes, panoramic^sorta L2D.
-
 >How do I buy gems if I use APK?
 
 [..."Highly likely to be from APK." I ain't sure, m'kay?](https://old.reddit.com/r/girlsfrontline/comments/mzp707/polarised_light_megathread/gx0p8on/)
@@ -301,10 +300,6 @@ If you won't move then it wouldn't. Yes, panoramic^sorta L2D.
 >Guides show more echelons deployed than regular heliports in the map. What am I missing?
 
 Heavy Heliports>Top Tab>Choose Echelon.
-
->I noticed during battle that the skill icons change order. How and why does it change?
-
-[Explanation and how to manipulate it.](https://old.reddit.com/r/girlsfrontline/comments/oeqgwt/weekly_commanders_lounge_july_06_2021/h48qu1v/)
 
 >Are there anymore analyses?
 

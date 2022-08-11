@@ -2,10 +2,6 @@
 
 # Resupply/Costumes/Furniture
 
-### How do I get Black Cards?
-
-> Just give the duplicate costume. Nice and simple.
-
 ### What if I don't have the doll I have costume for?
 
 > Make Kalina wear it and give it when the owner comes home.

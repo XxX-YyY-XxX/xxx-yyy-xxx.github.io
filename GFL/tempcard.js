@@ -1320,8 +1320,8 @@ export const cardData = Object.freeze([
         tags : [dTag.COLLAB]
     },
     {
-        questions : `I can't successfully log in. What should I do?`,
-        answers : `Wait a minute, change WiFi connection, change to data, use VPN, restart client, delete cache, ${link('do a manual patch', 'https://github.com/lloyddunamis/gfl_manualpatch/blob/main/FullResource_readme')}, ${link('delete some files', 'https://twitter.com/Synexcu/status/1310117595094216709?s=19')}, reinstall (with minimum data first), phone restart, or a combination of any of the above coupled with sheer determination to do it for days on end.`,
+        questions : `I can't update/download the game properly. What should I do?`,
+        answers : `Wait a minute, trudge through, change WiFi connection, change to data, use VPN, restart client, delete cache, ${link('do a manual patch', 'https://github.com/lloyddunamis/gfl_manualpatch/blob/main/FullResource_readme')}, ${link('delete some files', 'https://twitter.com/Synexcu/status/1310117595094216709?s=19')}, reinstall (with minimum data first), phone restart, or a combination of any of the above coupled with sheer determination to do it for days on end.`,
         tags : [dTag.TECH]
     },
     {
@@ -1932,6 +1932,46 @@ export const cardData = Object.freeze([
         questions : `I think I drove myself into a wall by not doing things efficiently. Do I have to restart my account to progress better?`,
         answers : `Nah. You'll be just fine continuing. Just do things better from now on.`,
         tags : [dTag.NEWB]
+    },
+    {
+        questions : `Do spare dorms contribute to comfort/battery generation?`,
+        answers : `No. The comfort values shown in it is for when they're actually used.`,
+        tags : [dTag.DORM]
+    },
+    {
+        questions : `Is there a way to change the skill icon order in battle?`,
+        answers : `${link('Explanation and manipulation.', 'https://old.reddit.com/r/girlsfrontline/comments/oeqgwt/weekly_commanders_lounge_july_06_2021/h48qu1v/')}`,
+        tags : [dTag.BATTLE, dTag.SKILL]
+    },
+    {
+        questions : `Is there an easy way to get Luffberry tickets?`,
+        answers : `${list(true,
+            'Create private lobby.',
+            'Start match with bots.',
+            'Recover game every 5 minutes or buy cards during shop phase.',
+            'Quit match after 20 minutes.')}`,
+        tags : [dTag.OJ]
+    },
+    {
+        questions : `How does one change their dormitory representative/avatar/visitor?`,
+        answers : `${image('./assets/images/VisitorAvatar.png', 'Visit > Setting > Dorm Visit')}<br>
+        Checked uses your commander avatar, unchecked and it uses your first adjutant.`,
+        tags : [dTag.DORM]
+    },
+    {
+        questions : `Where do I need to go to change my adjutant's background?`,
+        answers : `Profile > Base Management`,
+        tags : [dTag.MISC]
+    },  //@Visual
+    {
+        questions : `How do I get Black Cards?`,
+        answers : `Just give the duplicate costume. Nice and simple.`,
+        tags : [dTag.RESUPPLY, dTag.ITEM, dTag.GET]
+    },
+    {
+        questions : `I bought the L2D background but I saw nothing move. Is this really L2D?`,
+        answers : `If you won't move then it wouldn't. Yes, panoramic${altStyle('sorta L2D', TextStyle.SUPER)}.`,
+        tags : [dTag.MISC]
     },
     {
         questions : ``,

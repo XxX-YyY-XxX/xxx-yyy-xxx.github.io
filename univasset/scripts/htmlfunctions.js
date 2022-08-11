@@ -9,6 +9,7 @@ export class TextStyle {
     static BOLD = 'strong';
     static CODE = 'code';
     static QOUTE = 'blockquote';
+    static SUPER = 'sup';
 }
 
 /** @param {string} link */
@@ -25,9 +26,10 @@ export function image(link, caption = "") {
 
 /** @param {string} linkText Text or image URL. @param {string} link */
 export function link(linkText, link) {
-    if (linkStart.some(val => linkText.startsWith(val)))
+    return `<a href="${link}">${linkStart.some(val => linkText.startsWith(val)) ? `<img src="${linkText}" alt="${imgAlt}">` : linkText}</a>`;
+    /* if (linkStart.some(val => linkText.startsWith(val)))
         linkText = `<img src="${linkText}" alt="${imgAlt}">`
-    return `<a href="${link}">${linkText}</a>`;
+    return `<a href="${link}">${linkText}</a>`; */
 }
 
 /** @param {boolean} ordered */
