@@ -1179,7 +1179,7 @@ export const cardData = Object.freeze([
     {
         questions : `What happens to the reshuffle/refresh timer when the banner changes?`,
         answers : `Restarts from the top. Meaning refreshing just hours before Ringleader change has the same effect as refreshing 2 days ago.<br>
-        Reports suggest that the timer after the change doesn't start until opening the bombing screen.`,
+        Pool refresh doesn't start on banner change until after opening the bombing screen.`,
         tags : [dTag.PA]
     },  //@Test - Check refresh timer after hours of banner change
     {
@@ -1193,9 +1193,9 @@ export const cardData = Object.freeze([
         tags : [dTag.EQUIP]
     },
     {
-        questions : `Where can I see stat previews of of PA units?`,
+        questions : `Where can I see the stat previews for PA units?`,
         answers : `${googleEmbed('https://docs.google.com/spreadsheets/d/1TYKbdjuOdOMsvaaIduWW_8FF0tm27BjwKbC4uggl1wE')}`,
-        tags : [dTag.COALITION]
+        tags : [dTag.PA, dTag.COALITION]
     },
     {
         questions : `I haven't seen this icon/card BG before. Where can I get some of it?`,
