@@ -48,6 +48,7 @@ export const dTag = Object.freeze({
     //#endregion
     //#region Home Tabs
     CMDR : Object.freeze({val : 'Commander', desc : '"Self-insert."'}),
+    ADJUNCT : Object.freeze({val : 'Adjutants', desc : 'T-Doll secretary.'}),
     MINI : Object.freeze({val : 'MiniEvents', desc : 'Keycard Events, Point Events, etc.'}),
     SHOP : Object.freeze({val : 'Shop', desc : 'Buy things here.'}),
     FRIEND : Object.freeze({val : 'Friends', desc : 'The helpful kind.'}),
@@ -715,7 +716,7 @@ export const cardData = Object.freeze([
     },
     {
         questions : `What does oathing a doll do?`,
-        answers : `Additional line for oath, higher affection cap, double EXP gain (map EXP, auto-battles, CRs) on MODs, complete repair and resupply (one-time only), stat bonuses for damage/evasion/accuracy (because higher affection cap).`,
+        answers : `Additional adjutant line after oath, higher affection cap, double EXP gain (map EXP, auto-battles, CRs) on MODs, complete repair and resupply (one-time only), stat bonuses for damage/evasion/accuracy (because higher affection cap).`,
         tags : [dTag.TDOLL, dTag.OATH, dTag.MOD, dTag.LEVEL, dTag.LOVE]
     },
     {
@@ -832,7 +833,7 @@ export const cardData = Object.freeze([
         tags : [dTag.FRIEND, dTag.ECH]
     },
     {
-        questions : `I wasn't able to clear the event. Will I still get the clear rewards when they get added to Campaign?`,
+        questions : `I wasn't able to clear the event during it's initial runtime. Will I still get the clear rewards when they get added to Campaign?`,
         answers : `Nope. Gutted rewards compared to original, even True Core Masks (TCM). Free shit is free shit though, and doll/crate rewards gets cycled to Limited Dolls. So skip the current major event's story if you have to and reap the rewards.`,
         tags : [dTag.MARP, dTag.ITEM, dTag.CAMPAIGN, dTag.MAJOR, dTag.LEDOLL, dTag.TCM]
     },
@@ -871,7 +872,7 @@ export const cardData = Object.freeze([
     },
     {
         questions : `What are the resources that has a defined max capacity and how much can they store?`,
-        answers : `${image('./assets/images/ResourceCap.png', 'Train Coin = Training Data | Furniture Coin = Tokens | Memory Pieces = Neural Fragments')}<br>
+        answers : `${image('https://cdn.discordapp.com/attachments/410790982116966400/905090370675830884/image0.jpg', 'Train Coin = Training Data | Furniture Coin = Tokens | Memory Pieces = Neural Fragments<br>' + link('Source', 'https://randomqwerty.github.io/?server=en&file=item'))}<br>
         Even then, all resources can be obtained without regards to max capacity through daily gifts, mission rewards, and whaling.`,
         tags : [dTag.MARP, dTag.ITEM]
     },
@@ -961,7 +962,7 @@ export const cardData = Object.freeze([
         answers : `${altStyle('L2D mode', TextStyle.QOUTE)}<br>
         ${altStyle('Double Adjutant', TextStyle.QOUTE)}<br>
         Pick one.`,
-        tags : [dTag.TDOLL, dTag.SKIN]
+        tags : [dTag.TDOLL, dTag.SKIN, dTag.ADJUNCT]
     },
     {
         questions : `How do I unlock special effects on commanders like flame auras etc.?`,
@@ -1461,13 +1462,13 @@ export const cardData = Object.freeze([
     {
         questions : `Found out that there are seasonal lines for some dolls. How do I trigger them?`,
         answers : `Set them as your adjutant wearing the appropriate costume for the occasion.`,
-        tags : [dTag.TDOLL, dTag.SKIN]
+        tags : [dTag.TDOLL, dTag.SKIN, dTag.ADJUNCT]
     },  //@Clarify
     {
         questions : `Is there a compilation of anniversary adjutant lines?`,
         answers : `${youtubeEmbed('PLoDB_FcnOA5zXkZ9XmQMTog1F7uIRZ_Qa')}<br>
         ${googleEmbed('https://docs.google.com/document/d/1W5JzUGaC_fL5itce05WnkHcu7wX_sEn2vQlbgQNeKAk')}`,
-        tags : [dTag.LORE, dTag.ANNIV]
+        tags : [dTag.LORE, dTag.ANNIV, dTag.ADJUNCT]
     },  //PL4Z0akElhimzHHiVMCozfUn1B6tYKjwPR playlist by redditor u/paperrabbit. New by u/ConductorBichir.
     {
         questions : `My team says Ammo/Ration depleted. How do I fill it up?`,
@@ -1725,7 +1726,7 @@ export const cardData = Object.freeze([
         questions : `How do I change my assistant/adjutant?`,
         answers : `Commander Level > Base Management (bottom-left).<br>
         You can also change each one's background.`,
-        tags : [dTag.MISC]
+        tags : [dTag.ADJUNCT]
     },  //@Visual
     {
         questions : `How do I edit my Friend Card?`,
@@ -1959,11 +1960,6 @@ export const cardData = Object.freeze([
         tags : [dTag.DORM]
     },
     {
-        questions : `Where do I need to go to change my adjutant's background?`,
-        answers : `Profile > Base Management`,
-        tags : [dTag.MISC]
-    },  //@Visual
-    {
         questions : `How do I get Black Cards?`,
         answers : `Just give the duplicate costume. Nice and simple.`,
         tags : [dTag.RESUPPLY, dTag.ITEM, dTag.GET]
@@ -1972,6 +1968,27 @@ export const cardData = Object.freeze([
         questions : `I bought the L2D background but I saw nothing move. Is this really L2D?`,
         answers : `If you won't move then it wouldn't. Yes, panoramic${altStyle('sorta L2D', TextStyle.SUPER)}.`,
         tags : [dTag.MISC]
+    },
+    {
+        questions : `How do I bypass enemy defenses?`,
+        answers : `${table(['Defense', 'Counter'],
+            ['Health Bar', 'Just shoot them'],
+            ['Evasion', 'High accuracy<br>Evasion debuff<br>Surehits like skillshots or explosives'],
+            ['Armor', 'High firepower<br>AP bullets<br>Explosives'],
+            ['HP Shields', 'Basic shooting<br>Strippers like LTLX or De Lisle<br>Shield bypass like DEagle or NTW'],
+            ['Force Shields', 'HOCs'],
+            ['Damage Reduction', 'Shoot harder'])}`,
+        tags : [dTag.BATTLE, dTag.NEWB]
+    },
+    {
+        questions : `How do I know when my registration date was?`,
+        answers : `user_info.json from GFAlarm > reg_time value > convert to gregorian ("reg_time" unix time) with ${link('this', 'https://www.wolframalpha.com/')}`,
+        tags : [dTag.ACCT]
+    },
+    {
+        questions : `How do fairy talents work?`,
+        answers : `Activates at the start of battle but activates after the echelon's fairy skll. As for it's effects, aside from Fervor (which boosts at 0s, 8s, 16s mark), exactly what it says (i.e. unlimited if no limit was stated).`,
+        tags : [dTag.FAIRY, dTag.BATTLE]
     },
     {
         questions : ``,

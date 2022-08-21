@@ -104,6 +104,11 @@
 > - [Updates.](https://old.reddit.com/r/girlsfrontline/comments/w2n556/weekly_commanders_lounge_july_19_2022/igs19iq/)
 >
 > - [More doll analysis.](https://old.reddit.com/r/girlsfrontline/comments/w2n556/weekly_commanders_lounge_july_19_2022/ihc1uqc/)
+>
+> - [Row vs Column](https://old.reddit.com/r/girlsfrontline/comments/w2n556/weekly_commanders_lounge_july_19_2022/ihmraub/)
+>
+> - [Veteran Callback Limit](https://old.reddit.com/r/girlsfrontline/comments/w8dt7x/weekly_commanders_lounge_july_26_2022/ihvh4j6/)
+
 >EarSpeaker
 >
 > - [Cheap SG tank.](https://old.reddit.com/r/girlsfrontline/comments/uc7eet/weekly_commanders_lounge_april_26_2022/i6ut0vo/)
@@ -273,12 +278,6 @@ Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr)
 
 [u/elgatoroid's STC deobfuscator.](https://github.com/neko-gg/girlsfrontline-deobfuscator)
 
-# Account Management
-
->How do I know when was my registration date?
-
-[Here.](https://old.reddit.com/r/girlsfrontline/comments/s6s9xj/weekly_commanders_lounge_january_18_2022/ht9ller/)
-
 # Others
 
 >What does the Download Data button in the settings do?
@@ -296,6 +295,8 @@ Apparently no since it'll revert back to its default file.
 >How do I buy gems if I use APK?
 
 [..."Highly likely to be from APK." I ain't sure, m'kay?](https://old.reddit.com/r/girlsfrontline/comments/mzp707/polarised_light_megathread/gx0p8on/)
+
+[Google payments](https://old.reddit.com/r/girlsfrontline/comments/w2n556/weekly_commanders_lounge_july_19_2022/ihnfd3u/)
 
 >Guides show more echelons deployed than regular heliports in the map. What am I missing?
 
