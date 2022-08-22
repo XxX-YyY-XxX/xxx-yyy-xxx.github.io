@@ -817,11 +817,6 @@ export const cardData = Object.freeze([
         tags : [dTag.PET]
     },
     {
-        questions : `How often do general rate ups occur?`,
-        answers : `January, May, September`,
-        tags : [dTag.PROD]
-    },
-    {
         questions : `Do autobattles give affection?`,
         answers : `A tiny bit.`,
         tags : [dTag.AUTO, dTag.LOVE]
@@ -1913,9 +1908,8 @@ export const cardData = Object.freeze([
         tags : [dTag.SIDE, dTag.MOD]
     },  //@Clarify
     {
-        questions : `Will I lose the tile buffs if my dolls retreated/moved/lose link/die ?`,
-        answers : `${spoilerSummary('No.', youtubeEmbed('tQRqcTDmAKE'))}<br>
-        On that note, retreating dolls who had their buffs activate will not remove said buff. Also, tile buffs don't degrade even if your dummy count does.`,
+        questions : `Will I lose the tile buffs if my dolls retreated/moved/lose link/die?`,
+        answers : `${spoilerSummary('No', youtubeEmbed('tQRqcTDmAKE'))}. On that note, retreating dolls who had their buffs activate will not remove said buff. Also, tile buffs don't degrade even if your dummy count does.`,
         tags : [dTag.TDOLL, dTag.SKILL, dTag.BATTLE]
     },
     {
@@ -1997,13 +1991,19 @@ export const cardData = Object.freeze([
         tags : [dTag.COALITION, dTag.EQUIP]
     },
     {
-        questions : `Is there any rate ups here?`,
+        questions : `Is there a rate up in this game? If so, how do they work?`,
         answers : `${descriptionList({
             'Anchored Construction' : ['Available for newbies', 'Available whenever a new batch of production dolls are released'],
             'Targeted Rate Up' : ['Available when a new skin banner is released'],
             'General Rate Up' : ['January, May, September']
-        })}`,
+        })}<br>
+        ${link('Gamepress overview.', 'https://www.gamepress.gg/girlsfrontline/gfl-explained-rate-up')}`,
         tags : [dTag.PROD]
+    },
+    {
+        questions : `Can I deploy two or three of the same pets in expedition?`,
+        answers : `Actually, that is the method used by min-maxers regarding advantaged pets.`,
+        tags : [dTag.EXPED, dTag.PET]
     },
     {
         questions : ``,

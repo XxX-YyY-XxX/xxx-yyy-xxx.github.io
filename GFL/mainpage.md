@@ -165,7 +165,7 @@ https://old.reddit.com/r/girlsfrontline/comments/vrsp23/weekly_commanders_lounge
 
 # Random Info
 
-Red node KCCO mechs count towards the armored enemies mission.
+Red node enemy units count towards the SF enemies mission.
 
 Maximum routing for Planning Mode is 40.
 
@@ -289,10 +289,6 @@ Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr)
 >What does the Download Data button in the settings do?
 
 [Basically fairy and equipment texture, and dorm-related stuff.](https://old.reddit.com/r/girlsfrontline/comments/gziv26/weekly_commanders_lounge_june_09_2020/fut4man/)
-
->Is there a rate-up in this game? If so, how do they work?
-
-[Production Rate-Up Guide.](https://www.gamepress.gg/girlsfrontline/gfl-explained-rate-up)
 
 >Can I change the censored sprites to uncensored/rejected ones?
 

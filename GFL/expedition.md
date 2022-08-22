@@ -2,10 +2,6 @@
 
 # Expedition/Forward Basecamp
 
-### Can I deploy two or three of the same pets in expedition?
-
-> Actually, that is the method used by min-maxers regarding advantaged pets.
-
 ### Can the basecamp not give expedition loots?
 
 > Only if you didn't do one. If you did and no visible loot, restart app.
