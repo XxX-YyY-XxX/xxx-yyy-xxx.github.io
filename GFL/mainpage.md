@@ -108,6 +108,12 @@
 > - [Row vs Column](https://old.reddit.com/r/girlsfrontline/comments/w2n556/weekly_commanders_lounge_july_19_2022/ihmraub/)
 >
 > - [Veteran Callback Limit](https://old.reddit.com/r/girlsfrontline/comments/w8dt7x/weekly_commanders_lounge_july_26_2022/ihvh4j6/)
+>
+> - [Doll Review Skepticism](https://old.reddit.com/r/girlsfrontline/comments/w8dt7x/weekly_commanders_lounge_july_26_2022/ii5kcmm/)
+>
+> - [C93 + Liu](https://old.reddit.com/r/girlsfrontline/comments/w8dt7x/weekly_commanders_lounge_july_26_2022/iil56pi/)
+>
+> - [Equipment calibration](https://old.reddit.com/r/girlsfrontline/comments/we5q4h/weekly_commanders_lounge_august_02_2022/iino3ww/)
 
 >EarSpeaker
 >
@@ -366,6 +372,8 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 > Above 920 total resources used: Excludes HG.
 >
 > G11: 297, 297, 297, 31
+>
+> All 30 5* HGs: Grizzly, NZ75, Px4, and PA-15 <!--u/Rhasta_la_vista-->
 
 ### When all doll DPS contribution is equal, who becomes the MVP?
 

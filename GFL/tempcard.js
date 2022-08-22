@@ -954,7 +954,8 @@ export const cardData = Object.freeze([
     },  //@Visual
     {
         questions : `Is the package in the shop worth it?`,
-        answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/energy-packages')}`,
+        answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/energy-packages')}<br>
+        For the 7 day new account package: Day 4 to jumpstart skill leveling (saves around 80 days of datasims on a normal day), Day 5 is the most efficient oath package so far, and Day 7 is a really good value for tokens.`,
         tags : [dTag.ITEM, dTag.OATH, dTag.SHOP]
     },
     {
@@ -1989,6 +1990,20 @@ export const cardData = Object.freeze([
         questions : `How do fairy talents work?`,
         answers : `Activates at the start of battle but activates after the echelon's fairy skll. As for it's effects, aside from Fervor (which boosts at 0s, 8s, 16s mark), exactly what it says (i.e. unlimited if no limit was stated).`,
         tags : [dTag.FAIRY, dTag.BATTLE]
+    },
+    {
+        questions : `If a ringleader equips a support buff/debuff chip, does it apply on themselves as well?`,
+        answers : `Yes.`,
+        tags : [dTag.COALITION, dTag.EQUIP]
+    },
+    {
+        questions : `Is there any rate ups here?`,
+        answers : `${descriptionList({
+            'Anchored Construction' : ['Available for newbies', 'Available whenever a new batch of production dolls are released'],
+            'Targeted Rate Up' : ['Available when a new skin banner is released'],
+            'General Rate Up' : ['January, May, September']
+        })}`,
+        tags : [dTag.PROD]
     },
     {
         questions : ``,
