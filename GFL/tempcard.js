@@ -362,11 +362,10 @@ export const cardData = Object.freeze([
     {
         questions : `Why are the doll skills not activating?`,
         answers : `Is the auto skill button on? Is it on forced manual? Is it a flare skill?<br>
-        Active skills cannot activate when they cannot shoot, i.e. reloading, dolls moving, no enemy in range, no ammo/ration, in-between shot cooldowns.<br>
-        Passive skills on the other hand will not activate only if they have no ammo or ration. This includes Slug's 3x damage and Flash's -3 damage.<br>
-        Note though that there are a handful of exceptions.`,
+        Active skills cannot activate when they cannot shoot, i.e. reloading, dolls moving, no enemy in range, no ammo/ration<!--, in-between shot cooldowns-->.<br>
+        Passive skills on the other hand will not activate only if they have no ammo or ration. This includes Slug's 3x damage and Flash's -3 damage. Though that there are a handful of exceptions.`,
         tags : [dTag.TDOLL, dTag.SKILL, dTag.IMPT]
-    },
+    },  //@Visual
     //#endregion
     {
         questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
@@ -605,7 +604,7 @@ export const cardData = Object.freeze([
     },
     {
         questions : `Do events get a rerun? And if so, when?`,
-        answers : `Major events get a permanent rerun called Campaign Missions.<br>
+        answers : `Major events get a permanent rerun called Campaign Missions 6 months minimum after their initial release.<br>
         Seasonal events get one when it's their time.<br>
         Collabs are subject to their holders whims.`,
         tags : [dTag.MAJOR, dTag.CAMPAIGN, dTag.SEASON, dTag.COLLAB]
@@ -1235,7 +1234,7 @@ export const cardData = Object.freeze([
             'Main Story' : [link("u/RhythmLunatic's GFL Cutscene Interpreter (including collabs)", 'https://gfl.amaryllisworks.pw'),
                 link("Shoul's Story Scenes Playlists", 'https://www.youtube.com/channel/UC_JmwXOfYqOKpGGtc5gcVmw'),
                 link("Girls' Frontline Full Story Comprehension Playlist Translated up to Isomer", 'https://youtube.com/playlist?list=PL9y52Flm1yM-tJJoom2zfrWTpaO1mTw8M'),
-                link("u/DoctuhD's Girls Frontline Summary from Isomer to Polarized Light", 'https://docs.google.com/document/d/1yn0sjoktIb2f-KC6bxn3R0qpCUChBPpIQuERcLmBHbg')]
+                link("u/DoctuhD's Girls' Frontline Summary", 'https://docs.google.com/document/d/1oA07O2HGwvmoBqm-UKTTuSdxjLnSIbRHd5b2FuYOph0')]
         })}`,
         tags : [dTag.LORE, dTag.COLLAB]
     },
@@ -1539,11 +1538,6 @@ export const cardData = Object.freeze([
         questions : `Why is the event map still here? It should've ended, right?`,
         answers : `Happens if you didn't close the app throughout maintenance. Can still be played and drop limited dolls.<!-- u/BigStupidJellyfish_ -->`,
         tags : [dTag.MAJOR, dTag.SEASON, dTag.COLLAB]
-    },
-    {
-        questions : `I missed a major event, will it come back?`,
-        answers : `6 months minimum after their release, they get added to the Campaign tab. For collabs... hope for the best.`,
-        tags : [dTag.MAJOR, dTag.CAMPAIGN]
     },
     {
         questions : `Is there a list of game terms and their abbreviations? And is there any for dolls' nicknames?`,
@@ -2004,6 +1998,31 @@ export const cardData = Object.freeze([
         questions : `Can I deploy two or three of the same pets in expedition?`,
         answers : `Actually, that is the method used by min-maxers regarding advantaged pets.`,
         tags : [dTag.EXPED, dTag.PET]
+    },
+    {
+        questions : `Does the flare equipment's accuracy boost stack?`,
+        answers : `Yes.`,
+        tags : [dTag.TDOLL, dTag.EQUIP]
+    },
+    {
+        questions : `How can Alina get black marks/Adeline get white marks?`,
+        answers : `Have them support each other as HOCs.`,
+        tags : [dTag.COALITION, dTag.BATTLE]
+    },
+    {
+        questions : `How do I complete the quest for taking on drill targets?`,
+        answers : `Drill target = permanent preset of enemies. You know, the ones already available.`,
+        tags : [dTag.MISC]
+    },
+    {
+        questions : `Can I change the censored sprites to uncensored/rejected ones?`,
+        answers : `Apparently no since it'll revert back to its default file., And you might get in trouble.`,
+        tags : [dTag.TDOLL, dTag.SKIN]
+    },
+    {
+        questions : `How can I unlock the Fairy Room?`,
+        answers : `Clear 60 different maps, then get your first fairy using Heavy Equipment Production.`,
+        tags : [dTag.FAIRY]
     },
     {
         questions : ``,

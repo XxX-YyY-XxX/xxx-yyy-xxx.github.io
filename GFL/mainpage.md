@@ -290,10 +290,6 @@ Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr)
 
 [Basically fairy and equipment texture, and dorm-related stuff.](https://old.reddit.com/r/girlsfrontline/comments/gziv26/weekly_commanders_lounge_june_09_2020/fut4man/)
 
->Can I change the censored sprites to uncensored/rejected ones?
-
-Apparently no since it'll revert back to its default file.
-
 >How do I buy gems if I use APK?
 
 [..."Highly likely to be from APK." I ain't sure, m'kay?](https://old.reddit.com/r/girlsfrontline/comments/mzp707/polarised_light_megathread/gx0p8on/)
