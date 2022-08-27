@@ -320,7 +320,8 @@ export const cardData = Object.freeze([
         answers : `${descriptionList({
             'Mixed' : [spoilerSummary("CheneyQWER's infographic.", image('./assets/images/EchelonComps.png'))],
             'Coalition Echelons' : [link('Reddit flowchart post.', 'https://redd.it/rkvisq'),
-                link('Gamepress list of units and build suggestions.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units')],
+                link('Gamepress list of units and build suggestions.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units',
+                link('BigStupidJellyfish guide.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ringleader-echelon'))],
             'Tactical Doll Echelons' : [link("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv')]
         })}<br>
         Shouldn't be a gospel but a good starting point nonetheless.<br>
@@ -692,7 +693,7 @@ export const cardData = Object.freeze([
     },
     {
         questions : `Why is the PA notification in the home screen always lit up?`,
-        answers : `There are available pulls left to burn.`,
+        answers : `There are available pulls left to burn, particularly Svarog EMPs it seems.`,
         tags : [dTag.PA]
     },
     {
@@ -1237,7 +1238,7 @@ export const cardData = Object.freeze([
                 link("u/DoctuhD's Girls' Frontline Summary", 'https://docs.google.com/document/d/1oA07O2HGwvmoBqm-UKTTuSdxjLnSIbRHd5b2FuYOph0')]
         })}`,
         tags : [dTag.LORE, dTag.COLLAB]
-    },
+    },  //DuctuhD - https://docs.google.com/document/d/1yn0sjoktIb2f-KC6bxn3R0qpCUChBPpIQuERcLmBHbg
     {
         questions : `What's the use case for 5HGs?`,
         answers : `Good single target burst damage. Quick movespeed. Consumes minimal resources.`,
@@ -2023,6 +2024,41 @@ export const cardData = Object.freeze([
         questions : `How can I unlock the Fairy Room?`,
         answers : `Clear 60 different maps, then get your first fairy using Heavy Equipment Production.`,
         tags : [dTag.FAIRY]
+    },
+    {
+        questions : `Which PA unit has explosion attacks?`,
+        answers : `Manticores, Goliaths, Jaguars`,
+        tags : [dTag.COALITION]
+    },
+    {
+        questions : `Which fairy talent should I get?`,
+        answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/fairy-talents')}`,
+        tags : [dTag.FAIRY]
+    },
+    {
+        questions : `Can I farm ranking maps for the cumulative points?`,
+        answers : `Yes.`,
+        tags : [dTag.MAJOR]
+    },
+    {
+        questions : `Where did my Ringleader duplicates go?`,
+        answers : `As petals or as kernels. There can never be a dupe of the same Ringleader (literally same, alters are different).`,
+        tags : [dTag.PA, dTag.COALITION]
+    },
+    {
+        questions : `Is there a good place where I can find a spreadsheet on detailed doll stats?`,
+        answers : `${link("u/UnironicWeeaboo's repository.", 'https://randomqwerty.github.io/?server=ch&file=gun')}`,
+        tags : [dTag.TDOLL]
+    },
+    {
+        questions : `Guides show more echelons deployed than regular heliports in the map. What am I missing?`,
+        answers : `Heavy Heliports > Top Tab > Choose Echelon`,
+        tags : [dTag.MAP]
+    },
+    {
+        questions : `What is vulnerability?`,
+        answers : `A debuff that amplifies all damage recieved from all sources after armor calculation.`,
+        tags : [dTag.SKILL]
     },
     {
         questions : ``,

@@ -114,6 +114,10 @@
 > - [C93 + Liu](https://old.reddit.com/r/girlsfrontline/comments/w8dt7x/weekly_commanders_lounge_july_26_2022/iil56pi/)
 >
 > - [Equipment calibration](https://old.reddit.com/r/girlsfrontline/comments/we5q4h/weekly_commanders_lounge_august_02_2022/iino3ww/)
+>
+> - [Fairy Command dumping](https://old.reddit.com/r/girlsfrontline/comments/wjxfxg/weekly_commanders_lounge_august_09_2022/ik0b7ir/)
+>
+> - [SCEX, 56R](https://old.reddit.com/r/girlsfrontline/comments/wjxfxg/weekly_commanders_lounge_august_09_2022/ikb1n4d/)
 
 >EarSpeaker
 >
@@ -295,10 +299,6 @@ Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr)
 [..."Highly likely to be from APK." I ain't sure, m'kay?](https://old.reddit.com/r/girlsfrontline/comments/mzp707/polarised_light_megathread/gx0p8on/)
 
 [Google payments](https://old.reddit.com/r/girlsfrontline/comments/w2n556/weekly_commanders_lounge_july_19_2022/ihnfd3u/)
-
->Guides show more echelons deployed than regular heliports in the map. What am I missing?
-
-Heavy Heliports>Top Tab>Choose Echelon.
 
 >Are there anymore analyses?
 
