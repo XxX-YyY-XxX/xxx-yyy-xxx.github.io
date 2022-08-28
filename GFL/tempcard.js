@@ -517,6 +517,7 @@ export const cardData = Object.freeze([
         questions : `Is there a way for my game to feel smoother?`,
         answers : `${link('Gamepress article.', 'https://gamepress.gg/girlsfrontline/fixing-gfl-client-lag-possible-workarounds')}<br>
         ${link('Decompressed obb.', 'https://www.mediafire.com/file/r3iwixgyhkafr77/main.375.com.sunborn.girlsfrontline.en.obb/file')}<br>
+        ${link("irfaantx#9917's 2.09 obb.", 'https://drive.google.com/file/d/1Blm_Pf1hgL5pxdRBeV3qXCG3FHZUW0Y2')}<br>
         ${link('DIY decompression.', 'https://www.reddit.com/r/girlsfrontline/comments/lvwwtv/weekly_commanders_lounge_march_02_2021/gpugenl/')}`,
         tags : [dTag.MISC]
     },
@@ -2059,6 +2060,16 @@ export const cardData = Object.freeze([
         questions : `What is vulnerability?`,
         answers : `A debuff that amplifies all damage recieved from all sources after armor calculation.`,
         tags : [dTag.SKILL]
+    },
+    {
+        questions : `Is there something like an account/inventory/roster spreadsheet for this game?`,
+        answers : `${link('Make a copy for personal use.', 'https://old.reddit.com/r/girlsfrontline/comments/wpoce9/weekly_commanders_lounge_august_16_2022/ikyqyb1/')}`,
+        tags : [dTag.MISC]
+    },
+    {
+        questions : `Is there a good way for corpse dragging PA units?`,
+        answers : `SC 3-1 EX basically.`,
+        tags : [dTag.COALITION, dTag.LEVEL]
     },
     {
         questions : ``,

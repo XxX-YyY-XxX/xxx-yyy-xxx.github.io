@@ -118,6 +118,8 @@
 > - [Fairy Command dumping](https://old.reddit.com/r/girlsfrontline/comments/wjxfxg/weekly_commanders_lounge_august_09_2022/ik0b7ir/)
 >
 > - [SCEX, 56R](https://old.reddit.com/r/girlsfrontline/comments/wjxfxg/weekly_commanders_lounge_august_09_2022/ikb1n4d/)
+>
+> - [Row vs. column](https://old.reddit.com/r/girlsfrontline/comments/wpoce9/weekly_commanders_lounge_august_16_2022/il0buow/)
 
 >EarSpeaker
 >
@@ -190,6 +192,8 @@ LTLX skill pushback bosses.
 If spamming "one-click repair" creates multiple poop-ups, can count towards quests.
 
 Crit rate tile CE scales proportionally with each unit's crit dmg.
+
+Each doll has a hardcoded list of equipment types they can wear. - u/UnironicWeeaboo
 
 # Unanswered/To Do
 
