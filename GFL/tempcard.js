@@ -1018,7 +1018,7 @@ export const cardData = Object.freeze([
                 'Expedition.',
                 'Logistics (~19 weekly).',
                 'Achievements.',
-                'Mini-Events: Point Event (70).',
+                'Mini-Events: Point Event (70), Keycard Event.',
                 'Major Event crate rewards.',
                 'Shop. Especially when there is a seasonal/collab going on. Packages are also good.',
                 'Maintenance (10 weekly) and Apolotokens.']
@@ -2075,13 +2075,18 @@ export const cardData = Object.freeze([
     {
         questions : `How do I place dolls in dorms?`,
         answers : `Having a doll in an echelon. Dorm 1 corresponds to Echelon 1, Dorm 2 to Echelon 2, etc.`,
-        tags : [dTAg.DORM]
+        tags : [dTag.DORM]
     },
     {
         questions : `Do I get Friend Points if someone likes my dorm?`,
         answers : `No<!--KookyInspection-->, but you get FP when you like theirs.`,
         tags : [dTag.FRIEND]
     },
+    {
+        questions : `Do auto-battles count for "Defeat Enemies"?`,
+        answers : `No.`,
+        tags : [dTag.AUTO]
+    },  //See [question in sys mech]
     {
         questions : ``,
         answers : ``,

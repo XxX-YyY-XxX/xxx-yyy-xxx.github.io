@@ -2,11 +2,6 @@
 
 # Events
 
-### Do auto-battles count for "Defeat Enemies"?
-
-> No.
-<!-- See [question in sys mech] -->
-
 ### What do I do with unused Keycards during the bingo event?
 
 > Keep them. You'll get 5 Calibration Tickets per 1 Unused Keycard. Points go to trash. Source: Game info tab.
