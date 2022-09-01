@@ -524,7 +524,7 @@ export const cardData = Object.freeze([
     {
         questions : `What's the Fire Control Component (FCC) used for and where can I get them?`,
         answers : `Upgrading 5${star} dolls to 6${star} through modding.<br>
-        Obtainable through Black Market (2 monthly), major events, and special log-ins.`,
+        Obtainable through Black Market (2 monthly), major events/campaigns, special log-ins, shop packages<!--battlepass-->`,
         tags : [dTag.ITEM, dTag.MOD, dTag.GET]
     },
     {
@@ -1864,7 +1864,8 @@ export const cardData = Object.freeze([
             'General Liu' : [link('Clones can get stat buffs, albeit with restrictions.', 'https://iopwiki.com/wiki/General_Liu#Trivia')],
             'C-93' : ["Passive can trigger in response to other dolls' self-debuffs."],
             'Hanyang Type 88' : [link('Can still miss on certain positions.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/hanyangle-2')],
-            'FX05' : [link('Does not activate skill on max ROF.', 'https://old.reddit.com/r/girlsfrontline/comments/vx5s4p/weekly_commanders_lounge_july_12_2022/ig4n5sr/')]
+            'FX05' : [link('Does not activate skill on max ROF.', 'https://old.reddit.com/r/girlsfrontline/comments/vx5s4p/weekly_commanders_lounge_july_12_2022/ig4n5sr/')],
+            'Supernova' : ['Additive crit rate.']
         })}`,
         tags : [dTag.TDOLL, dTag.SKILL]
     },
@@ -2070,6 +2071,16 @@ export const cardData = Object.freeze([
         questions : `Is there a good way for corpse dragging PA units?`,
         answers : `SC 3-1 EX basically.`,
         tags : [dTag.COALITION, dTag.LEVEL]
+    },
+    {
+        questions : `How do I place dolls in dorms?`,
+        answers : `Having a doll in an echelon. Dorm 1 corresponds to Echelon 1, Dorm 2 to Echelon 2, etc.`,
+        tags : [dTAg.DORM]
+    },
+    {
+        questions : `Do I get Friend Points if someone likes my dorm?`,
+        answers : `No<!--KookyInspection-->, but you get FP when you like theirs.`,
+        tags : [dTag.FRIEND]
     },
     {
         questions : ``,
