@@ -351,13 +351,15 @@ export const cardData = Object.freeze([
         tags : [dTag.FAIRY, dTag.LEVEL, dTag.IMPT]
     },
     {
-        questions : `What is Anchored Construction?`,
-        answers : `There are two types of Anchored Construction, new dolls and starter.<br>
-        ${list(false,
-            link('Pity System for newly added production dolls', 'https://redd.it/szdua2') + ". Appears on the rate up for them which is on Saturdays and Sundays. Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate up.",
-            link(`Pity System for new players ${altStyle('and for veterans not bothering with it', TextStyle.STRIKE)}`, 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681') + '.')}<br>
-        ${altStyle('Points of Interest:', TextStyle.BOLD)}<br>
-        ${list(false, 'Anchor rate-up is closed once a doll (two for starter anchor) has been anchored.')}`,
+        questions : `Is there a rate up in this game? If so, how do they work?`,
+        answers : `${descriptionList({
+            'Anchored Construction' : [link(`Available for new players ${altStyle('and for veterans not bothering with it', TextStyle.STRIKE)}.`, 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681'),
+                link('Available on Saturdays and Sundays whenever a new batch of production dolls are released.', 'https://redd.it/szdua2'),
+                "Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate up."],
+            'Targeted Rate Up' : ['Available when a new skin banner is released.'],
+            'General Rate Up' : ['January, May, September.']
+        })}<br>
+        ${link('Gamepress overview.', 'https://www.gamepress.gg/girlsfrontline/gfl-explained-rate-up')}`,
         tags : [dTag.PROD, dTag.IMPT, dTag.TECH]
     },
     {
@@ -1233,13 +1235,13 @@ export const cardData = Object.freeze([
                 link("The Background History of Girls' Frontline", 'https://twitter.com/YZsFerrari/status/1379877420732448777'),
                 link('IOPWiki Lore', 'https://iopwiki.com/wiki/Lore'),
                 link('Gamepress Lore Directory', 'https://gamepress.gg/girlsfrontline/lore-directory')],
-            'Main Story' : [link("u/RhythmLunatic's GFL Cutscene Interpreter (including collabs)", 'https://gfl.amaryllisworks.pw'),
+            'Main Story' : [link("u/RhythmLunatic's GFL Cutscene Interpreter (including collabs)", 'https://gf.bluealice.xyz/'),
                 link("Shoul's Story Scenes Playlists", 'https://www.youtube.com/channel/UC_JmwXOfYqOKpGGtc5gcVmw'),
                 link("Girls' Frontline Full Story Comprehension Playlist Translated up to Isomer", 'https://youtube.com/playlist?list=PL9y52Flm1yM-tJJoom2zfrWTpaO1mTw8M'),
                 link("u/DoctuhD's Girls' Frontline Summary", 'https://docs.google.com/document/d/1oA07O2HGwvmoBqm-UKTTuSdxjLnSIbRHd5b2FuYOph0')]
         })}`,
         tags : [dTag.LORE, dTag.COLLAB]
-    },  //DuctuhD - https://docs.google.com/document/d/1yn0sjoktIb2f-KC6bxn3R0qpCUChBPpIQuERcLmBHbg
+    },  //DoctuhD - https://docs.google.com/document/d/1yn0sjoktIb2f-KC6bxn3R0qpCUChBPpIQuERcLmBHbg
     {
         questions : `What's the use case for 5HGs?`,
         answers : `Good single target burst damage. Quick movespeed. Consumes minimal resources.`,
@@ -1318,7 +1320,7 @@ export const cardData = Object.freeze([
         tags : [dTag.COLLAB]
     },
     {
-        questions : `I can't update/download the game properly. What should I do?`,
+        questions : `I can't update/download the game properly/stuck at X%. What should I do?`,
         answers : `Wait a minute, trudge through, change WiFi connection, change to data, use VPN, restart client, delete cache, ${link('do a manual patch', 'https://github.com/lloyddunamis/gfl_manualpatch/blob/main/FullResource_readme')}, ${link('delete some files', 'https://twitter.com/Synexcu/status/1310117595094216709?s=19')}, reinstall (with minimum data first), phone restart, or a combination of any of the above coupled with sheer determination to do it for days on end.`,
         tags : [dTag.TECH]
     },
@@ -1988,16 +1990,6 @@ export const cardData = Object.freeze([
         tags : [dTag.COALITION, dTag.EQUIP]
     },
     {
-        questions : `Is there a rate up in this game? If so, how do they work?`,
-        answers : `${descriptionList({
-            'Anchored Construction' : ['Available for newbies', 'Available whenever a new batch of production dolls are released'],
-            'Targeted Rate Up' : ['Available when a new skin banner is released'],
-            'General Rate Up' : ['January, May, September']
-        })}<br>
-        ${link('Gamepress overview.', 'https://www.gamepress.gg/girlsfrontline/gfl-explained-rate-up')}`,
-        tags : [dTag.PROD]
-    },
-    {
         questions : `Can I deploy two or three of the same pets in expedition?`,
         answers : `Actually, that is the method used by min-maxers regarding advantaged pets.`,
         tags : [dTag.EXPED, dTag.PET]
@@ -2087,6 +2079,21 @@ export const cardData = Object.freeze([
         answers : `No.`,
         tags : [dTag.AUTO]
     },  //See [question in sys mech]
+    {
+        questions : `Where can I see my event ranking placement?`,
+        answers : `Homescreen > Rank > Event Rank Tab`,
+        tags : [dTag.MAJOR]
+    },
+    {
+        questions : `I haven't used my starter anchor. Do I have to use it to see the new doll anchors?`,
+        answers : `You can swipe between them. If you can't, restart app.`,
+        tags : [dTag.PROD, dTag.TECH]
+    },
+    {
+        questions : `Can I change my name?`,
+        answers : `Using Name Change Card, which only appears during certain packages.`,
+        tags : [dTag.MISC]
+    },
     {
         questions : ``,
         answers : ``,

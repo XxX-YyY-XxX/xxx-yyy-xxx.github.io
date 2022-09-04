@@ -213,6 +213,8 @@ Official GFL world and political map.
 
 Dolls with oath animations.
 
+Commander costume skills and sets.
+
 # W/E
 
 [I want a frame for this.](https://old.reddit.com/r/girlsfrontline/comments/j1v3lw/weekly_commanders_lounge_september_29_2020/g7mr98t/)
