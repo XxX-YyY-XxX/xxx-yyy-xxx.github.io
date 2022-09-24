@@ -133,7 +133,7 @@ iframe[src*="docs.google.com"] {
     border: 0px;
 }
 
-iframe[src*="www.youtube.com"] {
+iframe[src*="www.youtube.com"], iframe[src*="streamable.com"] {
     width: 100%;
     aspect-ratio: 16/9;
     border: 0px;

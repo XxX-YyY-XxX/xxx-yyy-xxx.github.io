@@ -59,6 +59,11 @@ export function youtubeEmbed(videoID) {
     return `<iframe src="https://www.youtube.com/embed/${videoID.length == 11 ? videoID : `videoseries?list=${videoID}`}" allowfullscreen></iframe>`
 }
 
+/** @param {string} videoID */
+export function streamEmbed(videoID) {
+    return `<iframe src="https://streamable.com/e/${videoID}" allowfullscreen></iframe>`
+}
+
 /** @param permalink ...comments/${permalink}/?...*
 function redditEmbed(permalink) {                                       //needs more fix, how to check support
     return `<a href="https://www.reddit.com/r/girlsfrontline/comments/${permalink}/">For load fail purposes.</a><br>

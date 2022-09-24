@@ -1,4 +1,4 @@
-import {image, link, list, googleEmbed, youtubeEmbed, table, TextStyle, altStyle, spoilerSummary, descriptionList} from '/univasset/scripts/htmlfunctions.js';
+import {image, link, list, googleEmbed, youtubeEmbed, streamEmbed, table, TextStyle, altStyle, spoilerSummary, descriptionList} from '/univasset/scripts/htmlfunctions.js';
 
 const lessEqual = '≤';
 const star = '★';
@@ -94,6 +94,8 @@ export const cardData = Object.freeze([
             `Also called Poor Run or Beggar Run, it is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.<br>
             ${spoilerSummary("Ceia's 0-2 drag guide.", googleEmbed('https://docs.google.com/document/u/0/d/1PkxJ7ObdGW_cS_qbzAxQ_hoC1SFse3HNYWlnywZfPuo'))}<br>
             ${spoilerSummary("Ceia's SC 3-1Ex guide.", youtubeEmbed('UdmOZqypu_c'))}<br>
+            ${spoilerSummary("Aqua's SC 3-1Ex.", streamEmbed('0dpjje'))}<br>
+            ${spoilerSummary("BigStupidJellyfish's SC 3-1Ex auto-pathing.", image('./assets/images/SC%20Auto-path.png'))}<br>
             ${link('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide')}<br>
             ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/optimizing-leveling-introduction')}<br>
             ${link('GFLCorner guide.', 'https://www.gflcorner.com/efficient-leveling-guide/')}<br>
@@ -311,6 +313,21 @@ export const cardData = Object.freeze([
         tags : [dTag.TDOLL, dTag.IMPT, dTag.GET, dTag.SPEQ]
     },
     {
+        questions : `How do I strengthen T-Dolls?`,
+        answers : `${descriptionList({
+            'As an individual unit' : ['Leveling up',
+                'Stat enhancements',
+                'Equipments',
+                'Skill levels',
+                'Dummy-linking',
+                'MODs'],
+            'As a team' : ['Tile synergy',
+                'Skill synergy',
+                'Fairies']
+        })}`,
+        tags : [dTag.TDOLL, dTag.LEVEL, dTag.IMPT]
+    },
+    {
         questions : `When should I begin trying to produce fairies/do Heavy Equipment Constructions (HEC)?`,
         answers : `When you have sufficient income for 4 resources and cores. Ideally ASAP since raising one to 5${star} takes a considerable amount of time.`,
         tags : [dTag.FAIRY, dTag.PROD, dTag.IMPT]
@@ -423,7 +440,7 @@ export const cardData = Object.freeze([
     },
     {
         questions : `Would the equipment I'm enhancing get bonus points if I use an enhanced fodder?`,
-        answers : `No.`,
+        answers : `No for 2.09.`,
         tags : [dTag.EQUIP, dTag.LEVEL]
     },
     {
@@ -795,11 +812,6 @@ export const cardData = Object.freeze([
             "Storage slots especially if you're a collector. Or whenever you're getting annoyed with the pop-up.",
             'Your Mileage May Vary (YMMV).')}`,
         tags : [dTag.NEWB, dTag.ITEM]
-    },
-    {
-        questions : `What teams/echelons should I build?`,
-        answers : ` 2 ARSMGs first for general content, then RFHG for lategame, then MGSG if you want to deal with specialized enemies. The first team should ideally be Lv. 90 5-links before going for the next team.`,
-        tags : [dTag.NEWB, dTag.ECH]
     },
     {
         questions : `Which HOC chips should I use?`,
@@ -1371,7 +1383,7 @@ export const cardData = Object.freeze([
     },
     {
         questions : `When will the costumes go to the Black Card Exchange?`,
-        answers : `After around 2 banners.`,
+        answers : `After around 2 banners. Banners with "4 skins, no L2D" will also go to Radiant Collections.`,
         tags : [dTag.TDOLL, dTag.SKIN]
     },
     {
@@ -1441,7 +1453,7 @@ export const cardData = Object.freeze([
     {
         questions : `What are Prototype Fairies used for?`,
         answers : `Enhancing other fairies. They act like dupes in a sense that they give 100 enhancement EXP a pop, or 150 with matching talents. Recommended to use on expensive craft fairies.`,
-        tags : [dTag.FAIRY]
+        tags : [dTag.FAIRY, dTag.LEVEL]
     },
     {
         questions : `Where can I redeem the event boxes?`,
@@ -1657,20 +1669,6 @@ export const cardData = Object.freeze([
         questions : `Can I farm for the equipment/doll without clearing the map first?`,
         answers : `Yes, but better to clear it to remove the objectives pop-up.`,
         tags : [dTag.SPEQ, dTag.TDOLL]
-    },
-    {
-        questions : `How do I strengthen T-Dolls?`,
-        answers : `${descriptionList({
-            'As an individual unit' : ['Leveling up',
-                'Equipments',
-                'Skill Levels',
-                'Dummy-linking',
-                'MODs'],
-            'As a team' : ['Tile synergy',
-                'Skill synergy',
-                'Fairies']
-        })}`,
-        tags : [dTag.TDOLL, dTag.LEVEL]
     },
     {
         questions : `Is there any Live2D viewer for GFL?`,
@@ -2093,6 +2091,21 @@ export const cardData = Object.freeze([
         questions : `Can I change my name?`,
         answers : `Using Name Change Card, which only appears during certain packages.`,
         tags : [dTag.MISC]
+    },
+    {
+        questions : `What happens when a Luffberry Chess season is over?`,
+        answers : `Unclaimed seasonal gacha skins will carry over to next seasonal gacha, and so are the tickets. Ranking rewards are different each season.`,
+        tags : [dTag.OJ]
+    },
+    {
+        questions : `What are the other battery sinks besides facilities?`,
+        answers : `${list(false,
+            'Slaving Kalina (CR/SCR)',
+            'Making an animal kingdom (3 of each purchasable pets in Rescue Station)',
+            'Raising FSTs',
+            'Event PVs (Cafe)',
+            'Getting Gsh-18 (Cafe 4-koma)')}`,
+        tags : [dTag.ITEM]
     },
     {
         questions : ``,
