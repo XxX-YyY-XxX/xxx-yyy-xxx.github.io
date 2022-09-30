@@ -371,7 +371,7 @@ export const cardData = Object.freeze([
         questions : `Is there a rate up in this game? If so, how do they work?`,
         answers : `${descriptionList({
             'Anchored Construction' : [link(`Available for new players ${altStyle('and for veterans not bothering with it', TextStyle.STRIKE)}.`, 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681'),
-                link('Available on Saturdays and Sundays whenever a new batch of production dolls are released.', 'https://redd.it/szdua2'),
+                link('Available on Saturdays and Sundays whenever a new batch of production dolls are released.', 'https://redd.it/szdua2') + `Recommended anchors are 4${star} due to TCM existing, especially for shotguns.`, 
                 "Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate up."],
             'Targeted Rate Up' : ['Available when a new skin banner is released.'],
             'General Rate Up' : ['January, May, September.']
