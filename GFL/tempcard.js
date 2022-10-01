@@ -1338,7 +1338,7 @@ export const cardData = Object.freeze([
     },
     {
         questions : `What are these General Data I keep getting?`,
-        answers : `Used for FSTs that are not yet 5${star}. Limitations being only usable to FSTs in the gacha pool, and the data can't be used for iteration.<br>
+        answers : `Used for FSTs that are not yet 5${star}. Limitations being, only usable to FSTs in the gacha pool and the data can't be used for iteration.<br>
         If you plan to big brain with this, churn your FST-specific central data to patches first, because they're the priority data to use before general data.`,
         tags : [dTag.HOC, dTag.FST, dTag.ITEM]
     },
