@@ -321,7 +321,7 @@ export const cardData = Object.freeze([
         tags : [dTag.TDOLL, dTag.LEVEL, dTag.IMPT]
     },
     {
-        questions : `How do I run the leveling stages?`,
+        questions : `What are the leveling stages and how do I run them?`,
         answers : `${descriptionList({
             'General' : [
                 link('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide'),
@@ -346,7 +346,7 @@ export const cardData = Object.freeze([
                 spoilerSummary("BigStupidJellyfish's SC 3-1Ex auto-pathing.", image('./assets/images/SC%20Auto-path.png'))
             ],
         })}`,
-        tags : [dTag.TDOLL, dTag.LEVEL, dTag.LEVEL]
+        tags : [dTag.TDOLL, dTag.LEVEL, dTag.IMPT]
     },
     {
         questions : `When should I begin trying to produce fairies/do Heavy Equipment Constructions (HEC)?`,
