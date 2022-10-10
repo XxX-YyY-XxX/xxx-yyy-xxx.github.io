@@ -91,15 +91,7 @@ export const cardData = Object.freeze([
     {
         questions : `How do I level my girls?`,
         answers : `First is grinding them on leveling maps, mainly through ${spoilerSummary('corpse dragging', 
-            `Also called Poor Run or Beggar Run, it is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.<br>
-            ${spoilerSummary("Ceia's 0-2 drag guide.", googleEmbed('https://docs.google.com/document/u/0/d/1PkxJ7ObdGW_cS_qbzAxQ_hoC1SFse3HNYWlnywZfPuo'))}<br>
-            ${spoilerSummary("Ceia's SC 3-1Ex guide.", youtubeEmbed('UdmOZqypu_c'))}<br>
-            ${spoilerSummary("Aqua's SC 3-1Ex.", streamEmbed('0dpjje'))}<br>
-            ${spoilerSummary("BigStupidJellyfish's SC 3-1Ex auto-pathing.", image('./assets/images/SC%20Auto-path.png'))}<br>
-            ${link('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide')}<br>
-            ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/optimizing-leveling-introduction')}<br>
-            ${link('GFLCorner guide.', 'https://www.gflcorner.com/efficient-leveling-guide/')}<br>
-            ${link('DMesse guide.', 'http://dmesse.egloos.com/m/3567918')}`)}.<br>
+            `Also called Poor Run or Beggar Run, it is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.`)}.<br>
         Second is using ${spoilerSummary('Combat Reports (CR)', list(false,
             'Acquired through Forward Basecamp, Data Room, the shop during events, or as a reward.',
             "Can be gifted by going to the Dorm>Warehouse>Gift tab or going to your owned doll's profile and tapping the + button by the EXP bar.",
@@ -162,6 +154,7 @@ export const cardData = Object.freeze([
         ${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/rng_backstabbing')}<br>
         ${link('Gamepress Guide Part 1.', 'https://gamepress.gg/girlsfrontline/theater-7-overhaul-guide-new-mechanics-new-enemies-same-pain')} The updated theater version.<br>
         ${link('Gamepress Guide Part 2.', 'https://gamepress.gg/girlsfrontline/theater-7-combat-guide')} Still good for Theater 8.<br>
+        ${spoilerSummary('Theater for dummies.', image('https://cdn.discordapp.com/attachments/372235987520323596/881427651070410792/theaterguide.png'))}<br>
         TLDR is 5-6 Defense Drills in a row, twice per day, with differing battle effects. Do scouting bets where you pick one zone. Dump points on construction for easier battles.<br>
         Echelon formations are now 1 team + backups.`,
         tags : [dTag.THEATER, dTag.PRIME]
@@ -328,6 +321,34 @@ export const cardData = Object.freeze([
         tags : [dTag.TDOLL, dTag.LEVEL, dTag.IMPT]
     },
     {
+        questions : `How do I run the leveling stages?`,
+        answers : `${descriptionList({
+            'General' : [
+                link('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide'),
+                link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/optimizing-leveling-introduction'),
+                link('GFLCorner guide.', 'https://www.gflcorner.com/efficient-leveling-guide/'),
+                link('DMesse guide.', 'http://dmesse.egloos.com/m/3567918')
+            ],
+            '0-2' : [
+                spoilerSummary("Ceia's 0-2 drag guide.", googleEmbed('https://docs.google.com/document/u/0/d/1PkxJ7ObdGW_cS_qbzAxQ_hoC1SFse3HNYWlnywZfPuo'))
+            ],
+            '8-1N' : [
+                spoilerSummary('Zas drag.', googleEmbed('https://docs.google.com/spreadsheets/d/1VT52c-_m4zTx-OFRPcxE9iFmmJY_AMC7CyJT1B7FLt8'))
+            ],
+            '13-4' : [
+                link('tempkaridc calculator for Vector.', 'https://tempkaridc.github.io/gf/vec'),
+                link('xVarz spreadsheet for different draggers.', 'https://docs.google.com/spreadsheets/d/1cuZPF-r1e6TyE4Rj2DNkSEova7Tc-Cczs7RaoAK2vII'),
+                spoilerSummary('Infographic.', image('https://cdn.discordapp.com/attachments/564028599682727937/929724568258629642/134.png'))
+            ],
+            'SC 3-1 EX' : [
+                spoilerSummary("Ceia's SC 3-1Ex guide.", youtubeEmbed('UdmOZqypu_c')),
+                spoilerSummary("Aqua's SC 3-1Ex.", streamEmbed('0dpjje')),
+                spoilerSummary("BigStupidJellyfish's SC 3-1Ex auto-pathing.", image('./assets/images/SC%20Auto-path.png'))
+            ],
+        })}`,
+        tags : [dTag.TDOLL, dTag.LEVEL, dTag.LEVEL]
+    },
+    {
         questions : `When should I begin trying to produce fairies/do Heavy Equipment Constructions (HEC)?`,
         answers : `When you have sufficient income for 4 resources and cores. Ideally ASAP since raising one to 5${star} takes a considerable amount of time.`,
         tags : [dTag.FAIRY, dTag.PROD, dTag.IMPT]
@@ -454,7 +475,7 @@ export const cardData = Object.freeze([
     },
     {
         questions : `Do I still need to use advantaged dolls for Theater?`,
-        answers : `Not as much as before. They no longer make or break the CE, though they do get stat boosts.<br>
+        answers : `Not as much as before. They no longer make or break the CE, though they do get stat boosts, even outside strongholds.<br>
         HG = 20% CDR, SMG/SG = 15% Arm, 50% EVA, AR/RF/MG = 20% FP, 20% ACC.<br>
         The endgame now goes to MODs and oaths.<br>
         The CE you see on each doll when toggling the Boss CE button is the adjusted number, with the advantaged dolls having 20% bonus CE accounted for.`,
@@ -789,11 +810,6 @@ export const cardData = Object.freeze([
         tags : [dTag.NEWB, dTag.EXPED, dTag.PA, dTag.HOC, dTag.FAIRY, dTag.PET]
     },  //@Upgrade priority per facility
     {
-        questions : `What do I need for 8-1N Zas drag?`,
-        answers : `${googleEmbed('https://docs.google.com/spreadsheets/d/1VT52c-_m4zTx-OFRPcxE9iFmmJY_AMC7CyJT1B7FLt8')}`,
-        tags : [dTag.TDOLL, dTag.LEVEL]
-    },
-    {
         questions : `Do the purchaseable items in the Expedition Black Market ever change?`,
         answers : `No.`,
         tags : [dTag.EXPED, dTag.SHOP]
@@ -861,13 +877,6 @@ export const cardData = Object.freeze([
         questions : `How do I get Platinum and Nova Medals?`,
         answers : `From whatever Major/Seasonal/Collab Event running right now. Platinum are for 5${star} dolls and Nova are for dolls 4${star} and below.`,
         tags : [dTag.ITEM, dTag.TDOLL, dTag.MAJOR, dTag.SEASON, dTag.COLLAB, dTag.GET]
-    },
-    {
-        questions : `How do I build Vector to no-damage 13-4?`,
-        answers : `${link('tempkaridc calculator.', 'https://tempkaridc.github.io/gf/vec')}<br>
-        ${link('xVarz spreadsheet for different draggers.', 'https://docs.google.com/spreadsheets/d/1cuZPF-r1e6TyE4Rj2DNkSEova7Tc-Cczs7RaoAK2vII')}<br>
-        ${link('Infographic.', 'https://cdn.discordapp.com/attachments/564028599682727937/929724568258629642/134.png')}`,
-        tags : [dTag.LEVEL, dTag.TDOLL]
     },
     {
         questions : `How do I get a higher success rate for logistics?`,
@@ -1252,7 +1261,7 @@ export const cardData = Object.freeze([
                 link("Girls' Frontline Full Story Comprehension Playlist Translated up to Isomer", 'https://youtube.com/playlist?list=PL9y52Flm1yM-tJJoom2zfrWTpaO1mTw8M'),
                 link("u/DoctuhD's Girls' Frontline Summary", 'https://docs.google.com/document/d/1oA07O2HGwvmoBqm-UKTTuSdxjLnSIbRHd5b2FuYOph0')]
         })}`,
-        tags : [dTag.LORE, dTag.COLLAB]
+        tags : [dTag.LORE, dTag.MAJOR, dTag.COLLAB, dTag.REF]
     },  //DoctuhD - https://docs.google.com/document/d/1yn0sjoktIb2f-KC6bxn3R0qpCUChBPpIQuERcLmBHbg
     {
         questions : `What's the use case for 5HGs?`,
