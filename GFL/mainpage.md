@@ -134,6 +134,8 @@
 > - [Commander skills score.](https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/idqp247/)
 >
 > - [Smasher cheese.](https://old.reddit.com/r/girlsfrontline/comments/w2n556/weekly_commanders_lounge_july_19_2022/ihcdm9j/)
+>
+> - [Luffberry Gacha.](https://old.reddit.com/r/girlsfrontline/comments/x74mpx/weekly_commanders_lounge_september_06_2022/ingul31/)
 
 # Android Viability Checks (Mostly on Android 12)
 
@@ -295,10 +297,6 @@ Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr)
 [u/elgatoroid's STC deobfuscator.](https://github.com/neko-gg/girlsfrontline-deobfuscator)
 
 # Others
-
->What does the Download Data button in the settings do?
-
-[Basically fairy and equipment texture, and dorm-related stuff.](https://old.reddit.com/r/girlsfrontline/comments/gziv26/weekly_commanders_lounge_june_09_2020/fut4man/)
 
 >How do I buy gems if I use APK?
 

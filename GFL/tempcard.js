@@ -95,7 +95,8 @@ export const cardData = Object.freeze([
         Second is using ${spoilerSummary('Combat Reports (CR)', list(false,
             'Acquired through Forward Basecamp, Data Room, the shop during events, or as a reward.',
             "Can be gifted by going to the Dorm>Warehouse>Gift tab or going to your owned doll's profile and tapping the + button by the EXP bar.",
-            'Gives 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.'))}.`,
+            'Gives 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.',
+            'Gives 6000 fixed EXP per report only when used on oathed+modded dolls.'))}.`,
         tags : [dTag.TDOLL, dTag.LEVEL, dTag.PRIME, dTag.NEWB]
     },  //Privated - vqvPpO1vKqw
     {
@@ -2115,6 +2116,11 @@ export const cardData = Object.freeze([
             'Event PVs (Cafe)',
             'Getting Gsh-18 (Cafe 4-koma)')}`,
         tags : [dTag.ITEM]
+    },
+    {
+        questions : `What does the Download Data button in the settings do?`,
+        answers : `${link('Basically fairy and equipment texture, and dorm-related stuff.', 'https://old.reddit.com/r/girlsfrontline/comments/gziv26/weekly_commanders_lounge_june_09_2020/fut4man/')}`,
+        tags : [dTag.MISC]
     },
     {
         questions : ``,
