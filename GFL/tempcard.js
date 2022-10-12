@@ -288,7 +288,7 @@ export const cardData = Object.freeze([
                 link("The Background History of Girls' Frontline", 'https://twitter.com/YZsFerrari/status/1379877420732448777'),
                 link('IOPWiki Lore', 'https://iopwiki.com/wiki/Lore'),
                 link('Gamepress Lore Directory', 'https://gamepress.gg/girlsfrontline/lore-directory')],
-            'Main Story' : [link("u/RhythmLunatic's GFL Cutscene Interpreter (including collabs)", 'https://gf.bluealice.xyz/'),
+            'Main Story' : [link("u/RhythmLunatic's GFL Cutscene Interpreter (including collabs)", 'https://gfl.amaryllisworks.pw/'),
                 link("Shoul's Story Scenes Playlists", 'https://www.youtube.com/channel/UC_JmwXOfYqOKpGGtc5gcVmw'),
                 link("Girls' Frontline Full Story Comprehension Playlist Translated up to Isomer", 'https://youtube.com/playlist?list=PL9y52Flm1yM-tJJoom2zfrWTpaO1mTw8M'),
                 link("u/DoctuhD's Girls' Frontline Summary", 'https://docs.google.com/document/d/1oA07O2HGwvmoBqm-UKTTuSdxjLnSIbRHd5b2FuYOph0')]
@@ -718,7 +718,8 @@ export const cardData = Object.freeze([
             'Go to the GFAlarm folder.',
             'Info folder.',
             '{Username}_{UID}__theater_optimize_team.csv for current armory.',
-            'Use predicted damage instead of combat effectiveness.')}`,
+            'Use predicted damage instead of combat effectiveness.')}<br>
+        This sheet already takes into account advantaged doll bonuses.`,
         tags : [dTag["3P"], dTag.THEATER, dTag.CE]
     },
     {
@@ -2121,6 +2122,16 @@ export const cardData = Object.freeze([
         questions : `What does the Download Data button in the settings do?`,
         answers : `${link('Basically fairy and equipment texture, and dorm-related stuff.', 'https://old.reddit.com/r/girlsfrontline/comments/gziv26/weekly_commanders_lounge_june_09_2020/fut4man/')}`,
         tags : [dTag.MISC]
+    },
+    {
+        questions : `It's the last day of Theater. Do I still have to vote?`,
+        answers : `Yes.`,
+        tags : [dTag.THEATER]
+    },
+    {
+        questions : `Can I change my Sunborn Account's attached e-mail?`,
+        answers : `Apparently no.`,
+        tags : [dTag.ACCT]
     },
     {
         questions : ``,
