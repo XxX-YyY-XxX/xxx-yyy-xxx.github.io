@@ -153,8 +153,8 @@ export const cardData = Object.freeze([
         answers : `${link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Theater_Mode')}<br>
         ${link('GFC Guide.', 'https://www.gflcorner.com/theater-system-introduction-by-gfc/')}<br>
         ${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/rng_backstabbing')}<br>
-        ${link('Gamepress Guide Part 1.', 'https://gamepress.gg/girlsfrontline/theater-7-overhaul-guide-new-mechanics-new-enemies-same-pain')} The updated theater version.<br>
-        ${link('Gamepress Guide Part 2.', 'https://gamepress.gg/girlsfrontline/theater-7-combat-guide')} Still good for Theater 8.<br>
+        ${link('Gamepress Guide Part 1.', 'https://gamepress.gg/girlsfrontline/theater-8-overhaul-guide-new-mechanics-new-enemies-same-pain')} The latest theater version.<br>
+        ${link('Gamepress Guide Part 2.', 'https://gamepress.gg/girlsfrontline/theater-8-combat-guide')}<br>
         ${spoilerSummary('Theater for dummies.', image('https://cdn.discordapp.com/attachments/372235987520323596/881427651070410792/theaterguide.png'))}<br>
         TLDR is 5-6 Defense Drills in a row, twice per day, with differing battle effects. Do scouting bets where you pick one zone. Dump points on construction for easier battles.<br>
         Echelon formations are now 1 team + backups.`,
@@ -1488,10 +1488,9 @@ export const cardData = Object.freeze([
     },  //@Clarify
     {
         questions : `Is there a compilation of anniversary adjutant lines?`,
-        answers : `${youtubeEmbed('PLoDB_FcnOA5zXkZ9XmQMTog1F7uIRZ_Qa')}<br>
-        ${googleEmbed('https://docs.google.com/document/d/1W5JzUGaC_fL5itce05WnkHcu7wX_sEn2vQlbgQNeKAk')}`,
+        answers : `${youtubeEmbed('PLoDB_FcnOA5zXkZ9XmQMTog1F7uIRZ_Qa')}`,
         tags : [dTag.LORE, dTag.ANNIV, dTag.ADJUNCT]
-    },  //PL4Z0akElhimzHHiVMCozfUn1B6tYKjwPR playlist by redditor u/paperrabbit. New by u/ConductorBichir.
+    },  //PL4Z0akElhimzHHiVMCozfUn1B6tYKjwPR playlist by redditor u/paperrabbit. New by u/ConductorBichir. 1W5JzUGaC_fL5itce05WnkHcu7wX_sEn2vQlbgQNeKAk down,
     {
         questions : `My team says Ammo/Ration depleted. How do I fill it up?`,
         answers : `${list(true,
@@ -2132,6 +2131,11 @@ export const cardData = Object.freeze([
         questions : `Can I change my Sunborn Account's attached e-mail?`,
         answers : `Apparently no.`,
         tags : [dTag.ACCT]
+    },
+    {
+        questions : `Can the Sniper Fairy pierce shields?`,
+        answers : `No.`,
+        tags : [dTag.FAIRY, dTag.SKILL]
     },
     {
         questions : ``,
