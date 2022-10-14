@@ -50,6 +50,7 @@ export const dTag = Object.freeze({
     CMDR : Object.freeze({val : 'Commander', desc : '"Self-insert."'}),
     ADJUNCT : Object.freeze({val : 'Adjutants', desc : 'T-Doll secretary.'}),
     MINI : Object.freeze({val : 'MiniEvents', desc : 'Keycard Events, Point Events, etc.'}),
+    QUEST : Object.freeze({val : 'Quests', desc : 'Dailies, weeklies, main, career, intel.'}),
     SHOP : Object.freeze({val : 'Shop', desc : 'Buy things here.'}),
     FRIEND : Object.freeze({val : 'Friends', desc : 'The helpful kind.'}),
     //#endregion
@@ -430,6 +431,17 @@ export const cardData = Object.freeze([
         Passive skills on the other hand will not activate only if they have no ammo or ration. This includes Slug's 3x damage and Flash's -3 damage. Though that there are a handful of exceptions.`,
         tags : [dTag.TDOLL, dTag.SKILL, dTag.IMPT]
     },  //@Visual
+    {
+        questions : `How do I strengthen FSTs?`,
+        answers : `${list(false,
+            'Leveling up mostly by SCR',
+            `Raising ${star}s using their central data or general data`,
+            'Iterations by data patches (only available at LV100 and 5★)',
+            'Enhancements using pills',
+            'Skill levels',
+            'Tetrimino chips')}`,
+        tags : [dTag.FST, dTag.LEVEL, dTag.IMPT]
+    },
     //#endregion
     {
         questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
@@ -1302,7 +1314,7 @@ export const cardData = Object.freeze([
         ['Handgun (HG)', 'Buffer<br>Debuffer', '???', 'Cannot facetank'],
         ['Machine Gun (MG)', 'Opening Volley', 'Random', 'Reloads/Stops shooting at around 6s<br>Weak to high evasion'],
         ['Shotgun (SG)', 'Armor Tank', 'Frontline', 'Poor evasion'])}`,
-        tags : [dTag.TDOLL, dTag.NEWB]
+        tags : [dTag.TDOLL, dTag.BATTLE, dTag.NEWB]
     },
     {
         questions : `What's the time frame for modding dolls?`,
@@ -1604,17 +1616,6 @@ export const cardData = Object.freeze([
         questions : `What are pets used for?`,
         answers : `Extra comfort for dorms and raises chance to go to a specific expedition biome.`,
         tags : [dTag.PET, dTag.DORM, dTag.EXPED]
-    },
-    {
-        questions : `How do I strengthen FSTs?`,
-        answers : `${list(false,
-            'Leveling up mostly by SCR',
-            `Raising ${star}s using their central data or general data`,
-            'Iterations by data patches (only available at LV100 and 5★)',
-            'Enhancements using pills',
-            'Skill levels',
-            'Tetrimino chips')}`,
-        tags : [dTag.FST, dTag.LEVEL]
     },
     {
         questions : `Are keybinds bannable?`,
@@ -2136,6 +2137,11 @@ export const cardData = Object.freeze([
         questions : `Can the Sniper Fairy pierce shields?`,
         answers : `No.`,
         tags : [dTag.FAIRY, dTag.SKILL]
+    },
+    {
+        questions : `How do I complete Command Mission: Map Completion: Griffin Elite in Career Quests?`,
+        answers : `${spoilerSummary('Elite Griffin Combat Medals', image('./assets/images/GriffinEliteMedal.png'))} are acquired during the major story events on their original run.`,
+        tags : [dTag.MAJOR, dTag.QUEST]
     },
     {
         questions : ``,
