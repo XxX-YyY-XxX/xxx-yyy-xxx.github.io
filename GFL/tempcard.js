@@ -94,7 +94,7 @@ export const cardData = Object.freeze([
         answers : `First is grinding them on leveling maps, mainly through ${spoilerSummary('corpse dragging', 
             `Also called Poor Run or Beggar Run, it is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.`)}.<br>
         Second is using ${spoilerSummary('Combat Reports (CR)', list(false,
-            'Acquired through Forward Basecamp, Data Room, the shop during events, or as a reward.',
+            'Acquired through Forward Basecamp, Data Room, the shop during events, EXP Sim, or as a reward.',
             "Can be gifted by going to the Dorm>Warehouse>Gift tab or going to your owned doll's profile and tapping the + button by the EXP bar.",
             'Gives 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.',
             'Gives 6000 fixed EXP per report only when used on oathed+modded dolls.'))}.`,
@@ -2140,8 +2140,18 @@ export const cardData = Object.freeze([
     },
     {
         questions : `How do I complete Command Mission: Map Completion: Griffin Elite in Career Quests?`,
-        answers : `${spoilerSummary('Elite Griffin Combat Medals', image('./assets/images/GriffinEliteMedal.png'))} are acquired during the major story events on their original run.`,
+        answers : `${spoilerSummary('Elite Griffin Combat Medals', image('./assets/images/GriffinEliteMedal.png', 'Taken from GFLDB'))} are acquired during the major story events on their original run.`,
         tags : [dTag.MAJOR, dTag.QUEST]
+    },
+    {
+        questions : `I'm using coalition units but I can't raise my final score enough. What do I need to do?`,
+        answers : `Use Griffin echelons. All coalition units give lower score for rankings.`,
+        tags : [dTag.COALITION, dTag.THEATER]
+    },
+    {
+        questions : `What are Challenger Medals for?`,
+        answers : `Flex.`,
+        tags : [dTag.MISC]
     },
     {
         questions : ``,
