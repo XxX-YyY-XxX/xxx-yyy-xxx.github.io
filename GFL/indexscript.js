@@ -29,8 +29,6 @@ const inputButtons = new RadioButton('input-type',
 //#endregion
 
 //#region Initialize
-document.getElementById('version-number').innerHTML = cardData.length;
-
 //tooltip is only visible when tag is hovered over. 
 toggleableTagsField.innerHTML = Object.values(dTag).sort((a, b) => Compare.string(a.val, b.val)).map(tag => 
     `<label class="tags tooltip">

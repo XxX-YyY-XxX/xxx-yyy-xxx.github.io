@@ -126,6 +126,8 @@
 > - [Cheap SG tank.](https://old.reddit.com/r/girlsfrontline/comments/uc7eet/weekly_commanders_lounge_april_26_2022/i6ut0vo/)
 >
 > - [Top up gem month.](https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/idoig4j/)
+>
+> - [Base bonuses.](https://old.reddit.com/r/girlsfrontline/comments/xd1ivo/weekly_commanders_lounge_september_13_2022/ip1v560/)
 
 >Weeb
 >
@@ -250,6 +252,8 @@ GFL's [free-for-all cursed images compilation.](https://drive.google.com/drive/f
 [Github resource 1.](https://github.com/Dimbreath/GirlsFrontlineData)
 
 [Assets dump.](https://drive.google.com/drive/folders/1h4Vex9N6QU3ru_HbwE7aYtZrbKv3PwQX)
+
+[Speedrun to lategame.](https://old.reddit.com/r/girlsfrontline/comments/xd1ivo/weekly_commanders_lounge_september_13_2022/ioz9w4d/)
 
 # Nice Things To Have
 
