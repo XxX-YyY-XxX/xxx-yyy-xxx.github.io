@@ -2485,3 +2485,5 @@ export const cardData = Object.freeze([
         tags : []
     },
 ]);
+
+export const newCards = [];
