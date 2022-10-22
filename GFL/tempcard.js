@@ -351,7 +351,7 @@ export const cardData = Object.freeze([
             'Shop' : ['Applicable to collab dolls using event currency.',
                 `5${star} dolls available in Production are the only ones elegible for True Core Masks, bar spaghetti.`,]
         })}<br>
-        ${spoilerSummary('Dolls EN are missing.', image('https://cdn.discordapp.com/attachments/951085201658871820/991552853313335456/en_missing_dolls_ms_in_less_than_10_months_edition.png'))}`,
+        ${spoilerSummary('Dolls EN are missing.', image('https://media.discordapp.net/attachments/951085201658871820/1022535945398001794/en_missing_dolls_that_bullshit_poor_excuse_of_a_wiki_made_me_remake_this_image_edition.png'))}`,
         tags : [dTag.TDOLL, dTag.IMPT, dTag.GET, dTag.SPEQ]
     },
     {
@@ -2396,7 +2396,7 @@ export const cardData = Object.freeze([
     },  //See [question in sys mech]
     {
         id : '00305',
-        questions : `Where can I see my event ranking placement?`,
+        questions : `Where can I see my event ranking map placement?`,
         answers : `Homescreen > Rank > Event Rank Tab`,
         tags : [dTag.MAJOR]
     },
@@ -2479,6 +2479,12 @@ export const cardData = Object.freeze([
         tags : [dTag.MAP, dTag.COALITION, dTag.FST]
     },
     {
+        id : '00318',
+        questions : `Is it worth to wait for a veteran callback?`,
+        answers : `Negligible I say. Returning rewards can be farmed by just playing. And there could be many events before a major/collab event.`,
+        tags : [dTag.MISC]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
@@ -2486,4 +2492,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = [];
+export const newCards = ['00318'];

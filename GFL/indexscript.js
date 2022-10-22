@@ -37,7 +37,8 @@ toggleableTagsField.innerHTML = Object.values(dTag).sort((a, b) => Compare.strin
     </label>`
 ).join(' ');
 
-document.getElementById('cards-field').innerHTML = (searchParams.has('search') || searchParams.has('tags')) ? searchCards() : randomCards();
+document.getElementById('cards-field').innerHTML = (searchParams.has('search') || searchParams.has('tags')) ? searchCards() :
+                                                   (newCards.length > 0) ? addedCards() : randomCards();
 //#endregion
 
 //#region Private Functions
