@@ -2485,6 +2485,12 @@ export const cardData = Object.freeze([
         tags : [dTag.MISC]
     },
     {
+        id : '00319',
+        questions : `Are HP shields affected by armor, flash shells, and damage reduction?`,
+        answers : `Yes. They're more or less extensions of HP.`,
+        tags : [dTag.SKILL]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
@@ -2492,4 +2498,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00318'];
+export const newCards = ['00318', '00319'];

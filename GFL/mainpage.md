@@ -128,6 +128,8 @@
 > - [Top up gem month.](https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/idoig4j/)
 >
 > - [Base bonuses.](https://old.reddit.com/r/girlsfrontline/comments/xd1ivo/weekly_commanders_lounge_september_13_2022/ip1v560/)
+>
+> - [Base staffing checklists.](https://www.reddit.com/r/girlsfrontline/comments/xqtpd9/client_30_base_staffing_checklists_index/)
 
 >Weeb
 >
