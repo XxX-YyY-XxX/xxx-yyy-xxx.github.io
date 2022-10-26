@@ -232,7 +232,7 @@ export const cardData = Object.freeze([
         questions : `Is there a tier list for good PA units?`,
         answers : `${link("u/CheneyQWER's tier list.", 'https://redd.it/uirvxz')}<br>
         ${link('Gamepress units guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units')} Use the search bar if a certain PA unit is unavailable in the page.`,
-        tags : [dTag.COALITION, dTag.TIER]
+        tags : [dTag.PA, dTag.COALITION, dTag.TIER]
     },
     {
         id : '00016',
@@ -344,7 +344,7 @@ export const cardData = Object.freeze([
                         ['11', 'Mk46',      'N/A'],
                         ['12', 'MAT-49',    'N/A'],
                         ['13', 'Defender',  'N/A'])),
-                link(`Farmable dolls in campaign maps, both 3${star} monthlies and debut dolls.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
+                link(`Farmable dolls in campaign maps, both 3${star} monthly reward and debut dolls.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
                 'During collabs, major events, side events, and Rescue Event/Boss Bully, event rewards become temporarily available for farming.',
                 'Obtainable from random nodes, however unlikely.'],
             'Event Rewards' : [link("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls')],
@@ -1981,7 +1981,7 @@ export const cardData = Object.freeze([
     {
         id : '00241',
         questions : `How do I dye my commander's clothes?`,
-        answers : `Use an Infinite Surprise Dye or a Colorful Dye on a costume piece. Note that not every piece is dyeable.`,
+        answers : `Use an Infinite Surprise Dye or a Colorful Dye on a costume piece. Note that not every piece is dyeable, dirty and basic costumes in particular.`,
         tags : [dTag.CMDR, dTag.SKIN]
     },
     {
