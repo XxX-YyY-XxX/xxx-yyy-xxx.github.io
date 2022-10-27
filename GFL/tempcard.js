@@ -99,7 +99,8 @@ export const cardData = Object.freeze([
             'Acquired through Forward Basecamp, Data Room, the shop during events, EXP Sim, or as a reward.',
             "Can be gifted by going to the Dorm>Warehouse>Gift tab or going to your owned doll's profile and tapping the + button by the EXP bar.",
             'Gives 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.',
-            'Gives 6000 fixed EXP per report only when used on oathed+modded dolls.'))}.`,
+            'Gives 6000 fixed EXP per report only when used on oathed+modded dolls.'))}.<br>
+        Third is by running them through Auto-Battles.`,
         tags : [dTag.TDOLL, dTag.LEVEL, dTag.PRIME, dTag.NEWB]
     },  //Privated - vqvPpO1vKqw
     {
@@ -368,11 +369,11 @@ export const cardData = Object.freeze([
                 'Skill synergy',
                 'Fairies']
         })}`,
-        tags : [dTag.TDOLL, dTag.LEVEL, dTag.IMPT]
+        tags : [dTag.TDOLL, dTag.ECH, dTag.LEVEL, dTag.IMPT]
     },
     {
         id : '00026',
-        questions : `What are the leveling stages and how do I run them?`,
+        questions : `What are the leveling stages I can corpse drag and how do I run them?`,
         answers : `${descriptionList({
             'General' : [
                 link('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide'),
@@ -1084,7 +1085,7 @@ export const cardData = Object.freeze([
     {
         id : '00114',
         questions : `What are all the available pets right now?`,
-        answers : `${image('./assets/images/PetSale.png')}<br>
+        answers : `${image('./assets/images/PetSale.png', 'From u/UnironicWeeaboo')}<br>
         If you see a pet that is not on this list, it's a Cafe Story reward, collab pet, or event reward that haven't been added yet to the station.`,
         tags : [dTag.PET]
     },
@@ -2491,6 +2492,12 @@ export const cardData = Object.freeze([
         tags : [dTag.SKILL]
     },
     {
+        id : '00320',
+        questions : `I'm stuck in EXP Sim. Losing or withdrawing gives me an "Illegal Action Detected". What should I do?`,
+        answers : `Since restarting won't help, contact support.`,
+        tags : [dTag.SIMS, dTag.TECH]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
@@ -2498,4 +2505,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00318', '00319'];
+export const newCards = ['00318', '00319', '00320'];
