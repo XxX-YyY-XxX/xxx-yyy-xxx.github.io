@@ -450,9 +450,10 @@ export const cardData = Object.freeze([
         questions : `Is there a rate up in this game? If so, how do they work?`,
         answers : `${descriptionList({
             'Anchored Construction' : [link(`Available for new players ${altStyle('and for veterans not bothering with it', TextStyle.STRIKE)}.`, 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681'),
-                link('Available on Saturdays and Sundays whenever a new batch of production dolls are released.', 'https://redd.it/szdua2') + `Recommended anchors are 4${star} due to TCM existing, especially for shotguns.`, 
+                link('Available on Saturdays and Sundays whenever a new batch of production dolls are released.', 'https://redd.it/szdua2') + ` Recommended anchors are 4${star} due to TCM existing, especially for shotguns.`, 
                 "Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate up."],
-            'Targeted Rate Up' : ['Available when a new skin banner is released.'],
+            'Targeted Rate Up' : ['Available when a new skin banner is released.',
+                'Rate up dolls are those who are present in the banner.'],
             'General Rate Up' : ['January, May, September.']
         })}<br>
         ${link('Gamepress overview.', 'https://www.gamepress.gg/girlsfrontline/gfl-explained-rate-up')}`,
@@ -2498,6 +2499,12 @@ export const cardData = Object.freeze([
         tags : [dTag.SIMS, dTag.TECH]
     },
     {
+        id : '00321',
+        questions : `How do I unlock the farming stages in the event?`,
+        answers : `It should be a pair of nodes separate from the rest of the nodes.`,
+        tags : [dTag.MAJOR, dTag.COLLAB, dTag.SEASON]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
@@ -2505,4 +2512,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00318', '00319', '00320'];
+export const newCards = ['00318', '00319', '00320', '00321'];

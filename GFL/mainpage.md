@@ -302,6 +302,8 @@ Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr)
 
 [u/elgatoroid's STC deobfuscator.](https://github.com/neko-gg/girlsfrontline-deobfuscator)
 
+[Writer history.](https://old.reddit.com/r/girlsfrontline/comments/y133ep/weekly_commanders_lounge_october_11_2022/isrm6et/)
+
 # Others
 
 >How do I buy gems if I use APK?
@@ -401,6 +403,8 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 [Official Discord](https://discord.gg/gfen)
 
 [2.09 Newbie Features](https://redd.it/ry6fv0)
+
+[3.0 Features.](https://gamepress.gg/girlsfrontline/300-client-update-new-features)
 
 ## Check
 
