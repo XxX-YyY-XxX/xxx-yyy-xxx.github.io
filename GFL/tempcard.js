@@ -257,23 +257,15 @@ export const cardData = Object.freeze([
     {
         id : '00018',
         questions : `Anyone have a nice infographic for equipment priority and how many to have ideally?`,
-        answers : `${image('./assets/images/EqupTier.png')}`,
+        answers : `${image('https://cdn.discordapp.com/attachments/564028599682727937/1018032159350587494/eq_prior.png', 'Taken from Discord')}`,
         tags : [dTag.EQUIP, dTag.TDOLL, dTag.TIER]
-    },
+    },  //$eqpriority
     {
         id : '00019',
         questions : `Which HOC FSTs should I raise first?`,
-        answers : `${table(['Rank', 'To Lv. 60', `To 5${star}`, 'To Max Iter'],
-        ['01', 'BGM-71', '2B14',   '2B14'  ],
-        ['02', '2B14',   'Mk 153', 'Mk 153'],
-        ['03', 'Mk 153', 'AT4',    'M2'    ],
-        ['04', 'AT4',    'M2',     'AT4'   ],
-        ['05', 'M2',     'AGS-30', 'AGS-30'],
-        ['06', 'AGS-30', 'BGM-71', 'BGM-71'],
-        ['07', 'QLZ-04', 'QLZ-04', 'QLZ-04'],
-        ['08', 'PP-93',  'PP-93',  'PP-93' ])}`,
+        answers : `${image('https://cdn.discordapp.com/attachments/444348972035866634/971135326150090842/HOC_Priority.png', 'Taken from Discord')}`,
         tags : [dTag.HOC, dTag.FST, dTag.TIER]
-    },  //Rudimentary rankings. Last place reserved for incomplete FSTs.
+    },  //$hocpriority
     {
         id : '00020',
         questions : `Which doll should I get with True Core Masks?`,
@@ -291,6 +283,14 @@ export const cardData = Object.freeze([
         ${spoilerSummary("Tactical Doll Skins.", googleEmbed('https://docs.google.com/spreadsheets/d/1fEnzlpQk5Jvja5PwzlpDn2ypqP3BHcGftqWWOLnK17E'))} Contains censor comparison for each unit.`,
         tags : [dTag.TDOLL, dTag.SKIN, dTag.RESUPPLY, dTag.REF]
     },
+    {
+        id : '00297',
+        questions : `Is there a good place where I can find a spreadsheet on detailed doll stats?`,
+        answers : `${link("u/UnironicWeeaboo's repository.", 'https://randomqwerty.github.io/?server=ch&file=gun')}<br>
+        ${link('GFLDB.', 'https://gfl.zzzzz.kr/dolls.php?lang=en')}<br>
+        ${link('GFWiki CN.', 'https://gfwiki.org/w/%E6%88%98%E6%9C%AF%E4%BA%BA%E5%BD%A2%E5%9B%BE%E9%89%B4')}`,
+        tags : [dTag.TDOLL, dTag.REF]
+    },  //Wait for additional repo.
     {
         id : '00022',
         questions : `Which dolls have a MOD in the older servers?`,
@@ -1157,10 +1157,10 @@ export const cardData = Object.freeze([
     {
         id : '00123',
         questions : `Is there a list of doll farming routes for each map?`,
-        answers : `Compilation of all farm routes for limited dolls and equipments on both campaign and main story.<br>
-        ${googleEmbed('https://docs.google.com/document/d/1GUcA1ZHYVKBhTspdRYPIkECVZRoLFvqDnLrgrFb6VcU')}`,
+        answers : `${spoilerSummary('Compilation of all farm routes for limited dolls and equipments on both campaign and main story.', googleEmbed('https://docs.google.com/document/d/1GUcA1ZHYVKBhTspdRYPIkECVZRoLFvqDnLrgrFb6VcU'))}<br>
+        ${link('Farming routes by RevenantXIII (with Pilfer strats), focusing on events and ranking-relevant campaign dolls.', 'https://rosedrake.github.io/GFL.html')}`,
         tags : [dTag.TDOLL, dTag.GET, dTag.MAIN, dTag.CAMPAIGN]
-    },  //By u/rcpz93 most likely
+    },  //GDoc by u/rcpz93 most likely
     {
         id : '00124',
         questions : `What's the chronological order for the story?`,
@@ -1347,9 +1347,9 @@ export const cardData = Object.freeze([
     },
     {
         id : '00148',
-        questions : `How and why does a StrawberryPython team work so well?`,
+        questions : `How does a StrawberryPython team work?`,
         answers : `${googleEmbed('https://docs.google.com/document/d/105DXX2AlMB_wX0JpKGjPGsJ_zjsKOz_0bbd5ZshUx_o')}`,
-        tags : [dTag.ECH]
+        tags : [dTag.ECH, dTag.TDOLL]
     },
     {
         id : '00149',
@@ -1454,11 +1454,13 @@ export const cardData = Object.freeze([
         answers : `Unlocks after clearing 2-4N.<br>
         ${link('Matsuda Guide and Line-up, circa 2.08.', 'https://gfl.matsuda.tips/post/defdrill')}<br>
         ${altStyle('2.09 waves', TextStyle.BOLD)}:<br>
-        ${spoilerSummary('Discord Strats.', image('./assets/images/DiscordDefenseDrill.png'))}<br>
+        ${spoilerSummary('Discord Leaderboard Comps.', `${image('https://cdn.discordapp.com/attachments/453784246515925003/988812408929804328/unknown.png')}<br>
+            ${image('./assets/images/DiscordDefenseDrill.png')}`)}<br>
         ${spoilerSummary('General BLT vid.', youtubeEmbed('P-GLrBNvFVs'))}<br>
-        ${spoilerSummary('Ceia vid.', youtubeEmbed('qgbF2eiIzps'))}`,
+        ${spoilerSummary('Ceia vid.', youtubeEmbed('qgbF2eiIzps'))}<br>
+        ${spoilerSummary("CosmicArcher's comfy clear.", youtubeEmbed('avKEYzKSp0U'))}`,
         tags : [dTag.SIMS]
-    },
+    },  //Proper guide under construction
     {
         id : '00164',
         questions : `What would I need when building night ARSMGs?`,
@@ -1995,13 +1997,14 @@ export const cardData = Object.freeze([
     {
         id : '00243',
         questions : `Why does the iOS version crash a lot?`,
-        answers : `Grapevine: Mix iOS RAM overload prevention and GFL memory leak, and you have a totally definitely good time.`,
+        answers : `Grapevine: Mix iOS RAM overload prevention and GFL memory leak, and you have a totally definitely good time.<br>
+        iPhone 7 and above should work really well though.`,
         tags : [dTag.TECH, dTag.APPLE]
     },
     {
         id : '00244',
         questions : `How do I do EXP Sim?`,
-        answers : `Deploy one doll that can clear the whole map. Rewards 93 CRs on Advanced.`,
+        answers : `Deploy at least one echelon that can clear the whole map. Rewards 96 CRs on Advanced.`,
         tags : [dTag.SIMS]
     },  //@Check. Add SCR gain.
     {
@@ -2349,12 +2352,6 @@ export const cardData = Object.freeze([
         tags : [dTag.PA, dTag.COALITION]
     },
     {
-        id : '00297',
-        questions : `Is there a good place where I can find a spreadsheet on detailed doll stats?`,
-        answers : `${link("u/UnironicWeeaboo's repository.", 'https://randomqwerty.github.io/?server=ch&file=gun')}`,
-        tags : [dTag.TDOLL]
-    },
-    {
         id : '00298',
         questions : `Guides show more echelons deployed than regular heliports in the map. What am I missing?`,
         answers : `Heavy Heliports > Top Tab > Choose Echelon`,
@@ -2502,7 +2499,15 @@ export const cardData = Object.freeze([
         id : '00321',
         questions : `How do I unlock the farming stages in the event?`,
         answers : `It should be a pair of nodes separate from the rest of the nodes.`,
-        tags : [dTag.MAJOR, dTag.COLLAB, dTag.SEASON]
+        tags : [dTag.MAJOR, dTag.COLLAB, dTag.SEASON, dTag.CAMPAIGN]
+    },
+    {
+        id : '00322',
+        questions : `There is a spinning pinwheel, a diamond, and an almost complete gauge-like icon beside the map names. What do they mean?`,
+        answers : `Spinning pinwheel: Node split.<br>
+        Diamond: Story node.<br>
+        Gauge-like icon: Combat node.`,
+        tags : [dTag.MAJOR, dTag.SEASON, dTag.COLLAB, dTag.CAMPAIGN]
     },
     {
         id : '00300',
@@ -2512,4 +2517,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00318', '00319', '00320', '00321'];
+export const newCards = ['00318', '00319', '00320', '00321', '00322', '00018', '00019', '00123', '00163', '00297'];

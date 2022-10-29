@@ -20,6 +20,9 @@ const inputButtons = new RadioButton('input-type',
                     labeltrue.classList.remove('checked');
                 }
             }
+        },
+        browse(button) {
+
         }
     }, function(button) {
         searchTextField.value = '';

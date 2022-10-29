@@ -68,7 +68,7 @@ label.tags.checked/* , label.tags:has(input:checked) */ {
 .flex-label {
     background-color: transparent;
     line-height: 10px;
-    flex: calc(100% / 2);
+    flex: calc(100% / 3);
 }
 
 .flex-label.checked/* , .flex-label:has(input:checked) */ {
