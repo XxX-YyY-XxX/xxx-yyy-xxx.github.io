@@ -4,6 +4,8 @@ import {cardData, dTag, newCards} from "./tempcard.js";
 //#region Constants
 const toggleableTagsField = document.getElementById('tags-list');
 const searchTextField = document.getElementById('search-text');
+const browseField = document.getElementById('browse-page');
+const cardsForm = document.getElementById('submission-form');
 const searchParams = new URLSearchParams(location.search);
 const inputButtons = new RadioButton('input-type',
     {
@@ -22,7 +24,9 @@ const inputButtons = new RadioButton('input-type',
             }
         },
         browse(button) {
-
+            checkedLabel(button);
+            browseField.style.display = button.checked ? 'block' : 'none';
+            cardsForm.style.display = button.checked ? 'none' : 'block';
         }
     }, function(button) {
         searchTextField.value = '';

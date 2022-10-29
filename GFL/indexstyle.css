@@ -79,9 +79,9 @@ label.tags.checked/* , label.tags:has(input:checked) */ {
     width: calc(100% - 76px);
 }
 
-#tags-list {
+#tags-list, #browse-page {
     text-align: center;
-    display: none;                              /* Makes class hidden by default. */
+    display: none;                              /* Makes block hidden by default. */
 }
 /* #endregion */
 
