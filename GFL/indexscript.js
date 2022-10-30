@@ -9,12 +9,6 @@ const browseField = document.getElementById('browse-page');
 const searchParams = new URLSearchParams(location.search);
 const maxPage = Math.ceil((cardData.length - 1) / 5)
 const pageNo = document.getElementById('page-no');
-const pageOutput = {
-    'first' : 1,
-    'previous' : Math.max(1, Number(pageNo.innerText) - 1),
-    'next' : Math.min(maxPage, Number(pageNo.innerText) + 1),
-    'last' : maxPage
-};
 const inputButtons = new RadioButton('input-type',
     {
         search(button) {
@@ -136,10 +130,14 @@ window.toggleTag = function(tagCheckbox) {
     searchTextField.value = tagCheckbox.checked ? searchTextField.value + tagName : searchTextField.value.replace(tagName, '');
 }
 
-
 /** @param {HTMLButtonElement} pageButton*/
 window.changePage = function(pageButton) {
-    var page = pageOutput[pageButton.value];
+    const page = {
+        'first'     : 1,
+        'previous'  : Math.max(1, Number(pageNo.innerText) - 1),
+        'next'      : Math.min(maxPage, Number(pageNo.innerText) + 1),
+        'last'      : maxPage
+    }[pageButton.value];
     var output = '';
 
     pageNo.innerText = String(page);

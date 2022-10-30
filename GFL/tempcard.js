@@ -1524,7 +1524,8 @@ export const cardData = Object.freeze([
     {
         id : '00172',
         questions : `Where are the skins? I can't find them.`,
-        answers : `${image('./assets/images/SkinLocation.png', 'Dorms > Warehouse > Gifts')}`,
+        answers : `${image('./assets/images/SkinLocation.png', 'Dorms > Warehouse > Gifts')}<br>
+        You get black cards here by gifting it.`,
         tags : [dTag.TDOLL, dTag.SKIN]
     },
     {
@@ -2276,7 +2277,7 @@ export const cardData = Object.freeze([
     {
         id : '00284',
         questions : `How do I know when my registration date was?`,
-        answers : `user_info.json from GFAlarm > reg_time value > convert to gregorian ("reg_time" unix time) with ${link('this', 'https://www.wolframalpha.com/')}`,
+        answers : `user_info.json from GFAlarm > reg_time value > convert to gregorian ("reg_time" unix time) with ${link('this', 'https://www.wolframalpha.com/')}.`,
         tags : [dTag.ACCT]
     },
     {
@@ -2517,4 +2518,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00318', '00319', '00320', '00321', '00322', '00018', '00019', '00123', '00163', '00297'];
+export const newCards = ['00018', '00019', '00123', '00163', '00297'];
