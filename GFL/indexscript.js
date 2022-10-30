@@ -7,7 +7,14 @@ const searchTextField = document.getElementById('search-text');
 const cardsForm = document.getElementById('submission-form');
 const browseField = document.getElementById('browse-page');
 const searchParams = new URLSearchParams(location.search);
+const maxPage = Math.ceil((cardData.length - 1) / 5)
 const pageNo = document.getElementById('page-no');
+const pageOutput = {
+    'first' : 1,
+    'previous' : Math.max(1, Number(pageNo.innerText) - 1),
+    'next' : Math.min(maxPage, Number(pageNo.innerText) + 1),
+    'last' : maxPage
+};
 const inputButtons = new RadioButton('input-type',
     {
         search(button) {
@@ -129,32 +136,15 @@ window.toggleTag = function(tagCheckbox) {
     searchTextField.value = tagCheckbox.checked ? searchTextField.value + tagName : searchTextField.value.replace(tagName, '');
 }
 
+
 /** @param {HTMLButtonElement} pageButton*/
 window.changePage = function(pageButton) {
-    const maxPage = Math.ceil((cardData.length - 1) / 5)
-    var page = 0;
+    var page = pageOutput[pageButton.value];
     var output = '';
-
-    switch (pageButton.value) {
-        case 'first':
-            page = 1;
-            break;
-        case 'previous':
-            page = Math.max(1, Number(pageNo.innerText) - 1)
-            break;
-        case 'next':
-            page = Math.min(maxPage, Number(pageNo.innerText) + 1)
-            break;
-        case 'last':
-            page = maxPage
-            break;
-        default:
-            break;
-    }
 
     pageNo.innerText = String(page);
 
-    for (var i = (page * 5) - 5; i < page * 5; i++)
+    for (var i = (page * 5) - 5; i < Math.min(page * 5, cardData.length - 1); i++)
         output += setQuestionBoxes(cardData[i]);
     document.getElementById('cards-field').innerHTML = output;
 }
