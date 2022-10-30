@@ -71,7 +71,11 @@
                 </form>
 
                 <div id="browse-page">
-                    <!-- first prev pageno next last -->
+                    <button type="button" onclick="changePage(this)" value="first">First</button>
+                    <button type="button" onclick="changePage(this)" value="previous">Prev</button>
+                    <span id="page-no"></span>
+                    <button type="button" onclick="changePage(this)" value="next">Next</button>
+                    <button type="button" onclick="changePage(this)" value="last">Last</button>
                 </div>
 
                 <div id="cards-field"></div>
