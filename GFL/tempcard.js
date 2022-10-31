@@ -411,9 +411,11 @@ export const cardData = Object.freeze([
         questions : `Is there a guide on how to build echelons/team compositions?`,
         answers : `${descriptionList({
             'Mixed' : [spoilerSummary("CheneyQWER's infographic.", image('./assets/images/EchelonComps.png'))],
-            'Coalition Echelons' : [link('Reddit flowchart post.', 'https://redd.it/rkvisq'),
-                link('Gamepress list of units and build suggestions.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units',
-                link('BigStupidJellyfish guide.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ringleader-echelon'))],
+            'Coalition Echelons' : [
+                link('Reddit flowchart post.', 'https://redd.it/rkvisq'),
+                link('Gamepress list of units and build suggestions.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units'),
+                link('BigStupidJellyfish guide.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ringleader-echelon')
+            ],
             'Tactical Doll Echelons' : [link("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv')]
         })}<br>
         Shouldn't be a gospel but a good starting point nonetheless.<br>

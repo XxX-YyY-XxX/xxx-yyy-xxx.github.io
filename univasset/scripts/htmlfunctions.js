@@ -16,7 +16,7 @@ export class TextStyle {
 export function image(link, caption = "") {
     if (caption) {
         return `<figure>
-            <img src="${link}" alt="${imgAlt}">
+            <img src="${link}" alt="${imgAlt}" loading="lazy">
             <figcaption>${caption}</figcaption>
         </figure>`;
     } else {
@@ -26,10 +26,9 @@ export function image(link, caption = "") {
 
 /** @param {string} linkText Text or image URL. @param {string} link */
 export function link(linkText, link) {
-    return `<a href="${link}">${linkStart.some(val => linkText.startsWith(val)) ? `<img src="${linkText}" alt="${imgAlt}">` : linkText}</a>`;
-    /* if (linkStart.some(val => linkText.startsWith(val)))
-        linkText = `<img src="${linkText}" alt="${imgAlt}">`
-    return `<a href="${link}">${linkText}</a>`; */
+    return `<a href="${link}">
+        ${linkStart.some(val => linkText.startsWith(val)) ? `<img src="${linkText}" alt="${imgAlt}" loading="lazy">` : linkText}
+    </a>`;
 }
 
 /** @param {boolean} ordered */
