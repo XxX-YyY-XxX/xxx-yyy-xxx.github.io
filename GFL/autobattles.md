@@ -6,10 +6,6 @@
 
 > <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/hzark0/weekly_commanders_lounge_july_28_2020/g082rwn/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="195" width="640" scrolling="no"></iframe>
 
-### I can't do auto-battle even though I met the required CE. What happened?
-
-> Is it a night map? If it is, refer to night CE. If it still doesn't let you, increase CE, some required CE are listed wrong.
-
 ### Can I get SPEQs/Limited dolls from auto-battles?
 
 > Yes we can.

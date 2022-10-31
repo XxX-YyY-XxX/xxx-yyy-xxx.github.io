@@ -2511,6 +2511,12 @@ export const cardData = Object.freeze([
         tags : [dTag.MAJOR, dTag.SEASON, dTag.COLLAB, dTag.CAMPAIGN]
     },
     {
+        id : '00323',
+        questions : `I can't do an auto-battle even though I met the required CE. What's happening?`,
+        answers : `Is it a night map? If it is, refer to night CE. If it still doesn't let you, increase CE, some required CE are listed wrong.`,
+        tags : [dTag.AUTO]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,

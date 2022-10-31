@@ -42,7 +42,7 @@ export function list(ordered, ...any) {
 //create lazy load using details element
 export function googleEmbed(docLink) {
     return `<figure>
-        <iframe src="${docLink}/preview?pli=1"></iframe>
+        <iframe src="${docLink}/preview?pli=1" loading="lazy"></iframe>
         <figcaption><a onclick="refreshDoc(this)">Reload Frame</a> \| <a href="${docLink}">Source Link</a></figcaption>
     </figure>`;
 }
@@ -56,12 +56,12 @@ window.refreshDoc = function(element) {
 
 /** @param {string} videoID Youtube video or playlist ID*/
 export function youtubeEmbed(videoID) {
-    return `<iframe src="https://www.youtube.com/embed/${videoID.length == 11 ? videoID : `videoseries?list=${videoID}`}" allowfullscreen></iframe>`
+    return `<iframe src="https://www.youtube.com/embed/${videoID.length == 11 ? videoID : `videoseries?list=${videoID}`}" loading="lazy" allowfullscreen></iframe>`
 }
 
 /** @param {string} videoID */
 export function streamEmbed(videoID) {
-    return `<iframe src="https://streamable.com/e/${videoID}" allowfullscreen></iframe>`
+    return `<iframe src="https://streamable.com/e/${videoID}" loading="lazy" allowfullscreen></iframe>`
 }
 
 /** @param permalink ...comments/${permalink}/?...*
