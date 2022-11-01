@@ -76,7 +76,7 @@ export class RadioButton {
 
 /** For functions that returns a Promise. */
 export class AsyncFunc {
-    /** @param {RequestInfo | URL} jsonFile @returns Promise of JSON onject. */
+    /** @param {RequestInfo | URL} jsonFile @returns Promise of JSON object. */
     static async getJSON(jsonFile) {
         return fetch(jsonFile).then(response => response.json());
     }

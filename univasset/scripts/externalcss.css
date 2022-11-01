@@ -1,4 +1,5 @@
 @import "/assets/css/style.css?v=2d3b5126dd9bdaf552f3aef918356c51b10c15a9";
+@import "/univasset/scripts/include";
 
 /* #region General */
 code {
@@ -14,9 +15,6 @@ tr:nth-child(even) {
   background-color: rgba(85, 107, 47, 0.25);
 }
 
-include {
-  display: none;
-}
 /* #endregion */
 
 /* #region Tooltip */
