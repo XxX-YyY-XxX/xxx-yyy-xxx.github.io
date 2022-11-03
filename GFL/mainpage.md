@@ -120,6 +120,8 @@
 > - [SCEX, 56R](https://old.reddit.com/r/girlsfrontline/comments/wjxfxg/weekly_commanders_lounge_august_09_2022/ikb1n4d/)
 >
 > - [Row vs. column](https://old.reddit.com/r/girlsfrontline/comments/wpoce9/weekly_commanders_lounge_august_16_2022/il0buow/)
+>
+> - [#2 chip calc update.](https://old.reddit.com/r/girlsfrontline/comments/ycz59a/weekly_commanders_lounge_october_25_2022/iu20tha/)
 
 >EarSpeaker
 >

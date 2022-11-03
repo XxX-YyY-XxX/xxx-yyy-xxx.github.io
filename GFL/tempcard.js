@@ -223,6 +223,7 @@ export const cardData = Object.freeze([
         ${link('KR Wiki.', 'https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0/%EC%9D%B8%ED%98%95%EB%8F%84%EA%B0%90')}<br>
         ${link("Fatalchapter's bilibili guide.", 'https://www.bilibili.com/read/readlist/rl100361')} Updated up to Jashin dolls.<br>
         ${link("Sijun's list.", 'https://www.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1rph1l/')} Translated by u/ConductorBichir.<br>
+        ${spoilerSummary("u/LuckyTenth's spreadsheet.", googleEmbed('https://docs.google.com/spreadsheets/d/1w2qEbnNluSc6C4U73yyAnYE_zmXdARvDu3GZmMO7hl4'))}<br>
         ${spoilerSummary('BigStupidJellyfish analyses.', list(false,
             link('Vallhalla girls.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/valhalla'),
             link('AK-15.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ak15')))}`,
@@ -345,10 +346,11 @@ export const cardData = Object.freeze([
                         ['11', 'Mk46',      'N/A'],
                         ['12', 'MAT-49',    'N/A'],
                         ['13', 'Defender',  'N/A'])),
-                link(`Farmable dolls in campaign maps, both 3${star} monthly reward and debut dolls.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
+                link(`Farmable dolls in campaign maps, both 3${star} monthly reward dolls and those that debuted on this event.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
                 'During collabs, major events, side events, and Rescue Event/Boss Bully, event rewards become temporarily available for farming.',
                 'Obtainable from random nodes, however unlikely.'],
-            'Event Rewards' : [link("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls')],
+            'Event Rewards' : [link("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls'),
+                'These dolls will become unavailable from major story clear rewards after being added to the campaign tab.'],
             'Shop' : ['Applicable to collab dolls using event currency.',
                 `5${star} dolls available in Production are the only ones elegible for True Core Masks, bar spaghetti.`,]
         })}<br>
@@ -2519,6 +2521,12 @@ export const cardData = Object.freeze([
         tags : [dTag.AUTO]
     },
     {
+        id : '00324',
+        questions : `Will the seasonal coalition units return to they're base/original form?`,
+        answers : `That's already their actual form, as seen with their skills being completely different from the original's.`,
+        tags : [dTag.COALITION]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
@@ -2526,4 +2534,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00018', '00019', '00123', '00163', '00297'];
+export const newCards = ['00019', '00123', '00163', '00297', '00014'];
