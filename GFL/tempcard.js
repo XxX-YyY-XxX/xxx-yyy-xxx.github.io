@@ -23,7 +23,7 @@ export const dTag = Object.freeze({
             LEDOLL : Object.freeze({val : 'CycleDropDolls', desc : 'Reward dolls that now wander the rerun hell.'}),
         COALITION : Object.freeze({val : 'CoalitionUnits', desc : 'PA counterpart of Tactical Dolls.'}),
         EQUIP : Object.freeze({val : 'Equipments', desc : 'Gun attachments, FST chips, PA chips.'}),
-            SPEQ : Object.freeze({val : 'SpecialEquipments', desc : 'Equips specific to a doll.'}),
+            SPEQ : Object.freeze({val : 'SpecialEquipments', desc : 'Equipments specific to a doll.'}),
         ITEM : Object.freeze({val : 'ConsumableItems', desc : 'Tickets, cores, gems, batteries, shop items...'}),
             TCM : Object.freeze({val : 'TrueCoreMask', desc : `Used to redeem 5${star} prod dolls.`}),
         FAIRY : Object.freeze({val : 'Fairies', desc : 'Sixth man of the team.'}),
@@ -48,22 +48,28 @@ export const dTag = Object.freeze({
     //#endregion
     //#region Home Tabs
     CMDR : Object.freeze({val : 'Commander', desc : '"Self-insert."'}),
+    MARP : Object.freeze({val : 'FourResources', desc : 'Manpower, Ammunition, Rations, Parts.'}),
     ADJUNCT : Object.freeze({val : 'Adjutants', desc : 'T-Doll secretary.'}),
     MINI : Object.freeze({val : 'MiniEvents', desc : 'Keycard Events, Point Events, etc.'}),
     QUEST : Object.freeze({val : 'Quests', desc : 'Dailies, weeklies, main, career, intel.'}),
     SHOP : Object.freeze({val : 'Shop', desc : 'Buy things here.'}),
     FRIEND : Object.freeze({val : 'Friends', desc : 'The helpful kind.'}),
     //#endregion
+    //#region Meta Tags
     MISC : Object.freeze({val : 'Miscellaneous', desc : 'Default tag.'}),
-    ACCT : Object.freeze({val : 'AccountManagement', desc : 'Account data and integrity.'}),
-    TECH : Object.freeze({val : 'Troubleshooting', desc : 'DIY tech support.'}),
     '3P' : Object.freeze({val : 'ThirdParty', desc : 'Safe until said otherwise.'}),
+    TECH : Object.freeze({val : 'Troubleshooting', desc : 'DIY tech support.'}),
     NEWB : Object.freeze({val : 'NewbieGuide', desc : 'Things new/early-game players should know.'}),
     PRIME : Object.freeze({val : 'TopicPrimer', desc : "Starter explanation of it's paired tag."}), //Must be the first box of it's paired tag.
     TIER : Object.freeze({val : 'TierList', desc : 'Basic guideline on who are the best.'}),
-    ANNIV : Object.freeze({val : 'Anniversary', desc : "Anything concerning the game's anniversary."}),
     IMPT : Object.freeze({val : 'Important', desc : 'Things new players would need for late-game.'}),
     SYSMECH : Object.freeze({val : 'SystemMechanics', desc : 'Explanation on underlying mechanics of the game.'}),
+    LORE : Object.freeze({val : 'Story/Lore', desc : 'Main meat of the series.'}),
+    REF : Object.freeze({val : 'Compilation', desc : 'Reference compilations.'}),
+    GET : Object.freeze({val : 'Acquisition', desc : 'How to get and where.'}),
+    //#endregion
+    ACCT : Object.freeze({val : 'AccountManagement', desc : 'Account data and integrity.'}),
+    ANNIV : Object.freeze({val : 'Anniversary', desc : "Anything concerning the game's anniversary."}),
     ENEMY : Object.freeze({val : 'EnemyUnits', desc : 'Things regarding enemy info.'}),
     MAP : Object.freeze({val : 'FieldMap', desc : 'Node-based overworld.'}),
         BATTLE : Object.freeze({val : 'Skirmishes', desc : 'Where bullets rain.'}),
@@ -72,14 +78,10 @@ export const dTag = Object.freeze({
     LOVE : Object.freeze({val : 'Affection', desc : '"Keep it high."'}),
         OATH : Object.freeze({val : 'OathSystem', desc : 'Marriage.'}),
     LEVEL : Object.freeze({val : 'Leveling', desc : 'Mostly Corpse Drag.'}),
-    PET : Object.freeze({val : 'Pets', desc : 'Yes.'}),
+    PET : Object.freeze({val : 'Pets', desc : 'Little critters.'}),
     OJ : Object.freeze({val : 'LuffberryChess', desc : 'PVP sidegame.'}),
-    LORE : Object.freeze({val : 'Story/Lore', desc : 'Main meat of the series.'}),
-    MARP : Object.freeze({val : 'FourResources', desc : 'Manpower, Ammunition, Rations, Parts.'}),
-    REF : Object.freeze({val : 'Compilation', desc : 'Reference compilations.'}),
     CE : Object.freeze({val : 'CombatEffectiveness', desc : 'Clutch metric.'}),
     KALINA : Object.freeze({val : 'Kalina', desc : 'Overworked logistics officer.'}),
-    GET : Object.freeze({val : 'Acquisition', desc : 'How to get and where.'}),
 });
 
 export const cardData = Object.freeze([
@@ -354,7 +356,7 @@ export const cardData = Object.freeze([
             'Shop' : ['Applicable to collab dolls using event currency.',
                 `5${star} dolls available in Production are the only ones elegible for True Core Masks, bar spaghetti.`,]
         })}<br>
-        ${spoilerSummary('Dolls EN are missing.', image('https://media.discordapp.net/attachments/951085201658871820/1022535945398001794/en_missing_dolls_that_bullshit_poor_excuse_of_a_wiki_made_me_remake_this_image_edition.png'))}`,
+        ${spoilerSummary('Dolls EN are missing.', image('https://cdn.discordapp.com/attachments/951085201658871820/1033732620384751636/en_missing_dolls_varz_asked_edition.png'))}`,
         tags : [dTag.TDOLL, dTag.IMPT, dTag.GET, dTag.SPEQ]
     },
     {
@@ -2527,6 +2529,12 @@ export const cardData = Object.freeze([
         tags : [dTag.COALITION]
     },
     {
+        id : '00325',
+        questions : `I saw that commander costumes have skills. How do I level it up?`,
+        answers : `Get another costume set with the same skill to upgrade it.`,
+        tags : [dTag.CMDR, dTag.SKIN, dTag.SKILL]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
@@ -2534,4 +2542,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00019', '00123', '00163', '00297', '00014'];
+export const newCards = ['00123', '00163', '00297', '00014', '00024'];
