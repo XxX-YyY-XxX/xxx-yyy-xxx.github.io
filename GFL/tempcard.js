@@ -1164,8 +1164,9 @@ export const cardData = Object.freeze([
         id : '00123',
         questions : `Is there a list of doll farming routes for each map?`,
         answers : `${spoilerSummary('Compilation of all farm routes for limited dolls and equipments on both campaign and main story.', googleEmbed('https://docs.google.com/document/d/1GUcA1ZHYVKBhTspdRYPIkECVZRoLFvqDnLrgrFb6VcU'))}<br>
-        ${link('Farming routes by RevenantXIII (with Pilfer strats), focusing on events and ranking-relevant campaign dolls.', 'https://rosedrake.github.io/GFL.html')}`,
-        tags : [dTag.TDOLL, dTag.GET, dTag.MAIN, dTag.CAMPAIGN]
+        ${link('Farming routes by RevenantXIII (with Pilfer strats), focusing on events and ranking-relevant campaign dolls.', 'https://rosedrake.github.io/GFL.html')}<br>
+        ${spoilerSummary('416 SPEQ Pilfer route.', youtubeEmbed('5v6gEqydGm4'))}`,
+        tags : [dTag.TDOLL, dTag.GET, dTag.MAIN, dTag.CAMPAIGN, dTag.SPEQ]
     },  //GDoc by u/rcpz93 most likely
     {
         id : '00124',
@@ -1570,10 +1571,12 @@ export const cardData = Object.freeze([
     {
         id : '00178',
         questions : `I'm getting a "resource full" warning. What would that item be?`,
-        answers : `${image('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/inline-images/expedition-loot-rack.jpg', 'Taken from Gamepress')}<br>
+        answers : `Or "Items have reached the max capacity, unable to receive."<br>
+        ${image('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/inline-images/expedition-loot-rack.jpg', 'Taken from Gamepress')}<br>
         If the Mid Rewards rack is not empty, look at your armory.<br>
-        If it's the End Rewards, check your Black Market currencies.`,
-        tags : [dTag.EXPED, dTag.ITEM]
+        If it's the End Rewards, check your Black Market currencies.<br>
+        Or maybe just pasta, try restarting.`,
+        tags : [dTag.EXPED, dTag.ITEM, dTag.TECH]
     },
     {
         id : '00179',
