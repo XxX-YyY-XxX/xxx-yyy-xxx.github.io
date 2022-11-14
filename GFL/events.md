@@ -28,10 +28,6 @@
 > [There's this for starters.](https://drive.google.com/drive/folders/1YSG70y6NYm9E0rnOOvu5-xIC4yigCnU_) 
 -->
 
-### Counter says I still have maps to do. How do I know which ones are those?
-
-> ![](/GFL/assets/images/StoryProgress.png "Tap the encircled counter to see the remaining maps")
-
 ### What's a rescue event?
 
 > Events where you get to farm for [sought-after 4-5★ dolls](/GFL/tdolls#is-there-a-comprehensive-list-of-limited-event-dolls) in the story chapters 1-6.

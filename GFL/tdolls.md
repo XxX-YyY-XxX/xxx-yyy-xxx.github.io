@@ -6,20 +6,6 @@
 
 > <blockquote class="twitter-tweet"><p lang="en" dir="ltr">We modified some names to avoid licensing risk. We thank you for your understanding.</p>&mdash; Girls&#39; Frontline-EN Official (@GirlsFrontlineE) <a href="https://twitter.com/GirlsFrontlineE/status/1001058278728548354?ref_src=twsrc%5Etfw">May 28, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-### Can I set the damaged art as default for dolls?
-
-> Only on the main screen as an adjutant, unless you want them critically damaged forever.
-
-### The speech bubble hearts, SKK. What do they mean?
-
-> Dorm? Tap them to gain ¼ of an affection.
->
-> Echelon portrait? At 100 affection pts.
-
-### Are there welfare units in this game? And if so, are they permanently missable?
-
-> Yes. No.
-
 ### Where can I repair my damaged dolls?
 
 > Repair button at the main menu. You can also repair them on helipads pre and post-deployment. **Do note though that repairing post-deployment cost twice the resources and locks you out of S rank (gold) medals.**
@@ -29,10 +15,6 @@
 ### Is a doll worth farming?
 
 > Worth it if they can only be acquired by running the maps, otherwise just do construction.
-
-### How would I know if my EXP gain is getting penalized?
-
-> ![](/GFL/assets/images/EXPCutoff.png "EXP gains per map and their no-penalty threshold")
 
 ### How do you set L2Ds for adjutants?
 
@@ -61,14 +43,6 @@
 > Formation>Show Equip. The stats are above the equip boxes.
 
 @ Visual
-
-### How high should K2's RoF have to be to auto her skill?
-
-> Around 90 to maximize the ICD up to 100 if there's a run-up.
-
-### Do I need to level up my duplicates in order to use them as dummy-links?
-
-> Nope. They're merely DPS and health multiplier basically. Pretty much used as the equivalent of limit-break fodders in other gachas.
 
 ### Is there a comprehensive list of Limited Event Dolls?
 

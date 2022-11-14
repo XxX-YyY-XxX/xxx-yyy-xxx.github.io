@@ -2158,7 +2158,8 @@ export const cardData = Object.freeze([
             'C-93' : ["Passive can trigger in response to other dolls' self-debuffs."],
             'Hanyang Type 88' : [link('Can still miss on certain positions.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/hanyangle-2')],
             'FX05' : [link('Does not activate skill on max ROF.', 'https://old.reddit.com/r/girlsfrontline/comments/vx5s4p/weekly_commanders_lounge_july_12_2022/ig4n5sr/')],
-            'Supernova' : ['Additive crit rate.']
+            'Supernova' : ['Additive crit rate.'],
+            'K2' : ["ROF around 90 to maximize the ICD up to 100 if there's a run-up to auto her skill."]
         })}`,
         tags : [dTag.TDOLL, dTag.SKILL]
     },
@@ -2538,6 +2539,37 @@ export const cardData = Object.freeze([
         tags : [dTag.CMDR, dTag.SKIN, dTag.SKILL]
     },
     {
+        id : '00326',
+        questions : `Counter says I still have maps to do. How do I know which ones are those?`,
+        answers : `${image('./assets/images/StoryProgress.png', 'Tap the encircled counter to see the remaining maps')}`,
+        tags : [dTag.MAJOR, dTag.CAMPAIGN, dTag.COLLAB]
+    },
+    {
+        id : '00327',
+        questions : `Are there welfare units in this game? And if so, are they permanently missable?`,
+        answers : `Yes. No.`,
+        tags : [dTag.TDOLL, dTag.GET, dTag.NEWB]
+    },
+    {
+        id : '00328',
+        questions : `Can I set the damaged art as default for dolls?`,
+        answers : `Only on the main screen as an adjutant, unless you want them critically damaged forever.`,
+        tags : [dTag.TDOLL]
+    },
+    {
+        id : '00329',
+        questions : `The speech bubble hearts, SKK. What do they mean?`,
+        answers : `Dorm? Tap them to gain ¼ of an affection.<br>
+        Echelon portrait? They're at 90 affection pts. and above.`,
+        tags : [dTag.TDOLL, dTag.LOVE]
+    },
+    {
+        id : '00330',
+        questions : `Do I need to level up my duplicates in order to use them as dummy-links?`,
+        answers : `Nope. They're merely DPS and health multiplier basically. Pretty much used as the equivalent of limit-break fodders in other gachas.`,
+        tags : [dTag.TDOLL, dTag.LEVEL]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
@@ -2545,4 +2577,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00123', '00163', '00297', '00014', '00024'];
+export const newCards = ['00163', '00297', '00014', '00024', '00265'];
