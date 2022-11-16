@@ -5,6 +5,12 @@ const star = '★';
 const tm = '™️';
 //🍰
 
+/** @param {string} text 
+ * @param {string[]} ID */
+function getID(text, ...ID) {
+    return `<a href="https://xxx-yyy-xxx.github.io/GFL/?id=${ID.join('+')}">${text}</a>`
+}
+
 export const dTag = Object.freeze({
     //#region Combat Tabs
         //STORY : 'StoryEvents',          //For questions that apply to Major, Collab, and Seasonal Events.
@@ -2568,6 +2574,14 @@ export const cardData = Object.freeze([
         questions : `Do I need to level up my duplicates in order to use them as dummy-links?`,
         answers : `Nope. They're merely DPS and health multiplier basically. Pretty much used as the equivalent of limit-break fodders in other gachas.`,
         tags : [dTag.TDOLL, dTag.LEVEL]
+    },
+    {
+        id : '00331',
+        questions : `What is duping and how do I dupe?`,
+        answers : `Duping is the art of keeping a duplicate of the same unit instead of turning them into dummy cores.<br>
+        The only dupeable dolls are farmables, craftables, and capturables.<br>
+        For Griffin T-Dolls, this only comes in rankings. For Coalition Units, this is, at the very least, expected.`,
+        tags : [dTag.TDOLL, dTag.COALITION]
     },
     {
         id : '00300',

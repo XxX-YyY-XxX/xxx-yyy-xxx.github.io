@@ -46,8 +46,10 @@ toggleableTagsField.innerHTML = Object.values(dTag).sort((a, b) => Compare.strin
     </label>`
 ).join(' ');
 
-document.getElementById('cards-field').innerHTML = (searchParams.has('search') || searchParams.has('tags')) ? searchCards() :
-                                                   (newCards.length >= 3) ? addedCards() : randomCards();
+//get card from id
+document.getElementById('cards-field').innerHTML =
+    (searchParams.has('search') || searchParams.has('tags') || searchParams.has('id')) ? searchCards() :
+    (newCards.length >= 3) ? addedCards() : randomCards();
 //#endregion
 
 //#region Private Functions
@@ -62,7 +64,7 @@ function searchCards() {
         } else {
             return 'Empty search.';
         }
-    } else {
+    } else if (searchParams.has('search')) {
         const searchText = searchParams.get('search');
         if (searchText) {
             const phrase = new RegExp(searchText, 'i');
@@ -70,7 +72,10 @@ function searchCards() {
         } else {
             return 'Empty search.';
         }
-    }
+    } else if (searchParams.has('id')) {
+        const cardTags = searchParams.get('id').split(' ');
+        matchCheck = (card) => cardTags.includes(card.id);
+    } //else none
 
     for (const cards of cardData) {
         if (matchCheck(cards))

@@ -38,7 +38,6 @@ export function list(ordered, ...any) {
 }
 
 /** @param {string} docLink Ends in alphanumeric */
-//create lazy load using details element
 export function googleEmbed(docLink) {
     return `<figure>
         <iframe src="${docLink}/preview?pli=1" loading="lazy"></iframe>
