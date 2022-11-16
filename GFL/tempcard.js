@@ -2554,7 +2554,7 @@ export const cardData = Object.freeze([
         id : '00328',
         questions : `Can I set the damaged art as default for dolls?`,
         answers : `Only on the main screen as an adjutant, unless you want them critically damaged forever.`,
-        tags : [dTag.TDOLL]
+        tags : [dTag.TDOLL, dTag.SKIN]
     },
     {
         id : '00329',
