@@ -133,10 +133,10 @@ export const cardData = Object.freeze([
         answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
         ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-first-impressions-revamped')}<br>
-        ${spoilerSummary("Cleista's basic Twitter guide.", link('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096', 'https://twitter.com/CleistaCeleste/status/1409824210571214849'))}<br>
+        ${spoilerSummary("Cleista's basic Twitter guide.", twitterEmbed('CleistaCeleste', '1409824210571214849'))}<br>
         Apparently, this unlocks after beating 7-5 Normal.`,
         tags : [dTag.PA, dTag.PRIME]
-    },
+    },  //link('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096', 'https://twitter.com/CleistaCeleste/status/1409824210571214849')
     {
         id : '00005',
         questions : `How do Neural Upgrades/MODs work?`,

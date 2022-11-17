@@ -62,11 +62,9 @@ export function streamEmbed(videoID) {
     return `<iframe src="https://streamable.com/e/${videoID}" loading="lazy" allowfullscreen></iframe>`
 }
 
-export function twitterEmbed(handle, message, id, date) {
+export function twitterEmbed(handle, id) {
     return `<blockquote class="twitter-tweet">
-        <p lang="en" dir="ltr">${message}</p>
-        ${handle}
-        <a href="${id}?ref_src=twsrc%5Etfw">${date}</a>
+        <a href="https://twitter.com/${handle}/status/${id}?ref_src=twsrc%5Etfw">Source Tweet</a>
     </blockquote>`
 }
 
