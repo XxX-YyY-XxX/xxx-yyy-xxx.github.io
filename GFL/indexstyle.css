@@ -135,7 +135,8 @@ iframe[src*="www.youtube.com"], iframe[src*="streamable.com"] {
     display: block;
 }
 
-.twitter-tweet {
-    max-width: calc(100%-100px) !important;
+.twitter-tweet > iframe[src*="platform.twitter.com"] {
+    max-width: 100%;
 }
+/* calc(100%-100px) !important */
 /* #endregion */
