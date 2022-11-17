@@ -50,6 +50,8 @@ toggleableTagsField.innerHTML = Object.values(dTag).sort((a, b) => Compare.strin
 document.getElementById('cards-field').innerHTML =
     (searchParams.has('search') || searchParams.has('tags') || searchParams.has('id')) ? searchCards() :
     (newCards.length >= 3) ? addedCards() : randomCards();
+
+document.getElementById('maxpage').innerText = maxPage;
 //#endregion
 
 //#region Private Functions
