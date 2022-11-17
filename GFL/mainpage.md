@@ -27,9 +27,6 @@
 # [Tactical Dolls](/GFL/tdolls)*
 - Doll analysis, acquisition, builds and loadouts, and affections.
 
-# [Neural Upgrade/MOD](/GFL/mods)
-- Upgrade guide, mods list, and extra details.
-
 # [Events](/GFL/events)*
 - Major, minor, and mini events.
 
@@ -222,12 +219,6 @@ Official GFL world and political map.
 Dolls with oath animations.
 
 Commander costume skills and sets.
-
-# W/E
-
-[I want a frame for this.](https://old.reddit.com/r/girlsfrontline/comments/j1v3lw/weekly_commanders_lounge_september_29_2020/g7mr98t/)
-
-Numbers - 34419187811450531753
 
 # GFL Multimedia
 

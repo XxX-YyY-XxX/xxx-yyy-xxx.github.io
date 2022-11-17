@@ -2584,6 +2584,24 @@ export const cardData = Object.freeze([
         tags : [dTag.TDOLL, dTag.COALITION]
     },
     {
+        id : '00332',
+        questions : `I can't see my dolls MOD in the Neural Upgrade tab. Where are they?`,
+        answers : `Maybe because it's not yet released on whatever server you're in right now?`,
+        tags : [dTag.TDOLL, dTag.MOD]
+    },
+    {
+        id : '00333',
+        questions : `If I mod my doll, would I still be able to use other skins?`,
+        answers : `Yes, considering that costumes are this game's main revenue.`,
+        tags : [dTag.TDOLL, dTag.MOD, dTag.SKIN]
+    },
+    {
+        id : '00334',
+        questions : `I just got an Old Letter. WhoWhenWhereWhatWhyHow?`,
+        answers : `KSVK. After Modding her to 3. Mail. Connected to Mod Story. More story and immersion. Mica mail.`,
+        tags : [dTag.MOD]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
