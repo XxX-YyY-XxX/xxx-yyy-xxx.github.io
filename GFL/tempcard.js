@@ -627,7 +627,7 @@ export const cardData = Object.freeze([
     {
         id : '00054',
         questions : `Is there a way to know the map layout and its spawnable enemy units?`,
-        answers : `${link('GFLMaps site.', 'https://pengupengupengu.github.io/gflmaps/')}`,
+        answers : `${link('Pengu GFLMaps site.', 'https://pengupengupengu.github.io/gflmaps/')}`,
         tags : [dTag["3P"], dTag.MAP, dTag.ENEMY]
     },
     {
@@ -1937,7 +1937,7 @@ export const cardData = Object.freeze([
     {
         id : '00232',
         questions : `Is there any Live2D viewer for GFL?`,
-        answers : `${link('Pengu', 'https://pengupengupengu.github.io/live2d-viewer-web/')}. Don't know how this works.<br>
+        answers : `${link('Pengu.', 'https://pengupengupengu.github.io/live2d-viewer-web/')} Don't know how this works.<br>
         Or try IOPWiki.`,
         tags : [dTag['3P']]
     },
