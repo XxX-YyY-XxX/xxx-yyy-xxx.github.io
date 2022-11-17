@@ -65,7 +65,8 @@ export function streamEmbed(videoID) {
 export function twitterEmbed(handle, id) {
     return `<blockquote class="twitter-tweet">
         <a href="https://twitter.com/${handle}/status/${id}?ref_src=twsrc%5Etfw">Source Tweet</a>
-    </blockquote>`
+    </blockquote>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>`
 }
 
 /** @param permalink ...comments/${permalink}/?...*

@@ -136,7 +136,7 @@ export const cardData = Object.freeze([
         ${spoilerSummary("Cleista's basic Twitter guide.", twitterEmbed('CleistaCeleste', '1409824210571214849'))}<br>
         Apparently, this unlocks after beating 7-5 Normal.`,
         tags : [dTag.PA, dTag.PRIME]
-    },  //link('https://pbs.twimg.com/media/E5CzhbRXEAEB-XH?format=jpg&name=4096x4096', 'https://twitter.com/CleistaCeleste/status/1409824210571214849')
+    },
     {
         id : '00005',
         questions : `How do Neural Upgrades/MODs work?`,
