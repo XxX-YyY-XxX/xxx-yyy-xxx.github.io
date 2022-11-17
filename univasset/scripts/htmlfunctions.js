@@ -62,6 +62,14 @@ export function streamEmbed(videoID) {
     return `<iframe src="https://streamable.com/e/${videoID}" loading="lazy" allowfullscreen></iframe>`
 }
 
+export function twitterEmbed(handle, message, id, date) {
+    return `<blockquote class="twitter-tweet">
+        <p lang="en" dir="ltr">${message}</p>
+        ${handle}
+        <a href="${id}?ref_src=twsrc%5Etfw">${date}</a>
+    </blockquote>`
+}
+
 /** @param permalink ...comments/${permalink}/?...*
 function redditEmbed(permalink) {                                       //needs more fix, how to check support
     return `<a href="https://www.reddit.com/r/girlsfrontline/comments/${permalink}/">For load fail purposes.</a><br>

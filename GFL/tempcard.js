@@ -1,4 +1,4 @@
-import {image, link, list, googleEmbed, youtubeEmbed, streamEmbed, table, TextStyle, altStyle, spoilerSummary, descriptionList} from '/univasset/scripts/htmlfunctions.js';
+import {image, link, list, googleEmbed, youtubeEmbed, streamEmbed, table, TextStyle, altStyle, spoilerSummary, descriptionList, twitterEmbed} from '/univasset/scripts/htmlfunctions.js';
 
 const lessEqual = '≤';
 const star = '★';
