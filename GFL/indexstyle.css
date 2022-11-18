@@ -41,9 +41,18 @@ label.tags {
     color: black;
 }
 
-label.tags.checked/* , label.tags:has(input:checked) */ {
-    background: transparent;
-    color: aqua;
+@supports Selector(label.tags:has(input:checked)) {
+    label.tags:has(input:checked) {
+        background: transparent;
+        color: aqua;
+    }
+}
+
+@supports not Selector(label.tags:has(input:checked)) {
+    label.tags.checked {
+        background: transparent;
+        color: aqua;
+    }
 }
 
 .card-tags {
@@ -66,7 +75,7 @@ label.tags.checked/* , label.tags:has(input:checked) */ {
     flex: calc(100% / 3);
 }
 
-/* .flex-label.checked, */ .flex-label:has(input:checked) {
+.flex-label:has(input:checked) {
     background-color: darkgreen;
 }
 

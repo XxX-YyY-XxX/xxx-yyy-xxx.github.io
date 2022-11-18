@@ -2602,6 +2602,12 @@ export const cardData = Object.freeze([
         tags : [dTag.MOD]
     },
     {
+        id : '00335',
+        questions : `What if I don't have the doll I have costume for?`,
+        answers : `Make Kalina wear it and she gives it when the owner comes home.`,
+        tags : [dTag.TDOLL, dTag.SKIN]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
@@ -2609,4 +2615,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00297', '00014', '00024', '00265'];
+export const newCards = ['00014', '00024', '00265'];

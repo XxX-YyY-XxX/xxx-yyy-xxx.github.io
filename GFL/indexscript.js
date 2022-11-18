@@ -12,11 +12,9 @@ const pageNo = document.getElementById('page-no');
 const inputButtons = new RadioButton('input-type',
     {
         search(button) {
-            checkedLabel(button);
             searchTextField.style.display = button.checked ? 'inline' : 'none';
         },
         tags(button) {
-            checkedLabel(button);
             toggleableTagsField.style.display = button.checked ? 'block' : 'none';
             if (!button.checked) {
                 for (const labeltrue of Array.from(toggleableTagsField.children).filter(label => label.firstElementChild.checked)) {
@@ -26,7 +24,6 @@ const inputButtons = new RadioButton('input-type',
             }
         },
         browse(button) {
-            checkedLabel(button);
             browseField.style.display = button.checked ? 'block' : 'none';
             cardsForm.style.display = button.checked ? 'none' : 'block';
         }
@@ -46,7 +43,6 @@ toggleableTagsField.innerHTML = Object.values(dTag).sort((a, b) => Compare.strin
     </label>`
 ).join(' ');
 
-//get card from id
 document.getElementById('cards-field').innerHTML =
     (searchParams.has('search') || searchParams.has('tags') || searchParams.has('id')) ? searchCards() :
     (newCards.length >= 3) ? addedCards() : randomCards();

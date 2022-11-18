@@ -16,13 +16,6 @@ export const pageURL = window.location.origin + window.location.pathname;
 //#endregion
 
 //#region Enumerators
-/** For HTML tag removal. */
-export class HTMLSearch {
-    /** @property Uses regex for quick and dirty searches. */
-    static QUICK = 0;
-    /** @property Uses HTML parsing for precise element matching. */
-    static PRECISE = 1;
-}
 //#endregion
 
 //#region Class
@@ -84,7 +77,7 @@ export class AsyncFunc {
 //#endregion
 
 //#region Functions
-/** @param {string} htmlString @param {HTMLSearch} removalMethod */
+/** @param {string} htmlString */
 export function removeHTMLTag(htmlString) {
     return htmlString.replace(/(<([^>]+)>)/ig, '');
 
@@ -142,6 +135,7 @@ export function checkedLabel(inputElement) {
  * @param {Iterable[]} iterables order of iterables = order of output
  * @returns "Tuple" of values from each array */
 export function* zip(extend, ...iterables) {
+    //Change to iterables for less memory used
     const arrayOfArrays = iterables.map(arr => Array.from(arr))
     const maxlength = (extend ? Math.max : Math.min)(...arrayOfArrays.map(arr => arr.length))
 

@@ -2,10 +2,6 @@
 
 # Resupply/Costumes/Furniture
 
-### What if I don't have the doll I have costume for?
-
-> Make Kalina wear it and give it when the owner comes home.
-
 ### Where can I get furniture for my dorms?
 
 > Collateral of skin pulling, aka Resupply. Or Expedition shop.
