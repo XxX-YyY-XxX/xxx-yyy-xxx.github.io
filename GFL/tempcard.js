@@ -1,4 +1,5 @@
-import {image, link, list, googleEmbed, youtubeEmbed, streamEmbed, table, TextStyle, altStyle, spoilerSummary, descriptionList, twitterEmbed} from '/univasset/scripts/htmlfunctions.js';
+import {image, link, list, googleEmbed, youtubeEmbed, streamEmbed, table, TextStyle, altStyle, spoilerSummary, descriptionList} from '/univasset/scripts/htmlfunctions/htmlfunctions.js';
+import Embed from "/univasset/scripts/htmlfunctions/linkembed.js";
 
 const lessEqual = '≤';
 const star = '★';
@@ -133,7 +134,7 @@ export const cardData = Object.freeze([
         answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
         ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-first-impressions-revamped')}<br>
-        ${spoilerSummary("Cleista's basic Twitter guide.", twitterEmbed('CleistaCeleste', '1409824210571214849'))}<br>
+        ${spoilerSummary("Cleista's basic Twitter guide.", Embed.twitter('CleistaCeleste', '1409824210571214849'))}<br>
         Apparently, this unlocks after beating 7-5 Normal.`,
         tags : [dTag.PA, dTag.PRIME]
     },
