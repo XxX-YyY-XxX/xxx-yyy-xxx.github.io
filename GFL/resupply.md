@@ -2,34 +2,6 @@
 
 # Resupply/Costumes/Furniture
 
-### Where can I get furniture for my dorms?
-
-> Collateral of skin pulling, aka Resupply. Or Expedition shop.
-
-### I want to clean my furniture inventory. How do I do that?
-
-> ![](/GFL/assets/images/FurnitureTrash.png "Trash Icon")
-
-### I won't be using the costume. How can I scrap it?
-
-> I bring this news with a heavy heart that it is impossible. Deal with it.
-
-### What's the difference between L2D and Simplified L2D?
-
-> L2D 
-> - Reactive/full Live2D (the one where their eyes follow your touch).
->
-> Simplified L2D
-> - Animations on loop, except when they talk.
-
-### Do Gem Package skins go to Black Card Exchange?
-
-> Some do, some don't. What's sure is that gem pack collab skins are gem packs only. Obviously.
-
-### Where can I get reactive L2Ds?
-
-> Resupply.
-
 ### How can I obtain the wedding/oath skins for some T-dolls?
 
 > Oath skins? Watchu smoking? There's no oath skins, only gacha/free/paid skins.

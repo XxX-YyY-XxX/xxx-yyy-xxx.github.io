@@ -2608,6 +2608,46 @@ export const cardData = Object.freeze([
         tags : [dTag.TDOLL, dTag.SKIN]
     },
     {
+        id : '00336',
+        questions : `Where can I get furniture for my dorms?`,
+        answers : `Collateral of skin pulling, aka Resupply. Or Expedition shop.`,
+        tags : [dTag.FURN, dTag.DORM, dTag.RESUPPLY]
+    },
+    {
+        id : '00337',
+        questions : `I want to clean my furniture inventory. How do I do that?`,
+        answers : `${image('./assets/images/FurnitureTrash.png', 'Trash Icon')}`,
+        tags : [dTag.FURN]
+    },
+    {
+        id : '00338',
+        questions : `I won't be using the costume. How can I scrap it?`,
+        answers : `I bring this news with a heavy heart that it is impossible. Deal with it.`,
+        tags : [dTag.TDOLL, dTag.SKIN]
+    },
+    {
+        id : '00339',
+        questions : `What's the difference between L2D and Simplified L2D?`,
+        answers : `${descriptionList({
+            'Live2D' : [
+                'Sometimes called Reactive Live2Ds.',
+                'Can follow your touch with their eyes/head.',
+                'Can only be acquired through Resupply. Except maybe Hanyang 88.'
+            ],
+            'Simplified Live2D' : [
+                'Also known as Animations.',
+                'Plays on loop, except when they talk.'
+            ]
+        })}`,
+        tags : [dTag.TDOLL, dTag.SKIN]
+    },
+    {
+        id : '00340',
+        questions : `Do Gem Package skins go to Black Card Exchange?`,
+        answers : `Some do, some don't. What's for sure is that collab skins don't. Obviously.`,
+        tags : [dTag.TDOLL, dTag.SKIN]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
@@ -2615,4 +2655,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00014', '00024', '00265'];
+export const newCards = ['00024', '00265'];
