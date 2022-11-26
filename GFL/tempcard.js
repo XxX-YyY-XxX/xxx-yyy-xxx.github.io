@@ -356,7 +356,8 @@ export const cardData = Object.freeze([
                         ['13', 'Defender',  'N/A'])),
                 link(`Farmable dolls in campaign maps, both 3${star} monthly reward dolls and those that debuted on this event.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
                 'During collabs, major events, side events, and Rescue Event/Boss Bully, event rewards become temporarily available for farming.',
-                'Obtainable from random nodes, however unlikely.'],
+                'Obtainable from random nodes, however unlikely.',
+                'For units that can also be crafted, their drop rates are less than 1%.'],
             'Event Rewards' : [link("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls'),
                 'These dolls will become unavailable from major story clear rewards after being added to the campaign tab.'],
             'Shop' : ['Applicable to collab dolls using event currency.',
@@ -2648,6 +2649,12 @@ export const cardData = Object.freeze([
         tags : [dTag.TDOLL, dTag.SKIN]
     },
     {
+        id : '00341',
+        questions : `Is there any checklist for the base bonus?`,
+        answers : `${link("u/headphone_question's doll index checklist.", 'https://www.reddit.com/r/girlsfrontline/comments/xqtpd9/client_30_base_staffing_checklists_index/')}`,
+        tags : [dTag.MISC]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
@@ -2655,4 +2662,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00024', '00265'];
+export const newCards = [];

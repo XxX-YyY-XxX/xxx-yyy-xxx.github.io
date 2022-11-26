@@ -1,5 +1,6 @@
 @import "/assets/css/style.css?v=2d3b5126dd9bdaf552f3aef918356c51b10c15a9";
 @import "/univasset/scripts/include/includefile.css";
+@import "/univasset/scripts/pageheader/header.css";
 
 /* #region General */
 code {
@@ -75,20 +76,5 @@ tr:nth-child(even) {
       width: 100px;
       margin-left: -50px;
   }
-}
-/* #endregion */
-
-/* #region GFL Button */
-.btn-gfl {
-  background: -webkit-linear-gradient(rgb(255, 187, 17, 0.3), rgba(170, 130, 0, 0.3) 50%, rgba(10, 10, 10, 0.3) 50%, rgba(0, 0, 0, 0.3))
-}
-
-.btn-gfl:hover {
-  background: -webkit-linear-gradient(rgb(255, 187, 17, 0.6), rgba(170, 130, 0, 0.6) 50%,rgba(10, 10, 10, 0.8) 50%, rgba(0, 0, 0, 0.8))
-}
-
-.btn-gfl .icon {
-  opacity: 0.6;
-  background: url("/univasset/images/greenbottle.png") 0 0 no-repeat
 }
 /* #endregion */
