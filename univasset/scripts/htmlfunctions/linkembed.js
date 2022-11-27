@@ -13,10 +13,9 @@ export default class Embed {
     static youtube(videoID) {
         var temp = {
             11 : videoID,
-            99 : `videoseries?list=${videoID}`
+            34 : `videoseries?list=${videoID}`
         }[videoID.length];
-
-        return `<iframe src="https://www.youtube.com/embed/${videoID.length == 11 ? videoID : `videoseries?list=${videoID}`}" loading="lazy" allowfullscreen></iframe>`;
+        return `<iframe src="https://www.youtube.com/embed/${temp}" loading="lazy" allowfullscreen></iframe>`;
     }
 
     /** Create an innerHTML text for Streamable embeds.
