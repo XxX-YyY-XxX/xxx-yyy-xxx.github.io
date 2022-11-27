@@ -35,9 +35,6 @@
 # [Fairies](/GFL/fairies)*
 - Fairy guides and usage.
 
-# [Auto-Battles](/GFL/autobattles)*
-- Auto-battle cards, rewards, and efficient maps.
-
 # [Tactical Doll Skills](/GFL/skills)*
 - Skill issues, explanations, and interactions.
 
@@ -359,6 +356,10 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 >
 > [Gamepress guide](https://gamepress.gg/girlsfrontline/how-use-gf-battle-tester-girls-frontline-battle-tester) for the battle tester. [Guide on setting up.](https://old.reddit.com/r/girlsfrontline/comments/twps7w/weekly_commanders_lounge_april_05_2022/i3t3fu0/)
 
+### What does total exp in the auto-battle completion mean?
+
+> <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/hzark0/weekly_commanders_lounge_july_28_2020/g082rwn/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="195" width="640" scrolling="no"></iframe>
+
 ## Clarify
 
 ### Is there a recipe that focuses on a single doll?
@@ -397,6 +398,10 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 [2.09 Newbie Features](https://redd.it/ry6fv0)
 
 [3.0 Features.](https://gamepress.gg/girlsfrontline/300-client-update-new-features)
+
+### Can dolls gain affection in auto battles?
+
+> Yes. Also stated in-game through loading screens that you can do so.
 
 ## Check
 

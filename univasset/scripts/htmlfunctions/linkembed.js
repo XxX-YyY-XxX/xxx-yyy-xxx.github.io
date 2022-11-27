@@ -11,33 +11,26 @@ export default class Embed {
 
     /** @param {string} videoID Youtube video or playlist ID*/
     static youtube(videoID) {
-        var temp;
-        switch (videoID.length) {
-            case 11:
-                temp = videoID;
-                break;
-            case 99:
-                /* Needs check */
-                temp = `videoseries?list=${videoID}`;
-                break;
-            default:
-                console.log('Youtube ID:', videoID.length)
-                return '';
-        }
+        var temp = {
+            11 : videoID,
+            99 : `videoseries?list=${videoID}`
+        }[videoID.length];
+
         return `<iframe src="https://www.youtube.com/embed/${videoID.length == 11 ? videoID : `videoseries?list=${videoID}`}" loading="lazy" allowfullscreen></iframe>`;
     }
 
-    /** @param {string} videoID */
+    /** Create an innerHTML text for Streamable embeds.
+     * @param {string} videoID */
     static streamable(videoID) {
         return `<iframe src="https://streamable.com/e/${videoID}" loading="lazy" allowfullscreen></iframe>`;
     }
 
     /** Create an innerHTML text for Twitter embeds.
      * @param {string} handle
-     * @param {string} id */
-    static twitter(handle, id) {
+     * @param {string} tweetID */
+    static twitter(handle, tweetID) {
         return `<blockquote class="twitter-tweet">
-            <a href="https://twitter.com/${handle}/status/${id}?ref_src=twsrc%5Etfw">Source Tweet</a>
+            <a href="https://twitter.com/${handle}/status/${tweetID}?ref_src=twsrc%5Etfw">Source Tweet</a>
         </blockquote>`;
     }
 }
@@ -52,3 +45,7 @@ function redditEmbed(permalink) {                                       //needs 
     return `<a href="https://www.reddit.com/r/girlsfrontline/comments/${permalink}/">For load fail purposes.</a><br>
     <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/${permalink}/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="278" width="640" scrolling="no"></iframe>`
 }*/
+
+/* function twitterScript() {
+    import('https://platform.twitter.com/widgets.js');
+} */

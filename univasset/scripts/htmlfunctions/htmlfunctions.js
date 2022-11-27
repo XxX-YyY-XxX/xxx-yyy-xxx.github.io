@@ -57,17 +57,6 @@ export function youtubeEmbed(videoID) {
     return `<iframe src="https://www.youtube.com/embed/${videoID.length == 11 ? videoID : `videoseries?list=${videoID}`}" loading="lazy" allowfullscreen></iframe>`
 }
 
-/** @param {string} videoID */
-export function streamEmbed(videoID) {
-    return `<iframe src="https://streamable.com/e/${videoID}" loading="lazy" allowfullscreen></iframe>`
-}
-
-export function twitterEmbed(handle, id) {
-    return `<blockquote class="twitter-tweet">
-        <a href="https://twitter.com/${handle}/status/${id}?ref_src=twsrc%5Etfw">Source Tweet</a>
-    </blockquote>`
-}
-
 /** @param permalink ...comments/${permalink}/?...*
 function redditEmbed(permalink) {                                       //needs more fix, how to check support
     return `<a href="https://www.reddit.com/r/girlsfrontline/comments/${permalink}/">For load fail purposes.</a><br>

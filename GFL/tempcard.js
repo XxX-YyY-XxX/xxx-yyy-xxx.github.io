@@ -1,4 +1,4 @@
-import {image, link, list, googleEmbed, youtubeEmbed, streamEmbed, table, TextStyle, altStyle, spoilerSummary, descriptionList} from '/univasset/scripts/htmlfunctions/htmlfunctions.js';
+import {image, link, list, googleEmbed, youtubeEmbed, table, TextStyle, altStyle, spoilerSummary, descriptionList} from '/univasset/scripts/htmlfunctions/htmlfunctions.js';
 import Embed from "/univasset/scripts/htmlfunctions/linkembed.js";
 
 const lessEqual = '≤';
@@ -406,7 +406,7 @@ export const cardData = Object.freeze([
             ],
             'SC 3-1 EX' : [
                 spoilerSummary("Ceia's SC 3-1Ex guide.", youtubeEmbed('UdmOZqypu_c')),
-                spoilerSummary("Aqua's SC 3-1Ex.", streamEmbed('0dpjje')),
+                spoilerSummary("Aqua's SC 3-1Ex.", Embed.streamable('0dpjje')),
                 spoilerSummary("BigStupidJellyfish's SC 3-1Ex auto-pathing.", image('./assets/images/SC%20Auto-path.png'))
             ],
         })}`,
@@ -2654,6 +2654,30 @@ export const cardData = Object.freeze([
         questions : `Is there any checklist for the base bonus?`,
         answers : `${link("u/headphone_question's doll index checklist.", 'https://www.reddit.com/r/girlsfrontline/comments/xqtpd9/client_30_base_staffing_checklists_index/')}`,
         tags : [dTag.MISC]
+    },
+    {
+        id : '00342',
+        questions : `Can I get SPEQs/Limited dolls from auto-battles?`,
+        answers : `Yes we can.`,
+        tags : [dTag.AUTO, dTag.GET, dTag.SPEQ, dTag.TDOLL]
+    },
+    {
+        id : '00343',
+        questions : `Do auto-battle card bonus stack with combat exp bonus?`,
+        answers : `${image('./assets/images/XPUpAuto.png', 'Note that Monthly Auto-Battle Card is active, and 100% bonus is from XP up event')}`,
+        tags : [dTag.LEVEL, dTag.AUTO]
+    },
+    {
+        id : '00344',
+        questions : `What can fairies do during auto-battles?`,
+        answers : `Raise your CE to help you get the required amount.`,
+        tags : [dTag.FAIRY, dTag.AUTO]
+    },
+    {
+        id : '00345',
+        questions : `Is the monthly autobattle card worth it?`,
+        answers : `Well, considering exp shown in autobattle window is the total undistributed exp, one team basically gets 2x exp than no monthly card. And you can also do it for one more echelon.`,
+        tags : [dTag.AUTO]
     },
     {
         id : '00300',
