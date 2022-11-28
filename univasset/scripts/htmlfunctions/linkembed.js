@@ -9,7 +9,8 @@ export default class Embed {
         </figure>`;
     }
 
-    /** @param {string} videoID Youtube video or playlist ID*/
+    /** Create an innerHTML text for Youtube embeds.
+     * @param {string} videoID Youtube video or playlist ID*/
     static youtube(videoID) {
         var temp = {
             11 : videoID,
