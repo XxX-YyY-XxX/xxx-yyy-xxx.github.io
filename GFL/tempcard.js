@@ -2690,7 +2690,7 @@ export const cardData = Object.freeze([
         id : '00348',
         questions : `If I fail to capture a coalition unit, will I lose them?`,
         answers : `Rather than that, they're recycled back into the pool.`,
-        tags : []
+        tags : [dTag.PA, dTag.COALITION]
     },
     {
         id : '00349',
@@ -2714,4 +2714,4 @@ export const cardData = Object.freeze([
 
 //'00301'
 
-export const newCards = [];
+export const newCards = ['00026'];

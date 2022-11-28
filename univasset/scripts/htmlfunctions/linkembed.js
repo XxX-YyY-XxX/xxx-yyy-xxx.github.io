@@ -6,7 +6,7 @@ export default class Embed {
 
     /** Create an innerHTML text for Google document embeds.
      * @param {Embed} docType
-     * @param {string} id */
+     * @param {string} docID */
     static google(docType, docID) {
         return `<figure>
             <iframe src="https://docs.google.com/${docType}/d/${docID}/preview?pli=1" loading="lazy"></iframe>

@@ -50,13 +50,6 @@ window.refreshDoc = function(element) {
     reloadIFrame(element.parentElement.previousElementSibling);
 }
 
-//document.querySelectorAll('')
-
-/** @param {string} videoID Youtube video or playlist ID*/
-export function youtubeEmbed(videoID) {
-    return `<iframe src="https://www.youtube.com/embed/${videoID.length == 11 ? videoID : `videoseries?list=${videoID}`}" loading="lazy" allowfullscreen></iframe>`
-}
-
 /** @param permalink ...comments/${permalink}/?...*
 function redditEmbed(permalink) {                                       //needs more fix, how to check support
     return `<a href="https://www.reddit.com/r/girlsfrontline/comments/${permalink}/">For load fail purposes.</a><br>
