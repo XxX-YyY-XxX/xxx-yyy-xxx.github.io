@@ -26,37 +26,17 @@
 
 > Data>Dish>Report. Subject to change without prior notice.
 
-### Where to get kernels?
-
-> Supernova = 2-3★. Dark Star = 1★.
-
 ### After winning a combat mission with my Coalition team, I noticed that they have no ammo and rations in them. Where did my resources go?
 
 > Back to the pool. They even tell you this in the resupply screen.
 
 @ Visual
 
-### What is Peak Value Analysis?
-
-> Dummy-linking basically. But dupes are required.
-
-### If I fail to capture a coalition unit, will I lose them?
-
-> Rather than that, they're recycled back into the pool.
-
 ### Is there any way to rewatch the tutorial?
 
 > <iframe width="640" height="360" src="https://www.youtube.com/embed/tD7JgQcIQHM" frameborder="0" allowfullscreen></iframe>
 >
 > <iframe width="640" height="360" src="https://www.youtube.com/embed/_s9ZY5wDLYE" frameborder="0" allowfullscreen></iframe>
-
-### What does size imply in regards to PA units?
-
-> Stats. Bigger is better. Also subject to RNG, by impulse or svarog capture, or by kernel shop.
-
-### Is it a good idea to get duplicate Ringleaders and Manticores (aka one-link units) for linking/PVA?
-
-> Good? Yes. Necessary? Not really, since they be powerful enough already.
 
 ### Can I increase the ringleader's 25% capture rate?
 

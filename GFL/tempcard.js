@@ -1,4 +1,4 @@
-import {image, link, list, googleEmbed, youtubeEmbed, table, TextStyle, altStyle, spoilerSummary, descriptionList} from '/univasset/scripts/htmlfunctions/htmlfunctions.js';
+import {image, link, list, googleEmbed, table, TextStyle, altStyle, spoilerSummary, descriptionList} from '/univasset/scripts/htmlfunctions/htmlfunctions.js';
 import Embed from "/univasset/scripts/htmlfunctions/linkembed.js";
 
 const lessEqual = '≤';
@@ -405,7 +405,7 @@ export const cardData = Object.freeze([
                 spoilerSummary('Infographic.', image('https://cdn.discordapp.com/attachments/564028599682727937/929724568258629642/134.png'))
             ],
             'SC 3-1 EX' : [
-                spoilerSummary("Ceia's SC 3-1Ex guide.", youtubeEmbed('UdmOZqypu_c')),
+                spoilerSummary("Ceia's SC 3-1Ex guide.", Embed.youtube('UdmOZqypu_c')),
                 spoilerSummary("Aqua's SC 3-1Ex.", Embed.streamable('0dpjje')),
                 spoilerSummary("BigStupidJellyfish's SC 3-1Ex auto-pathing.", image('./assets/images/SC%20Auto-path.png'))
             ],
@@ -441,7 +441,7 @@ export const cardData = Object.freeze([
         This is the reason why putting your whole team at the back of the grid is preferable.<br>
         Sometimes called wiggling which in this context means moving your DPS to retarget.<br>
         ${link('GFC guide','https://www.gflcorner.com/battle-controls/')}<br>
-        ${spoilerSummary('Mitsu video guide', youtubeEmbed('ITUtRuF4TLY'))}<br>
+        ${spoilerSummary('Mitsu video guide', Embed.youtube('ITUtRuF4TLY'))}<br>
         ${link("u/Reikyu09's reddit post", 'https://redd.it/8o18an')}`,
         tags : [dTag.BATTLE, dTag.IMPT]
     },
@@ -891,7 +891,7 @@ export const cardData = Object.freeze([
     {
         id : '00086',
         questions : `What does the PA chip Pilfer do?`,
-        answers : `Allows players to have a ${spoilerSummary('chance', image('./assets/images/PIlferRNG.png', 'Pilfer subject to RNG'))} of getting ${spoilerSummary('S-Rank drops', youtubeEmbed('t6Vu72cajO0') + altStyle('Context: Coalition Medals require S-Rank battles.', TextStyle.QOUTE))} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
+        answers : `Allows players to have a ${spoilerSummary('chance', image('./assets/images/PIlferRNG.png', 'Pilfer subject to RNG'))} of getting ${spoilerSummary('S-Rank drops', Embed.youtube('t6Vu72cajO0') + altStyle('Context: Coalition Medals require S-Rank battles.', TextStyle.QOUTE))} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
         Combine this with the ability to fight on one ammo bar to get two chances on one enemy.`,
         tags : [dTag.COALITION, dTag.EQUIP]
     },
@@ -1173,7 +1173,7 @@ export const cardData = Object.freeze([
         questions : `Is there a list of doll farming routes for each map?`,
         answers : `${spoilerSummary('Compilation of all farm routes for limited dolls and equipments on both campaign and main story.', googleEmbed('https://docs.google.com/document/d/1GUcA1ZHYVKBhTspdRYPIkECVZRoLFvqDnLrgrFb6VcU'))}<br>
         ${link('Farming routes by RevenantXIII (with Pilfer strats), focusing on events and ranking-relevant campaign dolls.', 'https://rosedrake.github.io/GFL.html')}<br>
-        ${spoilerSummary('416 SPEQ Pilfer route.', youtubeEmbed('5v6gEqydGm4'))}`,
+        ${spoilerSummary('416 SPEQ Pilfer route.', Embed.youtube('5v6gEqydGm4'))}`,
         tags : [dTag.TDOLL, dTag.GET, dTag.MAIN, dTag.CAMPAIGN, dTag.SPEQ]
     },  //GDoc by u/rcpz93 most likely
     {
@@ -1471,9 +1471,9 @@ export const cardData = Object.freeze([
         ${altStyle('2.09 waves', TextStyle.BOLD)}:<br>
         ${spoilerSummary('Discord Leaderboard Comps.', `${image('https://cdn.discordapp.com/attachments/453784246515925003/988812408929804328/unknown.png')}<br>
             ${image('./assets/images/DiscordDefenseDrill.png')}`)}<br>
-        ${spoilerSummary('General BLT vid.', youtubeEmbed('P-GLrBNvFVs'))}<br>
-        ${spoilerSummary('Ceia vid.', youtubeEmbed('qgbF2eiIzps'))}<br>
-        ${spoilerSummary("CosmicArcher's comfy clear.", youtubeEmbed('avKEYzKSp0U'))}`,
+        ${spoilerSummary('General BLT vid.', Embed.youtube('P-GLrBNvFVs'))}<br>
+        ${spoilerSummary('Ceia vid.', Embed.youtube('qgbF2eiIzps'))}<br>
+        ${spoilerSummary("CosmicArcher's comfy clear.", Embed.youtube('avKEYzKSp0U'))}`,
         tags : [dTag.SIMS]
     },  //Proper guide under construction
     {
@@ -1724,7 +1724,7 @@ export const cardData = Object.freeze([
     {
         id : '00200',
         questions : `Is there a compilation of anniversary adjutant lines?`,
-        answers : `${youtubeEmbed('PLoDB_FcnOA5zXkZ9XmQMTog1F7uIRZ_Qa')}`,
+        answers : `${Embed.youtube('PLoDB_FcnOA5zXkZ9XmQMTog1F7uIRZ_Qa')}`,
         tags : [dTag.LORE, dTag.ANNIV, dTag.ADJUNCT]
     },  //PL4Z0akElhimzHHiVMCozfUn1B6tYKjwPR playlist by redditor u/paperrabbit. New by u/ConductorBichir. 1W5JzUGaC_fL5itce05WnkHcu7wX_sEn2vQlbgQNeKAk down,
     {
@@ -2216,7 +2216,7 @@ export const cardData = Object.freeze([
     {
         id : '00273',
         questions : `Will I lose the tile buffs if my dolls retreated/moved/lose link/die?`,
-        answers : `${spoilerSummary('No', youtubeEmbed('tQRqcTDmAKE'))}. On that note, retreating dolls who had their buffs activate will not remove said buff. Also, tile buffs don't degrade even if your dummy count does.`,
+        answers : `${spoilerSummary('No', Embed.youtube('tQRqcTDmAKE'))}. On that note, retreating dolls who had their buffs activate will not remove said buff. Also, tile buffs don't degrade even if your dummy count does.`,
         tags : [dTag.TDOLL, dTag.SKILL, dTag.BATTLE]
     },
     {
@@ -2678,6 +2678,36 @@ export const cardData = Object.freeze([
         questions : `Is the monthly autobattle card worth it?`,
         answers : `Well, considering exp shown in autobattle window is the total undistributed exp, one team basically gets 2x exp than no monthly card. And you can also do it for one more echelon.`,
         tags : [dTag.AUTO]
+    },
+    {
+        id : '00346',
+        questions : `Where to get kernels?`,
+        answers : `Supernova = 2-3${star}. Dark Star = 1${star}.`,
+        tags : [dTag.PA, dTag.ITEM]
+    },
+    {
+        id : '00347',
+        questions : `What is Peak Value Analysis?`,
+        answers : `Dummy-linking basically. But dupes are required.`,
+        tags : [dTag.PA, dTag.COALITION, dTag.LEVEL]
+    },
+    {
+        id : '00348',
+        questions : `If I fail to capture a coalition unit, will I lose them?`,
+        answers : `Rather than that, they're recycled back into the pool.`,
+        tags : []
+    },
+    {
+        id : '00349',
+        questions : `What does size imply in regards to PA units?`,
+        answers : `Stats. Bigger is better. Also subject to RNG, by impulse, svarog capture, or kernel shop.`,
+        tags : [dTag.PA, dTag.COALITION]
+    },
+    {
+        id : '00350',
+        questions : `Is it a good idea to get duplicate Ringleaders and Manticores (aka one-link units) for linking/PVA?`,
+        answers : `Good? Yes. Necessary? For RLs, not really, since they be powerful enough already. For mooks though...`,
+        tags : [dTag.PA, dTag.COALITION]
     },
     {
         id : '00300',
