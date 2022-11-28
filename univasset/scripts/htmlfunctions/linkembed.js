@@ -1,11 +1,16 @@
 import {reloadIFrame} from '/univasset/scripts/externaljavascript.js';
 
 export default class Embed {
-    /** @param {string} docType @param {string} id */
+    G_EXCEL = 'spreadsheets';
+    G_WORD = 'document';
+
+    /** Create an innerHTML text for Google document embeds.
+     * @param {Embed} docType
+     * @param {string} id */
     static google(docType, docID) {
         return `<figure>
-            <iframe src="${docLink}/preview?pli=1" loading="lazy"></iframe>
-            <figcaption><a onclick="refreshDoc(this)">Reload Frame</a> \| <a href="${docLink}">Source Link</a></figcaption>
+            <iframe src="https://docs.google.com/${docType}/d/${docID}/preview?pli=1" loading="lazy"></iframe>
+            <figcaption><a onclick="refreshDoc(this)">Reload Frame</a> \| <a href="https://docs.google.com/${docType}/d/${docID}">Source Link</a></figcaption>
         </figure>`;
     }
 

@@ -405,12 +405,13 @@ export const cardData = Object.freeze([
                 spoilerSummary('Infographic.', image('https://cdn.discordapp.com/attachments/564028599682727937/929724568258629642/134.png'))
             ],
             'SC 3-1 EX' : [
+                'Good for dragging coalition units.',
                 spoilerSummary("Ceia's SC 3-1Ex guide.", Embed.youtube('UdmOZqypu_c')),
                 spoilerSummary("Aqua's SC 3-1Ex.", Embed.streamable('0dpjje')),
                 spoilerSummary("BigStupidJellyfish's SC 3-1Ex auto-pathing.", image('./assets/images/SC%20Auto-path.png'))
             ],
         })}`,
-        tags : [dTag.TDOLL, dTag.LEVEL, dTag.IMPT]
+        tags : [dTag.TDOLL, dTag.COALITION, dTag.LEVEL, dTag.IMPT]
     },
     {
         id : '00027',
@@ -2289,7 +2290,7 @@ export const cardData = Object.freeze([
             ['Armor', 'High firepower<br>AP bullets<br>Explosives'],
             ['HP Shields', 'Basic shooting<br>Strippers like LTLX or De Lisle<br>Shield bypass like DEagle or NTW'],
             ['Force Shields', 'HOCs'],
-            ['Damage Reduction', 'Shoot harder'])}`,
+            ['Damage Reduction', 'Shoot harder<br>Buff strippers'])}`,
         tags : [dTag.BATTLE, dTag.NEWB]
     },
     {
@@ -2387,12 +2388,6 @@ export const cardData = Object.freeze([
         questions : `Is there something like an account/inventory/roster spreadsheet for this game?`,
         answers : `${link('Make a copy for personal use.', 'https://old.reddit.com/r/girlsfrontline/comments/wpoce9/weekly_commanders_lounge_august_16_2022/ikyqyb1/')}`,
         tags : [dTag.MISC]
-    },
-    {
-        id : '00301',
-        questions : `Is there a good way for corpse dragging PA units?`,
-        answers : `SC 3-1 EX basically.`,
-        tags : [dTag.COALITION, dTag.LEVEL]
     },
     {
         id : '00302',
@@ -2716,5 +2711,7 @@ export const cardData = Object.freeze([
         tags : []
     },
 ]);
+
+//'00301'
 
 export const newCards = [];
