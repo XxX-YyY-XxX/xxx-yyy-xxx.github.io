@@ -1,8 +1,8 @@
 import {reloadIFrame} from '/univasset/scripts/externaljavascript.js';
 
 export default class Embed {
-    G_EXCEL = 'spreadsheets';
-    G_WORD = 'document';
+    static G_EXCEL = 'spreadsheets';
+    static G_WORD = 'document';
 
     /** Create an innerHTML text for Google document embeds.
      * @param {Embed} docType
