@@ -20,7 +20,7 @@ export function image(link, caption = "") {
             <figcaption>${caption}</figcaption>
         </figure>`;
     } else {
-        return `<img src="${link}" alt="${imgAlt}">`
+        return `<img src="${link}" alt="${imgAlt}" loading="lazy">`
     }
 }
 
