@@ -153,8 +153,8 @@ export const cardData = Object.freeze([
         answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/fairies')}<br>
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Technical_Fairies')} Unupdated rework skills.<br>
         ${link('GFC guide Part 1.', 'https://www.gflcorner.com/fairy/')} Fairies up to CT only.<br>
-        ${spoilerSummary('GFC guide Part 2.', googleEmbed('https://docs.google.com/spreadsheets/d/1x6_YysDi0h89jKE9vEW2_fbxi7gG7XV5jjJqX8O41rw'))} Unupdated fairy list.<br>
-        ${spoilerSummary('Jesse #6406 doc.', googleEmbed('https://docs.google.com/document/d/1dXZkOmAR0SWqL7UKCxmTP2hUPjpoRhskbJHn1ZlpNWc'))}`,
+        ${spoilerSummary('GFC guide Part 2.', Embed.google(Embed.G_EXCEL, '1x6_YysDi0h89jKE9vEW2_fbxi7gG7XV5jjJqX8O41rw'))} Unupdated fairy list.<br>
+        ${spoilerSummary('Jesse #6406 doc.', Embed.google(Embed.G_WORD, '1dXZkOmAR0SWqL7UKCxmTP2hUPjpoRhskbJHn1ZlpNWc'))}`,
         tags : [dTag.FAIRY, dTag.PRIME]
     },
     {
