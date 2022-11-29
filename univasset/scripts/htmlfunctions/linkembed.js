@@ -41,9 +41,9 @@ export default class Embed {
 }
 
 /** @param {HTMLElement} element */
-/* window.refreshDoc = function(element) {
+window.refreshDoc = function(element) {
     reloadIFrame(element.parentElement.previousElementSibling);
-} */
+}
 
 /** @param permalink ...comments/${permalink}/?...*
 function redditEmbed(permalink) {                                       //needs more fix, how to check support

@@ -1,5 +1,3 @@
-import {reloadIFrame} from '/univasset/scripts/externaljavascript.js';
-
 const linkStart = ['https://', './assets/images/'];
 const imgAlt = 'Image loading failed.';
 
@@ -36,25 +34,6 @@ export function list(ordered, ...any) {
     const htmlElem = ordered ? 'ol' : 'ul';
     return `<${htmlElem}>${any.map(val => `<li>${val}</li>`).join('')}</${htmlElem}>`;
 }
-
-/** @param {string} docLink Ends in alphanumeric */
-export function googleEmbed(docLink) {
-    return `<figure>
-        <iframe src="${docLink}/preview?pli=1" loading="lazy"></iframe>
-        <figcaption><a onclick="refreshDoc(this)">Reload Frame</a> \| <a href="${docLink}">Source Link</a></figcaption>
-    </figure>`;
-}
-
-/** @param {HTMLElement} element */
-window.refreshDoc = function(element) {
-    reloadIFrame(element.parentElement.previousElementSibling);
-}
-
-/** @param permalink ...comments/${permalink}/?...*
-function redditEmbed(permalink) {                                       //needs more fix, how to check support
-    return `<a href="https://www.reddit.com/r/girlsfrontline/comments/${permalink}/">For load fail purposes.</a><br>
-    <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/${permalink}/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="278" width="640" scrolling="no"></iframe>`
-}*/
 
 /** @param {Array} headerArray Nullable value @param {Array[]} arrayOfArrays */
 export function table(headerArray, ...arrayOfArrays) {
