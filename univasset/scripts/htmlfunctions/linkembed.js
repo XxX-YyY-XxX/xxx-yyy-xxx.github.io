@@ -5,7 +5,7 @@ export default class Embed {
     static G_WORD = 'document';
 
     /** Create an innerHTML text for Google document embeds.
-     * @param {Embed} docType
+     * @param {Embed} docType Starts with G_
      * @param {string} docID */
     static google(docType, docID) {
         return `<figure>
@@ -50,7 +50,3 @@ function redditEmbed(permalink) {                                       //needs 
     return `<a href="https://www.reddit.com/r/girlsfrontline/comments/${permalink}/">For load fail purposes.</a><br>
     <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/${permalink}/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="278" width="640" scrolling="no"></iframe>`
 }*/
-
-/* function twitterScript() {
-    import('https://platform.twitter.com/widgets.js');
-} */
