@@ -152,6 +152,7 @@ window.changePage = function(pageButton) {
     document.getElementById('cards-field').innerHTML = output;
 
     if (output.includes('<blockquote class="twitter-tweet">'))
-        import('https://platform.twitter.com/widgets.js');
+        console.log('Twitter present.')
+    import('https://platform.twitter.com/widgets.js');
 }
 //#endregion

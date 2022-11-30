@@ -2705,13 +2705,35 @@ export const cardData = Object.freeze([
         tags : [dTag.PA, dTag.COALITION]
     },
     {
+        id : '00301',
+        questions : `When do I get to unlock the whole FST grid/matrix/board?`,
+        answers : `At full promotion. The yellow ★★★★★ one.`,
+        tags : [dTag.HOC, dTag.FST]
+    },
+    {
+        id : '00351',
+        questions : `How do FST HOC skills work?`,
+        answers : `Depends. Either by timer or by number of shots fired. And all skills are active, meaning no need to choose which one you'll use.`,
+        tags : [dTag.HOC, dTag.FST, dTag.SKILL]
+    },
+    {
+        id : '00352',
+        questions : `Can HOCs reduce armor just like they do with force shields?`,
+        answers : `No. Armor is a stat, not a gauge. Unless it's part of their skill.`,
+        tags : [dTag.HOC, dTag.FST]
+    },
+    {
+        id : '00353',
+        questions : `What's the rate for HOC rate-up?`,
+        answers : `No exact numbers, but note that it only increases the chance of getting a particular HOC's Central Data. Rate for Data as a whole remains unchanged.`,
+        tags : [dTag.HOC]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
         tags : []
     },
 ]);
-
-//'00301'
 
 export const newCards = ['00026'];
