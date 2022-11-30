@@ -103,7 +103,8 @@ export const cardData = Object.freeze([
         id : '00001',
         questions : `How do I level my girls?`,
         answers : `First is grinding them on leveling maps, mainly through ${spoilerSummary('corpse dragging', 
-            `Also called Poor Run or Beggar Run, it is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.`)}.<br>
+            `Also called Poor Run or Beggar Run, it is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.<br>
+            ${getID('Draggable stages.', '00026')}`)}.<br>
         Second is using ${spoilerSummary('Combat Reports (CR)', list(false,
             'Acquired through Forward Basecamp, Data Room, the shop during events, EXP Sim, or as a reward.',
             "Can be gifted by going to the Dorm>Warehouse>Gift tab or going to your owned doll's profile and tapping the + button by the EXP bar.",

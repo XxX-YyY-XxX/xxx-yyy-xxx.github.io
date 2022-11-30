@@ -48,8 +48,6 @@ document.getElementById('cards-field').innerHTML =
     (newCards.length >= 3) ? addedCards() : randomCards();
 
 document.getElementById('maxpage').innerText = maxPage;
-
-import('https://platform.twitter.com/widgets.js');
 //#endregion
 
 //#region Private Functions
@@ -150,9 +148,5 @@ window.changePage = function(pageButton) {
     for (var i = (page * 5) - 5; i < Math.min(page * 5, cardData.length - 1); i++)
         output += setQuestionBoxes(cardData[i]);
     document.getElementById('cards-field').innerHTML = output;
-
-    if (output.includes('<blockquote class="twitter-tweet">'))
-        console.log('Twitter present.')
-    import('https://platform.twitter.com/widgets.js');
 }
 //#endregion
