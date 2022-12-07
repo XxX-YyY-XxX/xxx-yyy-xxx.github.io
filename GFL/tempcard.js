@@ -2730,6 +2730,18 @@ export const cardData = Object.freeze([
         tags : [dTag.HOC]
     },
     {
+        id : '00354',
+        questions : `After a banner ends, would the extra impulses and aid commissions expire?`,
+        answers : `They're basically the equivalent of gacha currency, so it wouldn't make sense for them to expire.`,
+        tags : [dTag.PA, dTag.ITEM]
+    },
+    {
+        id : '00355',
+        questions : `What are Petri Dishes for?`,
+        answers : `Raising Coalition units' rarity.`,
+        tags : [dTag.PA, dTag.COALITION, dTag.ITEM]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,

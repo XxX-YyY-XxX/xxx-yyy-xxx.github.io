@@ -76,14 +76,6 @@
 
 > Daily gifts, failed captures, PA store.
 
-### What are Petri Dishes for?
-
-> Raising Coalition units' rarity.
-
-### After a banner ends, would the extra impulses and aid commissions expire?
-
-> They're basically the equivalent of gacha currency, so it wouldn't make sense for them to expire.
-
 ### My RL is bigger than she was before. Wuh huppun?
 
 > Dummy links maybe?
