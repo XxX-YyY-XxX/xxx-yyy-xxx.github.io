@@ -360,6 +360,10 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 
 > <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/hzark0/weekly_commanders_lounge_july_28_2020/g082rwn/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="195" width="640" scrolling="no"></iframe>
 
+### How do I see what rank I am in?
+
+> <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/z7neql/weekly_commanders_lounge_november_29_2022/iyaf84l/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="269" width="640" scrolling="no"></iframe>
+
 ## Clarify
 
 ### Is there a recipe that focuses on a single doll?

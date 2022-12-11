@@ -2742,11 +2742,21 @@ export const cardData = Object.freeze([
         tags : [dTag.PA, dTag.COALITION, dTag.ITEM]
     },
     {
+        id : '00356',
+        questions : `What are the fonts used in the game?`,
+        answers : `${descriptionList({
+            'Noto sans' : ['Story dialogue', 'Unit/Skill descriptions']
+        })}`,
+        tags : [dTag.MISC]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
         tags : []
     },
 ]);
+
+
 
 export const newCards = ['00026'];
