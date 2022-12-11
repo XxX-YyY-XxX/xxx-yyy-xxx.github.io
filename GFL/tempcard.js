@@ -867,7 +867,8 @@ export const cardData = Object.freeze([
         [`5${star} furniture`,      '08.00%'],
         [`4${star} furniture`,      '34.20%'],
         [`4${star} gifts/cakes`,    '01.80%'],
-        [`3${star} furniture`,      '54.00%'])}`,
+        [`3${star} furniture`,      '54.00%'])}<br>
+        ${link('As for the rates per costume...', 'https://big-stupid-jellyfish.github.io/GFMath/pages/gacha-rates')}`,
         tags : [dTag.RESUPPLY, dTag.TDOLL, dTag.SKIN, dTag.FURN]
     },
     {
