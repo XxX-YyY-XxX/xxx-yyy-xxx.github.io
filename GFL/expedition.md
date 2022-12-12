@@ -2,10 +2,6 @@
 
 # Expedition/Forward Basecamp
 
-### Can the basecamp not give expedition loots?
-
-> Only if you didn't do one. If you did and no visible loot, restart app.
-
 ### What are T-doll effects available in the older servers?
 
 > ~~Global already has everything they have.~~ Apparently new items have been added there.

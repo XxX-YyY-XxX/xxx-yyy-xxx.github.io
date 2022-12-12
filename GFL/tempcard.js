@@ -2751,6 +2751,18 @@ export const cardData = Object.freeze([
         tags : [dTag.MISC]
     },
     {
+        id : '00357',
+        questions : `What's the enemy targeting priority?`,
+        answers : `By default, the most forward unit. Note that due to asymmetrical angle, the top row is a smidge forward than the middle and the bottom is backward.`,
+        tags : [dTag.ENEMY, dTag.BATTLE]
+    },
+    {
+        id : '00358',
+        questions : `Can the basecamp not give expedition loots?`,
+        answers : `Only if you didn't do one. If you did and no visible loot, restart app.`,
+        tags : [dTag.EXPED, dTag.TECH]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
