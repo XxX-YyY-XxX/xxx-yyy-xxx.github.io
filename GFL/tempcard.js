@@ -862,13 +862,12 @@ export const cardData = Object.freeze([
     {
         id : '00082',
         questions : `What's the gacha rate for costumes?`,
-        answers : `${table(['Item', 'Rate'],
-        ['Costumes',                '02.00%'],
-        [`5${star} furniture`,      '08.00%'],
-        [`4${star} furniture`,      '34.20%'],
-        [`4${star} gifts/cakes`,    '01.80%'],
-        [`3${star} furniture`,      '54.00%'])}<br>
-        ${link('As for the rates per costume...', 'https://big-stupid-jellyfish.github.io/GFMath/pages/gacha-rates')}`,
+        answers : `${table(['Item',                                                             'Rate'],
+        [link('Costumes', 'https://big-stupid-jellyfish.github.io/GFMath/pages/gacha-rates'),   '02.00%'],
+        [`5${star} furniture`,                                                                  '08.00%'],
+        [`4${star} furniture`,                                                                  '34.20%'],
+        [`4${star} gifts/cakes`,                                                                '01.80%'],
+        [`3${star} furniture`,                                                                  '54.00%'])}`,
         tags : [dTag.RESUPPLY, dTag.TDOLL, dTag.SKIN, dTag.FURN]
     },
     {
@@ -2609,8 +2608,8 @@ export const cardData = Object.freeze([
     {
         id : '00336',
         questions : `Where can I get furniture for my dorms?`,
-        answers : `Collateral of skin pulling, aka Resupply. Or Expedition shop.`,
-        tags : [dTag.FURN, dTag.DORM, dTag.RESUPPLY]
+        answers : `Collateral of skin pulling, aka Resupply. Or Expedition shop. Or crates from major events. Or shop during seasonal.`,
+        tags : [dTag.FURN, dTag.DORM, dTag.RESUPPLY, dTag.SHOP, dTag.MAJOR, dTag.SEASON]
     },
     {
         id : '00337',

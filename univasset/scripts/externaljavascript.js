@@ -80,16 +80,6 @@ export class AsyncFunc {
 /** @param {string} htmlString */
 export function removeHTMLTag(htmlString) {
     return htmlString.replace(/(<([^>]+)>)/ig, '');
-
-    /* switch (removalMethod) {
-        case HTMLSearch.PRECISE:
-            dummyHTML.innerHTML = htmlString;
-            return dummyHTML.textContent ?? '';
-        case HTMLSearch.QUICK:
-        default:
-            console.warn('HTMLSearch unknown value.')
-            return '';
-    } */
 }
 
 //Math.random() = [0...1)
@@ -111,7 +101,7 @@ export function reloadIFrame(iframeElement) {
     iframeElement.src = temp;
 }
 
-/** @param {string} path @returns [Path with no extension, extension] */
+/** @param {string} path @returns [basename, extension] */
 //lastIndexOf+slice > split+replace
 export function splitExt(path) {
     //remove base url to prevent false positive
