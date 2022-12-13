@@ -407,6 +407,14 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 
 > Yes. Also stated in-game through loading screens that you can do so.
 
+### How do I use Construction Fairy effectively?
+
+> Deploy on a node next to an enemy, then take a defensive stance.
+
+### How do I use Landmine?
+
+> Stand on a node. Lay it down on an adjacent empty node. It activates the moment an enemy steps on it. Don't retreat the mine layer or you'll lose the mine.
+
 ## Check
 
 Alternate way to saving a target:

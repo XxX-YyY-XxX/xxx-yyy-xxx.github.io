@@ -2,24 +2,6 @@
 
 # Fairies
 
-### Is the Rescue Fairy's skill actually good?
-
-> <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/mgausk/weekly_commanders_lounge_march_30_2021/gsxx3gr/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="199" width="640" scrolling="no"></iframe>
->
-> Note that it only works on dolls, not equipments.
-
-### How do I use Construction Fairy effectively?
-
-> Deploy on a node next to an enemy, then take a defensive stance.
-
-@ Visual
-
-### How do I use Landmine?
-
-> Stand on a node. Lay it down on an adjacent empty node. It activates the moment an enemy steps on it. Don't retreat the mine layer or you'll lose the mine.
-
-@ Visual
-
 ### Can Support Fairy Skills (i.e. Construction) work on Coalition units?
 
 > <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/q1rscp/weekly_commanders_lounge_october_05_2021/hg4vntx/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="199" width="640" scrolling="no"></iframe>

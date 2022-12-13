@@ -10,10 +10,6 @@
 >
 > -u/ConductorBichir
 
-### Which expedition duration should I do to maximize efficiency?
-
-> 8 hours. More chances to get into hidden areas.
-
 ### What is the priority for each currency?
 
 > Toy Block (least useful IMO) - Furnitures, batteries if really strapped.

@@ -746,10 +746,10 @@ export const cardData = Object.freeze([
     },
     {
         id : '00067',
-        questions : `Which dolls should I duplicate?`,
+        questions : `Which dolls should I dupe/duplicate?`,
         answers : `${link('Matsuda notes.', 'https://gfl.matsuda.tips/post/worthwhiledupes')}<br>
         ${link('Gamepress suggestions.', 'https://gamepress.gg/girlsfrontline/t-doll-duping-guide')} Some details may not be applicable.<br>
-        ${spoilerSummary('Discord recommendations.', image('./assets/images/RecommendedDupeGuns.png'))}`,
+        ${spoilerSummary('Discord recommendations.', image('https://cdn.discordapp.com/attachments/640157367056728133/1048531902065287188/dupe_gameing_pt3.png'))}`,
         tags : [dTag.TDOLL]
     },  //Jesse, Varz, etc.
     {
@@ -2762,6 +2762,19 @@ export const cardData = Object.freeze([
         tags : [dTag.EXPED, dTag.TECH]
     },
     {
+        id : '00359',
+        questions : `Is the Rescue Fairy's skill actually good?`,
+        answers : `For core farming purposes, ${spoilerSummary('very noticeable', Embed.google(Embed.G_EXCEL, '1DSYyTdC3Yk7JV4YGuj8zFMZqbPcH2zpNShtAFpR2Qmw'))}.<br>
+        Note that it only works on dolls, not equipments.`,
+        tags : [dTag.FAIRY, dTag.SKILL]
+    },
+    {
+        id : '00360',
+        questions : `Which expedition duration should I do to maximize efficiency?`,
+        answers : `8 hours. More chances to get into hidden areas.`,
+        tags : [dTag.EXPED]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
@@ -2769,4 +2782,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00026', '00082', '00336'];
+export const newCards = ['00026', '00082', '00336', '00067'];
