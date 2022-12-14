@@ -415,6 +415,14 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 
 > Stand on a node. Lay it down on an adjacent empty node. It activates the moment an enemy steps on it. Don't retreat the mine layer or you'll lose the mine.
 
+### What do I do with unused Keycards during the bingo event?
+
+> Keep them. You'll get 5 Calibration Tickets per 1 Unused Keycard. Points go to trash. Source: Game info tab.
+
+### Where can I see rankings?
+
+> Tap the bottom-right arrow at the main screen.
+
 ## Check
 
 Alternate way to saving a target:

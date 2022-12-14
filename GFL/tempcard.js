@@ -357,7 +357,7 @@ export const cardData = Object.freeze([
                         ['12', 'MAT-49',    'N/A'],
                         ['13', 'Defender',  'N/A'])),
                 link(`Farmable dolls in campaign maps, both 3${star} monthly reward dolls and those that debuted on this event.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
-                'During collabs, major events, side events, and Rescue Event/Boss Bully, event rewards become temporarily available for farming.',
+                `During collabs, major events, side events, and ${spoilerSummary('Rescue Events', `Also known as Boss Bully, where you get to farm for 4-5${star} event reward dolls in the story chapters 1-6.`)}, event rewards become temporarily available for farming.`,
                 'Obtainable from random nodes, however unlikely.',
                 'For units that can also be crafted, their drop rates are less than 1%.'],
             'Event Rewards' : [link("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls'),
@@ -1223,7 +1223,7 @@ export const cardData = Object.freeze([
                 'Achievements.',
                 'Mini-Events, mainly, Keycard Events (Bingo).',
                 'Ranking participation.'],
-            'Tokens' : ['Dailies (7 daily) and weeklies (5 weekly).',
+            'Tokens' : ['Dailies (5 x 8) and weeklies (50 x 3/4) (40 for 250 points).',
                 'Expedition.',
                 'Logistics (~19 weekly).',
                 'Achievements.',
@@ -2059,7 +2059,8 @@ export const cardData = Object.freeze([
             'Shop' : ['Dedicated gem-bought shop.', 'Event shop during seasonal events.'],
             'Resupply' : ['Banners and Reruns.', 'Black Card Exchange.'],
             'Mini-events' : ['Mini-events.'],
-            'Ranking Rewards' : ['Arctic Warfare only.']
+            'Ranking Rewards' : ['Arctic Warfare only.'],
+            'Battlepass' : ['Called in-game as Frontline Protocol.', '10$ at minimum.']
         })}`,
         tags : [dTag.TDOLL, dTag.SKIN, dTag.GET]
     },
@@ -2775,6 +2776,18 @@ export const cardData = Object.freeze([
         tags : [dTag.EXPED]
     },
     {
+        id : '00361',
+        questions : `I can't log-in with my third party account. Is there any way to get back?`,
+        answers : `Might be because the third party is down. Contacting ${altStyle('support@sunborngame.com', TextStyle.BOLD)} to change to Sunborn account might help. Having account details may help.`,
+        tags : [dTag.ACCT, dTag.TECH]
+    },
+    {
+        id : '00362',
+        questions : `Will the *insert ranking reward here* be available in the future?`,
+        answers : `Only if they rerun ranking maps. AW and DD maps are slated to be reworked.`,
+        tags : [dTag.GET, dTag.FAIRY, dTag.SPEQ, dTag.MAJOR]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
@@ -2782,4 +2795,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00026', '00082', '00336', '00067'];
+export const newCards = ['00026', '00082', '00336', '00067', '00024', '00249', '00129'];
