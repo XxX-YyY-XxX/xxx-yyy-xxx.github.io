@@ -40,7 +40,6 @@ function nestedInclude(htmlString, params) {
                     default:
                         //check if parameter is object, null
                         console.log(paramValue, valueType);
-                        console.log(`String: ${valueType == 'string'}`);
                         break;
                 }
             } else if (childparam = include.textContent) {
