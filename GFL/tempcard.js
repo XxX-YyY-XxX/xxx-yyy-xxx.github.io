@@ -1055,7 +1055,8 @@ export const cardData = Object.freeze([
         id : '00107',
         questions : `What are the resources that has a defined max capacity and how much can they store?`,
         answers : `${image('https://cdn.discordapp.com/attachments/410790982116966400/905090370675830884/image0.jpg', 'Train Coin = Training Data | Furniture Coin = Tokens | Memory Pieces = Neural Fragments<br>' + link('Source', 'https://randomqwerty.github.io/?server=en&file=item'))}<br>
-        Even then, all resources can be obtained without regards to max capacity through daily gifts, mission rewards, and whaling.`,
+        Even then, all resources can be obtained without regards to max capacity through daily gifts, mission rewards, and whaling.<br>
+        And no, the four resources will stay at 300k.`,
         tags : [dTag.MARP, dTag.ITEM]
     },
     {
@@ -1886,7 +1887,7 @@ export const cardData = Object.freeze([
         id : '00223',
         questions : `What's the release order for PA banners?`,
         answers : `${spoilerSummary('Google Doc.', Embed.google(Embed.G_EXCEL, '1nwlyZxoYaC44idP8SnAjk1OgQX4ND0lIzG3_Fs1We_0'))}<br>
-        ${spoilerSummary('Image.', 'https://cdn.discordapp.com/attachments/564028599682727937/1003511535387283556/Proass_order.png')}`,
+        ${spoilerSummary('Image.', image('https://cdn.discordapp.com/attachments/564028599682727937/1003511535387283556/Proass_order.png'))}`,
         tags : [dTag.PA, dTag.COALITION]
     },
     {
