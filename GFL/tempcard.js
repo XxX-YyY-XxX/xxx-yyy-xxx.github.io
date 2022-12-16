@@ -1885,7 +1885,8 @@ export const cardData = Object.freeze([
     {
         id : '00223',
         questions : `What's the release order for PA banners?`,
-        answers : `${Embed.google(Embed.G_EXCEL, '1nwlyZxoYaC44idP8SnAjk1OgQX4ND0lIzG3_Fs1We_0')}`,
+        answers : `${spoilerSummary('Google Doc.', Embed.google(Embed.G_EXCEL, '1nwlyZxoYaC44idP8SnAjk1OgQX4ND0lIzG3_Fs1We_0'))}<br>
+        ${spoilerSummary('Image.', 'https://cdn.discordapp.com/attachments/564028599682727937/1003511535387283556/Proass_order.png')}`,
         tags : [dTag.PA, dTag.COALITION]
     },
     {
@@ -2788,6 +2789,18 @@ export const cardData = Object.freeze([
         tags : [dTag.GET, dTag.FAIRY, dTag.SPEQ, dTag.MAJOR]
     },
     {
+        id : '00363',
+        questions : `How valueable are Black Cards?`,
+        answers : `Very.`,
+        tags : [dTag.TDOLL, dTag.SKIN, dTag.ITEM]
+    },
+    {
+        id : '00364',
+        questions : `What's the optimal way of clearing ${altStyle('Bingo', TextStyle.STRIKE)} Key Card Events?`,
+        answers : `Using the Targeted Draws to fully clear the board in one go.`,
+        tags : [dTag.MINI]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
@@ -2795,4 +2808,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00026', '00082', '00336', '00067', '00024', '00249', '00129'];
+export const newCards = ['00082', '00336', '00067', '00024', '00249', '00129', '00223'];
