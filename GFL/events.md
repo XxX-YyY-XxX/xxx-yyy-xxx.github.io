@@ -11,7 +11,3 @@
 ### I've been getting dupes about 3 days when the Key Card Event started. What gives?
 
 > First, "Coupon Collector's Problem". Second, [it actually kinda seems rigged to some extent.](https://old.reddit.com/r/girlsfrontline/comments/o5hpk4/weekly_commanders_lounge_june_22_2021/h2pa27f/)
-
-### When will the current event end?
-
-> If major event or collab, 4 weeks after start. If minor of mini events, 3 weeks after start.

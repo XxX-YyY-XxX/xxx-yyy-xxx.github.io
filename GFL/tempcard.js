@@ -107,12 +107,12 @@ export const cardData = Object.freeze([
             ${getID('Draggable stages.', '00026')}`)}.<br>
         Second is using ${spoilerSummary('Combat Reports (CR)', list(false,
             'Acquired through Forward Basecamp, Data Room, the shop during events, EXP Sim, or as a reward.',
-            "Can be gifted by going to the Dorm>Warehouse>Gift tab or going to your owned doll's profile and tapping the + button by the EXP bar.",
+            `Can be gifted by going to the ${getID('Dorm Gifts screen', '00172')} or going to your owned doll's profile and tapping the + button by the EXP bar.`,
             'Gives 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.',
             'Gives 6000 fixed EXP per report only when used on oathed+modded dolls.'))}.<br>
         Third is by running them through Auto-Battles.`,
         tags : [dTag.TDOLL, dTag.LEVEL, dTag.PRIME, dTag.NEWB]
-    },  //Privated - vqvPpO1vKqw
+    },  //Privated - vqvPpO1vKqw, @Visual
     {
         id : '00002',
         questions : `What is Combat Effectiveness?`,
@@ -2802,6 +2802,21 @@ export const cardData = Object.freeze([
         tags : [dTag.MINI]
     },
     {
+        id : '00365',
+        questions : `What do the numbers mean when talking about tile positioning?`,
+        answers : `${table(null,
+            [7, 8, 9],
+            [4, 5, 6],
+            [1, 2, 3])}`,
+        tags : [dTag.ECH, dTag.NEWB]
+    },
+    {
+        id : '00366',
+        questions : `When will the current event end?`,
+        answers : `If major event or collab, 4 weeks after start. If minor or mini events, 3 weeks after start.`,
+        tags : [dTag.MAJOR, dTag.COLLAB, dTag.SEASON, dTag.MINI]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
@@ -2809,4 +2824,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00082', '00336', '00067', '00024', '00249', '00129', '00223'];
+export const newCards = ['00336', '00067', '00024', '00249', '00129', '00223', '00001'];
