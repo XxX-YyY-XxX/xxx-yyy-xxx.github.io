@@ -29,9 +29,6 @@
 # [Tactical Dolls](/GFL/tdolls)*
 - Doll analysis, acquisition, builds and loadouts, and affections.
 
-# [Events](/GFL/events)*
-- Major, minor, and mini events.
-
 # [Fairies](/GFL/fairies)*
 - Fairy guides and usage.
 
@@ -422,6 +419,10 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 ### Where can I see rankings?
 
 > Tap the bottom-right arrow at the main screen.
+
+### Can I get limited event dolls during rescue events using autobattles?
+
+> "These T-Dolls are obtainable through Auto-Battles as well." Hmm... I wonder. Note however that 1 auto-battle is equivalent to 1 roll for the doll.
 
 ## Check
 

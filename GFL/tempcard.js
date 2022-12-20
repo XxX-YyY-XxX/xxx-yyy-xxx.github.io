@@ -1,5 +1,6 @@
-import {image, link, list, table, TextStyle, altStyle, spoilerSummary, descriptionList} from '/univasset/scripts/htmlfunctions/htmlfunctions.js';
-import Embed from "/univasset/scripts/htmlfunctions/linkembed.js";
+import {descriptionList, spoilerSummary, image, table, link, list} from '/univasset/scripts/htmlfunctions/htmlfunctions.js';
+import TextStyle from '/univasset/scripts/htmlfunctions/textstyle.js';
+import Embed from '/univasset/scripts/htmlfunctions/linkembed.js';
 
 const lessEqual = '≤';
 const star = '★';
@@ -135,8 +136,7 @@ export const cardData = Object.freeze([
         answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
         ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-first-impressions-revamped')}<br>
-        ${spoilerSummary("Cleista's basic Twitter guide.", Embed.twitter('CleistaCeleste', '1409824210571214849'))}<br>
-        Apparently, this unlocks after beating 7-5 Normal.`,
+        ${spoilerSummary("Cleista's basic Twitter guide.", Embed.twitter('CleistaCeleste', '1409824210571214849'))}`,
         tags : [dTag.PA, dTag.PRIME]
     },
     {
@@ -256,9 +256,9 @@ export const cardData = Object.freeze([
     {
         id : '00017',
         questions : `Is there a tier list for fairies?`,
-        answers : `${image('./assets/images/FairyTier.png', "Sijun's list")}<br>
+        answers : `${image('https://i.imgur.com/2nh8xHs.jpeg', "Sijun's list")}<br>
         For the equipments, top number is the recommended quantity, bottom number is the reserve quantity.<br>
-        ${link(`u/UnironicWeeaboo's spreadsheet.`, 'https://docs.google.com/spreadsheets/d/1RORciafqtspkxy3fqBrFdKIxVfanV2-fLl9FlvY3QtM')}<br>
+        ${spoilerSummary(`u/UnironicWeeaboo's fairy stat calculator.`, Embed.google(Embed.G_EXCEL, '1RORciafqtspkxy3fqBrFdKIxVfanV2-fLl9FlvY3QtM'))}<br>
         ${spoilerSummary('u/BigStupidJellyfish_ reviews.', list(false,
             link('General reviews.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/fairy-reviews'),
             link('Sniper review.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/sniper-rework')
@@ -465,7 +465,7 @@ export const cardData = Object.freeze([
         id : '00032',
         questions : `Is there a rate up in this game? If so, how do they work?`,
         answers : `${descriptionList({
-            'Anchored Construction' : [link(`Available for new players ${altStyle('and for veterans not bothering with it', TextStyle.STRIKE)}.`, 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681'),
+            'Anchored Construction' : [link(`Available for new players ${new TextStyle('and for veterans not bothering with it', TextStyle.STRIKE)}.`, 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681'),
                 link('Available on Saturdays and Sundays whenever a new batch of production dolls are released.', 'https://redd.it/szdua2') + ` Recommended anchors are 4${star} due to TCM existing, especially for shotguns.`, 
                 "Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate up."],
             'Targeted Rate Up' : ['Available when a new skin banner is released.',
@@ -625,7 +625,7 @@ export const cardData = Object.freeze([
         questions : `Is there any way to reset my battles so I can get a win?`,
         answers : `Turn off WiFi during battle. You can still finish the fight with no connection. Though be wary of connection timeouts so do it near the end.<br>
         If you don't like the result or you lost, exit client, turn on WiFi, re-enter client, take the fight again.<br>
-        If satisfied ${altStyle('or saving your sanity', TextStyle.STRIKE)}, turn on WiFi after the battle finished.`,
+        If satisfied ${new TextStyle('or saving your sanity', TextStyle.STRIKE)}, turn on WiFi after the battle finished.`,
         tags : [dTag.BATTLE]
     },
     {
@@ -668,8 +668,7 @@ export const cardData = Object.freeze([
         id : '00058',
         questions : `Is there a way for my game to feel smoother?`,
         answers : `${link('Gamepress article.', 'https://gamepress.gg/girlsfrontline/fixing-gfl-client-lag-possible-workarounds')}<br>
-        ${link('Decompressed obb.', 'https://www.mediafire.com/file/r3iwixgyhkafr77/main.375.com.sunborn.girlsfrontline.en.obb/file')}<br>
-        ${link("irfaantx#9917's 2.09 obb.", 'https://drive.google.com/file/d/1Blm_Pf1hgL5pxdRBeV3qXCG3FHZUW0Y2')}<br>
+        ${link('Decompressed obb.', 'https://www.mediafire.com/file/rxuj9ke35he81lr/main.407.com.sunborn.girlsfrontline.en.obb/file')}<br>
         ${link('DIY decompression.', 'https://www.reddit.com/r/girlsfrontline/comments/lvwwtv/weekly_commanders_lounge_march_02_2021/gpugenl/')}`,
         tags : [dTag.MISC]
     },
@@ -801,7 +800,7 @@ export const cardData = Object.freeze([
     {
         id : '00074',
         questions : `If I MOD my T-Doll, is Level 100 still considered max level?`,
-        answers : `Thankfully, this is where common sense wins. In short, ${altStyle('NO', TextStyle.BOLD)}.`,
+        answers : `Thankfully, this is where common sense wins. In short, ${new TextStyle('NO', TextStyle.BOLD)}.`,
         tags : [dTag.MOD, dTag.LEVEL]
     },
     {
@@ -834,7 +833,7 @@ export const cardData = Object.freeze([
     {
         id : '00078',
         questions : `How are people just rolling in 5${star} fairies?`,
-        answers : `<p>${altStyle('Even dust, when piled up, can become a mountain.', TextStyle.ITALIC)}</p>
+        answers : `<p>${new TextStyle('Even dust, when piled up, can become a mountain.', TextStyle.ITALIC)}</p>
         Good logistics upkeep and rolling HECs everyday. Just think of crafting them a side thing that doesn't take a lot of attention.<br>
         For perspective on how long to raise one:<br>
         ${image('./assets/images/FairyRaising.png', 'From u/UnironicWeeaboo')}`,
@@ -893,7 +892,7 @@ export const cardData = Object.freeze([
     {
         id : '00086',
         questions : `What does the PA chip Pilfer do?`,
-        answers : `Allows players to have a ${spoilerSummary('chance', image('./assets/images/PIlferRNG.png', 'Pilfer subject to RNG'))} of getting ${spoilerSummary('S-Rank drops', Embed.youtube('t6Vu72cajO0') + altStyle('Context: Coalition Medals require S-Rank battles.', TextStyle.QOUTE))} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
+        answers : `Allows players to have a ${spoilerSummary('chance', image('./assets/images/PIlferRNG.png', 'Pilfer subject to RNG'))} of getting ${spoilerSummary('S-Rank drops', Embed.youtube('t6Vu72cajO0') + new TextStyle('Context: Coalition Medals require S-Rank battles.', TextStyle.QUOTE))} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
         Combine this with the ability to fight on one ammo bar to get two chances on one enemy.`,
         tags : [dTag.COALITION, dTag.EQUIP]
     },
@@ -906,7 +905,7 @@ export const cardData = Object.freeze([
     {
         id : '00088',
         questions : `How do I get more support echelons?`,
-        answers : `Add friends. Post your UID on a GFL community board and someone would ${altStyle('surely', TextStyle.STRIKE)}probably add you.`,
+        answers : `Add friends. Post your UID on a GFL community board and someone would ${new TextStyle('surely', TextStyle.STRIKE)}probably add you.`,
         tags : [dTag.FRIEND, dTag.ECH]
     },
     {
@@ -1041,8 +1040,8 @@ export const cardData = Object.freeze([
     {
         id : '00105',
         questions : `How do I get a higher success rate for logistics?`,
-        answers : `${altStyle('floor(mean of doll levels in echelon) * 0.45 + 15', TextStyle.CODE)} for normal logistics and<br>
-        ${altStyle('floor(mean of doll levels in echelon) * 0.60 + 30', TextStyle.CODE)} for rate up logistics.`,
+        answers : `${new TextStyle('floor(mean of doll levels in echelon) * 0.45 + 15', TextStyle.CODE)} for normal logistics and<br>
+        ${new TextStyle('floor(mean of doll levels in echelon) * 0.60 + 30', TextStyle.CODE)} for rate up logistics.`,
         tags : [dTag.LOGI]
     },
     {
@@ -1157,8 +1156,8 @@ export const cardData = Object.freeze([
     {
         id : '00121',
         questions : `Can I put 2 L2D skins in the double adjutant slot?`,
-        answers : `${altStyle('L2D mode', TextStyle.QOUTE)}<br>
-        ${altStyle('Double Adjutant', TextStyle.QOUTE)}<br>
+        answers : `${new TextStyle('L2D mode', TextStyle.QUOTE)}<br>
+        ${new TextStyle('Double Adjutant', TextStyle.QUOTE)}<br>
         Pick one.`,
         tags : [dTag.TDOLL, dTag.SKIN, dTag.ADJUNCT]
     },
@@ -1346,9 +1345,9 @@ export const cardData = Object.freeze([
     {
         id : '00145',
         questions : `Can someone tell me what the difference is between Charge, Destroy, and Defend commands for coalition units?`,
-        answers : `Lets melee units ${altStyle('Charge', TextStyle.BOLD)} down the lane.<br>
-        Lets melee units approach and ${altStyle('Destroy', TextStyle.BOLD)} the nearest enemy.<br>
-        Return and ${altStyle('Defend', TextStyle.BOLD)} their grid position.`,
+        answers : `Lets melee units ${new TextStyle('Charge', TextStyle.BOLD)} down the lane.<br>
+        Lets melee units approach and ${new TextStyle('Destroy', TextStyle.BOLD)} the nearest enemy.<br>
+        Return and ${new TextStyle('Defend', TextStyle.BOLD)} their grid position.`,
         tags : [dTag.COALITION, dTag.BATTLE]
     },
     {
@@ -1471,7 +1470,7 @@ export const cardData = Object.freeze([
         questions : `What're the rewards for the Defense Drill?`,
         answers : `Unlocks after clearing 2-4N.<br>
         ${link('Matsuda Guide and Line-up, circa 2.08.', 'https://gfl.matsuda.tips/post/defdrill')}<br>
-        ${altStyle('2.09 waves', TextStyle.BOLD)}:<br>
+        ${new TextStyle('2.09 waves', TextStyle.BOLD)}:<br>
         ${spoilerSummary('Discord Leaderboard Comps.', `${image('https://cdn.discordapp.com/attachments/453784246515925003/988812408929804328/unknown.png')}<br>
             ${image('./assets/images/DiscordDefenseDrill.png')}`)}<br>
         ${spoilerSummary('General BLT vid.', Embed.youtube('P-GLrBNvFVs'))}<br>
@@ -1744,7 +1743,7 @@ export const cardData = Object.freeze([
     {
         id : '00202',
         questions : `What does the ${link('glitter/sparkle', './assets/images/ShinyIndicator.png')} in my coalition unit's portrait mean? Their sprites also has a golden aura/glow around it.`,
-        answers : `A shiny ${altStyle('pokemon', TextStyle.STRIKE)} coalition unit. And the very reason Golden Infusion is a thing.<br>
+        answers : `A shiny ${new TextStyle('pokemon', TextStyle.STRIKE)} coalition unit. And the very reason Golden Infusion is a thing.<br>
         If put on a Lv.100, XL unit, something special may happen.`,
         tags : [dTag.COALITION]
     },
@@ -2282,7 +2281,7 @@ export const cardData = Object.freeze([
     {
         id : '00282',
         questions : `I bought the L2D background but I saw nothing move. Is this really L2D?`,
-        answers : `If you won't move then it wouldn't. Yes, panoramic${altStyle('sorta L2D', TextStyle.SUPER)}.`,
+        answers : `If you won't move then it wouldn't. Yes, panoramic${new TextStyle('sorta L2D', TextStyle.SUPER)}.`,
         tags : [dTag.MISC]
     },
     {
@@ -2780,7 +2779,7 @@ export const cardData = Object.freeze([
     {
         id : '00361',
         questions : `I can't log-in with my third party account. Is there any way to get back?`,
-        answers : `Might be because the third party is down. Contacting ${altStyle('support@sunborngame.com', TextStyle.BOLD)} to change to Sunborn account might help. Having account details may help.`,
+        answers : `Might be because the third party is down. Contacting ${new TextStyle('support@sunborngame.com', TextStyle.BOLD)} to change to Sunborn account might help. Having account details may help.`,
         tags : [dTag.ACCT, dTag.TECH]
     },
     {
@@ -2797,7 +2796,7 @@ export const cardData = Object.freeze([
     },
     {
         id : '00364',
-        questions : `What's the optimal way of clearing ${altStyle('Bingo', TextStyle.STRIKE)} Key Card Events?`,
+        questions : `What's the optimal way of clearing ${new TextStyle('Bingo', TextStyle.STRIKE)} Key Card Events?`,
         answers : `Using the Targeted Draws to fully clear the board in one go.`,
         tags : [dTag.MINI]
     },
@@ -2817,6 +2816,18 @@ export const cardData = Object.freeze([
         tags : [dTag.MAJOR, dTag.COLLAB, dTag.SEASON, dTag.MINI]
     },
     {
+        id : '00367',
+        questions : `How do we unlock the Additional Supplies/Blue Weekly Quest?`,
+        answers : `By paying for the current battlepass.`,
+        tags : [dTag.QUEST]
+    },
+    {
+        id : '00368',
+        questions : `I've been getting dupes about 3 days when the Key Card Event started. What gives?`,
+        answers : `First, "Coupon Collector's Problem". Second, ${link('it actually kinda seems rigged to some extent', 'https://www.reddit.com/r/girlsfrontline/comments/o5hpk4/weekly_commanders_lounge_june_22_2021/h2pa27f/')}.`,
+        tags : [dTag.MINI]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
@@ -2824,4 +2835,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00336', '00067', '00024', '00249', '00129', '00223', '00001'];
+export const newCards = ['00024', '00249', '00129', '00223', '00001', '00017', '00058'];
