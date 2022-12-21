@@ -722,12 +722,15 @@ export const cardData = Object.freeze([
     {
         id : '00064',
         questions : `What best-in-slot (BiS) equipments should I use on my dolls?`,
-        answers : `${spoilerSummary('General equipments.', `${link('./assets/images/EquipInfograph.png', 'https://big-stupid-jellyfish.github.io/GFMath/pages/newquip')}<br>AS-Val at night follows the day schema. SOP and STAR is SPEQ + VFL/PEQ. M16 is SPEQ + Exo/Armor.`)}<br>
+        answers : `${spoilerSummary('General equipments.',
+            `${link('./assets/images/EquipInfograph.png', 'https://big-stupid-jellyfish.github.io/GFMath/pages/newquip')}<br>
+            AS-Val at night follows the day schema. SOP and STAR is SPEQ + VFL/PEQ. M16 is SPEQ + Exo/Armor.`)}<br>
         ${spoilerSummary('#2 Chip equipment.', list(false,
             spoilerSummary('BigStupidJellyfish_ doc.', Embed.google(Embed.G_EXCEL, '14xV50MSMBFGgN75E-Gy10WtzACb_KZdpxRKCYQ6FDQA')),
             spoilerSummary('BigStupidJellyfish_ infograph.', link('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png', 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')),
             spoilerSummary('mis doc.', Embed.google(Embed.G_EXCEL, '1c0JhaSX9WyL3EB-7RCDE4NrfzR1YuWdYWidQ_06-PrQ'))))}<br>
-        ${spoilerSummary('AP thresholds.', image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/newquip/armor-reference.png'))}`,
+        ${spoilerSummary('AP thresholds.', image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/newquip/armor-reference.png'))}<br>
+        ${link('3.0 equips.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/newerquip')}`,
         tags : [dTag.TDOLL, dTag.EQUIP, dTag.ENEMY]
     },
     {
@@ -2828,6 +2831,23 @@ export const cardData = Object.freeze([
         tags : [dTag.MINI]
     },
     {
+        id : '00369',
+        questions : `How many Parachute Fairies would I need?`,
+        answers : `${descriptionList({
+            'Casual' : ['1 - 2'],
+            'Competetive' : ['3 - 5'],
+            'Top Ranker' : ['6 - 10'],
+            'Memer' : ['14+']
+        })}`,
+        tags : [dTag.FAIRY]
+    },
+    {
+        id : '00370',
+        questions : `Can Support Fairy Skills (i.e. Construction) work on Coalition units?`,
+        answers : `${link('Yes.', 'https://old.reddit.com/r/girlsfrontline/comments/q1rscp/weekly_commanders_lounge_october_05_2021/hg4vntx/')}`,
+        tags : [dTag.FAIRY, dTag.COALITION, dTag.BATTLE]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
@@ -2835,4 +2855,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00024', '00249', '00129', '00223', '00001', '00017', '00058'];
+export const newCards = ['00249', '00129', '00223', '00001', '00017', '00058', '00064'];

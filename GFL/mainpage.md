@@ -29,9 +29,6 @@
 # [Tactical Dolls](/GFL/tdolls)*
 - Doll analysis, acquisition, builds and loadouts, and affections.
 
-# [Fairies](/GFL/fairies)*
-- Fairy guides and usage.
-
 # [Tactical Doll Skills](/GFL/skills)*
 - Skill issues, explanations, and interactions.
 
