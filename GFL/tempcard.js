@@ -2848,6 +2848,18 @@ export const cardData = Object.freeze([
         tags : [dTag.FAIRY, dTag.COALITION, dTag.BATTLE]
     },
     {
+        id : '00371',
+        questions : `If I plan to buy the BP, do I have to do it at the start?`,
+        answers : `You can do it whenever. Whataver level you are at as F2P, that's also the level when you buy it.`,
+        tags : [dTag.MISC]
+    },
+    {
+        id : '00372',
+        questions : `Where do I get Transfer Catalysts?`,
+        answers : `Daily gifts, failed captures, PA store.`,
+        tags : [dTag.PA, dTag.ITEM]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,

@@ -71,11 +71,3 @@
 > Pulses. Note that this only works for the three units on the field at that time. Once an attempt is made, get or no, they will be replaced with another unit.
 >
 > Svarog. Pulls from the entire pool, but chances depend on how many are left in the pool.
-
-### Where do I get transfer catalysts?
-
-> Daily gifts, failed captures, PA store.
-
-### My RL is bigger than she was before. Wuh huppun?
-
-> Dummy links maybe?

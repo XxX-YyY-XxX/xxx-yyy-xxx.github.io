@@ -358,6 +358,8 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 
 > <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/z7neql/weekly_commanders_lounge_november_29_2022/iyaf84l/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="269" width="640" scrolling="no"></iframe>
 
+
+
 ## Clarify
 
 ### Is there a recipe that focuses on a single doll?
@@ -380,6 +382,8 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 > Case 2:
 >   Acquire order: G36c > 56R > XM3 > RMB > Jashin
 >   MVP: Jashin
+
+
 
 ## Visual
 
@@ -421,6 +425,8 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 
 > "These T-Dolls are obtainable through Auto-Battles as well." Hmm... I wonder. Note however that 1 auto-battle is equivalent to 1 roll for the doll.
 
+
+
 ## Check
 
 Alternate way to saving a target:
@@ -431,3 +437,7 @@ Tap the radar button again to move your echelons or terminate mission.
 ### How good are 9A-91's SPEQs?
 
 > [Imgur album.](https://imgur.com/a/JYEgQBO)
+
+### My RL is bigger than she was before. Wuh huppun?
+
+> Dummy links maybe?
