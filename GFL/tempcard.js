@@ -2875,7 +2875,7 @@ export const cardData = Object.freeze([
             ],
             'Svarog' : ['Pulls from the entire pool, but chances depend on how many are left in the pool.']
         })}`,
-        tags : [dTag.PA, dTag.COALITION]
+        tags : [dTag.PA, dTag.COALITION, dTag.GET]
     },
     {
         id : '00300',
