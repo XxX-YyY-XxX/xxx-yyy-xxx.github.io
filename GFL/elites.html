@@ -11,7 +11,8 @@
             for (const units of jsonObject)
                 (String(units.passive_skill).includes('200304') ? nonelite : elite).add(units.code)
 
-            for (const [index, [unitE, unitNE]] of enumerate(zip(true, elite, nonelite)))
+            //for (const [index, [unitE, unitNE]] of enumerate(zip(true, elite, nonelite)))
+            for (const [index, [unitE, unitNE]] of Object.entries(zip(true, elite, nonelite)))
                 rows += `<tr><td>${index + 1}</td><td>${unitE}</td><td>${unitNE ?? ''}</td></tr>`;
 
             document.getElementsByTagName('tbody')[0].innerHTML = rows;

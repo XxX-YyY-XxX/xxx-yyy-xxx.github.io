@@ -2,6 +2,36 @@
 <html>
     <head>
         <script defer type="text/javascript" src="/univasset/scripts/include/includefile.js"></script>
+        <script type="module">
+            import { AsyncFunc } from "/univasset/scripts/externaljavascript.js";
+
+            const units = (await AsyncFunc.getJSON('./units.json')).slice(0, -1);
+            const content = document.getElementById('main_content');
+            const template = document.createElement('template');
+            const list = document.createElement('dl');
+
+            for (const unit of units) {
+                //name
+                const name = document.createElement('dt')
+                name.textContent = unit.name;
+                list.appendChild(name);
+
+                //reference
+                for (const [reference, link] of Object.entries(unit.reference)) {
+                    if (reference) {
+                        const a = document.createElement('a');
+                        a.textContent = reference;
+                        a.href = link;
+
+                        const refs = document.createElement('dd');
+                        refs.appendChild(a);
+                        list.appendChild(refs);
+                    }
+                }
+            }
+            
+            content.appendChild(list);
+        </script>
 
         <meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
