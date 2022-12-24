@@ -164,11 +164,11 @@
         "reference" : {"MDR" : "https://iopwiki.com/wiki/MDR"}
     },
     {
-        "name" : "Hatsu (X)",
+        "name" : "De Lacey",
         "reference" : {"" : ""}
     },
     {
-        "name" : "De Lacey (X)",
+        "name" : "Hatsu (X)",
         "reference" : {"" : ""}
     },
     {
@@ -232,7 +232,20 @@
         "reference" : {"" : ""}
     },
     {
+        "name" : "Clotho",
+        "reference" : {"" : ""}
+    },
+    {
+        "name" : "Sockdolager",
+        "reference" : {"Falcon" : "https://iopwiki.com/wiki/Falcon"}
+    },
+    {
+        "name" : "Uranus",
+        "reference" : {"" : ""}
+    },
+    {
         "name" : "",
         "reference" : {"" : ""}
     }
+
 ]
