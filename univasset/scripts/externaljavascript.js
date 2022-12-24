@@ -177,7 +177,18 @@ class ToggleCheck {
         return bool;
     }
 }
+
+/** @param {string} url */
+export function isImage(url) {
+    const img = new Image();
+    var verdict;
+    img.onerror = () => {verdict = false};
+    img.onload = () => {verdict = true};
+    img.src = url;
+    return verdict;
+}
 //#endregion
+
 
 
 

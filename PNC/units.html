@@ -5,12 +5,9 @@
         <script type="module">
             import { AsyncFunc } from "/univasset/scripts/externaljavascript.js";
 
-            const units = (await AsyncFunc.getJSON('./units.json')).slice(0, -1);
-            const content = document.getElementById('main_content');
-            const template = document.createElement('template');
             const list = document.createElement('dl');
 
-            for (const unit of units) {
+            for (const unit of (await AsyncFunc.getJSON('./units.json')).slice(0, -1)) {
                 //name
                 const name = document.createElement('dt')
                 name.textContent = unit.name;
@@ -30,7 +27,7 @@
                 }
             }
             
-            content.appendChild(list);
+            document.getElementById('main_content').appendChild(list);
         </script>
 
         <meta charset='utf-8'>

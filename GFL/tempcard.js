@@ -256,7 +256,7 @@ export const cardData = Object.freeze([
     {
         id : '00017',
         questions : `Is there a tier list for fairies?`,
-        answers : `${image('https://i.imgur.com/2nh8xHs.jpeg')}<br>
+        answers : `${image('https://i.imgur.com/2nh8xHs.jpeg', "Sijun's list")}<br>
         For the equipments, top number is the recommended quantity, bottom number is the reserve quantity.<br>
         ${spoilerSummary(`u/UnironicWeeaboo's fairy stat calculator.`, Embed.google(Embed.G_EXCEL, '1RORciafqtspkxy3fqBrFdKIxVfanV2-fLl9FlvY3QtM'))}<br>
         ${spoilerSummary('u/BigStupidJellyfish_ reviews.', list(false,
@@ -264,7 +264,7 @@ export const cardData = Object.freeze([
             link('Sniper review.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/sniper-rework')
         ))}`,
         tags : [dTag.FAIRY, dTag.TIER, dTag.EQUIP]
-    },  //, "Sijun's list"
+    },
     {
         id : '00018',
         questions : `Anyone have a nice infographic for equipment priority and how many to have ideally?`,
@@ -2885,4 +2885,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00129', '00223', '00001', '00017', '00058', '00064'];
+export const newCards = ['00223', '00001', '00017', '00058', '00064'];

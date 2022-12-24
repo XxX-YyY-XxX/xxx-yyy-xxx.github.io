@@ -4,6 +4,10 @@
         "reference" : {"Persica" : "https://iopwiki.com/wiki/Persica"}
     },
     {
+        "name" : "Croque",
+        "reference" : {"" : ""}
+    },
+    {
         "name" : "Antonina",
         "reference" : {"" : ""}
     },
@@ -16,12 +20,12 @@
         "reference" : {"Simo Häyhä" : "https://en.wikipedia.org/wiki/Simo_H%C3%A4yh%C3%A4"}
     },
     {
-        "name" : "Croque",
-        "reference" : {"" : ""}
-    },
-    {
         "name" : "Fresnel",
         "reference" : {"Augustin-Jean Fresnel" : "https://en.wikipedia.org/wiki/Augustin-Jean_Fresnel"}
+    },
+    {
+        "name" : "Mai",
+        "reference" : {"" : ""}
     },
     {
         "name" : "Chelsea",
@@ -32,16 +36,12 @@
         "reference" : {"" : ""}
     },
     {
-        "name" : "Mai",
-        "reference" : {"" : ""}
-    },
-    {
         "name" : "Evelyn",
         "reference" : {"" : ""}
     },
     {
         "name" : "Souchun",
-        "reference" : {"" : ""}
+        "reference" : {"Type 64" : "https://iopwiki.com/wiki/Type_64"}
     },
     {
         "name" : "Max",
@@ -97,7 +97,7 @@
     },
     {
         "name" : "Chanzhi",
-        "reference" : {"" : ""}
+        "reference" : {"QBU-88" : "https://iopwiki.com/wiki/QBU-88"}
     },
     {
         "name" : "Nanaka",
@@ -113,7 +113,7 @@
     },
     {
         "name" : "Willow",
-        "reference" : {"" : ""}
+        "reference" : {"Suzuhara Lulu" : "https://virtualyoutuber.fandom.com/wiki/Suzuhara_Lulu"}
     },
     {
         "name" : "Ksenia",
@@ -173,7 +173,7 @@
     },
     {
         "name" : "Python (X)",
-        "reference" : {"" : ""}
+        "reference" : {"Snake" : "https://en.wikipedia.org/wiki/Metal_Gear"}
     },
     {
         "name" : "Nora (X)",
@@ -217,6 +217,18 @@
     },
     {
         "name" : "Undine (X)",
+        "reference" : {"" : ""}
+    },
+    {
+        "name" : "Nascita",
+        "reference" : {"" : ""}
+    },
+    {
+        "name" : "Puzzle",
+        "reference" : {"" : ""}
+    },
+    {
+        "name" : "Maghnilda",
         "reference" : {"" : ""}
     },
     {
