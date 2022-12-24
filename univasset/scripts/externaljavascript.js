@@ -74,14 +74,6 @@ export class AsyncFunc {
         return fetch(jsonFile).then(response => response.json());
     }
 }
-
-class CrossFunction {
-    value;
-    
-    constructor() {
-
-    }
-}
 //#endregion
 
 //#region Functions
@@ -186,14 +178,22 @@ class ToggleCheck {
     }
 }
 
+var globalVariable = ':)';
+
 /** @param {string} url */
 export function isImage(url) {
     const img = new Image();
-    const variable = new CrossFunction();
-    img.onerror = () => {variable.value = false};
-    img.onload = () => {variable.value = true};
-    img.src = url;
-    return variable.value;
+/*     img.onerror = () => {globalVariable = false};
+    img.onload = () => {globalVariable = true}; */
+    /* img.onerror = () => {console.log(url, 'failed.')};
+    img.onload = () => {console.log(url, 'success.')}; */
+
+    try {
+        img.src = url;
+    } catch {
+        console.log(url, 'is epic lol.');
+    }
+    return globalVariable;
 }
 //#endregion
 
