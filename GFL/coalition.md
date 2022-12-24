@@ -54,6 +54,8 @@
 
 > When the regenerating impulse reaches 14? Forgot. Guides seem to suggest it is though.
 
+@Clarify
+
 ### Can I change the command type (Defend/Charge/Destroy) automatically?
 
 > No can do for now.
@@ -65,9 +67,3 @@
 ### How are the Striker's ROF calculated?
 
 > <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/qkzc9s/weekly_commanders_lounge_november_02_2021/hjecs3p/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="259" width="640" scrolling="no"></iframe>
-
-### I want a specific unit. How will I be able to pull for them in this banner?
-
-> Pulses. Note that this only works for the three units on the field at that time. Once an attempt is made, get or no, they will be replaced with another unit.
->
-> Svarog. Pulls from the entire pool, but chances depend on how many are left in the pool.

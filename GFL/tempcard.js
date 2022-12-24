@@ -2860,6 +2860,24 @@ export const cardData = Object.freeze([
         tags : [dTag.PA, dTag.ITEM]
     },
     {
+        id : '00373',
+        questions : `How do I get my daily resources from quests?`,
+        answers : `Do any of the dailies until it has 6 icons, then a blue gift box with obtainable will appear, and finally tap on it to claim it.`,
+        tags : [dTag.QUEST, dTag.MARP, dTag.ITEM]
+    },  //@Visual
+    {
+        id : '00374',
+        questions : `I want a specific unit. How will I be able to pull for them in this banner?`,
+        answers : `${descriptionList({
+            'Pulses' : [
+                'Only works for the three units on the field at that time.',
+                'Once an attempt is made, captured or not, they will be replaced with another unit from the pool.'
+            ],
+            'Svarog' : ['Pulls from the entire pool, but chances depend on how many are left in the pool.']
+        })}`,
+        tags : [dTag.PA, dTag.COALITION]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
