@@ -74,6 +74,14 @@ export class AsyncFunc {
         return fetch(jsonFile).then(response => response.json());
     }
 }
+
+class CrossFunction {
+    value;
+    
+    constructor() {
+
+    }
+}
 //#endregion
 
 //#region Functions
@@ -181,11 +189,11 @@ class ToggleCheck {
 /** @param {string} url */
 export function isImage(url) {
     const img = new Image();
-    var verdict;
-    img.onerror = () => {verdict = false};
-    img.onload = () => {verdict = true};
+    const variable = new CrossFunction();
+    img.onerror = () => {variable.value = false};
+    img.onload = () => {variable.value = true};
     img.src = url;
-    return verdict;
+    return variable.value;
 }
 //#endregion
 
