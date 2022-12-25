@@ -67,7 +67,7 @@ export class RadioButton {
     }
 }
 
-/** For functions that returns a Promise. */
+/** For functions that return a Promise. */
 export class AsyncFunc {
     /** @param {RequestInfo | URL} jsonFile @returns Promise of JSON object. */
     static async getJSON(jsonFile) {
@@ -182,19 +182,43 @@ var globalVariable = ':)';
 
 /** @param {string} url */
 export function isImage(url) {
-    const img = new Image();
-/*     img.onerror = () => {globalVariable = false};
-    img.onload = () => {globalVariable = true}; */
+//    const img = new Image();
+/*     img.onerror = function() {globalVariable = false};
+    img.onload = function() {globalVariable = true}; */
     /* img.onerror = () => {console.log(url, 'failed.')};
     img.onload = () => {console.log(url, 'success.')}; */
 
-    try {
+/*     try {
         img.src = url;
     } catch {
         console.log(url, 'is epic lol.');
     }
     return globalVariable;
+ */    
+    return /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url);
 }
+
+/* function testImage(url, timeoutT) {
+    return new Promise(function (resolve, reject) {
+        var timeout = timeoutT || 5000;
+        var timer, img = new Image();
+        img.onerror = img.onabort = function () {
+            clearTimeout(timer);
+            reject("error");
+        };
+        img.onload = function () {
+            clearTimeout(timer);
+            resolve("success");
+        };
+        timer = setTimeout(function () {
+            // reset .src to invalid URL so it stops previous
+            // loading, but doesn't trigger new load
+            img.src = "//!!!!/test.jpg";
+            reject("timeout");
+        }, timeout);
+        img.src = url;
+    });
+} */
 //#endregion
 
 

@@ -168,7 +168,7 @@
         "reference" : {"" : ""}
     },
     {
-        "name" : "Hatsu (X)",
+        "name" : "Hatsuchiri",
         "reference" : {"" : ""}
     },
     {
@@ -220,32 +220,31 @@
         "reference" : {"" : ""}
     },
     {
-        "name" : "Nascita",
+        "name" : "Nascita (X)",
         "reference" : {"" : ""}
     },
     {
-        "name" : "Puzzle",
+        "name" : "Puzzle (X)",
         "reference" : {"" : ""}
     },
     {
-        "name" : "Maghnilda",
+        "name" : "Maghnilda (X)",
         "reference" : {"" : ""}
     },
     {
-        "name" : "Clotho",
+        "name" : "Clotho (X)",
         "reference" : {"" : ""}
     },
     {
-        "name" : "Sockdolager",
+        "name" : "Sockdolager (X)",
         "reference" : {"Falcon" : "https://iopwiki.com/wiki/Falcon"}
     },
     {
-        "name" : "Uranus",
+        "name" : "Uranus (X)",
         "reference" : {"" : ""}
     },
     {
         "name" : "",
         "reference" : {"" : ""}
     }
-
 ]
