@@ -363,7 +363,11 @@ export const cardData = Object.freeze([
             'Event Rewards' : [link("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls'),
                 'These dolls will become unavailable from major story clear rewards after being added to the campaign tab.'],
             'Shop' : ['Applicable to collab dolls using event currency.',
-                `5${star} dolls available in Production are the only ones elegible for True Core Masks, bar spaghetti.`,]
+                `5${star} dolls available in Production are the only ones elegible for True Core Masks, bar spaghetti.`],
+            'Achievements' : [
+                "Type 97s and the AR Team, which are the only ones that can't be bought.",
+                'All dolls come preleveled.'
+            ]
         })}<br>
         ${spoilerSummary('Dolls EN are missing.', image('https://cdn.discordapp.com/attachments/951085201658871820/1033732620384751636/en_missing_dolls_varz_asked_edition.png'))}`,
         tags : [dTag.TDOLL, dTag.IMPT, dTag.GET, dTag.SPEQ]
@@ -2064,7 +2068,8 @@ export const cardData = Object.freeze([
             'Resupply' : ['Banners and Reruns.', 'Black Card Exchange.'],
             'Mini-events' : ['Mini-events.'],
             'Ranking Rewards' : ['Arctic Warfare only.'],
-            'Battlepass' : ['Called in-game as Frontline Protocol.', '10$ at minimum.']
+            'Battlepass' : ['Called in-game as Frontline Protocol.', '10$ at minimum.'],
+            'New Player Rewards' : ["UMP45's Valentine's Skin, which is also available as gacha."]
         })}`,
         tags : [dTag.TDOLL, dTag.SKIN, dTag.GET]
     },
@@ -2878,6 +2883,19 @@ export const cardData = Object.freeze([
         tags : [dTag.PA, dTag.COALITION, dTag.GET]
     },
     {
+        id : '00375',
+        questions : `What are the possible dailies and weeklies for the 3.0 quests?`,
+        answers : `${Embed.google(Embed.G_EXCEL,  '1gyn-6r_XBriYonFpj-RPkoQnCK36StTWJ0E5_yTU048')}`,
+        tags : [dTag.QUEST]
+    },
+    {
+        id : '00376',
+        questions : `Is there any way to rewatch the PA tutorial?`,
+        answers : `${Embed.youtube('tD7JgQcIQHM')}<br>
+        ${Embed.youtube('_s9ZY5wDLYE')}`,
+        tags : [dTag.PA, dTag.LORE]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
@@ -2885,4 +2903,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00223', '00001', '00017', '00058', '00064'];
+export const newCards = ['00017', '00058', '00064', '00024', '00249'];

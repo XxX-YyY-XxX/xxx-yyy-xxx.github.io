@@ -341,6 +341,8 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 
 # For Fixing and Peer Review
 
+
+
 ## Fix
 
 ### Any substitute for [brainlets damage](http://brainlets.moe/gf/sim/) [sim](https://brainlets.moe/)?
@@ -357,6 +359,19 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 ### How do I see what rank I am in?
 
 > <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/z7neql/weekly_commanders_lounge_november_29_2022/iyaf84l/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="269" width="640" scrolling="no"></iframe>
+
+### What would be the best strat for pulling?
+
+> - Save Svarog (bottom-right) and Extra Impulses (top-right, the +N next to Regular Impulses) until you get to the pool you want to pull. Regular Impulses are free real estate.
+>
+> - [In-depth guide for maximum efficiency.](https://old.reddit.com/r/girlsfrontline/comments/ojazqj/weekly_commanders_lounge_july_13_2021/h5gg71b/)
+>
+> - If using Svarog Tickets, do it one at a time. 10x is just 1 pull done 10 times.
+>
+> Note that if you get a displayed unit using the ticket, the whole impulse capture pool (the 3 units shown) will reset... probably. <!-- @ Fix -->
+>
+> - [Charts for how much impulses are needed for guaranteed pull.](https://old.reddit.com/r/girlsfrontline/comments/rau1tq/weekly_commanders_lounge_december_07_2021/hnq60nf/)
+
 
 
 

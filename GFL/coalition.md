@@ -2,20 +2,6 @@
 
 # Protocol Assimilation/Coalition Echelons
 
-### What would be the best strat for pulling?
-
-> - Save Svarog (bottom-right) and Extra Impulses (top-right, the +N next to Regular Impulses) until you get to the pool you want to pull. Regular Impulses are free real estate.
->
-> - [In-depth guide for maximum efficiency.](https://old.reddit.com/r/girlsfrontline/comments/ojazqj/weekly_commanders_lounge_july_13_2021/h5gg71b/)
->
-> - If using Svarog Tickets, do it one at a time. 10x is just 1 pull done 10 times.
->
-> Note that if you get a displayed unit using the ticket, the whole impulse capture pool (the 3 units shown) will reset... probably. <!-- @ Fix -->
->
-> - [Charts for how much impulses are needed for guaranteed pull.](https://old.reddit.com/r/girlsfrontline/comments/rau1tq/weekly_commanders_lounge_december_07_2021/hnq60nf/)
-
-@ Fix
-
 ### Why are my XS units getting auto-locked?
 
 > Because tutorial said so? Only applies to first XS and XL copy of a particular unit.
@@ -31,12 +17,6 @@
 > Back to the pool. They even tell you this in the resupply screen.
 
 @ Visual
-
-### Is there any way to rewatch the tutorial?
-
-> <iframe width="640" height="360" src="https://www.youtube.com/embed/tD7JgQcIQHM" frameborder="0" allowfullscreen></iframe>
->
-> <iframe width="640" height="360" src="https://www.youtube.com/embed/_s9ZY5wDLYE" frameborder="0" allowfullscreen></iframe>
 
 ### Can I increase the ringleader's 25% capture rate?
 
