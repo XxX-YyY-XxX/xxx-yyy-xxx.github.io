@@ -12,16 +12,6 @@
 
 > Data>Dish>Report. Subject to change without prior notice.
 
-### After winning a combat mission with my Coalition team, I noticed that they have no ammo and rations in them. Where did my resources go?
-
-> Back to the pool. They even tell you this in the resupply screen.
-
-@ Visual
-
-### Can I increase the ringleader's 25% capture rate?
-
-> Drop the pool until you have 3/100 then use Svarog tickets.
-
 ### Do I need Dummy Cores for upgrading Coalition Units?
 
 > No. They have their own resources.

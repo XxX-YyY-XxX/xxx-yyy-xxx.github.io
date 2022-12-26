@@ -440,6 +440,12 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 
 > "These T-Dolls are obtainable through Auto-Battles as well." Hmm... I wonder. Note however that 1 auto-battle is equivalent to 1 roll for the doll.
 
+### After winning a combat mission with my Coalition team, I noticed that they have no ammo and rations in them. Where did my resources go?
+
+> Back to the pool. They even tell you this in the resupply screen.
+
+
+
 
 
 ## Check

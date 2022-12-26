@@ -1,6 +1,5 @@
 import {isImage} from '/univasset/scripts/externaljavascript.js';
 
-const linkStart = ['https://', './assets/images/'];
 const imgAlt = 'Image loading failed.';
 
 /** @param {string} link */
@@ -17,9 +16,8 @@ export function image(link, caption = "") {
 
 /** @param {string} linkText Text or image URL. @param {string} link */
 export function link(linkText, link) {
-    console.log(linkText, isImage(linkText))
     return `<a href="${link}">
-        ${linkStart.some(val => linkText.startsWith(val)) ? `<img src="${linkText}" alt="${imgAlt}" loading="lazy">` : linkText}
+        ${isImage(linkText) ? `<img src="${linkText}" alt="${imgAlt}" loading="lazy">` : linkText}
     </a>`;
 }
 
@@ -34,7 +32,7 @@ export function table(headerArray, ...arrayOfArrays) {
     return `<table>
         ${headerArray ? `<thead><tr>${headerArray.map(val => `<th>${val}</th>`).join('')}</tr></thead>` : ''}
         <tbody>
-            ${arrayOfArrays.map(val1 => `<tr>${val1.map(val2 => `<td>${val2}</td>`).join('')}</tr>`).join('')}
+            ${arrayOfArrays.map(arrays => `<tr>${arrays.map(items => `<td>${items}</td>`).join('')}</tr>`).join('')}
         </tbody>    
     </table>`;
 }

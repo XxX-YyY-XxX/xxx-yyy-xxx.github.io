@@ -1088,7 +1088,7 @@ export const cardData = Object.freeze([
     {
         id : '00111',
         questions : `Recipe for Parachute/Paradrop Fairy?`,
-        answers : `2000/500/2000/1000`,
+        answers : `${link('The official recipe.', 'https://gf-db.github.io/gfdb/gfdb.html?type=fairy&id=11&epoch.fairy=29.0')}`,
         tags : [dTag.FAIRY, dTag.PROD]
     },
     {
@@ -2885,7 +2885,8 @@ export const cardData = Object.freeze([
     {
         id : '00375',
         questions : `What are the possible dailies and weeklies for the 3.0 quests?`,
-        answers : `${Embed.google(Embed.G_EXCEL,  '1gyn-6r_XBriYonFpj-RPkoQnCK36StTWJ0E5_yTU048')}`,
+        answers : `${Embed.google(Embed.G_EXCEL,  '1gyn-6r_XBriYonFpj-RPkoQnCK36StTWJ0E5_yTU048')}<br>
+        This also counts as a brief overview of the system.`,
         tags : [dTag.QUEST]
     },
     {
@@ -2896,6 +2897,18 @@ export const cardData = Object.freeze([
         tags : [dTag.PA, dTag.LORE]
     },
     {
+        id : '00377',
+        questions : `What are Original and Pure Samples?`,
+        answers : `Used in the Intelligence Center to craft for FST chips and central data.`,
+        tags : [dTag.HOC, dTag.ITEM]
+    },
+    {
+        id : '00378',
+        questions : `Can I increase the ringleader's 25% capture rate?`,
+        answers : `Drop the pool until you have 3/100 then use Svarog tickets.`,
+        tags : [dTag.PA]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
@@ -2903,4 +2916,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00017', '00058', '00064', '00024', '00249'];
+export const newCards = ['00058', '00064', '00024', '00249', '00111'];
