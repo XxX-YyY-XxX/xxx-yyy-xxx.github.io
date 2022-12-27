@@ -12,3 +12,18 @@
     background: url("/univasset/images/gnk.png") 0 0 no-repeat
 }
 /* #endregion */
+
+/* #region PNC Button */
+.btn-pnc {
+    background: -webkit-linear-gradient(rgb(255, 187, 17, 0.3), rgba(170, 130, 0, 0.3) 50%, rgba(10, 10, 10, 0.3) 50%, rgba(0, 0, 0, 0.3))
+}
+
+.btn-pnc:hover {
+    background: -webkit-linear-gradient(rgb(255, 187, 17, 0.6), rgba(170, 130, 0, 0.6) 50%,rgba(10, 10, 10, 0.8) 50%, rgba(0, 0, 0, 0.8))
+}
+
+.btn-pnc .icon {
+    opacity: 0.6;
+    background: url("/univasset/images/exiles.png") 0 0 no-repeat
+}
+/* #endregion */

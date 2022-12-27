@@ -34,7 +34,7 @@ function nestedInclude(htmlString, params) {
                 const valueType = typeof paramValue;
 
                 switch (valueType) {
-                    case 'string':
+                    case 'string':  //Replaces the include element with the text
                         htmlString = htmlString.replace(include.outerHTML, paramValue);
                         break;
                     default:
