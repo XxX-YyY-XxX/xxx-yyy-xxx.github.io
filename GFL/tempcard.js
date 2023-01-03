@@ -108,7 +108,7 @@ export const cardData = Object.freeze([
             ${getID('Draggable stages.', '00026')}`)}.<br>
         Second is using ${spoilerSummary('Combat Reports (CR)', list(false,
             'Acquired through Forward Basecamp, Data Room, the shop during events, EXP Sim, or as a reward.',
-            `Can be gifted by going to the ${getID('Dorm Gifts screen', '00172')} or going to your owned doll's profile and tapping the + button by the EXP bar.`,
+            `Can be gifted by going to the ${spoilerSummary('Dorm Gifts screen', image('./assets/images/SkinLocation.png', 'Dorms > Warehouse > Gifts'))} or going to your owned doll's profile and tapping the + button by the EXP bar.`,
             'Gives 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.',
             'Gives 6000 fixed EXP per report only when used on oathed+modded dolls.'))}.<br>
         Third is by running them through Auto-Battles.`,
