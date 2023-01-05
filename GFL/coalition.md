@@ -2,19 +2,9 @@
 
 # Protocol Assimilation/Coalition Echelons
 
-### Why are my XS units getting auto-locked?
-
-> Because tutorial said so? Only applies to first XS and XL copy of a particular unit.
-
-@ Visual
-
 ### What's the Coalition Combat Drill priority?
 
 > Data>Dish>Report. Subject to change without prior notice.
-
-### Do I need Dummy Cores for upgrading Coalition Units?
-
-> No. They have their own resources.
 
 ### Which one should I upgrade first in the Protocol Center?
 

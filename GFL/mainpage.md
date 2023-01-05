@@ -444,6 +444,12 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 
 > Back to the pool. They even tell you this in the resupply screen.
 
+### Why are my XS units getting auto-locked?
+
+> Because tutorial said so? Only applies to first XS and XL copy of a particular unit.
+
+
+
 
 
 

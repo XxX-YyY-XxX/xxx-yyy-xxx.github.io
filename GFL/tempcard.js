@@ -2909,6 +2909,18 @@ export const cardData = Object.freeze([
         tags : [dTag.PA]
     },
     {
+        id : '00379',
+        questions : `How do I unlock the blue Weekly Quest?`,
+        answers : `Pay for the battlepass.`,
+        tags : [dTag.QUEST]
+    },
+    {
+        id : '00380',
+        questions : `Do I need Dummy Cores for upgrading Coalition Units?`,
+        answers : `No. They have their own resources.`,
+        tags : [dTag.COALITION, dTag.LEVEL, dTag.ITEM]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
@@ -2916,4 +2928,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00058', '00064', '00024', '00249', '00111'];
+export const newCards = ['00064', '00024', '00249', '00111'];
