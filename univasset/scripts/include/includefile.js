@@ -19,6 +19,9 @@ for (const include of Array.from(document.getElementsByTagName('include'))) {
 
 /** @param {string} htmlString @param {string} params */
 function nestedInclude(htmlString, params) {
+
+    htmlString = htmlString.replace(/<!--(?!>)[\S\s]*?-->/g, '');   //Removes comment from string
+
     //console.log('Before: ', htmlString);
 
     //Parameter setting
