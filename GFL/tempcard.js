@@ -1023,7 +1023,7 @@ export const cardData = Object.freeze([
     {
         id : '00101',
         questions : `I wasn't able to clear the event during it's initial runtime. Will I still get the clear rewards when they get added to Campaign?`,
-        answers : `Nope. Gutted rewards compared to original, even True Core Masks (TCM). Free shit is free shit though, and doll/crate rewards gets cycled to Limited Dolls. So skip the current major event's story if you have to and reap the rewards.`,
+        answers : `Nope. Gutted rewards compared to original, no True Core Masks (TCM), no dolls, no equipment. Free shit is free shit though, and doll/crate rewards gets cycled to Limited Dolls. So skip the current major event's story if you have to and reap the rewards.`,
         tags : [dTag.MARP, dTag.ITEM, dTag.CAMPAIGN, dTag.MAJOR, dTag.LEDOLL, dTag.TCM]
     },
     {
@@ -1082,7 +1082,7 @@ export const cardData = Object.freeze([
         questions : `What does the Aid Commissions do and how do I get more of them?`,
         answers : `Also known as Svarog/High Altitude EMP Bombing, it pulls from the entire pool where the entire pool is the X in the X/100 units.<br>
         Recommended to pull one at a time since 10-pull is literally 10 1-pulls.<br>
-        Acquired from weekly quest (8 standard captures), daily log-in, major events, shop (whenever a new banner starts).`,
+        Acquired from the quest's final node, daily log-in, major events, shop (whenever a new banner starts).`,
         tags : [dTag.ITEM, dTag.PA, dTag.GET]
     },
     {
@@ -2921,6 +2921,18 @@ export const cardData = Object.freeze([
         tags : [dTag.COALITION, dTag.LEVEL, dTag.ITEM]
     },
     {
+        id : '00381',
+        questions : `How long do ringleader banners last?`,
+        answers : `28 days. Anniversary banners last for 1 week.`,
+        tags : [dTag.PA]
+    },
+    {
+        id : '00382',
+        questions : `Can I change the command type (Defend/Charge/Destroy) automatically?`,
+        answers : `No can do for now.`,
+        tags : [dTag.COALITION, dTag.BATTLE]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
@@ -2928,4 +2940,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00064', '00024', '00249', '00111'];
+export const newCards = ['00024', '00249', '00111', '00110'];

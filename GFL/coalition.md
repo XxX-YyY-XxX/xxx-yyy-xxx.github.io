@@ -6,19 +6,11 @@
 
 > Data>Dish>Report. Subject to change without prior notice.
 
-### Which one should I upgrade first in the Protocol Center?
-
-> Impulse Reactor for more pulls then everything else.
-
 ### When does the impulse regen timer stop?
 
 > When the regenerating impulse reaches 14? Forgot. Guides seem to suggest it is though.
 
 @Clarify
-
-### Can I change the command type (Defend/Charge/Destroy) automatically?
-
-> No can do for now.
 
 ### I have one copy of a ringleader. Can I scrap them?
 
