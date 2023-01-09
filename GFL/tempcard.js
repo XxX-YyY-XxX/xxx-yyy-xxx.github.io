@@ -214,6 +214,12 @@ export const cardData = Object.freeze([
         tags : [dTag.LOVE, dTag.PRIME, dTag.OATH, dTag.TDOLL, dTag.COALITION, dTag.KALINA]
     },  //@Clarify - https://old.reddit.com/r/girlsfrontline/comments/w2n556/weekly_commanders_lounge_july_19_2022/igti9c1/
     {
+        id : '00098',
+        questions : `How does the Rescue Station work?`,
+        answers : `${link('DMesse guide.', 'http://dmesse.egloos.com/m/3588696')}`,
+        tags : [dTag.PET, dTag.PRIME]
+    },
+    {
         id : '00013',
         questions : `What is Luffberry Chess?`,
         answers : `GFL version of 100% Orange Juice, I guess?<br>
@@ -370,7 +376,7 @@ export const cardData = Object.freeze([
             ]
         })}<br>
         ${spoilerSummary('Dolls EN are missing.', image('https://cdn.discordapp.com/attachments/951085201658871820/1033732620384751636/en_missing_dolls_varz_asked_edition.png'))}`,
-        tags : [dTag.TDOLL, dTag.IMPT, dTag.GET, dTag.SPEQ]
+        tags : [dTag.TDOLL, dTag.IMPT, dTag.GET, dTag.SPEQ, dTag.PROD]
     },
     {
         id : '00025',
@@ -1000,12 +1006,6 @@ export const cardData = Object.freeze([
         ${spoilerSummary('5-block chips that can be disassembled.', image('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/2020-01/hoc-chip-shape-minmax-example.jpg', 'Taken from Gamepress'))}<br>
         These apps are safe for your account.`,
         tags : [dTag["3P"], dTag.HOC, dTag.FST, dTag.EQUIP, dTag.IMPT]
-    },
-    {
-        id : '00098',
-        questions : `How does the Rescue Station work?`,
-        answers : `${link('DMesse guide.', 'http://dmesse.egloos.com/m/3588696')}`,
-        tags : [dTag.PET]
     },
     {
         id : '00099',
@@ -2204,7 +2204,8 @@ export const cardData = Object.freeze([
     {
         id : '00269',
         questions : `How do I bind my account?`,
-        answers : `${link('Settings>Manage Account>Bind to your preferred account.', 'https://old.reddit.com/r/girlsfrontline/comments/h9zoat/weekly_commanders_lounge_june_16_2020/fvpm1q8/')} You can then change devices provided that you use the same account.`,
+        answers : `${link('Settings>Manage Account>Bind to your preferred account.', 'https://old.reddit.com/r/girlsfrontline/comments/h9zoat/weekly_commanders_lounge_june_16_2020/fvpm1q8/')} To see your account password, check the spam section of your bound email address.<br>
+        You can then change devices provided that you use the same account.`,
         tags : [dTag.ACCT]
     },  //@Visual
     {
@@ -2933,6 +2934,12 @@ export const cardData = Object.freeze([
         tags : [dTag.COALITION, dTag.BATTLE]
     },
     {
+        id : '00383',
+        questions : `I have one copy of a ringleader. Can I scrap them?`,
+        answers : `Why would you? How could you? Can you even anyway?`,
+        tags : [dTag.PA, dTag.COALITION]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
@@ -2940,4 +2947,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00024', '00249', '00111', '00110'];
+export const newCards = ['00249', '00111', '00110', '00269'];

@@ -398,6 +398,10 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 >   Acquire order: G36c > 56R > XM3 > RMB > Jashin
 >   MVP: Jashin
 
+### When does the impulse regen timer stop?
+
+> When the regenerating impulse reaches 14? Forgot. Guides seem to suggest it is though.
+
 
 
 ## Visual
