@@ -121,7 +121,7 @@
     },
     {
         "name" : "Imhotep",
-        "reference" : {"" : ""}
+        "reference" : {"" : "Lowlight"}
     },
     {
         "name" : "Octogen",
@@ -233,7 +233,7 @@
     },
     {
         "name" : "Clotho (X)",
-        "reference" : {"" : ""}
+        "reference" : {"" : "King's Raid Jane"}
     },
     {
         "name" : "Sockdolager (X)",
@@ -242,6 +242,10 @@
     {
         "name" : "Uranus (X)",
         "reference" : {"" : ""}
+    },
+    {
+        "name" : "Jiangyu (X)",
+        "reference" : {"Type 97" : "https://iopwiki.com/wiki/Type_97"}
     },
     {
         "name" : "",

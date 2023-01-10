@@ -2788,7 +2788,7 @@ export const cardData = Object.freeze([
     {
         id : '00361',
         questions : `I can't log-in with my third party account. Is there any way to get back?`,
-        answers : `Might be because the third party is down. Contacting ${new TextStyle('support@sunborngame.com', TextStyle.BOLD)} to change to Sunborn account might help. Having account details may help.`,
+        answers : `Might be because the third party is down. Contacting ${new TextStyle('support@sunborngame.com', TextStyle.BOLD)} to change to Sunborn account might help. Having account details, particularly UID and username, may help.`,
         tags : [dTag.ACCT, dTag.TECH]
     },
     {
@@ -2940,6 +2940,12 @@ export const cardData = Object.freeze([
         tags : [dTag.PA, dTag.COALITION]
     },
     {
+        id : '00384',
+        questions : `How are the Striker's ROF calculated?`,
+        answers : `${link('u/UnironicWeeaboo testing.', 'https://www.reddit.com/r/girlsfrontline/comments/qkzc9s/comment/hjecs3p/')}`,
+        tags : [dTag.ENEMY, dTag.COALITION]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
@@ -2947,4 +2953,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00249', '00111', '00110', '00269'];
+export const newCards = ['00111', '00110', '00269'];

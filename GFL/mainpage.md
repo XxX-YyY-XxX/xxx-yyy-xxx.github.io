@@ -32,9 +32,6 @@
 # [Tactical Doll Skills](/GFL/skills)*
 - Skill issues, explanations, and interactions.
 
-# [Protocol Assimilation/Coalition Echelons](/GFL/coalition)*
-- Assimilation (mostly) pulling guides.
-
 # [Dormitories](/GFL/dorms)
 - Friend batteries, pets, and posters.
 
