@@ -172,6 +172,10 @@
         "reference" : {"" : ""}
     },
     {
+        "name" : "Daiyan",
+        "reference" : {"Type 95" : "https://iopwiki.com/wiki/Type_95"}
+    },
+    {
         "name" : "Python (X)",
         "reference" : {"" : "Solid Snake or Naked Snake"}
     },
@@ -182,10 +186,6 @@
     {
         "name" : "Sueyoi (X)",
         "reference" : {"" : ""}
-    },
-    {
-        "name" : "Daiyan (X)",
-        "reference" : {"Type 95" : "https://iopwiki.com/wiki/Type_95"}
     },
     {
         "name" : "Millau (X)",
