@@ -2,6 +2,14 @@
 <html>
     <head>
         <script defer type="text/javascript" src="/univasset/scripts/include/includefile.js"></script>
+        <script type="module">
+            const iframe = document.getElementById('googleframe');
+
+            /** @param {HTMLSelectElement} select */
+            window.loadSheet = function(select) {
+                iframe.src = select.selectedOptions[0].value + 'preview?pli=1';
+            }
+        </script>
 
         <meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,6 +31,17 @@
         <title>PNC | Random Scraps</title>
     </head>
 
+    <style>
+        #googleframe {
+            aspect-ratio: 1/1;
+            width: 100%;
+        }
+
+        #googlesection {
+            border-style: inset;
+        }
+    </style>
+
     <body>
         <include src="/univasset/scripts/pageheader/header.html">"Anything related to GFL: Neural Cloud"</include>
 
@@ -30,7 +49,16 @@
             <section id="main_content">
                 <p><a href="./algorithm.html">Algorithm Stats</a></p>
                 <p><a href="./units.html">Unit Info</a></p>
-                <!-- google embed with dropdown -->
+                
+                <div id="googlesection">
+                    <select name="googlelinks" id="googlelinks" onchange="loadSheet(this)">
+                        <option value="https://docs.google.com/spreadsheets/d/1ugEerWZZcjcXyF7ZlYOUPISbnarrg2DCqRyHxpYsH4o/">iana's Unit Rating & Teambuilding Spreadsheet</option>
+                        <option value="https://docs.google.com/spreadsheets/d/1IrE5wimiFWYMxUUWQ8VrJoe0zDUPx8OI4rWja9hKQB4/">iana's Unit Rating & Teambuilding Spreadsheet(Mirror)</option>
+                        <option value="https://docs.google.com/spreadsheets/d/1pUMySKTl-rp1PGwUENAHN7PxEcL8rTVTGjZ6MLxMBtU/">PNC Neural Cloud Projections</option>
+                    </select>
+                    <br>
+                    <iframe id="googleframe"></iframe>
+                </div>
             </section>
         </div>
     </body>

@@ -19,7 +19,3 @@
 > [In-depth study on positioning, targeting, and some peculiar requirements involving acquire dates.](https://docs.google.com/document/d/1LPqpSCNWiu1HJOnK1FOB1o30FSwTQRQvcK-tAjO4SSI/)
 
 @ Fix
-
-### Can I zoom out during combat?
-
-> You'd have to zoom in first. If you mean zooming well outside the doll's shooting range, then no.

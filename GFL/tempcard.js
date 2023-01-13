@@ -2950,6 +2950,12 @@ export const cardData = Object.freeze([
         tags : [dTag.BATTLE]
     },  //@Visual
     {
+        id : '00386',
+        questions : `Can I zoom out during combat?`,
+        answers : `You'd have to zoom in first. If you mean zooming well outside the doll's shooting range, then no.`,
+        tags : [dTag.BATTLE]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,
