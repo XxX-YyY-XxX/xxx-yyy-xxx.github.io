@@ -28,7 +28,27 @@
 
         <div class="container">
             <section id="main_content">
+                <select name="googlelinks" id="googlelinks" onchange="loadSheet(this)">
+                    <option value="https://docs.google.com/spreadsheets/d/1ugEerWZZcjcXyF7ZlYOUPISbnarrg2DCqRyHxpYsH4o/">iana's Unit Rating & Teambuilding Spreadsheet</option>
+                    <option value="https://docs.google.com/spreadsheets/d/1IrE5wimiFWYMxUUWQ8VrJoe0zDUPx8OI4rWja9hKQB4/">iana's Unit Rating & Teambuilding Spreadsheet(Mirror)</option>
+                    <option value="https://docs.google.com/spreadsheets/d/1pUMySKTl-rp1PGwUENAHN7PxEcL8rTVTGjZ6MLxMBtU/">PNC Neural Cloud Projections</option>
+                </select>
+
+                <iframe id="googleframe"></iframe>
             </section>
         </div>
+
+        <script>
+            const iframe = document.getElementById('googleframe');
+
+            /** @param {HTMLSelectElement} select */
+            function loadSheet(select) {
+                iframe.src = select.selectedOptions[0].value + 'preview?pli=1';
+            }
+
+            //var b = 'https://docs.google.com/spreadsheets/d/1gyn-6r_XBriYonFpj-RPkoQnCK36StTWJ0E5_yTU048/';
+            //var [link, type] = b.match(new RegExp('https://docs.google.com/(spreadsheets|document)/d/.{44}/'));
+            //document.getElementById('output').innerHTML = link;
+        </script>
     </body>
 </html>
