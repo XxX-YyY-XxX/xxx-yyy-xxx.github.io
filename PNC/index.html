@@ -4,10 +4,16 @@
         <script defer type="text/javascript" src="/univasset/scripts/include/includefile.js"></script>
         <script type="module">
             const iframe = document.getElementById('googleframe');
+            var sheetURL = '';
 
             /** @param {HTMLSelectElement} select */
             window.loadSheet = function(select) {
-                iframe.src = select.selectedOptions[0].value + 'preview?pli=1';
+                sheetURL = select.selectedOptions[0].value;
+                iframe.src = sheetURL + 'preview?pli=1';
+            }
+
+            window.openSheet = function() {
+                window.open(sheetURL);
             }
         </script>
 
@@ -49,13 +55,14 @@
             <section id="main_content">
                 <p><a href="./algorithm.html">Algorithm Stats</a></p>
                 <p><a href="./units.html">Unit Info</a></p>
-                
+
                 <div id="googlesection">
                     <select name="googlelinks" id="googlelinks" onchange="loadSheet(this)">
-                        <option value="https://docs.google.com/spreadsheets/d/1ugEerWZZcjcXyF7ZlYOUPISbnarrg2DCqRyHxpYsH4o/">iana's Unit Rating & Teambuilding Spreadsheet</option>
+                        <option value="https://docs.google.com/spreadsheets/d/1ugEerWZZcjcXyF7ZlYOUPISbnarrg2DCqRyHxpYsH4o/" selected>iana's Unit Rating & Teambuilding Spreadsheet</option>
                         <option value="https://docs.google.com/spreadsheets/d/1IrE5wimiFWYMxUUWQ8VrJoe0zDUPx8OI4rWja9hKQB4/">iana's Unit Rating & Teambuilding Spreadsheet(Mirror)</option>
                         <option value="https://docs.google.com/spreadsheets/d/1pUMySKTl-rp1PGwUENAHN7PxEcL8rTVTGjZ6MLxMBtU/">PNC Neural Cloud Projections</option>
                     </select>
+                    <input type="button" onclick="openSheet()">Source</input>
                     <br>
                     <iframe id="googleframe"></iframe>
                 </div>
