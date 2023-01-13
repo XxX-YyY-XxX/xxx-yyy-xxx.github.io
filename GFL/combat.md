@@ -8,10 +8,6 @@
 
 @ Clarify
 
-### How do I deal with enemies with armor?
-
-> Use dolls that can equip AP ammo.
-
 ### Do debuffs stick if I retreat my dolls?
 
 > Rudimentary testing says no. Mainly applies to enemy side on-screen effects like molotovs, smoke, grenade, stun, etc.
@@ -27,7 +23,3 @@
 ### Can I zoom out during combat?
 
 > You'd have to zoom in first. If you mean zooming well outside the doll's shooting range, then no.
-
-### How do I stop my dolls from retreating on critical damage?
-
-> Heavy Damage Protection off in Game Settings or in Combat Pause Settings.

@@ -773,11 +773,9 @@ export const cardData = Object.freeze([
     {
         id : '00069',
         questions : `What's the drop rate for farmable dolls?`,
-        answers : `Limited dolls on chapters aproximately have 0.8% drop rate on normal and 1% on emergency.<br>
-        Event farms have around 1%, which also carries over to campaign missions.<br>
-        5${star} on normal maps have rates way below 1%... usually. Their droprates at Chapter 10 onwards seem to have higher rates.<br>
-        As for SPEQs, probably 1% too.<br>
-        If you plan to farm a 5${star} doll in Combat Missions, just do Productions. You'll get more chances there.`,
+        answers : `Limited dolls on Combat Missions aproximately have 0.8% drop rate on normal and 1% on emergency, with 5${star} seemingly have rates way below 1%. Their droprates Chapter 10 onwards are reported to have higher rates. If you do plan to farm a 5${star} doll, just do Productions. You'll get more chances there.<br>
+        Event farms have around 1%, which also carries over to their respective campaign missions.<br>
+        As for SPEQs, probably 1% too.`,
         tags : [dTag.TDOLL, dTag.MAIN, dTag.SPEQ, dTag.MAJOR, dTag.CAMPAIGN, dTag.SEASON, dTag.COLLAB]
     },
     {
@@ -2946,6 +2944,12 @@ export const cardData = Object.freeze([
         tags : [dTag.ENEMY, dTag.COALITION]
     },
     {
+        id : '00385',
+        questions : `How do I stop my dolls from retreating on critical damage?`,
+        answers : `Heavy Damage Protection off in Game Settings or in Combat Pause Settings.`,
+        tags : [dTag.BATTLE]
+    },  //@Visual
+    {
         id : '00300',
         questions : ``,
         answers : ``,
@@ -2953,4 +2957,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00111', '00110', '00269'];
+export const newCards = ['00110', '00269'];
