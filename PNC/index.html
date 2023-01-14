@@ -2,23 +2,6 @@
 <html>
     <head>
         <script defer type="text/javascript" src="/univasset/scripts/include/includefile.js"></script>
-        <script type="module">
-            const iframe = document.getElementById('googleframe');
-            var sheetURL = document.getElementsByName('googlelinks')[0].selectedOptions[0].value;
-            iframe.src = sheetURL + 'preview?pli=1';
-
-            /** @param {HTMLSelectElement} select */
-            window.loadSheet = function(select) {
-                sheetURL = select.selectedOptions[0].value;
-                iframe.src = sheetURL + 'preview?pli=1';
-            }
-
-            window.openSheet = function() {
-                window.open(sheetURL);
-            }
-
-            //create dropdown class
-        </script>
 
         <meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -47,17 +30,7 @@
             <section id="main_content">
                 <p><a href="./algorithm.html">Algorithm Stats</a></p>
                 <p><a href="./units.html">Unit Info</a></p>
-
-                <div style="border-style: inset;">
-                    <select name="googlelinks" onchange="loadSheet(this)">
-                        <option value="https://docs.google.com/spreadsheets/d/1ugEerWZZcjcXyF7ZlYOUPISbnarrg2DCqRyHxpYsH4o/" selected>iana's Unit Rating & Teambuilding Spreadsheet</option>
-                        <option value="https://docs.google.com/spreadsheets/d/1IrE5wimiFWYMxUUWQ8VrJoe0zDUPx8OI4rWja9hKQB4/">iana's Unit Rating & Teambuilding Spreadsheet(Mirror)</option>
-                        <option value="https://docs.google.com/spreadsheets/d/1pUMySKTl-rp1PGwUENAHN7PxEcL8rTVTGjZ6MLxMBtU/">PNC Neural Cloud Projections</option>
-                    </select>
-                    <button type="button" onclick="openSheet()" style="float: right;">Source</button>
-                    <br>
-                    <iframe id="googleframe" style="aspect-ratio: 1/1; width: 100%; border: 0"></iframe>
-                </div>
+                <p><a href="./googledocs.html">Guides</a></p>
             </section>
         </div>
     </body>

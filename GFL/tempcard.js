@@ -2956,6 +2956,12 @@ export const cardData = Object.freeze([
         tags : [dTag.BATTLE]
     },
     {
+        id : '00387',
+        questions : `What are these nameless mails with resources?`,
+        answers : `Battlepass overfill or dailies reward.`,
+        tags : [dTag.QUEST]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,

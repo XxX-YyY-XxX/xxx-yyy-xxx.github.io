@@ -7,17 +7,17 @@
 
             const list = document.createElement('dl');
 
-            for (const unit of (await AsyncFunc.getJSON('./units.json')).slice(0, -1)) {
+            for (const {name, reference} of (await AsyncFunc.getJSON('./units.json')).slice(0, -1)) {
                 //name
-                const name = document.createElement('dt')
-                name.textContent = unit.name;
-                list.appendChild(name);
+                const nameElement = document.createElement('dt')
+                nameElement.textContent = name;
+                list.appendChild(nameElement);
 
                 //reference
-                for (const [reference, link] of Object.entries(unit.reference)) {
-                    if (reference) {
+                for (const [referenceName, link] of Object.entries(reference)) {
+                    if (referenceName) {
                         const a = document.createElement('a');
-                        a.textContent = reference;
+                        a.textContent = referenceName;
                         a.href = link;
 
                         const refs = document.createElement('dd');

@@ -217,9 +217,6 @@ class ToggleCheck {
 }
 //#endregion
 
-
-
-
 /*const oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
 oXHR.onreadystatechange = function() {
     if (oXHR.readyState === 4 && oXHR.status == 200)
