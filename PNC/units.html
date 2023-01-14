@@ -4,7 +4,6 @@
         <script defer type="text/javascript" src="/univasset/scripts/include/includefile.js"></script>
         <script type="module">
             import { AsyncFunc } from "/univasset/scripts/externaljavascript.js";
-
             const list = document.createElement('dl');
 
             for (const {name, reference} of (await AsyncFunc.getJSON('./units.json')).slice(0, -1)) {

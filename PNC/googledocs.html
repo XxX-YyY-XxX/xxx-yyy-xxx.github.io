@@ -3,30 +3,17 @@
     <head>
         <script defer type="text/javascript" src="/univasset/scripts/include/includefile.js"></script>
         <script type="module">
-            /* const iframe = document.getElementsByTagName('iframe')[0];
-            var sheetURL = document.getElementsByName('googlelinks')[0].selectedOptions[0].value;
-            iframe.src = sheetURL + 'preview?pli=1'; */
-
-            /** @param {HTMLSelectElement} select */
-            /* window.loadSheet = function(select) {
-                sheetURL = select.selectedOptions[0].value;
-                iframe.src = sheetURL + 'preview?pli=1';
-            }
-
-            window.openSheet = function() {
-                window.open(sheetURL);
-            } */
-
-            gDocDropdown(document.querySelector('#main_content div'),
-                ["iana's Unit Rating & Teambuilding Spreadsheet", "https://docs.google.com/spreadsheets/d/1ugEerWZZcjcXyF7ZlYOUPISbnarrg2DCqRyHxpYsH4o/"],
-                ["iana's Unit Rating & Teambuilding Spreadsheet(Mirror)", "https://docs.google.com/spreadsheets/d/1IrE5wimiFWYMxUUWQ8VrJoe0zDUPx8OI4rWja9hKQB4/"],
-                ["PNC Neural Cloud Projections", "https://docs.google.com/spreadsheets/d/1pUMySKTl-rp1PGwUENAHN7PxEcL8rTVTGjZ6MLxMBtU/"],
-                ["Algorithms", "https://docs.google.com/spreadsheets/d/1eNVCADDvoelcOFeag4BxIouw1Na8KwxZjRD_rbBJdEU/"]
+            gdocDropdown(document.querySelector('#main_content div'),
+                ["iana's Unit Rating & Teambuilding Spreadsheet", "https://docs.google.com/spreadsheets/d/1ugEerWZZcjcXyF7ZlYOUPISbnarrg2DCqRyHxpYsH4o"],
+                ["iana's Unit Rating & Teambuilding Spreadsheet(Mirror)", "https://docs.google.com/spreadsheets/d/1IrE5wimiFWYMxUUWQ8VrJoe0zDUPx8OI4rWja9hKQB4"],
+                ["PNC Neural Cloud Projections", "https://docs.google.com/spreadsheets/d/1pUMySKTl-rp1PGwUENAHN7PxEcL8rTVTGjZ6MLxMBtU"],
+                ["Algorithms", "https://docs.google.com/spreadsheets/d/1eNVCADDvoelcOFeag4BxIouw1Na8KwxZjRD_rbBJdEU"]
             )
 
-            /** @param {HTMLElement} grouperElem
-             * @param {[str, str][]} nameLinkPair [Name of Google Sheet, Link of Google Sheet, ends in /] */
-            function gDocDropdown(grouperElem, ...nameLinkPair) {
+            /** Creates a field for Google Sheets.
+             * @param {HTMLElement} grouperElem
+             * @param {[str, str][]} nameLinkPair [Name of Google Sheet, Link of Google Sheet ending in alphanumeric] */
+            function gdocDropdown(grouperElem, ...nameLinkPair) {
                 const selectElem = document.createElement('select');
                 const buttonElem = document.createElement('button');
                 const iframeElem = document.createElement('iframe');
@@ -34,15 +21,13 @@
                 grouperElem.style.borderStyle = 'inset';
 
                 selectElem.addEventListener('change', function() {
-                    //this.parentElement.lastElementChild.src = this.selectedOptions[0].value + 'preview?pli=1';
-                    iframeElem.src = this.selectedOptions[0].value + 'preview?pli=1';
+                    iframeElem.src = this.selectedOptions[0].value + '/preview?pli=1';
                 })
 
                 buttonElem.textContent = 'Source';
                 buttonElem.style.float = 'right';
                 buttonElem.type = 'button';
                 buttonElem.addEventListener('click', function() {
-                    //window.open(this.previousElementSibling.selectedOptions[0].value);
                     window.open(selectElem.selectedOptions[0].value);
                 })
 
@@ -60,49 +45,7 @@
                 for (const elements of [selectElem, buttonElem, document.createElement('br'), iframeElem])
                     grouperElem.appendChild(elements);
 
-                iframeElem.src = selectElem.firstElementChild.value + 'preview?pli=1';
-            }
-
-            class GDocDropdown {
-                /** @type {HTMLIFrameElement} */
-                //#iframe;
-
-                /** @param {HTMLElement} grouperElement
-                 * @param {[str, str][]} nameLinkPair [Name of Google Sheet, Link of Google Sheet, ends in /] */
-                constructor(grouperElement, ...nameLinkPair) {
-                    const selectElem = document.createElement('select');
-                    const buttonElem = document.createElement('button');
-                    const iframeElem = document.createElement('iframe');
-
-                    grouperElement.style.borderStyle = 'inset';
-
-                    selectElem.addEventListener('change', function() {
-                        this.parentElement.lastElementChild.src = this.selectedOptions[0].value + 'preview?pli=1';
-                    })
-
-                    buttonElem.addEventListener('click', function() {
-                        window.open(this.previousElementSibling.selectedOptions[0].value);
-                    })
-                    buttonElem.textContent = 'Source';
-                    buttonElem.style.float = 'right';
-                    buttonElem.type = 'button';
-
-                    iframeElem.style.aspectRatio = '1/1';
-                    iframeElem.style.width = '100%';
-                    iframeElem.style.border = '0';
-
-                    for (const [name, link] of nameLinkPair) {
-                        const optionElem = document.createElement('option');
-                        optionElem.value = link;
-                        optionElem.textContent = name;
-                        selectElem.appendChild(optionElem);
-                    }
-
-                    for (const elements of [selectElem, buttonElem, document.createElement('br'), iframeElem])
-                        grouperElement.appendChild(elements);
-
-                    iframeElem.src = selectElem.firstElementChild.value + 'preview?pli=1';
-                }
+                iframeElem.src = selectElem.firstElementChild.value + '/preview?pli=1';
             }
         </script>
 
@@ -126,39 +69,12 @@
         <title>Guides Compilation | Random Scraps</title>
     </head>
 
-    <!--style>
-        #googleframe {
-            border-style: inset;
-        }
-
-        button {
-            float: right;
-        }
-
-        iframe {
-            aspect-ratio: 1/1;
-            width: 100%;
-            border: 0;
-        }
-    </style-->
-
     <body>
         <include src="/univasset/scripts/pageheader/header.html">"Google Sheets made by guidemakers for PNC"</include>
 
         <div class="container">
             <section id="main_content">
                 <div></div>
-                <!--div id="googleframe">
-                    <select name="googlelinks" onchange="loadSheet(this)">
-                        <option value="https://docs.google.com/spreadsheets/d/1ugEerWZZcjcXyF7ZlYOUPISbnarrg2DCqRyHxpYsH4o/" selected>iana's Unit Rating & Teambuilding Spreadsheet</option>
-                        <option value="https://docs.google.com/spreadsheets/d/1IrE5wimiFWYMxUUWQ8VrJoe0zDUPx8OI4rWja9hKQB4/">iana's Unit Rating & Teambuilding Spreadsheet(Mirror)</option>
-                        <option value="https://docs.google.com/spreadsheets/d/1pUMySKTl-rp1PGwUENAHN7PxEcL8rTVTGjZ6MLxMBtU/">PNC Neural Cloud Projections</option>
-                        <option value="https://docs.google.com/spreadsheets/d/1eNVCADDvoelcOFeag4BxIouw1Na8KwxZjRD_rbBJdEU/">Algorithms</option>
-                    </select>
-                    <button type="button" onclick="openSheet()">Source</button>
-                    <br>
-                    <iframe></iframe>
-                </div-->
             </section>
         </div>
     </body>

@@ -2969,4 +2969,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00110', '00269'];
+export const newCards = ['00269'];
