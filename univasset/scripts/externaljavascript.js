@@ -156,6 +156,45 @@ export function isImage(url) {
 
     return /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url);
 }
+
+/** Creates a field for Google Sheets.
+ * @param {HTMLElement} grouperElem
+ * @param {[str, str][]} nameLinkPair [Name of Google Sheet, Link of Google Sheet ending in alphanumeric] */
+export function gdocDropdown(grouperElem, ...nameLinkPair) {
+    const selectElem = document.createElement('select');
+    const buttonElem = document.createElement('button');
+    const iframeElem = document.createElement('iframe');
+
+    grouperElem.style.borderStyle = 'inset';
+
+    selectElem.addEventListener('change', function() {
+        iframeElem.src = this.selectedOptions[0].value + '/preview?pli=1';
+    })
+
+    buttonElem.textContent = 'Source';
+    buttonElem.style.float = 'right';
+    buttonElem.type = 'button';
+    buttonElem.addEventListener('click', function() {
+        window.open(selectElem.selectedOptions[0].value);
+    })
+
+    iframeElem.style.aspectRatio = '1/1';
+    iframeElem.style.width = '100%';
+    iframeElem.style.border = '0';
+
+    for (const [name, link] of nameLinkPair) {
+        const optionElem = document.createElement('option');
+        optionElem.value = link;
+        optionElem.textContent = name;
+        selectElem.appendChild(optionElem);
+    }
+
+    for (const elements of [selectElem, buttonElem, document.createElement('br'), iframeElem])
+        grouperElem.appendChild(elements);
+
+    iframeElem.src = selectElem.firstElementChild.value + '/preview?pli=1';
+}
+
 //#endregion
 
 //#region Generators
