@@ -22,7 +22,7 @@
                 //reference
                 for (const [referenceName, link] of Object.entries(reference)) {
                     if (referenceName) {
-                        initializeHTML('a', {textContent: referenceName, href: link})
+                        const a = initializeHTML('a', {textContent: referenceName, href: link})
                         //const a = document.createElement('a');
                         //a.textContent = referenceName;
                         //a.href = link;

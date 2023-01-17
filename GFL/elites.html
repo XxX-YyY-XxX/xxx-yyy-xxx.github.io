@@ -6,7 +6,7 @@
             import {AsyncFunc, zip, enumerate} from '/univasset/scripts/externaljavascript.js';
 
             const jsonObject = await AsyncFunc.getJSON('https://raw.githubusercontent.com/randomqwerty/GFLData/main/en/stc/enemy_character_type.json');
-            const template = document.createElement('template');
+            const tbody = document.createElement('tbody');
             var elite = new Set(), nonelite = new Set();//, rows = "";
 
             for (const units of jsonObject)
@@ -27,10 +27,10 @@
                 for (const elements of [tdIndex, tdElite, tdNElite])
                     trElem.appendChild(elements);
 
-                template.appendChild(trElem);
+                tbody.appendChild(trElem);
             }
 
-            document.querySelector('tbody').appendChild(template.content.cloneNode(true));
+            document.querySelector('table').appendChild(tbody);
 
             //rows += `<tr><td>${index + 1}</td><td>${unitE}</td><td>${unitNE ?? ''}</td></tr>`;
 
