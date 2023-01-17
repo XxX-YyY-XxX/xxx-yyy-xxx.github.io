@@ -1,254 +1,318 @@
 [
     {
         "name" : "Persicaria",
-        "reference" : {"Persica" : "https://iopwiki.com/wiki/Persica"}
+        "reference" : {"Persica" : "https://iopwiki.com/wiki/Persica"},
+        "fragments" : ["Fragment Search", "Newbie Mission"]
     },
     {
         "name" : "Croque",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search", "Vulnerability Check"]
     },
     {
         "name" : "Antonina",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Sol",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Simo",
-        "reference" : {"Simo Häyhä" : "https://en.wikipedia.org/wiki/Simo_H%C3%A4yh%C3%A4"}
+        "reference" : {"Simo Häyhä" : "https://en.wikipedia.org/wiki/Simo_H%C3%A4yh%C3%A4"},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Fresnel",
-        "reference" : {"Augustin-Jean Fresnel" : "https://en.wikipedia.org/wiki/Augustin-Jean_Fresnel"}
+        "reference" : {"Augustin-Jean Fresnel" : "https://en.wikipedia.org/wiki/Augustin-Jean_Fresnel"},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Mai",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search", "Vulnerability Check"]
     },
     {
         "name" : "Chelsea",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search", "Vulnerability Check"]
     },
     {
         "name" : "Gin",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search", "Exception Protocol"]
     },
     {
         "name" : "Evelyn",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Souchun",
-        "reference" : {"Type 64" : "https://iopwiki.com/wiki/Type_64"}
+        "reference" : {"Type 64" : "https://iopwiki.com/wiki/Type_64"},
+        "fragments" : ["Fragment Search", "Exception Protocol"]
     },
     {
         "name" : "Max",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search", "Exception Protocol"]
     },
     {
         "name" : "Betty",
-        "reference" : {"IDW" : "https://iopwiki.com/wiki/IDW"}
+        "reference" : {"IDW" : "https://iopwiki.com/wiki/IDW"},
+        "fragments" : ["Fragment Search", "Vulnerability Check"]
     },
     {
         "name" : "Choco",
-        "reference" : {"FNC" : "https://iopwiki.com/wiki/FNC"}
+        "reference" : {"FNC" : "https://iopwiki.com/wiki/FNC"},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Panakeia",
-        "reference" : {"wz.29" : "https://iopwiki.com/wiki/wz.29"}
+        "reference" : {"wz.29" : "https://iopwiki.com/wiki/wz.29"},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Banxsy",
-        "reference" : {"Banksy" : "https://en.wikipedia.org/wiki/Banksy"}
+        "reference" : {"Banksy" : "https://en.wikipedia.org/wiki/Banksy"},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Angela",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Florence",
-        "reference" : {"PA-15" : "https://iopwiki.com/wiki/PA-15"}
+        "reference" : {"PA-15" : "https://iopwiki.com/wiki/PA-15"},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Fern",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search", "Exception Protocol"]
     },
     {
         "name" : "Yanny",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search", "Vulnerability Check"]
     },
     {
         "name" : "Groove",
-        "reference" : {"" : ""}
-    },
-    {
-        "name" : "Aki",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Bonee",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search", "Exception Protocol"]
     },
     {
         "name" : "Earhart",
-        "reference" : {"Amelia Earhart" : "https://en.wikipedia.org/wiki/Amelia_Earhart"}
+        "reference" : {"Amelia Earhart" : "https://en.wikipedia.org/wiki/Amelia_Earhart"},
+        "fragments" : ["Fragment Search", "Vulnerability Check"]
     },
     {
         "name" : "Chanzhi",
-        "reference" : {"QBU-88" : "https://iopwiki.com/wiki/QBU-88"}
+        "reference" : {"QBU-88" : "https://iopwiki.com/wiki/QBU-88"},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Nanaka",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Zion",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Vee",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Willow",
-        "reference" : {"Suzuhara Lulu" : "https://virtualyoutuber.fandom.com/wiki/Suzuhara_Lulu"}
+        "reference" : {"" : "Suzuhara Lulu"},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Ksenia",
-        "reference" : {"Stechkin" : "https://iopwiki.com/wiki/Stechkin"}
+        "reference" : {"Stechkin" : "https://iopwiki.com/wiki/Stechkin"},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Imhotep",
-        "reference" : {"" : "Lowlight"}
+        "reference" : {"" : "Lowlight"},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Octogen",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search", "Vulnerability Check"]
     },
     {
         "name" : "Rise",
-        "reference" : {"MG36" : "https://iopwiki.com/wiki/MG36"}
+        "reference" : {"MG36" : "https://iopwiki.com/wiki/MG36"},
+        "fragments" : ["Fragment Search", "Exception Protocol"]
     },
     {
         "name" : "Abigail",
-        "reference" : {"M500" : "https://iopwiki.com/wiki/M500"}
+        "reference" : {"M500" : "https://iopwiki.com/wiki/M500"},
+        "fragments" : ["Fragment Search", "Exception Protocol"]
     },
     {
         "name" : "Jessie",
-        "reference" : {"M1897" : "https://iopwiki.com/wiki/M1897"}
+        "reference" : {"M1897" : "https://iopwiki.com/wiki/M1897"},
+        "fragments" : ["Fragment Search", "Vulnerability Check"]
     },
     {
         "name" : "Lam",
-        "reference" : {"LWMMG" : "https://iopwiki.com/wiki/LWMMG"}
+        "reference" : {"LWMMG" : "https://iopwiki.com/wiki/LWMMG"},
+        "fragments" : ["Fragment Search", "Exception Protocol"]
     },
     {
         "name" : "Hubble",
-        "reference" : {"Hubble Space Telescope" : "https://en.wikipedia.org/wiki/Hubble_Space_Telescope"}
+        "reference" : {"Hubble Space Telescope" : "https://en.wikipedia.org/wiki/Hubble_Space_Telescope"},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Sakuya",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Centaureissi",
-        "reference" : {"G36" : "https://iopwiki.com/wiki/G36"}
+        "reference" : {"G36" : "https://iopwiki.com/wiki/G36"},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Dushevnaya",
-        "reference" : {"KSVK" : "https://iopwiki.com/wiki/KSVK"}
+        "reference" : {"KSVK" : "https://iopwiki.com/wiki/KSVK"},
+        "fragments" : ["Fragment Search"]
+    },
+    {
+        "name" : "Aki",
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Kuro",
-        "reference" : {"MDR" : "https://iopwiki.com/wiki/MDR"}
+        "reference" : {"MDR" : "https://iopwiki.com/wiki/MDR"},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "De Lacey",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Hatsuchiri",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Daiyan",
-        "reference" : {"Type 95" : "https://iopwiki.com/wiki/Type_95"}
+        "reference" : {"Type 95" : "https://iopwiki.com/wiki/Type_95"},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Python (X)",
-        "reference" : {"" : "Solid Snake or Naked Snake"}
+        "reference" : {"" : "Solid Snake or Naked Snake"},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Nora (X)",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Sueyoi (X)",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Millau (X)",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Zangyin (X)",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Helix (X)",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Hannah (X)",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Turing (X)",
-        "reference" : {"Alan Turing" : "https://en.wikipedia.org/wiki/Alan_Turing"}
+        "reference" : {"Alan Turing" : "https://en.wikipedia.org/wiki/Alan_Turing"},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Dupin (X)",
-        "reference" : {"C. Auguste Dupin" : "https://en.wikipedia.org/wiki/C._Auguste_Dupin"}
+        "reference" : {"C. Auguste Dupin" : "https://en.wikipedia.org/wiki/C._Auguste_Dupin"},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Clukay (X)",
-        "reference" : {"HK416" : "https://iopwiki.com/wiki/HK416"}
+        "reference" : {"HK416" : "https://iopwiki.com/wiki/HK416"},
+        "fragments" : []
+
     },
     {
         "name" : "Undine (X)",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Nascita (X)",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Puzzle (X)",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Maghnilda (X)",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Clotho (X)",
-        "reference" : {"" : "King's Raid Jane"}
+        "reference" : {"" : "King's Raid Jane"},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Sockdolager (X)",
-        "reference" : {"Falcon" : "https://iopwiki.com/wiki/Falcon"}
+        "reference" : {"Falcon" : "https://iopwiki.com/wiki/Falcon"},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Uranus (X)",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "Jiangyu (X)",
-        "reference" : {"Type 97" : "https://iopwiki.com/wiki/Type_97"}
+        "reference" : {"Type 97" : "https://iopwiki.com/wiki/Type_97"},
+        "fragments" : ["Fragment Search"]
     },
     {
         "name" : "",
-        "reference" : {"" : ""}
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"]
     }
 ]

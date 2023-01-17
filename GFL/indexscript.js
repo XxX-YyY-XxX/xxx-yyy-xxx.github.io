@@ -59,7 +59,7 @@ function searchCards() {
         const cardTags = searchParams.get('tags').split(' ').filter(Boolean);
         if (cardTags.length > 0) {
             /** @returns {boolean} */
-            matchCheck = (card) => cardTags.subsetOf(card.tags.map(tag => tag.val));
+            matchCheck = ({tags}) => cardTags.subsetOf(tags.map(tag => tag.val));
         } else {
             return 'Empty search.';
         }
@@ -67,13 +67,13 @@ function searchCards() {
         const searchText = searchParams.get('search');
         if (searchText) {
             const phrase = new RegExp(searchText, 'i');
-            matchCheck = (card) => phrase.test(removeHTMLTag(card.questions)) || phrase.test(removeHTMLTag(card.answers));
+            matchCheck = ({questions, answers}) => phrase.test(removeHTMLTag(questions)) || phrase.test(removeHTMLTag(answers));
         } else {
             return 'Empty search.';
         }
     } else if (searchParams.has('id')) {
         const cardTags = searchParams.get('id').split(' ');
-        matchCheck = (card) => cardTags.includes(card.id);
+        matchCheck = ({id}) => cardTags.includes(id);
     } //else none
 
     for (const cards of cardData) {
@@ -87,10 +87,9 @@ function searchCards() {
 function addedCards() {
     var output = '';
 
-    for (const cards of cardData) {
+    for (const cards of cardData)
         if (newCards.includes(cards.id))
             output += setQuestionBoxes(cards);
-    }
 
     return output;
 }
@@ -104,19 +103,18 @@ function randomCards() {
         indices.add(randInt(0, maxValue));
     } while (indices.size < 3)
 
-    for (const index of indices) {
+    for (const index of indices)
         output += setQuestionBoxes(cardData[index]);
-    }
 
     return output;
 }
 
-function setQuestionBoxes(cards) {
+function setQuestionBoxes({questions, answers, tags}) {
     return `<fieldset>
-        <legend><h3>${cards.questions}</h3></legend>
-        ${cards.answers}
+        <legend><h3>${questions}</h3></legend>
+        ${answers}
         <hr>
-        Tags: ${cards.tags.map(tag => `<span class="tags card-tags">${tag.val}</span>` ).join(' ')}
+        Tags: ${tags.map(tag => `<span class="tags card-tags">${tag.val}</span>` ).join(' ')}
         </fieldset>`;
 }
 //#endregion
@@ -129,7 +127,7 @@ window.toggleInput = function(radioButton) {
 
 /** @param {HTMLInputElement} tagCheckbox */
 window.toggleTag = function(tagCheckbox) {
-    checkedLabel(tagCheckbox);
+    checkedLabel(tagCheckbox);                          //Will delete if CSS :has is ok
     const tagName = tagCheckbox.value + ' ';
     searchTextField.value = tagCheckbox.checked ? searchTextField.value + tagName : searchTextField.value.replace(tagName, '');
 }

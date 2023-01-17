@@ -6,11 +6,9 @@
             import { AsyncFunc, initializeHTML } from "/univasset/scripts/externaljavascript.js";
             const list = document.createElement('dl');
 
-            for (const {name, reference} of (await AsyncFunc.getJSON('./units.json')).slice(0, -1)) {
+            for (const {name, reference, fragments} of (await AsyncFunc.getJSON('./units.json')).slice(0, -1)) {
                 //name
-                const nameElement = document.createElement('dt')
-                nameElement.textContent = name;
-                list.appendChild(nameElement);
+                list.appendChild(initializeHTML('dt', {textContent: name}));
 
                 //reference
                 for (const [referenceName, link] of Object.entries(reference)) {
@@ -20,6 +18,9 @@
                         list.appendChild(refs);
                     }
                 }
+
+                //fragments
+                list.appendChild(initializeHTML('dd', {textContent: `Fragment Locations: ${fragments.join(', ')}`}));
             }
             
             document.getElementById('main_content').appendChild(list);
@@ -50,6 +51,26 @@
 
         <div class="container">
             <section id="main_content">
+                <!--table>
+                    <thead>
+                        <tr>
+                            <th rowspan="3" colspan="2">Algorithm Stats</th>
+                            <th colspan="4">Offense</th>
+                            <th colspan="4">Stability</th>
+                            <th colspan="4">Special</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2">Max HP</td>
+                            <td>Flat</td>
+                            <td></td>
+                            <td>1080</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table-->
             </section>
         </div>
     </body>
