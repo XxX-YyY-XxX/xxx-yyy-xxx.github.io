@@ -1,5 +1,6 @@
 import {Compare, RadioButton, removeHTMLTag, randInt, checkedLabel} from '/univasset/scripts/externaljavascript.js';
 import {cardData, dTag, newCards} from "./tempcard.js";
+import '/univasset/scripts/prototype.js';
 
 //#region Constants
 const toggleableTagsField = document.getElementById('tags-list');

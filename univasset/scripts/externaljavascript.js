@@ -1,9 +1,9 @@
 //#region Prototypes
 /** @param {Array} mainArray */
-Array.prototype.subsetOf = function(mainArray) {
+/* Array.prototype.subsetOf = function(mainArray) {
     //What if duplicate on subset?
     return this.every(val => mainArray.includes(val));
-}
+} */
 //#endregion
 
 //#region Constants
@@ -162,8 +162,10 @@ export function isImage(url) {
  * @param {[str, str][]} nameLinkPair [Name of Google Sheet, Link of Google Sheet ending in alphanumeric] */
 export function gdocDropdown(grouperElem, ...nameLinkPair) {
     const selectElem = document.createElement('select');
-    const buttonElem = document.createElement('button');
-    const iframeElem = document.createElement('iframe');
+    const buttonElem = initializeHTML('button', {textContent: 'Source', type: 'button'}, {float: 'right'});
+    //const buttonElem = document.createElement('button');
+    const iframeElem = initializeHTML('iframe', null, {aspectRatio: '1/1', width: '100%', border: '0'})
+    //const iframeElem = document.createElement('iframe');
 
     grouperElem.style.borderStyle = 'inset';
 
@@ -171,22 +173,23 @@ export function gdocDropdown(grouperElem, ...nameLinkPair) {
         iframeElem.src = this.selectedOptions[0].value + '/preview?pli=1';
     })
 
-    buttonElem.textContent = 'Source';
-    buttonElem.style.float = 'right';
-    buttonElem.type = 'button';
+    //buttonElem.textContent = 'Source';
+    //buttonElem.style.float = 'right';
+    //buttonElem.type = 'button';
     buttonElem.addEventListener('click', function() {
         window.open(selectElem.selectedOptions[0].value);
     })
 
-    iframeElem.style.aspectRatio = '1/1';
-    iframeElem.style.width = '100%';
-    iframeElem.style.border = '0';
+    //iframeElem.style.aspectRatio = '1/1';
+    //iframeElem.style.width = '100%';
+    //iframeElem.style.border = '0';
 
     for (const [name, link] of nameLinkPair) {
-        const optionElem = document.createElement('option');
-        optionElem.value = link;
-        optionElem.textContent = name;
-        selectElem.appendChild(optionElem);
+        //const optionElem = document.createElement('option');
+        //optionElem.value = link;
+        //optionElem.textContent = name;
+        //selectElem.appendChild(optionElem);
+        selectElem.appendChild(initializeHTML('option', {textContent: name, value: link}));
     }
 
     for (const elements of [selectElem, buttonElem, document.createElement('br'), iframeElem])
@@ -195,6 +198,19 @@ export function gdocDropdown(grouperElem, ...nameLinkPair) {
     iframeElem.src = selectElem.firstElementChild.value + '/preview?pli=1';
 }
 
+/** @param {string} createElement @param {{string: string}} attributes @param {{string: string}} styles */
+export function initializeHTML(createElement, attributes, styles) {
+    const temp = document.createElement(createElement);
+
+    for (const [attrib, value] of Object.entries(attributes))
+        temp[attrib] = value;
+
+    if (styles)
+        for (const [attrib, value] of Object.entries(styles))
+            temp.style[attrib] = value;
+
+    return temp;
+}
 //#endregion
 
 //#region Generators
@@ -253,14 +269,6 @@ class ToggleCheck {
         this.#storedValue = currentValue;
         return bool;
     }
-}
-
-/** @param {string} createElement @param {{string: string}} attributes */
-function initializeHTML(createElement, attributes) {
-    const temp = document.createElement(createElement);
-    for (const [attrib, value] of Object.entries(attributes))
-        temp[attrib] = value;
-    return temp;
 }
 //#endregion
 
