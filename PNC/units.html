@@ -6,6 +6,13 @@
             import { AsyncFunc } from "/univasset/scripts/externaljavascript.js";
             const list = document.createElement('dl');
 
+            function initializeHTML(createElement, attributes) {
+                const temp = document.createElement(createElement);
+                for (const [attrib, value] of Object.entries(attributes))
+                    temp[attrib] = value;
+                return temp;
+            }
+
             for (const {name, reference} of (await AsyncFunc.getJSON('./units.json')).slice(0, -1)) {
                 //name
                 const nameElement = document.createElement('dt')
@@ -15,7 +22,8 @@
                 //reference
                 for (const [referenceName, link] of Object.entries(reference)) {
                     if (referenceName) {
-                        const a = document.createElement('a', {'textContent': referenceName, 'href': link});
+                        initializeHTML('a', {textContent: referenceName, href: link})
+                        //const a = document.createElement('a');
                         //a.textContent = referenceName;
                         //a.href = link;
 
