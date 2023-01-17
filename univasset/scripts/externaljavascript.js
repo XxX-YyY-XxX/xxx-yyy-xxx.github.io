@@ -202,8 +202,9 @@ export function gdocDropdown(grouperElem, ...nameLinkPair) {
 export function initializeHTML(createElement, attributes, styles) {
     const temp = document.createElement(createElement);
 
-    for (const [attrib, value] of Object.entries(attributes))
-        temp[attrib] = value;
+    if (attributes)
+        for (const [attrib, value] of Object.entries(attributes))
+            temp[attrib] = value;
 
     if (styles)
         for (const [attrib, value] of Object.entries(styles))
