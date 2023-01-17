@@ -296,10 +296,6 @@ Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr)
 
 [Github 1.](https://github.com/markhydroxyl/GFL-notes/tree/main/tls)
 
->How can I start reading Griffin Memories?
-
-Get all the dolls involved in the story. Tap a story and fill the bar at the top to progress. You can fill it up by doing the missions at the right side of the bar.
-
 > Is there a limit to using Friend Echelons?
 
 20\. [This is where you can see how many support calls you have used, courtesy of BSJ.](https://imgur.com/7VHlmlN) The counter rises whenever you deploy a support echelon, win or lose, griffin or friend.

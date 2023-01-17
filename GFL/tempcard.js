@@ -2962,6 +2962,12 @@ export const cardData = Object.freeze([
         tags : [dTag.QUEST]
     },
     {
+        id : '00388',
+        questions : `How can I start reading Griffin Memories?`,
+        answers : `Get all the dolls involved in the story. Tap a story and fill the bar at the top to progress. You can fill it up by doing the missions at the right side of the bar.`,
+        tags : [dTag.SIDE]
+    },
+    {
         id : '00300',
         questions : ``,
         answers : ``,

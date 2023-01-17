@@ -254,6 +254,14 @@ class ToggleCheck {
         return bool;
     }
 }
+
+/** @param {string} createElement @param {{string: string}} attributes */
+function initializeHTML(createElement, attributes) {
+    const temp = document.createElement(createElement);
+    for (const [attrib, value] of Object.entries(attributes))
+        temp[attrib] = value;
+    return temp;
+}
 //#endregion
 
 /*const oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
