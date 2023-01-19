@@ -2,12 +2,87 @@
     {
         "name" : "Persicaria",
         "reference" : {"Persica" : "https://iopwiki.com/wiki/Persica"},
-        "fragments" : ["Fragment Search", "Newbie Mission"]
+        "fragments" : ["Fragment Search", "Sapience Expansion Program"]
     },
     {
         "name" : "Croque",
         "reference" : {"" : ""},
         "fragments" : ["Fragment Search", "Vulnerability Check"]
+    },
+    {
+        "name" : "Mai",
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search", "Vulnerability Check"]
+    },
+    {
+        "name" : "Chelsea",
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search", "Vulnerability Check"]
+    },
+    {
+        "name" : "Betty",
+        "reference" : {"IDW" : "https://iopwiki.com/wiki/IDW"},
+        "fragments" : ["Fragment Search", "Vulnerability Check"]
+    },
+    {
+        "name" : "Yanny",
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search", "Vulnerability Check"]
+    },
+    {
+        "name" : "Earhart",
+        "reference" : {"Amelia Earhart" : "https://en.wikipedia.org/wiki/Amelia_Earhart"},
+        "fragments" : ["Fragment Search", "Vulnerability Check"]
+    },
+    {
+        "name" : "Octogen",
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search", "Vulnerability Check"]
+    },
+    {
+        "name" : "Jessie",
+        "reference" : {"M1897" : "https://iopwiki.com/wiki/M1897"},
+        "fragments" : ["Fragment Search", "Vulnerability Check"]
+    },
+    {
+        "name" : "Gin",
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search", "Exception Protocol"]
+    },
+    {
+        "name" : "Souchun",
+        "reference" : {"Type 64" : "https://iopwiki.com/wiki/Type_64"},
+        "fragments" : ["Fragment Search", "Exception Protocol"]
+    },
+    {
+        "name" : "Max",
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search", "Exception Protocol"]
+    },
+    {
+        "name" : "Fern",
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search", "Exception Protocol"]
+    },
+    {
+        "name" : "Bonee",
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search", "Exception Protocol"]
+    },
+    {
+        "name" : "Rise",
+        "reference" : {"MG36" : "https://iopwiki.com/wiki/MG36"},
+        "fragments" : ["Fragment Search", "Exception Protocol"]
+    },
+    {
+        "name" : "Abigail",
+        "reference" : {"M500" : "https://iopwiki.com/wiki/M500"},
+        "fragments" : ["Fragment Search", "Exception Protocol"]
+    },
+    {
+        "name" : "Lam",
+        "reference" : {"LWMMG" : "https://iopwiki.com/wiki/LWMMG"},
+        "fragments" : ["Fragment Search", "Exception Protocol"]
     },
     {
         "name" : "Antonina",
@@ -30,39 +105,9 @@
         "fragments" : ["Fragment Search"]
     },
     {
-        "name" : "Mai",
-        "reference" : {"" : ""},
-        "fragments" : ["Fragment Search", "Vulnerability Check"]
-    },
-    {
-        "name" : "Chelsea",
-        "reference" : {"" : ""},
-        "fragments" : ["Fragment Search", "Vulnerability Check"]
-    },
-    {
-        "name" : "Gin",
-        "reference" : {"" : ""},
-        "fragments" : ["Fragment Search", "Exception Protocol"]
-    },
-    {
         "name" : "Evelyn",
         "reference" : {"" : ""},
         "fragments" : ["Fragment Search"]
-    },
-    {
-        "name" : "Souchun",
-        "reference" : {"Type 64" : "https://iopwiki.com/wiki/Type_64"},
-        "fragments" : ["Fragment Search", "Exception Protocol"]
-    },
-    {
-        "name" : "Max",
-        "reference" : {"" : ""},
-        "fragments" : ["Fragment Search", "Exception Protocol"]
-    },
-    {
-        "name" : "Betty",
-        "reference" : {"IDW" : "https://iopwiki.com/wiki/IDW"},
-        "fragments" : ["Fragment Search", "Vulnerability Check"]
     },
     {
         "name" : "Choco",
@@ -90,29 +135,9 @@
         "fragments" : ["Fragment Search"]
     },
     {
-        "name" : "Fern",
-        "reference" : {"" : ""},
-        "fragments" : ["Fragment Search", "Exception Protocol"]
-    },
-    {
-        "name" : "Yanny",
-        "reference" : {"" : ""},
-        "fragments" : ["Fragment Search", "Vulnerability Check"]
-    },
-    {
         "name" : "Groove",
         "reference" : {"" : ""},
         "fragments" : ["Fragment Search"]
-    },
-    {
-        "name" : "Bonee",
-        "reference" : {"" : ""},
-        "fragments" : ["Fragment Search", "Exception Protocol"]
-    },
-    {
-        "name" : "Earhart",
-        "reference" : {"Amelia Earhart" : "https://en.wikipedia.org/wiki/Amelia_Earhart"},
-        "fragments" : ["Fragment Search", "Vulnerability Check"]
     },
     {
         "name" : "Chanzhi",
@@ -148,31 +173,6 @@
         "name" : "Imhotep",
         "reference" : {"" : "Lowlight"},
         "fragments" : ["Fragment Search"]
-    },
-    {
-        "name" : "Octogen",
-        "reference" : {"" : ""},
-        "fragments" : ["Fragment Search", "Vulnerability Check"]
-    },
-    {
-        "name" : "Rise",
-        "reference" : {"MG36" : "https://iopwiki.com/wiki/MG36"},
-        "fragments" : ["Fragment Search", "Exception Protocol"]
-    },
-    {
-        "name" : "Abigail",
-        "reference" : {"M500" : "https://iopwiki.com/wiki/M500"},
-        "fragments" : ["Fragment Search", "Exception Protocol"]
-    },
-    {
-        "name" : "Jessie",
-        "reference" : {"M1897" : "https://iopwiki.com/wiki/M1897"},
-        "fragments" : ["Fragment Search", "Vulnerability Check"]
-    },
-    {
-        "name" : "Lam",
-        "reference" : {"LWMMG" : "https://iopwiki.com/wiki/LWMMG"},
-        "fragments" : ["Fragment Search", "Exception Protocol"]
     },
     {
         "name" : "Hubble",
