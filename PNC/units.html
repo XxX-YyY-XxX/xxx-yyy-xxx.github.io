@@ -23,8 +23,8 @@
                 if (fragments)
                     list.appendChild(initializeHTML('dd', {textContent: `Fragment Locations: ${fragments.join(', ')}`}));
             }
-            
-            document.getElementById('main_content').appendChild(list);
+
+            document.getElementById('chars').appendChild(list);
         </script>
 
         <meta charset='utf-8'>
@@ -52,6 +52,12 @@
 
         <div class="container">
             <section id="main_content">
+                <div id="chars"></div>
+                <br>
+                <h3>Notes:</h3>
+                <p>All units can get fragments through Intimacy and Neural Kits.</p>
+                <p>Permanently added units can get fragments through Basic Search.</p>
+                <p>Limited units do not get their own Fragment Search section.</p>
             </section>
         </div>
     </body>

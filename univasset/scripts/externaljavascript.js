@@ -25,20 +25,16 @@ export class Compare {
 }
 
 export class RadioButton {
+    /** @type {HTMLInputElement} */
     #currentChecked;
     #radioFunctions;
-    #univFunction;
     #radioGroup;
 
-    /** @param {String} name Name of the radio group.
-     * @param perButton \{radioButton.value : function(radioButton) => void }
-     * @param {function(HTMLInputElement) : void} universal Argument is clicked button. */
-    constructor(name, perButton, universal = function() {}) {
-        for (const buttons of Array.from(document.getElementsByName(name)))
-            if (buttons.checked)
-                this.#currentChecked = buttons;
+    /** @param {string} name Name of the radio group.
+     * @param {{string : function(HTMLInputElement)}} perButton \{radioButton.value : function(radioButton) => void } */
+    constructor(name, perButton) {
+        this.#currentChecked = Array.from(document.getElementsByName(name)).filter(button => button.checked)[0];
         this.#radioFunctions = perButton;
-        this.#univFunction = universal;
         this.#radioGroup = name;
     }
 
@@ -51,7 +47,6 @@ export class RadioButton {
             throw `RadioButtonError: Button is not part of the "${this.#radioGroup}" radio group.`
 
         if (checkedButton !== this.#currentChecked) {
-            this.#univFunction(checkedButton);
             this.#radioFunctions[this.#currentChecked.value](this.#currentChecked);
             this.#radioFunctions[checkedButton.value](checkedButton);
             this.#currentChecked = checkedButton;
@@ -178,6 +173,9 @@ export function gdocDropdown(grouperElem, ...nameLinkPair) {
 
 /** @param {string} createElement @param {{string: string}} attributes @param {{string: string}} styles */
 export function initializeHTML(createElement, attributes, styles) {
+    //make nested element version
+    //inner will take the mods
+    //outer will be returned
     const temp = document.createElement(createElement);
 
     if (attributes)

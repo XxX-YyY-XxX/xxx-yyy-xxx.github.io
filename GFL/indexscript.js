@@ -13,11 +13,21 @@ const pageNo = document.getElementById('page-no');
 const inputButtons = new RadioButton('input-type',
     {
         search(button) {
-            searchTextField.style.display = button.checked ? 'inline' : 'none';
+            if (button.checked) {
+                searchTextField.style.display = 'inline';
+                searchTextField.name = button.value;
+                searchTextField.value = '';
+            } else {
+                searchTextField.style.display = 'none'
+            }
         },
         tags(button) {
-            toggleableTagsField.style.display = button.checked ? 'block' : 'none';
-            if (!button.checked) {
+            if (button.checked) {
+                toggleableTagsField.style.display = 'block';
+                searchTextField.name = button.value;
+                searchTextField.value = '';
+            } else {
+                toggleableTagsField.style.display = 'none';
                 for (const labeltrue of Array.from(toggleableTagsField.children).filter(label => label.firstElementChild.checked)) {
                     labeltrue.firstElementChild.checked = false
                     labeltrue.classList.remove('checked');
@@ -28,9 +38,6 @@ const inputButtons = new RadioButton('input-type',
             browseField.style.display = button.checked ? 'block' : 'none';
             cardsForm.style.display = button.checked ? 'none' : 'block';
         }
-    }, function(button) {
-        searchTextField.value = '';
-        searchTextField.name = button.value;
     }
 );
 //#endregion

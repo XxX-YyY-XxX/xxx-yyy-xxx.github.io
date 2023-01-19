@@ -8,10 +8,6 @@
 
 @ Clarify
 
-### Do debuffs stick if I retreat my dolls?
-
-> Rudimentary testing says no. Mainly applies to enemy side on-screen effects like molotovs, smoke, grenade, stun, etc.
-
 ### Can I change which dolls get targetted by the enemy?
 
 > [By echelon positioning.](https://www.reddit.com/r/girlsfrontline/comments/g11mag/weekly_commanders_lounge_april_14_2020/fny91zz/)

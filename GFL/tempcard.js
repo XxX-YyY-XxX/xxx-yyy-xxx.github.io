@@ -1204,7 +1204,7 @@ export const cardData = Object.freeze([
         id : '00126',
         questions : `If I delete my unused speqs, will I be able to recover them?`,
         answers : `As of 2.09, dismantled/disassembled SPEQs can now be ${spoilerSummary('recovered/retrieved', image('./assets/images/SPEQRecover.png', 'From u/UnironicWeeaboo'))}. Collab SPEQs can be found under the Limited tab.`,
-        tags : [dTag.SPEQ, dTag.COLLAB]
+        tags : [dTag.EQUIP, dTag.SPEQ, dTag.COLLAB]
     },
     {
         id : '00127',
@@ -1984,9 +1984,9 @@ export const cardData = Object.freeze([
     {
         id : '00237',
         questions : `What are Specified Equipment Contracts for and how do I use them?`,
-        answers : `Extra IOP Special Orders. Gets used when the 20 free charges are used up.`,
+        answers : `Extra IOP Special Orders. Gets used when Equipment Production Special Order's 20 free charges are used up.`,
         tags : [dTag.ITEM, dTag.EQUIP, dTag.PROD]
-    },
+    },  //@Visual
     {
         id : '00238',
         questions : `Where is the in-game chip calculator and is it better than GFCalc?`,
@@ -2968,11 +2968,17 @@ export const cardData = Object.freeze([
         tags : [dTag.SIDE]
     },
     {
-        id : '00300',
+        id : '00389',
+        questions : `Do debuffs stick if I retreat my dolls?`,
+        answers : `Rudimentary testing says no. Mainly applies to enemy side on-screen effects like molotovs, smoke, grenade, stun, etc.`,
+        tags : [dTag.SKILL, dTag.BATTLE, dTag.SYSMECH]
+    },
+    {
+        id : '00000',
         questions : ``,
         answers : ``,
         tags : []
     },
 ]);
 
-export const newCards = ['00269'];
+export const newCards = ['00237'];
