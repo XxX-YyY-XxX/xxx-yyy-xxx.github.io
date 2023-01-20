@@ -2,12 +2,6 @@
 
 # Combat/Battle/Skirmish
 
-### Does retreating a doll during battle/skirmish have an effect on affection points?
-
-> Nope. They ONLY lose some if they or other dolls in the group died during mob battles. And auto-battles DO NOT decrease/affect^(w/e the case may be)^ affection points.
-
-@ Clarify
-
 ### Can I change which dolls get targetted by the enemy?
 
 > [By echelon positioning.](https://www.reddit.com/r/girlsfrontline/comments/g11mag/weekly_commanders_lounge_april_14_2020/fny91zz/)

@@ -2657,8 +2657,8 @@ export const cardData = Object.freeze([
     {
         id : '00341',
         questions : `Is there any checklist for the base bonus?`,
-        answers : `${link("u/headphone_question's doll index checklist.", 'https://www.reddit.com/r/girlsfrontline/comments/xqtpd9/client_30_base_staffing_checklists_index/')}`,
-        tags : [dTag.MISC]
+        answers : `${link("u/headphone_question's doll index checklist.", 'https://redd.it/xqtpd9')}`,
+        tags : [dTag.TDOLL]
     },
     {
         id : '00342',
@@ -2972,6 +2972,18 @@ export const cardData = Object.freeze([
         questions : `Do debuffs stick if I retreat my dolls?`,
         answers : `Rudimentary testing says no. Mainly applies to enemy side on-screen effects like molotovs, smoke, grenade, stun, etc.`,
         tags : [dTag.SKILL, dTag.BATTLE, dTag.SYSMECH]
+    },
+    {
+        id : '00390',
+        questions : `What happens to the Resupply Exchange Tickets after the banner ends?`,
+        answers : `Changed to tokens 1:1.`,
+        tags : [dTag.RESUPPLY, dTag.ITEM]
+    },  //@Visual
+    {
+        id : '00391',
+        questions : `When all dolls' DPS contribution is equal, who becomes the MVP?`,
+        answers : `By acquire sequence starting from latest, including collab units. MODding affects nothing.`,
+        tags : [dTag.TDOLL, dTag.BATTLE, dTag.LEVEL]
     },
     {
         id : '00000',

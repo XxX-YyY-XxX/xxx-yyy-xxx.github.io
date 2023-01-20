@@ -380,20 +380,13 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 >
 > All 30 5* HGs: Grizzly, NZ75, Px4, and PA-15 <!--u/Rhasta_la_vista-->
 
-### When all doll DPS contribution is equal, who becomes the MVP?
-
-> By acquire sequence. Or maybe skill position. MODding may or may not "refresh" MVP priority.
->
-> Case 1:
->   Acquire order: G36c > 56R > XM3 > RMB > AK15
->   MVP: ~~RMB~~AK15
-> Case 2:
->   Acquire order: G36c > 56R > XM3 > RMB > Jashin
->   MVP: Jashin
-
 ### When does the impulse regen timer stop?
 
 > When the regenerating impulse reaches 14? Forgot. Guides seem to suggest it is though.
+
+### Does retreating a doll during battle/skirmish have an effect on affection points?
+
+> Nope. They ONLY lose some if they or other dolls in the group died during mob battles. And auto-battles DO NOT decrease/affect^(w/e the case may be)^ affection points.
 
 
 

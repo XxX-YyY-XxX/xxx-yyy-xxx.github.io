@@ -34,15 +34,14 @@ function nestedInclude(htmlString, params) {
 
             if (key = include.getAttribute('key')) {
                 const paramValue = strArr[parseInt(key)];
-                const valueType = typeof paramValue;
 
-                switch (valueType) {
+                switch (typeof paramValue) {
                     case 'string':  //Replaces the include element with the text
                         htmlString = htmlString.replace(include.outerHTML, paramValue);
                         break;
                     default:
-                        //check if parameter is object, null
-                        console.log(paramValue, valueType);
+                        //number, bigint, boolean, symbol, undefined, object, function
+                        console.log(paramValue, typeof paramValue);
                         break;
                 }
             } else if (childparam = include.textContent) {
@@ -86,25 +85,3 @@ function nestedInclude(htmlString, params) {
 function paramAsJSON(textContent) {
     return JSON.parse(`[${textContent}]`);
 }
-
-
-
-
-
-
-
-
-
-
-
-//document.createElement('template');
-//document.createDocumentFragment()
-
-
-
-
-
-//<object name="styleheader" type="text/html" data="/univasset/styleheader.html"></object>
-//<embed type="text/html" src="/univasset/styleheader.html">
-//<!-- #include virtual="/univasset/styleheader.html" -->
-//{% include /univasset/styleheader.html %}
