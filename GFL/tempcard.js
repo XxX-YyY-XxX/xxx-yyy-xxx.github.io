@@ -2976,9 +2976,9 @@ export const cardData = Object.freeze([
     {
         id : '00390',
         questions : `What happens to the Resupply Exchange Tickets after the banner ends?`,
-        answers : `Changed to tokens 1:1.`,
+        answers : `${image('./assets/image/ResupplyMechanics.png')}`,
         tags : [dTag.RESUPPLY, dTag.ITEM]
-    },  //@Visual
+    },
     {
         id : '00391',
         questions : `When all dolls' DPS contribution is equal, who becomes the MVP?`,
