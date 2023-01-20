@@ -165,28 +165,36 @@ export function gdocDropdown(grouperElem, ...nameLinkPair) {
     for (const [name, link] of nameLinkPair)
         selectElem.appendChild(initializeHTML('option', {textContent: name, value: link}));
 
+    iframeElem.src = selectElem.firstElementChild.value + '/preview?pli=1';
+
     for (const elements of [selectElem, buttonElem, document.createElement('br'), iframeElem])
         grouperElem.appendChild(elements);
-
-    iframeElem.src = selectElem.firstElementChild.value + '/preview?pli=1';
 }
 
-/** @param {string} createElement @param {{string: string}} attributes @param {{string: string}} styles */
+/** @param {string} createElement If nested, inner element will be modified and outer element will be returned.
+ * @param {{string: string}} attributes
+ * @param {{string: string}} styles */
 export function initializeHTML(createElement, attributes, styles) {
-    //make nested element version
-    //inner will take the mods
-    //outer will be returned
-    const temp = document.createElement(createElement);
+    var outerElem, innerElem;
+    if (createElement.includes(' ')) {
+        const [outer, inner] = createElement.split(' ');
+        outerElem = document.createElement(outer);
+        innerElem = document.createElement(inner);
+        outerElem.appendChild(innerElem);
+    } else {
+        outerElem = null;
+        innerElem = document.createElement(createElement);
+    }
 
     if (attributes)
         for (const [attrib, value] of Object.entries(attributes))
-            temp[attrib] = value;
+        innerElem[attrib] = value;
 
     if (styles)
         for (const [attrib, value] of Object.entries(styles))
-            temp.style[attrib] = value;
+        innerElem.style[attrib] = value;
 
-    return temp;
+    return outerElem ?? innerElem;
 }
 //#endregion
 

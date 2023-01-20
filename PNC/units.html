@@ -11,16 +11,12 @@
                 list.appendChild(initializeHTML('dt', {textContent: name}));
 
                 //reference
-                for (const [referenceName, link] of Object.entries(reference)) {
-                    if (referenceName) {
-                        const refs = document.createElement('dd');
-                        refs.appendChild(initializeHTML('a', {textContent: referenceName, href: link}));
-                        list.appendChild(refs);
-                    }
-                }
+                for (const [referenceName, link] of Object.entries(reference))
+                    if (referenceName)
+                        list.appendChild(initializeHTML('dd a', {textContent: referenceName, href: link}));
 
                 //fragments
-                if (fragments)
+                if (fragments.length > 0)
                     list.appendChild(initializeHTML('dd', {textContent: `Fragment Locations: ${fragments.join(', ')}`}));
             }
 
