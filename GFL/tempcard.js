@@ -2976,7 +2976,7 @@ export const cardData = Object.freeze([
     {
         id : '00390',
         questions : `What happens to the Resupply Exchange Tickets after the banner ends?`,
-        answers : `${image('./assets/image/ResupplyMechanics.png')}`,
+        answers : `${image('./assets/images/ResupplyMechanics.png')}`,
         tags : [dTag.RESUPPLY, dTag.ITEM]
     },
     {

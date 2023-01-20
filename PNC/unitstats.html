@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script defer type="text/javascript" src="/univasset/scripts/include/includefile.js"></script>
+        <script type="module">
+            import { AsyncFunc, initializeHTML } from "/univasset/scripts/externaljavascript.js";
+            const json = (await AsyncFunc.getJSON('./units.json')).slice(0, -1);
+            
+
+            const header = [];
+
+            function sort() {
+
+            }
+
+            function loaddata(key = null) {
+
+            }
+
+
+            /* const jsonObject = await AsyncFunc.getJSON('https://raw.githubusercontent.com/randomqwerty/GFLData/main/en/stc/enemy_character_type.json');
+            const elite = new Set(), nonelite = new Set(), tbody = document.createElement('tbody');
+
+            for (const {passive_skill, code} of jsonObject)
+                (String(passive_skill).includes('200304') ? nonelite : elite).add(code)
+
+            for (const [index, [unitE, unitNE]] of enumerate(zip(true, elite, nonelite))) {
+                const trElem = document.createElement('tr');
+
+                const tdElems = [
+                    initializeHTML('td', {textContent: index + 1}),
+                    initializeHTML('td', {textContent: unitE}),
+                    initializeHTML('td', {textContent: unitNE ?? ''})
+                ]
+
+                for (const elements of tdElems)
+                    trElem.appendChild(elements);
+
+                tbody.appendChild(trElem);
+            }
+
+            document.querySelector('table').appendChild(tbody); */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /* const list = document.createElement('dl');
+
+            for (const {name, reference, fragments} of (await AsyncFunc.getJSON('./units.json')).slice(0, -1)) {
+                //name
+                list.appendChild(initializeHTML('dt', {textContent: name}));
+
+                //reference
+                for (const [referenceName, link] of Object.entries(reference))
+                    if (referenceName)
+                        list.appendChild(initializeHTML('dd a', {textContent: referenceName, href: link}));
+
+                //fragments
+                if (fragments.length > 0)
+                    list.appendChild(initializeHTML('dd', {textContent: `Fragment Locations: ${fragments.join(', ')}`}));
+            }
+
+            document.getElementById('chars').appendChild(list); */
+        </script>
+
+        <meta charset='utf-8'>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/univasset/scripts/externalcss.css">
+        
+        <!-- Setup theme-color -->
+
+        <!-- start theme color meta headers -->
+            <meta name="theme-color" content="#151515">
+            <meta name="msapplication-navbutton-color" content="#151515">
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <!-- end theme color meta headers -->
+
+        <!-- Setup Google Analytics -->
+
+        <link rel="icon" type="image/png" href="/univasset/images/favicon.png" />
+
+        <title>PNC Units Stats | Random Scraps</title>
+    </head>
+
+    <body>
+        <include src="/univasset/scripts/pageheader/header.html">"Unit stats"</include>
+
+        <div class="container">
+            <section id="main_content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Elites</th>
+                            <th>Non-Elites</th>
+                        </tr>
+                    </thead>
+                    <!--tbody></tbody-->
+                </table>
+            </section>
+        </div>
+    </body>
+</html>

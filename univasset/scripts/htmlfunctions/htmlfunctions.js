@@ -1,30 +1,21 @@
 import {isImage} from '/univasset/scripts/externaljavascript.js';
 
-const imgAlt = 'Image loading failed.';
+function img(link) {
+    return `<img src="${link}" alt="Image loading failed." loading="lazy">`;
+}
 
-/** @param {string} link */
+/** @param {string} link @param {string} caption Image description */
 export function image(link, caption = "") {
     return caption ? `<figure>
-            <img src="${link}" alt="${imgAlt}" loading="lazy">
+            ${img(link)}
             <figcaption>${caption}</figcaption>
-        </figure>` :
-        `<img src="${link}" alt="${imgAlt}" loading="lazy">`;
-
-
-    /* if (caption) {
-        return `<figure>
-            <img src="${link}" alt="${imgAlt}" loading="lazy">
-            <figcaption>${caption}</figcaption>
-        </figure>`;
-    } else {
-        return `<img src="${link}" alt="${imgAlt}" loading="lazy">`
-    } */
+        </figure>` : img(link);
 }
 
 /** @param {string} linkText Text or image URL. @param {string} link */
 export function link(linkText, link) {
     return `<a href="${link}">
-        ${isImage(linkText) ? `<img src="${linkText}" alt="${imgAlt}" loading="lazy">` : linkText}
+        ${isImage(linkText) ? img(linkText) : linkText}
     </a>`;
 }
 

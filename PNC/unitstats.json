@@ -1,0 +1,23 @@
+[
+    {
+        "name" : "",
+        "hp" : 0,
+        "attack" : 0,
+        "hashrate" : 0,
+        "physdef" : 0,
+        "opdef" : 0,
+        "atkspd" : 0,
+        "critrate" : 0,
+        "critdmg" : 0,
+        "physpen" : 0,
+        "oppen" : 0,
+        "dodge" : 0,
+        "regen" : 0,
+        "haste" : 0,
+        "resist" : 0,
+        "backlash" : 0,
+        "dmgboost" : 0,
+        "dmgreduc" : 0,
+        "healboost" : 0
+    }
+]
