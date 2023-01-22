@@ -58,7 +58,7 @@
 
             //const table = new Table(document.querySelector('#main_content div'), json)
 
-            table(document.querySelector('#main_content div'), json)
+            table(document.querySelector('#main_content div'), json, {sort: true})
             
             /* function sort() {
 
@@ -86,7 +86,7 @@
                 }
 
                 const headertr = document.createElement('tr');
-                for (const header of Object.entries(tablerows.shift()))
+                for (const header of tablerows.shift())
                     headertr.appendChild(initializeHTML('th', {textContent: header}));
                 theadElem.appendChild(headertr);
 
