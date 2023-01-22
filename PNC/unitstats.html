@@ -9,15 +9,16 @@
             table(document.querySelector('#main_content div'), json, {sort: true})
             
             /** @param {HTMLElement} grouperElem
-             * @param {Array[]} tablerows */
-            function table(grouperElem, tablerows, {sort = false, filter = false} = {}) {
-                const tableElem = document.createElement('table');
+             * @param {Array[]} tableMatrix */
+            function table(grouperElem, tableMatrix, {sort = false, filter = false, frzcol = false, frzhdr = false, fragment = false} = {}) {
+                const tableElem = initializeHTML('table', null, {margin: 0});
                 const theadElem = document.createElement('thead');
                 const tbodyElem = document.createElement('tbody');
-                //const sortSequence = [];
 
-                for (const element of [theadElem, tbodyElem])
-                    tableElem.appendChild(element);
+                //for (const element of [theadElem, tbodyElem])
+                //    tableElem.appendChild(element);
+
+                tableElem.append(theadElem, tbodyElem)
 
                 function printDataRows(nestedArray) {
                     tbodyElem.textContent = '';
@@ -30,68 +31,89 @@
                 }
 
                 const headertr = document.createElement('tr');
-                for (const header of tablerows.shift())
+                for (const header of tableMatrix.shift())
                     headertr.appendChild(initializeHTML('th', {textContent: header}));
                 theadElem.appendChild(headertr);
 
-                printDataRows(tablerows);
+                printDataRows(tableMatrix);
+
+                //------------------------------------------------------------------------------------------------------------
 
                 if (sort) {
                     //three way sort
                     //multi sort
-                    alert('Check console.');
-                    const samplerow = tablerows[0];
+                    const samplerow = tableMatrix[0];
                     for (const [index, headerCell] of Object.entries(headertr.children)) {
                         headerCell.dataset.index = index;
-                        const item = samplerow[index];
-                        console.log(item, typeof item)
-
-                        //change to generalized
-                        switch (typeof item) {
+                        
+                        switch (typeof samplerow[index]) {
                             case 'string':
                                 headerCell.addEventListener('click', function() {
                                     const index = this.dataset.index;
-                                    printDataRows(tablerows.sort((a, b) => Compare.string(a[index], b[index])));
+                                    printDataRows(tableMatrix.sort((a, b) => Compare.string(a[index], b[index])));
                                 });
                                 break;
                             case 'number':
                                 headerCell.addEventListener('click', function() {
                                     const index = this.dataset.index;
-                                    printDataRows(tablerows.sort((a, b) => Compare.number(b[index], a[index])));
+                                    printDataRows(tableMatrix.sort((a, b) => Compare.number(b[index], a[index])));
                                 });
                                 break;
                             default:
-                                console.log(item, typeof item, 'Defaulted')
+                                const item = samplerow[index];
+                                alert(item, typeof item)
                                 break;
                         }
-                        /* if (index == 0) {
-                            headerCell.addEventListener('click', function() {
-                                const index = this.dataset.index;
-                                printDataRows(tablerows.sort((a, b) => Compare.string(a[index], b[index])));
-                            })
-                        } else {
-                            headerCell.addEventListener('click', function() {
-                                const index = this.dataset.index;
-                                printDataRows(tablerows.sort((a, b) => Compare.number(b[index], a[index])));
-                            })
-                        } */
                     }
                 }
 
                 if (filter) {
                     //unfilter
                     //multifilter
+                    //change to CSS display: 'none';
                     for (const [index, headerCell] of Object.entries(headertr.children)) {
                         headerCell.dataset.index = index;
-                        headerCell.addEventListener('click', function() {
-                            const index = this.dataset.index;
-                            printDataRows(tablerows.filter(x => x[index]));
-                        });
+                        if (index) {
+                            headerCell.addEventListener('click', function() {
+                                const index = this.dataset.index;
+                                printDataRows(tablerows.filter(x => x[index]));
+                            });
+                        } else {
+                            headerCell.addEventListener('click', function() {
+                                printDataRows(tablerows);
+                            });
+                        }
                     }
                 }
 
-                //freeze first column
-                //freeze top row
+                //sort/filter problem
+                if (frzcol) {
+                    headertr.firstElementChild.style.position = 'sticky';
+                    //headertr.firstElementChild.style.background = '#1b1b1b';
+                    headertr.firstElementChild.style.background = headertr.firstElementChild.style.background-color;
+                    headertr.firstElementChild.style.left = 0;
+                    headertr.firstElementChild.style.zIndex = 2;
+
+                    for (const [index, trElem] of Object.entries(tbodyElem.children)) {
+                        trElem.firstElementChild.style.position = 'sticky';
+                        //trElem.firstElementChild.style.background = index % 2 ? '#1b1b1b' : '#292f20';  //Very CSS dependent
+                        trElem.firstElementChild.style.background = trElem.firstElementChild.style.background-color;
+                        trElem.firstElementChild.style.left = 0;
+                        trElem.firstElementChild.style.zIndex = 1;
+                    } 
+                }
+
+                if (frzhdr) {
+                    for (const [index, thElem] of Object.entries(headertr.children)) {
+                        thElem.style.position = 'sticky';
+                        //thElem.firstElementChild.style.background = '#1b1b1b';  //Very CSS dependent
+                        thElem.style.background = thElem.style.background-color;
+                        thElem.style.top = 0;
+                        thElem.style.zIndex = index ? 1 : 2;
+                    }
+                }
+
+                //------------------------------------------------------------------------------------------------------------
 
                 grouperElem.style.borderStyle = 'inset';
                 grouperElem.style.overflowX = 'auto';
@@ -128,7 +150,6 @@
         <div class="container">
             <section id="main_content">
                 <div></div>
-                <br>
                 <p>All units at Lv.70 and 5★.</p>
                 <p>Data taken from <a href="https://nalu.wiki/neuralcloud/c/dolls">nalu.wiki Neural Cloud</a>.</p>
             </section>

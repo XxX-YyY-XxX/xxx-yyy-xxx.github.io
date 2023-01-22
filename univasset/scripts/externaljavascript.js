@@ -167,8 +167,10 @@ export function gdocDropdown(grouperElem, ...nameLinkPair) {
 
     iframeElem.src = selectElem.firstElementChild.value + '/preview?pli=1';
 
-    for (const elements of [selectElem, buttonElem, document.createElement('br'), iframeElem])
-        grouperElem.appendChild(elements);
+    //for (const elements of [selectElem, buttonElem, document.createElement('br'), iframeElem])
+    //    grouperElem.appendChild(elements);
+
+    grouperElem.append(selectElem, buttonElem, document.createElement('br'), iframeElem);
 }
 
 /** @param {string} createElement If nested, inner element will be modified and outer element will be returned.
