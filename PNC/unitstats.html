@@ -3,7 +3,7 @@
     <head>
         <script defer type="text/javascript" src="/univasset/scripts/include/includefile.js"></script>
         <script type="module">
-            import { AsyncFunc, initializeHTML } from "/univasset/scripts/externaljavascript.js";
+            import { AsyncFunc, Compare, initializeHTML } from "/univasset/scripts/externaljavascript.js";
             const json = (await AsyncFunc.getJSON('./unitstats.json')).slice(0, -1);
 
             /* class Table {
@@ -96,8 +96,6 @@
                 for (const element of [theadElem, tbodyElem])
                     tableElem.appendChild(element);
 
-                document.createElement('a')
-
                 console.log(headertr.children)
                 console.log(Object.entries(headertr.children))
 
@@ -105,7 +103,11 @@
                     for (const [index, headerCell] of Object.entries(headertr.children)) {
                         headerCell.dataset.index = index;
                         headerCell.addEventListener('click', function() {
-                            printDataRows(tablerows.sort(x => x[this.dataset.index]));
+                            const index = this.dataset.index;
+                            if (index == 0)
+                                printDataRows(tablerows.sort((a, b) => Compare.string(a[index], b[index])));
+                            else
+                                printDataRows(tablerows.sort((a, b) => Compare.number(a[index], b[index])));
                         })
                         console.log(index)
                     }
