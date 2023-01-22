@@ -11,11 +11,13 @@
             for (const {passive_skill, code} of jsonObject)
                 (String(passive_skill).includes('200304') ? nonelite : elite).add(code)
 
+            console.log(Object.entries(zip(true, elite, nonelite)));
+
             for (const [index, [unitE, unitNE]] of Object.entries(zip(true, elite, nonelite))) {
                 const trElem = document.createElement('tr');
 
                 const tdElems = [
-                    initializeHTML('td', {textContent: index + 1}),
+                    initializeHTML('td', {textContent: Number(index) + 1}),
                     initializeHTML('td', {textContent: unitE}),
                     initializeHTML('td', {textContent: unitNE ?? ''})
                 ]
