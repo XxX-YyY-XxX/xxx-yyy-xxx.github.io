@@ -18,7 +18,7 @@
 
             /** @param {HTMLElement} grouperElem
              * @param {Array[]} tablerows */
-            function table(grouperElem, tablerows, {sort = false, filter = false}) {
+            function table(grouperElem, tablerows, {sort = false, filter = false} = {}) {
                 const tableElem = document.createElement('table');
                 const theadElem = document.createElement('thead');
                 const tbodyElem = document.createElement('tbody');
