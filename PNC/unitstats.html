@@ -96,12 +96,18 @@
                 for (const element of [theadElem, tbodyElem])
                     tableElem.appendChild(element);
 
+                document.createElement('a')
+
+                console.log(headertr.children)
+                console.log(Object.entries(headertr.children))
+
                 if (sort) {
                     for (const [index, headerCell] of Object.entries(headertr.children)) {
-                        headerCell.value = index;
+                        headerCell.dataset.index = index;
                         headerCell.addEventListener('click', function() {
-                            printDataRows(tablerows.sort(x => x[this.value]));
+                            printDataRows(tablerows.sort(x => x[this.dataset.index]));
                         })
+                        console.log(index)
                     }
                 }
 

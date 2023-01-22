@@ -2986,6 +2986,13 @@ export const cardData = Object.freeze([
         tags : [dTag.TDOLL, dTag.BATTLE, dTag.LEVEL]
     },
     {
+        id : '00392',
+        questions : `Can I change which dolls get targeted by the enemy?`,
+        answers : `${link('By echelon positioning.', 'https://www.reddit.com/r/girlsfrontline/comments/g11mag/weekly_commanders_lounge_april_14_2020/fny91zz/')}<br>
+        ${spoilerSummary('In-depth study on positioning, targeting, and some peculiar requirements involving acquire dates.', Embed.google(Embed.G_WORD, '1LPqpSCNWiu1HJOnK1FOB1o30FSwTQRQvcK-tAjO4SSI'))}`,
+        tags : [dTag.BATTLE]
+    },
+    {
         id : '00000',
         questions : ``,
         answers : ``,
