@@ -1,5 +1,5 @@
 [
-    ["Doll Name",  "Max HP", "Attack", "Hashrate", "Phys Def", "Op Def", "Atk Spd", "Crit Rate", "Crit Dmg", "Phys Pen", "Op Pen", "Dodge", "Regen", "Haste", "Resist", "Backlash", "Dmg Boost", "Mitigation", "Heal Boost"],
+    ["Doll Name",  "Max HP", "Attack", "Hashrate", "Phys Def", "Op Def", "Atk Spd", "Crit Rate", "Crit Dmg", "Phys Pen", "Op Pen", "Dodge", "Regen", "Haste", "Resist", "Backlash", "Dmg Boost", "Dmg Reduce", "Heal Boost"],
     ["Persicaria", 12835,    459,      600,        291,        293,      110,       2.5,         50,         140,        140,      7,       406,     0,       0,        0,          0,           0,            0],
     ["Antonina",   17225,    549,      562,        355,        375,      100,       8,           50,         343,        347,      3,       546,     0,       0,        0,          0,           0,            0],
     ["Sol",        19331,    555,      586,        441,        447,      130,       5,           50,         410,        412,      5,       610,     0,       0,        0,          0,           0,            0],
@@ -9,5 +9,6 @@
     ["Chelsea",    19932,    573,      549,        478,        492,      140,       0,           50,         370,        336,      6,       637,     0,       0,        0,          0,           0,            0],
     ["Gin",        10693,    428,      595,        232,        235,      130,       5,           50,         143,        143,      0,       161,     0,       0,        0,          0,           0,            0],
     ["Mai",        17225,    478,      627,        365,        370,      100,       5,           50,         344,        346,      5,       546,     0,       0,        0,          0,           0,            0],
+    ["Chelsea",    19932,    573,      549,        478,        492,      140,       0,           50,         370,        336,      6,       637,     0,       0,        0,          0,           0,            0],
     ["Doll",       "Max HP", "Attack", "Hashrate", "Phys Def", "Op Def", "Atk Spd", "Crit Rate", 50,         "Phys Pen", "Op Pen", "Dodge", "Regen", 0,       0,        0,          0,           0,            0]
 ]

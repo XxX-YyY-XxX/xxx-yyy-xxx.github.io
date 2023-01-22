@@ -3,7 +3,7 @@
     <head>
         <script defer type="text/javascript" src="/univasset/scripts/include/includefile.js"></script>
         <script type="module">
-            import {AsyncFunc, zip, enumerate, initializeHTML} from '/univasset/scripts/externaljavascript.js';
+            import {AsyncFunc, zip, /* enumerate, */ initializeHTML} from '/univasset/scripts/externaljavascript.js';
 
             const jsonObject = await AsyncFunc.getJSON('https://raw.githubusercontent.com/randomqwerty/GFLData/main/en/stc/enemy_character_type.json');
             const elite = new Set(), nonelite = new Set(), tbody = document.createElement('tbody');
@@ -11,7 +11,7 @@
             for (const {passive_skill, code} of jsonObject)
                 (String(passive_skill).includes('200304') ? nonelite : elite).add(code)
 
-            for (const [index, [unitE, unitNE]] of enumerate(zip(true, elite, nonelite))) {
+            for (const [index, [unitE, unitNE]] of Object.entries(zip(true, elite, nonelite))) {
                 const trElem = document.createElement('tr');
 
                 const tdElems = [

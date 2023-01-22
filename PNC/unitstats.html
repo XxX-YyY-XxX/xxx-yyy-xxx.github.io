@@ -6,7 +6,9 @@
             import { AsyncFunc, initializeHTML } from "/univasset/scripts/externaljavascript.js";
             const json = (await AsyncFunc.getJSON('./unitstats.json')).slice(0, -1);
 
-            table(document.querySelector('#main_content div'), json)
+            const table = new Table(document.querySelector('#main_content div'), json)
+
+            //table(document.querySelector('#main_content div'), json)
             
             /* function sort() {
 
@@ -18,28 +20,89 @@
 
             /** @param {HTMLElement} grouperElem
              * @param {Array[]} tablerows */
-            function table(grouperElem, tablerows, {sort = false, filter = false} = {}) {
+            /* function table(grouperElem, tablerows, {sort = false, filter = false} = {}) {
                 const tableElem = document.createElement('table');
                 const theadElem = document.createElement('thead');
                 const tbodyElem = document.createElement('tbody');
                 //const sortSequence = [];
 
+                function printDataRows() {
+                    for (const rows of tablerows) {
+                        const trElem = document.createElement('tr');
+                        for (const items of rows)
+                            trElem.appendChild(initializeHTML('td', {textContent: items}))
+                        tbodyElem.appendChild(trElem);
+                    }
+                }
+
                 const headertr = document.createElement('tr');
-                for (const header of tablerows.shift())
-                    headertr.appendChild(initializeHTML('th', {textContent: header}));
+                for (const [index, header] of Object.entries(tablerows.shift())) {
+                    const thElem = initializeHTML('th', {textContent: header, value: index});
+                    thElem.addEventListener('click', function() {
+                        tablerows.sort(x => x[thElem.value])
+                        printDataRows();
+                    });
+                    headertr.appendChild(thElem);
+                    //headertr.appendChild(initializeHTML('th', {textContent: header}));
+                }
                 theadElem.appendChild(headertr);
 
-                for (const rows of tablerows) {
-                    const trElem = document.createElement('tr');
-                    for (const items of rows)
-                        trElem.appendChild(initializeHTML('td', {textContent: items}))
-                    tbodyElem.appendChild(trElem);
-                }
+                printDataRows();
 
                 for (const element of [theadElem, tbodyElem])
                     tableElem.appendChild(element);
-                
-                grouperElem.appendChild(tableElem)
+
+                grouperElem.style.overflowX = 'auto';
+                grouperElem.appendChild(tableElem);
+            } */
+
+            class Table {
+                constructor(grouperElem, tablerows, {sort = false, filter = false} = {}) {
+                    const tableElem = document.createElement('table');
+                    const theadElem = document.createElement('thead');
+                    const tbodyElem = document.createElement('tbody');
+                    //const sortSequence = [];
+
+                    function printDataRows() {
+                        for (const rows of tablerows) {
+                            const trElem = document.createElement('tr');
+                            for (const items of rows)
+                                trElem.appendChild(initializeHTML('td', {textContent: items}))
+                            tbodyElem.appendChild(trElem);
+                        }
+                    }
+
+                    const headertr = document.createElement('tr');
+                    for (const [index, header] of Object.entries(tablerows.shift()))
+                        headertr.appendChild(initializeHTML('th', {textContent: header}));
+                    theadElem.appendChild(headertr);
+
+                    printDataRows();
+
+                    for (const element of [theadElem, tbodyElem])
+                        tableElem.appendChild(element);
+
+                    if (sort) {
+                        for (const [index, headerCell] of Object.entries(headertr.children)) {
+                            headerCell.value = index;
+                            headerCell.addEventListener('click', function() {
+                                tablerows.sort(x => x[this.value])
+                                printDataRows();
+                            })
+                        }
+                    }
+
+                    grouperElem.style.overflowX = 'auto';
+                    grouperElem.appendChild(tableElem);
+                }
+
+                sort() {
+
+                }
+
+                filter() {
+
+                }
             }
         </script>
 
@@ -64,11 +127,6 @@
     </head>
 
     <style>
-        table {
-            table-layout: fixed;
-            max-width: 100%;
-            overflow: scroll;
-        }
     </style>
 
     <body>
