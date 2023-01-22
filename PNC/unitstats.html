@@ -76,7 +76,8 @@
                 const tbodyElem = document.createElement('tbody');
                 //const sortSequence = [];
 
-                function printDataRows() {
+                function printDataRows(tablerows) {
+                    tbodyElem.textContent = '';
                     for (const rows of tablerows) {
                         const trElem = document.createElement('tr');
                         for (const items of rows)
@@ -90,7 +91,7 @@
                     headertr.appendChild(initializeHTML('th', {textContent: header}));
                 theadElem.appendChild(headertr);
 
-                printDataRows();
+                printDataRows(tablerows);
 
                 for (const element of [theadElem, tbodyElem])
                     tableElem.appendChild(element);
@@ -99,8 +100,7 @@
                     for (const [index, headerCell] of Object.entries(headertr.children)) {
                         headerCell.value = index;
                         headerCell.addEventListener('click', function() {
-                            tablerows.sort(x => x[this.value])
-                            printDataRows();
+                            printDataRows(tablerows.sort(x => x[this.value]));
                         })
                     }
                 }
@@ -141,6 +141,7 @@
                 <div></div>
                 <br>
                 <p>All units at Lv.70 and 5★.</p>
+                <p>Data taken from <a href="https://nalu.wiki/neuralcloud/c/dolls">nalu.wiki Neural Cloud</a>.</p>
             </section>
         </div>
     </body>

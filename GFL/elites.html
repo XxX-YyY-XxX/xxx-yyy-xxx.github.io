@@ -11,8 +11,6 @@
             for (const {passive_skill, code} of jsonObject)
                 (String(passive_skill).includes('200304') ? nonelite : elite).add(code)
 
-            console.log(Object.entries(Array.from(zip(true, elite, nonelite))));
-
             for (const [index, [unitE, unitNE]] of Object.entries(Array.from(zip(true, elite, nonelite)))) {
                 const trElem = document.createElement('tr');
 
