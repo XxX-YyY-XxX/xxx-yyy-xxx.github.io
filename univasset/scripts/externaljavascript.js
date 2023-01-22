@@ -156,19 +156,14 @@ export function gdocDropdown(grouperElem, ...nameLinkPair) {
 
     selectElem.addEventListener('change', function() {
         iframeElem.src = this.selectedOptions[0].value + '/preview?pli=1';
-    })
+    });
 
     buttonElem.addEventListener('click', function() {
         window.open(selectElem.selectedOptions[0].value);
-    })
+    });
 
-    for (const [name, link] of nameLinkPair)
-        selectElem.appendChild(initializeHTML('option', {textContent: name, value: link}));
-
+    for (const [name, link] of nameLinkPair) selectElem.appendChild(initializeHTML('option', {textContent: name, value: link}));
     iframeElem.src = selectElem.firstElementChild.value + '/preview?pli=1';
-
-    //for (const elements of [selectElem, buttonElem, document.createElement('br'), iframeElem])
-    //    grouperElem.appendChild(elements);
 
     grouperElem.append(selectElem, buttonElem, document.createElement('br'), iframeElem);
 }
@@ -189,12 +184,10 @@ export function initializeHTML(createElement, attributes, styles) {
     }
 
     if (attributes)
-        for (const [attrib, value] of Object.entries(attributes))
-        innerElem[attrib] = value;
+        for (const [attrib, value] of Object.entries(attributes)) innerElem[attrib] = value;
 
     if (styles)
-        for (const [attrib, value] of Object.entries(styles))
-        innerElem.style[attrib] = value;
+        for (const [attrib, value] of Object.entries(styles)) innerElem.style[attrib] = value;
 
     return outerElem ?? innerElem;
 }
