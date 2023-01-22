@@ -255,6 +255,13 @@ class ToggleCheck {
         return bool;
     }
 }
+
+function compare(a, b) {
+    return {
+        string(a, b) {return a.localeCompare(b)},
+        number(a, b) {return a - b}
+    }[typeof a](a, b);    
+}
 //#endregion
 
 /*const oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');

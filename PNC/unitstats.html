@@ -6,68 +6,8 @@
             import { AsyncFunc, Compare, initializeHTML } from "/univasset/scripts/externaljavascript.js";
             const json = (await AsyncFunc.getJSON('./unitstats.json')).slice(0, -1);
 
-            /* class Table {
-                constructor(grouperElem, tablerows, {sort = false, filter = false} = {}) {
-                    const tableElem = document.createElement('table');
-                    const theadElem = document.createElement('thead');
-                    const tbodyElem = document.createElement('tbody');
-                    //const sortSequence = [];
-
-                    function printDataRows() {
-                        for (const rows of tablerows) {
-                            const trElem = document.createElement('tr');
-                            for (const items of rows)
-                                trElem.appendChild(initializeHTML('td', {textContent: items}))
-                            tbodyElem.appendChild(trElem);
-                        }
-                    }
-
-                    const headertr = document.createElement('tr');
-                    for (const [index, header] of Object.entries(tablerows.shift()))
-                        headertr.appendChild(initializeHTML('th', {textContent: header}));
-                    theadElem.appendChild(headertr);
-
-                    printDataRows();
-
-                    for (const element of [theadElem, tbodyElem])
-                        tableElem.appendChild(element);
-
-                    if (sort) {
-                        for (const [index, headerCell] of Object.entries(headertr.children)) {
-                            headerCell.value = index;
-                            headerCell.addEventListener('click', function() {
-                                tablerows.sort(x => x[this.value])
-                                printDataRows();
-                            })
-                        }
-                    }
-
-                    grouperElem.style.overflowX = 'auto';
-                    grouperElem.appendChild(tableElem);
-                }
-
-                sort() {
-
-                }
-
-                filter() {
-
-                }
-            } */
-
-
-            //const table = new Table(document.querySelector('#main_content div'), json)
-
             table(document.querySelector('#main_content div'), json, {sort: true})
             
-            /* function sort() {
-
-            }
-
-            function loaddata(key = null) {
-
-            } */
-
             /** @param {HTMLElement} grouperElem
              * @param {Array[]} tablerows */
             function table(grouperElem, tablerows, {sort = false, filter = false} = {}) {
@@ -76,9 +16,12 @@
                 const tbodyElem = document.createElement('tbody');
                 //const sortSequence = [];
 
-                function printDataRows(tablerows) {
+                for (const element of [theadElem, tbodyElem])
+                    tableElem.appendChild(element);
+
+                function printDataRows(nestedArray) {
                     tbodyElem.textContent = '';
-                    for (const rows of tablerows) {
+                    for (const rows of nestedArray) {
                         const trElem = document.createElement('tr');
                         for (const items of rows)
                             trElem.appendChild(initializeHTML('td', {textContent: items}))
@@ -93,26 +36,64 @@
 
                 printDataRows(tablerows);
 
-                for (const element of [theadElem, tbodyElem])
-                    tableElem.appendChild(element);
-
-                console.log(headertr.children)
-                console.log(Object.entries(headertr.children))
-
                 if (sort) {
+                    //three way sort
+                    //multi sort
+                    alert('Check console.');
+                    const samplerow = tablerows[0];
+                    for (const [index, headerCell] of Object.entries(headertr.children)) {
+                        headerCell.dataset.index = index;
+                        const item = samplerow[index];
+                        console.log(item, typeof item)
+
+                        //change to generalized
+                        switch (typeof item) {
+                            case 'string':
+                                headerCell.addEventListener('click', function() {
+                                    const index = this.dataset.index;
+                                    printDataRows(tablerows.sort((a, b) => Compare.string(a[index], b[index])));
+                                });
+                                break;
+                            case 'number':
+                                headerCell.addEventListener('click', function() {
+                                    const index = this.dataset.index;
+                                    printDataRows(tablerows.sort((a, b) => Compare.number(b[index], a[index])));
+                                });
+                                break;
+                            default:
+                                console.log(item, typeof item, 'Defaulted')
+                                break;
+                        }
+                        /* if (index == 0) {
+                            headerCell.addEventListener('click', function() {
+                                const index = this.dataset.index;
+                                printDataRows(tablerows.sort((a, b) => Compare.string(a[index], b[index])));
+                            })
+                        } else {
+                            headerCell.addEventListener('click', function() {
+                                const index = this.dataset.index;
+                                printDataRows(tablerows.sort((a, b) => Compare.number(b[index], a[index])));
+                            })
+                        } */
+                    }
+                }
+
+                if (filter) {
+                    //unfilter
+                    //multifilter
                     for (const [index, headerCell] of Object.entries(headertr.children)) {
                         headerCell.dataset.index = index;
                         headerCell.addEventListener('click', function() {
                             const index = this.dataset.index;
-                            if (index == 0)
-                                printDataRows(tablerows.sort((a, b) => Compare.string(a[index], b[index])));
-                            else
-                                printDataRows(tablerows.sort((a, b) => Compare.number(a[index], b[index])));
-                        })
-                        console.log(index)
+                            printDataRows(tablerows.filter(x => x[index]));
+                        });
                     }
                 }
 
+                //freeze first column
+                //freeze top row
+
+                grouperElem.style.borderStyle = 'inset';
                 grouperElem.style.overflowX = 'auto';
                 grouperElem.appendChild(tableElem);
             }
