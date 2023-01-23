@@ -13,25 +13,27 @@
             /** @param {HTMLElement} grouperElem
              * @param {Array[]} tableMatrix */
             function table(grouperElem, tableMatrix, {sort = false, filter = false, frzcol = false, frzhdr = false, fragment = false} = {}) {
+                /** @type {HTMLTableElement} */
                 const tableElem = initializeHTML('table', null, {margin: 0});
                 const theadElem = document.createElement('thead');
                 const tbodyElem = document.createElement('tbody');
 
                 tableElem.append(theadElem, tbodyElem)
 
+                const headertr = document.createElement('tr');
+                for (const header of tableMatrix.shift()) headertr.appendChild(initializeHTML('th', {textContent: header}));
+                theadElem.appendChild(headertr);
+
                 /** @param {Array[]} nestedArray */
                 function printDataRows(nestedArray) {
                     tbodyElem.textContent = '';
                     for (const rows of nestedArray) {
                         const trElem = document.createElement('tr');
-                        for (const items of rows) trElem.appendChild(initializeHTML('td', {textContent: items}))
+                        trElem.appendChild(initializeHTML('th', {textContent: rows[0]}));
+                        for (const items of rows.slice(1, -1)) trElem.appendChild(initializeHTML('td', {textContent: items}));
                         tbodyElem.appendChild(trElem);
                     }
                 }
-
-                const headertr = document.createElement('tr');
-                for (const header of tableMatrix.shift()) headertr.appendChild(initializeHTML('th', {textContent: header}));
-                theadElem.appendChild(headertr);
 
                 printDataRows(tableMatrix);
 
@@ -45,31 +47,59 @@
                         //three way sort
                         //multi sort
                         const samplerow = tableMatrix[0];
+                        headertr.dataset.onsort = 0;
                         for (const [index, headerCell] of Object.entries(headertr.children)) {
                             headerCell.dataset.index = index;
                             headerCell.dataset.sort = 'no';
-
-                            //headertr.children.item()
+                            //headerCell.appendChild(initializeHTML('span', null, {position: 'absolute', 'margin-inline': '5px'}));
                             
                             switch (typeof samplerow[index]) {
                                 case 'string':
+                                    const string_sort = {
+                                            no(index) {
+                                                headertr.children.item(Number(headertr.dataset.onsort)).dataset.sort = 'no';
+                                                headertr.dataset.onsort = index;
+
+                                                headerCell.dataset.sort = 'hi';
+                                                return tableMatrix.sort((a, b) => Compare.string(a[index], b[index]));
+                                            },
+                                            hi(index) {
+                                                headerCell.dataset.sort = 'lo';
+                                                return tableMatrix.sort((a, b) => Compare.string(b[index], a[index]));
+                                            },
+                                            lo() {
+                                                headerCell.dataset.sort = 'no';
+                                                return tableMatrix;
+                                            }                                           
+                                        };
                                     headerCell.addEventListener('click', function() {
-                                        const index = this.dataset.index;
-                                        /* switch (headerCell.dataset.sort) {
-                                            case 'no':
-                                                break;
-                                            case 'hi':
-                                                break;
-                                            case 'lo':
-                                                break;
-                                        } */
-                                        printDataRows(tableMatrix.sort((a, b) => Compare.string(a[index], b[index])));
+                                        //const index = this.dataset.index;
+                                        //printDataRows(tableMatrix.sort((a, b) => Compare.string(a[index], b[index])));
+                                        printDataRows(string_sort[this.dataset.sort](this.dataset.index));
                                     });
                                     break;
                                 case 'number':
+                                    const number_sort = {
+                                            no(index) {
+                                                headertr.children.item(Number(headertr.dataset.onsort)).dataset.sort = 'no';
+                                                headertr.dataset.onsort = index;
+
+                                                headerCell.dataset.sort = 'hi';
+                                                return tableMatrix.sort((a, b) => Compare.number(b[index], a[index]));
+                                            },
+                                            hi(index) {
+                                                headerCell.dataset.sort = 'lo';
+                                                return tableMatrix.sort((a, b) => Compare.number(a[index], b[index]));
+                                            },
+                                            lo() {
+                                                headerCell.dataset.sort = 'no';
+                                                return tableMatrix;
+                                            }                                           
+                                        };
                                     headerCell.addEventListener('click', function() {
-                                        const index = this.dataset.index;
-                                        printDataRows(tableMatrix.sort((a, b) => Compare.number(b[index], a[index])));
+                                        //const index = this.dataset.index;
+                                        //printDataRows(tableMatrix.sort((a, b) => Compare.number(b[index], a[index])));
+                                        printDataRows(number_sort[this.dataset.sort](this.dataset.index));
                                     });
                                     break;
                                 default:

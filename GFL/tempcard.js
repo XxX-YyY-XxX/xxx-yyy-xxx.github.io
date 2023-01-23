@@ -2280,12 +2280,6 @@ export const cardData = Object.freeze([
         tags : [dTag.DORM]
     },
     {
-        id : '00281',
-        questions : `How do I get Black Cards?`,
-        answers : `Just give the duplicate costume. Nice and simple.`,
-        tags : [dTag.RESUPPLY, dTag.ITEM, dTag.GET]
-    },
-    {
         id : '00282',
         questions : `I bought the L2D background but I saw nothing move. Is this really L2D?`,
         answers : `If you won't move then it wouldn't. Yes, panoramic${new TextStyle('sorta L2D', TextStyle.SUPER)}.`,
@@ -2975,9 +2969,9 @@ export const cardData = Object.freeze([
     },
     {
         id : '00390',
-        questions : `What happens to the Resupply Exchange Tickets after the banner ends?`,
+        questions : `What happens to the Resupply Exchange Tickets after the banner ends? How do I get Black Cards?`,
         answers : `${image('./assets/images/ResupplyMechanics.png')}`,
-        tags : [dTag.RESUPPLY, dTag.ITEM]
+        tags : [dTag.RESUPPLY, dTag.ITEM, dTag.GET]
     },
     {
         id : '00391',
@@ -3000,4 +2994,6 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00237'];
+export const newCards = ['00237', '00390'];
+
+//00281
