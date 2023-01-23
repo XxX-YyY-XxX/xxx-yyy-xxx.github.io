@@ -73,26 +73,26 @@ export class Cycle {
         this.#length = this.#items.length;
     } 
 
-    get value() {
-        return this.#items[this.#index];
-    }
-
     next() {
+        const item = this.#items[this.#index];
         this.#index += 1;
-        if (this.#index == this.#length) {
+        if (this.#index == this.#length)
             this.#index = 0;
-        }
+        return item;
     }
 
     prev() {
+        const item = this.#items[this.#index];
         this.#index -= 1;
-        if (this.#index == -1) {
+        if (this.#index == -1)
             this.#index = this.#length - 1;
-        }
+        return item;
     }
 
     reset() {
+        const item = this.#items[this.#index];
         this.#index = 0;
+        return item;
     }
 }
 //#endregion
