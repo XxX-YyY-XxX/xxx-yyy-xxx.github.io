@@ -79,12 +79,20 @@ export class Cycle {
 
     next() {
         this.#index += 1;
-        if (this.#index == this.#length): this.#index = 0;
+        if (this.#index == this.#length) {
+            this.#index = 0;
+        }
     }
 
     prev() {
         this.#index -= 1;
-        if (this.#index == -1: this.#index) = this.#length - 1;
+        if (this.#index == -1) {
+            this.#index = this.#length - 1;
+        }
+    }
+
+    reset() {
+        this.#index = 0;
     }
 }
 //#endregion
