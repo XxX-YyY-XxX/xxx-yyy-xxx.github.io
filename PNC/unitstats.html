@@ -3,7 +3,7 @@
     <head>
         <script defer type="text/javascript" src="/univasset/scripts/include/includefile.js"></script>
         <script type="module">
-            import { AsyncFunc, Compare, initializeHTML } from "/univasset/scripts/externaljavascript.js";
+            import { AsyncFunc, Compare, Cycle, initializeHTML } from "/univasset/scripts/externaljavascript.js";
 
             table(document.querySelector('#main_content div'),
                 (await AsyncFunc.getJSON('./unitstats.json')).slice(0, -1),
@@ -47,59 +47,64 @@
                         //three way sort
                         //multi sort
                         const samplerow = tableMatrix[0];
+                        const origmatrix = tableMatrix;
                         headertr.dataset.onsort = 0;
+                        const string_sort = {
+                            no(cell) {
+                                const index = cell.dataset.index;
+
+                                headertr.children.item(Number(headertr.dataset.onsort)).dataset.sort = 'no';
+                                headertr.dataset.onsort = index;
+
+                                cell.dataset.sort = 'hi';
+                                return tableMatrix.sort((a, b) => Compare.string(a[index], b[index]));
+                            },
+                            hi(cell) {
+                                cell.dataset.sort = 'lo';
+                                const index = cell.dataset.index;
+                                return tableMatrix.sort((a, b) => Compare.string(b[index], a[index]));
+                            },
+                            lo(cell) {
+                                cell.dataset.sort = 'no';
+                                return origmatrix;
+                            }                                           
+                        };
+                        const number_sort = {
+                            no(cell) {
+                                const index = cell.dataset.index;
+
+                                headertr.children.item(Number(headertr.dataset.onsort)).dataset.sort = 'no';
+                                headertr.dataset.onsort = index;
+
+                                cell.dataset.sort = 'hi';
+                                return tableMatrix.sort((a, b) => Compare.number(b[index], a[index]));
+                            },
+                            hi(cell) {
+                                cell.dataset.sort = 'lo';
+                                const index = cell.dataset.index;
+                                return tableMatrix.sort((a, b) => Compare.number(a[index], b[index]));
+                            },
+                            lo(cell) {
+                                cell.dataset.sort = 'no';
+                                return origmatrix;
+                            }                                           
+                        };
+
                         for (const [index, headerCell] of Object.entries(headertr.children)) {
                             headerCell.dataset.index = index;
                             headerCell.dataset.sort = 'no';
+                            //const cycle = new Cycle('no', 'hi', 'lo');
                             //headerCell.appendChild(initializeHTML('span', null, {position: 'absolute', 'margin-inline': '5px'}));
                             
                             switch (typeof samplerow[index]) {
                                 case 'string':
-                                    const string_sort = {
-                                            no(index) {
-                                                headertr.children.item(Number(headertr.dataset.onsort)).dataset.sort = 'no';
-                                                headertr.dataset.onsort = index;
-
-                                                headerCell.dataset.sort = 'hi';
-                                                return tableMatrix.sort((a, b) => Compare.string(a[index], b[index]));
-                                            },
-                                            hi(index) {
-                                                headerCell.dataset.sort = 'lo';
-                                                return tableMatrix.sort((a, b) => Compare.string(b[index], a[index]));
-                                            },
-                                            lo() {
-                                                headerCell.dataset.sort = 'no';
-                                                return tableMatrix;
-                                            }                                           
-                                        };
                                     headerCell.addEventListener('click', function() {
-                                        //const index = this.dataset.index;
-                                        //printDataRows(tableMatrix.sort((a, b) => Compare.string(a[index], b[index])));
-                                        printDataRows(string_sort[this.dataset.sort](this.dataset.index));
+                                        printDataRows(string_sort[this.dataset.sort](this));
                                     });
                                     break;
                                 case 'number':
-                                    const number_sort = {
-                                            no(index) {
-                                                headertr.children.item(Number(headertr.dataset.onsort)).dataset.sort = 'no';
-                                                headertr.dataset.onsort = index;
-
-                                                headerCell.dataset.sort = 'hi';
-                                                return tableMatrix.sort((a, b) => Compare.number(b[index], a[index]));
-                                            },
-                                            hi(index) {
-                                                headerCell.dataset.sort = 'lo';
-                                                return tableMatrix.sort((a, b) => Compare.number(a[index], b[index]));
-                                            },
-                                            lo() {
-                                                headerCell.dataset.sort = 'no';
-                                                return tableMatrix;
-                                            }                                           
-                                        };
                                     headerCell.addEventListener('click', function() {
-                                        //const index = this.dataset.index;
-                                        //printDataRows(tableMatrix.sort((a, b) => Compare.number(b[index], a[index])));
-                                        printDataRows(number_sort[this.dataset.sort](this.dataset.index));
+                                        printDataRows(number_sort[this.dataset.sort](this));
                                     });
                                     break;
                                 default:

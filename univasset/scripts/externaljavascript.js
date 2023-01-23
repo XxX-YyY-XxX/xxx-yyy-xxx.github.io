@@ -61,6 +61,32 @@ export class AsyncFunc {
         return fetch(jsonFile).then(response => response.json());
     }
 }
+
+export class Cycle {
+    #items;
+    #index;
+    #length;
+
+    constructor(...items) {
+        this.#items = items;
+        this.#index = 0;
+        this.#length = this.#items.length;
+    } 
+
+    get value() {
+        return this.#items[this.#index];
+    }
+
+    next() {
+        this.#index += 1;
+        if (this.#index == this.#length): this.#index = 0;
+    }
+
+    prev() {
+        this.#index -= 1;
+        if (this.#index == -1: this.#index) = this.#length - 1;
+    }
+}
 //#endregion
 
 //#region Functions
