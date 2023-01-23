@@ -186,6 +186,10 @@
             overflow: auto;
         }
 
+        .func_table, .func_table * {
+            background-color: inherit;
+        }
+
         .func_table > table {
             margin: 0;
         }
@@ -193,11 +197,11 @@
 
         /* #region Sort */
         .func_table th[data-sort="no"] {
-            background-image: black;
+            background-color: inherit;
         }
 
         .func_table th[data-sort="hi"] {
-            background-image: linear-gradient(black, gray);
+            background-image: linear-gradient(black gray);
         }
 
         .func_table th[data-sort="lo"] {
