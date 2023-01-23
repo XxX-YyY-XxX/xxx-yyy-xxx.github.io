@@ -3,7 +3,8 @@
     <head>
         <script defer type="text/javascript" src="/univasset/scripts/include/includefile.js"></script>
         <script type="module">
-            import { AsyncFunc, Compare, initializeHTML } from "/univasset/scripts/externaljavascript.js";
+            import {AsyncFunc, Compare} from "/univasset/scripts/externaljavascript.js";
+            import {initializeHTML} from '/univasset/scripts/htmlgenerator/htmlgenerator.js';
 
             table(document.querySelector('#main_content div'),
                 (await AsyncFunc.getJSON('./unitstats.json')).slice(0, -1),
@@ -14,8 +15,7 @@
              * @param {Array[]} tableMatrix
              * @param fragment If Array items are Document Fragments. */
             function table(grouperElem, tableMatrix, {sort = false, filter = false, frzcol = false, frzhdr = false, fragment = false} = {}) {
-                /** @type {HTMLTableElement} */
-                const tableElem = initializeHTML('table', null, {margin: 0});
+                const tableElem = document.createElement('table');
                 const theadElem = document.createElement('thead');
                 const tbodyElem = document.createElement('tbody');
 
@@ -170,8 +170,7 @@
 
                 //------------------------------------------------------------------------------------------------------------
 
-                grouperElem.style.borderStyle = 'inset';
-                grouperElem.style.overflowX = 'auto';
+                grouperElem.classList.add('func_table');
                 grouperElem.appendChild(tableElem);
             }
         </script>
@@ -195,6 +194,17 @@
 
         <title>PNC Units Stats | Random Scraps</title>
     </head>
+
+    <style>
+        .func_table {
+            border-style: inset;
+            overflow: auto;
+        }
+
+        .func_table table {
+            margin: 0;
+        }
+    </style>
 
     <body>
         <include src="/univasset/scripts/pageheader/header.html">"Unit stat table"</include>

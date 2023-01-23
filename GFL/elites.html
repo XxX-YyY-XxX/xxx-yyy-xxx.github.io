@@ -4,7 +4,7 @@
         <script defer type="text/javascript" src="/univasset/scripts/include/includefile.js"></script>
         <script type="module">
             import {AsyncFunc, zip} from '/univasset/scripts/externaljavascript.js';
-            import {initializeHTML} from '/univasset/scripts/htmlgenerator.js';
+            import {initializeHTML} from '/univasset/scripts/htmlgenerator/htmlgenerator.js';
 
             const jsonObject = await AsyncFunc.getJSON('https://raw.githubusercontent.com/randomqwerty/GFLData/main/en/stc/enemy_character_type.json');
             const elite = new Set(), nonelite = new Set(), tbody = document.createElement('tbody');

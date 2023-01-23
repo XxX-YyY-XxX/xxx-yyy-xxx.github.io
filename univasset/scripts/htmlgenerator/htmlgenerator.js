@@ -2,7 +2,7 @@
  * @param {string} createElement If nested, inner element will be modified and outer element will be returned.
  * @param {{string: string}} attributes
  * @param {{string: string}} styles */
-export function initializeHTML(createElement, attributes, styles) {
+export function initializeHTML(createElement, attributes) {
     var outerElem, innerElem;
     if (createElement.includes(' ')) {
         const [outer, inner] = createElement.split(' ');
@@ -14,11 +14,7 @@ export function initializeHTML(createElement, attributes, styles) {
         innerElem = document.createElement(createElement);
     }
 
-    if (attributes)
-        for (const [attrib, value] of Object.entries(attributes)) innerElem[attrib] = value;
-
-    if (styles)
-        for (const [attrib, value] of Object.entries(styles)) innerElem.style[attrib] = value;
+    for (const [attrib, value] of Object.entries(attributes)) innerElem[attrib] = value;
 
     return outerElem ?? innerElem;
 }
@@ -28,8 +24,8 @@ export function initializeHTML(createElement, attributes, styles) {
  * @param {[str, str][]} nameLinkPair [Name of Google Sheet, Link of Google Sheet ending in alphanumeric] */
 export function gdocDropdown(grouperElem, ...nameLinkPair) {
     const selectElem = document.createElement('select');
-    const buttonElem = initializeHTML('button', {textContent: 'Source', type: 'button'}, {float: 'right'});
-    const iframeElem = initializeHTML('iframe', null, {aspectRatio: '1/1', width: '100%', border: '0'})
+    const buttonElem = initializeHTML('button', {textContent: 'Source', type: 'button'});
+    const iframeElem = document.createElement('iframe');
 
     selectElem.addEventListener('change', function() {
         iframeElem.src = this.selectedOptions[0].value + '/preview?pli=1';
@@ -42,6 +38,6 @@ export function gdocDropdown(grouperElem, ...nameLinkPair) {
     for (const [name, link] of nameLinkPair) selectElem.appendChild(initializeHTML('option', {textContent: name, value: link}));
     iframeElem.src = selectElem.firstElementChild.value + '/preview?pli=1';
 
-    grouperElem.style.borderStyle = 'inset';
+    grouperElem.classList.add('func_googleDoc');
     grouperElem.append(selectElem, buttonElem, document.createElement('br'), iframeElem);
 }

@@ -1,0 +1,15 @@
+/* #region Google Doc */
+.func_googleDoc {
+    border-style: inset;
+}
+
+.func_googleDoc button {
+    float: right;
+}
+
+.func_googleDoc iframe {
+    aspect-ratio: 1/1;
+    width: 100%;
+    border: 0;
+}
+/* #endregion */

@@ -4,7 +4,7 @@
         <script defer type="text/javascript" src="/univasset/scripts/include/includefile.js"></script>
         <script type="module">
             import {AsyncFunc} from "/univasset/scripts/externaljavascript.js";
-            import {initializeHTML} from '/univasset/scripts/htmlgenerator.js';
+            import {initializeHTML} from '/univasset/scripts/htmlgenerator/htmlgenerator.js';
             const list = document.createElement('dl');
 
             for (const {name, reference, fragments} of (await AsyncFunc.getJSON('./units.json')).slice(0, -1)) {
