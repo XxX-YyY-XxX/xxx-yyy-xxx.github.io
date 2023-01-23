@@ -30,8 +30,7 @@
                     tbodyElem.textContent = '';
                     for (const rows of nestedArray) {
                         const trElem = document.createElement('tr');
-                        trElem.appendChild(initializeHTML('th', {textContent: rows[0]}, {borderBottom: 0}));
-                        for (const items of rows.slice(1)) trElem.appendChild(initializeHTML('td', {textContent: items}));
+                        for (const items of rows) trElem.appendChild(initializeHTML('td', {textContent: items}));
                         tbodyElem.appendChild(trElem);
                     }
                 }
@@ -54,8 +53,10 @@
                                 const index = cell.dataset.index;
                                 cell.dataset.sort = 'hi';
 
-                                headertr.children.item(headertr.dataset.onsort).dataset.sort = 'no';
-                                headertr.dataset.onsort = index;
+                                if (index != headertr.dataset.onsort) {
+                                    headertr.children.item(headertr.dataset.onsort).dataset.sort = 'no';
+                                    headertr.dataset.onsort = index;
+                                }
 
                                 return tableMatrix.slice().sort((a, b) => Compare.string(a[index], b[index]));
                             },
@@ -76,8 +77,10 @@
                                 const index = cell.dataset.index;
                                 cell.dataset.sort = 'hi';
 
-                                headertr.children.item(headertr.dataset.onsort).dataset.sort = 'no';
-                                headertr.dataset.onsort = index;
+                                if (index != headertr.dataset.onsort) {
+                                    headertr.children.item(headertr.dataset.onsort).dataset.sort = 'no';
+                                    headertr.dataset.onsort = index;
+                                }
 
                                 return tableMatrix.slice().sort((a, b) => Compare.number(b[index], a[index]));
                             },
@@ -192,9 +195,6 @@
 
         <title>PNC Units Stats | Random Scraps</title>
     </head>
-
-    <style>
-    </style>
 
     <body>
         <include src="/univasset/scripts/pageheader/header.html">"Unit stat table"</include>

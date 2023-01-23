@@ -3,7 +3,8 @@
     <head>
         <script defer type="text/javascript" src="/univasset/scripts/include/includefile.js"></script>
         <script type="module">
-            import { AsyncFunc, initializeHTML } from "/univasset/scripts/externaljavascript.js";
+            import {AsyncFunc} from "/univasset/scripts/externaljavascript.js";
+            import {initializeHTML} from '/univasset/scripts/htmlgenerator.js';
             const list = document.createElement('dl');
 
             for (const {name, reference, fragments} of (await AsyncFunc.getJSON('./units.json')).slice(0, -1)) {
@@ -11,10 +12,6 @@
                 list.appendChild(initializeHTML('dt', {textContent: name}));
 
                 //reference
-                //for (const [referenceName, link] of Object.entries(reference))
-                //    if (referenceName)
-                //        list.appendChild(initializeHTML('dd a', {textContent: referenceName, href: link}));
-
                 for (const [referenceName, link] of Object.entries(reference).filter(x => x[0]))
                     list.appendChild(initializeHTML('dd a', {textContent: referenceName, href: link}));
 
