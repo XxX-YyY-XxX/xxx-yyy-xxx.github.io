@@ -44,7 +44,6 @@
                         alert('Sort and Filter are both activated.');
                         break;
                     case sort:
-                        //three way sort
                         //multi sort
                         const samplerow = tableMatrix[0];
                         headertr.dataset.onsort = 0;
@@ -143,29 +142,14 @@
 
                 //sort/filter problem
                 if (frzcol) {
-                    headertr.firstElementChild.style.position = 'sticky';
-                    //headertr.firstElementChild.style.background = '#1b1b1b';
-                    headertr.firstElementChild.style.background = headertr.firstElementChild.style.background-color;
-                    headertr.firstElementChild.style.left = 0;
-                    headertr.firstElementChild.style.zIndex = 2;
-
-                    for (const [index, trElem] of Object.entries(tbodyElem.children)) {
-                        trElem.firstElementChild.style.position = 'sticky';
-                        //trElem.firstElementChild.style.background = index % 2 ? '#1b1b1b' : '#292f20';  //Very CSS dependent
-                        trElem.firstElementChild.style.background = trElem.firstElementChild.style.background-color;
-                        trElem.firstElementChild.style.left = 0;
-                        trElem.firstElementChild.style.zIndex = 1;
-                    } 
+                    headertr.firstElementChild.classList.add('freeze_col');
+                    for (const trElem of Array.from(tbodyElem.children))
+                        trElem.firstElementChild.classList.add('freeze_col');
                 }
 
                 if (frzhdr) {
-                    for (const [index, thElem] of Object.entries(headertr.children)) {
-                        thElem.style.position = 'sticky';
-                        //thElem.firstElementChild.style.background = '#1b1b1b';  //Very CSS dependent
-                        thElem.style.background = thElem.style.background-color;
-                        thElem.style.top = 0;
-                        thElem.style.zIndex = index ? 1 : 2;
-                    }
+                    for (const thElem of Array.from(headertr.children))
+                        thElem.classList.add('freeze_row')
                 }
 
                 //------------------------------------------------------------------------------------------------------------
@@ -201,8 +185,37 @@
             overflow: auto;
         }
 
-        .func_table table {
+        .func_table > table {
             margin: 0;
+        }
+
+        .func_table .freeze_row {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        /* thElem.firstElementChild.style.background = '#1b1b1b';  //Very CSS dependent
+        thElem.style.background = thElem.style.background-color; */
+
+        .func_table .freeze_col {
+            position: sticky;
+            left: 0;
+            z-index: 1;
+        }
+
+        /* .func_table tr:nth-child(odd) td:first-child {
+            background-color: #1b1b1b;
+        } */
+
+        /* headertr.firstElementChild.style.background = '#1b1b1b';
+        headertr.firstElementChild.style.background = headertr.firstElementChild.style.background-color;
+
+        trElem.firstElementChild.style.background = index % 2 ? '#1b1b1b' : '#292f20';  //Very CSS dependent
+        trElem.firstElementChild.style.background = trElem.firstElementChild.style.background-color; */
+
+        .func_table th:first-child {
+            z-index: 2;
         }
     </style>
 

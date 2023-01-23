@@ -25,7 +25,7 @@ export function initializeHTML(createElement, attributes) {
 export function gdocDropdown(grouperElem, ...nameLinkPair) {
     const selectElem = document.createElement('select');
     const buttonElem = initializeHTML('button', {textContent: 'Source', type: 'button'});
-    const iframeElem = document.createElement('iframe');
+    const iframeElem = initializeHTML('iframe', {loading: 'lazy'});
 
     selectElem.addEventListener('change', function() {
         iframeElem.src = this.selectedOptions[0].value + '/preview?pli=1';

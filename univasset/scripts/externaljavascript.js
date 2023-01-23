@@ -109,12 +109,6 @@ export function randInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-/** @param {string} className @returns Null if no or multiple elements found. */
-export function uniqueClassElement(className) {
-    const output = Array.from(document.getElementsByClassName(className));
-    return output.length == 1 ? output[0] : null;
-}
-
 /** @param {HTMLIFrameElement} iframeElement*/
 export function reloadIFrame(iframeElement) {
     var temp = iframeElement.src;
@@ -188,20 +182,9 @@ export function* zip(extend, ...iterables) {
     const arrayOfArrays = iterables.map(arr => Array.from(arr))
     const maxlength = (extend ? Math.max : Math.min)(...arrayOfArrays.map(arr => arr.length))
 
-    for (let index = 0; index < maxlength; index++) {
-        var output = [];
-        for (const item of arrayOfArrays)
-            output.push(item[index])
-        yield output
-    }
+    for (let index = 0; index < maxlength; index++)
+        yield arrayOfArrays.map(arr => arr[index])
 }
-
-/** @param {Iterable} iterable @returns index, value */
-/* export function* enumerate(iterable) {
-    var index = 0;
-    for (const value of iterable)
-        yield [index++, value];
-} */
 //#endregion
 
 //#region Trial
@@ -220,21 +203,6 @@ function getIterator(iterable) {
 /** @param {String} string @param {String} substring */
 function stringToggle(string, substring) {
     return string.includes(substring) ? string.replace(substring, '') : string + substring;
-}
-
-//Needs to be per input
-class ToggleCheck {
-    #storedValue;
-
-    constructor(initialValue) {
-        this.#storedValue = initialValue;
-    }
-
-    isToggled(currentValue) {
-        var bool = this.#storedValue != currentValue;
-        this.#storedValue = currentValue;
-        return bool;
-    }
 }
 
 function compare(a, b) {
