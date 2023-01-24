@@ -225,3 +225,6 @@ oXHR.send(); */
 //sessionStorage.outputCards = typeof(Storage) !== null ? boxes : "Sorry, your browser does not support web storage...";
 //iframe.contentWindow.location.reload();
 //<button type="button" ></button>
+
+//<th rowspan="3" colspan="2">Algorithm Stats</th>
+//<td colspan="2" align="center">2 Slot</td>
