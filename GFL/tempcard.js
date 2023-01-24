@@ -2987,6 +2987,12 @@ export const cardData = Object.freeze([
         tags : [dTag.BATTLE]
     },
     {
+        id : '00281',
+        questions : `How are the limited bonus gems for the monrhly card applied?`,
+        answers : `Only within the time the event is ongoing, which is for a week. Note that it immediately becomes active as long as a monthly gem is active, old or new purchase.`,
+        tags : [dTag.MISC]
+    },
+    {
         id : '00000',
         questions : ``,
         answers : ``,
@@ -2995,5 +3001,3 @@ export const cardData = Object.freeze([
 ]);
 
 export const newCards = ['00237', '00390'];
-
-//00281

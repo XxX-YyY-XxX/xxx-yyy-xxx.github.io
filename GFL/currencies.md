@@ -2,10 +2,6 @@
 
 # Resource Management
 
-### How are the limited bonus gems for the monrhly card applied?
-
-> Only within the time the event is ongoing, which is for a week. Note that it immediately becomes active as long as a monthly gem is active, old or new purchase.
-
 ### Where can I use Calibration Tickets?
 
 > Equipment Calibration, Fairy Talent Calibration, HOC Chip Rotation, More Anticipation...
