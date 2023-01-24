@@ -8,7 +8,7 @@
 
             table(document.querySelector('#main_content div'),
                 (await AsyncFunc.getJSON('./unitstats.json')).slice(0, -1),
-                {sort: true}
+                {sort: true, frzcol: true}
             );
             
             /** @param {HTMLElement} grouperElem
@@ -222,11 +222,7 @@
         /* #endregion */
 
         /* #region Filter */
-        .func_table .filter_col {
-            display: none;
-        }
-
-        .func_table .filter_row {
+        .func_table .filter_col, .func_table .filter_row {
             display: none;
         }
         /* #endregion */
