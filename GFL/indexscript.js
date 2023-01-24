@@ -49,6 +49,7 @@ const fragment = new DocumentFragment();
 for (const {val, desc} of Object.values(dTag).sort((a, b) => Compare.string(a.val, b.val))) {
     const labelElem = document.createElement('label');
     labelElem.classList.add('tags', 'tooltip');
+    
     /** @type {HTMLInputElement} */
     const inputElem = initializeHTML('input', {type: 'checkbox', value: val});
     inputElem.addEventListener('click', function() {
@@ -58,20 +59,15 @@ for (const {val, desc} of Object.values(dTag).sort((a, b) => Compare.string(a.va
         if (searchTextField.value.slice(-1) === ' ')
             searchTextField.value = searchTextField.value.slice(0, -1);
     });
+    
     /** @type {HTMLSpanElement} */
     const spanElem = initializeHTML('span', {textContent: desc});
     spanElem.classList.add('tooltiptext');
+    
     labelElem.append(inputElem, val, spanElem);
     fragment.appendChild(labelElem);
 }
 toggleableTagsField.appendChild(fragment);
-
-/* toggleableTagsField.innerHTML = Object.values(dTag).sort((a, b) => Compare.string(a.val, b.val)).map(tag => 
-    `<label class="tags tooltip">
-        <input type="checkbox" onclick="toggleTag(this)" value="${tag.val}">${tag.val}
-        <span class="tooltiptext">${tag.desc}</span>
-    </label>`
-).join(' '); */
 
 document.getElementById('cards-field').innerHTML =
     (searchParams.has('search') || searchParams.has('tags') || searchParams.has('id')) ? searchCards() :
@@ -153,13 +149,6 @@ function setQuestionBoxes({questions, answers, tags}) {
 window.toggleInput = function(radioButton) {
     inputButtons.run(radioButton);
 }
-
-/** @param {HTMLInputElement} tagCheckbox */
-/* window.toggleTag = function(tagCheckbox) {
-    checkedLabel(tagCheckbox);                          //Will delete if CSS :has is ok
-    const tagName = tagCheckbox.value + ' ';
-    searchTextField.value = tagCheckbox.checked ? searchTextField.value + tagName : searchTextField.value.replace(tagName, '');
-} */
 
 /** @param {HTMLButtonElement} pageButton*/
 window.changePage = function(pageButton) {

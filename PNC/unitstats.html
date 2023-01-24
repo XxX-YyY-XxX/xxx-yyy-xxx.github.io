@@ -239,29 +239,24 @@
             z-index: 1;
         }
 
-        /* thElem.firstElementChild.style.background = '#1b1b1b';  //Very CSS dependent
-        thElem.style.background = thElem.style.background-color; */
-
         .func_table .freeze_col {
             position: sticky;
             left: 0;
             z-index: 1;
         }
 
-        /* .func_table tr:nth-child(odd) td:first-child {
-            background-color: #1b1b1b;
-        } */
-
-        /* headertr.firstElementChild.style.background = '#1b1b1b';
-        headertr.firstElementChild.style.background = headertr.firstElementChild.style.background-color;
-
-        trElem.firstElementChild.style.background = index % 2 ? '#1b1b1b' : '#292f20';  //Very CSS dependent
-        trElem.firstElementChild.style.background = trElem.firstElementChild.style.background-color; */
-
         .func_table th:first-child {
             z-index: 2;
         }
         /* #endregion */
+
+        .func_table .freeze_col {
+            background: #1b1b1b;
+        }
+
+        .func_table .freeze_col:nth-child(even) {
+            background: #282e1f;;
+        }
     </style>
 
     <body>

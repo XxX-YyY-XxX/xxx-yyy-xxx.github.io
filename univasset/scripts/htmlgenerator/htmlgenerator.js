@@ -1,8 +1,7 @@
 /** @param {(string | Node)[]} elements */
 function brJoin(elements) {
     const fragment = new DocumentFragment();
-    fragment.append(elements.shift());
-    for (const item of elements) fragment.append(document.createElement('br'), item);
+    fragment.append(...elements.flatMap(item => [item, document.createElement('br')]).slice(0, -1));    
     return fragment;
 }
 
