@@ -155,10 +155,12 @@
                         trElem.firstElementChild.classList.add('freeze_col');
 
                     if (sort) {
-                        headertr.firstElementChild.addEventListener('click', function() {
-                            for (const trElem of Array.from(tbodyElem.children))
-                                trElem.firstElementChild.classList.add('freeze_col');
-                        }, true);
+                        for (const thElem of Array.from(headertr.children)) {
+                            thElem.addEventListener('click', function() {
+                                for (const trElem of Array.from(tbodyElem.children))
+                                    trElem.firstElementChild.classList.add('freeze_col');
+                            }, true);
+                        }
                     }
                 }
 

@@ -54,7 +54,7 @@ for (const {val, desc} of Object.values(dTag).sort((a, b) => Compare.string(a.va
     inputElem.addEventListener('click', function() {
         checkedLabel(this);             //Will delete if CSS :has is ok
         searchTextField.value = this.checked ? searchTextField.value + ' ' + this.value : searchTextField.value.replace(this.value, '');
-        searchTextField.value = searchTextField.value.replace('  ', ' ');
+        searchTextField.value = searchTextField.value.replace('  ', ' ').slice(Number(searchTextField.value[0] === ' '));
         if (searchTextField.value.slice(-1) === ' ')
             searchTextField.value = searchTextField.value.slice(0, -1);
     });

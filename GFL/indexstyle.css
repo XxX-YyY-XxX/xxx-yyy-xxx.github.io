@@ -39,6 +39,7 @@ dd {
 label.tags {
     background: aqua;
     color: black;
+    margin: 0px 3px;
 }
 
 @supports Selector(label.tags:has(input:checked)) {
