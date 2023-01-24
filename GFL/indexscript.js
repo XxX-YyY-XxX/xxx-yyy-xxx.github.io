@@ -1,6 +1,7 @@
 import {Compare, RadioButton, removeHTMLTag, randInt, checkedLabel} from '/univasset/scripts/externaljavascript.js';
 import {cardData, dTag, newCards} from "./tempcard.js";
 import '/univasset/scripts/prototype.js';
+import {initializeHTML} from '/univasset/scripts/htmlgenerator/htmlgenerator.js';
 
 //#region Constants
 const toggleableTagsField = document.getElementById('tags-list');
@@ -43,19 +44,29 @@ const inputButtons = new RadioButton('input-type',
 //#endregion
 
 //#region Initialize
-//tooltip is only visible when tag is hovered over. 
-toggleableTagsField.innerHTML = Object.values(dTag).sort((a, b) => Compare.string(a.val, b.val)).map(tag => 
+//tooltip is only visible when tag is hovered over.
+const fragment = new DocumentFragment();
+for (const {val, desc} of Object.values(dTag).sort((a, b) => Compare.string(a.val, b.val))) {
+    const labelElem = initializeHTML('label', {class: 'tags tooltip'});
+    const inputElem = initializeHTML('input', {type: 'checkbox', onclick: 'toggleTag(this)', value: val});
+    const spanElem = initializeHTML('span', {class: 'tooltiptext', textContent: desc});
+    labelElem.append(inputElem, val, spanElem);
+    fragment.appendChild(labelElem);
+}
+toggleableTagsField.appendChild(fragment);
+
+/* toggleableTagsField.innerHTML = Object.values(dTag).sort((a, b) => Compare.string(a.val, b.val)).map(tag => 
     `<label class="tags tooltip">
         <input type="checkbox" onclick="toggleTag(this)" value="${tag.val}">${tag.val}
         <span class="tooltiptext">${tag.desc}</span>
     </label>`
-).join(' ');
+).join(' '); */
 
 document.getElementById('cards-field').innerHTML =
     (searchParams.has('search') || searchParams.has('tags') || searchParams.has('id')) ? searchCards() :
     (newCards.length >= 3) ? addedCards() : randomCards();
 
-document.getElementById('maxpage').innerText = maxPage;
+document.getElementById('maxpage').textContent = maxPage;
 //#endregion
 
 //#region Private Functions
