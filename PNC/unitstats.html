@@ -45,6 +45,7 @@
                         break;
                     case sort:
                         //multi sort
+                        //multiple option sort
                         const samplerow = tableMatrix[0];
                         headertr.dataset.onsort = 0;
                         const string_sort = {
@@ -127,14 +128,21 @@
                             headerCell.dataset.index = index;
                             if (index) {
                                 headerCell.addEventListener('click', function() {
-                                    const index = this.dataset.index;
-                                    printDataRows(tablerows.filter(x => x[index]));
+                                    //const index = this.dataset.index;
+                                    //printDataRows(tablerows.filter(x => x[index]));
                                 });
                             } else {
                                 headerCell.addEventListener('click', function() {
-                                    printDataRows(tablerows);
+                                    //printDataRows(tablerows);
                                 });
                             }
+                        }
+
+                        for (const [index, trElem] of Object.entries(tbodyElem.children)) {
+                            trElem.dataset.index = index;
+                            trElem.firstElementChild.addEventListener('click', function() {
+
+                            });
                         }
                         break;
                     //default: Simple af table.
@@ -197,15 +205,29 @@
 
         /* #region Sort */
         .func_table th[data-sort="no"] {
-            background-color: inherit;
+            background: inherit;
         }
 
         .func_table th[data-sort="hi"] {
-            background-image: linear-gradient(black, gray);
+            background: linear-gradient(135deg, black, transparent 50%),
+                linear-gradient(-135deg, black, transparent 50%),
+                linear-gradient(blue, gray 50%);
         }
 
         .func_table th[data-sort="lo"] {
-            background-image: linear-gradient(gray, black);
+            background: linear-gradient(45deg, black, transparent 50%),
+                linear-gradient(-45deg, black, transparent 50%),
+                linear-gradient(gray 50%, red);
+        }
+        /* #endregion */
+
+        /* #region Filter */
+        .func_table .filter_col {
+            display: none;
+        }
+
+        .func_table .filter_row {
+            display: none;
         }
         /* #endregion */
 
