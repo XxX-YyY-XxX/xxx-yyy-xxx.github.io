@@ -105,12 +105,12 @@
                                 case 'string':
                                     headerCell.addEventListener('click', function() {
                                         printDataRows(string_sort[this.dataset.sort](this));
-                                    });
+                                    }, true);
                                     break;
                                 case 'number':
                                     headerCell.addEventListener('click', function() {
                                         printDataRows(number_sort[this.dataset.sort](this));
-                                    });
+                                    }, true);
                                     break;
                                 default:
                                     const item = samplerow[index];
@@ -153,6 +153,13 @@
                     headertr.firstElementChild.classList.add('freeze_col');
                     for (const trElem of Array.from(tbodyElem.children))
                         trElem.firstElementChild.classList.add('freeze_col');
+
+                    if (sort) {
+                        headertr.firstElementChild.addEventListener('click', function() {
+                            for (const trElem of Array.from(tbodyElem.children))
+                                trElem.firstElementChild.classList.add('freeze_col');
+                        }, true);
+                    }
                 }
 
                 if (frzhdr) {
@@ -192,10 +199,6 @@
         .func_table {
             border-style: inset;
             overflow: auto;
-        }
-
-        .func_table, .func_table * {
-            background: inherit;
         }
 
         .func_table > table {

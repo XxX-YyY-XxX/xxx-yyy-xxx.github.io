@@ -1,7 +1,7 @@
 import {Compare, RadioButton, removeHTMLTag, randInt, checkedLabel} from '/univasset/scripts/externaljavascript.js';
+import {initializeHTML} from '/univasset/scripts/htmlgenerator/htmlgenerator.js';
 import {cardData, dTag, newCards} from "./tempcard.js";
 import '/univasset/scripts/prototype.js';
-import {initializeHTML} from '/univasset/scripts/htmlgenerator/htmlgenerator.js';
 
 //#region Constants
 const toggleableTagsField = document.getElementById('tags-list');
@@ -47,9 +47,20 @@ const inputButtons = new RadioButton('input-type',
 //tooltip is only visible when tag is hovered over.
 const fragment = new DocumentFragment();
 for (const {val, desc} of Object.values(dTag).sort((a, b) => Compare.string(a.val, b.val))) {
-    const labelElem = initializeHTML('label', {class: 'tags tooltip'});
-    const inputElem = initializeHTML('input', {type: 'checkbox', onclick: 'toggleTag(this)', value: val});
-    const spanElem = initializeHTML('span', {class: 'tooltiptext', textContent: desc});
+    const labelElem = document.createElement('label');
+    labelElem.classList.add('tags', 'tooltip');
+    /** @type {HTMLInputElement} */
+    const inputElem = initializeHTML('input', {type: 'checkbox', value: val});
+    inputElem.addEventListener('click', function() {
+        checkedLabel(this);             //Will delete if CSS :has is ok
+        searchTextField.value = this.checked ? searchTextField.value + ' ' + this.value : searchTextField.value.replace(this.value, '');
+        searchTextField.value = searchTextField.value.replace('  ', ' ');
+        if (searchTextField.value.slice(-1) === ' ')
+            searchTextField.value = searchTextField.value.slice(0, -1);
+    });
+    /** @type {HTMLSpanElement} */
+    const spanElem = initializeHTML('span', {textContent: desc});
+    spanElem.classList.add('tooltiptext');
     labelElem.append(inputElem, val, spanElem);
     fragment.appendChild(labelElem);
 }
@@ -144,11 +155,11 @@ window.toggleInput = function(radioButton) {
 }
 
 /** @param {HTMLInputElement} tagCheckbox */
-window.toggleTag = function(tagCheckbox) {
+/* window.toggleTag = function(tagCheckbox) {
     checkedLabel(tagCheckbox);                          //Will delete if CSS :has is ok
     const tagName = tagCheckbox.value + ' ';
     searchTextField.value = tagCheckbox.checked ? searchTextField.value + tagName : searchTextField.value.replace(tagName, '');
-}
+} */
 
 /** @param {HTMLButtonElement} pageButton*/
 window.changePage = function(pageButton) {

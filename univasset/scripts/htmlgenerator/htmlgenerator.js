@@ -8,7 +8,7 @@ function brJoin(elements) {
 
 /** Shortcut for createElement and HTML attributes.
  * @param {string} createElement If nested, inner element will be modified and outer element will be returned.
- * @param {{string: string}} attributes */
+ * @param {{HTMLAttribute: string}} attributes */
 export function initializeHTML(createElement, attributes) {
     var outerElem, innerElem;
     if (createElement.includes(' ')) {
