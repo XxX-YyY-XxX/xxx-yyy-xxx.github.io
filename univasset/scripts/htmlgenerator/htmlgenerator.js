@@ -1,7 +1,14 @@
-/** Shortcut for createElement, HTML attributes, and styles.
+/** @param {(string | Node)[]} elements */
+function brJoin(elements) {
+    const fragment = new DocumentFragment();
+    fragment.append(elements.shift());
+    for (const item of elements) fragment.append(document.createElement('br'), item);
+    return fragment;
+}
+
+/** Shortcut for createElement and HTML attributes.
  * @param {string} createElement If nested, inner element will be modified and outer element will be returned.
- * @param {{string: string}} attributes
- * @param {{string: string}} styles */
+ * @param {{string: string}} attributes */
 export function initializeHTML(createElement, attributes) {
     var outerElem, innerElem;
     if (createElement.includes(' ')) {
