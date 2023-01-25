@@ -7,7 +7,7 @@ function brJoin(elements) {
 
 /** Shortcut for createElement and HTML attributes.
  * @param {string} createElement If nested, inner element will be modified and outer element will be returned.
- * @param {{HTMLAttribute: string}} attributes */
+ * @param {{HTMLAttribute: string | Array}} attributes String for attribute assigment, Array for function calls. */
 export function initializeHTML(createElement, attributes) {
     var outerElem, innerElem;
     if (createElement.includes(' ')) {
@@ -20,7 +20,11 @@ export function initializeHTML(createElement, attributes) {
         innerElem = document.createElement(createElement);
     }
 
-    for (const [attrib, value] of Object.entries(attributes)) innerElem[attrib] = value;
+    for (const [attrib, value] of Object.entries(attributes ?? {}))
+        if (Array.isArray(value))
+            innerElem[attrib](...value)
+        else
+            innerElem[attrib] = value;        
 
     return outerElem ?? innerElem;
 }

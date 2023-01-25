@@ -95,6 +95,58 @@ export class Cycle {
         return item;
     }
 }
+
+export class Check {
+    static typeof(any) {
+        const item_type = typeof any;
+        switch (true) {
+            case item_type !== 'object':
+                return item_type;
+            case Array.isArray(any):
+                return 'array';
+            default:
+                return 'object';
+        }
+    }
+
+    /** @param {string} url */
+    static isImage(url) {
+        /* const img = new Image();
+        img.onerror = function() {globalVariable = false};
+        img.onload = function() {globalVariable = true};
+        img.onerror = () => {console.log(url, 'failed.')};
+        img.onload = () => {console.log(url, 'success.')};
+
+        try {
+            img.src = url;
+        } catch {
+            console.log(url, 'is epic lol.');
+        }
+        return globalVariable; */
+
+        /* return new Promise(function (resolve, reject) {
+            var timeout = 5000;
+            var timer, img = new Image();
+            img.onerror = img.onabort = function () {
+                clearTimeout(timer);
+                reject("error");
+            };
+            img.onload = function () {
+                clearTimeout(timer);
+                resolve("success");
+            };
+            timer = setTimeout(function () {
+                // reset .src to invalid URL so it stops previous
+                // loading, but doesn't trigger new load
+                img.src = "//!!!!/test.jpg";
+                reject("timeout");
+            }, timeout);
+            img.src = url;
+        }); */
+
+        return /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url);
+    }
+}
 //#endregion
 
 //#region Functions
@@ -132,44 +184,6 @@ export function checkedLabel(inputElement) {
     var oldClasses = inputElement.parentElement.className;
     inputElement.parentElement.classList.toggle('checked', inputElement.checked);
     return inputElement.parentElement.className != oldClasses;
-}
-
-/** @param {string} url */
-export function isImage(url) {
-    /* const img = new Image();
-    img.onerror = function() {globalVariable = false};
-    img.onload = function() {globalVariable = true};
-    img.onerror = () => {console.log(url, 'failed.')};
-    img.onload = () => {console.log(url, 'success.')};
-
-    try {
-        img.src = url;
-    } catch {
-        console.log(url, 'is epic lol.');
-    }
-    return globalVariable; */
-
-    /* return new Promise(function (resolve, reject) {
-        var timeout = 5000;
-        var timer, img = new Image();
-        img.onerror = img.onabort = function () {
-            clearTimeout(timer);
-            reject("error");
-        };
-        img.onload = function () {
-            clearTimeout(timer);
-            resolve("success");
-        };
-        timer = setTimeout(function () {
-            // reset .src to invalid URL so it stops previous
-            // loading, but doesn't trigger new load
-            img.src = "//!!!!/test.jpg";
-            reject("timeout");
-        }, timeout);
-        img.src = url;
-    }); */
-
-    return /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url);
 }
 //#endregion
 

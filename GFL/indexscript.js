@@ -70,7 +70,8 @@ for (const {val, desc} of Object.values(dTag).sort((a, b) => Compare.string(a.va
 toggleableTagsField.appendChild(fragment);
 
 document.getElementById('cards-field').innerHTML =
-    (searchParams.has('search') || searchParams.has('tags') || searchParams.has('id')) ? searchCards() :
+    (searchParams.has('search') || searchParams.has('tags')) ? searchCards() :
+    searchParams.has('id') ? idCards() :
     (newCards.length >= 3) ? addedCards() : randomCards();
 
 document.getElementById('maxpage').textContent = maxPage;
@@ -96,9 +97,6 @@ function searchCards() {
         } else {
             return 'Empty search.';
         }
-    } else if (searchParams.has('id')) {
-        const cardTags = searchParams.get('id').split(' ');
-        matchCheck = ({id}) => cardTags.includes(id);
     } //else none
 
     for (const cards of cardData) {
@@ -109,12 +107,21 @@ function searchCards() {
     return output || 'No matches found.';
 }
 
+function idCards() {
+    const id_list = searchParams.get('id').split(' ');
+    var output = '';
+
+    for (const cards of cardData.filter(({id}) => id_list.includes(id)))
+        output += setQuestionBoxes(cards);
+
+    return output || 'No matches found.';
+}
+
 function addedCards() {
     var output = '';
 
-    for (const cards of cardData)
-        if (newCards.includes(cards.id))
-            output += setQuestionBoxes(cards);
+    for (const cards of cardData.filter(({id}) => newCards.includes(id)))
+        output += setQuestionBoxes(cards);
 
     return output;
 }

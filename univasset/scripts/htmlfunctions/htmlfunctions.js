@@ -1,4 +1,4 @@
-import {isImage} from '/univasset/scripts/externaljavascript.js';
+import {Check} from '/univasset/scripts/externaljavascript.js';
 
 function img(link) {
     return `<img src="${link}" alt="Image loading failed." loading="lazy">`;
@@ -15,7 +15,7 @@ export function image(link, caption = "") {
 /** @param {string} linkText Text or image URL. @param {string} link */
 export function link(linkText, link) {
     return `<a href="${link}">
-        ${isImage(linkText) ? img(linkText) : linkText}
+        ${Check.isImage(linkText) ? img(linkText) : linkText}
     </a>`;
 }
 

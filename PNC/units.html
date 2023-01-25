@@ -17,7 +17,7 @@
 
                 //fragments
                 if (fragments.length)
-                    list.appendChild(initializeHTML('dd', {textContent: `Fragment Locations: ${fragments.join(', ')}`}));
+                    list.appendChild(initializeHTML('dd', {textContent: 'Fragment Locations: ' + fragments.join(', ')}));
             }
 
             document.querySelector('#main_content div').appendChild(list);
@@ -54,6 +54,7 @@
                 <p>All units can get fragments through Intimacy and Neural Kits.</p>
                 <p>Permanently added units can get fragments through Basic Search.</p>
                 <p>Limited units do not get their own Fragment Search section.</p>
+                <p>New Banner units gets a progression package.</p>
             </section>
         </div>
     </body>

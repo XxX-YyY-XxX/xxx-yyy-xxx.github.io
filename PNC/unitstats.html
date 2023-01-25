@@ -26,13 +26,9 @@
 
                 const headertr = document.createElement('tr');
                 for (const header of tableMatrix.shift()) {
-                    if (isHTMLElement(header)) {
-                        const thElem = document.createElement('th');
-                        thElem.appendChild(header);
-                        headertr.appendChild(thElem);
-                    } else {
-                        headertr.appendChild(initializeHTML('th', {textContent: header}));
-                    }
+                    headertr.appendChild(isHTMLElement(header) ?
+                        initializeHTML('th', {appendChild: [header]}) :
+                        initializeHTML('th', {textContent: header}));
                 }
                 theadElem.appendChild(headertr);
 
@@ -42,13 +38,9 @@
                     for (const rows of nestedArray) {
                         const trElem = document.createElement('tr');
                         for (const items of rows) {
-                            if (isHTMLElement(header)) {
-                                const tdElem = document.createElement('td');
-                                tdElem.appendChild(items);
-                                trElem.appendChild(tdElem);
-                            } else {
-                                trElem.appendChild(initializeHTML('td', {textContent: items}));
-                            }
+                            trElem.appendChild(isHTMLElement(header) ?
+                                initializeHTML('td', {appendChild: [items]}) :
+                                initializeHTML('td', {textContent: items}));
                         }
                         tbodyElem.appendChild(trElem);
                     }
