@@ -11,10 +11,13 @@
                 {sort: true, frzcol: true}
             );
             
+            function isHTMLElement(element) {
+                return [HTMLElement, DocumentFragment].some(class_instance => element instanceof class_instance);
+            }
+
             /** @param {HTMLElement} grouperElem
-             * @param {Array[]} tableMatrix
-             * @param fragment If Array items are Document Fragments. */
-            function table(grouperElem, tableMatrix, {sort = false, filter = false, frzcol = false, frzhdr = false, fragment = false} = {}) {
+             * @param {Array[]} tableMatrix */
+            function table(grouperElem, tableMatrix, {sort = false, filter = false, frzcol = false, frzhdr = false} = {}) {
                 const tableElem = document.createElement('table');
                 const theadElem = document.createElement('thead');
                 const tbodyElem = document.createElement('tbody');
@@ -22,7 +25,15 @@
                 tableElem.append(theadElem, tbodyElem)
 
                 const headertr = document.createElement('tr');
-                for (const header of tableMatrix.shift()) headertr.appendChild(initializeHTML('th', {textContent: header}));
+                for (const header of tableMatrix.shift()) {
+                    if (isHTMLElement(header)) {
+                        const thElem = document.createElement('th');
+                        thElem.appendChild(header);
+                        headertr.appendChild(thElem);
+                    } else {
+                        headertr.appendChild(initializeHTML('th', {textContent: header}));
+                    }
+                }
                 theadElem.appendChild(headertr);
 
                 /** @param {Array[]} nestedArray */
@@ -30,7 +41,15 @@
                     tbodyElem.textContent = '';
                     for (const rows of nestedArray) {
                         const trElem = document.createElement('tr');
-                        for (const items of rows) trElem.appendChild(initializeHTML('td', {textContent: items}));
+                        for (const items of rows) {
+                            if (isHTMLElement(header)) {
+                                const tdElem = document.createElement('td');
+                                tdElem.appendChild(items);
+                                trElem.appendChild(tdElem);
+                            } else {
+                                trElem.appendChild(initializeHTML('td', {textContent: items}));
+                            }
+                        }
                         tbodyElem.appendChild(trElem);
                     }
                 }
@@ -148,7 +167,6 @@
                     //default: Simple af table.
                 }
 
-                //sort/filter problem
                 if (frzcol) {
                     headertr.firstElementChild.classList.add('freeze_col');
                     for (const trElem of Array.from(tbodyElem.children))

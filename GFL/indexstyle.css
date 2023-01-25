@@ -37,22 +37,22 @@ dd {
 }
 
 label.tags {
-    background: aqua;
-    color: black;
-    margin: 0px 3px;
+    background: transparent;
+    color: aqua;
+    margin: 0px 5px;
 }
 
 @supports Selector(label.tags:has(input:checked)) {
     label.tags:has(input:checked) {
-        background: transparent;
-        color: aqua;
+        background: aqua;
+        color: black;
     }
 }
 
 @supports not Selector(label.tags:has(input:checked)) {
     label.tags.checked {
-        background: transparent;
-        color: aqua;
+        background: aqua;
+        color: black;
     }
 }
 
