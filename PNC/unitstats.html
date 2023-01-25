@@ -160,8 +160,7 @@
                 }
 
                 if (frzcol) {
-                    headertr.firstElementChild.classList.add('freeze_col');
-                    for (const trElem of Array.from(tbodyElem.children))
+                    for (const trElem of [headertr, ...Array.from(tbodyElem.children)])
                         trElem.firstElementChild.classList.add('freeze_col');
 
                     if (sort) {
