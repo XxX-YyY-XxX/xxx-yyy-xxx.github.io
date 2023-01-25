@@ -1,4 +1,4 @@
-import {reloadIFrame} from '/univasset/scripts/externaljavascript.js';
+import {reloadIFrame} from '../externaljavascript.js';
 
 export default class Embed {
     static G_EXCEL = 'spreadsheets';

@@ -1,4 +1,4 @@
-import {Check} from '/univasset/scripts/externaljavascript.js';
+import {Check} from '../externaljavascript.js';
 
 function img(link) {
     return `<img src="${link}" alt="Image loading failed." loading="lazy">`;

@@ -47,22 +47,18 @@ const inputButtons = new RadioButton('input-type',
 //tooltip is only visible when tag is hovered over.
 const fragment = new DocumentFragment();
 for (const {val, desc} of Object.values(dTag).sort((a, b) => Compare.string(a.val, b.val))) {
-    const labelElem = document.createElement('label');
-    labelElem.classList.add('tags', 'tooltip');
+    /** @type {HTMLSpanElement} */ const spanElem = initializeHTML('span', {textContent: desc, classList: {add: ['tooltiptext']}});
+    /** @type {HTMLLabelElement} */ const labelElem = initializeHTML('label', {classList: {add: ['tags', 'tooltip']}});
     
-    /** @type {HTMLInputElement} */
-    const inputElem = initializeHTML('input', {type: 'checkbox', value: val});
+    /** @type {HTMLInputElement} */ const inputElem = initializeHTML('input', {type: 'checkbox', value: val});
     inputElem.addEventListener('click', function() {
         checkedLabel(this);             //Will delete if CSS :has is ok
-        searchTextField.value = this.checked ? searchTextField.value + ' ' + this.value : searchTextField.value.replace(this.value, '');
-        searchTextField.value = searchTextField.value.replace('  ', ' ').slice(Number(searchTextField.value[0] === ' '));
+        searchTextField.value = this.checked ?
+            searchTextField.value + ' ' + this.value :
+            searchTextField.value.replace(this.value, '').replace('  ', ' ').slice(Number(searchTextField.value[0] === ' '));
         if (searchTextField.value.slice(-1) === ' ')
             searchTextField.value = searchTextField.value.slice(0, -1);
     });
-    
-    /** @type {HTMLSpanElement} */
-    const spanElem = initializeHTML('span', {textContent: desc});
-    spanElem.classList.add('tooltiptext');
     
     labelElem.append(inputElem, val, spanElem);
     fragment.appendChild(labelElem);

@@ -1,3 +1,5 @@
+import {Check} from '../externaljavascript.js';
+
 /** @param {(string | Node)[]} elements */
 function brJoin(elements) {
     const fragment = new DocumentFragment();
@@ -5,9 +7,26 @@ function brJoin(elements) {
     return fragment;
 }
 
+/** @param {{PropertyOrFunction: string | number | Array | {}}} attributes */
+function recursiveAttribute(base, attributes) {
+    for (const [attrib, value] of Object.entries(attributes)) {
+        switch (Check.typeof(value)) {
+            case 'array':
+                base[attrib](...value);
+                break;
+            case 'object':
+                recursiveAttribute(base[attrib], value);
+                break;
+            default:
+                base[attrib] = value;
+                break;
+        }
+    }
+}
+
 /** Shortcut for createElement and HTML attributes.
  * @param {string} createElement If nested, inner element will be modified and outer element will be returned.
- * @param {{HTMLAttribute: string | Array}} attributes String for attribute assigment, Array for function calls. */
+ * @param {{HTMLAttribute: string | number | Array | {}}} attributes String/Number for attribute assigment, Array for function calls, Object for deeper calls. */
 export function initializeHTML(createElement, attributes) {
     var outerElem, innerElem;
     if (createElement.includes(' ')) {
@@ -20,11 +39,7 @@ export function initializeHTML(createElement, attributes) {
         innerElem = document.createElement(createElement);
     }
 
-    for (const [attrib, value] of Object.entries(attributes ?? {}))
-        if (Array.isArray(value))
-            innerElem[attrib](...value)
-        else
-            innerElem[attrib] = value;        
+    recursiveAttribute(innerElem, attributes);
 
     return outerElem ?? innerElem;
 }
