@@ -193,11 +193,24 @@ export function checkedLabel(inputElement) {
  * @returns "Tuple" of values from each array */
 export function* zip(extend, ...iterables) {
     //Change to iterables for less memory used
-    const arrayOfArrays = iterables.map(arr => Array.from(arr))
-    const maxlength = (extend ? Math.max : Math.min)(...arrayOfArrays.map(arr => arr.length))
+    //const arrayOfArrays = iterables.map(arr => Array.from(arr));
+    //const maxlength = (extend ? Math.max : Math.min)(...arrayOfArrays.map(arr => arr.length));
 
-    for (let index = 0; index < maxlength; index++)
-        yield arrayOfArrays.map(arr => arr[index])
+    //for (let index = 0; index < maxlength; index++)
+    //    yield arrayOfArrays.map(arr => arr[index]);
+
+    const arrayOfArrays = iterables.map(getIterator);
+    const extension = extend ? 'some' : 'every';
+    do {
+        var output = [];
+        var check = [];
+        for (const item of arrayOfArrays) {
+            const {value, done} = item.next();
+            output.push(value);
+            check.push(done);
+            yield output;
+        }
+    } while (check[extension]())
 }
 //#endregion
 
@@ -214,39 +227,36 @@ function getIterator(iterable) {
     }
 }
 
-/** @param {String} string @param {String} substring */
-function stringToggle(string, substring) {
-    return string.includes(substring) ? string.replace(substring, '') : string + substring;
-}
-
 function compare(a, b) {
     return {
-        string(a, b) {return a.localeCompare(b)},
-        number(a, b) {return a - b}
+        string(x, y) {return x.localeCompare(y)},
+        number(x, y) {return x - y}
     }[typeof a](a, b);    
 }
 
-class Matrix {
-    constructor(title, header, leading, data, key) {
-        const base_array = [[title, ...header]];
-        const x_len = base_array[0].length;
-        
-        for (const item of leading) {
-            const new_len = base_array.push(Array(x_len));
-            base_array[new_len - 1][0] = item;            
-        }
+/** Creates a two-dimensional array.
+ * @param {Array} header Ordered from left to right.
+ * @param {Array} leader Ordered from top to bottom.
+ * @param {Array} data Objects to populate the matrix.
+ * @param {function(Object): [Object, Object]} key Return [x_key(same as in headers), y_key(same as in leaders)].
+ * @param {function(Object): Object} headkey Return object that would be used for population reference.
+ * @param {function(Object): Object} leadkey Return object that would be used for population reference.
+ */
+function matrix(title, header, leader, data, key, headkey = null, leadkey = null) {
+    const base_array = [[title, ...header]];
 
-        for (const item of data) {
-            const [x_axis, y_axis] = key(item);
-            base_array[leading.indexOf(y_axis) + 1][header.indexOf(x_axis) + 1] = item;
-        }
+    const x_len = header.length;        
+    for (const item of leader)
+        base_array.push([item, ...Array(x_len).fill('')]);
 
-        return base_array;
+    const head_copy = headkey ? header.map(headkey) : header;
+    const lead_copy = leadkey ? leader.map(leadkey) : leader;
+    for (const item of data) {
+        const [x_axis, y_axis] = key(item);
+        base_array[lead_copy.indexOf(y_axis) + 1][head_copy.indexOf(x_axis) + 1] = item;
     }
 
-    shape() {
-        return [this[0].length, this.length]
-    }
+    return base_array;
 }
 //#endregion
 

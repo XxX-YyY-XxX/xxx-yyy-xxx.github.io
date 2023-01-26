@@ -8,7 +8,7 @@
 
             table(document.querySelector('#main_content div'),
                 (await AsyncFunc.getJSON('./unitstats.json')).slice(0, -1),
-                {sort: true, frzcol: true}
+                {sort: true, frzcol: true, frzhdr: true}
             );
             
             function isHTMLElement(element) {
@@ -218,7 +218,7 @@
         /* #endregion */
 
         /* #region Sort */
-        .func_table th[data-sort="hi"] {
+        /* .func_table th[data-sort="hi"] {
             background: linear-gradient(135deg, black, transparent 50%),
                 linear-gradient(-135deg, black, transparent 50%),
                 linear-gradient(blue, gray 50%);
@@ -228,7 +228,7 @@
             background: linear-gradient(45deg, black, transparent 50%),
                 linear-gradient(-45deg, black, transparent 50%),
                 linear-gradient(gray 50%, red);
-        }
+        } */
         /* #endregion */
 
         /* #region Filter */
@@ -255,13 +255,35 @@
         }
         /* #endregion */
 
-        .func_table .freeze_col {
+        /* #region Custom */
+        .func_table .freeze_col, .func_table .freeze_row {
             background: #1b1b1b;
         }
 
         .func_table tr:nth-child(even) > .freeze_col {
             background: #282e1f;
         }
+
+        .func_table .freeze_col {
+            border-right: 1px dashed #b5e853;
+        }
+
+        .func_table th[data-sort="hi"] {
+            background: linear-gradient(135deg, #1b1b1b, transparent 50%),
+                linear-gradient(-135deg, #1b1b1b, transparent 50%),
+                linear-gradient(blue, gray 50%);
+        }
+
+        .func_table th[data-sort="lo"] {
+            background: linear-gradient(45deg, #1b1b1b, transparent 50%),
+                linear-gradient(-45deg, #1b1b1b, transparent 50%),
+                linear-gradient(gray 50%, red);
+        }
+
+        .func_table {
+            height: 100vh;
+        }
+        /* #endregion */
     </style>
 
     <body>

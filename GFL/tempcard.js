@@ -1,6 +1,6 @@
-import {descriptionList, spoilerSummary, image, table, link, list} from '/univasset/scripts/htmlfunctions/htmlfunctions.js';
-import TextStyle from '/univasset/scripts/htmlfunctions/textstyle.js';
-import Embed from '/univasset/scripts/htmlfunctions/linkembed.js';
+import {descriptionList, spoilerSummary, image, table, link, list} from '../univasset/scripts/htmlfunctions/htmlfunctions.js';
+import TextStyle from '../univasset/scripts/htmlfunctions/textstyle.js';
+import Embed from '../univasset/scripts/htmlfunctions/linkembed.js';
 
 const lessEqual = '≤';
 const star = '★';

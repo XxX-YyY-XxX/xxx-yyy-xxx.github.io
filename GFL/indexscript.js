@@ -44,7 +44,6 @@ const inputButtons = new RadioButton('input-type',
 //#endregion
 
 //#region Initialize
-//tooltip is only visible when tag is hovered over.
 const fragment = new DocumentFragment();
 for (const {val, desc} of Object.values(dTag).sort((a, b) => Compare.string(a.val, b.val))) {
     /** @type {HTMLSpanElement} */ const spanElem = initializeHTML('span', {textContent: desc, classList: {add: ['tooltiptext']}});
@@ -54,7 +53,7 @@ for (const {val, desc} of Object.values(dTag).sort((a, b) => Compare.string(a.va
     inputElem.addEventListener('click', function() {
         checkedLabel(this);             //Will delete if CSS :has is ok
         searchTextField.value = this.checked ?
-            searchTextField.value + ' ' + this.value :
+            (searchTextField.value + ' ' + this.value).trim() :
             searchTextField.value.replace(this.value, '').replace('  ', ' ').trim();
     });
     
