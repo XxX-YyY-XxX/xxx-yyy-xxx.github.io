@@ -225,6 +225,29 @@ function compare(a, b) {
         number(a, b) {return a - b}
     }[typeof a](a, b);    
 }
+
+class Matrix {
+    constructor(title, header, leading, data, key) {
+        const base_array = [[title, ...header]];
+        const x_len = base_array[0].length;
+        
+        for (const item of leading) {
+            const new_len = base_array.push(Array(x_len));
+            base_array[new_len - 1][0] = item;            
+        }
+
+        for (const item of data) {
+            const [x_axis, y_axis] = key(item);
+            base_array[leading.indexOf(y_axis) + 1][header.indexOf(x_axis) + 1] = item;
+        }
+
+        return base_array;
+    }
+
+    shape() {
+        return [this[0].length, this.length]
+    }
+}
 //#endregion
 
 /*const oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');

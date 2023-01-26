@@ -55,9 +55,7 @@ for (const {val, desc} of Object.values(dTag).sort((a, b) => Compare.string(a.va
         checkedLabel(this);             //Will delete if CSS :has is ok
         searchTextField.value = this.checked ?
             searchTextField.value + ' ' + this.value :
-            searchTextField.value.replace(this.value, '').replace('  ', ' ').slice(Number(searchTextField.value[0] === ' '));
-        if (searchTextField.value.slice(-1) === ' ')
-            searchTextField.value = searchTextField.value.slice(0, -1);
+            searchTextField.value.replace(this.value, '').replace('  ', ' ').trim();
     });
     
     labelElem.append(inputElem, val, spanElem);
@@ -66,7 +64,8 @@ for (const {val, desc} of Object.values(dTag).sort((a, b) => Compare.string(a.va
 toggleableTagsField.appendChild(fragment);
 
 document.getElementById('cards-field').innerHTML =
-    (searchParams.has('search') || searchParams.has('tags')) ? searchCards() :
+    searchParams.has('search') ? searchCards() :
+    searchParams.has('tags') ? tagsCards() :
     searchParams.has('id') ? idCards() :
     (newCards.length >= 3) ? addedCards() : randomCards();
 
@@ -75,30 +74,29 @@ document.getElementById('maxpage').textContent = maxPage;
 
 //#region Private Functions
 function searchCards() {
-    var output = '', matchCheck;
+    const searchText = searchParams.get('search');
+    var output = '';
 
-    if (searchParams.has('tags')) {
-        const cardTags = searchParams.get('tags').split(' ').filter(Boolean);
-        if (cardTags.length > 0) {
-            /** @returns {boolean} */
-            matchCheck = ({tags}) => cardTags.subsetOf(tags.map(tag => tag.val));
-        } else {
-            return 'Empty search.';
-        }
-    } else if (searchParams.has('search')) {
-        const searchText = searchParams.get('search');
-        if (searchText) {
-            const phrase = new RegExp(searchText, 'i');
-            matchCheck = ({questions, answers}) => phrase.test(removeHTMLTag(questions)) || phrase.test(removeHTMLTag(answers));
-        } else {
-            return 'Empty search.';
-        }
-    } //else none
+    if (searchText) {
+        const phrase = new RegExp(searchText, 'i');
 
-    for (const cards of cardData) {
-        if (matchCheck(cards))
+        for (const cards of cardData.filter(({questions, answers}) => phrase.test(removeHTMLTag(questions)) || phrase.test(removeHTMLTag(answers))))
             output += setQuestionBoxes(cards);
-    }
+
+        return output || 'No matches found.';
+    } else
+        return 'Empty search.';
+}
+
+function tagsCards() {
+    const cardTags = searchParams.get('tags').split(' ');
+    var output = '';
+
+    if (!cardTags.length)
+        return 'Empty search.';
+
+    for (const cards of cardData.filter(({tags}) => cardTags.subsetOf(tags.map(tag => tag.val))))
+        output += setQuestionBoxes(cards);
 
     return output || 'No matches found.';
 }
