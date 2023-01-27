@@ -153,6 +153,19 @@ export class Check {
 }
 //#endregion
 
+//#region Helper Functions
+/** @param {Iterable} iterable */
+function getIterator(iterable) {
+    //if (iterable[Symbol.iterator]() === iterable)
+    //Set = iterable[Symbol.iterator]();
+
+    if (!['set'].includes(Check.typeof(iterable)))
+        console.log(Check.typeof(iterable), iterable);
+
+    return iterable[Symbol.iterator]();
+}
+//#endregion
+
 //#region Functions
 /** @param {string} htmlString */
 export function removeHTMLTag(htmlString) {
@@ -196,42 +209,28 @@ export function checkedLabel(inputElement) {
  * @param {Iterable[]} iterables order of iterables = order of output
  * @returns "Tuple" of values from each array */
 export function* zip(extend, ...iterables) {
-    //Change to iterables for less memory used
-    //const arrayOfArrays = iterables.map(arr => Array.from(arr));
-    //const maxlength = (extend ? Math.max : Math.min)(...arrayOfArrays.map(arr => arr.length));
-
-    //for (let index = 0; index < maxlength; index++)
-    //    yield arrayOfArrays.map(arr => arr[index]);
-
-    const arrayOfArrays = iterables.map(getIterator);
+    const iterator_array = iterables.map(getIterator);
     const extension = extend ? 'some' : 'every';
-    const available = [];
-    do {
-        yield arrayOfArrays.map(x => {
-                const {value, done} = x.next();
-                available.push(!done);
-                return value;
-            });
-    } while (available.splice(0)[extension](x => x))
+    //const available = [];
+    /* while (true) {
+        const output = iterator_array.map(x => {
+            const {value, done} = x.next();
+            available.push(!done);
+            return value;
+        });
+        if (available.splice(0)[extension](x => x))
+            yield output;
+        else
+            break;
+    }   */     
+
+    const output = [];
+    while (iterator_array.map(x => {const {value, done} = x.next(); output.push(value); return !done;})[extension](x => x))
+        yield output.splice(0);
 }
 //#endregion
 
 //#region Trial
-/** @param {Iterable} iterable */
-function getIterator(iterable) {
-    //if (iterable[Symbol.iterator]() === iterable)
-    //Set = iterable[Symbol.iterator]();
-    if (!['set'].includes(Check.typeof(iterable)))
-        console.log(Check.typeof(iterable), iterable);
-
-    try {
-        return iterable[Symbol.iterator]();
-    } catch(err) {
-        console.log(err);
-        return null;
-    }
-}
-
 function compare(a, b) {
     return {
         string(x, y) {return x.localeCompare(y)},
