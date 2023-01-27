@@ -104,6 +104,10 @@ export class Check {
                 return item_type;
             case Array.isArray(any):
                 return 'array';
+            case any instanceof Set:
+                return 'set';
+            case [HTMLElement, DocumentFragment].some(x => any instanceof x):
+                return 'dom';
             default:
                 return 'object';
         }
@@ -201,16 +205,14 @@ export function* zip(extend, ...iterables) {
 
     const arrayOfArrays = iterables.map(getIterator);
     const extension = extend ? 'some' : 'every';
+    const check = [];
     do {
-        var output = [];
-        var check = [];
-        for (const item of arrayOfArrays) {
-            const {value, done} = item.next();
-            output.push(value);
-            check.push(done);
-            yield output;
-        }
-    } while (check[extension]())
+        yield arrayOfArrays.map(x => {
+                const {value, done} = x.next();
+                check.push(done);
+                return value;
+            });
+    } while (check.splice(0)[extension](x => x))
 }
 //#endregion
 
@@ -218,6 +220,7 @@ export function* zip(extend, ...iterables) {
 /** @param {Iterable} iterable */
 function getIterator(iterable) {
     //if (iterable[Symbol.iterator]() === iterable)
+    //Set = iterable[Symbol.iterator]();
     try {
         console.log(typeof(iterable), iterable);
         return iterable[Symbol.iterator]();
