@@ -11,11 +11,18 @@
 
             for (const {passive_skill, code} of jsonObject) (String(passive_skill).includes('200304') ? nonelite : elite).add(code);
 
-            for (const [index, [unitE, unitNE]] of Object.entries(Array.from(zip(true, elite, nonelite)))) {
+            console.log(zip(true, elite, nonelite))
+            console.log(Array.from(zip(true, elite, nonelite)))
+            console.log(Object.entries(Array.from(zip(true, elite, nonelite))))
+
+            //for (const [index, [unitE, unitNE]] of Object.entries(Array.from(zip(true, elite, nonelite)))) {
+            var index = 1;
+            for (const [unitE, unitNE] of zip(true, elite, nonelite)) {
                 const trElem = document.createElement('tr');
 
                 trElem.append(
-                    initializeHTML('td', {textContent: Number(index) + 1}),
+                    //initializeHTML('td', {textContent: Number(index) + 1}),
+                    initializeHTML('td', {textContent: index++}),
                     initializeHTML('td', {textContent: unitE}),
                     initializeHTML('td', {textContent: unitNE ?? ''})
                 );

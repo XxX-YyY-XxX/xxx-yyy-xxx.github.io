@@ -221,11 +221,11 @@ export function* zip(extend, ...iterables) {
 function getIterator(iterable) {
     //if (iterable[Symbol.iterator]() === iterable)
     //Set = iterable[Symbol.iterator]();
+    console.log(Check.typeof(iterable), iterable);
     try {
-        console.log(typeof(iterable), iterable);
         return iterable[Symbol.iterator]();
     } catch(err) {
-        console.log(err, typeof(iterable), iterable);
+        console.log(err);
         return null;
     }
 }
