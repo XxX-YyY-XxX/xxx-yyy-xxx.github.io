@@ -261,7 +261,7 @@ export const cardData = Object.freeze([
     },
     {
         id : '00017',
-        questions : `Is there a tier list for fairies?`,
+        questions : `Is there a tier list for fairies and equipment?`,
         answers : `${image('https://i.imgur.com/2nh8xHs.jpeg', "Sijun's list")}<br>
         For the equipments, top number is the recommended quantity, bottom number is the reserve quantity.<br>
         ${spoilerSummary(`u/UnironicWeeaboo's fairy stat calculator.`, Embed.google(Embed.G_EXCEL, '1RORciafqtspkxy3fqBrFdKIxVfanV2-fLl9FlvY3QtM'))}<br>
@@ -269,12 +269,12 @@ export const cardData = Object.freeze([
             link('General reviews.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/fairy-reviews'),
             link('Sniper review.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/sniper-rework')
         ))}`,
-        tags : [dTag.FAIRY, dTag.TIER, dTag.EQUIP]
+        tags : [dTag.FAIRY, dTag.EQUIP, dTag.TIER]
     },
     {
         id : '00018',
         questions : `Anyone have a nice infographic for equipment priority and how many to have ideally?`,
-        answers : `${image('https://cdn.discordapp.com/attachments/564028599682727937/1018032159350587494/eq_prior.png', 'Taken from Discord')}`,
+        answers : `${image('https://cdn.discordapp.com/attachments/951085201658871820/1063837601351610389/eq_prior_notheater.png', 'Taken from Discord')}`,
         tags : [dTag.EQUIP, dTag.TDOLL, dTag.TIER]
     },  //$eqpriority
     {
@@ -726,9 +726,7 @@ export const cardData = Object.freeze([
     {
         id : '00064',
         questions : `What best-in-slot (BiS) equipments should I use on my dolls?`,
-        answers : `${spoilerSummary('General equipments.',
-            `${link('./assets/images/EquipInfograph.png', 'https://big-stupid-jellyfish.github.io/GFMath/pages/newquip')}<br>
-            AS-Val at night follows the day schema. SOP and STAR is SPEQ + VFL/PEQ. M16 is SPEQ + Exo/Armor.`)}<br>
+        answers : `${spoilerSummary('General equipments.', link('https://i.imgur.com/tl4MGI8.jpeg', 'https://big-stupid-jellyfish.github.io/GFMath/pages/newquip'))}<br>
         ${spoilerSummary('#2 Chip equipment.', list(false,
             spoilerSummary('BigStupidJellyfish_ doc.', Embed.google(Embed.G_EXCEL, '14xV50MSMBFGgN75E-Gy10WtzACb_KZdpxRKCYQ6FDQA')),
             spoilerSummary('BigStupidJellyfish_ infograph.', link('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png', 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')),
@@ -1015,7 +1013,12 @@ export const cardData = Object.freeze([
     {
         id : '00101',
         questions : `I wasn't able to clear the event during it's initial runtime. Will I still get the clear rewards when they get added to Campaign?`,
-        answers : `Nope. Gutted rewards compared to original, no True Core Masks (TCM), no dolls, no equipment. Free shit is free shit though, and doll/crate rewards gets cycled to Limited Dolls. So skip the current major event's story if you have to and reap the rewards.`,
+        answers : `${list(false,
+            'Gutted rewards compared to original.',
+            'No True Core Masks (TCM).',
+            link('Reward and crate dolls get shuffled to farming lottery.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls')
+        )}<br>
+        Free shit is free shit though. So skip the current major event's story if you have to and reap the rewards.`,
         tags : [dTag.MARP, dTag.ITEM, dTag.CAMPAIGN, dTag.MAJOR, dTag.LEDOLL, dTag.TCM]
     },
     {
@@ -1086,7 +1089,7 @@ export const cardData = Object.freeze([
     {
         id : '00112',
         questions : `What does equipment calibration and enhancement do?`,
-        answers : `${image('./assets/images/EquipCalibEnhance.png', 'Calibration and enhancement are independent of each other')}<br>
+        answers : `${image('./assets/images/EquipCalibEnhance.png', 'Calibration and enhancement are independent of each other')}
         ${descriptionList({
             'Equipment Calibration' : [
                 "Raises the equipment's base stat.",
@@ -3005,6 +3008,6 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00237', '00390', '00112'];
+export const newCards = ['00237', '00390', '00112', '00101', '00018', '00064'];
 
 //00045
