@@ -1198,10 +1198,7 @@ export const cardData = Object.freeze([
         ${link('Overall.', 'https://www.reddit.com/r/girlsfrontline/comments/sm75vk/where_can_i_see_mirror_stage_story_line/hvvpppk/')}<br>
         ${link('Night Chapters.', 'https://www.reddit.com/r/girlsfrontline/comments/scouvz/questions_regarding_404/hu995o6/')}`,
         tags : [dTag.LORE]
-    },  //@Fix
-    /*
-        https://www.reddit.com/r/girlsfrontline/comments/sc8jed/weekly_commanders_lounge_january_25_2022/hupfxsr/
-    */
+    },  //@Fix, https://www.reddit.com/r/girlsfrontline/comments/sc8jed/weekly_commanders_lounge_january_25_2022/hupfxsr/
     {
         id : '00125',
         questions : `Is it possible to earn previously missed hidden achievements in Campaign Missions?`,
