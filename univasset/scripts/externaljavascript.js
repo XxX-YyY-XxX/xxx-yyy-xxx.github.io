@@ -212,6 +212,7 @@ export function* zip(extend, ...iterables) {
                 check.push(done);
                 return value;
             });
+        console.log(check)
     } while (check.splice(0)[extension](x => x))
 }
 //#endregion
