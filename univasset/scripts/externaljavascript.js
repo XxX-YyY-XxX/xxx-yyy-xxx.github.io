@@ -211,19 +211,6 @@ export function checkedLabel(inputElement) {
 export function* zip(extend, ...iterables) {
     const iterator_array = iterables.map(getIterator);
     const extension = extend ? 'some' : 'every';
-    //const available = [];
-    /* while (true) {
-        const output = iterator_array.map(x => {
-            const {value, done} = x.next();
-            available.push(!done);
-            return value;
-        });
-        if (available.splice(0)[extension](x => x))
-            yield output;
-        else
-            break;
-    }   */     
-
     const output = [];
     while (iterator_array.map(x => {const {value, done} = x.next(); output.push(value); return !done;})[extension](x => x))
         yield output.splice(0);
@@ -275,7 +262,6 @@ oXHR.send(); */
 
 //sessionStorage.outputCards = typeof(Storage) !== null ? boxes : "Sorry, your browser does not support web storage...";
 //iframe.contentWindow.location.reload();
-//<button type="button" ></button>
 
 //<th rowspan="3" colspan="2">Algorithm Stats</th>
 //<td colspan="2" align="center">2 Slot</td>
