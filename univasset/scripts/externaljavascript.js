@@ -205,15 +205,14 @@ export function* zip(extend, ...iterables) {
 
     const arrayOfArrays = iterables.map(getIterator);
     const extension = extend ? 'some' : 'every';
-    const check = [];
+    const available = [];
     do {
         yield arrayOfArrays.map(x => {
                 const {value, done} = x.next();
-                check.push(done);
+                available.push(!done);
                 return value;
             });
-        console.log(check)
-    } while (check.splice(0)[extension](x => x))
+    } while (available.splice(0)[extension](x => x))
 }
 //#endregion
 
@@ -222,7 +221,9 @@ export function* zip(extend, ...iterables) {
 function getIterator(iterable) {
     //if (iterable[Symbol.iterator]() === iterable)
     //Set = iterable[Symbol.iterator]();
-    console.log(Check.typeof(iterable), iterable);
+    if (!['set'].includes(Check.typeof(iterable)))
+        console.log(Check.typeof(iterable), iterable);
+
     try {
         return iterable[Symbol.iterator]();
     } catch(err) {
