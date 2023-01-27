@@ -1074,7 +1074,7 @@ export const cardData = Object.freeze([
         questions : `What does the Aid Commissions do and how do I get more of them?`,
         answers : `Also known as Svarog/High Altitude EMP Bombing, it pulls from the entire pool where the entire pool is the X in the X/100 units.<br>
         Recommended to pull one at a time since 10-pull is literally 10 1-pulls.<br>
-        Acquired from the quest's final node, daily log-in, major events, shop (whenever a new banner starts).`,
+        Acquired from the daily quest's final node, daily log-in, major events, shop (whenever a new banner starts).`,
         tags : [dTag.ITEM, dTag.PA, dTag.GET]
     },
     {
@@ -1151,8 +1151,10 @@ export const cardData = Object.freeze([
     {
         id : '00119',
         questions : `How does Symmetric Infusion work exactly?`,
-        answers : `${descriptionList({'Cognitive Infusion' : ['Basically, swaps sizes. Technically, swaps all stats aside from size. If both sides are upgraded, say Lv. 31 and Lv. 23, they become 23 and 31, not 1 and 31+.'], 
-        'Golden Infusion' : ['Swaps the golden status between the two units, nothing more, nothing less.']})}`,
+        answers : `${descriptionList({
+            'Cognitive Infusion' : ['Basically, swaps sizes. Technically, swaps all stats aside from size. If both sides are upgraded, say Lv. 31 and Lv. 23, they become 23 and 31, not 1 and 31+.'], 
+            'Golden Infusion' : ['Swaps the golden status between the two units, nothing more, nothing less.']
+        })}`,
         tags : [dTag.PA]
     },  //@Visual
     {
@@ -1173,10 +1175,12 @@ export const cardData = Object.freeze([
     {
         id : '00122',
         questions : `How do I unlock special effects on commanders like flame auras etc.?`,
-        answers : `${list(true, "Get a complete 5-slot from a set. Doesn't matter if male only or female only.",
-        'Get their rare color variants.',
-        '???',
-        'Profit.')}`,
+        answers : `${list(true, 
+            "Get a complete 5-slot from a set. Doesn't matter if male only or female only.",
+            'Get their rare color variants.',
+            '???',
+            'Profit.'
+        )}`,
         tags : [dTag.CMDR, dTag.SKIN]
     },
     {
