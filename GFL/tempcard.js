@@ -1091,7 +1091,7 @@ export const cardData = Object.freeze([
             'Equipment Calibration' : [
                 "Raises the equipment's base stat.",
                 'RNG dictates how many calibration tickets are wasted before maxing.',
-                `When it's on its highest calibration, a MAX in blue box appears on said equipment.`
+                `When it's on its highest calibration, ${image('./assets/images/BlueMAXBox.png', 'inline')} appears on said equipment.`
             ],
             'Equipment Enhancement' : [
                 'Multiplies the base stat up to Lv. 10.',
