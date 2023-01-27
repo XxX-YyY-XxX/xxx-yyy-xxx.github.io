@@ -568,12 +568,6 @@ export const cardData = Object.freeze([
         tags : [dTag.MAIN]
     },
     {
-        id : '00045',
-        questions : `Would the equipment I'm enhancing get bonus points if I use an enhanced fodder?`,
-        answers : `No for 2.09.`,
-        tags : [dTag.EQUIP, dTag.LEVEL]
-    },
-    {
         id : '00046',
         questions : `Is there a list of which logistics to do if I want to prioritize certain resources?`,
         answers : `${link('GFC GDoc.', 'https://docs.google.com/spreadsheets/d/1ah2JO6ggWuVaBho9yxgDMC-ucEKA8C42SBkjIlnIcWk')} Up to Chapter 11.<br>
@@ -1093,8 +1087,18 @@ export const cardData = Object.freeze([
         id : '00112',
         questions : `What does equipment calibration and enhancement do?`,
         answers : `${image('./assets/images/EquipCalibEnhance.png', 'Calibration and enhancement are independent of each other')}<br>
-        Equipment Calibration raises the equipment's base stat. The RNG dictates how many calib tickets are wasted before maxing. When it's on its highest calibration, a MAX in blue box appears on said equipment.<br>
-        Equipment Enhancement multiplies the base stat up to Lv. 10. Doesn't matter if Equip Enhancement Pills or fodder equips are used, it's merely a matter of resource cost per point raised.`,
+        ${descriptionList({
+            'Equipment Calibration' : [
+                "Raises the equipment's base stat.",
+                'RNG dictates how many calibration tickets are wasted before maxing.',
+                `When it's on its highest calibration, a MAX in blue box appears on said equipment.`
+            ],
+            'Equipment Enhancement' : [
+                'Multiplies the base stat up to Lv. 10.',
+                "Doesn't matter if Equip Enhancement Pills or fodder equips are used, it's merely a matter of resource cost per point raised.",
+                'As of 3.0, gets more enhancement points from enhanced fodders.'
+            ]
+        })}`,
         tags : [dTag.EQUIP, dTag.LEVEL, dTag.NEWB]
     },
     {
@@ -3000,4 +3004,6 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00237', '00390'];
+export const newCards = ['00237', '00390', '00112'];
+
+//00045

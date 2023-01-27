@@ -4,12 +4,17 @@ function img(link) {
     return `<img src="${link}" alt="Image loading failed." loading="lazy">`;
 }
 
-/** @param {string} link @param {string} caption Image description */
+/** @param {string} link @param {string} caption Image description or 'inline' for inline img. */
 export function image(link, caption = "") {
-    return caption ? `<figure>
-            ${img(link)}
-            <figcaption>${caption}</figcaption>
-        </figure>` : img(link);
+    if (caption) {
+        if (caption === 'inline')
+            return `<img class="inline-img" src="${link}" alt="Image loading failed." loading="lazy">`;
+        else
+            return `<figure>${img(link)}<figcaption>${caption}</figcaption></figure>`;
+
+    } else {
+        return img(link);
+    }
 }
 
 /** @param {string} linkText Text or image URL. @param {string} link */

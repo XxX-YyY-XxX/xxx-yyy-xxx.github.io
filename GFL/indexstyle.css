@@ -11,7 +11,7 @@ dl, table, figure, blockquote {
 }
 
 figcaption {
-    font-size: 1px;
+    font-size: 0.0625em;
     text-align: center;
     display: block;
 }
@@ -21,11 +21,10 @@ dd {
     margin-inline-start: 20px;
 }
 
-/* .inline-img {
+.inline-img {
     display: inline;
     height: 10px;
-    width: auto;
-} */
+}
 /* #endregion */
 
 /* #region Tags */
@@ -97,6 +96,7 @@ details {
 
 details[open] {
     display: block;
+    border: dashed 1px honeydew;
 }
 
 details summary {
