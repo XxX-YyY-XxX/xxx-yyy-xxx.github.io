@@ -21,11 +21,8 @@
                 tableElem.append(theadElem, tbodyElem)
 
                 const headertr = document.createElement('tr');
-                for (const header of tableMatrix.shift()) {
-                    headertr.appendChild(Check.typeof(header) === 'dom' ?
-                        initializeHTML('th', {appendChild: [header]}) :
-                        initializeHTML('th', {textContent: header}));
-                }
+                for (const header of tableMatrix.shift())
+                    headertr.appendChild(initializeHTML('th', Check.typeof(header) === 'dom' ? {appendChild: [header]} : {textContent: header}));
                 theadElem.appendChild(headertr);
 
                 /** @param {Array[]} nestedArray */
@@ -33,11 +30,8 @@
                     tbodyElem.textContent = '';
                     for (const rows of nestedArray) {
                         const trElem = document.createElement('tr');
-                        for (const items of rows) {
-                            trElem.appendChild(Check.typeof(items) === 'dom' ?
-                                initializeHTML('td', {appendChild: [items]}) :
-                                initializeHTML('td', {textContent: items}));
-                        }
+                        for (const items of rows)
+                            trElem.appendChild(initializeHTML('td', Check.typeof(items) === 'dom' ? {appendChild: [items]} : {textContent: items}));
                         tbodyElem.appendChild(trElem);
                     }
                 }

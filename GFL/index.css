@@ -11,7 +11,7 @@ dl, table, figure, blockquote {
 }
 
 figcaption {
-    font-size: 0.0625em;
+    font-size: 0.8em;
     text-align: center;
     display: block;
 }
