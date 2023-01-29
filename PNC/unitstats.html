@@ -3,176 +3,13 @@
     <head>
         <script defer type="text/javascript" src="/univasset/scripts/include/includefile.js"></script>
         <script type="module">
-            import {AsyncFunc, Compare, Check} from "/univasset/scripts/externaljavascript.js";
-            import {initializeHTML} from '/univasset/scripts/htmlgenerator/htmlgenerator.js';
+            import {table} from '/univasset/scripts/htmlgenerator/htmlgenerator.js';
+            import {AsyncFunc} from "/univasset/scripts/externaljavascript.js";
 
             table(document.querySelector('#main_content div'),
                 (await AsyncFunc.getJSON('./unitstats.json')).slice(0, -1),
                 {sort: true, frzcol: true, frzhdr: true}
-            );
-            
-            /** @param {HTMLElement} grouperElem
-             * @param {Array[]} tableMatrix */
-            function table(grouperElem, tableMatrix, {sort = false, filter = false, frzcol = false, frzhdr = false} = {}) {
-                const tableElem = document.createElement('table');
-                const theadElem = document.createElement('thead');
-                const tbodyElem = document.createElement('tbody');
-
-                tableElem.append(theadElem, tbodyElem)
-
-                const headertr = document.createElement('tr');
-                for (const header of tableMatrix.shift())
-                    headertr.appendChild(initializeHTML('th', Check.typeof(header) === 'dom' ? {appendChild: [header]} : {textContent: header}));
-                theadElem.appendChild(headertr);
-
-                /** @param {Array[]} nestedArray */
-                function printDataRows(nestedArray) {
-                    tbodyElem.textContent = '';
-                    for (const rows of nestedArray) {
-                        const trElem = document.createElement('tr');
-                        for (const items of rows)
-                            trElem.appendChild(initializeHTML('td', Check.typeof(items) === 'dom' ? {appendChild: [items]} : {textContent: items}));
-                        tbodyElem.appendChild(trElem);
-                    }
-                }
-
-                printDataRows(tableMatrix);
-
-                //------------------------------------------------------------------------------------------------------------
-
-                switch (true) {
-                    case sort && filter:
-                        alert('Sort and Filter are both activated.');
-                        break;
-                    case sort:
-                        //multi sort
-                        //multiple option sort
-                        const samplerow = tableMatrix[0];
-                        headertr.dataset.onsort = 0;
-                        const string_sort = {
-                            no(cell) {
-                                const index = cell.dataset.index;
-                                cell.dataset.sort = 'hi';
-
-                                if (index != headertr.dataset.onsort) {
-                                    headertr.children.item(headertr.dataset.onsort).dataset.sort = 'no';
-                                    headertr.dataset.onsort = index;
-                                }
-
-                                return tableMatrix.slice().sort((a, b) => Compare.string(a[index], b[index]));
-                            },
-                            hi(cell) {
-                                const index = cell.dataset.index;
-                                cell.dataset.sort = 'lo';
-
-                                return tableMatrix.slice().sort((a, b) => Compare.string(b[index], a[index]));
-                            },
-                            lo(cell) {
-                                cell.dataset.sort = 'no';
-
-                                return tableMatrix;
-                            }                                           
-                        };
-                        const number_sort = {
-                            no(cell) {
-                                const index = cell.dataset.index;
-                                cell.dataset.sort = 'hi';
-
-                                if (index != headertr.dataset.onsort) {
-                                    headertr.children.item(headertr.dataset.onsort).dataset.sort = 'no';
-                                    headertr.dataset.onsort = index;
-                                }
-
-                                return tableMatrix.slice().sort((a, b) => Compare.number(b[index], a[index]));
-                            },
-                            hi(cell) {
-                                const index = cell.dataset.index;
-                                cell.dataset.sort = 'lo';
-
-                                return tableMatrix.slice().sort((a, b) => Compare.number(a[index], b[index]));
-                            },
-                            lo(cell) {
-                                cell.dataset.sort = 'no';
-
-                                return tableMatrix;
-                            }                                           
-                        };
-
-                        for (const [index, headerCell] of Object.entries(headertr.children)) {
-                            headerCell.dataset.index = index;
-                            headerCell.dataset.sort = 'no';
-                            
-                            switch (typeof samplerow[index]) {
-                                case 'string':
-                                    headerCell.addEventListener('click', function() {
-                                        printDataRows(string_sort[this.dataset.sort](this));
-                                    }, true);
-                                    break;
-                                case 'number':
-                                    headerCell.addEventListener('click', function() {
-                                        printDataRows(number_sort[this.dataset.sort](this));
-                                    }, true);
-                                    break;
-                                default:
-                                    const item = samplerow[index];
-                                    alert(item, typeof item)
-                                    break;
-                            }
-                        }
-                        break;
-                    case filter:
-                        //unfilter
-                        //multifilter
-                        //change to CSS display: 'none';
-                        //filter for header and first column
-                        for (const [index, headerCell] of Object.entries(headertr.children)) {
-                            headerCell.dataset.index = index;
-                            if (index) {
-                                headerCell.addEventListener('click', function() {
-                                    //const index = this.dataset.index;
-                                    //printDataRows(tablerows.filter(x => x[index]));
-                                });
-                            } else {
-                                headerCell.addEventListener('click', function() {
-                                    //printDataRows(tablerows);
-                                });
-                            }
-                        }
-
-                        for (const [index, trElem] of Object.entries(tbodyElem.children)) {
-                            trElem.dataset.index = index;
-                            trElem.firstElementChild.addEventListener('click', function() {
-
-                            });
-                        }
-                        break;
-                    //default: Simple af table.
-                }
-
-                if (frzcol) {
-                    for (const trElem of [headertr, ...Array.from(tbodyElem.children)])
-                        trElem.firstElementChild.classList.add('freeze_col');
-
-                    if (sort) {
-                        for (const thElem of Array.from(headertr.children)) {
-                            thElem.addEventListener('click', function() {
-                                for (const trElem of Array.from(tbodyElem.children))
-                                    trElem.firstElementChild.classList.add('freeze_col');
-                            }, true);
-                        }
-                    }
-                }
-
-                if (frzhdr) {
-                    for (const thElem of Array.from(headertr.children))
-                        thElem.classList.add('freeze_row')
-                }
-
-                //------------------------------------------------------------------------------------------------------------
-
-                grouperElem.classList.add('func_table');
-                grouperElem.appendChild(tableElem);
-            }
+            );            
         </script>
 
         <meta charset='utf-8'>
@@ -196,58 +33,8 @@
     </head>
 
     <style>
-        /* #region General */
         .func_table {
-            border-style: inset;
-            overflow: auto;
-        }
-
-        .func_table > table {
-            margin: 0;
-        }
-        /* #endregion */
-
-        /* #region Sort */
-        /* .func_table th[data-sort="hi"] {
-            background: linear-gradient(135deg, black, transparent 50%),
-                linear-gradient(-135deg, black, transparent 50%),
-                linear-gradient(blue, gray 50%);
-        }
-
-        .func_table th[data-sort="lo"] {
-            background: linear-gradient(45deg, black, transparent 50%),
-                linear-gradient(-45deg, black, transparent 50%),
-                linear-gradient(gray 50%, red);
-        } */
-        /* #endregion */
-
-        /* #region Filter */
-        .func_table .filter_col, .func_table .filter_row {
-            display: none;
-        }
-        /* #endregion */
-
-        /* #region Freeze Cells */
-        .func_table .freeze_row {
-            position: sticky;
-            top: 0;
-            z-index: 1;
-        }
-
-        .func_table .freeze_col {
-            position: sticky;
-            left: 0;
-            z-index: 1;
-        }
-
-        .func_table th:first-child {
-            z-index: 2;
-        }
-        /* #endregion */
-
-        /* #region Custom */
-        .func_table .freeze_col, .func_table .freeze_row {
-            background: #1b1b1b;
+            height: 95vh;
         }
 
         .func_table tr:nth-child(even) > .freeze_col {
@@ -256,6 +43,11 @@
 
         .func_table .freeze_col {
             border-right: 1px dashed #b5e853;
+            background: #1b1b1b;
+        }
+
+        .func_table .freeze_row {
+            background: #1b1b1b;
         }
 
         .func_table th[data-sort="hi"] {
@@ -269,11 +61,6 @@
                 linear-gradient(-45deg, #1b1b1b, transparent 50%),
                 linear-gradient(gray 50%, red);
         }
-
-        .func_table {
-            height: 95vh;
-        }
-        /* #endregion */
     </style>
 
     <body>

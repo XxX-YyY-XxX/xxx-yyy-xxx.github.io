@@ -1,4 +1,4 @@
-/* #region Google Doc */
+/* #region Google Document */
 .func_googleDoc {
     border-style: inset;
 }
@@ -12,4 +12,53 @@
     width: 100%;
     border: 0;
 }
+/* #endregion */
+
+/* #region Responsive Table */
+.func_table {
+    border-style: inset;
+    overflow: auto;
+}
+
+.func_table > table {
+    margin: 0;
+}
+
+/* #region Sort */
+.func_table th[data-sort="hi"] {
+    background: linear-gradient(135deg, black, transparent 50%),
+        linear-gradient(-135deg, black, transparent 50%),
+        linear-gradient(blue, gray 50%);
+}
+
+.func_table th[data-sort="lo"] {
+    background: linear-gradient(45deg, black, transparent 50%),
+        linear-gradient(-45deg, black, transparent 50%),
+        linear-gradient(gray 50%, red);
+}
+/* #endregion */
+
+/* #region Filter */
+.func_table .filter_col, .func_table .filter_row {
+    display: none;
+}
+/* #endregion */
+
+/* #region Freeze Cells */
+.func_table .freeze_row {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.func_table .freeze_col {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+}
+
+.func_table th:first-child {
+    z-index: 2;
+}
+/* #endregion */
 /* #endregion */

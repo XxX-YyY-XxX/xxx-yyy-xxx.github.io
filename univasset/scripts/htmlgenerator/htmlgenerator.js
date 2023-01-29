@@ -1,4 +1,4 @@
-import {Check} from '../externaljavascript.js';
+import {Compare, Check} from '../externaljavascript.js';
 
 /** @param {(string | Node)[]} elements */
 function brJoin(elements) {
@@ -65,4 +65,168 @@ export function gdocDropdown(grouperElem, ...nameLinkPair) {
 
     grouperElem.classList.add('func_googleDoc');
     grouperElem.append(selectElem, buttonElem, document.createElement('br'), iframeElem);
+}
+
+/** Creates a table from a given matrix of data.
+ * @param {HTMLElement} grouperElem
+ * @param {Array[]} tableMatrix */
+export function table(grouperElem, tableMatrix, {sort = false, filter = false, frzcol = false, frzhdr = false} = {}) {
+    const tableElem = document.createElement('table');
+    const theadElem = document.createElement('thead');
+    const tbodyElem = document.createElement('tbody');
+
+    tableElem.append(theadElem, tbodyElem)
+
+    const headertr = document.createElement('tr');
+    for (const header of tableMatrix.shift())
+        headertr.appendChild(initializeHTML('th', Check.typeof(header) === 'dom' ? {appendChild: [header]} : {textContent: header}));
+    theadElem.appendChild(headertr);
+
+    /** @param {Array[]} nestedArray */
+    function printDataRows(nestedArray) {
+        tbodyElem.textContent = '';
+        for (const rows of nestedArray) {
+            const trElem = document.createElement('tr');
+            for (const items of rows)
+                trElem.appendChild(initializeHTML('td', Check.typeof(items) === 'dom' ? {appendChild: [items]} : {textContent: items}));
+            tbodyElem.appendChild(trElem);
+        }
+    }
+
+    printDataRows(tableMatrix);
+
+    //------------------------------------------------------------------------------------------------------------
+
+    switch (true) {
+        case sort && filter:
+            alert('Sort and Filter are both activated.');
+            break;
+        case sort:
+            //multi sort
+            //multiple option sort
+            const samplerow = tableMatrix[0];
+            headertr.dataset.onsort = 0;
+            const string_sort = {
+                no(cell) {
+                    const index = cell.dataset.index;
+                    cell.dataset.sort = 'hi';
+
+                    if (index != headertr.dataset.onsort) {
+                        headertr.children.item(headertr.dataset.onsort).dataset.sort = 'no';
+                        headertr.dataset.onsort = index;
+                    }
+
+                    return tableMatrix.slice().sort((a, b) => Compare.string(a[index], b[index]));
+                },
+                hi(cell) {
+                    const index = cell.dataset.index;
+                    cell.dataset.sort = 'lo';
+
+                    return tableMatrix.slice().sort((a, b) => Compare.string(b[index], a[index]));
+                },
+                lo(cell) {
+                    cell.dataset.sort = 'no';
+
+                    return tableMatrix;
+                }                                           
+            };
+            const number_sort = {
+                no(cell) {
+                    const index = cell.dataset.index;
+                    cell.dataset.sort = 'hi';
+
+                    if (index != headertr.dataset.onsort) {
+                        headertr.children.item(headertr.dataset.onsort).dataset.sort = 'no';
+                        headertr.dataset.onsort = index;
+                    }
+
+                    return tableMatrix.slice().sort((a, b) => Compare.number(b[index], a[index]));
+                },
+                hi(cell) {
+                    const index = cell.dataset.index;
+                    cell.dataset.sort = 'lo';
+
+                    return tableMatrix.slice().sort((a, b) => Compare.number(a[index], b[index]));
+                },
+                lo(cell) {
+                    cell.dataset.sort = 'no';
+
+                    return tableMatrix;
+                }                                           
+            };
+
+            for (const [index, headerCell] of Object.entries(headertr.children)) {
+                headerCell.dataset.index = index;
+                headerCell.dataset.sort = 'no';
+                
+                switch (typeof samplerow[index]) {
+                    case 'string':
+                        headerCell.addEventListener('click', function() {
+                            printDataRows(string_sort[this.dataset.sort](this));
+                        }, true);
+                        break;
+                    case 'number':
+                        headerCell.addEventListener('click', function() {
+                            printDataRows(number_sort[this.dataset.sort](this));
+                        }, true);
+                        break;
+                    default:
+                        const item = samplerow[index];
+                        alert(item, typeof item)
+                        break;
+                }
+            }
+            break;
+        case filter:
+            //unfilter
+            //multifilter
+            //change to CSS display: 'none';
+            //filter for header and first column
+            for (const [index, headerCell] of Object.entries(headertr.children)) {
+                headerCell.dataset.index = index;
+                if (index) {
+                    headerCell.addEventListener('click', function() {
+                        //const index = this.dataset.index;
+                        //printDataRows(tablerows.filter(x => x[index]));
+                    });
+                } else {
+                    headerCell.addEventListener('click', function() {
+                        //printDataRows(tablerows);
+                    });
+                }
+            }
+
+            for (const [index, trElem] of Object.entries(tbodyElem.children)) {
+                trElem.dataset.index = index;
+                trElem.firstElementChild.addEventListener('click', function() {
+
+                });
+            }
+            break;
+        //default: Simple af table.
+    }
+
+    if (frzcol) {
+        for (const trElem of [headertr, ...Array.from(tbodyElem.children)])
+            trElem.firstElementChild.classList.add('freeze_col');
+
+        if (sort) {
+            for (const thElem of Array.from(headertr.children)) {
+                thElem.addEventListener('click', function() {
+                    for (const trElem of Array.from(tbodyElem.children))
+                        trElem.firstElementChild.classList.add('freeze_col');
+                }, true);
+            }
+        }
+    }
+
+    if (frzhdr) {
+        for (const thElem of Array.from(headertr.children))
+            thElem.classList.add('freeze_row')
+    }
+
+    //------------------------------------------------------------------------------------------------------------
+
+    grouperElem.classList.add('func_table');
+    grouperElem.appendChild(tableElem);
 }
