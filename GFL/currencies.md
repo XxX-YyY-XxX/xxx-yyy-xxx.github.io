@@ -2,10 +2,6 @@
 
 # Resource Management
 
-### Where can I use Calibration Tickets?
-
-> Equipment Calibration, Fairy Talent Calibration, HOC Chip Rotation, More Anticipation...
-
 ### Do first purchase gem bonus reset?
 
 > Only on server anniversary which, on Global, is on May.

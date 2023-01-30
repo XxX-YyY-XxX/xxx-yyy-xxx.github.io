@@ -59,6 +59,7 @@ export const dTag = Object.freeze({
     MARP : Object.freeze({val : 'FourResources', desc : 'Manpower, Ammunition, Rations, Parts.'}),
     ADJUNCT : Object.freeze({val : 'Adjutants', desc : 'T-Doll secretary.'}),
     MINI : Object.freeze({val : 'MiniEvents', desc : 'Keycard Events, Point Events, etc.'}),
+    BP : Object.freeze({val : 'Battlepass', desc : 'Frontline Protocol.'}),
     QUEST : Object.freeze({val : 'Quests', desc : 'Dailies, weeklies, main, career, intel.'}),
     SHOP : Object.freeze({val : 'Shop', desc : 'Buy things here.'}),
     FRIEND : Object.freeze({val : 'Friends', desc : 'The helpful kind.'}),
@@ -2077,7 +2078,7 @@ export const cardData = Object.freeze([
             'Battlepass' : ['Called in-game as Frontline Protocol.', '10$ at minimum.'],
             'New Player Rewards' : ["UMP45's Valentine's Skin, which is also available as gacha."]
         })}`,
-        tags : [dTag.TDOLL, dTag.SKIN, dTag.GET]
+        tags : [dTag.TDOLL, dTag.SKIN, dTag.GET, dTag.BP]
     },
     {
         id : '00250',
@@ -2828,7 +2829,7 @@ export const cardData = Object.freeze([
         id : '00367',
         questions : `How do we unlock the Additional Supplies/Blue Weekly Quest?`,
         answers : `By paying for the current battlepass.`,
-        tags : [dTag.QUEST]
+        tags : [dTag.QUEST, dTag.BP]
     },
     {
         id : '00368',
@@ -2910,12 +2911,6 @@ export const cardData = Object.freeze([
         tags : [dTag.PA]
     },
     {
-        id : '00379',
-        questions : `How do I unlock the blue Weekly Quest?`,
-        answers : `Pay for the battlepass.`,
-        tags : [dTag.QUEST]
-    },
-    {
         id : '00380',
         questions : `Do I need Dummy Cores for upgrading Coalition Units?`,
         answers : `No. They have their own resources.`,
@@ -2961,7 +2956,7 @@ export const cardData = Object.freeze([
         id : '00387',
         questions : `What are these nameless mails with resources?`,
         answers : `Battlepass overfill or dailies reward.`,
-        tags : [dTag.QUEST]
+        tags : [dTag.QUEST, dTag.ITEM]
     },
     {
         id : '00388',
@@ -3001,6 +2996,18 @@ export const cardData = Object.freeze([
         tags : [dTag.MISC]
     },
     {
+        id : '00045',
+        questions : `If I bought the battlepass in the middle/end, will I still able to get the previous level rewards?`,
+        answers : `Yes.`,
+        tags : [dTag.QUEST, dTag.BP]
+    },
+    {
+        id : '00379',
+        questions : `Where can I use Calibration Tickets?`,
+        answers : `Equipment Calibration, Fairy Talent Calibration, HOC Chip Rotation, More Anticipation...`,
+        tags : [dTag.ITEM]
+    },
+    {
         id : '00000',
         questions : ``,
         answers : ``,
@@ -3009,5 +3016,3 @@ export const cardData = Object.freeze([
 ]);
 
 export const newCards = ['00237', '00390', '00112', '00101', '00018', '00064'];
-
-//00045

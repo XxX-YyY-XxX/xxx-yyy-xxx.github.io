@@ -11,9 +11,7 @@
             const elite = new Set(), nonelite = new Set();
 
             for (const {passive_skill, code} of jsonObject) (String(passive_skill).includes('200304') ? nonelite : elite).add(code);
-
-            for (const [index, [unitE, unitNE]] of Object.entries(Array.from(zip(true, elite, nonelite))))
-                matrix.push([Number(index) + 1, unitE, unitNE ?? '']);
+            for (const [index, [unitE, unitNE]] of Object.entries(Array.from(zip(true, elite, nonelite)))) matrix.push([Number(index) + 1, unitE, unitNE ?? '']);
 
             table(document.querySelector('#main_content div'), matrix);
         </script>

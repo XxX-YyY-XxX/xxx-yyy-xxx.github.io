@@ -17,3 +17,12 @@ Array.prototype.remove = function(any) {
     this.splice(item_index, Number(item_index !== -1));
 }
 //#endregion
+
+//#region Math
+/** @param {number} value 
+ * @param {number} lower Inclusive.
+ * @param {number} upper Inclusive. */
+Math.clip = function(value, lower, upper) {
+    return Math.min(Math.max(value, lower), upper);
+}
+//#endregion
