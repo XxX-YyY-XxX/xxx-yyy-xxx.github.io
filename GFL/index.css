@@ -10,21 +10,24 @@ dl, table, figure, blockquote {
     margin: 0px;
 }
 
-figcaption {
-    font-size: 0.8em;
-    text-align: center;
-    display: block;
-}
-
 dd {
     display: list-item;
     margin-inline-start: 20px;
 }
 
-.inline-img {
-    display: inline;
-    height: 16px;
-    margin: -3px -5px;
+dd > figure {
+    width: fit-content;
+}
+
+figcaption {
+    font-size: 0.5em;
+    text-align: center;
+    display: block;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
 }
 /* #endregion */
 
@@ -33,12 +36,12 @@ dd {
     outline: 2px solid aqua;
     border-radius: 10rem;
     padding: 0px 3px;
+    background: transparent;
+    color: aqua;
     display: inline-grid;                       /* For making the tag buttons stay together on wrap. */
 }
 
 label.tags {
-    background: transparent;
-    color: aqua;
     margin: 0px 5px;
 }
 
@@ -57,8 +60,6 @@ label.tags {
 }
 
 .card-tags {
-    background: transparent;
-    color: aqua;
     line-height: 20px;
 }
 /* #endregion */
@@ -125,11 +126,6 @@ legend h3, fieldset ol, fieldset ul {
 fieldset hr {
     border-top: 1px dashed;
 }
-
-fieldset a {
-    cursor: pointer;
-    text-decoration: none;
-}
 /* #endregion */
 
 /* #region Embed */
@@ -148,5 +144,18 @@ iframe[src*="www.youtube.com"], iframe[src*="streamable.com"] {
 
 .twitter-tweet > iframe[src*="platform.twitter.com"] {
     max-width: 100%;
+}
+/* #endregion */
+
+/* #region Img */
+img:not(.inline-img) {
+    margin: 0 auto;
+    display: block;
+}
+
+img.inline-img {
+    margin: -3px -5px;
+    display: inline;
+    height: 16px;
 }
 /* #endregion */

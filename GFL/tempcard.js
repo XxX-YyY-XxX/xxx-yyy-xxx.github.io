@@ -510,8 +510,7 @@ export const cardData = Object.freeze([
     {
         id : '00035',
         questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
-        answers : `${image('./assets/images/SFEnemy.png')}<br>
-        Note that Jupiter Cannons count as unarmored machine type.`,
+        answers : `${image('./assets/images/SFEnemy.png', 'Jupiter Cannons count as unarmored machine type')}`,
         tags : [dTag.ENEMY]
     },
     {

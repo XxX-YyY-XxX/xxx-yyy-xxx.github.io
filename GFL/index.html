@@ -39,15 +39,20 @@
 
         <div class="container">
             <section id="main_content">
-                <p><h1><a href="./starter">New Player Guide</a></h1></p>                
-                <p><h1><a href="./mainpage">Topics Repository</a></h1></p>
+                <table>
+                    <tr>
+                        <td><a href="./starter">New Player Guide</a></td>
+                        <td><a href="./mainpage">Topics Repository</a></td>
+                    </tr>
+                </table>
 
                 <div id="input-type-container">
-                    <label class="flex-label checked"><input type="radio" name="input-type" onclick="toggleInput(this)" value="search" checked><h2>Keyword</h2></label>
+                    <label class="flex-label"><input type="radio" name="input-type" onclick="toggleInput(this)" value="search" checked><h2>Keyword</h2></label>
                     <label class="flex-label"><input type="radio" name="input-type" onclick="toggleInput(this)" value="tags"><h2>Tags</h2></label>
                     <label class="flex-label"><input type="radio" name="input-type" onclick="toggleInput(this)" value="browse"><h2>Browse</h2></label>
                 </div>
 
+                <!-- #region Input Fields -->
                 <form id="submission-form">
                     <div id="tags-list"></div>
 
@@ -62,6 +67,7 @@
                     <button type="button" onclick="changePage(this)" value="next">Next</button>
                     <button type="button" onclick="changePage(this)" value="last">Last</button>
                 </div>
+                <!-- #endregion -->
 
                 <div id="cards-field"></div>
             </section>
