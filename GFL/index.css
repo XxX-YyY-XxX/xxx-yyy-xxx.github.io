@@ -31,6 +31,17 @@ a {
 }
 /* #endregion */
 
+/* #region Links Table */
+#main_content > table {
+    margin-bottom: 10px;
+}
+
+#main_content > table td {
+    border-style: ridge;
+    padding: 5px;
+}
+/* #endregion */
+
 /* #region Tags */
 .tags {
     outline: 2px solid aqua;

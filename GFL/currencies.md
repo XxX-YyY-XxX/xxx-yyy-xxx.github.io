@@ -2,10 +2,6 @@
 
 # Resource Management
 
-### Do first purchase gem bonus reset?
-
-> Only on server anniversary which, on Global, is on May.
-
 ### If I buy multiple Monthly Gem Packages, will it stack?
 
 > As in more than 30 a day? No. It being a 2 month distribution? Yes.

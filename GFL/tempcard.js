@@ -3007,6 +3007,12 @@ export const cardData = Object.freeze([
         tags : [dTag.ITEM]
     },
     {
+        id : '00393',
+        questions : `Do first purchase gem bonus reset?`,
+        answers : `Only on server anniversary which, on Global, is on May.`,
+        tags : [dTag.MISC]
+    },
+    {
         id : '00000',
         questions : ``,
         answers : ``,
