@@ -2,10 +2,6 @@
 
 # Resource Management
 
-### If I buy multiple Monthly Gem Packages, will it stack?
-
-> As in more than 30 a day? No. It being a 2 month distribution? Yes.
-
 ### Which should I prioritize in the Data Room, Combat Reports or Special Combat Reports?
 
 > SCRs primarily because you can just EXP sim, corpse drag, and auto-battle the dolls, and also because basecamp sells far more CR than SCR. Note that you'd need 5000 SCRs to fully level a fresh HOC.

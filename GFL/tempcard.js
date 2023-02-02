@@ -3013,6 +3013,12 @@ export const cardData = Object.freeze([
         tags : [dTag.MISC]
     },
     {
+        id : '00394',
+        questions : `If I buy multiple Monthly Gem Packages, will it stack?`,
+        answers : `As in more than 30 a day? No. It being a 2 month distribution? Yes.`,
+        tags : [dTag.MISC]
+    },
+    {
         id : '00000',
         questions : ``,
         answers : ``,

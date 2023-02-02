@@ -159,6 +159,7 @@ export class Check {
 /** @param {Iterable} iterable */
 function getIterator(iterable) {
     //if (iterable[Symbol.iterator]() === iterable)
+    
     //Set = iterable[Symbol.iterator]();
 
     if (!['set'].includes(Check.typeof(iterable)))
@@ -171,7 +172,7 @@ function getIterator(iterable) {
 //#region Functions
 /** @param {string} htmlString */
 export function removeHTMLTag(htmlString) {
-    return htmlString.replace(/(<([^>]+)>)/ig, '');
+    return htmlString.replace(/<([^>]+)>/ig, '');
 }
 
 //Math.random() = [0...1)
@@ -211,9 +212,9 @@ export function checkedLabel(inputElement) {
  * @param {Iterable[]} iterables order of iterables = order of output
  * @returns "Tuple" of values from each array */
 export function* zip(extend, ...iterables) {
-    const iterator_array = iterables.map(getIterator);
+    const output = Array();
     const extension = extend ? 'some' : 'every';
-    const output = [];
+    const iterator_array = iterables.map(getIterator);
     while (iterator_array.map(x => {const {value, done} = x.next(); output.push(value); return !done;})[extension](x => x))
         yield output.splice(0);
 }
