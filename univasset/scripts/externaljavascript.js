@@ -97,6 +97,7 @@ export class Cycle {
 }
 
 export class Check {
+    /** typeof, but with extra steps. */
     static typeof(any) {
         const item_type = typeof any;
         switch (true) {
@@ -106,7 +107,8 @@ export class Check {
                 return 'array';
             case any instanceof Set:
                 return 'set';
-            case [HTMLElement, DocumentFragment].some(x => any instanceof x):
+            case any instanceof HTMLElement:
+            case any instanceof DocumentFragment:
                 return 'dom';
             default:
                 return 'object';
