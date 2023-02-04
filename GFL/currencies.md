@@ -2,10 +2,6 @@
 
 # Resource Management
 
-### Which should I prioritize in the Data Room, Combat Reports or Special Combat Reports?
-
-> SCRs primarily because you can just EXP sim, corpse drag, and auto-battle the dolls, and also because basecamp sells far more CR than SCR. Note that you'd need 5000 SCRs to fully level a fresh HOC.
-
 ### I've seen players have around 500 T-doll contracts. How did they have that much?
 
 > Logistics and limiting production to 4 a day. The last one basically applies to long-time players though.

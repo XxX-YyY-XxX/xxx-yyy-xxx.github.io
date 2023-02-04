@@ -1,11 +1,14 @@
-import {descriptionList, spoilerSummary, image, table, link, list} from '../univasset/scripts/htmlfunctions/htmlfunctions.js';
+import {spoilerSummary, image, table, link} from '../univasset/scripts/htmlfunctions/htmlfunctions.js';
 import TextStyle from '../univasset/scripts/htmlfunctions/textstyle.js';
 import Embed from '../univasset/scripts/htmlfunctions/linkembed.js';
+import List from '../univasset/scripts/htmlfunctions/lists.js'
 
+//#region Special Characters
 const lessEqual = '≤';
 const star = '★';
 const tm = '™️';
 //🍰
+//#endregion
 
 /** @param {string} text 
  * @param {string[]} ID */
@@ -107,7 +110,7 @@ export const cardData = Object.freeze([
         answers : `First is grinding them on leveling maps, mainly through ${spoilerSummary('corpse dragging', 
             `Also called Poor Run or Beggar Run, it is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.<br>
             ${getID('Draggable stages.', '00026')}`)}.<br>
-        Second is using ${spoilerSummary('Combat Reports (CR)', list(false,
+        Second is using ${spoilerSummary('Combat Reports (CR)', List.unordered(
             'Acquired through Forward Basecamp, Data Room, the shop during events, EXP Sim, or as a reward.',
             `Can be gifted by going to the ${spoilerSummary('Dorm Gifts screen', image('./assets/images/SkinLocation.png', 'Dorms > Warehouse > Gifts'))} or going to your owned doll's profile and tapping the + button by the EXP bar.`,
             'Gives 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.',
@@ -203,13 +206,17 @@ export const cardData = Object.freeze([
     {
         id : '00012',
         questions : `What does Affection do?`,
-        answers : `${descriptionList({
-            'Tactical Dolls' : ['At 90 and above, gives stat bonuses indicated by pink numbers.',
+        answers : `${List.description({
+            'Tactical Dolls' : [
+                'At 90 and above, gives stat bonuses indicated by pink numbers.',
                 'At 10 below, gives stat penalties indicated by blue numbers.',
                 'Enables oathing at 100.',
-                'If a doll dies in a non-boss fight, that particular doll will lose 10 points. Everyone else loses 5 points.'],
-            'Coalition Units' : ['If a unit dies in battle, only that unit will lose affection.',
-                'Enables oathing at 100 for ringleaders only.'],
+                'If a doll dies in a non-boss fight, that particular doll will lose 10 points. Everyone else loses 5 points.'
+            ],
+            'Coalition Units' : [
+                'If a unit dies in battle, only that unit will lose affection.',
+                'Enables oathing at 100 for ringleaders only.'
+            ],
             'Kalina' : ['Raised through daily hearts or spending gems.']    //Spending gems on infrastructures raises hearts?
         })}`,
         tags : [dTag.LOVE, dTag.PRIME, dTag.OATH, dTag.TDOLL, dTag.COALITION, dTag.KALINA]
@@ -241,7 +248,7 @@ export const cardData = Object.freeze([
         ${link("Fatalchapter's bilibili guide.", 'https://www.bilibili.com/read/readlist/rl100361')} Updated up to Jashin dolls.<br>
         ${link("Sijun's list.", 'https://www.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1rph1l/')} Translated by u/ConductorBichir.<br>
         ${spoilerSummary("u/LuckyTenth's spreadsheet.", Embed.google(Embed.G_EXCEL, '1w2qEbnNluSc6C4U73yyAnYE_zmXdARvDu3GZmMO7hl4'))}<br>
-        ${spoilerSummary('BigStupidJellyfish analyses.', list(false,
+        ${spoilerSummary('BigStupidJellyfish analyses.', List.unordered(
             link('Vallhalla girls.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/valhalla'),
             link('AK-15.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ak15')))}`,
         tags : [dTag.TDOLL, dTag.TIER]
@@ -266,7 +273,7 @@ export const cardData = Object.freeze([
         answers : `${image('https://i.imgur.com/2nh8xHs.jpeg', "Sijun's list")}<br>
         For the equipments, top number is the recommended quantity, bottom number is the reserve quantity.<br>
         ${spoilerSummary(`u/UnironicWeeaboo's fairy stat calculator.`, Embed.google(Embed.G_EXCEL, '1RORciafqtspkxy3fqBrFdKIxVfanV2-fLl9FlvY3QtM'))}<br>
-        ${spoilerSummary('u/BigStupidJellyfish_ reviews.', list(false,
+        ${spoilerSummary('u/BigStupidJellyfish_ reviews.', List.unordered(
             link('General reviews.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/fairy-reviews'),
             link('Sniper review.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/sniper-rework')
         ))}`,
@@ -319,7 +326,7 @@ export const cardData = Object.freeze([
     {
         id : '00023',
         questions : `Where can I read the MOD, costume, event stories, and all that?`,
-        answers : `${descriptionList({
+        answers : `${List.description({
             'Compilations' : [link('GF Translated Story Material (+ other stuff)', 'https://drive.google.com/drive/folders/14sNze_lnv5EwL1bl_g3IOVQIo6GGYUJp'),
                 link('GF Translations', 'https://drive.google.com/drive/folders/14bAuWaGbagJwucmlit3EkXFqMRV9NHZO'),
                 link('The Official #gf-loreroom Information Index', 'https://docs.google.com/spreadsheets/d/1LYV05D7kGTKp_FS7cJrNrJlVxeRAnFVnr6vCTo5F-YM'),
@@ -344,7 +351,7 @@ export const cardData = Object.freeze([
     {
         id : '00024',
         questions : `Where and how can I get my favorite gun/doll/unit/character?`,
-        answers : `${descriptionList({
+        answers : `${List.description({
             'Factory Production' : [spoilerSummary('Gamepress infographic for resource efficient recipes.', image('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/2020-01/rateup-crafting-infographic.jpg'))],
             'Rescue Drops' : [
                 spoilerSummary('"Limited" drops in Combat Missions.', 'Limited to that particular map. Not limited by time, but by place. Until Rescue Event happens.' +
@@ -367,10 +374,14 @@ export const cardData = Object.freeze([
                 `During collabs, major events, side events, and ${spoilerSummary('Rescue Events', `Also known as Boss Bully, where you get to farm for 4-5${star} event reward dolls in the story chapters 1-6.`)}, event rewards become temporarily available for farming.`,
                 'Obtainable from random nodes, however unlikely.',
                 'For units that can also be crafted, their drop rates are less than 1%.'],
-            'Event Rewards' : [link("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls'),
-                'These dolls will become unavailable from major story clear rewards after being added to the campaign tab.'],
-            'Shop' : ['Applicable to collab dolls using event currency.',
-                `5${star} dolls available in Production are the only ones elegible for True Core Masks, bar spaghetti.`],
+            'Event Rewards' : [
+                link("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls'),
+                'These dolls will become unavailable from major story clear rewards after being added to the campaign tab.'
+            ],
+            'Shop' : [
+                'Applicable to collab dolls using event currency.',
+                `5${star} dolls available in Production are the only ones elegible for True Core Masks, bar spaghetti.`
+            ],
             'Achievements' : [
                 "Type 97s and the AR Team, which are the only ones that can't be bought.",
                 'All dolls come preleveled.'
@@ -382,7 +393,7 @@ export const cardData = Object.freeze([
     {
         id : '00025',
         questions : `How do I strengthen T-Dolls?`,
-        answers : `${descriptionList({
+        answers : `${List.description({
             'As an individual unit' : ['Leveling up',
                 'Stat enhancements',
                 'Equipments',
@@ -398,7 +409,7 @@ export const cardData = Object.freeze([
     {
         id : '00026',
         questions : `What are the leveling stages I can corpse drag and how do I run them?`,
-        answers : `${descriptionList({
+        answers : `${List.description({
             'General' : [
                 link('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide'),
                 link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/optimizing-leveling-introduction'),
@@ -434,7 +445,7 @@ export const cardData = Object.freeze([
     {
         id : '00028',
         questions : `Is there a guide on how to build echelons/team compositions?`,
-        answers : `${descriptionList({
+        answers : `${List.description({
             'Mixed' : [spoilerSummary("CheneyQWER's infographic.", image('./assets/images/EchelonComps.png'))],
             'Coalition Echelons' : [
                 link('Reddit flowchart post.', 'https://redd.it/rkvisq'),
@@ -461,7 +472,7 @@ export const cardData = Object.freeze([
     {
         id : '00030',
         questions : `What are Main Tanks and Off Tanks?`,
-        answers : `${descriptionList({'Main Tanks' : ['Guns that have survivability skills (i.e. smoke, eva boost, stun etc.).', 'Generally situated at the middle of the pack.'],
+        answers : `${List.description({'Main Tanks' : ['Guns that have survivability skills (i.e. smoke, eva boost, stun etc.).', 'Generally situated at the middle of the pack.'],
         'Off Tanks' : ['Guns that generally have damage skills (i.e. molotov, grenade, damage boost etc.) and/or a secondary damage soaker in some instances.', 'Situated at either middle-top or middle-bottom.']})}<br>
         All of these usually refer to SMGs.`,
         tags : [dTag.ECH, dTag.IMPT]
@@ -475,7 +486,7 @@ export const cardData = Object.freeze([
     {
         id : '00032',
         questions : `Is there a rate up in this game? If so, how do they work?`,
-        answers : `${descriptionList({
+        answers : `${List.description({
             'Anchored Construction' : [link(`Available for new players ${new TextStyle('and for veterans not bothering with it', TextStyle.STRIKE)}.`, 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681'),
                 link('Available on Saturdays and Sundays whenever a new batch of production dolls are released.', 'https://redd.it/szdua2') + ` Recommended anchors are 4${star} due to TCM existing, especially for shotguns.`, 
                 "Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate up."],
@@ -497,7 +508,7 @@ export const cardData = Object.freeze([
     {
         id : '00034',
         questions : `How do I strengthen FSTs?`,
-        answers : `${list(false,
+        answers : `${List.unordered(
             'Leveling up mostly by SCR',
             `Raising ${star}s using their central data or general data`,
             'Iterations by data patches (only available at LV100 and 5★)',
@@ -546,7 +557,7 @@ export const cardData = Object.freeze([
     {
         id : '00041',
         questions : `Which emulators are good for GFL?`,
-        answers : `${list(true, 'Mumu.', 'Memu.', 'LDPlayer.', 'Nox.', 'Bluestacks.')}`,
+        answers : `${List.ordered('Mumu.', 'Memu.', 'LDPlayer.', 'Nox.', 'Bluestacks.')}`,
         tags : [dTag.EMU]
     },
     {
@@ -589,7 +600,7 @@ export const cardData = Object.freeze([
     {
         id : '00048',
         questions : `For limited-time bonuses (i.e. auto-battles, logistics), when are the rewards calculated?`,
-        answers : `${descriptionList({
+        answers : `${List.description({
            'If the runs can be cancelled without penalty, rewards are calculated at the end.' : [
                 'The "Use Battery" bingo mission when exp-training HOCs.',
                 'Auto-Battles.'],
@@ -641,7 +652,7 @@ export const cardData = Object.freeze([
     {
         id : '00055',
         questions : `How can I save the enemy composition for later practice?`,
-        answers : `${descriptionList({
+        answers : `${List.description({
             'Add Target' : [
                 "Long press the enemy on the map and you'll see the button on the top-left.",
                 'Pause while in battle to see the button on the bottom-left.',
@@ -688,7 +699,7 @@ export const cardData = Object.freeze([
         questions : `What is Bookshelf of Memories?`,
         answers : `Sidestories for the featured dolls. Rewards ${spoilerSummary('Friend Gossips',
             'Unique dialogues when two paired dolls are in the double adjutant.' +
-            descriptionList({
+            List.description({
                 'Becoming a Star' : [
                     'P38 + HK45',
                     'P38 + SpectreM4',
@@ -698,7 +709,7 @@ export const cardData = Object.freeze([
                     'Stechkin + Desert Eagle']})
             )} or ${spoilerSummary('Unity Skills',
             'Additional skill when the paired dolls are in the same echelon.' +
-            descriptionList({
+            List.description({
                 'Operation Starchaser' : ['Grizzly + PzB29', 'AK-Alfa + M82'],
                 'Her Smile' : ['G36 + Springfield'],
                 'Default' : ['MPK + MPL']})
@@ -726,10 +737,10 @@ export const cardData = Object.freeze([
     {
         id : '00064',
         questions : `What best-in-slot (BiS) equipments should I use on my dolls?`,
-        answers : `${spoilerSummary('General equipments.', link('https://i.imgur.com/tl4MGI8.jpeg', 'https://big-stupid-jellyfish.github.io/GFMath/pages/newquip'))}<br>
-        ${spoilerSummary('#2 Chip equipment.', list(false,
+        answers : `${spoilerSummary('General equipments.', link(image('https://i.imgur.com/tl4MGI8.jpeg'), 'https://big-stupid-jellyfish.github.io/GFMath/pages/newquip'))}<br>
+        ${spoilerSummary('#2 Chip equipment.', List.unordered(
             spoilerSummary('BigStupidJellyfish_ doc.', Embed.google(Embed.G_EXCEL, '14xV50MSMBFGgN75E-Gy10WtzACb_KZdpxRKCYQ6FDQA')),
-            spoilerSummary('BigStupidJellyfish_ infograph.', link('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png', 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')),
+            spoilerSummary('BigStupidJellyfish_ infograph.', link(image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png'), 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')),
             spoilerSummary('mis doc.', Embed.google(Embed.G_EXCEL, '1c0JhaSX9WyL3EB-7RCDE4NrfzR1YuWdYWidQ_06-PrQ'))))}<br>
         ${spoilerSummary('AP thresholds.', image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/newquip/armor-reference.png'))}<br>
         ${link('3.0 equips.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/newerquip')}`,
@@ -947,7 +958,7 @@ export const cardData = Object.freeze([
         id : '00093',
         questions : `Which facilities/base upgrades should I prioritize for battery expenditures?`,
         answers : `${list(true,
-            spoilerSummary('Forward Basecamp', list(true, 
+            spoilerSummary('Forward Basecamp', List.ordered(
                 'Gate Console',
                 'Loot Rack')),
             spoilerSummary('Protocol Control Centre', list(true,
@@ -1013,7 +1024,7 @@ export const cardData = Object.freeze([
     {
         id : '00101',
         questions : `I wasn't able to clear the event during it's initial runtime. Will I still get the clear rewards when they get added to Campaign?`,
-        answers : `${list(false,
+        answers : `${List.unordered(
             'Gutted rewards compared to original.',
             'No True Core Masks (TCM).',
             link('Reward and crate dolls get shuffled to farming lottery.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls')
@@ -1090,7 +1101,7 @@ export const cardData = Object.freeze([
         id : '00112',
         questions : `What does equipment calibration and enhancement do?`,
         answers : `${image('./assets/images/EquipCalibEnhance.png', 'Calibration and enhancement are independent of each other')}
-        ${descriptionList({
+        ${List.description({
             'Equipment Calibration' : [
                 "Raises the equipment's base stat.",
                 'RNG dictates how many calibration tickets are wasted before maxing.',
@@ -1121,7 +1132,7 @@ export const cardData = Object.freeze([
     {
         id : '00115',
         questions : `How do friend batteries work?`,
-        answers : `${list(false,
+        answers : `${List.unordered(
             'Friend batteries recharge at 3am and 3pm UTC-8.',
             'The amount of charges/batteries depend on the number of dorms your friend has.',
             'Use Netlify if you want to know when it resets.',
@@ -1154,7 +1165,7 @@ export const cardData = Object.freeze([
     {
         id : '00119',
         questions : `How does Symmetric Infusion work exactly?`,
-        answers : `${descriptionList({
+        answers : `${List.description({
             'Cognitive Infusion' : ['Basically, swaps sizes. Technically, swaps all stats aside from size. If both sides are upgraded, say Lv. 31 and Lv. 23, they become 23 and 31, not 1 and 31+.'], 
             'Golden Infusion' : ['Swaps the golden status between the two units, nothing more, nothing less.']
         })}`,
@@ -1178,7 +1189,7 @@ export const cardData = Object.freeze([
     {
         id : '00122',
         questions : `How do I unlock special effects on commanders like flame auras etc.?`,
-        answers : `${list(true, 
+        answers : `${List.ordered(
             "Get a complete 5-slot from a set. Doesn't matter if male only or female only.",
             'Get their rare color variants.',
             '???',
@@ -1217,7 +1228,7 @@ export const cardData = Object.freeze([
     {
         id : '00127',
         questions : `Is there a way to expand the armory, or am I stuck with 100 doll slots forever?`,
-        answers : `${list(false, 'Shop>Items>Infrastructure>T-Doll slots +10.', 'Tap the locked echelon button.')}`,
+        answers : `${List.unordered( 'Shop>Items>Infrastructure>T-Doll slots +10.', 'Tap the locked echelon button.')}`,
         tags : [dTag.SHOP]
     },
     {
@@ -1229,7 +1240,7 @@ export const cardData = Object.freeze([
     {
         id : '00129',
         questions : `I want to F2PBTW. How do I do that?`,
-        answers : `${descriptionList({
+        answers : `${List.description({
             'Gems' : ['Daily log-ins (300 monthly).', 
                 'Sharing in FB/Twitter (30 weekly). You can cancel it at the last minute.',
                 'S-Ranking Normal (10) and Emergency (30) Chapters.',
@@ -1342,7 +1353,7 @@ export const cardData = Object.freeze([
     {
         id : '00144',
         questions : `What does "Event" mean on the left side of the mission select screen?`,
-        answers : `${descriptionList({
+        answers : `${List.description({
             'Combat Missions' : ['SPEQ Rate Up for X-4N',
                 'Special Rescue Event for X-6'],
             'Campaign Missions' : ['Newly added campaign'],
@@ -1666,7 +1677,7 @@ export const cardData = Object.freeze([
     {
         id : '00189',
         questions : `Where can I see the costumes I have acquired?`,
-        answers : `${list(false,
+        answers : `${List.unordered(
             'Commander Stat Card > Adjutants > Filter > Unlocked. Works for doll you have in inventory.',
             'Index > Furniture > Posters. Works for costumes that have been gifted/given.')}`,
         tags : [dTag.TDOLL, dTag.SKIN]
@@ -1681,7 +1692,7 @@ export const cardData = Object.freeze([
         id : '00191',
         questions : `General tips on defeating deathstacks?`,
         answers : `For the most part, you don't. But if you really want to, this is the epitome of "CE is useless", "what dolls, formation, fairy to use depend on what you're going against", and "learn kiting". Just don't expect to come out of it unscathed.<br>
-        ${descriptionList({
+        ${List.description({
             'Swarm deathstacks' : ['Usually AoE pierce such as Kord, Type 88, KSVK with HOC support and tank/delay fairies.',
                 'Kill them all before they kill you.'],
             'Golyat+ deathstacks' : ['Either stun+smoke or forceshields.']
@@ -1891,7 +1902,7 @@ export const cardData = Object.freeze([
     {
         id : '00222',
         questions : `What are the best deals for RL money?`,
-        answers : `${list(false,
+        answers : `${List.unordered(
             'Monthly gems card')}`,
         tags : [dTag.MISC]
     },
@@ -1923,7 +1934,7 @@ export const cardData = Object.freeze([
     {
         id : '00227',
         questions : `How many ways can I terminate the current mission?`,
-        answers : `${list(false,
+        answers : `${List.unordered(
             'Terminate mission button on the top-left of the field map.',
             "Combat Missions/Campaign/Event Map > the mission you're currently doing > Terminate.")}`,
         tags : [dTag.MAIN, dTag.CAMPAIGN, dTag.MAJOR, dTag.SEASON, dTag.COLLAB]
@@ -2069,7 +2080,7 @@ export const cardData = Object.freeze([
     {
         id : '00249',
         questions : `How can I get T-Doll skins?`,
-        answers : `${descriptionList({
+        answers : `${List.description({
             'Shop' : ['Dedicated gem-bought shop.', 'Event shop during seasonal events.'],
             'Resupply' : ['Banners and Reruns.', 'Black Card Exchange.'],
             'Mini-events' : ['Mini-events.'],
@@ -2162,7 +2173,7 @@ export const cardData = Object.freeze([
     {
         id : '00263',
         questions : `How do I get the gold medals in maps?`,
-        answers : `${list(false,
+        answers : `${List.unordered(
             'Read the Gold Medal description in the combat summary.',
             'Never retreat your team from the field map either by losing skirmishes (losses) or manual retreating (withdrawing).',
             "Never repair fielded teams (red warning at the bottom left tells you this, don't miss it).",
@@ -2179,7 +2190,7 @@ export const cardData = Object.freeze([
     {
         id : '00265',
         questions : `Which T-Doll skill's quirks should I be aware of?`,
-        answers : `${descriptionList({
+        answers : `${List.description({
             'General Liu' : [link('Clones can get stat buffs, albeit with restrictions.', 'https://iopwiki.com/wiki/General_Liu#Trivia')],
             'C-93' : ["Passive can trigger in response to other dolls' self-debuffs."],
             'Hanyang Type 88' : [link('Can still miss on certain positions.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/hanyangle-2')],
@@ -2446,7 +2457,7 @@ export const cardData = Object.freeze([
     {
         id : '00309',
         questions : `What are the other battery sinks besides facilities?`,
-        answers : `${list(false,
+        answers : `${List.unordered(
             'Slaving Kalina (CR/SCR)',
             'Making an animal kingdom (3 of each purchasable pets in Rescue Station)',
             'Raising FSTs',
@@ -2637,7 +2648,7 @@ export const cardData = Object.freeze([
     {
         id : '00339',
         questions : `What's the difference between L2D and Simplified L2D?`,
-        answers : `${descriptionList({
+        answers : `${List.description({
             'Live2D' : [
                 'Sometimes called Reactive Live2Ds.',
                 'Can follow your touch with their eyes/head.',
@@ -2755,7 +2766,7 @@ export const cardData = Object.freeze([
     {
         id : '00356',
         questions : `What are the fonts used in the game?`,
-        answers : `${descriptionList({
+        answers : `${List.description({
             'Noto sans' : ['Story dialogue', 'Unit/Skill descriptions']
         })}`,
         tags : [dTag.MISC]
@@ -2839,7 +2850,7 @@ export const cardData = Object.freeze([
     {
         id : '00369',
         questions : `How many Parachute Fairies would I need?`,
-        answers : `${descriptionList({
+        answers : `${List.description({
             'Casual' : ['1 - 2'],
             'Competetive' : ['3 - 5'],
             'Top Ranker' : ['6 - 10'],
@@ -2874,7 +2885,7 @@ export const cardData = Object.freeze([
     {
         id : '00374',
         questions : `I want a specific unit. How will I be able to pull for them in this banner?`,
-        answers : `${descriptionList({
+        answers : `${List.description({
             'Pulses' : [
                 'Only works for the three units on the field at that time.',
                 'Once an attempt is made, captured or not, they will be replaced with another unit from the pool.'
@@ -3019,6 +3030,18 @@ export const cardData = Object.freeze([
         tags : [dTag.MISC]
     },
     {
+        id : '00395',
+        questions : `How rare are Quick Repair Tickets?`,
+        answers : `As rare as water on a beach.`,
+        tags : [dTag.ITEM]
+    },
+    {
+        id : '00396',
+        questions : `Which should I prioritize in the Data Room, Combat Reports or Special Combat Reports?`,
+        answers : `SCRs primarily because you can just corpse drag, and auto-battle the dolls, and also because basecamp sells far more CR than SCR. Note that you'd need 5000 SCRs to fully level a fresh HOC.`,
+        tags : [dTag.ITEM, dTag.LEVEL]
+    },
+    {
         id : '00000',
         questions : ``,
         answers : ``,
@@ -3026,4 +3049,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00237', '00390', '00112', '00101', '00018', '00064'];
+export const newCards = ['00390', '00112', '00101', '00018', '00064'];
