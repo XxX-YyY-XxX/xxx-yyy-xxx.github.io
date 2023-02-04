@@ -487,7 +487,7 @@ export const cardData = Object.freeze([
         id : '00032',
         questions : `Is there a rate up in this game? If so, how do they work?`,
         answers : `${List.description({
-            'Anchored Construction' : [link(`Available for new players ${new TextStyle('and for veterans not bothering with it', TextStyle.STRIKE)}.`, 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681'),
+            'Anchored Construction' : [link(`Available for new players ${TextStyle.style('and for veterans not bothering with it', TextStyle.STRIKE)}.`, 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681'),
                 link('Available on Saturdays and Sundays whenever a new batch of production dolls are released.', 'https://redd.it/szdua2') + ` Recommended anchors are 4${star} due to TCM existing, especially for shotguns.`, 
                 "Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate up."],
             'Targeted Rate Up' : ['Available when a new skin banner is released.',
@@ -640,7 +640,7 @@ export const cardData = Object.freeze([
         questions : `Is there any way to reset my battles so I can get a win?`,
         answers : `Turn off WiFi during battle. You can still finish the fight with no connection. Though be wary of connection timeouts so do it near the end.<br>
         If you don't like the result or you lost, exit client, turn on WiFi, re-enter client, take the fight again.<br>
-        If satisfied ${new TextStyle('or saving your sanity', TextStyle.STRIKE)}, turn on WiFi after the battle finished.`,
+        If satisfied ${TextStyle.style('or saving your sanity', TextStyle.STRIKE)}, turn on WiFi after the battle finished.`,
         tags : [dTag.BATTLE]
     },
     {
@@ -798,7 +798,7 @@ export const cardData = Object.freeze([
     {
         id : '00072',
         questions : `How can I save my own voodoo recipe?`,
-        answers : `${list(true,
+        answers : `${List.ordered(
             'Craft from production using your own recipe.',
             'Take the item.',
             'Wait for 10 minutes for the voodoo list to refresh.',
@@ -814,7 +814,7 @@ export const cardData = Object.freeze([
     {
         id : '00074',
         questions : `If I MOD my T-Doll, is Level 100 still considered max level?`,
-        answers : `Thankfully, this is where common sense wins. In short, ${new TextStyle('NO', TextStyle.BOLD)}.`,
+        answers : `Thankfully, this is where common sense wins. In short, ${TextStyle.style('NO', TextStyle.BOLD)}.`,
         tags : [dTag.MOD, dTag.LEVEL]
     },
     {
@@ -832,7 +832,7 @@ export const cardData = Object.freeze([
     {
         id : '00077',
         questions : `Does anyone know how to CE stack using GFAlarm?`,
-        answers : `${list(true,
+        answers : `${List.ordered(
             'GFAlarm.',
             'File Save under Settings tab.',
             'Check "Save Theater Optimize Team".',
@@ -847,7 +847,7 @@ export const cardData = Object.freeze([
     {
         id : '00078',
         questions : `How are people just rolling in 5${star} fairies?`,
-        answers : `<p>${new TextStyle('Even dust, when piled up, can become a mountain.', TextStyle.ITALIC)}</p>
+        answers : `<p>${TextStyle.style('Even dust, when piled up, can become a mountain.', TextStyle.ITALIC)}</p>
         Good logistics upkeep and rolling HECs everyday. Just think of crafting them a side thing that doesn't take a lot of attention.<br>
         For perspective on how long to raise one:<br>
         ${image('./assets/images/FairyRaising.png', 'From u/UnironicWeeaboo')}`,
@@ -906,7 +906,7 @@ export const cardData = Object.freeze([
     {
         id : '00086',
         questions : `What does the PA chip Pilfer do?`,
-        answers : `Allows players to have a ${spoilerSummary('chance', image('./assets/images/PIlferRNG.png', 'Pilfer subject to RNG'))} of getting ${spoilerSummary('S-Rank drops', Embed.youtube('t6Vu72cajO0') + new TextStyle('Context: Coalition Medals require S-Rank battles.', TextStyle.QUOTE))} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
+        answers : `Allows players to have a ${spoilerSummary('chance', image('./assets/images/PIlferRNG.png', 'Pilfer subject to RNG'))} of getting ${spoilerSummary('S-Rank drops', Embed.youtube('t6Vu72cajO0') + TextStyle.style('Context: Coalition Medals require S-Rank battles.', TextStyle.QUOTE))} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
         Combine this with the ability to fight on one ammo bar to get two chances on one enemy.`,
         tags : [dTag.COALITION, dTag.EQUIP]
     },
@@ -919,7 +919,7 @@ export const cardData = Object.freeze([
     {
         id : '00088',
         questions : `How do I get more support echelons?`,
-        answers : `Add friends. Post your UID on a GFL community board and someone would ${new TextStyle('surely', TextStyle.STRIKE)}probably add you.`,
+        answers : `Add friends. Post your UID on a GFL community board and someone would ${TextStyle.style('surely', TextStyle.STRIKE)}probably add you.`,
         tags : [dTag.FRIEND, dTag.ECH]
     },
     {
@@ -957,11 +957,11 @@ export const cardData = Object.freeze([
     {
         id : '00093',
         questions : `Which facilities/base upgrades should I prioritize for battery expenditures?`,
-        answers : `${list(true,
+        answers : `${List.ordered(
             spoilerSummary('Forward Basecamp', List.ordered(
                 'Gate Console',
                 'Loot Rack')),
-            spoilerSummary('Protocol Control Centre', list(true,
+            spoilerSummary('Protocol Control Centre', List.ordered(
                 'Impulse Reactor',
                 'Tactical Chip Research Station')),
             'Intelligence Room',
@@ -987,7 +987,7 @@ export const cardData = Object.freeze([
     {
         id : '00096',
         questions : `Where to use gems?`,
-        answers : `${list(true,
+        answers : `${List.ordered(
             'Echelon slots up to 6 minimum, 8 for actually constant (ranking not included) logistics.',
             '5 dorms for batteries, enough to upgrade important facilities. More than that is your call.',
             "Storage slots especially if you're a collector. Or whenever you're getting annoyed with the pop-up.",
@@ -1053,8 +1053,8 @@ export const cardData = Object.freeze([
     {
         id : '00105',
         questions : `How do I get a higher success rate for logistics?`,
-        answers : `${new TextStyle('floor(mean of doll levels in echelon) * 0.45 + 15', TextStyle.CODE)} for normal logistics and<br>
-        ${new TextStyle('floor(mean of doll levels in echelon) * 0.60 + 30', TextStyle.CODE)} for rate up logistics.`,
+        answers : `${TextStyle.style('floor(mean of doll levels in echelon) * 0.45 + 15', TextStyle.CODE)} for normal logistics and<br>
+        ${TextStyle.style('floor(mean of doll levels in echelon) * 0.60 + 30', TextStyle.CODE)} for rate up logistics.`,
         tags : [dTag.LOGI]
     },
     {
@@ -1181,8 +1181,8 @@ export const cardData = Object.freeze([
     {
         id : '00121',
         questions : `Can I put 2 L2D skins in the double adjutant slot?`,
-        answers : `${new TextStyle('L2D mode', TextStyle.QUOTE)}<br>
-        ${new TextStyle('Double Adjutant', TextStyle.QUOTE)}<br>
+        answers : `${TextStyle.style('L2D mode', TextStyle.QUOTE)}<br>
+        ${TextStyle.style('Double Adjutant', TextStyle.QUOTE)}<br>
         Pick one.`,
         tags : [dTag.TDOLL, dTag.SKIN, dTag.ADJUNCT]
     },
@@ -1369,9 +1369,9 @@ export const cardData = Object.freeze([
     {
         id : '00145',
         questions : `Can someone tell me what the difference is between Charge, Destroy, and Defend commands for coalition units?`,
-        answers : `Lets melee units ${new TextStyle('Charge', TextStyle.BOLD)} down the lane.<br>
-        Lets melee units approach and ${new TextStyle('Destroy', TextStyle.BOLD)} the nearest enemy.<br>
-        Return and ${new TextStyle('Defend', TextStyle.BOLD)} their grid position.`,
+        answers : `Lets melee units ${TextStyle.style('Charge', TextStyle.BOLD)} down the lane.<br>
+        Lets melee units approach and ${TextStyle.style('Destroy', TextStyle.BOLD)} the nearest enemy.<br>
+        Return and ${TextStyle.style('Defend', TextStyle.BOLD)} their grid position.`,
         tags : [dTag.COALITION, dTag.BATTLE]
     },
     {
@@ -1494,7 +1494,7 @@ export const cardData = Object.freeze([
         questions : `What're the rewards for the Defense Drill?`,
         answers : `Unlocks after clearing 2-4N.<br>
         ${link('Matsuda Guide and Line-up, circa 2.08.', 'https://gfl.matsuda.tips/post/defdrill')}<br>
-        ${new TextStyle('2.09 waves', TextStyle.BOLD)}:<br>
+        ${TextStyle.style('2.09 waves', TextStyle.BOLD)}:<br>
         ${spoilerSummary('Discord Leaderboard Comps.', `${image('https://cdn.discordapp.com/attachments/453784246515925003/988812408929804328/unknown.png')}<br>
             ${image('./assets/images/DiscordDefenseDrill.png')}`)}<br>
         ${spoilerSummary('General BLT vid.', Embed.youtube('P-GLrBNvFVs'))}<br>
@@ -1756,7 +1756,7 @@ export const cardData = Object.freeze([
     {
         id : '00201',
         questions : `My team says Ammo/Ration depleted. How do I fill it up?`,
-        answers : `${list(true,
+        answers : `${List.ordered(
             'Stand on a captured Command Center, captured open Heliport, captured open Heavy Heliport, or Cache Box.',
             'Double-tap the echelon standing on it.',
             'Yellow Resupply button on the bottom-right.')}<br>
@@ -1767,7 +1767,7 @@ export const cardData = Object.freeze([
     {
         id : '00202',
         questions : `What does the ${link('glitter/sparkle', './assets/images/ShinyIndicator.png')} in my coalition unit's portrait mean? Their sprites also has a golden aura/glow around it.`,
-        answers : `A shiny ${new TextStyle('pokemon', TextStyle.STRIKE)} coalition unit. And the very reason Golden Infusion is a thing.<br>
+        answers : `A shiny ${TextStyle.style('pokemon', TextStyle.STRIKE)} coalition unit. And the very reason Golden Infusion is a thing.<br>
         If put on a Lv.100, XL unit, something special may happen.`,
         tags : [dTag.COALITION]
     },
@@ -1864,7 +1864,7 @@ export const cardData = Object.freeze([
     {
         id : '00217',
         questions : `What should I prioritize buying from the black market?`,
-        answers : `${list(true,
+        answers : `${List.ordered(
             'Fire Control Cores',
             'Dummy Cores',
             'Standard Combat Reports',
@@ -2284,7 +2284,7 @@ export const cardData = Object.freeze([
     {
         id : '00279',
         questions : `Is there an easy way to get Luffberry tickets?`,
-        answers : `${list(true,
+        answers : `${List.ordered(
             'Create private lobby.',
             'Start match with bots.',
             'Recover game every 5 minutes or buy cards during shop phase.',
@@ -2301,7 +2301,7 @@ export const cardData = Object.freeze([
     {
         id : '00282',
         questions : `I bought the L2D background but I saw nothing move. Is this really L2D?`,
-        answers : `If you won't move then it wouldn't. Yes, panoramic${new TextStyle('sorta L2D', TextStyle.SUPER)}.`,
+        answers : `If you won't move then it wouldn't. Yes, panoramic${TextStyle.style('sorta L2D', TextStyle.SUPER)}.`,
         tags : [dTag.MISC]
     },
     {
@@ -2799,7 +2799,7 @@ export const cardData = Object.freeze([
     {
         id : '00361',
         questions : `I can't log-in with my third party account. Is there any way to get back?`,
-        answers : `Might be because the third party is down. Contacting ${new TextStyle('support@sunborngame.com', TextStyle.BOLD)} to change to Sunborn account might help. Having account details, particularly UID and username, may help.`,
+        answers : `Might be because the third party is down. Contacting ${TextStyle.style('support@sunborngame.com', TextStyle.BOLD)} to change to Sunborn account might help. Having account details, particularly UID and username, may help.`,
         tags : [dTag.ACCT, dTag.TECH]
     },
     {
@@ -2816,7 +2816,7 @@ export const cardData = Object.freeze([
     },
     {
         id : '00364',
-        questions : `What's the optimal way of clearing ${new TextStyle('Bingo', TextStyle.STRIKE)} Key Card Events?`,
+        questions : `What's the optimal way of clearing ${TextStyle.style('Bingo', TextStyle.STRIKE)} Key Card Events?`,
         answers : `Using the Targeted Draws to fully clear the board in one go.`,
         tags : [dTag.MINI]
     },

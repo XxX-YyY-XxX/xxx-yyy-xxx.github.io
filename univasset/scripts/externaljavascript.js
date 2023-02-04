@@ -220,6 +220,17 @@ export function* zip(extend, ...iterables) {
 }
 //#endregion
 
+//#region Decorators
+/** Turns class into a memorizing function. Only callable functions are constructor and implicitly callable function.
+ * @param {class} classInstance Create class instance here.
+ * @param {string} funcName Name of the implicitly callable function. */
+export function memoization(classInstance, funcName) {
+    var output = function() {return classInstance[funcName].apply(classInstance, arguments);}
+    Object.setPrototypeOf(output, classInstance);
+    return output;
+}
+//#endregion
+
 //#region Trial
 function compare(a, b) {
     return {

@@ -5,15 +5,9 @@ export default class TextStyle {
     static CODE = 'code';
     static QUOTE = 'blockquote';
     static SUPER = 'sup';
-
-    #output;
-
-    /** @param {string} string @param {TextStyle} style*/
-    constructor(string, style) {
-        this.#output = `<${style}>${string}</${style}>`;
-    }
-
-    toString() {
-        return this.#output;
+    
+    /** @param {string} text @param {TextStyle} style*/
+    static style(text, style) {
+        return `<${style}>${text}</${style}>`;
     }
 }
