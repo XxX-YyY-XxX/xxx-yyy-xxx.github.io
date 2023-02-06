@@ -64,13 +64,12 @@ export class AsyncFunc {
 
 export class Cycle {
     #items;
-    #index;
+    #index = 0;
     #length;
 
     constructor(...items) {
         this.#items = items;
-        this.#index = 0;
-        this.#length = this.#items.length;
+        this.#length = items.length;
     } 
 
     next() {
@@ -183,7 +182,7 @@ export function randInt(min, max) {
 
 /** @param {HTMLIFrameElement} iframeElement*/
 export function reloadIFrame(iframeElement) {
-    var temp = iframeElement.src;
+    const temp = iframeElement.src;
     iframeElement.src = '';
     iframeElement.src = temp;
 }
@@ -215,31 +214,34 @@ export function* zip(extend, ...iterables) {
     const output = Array();
     const extension = extend ? 'some' : 'every';
     const iterator_array = iterables.map(getIterator);
-    while (iterator_array.map(x => {const {value, done} = x.next(); output.push(value); return !done;})[extension](x => x))
+    while (iterator_array.map(x => x.next()).map(({value, done}) => {output.push(value); return !done;})[extension](x => x))
         yield output.splice(0);
 }
 //#endregion
 
 //#region Decorators
-/** Turns class into a memorizing function. Only callable functions are constructor and implicitly callable function.
- * @param {class} classInstance Create class instance here.
- * @param {string} funcName Name of the implicitly callable function. */
-export function memoization(classInstance, funcName) {
-    var output = function() {return classInstance[funcName].apply(classInstance, arguments);}
-    Object.setPrototypeOf(output, classInstance);
-    return output;
-}
 //#endregion
 
 //#region Trial
-function compare(a, b) {
-    return {
-        string(x, y) {return x.localeCompare(y)},
-        number(x, y) {return x - y}
-    }[typeof a](a, b);    
+function compare() {
+    var current_func = function(a, b) {
+        current_func = {
+            string(x, y) {return x.localeCompare(y)},
+            number(x, y) {return x - y}
+        }[typeof a];
+    
+        return current_func(a, b);
+    }
+
+    /** (a, b) for ascending, (b, a) for descending.
+     * @returns {int} */
+    return function(a, b) {
+        return current_func(a, b);
+    }
 }
 
 /** Creates a two-dimensional array.
+ * @param {Object} title Occupies index (0, 0) of the table.
  * @param {Array} header Ordered from left to right.
  * @param {Array} leader Ordered from top to bottom.
  * @param {Array} data Objects to populate the matrix.
@@ -254,14 +256,25 @@ function matrix(title, header, leader, data, key, headkey = null, leadkey = null
     for (const item of leader)
         base_array.push([item, ...Array(x_len).fill('')]);
 
-    const head_copy = headkey ? header.map(headkey) : header;
-    const lead_copy = leadkey ? leader.map(leadkey) : leader;
+    const head_copy = header.map(headkey ?? (x => x));
+    const lead_copy = leader.map(leadkey ?? (x => x));
     for (const item of data) {
         const [x_axis, y_axis] = key(item);
         base_array[lead_copy.indexOf(y_axis) + 1][head_copy.indexOf(x_axis) + 1] = item;
     }
 
     return base_array;
+}
+
+/** Adds memoization to function.
+ * @param {function} func */
+function memoize(func) {
+    const bank = new Map();
+    return function(...args) {
+        if (!bank.has(args))
+            bank.set(args, func(...args));
+        return bank.get(args);
+    }
 }
 //#endregion
 

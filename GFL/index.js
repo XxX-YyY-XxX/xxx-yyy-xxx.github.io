@@ -1,7 +1,7 @@
-import {Compare, RadioButton, removeHTMLTag, randInt, checkedLabel} from '/univasset/scripts/externaljavascript.js';
-import {initializeHTML} from '/univasset/scripts/htmlgenerator/htmlgenerator.js';
+import {Compare, RadioButton, removeHTMLTag, randInt, checkedLabel} from '../univasset/scripts/externaljavascript.js';
+import {initializeHTML} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
 import {cardData, dTag, newCards} from "./tempcard.js";
-import '/univasset/scripts/prototype.js';
+import '../univasset/scripts/prototype.js';
 
 //#region Constants
 const toggleableTagsField = document.getElementById('tags-list');
@@ -94,7 +94,7 @@ function tagsCards() {
     if (!cardTags.length)
         return 'Empty search.';
 
-    for (const cards of cardData.filter(({tags}) => cardTags.subsetOf(tags.map(tag => tag.val))))
+    for (const cards of cardData.filter(({tags}) => cardTags.subsetOf(tags.map(x => x.val))))
         output += setQuestionBoxes(cards);
 
     return output || 'No matches found.';
