@@ -73,7 +73,7 @@ export function gdocDropdown(grouperElem, ...nameLinkPair) {
 
 /** Creates a table from a given matrix of data.
  * @param {HTMLElement} grouperElem
- * @param {Array[]} tableMatrix */
+ * @param {Array[]} tableMatrix First row will be used as header. */
 export function table(grouperElem, tableMatrix, {sort = false, filter = false, frzcol = false, frzhdr = false} = {}) {
     const tableElem = document.createElement('table');
     const theadElem = document.createElement('thead');
@@ -116,7 +116,62 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
             }
             const samplerow = tableMatrix[0];
             headertr.dataset.onsort = 0;
-            const string_sort = {
+
+            const sort_method = {
+                string: {
+                    no(cell) {
+                        const index = cell.dataset.index;
+                        cell.dataset.sort = 'hi';
+    
+                        if (index != headertr.dataset.onsort) {
+                            headertr.children.item(headertr.dataset.onsort).dataset.sort = 'no';
+                            headertr.dataset.onsort = index;
+                        }
+    
+                        return tableMatrix.slice().sort((a, b) => Compare.string(a[index], b[index]));
+                    },
+                    hi(cell) {
+                        const index = cell.dataset.index;
+                        cell.dataset.sort = 'lo';
+    
+                        return tableMatrix.slice().sort((a, b) => Compare.string(b[index], a[index]));
+                    },
+                    lo(cell) {
+                        cell.dataset.sort = 'no';
+    
+                        return tableMatrix;
+                    }   
+                },
+                number: {
+                    no(cell) {
+                        const index = cell.dataset.index;
+                        cell.dataset.sort = 'hi';
+    
+                        if (index != headertr.dataset.onsort) {
+                            headertr.children.item(headertr.dataset.onsort).dataset.sort = 'no';
+                            headertr.dataset.onsort = index;
+                        }
+    
+                        return tableMatrix.slice().sort((a, b) => Compare.number(b[index], a[index]));
+                    },
+                    hi(cell) {
+                        const index = cell.dataset.index;
+                        cell.dataset.sort = 'lo';
+    
+                        return tableMatrix.slice().sort((a, b) => Compare.number(a[index], b[index]));
+                    },
+                    lo(cell) {
+                        cell.dataset.sort = 'no';
+    
+                        return tableMatrix;
+                    }
+                }
+            }
+
+
+
+
+            /* const string_sort = {
                 no(cell) {
                     const index = cell.dataset.index;
                     cell.dataset.sort = 'hi';
@@ -180,13 +235,21 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
 
                     return tableMatrix;
                 }                                           
-            };
+            }; */
 
             for (const [index, headerCell] of Object.entries(headertr.children)) {
-                headerCell.dataset.index = index;
-                headerCell.dataset.sort = 'no';
+                const itemtype = Check.typeof(samplerow[index]);
+                headerCell.dataset.index = index;   //Constant
+                headerCell.dataset.sort = 'no';     //Cycles between no, hi, lo
+
+                headerCell.addEventListener('click', function() {
+                    printDataRows(sort_method[itemtype][this.dataset.sort](this));
+                }, true);
+
+
+
                 
-                switch (typeof samplerow[index]) {
+                /* switch (Check.typeof(samplerow[index])) {
                     case 'string':
                         headerCell.addEventListener('click', function() {
                             printDataRows(string_sort[this.dataset.sort](this));
@@ -201,9 +264,9 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
                         break;
                     default:
                         const item = samplerow[index];
-                        alert(item, typeof item)
+                        alert(item, Check.typeof(item));
                         break;
-                }
+                } */
             }
             break;
         case filter:
@@ -235,17 +298,8 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
         //default: Simple af table.
     }
 
-    if (frzcol) {
-        //for (const trElem of [headertr, ...Array.from(tbodyElem.children)])
-        //    trElem.firstElementChild.classList.add('freeze_col');
-        tableElem.classList.add('freeze_col')
-    }
-
-    if (frzhdr) {
-        //for (const thElem of Array.from(headertr.children))
-        //    thElem.classList.add('freeze_row')
-        tableElem.classList.add('freeze_row')
-    }
+    if (frzcol) tableElem.classList.add('freeze_col');
+    if (frzhdr) tableElem.classList.add('freeze_row');
     //------------------------------------------------------------------------------------------------------------
     grouperElem.classList.add('func_table');
     grouperElem.appendChild(tableElem);
