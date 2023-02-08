@@ -2,10 +2,6 @@
 
 # Resource Management
 
-### I've seen players have around 500 T-doll contracts. How did they have that much?
-
-> Logistics and limiting production to 4 a day. The last one basically applies to long-time players though.
-
 ### When do we get discounted tokens?
 
 > Around x-mas, cny, anni, April 16 week, and the likes.

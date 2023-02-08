@@ -25,15 +25,19 @@ function recursiveAttribute(base, attributes) {
 }
 
 /** Shortcut for createElement and HTML attributes.
- * @param {string} createElement If nested, inner element will be modified and outer element will be returned.
+ * @param {string} createElement If nested (by space), innermost element will be modified and outermost element will be returned.
  * @param {{HTMLAttribute: string | number | Array | {}}} attributes String/Number for attribute assigment, Array for function calls, Object for deeper calls. */
 export function initializeHTML(createElement, attributes) {
     var outerElem, innerElem;
     if (createElement.includes(' ')) {
-        const [outer, inner] = createElement.split(' ');
-        outerElem = document.createElement(outer);
-        innerElem = document.createElement(inner);
-        outerElem.appendChild(innerElem);
+        let restElems, parentElem;
+        [outerElem, ...restElems] = createElement.split(' ').map(x => document.createElement(x));
+        
+        parentElem = outerElem;
+        for (innerElem of restElems) {
+            parentElem.appendChild(innerElem);
+            parentElem = innerElem;
+        }
     } else {
         outerElem = null;
         innerElem = document.createElement(createElement);
@@ -82,19 +86,12 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
         headertr.appendChild(initializeHTML('th', Check.typeof(header) === 'dom' ? {appendChild: [header]} : {textContent: header}));
     theadElem.appendChild(headertr);
 
-    /** @param {Array[]} nestedArray */
-    function printDataRows(nestedArray) {
-        tbodyElem.textContent = '';
-        for (const rows of nestedArray) {
-            const trElem = document.createElement('tr');
-            for (const items of rows)
-                trElem.appendChild(initializeHTML('td', Check.typeof(items) === 'dom' ? {appendChild: [items]} : {textContent: items}));
-            tbodyElem.appendChild(trElem);
-        }
+    for (const rows of nestedArray) {
+        const trElem = document.createElement('tr');
+        for (const item of rows)
+            trElem.appendChild(initializeHTML('td', Check.typeof(item) === 'dom' ? {appendChild: [item]} : {textContent: item}));
+        tbodyElem.appendChild(trElem);
     }
-
-    printDataRows(tableMatrix);
-
     //------------------------------------------------------------------------------------------------------------
 
     switch (true) {
@@ -104,6 +101,16 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
         case sort:
             //multi sort
             //multiple option sort
+            /** @param {Array[]} nestedArray */
+            function printDataRows(nestedArray) {
+                tbodyElem.textContent = '';
+                for (const rows of nestedArray) {
+                    const trElem = document.createElement('tr');
+                    for (const item of rows)
+                        trElem.appendChild(initializeHTML('td', Check.typeof(item) === 'dom' ? {appendChild: [item]} : {textContent: item}));
+                    tbodyElem.appendChild(trElem);
+                }
+            }
             const samplerow = tableMatrix[0];
             headertr.dataset.onsort = 0;
             const string_sort = {

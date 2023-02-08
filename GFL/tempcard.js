@@ -60,6 +60,7 @@ export const dTag = Object.freeze({
     //#region Home Tabs
     CMDR : Object.freeze({val : 'Commander', desc : '"Self-insert."'}),
     MARP : Object.freeze({val : 'FourResources', desc : 'Manpower, Ammunition, Rations, Parts.'}),
+    GEMS : Object.freeze({val : 'PremiumCurrency', desc : 'Kalina demands you spend these on her.'}),
     ADJUNCT : Object.freeze({val : 'Adjutants', desc : 'T-Doll secretary.'}),
     MINI : Object.freeze({val : 'MiniEvents', desc : 'Keycard Events, Point Events, etc.'}),
     BP : Object.freeze({val : 'Battlepass', desc : 'Frontline Protocol.'}),
@@ -217,7 +218,7 @@ export const cardData = Object.freeze([
                 'If a unit dies in battle, only that unit will lose affection.',
                 'Enables oathing at 100 for ringleaders only.'
             ],
-            'Kalina' : ['Raised through daily hearts or spending gems.']    //Spending gems on infrastructures raises hearts?
+            'Kalina' : ['Raised through daily hearts in the shop or spending gems.']    //Spending gems on infrastructures raises hearts?
         })}`,
         tags : [dTag.LOVE, dTag.PRIME, dTag.OATH, dTag.TDOLL, dTag.COALITION, dTag.KALINA]
     },  //@Clarify - https://old.reddit.com/r/girlsfrontline/comments/w2n556/weekly_commanders_lounge_july_19_2022/igti9c1/
@@ -992,7 +993,7 @@ export const cardData = Object.freeze([
             '5 dorms for batteries, enough to upgrade important facilities. More than that is your call.',
             "Storage slots especially if you're a collector. Or whenever you're getting annoyed with the pop-up.",
             'Your Mileage May Vary (YMMV).')}`,
-        tags : [dTag.NEWB, dTag.ITEM]
+        tags : [dTag.NEWB, dTag.GEMS]
     },
     {
         id : '00097',
@@ -1256,7 +1257,7 @@ export const cardData = Object.freeze([
                 'Shop. Especially when there is a seasonal/collab going on. Packages are also good.',
                 'Maintenance (10 weekly) and Apolotokens.']
         })}`,
-        tags : [dTag.ITEM, dTag.RESUPPLY, dTag.GET]
+        tags : [dTag.ITEM, dTag.RESUPPLY, dTag.GET, dTag.GEMS]
     },  //Site down - https://dmesse.egloos.com/m/3594243
     {
         id : '00130',
@@ -1646,7 +1647,7 @@ export const cardData = Object.freeze([
         id : '00184',
         questions : `Just bought a gem pack/monthly card but I didn't get it yet. What do I do?`,
         answers : `Go through the process again then back out at the payment screen. If it fails, contact support first if you're planning a refund.`,
-        tags : [dTag.TECH]
+        tags : [dTag.TECH, dTag.GEMS]
     },
     {
         id : '00185',
@@ -2665,7 +2666,7 @@ export const cardData = Object.freeze([
         id : '00340',
         questions : `Do Gem Package skins go to Black Card Exchange?`,
         answers : `Some do, some don't. What's for sure is that collab skins don't. Obviously.`,
-        tags : [dTag.TDOLL, dTag.SKIN]
+        tags : [dTag.TDOLL, dTag.SKIN, dTag.GEMS]
     },
     {
         id : '00341',
@@ -3003,7 +3004,7 @@ export const cardData = Object.freeze([
         id : '00281',
         questions : `How are the limited bonus gems for the monrhly card applied?`,
         answers : `Only within the time the event is ongoing, which is for a week. Note that it immediately becomes active as long as a monthly gem is active, old or new purchase.`,
-        tags : [dTag.MISC]
+        tags : [dTag.GEMS]
     },
     {
         id : '00045',
@@ -3021,13 +3022,13 @@ export const cardData = Object.freeze([
         id : '00393',
         questions : `Do first purchase gem bonus reset?`,
         answers : `Only on server anniversary which, on Global, is on May.`,
-        tags : [dTag.MISC]
+        tags : [dTag.GEMS]
     },
     {
         id : '00394',
         questions : `If I buy multiple Monthly Gem Packages, will it stack?`,
         answers : `As in more than 30 a day? No. It being a 2 month distribution? Yes.`,
-        tags : [dTag.MISC]
+        tags : [dTag.GEMS]
     },
     {
         id : '00395',
@@ -3042,6 +3043,12 @@ export const cardData = Object.freeze([
         tags : [dTag.ITEM, dTag.LEVEL]
     },
     {
+        id : '00397',
+        questions : `I've seen players have around 500 T-doll contracts. How did they have that much?`,
+        answers : `Logistics and doing production for daily quests. The last one basically applies to long-time players though.`,
+        tags : [dTag.ITEM]
+    },
+    {
         id : '00000',
         questions : ``,
         answers : ``,
@@ -3049,4 +3056,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00390', '00112', '00101', '00018', '00064'];
+export const newCards = ['00112', '00101', '00018', '00064'];

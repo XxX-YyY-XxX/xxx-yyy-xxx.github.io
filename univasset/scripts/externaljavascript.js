@@ -66,6 +66,7 @@ export class Cycle {
     #items;
     #index = 0;
     #length;
+    get #value() {return this.#items[this.#index];}
 
     constructor(...items) {
         this.#items = items;
@@ -73,25 +74,25 @@ export class Cycle {
     } 
 
     next() {
-        const item = this.#items[this.#index];
+        const output = this.#value;
         this.#index += 1;
         if (this.#index == this.#length)
             this.#index = 0;
-        return item;
+        return output;
     }
 
     prev() {
-        const item = this.#items[this.#index];
+        const output = this.#value;
         this.#index -= 1;
         if (this.#index == -1)
             this.#index = this.#length - 1;
-        return item;
+        return output;
     }
 
     reset() {
-        const item = this.#items[this.#index];
+        const output = this.#value;
         this.#index = 0;
-        return item;
+        return output;
     }
 }
 
@@ -160,10 +161,6 @@ function getIterator(iterable) {
     //if (iterable[Symbol.iterator]() === iterable)
     
     //Set = iterable[Symbol.iterator]();
-
-    if (!['set'].includes(Check.typeof(iterable)))
-        console.log(Check.typeof(iterable), iterable);
-
     return iterable[Symbol.iterator]();
 }
 //#endregion
@@ -174,9 +171,9 @@ export function removeHTMLTag(htmlString) {
     return htmlString.replace(/<([^>]+)>/ig, '');
 }
 
-//Math.random() = [0...1)
 /** @param {number} min Inclusive @param {number} max Exclusive */
 export function randInt(min, max) {
+    //Math.random() = [0...1)
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
@@ -188,10 +185,11 @@ export function reloadIFrame(iframeElement) {
 }
 
 /** @param {string} path @returns [basename, extension] */
-//lastIndexOf+slice > split+replace
 export function splitExt(path) {
     //remove base url to prevent false positive
     //(new URL(path)).pathname
+    
+    //lastIndexOf+slice > split+replace
     var index = path.lastIndexOf('.');
     return [path.slice(0, index), path.slice(index)]
 }
@@ -200,9 +198,9 @@ export function splitExt(path) {
  * @param {HTMLInputElement} inputElement
  * @returns true if successfully toggled, false otherwise. */
 export function checkedLabel(inputElement) {
-    var oldClasses = inputElement.parentElement.className;
-    inputElement.parentElement.classList.toggle('checked', inputElement.checked);
-    return inputElement.parentElement.className != oldClasses;
+    const old_check = inputElement.parentElement.classList.contains('checked');
+    const new_check = inputElement.parentElement.classList.toggle('checked', inputElement.checked);
+    return old_check != new_check;
 }
 //#endregion
 
@@ -252,9 +250,8 @@ function compare() {
 function matrix(title, header, leader, data, key, headkey = null, leadkey = null) {
     const base_array = [[title, ...header]];
 
-    const x_len = header.length;        
-    for (const item of leader)
-        base_array.push([item, ...Array(x_len).fill('')]);
+    const x_len = header.length;
+    for (const item of leader) base_array.push([item, ...Array(x_len).fill('')]);
 
     const head_copy = header.map(headkey ?? (x => x));
     const lead_copy = leader.map(leadkey ?? (x => x));
@@ -271,8 +268,7 @@ function matrix(title, header, leader, data, key, headkey = null, leadkey = null
 function memoize(func) {
     const bank = new Map();
     return function(...args) {
-        if (!bank.has(args))
-            bank.set(args, func(...args));
+        if (!bank.has(args)) bank.set(args, func(...args));
         return bank.get(args);
     }
 }

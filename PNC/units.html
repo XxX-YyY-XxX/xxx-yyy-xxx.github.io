@@ -7,9 +7,9 @@
             import {initializeHTML} from '/univasset/scripts/htmlgenerator/htmlgenerator.js';
             const list = document.createElement('dl');
 
-            for (const {name, reference, fragments} of (await AsyncFunc.getJSON('./units.json')).slice(0, -1)) {
+            for (const {name, reference, fragments, event} of (await AsyncFunc.getJSON('./units.json')).slice(0, -1)) {
                 //name
-                list.appendChild(initializeHTML('dt', {textContent: name}));
+                list.appendChild(initializeHTML('dt', {textContent: name + (event ? ` - ${event}` : '')}));
 
                 //reference
                 for (const [referenceName, link] of Object.entries(reference).filter(x => x[0]))
