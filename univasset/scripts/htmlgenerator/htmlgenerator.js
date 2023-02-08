@@ -126,34 +126,34 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
                         headertr.dataset.onsort = index;
                     }
 
-                    //return tableMatrix.slice().sort((a, b) => Compare.string(a[index], b[index]));
+                    return tableMatrix.slice().sort((a, b) => Compare.string(a[index], b[index]));
 
-                    var rowElems = Array.from(tbodyElem.children);
-                    var basis = tableMatrix.slice().sort((a, b) => Compare.string(a[index], b[index])).map(elem => elem[0]);
+                    //var rowElems = Array.from(tbodyElem.children);
+                    //var basis = tableMatrix.slice().sort((a, b) => Compare.string(a[index], b[index])).map(elem => elem[0]);
 
-                    return rowElems.sort((a, b) => basis.indexOf(a.firstElementChild.textContent) - basis.indexOf(b.firstElementChild.textContent));
+                    //return rowElems.sort((a, b) => basis.indexOf(a.firstElementChild.textContent) - basis.indexOf(b.firstElementChild.textContent));
                 },
                 hi(cell) {
                     const index = cell.dataset.index;
                     cell.dataset.sort = 'lo';
 
-                    //return tableMatrix.slice().sort((a, b) => Compare.string(b[index], a[index]));
+                    return tableMatrix.slice().sort((a, b) => Compare.string(b[index], a[index]));
 
-                    var rowElems = Array.from(tbodyElem.children);
-                    var basis = tableMatrix.slice().sort((a, b) => Compare.string(b[index], a[index])).map(elem => elem[0]);
+                    //var rowElems = Array.from(tbodyElem.children);
+                    //var basis = tableMatrix.slice().sort((a, b) => Compare.string(b[index], a[index])).map(elem => elem[0]);
 
-                    return rowElems.sort((a, b) => basis.indexOf(a.firstElementChild.textContent) - basis.indexOf(b.firstElementChild.textContent));
+                    //return rowElems.sort((a, b) => basis.indexOf(a.firstElementChild.textContent) - basis.indexOf(b.firstElementChild.textContent));
 
                 },
                 lo(cell) {
                     cell.dataset.sort = 'no';
 
-                    //return tableMatrix;
+                    return tableMatrix;
 
-                    var rowElems = Array.from(tbodyElem.children);
-                    var basis = tableMatrix.map(elem => elem[0]);
+                    //var rowElems = Array.from(tbodyElem.children);
+                    //var basis = tableMatrix.map(elem => elem[0]);
 
-                    return rowElems.sort((a, b) => basis.indexOf(a.firstElementChild.textContent) - basis.indexOf(b.firstElementChild.textContent));
+                    //return rowElems.sort((a, b) => basis.indexOf(a.firstElementChild.textContent) - basis.indexOf(b.firstElementChild.textContent));
 
                 }                                           
             };
@@ -189,9 +189,9 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
                 switch (typeof samplerow[index]) {
                     case 'string':
                         headerCell.addEventListener('click', function() {
-                            //printDataRows(string_sort[this.dataset.sort](this));
-                            tbodyElem.textContent = '';
-                            tbodyElem.append(string_sort[this.dataset.sort](this))
+                            printDataRows(string_sort[this.dataset.sort](this));
+                            //tbodyElem.textContent = '';
+                            //tbodyElem.append(...string_sort[this.dataset.sort](this))
                         }, true);
                         break;
                     case 'number':
@@ -236,22 +236,15 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
     }
 
     if (frzcol) {
-        for (const trElem of [headertr, ...Array.from(tbodyElem.children)])
-            trElem.firstElementChild.classList.add('freeze_col');
-
-        /* if (sort) {
-            for (const thElem of Array.from(headertr.children)) {
-                thElem.addEventListener('click', function() {
-                    for (const trElem of Array.from(tbodyElem.children))
-                        trElem.firstElementChild.classList.add('freeze_col');
-                }, true);
-            }
-        } */
+        //for (const trElem of [headertr, ...Array.from(tbodyElem.children)])
+        //    trElem.firstElementChild.classList.add('freeze_col');
+        tableElem.classList.add('freeze_col')
     }
 
     if (frzhdr) {
-        for (const thElem of Array.from(headertr.children))
-            thElem.classList.add('freeze_row')
+        //for (const thElem of Array.from(headertr.children))
+        //    thElem.classList.add('freeze_row')
+        tableElem.classList.add('freeze_row')
     }
     //------------------------------------------------------------------------------------------------------------
     grouperElem.classList.add('func_table');

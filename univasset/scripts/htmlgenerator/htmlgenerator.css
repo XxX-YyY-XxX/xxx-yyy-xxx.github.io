@@ -45,13 +45,13 @@
 /* #endregion */
 
 /* #region Freeze Cells */
-.func_table .freeze_row {
+.func_table > table.freeze_row th {
     position: sticky;
     top: 0;
     z-index: 1;
 }
 
-.func_table .freeze_col {
+.func_table > table.freeze_col tr > :first-child {
     position: sticky;
     left: 0;
     z-index: 1;

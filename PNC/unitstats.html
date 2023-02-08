@@ -37,16 +37,16 @@
             height: 95vh;
         }
 
-        .func_table .freeze_col {
+        .func_table tr:nth-child(even) > :first-child {
+            background: #282e1f !important;
+        }
+
+        .func_table > .freeze_col tr > :first-child {
             border-right: 1px dashed #b5e853;
             background: #1b1b1b;
         }
 
-        .func_table tr:nth-child(even) > .freeze_col {
-            background: #282e1f;
-        }
-
-        .func_table .freeze_row {
+        .func_table > .freeze_row th {
             background: #1b1b1b;
         }
 
