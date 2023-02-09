@@ -1585,7 +1585,12 @@ export const cardData = Object.freeze([
     {
         id : '00175',
         questions : `What are these General Data I keep getting?`,
-        answers : `Used for FSTs that are not yet 5${star}. Limitations being, only usable to FSTs in the gacha pool and the data can't be used for iteration.<br>
+        answers : `Used for FSTs that are not yet 5${star}.<br>
+        ${TextStyle.style('Limitations:', TextStyle.BOLD)}<br>
+        ${List.unordered(
+            'Only usable to FSTs in the gacha pool (added after a Theater for a new FST is run).',
+            "Cannot be used for iteration."
+        )}
         If you plan to big brain with this, churn your FST-specific central data to patches first, because they're the priority data to use before general data.`,
         tags : [dTag.HOC, dTag.FST, dTag.ITEM]
     },
@@ -3049,6 +3054,18 @@ export const cardData = Object.freeze([
         tags : [dTag.ITEM]
     },
     {
+        id : '00398',
+        questions : `How do I unlock mortars and anti-tanks?`,
+        answers : `FSTs can only be unlocked by their respective Central Data. These can be acquired from their Theater runs or at the Intelligence Analysis gacha pool.`,
+        tags : [dTag.HOC, dTag.FST, dTag.GET]
+    },
+    {
+        id : '00399',
+        questions : `When do we get discounted tokens?`,
+        answers : `Around x-mas, cny, anni, April 16 week, and the likes.`,
+        tags : [dTag.RESUPPLY, dTag.ITEM]
+    },
+    {
         id : '00000',
         questions : ``,
         answers : ``,
@@ -3056,4 +3073,4 @@ export const cardData = Object.freeze([
     },
 ]);
 
-export const newCards = ['00112', '00101', '00018', '00064'];
+export const newCards = ['00101', '00018', '00064'];
