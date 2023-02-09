@@ -73,7 +73,10 @@ export function gdocDropdown(grouperElem, ...nameLinkPair) {
 
 /** Creates a table from a given matrix of data.
  * @param {HTMLElement} grouperElem
- * @param {Array[]} tableMatrix First row will be used as header. */
+ * @param {Array[]} tableMatrix First row will be used as header.
+ * ```
+ *  sort: boolean | keyfunction(matrixData: HTMLElement) => any
+ * ``` */
 export function table(grouperElem, tableMatrix, {sort = false, filter = false, frzcol = false, frzhdr = false} = {}) {
     const tableElem = document.createElement('table');
     const theadElem = document.createElement('thead');
@@ -97,77 +100,18 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
         case sort && filter:
             alert('Sort and Filter are both activated.');
             break;
-        case sort:
-            //multi sort
-            //multiple option sort
+        case Boolean(sort):
+            //multi sort - 2+ sortings
+            //multiple option sort - multiple keys per cell
 
-            /** @param {Array[]} nestedArray */
-            function printDataRows(nestedArray) {
-                tbodyElem.textContent = '';
-                for (const rows of nestedArray) {
-                    const trElem = document.createElement('tr');
-                    for (const item of rows)
-                        trElem.appendChild(initializeHTML('td', Check.typeof(item) === 'dom' ? {appendChild: [item]} : {textContent: item}));
-                    tbodyElem.appendChild(trElem);
-                }
-            }
-
-            /* const sort_method = {
-                string: {
-                    no(cell) {
-                        const index = cell.dataset.index;
-                        cell.dataset.sort = 'hi';
-    
-                        if (index != headertr.dataset.onsort) {
-                            headertr.children.item(headertr.dataset.onsort).dataset.sort = 'no';
-                            headertr.dataset.onsort = index;
-                        }
-    
-                        return tableMatrix.slice().sort((a, b) => Compare.string(a[index], b[index]));
-                    },
-                    hi(cell) {
-                        const index = cell.dataset.index;
-                        cell.dataset.sort = 'lo';
-    
-                        return tableMatrix.slice().sort((a, b) => Compare.string(b[index], a[index]));
-                    },
-                    lo(cell) {
-                        cell.dataset.sort = 'no';
-    
-                        return tableMatrix;
-                    }
-                },
-                number: {
-                    no(cell) {
-                        const index = cell.dataset.index;
-                        cell.dataset.sort = 'hi';
-    
-                        if (index != headertr.dataset.onsort) {
-                            headertr.children.item(headertr.dataset.onsort).dataset.sort = 'no';
-                            headertr.dataset.onsort = index;
-                        }
-    
-                        return tableMatrix.slice().sort((a, b) => Compare.number(b[index], a[index]));
-                    },
-                    hi(cell) {
-                        const index = cell.dataset.index;
-                        cell.dataset.sort = 'lo';
-    
-                        return tableMatrix.slice().sort((a, b) => Compare.number(a[index], b[index]));
-                    },
-                    lo(cell) {
-                        cell.dataset.sort = 'no';
-    
-                        return tableMatrix;
-                    }
-                }
-            } */
-
-            document.createElement('th')
+            /* const key = {
+                function: x => sort(x),
+                boolean: x => x
+            }[Check.typeof(sort)] */
 
             /** @param {HTMLTableCellElement} cell @param {string} type @returns {Array[]} */
             function sortMethod(cell, type) {
-                return {
+                const sorted_array = {
                     no() {
                         const index = cell.dataset.index;
                         cell.dataset.sort = 'hi';
@@ -178,18 +122,18 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
                         }
     
                         return {
-                            string: tableMatrix.slice().sort((a, b) => Compare.string(a[index], b[index])),
-                            number: tableMatrix.slice().sort((a, b) => Compare.number(b[index], a[index]))
-                        }[type]
+                            string: () => tableMatrix.slice().sort((a, b) => Compare.string(a[index], b[index])),
+                            number: () => tableMatrix.slice().sort((a, b) => Compare.number(b[index], a[index]))
+                        }[type]()
                     },
                     hi() {
                         const index = cell.dataset.index;
                         cell.dataset.sort = 'lo';
     
                         return {
-                            string: tableMatrix.slice().sort((a, b) => Compare.string(b[index], a[index])),
-                            number: tableMatrix.slice().sort((a, b) => Compare.number(a[index], b[index]))
-                        }[type]
+                            string: () => tableMatrix.slice().sort((a, b) => Compare.string(b[index], a[index])),
+                            number: () => tableMatrix.slice().sort((a, b) => Compare.number(a[index], b[index]))
+                        }[type]()
                     },
                     lo() {
                         cell.dataset.sort = 'no';
@@ -197,6 +141,14 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
                         return tableMatrix;
                     }
                 }[cell.dataset.sort]();
+
+                tbodyElem.textContent = '';
+                for (const rows of sorted_array) {
+                    const trElem = document.createElement('tr');
+                    for (const item of rows)
+                        trElem.appendChild(initializeHTML('td', Check.typeof(item) === 'dom' ? {appendChild: [item]} : {textContent: item}));
+                    tbodyElem.appendChild(trElem);
+                }
             }
 
             headertr.dataset.onsort = 0;
@@ -207,8 +159,7 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
                 headerCell.dataset.sort = 'no';     //Cycles between no, hi, lo
                 headerCell.dataset.index = index;   //Constant
                 headerCell.addEventListener('click', function() {
-                    //printDataRows(sort_method[itemtype][this.dataset.sort](this));
-                    printDataRows(sortMethod(this, itemtype));
+                    sortMethod(this, itemtype);
                 }, true);
             }
             break;
