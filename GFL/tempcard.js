@@ -3066,6 +3066,12 @@ export const cardData = Object.freeze([
         tags : [dTag.RESUPPLY, dTag.ITEM]
     },
     {
+        id : '00400',
+        questions : `If I bought a Monthly Gem Card, do I get them immediately every day or do I have to log-in?`,
+        answers : `Sent as mail, procured as mail, expires as mail.`,
+        tags : [dTag.GEMS]
+    },
+    {
         id : '00000',
         questions : ``,
         answers : ``,

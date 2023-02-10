@@ -8,10 +8,6 @@
 >
 > [Related.](https://old.reddit.com/r/girlsfrontline/comments/mzjdl5/weekly_commanders_lounge_april_27_2021/gwrie7y/)
 
-### If I bought a Monthly Gem Card, do I get them immediately every day or do I have to log-in?
-
-> Sent as mail, procured as mail, expires as mail.
-
 ### Anyone knows what resources and how much do we get for a failed PA capture?
 
 > ![](/GFL/assets/images/CaptureFail.png "Slashes are because probability")
