@@ -46,10 +46,10 @@ const inputButtons = new RadioButton('input-type',
 //#region Initialize
 const fragment = new DocumentFragment();
 for (const {val, desc} of Object.values(dTag).sort((a, b) => Compare.string(a.val, b.val))) {
-    /** @type {HTMLSpanElement} */ const spanElem = initializeHTML('span', {textContent: desc, classList: {add: ['tooltiptext']}});
-    /** @type {HTMLLabelElement} */ const labelElem = initializeHTML('label', {classList: {add: ['tags', 'tooltip']}});
+    const spanElem = initializeHTML('span', {textContent: desc, classList: {add: ['tooltiptext']}});
+    const labelElem = initializeHTML('label', {classList: {add: ['tags', 'tooltip']}});
     
-    /** @type {HTMLInputElement} */ const inputElem = initializeHTML('input', {type: 'checkbox', value: val});
+    const inputElem = initializeHTML('input', {type: 'checkbox', value: val});
     inputElem.addEventListener('click', function() {
         checkedLabel(this);             //Will delete if CSS :has is ok
         searchTextField.value = this.checked ?

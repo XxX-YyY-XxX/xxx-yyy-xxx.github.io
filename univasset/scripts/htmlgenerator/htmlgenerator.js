@@ -24,9 +24,11 @@ function recursiveAttribute(base, attributes) {
     }
 }
 
-/** Shortcut for createElement and HTML attributes.
- * @param {string} createElement If nested (by space), innermost element will be modified and outermost element will be returned.
- * @param {{HTMLAttribute: string | number | Array | {}}} attributes String/Number for attribute assigment, Array for function calls, Object for deeper calls. */
+/** Shortcut for createElement and HTML attributes. Probably should've been named as initializeElement.
+ * @template {keyof HTMLElementTagNameMap} T
+ * @param {T} createElement If nested (by space), innermost element will be modified and outermost element will be returned.
+ * @param {{HTMLAttribute: string | number | Array | {}}} attributes String/Number for attribute assigment, Array for function calls, Object for deeper calls.
+ * @returns {HTMLElementTagNameMap[T]} */
 export function initializeHTML(createElement, attributes) {
     var outerElem, innerElem;
     if (createElement.includes(' ')) {

@@ -62,19 +62,20 @@ export class AsyncFunc {
     }
 }
 
+/** @template T */
 export class Cycle {
-    #items;
+    #items = [];
     #index = 0;
-    #length;
-    get #value() {return this.#items[this.#index];}
+    #length = 0;
 
+    /** @param {T[] | Generator(T)} items */
     constructor(...items) {
-        this.#items = items;
+        this.#items = items.length === 1 && items[0] === getIterator(items[0]) ? Array.from(items[0]) : items;
         this.#length = items.length;
     } 
 
     next() {
-        const output = this.#value;
+        const output = this.#items[this.#index];
         this.#index += 1;
         if (this.#index == this.#length)
             this.#index = 0;
@@ -82,7 +83,7 @@ export class Cycle {
     }
 
     prev() {
-        const output = this.#value;
+        const output = this.#items[this.#index];
         this.#index -= 1;
         if (this.#index == -1)
             this.#index = this.#length - 1;
@@ -90,7 +91,7 @@ export class Cycle {
     }
 
     reset() {
-        const output = this.#value;
+        const output = this.#items[this.#index];
         this.#index = 0;
         return output;
     }
@@ -103,6 +104,8 @@ export class Check {
         switch (true) {
             case item_type !== 'object':
                 return item_type;
+            case any === null:
+                return 'null';
             case Array.isArray(any):
                 return 'array';
             case any instanceof Set:
