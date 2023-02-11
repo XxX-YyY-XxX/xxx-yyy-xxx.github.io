@@ -79,6 +79,47 @@
     },
     "Facilities",
     {
+        "name" : "EchelonFormation",
+        "description" : "Deployable teams."
+    },
+    {
+        "name" : "FactoryProduction",
+        "description" : "Ancient Unit Gacha."
+    },
+    {
+        "name" : "NeuralUpgrade",
+        "description" : "Extra limit break."
+    },
+    {
+        "name" : "Dormitories",
+        "description" : "Battery charger."
+    },
+        {
+            "name" : "Resupply",
+            "description" : "Dorm gacha."
+        },
+        {
+            "name" : "Costumes",
+            "description" : "True money sink."
+        },
+        {
+            "name" : "Furniture",
+            "description" : "Dorm equipments."
+        },
+    {
+        "name" : "HeavyOrdnanceCorps",
+        "description" : "Shelling support."
+    },
+    {
+        "name" : "ForwardBasecamp",
+        "description" : "Casual's dream QOL."
+    },
+    {
+        "name" : "ProtocolAssimilation",
+        "description" : "Coalition unit gacha and coalition drills."
+    },
+    "Devices",
+    {
         "name" : "",
         "description" : "★"
     }
@@ -86,18 +127,6 @@
 
 export const dTag = Object.freeze({
     //#region 
-        ECH : Object.freeze({val : 'EchelonFormation', desc : 'Deployable teams.'}),
-        PROD : Object.freeze({val : 'FactoryProduction', desc : 'Ancient Unit Gacha.'}),
-        MOD : Object.freeze({val : 'NeuralUpgrade', desc : 'Extra limit break.'}),
-        DORM : Object.freeze({val : 'Dormitories', desc : 'Battery charger.'}),
-            RESUPPLY : Object.freeze({val : 'Resupply', desc : 'Dorm gacha.'}),
-            SKIN : Object.freeze({val : 'Costumes', desc : 'True money sink.'}),
-            FURN : Object.freeze({val : 'Furniture', desc : '"Dorm Equipments."'}),
-        HOC : Object.freeze({val : 'HeavyOrdnanceCorps', desc : 'Shelling support.'}),
-        EXPED : Object.freeze({val : 'ForwardBasecamp', desc : "Casual's dream QOL."}),
-        PA : Object.freeze({val : 'ProtocolAssimilation', desc : 'PA pulling and coalition drills.'}),
-    //#endregion
-    //#region Devices
     APPLE : Object.freeze({val : 'AppleDevices', desc : 'iOS exclusive features.'}),
     EMU : Object.freeze({val : 'Emulators', desc : 'Emulator exclusive features.'}),
     //ANDROID : 'AndroidDevices',
