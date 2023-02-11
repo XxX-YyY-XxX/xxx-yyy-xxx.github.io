@@ -1,3 +1,5 @@
+import './prototype.js';
+
 //#region Constants
 /** Close to zero value. */
 const epsilon = 10 ** -10;
@@ -204,6 +206,15 @@ export function checkedLabel(inputElement) {
     const old_check = inputElement.parentElement.classList.contains('checked');
     const new_check = inputElement.parentElement.classList.toggle('checked', inputElement.checked);
     return old_check != new_check;
+}
+
+/** Returns days, hours, minutes, seconds.
+ * @param {number} milli
+ * @returns {[number, number, number, number]}*/
+export function ddhhmmss(milli) {
+    var [min, sec] = Math.intdiv(Math.trunc(milli / 1000), 60)
+    var [hr, min] = Math.intdiv(min, 60)
+    return [...Math.intdiv(hr, 24), min, sec]
 }
 //#endregion
 

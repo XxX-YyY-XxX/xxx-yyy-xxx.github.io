@@ -25,4 +25,12 @@ Array.prototype.remove = function(any) {
 Math.clip = function(value, lower, upper) {
     return Math.min(Math.max(value, lower), upper);
 }
+
+/** Returns quotient and remainder.
+ * @param {number} dividend
+ * @param {number} divisor
+ * @returns {[number,number]} */
+Math.intdiv = function(dividend, divisor) {
+    return [Math.trunc(dividend / divisor), dividend % divisor]
+}
 //#endregion
