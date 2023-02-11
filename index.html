@@ -46,6 +46,28 @@
             const ex = document.createElement('span');
             ex.textContent = 'jkl;'
             span.appendChild(ex); */
+
+            /** @param {Number} starttime */
+            function time(htmlelem, starttime) {
+                //starttime = endtime - currenttime
+                var timer = setInterval(function() {
+                    htmlelem.innerHTML = '00:' + String(starttime).padStart(2, "0");
+                    starttime--;
+                    if (starttime < 0)
+                        clearInterval(timer)
+                }, 1000)
+            }
+
+            time(div, 20)
+
+            //console.log(new Date() == new Date().toString())
+            console.log(new Date().toDateString())
+            //console.log(new Date().toISOString() == new Date().toJSON())
+            console.log(new Date().toLocaleDateString())
+            console.log(new Date().toLocaleString())
+            console.log(new Date().toLocaleTimeString())
+            console.log(new Date().toTimeString())
+            console.log(new Date().toUTCString())
         </script>
     </body>
 </html>
