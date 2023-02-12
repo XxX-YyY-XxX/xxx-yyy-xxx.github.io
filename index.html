@@ -49,28 +49,41 @@
             ex.textContent = 'jkl;'
             span.appendChild(ex); */
 
-            function time(htmlelem) {
-                const timer = setInterval(function() {
-                    var count = Date.UTC(2023, months.indexOf("Feb"), 21, 18, 29) - Date.now();
-                    htmlelem.innerHTML = ddhhmmss(count).map(num => String(num).padStart(2, '0')).join(':');
-                    if (!count) clearInterval(timer);
-                }, 1000)
+            /** 
+             * @param {HTMLElement} grouperElem
+             * @param {string} date Mon dy, year hr:mn:sc (UTC|GMT)(+-)offs */
+            function timer(grouperElem, date, eventURL = '', {map = false} = {}) {
+                const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                const [mo, ...rest] = date.replace(/[,(UTC|GMT)]/g, '').replace(/:/g, ' ').split(' ');
+                const [day, yr, hr, min, off] = rest.map(Number);
+                const countdown = setInterval(function() {
+                    var count = Date.UTC(yr, months.indexOf(mo), day, hr - (off / 100), min) - Date.now();
+                    grouperElem.textContent = ddhhmmss(count).map(num => String(num).padStart(2, '0')).join(':');
+                    if (count < 0) {
+                        clearInterval(countdown);
+                        grouperElem.textContent = 'Expired'
+                    }
+                }, 1000);
             }
 
+            //input assumes local time
+            //console.log(new Date(2023, 1, 15, 15, 59))
+            //console.log(new Date(2023, 1, 15, 15 - 8, 59).toUTCString())
 
-
+            //console.log(new Date('Feb 14, 2023 23:59:00 GMT'))
+            //console.log(new Date('Feb 14, 2023 23:59:00 GMT').toLocaleString())
+            //console.log(new Date('Feb 14, 2023 23:59:00 GMT').toUTCString())
+            //console.log(new Date('Feb 14, 2023 23:59:00 GMT').toISOString())
             
 
 
-            time(div)
+            timer(div,
+                'Feb 21, 2023, 18:30 UTC-0800')
 
 
             function intDiv(dividend, divisor) {
                 return [Math.trunc(dividend / divisor), dividend % divisor]
             }
-
-
-            const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
             function ddhhmmss(milli) {
                 var [min, sec] = intDiv(Math.trunc(milli / 1000), 60)
@@ -86,18 +99,11 @@
 
 
 
-            /* function leadingZero(num) {
-
-
-                num = num.toString();
-                while (num.length < 2) num = "0" + num;
-                return num;
-            }
+            /* 
 
             num = 111;
 
-            console.log(String(num).padStart(2, "0"));
-            console.log(leadingZero(num)); */
+            console.log(String(num).padStart(2, "0")); */
 
 
 
@@ -112,10 +118,10 @@
     const minutesValue = document.querySelectorAll(mins);
     const secondsValue = document.querySelectorAll(secs);
 
-    let daysValueNumber = leadingZero(Math.floor(difference / (1000 * 60 * 60 * 24)));
-    let hoursValueNumber = leadingZero(Math.floor(difference / (1000 * 60 * 60) % 24));
-    let minutesValueNumber = leadingZero(Math.floor(difference / (1000 * 60) % 60));
-    let secondsValueNumber = leadingZero(Math.floor(difference / (1000) % 60));
+    let daysValueNumber = String(Math.floor(difference / (1000 * 60 * 60 * 24))).padStart(2, "0");
+    let hoursValueNumber = String(Math.floor(difference / (1000 * 60 * 60) % 24)).padStart(2, "0");
+    let minutesValueNumber = String(Math.floor(difference / (1000 * 60) % 60)).padStart(2, "0");
+    let secondsValueNumber = String(Math.floor(difference / (1000) % 60)).padStart(2, "0");
 
     if (daysValueNumber < 0) {
         timerRemoveElements(id, itemId);
@@ -149,9 +155,9 @@ function countReset(hours, mins, secs) {
     const hoursValue = document.querySelector(hours);
     const minutesValue = document.querySelector(mins);
     const secondsValue = document.querySelector(secs);
-    let hoursValueNumber = leadingZero(Math.floor(difference / (1000 * 60 * 60) % 24));
-    let minutesValueNumber = leadingZero(Math.floor(difference / (1000 * 60) % 60));
-    let secondsValueNumber = leadingZero(Math.floor(difference / (1000) % 60));
+    let hoursValueNumber = String(Math.floor(difference / (1000 * 60 * 60) % 24)).padStart(2, "0");
+    let minutesValueNumber = String(Math.floor(difference / (1000 * 60) % 60)).padStart(2, "0");
+    let secondsValueNumber = String(Math.floor(difference / (1000) % 60)).padStart(2, "0");
     hoursValue.innerHTML = hoursValueNumber + ":";
     minutesValue.innerHTML = minutesValueNumber + ":";
     secondsValue.innerHTML = secondsValueNumber;
@@ -167,9 +173,9 @@ function countServer() {
     if(utcHour < 0) {
         utcHour += 24;
     }
-    hoursValue.innerHTML = leadingZero(utcHour) + ":";
-    minutesValue.innerHTML = leadingZero(dateTimeNow.getUTCMinutes()) + ":";
-    secondsValue.innerHTML = leadingZero(dateTimeNow.getUTCSeconds());
+    hoursValue.innerHTML = String(utcHour).padStart(2, "0") + ":";
+    minutesValue.innerHTML = String(dateTimeNow.getUTCMinutes()).padStart(2, "0") + ":";
+    secondsValue.innerHTML = String(dateTimeNow.getUTCSeconds()).padStart(2, "0");
 }
 
 function timerRemoveElements(id, itemId) {
