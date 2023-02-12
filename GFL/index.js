@@ -3,6 +3,30 @@ import {initializeHTML} from '../univasset/scripts/htmlgenerator/htmlgenerator.j
 import {cardData, dTag, newCards} from "./tempcard.js";
 import '../univasset/scripts/prototype.js';
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //#region Constants
 const toggleableTagsField = document.getElementById('tags-list');
 const searchTextField = document.getElementById('search-text');

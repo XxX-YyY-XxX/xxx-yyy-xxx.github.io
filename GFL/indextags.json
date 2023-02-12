@@ -1,137 +1,79 @@
 [
     "Combat Tabs",
-    {
-        "name" : "MajorEvents",
-        "description" : "Main story. Added to Campaign after a while."
-    },
-    {
-        "name" : "SeasonalEvents",
-        "description" : "Happens every New Year, X-mas, Halloween, etc."
-    },
-    {
-        "name" : "Collaboration",
-        "description" : "Reason: \"He liked it.\""
-    },
-    {
-        "name" : "CombatMissions",
-        "description" : "Main missions aka Chapters 0-13."
-    },
-    {
-        "name" : "Logistics",
-        "description" : "Main source of MARP and tickets."
-    },
-    {
-        "name" : "CombatSimulations",
-        "description" : "Place to get upgrade materials."
-    },
-    {
-        "name" : "CampaignMissions",
-        "description" : "Permanent Major Events."
-    },
-    {
-        "name" : "Theater",
-        "description" : "Backstab central."
-    },
-    {
-        "name" : "AutoBattles",
-        "description" : "Lazy farming."
-    },
+    {"name" : "MajorEvents",
+    "description" : "Main story. Added to Campaign after a while."},
+    {"name" : "SeasonalEvents",
+    "description" : "Happens every New Year, X-mas, Halloween, etc."},
+    {"name" : "Collaboration",
+    "description" : "Reason: \"He liked it.\""},
+    {"name" : "CombatMissions",
+    "description" : "Main missions aka Chapters 0-13."},
+    {"name" : "Logistics",
+    "description" : "Main source of MARP and tickets."},
+    {"name" : "CombatSimulations",
+    "description" : "Place to get upgrade materials."},
+    {"name" : "CampaignMissions",
+    "description" : "Permanent Major Events."},
+    {"name" : "Theater",
+    "description" : "Backstab central."},
+    {"name" : "AutoBattles",
+    "description" : "Lazy farming."},
     "Armory Tabs",
-    {
-        "name" : "TacticalDolls",
-        "description" : "Anything T-Doll related. Use as secondary tag."
-    },
-        {
-            "name" : "CycleDropDolls",
-            "description" : "Reward dolls that now wander the rerun hell."
-        },
-    {
-        "name" : "CoalitionUnits",
-        "description" : "PA counterpart of Tactical Dolls."
-    },
-    {
-        "name" : "Equipments",
-        "description" : "Gun attachments, FST chips, PA chips."
-    },
-        {
-            "name" : "SpecialEquipments",
-            "description" : "Equipments specific to a doll."
-        },
-    {
-        "name" : "ConsumableItems",
-        "description" : "Tickets, tokens, cores, batteries, shop items..."
-    },
-        {
-            "name" : "TrueCoreMask",
-            "description" : "Used to redeem 5★ production dolls."
-        },
-        {
-            "name" : "Gems",
-            "description" : "Kalina demands you spend these on her."
-        },
-    {
-        "name" : "Fairies",
-        "description" : "Sixth man of the team."
-    },
-    {
-        "name" : "FireSupportTeam",
-        "description" : "Rockets and mortars, the first of the HOC."
-    },
+    {"name" : "TacticalDolls",
+    "description" : "Anything T-Doll related. Use as secondary tag."},
+        {"name" : "CycleDropDolls",
+        "description" : "Reward dolls that now wander the rerun hell."},
+    {"name" : "CoalitionUnits",
+    "description" : "PA counterpart of Tactical Dolls."},
+    {"name" : "Equipments",
+    "description" : "Gun attachments, FST chips, PA chips."},
+        {"name" : "SpecialEquipments",
+        "description" : "Equipments specific to a doll."},
+    {"name" : "ConsumableItems",
+    "description" : "Tickets, tokens, cores, batteries, shop items..."},
+        {"name" : "TrueCoreMask",
+        "description" : "Used to redeem 5★ production dolls."},
+        {"name" : "Gems",
+        "description" : "Kalina demands you spend these on her."},
+    {"name" : "Fairies",
+    "description" : "Sixth man of the team."},
+    {"name" : "FireSupportTeam",
+    "description" : "Rockets and mortars, the first of the HOC."},
     "Facilities",
-    {
-        "name" : "EchelonFormation",
-        "description" : "Deployable teams."
-    },
-    {
-        "name" : "FactoryProduction",
-        "description" : "Ancient Unit Gacha."
-    },
-    {
-        "name" : "NeuralUpgrade",
-        "description" : "Extra limit break."
-    },
-    {
-        "name" : "Dormitories",
-        "description" : "Battery charger."
-    },
-        {
-            "name" : "Resupply",
-            "description" : "Dorm gacha."
-        },
-        {
-            "name" : "Costumes",
-            "description" : "True money sink."
-        },
-        {
-            "name" : "Furniture",
-            "description" : "Dorm equipments."
-        },
-    {
-        "name" : "HeavyOrdnanceCorps",
-        "description" : "Shelling support."
-    },
-    {
-        "name" : "ForwardBasecamp",
-        "description" : "Casual's dream QOL."
-    },
-    {
-        "name" : "ProtocolAssimilation",
-        "description" : "Coalition unit gacha and coalition drills."
-    },
+    {"name" : "EchelonFormation",
+    "description" : "Deployable teams."},
+    {"name" : "FactoryProduction",
+    "description" : "Ancient Unit Gacha."},
+    {"name" : "NeuralUpgrade",
+    "description" : "Extra limit break."},
+    {"name" : "Dormitories",
+    "description" : "Battery charger."},
+        {"name" : "Resupply",
+        "description" : "Dorm gacha."},
+        {"name" : "Costumes",
+        "description" : "True money sink."},
+        {"name" : "Furniture",
+        "description" : "Dorm equipments."},
+    {"name" : "HeavyOrdnanceCorps",
+    "description" : "Shelling support."},
+    {"name" : "ForwardBasecamp",
+    "description" : "Casual's dream QOL."},
+    {"name" : "ProtocolAssimilation",
+    "description" : "Coalition unit gacha and coalition drills."},
     "Devices",
-    {
-        "name" : "",
-        "description" : "★"
-    }
+    {"name" : "AppleDevices",
+    "description" : "iOS exclusive features."},
+    {"name" : "Emulators",
+    "description" : "Emulator exclusive features."},
+    {"name" : "AndroidDevices",
+    "description" : "Android exclusive features."},
+    "Home Tabs",
+    {"name" : "",
+    "description" : "★"}
 ]
 
 export const dTag = Object.freeze({
     //#region 
-    APPLE : Object.freeze({val : 'AppleDevices', desc : 'iOS exclusive features.'}),
-    EMU : Object.freeze({val : 'Emulators', desc : 'Emulator exclusive features.'}),
-    //ANDROID : 'AndroidDevices',
-    //#endregion
-    //#region Home Tabs
     CMDR : Object.freeze({val : 'Commander', desc : '"Self-insert."'}),
     MARP : Object.freeze({val : 'FourResources', desc : 'Manpower, Ammunition, Rations, Parts.'}),
     GEMS : Object.freeze({val : '', desc : ''}),

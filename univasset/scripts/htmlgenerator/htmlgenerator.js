@@ -1,4 +1,5 @@
-import {Compare, Check} from '../externaljavascript.js';
+import {Compare, Check, splitTime} from '../externaljavascript.js';
+import '../prototype.js';
 
 /** @param {(string | Node)[]} elements */
 function brJoin(elements) {
@@ -199,4 +200,26 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
     //------------------------------------------------------------------------------------------------------------
     grouperElem.classList.add('func_table');
     grouperElem.appendChild(tableElem);
+}
+
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+/** Creates a timer for events.
+ * @param {HTMLElement} grouperElem
+ * @param {string} date Mon dy, year hr:mn:sc (UTC|GMT)(+-)offs */
+export function timer(grouperElem, date, eventURL = '') {
+    const [mo, ...rest] = date.replace(/[,(UTC|GMT)]/g, '').replace(/:/g, ' ').split(' ');
+    const [day, yr, hr, min, off] = rest.map(Number);
+    const [hroff, minoff] = Math.intdiv(off, 100);
+    const endtime = Date.UTC(yr, months.indexOf(mo), day, hr - hroff, min - minoff);
+
+    const spanElem = document.createElement('span');
+    const countdown = setInterval(function() {
+        const count = endtime - Date.now();
+        spanElem.textContent = splitTime(count).map(num => String(num).padStart(2, '0')).join(':');
+        if (count < 0) {clearInterval(countdown); spanElem.textContent = 'Event ended.';}
+    }, 1000);
+
+    grouperElem.classList.add('func_timer');
+    grouperElem.append(initializeHTML('img', {src: eventURL}), spanElem);
 }

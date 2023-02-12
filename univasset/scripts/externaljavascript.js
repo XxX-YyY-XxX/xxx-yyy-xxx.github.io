@@ -209,10 +209,10 @@ export function checkedLabel(inputElement) {
 }
 
 /** Returns days, hours, minutes, seconds.
- * @param {number} milli
+ * @param {number} milliseconds
  * @returns {[number, number, number, number]}*/
-export function ddhhmmss(milli) {
-    var [min, sec] = Math.intdiv(Math.trunc(milli / 1000), 60)
+export function splitTime(milliseconds) {
+    var [min, sec] = Math.intdiv(Math.trunc(milliseconds / 1000), 60)
     var [hr, min] = Math.intdiv(min, 60)
     return [...Math.intdiv(hr, 24), min, sec]
 }
