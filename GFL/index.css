@@ -82,13 +82,13 @@ label.tags {
     text-align: center;
 }
 
-.flex-label {
+#input-type-container > label {
     background-color: transparent;
     line-height: 10px;
     flex: calc(100% / 3);
 }
 
-.flex-label:has(input:checked) {
+#input-type-container > label:has(input:checked) {
     background-color: darkgreen;
 }
 

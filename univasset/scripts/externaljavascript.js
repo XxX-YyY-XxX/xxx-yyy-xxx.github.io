@@ -1,4 +1,4 @@
-import './prototype.js';
+import {iter, zip} from './basefunctions/basefunctions.js';
 
 //#region Constants
 /** Close to zero value. */
@@ -35,9 +35,14 @@ export class RadioButton {
     /** @param {string} name Name of the radio group.
      * @param {{string : function(HTMLInputElement)}} perButton \{radioButton.value : function(radioButton) => void } */
     constructor(name, perButton) {
-        this.#currentChecked = Array.from(document.getElementsByName(name)).filter(button => button.checked)[0];
+        /** @type {HTMLButtonElement[]} */ const buttons = Array.from(document.getElementsByName(name));
+        this.#currentChecked = buttons.filter(button => button.checked)[0];
         this.#radioFunctions = perButton;
         this.#radioGroup = name;
+
+        //for (const button of buttons) {
+        //    button.addEventListener('click', this.run)
+        //}
     }
 
     /** Runs if clicked button is different from current checked button.
@@ -72,7 +77,7 @@ export class Cycle {
 
     /** @param {T[] | Generator(T)} items */
     constructor(...items) {
-        this.#items = items.length === 1 && items[0] === getIterator(items[0]) ? Array.from(items[0]) : items;
+        this.#items = items.length === 1 && items[0] === iter(items[0]) ? Array.from(items[0]) : items;
         this.#length = items.length;
     } 
 
@@ -160,16 +165,6 @@ export class Check {
 }
 //#endregion
 
-//#region Helper Functions
-/** @param {Iterable} iterable */
-function getIterator(iterable) {
-    //if (iterable[Symbol.iterator]() === iterable)
-    
-    //Set = iterable[Symbol.iterator]();
-    return iterable[Symbol.iterator]();
-}
-//#endregion
-
 //#region Functions
 /** @param {string} htmlString */
 export function removeHTMLTag(htmlString) {
@@ -216,22 +211,6 @@ export function splitTime(milliseconds) {
     var [hr, min] = Math.intdiv(min, 60)
     return [...Math.intdiv(hr, 24), min, sec]
 }
-//#endregion
-
-//#region Generators
-/** @param {boolean} extend true to extend, false to clip
- * @param {Iterable[]} iterables order of iterables = order of output
- * @returns "Tuple" of values from each array */
-export function* zip(extend, ...iterables) {
-    const output = Array();
-    const extension = extend ? 'some' : 'every';
-    const iterator_array = iterables.map(getIterator);
-    while (iterator_array.map(x => x.next()).map(({value, done}) => {output.push(value); return !done;})[extension](x => x))
-        yield output.splice(0);
-}
-//#endregion
-
-//#region Decorators
 //#endregion
 
 //#region Trial

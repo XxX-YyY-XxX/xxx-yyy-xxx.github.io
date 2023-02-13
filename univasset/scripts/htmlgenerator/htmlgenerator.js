@@ -1,5 +1,5 @@
 import {Compare, Check, splitTime} from '../externaljavascript.js';
-import '../prototype.js';
+import '../basefunctions/basefunctions.js';
 
 /** @param {(string | Node)[]} elements */
 function brJoin(elements) {
@@ -161,9 +161,7 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
 
                 headerCell.dataset.sort = 'no';     //Cycles between no, hi, lo
                 headerCell.dataset.index = index;   //Constant
-                headerCell.addEventListener('click', function() {
-                    sortMethod(this, itemtype);
-                }, true);
+                headerCell.addEventListener('click', function() {sortMethod(this, itemtype);}, true);
             }
             break;
         case filter:
@@ -222,4 +220,33 @@ export function timer(grouperElem, date, eventURL = '') {
 
     grouperElem.classList.add('func_timer');
     grouperElem.append(initializeHTML('img', {src: eventURL}), spanElem);
+}
+
+/** Creates a radio group.
+ * @param {HTMLElement} grouperElem
+ * @param {string} radioName Name of the radio group. Most useful on form submissions.
+ * @param {[string | HTMLElement, string, function(HTMLInputElement): null][]} perButtonFunc [textContent, value, onclick function] */
+export function radioGroup(grouperElem, radioName, ...perButtonFunc) {
+    const radioFunctions = new Map(perButtonFunc.map(([, value, func]) => [value, func]));
+    /** @type {HTMLInputElement} */ var currentChecked;
+
+    const fragment = new DocumentFragment();
+    for (const [text, value, func] of perButtonFunc) {
+        const inputElem = initializeHTML('input', {value: value, type: 'radio', name: radioName});
+        inputElem.addEventListener('click', function() {
+            if (this !== currentChecked) {
+                radioFunctions.get(currentChecked.value)(currentChecked);
+                func(this);
+                currentChecked = this;
+            }
+        });
+        fragment.appendChild(initializeHTML('label', {append: [inputElem, text]}));
+    }
+
+    currentChecked = fragment.firstElementChild.firstElementChild;
+    currentChecked.checked = true;
+    radioFunctions.get(currentChecked.value)(currentChecked);
+
+    grouperElem.classList.add('func_radioGroup');
+    grouperElem.appendChild(fragment);
 }

@@ -1,10 +1,24 @@
+import '../univasset/scripts/basefunctions/basefunctions.js';
 import {Compare, RadioButton, removeHTMLTag, randInt, checkedLabel} from '../univasset/scripts/externaljavascript.js';
-import {initializeHTML} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
+import {initializeHTML, radioGroup} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
 import {cardData, dTag, newCards} from "./tempcard.js";
-import '../univasset/scripts/prototype.js';
 
+//const show_pages = document.getElementsByName();
+//const page_funcs = new RadioButton('show-page')
+/* {
+    timer(radio) {
+        if (radio.checked) {
+            timer_field.style.display = 'block';
+        } else {
+            timer_field.style.display = 'none';
+        }
+    },
+    links(radio) {},
+    faqs(radio) {}
+} */
+//for (const radio of Array.from(show_pages)) radio.addEventListener('change', page_funcs[radio.value])
 
-
+//const timer_field = document.getElementById('timer-field');
 
 
 
@@ -35,7 +49,7 @@ const browseField = document.getElementById('browse-page');
 const searchParams = new URLSearchParams(location.search);
 const maxPage = Math.ceil((cardData.length - 1) / 5)
 const pageNo = document.getElementById('page-no');
-const inputButtons = new RadioButton('input-type',
+/* const inputButtons = new RadioButton('input-type',
     {
         search(button) {
             if (button.checked) {
@@ -64,7 +78,40 @@ const inputButtons = new RadioButton('input-type',
             cardsForm.style.display = button.checked ? 'none' : 'block';
         }
     }
-);
+); */
+/** @param {HTMLInputElement} radioButton */
+/* window.toggleInput = function(radioButton) {
+    inputButtons.run(radioButton);
+} */
+
+radioGroup(document.querySelector('#input-type-container'), 'input-type',
+    [initializeHTML('h2', {textContent: 'Keyword'}), 'search', function(button) {
+        if (button.checked) {
+            searchTextField.style.display = 'inline';
+            searchTextField.name = button.value;
+            searchTextField.value = '';
+        } else {
+            searchTextField.style.display = 'none'
+        }
+    }],
+    [initializeHTML('h2', {textContent: 'Tags'}), 'tags', function(button) {
+        if (button.checked) {
+            toggleableTagsField.style.display = 'block';
+            searchTextField.name = button.value;
+            searchTextField.value = '';
+        } else {
+            toggleableTagsField.style.display = 'none';
+            for (const labeltrue of Array.from(toggleableTagsField.children).filter(label => label.firstElementChild.checked)) {
+                labeltrue.firstElementChild.checked = false
+                labeltrue.classList.remove('checked');
+            }
+        }
+    }],
+    [initializeHTML('h2', {textContent: 'Browse'}), 'browse', function(button) {
+        browseField.style.display = button.checked ? 'block' : 'none';
+        cardsForm.style.display = button.checked ? 'none' : 'block';
+    }]
+)
 //#endregion
 
 //#region Initialize
@@ -169,11 +216,6 @@ function setQuestionBoxes({questions, answers, tags}) {
 //#endregion
 
 //#region Public Functions
-/** @param {HTMLInputElement} radioButton */
-window.toggleInput = function(radioButton) {
-    inputButtons.run(radioButton);
-}
-
 /** @param {HTMLButtonElement} pageButton*/
 window.changePage = function(pageButton) {
     const page = {
