@@ -26,41 +26,6 @@ export class Compare {
     }
 }
 
-export class RadioButton {
-    /** @type {HTMLInputElement} */
-    #currentChecked;
-    #radioFunctions;
-    #radioGroup;
-
-    /** @param {string} name Name of the radio group.
-     * @param {{string : function(HTMLInputElement)}} perButton \{radioButton.value : function(radioButton) => void } */
-    constructor(name, perButton) {
-        /** @type {HTMLButtonElement[]} */ const buttons = Array.from(document.getElementsByName(name));
-        this.#currentChecked = buttons.filter(button => button.checked)[0];
-        this.#radioFunctions = perButton;
-        this.#radioGroup = name;
-
-        //for (const button of buttons) {
-        //    button.addEventListener('click', this.run)
-        //}
-    }
-
-    /** Runs if clicked button is different from current checked button.
-     * @param {HTMLInputElement} checkedButton Button that was interacted.
-     * @throws RadioButtonError if "checkedButton" is from a different radio group. */
-    run(checkedButton) {
-        //what if no default selected button?
-        if (checkedButton.name != this.#radioGroup)
-            throw `RadioButtonError: Button is not part of the "${this.#radioGroup}" radio group.`
-
-        if (checkedButton !== this.#currentChecked) {
-            this.#radioFunctions[this.#currentChecked.value](this.#currentChecked);
-            this.#radioFunctions[checkedButton.value](checkedButton);
-            this.#currentChecked = checkedButton;
-        }
-    }
-}
-
 /** For functions that return a Promise. */
 export class AsyncFunc {
     /** @param {RequestInfo | URL} jsonFile @returns Promise of JSON object. */
@@ -210,6 +175,11 @@ export function splitTime(milliseconds) {
     var [min, sec] = Math.intdiv(Math.trunc(milliseconds / 1000), 60)
     var [hr, min] = Math.intdiv(min, 60)
     return [...Math.intdiv(hr, 24), min, sec]
+}
+
+/** @param {RequestInfo | URL} jsonFile @returns JSON object. */
+export function getJSON(jsonFile) {
+    return await (async () => fetch(jsonFile).then(response => response.json()))();
 }
 //#endregion
 

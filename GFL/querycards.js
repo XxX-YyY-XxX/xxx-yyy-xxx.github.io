@@ -16,88 +16,90 @@ function getID(text, ...ID) {
     return `<a href="https://xxx-yyy-xxx.github.io/GFL/?id=${ID.join('+')}">${text}</a>`
 }
 
-export const dTag = Object.freeze({
+
+
+export const dTag = {
     //#region Combat Tabs
         //STORY : 'StoryEvents',          //For questions that apply to Major, Collab, and Seasonal Events.
-            MAJOR : Object.freeze({val : 'MajorEvents', desc : 'Main story. Added to Campaign after a while.'}),
-            SEASON : Object.freeze({val : 'SeasonalEvents', desc : 'Happens every New Year, X-mas, Halloween, etc.'}),
-            COLLAB : Object.freeze({val : 'Collaboration', desc : 'Reason: "He liked it."'}),
-        MAIN : Object.freeze({val : 'CombatMissions', desc : 'Main missions aka Chapters 0-13.'}),
-            AUTO : Object.freeze({val : 'AutoBattles', desc : 'Lazy farming.'}),
-        LOGI : Object.freeze({val : 'Logistics', desc : 'Main source of MARP and tickets.'}),
-        SIMS : Object.freeze({val : 'CombatSimulations', desc : 'Place to get upgrade materials.'}),
-        CAMPAIGN : Object.freeze({val : 'CampaignMissions', desc : 'Permanent Major Events.'}),
-        THEATER : Object.freeze({val : 'Theater', desc : 'Backstab central.'}),
+            MAJOR : {name: 'MajorEvents', description: 'Main story. Added to Campaign after a while.'},
+            SEASON : {name: 'SeasonalEvents', description: 'Happens every New Year, X-mas, Halloween, etc.'},
+            COLLAB : {name: 'Collaboration', description: 'Reason: "He liked it."'},
+        MAIN : {name: 'CombatMissions', description: 'Main missions aka Chapters 0-13.'},
+            AUTO : {name: 'AutoBattles', description: 'Lazy farming.'},
+        LOGI : {name: 'Logistics', description: 'Main source of MARP and tickets.'},
+        SIMS : {name: 'CombatSimulations', description: 'Place to get upgrade materials.'},
+        CAMPAIGN : {name: 'CampaignMissions', description: 'Permanent Major Events.'},
+        THEATER : {name: 'Theater', description: 'Backstab central.'},
     //#endregion
     //#region Armory Tabs
-        TDOLL : Object.freeze({val : 'TacticalDolls', desc : 'Anything T-Doll related. Use as secondary tag.'}),
-            LEDOLL : Object.freeze({val : 'CycleDropDolls', desc : 'Reward dolls that now wander the rerun hell.'}),
-        COALITION : Object.freeze({val : 'CoalitionUnits', desc : 'PA counterpart of Tactical Dolls.'}),
-        EQUIP : Object.freeze({val : 'Equipments', desc : 'Gun attachments, FST chips, PA chips.'}),
-            SPEQ : Object.freeze({val : 'SpecialEquipments', desc : 'Equipments specific to a doll.'}),
-        ITEM : Object.freeze({val : 'ConsumableItems', desc : 'Tickets, cores, gems, batteries, shop items...'}),
-            TCM : Object.freeze({val : 'TrueCoreMask', desc : `Used to redeem 5${star} prod dolls.`}),
-        FAIRY : Object.freeze({val : 'Fairies', desc : 'Sixth man of the team.'}),
-        FST : Object.freeze({val : 'FireSupportTeam', desc : 'Rockets and mortars, the first of the HOC.'}),
+        TDOLL : {name: 'TacticalDolls', description: 'Anything T-Doll related. Use as secondary tag.'},
+            LEDOLL : {name: 'CycleDropDolls', description: 'Reward dolls that now wander the rerun hell.'},
+        COALITION : {name: 'CoalitionUnits', description: 'PA counterpart of Tactical Dolls.'},
+        EQUIP : {name: 'Equipments', description: 'Gun attachments, FST chips, PA chips.'},
+            SPEQ : {name: 'SpecialEquipments', description: 'Equipments specific to a doll.'},
+        ITEM : {name: 'ConsumableItems', description: 'Tickets, cores, gems, batteries, shop items...'},
+            TCM : {name: 'TrueCoreMask', description: `Used to redeem 5${star} prod dolls.`},
+        FAIRY : {name: 'Fairies', description: 'Sixth man of the team.'},
+        FST : {name: 'FireSupportTeam', description: 'Rockets and mortars, the first of the HOC.'},
     //#endregion
     //#region Facilities
-        ECH : Object.freeze({val : 'EchelonFormation', desc : 'Deployable teams.'}),
-        PROD : Object.freeze({val : 'FactoryProduction', desc : 'Ancient Unit Gacha.'}),
-        MOD : Object.freeze({val : 'NeuralUpgrade', desc : 'Extra limit break.'}),
-        DORM : Object.freeze({val : 'Dormitories', desc : 'Battery charger.'}),
-            RESUPPLY : Object.freeze({val : 'Resupply', desc : 'Dorm gacha.'}),
-            SKIN : Object.freeze({val : 'Costumes', desc : 'True money sink.'}),
-            FURN : Object.freeze({val : 'Furniture', desc : '"Dorm Equipments."'}),
-        HOC : Object.freeze({val : 'HeavyOrdnanceCorps', desc : 'Shelling support.'}),
-        EXPED : Object.freeze({val : 'ForwardBasecamp', desc : "Casual's dream QOL."}),
-        PA : Object.freeze({val : 'ProtocolAssimilation', desc : 'PA pulling and coalition drills.'}),
+        ECH : {name: 'EchelonFormation', description: 'Deployable teams.'},
+        PROD : {name: 'FactoryProduction', description: 'Ancient Unit Gacha.'},
+        MOD : {name: 'NeuralUpgrade', description: 'Extra limit break.'},
+        DORM : {name: 'Dormitories', description: 'Battery charger.'},
+            RESUPPLY : {name: 'Resupply', description: 'Dorm gacha.'},
+            SKIN : {name: 'Costumes', description: 'True money sink.'},
+            FURN : {name: 'Furniture', description: '"Dorm Equipments."'},
+        HOC : {name: 'HeavyOrdnanceCorps', description: 'Shelling support.'},
+        EXPED : {name: 'ForwardBasecamp', description: "Casual's dream QOL."},
+        PA : {name: 'ProtocolAssimilation', description: 'PA pulling and coalition drills.'},
     //#endregion
     //#region Devices
-    APPLE : Object.freeze({val : 'AppleDevices', desc : 'iOS exclusive features.'}),
-    EMU : Object.freeze({val : 'Emulators', desc : 'Emulator exclusive features.'}),
-    //ANDROID : 'AndroidDevices',
+    APPLE : {name: 'AppleDevices', description: 'iOS exclusive features.'},
+    EMU : {name: 'Emulators', description: 'Emulator exclusive features.'},
+    ANDROID : {name: 'AndroidDevices', description: 'Android exclusive features.'},
     //#endregion
     //#region Home Tabs
-    CMDR : Object.freeze({val : 'Commander', desc : '"Self-insert."'}),
-    MARP : Object.freeze({val : 'FourResources', desc : 'Manpower, Ammunition, Rations, Parts.'}),
-    GEMS : Object.freeze({val : 'PremiumCurrency', desc : 'Kalina demands you spend these on her.'}),
-    ADJUNCT : Object.freeze({val : 'Adjutants', desc : 'T-Doll secretary.'}),
-    MINI : Object.freeze({val : 'MiniEvents', desc : 'Keycard Events, Point Events, etc.'}),
-    BP : Object.freeze({val : 'Battlepass', desc : 'Frontline Protocol.'}),
-    QUEST : Object.freeze({val : 'Quests', desc : 'Dailies, weeklies, main, career, intel.'}),
-    SHOP : Object.freeze({val : 'Shop', desc : 'Buy things here.'}),
-    FRIEND : Object.freeze({val : 'Friends', desc : 'The helpful kind.'}),
+    CMDR : {name: 'Commander', description: '"Self-insert."'},
+    MARP : {name: 'FourResources', description: 'Manpower, Ammunition, Rations, Parts.'},
+    GEMS : {name: 'Gems', description: 'Kalina demands you spend these on her.'},
+    ADJUNCT : {name: 'Adjutants', description: 'T-Doll secretary.'},
+    MINI : {name: 'MiniEvents', description: 'Keycard Events, Point Events, etc.'},
+    BP : {name: 'Battlepass', description: 'Frontline Protocol.'},
+    QUEST : {name: 'Quests', description: 'Dailies, weeklies, main, career, intel.'},
+    SHOP : {name: 'Shop', description: 'Buy things here.'},
+    FRIEND : {name: 'Friends', description: 'The helpful kind.'},
     //#endregion
     //#region Meta Tags
-    MISC : Object.freeze({val : 'Miscellaneous', desc : 'Default tag.'}),
-    '3P' : Object.freeze({val : 'ThirdParty', desc : 'Safe until said otherwise.'}),
-    TECH : Object.freeze({val : 'Troubleshooting', desc : 'DIY tech support.'}),
-    NEWB : Object.freeze({val : 'NewbieGuide', desc : 'Things new/early-game players should know.'}),
-    PRIME : Object.freeze({val : 'TopicPrimer', desc : "Starter explanation of it's paired tag."}), //Must be the first box of it's paired tag.
-    TIER : Object.freeze({val : 'TierList', desc : 'Basic guideline on who are the best.'}),
-    IMPT : Object.freeze({val : 'Important', desc : 'Things new players would need for late-game.'}),
-    SYSMECH : Object.freeze({val : 'SystemMechanics', desc : 'Explanation on underlying mechanics of the game.'}),
-    LORE : Object.freeze({val : 'Story/Lore', desc : 'Main meat of the series.'}),
-    REF : Object.freeze({val : 'Compilation', desc : 'Reference compilations.'}),
-    GET : Object.freeze({val : 'Acquisition', desc : 'How to get and where.'}),
+    MISC : {name: 'Miscellaneous', description: 'Default tag.'},
+    '3P' : {name: 'ThirdParty', description: 'Safe until said otherwise.'},
+    TECH : {name: 'Troubleshooting', description: 'DIY tech support.'},
+    NEWB : {name: 'NewbieGuide', description: 'Things new/early-game players should know.'},
+    PRIME : {name: 'TopicPrimer', description: "Starter explanation of it's paired tag."}, //Must be the first box of it's paired tag.
+    TIER : {name: 'TierList', description: 'Basic guideline on who are the best.'},
+    IMPT : {name: 'Important', description: 'Things new players would need for late-game.'},
+    SYSMECH : {name: 'SystemMechanics', description: 'Explanation on underlying mechanics of the game.'},
+    LORE : {name: 'Story/Lore', description: 'Main meat of the series.'},
+    REF : {name: 'Compilation', description: 'Reference compilations.'},
+    GET : {name: 'Acquisition', description: 'How to get and where.'},
     //#endregion
-    ACCT : Object.freeze({val : 'AccountManagement', desc : 'Account data and integrity.'}),
-    ANNIV : Object.freeze({val : 'Anniversary', desc : "Anything concerning the game's anniversary."}),
-    ENEMY : Object.freeze({val : 'EnemyUnits', desc : 'Things regarding enemy info.'}),
-    MAP : Object.freeze({val : 'FieldMap', desc : 'Node-based overworld.'}),
-        BATTLE : Object.freeze({val : 'Skirmishes', desc : 'Where bullets rain.'}),
-    SIDE : Object.freeze({val : 'SideStory', desc : 'Extra stories.'}),
-    SKILL : Object.freeze({val : 'Skills', desc : 'Unit skills.'}),
-    LOVE : Object.freeze({val : 'Affection', desc : '"Keep it high."'}),
-        OATH : Object.freeze({val : 'OathSystem', desc : 'Marriage.'}),
-    LEVEL : Object.freeze({val : 'Leveling', desc : 'Mostly Corpse Drag.'}),
-    PET : Object.freeze({val : 'Pets', desc : 'Little critters.'}),
-    OJ : Object.freeze({val : 'LuffberryChess', desc : 'PVP sidegame.'}),
-    CE : Object.freeze({val : 'CombatEffectiveness', desc : 'Clutch metric.'}),
-    KALINA : Object.freeze({val : 'Kalina', desc : 'Overworked logistics officer.'}),
-});
+    ACCT : {name: 'AccountManagement', description: 'Account data and integrity.'},
+    ANNIV : {name: 'Anniversary', description: "Anything concerning the game's anniversary."},
+    ENEMY : {name: 'EnemyUnits', description: 'Things regarding enemy info.'},
+    MAP : {name: 'FieldMap', description: 'Node-based overworld.'},
+        BATTLE : {name: 'Skirmishes', description: 'Where bullets rain.'},
+    SIDE : {name: 'SideStory', description: 'Extra stories.'},
+    SKILL : {name: 'Skills', description: 'Unit skills.'},
+    LOVE : {name: 'Affection', description: '"Keep it high."'},
+        OATH : {name: 'OathSystem', description: 'Marriage.'},
+    LEVEL : {name: 'Leveling', description: 'Mostly Corpse Drag.'},
+    PET : {name: 'Pets', description: 'Little critters.'},
+    OJ : {name: 'LuffberryChess', description: 'PVP sidegame.'},
+    CE : {name: 'CombatEffectiveness', description: 'Clutch metric.'},
+    KALINA : {name: 'Kalina', description: 'Overworked logistics officer.'},
+};
 
-export const cardData = Object.freeze([
+export const cardData = [
     //#region Topic Primers
     {
         id : '00000',
@@ -3077,6 +3079,6 @@ export const cardData = Object.freeze([
         answers : ``,
         tags : []
     },
-]);
+];
 
 export const newCards = ['00101', '00018', '00064'];

@@ -222,13 +222,13 @@ export function timer(grouperElem, date, eventURL = '') {
     grouperElem.append(initializeHTML('img', {src: eventURL}), spanElem);
 }
 
-/** Creates a radio group.
+/** Creates a radio group. Clicked button only runs when it's unchecked.
  * @param {HTMLElement} grouperElem
  * @param {string} radioName Name of the radio group. Most useful on form submissions.
  * @param {[string | HTMLElement, string, function(HTMLInputElement): null][]} perButtonFunc [textContent, value, onclick function] */
 export function radioGroup(grouperElem, radioName, ...perButtonFunc) {
     const radioFunctions = new Map(perButtonFunc.map(([, value, func]) => [value, func]));
-    /** @type {HTMLInputElement} */ var currentChecked;
+    var currentChecked;
 
     const fragment = new DocumentFragment();
     for (const [text, value, func] of perButtonFunc) {

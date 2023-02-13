@@ -1,7 +1,7 @@
 import '../univasset/scripts/basefunctions/basefunctions.js';
-import {Compare, RadioButton, removeHTMLTag, randInt, checkedLabel} from '../univasset/scripts/externaljavascript.js';
+import {Compare, removeHTMLTag, randInt, checkedLabel} from '../univasset/scripts/externaljavascript.js';
 import {initializeHTML, radioGroup} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
-import {cardData, dTag, newCards} from "./tempcard.js";
+import {dTag, cardData, newCards} from "./querycards.js";
 
 //const show_pages = document.getElementsByName();
 //const page_funcs = new RadioButton('show-page')
@@ -40,7 +40,6 @@ import {cardData, dTag, newCards} from "./tempcard.js";
 
 
 
-
 //#region Constants
 const toggleableTagsField = document.getElementById('tags-list');
 const searchTextField = document.getElementById('search-text');
@@ -49,41 +48,9 @@ const browseField = document.getElementById('browse-page');
 const searchParams = new URLSearchParams(location.search);
 const maxPage = Math.ceil((cardData.length - 1) / 5)
 const pageNo = document.getElementById('page-no');
-/* const inputButtons = new RadioButton('input-type',
-    {
-        search(button) {
-            if (button.checked) {
-                searchTextField.style.display = 'inline';
-                searchTextField.name = button.value;
-                searchTextField.value = '';
-            } else {
-                searchTextField.style.display = 'none'
-            }
-        },
-        tags(button) {
-            if (button.checked) {
-                toggleableTagsField.style.display = 'block';
-                searchTextField.name = button.value;
-                searchTextField.value = '';
-            } else {
-                toggleableTagsField.style.display = 'none';
-                for (const labeltrue of Array.from(toggleableTagsField.children).filter(label => label.firstElementChild.checked)) {
-                    labeltrue.firstElementChild.checked = false
-                    labeltrue.classList.remove('checked');
-                }
-            }
-        },
-        browse(button) {
-            browseField.style.display = button.checked ? 'block' : 'none';
-            cardsForm.style.display = button.checked ? 'none' : 'block';
-        }
-    }
-); */
-/** @param {HTMLInputElement} radioButton */
-/* window.toggleInput = function(radioButton) {
-    inputButtons.run(radioButton);
-} */
+//#endregion
 
+//#region Initialize
 radioGroup(document.querySelector('#input-type-container'), 'input-type',
     [initializeHTML('h2', {textContent: 'Keyword'}), 'search', function(button) {
         if (button.checked) {
@@ -112,15 +79,10 @@ radioGroup(document.querySelector('#input-type-container'), 'input-type',
         cardsForm.style.display = button.checked ? 'none' : 'block';
     }]
 )
-//#endregion
 
-//#region Initialize
 const fragment = new DocumentFragment();
-for (const {val, desc} of Object.values(dTag).sort((a, b) => Compare.string(a.val, b.val))) {
-    const spanElem = initializeHTML('span', {textContent: desc, classList: {add: ['tooltiptext']}});
-    const labelElem = initializeHTML('label', {classList: {add: ['tags', 'tooltip']}});
-    
-    const inputElem = initializeHTML('input', {type: 'checkbox', value: val});
+for (const {name, description} of dTag.sort((a, b) => Compare.string(a.name, b.name))) {    
+    const inputElem = initializeHTML('input', {type: 'checkbox', value: name});
     inputElem.addEventListener('click', function() {
         checkedLabel(this);             //Will delete if CSS :has is ok
         searchTextField.value = this.checked ?
@@ -128,8 +90,8 @@ for (const {val, desc} of Object.values(dTag).sort((a, b) => Compare.string(a.va
             searchTextField.value.replace(this.value, '').replace('  ', ' ').trim();
     });
     
-    labelElem.append(inputElem, val, spanElem);
-    fragment.appendChild(labelElem);
+    const spanElem = initializeHTML('span', {textContent: description, classList: {add: ['tooltiptext']}});
+    fragment.appendChild(initializeHTML('label', {classList: {add: ['tags', 'tooltip']}, append: [inputElem, name, spanElem]}));
 }
 toggleableTagsField.appendChild(fragment);
 
@@ -165,7 +127,7 @@ function tagsCards() {
     if (!cardTags.length)
         return 'Empty search.';
 
-    for (const cards of cardData.filter(({tags}) => cardTags.subsetOf(tags.map(x => x.val))))
+    for (const cards of cardData.filter(({tags}) => cardTags.subsetOf(tags.map(x => x.name))))
         output += setQuestionBoxes(cards);
 
     return output || 'No matches found.';
@@ -210,7 +172,7 @@ function setQuestionBoxes({questions, answers, tags}) {
         <legend><h3>${questions}</h3></legend>
         ${answers}
         <hr>
-        Tags: ${tags.map(tag => `<span class="tags card-tags">${tag.val}</span>` ).join(' ')}
+        Tags: ${tags.map(tag => `<span class="tags card-tags">${tag.name}</span>` ).join(' ')}
         </fieldset>`;
 }
 //#endregion
