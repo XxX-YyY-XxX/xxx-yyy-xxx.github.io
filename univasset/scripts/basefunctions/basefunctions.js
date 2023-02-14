@@ -1,2 +1,2 @@
 import './prototype.js';
-export {iter, zip} from './pseudobuiltin.js';
+export {iter, zip, type} from './pseudobuiltin.js';

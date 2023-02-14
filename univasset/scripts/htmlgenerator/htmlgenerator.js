@@ -1,5 +1,5 @@
-import {Compare, Check, splitTime} from '../externaljavascript.js';
-import '../basefunctions/basefunctions.js';
+import {Compare, splitTime} from '../externaljavascript.js';
+import {type} from '../basefunctions/basefunctions.js';
 
 /** @param {(string | Node)[]} elements */
 function brJoin(elements) {
@@ -11,7 +11,7 @@ function brJoin(elements) {
 /** @param {{PropertyOrFunction: string | number | Array | {}}} attributes */
 function recursiveAttribute(base, attributes) {
     for (const [attrib, value] of Object.entries(attributes)) {
-        switch (Check.typeof(value)) {
+        switch (type(value)) {
             case 'array':
                 base[attrib](...value);
                 break;
@@ -110,7 +110,7 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
             /* const key = {
                 function: x => sort(x),
                 boolean: x => x
-            }[Check.typeof(sort)] */
+            }[type(sort)] */
 
             /** @param {HTMLTableCellElement} cell @param {string} type @returns {Array[]} */
             function sortMethod(cell, type) {
@@ -149,7 +149,7 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
                 for (const rows of sorted_array) {
                     const trElem = document.createElement('tr');
                     for (const item of rows)
-                        trElem.appendChild(initializeHTML('td', Check.typeof(item) === 'dom' ? {appendChild: [item]} : {textContent: item}));
+                        trElem.appendChild(initializeHTML('td', type(item) === 'dom' ? {appendChild: [item]} : {textContent: item}));
                     tbodyElem.appendChild(trElem);
                 }
             }
@@ -157,7 +157,7 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
             headertr.dataset.onsort = 0;
             const samplerow = tableMatrix[0];
             for (const [index, headerCell] of Object.entries(headertr.children)) {
-                const itemtype = Check.typeof(samplerow[index]);
+                const itemtype = type(samplerow[index]);
 
                 headerCell.dataset.sort = 'no';     //Cycles between no, hi, lo
                 headerCell.dataset.index = index;   //Constant
@@ -222,7 +222,7 @@ export function timer(grouperElem, date, eventURL = '') {
     grouperElem.append(initializeHTML('img', {src: eventURL}), spanElem);
 }
 
-/** Creates a radio group. Clicked button only runs when it's unchecked.
+/** Creates a radio group. Clicked button only runs when it's unchecked. First button is the default checked.
  * @param {HTMLElement} grouperElem
  * @param {string} radioName Name of the radio group. Most useful on form submissions.
  * @param {[string | HTMLElement, string, function(HTMLInputElement): null][]} perButtonFunc [textContent, value, onclick function] */
@@ -234,7 +234,7 @@ export function radioGroup(grouperElem, radioName, ...perButtonFunc) {
     for (const [text, value, func] of perButtonFunc) {
         const inputElem = initializeHTML('input', {value: value, type: 'radio', name: radioName});
         inputElem.addEventListener('click', function() {
-            if (this !== currentChecked) {
+            if (currentChecked !== this) {
                 radioFunctions.get(currentChecked.value)(currentChecked);
                 func(this);
                 currentChecked = this;
