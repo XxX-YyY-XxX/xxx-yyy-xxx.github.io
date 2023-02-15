@@ -32,21 +32,21 @@ radioGroup(document.querySelector('#input-type-container'), 'input-type',
         if (button.checked) {
             searchTextField.style.display = 'inline';
             searchTextField.name = button.value;
-            searchTextField.value = '';
         } else {
             searchTextField.style.display = 'none';
+            searchTextField.value = '';
         }
     }],
     [initializeHTML('h2', {textContent: 'Tags'}), 'tags', function(button) {
         if (button.checked) {
             toggleableTagsField.style.display = 'block';
             searchTextField.name = button.value;
-            searchTextField.value = '';
         } else {
             toggleableTagsField.style.display = 'none';
+            searchTextField.value = '';
             for (const input_true of tag_label_inputs.filter(input => input.checked)) {
                 input_true.checked = false;
-                checkedLabel(input_true);
+                checkedLabel(input_true);   //remove if :has is supported
             }
         }
     }],

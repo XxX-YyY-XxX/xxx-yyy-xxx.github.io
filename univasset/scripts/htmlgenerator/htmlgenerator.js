@@ -204,15 +204,12 @@ const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
 
 /** Creates a timer for events.
  * @param {HTMLElement} grouperElem
- * @param {string} date Mon dy, year hr:mn UTC(+-)offs */
+ * @param {string} date Mon dy, year hr:mn (UTC|GMT)(+-)offs */
 export function timer(grouperElem, date, eventURL = '') {
-    const [mo, ...rest] = date.replace(/[,(UTC)]/g, '').replace(/:/g, ' ').split(' ');
+    const [mo, ...rest] = date.replace(/,|(UTC)|(GMT)/g, '').replace(/:/g, ' ').split(' ');
     const [day, yr, hr, min, off] = rest.map(Number);
     const [hroff, minoff] = Math.intdiv(off, 100);
     const endtime = Date.UTC(yr, months.indexOf(mo), day, hr - hroff, min - minoff);
-    console.log(date)
-    console.log(mo, day, yr, hr, min, off)
-    console.log(new Date(endtime).toUTCString())
 
     const spanElem = document.createElement('span');
     const countdown = setInterval(function() {
