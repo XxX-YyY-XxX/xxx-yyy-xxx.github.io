@@ -32,7 +32,7 @@ export class Cycle {
     #index = 0;
     #length = 0;
 
-    /** @param {T[] | Generator(T)} items */
+    /** @param {T[]} items */
     constructor(...items) {
         this.#items = items.length === 1 && items[0] === iter(items[0]) ? Array.from(items[0]) : items;
         this.#length = items.length;
@@ -100,6 +100,14 @@ export class Check {
         return /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url);
     }
 }
+
+/** Returns Promise. */
+export class Async {
+    /** @param {RequestInfo | URL} jsonFile @returns JSON object. */
+    static async getJSON(jsonFile) {
+        return fetch(jsonFile).then(response => response.json());
+    }
+}
 //#endregion
 
 //#region Functions
@@ -147,13 +155,6 @@ export function splitTime(milliseconds) {
     var [min, sec] = Math.intdiv(Math.trunc(milliseconds / 1000), 60)
     var [hr, min] = Math.intdiv(min, 60)
     return [...Math.intdiv(hr, 24), min, sec]
-}
-
-/** @param {RequestInfo | URL} jsonFile @returns JSON object. */
-export function getJSON(jsonFile) {
-    var output;
-    fetch(jsonFile).then(response => response.json()).then(json => {output = json});
-    return output;
 }
 //#endregion
 

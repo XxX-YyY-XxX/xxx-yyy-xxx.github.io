@@ -4,10 +4,10 @@
         <script defer type="text/javascript" src="/univasset/scripts/include/includefile.js"></script>
         <script type="module">
             import {table} from '/univasset/scripts/htmlgenerator/htmlgenerator.js';
-            import {getJSON} from "/univasset/scripts/externaljavascript.js";
+            import {Async} from "/univasset/scripts/externaljavascript.js";
 
             table(document.querySelector('#main_content div'),
-                getJSON('./unitstats.json').slice(0, -1),
+                (await Async.getJSON('./unitstats.json')).slice(0, -1),
                 {sort: true, frzcol: true, frzhdr: true}
             );
         </script>
