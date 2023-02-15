@@ -206,7 +206,7 @@ const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
  * @param {HTMLElement} grouperElem
  * @param {string} date Mon dy, year hr:mn:sc (UTC|GMT)(+-)offs */
 export function timer(grouperElem, date, eventURL = '') {
-    const [mo, ...rest] = date.replace(/[,(UTC|GMT)]/g, '').replace(/:/g, ' ').split(' ');
+    const [mo, ...rest] = date.replace(/[,(UTC)(GMT)]/g, '').replace(/:/g, ' ').split(' ');
     const [day, yr, hr, min, off] = rest.map(Number);
     const [hroff, minoff] = Math.intdiv(off, 100);
     const endtime = Date.UTC(yr, months.indexOf(mo), day, hr - hroff, min - minoff);
