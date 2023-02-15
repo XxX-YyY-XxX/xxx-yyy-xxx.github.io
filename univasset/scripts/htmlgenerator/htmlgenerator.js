@@ -211,6 +211,7 @@ export function timer(grouperElem, date, eventURL = '') {
     const [hroff, minoff] = Math.intdiv(off, 100);
     const endtime = Date.UTC(yr, months.indexOf(mo), day, hr - hroff, min - minoff);
     console.log(date)
+    console.log(mo, day, yr, hr, min, off)
     console.log(new Date(endtime).toUTCString())
 
     const spanElem = document.createElement('span');
