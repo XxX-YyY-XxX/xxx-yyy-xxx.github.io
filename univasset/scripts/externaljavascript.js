@@ -179,7 +179,8 @@ export function splitTime(milliseconds) {
 
 /** @param {RequestInfo | URL} jsonFile @returns JSON object. */
 export function getJSON(jsonFile) {
-    return await (async () => fetch(jsonFile).then(response => response.json()))();
+    const output = await (async () => fetch(jsonFile).then(response => response.json()))();
+    return output;
 }
 //#endregion
 
