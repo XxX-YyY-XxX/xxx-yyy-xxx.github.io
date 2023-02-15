@@ -3,85 +3,14 @@ import {Compare, removeHTMLTag, randInt, checkedLabel} from '../univasset/script
 import {initializeHTML, radioGroup} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
 import {dTag, cardData, newCards} from "./querycards.js";
 
-//const show_pages = document.getElementsByName();
-//const page_funcs = new RadioButton('show-page')
-/* {
-    timer(radio) {
-        if (radio.checked) {
-            timer_field.style.display = 'block';
-        } else {
-            timer_field.style.display = 'none';
-        }
-    },
-    links(radio) {},
-    faqs(radio) {}
-} */
-//for (const radio of Array.from(show_pages)) radio.addEventListener('change', page_funcs[radio.value])
-
-//const timer_field = document.getElementById('timer-field');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //#region Constants
-const toggleableTagsField = document.getElementById('tags-list');
 const searchTextField = document.getElementById('search-text');
-const cardsForm = document.getElementById('submission-form');
-const browseField = document.getElementById('browse-page');
 const searchParams = new URLSearchParams(location.search);
-const maxPage = Math.ceil((cardData.length - 1) / 5)
-const pageNo = document.getElementById('page-no');
 //#endregion
 
-//#region Initialize
-radioGroup(document.querySelector('#input-type-container'), 'input-type',
-    [initializeHTML('h2', {textContent: 'Keyword'}), 'search', function(button) {
-        if (button.checked) {
-            searchTextField.style.display = 'inline';
-            searchTextField.name = button.value;
-            searchTextField.value = '';
-        } else {
-            searchTextField.style.display = 'none'
-        }
-    }],
-    [initializeHTML('h2', {textContent: 'Tags'}), 'tags', function(button) {
-        if (button.checked) {
-            toggleableTagsField.style.display = 'block';
-            searchTextField.name = button.value;
-            searchTextField.value = '';
-        } else {
-            toggleableTagsField.style.display = 'none';
-            for (const labeltrue of Array.from(toggleableTagsField.children).filter(label => label.firstElementChild.checked)) {
-                labeltrue.firstElementChild.checked = false
-                labeltrue.classList.remove('checked');
-            }
-        }
-    }],
-    [initializeHTML('h2', {textContent: 'Browse'}), 'browse', function(button) {
-        browseField.style.display = button.checked ? 'block' : 'none';
-        cardsForm.style.display = button.checked ? 'none' : 'block';
-    }]
-)
-
-const fragment = new DocumentFragment();
-for (const {name, description} of dTag.sort((a, b) => Compare.string(a.name, b.name))) {    
+//#region Tags Field
+const toggleableTagsField = document.getElementById('tags-list');
+for (const {name, description} of Object.values(dTag).sort((a, b) => Compare.string(a.name, b.name))) {    
     const inputElem = initializeHTML('input', {type: 'checkbox', value: name});
     inputElem.addEventListener('click', function() {
         checkedLabel(this);             //Will delete if CSS :has is ok
@@ -91,17 +20,47 @@ for (const {name, description} of dTag.sort((a, b) => Compare.string(a.name, b.n
     });
     
     const spanElem = initializeHTML('span', {textContent: description, classList: {add: ['tooltiptext']}});
-    fragment.appendChild(initializeHTML('label', {classList: {add: ['tags', 'tooltip']}, append: [inputElem, name, spanElem]}));
+    toggleableTagsField.appendChild(initializeHTML('label', {classList: {add: ['tags', 'tooltip']}, append: [inputElem, name, spanElem]}));
 }
-toggleableTagsField.appendChild(fragment);
+//#endregion
+
+//#region Initialize
+/** @type {HTMLInputElement[]} */ const tag_label_inputs = Array.from(toggleableTagsField.children).map(label => label.firstElementChild);
+const cardsForm = document.getElementById('submission-form'), browseField = document.getElementById('browse-page');
+radioGroup(document.querySelector('#input-type-container'), 'input-type',
+    [initializeHTML('h2', {textContent: 'Keyword'}), 'search', function(button) {
+        if (button.checked) {
+            searchTextField.style.display = 'inline';
+            searchTextField.name = button.value;
+            searchTextField.value = '';
+        } else {
+            searchTextField.style.display = 'none';
+        }
+    }],
+    [initializeHTML('h2', {textContent: 'Tags'}), 'tags', function(button) {
+        if (button.checked) {
+            toggleableTagsField.style.display = 'block';
+            searchTextField.name = button.value;
+            searchTextField.value = '';
+        } else {
+            toggleableTagsField.style.display = 'none';
+            for (const input_true of tag_label_inputs.filter(input => input.checked)) {
+                input_true.checked = false;
+                checkedLabel(input_true);
+            }
+        }
+    }],
+    [initializeHTML('h2', {textContent: 'Browse'}), 'browse', function(button) {
+        browseField.style.display = button.checked ? 'block' : 'none';
+        cardsForm.style.display = button.checked ? 'none' : 'block';
+    }]
+)
 
 document.getElementById('cards-field').innerHTML =
     searchParams.has('search') ? searchCards() :
     searchParams.has('tags') ? tagsCards() :
     searchParams.has('id') ? idCards() :
     (newCards.length >= 3) ? addedCards() : randomCards();
-
-document.getElementById('maxpage').textContent = maxPage;
 //#endregion
 
 //#region Private Functions
@@ -124,13 +83,14 @@ function tagsCards() {
     const cardTags = searchParams.get('tags').split(' ');
     var output = '';
 
-    if (!cardTags.length)
+    if (cardTags.length) {
+        for (const cards of cardData.filter(({tags}) => cardTags.subsetOf(tags.map(x => x.name))))
+            output += setQuestionBoxes(cards);
+
+        return output || 'No matches found.';
+    } else {
         return 'Empty search.';
-
-    for (const cards of cardData.filter(({tags}) => cardTags.subsetOf(tags.map(x => x.name))))
-        output += setQuestionBoxes(cards);
-
-    return output || 'No matches found.';
+    }
 }
 
 function idCards() {
@@ -157,9 +117,8 @@ function randomCards() {
     const indices = new Set();
     var output = '';
 
-    do {
-        indices.add(randInt(0, maxValue));
-    } while (indices.size < 3)
+    do indices.add(randInt(0, maxValue));
+    while (indices.size < 3)
 
     for (const index of indices)
         output += setQuestionBoxes(cardData[index]);
@@ -167,6 +126,7 @@ function randomCards() {
     return output;
 }
 
+/** @param {cardData} */
 function setQuestionBoxes({questions, answers, tags}) {
     return `<fieldset>
         <legend><h3>${questions}</h3></legend>
@@ -177,18 +137,22 @@ function setQuestionBoxes({questions, answers, tags}) {
 }
 //#endregion
 
-//#region Public Functions
+//#region Browse Field
+const maxPage = Math.ceil((cardData.length - 1) / 5)
+document.getElementById('maxpage').textContent = maxPage;
+const pageNo = document.getElementById('page-no');
+
 /** @param {HTMLButtonElement} pageButton*/
 window.changePage = function(pageButton) {
     const page = {
         'first'     : 1,
-        'previous'  : Math.max(1, Number(pageNo.innerText) - 1),
-        'next'      : Math.min(maxPage, Number(pageNo.innerText) + 1),
+        'previous'  : Math.max(1, Number(pageNo.textContent) - 1),
+        'next'      : Math.min(maxPage, Number(pageNo.textContent) + 1),
         'last'      : maxPage
     }[pageButton.value];
     var output = '';
 
-    pageNo.innerText = String(page);
+    pageNo.textContent = page;
 
     for (var i = (page * 5) - 5; i < Math.min(page * 5, cardData.length - 1); i++)
         output += setQuestionBoxes(cardData[i]);

@@ -16,8 +16,6 @@ function getID(text, ...ID) {
     return `<a href="https://xxx-yyy-xxx.github.io/GFL/?id=${ID.join('+')}">${text}</a>`
 }
 
-
-
 export const dTag = {
     //#region Combat Tabs
         //STORY : 'StoryEvents',          //For questions that apply to Major, Collab, and Seasonal Events.
@@ -3074,6 +3072,19 @@ export const cardData = [
         tags : [dTag.GEMS]
     },
     {
+        id : '00401',
+        questions : `Do debuffs stack i.e. smoke, stat downs?`,
+        answers : `Unless stated otherwise, yes.`,
+        tags : [dTag.SKILL]
+    },
+    {
+        id : '00402',
+        questions : `How many combat reports should I have ideally?`,
+        answers : `660 CRs to raise a doll from Lv.1 to Lv.90.<br>
+        As for how much is the recommended stock, if your main source of raising dolls is map leveling/corpse dragging, you'll get a truck load of them before you know it.`,
+        tags : [dTag.TDOLL, dTag.LEVEL]
+    },
+    {
         id : '00000',
         questions : ``,
         answers : ``,
@@ -3081,4 +3092,4 @@ export const cardData = [
     },
 ];
 
-export const newCards = ['00101', '00018', '00064'];
+export const newCards = [];

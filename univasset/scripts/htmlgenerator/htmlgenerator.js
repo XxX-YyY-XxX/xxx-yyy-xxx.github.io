@@ -214,12 +214,12 @@ export function timer(grouperElem, date, eventURL = '') {
     const spanElem = document.createElement('span');
     const countdown = setInterval(function() {
         const count = endtime - Date.now();
-        spanElem.textContent = splitTime(count).map(num => String(num).padStart(2, '0')).join(':');
+        spanElem.textContent = splitTime(count).map(num => String(num).padStart(2, '0')).join(' : ');
         if (count < 0) {clearInterval(countdown); spanElem.textContent = 'Event ended.';}
     }, 1000);
 
     grouperElem.classList.add('func_timer');
-    grouperElem.append(initializeHTML('img', {src: eventURL}), spanElem);
+    grouperElem.append(initializeHTML('img', {src: eventURL, alt: 'Image error.', loading: 'lazy'}), spanElem);
 }
 
 /** Creates a radio group. Clicked button only runs when it's unchecked. First button is the default checked.

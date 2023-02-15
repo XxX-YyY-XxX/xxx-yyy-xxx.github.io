@@ -11,7 +11,3 @@
 ### Anyone knows what resources and how much do we get for a failed PA capture?
 
 > ![](/GFL/assets/images/CaptureFail.png "Slashes are because probability")
-
-### How many combat reports should I have ideally?
-
-> 660 CRs to raise a doll from Lv.1 to Lv.90. As for how much is the recommended stock, if your main source of raising dolls is map leveling/corpse dragging, you'll get a truck load of them before you know it.

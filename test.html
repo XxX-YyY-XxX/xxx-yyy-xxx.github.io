@@ -2,14 +2,6 @@
 <html>
     <head>
         <script defer type="text/javascript" src="/univasset/scripts/include/includefile.js"></script>
-        <script type="module">
-            import {timer} from '/univasset/scripts/htmlgenerator/htmlgenerator.js';
-
-            document.getElementById('event');
-            timer(document.getElementById('battlepass'), 'Mar 19, 2023 23:59 UTC-0800',
-                'https://preview.redd.it/lacxhmhbpoga1.jpg?width=1920&format=pjpg&auto=webp&v=enabled&s=d820f33650f44cae82e839c4d8a2d13237bf88c9');
-            document.getElementById('skin-banner');
-        </script>
 
         <meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,18 +20,35 @@
 
         <link rel="icon" type="image/png" href="/univasset/images/favicon.png" />
 
-        <title>Random Scraps</title>
+        <title>Testing...</title>
     </head>
 
     <body>
-        <include src="/univasset/scripts/pageheader/header.html">"Welcome to the Main Page"</include>
+        <include src="/univasset/scripts/pageheader/header.html">"Live Test Page"</include>
 
         <div class="container">
             <section id="main_content">
-                <div id="event"></div>
-                <div id="battlepass"></div>
-                <div id="skin-banner"></div>
+                <div></div>
+                <span></span>
             </section>
         </div>
+
+        <script>
+            const div = document.querySelector('#main_content div');
+            const span = document.querySelector('#main_content span');
+
+            const testArray = [1,2,3,4,5,6,7,8,9,0];
+            
+            //var b = 'https://docs.google.com/spreadsheets/d/1gyn-6r_XBriYonFpj-RPkoQnCK36StTWJ0E5_yTU048/';
+            //var [link, type] = b.match(new RegExp('https://docs.google.com/(spreadsheets|document)/d/.{44}/'));
+            //document.getElementById('output').innerHTML = link;
+            
+            /* span.insertAdjacentText('beforeend', 'asdf');
+
+            const ex = document.createElement('span');
+            ex.textContent = 'jkl;'
+            span.appendChild(ex); */
+
+        </script>
     </body>
 </html>
