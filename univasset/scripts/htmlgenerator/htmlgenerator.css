@@ -65,14 +65,18 @@
 /* #endregion */
 
 /* #region Event Timer */
+.func_timer {
+    text-align: center;
+}
+
 .func_timer > img {
     width: 100%;
 }
 
-.func_timer > span {
+/* .func_timer > span {
     text-align: center;
-}
-/* #endregion */
+} */
+ /* #endregion */
 
 /* #region Radio Group */
 /* #endregion */

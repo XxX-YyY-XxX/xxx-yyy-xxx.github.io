@@ -1,4 +1,4 @@
-import {iter, zip} from './basefunctions/basefunctions.js';
+import {iter} from './basefunctions/basefunctions.js';
 
 //#region Constants
 /** Close to zero value. */
@@ -23,14 +23,6 @@ export class Compare {
     /** @param {number} a @param {number} b */
     static number(a, b) {
         return a - b;
-    }
-}
-
-/** For functions that return a Promise. */
-export class AsyncFunc {
-    /** @param {RequestInfo | URL} jsonFile @returns Promise of JSON object. */
-    static async getJSON(jsonFile) {
-        return fetch(jsonFile).then(response => response.json());
     }
 }
 
@@ -70,26 +62,6 @@ export class Cycle {
 }
 
 export class Check {
-    /** typeof, but with extra steps. */
-    static typeof(any) {
-        const item_type = typeof any;
-        switch (true) {
-            case item_type !== 'object':
-                return item_type;
-            case any === null:
-                return 'null';
-            case Array.isArray(any):
-                return 'array';
-            case any instanceof Set:
-                return 'set';
-            case any instanceof HTMLElement:
-            case any instanceof DocumentFragment:
-                return 'dom';
-            default:
-                return 'object';
-        }
-    }
-
     /** @param {string} url */
     static isImage(url) {
         /* const img = new Image();
@@ -180,9 +152,7 @@ export function splitTime(milliseconds) {
 /** @param {RequestInfo | URL} jsonFile @returns JSON object. */
 export function getJSON(jsonFile) {
     var output;
-    fetch(jsonFile)
-        .then(response => response.json())
-        .then(json => {output = json});
+    fetch(jsonFile).then(response => response.json()).then(json => {output = json});
     return output;
 }
 //#endregion

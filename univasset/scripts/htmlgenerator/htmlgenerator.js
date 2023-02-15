@@ -210,6 +210,8 @@ export function timer(grouperElem, date, eventURL = '') {
     const [day, yr, hr, min, off] = rest.map(Number);
     const [hroff, minoff] = Math.intdiv(off, 100);
     const endtime = Date.UTC(yr, months.indexOf(mo), day, hr - hroff, min - minoff);
+    console.log(date)
+    console.log(new Date(endtime).toUTCString())
 
     const spanElem = document.createElement('span');
     const countdown = setInterval(function() {
