@@ -265,9 +265,9 @@
     },
     {
         "name" : "Python",
-        "reference" : {"" : "Solid Snake or Naked Snake"},
+        "reference" : {"Snake" : "https://en.wikipedia.org/wiki/Metal_Gear"},
         "fragments" : ["Fragment Search"],
-        "event" : ""
+        "event" : "Quenching Operation"
     },
     {
         "name" : "Nora (X)",
@@ -279,7 +279,7 @@
         "name" : "Sueyoi (X)",
         "reference" : {"" : ""},
         "fragments" : ["Fragment Search"],
-        "event" : ""
+        "event" : "Heterogenity Blocker"
     },
     {
         "name" : "Millau (X)",
@@ -303,13 +303,13 @@
         "name" : "Hannah (X)",
         "reference" : {"" : ""},
         "fragments" : ["Fragment Search"],
-        "event" : ""
+        "event" : "Critical Cascade"
     },
     {
         "name" : "Turing (X)",
         "reference" : {"Alan Turing" : "https://en.wikipedia.org/wiki/Alan_Turing"},
         "fragments" : ["Fragment Search"],
-        "event" : ""
+        "event" : "Critical Cascade"
     },
     {
         "name" : "Dupin (X)",
@@ -321,25 +321,25 @@
         "name" : "Clukay (X)",
         "reference" : {"HK416" : "https://iopwiki.com/wiki/HK416"},
         "fragments" : [],
-        "event" : ""
+        "event" : "Anniversary"
     },
     {
         "name" : "Undine (X)",
         "reference" : {"" : ""},
         "fragments" : ["Fragment Search"],
-        "event" : ""
+        "event" : "Christmas"
     },
     {
         "name" : "Nascita (X)",
         "reference" : {"" : ""},
         "fragments" : ["Fragment Search"],
-        "event" : ""
+        "event" : "Inverted Mordant Resonance"
     },
     {
         "name" : "Puzzle (X)",
         "reference" : {"" : ""},
         "fragments" : ["Fragment Search"],
-        "event" : ""
+        "event" : "Inverted Mordant Resonance"
     },
     {
         "name" : "Maghnilda (X)",
@@ -351,25 +351,25 @@
         "name" : "Clotho (X)",
         "reference" : {"" : "King's Raid Jane"},
         "fragments" : ["Fragment Search"],
-        "event" : ""
+        "event" : "Halloween"
     },
     {
         "name" : "Sockdolager (X)",
         "reference" : {"Falcon" : "https://iopwiki.com/wiki/Falcon"},
         "fragments" : ["Fragment Search"],
-        "event" : ""
+        "event" : "Heterogenity Blocker"
     },
     {
         "name" : "Uranus (X)",
         "reference" : {"" : ""},
         "fragments" : ["Fragment Search"],
-        "event" : ""
+        "event" : "Critical Cascade"
     },
     {
         "name" : "Jiangyu (X)",
         "reference" : {"Type 97" : "https://iopwiki.com/wiki/Type_97"},
         "fragments" : ["Fragment Search"],
-        "event" : ""
+        "event" : "CNY"
     },
     {
         "name" : "Yelena (X)",

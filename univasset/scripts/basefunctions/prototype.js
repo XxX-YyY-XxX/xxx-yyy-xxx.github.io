@@ -1,6 +1,7 @@
 //#region Arrays
 /** Checks if current array's elements are present in the given array.
- * @memberof Array
+ * @method
+ * @name Array#subsetOf
  * @param {Array} array An array to base from. */
 Array.prototype.subsetOf = function(array) {
     //What if duplicate on subset?
