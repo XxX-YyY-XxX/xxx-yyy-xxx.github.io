@@ -81,23 +81,16 @@ export function gdocDropdown(grouperElem, ...nameLinkPair) {
  *  sort: boolean | keyfunction(matrixData: HTMLElement) => any
  * ``` */
 export function table(grouperElem, tableMatrix, {sort = false, filter = false, frzcol = false, frzhdr = false} = {}) {
-    const tableElem = document.createElement('table');
-    const theadElem = document.createElement('thead');
+    const headerElems = tableMatrix.shift().map(header => initializeHTML("th", type(header) === "dom" ? {appendChild: [header]} : {textContent: header}));
+    /** @type {HTMLTableSectionElement} */ const theadElem = initializeHTML("thead tr", {append: headerElems});
+
     const tbodyElem = document.createElement('tbody');
-
-    tableElem.append(theadElem, tbodyElem)
-
-    const headertr = document.createElement('tr');
-    for (const header of tableMatrix.shift())
-        headertr.appendChild(initializeHTML('th', Check.typeof(header) === 'dom' ? {appendChild: [header]} : {textContent: header}));
-    theadElem.appendChild(headertr);
-
     for (const rows of tableMatrix) {
-        const trElem = document.createElement('tr');
-        for (const item of rows)
-            trElem.appendChild(initializeHTML('td', Check.typeof(item) === 'dom' ? {appendChild: [item]} : {textContent: item}));
-        tbodyElem.appendChild(trElem);
+        const rowElems = rows.map(item => initializeHTML("td", type(item) === "dom" ? {appendChild: [item]} : {textContent: item}));
+        tbodyElem.appendChild(initializeHTML("tr", {append: rowElems}));
     }
+
+    const tableElem = initializeHTML("table", {append: [theadElem, tbodyElem]});
     //------------------------------------------------------------------------------------------------------------
     switch (true) {
         case sort && filter:
@@ -111,6 +104,7 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
                 function: x => sort(x),
                 boolean: x => x
             }[type(sort)] */
+            /** @type {DOMStringMap} */ const header_data = theadElem.dataset;
 
             /** @param {HTMLTableCellElement} cell @param {string} type @returns {Array[]} */
             function sortMethod(cell, type) {
@@ -119,9 +113,9 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
                         const index = cell.dataset.index;
                         cell.dataset.sort = 'hi';
     
-                        if (index != headertr.dataset.onsort) {
-                            headertr.children.item(headertr.dataset.onsort).dataset.sort = 'no';
-                            headertr.dataset.onsort = index;
+                        if (index != header_data.onsort) {
+                            headerElems[header_data.onsort].dataset.sort = 'no';
+                            header_data.onsort = index;
                         }
     
                         return {
@@ -147,21 +141,19 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
 
                 tbodyElem.textContent = '';
                 for (const rows of sorted_array) {
-                    const trElem = document.createElement('tr');
-                    for (const item of rows)
-                        trElem.appendChild(initializeHTML('td', type(item) === 'dom' ? {appendChild: [item]} : {textContent: item}));
-                    tbodyElem.appendChild(trElem);
+                    const rowElems = rows.map(item => initializeHTML("td", type(item) === "dom" ? {appendChild: [item]} : {textContent: item}));
+                    tbodyElem.appendChild(initializeHTML("tr", {append: rowElems}));
                 }
             }
 
-            headertr.dataset.onsort = 0;
+            header_data.onsort = 0;
             const samplerow = tableMatrix[0];
-            for (const [index, headerCell] of Object.entries(headertr.children)) {
+            for (const [index, headerCell] of Object.entries(headerElems)) {
                 const itemtype = type(samplerow[index]);
 
                 headerCell.dataset.sort = 'no';     //Cycles between no, hi, lo
                 headerCell.dataset.index = index;   //Constant
-                headerCell.addEventListener('click', function() {sortMethod(this, itemtype);}, true);
+                headerCell.addEventListener('click', function() {sortMethod(this, itemtype)}, true);
             }
             break;
         case filter:
@@ -169,7 +161,7 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
             //multifilter
             //change to CSS display: 'none';
             //filter for header and first column
-            for (const [index, headerCell] of Object.entries(headertr.children)) {
+            for (const [index, headerCell] of Object.entries(headerElems)) {
                 headerCell.dataset.index = index;
                 if (index) {
                     headerCell.addEventListener('click', function() {
