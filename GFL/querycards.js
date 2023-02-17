@@ -1726,7 +1726,7 @@ export const cardData = [
     {
         id : '00195',
         questions : `What are Prototype Fairies used for?`,
-        answers : `Enhancing other fairies. They act like dupes in a sense that they give 100 enhancement EXP a pop, or 150 with matching talents. Recommended to use on expensive craft fairies.`,
+        answers : `A Prototype Fairy is used to enhance other fairies. They act like dupes in a sense that they give 100 enhancement EXP a pop, or 150 with matching talents. Recommended to use on expensive craft fairies.`,
         tags : [dTag.FAIRY, dTag.LEVEL]
     },
     {
@@ -1811,9 +1811,9 @@ export const cardData = [
     {
         id : '00208',
         questions : `I don't know how to change the AI behaviour of my support/friend echelon, anyone can help me?`,
-        answers : `Double tap them and there should be options at their feet.`,
+        answers : `${image('./assets/images/FriendEchelonCommand.png', 'Double-tap the Friend Echelon to show options')}`,
         tags : [dTag.FRIEND, dTag.ECH, dTag.MAP]
-    },  //@Visual
+    },
     {
         id : '00209',
         questions : `When will dorm battery, daily gift, friend battery reset?`,
@@ -3083,6 +3083,12 @@ export const cardData = [
         answers : `660 CRs to raise a doll from Lv.1 to Lv.90.<br>
         As for how much is the recommended stock, if your main source of raising dolls is map leveling/corpse dragging, you'll get a truck load of them before you know it.`,
         tags : [dTag.TDOLL, dTag.LEVEL]
+    },
+    {
+        id : '00403',
+        questions : `Anyone knows what resources and how much do we get for a failed PA capture?`,
+        answers : `${image('./assets/images/CaptureFail.png', 'Slashes are because probability')}`,
+        tags : [dTag.ITEM, dTag.PA]
     },
     {
         id : '00000',
