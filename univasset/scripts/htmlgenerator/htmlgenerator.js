@@ -106,8 +106,8 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
             }[type(sort)] */
             /** @type {DOMStringMap} */ const header_data = theadElem.dataset;
 
-            /** @param {HTMLTableCellElement} cell @param {string} type @returns {Array[]} */
-            function sortMethod(cell, type) {
+            /** @param {HTMLTableCellElement} cell @param {string} itemtype @returns {Array[]} */
+            function sortMethod(cell, itemtype) {
                 const sorted_array = {
                     no() {
                         const index = cell.dataset.index;
@@ -121,7 +121,7 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
                         return {
                             string: () => tableMatrix.slice().sort((a, b) => Compare.string(a[index], b[index])),
                             number: () => tableMatrix.slice().sort((a, b) => Compare.number(b[index], a[index]))
-                        }[type]()
+                        }[itemtype]()
                     },
                     hi() {
                         const index = cell.dataset.index;
@@ -130,7 +130,7 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
                         return {
                             string: () => tableMatrix.slice().sort((a, b) => Compare.string(b[index], a[index])),
                             number: () => tableMatrix.slice().sort((a, b) => Compare.number(a[index], b[index]))
-                        }[type]()
+                        }[itemtype]()
                     },
                     lo() {
                         cell.dataset.sort = 'no';
