@@ -134,7 +134,7 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
             }
 
             for (const [index, headerCell] of Object.entries(headerElems)) {
-                setAttr(headerCell.dataset, {sort: 'no', index: index, type: type(samplerow[index])});
+                setAttr(headerCell, {dataset: {sort: 'no', index: index, type: type(samplerow[index])}});
                 headerCell.addEventListener('click', sortMethod, true);
             }
             break;
