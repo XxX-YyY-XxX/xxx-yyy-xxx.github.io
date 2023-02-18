@@ -120,7 +120,8 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
     
                         return {
                             string: () => tableMatrix.slice().sort((a, b) => Compare.string(a[index], b[index])),
-                            number: () => tableMatrix.slice().sort((a, b) => Compare.number(b[index], a[index]))
+                            number: () => tableMatrix.slice().sort((a, b) => Compare.number(b[index], a[index])),
+                            dom: () => null
                         }[itemtype]()
                     },
                     hi() {
@@ -129,7 +130,8 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
     
                         return {
                             string: () => tableMatrix.slice().sort((a, b) => Compare.string(b[index], a[index])),
-                            number: () => tableMatrix.slice().sort((a, b) => Compare.number(a[index], b[index]))
+                            number: () => tableMatrix.slice().sort((a, b) => Compare.number(a[index], b[index])),
+                            dom: () => null
                         }[itemtype]()
                     },
                     lo() {
@@ -139,11 +141,17 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
                     }
                 }[cell.dataset.sort]();
 
+                const basis_array = sorted_array.map(row => row[0]);
+
+                const new_sort = Array.from(tbodyElem.children).sort((a, b) => basis_array.indexOf(a.firstElementChild.textContent) - basis_array.indexOf(b.firstElementChild.textContent));
+
                 tbodyElem.textContent = '';
-                for (const rows of sorted_array) {
-                    const rowElems = rows.map(item => initializeHTML("td", type(item) === "dom" ? {appendChild: [item]} : {textContent: item}));
-                    tbodyElem.appendChild(initializeHTML("tr", {append: rowElems}));
-                }
+                //for (const rows of sorted_array) {
+                //    const rowElems = rows.map(item => initializeHTML("td", type(item) === "dom" ? {appendChild: [item]} : {textContent: item}));
+                //    tbodyElem.appendChild(initializeHTML("tr", {append: rowElems}));
+                //}
+
+                tbodyElem.append(...new_sort);
             }
 
             header_data.onsort = 0;

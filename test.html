@@ -49,6 +49,15 @@
             ex.textContent = 'jkl;'
             span.appendChild(ex); */
 
+            const z = [6,1,7,3,4,5,0,8,2,9]
+            /** @type [number, string][] */
+            const x = [[1,"q"],[2,"w"],[3,"e"],[4,"r"],[5,"t"],[6,"y"],[7,"u"],[8,"i"],[9,"o"],[0,"p"]]
+
+            console.log(z)
+            console.log(x)
+            console.log(x.slice().sort((a, b) => z.indexOf(a[0]) - z.indexOf(b[0])))
+
+
         </script>
     </body>
 </html>
