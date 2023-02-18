@@ -17,9 +17,6 @@
 # [Heavy Ordnance Corps](/GFL/hoc)*
 - Fire supports, chip placements, and usage.
 
-# [Resource Management](/GFL/currencies)
-- Gems, tokens, tickets, MARP acquisition and usage.
-
 # [Theater](/GFL/theater)
 - Theater guides, battles, and formations.
 

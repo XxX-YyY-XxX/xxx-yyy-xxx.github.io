@@ -3091,6 +3091,19 @@ export const cardData = [
         tags : [dTag.ITEM, dTag.PA]
     },
     {
+        id : '00404',
+        questions : `How often do Electronic Impulses replenish?`,
+        answers : `With a maxed-out Impulse Reactor, 2 a day.`,
+        tags : [dTag.PA, dTag.ITEM]
+    },
+    {
+        id : '00000',
+        questions : `Why are the gem package names incorrect/confusing?`,
+        answers : `${link('Explanation 1.', 'https://www.reddit.com/r/girlsfrontline/comments/q1rscp/weekly_commanders_lounge_october_05_2021/hg3xpyr/')}<br>
+        ${link('Explanation 2.', 'https://www.reddit.com/r/girlsfrontline/comments/mzjdl5/weekly_commanders_lounge_april_27_2021/gwrie7y/')}`,
+        tags : [dTag.GEMS]
+    },
+    {
         id : '00000',
         questions : ``,
         answers : ``,
