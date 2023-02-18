@@ -96,10 +96,12 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
             }[type(samplerow[0])];
 
             /** @param {HTMLTableCellElement} cell */ function sortMethod(cell) {
+                console.log(cell, type(cell));
+                const this_main = this;
                 const basis_array = {
                     no() {
-                        const index = cell.dataset.index;
-                        cell.dataset.sort = 'hi';
+                        const index = this_main.dataset.index;
+                        this_main.dataset.sort = 'hi';
     
                         if (index != header_data.onsort) {
                             headerElems[header_data.onsort].dataset.sort = 'no';
@@ -110,31 +112,31 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
                             string: () => tableMatrix.slice().sort((a, b) => Compare.string(a[index], b[index])).map(row => row[0]),
                             number: () => tableMatrix.slice().sort((a, b) => Compare.number(b[index], a[index])).map(row => row[0]),
                             dom: () => null
-                        }[cell.dataset.type]()
+                        }[this_main.dataset.type]()
                     },
                     hi() {
-                        const index = cell.dataset.index;
-                        cell.dataset.sort = 'lo';
+                        const index = this_main.dataset.index;
+                        this_main.dataset.sort = 'lo';
     
                         return {
                             string: () => tableMatrix.slice().sort((a, b) => Compare.string(b[index], a[index])).map(row => row[0]),
                             number: () => tableMatrix.slice().sort((a, b) => Compare.number(a[index], b[index])).map(row => row[0]),
                             dom: () => null
-                        }[cell.dataset.type]()
+                        }[this_main.dataset.type]()
                     },
                     lo() {
-                        cell.dataset.sort = 'no';
+                        this_main.dataset.sort = 'no';
     
                         return tableMatrix.map(row => row[0]);
                     }
-                }[cell.dataset.sort]();
+                }[this_main.dataset.sort]();
 
                 const new_sort = Array.from(tbodyElem.children).sort(compare({key: leadkey, array: basis_array}));
                 tbodyElem.replaceChildren(...new_sort);                                                                     
             }
 
             for (const [index, headerCell] of Object.entries(headerElems)) {
-                setAttr(headerCell, {dataset: {sort: 'no', index: index, type: type(samplerow[index])}});
+                setAttr(headerCell.dataset, {sort: 'no', index: index, type: type(samplerow[index])});
                 headerCell.addEventListener('click', sortMethod, true);
             }
             break;
