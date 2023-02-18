@@ -1,4 +1,4 @@
-import {Compare, splitTime} from '../externaljavascript.js';
+import {Compare, splitTime, setAttr} from '../externaljavascript.js';
 import {type} from '../basefunctions/basefunctions.js';
 
 /** @param {(string | Node)[]} elements */
@@ -6,23 +6,6 @@ function brJoin(elements) {
     const fragment = new DocumentFragment();
     fragment.append(...elements.flatMap(item => [item, document.createElement('br')]).slice(0, -1));    
     return fragment;
-}
-
-/** @param {{PropertyOrFunction: string | number | Array | {}}} attributes */
-function recursiveAttribute(base, attributes) {
-    for (const [attrib, value] of Object.entries(attributes)) {
-        switch (type(value)) {
-            case 'array':
-                base[attrib](...value);
-                break;
-            case 'object':
-                recursiveAttribute(base[attrib], value);
-                break;
-            default:
-                base[attrib] = value;
-                break;
-        }
-    }
 }
 
 /** Shortcut for createElement and HTML attributes. Probably should've been named as initializeElement.
@@ -46,7 +29,7 @@ export function initializeHTML(createElement, attributes) {
         innerElem = document.createElement(createElement);
     }
 
-    recursiveAttribute(innerElem, attributes);
+    setAttr(innerElem, attributes);
 
     return outerElem ?? innerElem;
 }
@@ -105,10 +88,16 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
                 boolean: x => x
             }[type(sort)] */
             /** @type {DOMStringMap} */ const header_data = theadElem.dataset;
+            const samplerow = tableMatrix[0];
+            header_data.onsort = 0;
+            const leadkey = {
+                string: x => x.firstElementChild.textContent,
+                number: x => Number(x.firstElementChild.textContent),
+                dom: x => null
+            }[type(samplerow[0])]
 
-            /** @param {HTMLTableCellElement} cell @param {string} itemtype @returns {Array[]} */
-            function sortMethod(cell, itemtype) {
-                const sorted_array = {
+            /** @param {HTMLTableCellElement} cell */ function sortMethod(cell) {
+                const basis_array = {
                     no() {
                         const index = cell.dataset.index;
                         cell.dataset.sort = 'hi';
@@ -119,49 +108,35 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
                         }
     
                         return {
-                            string: () => tableMatrix.slice().sort((a, b) => Compare.string(a[index], b[index])),
-                            number: () => tableMatrix.slice().sort((a, b) => Compare.number(b[index], a[index])),
+                            string: () => tableMatrix.slice().sort((a, b) => Compare.string(a[index], b[index])).map(row => row[0]),
+                            number: () => tableMatrix.slice().sort((a, b) => Compare.number(b[index], a[index])).map(row => row[0]),
                             dom: () => null
-                        }[itemtype]()
+                        }[cell.dataset.type]()
                     },
                     hi() {
                         const index = cell.dataset.index;
                         cell.dataset.sort = 'lo';
     
                         return {
-                            string: () => tableMatrix.slice().sort((a, b) => Compare.string(b[index], a[index])),
-                            number: () => tableMatrix.slice().sort((a, b) => Compare.number(a[index], b[index])),
+                            string: () => tableMatrix.slice().sort((a, b) => Compare.string(b[index], a[index])).map(row => row[0]),
+                            number: () => tableMatrix.slice().sort((a, b) => Compare.number(a[index], b[index])).map(row => row[0]),
                             dom: () => null
-                        }[itemtype]()
+                        }[cell.dataset.type]()
                     },
                     lo() {
                         cell.dataset.sort = 'no';
     
-                        return tableMatrix;
+                        return tableMatrix.map(row => row[0]);
                     }
                 }[cell.dataset.sort]();
 
-                const basis_array = sorted_array.map(row => row[0]);
-
-                const new_sort = Array.from(tbodyElem.children).sort((a, b) => basis_array.indexOf(a.firstElementChild.textContent) - basis_array.indexOf(b.firstElementChild.textContent));
-
-                tbodyElem.textContent = '';
-                //for (const rows of sorted_array) {
-                //    const rowElems = rows.map(item => initializeHTML("td", type(item) === "dom" ? {appendChild: [item]} : {textContent: item}));
-                //    tbodyElem.appendChild(initializeHTML("tr", {append: rowElems}));
-                //}
-
-                tbodyElem.append(...new_sort);
+                const new_sort = Array.from(tbodyElem.children).sort((a, b) => basis_array.indexOf(leadkey(a)) - basis_array.indexOf(leadkey(b)));
+                tbodyElem.replaceChildren(...new_sort);
             }
 
-            header_data.onsort = 0;
-            const samplerow = tableMatrix[0];
             for (const [index, headerCell] of Object.entries(headerElems)) {
-                const itemtype = type(samplerow[index]);
-
-                headerCell.dataset.sort = 'no';     //Cycles between no, hi, lo
-                headerCell.dataset.index = index;   //Constant
-                headerCell.addEventListener('click', function() {sortMethod(this, itemtype)}, true);
+                setAttr(headerCell.dataset, {sort: 'no', index: index, type: type(samplerow[index])});
+                headerCell.addEventListener('click', sortMethod, true);
             }
             break;
         case filter:

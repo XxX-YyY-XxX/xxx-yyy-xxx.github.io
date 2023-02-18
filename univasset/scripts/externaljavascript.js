@@ -156,6 +156,23 @@ export function splitTime(milliseconds) {
     var [hr, min] = Math.intdiv(min, 60)
     return [...Math.intdiv(hr, 24), min, sec]
 }
+
+/** @param {{HTMLAttribute: string | number | Array | {}}} attributes String/Number for attribute assigment, Array for function calls, Object for deeper calls. */
+export function setAttr(base, attributes) {
+    for (const [attrib, value] of Object.entries(attributes)) {
+        switch (type(value)) {
+            case 'array':
+                base[attrib](...value);
+                break;
+            case 'object':
+                setAttr(base[attrib], value);
+                break;
+            default:
+                base[attrib] = value;
+                break;
+        }
+    }
+}
 //#endregion
 
 //#region Trial
