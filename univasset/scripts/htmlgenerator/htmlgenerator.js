@@ -11,7 +11,7 @@ function brJoin(elements) {
 /** Shortcut for createElement and HTML attributes. Probably should've been named as initializeElement.
  * @template {keyof HTMLElementTagNameMap} T
  * @param {T} createElement If nested (by space), innermost element will be modified and outermost element will be returned.
- * @param {{HTMLAttribute: string | number | Array | {}}} attributes String/Number for attribute assigment, Array for function calls, Object for deeper calls.
+ * @param {{HTMLAttribute: string | number | Array | {}}} attributes See setAttr.
  * @returns {HTMLElementTagNameMap[T]} */
 export function initializeHTML(createElement, attributes) {
     var outerElem, innerElem;
@@ -86,22 +86,22 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
                 boolean: x => x
             }[type(sort)] */
             /** @type {DOMStringMap} */ const header_data = theadElem.dataset;
-            const samplerow = tableMatrix[0];
             header_data.onsort = 0;
-            /** @type {function(HTMLTableRowElement): string|number} */
-            const leadkey = {
+
+            const samplerow = tableMatrix[0];
+            /** @type {function(HTMLTableRowElement): string|number} */ const leadkey = {
                 string: x => x.firstElementChild.textContent,
                 number: x => Number(x.firstElementChild.textContent),
                 dom: x => null
             }[type(samplerow[0])];
 
-            /** @param {HTMLTableCellElement} cell */ function sortMethod(cell) {
-                console.log(cell, type(cell));
-                const this_main = this;
+            /** @param {MouseEvent} event */
+            function sortMethod(event) {
+                /** @type {HTMLTableCellElement} */ const cell = this;
                 const basis_array = {
                     no() {
-                        const index = this_main.dataset.index;
-                        this_main.dataset.sort = 'hi';
+                        const index = cell.dataset.index;
+                        cell.dataset.sort = 'hi';
     
                         if (index != header_data.onsort) {
                             headerElems[header_data.onsort].dataset.sort = 'no';
@@ -112,24 +112,24 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
                             string: () => tableMatrix.slice().sort((a, b) => Compare.string(a[index], b[index])).map(row => row[0]),
                             number: () => tableMatrix.slice().sort((a, b) => Compare.number(b[index], a[index])).map(row => row[0]),
                             dom: () => null
-                        }[this_main.dataset.type]()
+                        }[cell.dataset.type]()
                     },
                     hi() {
-                        const index = this_main.dataset.index;
-                        this_main.dataset.sort = 'lo';
+                        const index = cell.dataset.index;
+                        cell.dataset.sort = 'lo';
     
                         return {
                             string: () => tableMatrix.slice().sort((a, b) => Compare.string(b[index], a[index])).map(row => row[0]),
                             number: () => tableMatrix.slice().sort((a, b) => Compare.number(a[index], b[index])).map(row => row[0]),
                             dom: () => null
-                        }[this_main.dataset.type]()
+                        }[cell.dataset.type]()
                     },
                     lo() {
-                        this_main.dataset.sort = 'no';
+                        cell.dataset.sort = 'no';
     
                         return tableMatrix.map(row => row[0]);
                     }
-                }[this_main.dataset.sort]();
+                }[cell.dataset.sort]();
 
                 const new_sort = Array.from(tbodyElem.children).sort(compare({key: leadkey, array: basis_array}));
                 tbodyElem.replaceChildren(...new_sort);                                                                     
