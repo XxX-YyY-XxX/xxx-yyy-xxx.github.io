@@ -1,4 +1,4 @@
-import {Compare, splitTime, setAttr} from '../externaljavascript.js';
+import {Compare, splitTime, setAttr, compare} from '../externaljavascript.js';
 import {type} from '../basefunctions/basefunctions.js';
 
 /** @param {(string | Node)[]} elements */
@@ -60,9 +60,7 @@ export function gdocDropdown(grouperElem, ...nameLinkPair) {
 /** Creates a table from a given matrix of data.
  * @param {HTMLElement} grouperElem
  * @param {Array[]} tableMatrix First row will be used as header.
- * ```
- *  sort: boolean | keyfunction(matrixData: HTMLElement) => any
- * ``` */
+ * @param {{sort: boolean|function(HTMLElement), filter: boolean, frzcol: boolean, frzhdr: boolean}} */
 export function table(grouperElem, tableMatrix, {sort = false, filter = false, frzcol = false, frzhdr = false} = {}) {
     const headerElems = tableMatrix.shift().map(header => initializeHTML("th", type(header) === "dom" ? {appendChild: [header]} : {textContent: header}));
     /** @type {HTMLTableSectionElement} */ const theadElem = initializeHTML("thead tr", {append: headerElems});
@@ -90,11 +88,12 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
             /** @type {DOMStringMap} */ const header_data = theadElem.dataset;
             const samplerow = tableMatrix[0];
             header_data.onsort = 0;
+            /** @type {function(HTMLTableRowElement): string|number} */
             const leadkey = {
                 string: x => x.firstElementChild.textContent,
                 number: x => Number(x.firstElementChild.textContent),
                 dom: x => null
-            }[type(samplerow[0])]
+            }[type(samplerow[0])];
 
             /** @param {HTMLTableCellElement} cell */ function sortMethod(cell) {
                 const basis_array = {
@@ -130,8 +129,8 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
                     }
                 }[cell.dataset.sort]();
 
-                const new_sort = Array.from(tbodyElem.children).sort((a, b) => basis_array.indexOf(leadkey(a)) - basis_array.indexOf(leadkey(b)));
-                tbodyElem.replaceChildren(...new_sort);
+                const new_sort = Array.from(tbodyElem.children).sort(compare({key: leadkey, array: basis_array}));
+                tbodyElem.replaceChildren(...new_sort);                                                                     
             }
 
             for (const [index, headerCell] of Object.entries(headerElems)) {
@@ -179,25 +178,33 @@ const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
 
 /** Creates a timer for events.
  * @param {HTMLElement} grouperElem
- * @param {string} date Mon dy, year hr:mn (UTC|GMT)±offs */
-export function timer(grouperElem, date, eventURL = '') {
+ * @param {string} date Mon dy, year hr:mn (UTC|GMT)±offs
+ * @param {string} eventURL URL of the banner image.
+ * @param {{onEnd: function(): void}} */
+export function timer(grouperElem, date, eventURL = '', {onEnd = null} = {}) {
     const [mo, ...rest] = date.replace(/,|(UTC)|(GMT)/g, '').replace(':', ' ').split(' ');
     const [day, yr, hr, min, off] = rest.map(Number);
     const [hroff, minoff] = Math.intdiv(off, 100);
     const endtime = Date.UTC(yr, months.indexOf(mo), day, hr - hroff, min - minoff);
 
     const spanElem = document.createElement('span');
-    const countdown = setInterval(function() {
+    var countdown = setInterval(function() {
         const count = endtime - Date.now();
         spanElem.textContent = splitTime(count).map(num => String(num).padStart(2, '0')).join(' : ');
         if (count < 0) {
             clearInterval(countdown);
-            grouperElem.style.display = 'none';
+            countdown = null;               //if clearInterval then append
+            grouperElem.replaceChildren();  //if append then clearInterval
+            onEnd?.();
+            console.log("clearInterval");
         }
     }, 1000);
 
-    grouperElem.classList.add('func_timer');
-    grouperElem.append(initializeHTML('img', {src: eventURL, alt: 'Image error.', loading: 'lazy'}), spanElem);
+    if (countdown !== null) {   //May not even work
+        grouperElem.classList.add('func_timer');
+        grouperElem.append(initializeHTML('img', {src: eventURL, alt: 'Image error.', loading: 'lazy'}), spanElem);    
+    }
+    console.log("append");
 }
 
 /** Creates a radio group. Clicked button only runs when it's unchecked. First button is the default checked.

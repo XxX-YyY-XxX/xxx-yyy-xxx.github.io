@@ -173,26 +173,35 @@ export function setAttr(base, attributes) {
         }
     }
 }
-//#endregion
 
-//#region Trial
-function compare() {
-    var current_func = function(a, b) {
-        current_func = {
-            string(x, y) {return x.localeCompare(y)},
-            number(x, y) {return x - y}
+/** Creates a function from the given parametrs.
+ * @param {{key: function(any): string|number, reverse: boolean, array: Array}}
+ * @param array Follows this array for specific order. Only useful for unique values for now. */
+export function compare({key = x => x, reverse = false, array = null} = {}) {
+    const _onReverse = reverse ? ((x, y) => [y, x]) : ((x, y) => [x, y]);
+    const _getIndex = array ? (x => array.indexOf(x)) : (x => x);
+
+    function _currentFunc(a, b) {
+        _currentFunc = {
+            string: (x, y) => x.localeCompare(y),
+            number: (x, y) => x - y
         }[typeof a];
-    
-        return current_func(a, b);
+
+        return _currentFunc(a, b);
     }
 
     /** (a, b) for ascending, (b, a) for descending.
-     * @returns {int} */
+     * @returns {number} */
     return function(a, b) {
-        return current_func(a, b);
+        [a, b] = [key(a), key(b)];
+        [a, b] = [_getIndex(a), _getIndex(b)];
+        [a, b] = _onReverse(a, b);
+        return _currentFunc(a, b);
     }
 }
+//#endregion
 
+//#region Trial
 /** Creates a two-dimensional array.
  * @param {Object} title Occupies index (0, 0) of the table.
  * @param {Array} header Ordered from left to right.
@@ -200,16 +209,15 @@ function compare() {
  * @param {Array} data Objects to populate the matrix.
  * @param {function(Object): [Object, Object]} key Return [x_key(same as in headers), y_key(same as in leaders)].
  * @param {function(Object): Object} headkey Return object that would be used for population reference.
- * @param {function(Object): Object} leadkey Return object that would be used for population reference.
- */
-function matrix(title, header, leader, data, key, headkey = null, leadkey = null) {
+ * @param {function(Object): Object} leadkey Return object that would be used for population reference. */
+function matrix(title, header, leader, data, key, headkey = x => x, leadkey = x => x) {
     const base_array = [[title, ...header]];
 
     const x_len = header.length;
     for (const item of leader) base_array.push([item, ...Array(x_len).fill('')]);
 
-    const head_copy = header.map(headkey ?? (x => x));
-    const lead_copy = leader.map(leadkey ?? (x => x));
+    const head_copy = header.map(headkey);
+    const lead_copy = leader.map(leadkey);
     for (const item of data) {
         const [x_axis, y_axis] = key(item);
         base_array[lead_copy.indexOf(y_axis) + 1][head_copy.indexOf(x_axis) + 1] = item;

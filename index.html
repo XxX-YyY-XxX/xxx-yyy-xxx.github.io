@@ -6,10 +6,18 @@
             import {timer} from '/univasset/scripts/htmlgenerator/htmlgenerator.js';
 
             document.getElementById('event');
+
+            function nextPass() {
+                //timer(document.getElementById('battlepass'), ,);
+            }
             timer(document.getElementById('battlepass'), 'Mar 19, 2023 23:59 UTC-0800',
-                'https://preview.redd.it/lacxhmhbpoga1.jpg?width=1920&format=pjpg&auto=webp&v=enabled&s=d820f33650f44cae82e839c4d8a2d13237bf88c9');
+                'https://preview.redd.it/lacxhmhbpoga1.jpg?width=1920&format=pjpg&auto=webp&v=enabled&s=d820f33650f44cae82e839c4d8a2d13237bf88c9',
+                {onEnd: nextPass});
+
             document.getElementById('skin-banner');
-            document.getElementById('mini-event');
+
+            timer(document.getElementById('mini-event'), 'Mar 13, 2023 23:59 UTC-0800',
+                'https://preview.redd.it/ryq3i7bn5bia1.jpg?width=1000&format=pjpg&auto=webp&v=enabled&s=ef3584e697e15777310060145378d8d28f78eae4');
         </script>
 
         <meta charset='utf-8'>

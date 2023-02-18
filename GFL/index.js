@@ -1,5 +1,5 @@
 import '../univasset/scripts/basefunctions/basefunctions.js';
-import {Compare, removeHTMLTag, randInt, checkedLabel} from '../univasset/scripts/externaljavascript.js';
+import {removeHTMLTag, randInt, checkedLabel, compare} from '../univasset/scripts/externaljavascript.js';
 import {initializeHTML, radioGroup} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
 import {dTag, cardData, newCards} from "./querycards.js";
 
@@ -10,7 +10,7 @@ const searchParams = new URLSearchParams(location.search);
 
 //#region Tags Field
 const toggleableTagsField = document.getElementById('tags-list');
-for (const {name, description} of Object.values(dTag).sort((a, b) => Compare.string(a.name, b.name))) {    
+for (const {name, description} of Object.values(dTag).sort(compare({key: x => x.name}))) {    
     const inputElem = initializeHTML('input', {type: 'checkbox', value: name});
     inputElem.addEventListener('click', function() {
         checkedLabel(this);             //Will delete if CSS :has is ok
