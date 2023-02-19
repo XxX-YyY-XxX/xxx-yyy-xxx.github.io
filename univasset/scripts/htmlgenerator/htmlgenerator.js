@@ -182,8 +182,9 @@ const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
  * @param {HTMLElement} grouperElem
  * @param {string} date Mon dy, year hr:mn (UTC|GMT)±offs
  * @param {string} eventURL URL of the banner image.
- * @param {{onEnd: function(): void}} */
-export function timer(grouperElem, date, eventURL = '', {onEnd = null} = {}) {
+ * @param {{onEnd: function(): void, interval: number}} 
+ * @param interval Time it takes to update the timer, in milliseconds. Default 1000. */
+export function timer(grouperElem, date, eventURL = '', {onEnd = null, interval = 1000} = {}) {
     const [mo, ...rest] = date.replace(/,|(UTC)|(GMT)/g, '').replace(':', ' ').split(' ');
     const [day, yr, hr, min, off] = rest.map(Number);
     const [hroff, minoff] = Math.intdiv(off, 100);
@@ -192,21 +193,21 @@ export function timer(grouperElem, date, eventURL = '', {onEnd = null} = {}) {
     const spanElem = document.createElement('span');
     var countdown = setInterval(function() {
         const count = endtime - Date.now();
-        spanElem.textContent = splitTime(count).map(num => String(num).padStart(2, '0')).join(' : ');
+        spanElem.textContent = splitTime(count).slice(0, -1).map(num => String(num).padStart(2, '0')).join(' : ');
         if (count < 0) {
             clearInterval(countdown);
             countdown = null;               //if clearInterval then append
             grouperElem.replaceChildren();  //if append then clearInterval
             onEnd?.();
-            console.log("clearInterval");
+            console.log(date, "clearInterval");
         }
-    }, 1000);
+    }, interval);
 
     if (countdown !== null) {   //May not even work
         grouperElem.classList.add('func_timer');
         grouperElem.append(initializeHTML('img', {src: eventURL, alt: 'Image error.', loading: 'lazy'}), spanElem);    
     }
-    console.log("append");
+    console.log(date, "append");
 }
 
 /** Creates a radio group. Clicked button only runs when it's unchecked. First button is the default checked.

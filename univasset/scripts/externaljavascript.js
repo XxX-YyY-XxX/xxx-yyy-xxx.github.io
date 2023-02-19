@@ -139,22 +139,24 @@ export function splitExt(path) {
     return [path.slice(0, index), path.slice(index)]
 }
 
-/** For input elements inside label elements.
+/** Depracated. For input elements inside label elements.
  * @param {HTMLInputElement} inputElement
  * @returns true if successfully toggled, false otherwise. */
 export function checkedLabel(inputElement) {
+    console.error("This page uses checkedLabel. This should be replaced with :has selector.");
     const old_check = inputElement.parentElement.classList.contains('checked');
     const new_check = inputElement.parentElement.classList.toggle('checked', inputElement.checked);
     return old_check != new_check;
 }
 
-/** Returns days, hours, minutes, seconds.
+/**
  * @param {number} milliseconds
- * @returns {[number, number, number, number]}*/
+ * @returns {[number, number, number, number, number]} days, hours, minutes, seconds, milliseconds */
 export function splitTime(milliseconds) {
-    var [min, sec] = Math.intdiv(Math.trunc(milliseconds / 1000), 60)
-    var [hr, min] = Math.intdiv(min, 60)
-    return [...Math.intdiv(hr, 24), min, sec]
+    var [sec, milli] = Math.intdiv(milliseconds, 1000);
+    var [min, sec] = Math.intdiv(sec, 60);
+    var [hr, min] = Math.intdiv(min, 60);
+    return [...Math.intdiv(hr, 24), min, sec, milli];
 }
 
 /** @param {{HTMLAttribute: string | number | Array | {}}} attributes String/Number for attribute assigment, Array for function calls, Object for property calls. */
