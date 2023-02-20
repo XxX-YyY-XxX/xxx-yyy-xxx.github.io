@@ -1020,7 +1020,7 @@ export const cardData = [
         questions : `Do support echelons use equipment?`,
         answers : `Equipments used, formation, and apparently costumes too are saved instances.<br>
         Doll levels, equipment levels, skill levels, and chibis aren't. Meaning supports can be saved then leveled afterwards.`,
-        tags : [dTag.FRIEND, dTag.ECH]
+        tags : [dTag.FRIEND, dTag.ECH, dTag.EQUIP]
     },
     {
         id : '00101',
@@ -3097,11 +3097,17 @@ export const cardData = [
         tags : [dTag.PA, dTag.ITEM]
     },
     {
-        id : '00000',
+        id : '00405',
         questions : `Why are the gem package names incorrect/confusing?`,
         answers : `${link('Explanation 1.', 'https://www.reddit.com/r/girlsfrontline/comments/q1rscp/weekly_commanders_lounge_october_05_2021/hg3xpyr/')}<br>
         ${link('Explanation 2.', 'https://www.reddit.com/r/girlsfrontline/comments/mzjdl5/weekly_commanders_lounge_april_27_2021/gwrie7y/')}`,
         tags : [dTag.GEMS]
+    },
+    {
+        id : '00406',
+        questions : `How do dorms work?`,
+        answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/what-happens-in-the-dorms-stays-in-the-dorms')}`,
+        tags : [dTag.DORM]
     },
     {
         id : '00000',

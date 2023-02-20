@@ -1,4 +1,4 @@
-import {Compare, splitTime, setAttr, compare} from '../externaljavascript.js';
+import {splitTime, setAttr, compare} from '../externaljavascript.js';
 import {type} from '../basefunctions/basefunctions.js';
 
 /** @param {(string | Node)[]} elements */
@@ -11,7 +11,7 @@ function brJoin(elements) {
 /** Shortcut for createElement and HTML attributes. Probably should've been named as initializeElement.
  * @template {keyof HTMLElementTagNameMap} T
  * @param {T} createElement If nested (by space), innermost element will be modified and outermost element will be returned.
- * @param {{HTMLAttribute: string | number | Array | {}}} attributes See setAttr.
+ * @param {{HTMLAttribute: string | number | Array | {}}} attributes See {@link setAttr}.
  * @returns {HTMLElementTagNameMap[T]} */
 export function initializeHTML(createElement, attributes) {
     var outerElem, innerElem;
@@ -50,7 +50,7 @@ export function gdocDropdown(grouperElem, ...nameLinkPair) {
         window.open(selectElem.selectedOptions[0].value);
     });
 
-    for (const [name, link] of nameLinkPair) selectElem.appendChild(initializeHTML('option', {textContent: name, value: link}));
+    selectElem.append(...nameLinkPair.map(([name, link]) => initializeHTML('option', {textContent: name, value: link})));
     iframeElem.src = selectElem.firstElementChild.value + '/preview?pli=1';
 
     grouperElem.classList.add('func_googleDoc');
@@ -109,8 +109,8 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
                         }
     
                         return {
-                            string: () => tableMatrix.slice().sort((a, b) => Compare.string(a[index], b[index])).map(row => row[0]),
-                            number: () => tableMatrix.slice().sort((a, b) => Compare.number(b[index], a[index])).map(row => row[0]),
+                            string: () => tableMatrix.slice().sort(compare({key: x => x[index]})),
+                            number: () => tableMatrix.slice().sort(compare({key: x => x[index], reverse: true})),
                             dom: () => null
                         }[cell.dataset.type]()
                     },
@@ -119,17 +119,17 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
                         cell.dataset.sort = 'lo';
     
                         return {
-                            string: () => tableMatrix.slice().sort((a, b) => Compare.string(b[index], a[index])).map(row => row[0]),
-                            number: () => tableMatrix.slice().sort((a, b) => Compare.number(a[index], b[index])).map(row => row[0]),
+                            string: () => tableMatrix.slice().sort(compare({key: x => x[index], reverse: true})),
+                            number: () => tableMatrix.slice().sort(compare({key: x => x[index]})),
                             dom: () => null
                         }[cell.dataset.type]()
                     },
                     lo() {
                         cell.dataset.sort = 'no';
     
-                        return tableMatrix.map(row => row[0]);
+                        return tableMatrix;
                     }
-                }[cell.dataset.sort]();
+                }[cell.dataset.sort]().map(row => row[0]);
 
                 const new_sort = Array.from(tbodyElem.children).sort(compare({key: leadkey, array: basis_array}));
                 tbodyElem.replaceChildren(...new_sort);                                                                     
@@ -182,7 +182,7 @@ const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
  * @param {HTMLElement} grouperElem
  * @param {string} date Mon dy, year hr:mn (UTC|GMT)±offs
  * @param {string} eventURL URL of the banner image.
- * @param {{onEnd: function(): void, interval: number}} 
+ * @param {{onEnd: function(): void, interval: number}} onEnd Event listener for when timer reaches 0.
  * @param interval Time it takes to update the timer, in milliseconds. Default 1000. */
 export function timer(grouperElem, date, eventURL = '', {onEnd = null, interval = 1000} = {}) {
     const [mo, ...rest] = date.replace(/,|(UTC)|(GMT)/g, '').replace(':', ' ').split(' ');
@@ -202,6 +202,7 @@ export function timer(grouperElem, date, eventURL = '', {onEnd = null, interval 
         if (count < 0) {
             clearInterval(countdown);
             grouperElem.replaceChildren();
+            grouperElem.classList.remove('func_timer');
             onEnd?.();
         }
     }, interval);
@@ -213,7 +214,7 @@ export function timer(grouperElem, date, eventURL = '', {onEnd = null, interval 
 /** Creates a radio group. Clicked button only runs when it's unchecked. First button is the default checked.
  * @param {HTMLElement} grouperElem
  * @param {string} radioName Name of the radio group. Most useful on form submissions.
- * @param {[string | HTMLElement, string, function(HTMLInputElement): null][]} perButtonFunc [textContent, value, onclick function] */
+ * @param {[string | HTMLElement, string, function(HTMLInputElement): void][]} perButtonFunc [textContent, value, onclick function] Each function should have code on select and deselect. */
 export function radioGroup(grouperElem, radioName, ...perButtonFunc) {
     const radioFunctions = new Map(perButtonFunc.map(([, value, func]) => [value, func]));
     var currentChecked;
