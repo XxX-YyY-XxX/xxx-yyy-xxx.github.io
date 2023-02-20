@@ -190,24 +190,24 @@ export function timer(grouperElem, date, eventURL = '', {onEnd = null, interval 
     const [hroff, minoff] = Math.intdiv(off, 100);
     const endtime = Date.UTC(yr, months.indexOf(mo), day, hr - hroff, min - minoff);
 
+    if (endtime < Date.now()) {
+        onEnd?.();
+        return;
+    }
+
     const spanElem = document.createElement('span');
-    var countdown = setInterval(function() {
+    const countdown = setInterval(function() {
         const count = endtime - Date.now();
         spanElem.textContent = splitTime(count).slice(0, -1).map(num => String(num).padStart(2, '0')).join(' : ');
         if (count < 0) {
             clearInterval(countdown);
-            countdown = null;               //if clearInterval then append
-            grouperElem.replaceChildren();  //if append then clearInterval
+            grouperElem.replaceChildren();
             onEnd?.();
-            console.log(date, "clearInterval");
         }
     }, interval);
 
-    if (countdown !== null) {   //May not even work
-        grouperElem.classList.add('func_timer');
-        grouperElem.append(initializeHTML('img', {src: eventURL, alt: 'Image error.', loading: 'lazy'}), spanElem);    
-    }
-    console.log(date, "append");
+    grouperElem.classList.add('func_timer');
+    grouperElem.append(initializeHTML('img', {src: eventURL, alt: 'Image error.', loading: 'lazy'}), spanElem);    
 }
 
 /** Creates a radio group. Clicked button only runs when it's unchecked. First button is the default checked.
