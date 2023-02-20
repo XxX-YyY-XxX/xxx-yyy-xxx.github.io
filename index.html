@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script defer type="text/javascript" src="/univasset/scripts/include/includefile.js"></script>
+        <script type="module" src="/univasset/scripts/include/include.js"></script>
         <script type="module">
             import {timer} from '/univasset/scripts/htmlgenerator/htmlgenerator.js';
 
-            document.getElementById('event');
+            timer(document.getElementById('event'), 'Mar 06, 2023 23:59 UTC-0800',
+                'https://preview.redd.it/sip8lqjbh9ja1.jpg?width=1600&format=pjpg&auto=webp&v=enabled&s=54d124e31725023e06155b6b4eaea62c225d0290');
 
-            function nextPass() {
-                //timer(document.getElementById('battlepass'), ,);
-            }
+            const nextPass = timer.bind(null, document.getElementById('battlepass'));
             timer(document.getElementById('battlepass'), 'Mar 19, 2023 23:59 UTC-0800',
                 'https://preview.redd.it/lacxhmhbpoga1.jpg?width=1920&format=pjpg&auto=webp&v=enabled&s=d820f33650f44cae82e839c4d8a2d13237bf88c9',
                 {onEnd: nextPass});
 
             document.getElementById('skin-banner');
 
-            function test() {
-                timer(document.getElementById('mini-event'), 'Mar 13, 2023 23:59 UTC-0800',
-                    'https://preview.redd.it/ryq3i7bn5bia1.jpg?width=1000&format=pjpg&auto=webp&v=enabled&s=ef3584e697e15777310060145378d8d28f78eae4');
-            }
-            timer(document.getElementById('mini-event'), 'Feb 21, 2023 23:59 UTC-0800',
+            const miniStart = timer.bind(null, document.getElementById('mini-event'), 'Mar 13, 2023 23:59 UTC-0800',
+                'https://preview.redd.it/ryq3i7bn5bia1.jpg?width=1000&format=pjpg&auto=webp&v=enabled&s=ef3584e697e15777310060145378d8d28f78eae4');
+            timer(document.getElementById('mini-event'), 'Feb 21, 2023 00:00 UTC-0800',
                 'https://preview.redd.it/jdn2kthm5bia1.jpg?width=1000&format=pjpg&auto=webp&v=enabled&s=d17458e026085aef1c89b251e6e503b71b2ff07c',
-                {onEnd: test});
+                {onEnd: miniStart});
         </script>
 
         <meta charset='utf-8'>
