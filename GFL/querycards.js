@@ -3110,6 +3110,12 @@ export const cardData = [
         tags : [dTag.DORM]
     },
     {
+        id : '00407',
+        questions : `I see posters of certain dolls on some of my friends' dorm walls. How do I get them?`,
+        answers : `It's either from a skin where you give it to a doll, mail reward, or a campaign poster that can bought in the cafe.`,
+        tags : [dTag.DORM, dTag.FURN]
+    },
+    {
         id : '00000',
         questions : ``,
         answers : ``,

@@ -13,7 +13,3 @@
 ### How many hours do visitors stay in the dorm?
 
 > 8\.
-
-### I see posters of certain dolls on some of my friends' dorm walls. How do I get them?
-
-> It's either from a skin where you give it to a doll, mail reward, or a campaign poster that can bought in the cafe.
