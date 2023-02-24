@@ -176,7 +176,7 @@ export function setAttr(base, attributes) {
     }
 }
 
-/** Creates a function from the given parametrs.
+/** Creates a sorter key from the given parametrs.
  * @param {{key: function(any): string|number, reverse: boolean, array: Array}}
  * @param array Follows this array for specific order. Only useful for unique values for now. */
 export function compare({key = x => x, reverse = false, array = null} = {}) {

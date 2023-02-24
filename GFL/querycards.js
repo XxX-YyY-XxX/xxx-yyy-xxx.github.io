@@ -2202,7 +2202,8 @@ export const cardData = [
             'Hanyang Type 88' : [link('Can still miss on certain positions.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/hanyangle-2')],
             'FX05' : [link('Does not activate skill on max ROF.', 'https://old.reddit.com/r/girlsfrontline/comments/vx5s4p/weekly_commanders_lounge_july_12_2022/ig4n5sr/')],
             'Supernova' : ['Additive crit rate.'],
-            'K2' : ["ROF around 90 to maximize the ICD up to 100 if there's a run-up to auto her skill."]
+            'K2' : ["ROF around 90 to maximize the ICD up to 100 if there's a run-up to auto her skill."],
+            'Sterling' : ['M3', 'PPSh-41 (+MOD)', 'PP-2000', 'PPS-43', 'Sten MKII', 'EVO 3', 'PP-19 (+MOD)', 'Sterling']
         })}`,
         tags : [dTag.TDOLL, dTag.SKILL]
     },
@@ -3116,6 +3117,18 @@ export const cardData = [
         tags : [dTag.DORM, dTag.FURN]
     },
     {
+        id : '00408',
+        questions : `How many hours do visitors stay in the dorm?`,
+        answers : `8.`,
+        tags : [dTag.DORM]
+    },
+    {
+        id : '00409',
+        questions : `How do I change my commander's gender so I can change their dirty clothes?`,
+        answers : `Change gender in the commander's wardrobe, which can be visited by tapping the arrow below then tapping WARDROBE, or tapping your commander name then tapping on the "???" speech bubble.`,
+        tags : [dTag.CMDR, dTag.SKIN]
+    },  //@Visual
+    {
         id : '00000',
         questions : ``,
         answers : ``,
@@ -3123,4 +3136,4 @@ export const cardData = [
     },
 ];
 
-export const newCards = [];
+export const newCards = ['00265'];

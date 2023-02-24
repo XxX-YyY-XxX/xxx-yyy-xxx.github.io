@@ -2,12 +2,6 @@
 
 # Commander Wardrobe
 
-### How do I change my commander's gender so I can change their dirty clothes?
-
-> Change gender in the commander's wardrobe, which can be visited by tapping the arrow below then tapping WARDROBE, or tapping your commander name then tapping on the "???" speech bubble.
-
-@ Visual
-
 ### What does Infinite Surprise Dyes do?
 
 > Changes the appearance of your commander's clothes, **IF** they can be changed, that is.
