@@ -3125,6 +3125,17 @@ export const cardData = [
         tags : [dTag.DORM]
     },
     {
+        id : '00021',
+        questions : `What is the priority for each currency?`,
+        answers : `${List.description({
+            "Toy Block": ["Furnitures", "Batteries if really strapped"],
+            "Buttstock": ["Fire Control Cores", "CR/SCR if needed"],
+            "Acorns": ["SPEQs"],
+            "Bottle": ["Cores", "Effects for posterity"]
+        })}`,
+        tags : [dTag.EXPED, dTag.SHOP]
+    },
+    {
         id : '00000',
         questions : ``,
         answers : ``,
@@ -3134,4 +3145,4 @@ export const cardData = [
 
 export const newCards = ['00265'];
 
-// '00021' '00022'
+// '00022'
