@@ -1,4 +1,4 @@
-import {spoilerSummary, image, table, link} from '../univasset/scripts/htmlfunctions/htmlfunctions.js';
+import {spoilerSummary, image, table, link, tooltip, getID} from '../univasset/scripts/htmlfunctions/htmlfunctions.js';
 import TextStyle from '../univasset/scripts/htmlfunctions/textstyle.js';
 import Embed from '../univasset/scripts/htmlfunctions/linkembed.js';
 import List from '../univasset/scripts/htmlfunctions/lists.js'
@@ -10,11 +10,7 @@ const tm = '™️';
 //🍰
 //#endregion
 
-/** @param {string} text 
- * @param {string[]} ID */
-function getID(text, ...ID) {
-    return `<a href="https://xxx-yyy-xxx.github.io/GFL/?id=${ID.join('+')}">${text}</a>`
-}
+
 
 export const dTag = {
     //#region Combat Tabs
@@ -374,7 +370,9 @@ export const cardData = [
                 link(`Farmable dolls in campaign maps, both 3${star} monthly reward dolls and those that debuted on this event.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
                 `During collabs, major events, side events, and ${spoilerSummary('Rescue Events', `Also known as Boss Bully, where you get to farm for 4-5${star} event reward dolls in the story chapters 1-6.`)}, event rewards become temporarily available for farming.`,
                 'Obtainable from random nodes, however unlikely.',
-                'For units that can also be crafted, their drop rates are less than 1%.'],
+                'For units that can also be crafted, their drop rates are less than 1%.',
+                "Whatever doll you recieved, whether you win or lose the stage, you keep it."
+            ],
             'Event Rewards' : [
                 link("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls'),
                 'These dolls will become unavailable from major story clear rewards after being added to the campaign tab.'
@@ -389,7 +387,7 @@ export const cardData = [
             ]
         })}<br>
         ${spoilerSummary('Dolls EN are missing.', image('https://cdn.discordapp.com/attachments/951085201658871820/1033732620384751636/en_missing_dolls_varz_asked_edition.png'))}`,
-        tags : [dTag.TDOLL, dTag.IMPT, dTag.GET, dTag.SPEQ, dTag.PROD]
+        tags : [dTag.TDOLL, dTag.IMPT, dTag.GET, dTag.SPEQ, dTag.PROD, dTag.MAP]
     },
     {
         id : '00025',
@@ -1042,7 +1040,7 @@ export const cardData = [
     {
         id : '00103',
         questions : `My resources (Manpower, Ammunitions, Rations, Parts) are uncomfortably low? Where can I get some?`,
-        answers : `Most efficient and consistent is logistics. Though you can get them through the shop, quest and event/crate rewards, campaign/major story node clears, and random nodes.`,
+        answers : `${TextStyle.style("Most efficient and consistent is logistics.", TextStyle.BOLD)}<br>Though you can get them through the shop, quest and event/crate rewards, campaign/major story node clears, and random nodes.`,
         tags : [dTag.MARP, dTag.LOGI, dTag.NEWB, dTag.GET]
     },
     {
@@ -1177,7 +1175,7 @@ export const cardData = [
         questions : `Is the package in the shop worth it?`,
         answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/energy-packages')}<br>
         For the 7 day new account package: Day 4 to jumpstart skill leveling (saves around 80 days of datasims on a normal day), Day 5 is the most efficient oath package so far, and Day 7 is a really good value for tokens.`,
-        tags : [dTag.ITEM, dTag.OATH, dTag.SHOP]
+        tags : [dTag.ITEM, dTag.OATH, dTag.SHOP, dTag.NEWB]
     },
     {
         id : '00121',
@@ -1246,14 +1244,15 @@ export const cardData = [
                 'Sharing in FB/Twitter (30 weekly). You can cancel it at the last minute.',
                 'S-Ranking Normal (10) and Emergency (30) Chapters.',
                 'Achievements.',
-                'Mini-Events, mainly, Keycard Events (Bingo).',
+                'Mini-Events, mainly, Keycard Events (Bingo) (100).',
                 'Ranking participation.'],
             'Tokens' : ['Dailies (5 x 8) and weeklies (50 x 3/4) (40 for 250 points).',
                 'Expedition.',
                 'Logistics (~19 weekly).',
                 'Achievements.',
-                'Mini-Events: Point Event (70), Keycard Event.',
+                'Mini-Events: Point Event (70), Keycard Event (20).',
                 'Major Event crate rewards.',
+                "Theater Point Rewards (70).",
                 'Shop. Especially when there is a seasonal/collab going on. Packages are also good.',
                 'Maintenance (10 weekly) and Apolotokens.']
         })}`,
@@ -2038,7 +2037,7 @@ export const cardData = [
         questions : `How do I dye my commander's clothes?`,
         answers : `Use an Infinite Surprise Dye or a Colorful Dye on a costume piece. Note that not every piece is dyeable, dirty and basic costumes in particular.`,
         tags : [dTag.CMDR, dTag.SKIN]
-    },
+    },  //@Visual
     {
         id : '00242',
         questions : `Where can I get a dyeable and free commander costume?`,
@@ -3128,6 +3127,18 @@ export const cardData = [
         answers : `Change gender in the commander's wardrobe, which can be visited by tapping the arrow below then tapping WARDROBE, or tapping your commander name then tapping on the "???" speech bubble.`,
         tags : [dTag.CMDR, dTag.SKIN]
     },  //@Visual
+    {
+        id : '00410',
+        questions : `What are spare dorms and what are they for?`,
+        answers : `They're dorm rooms that act as presets by saving dorm configuration with 6 free slots. They can also be used to swap dorm order. Also, they don't contribute to battery generation.`,
+        tags : [dTag.DORM]
+    },
+    {
+        id : '00411',
+        questions : `Which dolls appear in which dorms?`,
+        answers : `Echelon position corresponds to dorm positions i.e. Echelon 1 in Dorm 1, Echelon 2 in Dorm 2, etc.`,
+        tags : [dTag.DORM]
+    },
     {
         id : '00000',
         questions : ``,

@@ -13,19 +13,6 @@ export const pageURL = window.location.origin + window.location.pathname;
 //#endregion
 
 //#region Class
-/** (a, b) for ascending, (b, a) for descending. */
-export class Compare {
-    /** @param {string} a @param {string} b */
-    static string(a, b) {
-        return a.localeCompare(b);
-    }
-
-    /** @param {number} a @param {number} b */
-    static number(a, b) {
-        return a - b;
-    }
-}
-
 /** @template T */
 export class Cycle {
     #items = [];

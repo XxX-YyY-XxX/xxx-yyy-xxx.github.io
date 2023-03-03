@@ -31,3 +31,13 @@ export function table(headerArray, ...arrayOfArrays) {
 export function spoilerSummary(summaryName, details) {
     return `<details><summary>${summaryName}</summary>${details}</details>`;
 }
+
+/** @param {string} hoverable @param {string | HTMLElement} tooltip */
+export function tooltip(hoverable, tooltip) {
+    return `<span class="tooltip">${hoverable}<span class="tooltiptext">${tooltip}</span></span>`
+}
+
+/** @param {string} text @param {string[]} ID */
+export function getID(text, ...ID) {
+    return `<a href="https://xxx-yyy-xxx.github.io/GFL/?id=${ID.join('+')}">${text}</a>`
+}

@@ -26,9 +26,6 @@
 # [Tactical Doll Skills](/GFL/skills)*
 - Skill issues, explanations, and interactions.
 
-# [Dormitories](/GFL/dorms)
-- Friend batteries, pets, and posters.
-
 # [Commander Wardrobe](/GFL/wardrobe)*
 - Costume skills, availability, and gender change.
 

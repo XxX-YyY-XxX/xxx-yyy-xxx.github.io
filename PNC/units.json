@@ -249,13 +249,13 @@
         "name" : "De Lacey",
         "reference" : {"" : ""},
         "fragments" : ["Fragment Search"],
-        "event" : "Divine Heresy"
+        "event" : "Divine Heresy - Alternative Evolutionism"
     },
     {
         "name" : "Hatsuchiri",
         "reference" : {"" : "LoL Reksai"},
         "fragments" : ["Fragment Search"],
-        "event" : "Divine Heresy"
+        "event" : "Divine Heresy - Alternative Evolutionism"
     },
     {
         "name" : "Daiyan",
@@ -333,13 +333,13 @@
         "name" : "Nascita (X)",
         "reference" : {"" : ""},
         "fragments" : ["Fragment Search"],
-        "event" : "Inverted Mordant Resonance"
+        "event" : "Inverted Mordent Resonance"
     },
     {
         "name" : "Puzzle (X)",
         "reference" : {"" : ""},
         "fragments" : ["Fragment Search"],
-        "event" : "Inverted Mordant Resonance"
+        "event" : "Inverted Mordent Resonance"
     },
     {
         "name" : "Maghnilda (X)",
@@ -373,7 +373,19 @@
     },
     {
         "name" : "Yelena (X)",
-        "reference" : {"RMB-93" : "https://iopwiki.com/wiki/RMB-93"},
+        "reference" : {"RMB-93" : "https://iopwiki.com/wiki/RMB-93", "": "LoL Twisted Fate"},
+        "fragments" : ["Fragment Search"],
+        "event" : ""
+    },
+    {
+        "name" : "Lind (X)",
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"],
+        "event" : ""
+    },
+    {
+        "name" : "Horizon (X)",
+        "reference" : {"" : ""},
         "fragments" : ["Fragment Search"],
         "event" : ""
     },
