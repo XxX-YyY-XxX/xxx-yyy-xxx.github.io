@@ -298,14 +298,6 @@ export const cardData = [
     //#endregion
     //#region Compilations
     {
-        id : '00021',
-        questions : `T-Doll Costumes available now?`,
-        answers : `u/ConductorBichir spreadsheets.<br>
-        ${spoilerSummary('Costume Banners.', Embed.google(Embed.G_EXCEL, '10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ'))} Includes furniture set and its complete set special effect.<br>
-        ${spoilerSummary("Tactical Doll Skins.", Embed.google(Embed.G_EXCEL, '1fEnzlpQk5Jvja5PwzlpDn2ypqP3BHcGftqWWOLnK17E'))} Contains censor comparison for each unit.`,
-        tags : [dTag.TDOLL, dTag.SKIN, dTag.RESUPPLY, dTag.REF]
-    },
-    {
         id : '00297',
         questions : `Is there a good place where I can find a spreadsheet on detailed doll stats?`,
         answers : `${link("u/UnironicWeeaboo's repository.", 'https://randomqwerty.github.io/?server=ch&file=gun')}<br>
@@ -313,13 +305,6 @@ export const cardData = [
         ${link('GFWiki CN.', 'https://gfwiki.org/w/%E6%88%98%E6%9C%AF%E4%BA%BA%E5%BD%A2%E5%9B%BE%E9%89%B4')}`,
         tags : [dTag.TDOLL, dTag.REF]
     },  //Wait for additional repo.
-    {
-        id : '00022',
-        questions : `Which dolls have a MOD in the older servers?`,
-        answers : `u/ConductorBichir's list. Includes all Special Equipments.<br>
-        ${Embed.google(Embed.G_EXCEL, '1u2sXat4FD7jFLdjMLrq5zIiDrGJMEVaGvB2z2JysxLI')}`,
-        tags : [dTag.MOD, dTag.SPEQ, dTag.REF]
-    },
     {
         id : '00023',
         questions : `Where can I read the MOD, costume, event stories, and all that?`,
@@ -3148,3 +3133,5 @@ export const cardData = [
 ];
 
 export const newCards = ['00265'];
+
+// '00021' '00022'

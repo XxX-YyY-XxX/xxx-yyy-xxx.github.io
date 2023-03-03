@@ -2,6 +2,16 @@
 <html>
     <head>
         <script type="module" src="/univasset/scripts/include/include.js"></script>
+        <script type="module">
+            import {gdocDropdown} from '/univasset/scripts/htmlgenerator/htmlgenerator.js';
+
+            gdocDropdown(document.querySelector('#main_content div'),
+                ["GFL Skin/Furniture List", "https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ"],
+                ["GFL Neural Upgrade", "https://docs.google.com/spreadsheets/d/1u2sXat4FD7jFLdjMLrq5zIiDrGJMEVaGvB2z2JysxLI"]
+            )
+
+            // G_EXCEL, '1fEnzlpQk5Jvja5PwzlpDn2ypqP3BHcGftqWWOLnK17E'
+        </script>
 
         <meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,14 +30,16 @@
 
         <link rel="icon" type="image/png" href="/univasset/images/favicon.png" />
 
-        <title>Random Scraps</title>
+        <title>Guides Compilation | Random Scraps</title>
     </head>
 
     <body>
-        <include src="/univasset/scripts/pageheader/header.html">"Welcome to the Main Page"</include>
+        <include src="/univasset/scripts/pageheader/header.html">"Google Sheets made by guidemakers for PNC"</include>
 
         <div class="container">
             <section id="main_content">
+                <p>Created by u/ConductorBichir. Maintained by u/UnironicWeeaboo.</p>
+                <div></div>
             </section>
         </div>
     </body>

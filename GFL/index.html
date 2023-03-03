@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!--
-            sheet?pli=1&gid=1593777261:62 Uncaught ReferenceError: posObjs is not defined
-            at switchToSheet (sheet?pli=1&gid=1593777261:62:11)
-            at sheet?pli=1&gid=1593777261:98:112961
-
-            - Reloading Google Embed Iframe
-        -->
-        <!-- Some GDoc fails to load and reloading it blanks the whole page. -->
-        <!-- script defer type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script -->
-        <script defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         <script type="module" src="/univasset/scripts/include/include.js"></script>
-        <script type="module" src="./index.js"></script>
+        <script type="module">
+            import {timer} from '/univasset/scripts/htmlgenerator/htmlgenerator.js';
+
+            timer(document.getElementById('event'), 'Mar 06, 2023 23:59 UTC-0800',
+                'https://preview.redd.it/sip8lqjbh9ja1.jpg?width=1600&format=pjpg&auto=webp&v=enabled&s=54d124e31725023e06155b6b4eaea62c225d0290');
+
+            const nextPass = timer.bind(null, document.getElementById('battlepass'));
+            timer(document.getElementById('battlepass'), 'Mar 19, 2023 23:59 UTC-0800',
+                'https://preview.redd.it/lacxhmhbpoga1.jpg?width=1920&format=pjpg&auto=webp&v=enabled&s=d820f33650f44cae82e839c4d8a2d13237bf88c9',
+                {onEnd: nextPass});
+
+            document.getElementById("coalition")
+
+            // const nextBanner = timer.bind(null, document.getElementById('skin-banner'))
+            timer(document.getElementById('skin-banner'), 'Mar 13, 2023 23:59 UTC-0800',
+                'https://iopwiki.com/images/f/ff/New_Year_Nostalgia_Login_Wallpaper.png');
+
+            timer(document.getElementById('mini-event'), 'Mar 13, 2023 23:59 UTC-0800',
+                'https://preview.redd.it/ryq3i7bn5bia1.jpg?width=1000&format=pjpg&auto=webp&v=enabled&s=ef3584e697e15777310060145378d8d28f78eae4');
+        </script>
         
         <meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="/univasset/scripts/externalcss.css">
         
         <!-- Setup theme-color -->
 
@@ -31,42 +40,30 @@
 
         <link rel="icon" type="image/png" href="/univasset/images/favicon.png" />
 
-        <title>GFL FAQs | Random Scraps</title>
+        <title>GFL Main Page | Random Scraps</title>
     </head>
 
     <body>
-        <include src="/univasset/scripts/pageheader/header.html">"Girls' Frontline Reddit Lounge FAQs"</include>
+        <include src="/univasset/scripts/pageheader/header.html">"GFL Event Timer"</include>
 
         <div class="container">
             <section id="main_content">
-                <div id="section_type"></div>
                 <table>
                     <tr>
+                        <td><a href="./faqs">Frequently Asked Questions</a></td>
                         <td><a href="./starter">New Player Guide</a></td>
+                        <td><a href="./skins">Skins, Furns, MODs, and SPEQs</a></td>
+                    </tr>
+                    <tr>
                         <td><a href="./mainpage">Topics Repository</a></td>
                     </tr>
                 </table>
 
-                <div id="input-type-container"></div>
-
-                <!-- #region Input Fields -->
-                <form id="submission-form">
-                    <div id="tags-list"></div>
-
-                    <input type="text" id="search-text" placeholder="Search..." name="search">
-                    <input type="submit">
-                </form>
-
-                <div id="browse-page">
-                    <button type="button" onclick="changePage(this)" value="first">First</button>
-                    <button type="button" onclick="changePage(this)" value="previous">Prev</button>
-                    <span id="page-no">0</span>/<span id="maxpage"></span>
-                    <button type="button" onclick="changePage(this)" value="next">Next</button>
-                    <button type="button" onclick="changePage(this)" value="last">Last</button>
-                </div>
-                <!-- #endregion -->
-
-                <div id="cards-field"></div>
+                <div id="event"></div>
+                <div id="battlepass"></div>
+                <div id="coalition"></div>
+                <div id="skin-banner"></div>
+                <div id="mini-event"></div>
             </section>
         </div>
     </body>
