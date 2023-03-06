@@ -11,9 +11,6 @@
 # [Story](/GFL/story)*
 - Lore, major events, timeline, and costume stories.
 
-# [Expedition/Forward Basecamp](/GFL/expedition)*
-- Expedition compositions, requirements, and tips.
-
 # [Heavy Ordnance Corps](/GFL/hoc)*
 - Fire supports, chip placements, and usage.
 

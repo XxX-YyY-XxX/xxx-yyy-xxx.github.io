@@ -1683,7 +1683,7 @@ export const cardData = [
         questions : `General tips on defeating deathstacks?`,
         answers : `For the most part, you don't. But if you really want to, this is the epitome of "CE is useless", "what dolls, formation, fairy to use depend on what you're going against", and "learn kiting". Just don't expect to come out of it unscathed.<br>
         ${List.description({
-            'Swarm deathstacks' : ['Usually AoE pierce such as Kord, Type 88, KSVK with HOC support and tank/delay fairies.',
+            'Swarm deathstacks' : ['Usually AoE attacks such as Kord, Type 88, M4 exodia, KSVK with HOC support, and tank/delay fairies.',
                 'Kill them all before they kill you.'],
             'Golyat+ deathstacks' : ['Either stun+smoke or forceshields.']
         })}`,
@@ -3136,6 +3136,22 @@ export const cardData = [
         tags : [dTag.EXPED, dTag.SHOP]
     },
     {
+        id : '00412',
+        questions : `What is a deathstack?`,
+        answers : `${List.unordered(
+            "Strong enemies that can cover each others weaknesses.",
+            "Large amount of enemies in a single formation.",
+            "Even with superior kiting and armory, taking critical damage is inevitable."
+        )}`,
+        tags : [dTag.ENEMY]
+    },
+    {
+        id : '00022',
+        questions : `What T-doll effects are available in the older servers?`,
+        answers : `Global already has everything they have.`,
+        tags : [dTag.TDOLL, dTag.EXPED, dTag.SHOP]
+    },
+    {
         id : '00000',
         questions : ``,
         answers : ``,
@@ -3144,5 +3160,3 @@ export const cardData = [
 ];
 
 export const newCards = ['00265'];
-
-// '00022'
