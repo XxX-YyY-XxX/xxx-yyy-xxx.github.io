@@ -106,7 +106,9 @@ export const cardData = [
         questions : `How do I level my girls?`,
         answers : `First is grinding them on leveling maps, mainly through ${spoilerSummary('corpse dragging', 
             `Also called Poor Run or Beggar Run, it is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.<br>
-            ${getID('Draggable stages.', '00026')}`)}.<br>
+            ${getID('Draggable stages.', '00026')}<br>
+            ${getID("Supplying the dragger.", "00073")}`
+        )}.<br>
         Second is using ${spoilerSummary('Combat Reports (CR)', List.unordered(
             'Acquired through Forward Basecamp, Data Room, the shop during events, EXP Sim, or as a reward.',
             `Can be gifted by going to the ${spoilerSummary('Dorm Gifts screen', image('./assets/images/SkinLocation.png', 'Dorms > Warehouse > Gifts'))} or going to your owned doll's profile and tapping the + button by the EXP bar.`,
@@ -3150,6 +3152,24 @@ export const cardData = [
         questions : `What T-doll effects are available in the older servers?`,
         answers : `Global already has everything they have.`,
         tags : [dTag.TDOLL, dTag.EXPED, dTag.SHOP]
+    },
+    {
+        id : '00413',
+        questions : `Can I use the same unit in different echelons?`,
+        answers : `The exact same? No. But this game allows the use of duplicates, in other words ${getID("duping", "00331")}. This would still cost resources to raise the dupe.`,
+        tags : [dTag.TDOLL, dTag.COALITION, dTag.ECH]
+    },
+    {
+        id : '00414',
+        questions : `Does the Black Market shop ever refresh its stock?`,
+        answers : `The ITEM section, yes. Every turn of a new month.`,
+        tags : [dTag.EXPED, dTag. SHOP]
+    },
+    {
+        id : '00415',
+        questions : ``,
+        answers : ``,
+        tags : []
     },
     {
         id : '00000',
