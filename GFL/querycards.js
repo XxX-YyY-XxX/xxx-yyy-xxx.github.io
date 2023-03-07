@@ -2245,8 +2245,8 @@ export const cardData = [
     {
         id : '00274',
         questions : `I'm planning to use a max level oathed MOD doll to farm surplus exp. Is that a good idea?`,
-        answers : `As good an idea as running an unmodded max level doll.`,
-        tags : [dTag.TDOLL, dTag.LEVEL]
+        answers : `${image("https://cdn.discordapp.com/attachments/410790982116966400/970892903247384576/Surplus-and-fairy-exp-oath-no-oath.gif", "From u/UnironicWeeaboo")}`,
+        tags : [dTag.TDOLL, dTag.LEVEL, dTag.MOD, dTag.OATH]
     },
     {
         id : '00275',
