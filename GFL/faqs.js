@@ -1,4 +1,4 @@
-import '../univasset/scripts/basefunctions/basefunctions.js';
+import '../univasset/scripts/basefunctions';
 import {removeHTMLTag, randInt, checkedLabel, compare} from '../univasset/scripts/externaljavascript.js';
 import {initializeHTML, radioGroup} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
 import {dTag, cardData, newCards} from "./querycards.js";

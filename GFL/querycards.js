@@ -2699,7 +2699,7 @@ export const cardData = [
     {
         id : '00347',
         questions : `What is Peak Value Analysis?`,
-        answers : `Dummy-linking basically. But dupes are required.`,
+        answers : `Dummy-linking basically. But dupes are required. For ringleaders, the duplicates are automatically consumed.`,
         tags : [dTag.PA, dTag.COALITION, dTag.LEVEL]
     },
     {
@@ -3167,10 +3167,10 @@ export const cardData = [
     },
     {
         id : '00415',
-        questions : ``,
-        answers : ``,
-        tags : []
-    },
+        questions : `How do I unlock new HOCs?`,
+        answers : `From chip analyzer or from their status page (accessible through garage or echelon formation).`,
+        tags : [dTag.HOC, dTag.FST, dTag.GET]
+    },  //@Visual
     {
         id : '00000',
         questions : ``,

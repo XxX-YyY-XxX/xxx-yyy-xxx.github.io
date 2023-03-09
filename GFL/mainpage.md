@@ -11,9 +11,6 @@
 # [Story](/GFL/story)*
 - Lore, major events, timeline, and costume stories.
 
-# [Heavy Ordnance Corps](/GFL/hoc)*
-- Fire supports, chip placements, and usage.
-
 # [Theater](/GFL/theater)
 - Theater guides, battles, and formations.
 

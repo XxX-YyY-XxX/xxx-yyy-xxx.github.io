@@ -270,6 +270,12 @@
         "event" : "Quenching Operation"
     },
     {
+        "name" : "Nascita",
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"],
+        "event" : "Inverted Mordent Resonance"
+    },
+    {
         "name" : "Nora (X)",
         "reference" : {"" : ""},
         "fragments" : ["Fragment Search"],
@@ -328,12 +334,6 @@
         "reference" : {"" : ""},
         "fragments" : ["Fragment Search"],
         "event" : "Christmas"
-    },
-    {
-        "name" : "Nascita (X)",
-        "reference" : {"" : ""},
-        "fragments" : ["Fragment Search"],
-        "event" : "Inverted Mordent Resonance"
     },
     {
         "name" : "Puzzle (X)",

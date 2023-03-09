@@ -1,4 +1,4 @@
-import {iter, type} from './basefunctions/basefunctions.js';
+import {iter, type} from './basefunctions';
 
 //#region Constants
 /** Close to zero value. */
