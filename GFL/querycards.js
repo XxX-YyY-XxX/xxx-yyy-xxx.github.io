@@ -357,7 +357,7 @@ export const cardData = [
                 `During collabs, major events, side events, and ${spoilerSummary('Rescue Events', `Also known as Boss Bully, where you get to farm for 4-5${star} event reward dolls in the story chapters 1-6.`)}, event rewards become temporarily available for farming.`,
                 'Obtainable from random nodes, however unlikely.',
                 'For units that can also be crafted, their drop rates are less than 1%.',
-                "Whatever doll you recieved, whether you win or lose the stage, you keep it."
+                "Whatever doll you recieved, whether you win, lose, or quit the stage, you keep it."
             ],
             'Event Rewards' : [
                 link("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls'),
@@ -371,10 +371,9 @@ export const cardData = [
                 "Type 97s and the AR Team, which are the only ones that can't be bought.",
                 'All dolls come preleveled.'
             ]
-        })}<br>
-        ${spoilerSummary('Dolls EN are missing.', image('https://cdn.discordapp.com/attachments/951085201658871820/1033732620384751636/en_missing_dolls_varz_asked_edition.png'))}`,
+        })}`,
         tags : [dTag.TDOLL, dTag.IMPT, dTag.GET, dTag.SPEQ, dTag.PROD, dTag.MAP]
-    },
+    },  //${spoilerSummary('Dolls EN are missing.', image('https://cdn.discordapp.com/attachments/951085201658871820/1033732620384751636/en_missing_dolls_varz_asked_edition.png'))}
     {
         id : '00025',
         questions : `How do I strengthen T-Dolls?`,
