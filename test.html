@@ -36,6 +36,10 @@
         <script type="module">
             import {type} from "./univasset/scripts/basefunctions/index";
 
+            /* Working
+            ./univasset/scripts/basefunctions/index.js
+            */
+
             const div = document.querySelector('#main_content div');
             const span = document.querySelector('#main_content span');
 
@@ -52,7 +56,7 @@
             span.appendChild(ex); */
 
             div.textContent = "./univasset/scripts/basefunctions/index"
-            span.textContent = ["asdf", 23, false, null, undefined, [], {}].map(type).join(" ")
+            span.textContent = ["asdf", 23, false, null, undefined, [], {}, Symbol.iterator].map(type).join(" ")
         </script>
     </body>
 </html>

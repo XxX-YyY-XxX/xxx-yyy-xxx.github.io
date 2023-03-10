@@ -10,8 +10,6 @@ const tm = '™️';
 //🍰
 //#endregion
 
-
-
 export const dTag = {
     //#region Combat Tabs
         //STORY : 'StoryEvents',          //For questions that apply to Major, Collab, and Seasonal Events.
@@ -31,8 +29,10 @@ export const dTag = {
         COALITION : {name: 'CoalitionUnits', description: 'PA counterpart of Tactical Dolls.'},
         EQUIP : {name: 'Equipments', description: 'Gun attachments, FST chips, PA chips.'},
             SPEQ : {name: 'SpecialEquipments', description: 'Equipments specific to a doll.'},
-        ITEM : {name: 'ConsumableItems', description: 'Tickets, cores, gems, batteries, shop items...'},
+        ITEM : {name: 'ConsumableItems', description: 'Tickets, cores, shop items...'},
             TCM : {name: 'TrueCoreMask', description: `Used to redeem 5${star} prod dolls.`},
+            GEMS : {name: 'Gems', description: 'Kalina demands you spend these on her.'},
+            BATTERY : {name: 'Battery', description: 'Currency for upgrading facilities.'},
         FAIRY : {name: 'Fairies', description: 'Sixth man of the team.'},
         FST : {name: 'FireSupportTeam', description: 'Rockets and mortars, the first of the HOC.'},
     //#endregion
@@ -56,7 +56,6 @@ export const dTag = {
     //#region Home Tabs
     CMDR : {name: 'Commander', description: '"Self-insert."'},
     MARP : {name: 'FourResources', description: 'Manpower, Ammunition, Rations, Parts.'},
-    GEMS : {name: 'Gems', description: 'Kalina demands you spend these on her.'},
     ADJUNCT : {name: 'Adjutants', description: 'T-Doll secretary.'},
     MINI : {name: 'MiniEvents', description: 'Keycard Events, Point Events, etc.'},
     BP : {name: 'Battlepass', description: 'Frontline Protocol.'},
@@ -955,7 +954,7 @@ export const cardData = [
             'Fairy Chamber',
             'Data Room',
             'Rescue Station')}`,
-        tags : [dTag.NEWB, dTag.EXPED, dTag.PA, dTag.HOC, dTag.FAIRY, dTag.PET]
+        tags : [dTag.NEWB, dTag.EXPED, dTag.PA, dTag.HOC, dTag.FAIRY, dTag.PET, dTag.BATTERY]
     },  //@Upgrade priority per facility
     {
         id : '00094',
@@ -974,7 +973,7 @@ export const cardData = [
         id : '00096',
         questions : `Where to use gems?`,
         answers : `${List.ordered(
-            'Echelon slots up to 6 minimum, 8 for actually constant (ranking not included) logistics.',
+            'Echelon slots (costing 880, not 380) up to 6 minimum, 8 for actually constant (ranking not included) logistics.',
             '5 dorms for batteries, enough to upgrade important facilities. More than that is your call.',
             "Storage slots especially if you're a collector. Or whenever you're getting annoyed with the pop-up.",
             'Your Mileage May Vary (YMMV).')}`,
@@ -1119,13 +1118,12 @@ export const cardData = [
         id : '00115',
         questions : `How do friend batteries work?`,
         answers : `${List.unordered(
-            'Friend batteries recharge at 3am and 3pm UTC-8.',
-            'The amount of charges/batteries depend on the number of dorms your friend has.',
-            'Use Netlify if you want to know when it resets.',
+            `Friend batteries recharge at 3am and 3pm UTC-8, or whenever ${link("Netlify", "https://gftimers.netlify.app/")} says the time is.`,
+            'The amount of charges/batteries depend on the number of dorms your friend has.',   //Tentative
             'A set number of people can claim one once per cycle.',
             "As the name suggests, it only appears on your friend's dorms, not on any strangers (especially on a Random Visit)."
         )}`,
-        tags : [dTag.FRIEND, dTag.ITEM]
+        tags : [dTag.FRIEND, dTag.ITEM, dTag.BATTERY]
     },  //@Clarify
     {
         id : '00116',
@@ -1146,7 +1144,7 @@ export const cardData = [
         id : '00118',
         questions : `As a beginner, is it worth to use batteries for combat reports?`,
         answers : `Probably if surplus EXP is maxed out, otherwise doubt it.`,
-        tags : [dTag.NEWB, dTag.ITEM]
+        tags : [dTag.NEWB, dTag.ITEM, dTag.BATTERY]
     },
     {
         id : '00119',
@@ -1233,7 +1231,7 @@ export const cardData = [
                 'Achievements.',
                 'Mini-Events, mainly, Keycard Events (Bingo) (100).',
                 'Ranking participation.'],
-            'Tokens' : ['Dailies (5 x 8) and weeklies (50 x 3/4) (40 for 250 points).',
+            'Tokens' : ['Dailies (5pts x 8) and weeklies (50pts x 3 or 4) (40 for 250 points).',
                 'Expedition.',
                 'Logistics (~19 weekly).',
                 'Achievements.',
@@ -2266,7 +2264,7 @@ export const cardData = [
         id : '00277',
         questions : `Do spare dorms contribute to comfort/battery generation?`,
         answers : `No. The comfort values shown in it is for when they're actually used.`,
-        tags : [dTag.DORM]
+        tags : [dTag.DORM, dTag.ITEM, dTag.BATTERY]
     },
     {
         id : '00278',
@@ -2456,7 +2454,7 @@ export const cardData = [
             'Raising FSTs',
             'Event PVs (Cafe)',
             'Getting Gsh-18 (Cafe 4-koma)')}`,
-        tags : [dTag.ITEM]
+        tags : [dTag.ITEM, dTag.BATTERY]
     },
     {
         id : '00310',

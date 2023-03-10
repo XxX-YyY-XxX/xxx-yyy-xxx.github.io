@@ -100,7 +100,7 @@ export class Async {
 //#region Functions
 /** @param {string} htmlString */
 export function removeHTMLTag(htmlString) {
-    return htmlString.replace(/(<([^>]+)>)/ig, '');
+    return htmlString.replace(/<([^>]+)>/ig, '');
 }
 
 /** @param {number} min Inclusive @param {number} max Exclusive */
@@ -174,13 +174,11 @@ export function compare({key = x => x, reverse = false, array = null} = {}) {
         _currentFunc = {
             string: (x, y) => x.localeCompare(y),
             number: (x, y) => x - y
-        }[typeof a];
+        }[type(a)];
 
         return _currentFunc(a, b);
     }
 
-    /** (a, b) for ascending, (b, a) for descending.
-     * @returns {number} */
     return function(a, b) {
         [a, b] = [key(a), key(b)];
         [a, b] = [_getIndex(a), _getIndex(b)];
