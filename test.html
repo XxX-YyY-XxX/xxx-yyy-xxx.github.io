@@ -34,7 +34,7 @@
         </div>
 
         <script type="module">
-            import {type} from "./univasset/scripts/basefunctions/index.js";
+            import {type} from "./univasset/scripts/basefunctions/index";
 
             const div = document.querySelector('#main_content div');
             const span = document.querySelector('#main_content span');
@@ -51,8 +51,8 @@
             ex.textContent = 'jkl;'
             span.appendChild(ex); */
 
-            div.textContent = "./univasset/scripts/basefunctions/index.js"
-            span.textContent = ["asdf", 23, false, null, undefined].map(type).join(" ")
+            div.textContent = "./univasset/scripts/basefunctions/index"
+            span.textContent = ["asdf", 23, false, null, undefined, [], {}].map(type).join(" ")
         </script>
     </body>
 </html>
