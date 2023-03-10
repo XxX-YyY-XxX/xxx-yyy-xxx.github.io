@@ -11,7 +11,7 @@ export function iter(iterable) {
  * @returns "Tuple" of values from each array */
 export function* zip(...iterables) {
     var extension;
-    if (iterables[iterables.length - 1] === true) {extension = 'some'; iterables.pop();}
+    if (iterables.slice(-1)[0] === true) {extension = 'some'; iterables.pop();}
     else extension = 'every';
 
     const output = Array();

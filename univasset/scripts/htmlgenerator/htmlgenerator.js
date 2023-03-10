@@ -1,5 +1,5 @@
 import {splitTime, setAttr, compare} from '../externaljavascript.js';
-import {type} from '../basefunctions/basefunctions.js';
+import {type} from '../basefunctions';
 
 /** @param {(string | Node)[]} elements */
 function brJoin(elements) {
