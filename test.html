@@ -63,7 +63,7 @@
             var it = iter(testArray)
 
             div.textContent = it === iter(it)
-            span.textContent = ["asdf", 23, false, null, undefined, [], {}, Symbol.iterator, new DocumentFragment(), new Set(), new Map()].map(type).join(" ")
+            span.textContent = ["asdf", 23, false, null, undefined, [], {}, Symbol.iterator, new DocumentFragment(), new Set(), new Map(), it, testArray].map(x => [x, type(x)]).join("\n")
         </script>
     </body>
 </html>

@@ -989,7 +989,7 @@ export const cardData = [
             ],
             "PC Downloads": [
                 link('GFChipCalc Github page (Outdated).', 'https://github.com/Bunnyspa/GFChipCalc/releases'),
-                link("GFChipCalc .jar file (Updated).", Embed.google(Embed.G_FILE, "1LbZirmRxvwA5WXS9hwvc4mTUi_hYYjZ3"))
+                spoilerSummary("GFChipCalc .jar file (Updated).", Embed.google(Embed.G_FILE, "1LbZirmRxvwA5WXS9hwvc4mTUi_hYYjZ3"))
             ],
             "Android Downloads": [
                 link('Android Chip Calc download page.', 'https://bunnyspa.github.io/gfl/chipcalc'),
