@@ -34,7 +34,7 @@
         </div>
 
         <script type="module">
-            import {type} from "./univasset/scripts/basefunctions/index.js";
+            import {type, iter} from "./univasset/scripts/basefunctions/index.js";
 
             /* Working
             ./univasset/scripts/basefunctions/index.js
@@ -60,6 +60,9 @@
             ex.textContent = 'jkl;'
             span.appendChild(ex); */
 
+            var it = iter(testArray)
+
+            div.textContent = it === iter(it)
             span.textContent = ["asdf", 23, false, null, undefined, [], {}, Symbol.iterator, new DocumentFragment(), new Set(), new Map()].map(type).join(" ")
         </script>
     </body>

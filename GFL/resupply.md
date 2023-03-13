@@ -14,10 +14,6 @@
 
 @ Clarify
 
-### I missed some event furniture that can be acquired from crates. Will I ever have a chance to get them again?
-
-> Yes. Wait for them in the Black Market Exchange.
-
 # For questions without proper answers yet.
 
 >Normal T-Doll Production:

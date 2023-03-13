@@ -94,6 +94,8 @@
 > - [Row vs. column](https://old.reddit.com/r/girlsfrontline/comments/wpoce9/weekly_commanders_lounge_august_16_2022/il0buow/)
 >
 > - [#2 chip calc update.](https://old.reddit.com/r/girlsfrontline/comments/ycz59a/weekly_commanders_lounge_october_25_2022/iu20tha/)
+>
+> - [Dorm notes.](https://old.reddit.com/r/girlsfrontline/comments/v6pt9o/weekly_commanders_lounge_june_07_2022/ibyvjnm/)
 
 >EarSpeaker
 >

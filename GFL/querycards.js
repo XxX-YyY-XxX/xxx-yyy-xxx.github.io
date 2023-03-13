@@ -981,15 +981,24 @@ export const cardData = [
     {
         id : '00097',
         questions : `Which HOC chips should I use?`,
-        answers : `${link('Reddit guide for desktop calc.', 'https://redd.it/fnh1ey')}<br>
-        ${spoilerSummary('Google Docs guide.', Embed.google(Embed.G_WORD, '1pR6g-mgsy22_MhRPASL9c1wDoCuxfUwr-DCCMYmb7Ss'))}<br>
-        ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/guide-gfchipcalc-hoc-calculator-optimization-tool')}<br>
-        ${link('GFChipCalc versions page.', 'https://github.com/Bunnyspa/GFChipCalc/releases')} If the proxy method doesn't work, use 7.3.0 or import the {username}_{UID}_user_info.json from GFAlarm.<br>
-        ${link('Android Chip Calc download page.', 'https://bunnyspa.github.io/gfl/chipcalc')}<br>
-        ${link('Alternate link for Android Chip Calc.', 'https://apkpure.com/girls-frontline-chip-calculator/bunnyspa.gfl.chipcalc/versions')}<br>
-        ${link('Browser Chip Calc by FatalChapter.', 'https://hycdes.com/pages/GFT_ChipCal-EN.html')}<br>
-        ${spoilerSummary('5-block chips that can be disassembled.', image('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/2020-01/hoc-chip-shape-minmax-example.jpg', 'Taken from Gamepress'))}<br>
-        These apps are safe for your account.`,
+        answers : `${List.description({
+            "Guides": [
+                link('Reddit guide for desktop chip calculator.', 'https://redd.it/fnh1ey'),
+                spoilerSummary('Google Docs guide.', Embed.google(Embed.G_WORD, '1pR6g-mgsy22_MhRPASL9c1wDoCuxfUwr-DCCMYmb7Ss')),
+                spoilerSummary('5-block chips that can be disassembled.', image('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/2020-01/hoc-chip-shape-minmax-example.jpg', 'Taken from Gamepress'))
+            ],
+            "PC Downloads": [
+                link('GFChipCalc Github page (Outdated).', 'https://github.com/Bunnyspa/GFChipCalc/releases'),
+                link("GFChipCalc .jar file (Updated).", Embed.google(Embed.G_FILE, "1LbZirmRxvwA5WXS9hwvc4mTUi_hYYjZ3"))
+            ],
+            "Android Downloads": [
+                link('Android Chip Calc download page.', 'https://bunnyspa.github.io/gfl/chipcalc'),
+                link('Alternate link for Android Chip Calc.', 'https://apkpure.com/girls-frontline-chip-calculator/bunnyspa.gfl.chipcalc/versions')
+            ],
+            "Browser": [
+                link('Browser Chip Calc by FatalChapter.', 'https://hycdes.com/pages/GFT_ChipCal-EN')
+            ]
+        })}`,
         tags : [dTag["3P"], dTag.HOC, dTag.FST, dTag.EQUIP, dTag.IMPT]
     },
     {
@@ -2002,7 +2011,7 @@ export const cardData = [
         IMO no, since it can't maximize strengths, though it is useful for temporary set-ups.<br>
         To use it properly, enable Preview Max-level Chip Stats.`,
         tags : [dTag.HOC, dTag.FST, dTag.EQUIP, dTag["3P"]]
-    },
+    },  //@Visual
     {
         id : '00239',
         questions : `How do I change my assistant/adjutant?`,
@@ -2300,9 +2309,9 @@ export const cardData = [
         answers : `${table(['Defense', 'Counter'],
             ['Health Bar', 'Just shoot them'],
             ['Evasion', 'High accuracy<br>Evasion debuff<br>Surehits like skillshots or explosives'],
-            ['Armor', 'High firepower<br>AP bullets<br>Explosives'],
+            ['Armor', 'High firepower<br>AP bullets<br>Explosives<br>Armor-ignoring attacks'],
             ['HP Shields', 'Basic shooting<br>Strippers like LTLX or De Lisle<br>Shield bypass like DEagle or NTW'],
-            ['Force Shields', 'HOCs'],
+            ['Force Shields<br>Distortion Barriers', 'HOCs (specifically FSTs)<br>Base Architect support'],
             ['Damage Reduction', 'Shoot harder<br>Buff strippers'])}`,
         tags : [dTag.BATTLE, dTag.NEWB]
     },
@@ -3169,6 +3178,12 @@ export const cardData = [
         tags : [dTag.HOC, dTag.FST, dTag.GET]
     },  //@Visual
     {
+        id : '00416',
+        questions : `I missed some event furniture that can be acquired from crates. Will I ever have a chance to get them again?`,
+        answers : `Yes. Wait for them in the Black Market Exchange.`,
+        tags : [dTag.FURN, dTag.MAJOR, dTag.EXPED, dTag.SHOP]
+    },
+    {
         id : '00000',
         questions : ``,
         answers : ``,
@@ -3176,4 +3191,4 @@ export const cardData = [
     },
 ];
 
-export const newCards = ['00265'];
+export const newCards = ['00265', '00097'];

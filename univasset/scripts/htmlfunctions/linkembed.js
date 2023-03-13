@@ -1,8 +1,9 @@
 import {reloadIFrame} from '../externaljavascript.js';
 
 export default class Embed {
-    static G_EXCEL = 'spreadsheets';
-    static G_WORD = 'document';
+    static G_EXCEL = "spreadsheets";
+    static G_WORD = "document";
+    static G_FILE = "file";
 
     /** Create an innerHTML text for Google document embeds.
      * @param {Embed} docType Starts with G_
