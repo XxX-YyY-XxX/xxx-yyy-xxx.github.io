@@ -176,8 +176,6 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
     grouperElem.appendChild(tableElem);
 }
 
-const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
 /** Creates a timer for events.
  * @param {HTMLElement} grouperElem
  * @param {string} date Mon dy, year hr:mn (UTC|GMT)±offs
@@ -185,6 +183,8 @@ const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
  * @param {{onEnd: function(): void, interval: number}} onEnd Event listener for when timer reaches 0.
  * @param interval Time it takes to update the timer, in milliseconds. Default 1000. */
 export function timer(grouperElem, date, eventURL = '', {onEnd = null, interval = 1000} = {}) {
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
     const [mo, ...rest] = date.replace(/,|(UTC)|(GMT)/g, '').replace(':', ' ').split(' ');
     const [day, yr, hr, min, off] = rest.map(Number);
     const [hroff, minoff] = Math.intdiv(off, 100);
@@ -223,11 +223,10 @@ export function radioGroup(grouperElem, radioName, ...perButtonFunc) {
     for (const [text, value, func] of perButtonFunc) {
         const inputElem = initializeHTML('input', {value: value, type: 'radio', name: radioName});
         inputElem.addEventListener('click', function() {
-            if (currentChecked !== this) {
-                radioFunctions.get(currentChecked.value)(currentChecked);
-                func(this);
-                currentChecked = this;
-            }
+            if (currentChecked === this) return
+            radioFunctions.get(currentChecked.value)(currentChecked);
+            func(this);
+            currentChecked = this;
         });
         fragment.appendChild(initializeHTML('label', {append: [inputElem, text]}));
     }

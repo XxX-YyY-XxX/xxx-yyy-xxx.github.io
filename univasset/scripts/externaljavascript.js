@@ -1,4 +1,4 @@
-import {iter, type} from './basefunctions/index.js';
+import {iter, type, zip} from './basefunctions/index.js';
 
 //#region Constants
 /** Close to zero value. */
@@ -21,6 +21,7 @@ export class Cycle {
 
     /** @param {T[]} items */
     constructor(...items) {
+        //will change
         this.#items = items.length === 1 && items[0] === iter(items[0]) ? Array.from(items[0]) : items;
         this.#length = items.length;
     } 
@@ -28,7 +29,7 @@ export class Cycle {
     next() {
         const output = this.#items[this.#index];
         this.#index += 1;
-        if (this.#index == this.#length)
+        if (this.#index === this.#length)
             this.#index = 0;
         return output;
     }
@@ -36,7 +37,7 @@ export class Cycle {
     prev() {
         const output = this.#items[this.#index];
         this.#index -= 1;
-        if (this.#index == -1)
+        if (this.#index === -1)
             this.#index = this.#length - 1;
         return output;
     }
@@ -116,7 +117,7 @@ export function reloadIFrame(iframeElement) {
     iframeElement.src = temp;
 }
 
-/** @param {string} path @returns [basename, extension] */
+/** @param {string} path @returns {[string, string]} basename, extension */
 export function splitExt(path) {
     //remove base url to prevent false positive
     //(new URL(path)).pathname
@@ -146,7 +147,11 @@ export function splitTime(milliseconds) {
     return [...Math.intdiv(hr, 24), min, sec, milli];
 }
 
-/** @param {{HTMLAttribute: string | number | Array | {}}} attributes String/Number for attribute assigment, Array for function calls, Object for property calls. */
+/**
+ * @template T
+ * @param {T} base
+ * @param {{HTMLAttribute: string | number | Array | {}}} attributes String/Number for attribute assigment, Array for function calls, Object for property calls.
+ * @returns {T} */
 export function setAttr(base, attributes) {
     for (const [attrib, value] of Object.entries(attributes)) {
         switch (type(value)) {
@@ -161,21 +166,36 @@ export function setAttr(base, attributes) {
                 break;
         }
     }
+    return base
 }
 
 /** Creates a sorter key from the given parametrs.
- * @param {{key: function(any): string|number, reverse: boolean, array: Array}}
+ * @param {{key: function(any): any, reverse: boolean, array: Array}}
  * @param array Follows this array for specific order. Only useful for unique values for now. */
 export function compare({key = x => x, reverse = false, array = null} = {}) {
+    //will not fuse array and key parameters
     const _onReverse = reverse ? ((x, y) => [y, x]) : ((x, y) => [x, y]);
     const _getIndex = array ? (x => array.indexOf(x)) : (x => x);
 
-    function _currentFunc(a, b) {
-        _currentFunc = {
-            string: (x, y) => x.localeCompare(y),
-            number: (x, y) => x - y
-        }[type(a)];
+    const method = {
+        /** @param {number} x @param {number} y */
+        number: (x, y) => x - y,
+        /** @param {string} x @param {string} y */
+        string: (x, y) => x.localeCompare(y),
+        /** @param {boolean} x @param {boolean} y */
+        boolean: (x, y) => x - y,
+        /** @param {Array} x @param {Array} y @returns {number} */
+        array: (x, y) => {
+            for (const [first, second] of zip(x, y)) {
+                let val = method[type(first)](first, second);
+                if (val) return val;    //-1 = true, 0 = false, 1 = true
+            }
+            return 0;
+        }
+    };
 
+    function _currentFunc(a, b) {
+        _currentFunc = method[type(a)];
         return _currentFunc(a, b);
     }
 
@@ -214,7 +234,9 @@ function matrix(title, header, leader, data, key, headkey = x => x, leadkey = x 
 }
 
 /** Adds memoization to function.
- * @param {function} func */
+ * @template {function} T
+ * @param {T} func
+ * @returns {T} */
 function memoize(func) {
     const bank = new Map();
     return function(...args) {

@@ -24,12 +24,14 @@ export function* zip(...iterables) {
 export function type(any) {
     const item_type = typeof any;
     switch (true) {
-        case item_type !== 'object':
+        case item_type !== "object":
             return item_type;
         case any === null:
-            return 'null';
+            return "null";
+        case any === iter(any):
+            return "iterator"
         case Array.isArray(any):
-            return 'array';
+            return "array";
         case any instanceof Set:
             return 'set';
         case any instanceof HTMLElement:
