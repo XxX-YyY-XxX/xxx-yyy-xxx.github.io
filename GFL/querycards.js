@@ -3184,6 +3184,18 @@ export const cardData = [
         tags : [dTag.FURN, dTag.MAJOR, dTag.EXPED, dTag.SHOP]
     },
     {
+        id : '00417',
+        questions : `How do I establish a supply route?`,
+        answers : `${image("https://i.ibb.co/N3MVNnd/IMG-20230314-093923.jpg", "Caprturing all nodes along the blue line will create one (from u/WhistleOfDeath)")}`,
+        tags : [dTag.MAP, dTag.SYSMECH]
+    },
+    {
+        id : '00418',
+        questions : `What is an additive buff?`,
+        answers : `Buffs that are added after all modifiers, making this useful for countering/mitigating debuffs.`,
+        tags : [dTag.SKILL]
+    },
+    {
         id : '00000',
         questions : ``,
         answers : ``,
