@@ -62,12 +62,49 @@ export function gdocDropdown(grouperElem, ...nameLinkPair) {
  * @param {Array[]} tableMatrix First row will be used as header.
  * @param {{sort: boolean|function(HTMLElement), filter: boolean, frzcol: boolean, frzhdr: boolean}} */
 export function table(grouperElem, tableMatrix, {sort = false, filter = false, frzcol = false, frzhdr = false} = {}) {
-    const headerElems = tableMatrix.shift().map(header => initializeHTML("th", type(header) === "dom" ? {appendChild: [header]} : {textContent: header}));
+    const headerElems = tableMatrix.shift().map(value => {
+        const th = document.createElement("th");
+        switch (type(value)) {
+            case "string":
+            case "number":
+                th.textContent = value;
+                break;
+            case "array":
+                th.appendChild(brJoin(value));
+                break;
+            case "dom":
+                th.appendChild(value);
+                break;
+            default:
+                console.log(type(value), value);
+                th.textContent = value;
+                break;
+        }
+        return th;
+    });
     /** @type {HTMLTableSectionElement} */ const theadElem = initializeHTML("thead tr", {append: headerElems});
 
     const tbodyElem = document.createElement('tbody');
     for (const rows of tableMatrix) {
-        const rowElems = rows.map(item => initializeHTML("td", type(item) === "dom" ? {appendChild: [item]} : {textContent: item}));
+        const rowElems = rows.map(value => {
+            const td = document.createElement("td");
+            switch (type(value)) {
+                case "string":
+                case "number":
+                    td.textContent = value;
+                    break;
+                case "array":
+                    td.appendChild(brJoin(value))
+                    break;
+                case "dom":
+                    th.appendChild(value);
+                    break;        
+                default:
+                    console.log(type(value), value);
+                    td.textContent = value;
+            }
+            return td;
+        });
         tbodyElem.appendChild(initializeHTML("tr", {append: rowElems}));
     }
 
@@ -92,6 +129,7 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
             /** @type {function(HTMLTableRowElement): string|number} */ const leadkey = {
                 string: x => x.firstElementChild.textContent,
                 number: x => Number(x.firstElementChild.textContent),
+                array: x => null,
                 dom: x => null
             }[type(samplerow[0])];
 
@@ -111,6 +149,7 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
                         return {
                             string: () => tableMatrix.slice().sort(compare({key: x => x[index]})),
                             number: () => tableMatrix.slice().sort(compare({key: x => x[index], reverse: true})),
+                            array: () => tableMatrix.slice().sort(compare({key: x => [~x[index].length, x[index]]})),
                             dom: () => null
                         }[cell.dataset.type]()
                     },
@@ -121,6 +160,7 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
                         return {
                             string: () => tableMatrix.slice().sort(compare({key: x => x[index], reverse: true})),
                             number: () => tableMatrix.slice().sort(compare({key: x => x[index]})),
+                            array: () => tableMatrix.slice().sort(compare({key: x => [x[index].length, x[index]]})),
                             dom: () => null
                         }[cell.dataset.type]()
                     },
