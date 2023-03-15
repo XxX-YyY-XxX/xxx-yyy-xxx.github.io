@@ -28,8 +28,6 @@ export function type(any) {
             return item_type;
         case any === null:
             return "null";
-        case any === iter(any):
-            return "iterator"
         case Array.isArray(any):
             return "array";
         case any instanceof Set:
@@ -37,6 +35,8 @@ export function type(any) {
         case any instanceof HTMLElement:
         case any instanceof DocumentFragment:
             return 'dom';
+        //case any === iter(any):
+        //    return "iterator";
         default:
             return 'object';
     }

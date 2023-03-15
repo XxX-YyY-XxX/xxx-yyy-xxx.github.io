@@ -2,10 +2,6 @@
 
 # Resupply/Costumes/Furniture
 
-### How can I obtain the wedding/oath skins for some T-dolls?
-
-> Oath skins? Watchu smoking? There's no oath skins, only gacha/free/paid skins.
-
 ### What are the furniture sets as of now?
 
 > [Everyhting CN has to offer.](http://www.gfwiki.org/w/%E5%AE%B6%E5%85%B7)

@@ -3196,6 +3196,12 @@ export const cardData = [
         tags : [dTag.SKILL]
     },
     {
+        id : '00419',
+        questions : `How can I obtain the wedding/oath skins for some T-dolls?`,
+        answers : `Oath skins? Watchu smoking? There's no oath skins, only gacha/free/paid skins.`,
+        tags : [dTag.TDOLL, dTag.SKIN]
+    },
+    {
         id : '00000',
         questions : ``,
         answers : ``,
