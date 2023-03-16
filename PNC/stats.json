@@ -1,6 +1,8 @@
 [
     {
         "doll": "Doll Name",
+        "class": "Class",
+        "frags": "Fragments",
         "hp": "Max HP",
         "atk": "Attack",
         "hash": "Hashrate",
@@ -18,11 +20,12 @@
         "backlash": "Backlash",
         "dmgamp": "Dmg Boost",
         "dmgreduc": "Dmg Reduce",
-        "healamp": "Heal Boost",
-        "frags": "Fragments"
+        "healamp": "Heal Boost"
     },
     {
         "doll": "Persicaria",
+        "class": "Medic",
+        "frags": ["Neural Kits", "Intimacy", "Fragment Search", "Basic Search", "Sapience Expansion Program"],
         "hp": 12835,
         "atk": 459,
         "hash": 600,
@@ -40,11 +43,55 @@
         "backlash": 0,
         "dmgamp": 0,
         "dmgreduc": 0,
-        "healamp": 0,
-        "frags": ["Neural Kits", "Intimacy", "Fragment Search", "Sapience Expansion Program"]
+        "healamp": 0
     },
-    ["Antonina",     17225,    549,      562,        355,        375,      100,       8,           50,         343,        347,      3,       546,     0,       0,        0,          0,           0,            0],
-    ["Sol",          19331,    555,      586,        441,        447,      130,       5,           50,         410,        412,      5,       610,     0,       0,        0,          0,           0,            0],
+    {
+        "doll": "Antonina",
+        "class": "Specialist",
+        "frags": ["Neural Kits", "Intimacy", "Fragment Search", "Basic Search"],
+        "hp": 17225,
+        "atk": 549,
+        "hash": 562,
+        "pdef": 355,
+        "odef": 375,
+        "aspd": 100,
+        "crate": 8,
+        "cdmg": 50,
+        "ppen": 343,
+        "open": 347,
+        "dodge": 3,
+        "regen": 546,
+        "cdr": 0,
+        "res": 0,
+        "backlash": 0,
+        "dmgamp": 0,
+        "dmgreduc": 0,
+        "healamp": 0
+    },
+    {
+        "doll": "Sol",
+        "class": "Warrios",
+        "frags": ["Neural Kits", "Intimacy", "Fragment Search", "Basic Search"],
+        "hp": 19331,
+        "atk": 555,
+        "hash": 586,
+        "pdef": 441,
+        "odef": 447,
+        "aspd": 130,
+        "crate": 5,
+        "cdmg": 50,
+        "ppen": 410,
+        "open": 412,
+        "dodge": 5,
+        "regen": 610,
+        "cdr": 0,
+        "res": 0,
+        "backlash": 0,
+        "dmgamp": 0,
+        "dmgreduc": 0,
+        "healamp": 0
+    },
+
     ["Simo",         11671,    621,      525,        260,        273,      130,       10,          50,         461,        436,      0,       364,     0,       0,        0,          0,           0,            0],
     ["Croque",       22590,    384,      583,        827,        608,      90,        0,           50,         234,        223,      10,      728,     0,       0,        0,          0,           0,            0],
     ["Fresnel",      11424,    609,      602,        223,        226,      120,       10,          50,         427,        461,      0,       349,     0,       0,        0,          0,           0,            0],
@@ -93,6 +140,8 @@
 
     {
         "doll": "Doll Name",
+        "class": "Class",
+        "frags": ["Neural Kits", "Intimacy", "Fragment Search", "Basic Search"],
         "hp": "Max HP",
         "atk": "Attack",
         "hash": "Hashrate",
@@ -110,7 +159,6 @@
         "backlash": 0,
         "dmgamp": 0,
         "dmgreduc": 0,
-        "healamp": 0,
-        "frags": ["Neural Kits", "Intimacy", "Fragment Search"]
+        "healamp": 0
     }
 ]

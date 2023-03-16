@@ -223,6 +223,8 @@ GFL's [free-for-all cursed images compilation.](https://drive.google.com/drive/f
 
 [Speedrun to lategame.](https://old.reddit.com/r/girlsfrontline/comments/xd1ivo/weekly_commanders_lounge_september_13_2022/ioz9w4d/)
 
+[CG Images.](https://drive.google.com/drive/folders/17o2xmOnkAGQC5V4SILahaiOaA3oAd7cZ)
+
 # Nice Things To Have
 
 [Pre-mission flavor text.](https://old.reddit.com/r/girlsfrontline/comments/kma337/weekly_commanders_lounge_december_29_2020/ghziik1/)

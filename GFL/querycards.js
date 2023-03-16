@@ -721,12 +721,13 @@ export const cardData = [
     {
         id : '00064',
         questions : `What best-in-slot (BiS) equipments should I use on my dolls?`,
-        answers : `${spoilerSummary('General equipments.', link(image('https://i.imgur.com/tl4MGI8.jpeg'), 'https://big-stupid-jellyfish.github.io/GFMath/pages/newquip'))}<br>
+        answers : `${spoilerSummary('General equipments.', image("https://cdn.discordapp.com/attachments/951085201658871820/1059432568321224704/eq_suggestions.png", "Taken from Discord."))}<br>
         ${spoilerSummary('#2 Chip equipment.', List.unordered(
             spoilerSummary('BigStupidJellyfish_ doc.', Embed.google(Embed.G_EXCEL, '14xV50MSMBFGgN75E-Gy10WtzACb_KZdpxRKCYQ6FDQA')),
             spoilerSummary('BigStupidJellyfish_ infograph.', link(image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png'), 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')),
             spoilerSummary('mis doc.', Embed.google(Embed.G_EXCEL, '1c0JhaSX9WyL3EB-7RCDE4NrfzR1YuWdYWidQ_06-PrQ'))))}<br>
         ${spoilerSummary('AP thresholds.', image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/newquip/armor-reference.png'))}<br>
+        ${link("2.09 equips.", "https://big-stupid-jellyfish.github.io/GFMath/pages/newquip")}<br>
         ${link('3.0 equips.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/newerquip')}`,
         tags : [dTag.TDOLL, dTag.EQUIP, dTag.ENEMY]
     },
@@ -2195,7 +2196,8 @@ export const cardData = [
             'FX05' : [link('Does not activate skill on max ROF.', 'https://old.reddit.com/r/girlsfrontline/comments/vx5s4p/weekly_commanders_lounge_july_12_2022/ig4n5sr/')],
             'Supernova' : ['Additive crit rate.'],
             'K2' : ["ROF around 90 to maximize the ICD up to 100 if there's a run-up to auto her skill."],
-            'Sterling' : ['M3', 'PPSh-41 (+MOD)', 'PP-2000', 'PPS-43', 'Sten MKII', 'EVO 3', 'PP-19 (+MOD)', 'Sterling']
+            'Sterling' : ['M3', 'PPSh-41 (+MOD)', 'PP-2000', 'PPS-43', 'Sten MKII', 'EVO 3', 'PP-19 (+MOD)', 'Sterling'],
+            "M4 SOPMOD II": [link("M4 interaction still borked (by u/UnironicWeeaboo).", "https://imgur.com/a/7eSGbu6")]
         })}`,
         tags : [dTag.TDOLL, dTag.SKILL]
     },
@@ -3200,6 +3202,12 @@ export const cardData = [
         questions : `How can I obtain the wedding/oath skins for some T-dolls?`,
         answers : `Oath skins? Watchu smoking? There's no oath skins, only gacha/free/paid skins.`,
         tags : [dTag.TDOLL, dTag.SKIN]
+    },
+    {
+        id : '00420',
+        questions : `How many event currencies can I get in a day?`,
+        answers : `60, up to 80 if it's a rerun.`,
+        tags : [dTag.MAJOR, dTag.SEASON]
     },
     {
         id : '00000',
