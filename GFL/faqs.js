@@ -1,7 +1,7 @@
 import '../univasset/scripts/basefunctions/index.js';
 import {removeHTMLTag, randInt, checkedLabel, compare} from '../univasset/scripts/externaljavascript.js';
 import {initializeHTML, radioGroup} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
-import {dTag, cardData, newCards} from "./querycards.js";
+import {dTag, cardData} from "./querycards.js";
 
 //#region Constants
 const searchTextField = document.getElementById('search-text');
@@ -59,8 +59,7 @@ radioGroup(document.querySelector('#input-type-container'), 'input-type',
 document.getElementById('cards-field').innerHTML =
     searchParams.has('search') ? searchCards() :
     searchParams.has('tags') ? tagsCards() :
-    searchParams.has('id') ? idCards() :
-    (newCards.length >= 3) ? addedCards() : randomCards();
+    searchParams.has('id') ? idCards() : randomCards();
 //#endregion
 
 //#region Private Functions
@@ -101,15 +100,6 @@ function idCards() {
         output += setQuestionBoxes(cards);
 
     return output || 'No matches found.';
-}
-
-function addedCards() {
-    var output = '';
-
-    for (const cards of cardData.filter(({id}) => newCards.includes(id)))
-        output += setQuestionBoxes(cards);
-
-    return output;
 }
 
 function randomCards() {

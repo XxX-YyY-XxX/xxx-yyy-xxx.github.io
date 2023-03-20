@@ -9,19 +9,20 @@
                 "https://pbs.twimg.com/media/FqgWmU4aEAIUybb?format=jpg&name=large");
 
             const nextPass = timer.bind(null, document.getElementById('battlepass'), "Apr 23, 2023 23:59 UTC-0800",
-                "");
+                "https://pbs.twimg.com/media/FrPXbbwagAMxVqt?format=jpg&name=large");
             timer(document.getElementById('battlepass'), 'Mar 19, 2023 23:59 UTC-0800',
                 'https://preview.redd.it/lacxhmhbpoga1.jpg?width=1920&format=pjpg&auto=webp&v=enabled&s=d820f33650f44cae82e839c4d8a2d13237bf88c9',
                 {onEnd: nextPass});
 
+            const nextUnit = timer.bind(null, document.getElementById("coalition"), "Apr 11, 2023, 23:59 UTC-0800",
+                "https://pbs.twimg.com/media/FrUwVIhaUAAfUgl?format=jpg&name=large")
             timer(document.getElementById("coalition"), "Apr 03, 2023 23:59 UTC-0800",
-                "https://pbs.twimg.com/media/FqLtCZoaEAAWyl3?format=jpg&name=large");
+                "https://pbs.twimg.com/media/FqLtCZoaEAAWyl3?format=jpg&name=large", {onEnd: nextUnit});
 
             const nextBanner = timer.bind(null, document.getElementById('skin-banner'), "",
                 "");
             timer(document.getElementById('skin-banner'), "Apr 10, 2023 23:59 UTC-0800",
-            "https://iopwiki.com/images/f/fb/Farthest_Distance_Login_Wallpaper.png",
-                {onEnd: nextBanner});
+            "https://iopwiki.com/images/f/fb/Farthest_Distance_Login_Wallpaper.png", {onEnd: nextBanner});
 
             //timer(document.getElementById('mini-event'), 'Mar 13, 2023 23:59 UTC-0800',
             //    'https://preview.redd.it/ryq3i7bn5bia1.jpg?width=1000&format=pjpg&auto=webp&v=enabled&s=ef3584e697e15777310060145378d8d28f78eae4');
@@ -73,7 +74,7 @@
                     </tr>
                     <tr>
                         <td><a href="./mainpage">Topics Repository</a></td>
-                        <!-- changelog -->
+                        <td><a href="./changelog">Change Logs</a></td>
                         <!-- glossary -->
                     </tr>
                 </table>

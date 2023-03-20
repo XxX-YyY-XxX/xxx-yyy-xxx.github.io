@@ -117,6 +117,12 @@ export const cardData = [
         tags : [dTag.TDOLL, dTag.LEVEL, dTag.PRIME, dTag.NEWB]
     },  //Privated - vqvPpO1vKqw, @Visual
     {
+        id : '00421',
+        questions : `Is there a guide on how to use the equipments/attachments for Tactical Dolls?`,
+        answers : `${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/equipment-basics-how-juggernaut-t-dolls")}`,
+        tags : [dTag.TDOLL, dTag.EQUIP, dTag.PRIME]
+    },
+    {
         id : '00002',
         questions : `What is Combat Effectiveness?`,
         answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ce')}<br>
@@ -157,6 +163,7 @@ export const cardData = [
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Technical_Fairies')} Unupdated rework skills.<br>
         ${link('GFC guide Part 1.', 'https://www.gflcorner.com/fairy/')} Fairies up to CT only.<br>
         ${spoilerSummary('GFC guide Part 2.', Embed.google(Embed.G_EXCEL, '1x6_YysDi0h89jKE9vEW2_fbxi7gG7XV5jjJqX8O41rw'))} Unupdated fairy list.<br>
+        ${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/fairies-where-they-live-and-how-craft-them")}
         ${spoilerSummary('Jesse #6406 doc.', Embed.google(Embed.G_WORD, '1dXZkOmAR0SWqL7UKCxmTP2hUPjpoRhskbJHn1ZlpNWc'))}`,
         tags : [dTag.FAIRY, dTag.PRIME]
     },
@@ -316,7 +323,7 @@ export const cardData = [
                 link('Campaign Stuff', 'https://drive.google.com/drive/folders/15EjxktNclESJ6e6rb5udNxOaczNTPZVZ'),
                 link('Costume Stories', 'https://drive.google.com/drive/folders/13AiWn_jgIxWUTK2T7EVjFV8Rkk6jptEs'),
                 link('GFL Manga', 'https://drive.google.com/drive/folders/1fEYYxtXAFTfyovwW-WRvNOpbXTu1_hlk'),
-                link("u/TheGreyGhost00's Reddit Outline", 'https://redd.it/uwdiro')],
+                link("u/TheGreyGhost00's Reddit Outline", "https://redd.it/z1g738")],
             'Lore' : [link('Confidential Files', 'https://docs.google.com/document/d/1JyJ-o9gHCeCdN2h8PhhRdFczejLs6Wve8dziQZUSEGk'),
                 link('Confidential Files 2: New and Emerging Forms of Threat', 'https://drive.google.com/drive/folders/17_9Tu-90ZWrvlHPzgWbVwSQebJ4nHiR7'),
                 link("The Background History of Girls' Frontline", 'https://twitter.com/YZsFerrari/status/1379877420732448777'),
@@ -325,10 +332,11 @@ export const cardData = [
             'Main Story' : [link("u/RhythmLunatic's GFL Cutscene Interpreter (including collabs)", 'https://gfl.amaryllisworks.pw/'),
                 link("Shoul's Story Scenes Playlists", 'https://www.youtube.com/channel/UC_JmwXOfYqOKpGGtc5gcVmw'),
                 link("Girls' Frontline Full Story Comprehension Playlist Translated up to Isomer", 'https://youtube.com/playlist?list=PL9y52Flm1yM-tJJoom2zfrWTpaO1mTw8M'),
-                link("u/DoctuhD's Girls' Frontline Summary", 'https://docs.google.com/document/d/1oA07O2HGwvmoBqm-UKTTuSdxjLnSIbRHd5b2FuYOph0')]
+                link("u/DoctuhD's Girls' Frontline Summary", 'https://docs.google.com/document/d/1oA07O2HGwvmoBqm-UKTTuSdxjLnSIbRHd5b2FuYOph0'),
+                spoilerSummary("u/Signal_Abroad1427's Hurricane Rescue video", Embed.youtube("oH1st5OxdyY"))]
         })}`,
         tags : [dTag.LORE, dTag.MAJOR, dTag.COLLAB, dTag.REF]
-    },  //DoctuhD - https://docs.google.com/document/d/1yn0sjoktIb2f-KC6bxn3R0qpCUChBPpIQuERcLmBHbg
+    },
     //#endregion
     //#region Important Details
     {
@@ -2015,7 +2023,7 @@ export const cardData = [
     },  //@Visual
     {
         id : '00239',
-        questions : `How do I change my assistant/adjutant?`,
+        questions : `How do I change my assistant/adjutant/lobby character?`,
         answers : `Commander Level > Base Management (bottom-left).<br>
         You can also change each one's background.`,
         tags : [dTag.ADJUNCT]
@@ -3210,11 +3218,15 @@ export const cardData = [
         tags : [dTag.MAJOR, dTag.SEASON]
     },
     {
+        id : '00422',
+        questions : ``,
+        answers : ``,
+        tags : []
+    },
+    {
         id : '00000',
         questions : ``,
         answers : ``,
         tags : []
     },
 ];
-
-export const newCards = ['00265', '00097'];
