@@ -8,13 +8,15 @@
             timer(document.getElementById('event'), "Apr 03, 2023 23:59 UTC-0800",
                 "https://pbs.twimg.com/media/FqgWmU4aEAIUybb?format=jpg&name=large");
 
-            const nextPass = timer.bind(null, document.getElementById('battlepass'), "Apr 23, 2023 23:59 UTC-0800",
-                "https://pbs.twimg.com/media/FrPXbbwagAMxVqt?format=jpg&name=large");
-            timer(document.getElementById('battlepass'), 'Mar 19, 2023 23:59 UTC-0800',
-                'https://preview.redd.it/lacxhmhbpoga1.jpg?width=1920&format=pjpg&auto=webp&v=enabled&s=d820f33650f44cae82e839c4d8a2d13237bf88c9',
-                {onEnd: nextPass});
+            const nextPass = timer.bind(null, document.getElementById('battlepass'), "",
+                "");
+            timer(document.getElementById('battlepass'), "Apr 23, 2023 23:59 UTC-0800",
+            "https://pbs.twimg.com/media/FrPXbbwagAMxVqt?format=jpg&name=large", {onEnd: nextPass});
 
-            const nextUnit = timer.bind(null, document.getElementById("coalition"), "Apr 11, 2023, 23:59 UTC-0800",
+            timer(document.getElementById("anchor"), "Mar 22, 2023 23:59 UTC-0800",
+                "https://pbs.twimg.com/media/Frof_t8acAAW-rI?format=jpg&name=large")
+            
+            const nextUnit = timer.bind(null, document.getElementById("coalition"), "Apr 17, 2023, 23:59 UTC-0800",
                 "https://pbs.twimg.com/media/FrUwVIhaUAAfUgl?format=jpg&name=large")
             timer(document.getElementById("coalition"), "Apr 03, 2023 23:59 UTC-0800",
                 "https://pbs.twimg.com/media/FqLtCZoaEAAWyl3?format=jpg&name=large", {onEnd: nextUnit});
@@ -48,19 +50,6 @@
         <title>GFL Main Page | Random Scraps</title>
     </head>
 
-    <style>
-        /* tr {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        td {
-            background-color: transparent;
-            line-height: 10px;
-            flex: calc(100% / 3);
-        } */
-    </style>
-
     <body>
         <include src="/univasset/scripts/pageheader/header.html">"GFL Main Page and Event Timer"</include>
 
@@ -81,6 +70,7 @@
 
                 <div id="event"></div>
                 <div id="battlepass"></div>
+                <div id="anchor"></div>
                 <div id="coalition"></div>
                 <div id="skin-banner"></div>
                 <div id="mini-event"></div>
