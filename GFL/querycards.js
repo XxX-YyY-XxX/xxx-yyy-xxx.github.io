@@ -3071,8 +3071,8 @@ export const cardData = [
     {
         id : '00400',
         questions : `If I bought a Monthly Gem Card, do I get them immediately every day or do I have to log-in?`,
-        answers : `Sent as mail, procured as mail, expires as mail.`,
-        tags : [dTag.GEMS]
+        answers : `Sent as mail, procured as mail, expires as mail. One week expiration.`,
+        tags : [dTag.GEMS, dTag.GET]
     },
     {
         id : '00401',
@@ -3219,9 +3219,9 @@ export const cardData = [
     },
     {
         id : '00422',
-        questions : ``,
-        answers : ``,
-        tags : []
+        questions : `Is there any damage sim? Or at least a DPS calculator?`,
+        answers : `${spoilerSummary("u/corbsieboy's spreadsheet calculator.", Embed.google(Embed.G_EXCEL, "1HgLM886cjnlGeoff7sE5QkTN4KPbT-52"))}`,
+        tags : [dTag['3P']]
     },
     {
         id : '00000',
