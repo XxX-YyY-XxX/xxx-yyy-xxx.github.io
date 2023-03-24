@@ -96,6 +96,27 @@ export class Async {
         return fetch(jsonFile).then(response => response.json());
     }
 }
+
+/** Class for countdown timers. */
+export class Timer {
+    #months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    #endtime;
+
+    /**
+     * @param {string} date
+     * Apr 03, 2023 23:59 UTC-0800 */
+    constructor(date) {
+        const [mo, ...rest] = date.replace(/,|(UTC)|(GMT)/g, "").replace(":", " ").split(" ");
+        const [day, yr, hr, min, off] = rest.map(Number);
+        const [hroff, minoff] = Math.intdiv(off, 100);
+        this.#endtime = Date.UTC(yr, this.#months.indexOf(mo), day, hr - hroff, min - minoff);
+    }
+
+    get done() {return this.#endtime < Date.now()}
+
+    /** @returns Time remaining in milliseconds. */
+    get remaining() {return this.#endtime - Date.now()}
+}
 //#endregion
 
 //#region Functions

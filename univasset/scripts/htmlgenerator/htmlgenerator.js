@@ -1,4 +1,4 @@
-import {splitTime, setAttr, compare} from '../externaljavascript.js';
+import {Timer, splitTime, setAttr, compare} from '../externaljavascript.js';
 import {type} from '../basefunctions/index.js';
 
 /** @param {(string | Node)[]} elements */
@@ -223,23 +223,17 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
  * @param {{onEnd: function(): void, interval: number}} onEnd Event listener for when timer reaches 0.
  * @param interval Time it takes to update the timer, in milliseconds. Default 1000. */
 export function timer(grouperElem, date, eventURL = '', {onEnd = null, interval = 1000} = {}) {
-    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const time = new Timer(date)
 
-    const [mo, ...rest] = date.replace(/,|(UTC)|(GMT)/g, '').replace(':', ' ').split(' ');
-    const [day, yr, hr, min, off] = rest.map(Number);
-    const [hroff, minoff] = Math.intdiv(off, 100);
-    const endtime = Date.UTC(yr, months.indexOf(mo), day, hr - hroff, min - minoff);
-
-    if (endtime < Date.now()) {
+    if (time.done) {
         onEnd?.();
         return;
     }
 
     const spanElem = document.createElement('span');
     const countdown = setInterval(function() {
-        const count = endtime - Date.now();
-        spanElem.textContent = splitTime(count).slice(0, -1).map(num => String(num).padStart(2, '0')).join(' : ');
-        if (count < 0) {
+        spanElem.textContent = splitTime(time.remaining).slice(0, -1).map(num => String(num).padStart(2, '0')).join(' : ');
+        if (time.done) {
             clearInterval(countdown);
             grouperElem.replaceChildren();
             grouperElem.classList.remove('func_timer');

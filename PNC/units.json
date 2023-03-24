@@ -276,6 +276,12 @@
         "event" : "Inverted Mordent Resonance"
     },
     {
+        "name" : "Puzzle",
+        "reference" : {"" : ""},
+        "fragments" : ["Fragment Search"],
+        "event" : "Inverted Mordent Resonance"
+    },
+    {
         "name" : "Nora (X)",
         "reference" : {"" : ""},
         "fragments" : ["Fragment Search"],
@@ -336,12 +342,6 @@
         "event" : "Christmas"
     },
     {
-        "name" : "Puzzle (X)",
-        "reference" : {"" : ""},
-        "fragments" : ["Fragment Search"],
-        "event" : "Inverted Mordent Resonance"
-    },
-    {
         "name" : "Maghnilda (X)",
         "reference" : {"" : ""},
         "fragments" : ["Fragment Search"],
@@ -379,8 +379,8 @@
     },
     {
         "name" : "Lind (X)",
-        "reference" : {"" : ""},
-        "fragments" : ["Fragment Search"],
+        "reference" : {"" : "AA-12"},
+        "fragments" : [],
         "event" : ""
     },
     {
