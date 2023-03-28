@@ -193,6 +193,8 @@ Dolls with oath animations.
 
 Commander costume skills and sets.
 
+In-game SFX.
+
 # GFL Multimedia
 
 [GFL Music Library.](https://girlsfrontline.kr/db/musicplayer/) [Another.](http://gfwiki.org/w/%E9%9F%B3%E4%B9%90%E9%89%B4%E8%B5%8F)

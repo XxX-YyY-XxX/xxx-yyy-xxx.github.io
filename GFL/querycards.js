@@ -237,6 +237,7 @@ export const cardData = [
         questions : `What is Luffberry Chess?`,
         answers : `GFL version of 100% Orange Juice, I guess?<br>
         And it's called "chess" only because boardgame.<br>
+        ${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/springfields-cafe-haven-soothe-weary-souls-and-luffberry-chess")}
         ${link("u/fortis_99's tips.", 'https://redd.it/rz4uye')}<br>
         ${spoilerSummary("u/StarBase10's doc guide.", Embed.google(Embed.G_WORD, '1BHZ36zTKdQ9gd81a-RAHEzbs9OEgJraSRp5LQv8CB_A'))}`,
         tags : [dTag.OJ, dTag.PRIME]
@@ -317,23 +318,30 @@ export const cardData = [
         id : '00023',
         questions : `Where can I read the MOD, costume, event stories, and all that?`,
         answers : `${List.description({
-            'Compilations' : [link('GF Translated Story Material (+ other stuff)', 'https://drive.google.com/drive/folders/14sNze_lnv5EwL1bl_g3IOVQIo6GGYUJp'),
+            'Compilations' : [
+                link("GFL-RC verse collection.", "https://drive.google.com/drive/folders/1q5IMbZhCOEfdcLxjL5YbR11kzW8PRgw2"),
+                link('GF Translated Story Material (+ other stuff)', 'https://drive.google.com/drive/folders/14sNze_lnv5EwL1bl_g3IOVQIo6GGYUJp'),
                 link('GF Translations', 'https://drive.google.com/drive/folders/14bAuWaGbagJwucmlit3EkXFqMRV9NHZO'),
                 link('The Official #gf-loreroom Information Index', 'https://docs.google.com/spreadsheets/d/1LYV05D7kGTKp_FS7cJrNrJlVxeRAnFVnr6vCTo5F-YM'),
                 link('Campaign Stuff', 'https://drive.google.com/drive/folders/15EjxktNclESJ6e6rb5udNxOaczNTPZVZ'),
                 link('Costume Stories', 'https://drive.google.com/drive/folders/13AiWn_jgIxWUTK2T7EVjFV8Rkk6jptEs'),
                 link('GFL Manga', 'https://drive.google.com/drive/folders/1fEYYxtXAFTfyovwW-WRvNOpbXTu1_hlk'),
-                link("u/TheGreyGhost00's Reddit Outline", "https://redd.it/z1g738")],
-            'Lore' : [link('Confidential Files', 'https://docs.google.com/document/d/1JyJ-o9gHCeCdN2h8PhhRdFczejLs6Wve8dziQZUSEGk'),
+                link("u/TheGreyGhost00's Reddit Outline", "https://redd.it/z1g738")
+            ],
+            'Lore' : [
+                link('Confidential Files', 'https://docs.google.com/document/d/1JyJ-o9gHCeCdN2h8PhhRdFczejLs6Wve8dziQZUSEGk'),
                 link('Confidential Files 2: New and Emerging Forms of Threat', 'https://drive.google.com/drive/folders/17_9Tu-90ZWrvlHPzgWbVwSQebJ4nHiR7'),
                 link("The Background History of Girls' Frontline", 'https://twitter.com/YZsFerrari/status/1379877420732448777'),
                 link('IOPWiki Lore', 'https://iopwiki.com/wiki/Lore'),
-                link('Gamepress Lore Directory', 'https://gamepress.gg/girlsfrontline/lore-directory')],
-            'Main Story' : [link("u/RhythmLunatic's GFL Cutscene Interpreter (including collabs)", 'https://gfl.amaryllisworks.pw/'),
+                link('Gamepress Lore Directory', 'https://gamepress.gg/girlsfrontline/lore-directory')
+            ],
+            'Main Story' : [
+                link("u/RhythmLunatic's GFL Cutscene Interpreter (including collabs)", 'https://gfl.amaryllisworks.pw/'),
                 link("Shoul's Story Scenes Playlists", 'https://www.youtube.com/channel/UC_JmwXOfYqOKpGGtc5gcVmw'),
                 link("Girls' Frontline Full Story Comprehension Playlist Translated up to Isomer", 'https://youtube.com/playlist?list=PL9y52Flm1yM-tJJoom2zfrWTpaO1mTw8M'),
                 link("u/DoctuhD's Girls' Frontline Summary", 'https://docs.google.com/document/d/1oA07O2HGwvmoBqm-UKTTuSdxjLnSIbRHd5b2FuYOph0'),
-                spoilerSummary("u/Signal_Abroad1427's Hurricane Rescue video", Embed.youtube("oH1st5OxdyY"))]
+                spoilerSummary("u/Signal_Abroad1427's Hurricane Rescue video", Embed.youtube("oH1st5OxdyY"))
+            ]
         })}`,
         tags : [dTag.LORE, dTag.MAJOR, dTag.COLLAB, dTag.REF]
     },
@@ -404,7 +412,7 @@ export const cardData = [
         answers : `${List.description({
             'General' : [
                 link('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide'),
-                link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/optimizing-leveling-introduction'),
+                link('Gamepress guide.', "https://gamepress.gg/girlsfrontline/optimized-levelling-corpse-dragging-maps"),
                 link('GFLCorner guide.', 'https://www.gflcorner.com/efficient-leveling-guide/'),
                 link('DMesse guide.', 'http://dmesse.egloos.com/m/3567918')
             ],
@@ -537,7 +545,8 @@ export const cardData = [
     {
         id : '00039',
         questions : `How do I get more Quick Training Contracts?`,
-        answers : `End of daily log-ins, Keycard Event, gem shop.`,
+        answers : `End of daily log-ins, battlepass, Keycard Event, gem shop.<br>
+        This contract/ticket is doesn't come in droves so use carefully.`,
         tags : [dTag.ITEM, dTag.MINI, dTag.SHOP, dTag.GET]
     },
     {
@@ -1090,7 +1099,7 @@ export const cardData = [
         questions : `What does the Aid Commissions do and how do I get more of them?`,
         answers : `Also known as Svarog/High Altitude EMP Bombing, it pulls from the entire pool where the entire pool is the X in the X/100 units.<br>
         Recommended to pull one at a time since 10-pull is literally 10 1-pulls.<br>
-        Acquired from the daily quest's final node, daily log-in, major events, shop (whenever a new banner starts).`,
+        Acquired from the daily quest's final node, daily log-in, major events, battlepass, shop (whenever a new banner starts).`,
         tags : [dTag.ITEM, dTag.PA, dTag.GET]
     },
     {
@@ -1470,7 +1479,9 @@ export const cardData = [
         answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/its_still_not_enough_fuck')}<br>
         ${link('BigStupidJellyfish write-up.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/core-rates')}<br>
         ${link("u/UnironicWeeaboo's easier 11-6.", 'https://www.reddit.com/r/girlsfrontline/comments/u1tr33/weekly_commanders_lounge_april_12_2022/i5178cy/')}<br>
-        Run any daytime leveling maps for combined core and exp farming. You can also farm during core rate up by using the handgun recipe.`,
+        Run any daytime leveling maps for combined core and exp farming.<br>
+        You can also farm during core rate up by using the handgun recipe.<br>
+        Or buy from the Black Market every first day of the month.`,
         tags : [dTag.ITEM, dTag.GET]
     },
     {
@@ -1935,7 +1946,9 @@ export const cardData = [
     {
         id : '00226',
         questions : `How do I get duplicate ringleaders?`,
-        answers : `If you successfully captured the RL, there is a "Reset Pool" button beside the Svarog button. This allows you to refresh the pool back to 100 for another round of RL pulling. Dupe RLs are autofed to your first copy. Any more pulls of the same RL with full petal is an autoscrap.`,
+        answers : `If you successfully captured the RL, there is a "Reset Pool" button beside the Svarog button. This allows you to refresh the pool back to 100 for another round of RL pulling.<br>
+        Dupe RLs are autofed to your first copy, raising their petals. Any more pulls of the same RL with full petal is an autoscrap.<br>
+        Getting full petals is pretty much only relevant to Theater.`,
         tags : [dTag.COALITION, dTag.PA]
     },
     {
@@ -3222,6 +3235,19 @@ export const cardData = [
         questions : `Is there any damage sim? Or at least a DPS calculator?`,
         answers : `${spoilerSummary("u/corbsieboy's spreadsheet calculator.", Embed.google(Embed.G_EXCEL, "1HgLM886cjnlGeoff7sE5QkTN4KPbT-52"))}`,
         tags : [dTag['3P']]
+    },
+    {
+        id : '00423',
+        questions : `Where can I get Memory Fragments?`,
+        answers : `${List.ordered(
+            "Combat Simulations - Neural Corridor",
+            "Kalina's Shop",
+            "Cafe MOD Stories",
+            "Campaign/Event Rewards",
+            "Lufberry Gacha",
+            "Expedition Loots"
+        )}`,
+        tags : [dTag.MOD, dTag.ITEM, dTag.GET]
     },
     {
         id : '00000',
