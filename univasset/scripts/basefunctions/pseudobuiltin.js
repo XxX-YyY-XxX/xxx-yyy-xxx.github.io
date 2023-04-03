@@ -8,7 +8,7 @@ export function iter(iterable) {
 
 /** Iterates items per index in groups. Add "true" at the end to extend shortest.
  * @param {Iterable[]} iterables order of iterables = order of output
- * @returns "Tuple" of values from each array */
+ * @returns Array of values from each array */
 export function* zip(...iterables) {
     var extension;
     if (iterables.slice(-1)[0] === true) {extension = 'some'; iterables.pop();}
@@ -35,7 +35,7 @@ export function type(any) {
         case any instanceof HTMLElement:
         case any instanceof DocumentFragment:
             return 'dom';
-        //case any === iter(any):
+        //case Symbol.iterator in any:
         //    return "iterator";
         default:
             return 'object';

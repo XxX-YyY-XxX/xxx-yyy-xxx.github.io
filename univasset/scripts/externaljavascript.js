@@ -1,4 +1,4 @@
-import {iter, type, zip} from './basefunctions/index.js';
+import {type, zip} from './basefunctions/index.js';
 
 //#region Constants
 /** Close to zero value. */
@@ -19,29 +19,28 @@ export class Cycle {
     #index = 0;
     #length = 0;
 
-    /** @param {T[]} items */
-    constructor(...items) {
-        //will change
-        this.#items = items.length === 1 && items[0] === iter(items[0]) ? Array.from(items[0]) : items;
+    /** @param {Iterable<T>} items */
+    constructor(items) {
+        this.#items = Array.from(items);
         this.#length = items.length;
     } 
 
+    /** @returns {T} */
     next() {
         const output = this.#items[this.#index];
-        this.#index += 1;
-        if (this.#index === this.#length)
-            this.#index = 0;
+        this.#index = (this.#index + 1) % this.#length
         return output;
     }
 
+    /** @returns {T} */
     prev() {
         const output = this.#items[this.#index];
-        this.#index -= 1;
-        if (this.#index === -1)
-            this.#index = this.#length - 1;
+        const index = (this.#index - 1) % this.#length;
+        this.#index = this.#index < 0 ? this.#length + index : index;
         return output;
     }
 
+    /** @returns {T} */
     reset() {
         const output = this.#items[this.#index];
         this.#index = 0;
