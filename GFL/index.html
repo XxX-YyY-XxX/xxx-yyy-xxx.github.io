@@ -5,21 +5,21 @@
         <script type="module">
             import {timer} from '/univasset/scripts/htmlgenerator/htmlgenerator.js';
 
-            timer(document.getElementById('event'), "Apr 03, 2023 23:59 UTC-0800",
-                "https://pbs.twimg.com/media/FqgWmU4aEAIUybb?format=jpg&name=large");
+            timer(document.getElementById('event'), "Apr 17, 2023 23:59 UTC-0800",
+                "./6kxmjz1cafqa1.jpg");
 
             const nextPass = timer.bind(null, document.getElementById('battlepass'), "",
                 "");
             timer(document.getElementById('battlepass'), "Apr 23, 2023 23:59 UTC-0800",
             "https://pbs.twimg.com/media/FrPXbbwagAMxVqt?format=jpg&name=large", {onEnd: nextPass});
 
-            timer(document.getElementById("anchor"), "Mar 22, 2023 23:59 UTC-0800",
-                "https://pbs.twimg.com/media/Frof_t8acAAW-rI?format=jpg&name=large")
+            //timer(document.getElementById("anchor"), "Mar 22, 2023 23:59 UTC-0800",
+            //    "https://pbs.twimg.com/media/Frof_t8acAAW-rI?format=jpg&name=large")
             
-            const nextUnit = timer.bind(null, document.getElementById("coalition"), "Apr 17, 2023, 23:59 UTC-0800",
-                "https://pbs.twimg.com/media/FrUwVIhaUAAfUgl?format=jpg&name=large")
-            timer(document.getElementById("coalition"), "Apr 03, 2023 23:59 UTC-0800",
-                "https://pbs.twimg.com/media/FqLtCZoaEAAWyl3?format=jpg&name=large", {onEnd: nextUnit});
+            const nextUnit = timer.bind(null, document.getElementById("coalition"), "May 01, 2023, 23:59 UTC-0800",
+                "https://preview.redd.it/jajjlqo4cvq81.jpg?width=1400&format=pjpg&auto=webp&v=enabled&s=a2f9a3e65cad03508714bb81aa834ad16f87b843")
+            timer(document.getElementById("coalition"), "Apr 17, 2023, 23:59 UTC-0800",
+                "https://pbs.twimg.com/media/FrUwVIhaUAAfUgl?format=jpg&name=large", {onEnd: nextUnit});
 
             const nextBanner = timer.bind(null, document.getElementById('skin-banner'), "",
                 "");

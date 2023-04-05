@@ -12,7 +12,7 @@ const tm = '™️';
 
 export const dTag = {
     //#region Combat Tabs
-        //STORY : 'StoryEvents',          //For questions that apply to Major, Collab, and Seasonal Events.
+        LORE : {name: 'Story/Lore', description: 'Main meat of the series.'},
             MAJOR : {name: 'MajorEvents', description: 'Main story. Added to Campaign after a while.'},
             SEASON : {name: 'SeasonalEvents', description: 'Happens every New Year, X-mas, Halloween, etc.'},
             COLLAB : {name: 'Collaboration', description: 'Reason: "He liked it."'},
@@ -72,7 +72,6 @@ export const dTag = {
     TIER : {name: 'TierList', description: 'Basic guideline on who are the best.'},
     IMPT : {name: 'Important', description: 'Things new players would need for late-game.'},
     SYSMECH : {name: 'SystemMechanics', description: 'Explanation on underlying mechanics of the game.'},
-    LORE : {name: 'Story/Lore', description: 'Main meat of the series.'},
     REF : {name: 'Compilation', description: 'Reference compilations.'},
     GET : {name: 'Acquisition', description: 'How to get and where.'},
     //#endregion
@@ -85,7 +84,7 @@ export const dTag = {
     SKILL : {name: 'Skills', description: 'Unit skills.'},
     LOVE : {name: 'Affection', description: '"Keep it high."'},
         OATH : {name: 'OathSystem', description: 'Marriage.'},
-    LEVEL : {name: 'Leveling', description: 'Mostly Corpse Drag.'},
+    LEVEL : {name: 'Leveling', description: 'EXP, enhancements, calibrations...'},
     PET : {name: 'Pets', description: 'Little critters.'},
     OJ : {name: 'LuffberryChess', description: 'PVP sidegame.'},
     CE : {name: 'CombatEffectiveness', description: 'Clutch metric.'},
@@ -373,7 +372,8 @@ export const cardData = [
                 `During collabs, major events, side events, and ${spoilerSummary('Rescue Events', `Also known as Boss Bully, where you get to farm for 4-5${star} event reward dolls in the story chapters 1-6.`)}, event rewards become temporarily available for farming.`,
                 'Obtainable from random nodes, however unlikely.',
                 'For units that can also be crafted, their drop rates are less than 1%.',
-                "Whatever doll you recieved, whether you win, lose, or quit the stage, you keep it."
+                "Whatever doll you recieved, whether you win, lose, or quit the stage, you keep it.",
+                getID("Farming maps and routing.", "00123")
             ],
             'Event Rewards' : [
                 link("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls'),
@@ -2175,9 +2175,10 @@ export const cardData = [
     {
         id : '00260',
         questions : `Which of the enemies count as an elite?`,
-        answers : `${link('Powered by randomqwerty.', './elites')}`,
+        answers : `${link('Powered by randomqwerty.', './elites')}<br>
+        ${spoilerSummary("pengu's enemy dex spreadsheet (includes high threat).", Embed.google(Embed.G_EXCEL, "1_WPjx2WUE8zYhhfJ3wJkGCmpLn6dgwmcY-R7ZfKWTZ8"))}`,  //according to u/MrFunkyBoy (https://old.reddit.com/r/girlsfrontline/comments/111xab7/weekly_commanders_lounge_february_14_2023/j957swj/)
         tags : [dTag.ENEMY]
-    },
+    },  
     {
         id : '00261',
         questions : `Can I unbind my Sunborn Account?`,
@@ -2309,8 +2310,8 @@ export const cardData = [
         answers : `${List.ordered(
             'Create private lobby.',
             'Start match with bots.',
-            'Recover game every 5 minutes or buy cards during shop phase.',
-            'Quit match after 20 minutes.')}`,
+            'Recover game every 5 minutes or buy cards during shop phase. Important or else you get no tickets.',
+            'Quit match after 20 minutes. No prompt but additional tickets are still added.')}`,
         tags : [dTag.OJ]
     },
     {
@@ -3248,6 +3249,20 @@ export const cardData = [
             "Expedition Loots"
         )}`,
         tags : [dTag.MOD, dTag.ITEM, dTag.GET]
+    },
+    {
+        id : '00424',
+        questions : `How does Resource Recovery/Disassembly/Scrapping work?`,
+        answers : `${List.description({
+            "Tactical Dolls": [
+                "The final stage of core farming.",
+                `Cores received is equal to each scrapped doll's rarity, all other stats be damned. Collab dolls count as 5${star}.`
+            ],
+            "Equipment": [],
+            "Fairies": [],
+            "Coalition Units": ["The only way to get Supernova and Dark Nova Crystals."]
+        })}`,
+        tags : [dTag.SYSMECH, dTag.TDOLL, dTag.EQUIP, dTag.FAIRY, dTag.COALITION, dTag.ITEM]
     },
     {
         id : '00000',
