@@ -35,8 +35,7 @@ export class Cycle {
     /** @returns {T} */
     prev() {
         const output = this.#items[this.#index];
-        const index = (this.#index - 1) % this.#length;
-        this.#index = this.#index < 0 ? this.#length + index : index;
+        this.#index = this.#index ? this.#index - 1 : this.#length - 1;
         return output;
     }
 
@@ -170,15 +169,14 @@ export function splitTime(milliseconds) {
 /**
  * @template T
  * @param {T} base
- * @param {{HTMLAttribute: string | number | Array | {}}} attributes String/Number for attribute assigment, Array for function calls, Object for property calls.
- * @returns {T} */
+ * @param {{HTMLAttribute: string | number | Array | {}}} attributes String/Number for attribute assigment, Array for function calls, Object for property calls. */
 export function setAttr(base, attributes) {
     for (const [attrib, value] of Object.entries(attributes)) {
         switch (type(value)) {
-            case 'array':
+            case "array":
                 base[attrib](...value);
                 break;
-            case 'object':
+            case "object":
                 setAttr(base[attrib], value);
                 break;
             default:
@@ -186,7 +184,6 @@ export function setAttr(base, attributes) {
                 break;
         }
     }
-    return base
 }
 
 /** Creates a sorter key from the given parametrs.
@@ -219,6 +216,7 @@ export function compare({key = x => x, reverse = false, array = null} = {}) {
         return _currentFunc(a, b);
     }
 
+    /** @returns {number} */
     return function(a, b) {
         [a, b] = [key(a), key(b)];
         [a, b] = [_getIndex(a), _getIndex(b)];

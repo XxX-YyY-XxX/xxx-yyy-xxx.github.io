@@ -32,14 +32,14 @@ Object.defineProperty(Array.prototype, "remove", {
  * @param {number} lower Inclusive.
  * @param {number} upper Inclusive. */
 Math.clip = function(value, lower, upper) {
-    return Math.min(Math.max(value, lower), upper);
+    return this.min(this.max(value, lower), upper);
 }
 
 /** Returns quotient and remainder.
  * @param {number} dividend
  * @param {number} divisor
- * @returns {[number,number]} */
+ * @returns {[number,number]} quotient, remainder */
 Math.intdiv = function(dividend, divisor) {
-    return [Math.trunc(dividend / divisor), dividend % divisor]
+    return [this.trunc(dividend / divisor), dividend % divisor]
 }
 //#endregion
