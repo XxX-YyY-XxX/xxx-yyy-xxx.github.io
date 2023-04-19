@@ -1,7 +1,7 @@
 import {table, tableSort, initializeHTML} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
 import {Async} from "../univasset/scripts/externaljavascript.js";
 
-/** @type {Array} */ const units = await Async.getJSON('./unitstats.json').slice(0, -1);
+/** @type {Array} */ const units = (await Async.getJSON('./unitstats.json')).slice(0, -1);
 
 const str = x => initializeHTML("td", {textContent: x});
 const int = x => initializeHTML("td", {textContent: x});

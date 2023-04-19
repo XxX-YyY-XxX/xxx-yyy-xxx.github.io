@@ -17,7 +17,7 @@ export function initializeHTML(createElement, attributes) {
     var outerElem, innerElem;
     if (createElement.includes(' ')) {
         let restElems, parentElem;
-        [outerElem, ...restElems] = createElement.split(' ').map(document.createElement);
+        [outerElem, ...restElems] = createElement.split(' ').map(x => document.createElement(x));   //Illegal invocation
         
         parentElem = outerElem;
         for (innerElem of restElems) {

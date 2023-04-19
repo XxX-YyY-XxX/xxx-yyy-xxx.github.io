@@ -5,10 +5,8 @@
         <script type="module">
             import {timer} from '/univasset/scripts/htmlgenerator/htmlgenerator.js';
 
-            const nextEvent = timer.bind(null, document.getElementById('event'), "May 22, 2023 23:59 UTC-0800",
+            timer(document.getElementById('event'), "May 22, 2023 23:59 UTC-0800",
                 "https://preview.redd.it/qiyu4iokrkta1.jpg?width=1200&format=pjpg&auto=webp&v=enabled&s=30341a60a2e9a95d049dac9252829efb2916be8e");
-            timer(document.getElementById('event'), "Apr 17, 2023 23:59 UTC-0800",
-                "./6kxmjz1cafqa1.jpg");
 
             const nextPass = timer.bind(null, document.getElementById('battlepass'), "May 28, 2023 23:59 UTC-0800",
                 "C-93");
