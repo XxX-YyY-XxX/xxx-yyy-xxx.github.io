@@ -58,7 +58,7 @@ export const dTag = {
     MARP : {name: 'FourResources', description: 'Manpower, Ammunition, Rations, Parts.'},
     ADJUNCT : {name: 'Adjutants', description: 'T-Doll secretary.'},
     MINI : {name: 'MiniEvents', description: 'Keycard Events, Point Events, etc.'},
-    BP : {name: 'Battlepass', description: 'Frontline Protocol.'},
+    BP : {name: 'FrontlineProtocol', description: 'Battlepass mostly for skins.'},
     QUEST : {name: 'Quests', description: 'Dailies, weeklies, main, career, intel.'},
     SHOP : {name: 'Shop', description: 'Buy things here.'},
     FRIEND : {name: 'Friends', description: 'The helpful kind.'},
@@ -96,7 +96,7 @@ export const cardData = [
     {
         id : '00000',
         questions : `I can't access/press/see things, what do I do?`,
-        answers : `Have you tried restarting your application? This should be the default response to everything.`,
+        answers : `Have you tried restarting your application/phone? This should be the default response to everything.`,
         tags : [dTag.TECH, dTag.PRIME, dTag.IMPT]
     },
     {
@@ -262,7 +262,8 @@ export const cardData = [
         id : '00015',
         questions : `Is there a tier list for good PA units?`,
         answers : `${link("u/CheneyQWER's tier list.", 'https://redd.it/uirvxz')}<br>
-        ${link('Gamepress units guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units')} Use the search bar if a certain PA unit is unavailable in the page.`,
+        ${link('Gamepress units guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units')} Use the search bar if a certain PA unit is unavailable in the page.<br>
+        ${link("Matsuda tips.", "https://gfl.matsuda.tips/captures/")}`,
         tags : [dTag.PA, dTag.COALITION, dTag.TIER]
     },
     {
@@ -445,7 +446,8 @@ export const cardData = [
     {
         id : '00028',
         questions : `Is there a guide on how to build echelons/team compositions?`,
-        answers : `${List.description({
+        answers : `Basic tip in this game is counterplay is more important than fixed synergy.<br>
+        ${List.description({
             'Mixed' : [spoilerSummary("CheneyQWER's infographic.", image('./assets/images/EchelonComps.png'))],
             'Coalition Echelons' : [
                 link('Reddit flowchart post.', 'https://redd.it/rkvisq'),
@@ -456,7 +458,7 @@ export const cardData = [
         })}<br>
         Shouldn't be a gospel but a good starting point nonetheless.<br>
         ${link('u/UnironicWeeaboo tips.', 'https://old.reddit.com/r/girlsfrontline/comments/vmhs0x/weekly_commanders_lounge_june_28_2022/ie3bw95/')}`,
-        tags : [dTag.ECH, dTag.COALITION, dTag.TDOLL, dTag.IMPT]
+        tags : [dTag.ECH, dTag.PA, dTag.COALITION, dTag.TDOLL, dTag.IMPT]
     },
     {
         id : '00029',
@@ -639,9 +641,14 @@ export const cardData = [
     {
         id : '00053',
         questions : `Is there any way to reset my battles so I can get a win?`,
-        answers : `Turn off WiFi during battle. You can still finish the fight with no connection. Though be wary of connection timeouts so do it near the end.<br>
-        If you don't like the result or you lost, exit client, turn on WiFi, re-enter client, take the fight again.<br>
-        If satisfied ${TextStyle.style('or saving your sanity', TextStyle.STRIKE)}, turn on WiFi after the battle finished.`,
+        answers : `${List.description({
+            "Method 1: In-game restart": [image("./assets/images/BattleRestart.png", "Restart Battle button in Pause menu. Beware the Withdraw button.")],
+            "Method 2: Client restart": [
+                "Turn off WiFi during battle. You can still finish the fight with no connection. Though be wary of connection timeouts so do it near the end.",
+                "If you don't like the result or you lost, exit client, turn on WiFi, re-enter client, take the fight again.",
+                "If satisfied ${TextStyle.style('or saving your sanity', TextStyle.STRIKE)}, turn on WiFi after the battle finished."
+            ]
+        })}`,
         tags : [dTag.BATTLE]
     },
     {
@@ -1579,7 +1586,7 @@ export const cardData = [
         id : '00172',
         questions : `Where are the skins? I can't find them.`,
         answers : `${image('./assets/images/SkinLocation.png', 'Dorms > Warehouse > Gifts')}<br>
-        You get black cards here by gifting it.`,
+        You get Black Cards here by gifting it.`,
         tags : [dTag.TDOLL, dTag.SKIN]
     },
     {
@@ -2105,7 +2112,7 @@ export const cardData = [
             'Resupply' : ['Banners and Reruns.', 'Black Card Exchange.'],
             'Mini-events' : ['Mini-events.'],
             'Ranking Rewards' : ['Arctic Warfare only.'],
-            'Battlepass' : ['Called in-game as Frontline Protocol.', '10$ at minimum.'],
+            'Frontline Protocol' : ['Basically the battlepass of this game.', '10$ at minimum.'],
             'New Player Rewards' : ["UMP45's Valentine's Skin, which is also available as gacha."]
         })}`,
         tags : [dTag.TDOLL, dTag.SKIN, dTag.GET, dTag.BP]
@@ -3263,6 +3270,24 @@ export const cardData = [
             "Coalition Units": ["The only way to get Supernova and Dark Nova Crystals."]
         })}`,
         tags : [dTag.SYSMECH, dTag.TDOLL, dTag.EQUIP, dTag.FAIRY, dTag.COALITION, dTag.ITEM]
+    },
+    {
+        id : '00425',
+        questions : `Did the battlepass skins have a rerun yet?`,
+        answers : `None yet. But even if they do, they'll mostly likely have the same cost without the bonuses.`,
+        tags : [dTag.BP]
+    },
+    {
+        id : '00426',
+        questions : `What/where can I get Supply Crates?`,
+        answers : `Event-limited items that can only be bought during the its runtime. Gives resources and dolls.`,
+        tags : [dTag.ITEM, dTag.MAJOR]
+    },
+    {
+        id : '00427',
+        questions : `When do pets in the Rescue Station change?`,
+        answers : `3 days without buying them, arguably the next day if you do.`,
+        tags : [dTag.PET]
     },
     {
         id : '00000',
