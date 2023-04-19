@@ -166,10 +166,7 @@ export function splitTime(milliseconds) {
     return [...Math.intdiv(hr, 24), min, sec, milli];
 }
 
-/**
- * @template T
- * @param {T} base
- * @param {{HTMLAttribute: string | number | Array | {}}} attributes String/Number for attribute assigment, Array for function calls, Object for property calls. */
+/** @param {{HTMLAttribute: string | number | Array | {}}} attributes String/Number for attribute assigment, Array for function calls, Object for property calls. */
 export function setAttr(base, attributes) {
     for (const [attrib, value] of Object.entries(attributes)) {
         switch (type(value)) {

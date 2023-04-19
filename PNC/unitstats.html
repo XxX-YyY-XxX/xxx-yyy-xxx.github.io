@@ -2,15 +2,7 @@
 <html>
     <head>
         <script type="module" src="/univasset/scripts/include/include.js"></script>
-        <script type="module">
-            import {table} from '/univasset/scripts/htmlgenerator/htmlgenerator.js';
-            import {Async} from "/univasset/scripts/externaljavascript.js";
-
-            table(document.querySelector('#main_content div'),
-                (await Async.getJSON('./unitstats.json')).slice(0, -1),
-                {sort: true, frzcol: true, frzhdr: true}
-            );
-        </script>
+        <script type="module" src="./unitstats.js"></script>
 
         <meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
