@@ -2,7 +2,7 @@ import {Timer, splitTime, setAttr, compare} from '../externaljavascript.js';
 import {type, zip} from '../basefunctions/index.js';
 
 /** @param {(string | Node)[]} elements */
-function brJoin(elements) {
+export function brJoin(elements) {
     const fragment = new DocumentFragment();
     fragment.append(...elements.flatMap(item => [item, document.createElement('br')]).slice(0, -1));    
     return fragment;

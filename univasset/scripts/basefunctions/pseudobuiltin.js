@@ -1,14 +1,12 @@
 /** @param {Iterable} iterable */
 export function iter(iterable) {
-    //if (iterable[Symbol.iterator]() === iterable)
-    
-    //Set = iterable[Symbol.iterator]();
     return iterable[Symbol.iterator]();
 }
 
 /** Iterates items per index in groups. Add "true" at the end to extend shortest.
- * @param {Iterable[]} iterables order of iterables = order of output
- * @returns Array of values from each array */
+ * @template T
+ * @param {Iterable<T>[]} iterables order of iterables = order of output
+ * @returns {Generator<T[], void, unknown>} Array of values from each array */
 export function* zip(...iterables) {
     var extension;
     if (iterables.slice(-1)[0] === true) {extension = 'some'; iterables.pop();}

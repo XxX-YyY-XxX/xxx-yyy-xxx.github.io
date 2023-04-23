@@ -187,7 +187,7 @@ export function setAttr(base, attributes) {
  * @param {{key: function(any): any, reverse: boolean, array: Array}}
  * @param array Follows this array for specific order. Only useful for unique values for now. */
 export function compare({key = x => x, reverse = false, array = null} = {}) {
-    //will not fuse array and key parameters
+    //shall never fuse array and key parameters
     const _onReverse = reverse ? ((x, y) => [y, x]) : ((x, y) => [x, y]);
     const _getIndex = array ? (x => array.indexOf(x)) : (x => x);
 
@@ -201,10 +201,18 @@ export function compare({key = x => x, reverse = false, array = null} = {}) {
         /** @param {Array} x @param {Array} y @returns {number} */
         array: (x, y) => {
             for (const [first, second] of zip(x, y)) {
-                let val = method[type(first)](first, second);
+                const val = method[type(first)](first, second);
                 if (val) return val;    //-1 = true, 0 = false, 1 = true
             }
             return 0;
+        },
+        /** @param {{}} x @param {{}} y @returns {number} */
+        object: (x, y) => {
+            for (const [[first, _], [second, __]] of zip(Object.entries(x), Object.entries(y))) {
+                const val = first.localeCompare(second);
+                if (val) return val;
+            }
+            return 0;            
         }
     };
 
