@@ -16,7 +16,7 @@ tableSort(document.querySelector("#stats > div"),
 );
 
 tableSort(document.querySelector("#data > div"),
-    units.map(x => [x.name, x.class, x.reference, x.frags]),
+    units.map(x => [x.name, x.class, x.reference, x.fragments]),
     [str, str, ref, arr],
     {frzcol: true, frzhdr: true}
 );

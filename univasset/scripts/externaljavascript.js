@@ -35,7 +35,7 @@ export class Cycle {
     /** @returns {T} */
     prev() {
         const output = this.#items[this.#index];
-        this.#index = this.#index ? this.#index - 1 : this.#length - 1;
+        this.#index = (this.#index || this.#length) - 1;
         return output;
     }
 
@@ -100,9 +100,7 @@ export class Timer {
     #months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     #endtime;
 
-    /**
-     * @param {string} date
-     * Apr 03, 2023 23:59 UTC-0800 */
+    /** @param {string} date Apr 03, 2023 23:59 UTC-0800 */
     constructor(date) {
         const [mo, ...rest] = date.replace(/,|(UTC)|(GMT)/g, "").replace(":", " ").split(" ");
         const [day, yr, hr, min, off] = rest.map(Number);
@@ -208,7 +206,7 @@ export function compare({key = x => x, reverse = false, array = null} = {}) {
         },
         /** @param {{}} x @param {{}} y @returns {number} */
         object: (x, y) => {
-            for (const [[first, _], [second, __]] of zip(Object.entries(x), Object.entries(y))) {
+            for (const [first, second] of zip(Object.keys(x), Object.keys(y))) {
                 const val = first.localeCompare(second);
                 if (val) return val;
             }

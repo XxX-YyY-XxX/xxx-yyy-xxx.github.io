@@ -3217,7 +3217,7 @@ export const cardData = [
     {
         id : '00417',
         questions : `How do I establish a supply route?`,
-        answers : `${image("https://i.ibb.co/N3MVNnd/IMG-20230314-093923.jpg", "Caprturing all nodes along the blue line will create one (from u/WhistleOfDeath)")}`,
+        answers : `${image("https://i.ibb.co/N3MVNnd/IMG-20230314-093923.jpg", "Capturing all nodes along the blue line will create one (from u/WhistleOfDeath)")}`,
         tags : [dTag.MAP, dTag.SYSMECH]
     },
     {
@@ -3288,6 +3288,20 @@ export const cardData = [
         questions : `When do pets in the Rescue Station change?`,
         answers : `3 days without buying them, arguably the next day if you do.`,
         tags : [dTag.PET]
+    },
+    {
+        id : '00428',
+        questions : `How do I deal with each enemy?`,
+        answers : `GFC Spreadsheet. A bit outdated though.
+        ${Embed.google(Embed.G_EXCEL, "1TjHC4Vaed8dFqSkagM6teNlmBjFGPiUbTRnTnvxnnu4")}`,
+        tags : [dTag.ENEMY]
+    },
+    {
+        id : '00429',
+        questions : `When will a zone get a support bonus?`,
+        answers : `When that zone has the lowest total score.<br>
+        ${image("https://cdn.discordapp.com/attachments/640157367056728133/1077929307139231754/unknown.png", "Score threshold per stage (From u/Mich997)")}`,
+        tags : [dTag.THEATER]
     },
     {
         id : '00000',
