@@ -62,7 +62,7 @@ export function gdocDropdown(grouperElem, ...nameLinkPair) {
  * @param {Array[]} tableMatrix First row will be used as header.
  * @param {{sort: boolean|function(HTMLElement), filter: boolean, frzcol: boolean, frzhdr: boolean}} */
 export function table(grouperElem, tableMatrix, {sort = false, filter = false, frzcol = false, frzhdr = false} = {}) {
-    console.log("Use 'tableWithSort' for sorted tables.");
+    alert("Use 'tableWithSort' for sorted tables.");
 
     const headerElems = tableMatrix.shift().map(value => {
         const th = document.createElement("th");
@@ -250,6 +250,7 @@ export function tableSort(grouperElem, tableMatrix, mapping, {frzcol = false, fr
         /** @type {HTMLTableCellElement} */ const cell = this;
         /** @type {Array} */
         const sorted_array = {
+            no: function() {return this.lo},
             hi() {
                 const index = cell.dataset.index;
                 cell.dataset.sort = "lo";
@@ -258,7 +259,7 @@ export function tableSort(grouperElem, tableMatrix, mapping, {frzcol = false, fr
                     string: () => tableMatrix.sort(compare({key: x => x[index], reverse: true})),
                     number: () => tableMatrix.sort(compare({key: x => x[index]})),
                     array: () => tableMatrix.sort(compare({key: x => [x[index].length, x[index]]})),
-                    dom: () => null
+                    object: () => tableMatrix.sort(compare({key: x => {let y = Object.keys(x[index]); return [y.length, y]}}))
                 }[cell.dataset.type]()
             },
             lo() {
@@ -269,7 +270,7 @@ export function tableSort(grouperElem, tableMatrix, mapping, {frzcol = false, fr
                     string: () => tableMatrix.sort(compare({key: x => x[index]})),
                     number: () => tableMatrix.sort(compare({key: x => x[index], reverse: true})),
                     array: () => tableMatrix.sort(compare({key: x => [~x[index].length, x[index]]})),
-                    dom: () => null
+                    object: () => tableMatrix.sort(compare({key: x => {let y = Object.keys(x[index]); return [~y.length, y]}}))
                 }[cell.dataset.type]()
             }
         }[cell.dataset.sort]();
@@ -279,7 +280,7 @@ export function tableSort(grouperElem, tableMatrix, mapping, {frzcol = false, fr
     }
 
     for (const [index, headerCell] of Object.entries(headerElems)) {
-        setAttr(headerCell.dataset, {sort: "lo", index: index, type: type(samplerow[index])});
+        setAttr(headerCell.dataset, {sort: "no", index: index, type: type(samplerow[index])});
         headerCell.addEventListener("click", sortMethod, true);
     }
 
