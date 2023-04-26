@@ -193,7 +193,7 @@
     },
     {
         "name": "Mai",
-        "class": "Class",
+        "class": "Specialist",
         "reference": {},
         "fragments": ["Neural Kits", "Intimacy", "Fragment Search", "Basic Search", "Vulnerability Check", "Rossum Sector", "Cyclopes Sector"],
         "hp": 17225,
