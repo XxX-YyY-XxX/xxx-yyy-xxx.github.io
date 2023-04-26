@@ -250,7 +250,7 @@ export function tableSort(grouperElem, tableMatrix, mapping, {frzcol = false, fr
         /** @type {HTMLTableCellElement} */ const cell = this;
         /** @type {Array} */
         const sorted_array = {
-            no: function() {return this.lo},
+            no: function() {return this.lo()},
             hi() {
                 const index = cell.dataset.index;
                 cell.dataset.sort = "lo";
@@ -274,9 +274,6 @@ export function tableSort(grouperElem, tableMatrix, mapping, {frzcol = false, fr
                 }[cell.dataset.type]()
             }
         }[cell.dataset.sort]();
-
-        console.log(type(sorted_array))
-        console.log(sorted_array)
 
         const new_sort = Array.from(tbodyElem.children).sort(compare({key: leadkey, array: sorted_array.map(x => x[0])}));
         tbodyElem.replaceChildren(...new_sort);
