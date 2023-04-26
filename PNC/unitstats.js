@@ -5,8 +5,8 @@ import {Async} from "../univasset/scripts/externaljavascript.js";
 
 const str = x => initializeHTML("td", {textContent: x});
 const per = x => initializeHTML("td", {textContent: `${x}%`});
-const arr = x => initializeHTML("td", {appendChild: brJoin(x)});
-const ref = x => initializeHTML("td", {appendChild: brJoin(Object.entries(x).map(([name, link]) => initializeHTML("a", {textContent: name, href: link})))});
+const arr = x => initializeHTML("td", {appendChild: [brJoin(x)]});
+const ref = x => initializeHTML("td", {appendChild: [brJoin(Object.entries(x).map(([name, link]) => initializeHTML("a", {textContent: name, href: link})))]});
 
 tableSort(document.querySelector("#stats > div"),
     units.map(({name, hp, atk, hash, pdef, odef, aspd, crate, cdmg, ppen, open, dodge, regen, cdr, res, backlash, dmgamp, dmgreduc, healamp}) => 

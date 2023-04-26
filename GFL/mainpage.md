@@ -112,6 +112,8 @@
 > - [Smasher cheese.](https://old.reddit.com/r/girlsfrontline/comments/w2n556/weekly_commanders_lounge_july_19_2022/ihcdm9j/)
 >
 > - [Luffberry Gacha.](https://old.reddit.com/r/girlsfrontline/comments/x74mpx/weekly_commanders_lounge_september_06_2022/ingul31/)
+>
+> - [In-game text.](https://github.com/randomqwerty/GFLData/find/main)
 
 # Android Viability Checks (Mostly on Android 12)
 

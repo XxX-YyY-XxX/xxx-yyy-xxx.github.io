@@ -454,7 +454,12 @@ export const cardData = [
                 link('Gamepress list of units and build suggestions.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units'),
                 link('BigStupidJellyfish guide.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ringleader-echelon')
             ],
-            'Tactical Doll Echelons' : [link("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv')]
+            'Tactical Doll Echelons' : [
+                link("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv'),
+                link("ARSMG by warorpeace#7149.", "https://docs.google.com/document/d/e/2PACX-1vR4OYslSVaE5mv6xyu7rIun24Ltu0SWsEzwOrER2MiWseDt5Fy5LjFFEZZzTDvl9C2Xb7g3pcWObSC4/pub"),
+                link("RFHG by warorpeace#7149.", "https://docs.google.com/document/d/e/2PACX-1vTR8LNVuBX4FiaAxLus5zZO6M4hQCu_4Fec0S0rqMmhPMXQXMcnU4uPhwwYAHOQDB5I9nq0VqSJd4-p/pub"),
+                spoilerSummary("MGSG by canoxin#2789.", Embed.google(Embed.G_WORD, "1-O7398S5sHcowCI8lp5Ktu_AiUBydJuvVHV-dX7g-l8"))
+            ]
         })}<br>
         Shouldn't be a gospel but a good starting point nonetheless.<br>
         ${link('u/UnironicWeeaboo tips.', 'https://old.reddit.com/r/girlsfrontline/comments/vmhs0x/weekly_commanders_lounge_june_28_2022/ie3bw95/')}`,
@@ -1541,12 +1546,12 @@ export const cardData = [
         id : '00166',
         questions : `What does each gun class do?`,
         answers : `${table(['Class', 'Roles', 'Target Priority', 'Caveat'],
-        ['Assualt Rifle (AR)', 'Anti-Swarm<br>Anti-Boss', 'Frontline', 'Weak to armored enemies'],
-        ['Submachine Gun (SMG)', 'Evasion Tank<br>Anti-Swarm', 'Frontline', 'Accuracy is non-existent'],
-        ['Rifle (RF)', 'Anti-Armor', 'Backline', 'Weak to swarms<br>Affected by night penalty'],
-        ['Handgun (HG)', 'Buffer<br>Debuffer', '???', 'Cannot facetank'],
-        ['Machine Gun (MG)', 'Opening Volley', 'Random', 'Reloads/Stops shooting at around 6s<br>Weak to high evasion'],
-        ['Shotgun (SG)', 'Armor Tank', 'Frontline', 'Poor evasion'])}`,
+        ['Assualt Rifle (AR)',      'Anti-Swarm<br>Sustained DPS',  'Frontline',    'Weak to armored enemies'],
+        ['Submachine Gun (SMG)',    'Evasion Tank<br>Anti-Swarm',   'Frontline',    'Accuracy is non-existent'],
+        ['Rifle (RF)',              'Big Damage<br>Anti-Armor',     'Backline',     'Weak to swarms<br>Affected by night penalty'],
+        ['Handgun (HG)',            'Buffer<br>Debuffer',           '???',          'Cannot facetank'],
+        ['Machine Gun (MG)',        'Opening Volley',               'Random',       'Reloads/Stops shooting at around 6s<br>Weak to high evasion'],
+        ['Shotgun (SG)',            'Armor Tank',                   'Frontline',    'Poor evasion'])}`,
         tags : [dTag.TDOLL, dTag.BATTLE, dTag.NEWB]
     },
     {
@@ -3302,6 +3307,12 @@ export const cardData = [
         answers : `When that zone has the lowest total score.<br>
         ${image("https://cdn.discordapp.com/attachments/640157367056728133/1077929307139231754/unknown.png", "Score threshold per stage (From u/Mich997)")}`,
         tags : [dTag.THEATER]
+    },
+    {
+        id : '00430',
+        questions : `Where can I read the Griffin Memories?`,
+        answers : `${image("./assets/images/GriffinMemories.png", "Bookshelf of Memories found in the Data Room")}`,
+        tags : [dTag.SIDE]
     },
     {
         id : '00000',
