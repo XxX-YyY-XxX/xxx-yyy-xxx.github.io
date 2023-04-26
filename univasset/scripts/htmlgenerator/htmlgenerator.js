@@ -275,6 +275,9 @@ export function tableSort(grouperElem, tableMatrix, mapping, {frzcol = false, fr
             }
         }[cell.dataset.sort]();
 
+        console.debug(type(sorted_array))
+        console.debug(sorted_array)
+
         const new_sort = Array.from(tbodyElem.children).sort(compare({key: leadkey, array: sorted_array.map(x => x[0])}));
         tbodyElem.replaceChildren(...new_sort);
     }
