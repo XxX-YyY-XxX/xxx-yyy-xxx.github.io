@@ -53,6 +53,23 @@
                 linear-gradient(-45deg, #1b1b1b, transparent 50%),
                 linear-gradient(gray 50%, red) !important;
         }
+
+        #button {
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            border-style: initial;
+        }
+
+        #button > label {
+            background-color: transparent;
+            line-height: 10px;
+            flex: calc(100% / 2);
+        }
+
+        #button > label:has(input:checked) {
+            background-color: darkgreen;
+        }
     </style>
 
     <body>

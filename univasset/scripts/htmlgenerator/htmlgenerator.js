@@ -329,8 +329,8 @@ export function radioGroup(grouperElem, radioName, ...perButtonFunc) {
     /** @type {HTMLInputElement} */ var current_checked;
 
     const fragment = new DocumentFragment();
-    for (const [text, value, func] of perButtonFunc) {
-        const inputElem = initializeHTML('input', {value: value, type: 'radio', name: radioName});
+    for (const [index, [text, value, func]] of Object.entries(perButtonFunc)) {
+        const inputElem = initializeHTML('input', {value: value, type: 'radio', name: radioName, checked: !Number(index)});
         inputElem.addEventListener('click', function() {
             if (current_checked === this) return
             radio_functions.get(current_checked.value)(current_checked);
@@ -338,11 +338,13 @@ export function radioGroup(grouperElem, radioName, ...perButtonFunc) {
             func(this);
         });
         fragment.appendChild(initializeHTML('label', {append: [inputElem, text]}));
+        func(inputElem);
     }
 
     current_checked = fragment.firstElementChild.firstElementChild;
-    current_checked.checked = true;
-    radio_functions.get(current_checked.value)(current_checked);
+    //current_checked.checked = true;
+    //may need to iterate run each function
+    //radio_functions.get(current_checked.value)(current_checked);
 
     grouperElem.classList.add('func_radioGroup');
     grouperElem.appendChild(fragment);
