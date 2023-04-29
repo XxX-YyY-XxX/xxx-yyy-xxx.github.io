@@ -342,9 +342,6 @@ export function radioGroup(grouperElem, radioName, ...perButtonFunc) {
     }
 
     current_checked = fragment.firstElementChild.firstElementChild;
-    //current_checked.checked = true;
-    //may need to iterate run each function
-    //radio_functions.get(current_checked.value)(current_checked);
 
     grouperElem.classList.add('func_radioGroup');
     grouperElem.appendChild(fragment);
