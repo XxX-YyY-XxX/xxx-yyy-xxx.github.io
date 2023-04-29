@@ -12,8 +12,8 @@ const ref = x => initializeHTML("td", {appendChild: [brJoin(Object.entries(x).ma
 /** @type {HTMLElement} */ const dataelem = document.querySelector("#data");
 
 radioGroup(document.querySelector("#button"), "tables",
-    ["Stats", "stat", function(x) {statelem.style.display = x.checked ? "block" : "none"}],
-    ["Others", "data", function(x) {dataelem.style.display = x.checked ? "block" : "none"}]
+    [initializeHTML("h2", {textContent: "Stats"}), "stat", function(x) {statelem.style.display = x.checked ? "block" : "none"}],
+    [initializeHTML("h2", {textContent: "Others"}), "data", function(x) {dataelem.style.display = x.checked ? "block" : "none"}]
 );
 
 tableSort(document.querySelector("#stats > div"),
