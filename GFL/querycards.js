@@ -1003,7 +1003,7 @@ export const cardData = [
         questions : `Where to use gems?`,
         answers : `${List.ordered(
             'Echelon slots (costing 880, not 380) up to 6 minimum, 8 for actually constant (ranking not included) logistics.',
-            '5 dorms for batteries, enough to upgrade important facilities. More than that is your call.',
+            '5 dorms total for batteries, enough to upgrade important facilities. More than that is your call.',
             "Storage slots especially if you're a collector. Or whenever you're getting annoyed with the pop-up.",
             'Your Mileage May Vary (YMMV).')}`,
         tags : [dTag.NEWB, dTag.GEMS]
