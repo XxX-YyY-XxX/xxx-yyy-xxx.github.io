@@ -54,12 +54,6 @@
         "event" : "Christmas"
     },
     {
-        "name" : "Maghnilda (X)",
-        "reference" : {"" : ""},
-        "fragments" : ["Fragment Search"],
-        "event" : ""
-    },
-    {
         "name" : "Clotho (X)",
         "reference" : {"" : "King's Raid Jane"},
         "fragments" : ["Fragment Search"],

@@ -1178,6 +1178,30 @@
         "dmgreduc": 0,
         "healamp": 0
     },
+    {
+        "name": "Magnhilda",
+        "class": "Warrior",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
+        "hp": -1,
+        "atk": -1,
+        "hash": -1,
+        "pdef": -1,
+        "odef": -1,
+        "aspd": -1,
+        "crate": -1,
+        "cdmg": 50,
+        "ppen": -1,
+        "open": -1,
+        "dodge": -1,
+        "regen": -1,
+        "cdr": 0,
+        "res": 0,
+        "backlash": 0,
+        "dmgamp": 0,
+        "dmgreduc": 0,
+        "healamp": 0
+    },
 
     {
         "name": "Doll Name",

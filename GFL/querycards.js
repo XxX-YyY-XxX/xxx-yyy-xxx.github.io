@@ -33,6 +33,7 @@ export const dTag = {
             TCM : {name: 'TrueCoreMask', description: `Used to redeem 5${star} prod dolls.`},
             GEMS : {name: 'Gems', description: 'Kalina demands you spend these on her.'},
             BATTERY : {name: 'Battery', description: 'Currency for upgrading facilities.'},
+            CORE : {name: 'DummyCore', description: 'Used for dummy-linking, neural upgrades, and fairy/SG crafts.'},
         FAIRY : {name: 'Fairies', description: 'Sixth man of the team.'},
         FST : {name: 'FireSupportTeam', description: 'Rockets and mortars, the first of the HOC.'},
     //#endregion
@@ -142,7 +143,8 @@ export const cardData = [
         questions : `Are there any general guides for Protocol Assimilation/Coalition Units/SF Capture Operation?`,
         answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
-        ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-first-impressions-revamped')}<br>
+        ${link('Gamepress guide 1.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-first-impressions-revamped')}<br>
+        ${link("Gamepress guide 2.", "https://gamepress.gg/girlsfrontline/protocol-assimilation-coalition-basics-and-teambuilding-how-acquire-sf-waifus")}
         ${spoilerSummary("Cleista's basic Twitter guide.", Embed.twitter('CleistaCeleste', '1409824210571214849'))}`,
         tags : [dTag.PA, dTag.PRIME]
     },
@@ -406,6 +408,15 @@ export const cardData = [
                 'Fairies']
         })}`,
         tags : [dTag.TDOLL, dTag.ECH, dTag.LEVEL, dTag.IMPT]
+    },
+    {
+        id : '00433',
+        questions : `What is Dummy-linking?`,
+        answers : `A game mechanic to increase the total damage dealt and the health pool of a doll, and tile bonuses for HGs.<br>
+        Each newly-acquired doll starts at dummy link 1.<br>
+        The level thresholds of dolls to enable linking are levels 10(x2), 30(x3), 70(x4), 90(x5).<br>
+        Which is why the general consensus on leveling is to stop at Lv.90, and why RFHGs are often regarded as mid-late game builds.`,
+        tags : [dTag.SYSMECH, dTag.TDOLL, dTag.IMPT]
     },
     {
         id : '00026',
@@ -798,9 +809,11 @@ export const cardData = [
     {
         id : '00070',
         questions : `Do events get a rerun? And if so, when?`,
-        answers : `Major events get a permanent rerun called Campaign Missions 6 months minimum after their initial release.<br>
-        Seasonal events get one when it's their time.<br>
-        Collabs are subject to their holders whims.`,
+        answers : `${List.description({
+            "Major Events": ["Gets a permanent rerun called Campaign Missions 6 months minimum after their initial release."],
+            "Seasonal Events": ["Gets one when it's their time.", "Much older ones will be added to Campaign Mission."],
+            "Collab Events": ["Subjected to their holders whims."]
+        })}`,
         tags : [dTag.MAJOR, dTag.CAMPAIGN, dTag.SEASON, dTag.COLLAB]
     },
     {
@@ -1299,7 +1312,7 @@ export const cardData = [
         id : '00132',
         questions : `Read a guide that said to use a team of 2${star} & 3${star} dolls until I get enough cores to spend. Is it still worth doing it now?`,
         answers : `With the advent of Expeditions and Newbie Career Quests, you get enough dummy cores right off the bat. Don't overspend still.`,
-        tags : [dTag.ITEM]
+        tags : [dTag.ITEM, dTag.CORE]
     },
     {
         id : '00133',
@@ -1494,7 +1507,7 @@ export const cardData = [
         Run any daytime leveling maps for combined core and exp farming.<br>
         You can also farm during core rate up by using the handgun recipe.<br>
         Or buy from the Black Market every first day of the month.`,
-        tags : [dTag.ITEM, dTag.GET]
+        tags : [dTag.ITEM, dTag.CORE, dTag.GET]
     },
     {
         id : '00160',
@@ -2231,7 +2244,8 @@ export const cardData = [
             'Supernova' : ['Additive crit rate.'],
             'K2' : ["ROF around 90 to maximize the ICD up to 100 if there's a run-up to auto her skill."],
             'Sterling' : ['M3', 'PPSh-41 (+MOD)', 'PP-2000', 'PPS-43', 'Sten MKII', 'EVO 3', 'PP-19 (+MOD)', 'Sterling'],
-            "M4 SOPMOD II": [link("M4 interaction still borked (by u/UnironicWeeaboo).", "https://imgur.com/a/7eSGbu6")]
+            "M4 SOPMOD II": [link("M4 interaction still borked (by u/UnironicWeeaboo).", "https://imgur.com/a/7eSGbu6")],
+            "Ribeyrolles": [`MOD skill do not count for AS Val's MOD skill, most likely due to buff counting as a "unit".`]
         })}`,
         tags : [dTag.TDOLL, dTag.SKILL]
     },
@@ -2959,7 +2973,7 @@ export const cardData = [
         id : '00380',
         questions : `Do I need Dummy Cores for upgrading Coalition Units?`,
         answers : `No. They have their own resources.`,
-        tags : [dTag.COALITION, dTag.LEVEL, dTag.ITEM]
+        tags : [dTag.COALITION, dTag.LEVEL, dTag.ITEM, dTag.CORE]
     },
     {
         id : '00381',
@@ -3313,6 +3327,18 @@ export const cardData = [
         questions : `Where can I read the Griffin Memories?`,
         answers : `${image("./assets/images/GriffinMemories.png", "Bookshelf of Memories found in the Data Room")}`,
         tags : [dTag.SIDE]
+    },
+    {
+        id : '00431',
+        questions : `Which map is the fastest for the killing armored units?`,
+        answers : `8-1N is easy enough and has numerous Tarantulas.`,
+        tags : [dTag.ENEMY]
+    },
+    {
+        id : '00432',
+        questions : `"Your session has expired." What does that even mean?`,
+        answers : `Too many user inputs during log-in. Just chill out and let it cook.`,
+        tags : [dTag.TECH]
     },
     {
         id : '00000',
