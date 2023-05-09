@@ -3,11 +3,11 @@
     <head>
         <script type="module" src="/univasset/scripts/include/include.js"></script>
         <script type="module">
-            import {AsyncFunc} from '/univasset/scripts/externaljavascript.js';
+            import {Async} from '/univasset/scripts/externaljavascript.js';
             import {table} from '/univasset/scripts/htmlgenerator/htmlgenerator.js';
             import {zip} from '/univasset/scripts/basefunctions/index.js';
 
-            const jsonObject = await AsyncFunc.getJSON('https://raw.githubusercontent.com/randomqwerty/GFLData/main/en/stc/enemy_character_type.json');
+            const jsonObject = await Async.getJSON('https://raw.githubusercontent.com/randomqwerty/GFLData/main/en/stc/enemy_character_type.json');
             const matrix = [['No', 'Elites', 'Non-Elites']];
             var elite = new Set(), nonelite = new Set();
 

@@ -4,7 +4,7 @@ import {type, zip} from '../basefunctions/index.js';
 /** @param {(string | Node)[]} elements */
 export function brJoin(elements) {
     const fragment = new DocumentFragment();
-    fragment.append(...elements.flatMap(item => [item, document.createElement('br')]).slice(0, -1));    
+    fragment.append(...elements.flatMap(item => [item, document.createElement("br")]).slice(0, -1));    
     return fragment;
 }
 
@@ -35,26 +35,29 @@ export function initializeHTML(createElement, attributes) {
 }
 
 /** Creates a field for Google Sheets.
- * @param {HTMLElement} grouperElem
- * @param {[str, str][]} nameLinkPair [Name of Google Sheet, Link of Google Sheet ending in alphanumeric] */
-export function gdocDropdown(grouperElem, ...nameLinkPair) {
-    const selectElem = document.createElement('select');
-    const buttonElem = initializeHTML('button', {textContent: 'Source', type: 'button'});
-    const iframeElem = initializeHTML('iframe', {loading: 'lazy'});
+ * @param {HTMLElement} grouper_elem
+ * @param {[string, string][]} namelinkpair [Name of Google Sheet, Link of Google Sheet ending in alphanumeric] */
+export function gdocDropdown(grouper_elem, ...namelinkpair) {
+    const embedtext = "/preview?pli=1";
+    const select_elem = document.createElement("select");
+    const button_elem = document.createElement("button");
+    setAttr(button_elem, {textContent: "Source", type: "button"});
+    const iframe_elem = document.createElement("iframe");
+    iframe_elem.loading = "lazy";
 
-    selectElem.addEventListener('change', function() {
-        iframeElem.src = this.selectedOptions[0].value + '/preview?pli=1';
-    });
+    select_elem.addEventListener("change", function() {iframe_elem.src = this.selectedOptions[0].value + embedtext});
+    button_elem.addEventListener("click", () => window.open(select_elem.selectedOptions[0].value));
 
-    buttonElem.addEventListener('click', function() {
-        window.open(selectElem.selectedOptions[0].value);
-    });
+    for (const [name, link] of namelinkpair) {
+        const option = document.createElement("option");
+        setAttr(option, {textContent: name, value: link});
+        select_elem.appendChild(option);
+    }
 
-    selectElem.append(...nameLinkPair.map(([name, link]) => initializeHTML('option', {textContent: name, value: link})));
-    iframeElem.src = selectElem.firstElementChild.value + '/preview?pli=1';
+    iframe_elem.src = select_elem.firstElementChild.value + embedtext;
 
-    grouperElem.classList.add('func_googleDoc');
-    grouperElem.append(selectElem, buttonElem, document.createElement('br'), iframeElem);
+    grouper_elem.classList.add("func_googleDoc");
+    grouper_elem.append(select_elem, button_elem, document.createElement("br"), iframe_elem);
 }
 
 /** Creates a table from a given matrix of data.
@@ -306,8 +309,8 @@ export function tableSort(grouper_elem, tablematrix, mapping, {frzcol = false, f
  * @param {{onEnd: function(): void, interval: number}} onEnd Event listener for when timer reaches 0.
  * @param interval Time it takes to update the timer, in milliseconds. Default 1000. */
 export function timer(grouper_elem, date, eventURL = '', {onEnd = null, interval = 1000} = {}) {
-    const time = new Timer(date)
-    if (time.done) {onEnd?.(); return}
+    const time = new Timer(date);
+    if (time.done) {onEnd?.(); return};
 
     const spanElem = document.createElement('span');
     const countdown = setInterval(function() {
