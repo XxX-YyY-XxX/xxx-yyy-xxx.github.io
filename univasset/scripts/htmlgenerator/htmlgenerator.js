@@ -34,21 +34,17 @@ export function initializeHTML(createElement, attributes) {
     return outerElem ?? innerElem;
 }
 
-/**
- * 
- * @param  {...keyof HTMLElementTagNameMap} tagname 
- * @returns 
- */
-export function nestElements(...tagname) {
-    var parent, child;
-    const output = Array();
-    for (const tag of tagname) {
-        if (parent === undefined) {
-
-        } else {
-
-        }
-    }
+/** Creates an array of nodes that nests rightwards. First element is the main parent.
+ * @template {keyof HTMLElementTagNameMap} T0
+ * @template {keyof HTMLElementTagNameMap} T1
+ * @param {T0} tag0
+ * @param {T1} tag1
+ * @returns {[HTMLElementTagNameMap[T0], HTMLElementTagNameMap[T1]]} */
+export function nestElements(tag0, tag1) {
+    const e0 = document.createElement(tag0);
+    const e1 = document.createElement(tag1);
+    e0.appendChild(e1);
+    return [e0, e1];
 }
 
 /** Creates a field for Google Sheets.
@@ -82,7 +78,7 @@ export function gdocDropdown(grouper_elem, ...namelinkpair) {
  * @param {Array[]} tableMatrix First row will be used as header.
  * @param {{sort: boolean|function(HTMLElement), filter: boolean, frzcol: boolean, frzhdr: boolean}} */
 export function table(grouperElem, tableMatrix, {sort = false, filter = false, frzcol = false, frzhdr = false} = {}) {
-    alert("Use 'tableWithSort' for sorted tables.");
+    console.error("Use 'tableWithSort' for sorted tables.");
 
     const headerElems = tableMatrix.shift().map(value => {
         const th = document.createElement("th");
@@ -245,15 +241,13 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
  * @param {{frzcol: boolean, frzhdr: boolean}} */
 export function tableSort(grouper_elem, tablematrix, mapping, {frzcol = false, frzhdr = false} = {}) {
     //Almost always a string
+    const [thead_elem, tr_elem] = nestElements("thead", "tr");
     const header_elems = tablematrix.shift().map(value => {
         const th = document.createElement("th");
         th.textContent = value;
         return th;
     });
-    const tr_elem = document.createElement("tr");
     tr_elem.append(...header_elems);
-    const thead_elem = document.createElement("thead");
-    thead_elem.appendChild(tr_elem);
 
     const tbodyElem = document.createElement("tbody");
     for (const rows of tablematrix) {
@@ -356,7 +350,7 @@ export function timer(grouper_elem, date, eventURL = '', {onEnd = null, interval
 /** Creates a radio group. Clicked button only runs when it's unchecked. First button is the default checked.
  * @param {HTMLElement} grouper_elem
  * @param {string} radioname Name of the radio group. Most useful on form submissions.
- * @param {[string | HTMLElement, string, function(HTMLInputElement): void][]} buttondata [textContent, value, onclick function] Each function should have code on select and deselect. */
+ * @param {...[string | HTMLElement, string, function(HTMLInputElement): void]} buttondata [textContent, value, onclick function] Each function should have code on select and deselect. */
 export function radioGroup(grouper_elem, radioname, ...buttondata) {
     const radio_functions = new Map(buttondata.map(([, value, func]) => [value, func]));
     /** @type {HTMLInputElement} */ var current_checked;
