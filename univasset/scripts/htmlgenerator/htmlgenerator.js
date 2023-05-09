@@ -34,6 +34,23 @@ export function initializeHTML(createElement, attributes) {
     return outerElem ?? innerElem;
 }
 
+/**
+ * 
+ * @param  {...keyof HTMLElementTagNameMap} tagname 
+ * @returns 
+ */
+export function nestElements(...tagname) {
+    var parent, child;
+    const output = Array();
+    for (const tag of tagname) {
+        if (parent === undefined) {
+
+        } else {
+
+        }
+    }
+}
+
 /** Creates a field for Google Sheets.
  * @param {HTMLElement} grouper_elem
  * @param {[string, string][]} namelinkpair [Name of Google Sheet, Link of Google Sheet ending in alphanumeric] */
@@ -224,7 +241,7 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
 /** Creates a sortable table from a given matrix of data.
  * @param {HTMLElement} grouper_elem
  * @param {Array[]} tablematrix First row will be used as header.
- * @param {(function(any): HTMLTableCellElement)[]} mapping
+ * @param {(function(HTMLTableCellElement, any): void)[]} mapping
  * @param {{frzcol: boolean, frzhdr: boolean}} */
 export function tableSort(grouper_elem, tablematrix, mapping, {frzcol = false, frzhdr = false} = {}) {
     //Almost always a string
@@ -240,11 +257,17 @@ export function tableSort(grouper_elem, tablematrix, mapping, {frzcol = false, f
 
     const tbodyElem = document.createElement("tbody");
     for (const rows of tablematrix) {
-        const rowElems = rows.map((value, index) => mapping[index](value));
-        tbodyElem.appendChild(setAttr(document.createElement("tr"), {append: rowElems}));
+        const tr = document.createElement("tr");
+        tr.append(...rows.map((value, index) => {
+            const td = document.createElement("td");
+            mapping[index](td, value);
+            return td;
+        }));
+        tbodyElem.appendChild(tr);
     }
 
-    const tableElem = initializeHTML("table", {append: [thead_elem, tbodyElem]});
+    const table_elem = document.createElement("table");
+    table_elem.append(thead_elem, tbodyElem);
 
     const samplerow = tablematrix[0];
 
@@ -295,11 +318,11 @@ export function tableSort(grouper_elem, tablematrix, mapping, {frzcol = false, f
         headerCell.addEventListener("click", sortMethod, true);
     }
 
-    if (frzcol) tableElem.classList.add("freeze_col");
-    if (frzhdr) tableElem.classList.add("freeze_row");
+    if (frzcol) table_elem.classList.add("freeze_col");
+    if (frzhdr) table_elem.classList.add("freeze_row");
 
     grouper_elem.classList.add("func_table");
-    grouper_elem.appendChild(tableElem);
+    grouper_elem.appendChild(table_elem);
 }
 
 /** Creates a timer for events.

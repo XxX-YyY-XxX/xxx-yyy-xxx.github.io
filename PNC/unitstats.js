@@ -3,13 +3,13 @@ import {Async} from "../univasset/scripts/externaljavascript.js";
 
 /** @type {Array} */ const units = (await Async.getJSON('./unitstats.json')).slice(0, -1);
 
-const str = x => initializeHTML("td", {textContent: x});
-const per = x => initializeHTML("td", {textContent: `${x}%`});
-const arr = x => initializeHTML("td", {appendChild: [brJoin(x)]});
-const ref = x => initializeHTML("td", {appendChild: [brJoin(Object.entries(x).map(([name, link]) => initializeHTML("a", {textContent: name, href: link})))]});
+const str = (x, y) => {x.textContent = y};
+const per = (x, y) => {x.textContent = `${y}%`};
+const arr = (x, y) => {x.appendChild(brJoin(y))};
+const ref = (x, y) => {x.appendChild(brJoin(Object.entries(y).map(([name, link]) => initializeHTML("a", {textContent: name, href: link}))))};
 
-/** @type {HTMLElement} */ const statelem = document.querySelector("#stats");
-/** @type {HTMLElement} */ const dataelem = document.querySelector("#data");
+const statelem = document.querySelector("#stats");
+const dataelem = document.querySelector("#data");
 
 radioGroup(document.querySelector("#button"), "tables",
     [initializeHTML("h2", {textContent: "Stats"}), "stat", function(x) {statelem.style.display = x.checked ? "block" : "none"}],
