@@ -168,6 +168,10 @@ export function splitTime(milliseconds) {
 export function setAttr(base, attributes) {
     for (const [attrib, value] of Object.entries(attributes)) {
         switch (type(value)) {
+            case "string":
+            case "number":
+                base[attrib] = value;
+                break;
             case "array":
                 base[attrib](...value);
                 break;
@@ -175,7 +179,7 @@ export function setAttr(base, attributes) {
                 setAttr(base[attrib], value);
                 break;
             default:
-                base[attrib] = value;
+                console.error("Unknown data type:", type(value), value);
                 break;
         }
     }

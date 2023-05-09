@@ -219,23 +219,31 @@ export function table(grouperElem, tableMatrix, {sort = false, filter = false, f
 }
 
 /** Creates a sortable table from a given matrix of data.
- * @param {HTMLElement} grouperElem
- * @param {Array[]} tableMatrix First row will be used as header.
+ * @param {HTMLElement} grouper_elem
+ * @param {Array[]} tablematrix First row will be used as header.
  * @param {(function(any): HTMLTableCellElement)[]} mapping
  * @param {{frzcol: boolean, frzhdr: boolean}} */
-export function tableSort(grouperElem, tableMatrix, mapping, {frzcol = false, frzhdr = false} = {}) {
-    const headerElems = tableMatrix.shift().map(value => initializeHTML("th", {textContent: value}));   //Almost always a string
-    /** @type {HTMLTableSectionElement} */ const theadElem = initializeHTML("thead tr", {append: headerElems});
+export function tableSort(grouper_elem, tablematrix, mapping, {frzcol = false, frzhdr = false} = {}) {
+    //Almost always a string
+    const header_elems = tablematrix.shift().map(value => {
+        const th = document.createElement("th");
+        th.textContent = value;
+        return th;
+    });
+    const tr_elem = document.createElement("tr");
+    tr_elem.append(...header_elems);
+    const thead_elem = document.createElement("thead");
+    thead_elem.appendChild(tr_elem);
 
     const tbodyElem = document.createElement("tbody");
-    for (const rows of tableMatrix) {
+    for (const rows of tablematrix) {
         const rowElems = rows.map((value, index) => mapping[index](value));
-        tbodyElem.appendChild(initializeHTML("tr", {append: rowElems}));
+        tbodyElem.appendChild(setAttr(document.createElement("tr"), {append: rowElems}));
     }
 
-    const tableElem = initializeHTML("table", {append: [theadElem, tbodyElem]});
+    const tableElem = initializeHTML("table", {append: [thead_elem, tbodyElem]});
 
-    const samplerow = tableMatrix[0];
+    const samplerow = tablematrix[0];
 
     /** @type {function(HTMLTableRowElement): string | number | null} */
     const leadkey = {
@@ -256,10 +264,10 @@ export function tableSort(grouperElem, tableMatrix, mapping, {frzcol = false, fr
                 cell.dataset.sort = "lo";
 
                 return {
-                    string: () => tableMatrix.sort(compare({key: x => x[index], reverse: true})),
-                    number: () => tableMatrix.sort(compare({key: x => x[index]})),
-                    array: () => tableMatrix.sort(compare({key: x => [x[index].length, x[index]]})),
-                    object: () => tableMatrix.sort(compare({key: x => {let y = Object.keys(x[index]); return [y.length, y]}}))
+                    string: () => tablematrix.sort(compare({key: x => x[index], reverse: true})),
+                    number: () => tablematrix.sort(compare({key: x => x[index]})),
+                    array: () => tablematrix.sort(compare({key: x => [x[index].length, x[index]]})),
+                    object: () => tablematrix.sort(compare({key: x => {let y = Object.keys(x[index]); return [y.length, y]}}))
                 }[cell.dataset.type]()
             },
             lo() {
@@ -267,10 +275,10 @@ export function tableSort(grouperElem, tableMatrix, mapping, {frzcol = false, fr
                 cell.dataset.sort = "hi";
 
                 return {
-                    string: () => tableMatrix.sort(compare({key: x => x[index]})),
-                    number: () => tableMatrix.sort(compare({key: x => x[index], reverse: true})),
-                    array: () => tableMatrix.sort(compare({key: x => [~x[index].length, x[index]]})),
-                    object: () => tableMatrix.sort(compare({key: x => {let y = Object.keys(x[index]); return [~y.length, y]}}))
+                    string: () => tablematrix.sort(compare({key: x => x[index]})),
+                    number: () => tablematrix.sort(compare({key: x => x[index], reverse: true})),
+                    array: () => tablematrix.sort(compare({key: x => [~x[index].length, x[index]]})),
+                    object: () => tablematrix.sort(compare({key: x => {let y = Object.keys(x[index]); return [~y.length, y]}}))
                 }[cell.dataset.type]()
             }
         }[cell.dataset.sort]();
@@ -279,7 +287,7 @@ export function tableSort(grouperElem, tableMatrix, mapping, {frzcol = false, fr
         tbodyElem.replaceChildren(...new_sort);
     }
 
-    for (const [index, headerCell] of Object.entries(headerElems)) {
+    for (const [index, headerCell] of Object.entries(header_elems)) {
         setAttr(headerCell.dataset, {sort: "no", index: index, type: type(samplerow[index])});
         headerCell.addEventListener("click", sortMethod, true);
     }
@@ -287,62 +295,62 @@ export function tableSort(grouperElem, tableMatrix, mapping, {frzcol = false, fr
     if (frzcol) tableElem.classList.add("freeze_col");
     if (frzhdr) tableElem.classList.add("freeze_row");
 
-    grouperElem.classList.add("func_table");
-    grouperElem.appendChild(tableElem);
+    grouper_elem.classList.add("func_table");
+    grouper_elem.appendChild(tableElem);
 }
 
 /** Creates a timer for events.
- * @param {HTMLElement} grouperElem
+ * @param {HTMLElement} grouper_elem
  * @param {string} date Mon dy, year hr:mn (UTC|GMT)±offs
  * @param {string} eventURL URL of the banner image.
  * @param {{onEnd: function(): void, interval: number}} onEnd Event listener for when timer reaches 0.
  * @param interval Time it takes to update the timer, in milliseconds. Default 1000. */
-export function timer(grouperElem, date, eventURL = '', {onEnd = null, interval = 1000} = {}) {
+export function timer(grouper_elem, date, eventURL = '', {onEnd = null, interval = 1000} = {}) {
     const time = new Timer(date)
-
-    if (time.done) {
-        onEnd?.();
-        return;
-    }
+    if (time.done) {onEnd?.(); return}
 
     const spanElem = document.createElement('span');
     const countdown = setInterval(function() {
         spanElem.textContent = splitTime(time.remaining).slice(0, -1).map(num => String(num).padStart(2, '0')).join(' : ');
         if (time.done) {
             clearInterval(countdown);
-            grouperElem.replaceChildren();
-            grouperElem.classList.remove('func_timer');
+            grouper_elem.replaceChildren();
+            grouper_elem.classList.remove('func_timer');
             onEnd?.();
         }
     }, interval);
 
-    grouperElem.classList.add('func_timer');
-    grouperElem.append(initializeHTML('img', {src: eventURL, alt: 'Image error.', loading: 'lazy'}), spanElem);    
+    grouper_elem.classList.add('func_timer');
+    grouper_elem.append(initializeHTML('img', {src: eventURL, alt: 'Image error.', loading: 'lazy'}), spanElem);    
 }
 
 /** Creates a radio group. Clicked button only runs when it's unchecked. First button is the default checked.
- * @param {HTMLElement} grouperElem
- * @param {string} radioName Name of the radio group. Most useful on form submissions.
- * @param {[string | HTMLElement, string, function(HTMLInputElement): void][]} perButtonFunc [textContent, value, onclick function] Each function should have code on select and deselect. */
-export function radioGroup(grouperElem, radioName, ...perButtonFunc) {
-    const radio_functions = new Map(perButtonFunc.map(([, value, func]) => [value, func]));
+ * @param {HTMLElement} grouper_elem
+ * @param {string} radioname Name of the radio group. Most useful on form submissions.
+ * @param {[string | HTMLElement, string, function(HTMLInputElement): void][]} buttondata [textContent, value, onclick function] Each function should have code on select and deselect. */
+export function radioGroup(grouper_elem, radioname, ...buttondata) {
+    const radio_functions = new Map(buttondata.map(([, value, func]) => [value, func]));
     /** @type {HTMLInputElement} */ var current_checked;
 
     const fragment = new DocumentFragment();
-    for (const [index, [text, value, func]] of Object.entries(perButtonFunc)) {
-        const inputElem = initializeHTML('input', {value: value, type: 'radio', name: radioName, checked: !Number(index)});
-        inputElem.addEventListener('click', function() {
-            if (current_checked === this) return
+    for (const [index, [text, value, func]] of Object.entries(buttondata)) {
+        const input_elem = document.createElement("input");
+        setAttr(input_elem, {value: value, type: "radio", name: radioname, checked: !Number(index)});
+        input_elem.addEventListener("click", function() {
+            if (current_checked === this) return;
             radio_functions.get(current_checked.value)(current_checked);
             current_checked = this;
             func(this);
         });
-        fragment.appendChild(initializeHTML('label', {append: [inputElem, text]}));
-        func(inputElem);
+        func(input_elem);
+
+        const label_elem = document.createElement("label");
+        label_elem.append(input_elem, text);
+        fragment.appendChild(label_elem);
     }
 
     current_checked = fragment.firstElementChild.firstElementChild;
 
-    grouperElem.classList.add('func_radioGroup');
-    grouperElem.appendChild(fragment);
+    grouper_elem.classList.add('func_radioGroup');
+    grouper_elem.appendChild(fragment);
 }
