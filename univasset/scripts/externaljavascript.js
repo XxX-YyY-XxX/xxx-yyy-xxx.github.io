@@ -164,12 +164,13 @@ export function splitTime(milliseconds) {
     return [...Math.intdiv(hr, 24), min, sec, milli];
 }
 
-/** @param {{HTMLAttribute: string | number | Array | {}}} attributes String/Number for attribute assigment, Array for function calls, Object for property calls. */
+/** @param {{HTMLAttribute: any}} attributes String/Number for attribute assigment, Array for function calls, Object for property calls. */
 export function setAttr(base, attributes) {
     for (const [attrib, value] of Object.entries(attributes)) {
         switch (type(value)) {
             case "string":
             case "number":
+            case "boolean":
                 base[attrib] = value;
                 break;
             case "array":
@@ -179,7 +180,7 @@ export function setAttr(base, attributes) {
                 setAttr(base[attrib], value);
                 break;
             default:
-                console.error("Unknown data type:", type(value), value);
+                console.error("Unknown data type of", attrib, "=", type(value), value);
                 break;
         }
     }
