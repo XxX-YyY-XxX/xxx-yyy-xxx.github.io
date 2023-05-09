@@ -309,22 +309,25 @@ export function tableSort(grouper_elem, tablematrix, mapping, {frzcol = false, f
  * @param {{onEnd: function(): void, interval: number}} onEnd Event listener for when timer reaches 0.
  * @param interval Time it takes to update the timer, in milliseconds. Default 1000. */
 export function timer(grouper_elem, date, eventURL = '', {onEnd = null, interval = 1000} = {}) {
+    const classtext = "func_timer";
     const time = new Timer(date);
     if (time.done) {onEnd?.(); return};
 
-    const spanElem = document.createElement('span');
+    const span = document.createElement("span");
     const countdown = setInterval(function() {
-        spanElem.textContent = splitTime(time.remaining).slice(0, -1).map(num => String(num).padStart(2, '0')).join(' : ');
+        span.textContent = splitTime(time.remaining).slice(0, -1).map(num => String(num).padStart(2, '0')).join(' : ');
         if (time.done) {
             clearInterval(countdown);
             grouper_elem.replaceChildren();
-            grouper_elem.classList.remove('func_timer');
+            grouper_elem.classList.remove(classtext);
             onEnd?.();
         }
     }, interval);
 
-    grouper_elem.classList.add('func_timer');
-    grouper_elem.append(initializeHTML('img', {src: eventURL, alt: 'Image error.', loading: 'lazy'}), spanElem);    
+    grouper_elem.classList.add(classtext);
+    const img = document.createElement("img");
+    setAttr(img, {src: eventURL, alt: "Image error.", loading: "lazy"});    // Will change
+    grouper_elem.append(img, span);
 }
 
 /** Creates a radio group. Clicked button only runs when it's unchecked. First button is the default checked.
