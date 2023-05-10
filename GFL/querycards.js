@@ -413,10 +413,11 @@ export const cardData = [
         id : '00433',
         questions : `What is Dummy-linking?`,
         answers : `A game mechanic to increase the total damage dealt and the health pool of a doll, and tile bonuses for HGs.<br>
-        Each newly-acquired doll starts at dummy link 1.<br>
+        Each newly-acquired doll starts at dummy link x1.<br>
         The level thresholds of dolls to enable linking are levels 10(x2), 30(x3), 70(x4), 90(x5).<br>
-        Which is why the general consensus on leveling is to stop at Lv.90, and why RFHGs are often regarded as mid-late game builds.`,
-        tags : [dTag.SYSMECH, dTag.TDOLL, dTag.IMPT]
+        Which is why the general consensus on leveling is to stop at Lv.90, and why RFHGs are often regarded as mid-late game builds.<br>
+        Each additional link also gives an additional 0.5x multiplier, up to x3 EXP. Affects auto-battle EXP gain.`,
+        tags : [dTag.SYSMECH, dTag.TDOLL, dTag.IMPT, dTag.LEVEL, dTag.AUTO]
     },
     {
         id : '00026',
@@ -504,7 +505,8 @@ export const cardData = [
     {
         id : '00032',
         questions : `Is there a rate up in this game? If so, how do they work?`,
-        answers : `${List.description({
+        answers : `When a rate-up is in progress, an "EVENT" marker will be plastered on top of the Factory Production button.<br>
+        ${List.description({
             'Anchored Construction' : [link(`Available for new players ${TextStyle.style('and for veterans not bothering with it', TextStyle.STRIKE)}.`, 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681'),
                 link('Available on Saturdays and Sundays whenever a new batch of production dolls are released.', 'https://redd.it/szdua2') + ` Recommended anchors are 4${star} due to TCM existing, especially for shotguns.`, 
                 "Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate up."],
@@ -1013,12 +1015,24 @@ export const cardData = [
     },
     {
         id : '00096',
-        questions : `Where to use gems?`,
-        answers : `${List.ordered(
-            'Echelon slots (costing 880, not 380) up to 6 minimum, 8 for actually constant (ranking not included) logistics.',
-            '5 dorms total for batteries, enough to upgrade important facilities. More than that is your call.',
-            "Storage slots especially if you're a collector. Or whenever you're getting annoyed with the pop-up.",
-            'Your Mileage May Vary (YMMV).')}`,
+        questions : `What's the priority to spend gems?`,
+        answers : `${List.description({
+            "Echelon Slots": [
+                "Costs 880, not 380.",
+                "Up to 6 minimum, 8 for actually constant (ranking not included) logistics. Preferably more."
+            ],
+            "Dormitories": [
+                "Additional 3-4 for for faster batteries, enough to quickly upgrade important facilities. More than that is your call.",
+                "Endgame players will almost always have full battery charges."
+            ],
+            "T-Doll Storage Slots": [
+                "Especially if you're a collector. Or whenever you're getting annoyed with the pop-up."
+            ],
+            "T-Doll Production Slots": [
+                "Practically worthless due to the abundance of Quick Production Tickets."
+            ],
+            "Your Mileage May Vary (YMMV)": []
+        })}`,
         tags : [dTag.NEWB, dTag.GEMS]
     },
     {
@@ -1049,7 +1063,7 @@ export const cardData = [
         questions : `Do autobattles give affection?`,
         answers : `A tiny bit.`,
         tags : [dTag.AUTO, dTag.LOVE]
-    },
+    },  //@Visual (loading screen)
     {
         id : '00100',
         questions : `Do support echelons use equipment?`,
@@ -1265,12 +1279,6 @@ export const cardData = [
         questions : `Is there a way to expand the armory, or am I stuck with 100 doll slots forever?`,
         answers : `${List.unordered( 'Shop>Items>Infrastructure>T-Doll slots +10.', 'Tap the locked echelon button.')}`,
         tags : [dTag.SHOP]
-    },
-    {
-        id : '00128',
-        questions : `Should I dummy link my dolls when corpse dragging?`,
-        answers : `Recommended. Each link gives an additional 0.5x multiplier.`,
-        tags : [dTag.TDOLL, dTag.LEVEL]
     },
     {
         id : '00129',
@@ -1625,12 +1633,12 @@ export const cardData = [
         answers : `Used for FSTs that are not yet 5${star}.<br>
         ${TextStyle.style('Limitations:', TextStyle.BOLD)}<br>
         ${List.unordered(
-            'Only usable to FSTs in the gacha pool (added after a Theater for a new FST is run).',
+            'Only usable to FSTs in the gacha pool (added after a Theater for a new FST is ran).',
             "Cannot be used for iteration."
         )}
         If you plan to big brain with this, churn your FST-specific central data to patches first, because they're the priority data to use before general data.`,
         tags : [dTag.HOC, dTag.FST, dTag.ITEM]
-    },
+    },  //@Visual (5 yellow stars)
     {
         id : '00176',
         questions : `Just noticed that the Black Market Shop in the Forward Basecamp has a Costumes tab. Anyone know what that's about?`,
@@ -1770,7 +1778,7 @@ export const cardData = [
         id : '00196',
         questions : `Where can I redeem the event boxes?`,
         answers : `Main Screen > Event > Time-Limited Event Tab > Supply Boxes.`,
-        tags : [dTag.ANNIV]
+        tags : [dTag.ANNIV, dTag.ITEM]
     },  //@Visual
     {
         id : '00197',
@@ -3339,6 +3347,12 @@ export const cardData = [
         questions : `"Your session has expired." What does that even mean?`,
         answers : `Too many user inputs during log-in. Just chill out and let it cook.`,
         tags : [dTag.TECH]
+    },
+    {
+        id : '00433',
+        questions : `What's the distribution for Coalition Unit sizes?`,
+        answers : `${link("u/BigStupidJellyfish_'s findings.", "https://old.reddit.com/r/girlsfrontline/comments/135epds/weekly_commanders_lounge_may_02_2023/jiyruin/")}`,
+        tags : [dTag.PA, dTag.COALITION]
     },
     {
         id : '00000',

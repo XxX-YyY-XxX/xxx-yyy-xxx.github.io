@@ -399,10 +399,6 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 
 [3.0 Features.](https://gamepress.gg/girlsfrontline/300-client-update-new-features)
 
-### Can dolls gain affection in auto battles?
-
-> Yes. Also stated in-game through loading screens that you can do so.
-
 ### How do I use Construction Fairy effectively?
 
 > Deploy on a node next to an enemy, then take a defensive stance.

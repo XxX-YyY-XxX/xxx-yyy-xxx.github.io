@@ -1,7 +1,7 @@
 import {timer} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
 
-timer(document.getElementById('event'), "May 29, 2023 23:59 UTC-0800", 
-    "https://preview.redd.it/jo5loy4u8kua1.jpg?width=1920&format=pjpg&auto=webp&v=enabled&s=7db3bcd62d070806b3cc3caf4951204dc0f103e9");
+timer(document.getElementById('event'), "May 29, 2023 23:59 UTC-0800",
+    "https://preview.redd.it/wxk1k0mnzrya1.jpg?width=1600&format=pjpg&auto=webp&v=enabled&s=7682417d94804d0c83b65391b60637615f828b58");
 
 const nextPass = timer.bind(null, document.getElementById('battlepass'), "",
     "");
