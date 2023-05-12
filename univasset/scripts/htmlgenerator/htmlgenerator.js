@@ -73,7 +73,7 @@ export function gdocDropdown(grouper_elem, ...namelinkpair) {
     grouper_elem.append(select_elem, button_elem, document.createElement("br"), iframe_elem);
 }
 
-/** Creates a sortable table from a given matrix of data.
+/** Creates a table from a given matrix of data.
  * @param {HTMLElement} grouper_elem
  * @param {Array[]} tablematrix First row will be used as header.
  * @param {(function(HTMLTableCellElement, any): void)[]} mapping

@@ -188,7 +188,8 @@ export const cardData = [
         ${link('Gamepress Guide Part 2.', 'https://gamepress.gg/girlsfrontline/theater-8-combat-guide')}<br>
         ${spoilerSummary('Theater for dummies.', image('https://cdn.discordapp.com/attachments/372235987520323596/881427651070410792/theaterguide.png'))}<br>
         TLDR is 5-6 Defense Drills in a row, twice per day, with differing battle effects. Do scouting bets where you pick one zone. Dump points on construction for easier battles.<br>
-        Echelon formations are now 1 team + backups.`,
+        Echelon formations are now 1 team + backups.<br>
+        Between 4:00-5:00AM UTC-8, a ceasefire occurs to tally the scores.`,
         tags : [dTag.THEATER, dTag.PRIME]
     },
     {
@@ -686,8 +687,9 @@ export const cardData = [
                 'Adds the current enemy formation to the Target Practice in the Combat Sims.'],
             'GFAlarm' : [
                 'Use GFLMaps to take the enemy IDs you want to fight and enter them in the Custom Target Train under Packet Forger, with IDs separated by commas.',
-                image('./assets/images/GFAlarmCTT.png', 'From u/UnironicWeeaboo'),
-                `Works for comps that has been loaded into the client and is ${link('very safe', 'https://www.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i312oo2/')}.`],
+                `Works for comps that has been loaded into the client and is ${link('very', 'https://www.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i312oo2/')} ${link("safe", "https://www.reddit.com/r/girlsfrontline/comments/11e0hpg/weekly_commanders_lounge_february_28_2023/jan16s5/")}.`,
+                image('./assets/images/GFAlarmCTT.png', 'From u/UnironicWeeaboo')
+            ],
             '<a href="https://gfl.matsuda.tips/post/everything-sucks-forever">Matsuda recommendations</a>' : []
         })}`,
         tags : [dTag.ENEMY, dTag.BATTLE, dTag.MAP, dTag["3P"]]
@@ -1026,7 +1028,8 @@ export const cardData = [
                 "Endgame players will almost always have full battery charges."
             ],
             "T-Doll Storage Slots": [
-                "Especially if you're a collector. Or whenever you're getting annoyed with the pop-up."
+                "Especially if you're a collector. Or whenever you're getting annoyed with the pop-up.",
+                `This can be mitigated somewhat by scrapping easily acquirable dolls, and the ${getID("Recovery", "00185")} system.`
             ],
             "T-Doll Production Slots": [
                 "Practically worthless due to the abundance of Quick Production Tickets."
@@ -1570,7 +1573,7 @@ export const cardData = [
         ['Assualt Rifle (AR)',      'Anti-Swarm<br>Sustained DPS',  'Frontline',    'Weak to armored enemies'],
         ['Submachine Gun (SMG)',    'Evasion Tank<br>Anti-Swarm',   'Frontline',    'Accuracy is non-existent'],
         ['Rifle (RF)',              'Big Damage<br>Anti-Armor',     'Backline',     'Weak to swarms<br>Affected by night penalty'],
-        ['Handgun (HG)',            'Buffer<br>Debuffer',           '???',          'Cannot facetank'],
+        ['Handgun (HG)',            'Buffer<br>Debuffer',           'Random',        'Cannot facetank'],
         ['Machine Gun (MG)',        'Opening Volley',               'Random',       'Reloads/Stops shooting at around 6s<br>Weak to high evasion'],
         ['Shotgun (SG)',            'Armor Tank',                   'Frontline',    'Poor evasion'])}`,
         tags : [dTag.TDOLL, dTag.BATTLE, dTag.NEWB]
@@ -2709,14 +2712,15 @@ export const cardData = [
             'Live2D' : [
                 'Sometimes called Reactive Live2Ds.',
                 'Can follow your touch with their eyes/head.',
-                'Can only be acquired through Resupply. Except maybe Hanyang 88.'
+                'Can only be acquired through Resupply. Except maybe Hanyang 88.',
+                "Only AR Team and 404 have L2D Mod3 art."
             ],
             'Simplified Live2D' : [
                 'Also known as Animations.',
-                'Plays on loop, except when they talk.'
+                'Plays on loop, except their mouth when they talk.'
             ]
         })}`,
-        tags : [dTag.TDOLL, dTag.SKIN]
+        tags : [dTag.TDOLL, dTag.SKIN, dTag.MOD]
     },
     {
         id : '00340',
@@ -2741,7 +2745,7 @@ export const cardData = [
         questions : `Do auto-battle card bonus stack with combat exp bonus?`,
         answers : `${image('./assets/images/XPUpAuto.png', 'Note that Monthly Auto-Battle Card is active, and 100% bonus is from XP up event')}`,
         tags : [dTag.LEVEL, dTag.AUTO]
-    },
+    },  //@Source
     {
         id : '00344',
         questions : `What can fairies do during auto-battles?`,
