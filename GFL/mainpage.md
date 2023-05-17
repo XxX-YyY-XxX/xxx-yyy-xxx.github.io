@@ -449,3 +449,5 @@ Tap the radar button again to move your echelons or terminate mission.
 > Dummy links maybe?
 
 00128
+
+Data Sim data arrangement is "Advanced, Intermediate, Basic"

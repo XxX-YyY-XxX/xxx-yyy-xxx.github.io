@@ -164,7 +164,7 @@ export const cardData = [
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Technical_Fairies')} Unupdated rework skills.<br>
         ${link('GFC guide Part 1.', 'https://www.gflcorner.com/fairy/')} Fairies up to CT only.<br>
         ${spoilerSummary('GFC guide Part 2.', Embed.google(Embed.G_EXCEL, '1x6_YysDi0h89jKE9vEW2_fbxi7gG7XV5jjJqX8O41rw'))} Unupdated fairy list.<br>
-        ${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/fairies-where-they-live-and-how-craft-them")}
+        ${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/fairies-where-they-live-and-how-craft-them")}<br>
         ${spoilerSummary('Jesse #6406 doc.', Embed.google(Embed.G_WORD, '1dXZkOmAR0SWqL7UKCxmTP2hUPjpoRhskbJHn1ZlpNWc'))}`,
         tags : [dTag.FAIRY, dTag.PRIME]
     },
@@ -412,12 +412,13 @@ export const cardData = [
     },
     {
         id : '00433',
-        questions : `What is Dummy-linking?`,
+        questions : `What is Dummy-linking and how do I do it?`,
         answers : `A game mechanic to increase the total damage dealt and the health pool of a doll, and tile bonuses for HGs.<br>
         Each newly-acquired doll starts at dummy link x1.<br>
         The level thresholds of dolls to enable linking are levels 10(x2), 30(x3), 70(x4), 90(x5).<br>
         Which is why the general consensus on leveling is to stop at Lv.90, and why RFHGs are often regarded as mid-late game builds.<br>
-        Each additional link also gives an additional 0.5x multiplier, up to x3 EXP. Affects auto-battle EXP gain.`,
+        Each additional link also gives an additional 0.5x multiplier, up to x3 EXP. Affects auto-battle EXP gain.<br>
+        This can be done by going to Factory>Dummy-Link and using duplicate dolls or dummy cores.`,
         tags : [dTag.SYSMECH, dTag.TDOLL, dTag.IMPT, dTag.LEVEL, dTag.AUTO]
     },
     {
@@ -1139,7 +1140,7 @@ export const cardData = [
     {
         id : '00110',
         questions : `What does the Aid Commissions do and how do I get more of them?`,
-        answers : `Also known as Svarog/High Altitude EMP Bombing, it pulls from the entire pool where the entire pool is the X in the X/100 units.<br>
+        answers : `Also known as Svarog/High Altitude EMP Bombing Runs, it pulls from the entire pool where the entire pool is the X in the X/100 units.<br>
         Recommended to pull one at a time since 10-pull is literally 10 1-pulls.<br>
         Acquired from the daily quest's final node, daily log-in, major events, battlepass, shop (whenever a new banner starts).`,
         tags : [dTag.ITEM, dTag.PA, dTag.GET]
@@ -1463,7 +1464,7 @@ export const cardData = [
         questions : `How do I scrap/retire coalition units? I'm lost.`,
         answers : `Factory > Retirement (Disassemble) > Fourth + symbol.`,
         tags : [dTag.COALITION]
-    },
+    },  //@Visual, change to anything that can be scrapped, "Where do I scrap/retire X?", "What to do with extra/duplicate X?"
     {
         id : '00152',
         questions : `What do advantaged dolls in combat map mean?`,
@@ -3353,10 +3354,22 @@ export const cardData = [
         tags : [dTag.TECH]
     },
     {
-        id : '00433',
+        id : '00434',
+        questions : `What does the "house, +, wrench" node do?`,
+        answers : `One-time repair and one-time resupply.`,
+        tags : [dTag.MAP]
+    },  //@Visual
+    {
+        id : '00435',
         questions : `What's the distribution for Coalition Unit sizes?`,
         answers : `${link("u/BigStupidJellyfish_'s findings.", "https://old.reddit.com/r/girlsfrontline/comments/135epds/weekly_commanders_lounge_may_02_2023/jiyruin/")}`,
         tags : [dTag.PA, dTag.COALITION]
+    },
+    {
+        id : '00436',
+        questions : `Where can I get commander costumes?`,
+        answers : `Shop, Ranking, Special Log-ins, Black Market, Luffberry, Bookshelf of Memories, Shattered Connexions.`,
+        tags : [dTag.CMDR, dTag.SKIN]
     },
     {
         id : '00000',

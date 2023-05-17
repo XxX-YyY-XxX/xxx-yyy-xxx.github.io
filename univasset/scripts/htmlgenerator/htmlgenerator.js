@@ -11,7 +11,7 @@ export function brJoin(elements) {
 /** Shortcut for createElement and HTML attributes. Probably should've been named as initializeElement.
  * @template {keyof HTMLElementTagNameMap} T
  * @param {T} createElement If nested (by space), innermost element will be modified and outermost element will be returned.
- * @param {{HTMLAttribute: string | number | Array | {}}} attributes See {@link setAttr}.
+ * @param {{[HTMLAttribute: string]: string | number | Array | {}}} attributes See {@link setAttr}.
  * @returns {HTMLElementTagNameMap[T]} */
 export function initializeHTML(createElement, attributes) {
     var outerElem, innerElem;
