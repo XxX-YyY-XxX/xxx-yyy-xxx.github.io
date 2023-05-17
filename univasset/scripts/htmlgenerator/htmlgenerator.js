@@ -84,7 +84,7 @@ export function table(grouper_elem, tablematrix, mapping, {frzcol = false, frzhd
     for (const value of tablematrix.shift()) {
         const th = document.createElement("th");
         th.textContent = value;
-        tr_elem.appendChild(th);        
+        tr_elem.appendChild(th);
     }
 
     const tbodyElem = document.createElement("tbody");
@@ -227,11 +227,13 @@ export function timer(grouper_elem, date, eventURL = '', {onEnd = null, interval
  * @param {string} radioname Name of the radio group. Most useful on form submissions.
  * @param {...[string | HTMLElement, string, function(HTMLInputElement): void]} buttondata [textContent, value, onclick function] Each function should have code on select and deselect. */
 export function radioGroup(grouper_elem, radioname, ...buttondata) {
-    const radio_functions = new Map(buttondata.map(([, value, func]) => [value, func]));
+    /** @type {Map<string, function(HTMLInputElement): void>}*/ const radio_functions = new Map();
     /** @type {HTMLInputElement} */ var current_checked;
-
     const fragment = new DocumentFragment();
+
     for (const [index, [text, value, func]] of Object.entries(buttondata)) {
+        radio_functions.set(value, func)
+
         const input_elem = document.createElement("input");
         setAttr(input_elem, {value: value, type: "radio", name: radioname, checked: !Number(index)});
         input_elem.addEventListener("click", function() {
