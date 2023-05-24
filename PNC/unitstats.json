@@ -965,7 +965,7 @@
         "name": "Sockdolager",
         "class": "Sniper",
         "reference": {"Falcon" : "https://iopwiki.com/wiki/Falcon"},
-        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
+        "fragments": ["Neural Kits", "Intimacy", "Aberrance's Chain"],
         "hp": -1,
         "atk": -1,
         "hash": -1,
