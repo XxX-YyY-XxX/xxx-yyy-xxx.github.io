@@ -103,19 +103,22 @@ export const cardData = [
     {
         id : '00001',
         questions : `How do I level my girls?`,
-        answers : `First is grinding them on leveling maps, mainly through ${spoilerSummary('corpse dragging', 
-            `Also called Poor Run or Beggar Run, it is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.<br>
-            ${getID('Draggable stages.', '00026')}<br>
-            ${getID("Supplying the dragger.", "00073")}`
-        )}.<br>
-        Second is using ${spoilerSummary('Combat Reports (CR)', List.unordered(
-            'Acquired through Forward Basecamp, Data Room, the shop during events, EXP Sim, or as a reward.',
-            `Can be gifted by going to the ${spoilerSummary('Dorm Gifts screen', image('./assets/images/SkinLocation.png', 'Dorms > Warehouse > Gifts'))} or going to your owned doll's profile and tapping the + button by the EXP bar.`,
-            'Gives 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.',
-            'Gives 6000 fixed EXP per report only when used on oathed+modded dolls.'))}.<br>
-        Third is by running them through Auto-Battles.`,
-        tags : [dTag.TDOLL, dTag.LEVEL, dTag.PRIME, dTag.NEWB]
-    },  //Privated - vqvPpO1vKqw, @Visual
+        answers : `${List.description({
+            "Leveling Maps": [
+                `Done mainly through ${spoilerSummary('corpse dragging', "Also called Poor Run or Beggar Run, it is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.")}`,
+                getID('Draggable stages.', '00026'),
+                getID("Supplying the dragger.", "00073")
+            ],
+            "Combat Reports (CR)": [
+                'Acquired through Forward Basecamp, Data Room, the shop during events, EXP Sim, or as a reward.',
+                `Can be gifted by going to the ${spoilerSummary('Dorm Gifts screen', image('./assets/images/SkinLocation.png', 'Dorms > Warehouse > Gifts'))} or your ${spoilerSummary("Doll's Profile", image("./assets/images/DollEXP.png", "+ button by the EXP bar"))}.`,
+                'Gives 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.',
+                'Gives 6000 fixed EXP per report only when used on oathed+modded dolls.'
+            ],
+            "Auto-Battles": []
+        })}`,
+        tags : [dTag.TDOLL, dTag.LEVEL, dTag.PRIME, dTag.NEWB, dTag.OATH, dTag.MOD]
+    },
     {
         id : '00421',
         questions : `Is there a guide on how to use the equipments/attachments for Tactical Dolls?`,
@@ -291,15 +294,15 @@ export const cardData = [
     {
         id : '00018',
         questions : `Anyone have a nice infographic for equipment priority and how many to have ideally?`,
-        answers : `${image('https://cdn.discordapp.com/attachments/951085201658871820/1063837601351610389/eq_prior_notheater.png', 'Taken from Discord')}`,
+        answers : `${image('https://cdn.discordapp.com/attachments/951085201658871820/1063837601351610389/eq_prior_notheater.png', 'Discord: $eqpriority')}`,
         tags : [dTag.EQUIP, dTag.TDOLL, dTag.TIER]
-    },  //$eqpriority
+    },
     {
         id : '00019',
         questions : `Which HOC FSTs should I raise first?`,
-        answers : `${image('https://cdn.discordapp.com/attachments/444348972035866634/971135326150090842/HOC_Priority.png', 'Taken from Discord')}`,
+        answers : `${image('https://cdn.discordapp.com/attachments/444348972035866634/971135326150090842/HOC_Priority.png', 'Discord: $hocpriority')}`,
         tags : [dTag.HOC, dTag.FST, dTag.TIER]
-    },  //$hocpriority
+    },
     {
         id : '00020',
         questions : `Which doll should I get with True Core Masks?`,
@@ -425,24 +428,27 @@ export const cardData = [
         id : '00026',
         questions : `What are the leveling stages I can corpse drag and how do I run them?`,
         answers : `${List.description({
-            'General' : [
+            'General': [
                 link('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide'),
                 link('Gamepress guide.', "https://gamepress.gg/girlsfrontline/optimized-levelling-corpse-dragging-maps"),
                 link('GFLCorner guide.', 'https://www.gflcorner.com/efficient-leveling-guide/'),
                 link('DMesse guide.', 'http://dmesse.egloos.com/m/3567918')
             ],
-            '0-2' : [
+            '0-2': [
                 spoilerSummary("Ceia's 0-2 drag guide.", Embed.google(Embed.G_WORD, '1PkxJ7ObdGW_cS_qbzAxQ_hoC1SFse3HNYWlnywZfPuo'))
             ],
-            '8-1N' : [
+            "4-3E": [
+                "For AR DPS, do not use MGs or caped RFs."
+            ],
+            '8-1N': [
                 spoilerSummary('Zas drag.', Embed.google(Embed.G_EXCEL, '1VT52c-_m4zTx-OFRPcxE9iFmmJY_AMC7CyJT1B7FLt8'))
             ],
-            '13-4' : [
+            '13-4': [
                 link('tempkaridc calculator for Vector.', 'https://tempkaridc.github.io/gf/vec'),
                 link('xVarz spreadsheet for different draggers.', 'https://docs.google.com/spreadsheets/d/1cuZPF-r1e6TyE4Rj2DNkSEova7Tc-Cczs7RaoAK2vII'),
                 spoilerSummary('Infographic.', image('https://cdn.discordapp.com/attachments/564028599682727937/929724568258629642/134.png'))
             ],
-            'SC 3-1 EX' : [
+            'SC 3-1 EX': [
                 'Good for dragging coalition units.',
                 spoilerSummary("Ceia's SC 3-1Ex guide.", Embed.youtube('UdmOZqypu_c')),
                 spoilerSummary("Aqua's SC 3-1Ex.", Embed.streamable('0dpjje')),
@@ -477,7 +483,7 @@ export const cardData = [
         })}<br>
         Shouldn't be a gospel but a good starting point nonetheless.<br>
         ${link('u/UnironicWeeaboo tips.', 'https://old.reddit.com/r/girlsfrontline/comments/vmhs0x/weekly_commanders_lounge_june_28_2022/ie3bw95/')}`,
-        tags : [dTag.ECH, dTag.PA, dTag.COALITION, dTag.TDOLL, dTag.IMPT]
+        tags : [dTag.ECH, dTag.PA, dTag.COALITION, dTag.TDOLL, dTag.IMPT, dTag.NEWB]
     },
     {
         id : '00029',
@@ -1805,9 +1811,16 @@ export const cardData = [
     {
         id : '00200',
         questions : `Is there a compilation of anniversary adjutant lines?`,
-        answers : `${Embed.youtube('PLoDB_FcnOA5zXkZ9XmQMTog1F7uIRZ_Qa')}`,
+        answers : `${List.unordered(
+            spoilerSummary("3rd Anniversary", Embed.youtube("PL4Z0akElhimzHHiVMCozfUn1B6tYKjwPR")), //u/paperrabbit
+            spoilerSummary("4th Anniversary", Embed.youtube("PLoDB_FcnOA5zXkZ9XmQMTog1F7uIRZ_Qa")), //u/ConductorBichir
+            spoilerSummary("5th Anniversary", List.unordered(
+                link("Cutscene interpreter", "https://gfl.amaryllisworks.pw/#side-12-0"),
+                ""
+            ))
+        )}`,
         tags : [dTag.LORE, dTag.ANNIV, dTag.ADJUNCT]
-    },  //PL4Z0akElhimzHHiVMCozfUn1B6tYKjwPR playlist by redditor u/paperrabbit. New by u/ConductorBichir. 1W5JzUGaC_fL5itce05WnkHcu7wX_sEn2vQlbgQNeKAk down,
+    },
     {
         id : '00201',
         questions : `My team says Ammo/Ration depleted. How do I fill it up?`,
@@ -2257,7 +2270,8 @@ export const cardData = [
             'K2' : ["ROF around 90 to maximize the ICD up to 100 if there's a run-up to auto her skill."],
             'Sterling' : ['M3', 'PPSh-41 (+MOD)', 'PP-2000', 'PPS-43', 'Sten MKII', 'EVO 3', 'PP-19 (+MOD)', 'Sterling'],
             "M4 SOPMOD II": [link("M4 interaction still borked (by u/UnironicWeeaboo).", "https://imgur.com/a/7eSGbu6")],
-            "Ribeyrolles": [`MOD skill do not count for AS Val's MOD skill, most likely due to buff counting as a "unit".`]
+            "Ribeyrolles": [`MOD skill do not count for AS Val's MOD skill, most likely due to buff counting as a "unit".`],
+            "LTLX": ["Skill knocks back bosses."]
         })}`,
         tags : [dTag.TDOLL, dTag.SKILL]
     },

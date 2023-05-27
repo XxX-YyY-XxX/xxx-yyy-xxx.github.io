@@ -5,9 +5,6 @@
 # [Technical Help](/GFL/technical)
 - Troubleshooting, bug reports, and customer support.
 
-# [Resupply/Costumes/Furniture](/GFL/resupply)*
-- Resupply gacha and rates, skin catalouges, and furniture sets.
-
 # [Story](/GFL/story)*
 - Lore, major events, timeline, and costume stories.
 
@@ -167,8 +164,6 @@ FCCs apparently only appears if Neural Upgrade is unlocked.
 
 Skill Level 8 is generally a good stopping point for dolls in terms of energy expenditure.
 
-LTLX skill pushback bosses.
-
 If spamming "one-click repair" creates multiple poop-ups, can count towards quests.
 
 Crit rate tile CE scales proportionally with each unit's crit dmg.
@@ -252,8 +247,6 @@ Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr)
 [Rescue station current status?](https://old.reddit.com/r/girlsfrontline/comments/paivke/weekly_commanders_lounge_august_24_2021/haitcqz/)
 
 [Chibi sprite grouping.](https://old.reddit.com/r/girlsfrontline/comments/pf1dsb/weekly_commanders_lounge_august_31_2021/hbil6gc/)
-
-[4-3e grind.](https://old.reddit.com/r/girlsfrontline/comments/qkzc9s/weekly_commanders_lounge_november_02_2021/hjchtgu/)
 
 [BSJ's seasonal mail of 2022.](https://imgur.com/a/pfLjyN6)
 [Part 2.](https://imgur.com/a/N1WCQF2)
@@ -451,3 +444,34 @@ Tap the radar button again to move your echelons or terminate mission.
 00128
 
 Data Sim data arrangement is "Advanced, Intermediate, Basic"
+
+### What are the furniture sets as of now?
+
+> [Everyhting CN has to offer.](http://www.gfwiki.org/w/%E5%AE%B6%E5%85%B7)
+>
+> [Tells you which furniture are available to which banner... probably.](https://mzh.moegirl.org.cn/%E5%B0%91%E5%A5%B3%E5%89%8D%E7%BA%BF/%E5%AE%B6%E5%85%B7#)
+
+@ Clarify
+
+# For questions without proper answers yet.
+
+>Normal T-Doll Production:
+>- Probability of 5-star humanoid: 3%
+>- Probability of 4-star humanoid: 10%
+>- Probability of 3-star humanoid: 27%
+>- Probability of 2-star humanoid: 60%
+>
+>Heavy T-Doll Production:
+>| Rarity | Gear 1 | Gear 2 | Gear 3 |
+>| --- | --- | --- | --- |
+>| 5 | 15% | 20% | 25% |
+>| 4 | 45% | 60% | 75% |
+>| 3 | 40% | 20% | 0% |
+>
+>Normal Equipment Production:
+>- Probability of 5-star equipment: 6.5%
+>- Probability of 4-star equipment: 15%
+>- Probability of 3-star equipment: 30%
+>- Probability of 2-star equipment: 48.5%
+>
+>*The above probabilities are all average probabilities. Depending on the construction formula, the probabilities of each star will fluctuate up and down.
