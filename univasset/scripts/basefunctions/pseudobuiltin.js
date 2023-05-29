@@ -5,7 +5,7 @@ export function iter(iterable) {
 
 /** Iterates items per index in groups. Add "true" at the end to extend shortest.
  * @template T
- * @param {Iterable<T>[]} iterables order of iterables = order of output
+ * @param {...Iterable<T>} iterables order of iterables = order of output
  * @returns {Generator<T[], void, unknown>} Array of values from each array */
 export function* zip(...iterables) {
     var extension;
@@ -21,21 +21,23 @@ export function* zip(...iterables) {
 /** typeof, but with extra steps. */
 export function type(any) {
     const item_type = typeof any;
-    switch (true) {
-        case item_type !== "object":
+    try {
+        if (item_type !== "object")
             return item_type;
-        case any === null:
+        else if (any === null)
             return "null";
-        case Array.isArray(any):
+        else if (Array.isArray(any))
             return "array";
-        case any instanceof Set:
-            return 'set';
-        case any instanceof HTMLElement:
-        case any instanceof DocumentFragment:
-            return 'dom';
-        //case Symbol.iterator in any:
-        //    return "iterator";
-        default:
-            return 'object';
+        else if (any instanceof Set)
+            return "set";
+        else if (any instanceof HTMLElement || any instanceof DocumentFragment)
+            return "dom";
+        else if (Symbol.iterator in any)
+            return "iterator"
+        else
+            return "object";
+    } catch (exception) {
+        console.error(exception)
+        return "object"
     }
 }
