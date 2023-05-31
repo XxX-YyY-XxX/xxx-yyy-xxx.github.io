@@ -1250,6 +1250,30 @@
         "dmgreduc": 0,
         "healamp": 0
     },
+    {
+        "name": "Clukay",
+        "class": "Sniper",
+        "reference": {"HK416" : "https://iopwiki.com/wiki/HK416"},
+        "fragments": ["Neural Kits", "Intimacy"],
+        "hp": 11671,
+        "atk": 521,
+        "hash": 683,
+        "pdef": 216,
+        "odef": 216,
+        "aspd": 105,
+        "crate": 12,
+        "cdmg": 50,
+        "ppen": 314,
+        "open": 428,
+        "dodge": 5,
+        "regen": 364,
+        "cdr": 0,
+        "res": 0,
+        "backlash": 0,
+        "dmgamp": 0,
+        "dmgreduc": 0,
+        "healamp": 0
+    },
 
     {
         "name": "Doll Name",
