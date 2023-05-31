@@ -346,7 +346,8 @@ export const cardData = [
                 link("Shoul's Story Scenes Playlists", 'https://www.youtube.com/channel/UC_JmwXOfYqOKpGGtc5gcVmw'),
                 link("Girls' Frontline Full Story Comprehension Playlist Translated up to Isomer", 'https://youtube.com/playlist?list=PL9y52Flm1yM-tJJoom2zfrWTpaO1mTw8M'),
                 link("u/DoctuhD's Girls' Frontline Summary", 'https://docs.google.com/document/d/1oA07O2HGwvmoBqm-UKTTuSdxjLnSIbRHd5b2FuYOph0'),
-                spoilerSummary("u/Signal_Abroad1427's Hurricane Rescue video", Embed.youtube("oH1st5OxdyY"))
+                spoilerSummary("u/Signal_Abroad1427's Hurricane Rescue video", Embed.youtube("oH1st5OxdyY")),
+                link("u/pointblanksniper collection", "https://old.reddit.com/r/girlsfrontline/comments/13phxi5/weekly_commanders_lounge_may_23_2023/jlv5bns/")
             ]
         })}`,
         tags : [dTag.LORE, dTag.MAJOR, dTag.COLLAB, dTag.REF]
@@ -515,14 +516,17 @@ export const cardData = [
         questions : `Is there a rate up in this game? If so, how do they work?`,
         answers : `When a rate-up is in progress, an "EVENT" marker will be plastered on top of the Factory Production button.<br>
         ${List.description({
-            'Anchored Construction' : [link(`Available for new players ${TextStyle.style('and for veterans not bothering with it', TextStyle.STRIKE)}.`, 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681'),
+            'Anchored Construction' : [
+                link(`Available for new players ${TextStyle.style('and for veterans not bothering with it', TextStyle.STRIKE)}.`, 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681'),
                 link('Available on Saturdays and Sundays whenever a new batch of production dolls are released.', 'https://redd.it/szdua2') + ` Recommended anchors are 4${star} due to TCM existing, especially for shotguns.`, 
-                "Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate up."],
-            'Targeted Rate Up' : ['Available when a new skin banner is released.',
-                'Rate up dolls are those who are present in the banner.'],
+                "Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate up."
+            ],
+            'Targeted Rate Up' : [
+                'Available when a new skin banner is released.',
+                'Rate up dolls are those who are present in the banner.'
+            ],
             'General Rate Up' : ['January, May, September.']
-        })}<br>
-        ${link('Gamepress overview.', 'https://www.gamepress.gg/girlsfrontline/gfl-explained-rate-up')}`,
+        })}`,
         tags : [dTag.PROD, dTag.IMPT, dTag.TECH]
     },
     {
@@ -1601,7 +1605,7 @@ export const cardData = [
     {
         id : '00169',
         questions : `Are the previous monthly Special Equipments obtainable in some way?`,
-        answers : `No word as of now.`,
+        answers : `Soon in Gray Zone Exploration`,
         tags : [dTag.SPEQ]
     },
     {
@@ -1628,7 +1632,11 @@ export const cardData = [
     {
         id : '00173',
         questions : `What should I do during a collab?`,
-        answers : `Farm event specific currencies (NOT Platinum or Nova medals), get all collab characters, their Special Equipments, and the fairy, grind for the dolls you don't have yet. Combat reports and affection boosters are low on the shop priority list.`,
+        answers : `${List.unordered(
+            "Farm event specific currencies (NOT Platinum or Nova medals) (60 daily).",
+            "Get all collab characters (Clear Reward, Farming, Shop), their Special Equipments, and the fairy.",
+            "Combat reports and affection boosters are low on the shop priority list (costing 2 per item)."
+        )}`,
         tags : [dTag.COLLAB]
     },
     {
@@ -3385,6 +3393,24 @@ export const cardData = [
         answers : `Shop, Ranking, Special Log-ins, Black Market, Luffberry, Bookshelf of Memories, Shattered Connexions.`,
         tags : [dTag.CMDR, dTag.SKIN]
     },
+    {
+        id : '00437',
+        questions : `Where can I get T-doll contracts?`,
+        answers : `Logistics, dailies.`,
+        tags : [dTag.ITEM, dTag.GET]
+    },
+    {
+        id : '00438',
+        questions : `I saw giant coalition units in my dorm, and they walk/sit backwards. How did this happen?`,
+        answers : `Friend visit with a coalition unit adjutant`,
+        tags : [dTag.DORM, dTag.COALITION]
+    },
+    {
+        id : '00439',
+        questions : `Why are my XS units getting auto-locked?`,
+        answers : `Because tutorial said so? Only applies to first XS and XL copy of a particular unit.`,
+        tags : [dTag.PA, dTag.COALITION]
+    },  //@Visual
     {
         id : '00000',
         questions : ``,

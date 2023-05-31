@@ -221,6 +221,7 @@ export function compare({key = x => x, reverse = false, array = null} = {}) {
     };
 
     function _currentFunc(a, b) {
+        console.log("First call.")
         _currentFunc = method[type(a)];
         return _currentFunc(a, b);
     }
