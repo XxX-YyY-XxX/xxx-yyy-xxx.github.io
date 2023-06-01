@@ -211,17 +211,17 @@ export function compare({key = x => x, reverse = false, array = null} = {}) {
         },
         /** @param {{}} x @param {{}} y @returns {number} */
         object: (x, y) => {
-            //f,s could be undefined
+            //Longest clipped so [first, second] never undefined
             for (const [first, second] of zip(Object.keys(x), Object.keys(y))) {
                 const val = first.localeCompare(second);
                 if (val) return val;
             }
-            return 0;            
+            //sort by values
+            return 0;
         }
     };
 
     function _currentFunc(a, b) {
-        console.log("First call.")
         _currentFunc = method[type(a)];
         return _currentFunc(a, b);
     }
