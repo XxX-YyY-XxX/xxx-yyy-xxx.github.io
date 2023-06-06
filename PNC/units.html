@@ -2,12 +2,12 @@
 <html>
     <head>
         <script type="module" src="/univasset/scripts/include/include.js"></script>
-        <script type="module" src="./unitstats.js"></script>
+        <script type="module" src="./units.js"></script>
 
         <meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/univasset/scripts/externalcss.css">
+        <link rel="stylesheet" href="./units.css">
         
         <!-- Setup theme-color -->
 
@@ -24,59 +24,6 @@
         <title>PNC Units Stats | Random Scraps</title>
     </head>
 
-    <style>
-        .func_table {
-            height: 95vh;
-        }
-
-        .func_table tr:nth-child(even) > :first-child {
-            background: #282e1f !important;
-        }
-
-        .func_table > .freeze_col tr > :first-child {
-            border-right: 1px dashed #b5e853;
-            background: #1b1b1b;
-        }
-
-        .func_table > .freeze_row th {
-            background: #1b1b1b;
-        }
-
-        .func_table th[data-sort="hi"] {
-            background: linear-gradient(135deg, #1b1b1b, transparent 50%),
-                linear-gradient(-135deg, #1b1b1b, transparent 50%),
-                linear-gradient(blue, gray 50%) !important;
-        }
-
-        .func_table th[data-sort="lo"] {
-            background: linear-gradient(45deg, #1b1b1b, transparent 50%),
-                linear-gradient(-45deg, #1b1b1b, transparent 50%),
-                linear-gradient(gray 50%, red) !important;
-        }
-
-        input[type="checkbox"], input[type="radio"] {
-            appearance: none;
-            margin: 0px;
-        }
-
-        #button {
-            display: flex;
-            flex-wrap: wrap;
-            text-align: center;
-            border-style: initial;
-        }
-
-        #button > label {
-            background-color: transparent;
-            line-height: 10px;
-            flex: calc(100% / 2);
-        }
-
-        #button > label:has(input:checked) {
-            background-color: darkgreen;
-        }
-    </style>
-
     <body>
         <include src="/univasset/scripts/pageheader/header.html">"Unit stat table"</include>
 
@@ -86,8 +33,18 @@
                 
                 <div id="stats">
                     <div></div>
-                    <p>All units at Lv.70 and 5★.</p>
-                    <p>Data taken from <a href="https://nalu.wiki/neuralcloud/c/dolls">nalu.wiki Neural Cloud</a> and <a href="http://wiki.42lab.cloud/w/%E5%BF%83%E6%99%BA%E4%BA%BA%E5%BD%A2%E5%9B%BE%E9%89%B4">42 wiki</a>.</p>
+                    <p>All units at Lv.70 and 5★. Arma statsat Lv.30.</p>
+                    <p>Data taken from <a href="https://nalu.wiki/neuralcloud/c/dolls">nalu wiki</a> and <a href="http://wiki.42lab.cloud/w/%E5%BF%83%E6%99%BA%E4%BA%BA%E5%BD%A2%E5%9B%BE%E9%89%B4">42 wiki</a>.</p>
+                    <p>Default stats for all units:</p>
+                    <table>
+                        <tr><td>Crit Damage</td>        <td>50%</td></tr>
+                        <tr><td>Skill Haste</td>        <td>0%</td></tr>
+                        <tr><td>Debuff RES</td>         <td>0</td></tr>
+                        <tr><td>Backlash</td>           <td>0%</td></tr>
+                        <tr><td>Damage Boost</td>       <td>0%</td></tr>
+                        <tr><td>Injury Mitigation</td>  <td>0%</td></tr>
+                        <tr><td>Healing Effect</td>     <td>0%</td></tr>
+                    </table>
                 </div>
 
                 <div id="data">

@@ -1,0 +1,77 @@
+@import "../univasset/scripts/externalcss.css";
+
+.func_table {
+    height: 95vh;
+}
+
+/* #region Freeze */
+.func_table tr:nth-child(even) > :first-child {
+    background: #282e1f !important;
+}
+
+.func_table > .freeze_col tr > :first-child {
+    border-right: 1px dashed #b5e853;
+    background: #1b1b1b;
+}
+
+.func_table > .freeze_row th {
+    background: #1b1b1b;
+}
+/* #endregion */
+
+/* #region Sort */
+.func_table th[data-sort="hi"] {
+    background: linear-gradient(135deg, #1b1b1b, transparent 50%),
+        linear-gradient(-135deg, #1b1b1b, transparent 50%),
+        linear-gradient(blue, gray 50%) !important;
+}
+
+.func_table th[data-sort="lo"] {
+    background: linear-gradient(45deg, #1b1b1b, transparent 50%),
+        linear-gradient(-45deg, #1b1b1b, transparent 50%),
+        linear-gradient(gray 50%, red) !important;
+}
+/* #endregion */
+
+input[type="checkbox"], input[type="radio"] {
+    appearance: none;
+    margin: 0px;
+}
+
+/* #region Radio */
+#button {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    border-style: initial;
+}
+
+#button > label {
+    background-color: transparent;
+    line-height: 10px;
+    flex: calc(100% / 2);
+}
+
+#button > label:has(input:checked) {
+    background-color: darkgreen;
+}
+/* #endregion */
+
+#stats, #data {
+    display: none;
+}
+
+#stat > table td {
+    width: fit-content;
+}
+
+.func_table input ~ span {
+    opacity: 0.3;
+    background-position: 0 0;
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+}
+
+.func_table input:checked ~ span {
+    opacity: 1;
+}

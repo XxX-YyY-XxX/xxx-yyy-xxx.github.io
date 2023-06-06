@@ -12,18 +12,18 @@ export function* zip(...iterables) {
     if (iterables.slice(-1)[0] === true) {extension = 'some'; iterables.pop();}
     else extension = 'every';
 
-    const output = Array();
-    const iterator_array = iterables.map(iter);
-    while (iterator_array.map(x => x.next()).map(({value, done}) => {output.push(value); return !done;})[extension](x => x))
-        yield output.splice(0);
+    const OUTPUT = Array();
+    const ITER_ARRAY = iterables.map(iter);
+    while (ITER_ARRAY.map(x => x.next()).map(({value, done}) => {OUTPUT.push(value); return !done;})[extension](x => x))
+        yield OUTPUT.splice(0);
 }
 
 /** typeof, but with extra steps. */
 export function type(any) {
-    const item_type = typeof any;
+    const TYPE = typeof any;
     try {
-        if (item_type !== "object")
-            return item_type;
+        if (TYPE !== "object")
+            return TYPE;
         else if (any === null)
             return "null";
         else if (Array.isArray(any))
@@ -33,7 +33,7 @@ export function type(any) {
         else if (any instanceof HTMLElement || any instanceof DocumentFragment)
             return "dom";
         else if (Symbol.iterator in any)
-            return "iterator"
+            return "iterator";
         else
             return "object";
     } catch (exception) {

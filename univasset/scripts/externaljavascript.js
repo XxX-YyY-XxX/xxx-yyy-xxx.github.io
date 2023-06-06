@@ -164,7 +164,8 @@ export function splitTime(milliseconds) {
     return [...Math.intdiv(hr, 24), min, sec, milli];
 }
 
-/** @param {{[HTMLAttribute: string]: any}} attributes String/Number for attribute assigment, Array for function calls, Object for property calls. */
+/** 
+ * @param {{[HTMLAttribute: string]: any}} attributes String/Number for attribute assigment, Array for function calls, Object for property calls. */
 export function setAttr(base, attributes) {
     for (const [attrib, value] of Object.entries(attributes)) {
         switch (type(value)) {
@@ -186,9 +187,12 @@ export function setAttr(base, attributes) {
     }
 }
 
-/** Creates a sorter key from the given parametrs.
- * @param {{key: function(any): any, reverse: boolean, array: Array}}
- * @param array Follows this array for specific order. Only useful for unique values for now. */
+/** Creates a sorter key from the given parameters.
+ * @template T0
+ * @template T1
+ * @param {{key: function(T0): T1, reverse: boolean, array: T1[]}}
+ * @param array Follows this array for specific order. Only useful for unique values for now.
+ * @returns {function(T0, T0): number} */
 export function compare({key = x => x, reverse = false, array = null} = {}) {
     //shall never fuse array and key parameters
     const _onReverse = reverse ? ((x, y) => [y, x]) : ((x, y) => [x, y]);
@@ -226,7 +230,6 @@ export function compare({key = x => x, reverse = false, array = null} = {}) {
         return _currentFunc(a, b);
     }
 
-    /** @returns {number} */
     return function(a, b) {
         [a, b] = [key(a), key(b)];
         [a, b] = [_getIndex(a), _getIndex(b)];

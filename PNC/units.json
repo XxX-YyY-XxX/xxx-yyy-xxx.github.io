@@ -1,29 +1,5 @@
 [
     {
-        "name": "Doll Name",
-        "class": "Class",
-        "reference": "Reference",
-        "fragments": "Fragments",
-        "hp": "Max HP",
-        "atk": "Attack",
-        "hash": "Hashrate",
-        "pdef": "Phys Def",
-        "odef": "Op Def",
-        "aspd": "Atk Spd",
-        "crate": "Crit Rate",
-        "cdmg": "Crit Dmg",
-        "ppen": "Phys Pen",
-        "open": "Op Pen",
-        "dodge": "Dodge",
-        "regen": "Regen",
-        "cdr": "Haste",
-        "res": "Resist",
-        "backlash": "Backlash",
-        "dmgamp": "Dmg Boost",
-        "dmgreduc": "Dmg Reduce",
-        "healamp": "Heal Boost"
-    },
-    {
         "name": "Persicaria",
         "class": "Medic",
         "reference": {"Persica": "https://iopwiki.com/wiki/Persica"},
@@ -35,17 +11,20 @@
         "odef": 293,
         "aspd": 110,
         "crate": 2.5,
-        "cdmg": 50,
         "ppen": 140,
         "open": 140,
         "dodge": 7,
         "regen": 406,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Antonina",
@@ -59,17 +38,20 @@
         "odef": 375,
         "aspd": 100,
         "crate": 8,
-        "cdmg": 50,
         "ppen": 343,
         "open": 347,
         "dodge": 3,
         "regen": 546,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Sol",
@@ -83,17 +65,20 @@
         "odef": 447,
         "aspd": 130,
         "crate": 5,
-        "cdmg": 50,
         "ppen": 410,
         "open": 412,
         "dodge": 5,
         "regen": 610,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Simo",
@@ -107,17 +92,20 @@
         "odef": 273,
         "aspd": 130,
         "crate": 10,
-        "cdmg": 50,
         "ppen": 461,
         "open": 436,
         "dodge": 0,
         "regen": 364,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Croque",
@@ -131,17 +119,20 @@
         "odef": 608,
         "aspd": 90,
         "crate": 0,
-        "cdmg": 50,
         "ppen": 234,
         "open": 223,
         "dodge": 10,
         "regen": 728,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Fresnel",
@@ -155,17 +146,20 @@
         "odef": 226,
         "aspd": 120,
         "crate": 10,
-        "cdmg": 50,
         "ppen": 427,
         "open": 461,
         "dodge": 0,
         "regen": 349,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Chelsea",
@@ -179,17 +173,20 @@
         "odef": 492,
         "aspd": 140,
         "crate": 0,
-        "cdmg": 50,
         "ppen": 370,
         "open": 336,
         "dodge": 6,
         "regen": 637,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Mai",
@@ -203,17 +200,20 @@
         "odef": 370,
         "aspd": 100,
         "crate": 5,
-        "cdmg": 50,
         "ppen": 344,
         "open": 346,
         "dodge": 5,
         "regen": 546,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Souchun",
@@ -227,17 +227,20 @@
         "odef": 768,
         "aspd": 110,
         "crate": 0,
-        "cdmg": 50,
         "ppen": 254,
         "open": 272,
         "dodge": 6,
         "regen": 637,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Max",
@@ -251,17 +254,20 @@
         "odef": 192,
         "aspd": 140,
         "crate": 5,
-        "cdmg": 50,
         "ppen": 322,
         "open": 364,
         "dodge": 5,
         "regen": 364,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Betty",
@@ -275,17 +281,20 @@
         "odef": 531,
         "aspd": 140,
         "crate": 10,
-        "cdmg": 50,
         "ppen": 377,
         "open": 334,
         "dodge": 0,
         "regen": 610,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Choco",
@@ -299,17 +308,20 @@
         "odef": 373,
         "aspd": 115,
         "crate": 5,
-        "cdmg": 50,
         "ppen": 203,
         "open": 201,
         "dodge": 7,
         "regen": 455,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Panakeia",
@@ -323,17 +335,20 @@
         "odef": 301,
         "aspd": 120,
         "crate": 3,
-        "cdmg": 50,
         "ppen": 133,
         "open": 144,
         "dodge": 7,
         "regen": 364,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Angela",
@@ -347,17 +362,20 @@
         "odef": 365,
         "aspd": 100,
         "crate": 0,
-        "cdmg": 50,
         "ppen": 341,
         "open": 338,
         "dodge": 9,
         "regen": 546,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Florence",
@@ -371,17 +389,20 @@
         "odef": 265,
         "aspd": 110,
         "crate": 0,
-        "cdmg": 50,
         "ppen": 200,
         "open": 196,
         "dodge": 7,
         "regen": 334,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Fern",
@@ -395,17 +416,20 @@
         "odef": 470,
         "aspd": 120,
         "crate": 4,
-        "cdmg": 50,
         "ppen": 481,
         "open": 472,
         "dodge": 6,
         "regen": 546,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "pending",
+            "hp": 3511,
+            "atk": 87,
+            "hash": 136,
+            "pdef": 98,
+            "odef": 94,
+            "ppen": 96,
+            "open": 94
+        }
     },
     {
         "name": "Yanny",
@@ -419,17 +443,20 @@
         "odef": 609,
         "aspd": 90,
         "crate": 0,
-        "cdmg": 50,
         "ppen": 221,
         "open": 221,
         "dodge": 5,
         "regen": 728,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Groove",
@@ -443,17 +470,20 @@
         "odef": 370,
         "aspd": 110,
         "crate": 0,
-        "cdmg": 50,
         "ppen": 346,
         "open": 354,
         "dodge": 10,
         "regen": 546,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "pending",
+            "hp": 2400,
+            "atk": 73,
+            "hash": 79,
+            "pdef": 48,
+            "odef": 51,
+            "ppen": 48,
+            "open": 50
+        }						
     },
     {
         "name": "Bonee",
@@ -467,17 +497,20 @@
         "odef": 751,
         "aspd": 100,
         "crate": 10,
-        "cdmg": 50,
         "ppen": 284,
         "open": 285,
         "dodge": 4,
         "regen": 637,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Earhart",
@@ -491,17 +524,20 @@
         "odef": 209,
         "aspd": 115,
         "crate": 12,
-        "cdmg": 50,
         "ppen": 355,
         "open": 392,
         "dodge": 0,
         "regen": 364,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Zion",
@@ -515,17 +551,20 @@
         "odef": 585,
         "aspd": 100,
         "crate": 0,
-        "cdmg": 50,
         "ppen": 226,
         "open": 221,
         "dodge": 10,
         "regen": 702,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Ksenia",
@@ -539,17 +578,20 @@
         "odef": 377,
         "aspd": 100,
         "crate": 6,
-        "cdmg": 50,
         "ppen": 338,
         "open": 345,
         "dodge": 3,
         "regen": 546,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Imhotep",
@@ -563,17 +605,20 @@
         "odef": 289,
         "aspd": 115,
         "crate": 8,
-        "cdmg": 50,
         "ppen": 206,
         "open": 313,
         "dodge": 0,
         "regen": 546,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Octogen",
@@ -587,17 +632,20 @@
         "odef": 212,
         "aspd": 110,
         "crate": 0,
-        "cdmg": 50,
         "ppen": 331,
         "open": 371,
         "dodge": 0,
         "regen": 364,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Rise",
@@ -611,17 +659,20 @@
         "odef": 350,
         "aspd": 100,
         "crate": 8,
-        "cdmg": 50,
         "ppen": 349,
         "open": 344,
         "dodge": 3,
         "regen": 546,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Abigail",
@@ -635,17 +686,20 @@
         "odef": 421,
         "aspd": 100,
         "crate": 10,
-        "cdmg": 50,
         "ppen": 249,
         "open": 251,
         "dodge": 10,
         "regen": 546,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Jessie",
@@ -659,17 +713,20 @@
         "odef": 360,
         "aspd": 110,
         "crate": 3,
-        "cdmg": 50,
         "ppen": 138,
         "open": 138,
         "dodge": 7,
         "regen": 406,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Lam",
@@ -683,17 +740,20 @@
         "odef": 276,
         "aspd": 100,
         "crate": 10,
-        "cdmg": 50,
         "ppen": 561,
         "open": 499,
         "dodge": 0,
         "regen": 364,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Sakuya",
@@ -707,17 +767,20 @@
         "odef": 334,
         "aspd": 108,
         "crate": 2,
-        "cdmg": 50,
         "ppen": 408,
         "open": 401,
         "dodge": 8,
         "regen": 519,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Dushevnaya",
@@ -731,17 +794,20 @@
         "odef": 351,
         "aspd": 100,
         "crate": 8,
-        "cdmg": 50,
         "ppen": 345,
         "open": 339,
         "dodge": 3,
         "regen": 546,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
 
     {
@@ -756,17 +822,20 @@
         "odef": 193,
         "aspd": 120,
         "crate": 10,
-        "cdmg": 50,
         "ppen": 500,
         "open": 455,
         "dodge": 0,
         "regen": 364,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Evelyn",
@@ -780,17 +849,20 @@
         "odef": 660,
         "aspd": 100,
         "crate": 0,
-        "cdmg": 50,
         "ppen": 219,
         "open": 219,
         "dodge": 3,
         "regen": 747,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "pending",
+            "hp": 4636,
+            "atk": 82,
+            "hash": 119,
+            "pdef": 132,
+            "odef": 132,
+            "ppen": 44,
+            "open": 44
+        }
     },
     {
         "name": "Gin",
@@ -804,17 +876,20 @@
         "odef": 235,
         "aspd": 130,
         "crate": 5,
-        "cdmg": 50,
         "ppen": 143,
         "open": 143,
         "dodge": 0,
         "regen": 161,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Centaureissi",
@@ -828,17 +903,20 @@
         "odef": 522,
         "aspd": 120,
         "crate": 4,
-        "cdmg": 50,
         "ppen": 332,
         "open": 339,
         "dodge": 4,
         "regen": 637,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Vee",
@@ -852,17 +930,20 @@
         "odef": 328,
         "aspd": 120,
         "crate": 0,
-        "cdmg": 50,
         "ppen": 458,
         "open": 411,
         "dodge": 0,
         "regen": 455,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Chanzhi",
@@ -876,17 +957,20 @@
         "odef": 214,
         "aspd": 130,
         "crate": 10,
-        "cdmg": 50,
         "ppen": 478,
         "open": 414,
         "dodge": 3,
         "regen": 364,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "pending",
+            "hp": 2334,
+            "atk": 132,
+            "hash": 111,
+            "pdef": 44,
+            "odef": 43,
+            "ppen": 96,
+            "open": 83
+        }
     },
     {
         "name": "Nanaka",
@@ -900,17 +984,20 @@
         "odef": 355,
         "aspd": 90,
         "crate": 3,
-        "cdmg": 50,
         "ppen": 197,
         "open": 200,
         "dodge": 7,
         "regen": 395,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Banxsy",
@@ -924,17 +1011,20 @@
         "odef": 269,
         "aspd": 140,
         "crate": 5,
-        "cdmg": 50,
         "ppen": 529,
         "open": 471,
         "dodge": 4,
         "regen": 406,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
 
     {
@@ -949,17 +1039,20 @@
         "odef": 369,
         "aspd": 140,
         "crate": 3,
-        "cdmg": 50,
         "ppen": 339,
         "open": 341,
         "dodge": 3,
         "regen": 595,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Sockdolager",
@@ -973,17 +1066,20 @@
         "odef": 216,
         "aspd": 130,
         "crate": 10,
-        "cdmg": 50,
         "ppen": 444,
         "open": 444,
         "dodge": 0,
         "regen": 364,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
 
     {
@@ -998,17 +1094,20 @@
         "odef": 422,
         "aspd": 110,
         "crate": 10,
-        "cdmg": 50,
         "ppen": 445,
         "open": 409,
         "dodge": 5,
         "regen": 588,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Kuro",
@@ -1022,17 +1121,20 @@
         "odef": 192,
         "aspd": 140,
         "crate": 5,
-        "cdmg": 50,
         "ppen": 322,
         "open": 404,
         "dodge": 5,
         "regen": 364,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "De Lacey",
@@ -1046,17 +1148,20 @@
         "odef": 323,
         "aspd": 109,
         "crate": 3,
-        "cdmg": 50,
         "ppen": 167,
         "open": 336,
         "dodge": 7.5,
         "regen": 455,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "pending",
+            "hp": 2806,
+            "atk": 98,
+            "hash": 126,
+            "pdef": 63,
+            "odef": 65,
+            "ppen": 33,
+            "open": 67
+        }
     },
     {
         "name": "Hatsuchiri",
@@ -1070,17 +1175,20 @@
         "odef": 325,
         "aspd": 110,
         "crate": 10,
-        "cdmg": 50,
         "ppen": 475,
         "open": 295,
         "dodge": 8,
         "regen": 588,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Daiyan",
@@ -1094,17 +1202,20 @@
         "odef": 159,
         "aspd": 120,
         "crate": 10,
-        "cdmg": 50,
         "ppen": 444,
         "open": 399,
         "dodge": 0,
         "regen": 327,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Python",
@@ -1118,17 +1229,20 @@
         "odef": 598,
         "aspd": 90,
         "crate": 0,
-        "cdmg": 50,
         "ppen": 234,
         "open": 223,
         "dodge": 10,
         "regen": 577,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Nascita",
@@ -1142,17 +1256,20 @@
         "odef": 477,
         "aspd": 120,
         "crate": 10,
-        "cdmg": 50,
         "ppen": 447,
         "open": 360,
         "dodge": 5,
         "regen": 546,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Puzzle",
@@ -1166,17 +1283,20 @@
         "odef": 409,
         "aspd": 110,
         "crate": 5,
-        "cdmg": 50,
         "ppen": 395,
         "open": 362,
         "dodge": 5,
         "regen": 610,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Helix",
@@ -1190,17 +1310,20 @@
         "odef": 292,
         "aspd": 110,
         "crate": 4,
-        "cdmg": 50,
         "ppen": 155,
         "open": 155,
         "dodge": 7,
         "regen": 364,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Magnhilda",
@@ -1214,17 +1337,20 @@
         "odef": 423,
         "aspd": 120,
         "crate": 4,
-        "cdmg": 50,
         "ppen": 414,
         "open": 295,
         "dodge": 4,
         "regen": 679,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Sueyoi",
@@ -1238,17 +1364,20 @@
         "odef": 376,
         "aspd": 100,
         "crate": 10,
-        "cdmg": 50,
         "ppen": 345,
         "open": 395,
         "dodge": 5,
         "regen": 455,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
     {
         "name": "Clukay",
@@ -1262,17 +1391,20 @@
         "odef": 216,
         "aspd": 105,
         "crate": 12,
-        "cdmg": 50,
         "ppen": 314,
         "open": 428,
         "dodge": 5,
         "regen": 364,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     },
 
     {
@@ -1287,16 +1419,19 @@
         "odef": -1,
         "aspd": -1,
         "crate": -1,
-        "cdmg": 50,
         "ppen": -1,
         "open": -1,
         "dodge": -1,
         "regen": -1,
-        "cdr": 0,
-        "res": 0,
-        "backlash": 0,
-        "dmgamp": 0,
-        "dmgreduc": 0,
-        "healamp": 0
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
     }
 ]
