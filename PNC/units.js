@@ -1,6 +1,6 @@
 import {tableSort, initializeHTML, brJoin, radioGroup, nestElements} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
 import {Async, compare, setAttr} from "../univasset/scripts/externaljavascript.js";
-import {zip} from "../univasset/scripts/basefunctions/index.js"
+import {zip, count} from "../univasset/scripts/basefunctions/index.js"
 
 const STAT = document.querySelector("#stats"), DATA = document.querySelector("#data");
 radioGroup(document.querySelector("#button"), "tables",
@@ -15,13 +15,13 @@ const str = (x, y) => {x.textContent = y};
 /** @param {HTMLTableCellElement} x @param {number} y */
 const per = (x, y) => {x.textContent = `${y}%`};
 
-const STAT_ARRAY = UNITS.map(x => [x.name, x.hp, x.atk, x.hash, x.pdef, x.odef, x.aspd, x.crate, x.ppen, x.open, x.dodge, x.regen]);
+/* const STAT_ARRAY = UNITS.map(x => [x.name, x.hp, x.atk, x.hash, x.pdef, x.odef, x.aspd, x.crate, x.ppen, x.open, x.dodge, x.regen]);
 STAT_ARRAY.unshift(["Doll Name", "Max HP", "Attack", "Hashrate", "Phys Def", "Op Def", "Atk Spd", "Crit Rate", "Phys Pen", "Op Pen", "Dodge", "Regen"]);
 tableSort(document.querySelector("#stats > div"),
     STAT_ARRAY,
     [str, str, str, str, str, str, str, per, str, str, per, str],
     {frzcol: true, frzhdr: true}
-);
+); */
 
 function sort() {
     class Units {
@@ -69,7 +69,7 @@ function sort() {
         #hasarma;
 
         #input;
-        #listener;
+        #updateStat;
         //#endregion
     
         constructor(stat_object) {
@@ -100,6 +100,7 @@ function sort() {
             this.#arma = false;
             this.#hasarma = !["", "pending"].includes(this.#icon);
 
+            //#region HTML Elements
             this.row = document.createElement("tr");
 
             const TD_NAME = document.createElement("td");
@@ -107,13 +108,13 @@ function sort() {
                 const LABEL = document.createElement("label");
                 const INPUT = document.createElement("input");
                 const IMAGE = document.createElement("img");
-
+                
                 const UNIT = this;
                 this.#input = INPUT;
                 INPUT.type = "checkbox";
                 INPUT.addEventListener("click", function() {
                     UNIT.#arma = this.checked;
-                    UNIT.#listener();
+                    UNIT.#updateStat();
                 });
 
                 IMAGE.src = this.#icon;
@@ -134,7 +135,7 @@ function sort() {
             const TD_PPEN = initializeHTML("td", {textContent: this.ppen});
             const TD_OPEN = initializeHTML("td", {textContent: this.open});
 
-            this.#listener = () => {
+            this.#updateStat = () => {
                 TD_HP.textContent = this.hp;
                 TD_ATK.textContent = this.atk;
                 TD_HASH.textContent = this.hash;
@@ -158,6 +159,7 @@ function sort() {
                 initializeHTML("td", {textContent: `${this.dodge}%`}),
                 initializeHTML("td", {textContent: this.regen})
             )
+            //#endregion
         }
         
         /** @param {boolean | null} force */
@@ -169,7 +171,7 @@ function sort() {
                 this.#input.checked = force;
                 this.#arma = force;
             }
-            this.#listener();
+            this.#updateStat();
         }
     }    
 
@@ -221,17 +223,20 @@ function sort() {
 
     const HEADER_NAMES = ["Doll Name", "Max HP", "Attack", "Hashrate", "Phys Def", "Op Def", "Atk Spd", "Crit Rate", "Phys Pen", "Op Pen", "Dodge", "Regen"];
     const HEADER_KEYS = ["name", "hp", "atk", "hash", "pdef", "odef", "aspd", "crate", "ppen", "open", "dodge", "regen"];
-    for (const [NAME, KEY] of zip(HEADER_NAMES, HEADER_KEYS)) {
+    function* returnType() {yield "string"; while (true) yield "number"};
+    for (const [NAME, KEY, TYPE] of zip(HEADER_NAMES, HEADER_KEYS, returnType())) {
         const TH = document.createElement("th");
         TH.textContent = NAME;
         TH.addEventListener("click", sortMethod, true);
-        setAttr(TH.dataset, {sort: "no", key: KEY, type: Number(INDEX) ? "number" : "string"});
+        setAttr(TH.dataset, {sort: "no", key: KEY, type: TYPE});
         HEADER_TR.appendChild(TH);
     }
 
     STAT.classList.add("func_table");
     STAT.appendChild(TABLE);
 }
+
+sort()
 
 const DATA_ARRAY = UNITS.map(x => [x.name, x.class, x.reference, x.fragments]);
 DATA_ARRAY.unshift(["Doll Name", "Class", "Reference", "Fragments"]);

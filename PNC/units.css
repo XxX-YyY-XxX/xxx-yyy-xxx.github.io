@@ -4,6 +4,10 @@
     height: 95vh;
 }
 
+#stats, #data {
+    display: none;
+}
+
 /* #region Freeze */
 .func_table tr:nth-child(even) > :first-child {
     background: #282e1f !important;
@@ -57,14 +61,11 @@ input[type="checkbox"], input[type="radio"] {
 }
 /* #endregion */
 
-#stats, #data {
-    display: none;
-}
-
-#stat > table td {
+/* #stat > table td {
     width: fit-content;
-}
+} */
 
+/* #region Arma */
 input ~ .arma {
     opacity: 0.3;
     height: inherit;
@@ -77,3 +78,4 @@ input ~ .arma {
 input:checked ~ .arma {
     opacity: 1;
 }
+/* #endregion */

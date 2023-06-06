@@ -421,7 +421,7 @@
         "dodge": 6,
         "regen": 546,
         "arma": {
-            "icon": "pending",
+            "icon": "./assets/images/arma/Fern.png",
             "hp": 3511,
             "atk": 87,
             "hash": 136,
@@ -475,7 +475,7 @@
         "dodge": 10,
         "regen": 546,
         "arma": {
-            "icon": "pending",
+            "icon": "./assets/images/arma/Groove.png",
             "hp": 2400,
             "atk": 73,
             "hash": 79,
@@ -854,7 +854,7 @@
         "dodge": 3,
         "regen": 747,
         "arma": {
-            "icon": "pending",
+            "icon": "./assets/images/arma/Evelyn.png",
             "hp": 4636,
             "atk": 82,
             "hash": 119,
@@ -962,7 +962,7 @@
         "dodge": 3,
         "regen": 364,
         "arma": {
-            "icon": "pending",
+            "icon": "./assets/images/arma/Chanzhi.png",
             "hp": 2334,
             "atk": 132,
             "hash": 111,
@@ -1153,7 +1153,7 @@
         "dodge": 7.5,
         "regen": 455,
         "arma": {
-            "icon": "pending",
+            "icon": "./assets/images/arma/DeLacey.png",
             "hp": 2806,
             "atk": 98,
             "hash": 126,

@@ -1,12 +1,14 @@
-/** @param {Iterable} iterable */
+/** Create an iterator from an iterable object.
+ * @template T
+ * @param {Iterable<T>} iterable
+ * @returns {Iterator<T, any, undefined>} */
 export function iter(iterable) {
     return iterable[Symbol.iterator]();
 }
 
 /** Iterates items per index in groups. Add "true" at the end to extend shortest.
- * @template T
- * @param {...Iterable<T>} iterables order of iterables = order of output
- * @returns {Generator<T[], void, unknown>} Array of values from each array */
+ * @param {...(Iterable<any> | Generator<any, any, any> | true)} iterables order of iterables = order of output
+ * @returns {Generator<any[], void, unknown>} Array of values from each iterable */
 export function* zip(...iterables) {
     var extension;
     if (iterables.slice(-1)[0] === true) {extension = 'some'; iterables.pop();}
@@ -37,7 +39,18 @@ export function type(any) {
         else
             return "object";
     } catch (exception) {
-        console.error(exception)
-        return "object"
+        console.error(exception);
+        return "object";
+    }
+}
+
+/** Return incrementing number.
+ * @param {number} start Start of the count. Default 0.
+ * @param {number} step Increment amount. Default 1. */
+export function* count(start = 0, step = 1) {
+    var i = start;
+    while (true) {
+        yield i;
+        i = i + step;
     }
 }
