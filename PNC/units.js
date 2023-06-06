@@ -80,12 +80,12 @@ function sort() {
             this.#hash = stat_object.hash;
             this.#pdef = stat_object.pdef;
             this.#odef = stat_object.odef;
-            this.#aspd = stat_object.aspd;
-            this.#crate = stat_object.crate;
+            this.aspd = stat_object.aspd;
+            this.crate = stat_object.crate;
             this.#ppen = stat_object.ppen;
             this.#open = stat_object.open;
-            this.#dodge = stat_object.dodge;
-            this.#regen = stat_object.regen;
+            this.dodge = stat_object.dodge;
+            this.regen = stat_object.regen;
     
             this.#icon = stat_object.arma.icon;
             this.#armahp = stat_object.arma.hp + this.#hp;
