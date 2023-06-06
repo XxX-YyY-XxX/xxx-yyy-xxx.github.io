@@ -68,11 +68,9 @@ input[type="checkbox"], input[type="radio"] {
 /* #region Arma */
 input ~ .arma {
     opacity: 0.3;
-    height: inherit;
+    height: 24px;
     object-fit: contain;
-/*  background-position: 0 0;
-    background-size: 16px 16px;
-    background-repeat: no-repeat;*/
+    float: right;
 }
 
 input:checked ~ .arma {
