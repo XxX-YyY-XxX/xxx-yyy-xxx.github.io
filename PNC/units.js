@@ -175,7 +175,7 @@ function sort() {
         }
     }    
 
-    /** @type {Units[]} */ const UNIT_LIST = UNITS.map(Units);
+    const UNIT_LIST = UNITS.map(x => new Units(x));
 
     const [THEAD, HEADER_TR] = nestElements("thead", "tr");
 
