@@ -13,8 +13,8 @@ const nextUnit = timer.bind(null, document.getElementById("coalition"), "Jun 26,
 timer(document.getElementById("coalition"), "May 29, 2023, 23:59 UTC-0800",
     "https://preview.redd.it/odja9iezxew81.jpg?width=1400&format=pjpg&auto=webp&v=enabled&s=e187ca26f4368c052af065601aba9ce60c16604f", {onEnd: nextUnit});
 
-const nextBanner = timer.bind(null, document.getElementById('skin-banner'), "",
-    "");
+const nextBanner = timer.bind(null, document.getElementById('skin-banner'), "Jul 03, 2023 23:59 UTC-0800",
+    "https://iopwiki.com/images/1/1d/Childhood_Tales_of_Summer_Flowers_Login_Wallpaper.png");
 timer(document.getElementById('skin-banner'), "Jun 05, 2023 23:59 UTC-0800",
     "doublebanner.png", {onEnd: nextBanner});
 

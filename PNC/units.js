@@ -68,6 +68,7 @@ function sort() {
         #arma;
         #hasarma;
 
+        #input;
         #listener;
         //#endregion
     
@@ -105,18 +106,22 @@ function sort() {
             if (this.#hasarma) {
                 const LABEL = document.createElement("label");
                 const INPUT = document.createElement("input");
-                const EMBLEM = document.createElement("span");
-
-                INPUT.type = "checkbox";
-                EMBLEM.style.backgroundImage = `url("${this.#icon}")`;
-
-                LABEL.append(INPUT, this.name, EMBLEM)
+                const IMAGE = document.createElement("img");
 
                 const UNIT = this;
-                TD_NAME.addEventListener("click", function() {
-                    UNIT.switch(INPUT.checked);
+                this.#input = INPUT;
+                INPUT.type = "checkbox";
+                INPUT.addEventListener("click", function() {
+                    UNIT.#arma = this.checked;
+                    UNIT.#listener();
                 });
-                TD_NAME.append(LABEL);
+
+                IMAGE.src = this.#icon;
+                IMAGE.alt = `${this.name} arma.`;
+                IMAGE.classList.add("arma");
+
+                LABEL.append(INPUT, this.name, IMAGE);
+                TD_NAME.appendChild(LABEL);
             } else {
                 TD_NAME.textContent = this.name;
             }
@@ -160,8 +165,10 @@ function sort() {
             if (!this.#hasarma) return;
             if (force === null)
                 this.#arma = !this.#arma;
-            else
+            else {
+                this.#input.checked = force;
                 this.#arma = force;
+            }
             this.#listener();
         }
     }    
@@ -222,7 +229,6 @@ function sort() {
         HEADER_TR.appendChild(TH);
     }
 
-    const STAT = document.querySelector("#stats > div");
     STAT.classList.add("func_table");
     STAT.appendChild(TABLE);
 }
