@@ -51,10 +51,10 @@ class Units {
 
     /** @type {string} */ #icon;
 
-    row;
     #arma;
     #hasarma;
 
+    row;
     #input;
     #updateStat;
     //#endregion
@@ -152,12 +152,8 @@ class Units {
     /** @param {boolean | null} force */
     switch(force = null) {
         if (!this.#hasarma) return;
-        if (force === null)
-            this.#arma = !this.#arma;
-        else {
-            this.#input.checked = force;
-            this.#arma = force;
-        }
+        this.#arma = force ?? !this.#arma;
+        this.#input.checked = this.#arma;
         this.#updateStat();
     }
 }    
@@ -220,6 +216,7 @@ STAT_TABLE.classList.add("func_table");
 STAT_TABLE.appendChild(TABLE);
 //#endregion
 
+//#region Others
 const DATA_ARRAY = UNITS.map(x => [x.name, x.class, x.reference, x.fragments]);
 DATA_ARRAY.unshift(["Doll Name", "Class", "Reference", "Fragments"]);
 tableSort(
@@ -233,3 +230,4 @@ tableSort(
     ],
     {frzcol: true, frzhdr: true}
 );
+//#endregion

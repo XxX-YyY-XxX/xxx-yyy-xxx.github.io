@@ -1,12 +1,13 @@
 /* 
     key: parameter name whose value will replace this element
     src: url of file whose content will replace this element
- */
+*/
 
 for (const include of Array.from(document.querySelectorAll("include[src]"))) await includeDocument(include);
 
 /** @param {HTMLElement} include_elem */
 async function includeDocument(include_elem) {
+    // return error if path does not exist
     const include_document = await fetch(include_elem.getAttribute("src"))
         .then(response => response.text())
         .then(html => html.replace(/<!--(?!>)[\S\s]*?-->/g, ''))
