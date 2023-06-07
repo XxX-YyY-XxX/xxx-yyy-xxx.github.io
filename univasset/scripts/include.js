@@ -11,6 +11,7 @@
         => <include src="" z="12"></include>
 
     ChildNode.replaceWith() does not work with open tags.
+    object, array, boolean ???
 */
 
 for (const INCLUDE of Array.from(document.querySelectorAll("include[src]"))) await includeDocument(INCLUDE);
@@ -19,7 +20,7 @@ for (const INCLUDE of Array.from(document.querySelectorAll("include[src]"))) awa
 async function includeDocument(include_elem) {
     const INCLUDE_DOC = await fetch(include_elem.getAttribute("src"))
         .then(response => response.text())
-        .then(html => html.replace(/<!--(?!>)[\S\s]*?-->/g, ''))
+        .then(html => html.replace(/<!--(?!>)[\S\s]*?-->/g, ""))
         .then(cleantext => new DOMParser().parseFromString(cleantext, "text/html"))
         .catch(error => {console.error(error); return null});
     if (INCLUDE_DOC === null) return;
@@ -29,22 +30,17 @@ async function includeDocument(include_elem) {
     for (const INCLUDE of Array.from(INCLUDE_DOC.querySelectorAll("include[key]")))
         INCLUDE.replaceWith(PARAM.get(INCLUDE.getAttribute("key")));
 
-    for (const INCLUDE of Array.from(INCLUDE_DOC.querySelectorAll("include[key-src]"))) {
-        INCLUDE.setAttribute("src", PARAM.get(INCLUDE.getAttribute("key-src")));
-        INCLUDE.removeAttribute("key-src");
-    }
-
-    for (const INCLUDE of Array.from(INCLUDE_DOC.querySelectorAll("include[src]"))) {
+    for (const INCLUDE of Array.from(INCLUDE_DOC.querySelectorAll("include"))) {
         for (const {name, value} of Array.from(INCLUDE.attributes)) {
-            if (name === "src") continue;
-            else if (name.startsWith("key-")) {
+            if (name.startsWith("key-")) {
                 INCLUDE.setAttribute(name.replace("key-", ""), PARAM.get(value));
                 INCLUDE.removeAttribute(name);
-            } else console.log("Unknown pair:", name, value);
+            }
         }
-    
-        await includeDocument(INCLUDE);
     }
+    
+    for (const INCLUDE of Array.from(INCLUDE_DOC.querySelectorAll("include[src]")))
+        await includeDocument(INCLUDE);
 
     for (const INCLUDE of Array.from(INCLUDE_DOC.querySelectorAll("include")))
         console.log("Wild include element found:", INCLUDE, "from", include_elem.getAttribute("src"));
