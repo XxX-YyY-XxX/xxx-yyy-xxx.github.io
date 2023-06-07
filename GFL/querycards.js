@@ -105,7 +105,7 @@ export const cardData = [
         questions : `How do I level my girls?`,
         answers : `${List.description({
             "Leveling Maps": [
-                `Done mainly through ${spoilerSummary('corpse dragging', "Also called Poor Run or Beggar Run, it is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.")}`,
+                `Done mainly through ${spoilerSummary('corpse dragging', "Also called Poor Run or Beggar Run, it is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.")}.`,
                 getID('Draggable stages.', '00026'),
                 getID("Supplying the dragger.", "00073")
             ],
@@ -561,7 +561,7 @@ export const cardData = [
         questions : `Will there be problems with switching between multiple devices regularly?`,
         answers : `Only if you think that manually logging in every switch is a problem.`,
         tags : [dTag.ACCT]
-    },
+    },  //If there's two simultaneous logins, who gets kicked the first or the second?
     {
         id : '00037',
         questions : `Where to go for tech support?`,
@@ -825,7 +825,7 @@ export const cardData = [
         id : '00070',
         questions : `Do events get a rerun? And if so, when?`,
         answers : `${List.description({
-            "Major Events": ["Gets a permanent rerun called Campaign Missions 6 months minimum after their initial release."],
+            "Major Events": ["Gets a permanent rerun called Campaign Missions 6-12 months or more after their initial release."],
             "Seasonal Events": ["Gets one when it's their time.", "Much older ones will be added to Campaign Mission."],
             "Collab Events": ["Subjected to their holders whims."]
         })}`,
@@ -1104,8 +1104,9 @@ export const cardData = [
     },
     {
         id : '00103',
-        questions : `My resources (Manpower, Ammunitions, Rations, Parts) are uncomfortably low? Where can I get some?`,
-        answers : `${TextStyle.style("Most efficient and consistent is logistics.", TextStyle.BOLD)}<br>Though you can get them through the shop, quest and event/crate rewards, campaign/major story node clears, and random nodes.`,
+        questions : `My resources (Manpower, Ammunitions/Ammo, Rations, Parts) are uncomfortably low? Where can I get some?`,
+        answers : `${TextStyle.style("Most efficient and consistent is logistics.", TextStyle.BOLD)}<br>
+        Though you can get them through the shop, quest and event/crate rewards, campaign/major story node clears, and random nodes.`,
         tags : [dTag.MARP, dTag.LOGI, dTag.NEWB, dTag.GET]
     },
     {
@@ -1130,7 +1131,8 @@ export const cardData = [
     {
         id : '00107',
         questions : `What are the resources that has a defined max capacity and how much can they store?`,
-        answers : `${image('https://cdn.discordapp.com/attachments/410790982116966400/905090370675830884/image0.jpg', 'Train Coin = Training Data | Furniture Coin = Tokens | Memory Pieces = Neural Fragments<br>' + link('Source', 'https://randomqwerty.github.io/?server=en&file=item'))}<br>
+        answers : `Resource limit for each currency.<br>
+        ${image('https://cdn.discordapp.com/attachments/410790982116966400/905090370675830884/image0.jpg', 'Train Coin = Training Data | Furniture Coin = Tokens | Memory Pieces = Neural Fragments<br>' + link('Source', 'https://randomqwerty.github.io/?server=en&file=item'))}<br>
         Even then, all resources can be obtained without regards to max capacity through daily gifts, mission rewards, and whaling.<br>
         And no, the four resources will stay at 300k.`,
         tags : [dTag.MARP, dTag.ITEM]
@@ -2276,10 +2278,11 @@ export const cardData = [
             'FX05' : [link('Does not activate skill on max ROF.', 'https://old.reddit.com/r/girlsfrontline/comments/vx5s4p/weekly_commanders_lounge_july_12_2022/ig4n5sr/')],
             'Supernova' : ['Additive crit rate.'],
             'K2' : ["ROF around 90 to maximize the ICD up to 100 if there's a run-up to auto her skill."],
-            'Sterling' : ['M3', 'PPSh-41 (+MOD)', 'PP-2000', 'PPS-43', 'Sten MKII', 'EVO 3', 'PP-19 (+MOD)', 'Sterling'],
+            'Sterling' : ['M3, PPSh-41 (+MOD), PP-2000, PPS-43, Sten MKII, EVO 3, PP-19 (+MOD), Sterling'],
             "M4 SOPMOD II": [link("M4 interaction still borked (by u/UnironicWeeaboo).", "https://imgur.com/a/7eSGbu6")],
             "Ribeyrolles": [`MOD skill do not count for AS Val's MOD skill, most likely due to buff counting as a "unit".`],
-            "LTLX": ["Skill knocks back bosses."]
+            "LTLX": ["Skill knocks back bosses."],
+            "M4A1": ["Main shot cannot crit. Explosion does."]
         })}`,
         tags : [dTag.TDOLL, dTag.SKILL]
     },
@@ -3412,9 +3415,16 @@ export const cardData = [
         tags : [dTag.PA, dTag.COALITION]
     },  //@Visual
     {
+        id : '00440',
+        questions : `How do I run Data Simulations?`,
+        answers : `${link("BigStupidJellyfish's guide.", "https://big-stupid-jellyfish.github.io/GFMath/pages/datasim")}`,
+        tags : [dTag.SIMS]
+    },
+    {
         id : '00000',
         questions : ``,
         answers : ``,
         tags : []
     },
 ];
+

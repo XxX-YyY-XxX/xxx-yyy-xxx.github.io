@@ -2,10 +2,6 @@
 
 # Tactical Doll Skills
 
-### Can M4A1's cannon proc crit?
-
-> For the main shot, no. For the rest of the explosion, yes.
-
 ### In terms of M950a's Mod skill, what node is the theatre stage?
 
 > Non-allied. Occupied or otherwise. Also applicable to all combat sims.

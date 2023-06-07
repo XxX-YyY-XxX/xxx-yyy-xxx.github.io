@@ -159,3 +159,7 @@ img.inline-img {
     height: 16px;
 }
 /* #endregion */
+
+#submission-form, #browse-page {
+    display: none;
+}
