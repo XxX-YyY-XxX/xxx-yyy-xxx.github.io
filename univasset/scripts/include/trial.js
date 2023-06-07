@@ -1,41 +1,53 @@
 /* 
     key: parameter name whose value will replace this element
     src: url of file whose content will replace this element
+    key-???: change own name to ???, change value to value of name matching own value
+
+    Main:
+        <include src="" a="12" s="34" />
+    Sub:
+        <include src="" key-z="a" />
+        => <include src="" z="12" />
+    Key:
+        <include key="s" />
+        => 34
 */
 
-for (const include of Array.from(document.querySelectorAll("include[src]"))) await includeDocument(include);
+for (const INCLUDE of Array.from(document.querySelectorAll("include[src]"))) await includeDocument(INCLUDE);
 
 /** @param {HTMLElement} include_elem */
 async function includeDocument(include_elem) {
-    // return error if path does not exist
-    const include_document = await fetch(include_elem.getAttribute("src"))
+    const INCLUDE_DOC = await fetch(include_elem.getAttribute("src"))
         .then(response => response.text())
         .then(html => html.replace(/<!--(?!>)[\S\s]*?-->/g, ''))
-        .then(cleantext => new DOMParser().parseFromString(cleantext, "text/html"));
-    /** @type {Array} */ const parameters = JSON.parse("[" + include_elem.textContent + "]");
+        .then(cleantext => new DOMParser().parseFromString(cleantext, "text/html"))
+        .catch(error => {console.error(error); return null});
+    if (INCLUDE_DOC === null) return;
 
-    for (const include of Array.from(include_document.querySelectorAll("include[key]"))) {
-        const paramvalue = parameters[parseInt(include.getAttribute("key"))];
+    const PARAM = new Map(Array.from(include_elem.attributes).map(({name, value}) => [name, value]));
 
-        switch (typeof paramvalue) {
-            case "string":  //Replace include element with text.
-                include.replaceWith(paramvalue);
-                break;
-            default:
-                alert(typeof paramvalue, paramvalue, include);
-                break;
-        }
+    for (const INCLUDE of Array.from(INCLUDE_DOC.querySelectorAll("include[key]")))
+        INCLUDE.replaceWith(PARAM.get(INCLUDE.getAttribute("key")));
+
+    for (const INCLUDE of Array.from(INCLUDE_DOC.querySelectorAll("include[key-src]"))) {
+        INCLUDE.setAttribute("src", PARAM.get(INCLUDE.getAttribute("key-src")));
+        INCLUDE.removeAttribute("key-src");
     }
 
-    for (const include of Array.from(include_document.querySelectorAll("include[src]"))) {
-        if (include.textContent) {
-            /** @type {Array} */ let subparam = JSON.parse("[" + include.textContent + "]");
-            subparam = subparam.map(x => Number.isInteger(x) ? parameters[x] : x);
-            include.textContent = JSON.stringify(subparam).slice(1, -1);
+    for (const INCLUDE of Array.from(INCLUDE_DOC.querySelectorAll("include[src]"))) {
+        for (const {name, value} of Array.from(INCLUDE.attributes)) {
+            if (name === "src") continue;
+            else if (name.startsWith("key-")) {
+                INCLUDE.setAttribute(name.replace("key-", ""), PARAM.get(value));
+                INCLUDE.removeAttribute(name);
+            } else console.log("Unknown pair:", name, value);
         }
-
-        await includeDocument(include);
-    }
     
-    include_elem.replaceWith(...include_document.body.childNodes);
+        await includeDocument(INCLUDE);
+    }
+
+    for (const INCLUDE of Array.from(INCLUDE_DOC.querySelectorAll("include")))
+        console.log("Wild include element found:", INCLUDE, "from", include_elem.getAttribute("src"));
+    
+    include_elem.replaceWith(...INCLUDE_DOC.body.childNodes);
 }
