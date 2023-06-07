@@ -18,8 +18,11 @@ for (const INCLUDE of Array.from(document.querySelectorAll("include[src]"))) awa
 
 /** @param {HTMLElement} include_elem */
 async function includeDocument(include_elem) {
-    const INCLUDE_DOC = await fetch(include_elem.getAttribute("src"))
-        .then(response => response.text())
+    const SOURCE = include_elem.getAttribute("src");
+    const INCLUDE_DOC = await fetch(SOURCE)
+        .then(response => {
+            if (response.ok) return response.text();
+            return Promise.reject(`File missing: ${SOURCE}`)})
         .then(html => html.replace(/<!--(?!>)[\S\s]*?-->/g, ""))
         .then(cleantext => new DOMParser().parseFromString(cleantext, "text/html"))
         .catch(error => {console.error(error); return null});
@@ -43,7 +46,7 @@ async function includeDocument(include_elem) {
         await includeDocument(INCLUDE);
 
     for (const INCLUDE of Array.from(INCLUDE_DOC.querySelectorAll("include")))
-        console.log("Wild include element found:", INCLUDE, "from", include_elem.getAttribute("src"));
+        console.log("Wild include element found:", INCLUDE, "from", SOURCE);
     
     include_elem.replaceWith(...INCLUDE_DOC.body.childNodes);
 }
