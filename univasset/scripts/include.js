@@ -1,16 +1,16 @@
 /* 
-    key: parameter name whose value will replace this element
     src: url of file whose content will replace this element
-    key-???: change own name to ???, change value to value of name matching own value
+        <include src="" a="12" s="34"></include>
 
-    Main:
-        <include src="" a="12" s="34" />
-    Sub:
-        <include src="" key-z="a" />
-        => <include src="" z="12" />
-    Key:
-        <include key="s" />
+    key: parameter name whose value will replace this element
+        <include key="s"></include>
         => 34
+
+    key-???: change own name to ???, current value is parameter name, change value to value of parameter
+        <include src="" key-z="a"></include>
+        => <include src="" z="12"></include>
+
+    ChildNode.replaceWith() does not work with open tags.
 */
 
 for (const INCLUDE of Array.from(document.querySelectorAll("include[src]"))) await includeDocument(INCLUDE);
