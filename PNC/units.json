@@ -378,33 +378,6 @@
         }
     },
     {
-        "name": "Florence",
-        "class": "Medic",
-        "reference": {"PA-15": "https://iopwiki.com/wiki/PA-15"},
-        "fragments": ["Neural Kits", "Intimacy", "Fragment Search", "Basic Search"],
-        "hp": 10991,
-        "atk": 454,
-        "hash": 647,
-        "pdef": 273,
-        "odef": 265,
-        "aspd": 110,
-        "crate": 0,
-        "ppen": 200,
-        "open": 196,
-        "dodge": 7,
-        "regen": 334,
-        "arma": {
-            "icon": "",
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
-        }
-    },
-    {
         "name": "Fern",
         "class": "Warrior",
         "reference": {},
@@ -1015,6 +988,33 @@
         "open": 471,
         "dodge": 4,
         "regen": 406,
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        }
+    },
+    {
+        "name": "Florence",
+        "class": "Medic",
+        "reference": {"PA-15": "https://iopwiki.com/wiki/PA-15"},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search", "Basic Search"],
+        "hp": 10991,
+        "atk": 454,
+        "hash": 647,
+        "pdef": 273,
+        "odef": 265,
+        "aspd": 110,
+        "crate": 0,
+        "ppen": 200,
+        "open": 196,
+        "dodge": 7,
+        "regen": 334,
         "arma": {
             "icon": "",
             "hp": -1,
