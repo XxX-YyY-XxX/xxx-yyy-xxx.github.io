@@ -40,19 +40,19 @@
 /* #endregion */
 
 /* #region Freeze Cells */
-.func_table > .freeze_row th {
+.func_table > .freeze-row th {
     position: sticky;
     top: 0;
     z-index: 1;
 }
 
-.func_table > .freeze_col tr > :first-child {
+.func_table > .freeze-col tr > :first-child {
     position: sticky;
     left: 0;
     z-index: 1;
 }
 
-.func_table > .freeze_col.freeze_row th:first-child {
+.func_table > .freeze-col.freeze-row th:first-child {
     z-index: 2;
 }
 /* #endregion */

@@ -106,10 +106,10 @@ class Units {
 
             IMAGE.src = this.#icon;
             IMAGE.alt = `${this.name} arma.`;
-            IMAGE.classList.add("arma");
 
-            LABEL.append(INPUT, this.name, IMAGE);
-            TD_NAME.appendChild(LABEL);
+            LABEL.append(INPUT, IMAGE);
+            LABEL.classList.add("arma");
+            TD_NAME.append(this.name, LABEL);
         } else {
             TD_NAME.textContent = this.name;
         }
@@ -166,7 +166,7 @@ const TBODY = document.createElement("tbody");
 TBODY.append(...UNIT_LIST.map(unit => unit.row))
 
 const TABLE = document.createElement("table");
-TABLE.classList.add("freeze_col", "freeze_row");
+TABLE.classList.add("freeze-col", "freeze-row");
 TABLE.append(THEAD, TBODY);
 
 /** @param {MouseEvent} event */
@@ -223,10 +223,10 @@ tableSort(
     document.querySelector("#data > div"),
     DATA_ARRAY,
     [
-        (x, y) => {x.textContent = y},
-        (x, y) => {x.textContent = y},
-        (x, y) => {x.appendChild(brJoin(Object.entries(y).map(([name, link]) => initializeHTML("a", {textContent: name, href: link}))))},
-        (x, y) => {x.appendChild(brJoin(y))}
+        x => x,
+        x => x,
+        x => brJoin(Object.entries(x).map(([name, link]) => initializeHTML("a", {textContent: name, href: link}))),
+        x => brJoin(x)
     ],
     {frzcol: true, frzhdr: true}
 );

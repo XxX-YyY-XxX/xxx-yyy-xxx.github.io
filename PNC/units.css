@@ -61,19 +61,19 @@ input[type="checkbox"], input[type="radio"] {
 }
 /* #endregion */
 
-/* #stat > table td {
-    width: fit-content;
-} */
-
 /* #region Arma */
-input ~ .arma {
-    opacity: 0.3;
-    height: 24px;
-    object-fit: contain;
+.arma {
     float: right;
 }
 
-input:checked ~ .arma {
+.arma > img {
+    opacity: 0.3;
+    height: 24px;
+    object-fit: contain;
+    /* float: right; */
+}
+
+.arma > input:checked ~ img {
     opacity: 1;
 }
 /* #endregion */

@@ -1,5 +1,5 @@
 import {Timer, splitTime, setAttr, compare} from '../externaljavascript.js';
-import {type, zip} from '../basefunctions/index.js';
+import {type, zip, count} from '../basefunctions/index.js';
 
 /** @param {(string | Node)[]} elements */
 export function brJoin(elements) {
@@ -110,87 +110,115 @@ export function table(grouper_elem, tablematrix, mapping, {frzcol = false, frzhd
 
 /** Creates a sortable table from a given matrix of data.
  * @param {HTMLElement} grouper_elem
- * @param {Array[]} tablematrix First row will be used as header.
- * @param {(function(HTMLTableCellElement, any): void)[]} mapping
+ * @param {Array[]} tablematrix First row will be used as header. Other rows will be used as sorting basis.
+ * @param {(function(any): string | number | Node)[]} mapping
  * @param {{frzcol: boolean, frzhdr: boolean}} */
 export function tableSort(grouper_elem, tablematrix, mapping, {frzcol = false, frzhdr = false} = {}) {
-    //Almost always a string
-    const [thead_elem, tr_elem] = nestElements("thead", "tr");
-    const header_elems = tablematrix.shift().map(value => {
-        const th = document.createElement("th");
-        th.textContent = value;
-        return th;
-    });
-    tr_elem.append(...header_elems);
+    /** @param {Array} data_array */
+    function sortableRow(data_array) {
+        const TR = document.createElement("tr");
 
-    const tbodyElem = document.createElement("tbody");
-    for (const rows of tablematrix) {
-        const tr = document.createElement("tr");
-        tr.append(...rows.map((value, index) => {
-            const td = document.createElement("td");
-            mapping[index](td, value);
-            return td;
-        }));
-        tbodyElem.appendChild(tr);
+        for (const [VALUE, FUNC] of zip(data_array, mapping)) {
+            const TD = document.createElement("td");
+            TD.append(FUNC(VALUE));
+            TR.appendChild(TD);
+        }
+
+        return {list: data_array, row: TR};
     }
 
-    const table_elem = document.createElement("table");
-    table_elem.append(thead_elem, tbodyElem);
+    const HEADER_ROW = tablematrix[0];                          //Almost always a string
+    const DATA_ROWS = tablematrix.slice(1).map(sortableRow);
 
-    const samplerow = tablematrix[0];
+    const [THEAD, HEADER_TR] = nestElements("thead", "tr");
 
-    /** @type {function(HTMLTableRowElement): string | number | null} */
-    const leadkey = {
-        string: x => x.firstElementChild.textContent,
-        number: x => Number(x.firstElementChild.textContent),
-        array: x => null,
-        dom: x => null
-    }[type(samplerow[0])];
+    const TBODY = document.createElement("tbody");
+    TBODY.append(...DATA_ROWS.map(x => x.row));
+
+    const TABLE = document.createElement("table");
+    TABLE.append(THEAD, TBODY);
 
     /** @param {MouseEvent} event */
     function sortMethod(event) {
-        /** @type {HTMLTableCellElement} */ const cell = this;
-        /** @type {Array} */
-        const sorted_array = {
-            no: function() {return this.lo()},
-            hi() {
-                const index = cell.dataset.index;
-                cell.dataset.sort = "lo";
-
-                return {
-                    string: () => tablematrix.sort(compare({key: x => x[index], reverse: true})),
-                    number: () => tablematrix.sort(compare({key: x => x[index]})),
-                    array: () => tablematrix.sort(compare({key: x => [x[index].length, x[index]]})),
-                    object: () => tablematrix.sort(compare({key: x => {let y = Object.keys(x[index]); return [y.length, y]}}))
-                }[cell.dataset.type]()
-            },
-            lo() {
-                const index = cell.dataset.index;
-                cell.dataset.sort = "hi";
-
-                return {
-                    string: () => tablematrix.sort(compare({key: x => x[index]})),
-                    number: () => tablematrix.sort(compare({key: x => x[index], reverse: true})),
-                    array: () => tablematrix.sort(compare({key: x => [~x[index].length, x[index]]})),
-                    object: () => tablematrix.sort(compare({key: x => {let y = Object.keys(x[index]); return [~y.length, y]}}))
-                }[cell.dataset.type]()
-            }
-        }[cell.dataset.sort]();
-
-        const new_sort = Array.from(tbodyElem.children).sort(compare({key: leadkey, array: sorted_array.map(x => x[0])}));
-        tbodyElem.replaceChildren(...new_sort);
+        /** @type {DOMStringMap} */ const DATA = this.dataset;
+        switch (DATA.sort) {
+            case "no":
+            case "lo":
+                DATA.sort = "hi";
+                switch (DATA.type) {
+                    case "string":
+                        DATA_ROWS.sort(compare({key: ({list}) => list[DATA.index]}));
+                        break;
+                    case "number":
+                        DATA_ROWS.sort(compare({key: ({list}) => list[DATA.index], reverse: true}));
+                        break;
+                    case "array":
+                        DATA_ROWS.sort(compare({key: ({list}) => [~list[DATA.index].length, list[DATA.index]]}));
+                        break;
+                    case "object":
+                        DATA_ROWS.sort(compare({key: ({list}) => {let y = Object.keys(list[DATA.index]); return [~y.length, y]}}));
+                        break;
+                    default:
+                        console.log("Unregistered type:", DATA.type, DATA_ROWS[0].list[DATA.index]);
+                        break;
+                }
+                break;
+            case "hi":
+                DATA.sort = "lo";
+                switch (DATA.type) {
+                    case "string":
+                        DATA_ROWS.sort(compare({key: ({list}) => list[DATA.index], reverse: true}));
+                        break;
+                    case "number":
+                        DATA_ROWS.sort(compare({key: ({list}) => list[DATA.index]}));
+                        break;
+                    case "array":
+                        DATA_ROWS.sort(compare({key: ({list}) => [list[DATA.index].length, list[DATA.index]]}));
+                        break;
+                    case "object":
+                        DATA_ROWS.sort(compare({key: ({list}) => {let y = Object.keys(list[DATA.index]); return [y.length, y]}}));
+                    default:
+                        console.log("Unregistered type:", DATA.type, DATA_ROWS[0].list[DATA.index]);
+                        break;
+                    }
+                break;
+        }
+        TBODY.replaceChildren(...DATA_ROWS.map(x => x.row));
     }
 
-    for (const [index, headerCell] of Object.entries(header_elems)) {
-        setAttr(headerCell.dataset, {sort: "no", index: index, type: type(samplerow[index])});
-        headerCell.addEventListener("click", sortMethod, true);
+    for (const [INDEX, NAME, TYPE] of zip(count(), HEADER_ROW, DATA_ROWS[0].list.map(type))) {
+        const TH = document.createElement("th");
+        TH.textContent = NAME;
+        TH.addEventListener("click", sortMethod, true);
+        setAttr(TH.dataset, {sort: "no", index: INDEX, type: TYPE});
+        HEADER_TR.appendChild(TH);
     }
 
-    if (frzcol) table_elem.classList.add("freeze_col");
-    if (frzhdr) table_elem.classList.add("freeze_row");
+    if (frzcol) TABLE.classList.add("freeze-col");
+    if (frzhdr) TABLE.classList.add("freeze-row");
 
     grouper_elem.classList.add("func_table");
-    grouper_elem.appendChild(table_elem);
+    grouper_elem.appendChild(TABLE);
+}
+
+class Table {
+    #datarow;
+    
+    constructor() {
+
+    }
+
+    normal() {
+
+    }
+
+    sort() {
+
+    }
+
+    filter() {
+
+    }
 }
 
 /** Creates a timer for events.
