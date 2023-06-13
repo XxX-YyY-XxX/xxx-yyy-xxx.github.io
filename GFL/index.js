@@ -18,5 +18,5 @@ const nextBanner = timer.bind(null, document.getElementById('skin-banner'), "",
 timer(document.getElementById('skin-banner'), "Jul 03, 2023 23:59 UTC-0800",
     "https://pbs.twimg.com/media/Fx8CrrnaAAE-28t?format=jpg&name=large", {onEnd: nextBanner});
 
-timer(document.getElementById('mini-event'), "",
-    "");
+//timer(document.getElementById('mini-event'), "",
+//    "");
