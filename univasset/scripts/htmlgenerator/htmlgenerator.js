@@ -1,5 +1,5 @@
 import {Timer, splitTime, setAttr, compare} from '../externaljavascript.js';
-import {type, zip, count} from '../basefunctions/index.js';
+import {type, zip, range} from '../basefunctions/index.js';
 
 /** @param {(string | Node)[]} elements */
 export function brJoin(elements) {
@@ -186,7 +186,7 @@ export function tableSort(grouper_elem, tablematrix, mapping, {frzcol = false, f
         TBODY.replaceChildren(...DATA_ROWS.map(x => x.row));
     }
 
-    for (const [INDEX, NAME, TYPE] of zip(count(), HEADER_ROW, DATA_ROWS[0].list.map(type))) {
+    for (const [INDEX, NAME, TYPE] of zip(range(), HEADER_ROW, DATA_ROWS[0].list.map(type))) {
         const TH = document.createElement("th");
         TH.textContent = NAME;
         TH.addEventListener("click", sortMethod, true);

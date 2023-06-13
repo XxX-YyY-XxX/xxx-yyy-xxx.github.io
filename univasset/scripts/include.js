@@ -35,12 +35,18 @@ async function includeDocument(include_elem, file_name) {
 
     const PARAM = new Map(Array.from(include_elem.attributes).map(({name, value}) => [name, value]));
 
-    for (const INCLUDE of Array.from(INCLUDE_DOC.querySelectorAll("include[key]")))
-        INCLUDE.replaceWith(PARAM.get(INCLUDE.getAttribute("key")));
+    for (const INCLUDE of Array.from(INCLUDE_DOC.querySelectorAll("include[key]"))) {
+        const value = PARAM.get(INCLUDE.getAttribute("key"));
+        if (value !== undefined)    INCLUDE.replaceWith(value);
+        else                        INCLUDE.replaceWith(...INCLUDE.childNodes);
+    }
+
+    //attr-??? where ??? is attribute of first child, value is parameter name
 
     for (const INCLUDE of Array.from(INCLUDE_DOC.querySelectorAll("include"))) {
         for (const {name, value} of Array.from(INCLUDE.attributes)) {
             if (name.startsWith("param-")) {
+                //what if param key not found?
                 INCLUDE.setAttribute(name.replace("param-", ""), PARAM.get(value));
                 INCLUDE.removeAttribute(name);
             }

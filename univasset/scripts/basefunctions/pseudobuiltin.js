@@ -11,8 +11,9 @@ export function iter(iterable) {
  * @returns {Generator<any[], void, unknown>} Array of values from each iterable */
 export function* zip(...iterables) {
     var extension;
-    if (iterables.slice(-1)[0] === true) {extension = 'some'; iterables.pop();}
-    else extension = 'every';
+    if (iterables[iterables.length - 1] === true) {
+        extension = 'some'; iterables.pop();
+    } else extension = 'every';
 
     const OUTPUT = Array();
     const ITER_ARRAY = iterables.map(iter);
@@ -44,13 +45,24 @@ export function type(any) {
     }
 }
 
-/** Return incrementing number.
+/**
+ * @param {number} stop End of count. Exclusive. If not given, increments infinitely.
  * @param {number} start Start of the count. Default 0.
  * @param {number} step Increment amount. Default 1. */
-export function* count(start = 0, step = 1) {
-    var i = start;
-    while (true) {
-        yield i;
-        i = i + step;
+export function* range(stop, start = 0, step = 1) {
+    var loop;
+    if (stop === undefined || stop === null)
+        loop = x => true;
+    else if (step > 0)
+        loop = x => x < stop;
+    else if (step < 0)
+        loop = x => x > stop;
+    else {
+        console.error("Error in range function:", stop, start, step);
+        loop = x => false;
     }
+
+    for (start; loop(start); start += step)
+        yield start;
 }
+
