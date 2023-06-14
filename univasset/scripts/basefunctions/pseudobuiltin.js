@@ -49,9 +49,9 @@ export function type(any) {
  * @param {number} stop End of count. Exclusive. If not given, increments infinitely.
  * @param {number} start Start of the count. Default 0.
  * @param {number} step Increment amount. Default 1. */
-export function* range(stop, start = 0, step = 1) {
+export function* range(stop = null, start = 0, step = 1) {
     var loop;
-    if (stop === undefined || stop === null)
+    if (stop === null)
         loop = x => true;
     else if (step > 0)
         loop = x => x < stop;
@@ -65,4 +65,3 @@ export function* range(stop, start = 0, step = 1) {
     for (start; loop(start); start += step)
         yield start;
 }
-

@@ -1,7 +1,7 @@
 import {timer} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
 
 timer(document.getElementById('event'), "Jul 03, 2023 23:59 UTC-0800",
-    "https://pbs.twimg.com/media/Fxlj7baaUAAqvH7?format=jpg&name=large");
+    "https://pbs.twimg.com/media/FyfnR_OaMAEqaYa?format=jpg&name=large");
 
 const nextPass = timer.bind(null, document.getElementById('battlepass'), "",
     "");
