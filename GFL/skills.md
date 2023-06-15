@@ -2,10 +2,6 @@
 
 # Tactical Doll Skills
 
-### In terms of M950a's Mod skill, what node is the theatre stage?
-
-> Non-allied. Occupied or otherwise. Also applicable to all combat sims.
-
 ### Can KSVK's 2nd skill crit/miss?
 
 > [Apparently it's coded like an explosive/grenade](https://iopwiki.com/wiki/KSVK). Main shot can miss and crit, while resulting explosion can't.

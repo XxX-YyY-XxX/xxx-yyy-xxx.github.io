@@ -734,28 +734,6 @@ export const cardData = [
         tags : [dTag.ITEM, dTag.MOD, dTag.GET]
     },
     {
-        id : '00060',
-        questions : `What is Bookshelf of Memories?`,
-        answers : `Sidestories for the featured dolls. Rewards ${spoilerSummary('Friend Gossips',
-            'Unique dialogues when two paired dolls are in the double adjutant.' +
-            List.description({
-                'Becoming a Star' : [
-                    'P38 + HK45',
-                    'P38 + SpectreM4',
-                    'P38 + Desert Eagle',
-                    'HK45 + SpectreM4',
-                    'HK45 + Desert Eagle',
-                    'Stechkin + Desert Eagle']})
-            )} or ${spoilerSummary('Unity Skills',
-            'Additional skill when the paired dolls are in the same echelon.' +
-            List.description({
-                'Operation Starchaser' : ['Grizzly + PzB29', 'AK-Alfa + M82'],
-                'Her Smile' : ['G36 + Springfield'],
-                'Default' : ['MPK + MPL']})
-            )}. Found in the Data Room.`,
-        tags : [dTag.SIDE, dTag.SKILL]
-    },
-    {
         id : '00061',
         questions : `What is Central Data for?`,
         answers : `Unlocking the corresponding FST, promoting said FST, and used as a Data Patch if 5${star}.`,
@@ -3362,10 +3340,27 @@ export const cardData = [
     },
     {
         id : '00430',
-        questions : `Where can I read the Griffin Memories?`,
-        answers : `${image("./assets/images/GriffinMemories.png", "Bookshelf of Memories found in the Data Room")}`,
+        questions : `Where is Bookshelf of Memories?`,
+        answers : `${image("./assets/images/GriffinMemories.png", "Bookshelf of Memories found in the Data Room")}<br>
+        Sidestories for the featured dolls (Griffin Memories). Rewards ${getID("Friend Gossips", "00060")} or ${getID("Unity Skills", "00442")}.`,
         tags : [dTag.SIDE]
     },
+    {
+        id : '00060',
+        questions : `What are Friend Gossips?`,
+        answers : `Unique dialogues when two paired dolls are in the double adjutant.<br>
+        ${List.description({
+            'Becoming a Star' : [
+                'P38 + HK45',
+                'P38 + SpectreM4',
+                'P38 + Desert Eagle',
+                'HK45 + SpectreM4',
+                'HK45 + Desert Eagle',
+                'Stechkin + Desert Eagle']
+        })}`,
+        tags : [dTag.SIDE, dTag.ADJUNCT]
+    },
+
     {
         id : '00431',
         questions : `Which map is the fastest for the killing armored units?`,
@@ -3421,10 +3416,26 @@ export const cardData = [
         tags : [dTag.SIMS]
     },
     {
+        id : '00441',
+        questions : `What type of faction node do Theater stages have?`,
+        answers : `Non-allied. Occupied or otherwise. Also applicable to all combat sims with no overworld map.`,
+        tags : [dTag.THEATER, dTag.SIMS]
+    },
+    {
+        id : '00442',
+        questions : `What are Unity Skills?`,
+        answers : `Additional skill when the paired dolls are in the same echelon.<br>
+        ${List.description({
+            'Operation Starchaser' : ['Grizzly + PzB29', 'AK-Alfa + M82'],
+            'Her Smile' : ['G36 + Springfield'],
+            'Default' : ['MPK + MPL', "SCAR-H + SCAR-L"]
+        })}`,
+        tags : [dTag.TDOLL, dTag.SKILL]
+    },
+    {
         id : '00000',
         questions : ``,
         answers : ``,
         tags : []
     },
 ];
-

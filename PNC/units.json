@@ -1099,7 +1099,7 @@
         "dodge": 5,
         "regen": 588,
         "arma": {
-            "icon": "",
+            "icon": "pending",
             "hp": 3748,
             "atk": 125,
             "hash": 100,
