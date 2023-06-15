@@ -39,5 +39,5 @@ export function tooltip(hoverable, tooltip) {
 
 /** @param {string} text @param {string[]} ID */
 export function getID(text, ...ID) {
-    return `<a href="https://xxx-yyy-xxx.github.io/GFL/?id=${ID.join('+')}">${text}</a>`
+    return `<a href="https://xxx-yyy-xxx.github.io/GFL/faqs?id=${ID.join('+')}">${text}</a>`
 }

@@ -1100,13 +1100,13 @@
         "regen": 588,
         "arma": {
             "icon": "",
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
+            "hp": 3748,
+            "atk": 125,
+            "hash": 100,
+            "pdef": 84,
+            "odef": 84,
+            "ppen": 89,
+            "open": 82
         }
     },
     {
@@ -1424,7 +1424,7 @@
         "dodge": -1,
         "regen": -1,
         "arma": {
-            "icon": "",
+            "icon": "pending",
             "hp": -1,
             "atk": -1,
             "hash": -1,
