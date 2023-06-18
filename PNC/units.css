@@ -8,6 +8,23 @@
     display: none;
 }
 
+input[type="checkbox"], input[type="radio"] {
+    appearance: none;
+    margin: 0px;
+}
+
+/* #region Common Stats */
+#common {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: fit-content;
+}
+
+#common > * {
+    padding: 0px 5px;
+}
+/* #endregion */
+
 /* #region Freeze */
 .func_table tr:nth-child(even) > :first-child {
     background: #282e1f !important;
@@ -36,11 +53,6 @@
         linear-gradient(gray 50%, red) !important;
 }
 /* #endregion */
-
-input[type="checkbox"], input[type="radio"] {
-    appearance: none;
-    margin: 0px;
-}
 
 /* #region Radio */
 #button {

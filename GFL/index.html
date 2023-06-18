@@ -24,25 +24,28 @@
         <title>GFL Main Page | Random Scraps</title>
     </head>
 
+    <style>
+        #id {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    </style>
+
     <body>
         <include src="/univasset/scripts/pageheader/header.html" 0="GFL Main Page and Event Timer"></include>
 
         <div class="container">
             <section id="main_content">
-                <table>
-                    <tr>
-                        <td><a href="./faqs">Frequently Asked Questions</a></td>
-                        <td><a href="./starter">New Player Guide</a></td>
-                        <td><a href="./docs" class="tooltip">Compilations<span class="tooltiptext">Skins, MODs, Furnitures, SPEQs</span></a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="./mainpage">Topics Repository</a></td>
-                        <!--td><a href="./calc">Calculators</a></td-->
-                        <td><a href="./changelog">Change Logs</a></td>
-                    </tr>
+                <div id="links">
+                    <a href="./faqs">Frequently Asked Questions</a>
+                    <a href="./starter">New Player Guide</a>
+                    <a href="./docs" class="tooltip">Compilations<span class="tooltiptext">Skins, MODs, Furnitures, SPEQs</span></a>
+                    <a href="./mainpage">Topics Repository</a>
+                    <!--a href="./calc">Calculators</a-->
+                    <a href="./changelog">Change Logs</a>
                     <!-- glossary -->
                     <!-- acquisition index -->
-                </table>
+                </div>
 
                 <div id="event"></div>
                 <div id="battlepass"></div>

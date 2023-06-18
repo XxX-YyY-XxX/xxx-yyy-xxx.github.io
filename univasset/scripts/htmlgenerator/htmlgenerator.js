@@ -201,26 +201,6 @@ export function tableSort(grouper_elem, tablematrix, mapping, {frzcol = false, f
     grouper_elem.appendChild(TABLE);
 }
 
-class Table {
-    #datarow;
-    
-    constructor() {
-
-    }
-
-    normal() {
-
-    }
-
-    sort() {
-
-    }
-
-    filter() {
-
-    }
-}
-
 /** Creates a timer for events.
  * @param {HTMLElement} grouper_elem
  * @param {string} date Mon dy, year hr:mn (UTC|GMT)±offs

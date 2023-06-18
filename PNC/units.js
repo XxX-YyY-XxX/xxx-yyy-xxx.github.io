@@ -9,6 +9,18 @@ radioGroup(document.querySelector("#button"), "tables",
 );
 
 /** @type {{}[]} */ const UNITS = (await Async.getJSON('./units.json')).slice(0, -1);
+const INTIMACY_STATS = {
+    "Code Robustness": ["hp", 1320],
+    "Power Connection": ["atk", 55],
+    "Neural Activation": ["hash", 55],
+    "Shield of Friendship": ["pdef", 55],
+    "Coordinated Strike": ["crate", 8],
+    "Victorious Inspiration": ["cdmg", 12],
+    "Risk Evasion Aid": ["dodge", -1],
+    "Mechanical Celerity": ["haste", 8],
+    "Coordinated Formation": ["dboost", 5],
+    "Through Fire and Water": ["reduc", 5],
+}
 
 //#region Statistics Table
 class Units {
@@ -50,6 +62,7 @@ class Units {
     /** @type {number} */ regen;
 
     /** @type {string} */ #icon;
+    /** @type {"Guard" | "Sniper" | "Warrior" | "Specialist" | "Medic"} */ #class;
 
     #arma;
     #hasarma;

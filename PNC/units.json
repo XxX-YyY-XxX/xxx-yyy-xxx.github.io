@@ -24,7 +24,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
     },
     {
         "name": "Antonina",
@@ -51,7 +52,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Sol",
@@ -78,7 +80,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Simo",
@@ -105,7 +108,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Croque",
@@ -132,7 +136,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": ["Code Robustness", "Shield of Friendship", "Through Fire and Water"]
     },
     {
         "name": "Fresnel",
@@ -159,7 +164,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Chelsea",
@@ -186,7 +192,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"]
     },
     {
         "name": "Mai",
@@ -213,7 +220,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Souchun",
@@ -240,7 +248,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Max",
@@ -267,7 +276,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": ["Power Connection", "Neural Activation", "Coordinated Formation"]
     },
     {
         "name": "Betty",
@@ -294,7 +304,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": ["Power Connection", "Code Robustness", "Coordinated Formation"]
     },
     {
         "name": "Choco",
@@ -321,7 +332,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Panakeia",
@@ -348,7 +360,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Angela",
@@ -375,7 +388,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
     },
     {
         "name": "Fern",
@@ -402,7 +416,8 @@
             "odef": 94,
             "ppen": 96,
             "open": 94
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Yanny",
@@ -429,7 +444,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": ["Shield of Friendship", "Neural Activation", "Risk Evasion Aid"]
     },
     {
         "name": "Groove",
@@ -483,7 +499,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": ["Code Robustness", "Neural Activation", "Through Fire and Water"]
     },
     {
         "name": "Earhart",
@@ -510,7 +527,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Zion",
@@ -537,7 +555,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Ksenia",
@@ -564,7 +583,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Imhotep",
@@ -591,7 +611,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
     },
     {
         "name": "Octogen",
@@ -618,7 +639,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Rise",
@@ -645,7 +667,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Abigail",
@@ -672,7 +695,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Jessie",
@@ -699,7 +723,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Lam",
@@ -726,7 +751,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": ["Power Connection", "Coordinated Strike", "Victorious Inspiration"]
     },
     {
         "name": "Sakuya",
@@ -753,7 +779,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"]
     },
     {
         "name": "Dushevnaya",
@@ -780,7 +807,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
     },
 
     {
@@ -808,7 +836,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": ["Power Connection", "Neural Activation", "Coordinated Strike"]
     },
     {
         "name": "Evelyn",
@@ -835,7 +864,8 @@
             "odef": 132,
             "ppen": 44,
             "open": 44
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Gin",
@@ -862,7 +892,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Centaureissi",
@@ -889,7 +920,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Vee",
@@ -916,7 +948,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Chanzhi",
@@ -943,7 +976,8 @@
             "odef": 43,
             "ppen": 96,
             "open": 83
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Nanaka",
@@ -970,7 +1004,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Banxsy",
@@ -997,7 +1032,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Florence",
@@ -1024,7 +1060,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
 
     {
@@ -1052,7 +1089,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
     },
     {
         "name": "Sockdolager",
@@ -1079,7 +1117,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": ["Power Connection", "Code Robustness", "Coordinated Formation"]
     },
 
     {
@@ -1099,7 +1138,7 @@
         "dodge": 5,
         "regen": 588,
         "arma": {
-            "icon": "pending",
+            "icon": "./assets/images/arma/Aki.png",
             "hp": 3748,
             "atk": 125,
             "hash": 100,
@@ -1107,7 +1146,8 @@
             "odef": 84,
             "ppen": 89,
             "open": 82
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Kuro",
@@ -1134,7 +1174,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": ["Neural Activation", "Code Robustness", "Coordinated Formation"]
     },
     {
         "name": "De Lacey",
@@ -1161,7 +1202,8 @@
             "odef": 65,
             "ppen": 33,
             "open": 67
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Hatsuchiri",
@@ -1188,7 +1230,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": ["Power Connection", "Mechanical Celerity", "Coordinated Formation"]
     },
     {
         "name": "Daiyan",
@@ -1215,7 +1258,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"]
     },
     {
         "name": "Python",
@@ -1242,7 +1286,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Nascita",
@@ -1269,7 +1314,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": ["Power Connection", "Code Robustness", "Coordinated Formation"]
     },
     {
         "name": "Puzzle",
@@ -1296,7 +1342,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Helix",
@@ -1323,7 +1370,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
     },
     {
         "name": "Magnhilda",
@@ -1350,7 +1398,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Sueyoi",
@@ -1377,7 +1426,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     },
     {
         "name": "Clukay",
@@ -1404,7 +1454,8 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": ["Neural Activation", "Coordinated Strike", "Victorious Inspiration"]
     },
 
     {
@@ -1424,7 +1475,7 @@
         "dodge": -1,
         "regen": -1,
         "arma": {
-            "icon": "pending",
+            "icon": "",
             "hp": -1,
             "atk": -1,
             "hash": -1,
@@ -1432,6 +1483,7 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        }
+        },
+        "intimacy": []
     }
 ]
