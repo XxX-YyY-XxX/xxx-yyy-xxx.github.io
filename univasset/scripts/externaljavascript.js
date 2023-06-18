@@ -148,7 +148,7 @@ export function splitExt(path) {
  * @param {HTMLInputElement} inputElement
  * @returns true if successfully toggled, false otherwise. */
 export function checkedLabel(inputElement) {
-    console.error("This page uses checkedLabel. This should be replaced with :has selector.");
+    console.warn("This page uses checkedLabel. This should be replaced with :has selector.");
     const old_check = inputElement.parentElement.classList.contains('checked');
     const new_check = inputElement.parentElement.classList.toggle('checked', inputElement.checked);
     return old_check != new_check;
