@@ -7,7 +7,7 @@ export function iter(iterable) {
 }
 
 /** Iterates items per index in groups. Add "true" at the end to extend shortest.
- * @param {...(Iterable<any> | Generator<any, any, any> | true)} iterables order of iterables = order of output
+ * @param {[...(Iterable<any> | Generator<any, any, any>), true]} iterables order of iterables = order of output
  * @returns {Generator<any[], void, unknown>} Array of values from each iterable */
 export function* zip(...iterables) {
     var extension;
@@ -50,7 +50,7 @@ export function type(any) {
  * @param {number} start Start of the count. Default 0.
  * @param {number} step Increment amount. Default 1. */
 export function* range(stop = null, start = 0, step = 1) {
-    var loop;
+    /** @type {function(number): boolean} */ var loop;
     if (stop === null)
         loop = x => true;
     else if (step > 0)
