@@ -730,8 +730,8 @@ export const cardData = [
         id : '00059',
         questions : `What's the Fire Control Component (FCC) used for and where can I get them?`,
         answers : `Upgrading 5${star} dolls to 6${star} through modding.<br>
-        Obtainable through Black Market (2 monthly), major events/campaigns, special log-ins, shop packages<!--battlepass-->`,
-        tags : [dTag.ITEM, dTag.MOD, dTag.GET]
+        Obtainable through Black Market (2 monthly), major events/campaigns, special log-ins, shop packages, battlepass`,
+        tags : [dTag.ITEM, dTag.MOD, dTag.GET, dTag.EXPED, dTag.SHOP, dTag.MAJOR, dTag.CAMPAIGN, dTag.BP]
     },
     {
         id : '00061',
@@ -3431,6 +3431,12 @@ export const cardData = [
             'Default' : ['MPK + MPL', "SCAR-H + SCAR-L"]
         })}`,
         tags : [dTag.TDOLL, dTag.SKILL]
+    },
+    {
+        id : '00443',
+        questions : `After winning a combat mission with my Coalition team, I noticed that they have no ammo and rations in them. Where did my resources go?`,
+        answers : `Back to the pool.`,
+        tags : [dTag.COALITION]
     },
     {
         id : '00000',

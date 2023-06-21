@@ -71,6 +71,10 @@ input[type="checkbox"], input[type="radio"] {
 #button > label:has(input:checked) {
     background-color: darkgreen;
 }
+
+#button h2 {
+    margin: 0px 0px 10px;
+}
 /* #endregion */
 
 /* #region Arma */

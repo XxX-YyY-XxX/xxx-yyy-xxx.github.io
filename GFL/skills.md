@@ -16,14 +16,6 @@
 >
 > [Pekola.](/GFL/assets/images/PekolaUse.png)
 
-### What's Unity Skill?
-
-> Skill that activates when you have both of the prerequisite dolls in the same echelon. Can be acquired by going through Bookshelf of Memories<!-- link --> in the Data Room.
->
-> You'll see it sandwiched between Base Skill and MOD Skill, collapsed. <!-- @ Visuak -->
->
-> As for those who have it, G36 + Springfield, Grizzly + Pzb39, AKAlfa + M82.
-
 ### Can SAA MOD trigger M500 MOD?
 
 > Even better. It still works even after the initial three procs are used. Just make sure to cover the first few seconds of no shield.
