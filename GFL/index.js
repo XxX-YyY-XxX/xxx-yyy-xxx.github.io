@@ -1,5 +1,6 @@
 import {timer} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
 
+"Jul 10, 2023 23:59 UTC-0800", "https://iopwiki.com/images/e/e2/Mk_47_Artwork.jpg"
 timer(document.getElementById('event'), "Jul 03, 2023 23:59 UTC-0800",
     "https://pbs.twimg.com/media/FyfnR_OaMAEqaYa?format=jpg&name=large");
 

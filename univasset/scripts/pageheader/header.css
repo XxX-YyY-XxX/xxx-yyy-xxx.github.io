@@ -27,3 +27,18 @@
     background: url("/univasset/images/exiles.png") 0 0 no-repeat
 }
 /* #endregion */
+
+/* #region EXI Button */
+.btn-exi {
+    background: -webkit-linear-gradient(rgb(255, 187, 17, 0.3), rgba(170, 130, 0, 0.3) 50%, rgba(10, 10, 10, 0.3) 50%, rgba(0, 0, 0, 0.3))
+}
+
+.btn-exi:hover {
+    background: -webkit-linear-gradient(rgb(255, 187, 17, 0.6), rgba(170, 130, 0, 0.6) 50%,rgba(10, 10, 10, 0.8) 50%, rgba(0, 0, 0, 0.8))
+}
+
+.btn-exi .icon {
+    opacity: 0.6;
+    background: url("") 0 0 no-repeat
+}
+/* #endregion */
