@@ -1,27 +1,26 @@
-import '../univasset/scripts/basefunctions/index.js';
-import {removeHTMLTag, randInt, compare} from '../univasset/scripts/externaljavascript.js';
+import {cmp} from '../univasset/scripts/basefunctions/index.js';
+import {removeHTMLTag, randInt, setAttr} from '../univasset/scripts/externaljavascript.js';
 import {initializeHTML, radioGroup} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
 import {dTag, cardData} from "./querycards.js";
 
 //#region Constants
-/** @type {HTMLInputElement} */ const searchTextField = document.querySelector(".search-text");
+const searchTextField = document.querySelector("#search-text");
 const searchParams = new URLSearchParams(location.search);
+const CARDFIELD = document.querySelector("#cards-field");
 //#endregion
 
 //#region Tags Field
 const toggleableTagsField = document.getElementById('tags-list');
-for (const {name, description} of Object.values(dTag).sort(compare({key: x => x.name}))) {
-    const LABEL = document.createElement("label");
+for (const {name, description} of Object.values(dTag).sort(cmp({key: x => x.name}))) {
     const INPUT = document.createElement("input");
-
-    INPUT.value = name;
-    INPUT.type = "checkbox";
+    setAttr(INPUT, {value: name, type: "checkbox"});
     INPUT.addEventListener("change", function() {
         searchTextField.value = this.checked ?
             (searchTextField.value + " " + this.value).trim() :
             searchTextField.value.replace(this.value, "").replace("  ", " ").trim();
     });
 
+    const LABEL = document.createElement("label");
     LABEL.classList.add("tags", "tooltip");
     LABEL.append(INPUT, name, initializeHTML('span', {textContent: description, classList: {add: ['tooltiptext']}}));
     
@@ -49,9 +48,8 @@ radioGroup(document.querySelector('#input-type-container'), 'input-type',
         } else {
             toggleableTagsField.style.display = 'none';
             searchTextField.value = '';
-            for (const input_true of tag_label_inputs.filter(input => input.checked)) {
+            for (const input_true of tag_label_inputs.filter(input => input.checked))
                 input_true.checked = false;
-            }
         }
     }],
     [initializeHTML('h2', {textContent: 'Browse'}), 'browse', function(button) {
@@ -60,7 +58,7 @@ radioGroup(document.querySelector('#input-type-container'), 'input-type',
     }]
 )
 
-document.getElementById('cards-field').innerHTML =
+CARDFIELD.innerHTML =
     searchParams.has('search') ? searchCards() :
     searchParams.has('tags') ? tagsCards() :
     searchParams.has('id') ? idCards() : randomCards();
@@ -135,21 +133,21 @@ function setQuestionBoxes({questions, answers, tags}) {
 const maxPage = Math.ceil((cardData.length - 1) / 5)
 document.getElementById('maxpage').textContent = maxPage;
 const pageNo = document.getElementById('page-no');
-
-/** @param {HTMLButtonElement} pageButton*/
-window.changePage = function(pageButton) {
-    const page = {
-        'first'     : 1,
-        'previous'  : Math.max(1, Number(pageNo.textContent) - 1),
-        'next'      : Math.min(maxPage, Number(pageNo.textContent) + 1),
-        'last'      : maxPage
-    }[pageButton.value];
-    var output = '';
-
-    pageNo.textContent = page;
-
-    for (var i = (page * 5) - 5; i < Math.min(page * 5, cardData.length - 1); i++)
-        output += setQuestionBoxes(cardData[i]);
-    document.getElementById('cards-field').innerHTML = output;
+for (const BUTT of Array.from(document.querySelectorAll("button"))) {
+    /** @type {function(): number} */
+    const getPage = {
+        first: () => 1,
+        previous: () => Math.max(1, Number(pageNo.textContent) - 1),
+        next: () => Math.min(maxPage, Number(pageNo.textContent) + 1),
+        last: () => maxPage
+    }[BUTT.value];
+    BUTT.addEventListener("click", function(event) {
+        var output = "";
+        const PAGE = getPage();
+        pageNo.textContent = PAGE;
+        for (var i = (PAGE * 5) - 5; i < Math.min(PAGE * 5, cardData.length - 1); i++)
+            output += setQuestionBoxes(cardData[i]);
+        CARDFIELD.innerHTML = output;    
+    })
 }
 //#endregion
