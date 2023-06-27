@@ -1,4 +1,5 @@
-import {type, zip} from './basefunctions/index.js';
+import {cmp, type} from './basefunctions/index.js';
+export {cmp as compare};
 
 //#region Constants
 /** Close to zero value. */
@@ -144,16 +145,6 @@ export function splitExt(path) {
     return [path.slice(0, index), path.slice(index)]
 }
 
-/** Depracated. For input elements inside label elements.
- * @param {HTMLInputElement} inputElement
- * @returns true if successfully toggled, false otherwise. */
-export function checkedLabel(inputElement) {
-    console.warn("This page uses checkedLabel. This should be replaced with :has selector.");
-    const old_check = inputElement.parentElement.classList.contains('checked');
-    const new_check = inputElement.parentElement.classList.toggle('checked', inputElement.checked);
-    return old_check != new_check;
-}
-
 /**
  * @param {number} milliseconds
  * @returns {[number, number, number, number, number]} days, hours, minutes, seconds, milliseconds */
@@ -164,8 +155,10 @@ export function splitTime(milliseconds) {
     return [...Math.intdiv(hr, 24), min, sec, milli];
 }
 
-/** 
- * @param {{[HTMLAttribute: string]: any}} attributes String/Number for attribute assigment, Array for function calls, Object for property calls. */
+/**
+ * @template T
+ * @param {T} base 
+ * @param {{[ObjectAttribute: string]: any}} attributes arguments[] for function calls, {attribute: ???} for property calls, everything else for attribute assigment. */
 export function setAttr(base, attributes) {
     for (const [attrib, value] of Object.entries(attributes)) {
         switch (type(value)) {
@@ -181,60 +174,9 @@ export function setAttr(base, attributes) {
                 setAttr(base[attrib], value);
                 break;
             default:
-                console.error(`Unknown data type of ${attrib}: ${type(value)}`);
+                console.warn(`Unknown data type of ${attrib}: ${type(value)}`);
                 break;
         }
-    }
-}
-
-/** Creates a sorter key from the given parameters.
- * @template T0
- * @template T1
- * @param {{key: function(T0): T1, reverse: boolean, array: T1[]}}
- * @param array Follows this array for specific order. Only useful for unique values for now.
- * @returns {function(T0, T0): number} */
-export function compare({key = x => x, reverse = false, array = null} = {}) {
-    //shall never fuse array and key parameters
-    const _onReverse = reverse ? ((x, y) => [y, x]) : ((x, y) => [x, y]);
-    const _getIndex = array ? (x => array.indexOf(x)) : (x => x);
-
-    const method = {
-        /** @param {number} x @param {number} y */
-        number: (x, y) => x - y,
-        /** @param {string} x @param {string} y */
-        string: (x, y) => x.localeCompare(y),
-        /** @param {boolean} x @param {boolean} y */
-        boolean: (x, y) => x - y,
-        /** @param {Array} x @param {Array} y @returns {number} */
-        array: (x, y) => {
-            for (const [first, second] of zip(x, y)) {
-                const val = method[type(first)](first, second);
-                if (val) return val;    //-1 = true, 0 = false, 1 = true
-            }
-            return 0;
-        },
-        /** @param {{}} x @param {{}} y @returns {number} */
-        object: (x, y) => {
-            //Longest clipped so [first, second] never undefined
-            for (const [first, second] of zip(Object.keys(x), Object.keys(y))) {
-                const val = first.localeCompare(second);
-                if (val) return val;
-            }
-            //sort by values
-            return 0;
-        }
-    };
-
-    function _currentFunc(a, b) {
-        _currentFunc = method[type(a)];
-        return _currentFunc(a, b);
-    }
-
-    return function(a, b) {
-        [a, b] = [key(a), key(b)];
-        [a, b] = [_getIndex(a), _getIndex(b)];
-        [a, b] = _onReverse(a, b);
-        return _currentFunc(a, b);
     }
 }
 //#endregion

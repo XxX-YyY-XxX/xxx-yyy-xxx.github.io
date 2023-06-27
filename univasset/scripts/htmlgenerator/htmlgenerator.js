@@ -1,5 +1,5 @@
-import {Timer, splitTime, setAttr, compare} from '../externaljavascript.js';
-import {type, zip, range} from '../basefunctions/index.js';
+import {Timer, splitTime, setAttr} from '../externaljavascript.js';
+import {type, zip, range, cmp} from '../basefunctions/index.js';
 
 /** @param {(string | Node)[]} elements */
 export function brJoin(elements) {
@@ -113,7 +113,7 @@ export function table(grouper_elem, tablematrix, mapping, {frzcol = false, frzhd
  * @param {Array[]} tablematrix First row will be used as header. Other rows will be used as sorting basis.
  * @param {(function(any): string | number | Node)[]} mapping
  * @param {{frzcol: boolean, frzhdr: boolean}} */
-export function tableSort(grouper_elem, tablematrix, mapping, {frzcol = false, frzhdr = false} = {}) {
+export function tableSort(grouper_elem, tablematrix, mapping, {frzcol = false, frzhdr = false, caption = null} = {}) {
     /** @param {Array} data_array */
     function sortableRow(data_array) {
         const TR = document.createElement("tr");
@@ -136,6 +136,11 @@ export function tableSort(grouper_elem, tablematrix, mapping, {frzcol = false, f
     TBODY.append(...DATA_ROWS.map(x => x.row));
 
     const TABLE = document.createElement("table");
+    if (caption !== null) {
+        const CAPTION = document.createElement("caption");
+        CAPTION.textContent = caption;
+        TABLE.appendChild(CAPTION);
+    }
     TABLE.append(THEAD, TBODY);
 
     /** @param {MouseEvent} event */
@@ -147,16 +152,16 @@ export function tableSort(grouper_elem, tablematrix, mapping, {frzcol = false, f
                 DATA.sort = "hi";
                 switch (DATA.type) {
                     case "string":
-                        DATA_ROWS.sort(compare({key: ({list}) => list[DATA.index]}));
+                        DATA_ROWS.sort(cmp({key: ({list}) => list[DATA.index]}));
                         break;
                     case "number":
-                        DATA_ROWS.sort(compare({key: ({list}) => list[DATA.index], reverse: true}));
+                        DATA_ROWS.sort(cmp({key: ({list}) => list[DATA.index], reverse: true}));
                         break;
                     case "array":
-                        DATA_ROWS.sort(compare({key: ({list}) => [~list[DATA.index].length, list[DATA.index]]}));
+                        DATA_ROWS.sort(cmp({key: ({list}) => [~list[DATA.index].length, list[DATA.index]]}));
                         break;
                     case "object":
-                        DATA_ROWS.sort(compare({key: ({list}) => {let y = Object.keys(list[DATA.index]); return [~y.length, y]}}));
+                        DATA_ROWS.sort(cmp({key: ({list}) => {let y = Object.keys(list[DATA.index]); return [~y.length, y]}}));
                         break;
                     default:
                         console.log("Unregistered type:", DATA.type, DATA_ROWS[0].list[DATA.index]);
@@ -167,16 +172,16 @@ export function tableSort(grouper_elem, tablematrix, mapping, {frzcol = false, f
                 DATA.sort = "lo";
                 switch (DATA.type) {
                     case "string":
-                        DATA_ROWS.sort(compare({key: ({list}) => list[DATA.index], reverse: true}));
+                        DATA_ROWS.sort(cmp({key: ({list}) => list[DATA.index], reverse: true}));
                         break;
                     case "number":
-                        DATA_ROWS.sort(compare({key: ({list}) => list[DATA.index]}));
+                        DATA_ROWS.sort(cmp({key: ({list}) => list[DATA.index]}));
                         break;
                     case "array":
-                        DATA_ROWS.sort(compare({key: ({list}) => [list[DATA.index].length, list[DATA.index]]}));
+                        DATA_ROWS.sort(cmp({key: ({list}) => [list[DATA.index].length, list[DATA.index]]}));
                         break;
                     case "object":
-                        DATA_ROWS.sort(compare({key: ({list}) => {let y = Object.keys(list[DATA.index]); return [y.length, y]}}));
+                        DATA_ROWS.sort(cmp({key: ({list}) => {let y = Object.keys(list[DATA.index]); return [y.length, y]}}));
                     default:
                         console.log("Unregistered type:", DATA.type, DATA_ROWS[0].list[DATA.index]);
                         break;
@@ -199,6 +204,20 @@ export function tableSort(grouper_elem, tablematrix, mapping, {frzcol = false, f
 
     grouper_elem.classList.add("func_table");
     grouper_elem.appendChild(TABLE);
+}
+
+export class Table {
+    normal() {
+
+    }
+
+    sort() {
+
+    }
+
+    filter() {
+
+    }
 }
 
 /** Creates a timer for events.
@@ -261,4 +280,14 @@ export function radioGroup(grouper_elem, radioname, ...buttondata) {
 
     grouper_elem.classList.add('func_radioGroup');
     grouper_elem.appendChild(fragment);
+}
+
+/** Function for clickable labels unsupported by :has selector.
+*
+* Toggles `checked` class in label.
+*
+* \<label>\<input>\</label>
+ * @this {HTMLInputElement} */
+export function checkLabel() {
+    this.parentElement.classList.toggle("checked", this.checked)
 }

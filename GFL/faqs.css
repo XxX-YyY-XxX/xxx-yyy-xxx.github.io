@@ -45,18 +45,9 @@ label.tags {
     margin: 0px 5px;
 }
 
-@supports Selector(label.tags:has(input:checked)) {
-    label.tags:has(input:checked) {
-        background: aqua;
-        color: black;
-    }
-}
-
-@supports not Selector(label.tags:has(input:checked)) {
-    label.tags.checked {
-        background: aqua;
-        color: black;
-    }
+label.tags:has(input:checked) {
+    background: aqua;
+    color: black;
 }
 
 .card-tags {
@@ -76,7 +67,7 @@ label.tags {
     background-color: transparent;
     line-height: 10px;
     flex: calc(100% / 3);
-    }
+}
 
 #input-type-container > label:has(input:checked) {
     background-color: darkgreen;
@@ -160,7 +151,7 @@ img:not(.inline-img) {
 img.inline-img {
     margin: -3px -5px;
     display: inline;
-    height: 16px;
+    height: 1rem;
 }
 /* #endregion */
 
