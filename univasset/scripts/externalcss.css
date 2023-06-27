@@ -1,8 +1,8 @@
 @import "/assets/css/style.css?v=2d3b5126dd9bdaf552f3aef918356c51b10c15a9";
-@import "/univasset/scripts/htmlgenerator/htmlgenerator.css";
-@import "/univasset/scripts/pageheader/header.css";
+@import "./htmlgenerator/htmlgenerator.css";
+@import "./pageheader/header.css";
+@import "./tooltip.css";
 
-/* #region General */
 code {
   background: rgba(0, 0, 0, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -15,66 +15,3 @@ code {
 tr:nth-child(even) {
   background-color: rgba(85, 107, 47, 0.25);
 }
-
-/* #endregion */
-
-/* #region Tooltip */
-.tooltip {
-  position: relative;
-}
-
-/* Interactible */
-.tooltip .tooltiptext {
-  width: 300px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 8px;
-  padding: 3px;
-  position: absolute;
-  z-index: 1;
-  bottom: 100%;
-  left: 50%;
-  margin-left: -150px;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-  
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-}
-
-/* Descriptive */
-/* .tooltip + .tooltiptext {
-  width: 300px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 8px;
-  padding: 3px;
-  position: relative;
-  z-index: 1;
-  bottom: 100%;
-  left: 50%;
-  margin-left: -150px;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-  
-.tooltip:hover + .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-} */
-/* If desktop, on top of text */
-/* If mobile, on top of screen */
-
-@media screen and (max-width: 720px) {
-  .tooltip .tooltiptext {
-      width: 100px;
-      margin-left: -50px;
-  }
-}
-/* #endregion */
