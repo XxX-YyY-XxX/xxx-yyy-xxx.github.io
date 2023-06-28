@@ -2,10 +2,6 @@
 
 # Tactical Doll Skills
 
-### Can KSVK's 2nd skill crit/miss?
-
-> [Apparently it's coded like an explosive/grenade](https://iopwiki.com/wiki/KSVK). Main shot can miss and crit, while resulting explosion can't.
-
 ### How does a certain doll's skill work?
 
 > [M1897 Mod.](https://old.reddit.com/r/girlsfrontline/comments/osihvd/weekly_commanders_lounge_july_27_2021/h72czw7/) 

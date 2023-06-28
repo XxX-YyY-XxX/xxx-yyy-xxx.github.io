@@ -133,6 +133,12 @@ export const cardData = [
         tags : [dTag.CE, dTag.PRIME]
     },
     {
+        id : '00444',
+        questions : `What are batteries (battery) and where do I get them?`,
+        answers : `Used to upgrade facilities, and more. You can get them from the Black Market, your dorm, and your friends' dorms.`,
+        tags : [dTag.BATTERY, dTag.PRIME, dTag.GET]
+    },
+    {
         id : '00003',
         questions : `What is Expedition/Forward Basecamp?`,
         answers : `${link('Gamepress Detailed Guide.', 'https://gamepress.gg/girlsfrontline/gfl-explained-basecamp-and-exploration')}<br>
@@ -2260,7 +2266,8 @@ export const cardData = [
             "M4 SOPMOD II": [link("M4 interaction still borked (by u/UnironicWeeaboo).", "https://imgur.com/a/7eSGbu6")],
             "Ribeyrolles": [`MOD skill do not count for AS Val's MOD skill, most likely due to buff counting as a "unit".`],
             "LTLX": ["Skill knocks back bosses."],
-            "M4A1": ["Main shot cannot crit. Explosion does."]
+            "M4A1": ["Main shot cannot crit. Explosion does."],
+            "KSVK": [`Main shot is normal shot, ${link("explosion coded as explosion", "https://iopwiki.com/wiki/KSVK")}.`]
         })}`,
         tags : [dTag.TDOLL, dTag.SKILL]
     },
@@ -3438,6 +3445,12 @@ export const cardData = [
         answers : `Back to the pool.`,
         tags : [dTag.COALITION]
     },
+    {
+        id : '00445',
+        questions : `What do I do with unused Keycards during the bingo event?`,
+        answers : `Keep them. You'll get 5 Calibration Tickets per 1 Unused Keycard. Points go to trash. Source: Game info tab.`,
+        tags : [dTag.MINI]
+    },  //@Visual
     {
         id : '00000',
         questions : ``,
