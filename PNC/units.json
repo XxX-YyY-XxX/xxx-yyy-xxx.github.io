@@ -136,7 +136,7 @@
             "odef": -1,
             "ppen": -1,
             "open": -1
-        },
+        }, 
         "intimacy": ["Code Robustness", "Shield of Friendship", "Through Fire and Water"]
     },
     {
@@ -184,14 +184,14 @@
         "dodge": 6,
         "regen": 637,
         "arma": {
-            "icon": "",
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
+            "icon": "pending",
+            "hp": 2800,
+            "atk": 83,
+            "hash": 78,
+            "pdef": 66,
+            "odef": 67,
+            "ppen": 52,
+            "open": 47
         },
         "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"]
     },

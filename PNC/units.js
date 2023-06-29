@@ -1,6 +1,6 @@
 import {tableSort, initializeHTML, brJoin, radioGroup, nestElements} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
-import {Async, compare, setAttr} from "../univasset/scripts/externaljavascript.js";
-import {zip} from "../univasset/scripts/basefunctions/index.js"
+import {Async, setAttr} from "../univasset/scripts/externaljavascript.js";
+import {zip, cmp} from "../univasset/scripts/basefunctions/index.js"
 
 const STAT = document.querySelector("#stats"), DATA = document.querySelector("#data");
 radioGroup(document.querySelector("#button"), "tables",
@@ -26,55 +26,84 @@ const INTIMACY_STATS = {
 class Units {
     //#region Variables
     /** @type {string} */ name;
+    /** @type {"Guard" | "Sniper" | "Warrior" | "Specialist" | "Medic"} */ #class;
 
     #hp; #armahp;
     /** @returns {number} */
-    get hp() {return this.#arma ? this.#armahp : this.#hp}
+    get hp() {
+        var output = this.#hp;
+        if (this.#hasarma && this.#arma) output += this.#armahp;
+        return output;
+    }
 
     #atk; #armaatk;
     /** @returns {number} */
-    get atk() {return this.#arma ? this.#armaatk : this.#atk}
+    get atk() {
+        var output = this.#atk;
+        if (this.#hasarma && this.#arma) output += this.#armaatk;
+        return output;
+    }
 
     #hash; #armahash;
     /** @returns {number} */
-    get hash() {return this.#arma ? this.#armahash : this.#hash}
+    get hash() {
+        var output = this.#hash;
+        if (this.#hasarma && this.#arma) output += this.#armahash;
+        return output;
+    }
 
     #pdef; #armapdef;
     /** @returns {number} */
-    get pdef() {return this.#arma ? this.#armapdef : this.#pdef}
+    get pdef() {
+        var output = this.#pdef;
+        if (this.#hasarma && this.#arma) output += this.#armapdef;
+        return output;
+    }
 
     #odef; #armaodef;
     /** @returns {number} */
-    get odef() {return this.#arma ? this.#armaodef : this.#odef}
+    get odef() {
+        var output = this.#odef;
+        if (this.#hasarma && this.#arma) output += this.#armaodef;
+        return output;
+    }
 
     /** @type {number} */ aspd;
     /** @type {number} */ crate;
 
     #ppen; #armappen;
     /** @returns {number} */
-    get ppen() {return this.#arma ? this.#armappen : this.#ppen}
+    get ppen() {
+        var output = this.#ppen;
+        if (this.#hasarma && this.#arma) output += this.#armappen;
+        return output;
+    }
 
     #open; #armaopen;
     /** @returns {number} */
-    get open() {return this.#arma ? this.#armaopen : this.#open}
+    get open() {
+        var output = this.#open;
+        if (this.#hasarma && this.#arma) output += this.#armaopen;
+        return output;
+    }
 
     /** @type {number} */ dodge;
     /** @type {number} */ regen;
 
     /** @type {string} */ #icon;
-    /** @type {"Guard" | "Sniper" | "Warrior" | "Specialist" | "Medic"} */ #class;
 
-    #arma;
+    #arma = false;
     #hasarma;
 
     row;
-    #input;
     #updateStat;
     //#endregion
 
     constructor(stat_object) {
         //#region Assignment
         this.name = stat_object.name;
+        this.#class = stat_object.class;
+
         this.#hp = stat_object.hp;
         this.#atk = stat_object.atk;
         this.#hash = stat_object.hash;
@@ -87,44 +116,29 @@ class Units {
         this.dodge = stat_object.dodge;
         this.regen = stat_object.regen;
 
-        this.#icon = stat_object.arma.icon;
-        this.#armahp = stat_object.arma.hp + this.#hp;
-        this.#armaatk = stat_object.arma.atk + this.#atk;
-        this.#armahash = stat_object.arma.hash + this.#hash;
-        this.#armapdef = stat_object.arma.pdef + this.#pdef;
-        this.#armaodef = stat_object.arma.odef + this.#odef;
-        this.#armappen = stat_object.arma.ppen + this.#ppen;
-        this.#armaopen = stat_object.arma.open + this.#open;
+        const ARMA = stat_object.arma;
+        this.#icon = ARMA.icon;
+        this.#armahp = ARMA.hp;
+        this.#armaatk = ARMA.atk;
+        this.#armahash = ARMA.hash;
+        this.#armapdef = ARMA.pdef;
+        this.#armaodef = ARMA.odef;
+        this.#armappen = ARMA.ppen;
+        this.#armaopen = ARMA.open;
         //#endregion
 
-        this.#arma = false;
-        this.#hasarma = !["", "pending"].includes(this.#icon);
+        this.#hasarma = /\.\/assets\/images\/arma\/\S+\.png/.test(this.#icon);
 
         //#region HTML Elements
         this.row = document.createElement("tr");
 
         const TD_NAME = document.createElement("td");
+        TD_NAME.append(this.name);
         if (this.#hasarma) {
-            const LABEL = document.createElement("label");
-            const INPUT = document.createElement("input");
             const IMAGE = document.createElement("img");
-            
-            const UNIT = this;
-            this.#input = INPUT;
-            INPUT.type = "checkbox";
-            INPUT.addEventListener("click", function() {
-                UNIT.#arma = this.checked;
-                UNIT.#updateStat();
-            });
-
-            IMAGE.src = this.#icon;
-            IMAGE.alt = `${this.name} arma.`;
-
-            LABEL.append(INPUT, IMAGE);
-            LABEL.classList.add("arma");
-            TD_NAME.append(this.name, LABEL);
-        } else {
-            TD_NAME.textContent = this.name;
+            setAttr(IMAGE, {alt: `${this.name} arma.`, src: this.#icon})
+            IMAGE.classList.add("arma");
+            TD_NAME.appendChild(IMAGE);
         }
 
         const TD_HP = initializeHTML("td", {textContent: this.hp});
@@ -144,7 +158,7 @@ class Units {
             TD_PPEN.textContent = this.ppen;
             TD_OPEN.textContent = this.open;
         }
-
+ 
         this.row.append(
             TD_NAME,
             TD_HP,
@@ -160,16 +174,14 @@ class Units {
             initializeHTML("td", {textContent: this.regen})
         )
         //#endregion
+
+        console.log(this["name"], this["#icon"]);
     }
-    
-    /** @param {boolean | null} force */
-    switch(force = null) {
-        if (!this.#hasarma) return;
-        this.#arma = force ?? !this.#arma;
-        this.#input.checked = this.#arma;
-        this.#updateStat();
-    }
-}    
+}
+
+function updateTable() {
+    TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));
+}
 
 const UNIT_LIST = UNITS.map(x => new Units(x));
 
@@ -191,10 +203,10 @@ function sortMethod(event) {
             DATA.sort = "hi";
             switch (DATA.type) {
                 case "string":
-                    UNIT_LIST.sort(compare({key: x => x[DATA.key]}));
+                    UNIT_LIST.sort(cmp({key: x => x[DATA.key]}));
                     break;
                 case "number":
-                    UNIT_LIST.sort(compare({key: x => x[DATA.key], reverse: true}));
+                    UNIT_LIST.sort(cmp({key: x => x[DATA.key], reverse: true}));
                     break;
             }
             break;
@@ -202,15 +214,15 @@ function sortMethod(event) {
             DATA.sort = "lo";
             switch (DATA.type) {
                 case "string":
-                    UNIT_LIST.sort(compare({key: x => x[DATA.key], reverse: true}));
+                    UNIT_LIST.sort(cmp({key: x => x[DATA.key], reverse: true}));
                     break;
                 case "number":
-                    UNIT_LIST.sort(compare({key: x => x[DATA.key]}));
+                    UNIT_LIST.sort(cmp({key: x => x[DATA.key]}));
                     break;
             }
             break;
     }
-    TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));
+    updateTable();
 }
 
 const HEADER_NAMES = ["Doll Name", "Max HP", "Attack", "Hashrate", "Phys Def", "Op Def", "Atk Spd", "Crit Rate", "Phys Pen", "Op Pen", "Dodge", "Regen"];
@@ -224,7 +236,7 @@ for (const [NAME, KEY, TYPE] of zip(HEADER_NAMES, HEADER_KEYS, returnType())) {
     HEADER_TR.appendChild(TH);
 }
 
-const STAT_TABLE = document.querySelector("#stats > div");
+const STAT_TABLE = document.querySelector("#stats > .table");
 STAT_TABLE.classList.add("func_table");
 STAT_TABLE.appendChild(TABLE);
 //#endregion
@@ -233,7 +245,7 @@ STAT_TABLE.appendChild(TABLE);
 const DATA_ARRAY = UNITS.map(x => [x.name, x.class, x.reference, x.fragments]);
 DATA_ARRAY.unshift(["Doll Name", "Class", "Reference", "Fragments"]);
 tableSort(
-    document.querySelector("#data > div"),
+    document.querySelector("#data > .table"),
     DATA_ARRAY,
     [
         x => x,
