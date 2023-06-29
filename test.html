@@ -189,16 +189,20 @@
 
             //hash["touch"]
 
-            document.querySelector("#x0").textContent = `navigator.userAgentData.mobile: ${navigator.userAgentData.mobile}`;
-            document.querySelector("#x1").textContent = `!!navigator.maxTouchPoints: ${!!navigator.maxTouchPoints}`;
-            document.querySelector("#x2").textContent = `"ontouchstart" in window: ${"ontouchstart" in window}`;
-            document.querySelector("#x3").textContent = `"ontouchstart" in document.documentElement: ${"ontouchstart" in document.documentElement}`;
-            document.querySelector("#x4").textContent = `userAgentMatch(): ${userAgentMatch()}`;
-            document.querySelector("#x5").textContent = `detectMobileBrowser(): ${detectMobileBrowser()}`;
-            document.querySelector("#x6").textContent = `createTouchEvent(): ${createTouchEvent()}`;
-            document.querySelector("#x7").textContent = `detectStorage(): ${detectStorage()}`;
-            document.querySelector("#x8").textContent = `window.DocumentTouch: ${window.DocumentTouch}`;
-            document.querySelector("#x9").textContent = ``;
+            try {
+                document.querySelector("#x0").textContent = `navigator.userAgentData.mobile: ${navigator.userAgentData.mobile}`;
+                document.querySelector("#x1").textContent = `!!navigator.maxTouchPoints: ${!!navigator.maxTouchPoints}`;
+                document.querySelector("#x2").textContent = `"ontouchstart" in window: ${"ontouchstart" in window}`;
+                document.querySelector("#x3").textContent = `"ontouchstart" in document.documentElement: ${"ontouchstart" in document.documentElement}`;
+                document.querySelector("#x4").textContent = `userAgentMatch(): ${userAgentMatch()}`;
+                document.querySelector("#x5").textContent = `detectMobileBrowser(): ${detectMobileBrowser()}`;
+                document.querySelector("#x6").textContent = `createTouchEvent(): ${createTouchEvent()}`;
+                document.querySelector("#x7").textContent = `detectStorage(): ${detectStorage()}`;
+                document.querySelector("#x8").textContent = `window.DocumentTouch: ${window.DocumentTouch}`;
+                document.querySelector("#x9").textContent = ``;
+            } catch(e) {
+                alert(e)
+            }
 
             document.querySelector("#user-agent").textContent = navigator.userAgent;
         </script>
