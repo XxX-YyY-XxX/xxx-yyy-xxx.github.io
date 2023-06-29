@@ -190,7 +190,7 @@
             //hash["touch"]
 
             try {
-                document.querySelector("#x0").textContent = `navigator.userAgentData.mobile: ${navigator.userAgentData.mobile}`;
+                document.querySelector("#x0").textContent = `navigator.userAgentData.mobile: ${navigator.userAgentData?.mobile}`;
                 document.querySelector("#x1").textContent = `!!navigator.maxTouchPoints: ${!!navigator.maxTouchPoints}`;
                 document.querySelector("#x2").textContent = `"ontouchstart" in window: ${"ontouchstart" in window}`;
                 document.querySelector("#x3").textContent = `"ontouchstart" in document.documentElement: ${"ontouchstart" in document.documentElement}`;
