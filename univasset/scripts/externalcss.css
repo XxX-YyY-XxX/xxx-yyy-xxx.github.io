@@ -4,14 +4,19 @@
 @import "./tooltip.css";
 
 code {
-  background: rgba(0, 0, 0, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 0px 3px;
-  margin: 0px -3px;
-  color: #aa759f;
-  border-radius: 2px;
+	background: rgba(0, 0, 0, 0.9);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	padding: 0px 3px;
+	margin: 0px -3px;
+	color: #aa759f;
+	border-radius: 2px;
 }
 
 tr:nth-child(even) {
-  background-color: rgba(85, 107, 47, 0.25);
+	background-color: rgba(85, 107, 47, 0.25);
+}
+
+dd {
+    display: list-item;
+    margin-inline-start: 20px;
 }

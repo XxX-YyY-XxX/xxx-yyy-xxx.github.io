@@ -78,8 +78,13 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .arma {
-    float: right;
-    height: 1.4rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.arma > img {
+    /* float: right; */
+    height: 1rem;
     object-fit: contain;
     vertical-align: middle;
 }

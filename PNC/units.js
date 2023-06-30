@@ -8,7 +8,38 @@ radioGroup(document.querySelector("#button"), "tables",
     [initializeHTML("h2", {textContent: "Others"}), "data", function(x) {DATA.style.display = x.checked ? "block" : "none"}]
 );
 
-/** @type {{}[]} */ const UNITS = (await Async.getJSON('./units.json')).slice(0, -1);
+/** 
+ * @typedef {{
+ *  name: string, 
+ *  class: "Guard" | "Sniper" | "Warrior" | "Specialist" | "Medic",
+ *  reference: {[linkname: string]: string},
+ *  fragments: string[],
+ *  hp: number,
+ *  atk: number,
+ *  hash: number,
+ *  pdef: number,
+ *  odef: number,
+ *  aspd: number,
+ *  crate: number,
+ *  ppen: number,
+ *  open: number,
+ *  dodge: number,
+ *  regen: number,
+ *  arma: {
+ *      icon: string,
+ *      hp: number,
+ *      atk: number,
+ *      hash: number,
+ *      pdef: number,
+ *      odef: number,
+ *      ppen: number,
+ *      open: number
+ *  },
+ *  intimacy: (keyof INTIMACY_STATS)[]}} UnitObject
+ * */
+
+/** @type {UnitObject[]} */
+const UNITS = (await Async.getJSON('./units.json')).slice(0, -1);
 const INTIMACY_STATS = {
     "Code Robustness": ["hp", 1320],
     "Power Connection": ["atk", 55],
@@ -20,16 +51,16 @@ const INTIMACY_STATS = {
     "Mechanical Celerity": ["haste", 8],
     "Coordinated Formation": ["dboost", 5],
     "Through Fire and Water": ["reduc", 5],
+    "Healing Bond": ["heal", 5]
 }
 
 //#region Statistics Table
 class Units {
     //#region Variables
-    /** @type {string} */ name;
-    /** @type {"Guard" | "Sniper" | "Warrior" | "Specialist" | "Medic"} */ #class;
+    name;
+    #class;
 
     #hp; #armahp;
-    /** @returns {number} */
     get hp() {
         var output = this.#hp;
         if (this.#hasarma && this.#arma) output += this.#armahp;
@@ -37,7 +68,6 @@ class Units {
     }
 
     #atk; #armaatk;
-    /** @returns {number} */
     get atk() {
         var output = this.#atk;
         if (this.#hasarma && this.#arma) output += this.#armaatk;
@@ -45,7 +75,6 @@ class Units {
     }
 
     #hash; #armahash;
-    /** @returns {number} */
     get hash() {
         var output = this.#hash;
         if (this.#hasarma && this.#arma) output += this.#armahash;
@@ -53,7 +82,6 @@ class Units {
     }
 
     #pdef; #armapdef;
-    /** @returns {number} */
     get pdef() {
         var output = this.#pdef;
         if (this.#hasarma && this.#arma) output += this.#armapdef;
@@ -61,18 +89,16 @@ class Units {
     }
 
     #odef; #armaodef;
-    /** @returns {number} */
     get odef() {
         var output = this.#odef;
         if (this.#hasarma && this.#arma) output += this.#armaodef;
         return output;
     }
 
-    /** @type {number} */ aspd;
-    /** @type {number} */ crate;
+    aspd;
+    crate;
 
     #ppen; #armappen;
-    /** @returns {number} */
     get ppen() {
         var output = this.#ppen;
         if (this.#hasarma && this.#arma) output += this.#armappen;
@@ -80,17 +106,11 @@ class Units {
     }
 
     #open; #armaopen;
-    /** @returns {number} */
     get open() {
         var output = this.#open;
         if (this.#hasarma && this.#arma) output += this.#armaopen;
         return output;
     }
-
-    /** @type {number} */ dodge;
-    /** @type {number} */ regen;
-
-    /** @type {string} */ #icon;
 
     #arma = false;
     #hasarma;
@@ -99,6 +119,7 @@ class Units {
     #updateStat;
     //#endregion
 
+    /** @param {UnitObject} stat_object */
     constructor(stat_object) {
         //#region Assignment
         this.name = stat_object.name;
@@ -117,7 +138,6 @@ class Units {
         this.regen = stat_object.regen;
 
         const ARMA = stat_object.arma;
-        this.#icon = ARMA.icon;
         this.#armahp = ARMA.hp;
         this.#armaatk = ARMA.atk;
         this.#armahash = ARMA.hash;
@@ -125,20 +145,26 @@ class Units {
         this.#armaodef = ARMA.odef;
         this.#armappen = ARMA.ppen;
         this.#armaopen = ARMA.open;
+
+        //stat_object.intimacy;
         //#endregion
 
-        this.#hasarma = /\.\/assets\/images\/arma\/\S+\.png/.test(this.#icon);
+        this.#hasarma = /\.\/assets\/images\/arma\/\S+\.png/.test(ARMA.icon);
 
         //#region HTML Elements
         this.row = document.createElement("tr");
 
         const TD_NAME = document.createElement("td");
-        TD_NAME.append(this.name);
         if (this.#hasarma) {
             const IMAGE = document.createElement("img");
-            setAttr(IMAGE, {alt: `${this.name} arma.`, src: this.#icon})
-            IMAGE.classList.add("arma");
-            TD_NAME.appendChild(IMAGE);
+            setAttr(IMAGE, {alt: `${this.name} arma.`, src: ARMA.icon})
+
+            const SPAN = document.createElement("span");
+            SPAN.classList.add("arma");
+            SPAN.append(this.name, IMAGE);
+            TD_NAME.appendChild(SPAN);
+        } else {
+            TD_NAME.textContent = this.name;
         }
 
         const TD_HP = initializeHTML("td", {textContent: this.hp});
@@ -175,7 +201,7 @@ class Units {
         )
         //#endregion
 
-        console.log(this["name"], this["#icon"]);
+        //#privatefield cannot be called dynamically, use exec/eval instead
     }
 }
 
@@ -194,9 +220,9 @@ const TABLE = document.createElement("table");
 TABLE.classList.add("freeze-col", "freeze-row");
 TABLE.append(THEAD, TBODY);
 
-/** @param {MouseEvent} event */
+/** @this {HTMLTableCellElement} @param {MouseEvent} event */
 function sortMethod(event) {
-    /** @type {DOMStringMap} */ const DATA = this.dataset;
+    const DATA = this.dataset;
     switch (DATA.sort) {
         case "no":
         case "lo":

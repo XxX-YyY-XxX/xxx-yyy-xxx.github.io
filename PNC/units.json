@@ -184,7 +184,7 @@
         "dodge": 6,
         "regen": 637,
         "arma": {
-            "icon": "pending",
+            "icon": "./assets/images/arma/Chelsea.png",
             "hp": 2800,
             "atk": 83,
             "hash": 78,
@@ -1203,7 +1203,7 @@
             "ppen": 33,
             "open": 67
         },
-        "intimacy": []
+        "intimacy": ["Neural Activation", "Code Robustness", "Healing Bond"]
     },
     {
         "name": "Hatsuchiri",

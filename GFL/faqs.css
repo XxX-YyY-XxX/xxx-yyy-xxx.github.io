@@ -10,11 +10,6 @@ dl, table, figure, blockquote {
     margin: 0px;
 }
 
-dd {
-    display: list-item;
-    margin-inline-start: 20px;
-}
-
 dd > figure {
     width: fit-content;
 }
@@ -149,7 +144,7 @@ img:not(.inline-img) {
 }
 
 img.inline-img {
-    margin: -3px -5px;
+    vertical-align: middle;
     display: inline;
     height: 1rem;
 }
