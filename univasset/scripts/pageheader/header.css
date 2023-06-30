@@ -1,3 +1,7 @@
+.icon {
+    opacity: 0.6;
+}
+
 /* #region GFL Button */
 .btn-gfl {
     background: -webkit-linear-gradient(rgb(255, 187, 17, 0.3), rgba(170, 130, 0, 0.3) 50%, rgba(10, 10, 10, 0.3) 50%, rgba(0, 0, 0, 0.3))
@@ -8,7 +12,6 @@
 }
 
 .btn-gfl .icon {
-    opacity: 0.6;
     background: url("/univasset/images/gnk.png") 0 0 no-repeat
 }
 /* #endregion */
@@ -23,7 +26,6 @@
 }
 
 .btn-pnc .icon {
-    opacity: 0.6;
     background: url("/univasset/images/exiles.png") 0 0 no-repeat
 }
 /* #endregion */
@@ -38,7 +40,6 @@
 }
 
 .btn-exi .icon {
-    opacity: 0.6;
     background: url("") 0 0 no-repeat
 }
 /* #endregion */
