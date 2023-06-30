@@ -1,45 +1,46 @@
 .icon {
     opacity: 0.6;
+    background: 0 0 no-repeat;
 }
 
 /* #region GFL Button */
 .btn-gfl {
-    background: -webkit-linear-gradient(rgb(255, 187, 17, 0.3), rgba(170, 130, 0, 0.3) 50%, rgba(10, 10, 10, 0.3) 50%, rgba(0, 0, 0, 0.3))
+    background: -webkit-linear-gradient(rgb(255, 187, 17, 0.3), rgb(170, 130, 0, 0.3) 50%, rgb(10, 10, 10, 0.3) 50%, rgb(0, 0, 0, 0.3));
 }
 
 .btn-gfl:hover {
-    background: -webkit-linear-gradient(rgb(255, 187, 17, 0.6), rgba(170, 130, 0, 0.6) 50%,rgba(10, 10, 10, 0.8) 50%, rgba(0, 0, 0, 0.8))
+    background: -webkit-linear-gradient(rgb(255, 187, 17, 0.6), rgb(170, 130, 0, 0.6) 50%,rgb(10, 10, 10, 0.8) 50%, rgb(0, 0, 0, 0.8));
 }
 
 .btn-gfl .icon {
-    background: url("/univasset/images/gnk.png") 0 0 no-repeat
+    background-image: url("./gnk.png");
 }
 /* #endregion */
 
 /* #region PNC Button */
 .btn-pnc {
-    background: -webkit-linear-gradient(rgb(255, 187, 17, 0.3), rgba(170, 130, 0, 0.3) 50%, rgba(10, 10, 10, 0.3) 50%, rgba(0, 0, 0, 0.3))
+    background: -webkit-linear-gradient(rgb(255 255 255 / 30%), rgb(109 163 163 / 30%) 50%, rgb(104 137 163 / 30%) 50%, rgb(0 64 55 / 30%));
 }
 
 .btn-pnc:hover {
-    background: -webkit-linear-gradient(rgb(255, 187, 17, 0.6), rgba(170, 130, 0, 0.6) 50%,rgba(10, 10, 10, 0.8) 50%, rgba(0, 0, 0, 0.8))
+    background: -webkit-linear-gradient(rgb(255 255 255 / 60%), rgb(109 163 163 / 60%) 50%, rgb(104 137 163 / 80%) 50%, rgb(0 64 55 / 80%));
 }
 
 .btn-pnc .icon {
-    background: url("/univasset/images/exiles.png") 0 0 no-repeat
+    background-image: url("");
 }
 /* #endregion */
 
 /* #region EXI Button */
 .btn-exi {
-    background: -webkit-linear-gradient(rgb(255, 187, 17, 0.3), rgba(170, 130, 0, 0.3) 50%, rgba(10, 10, 10, 0.3) 50%, rgba(0, 0, 0, 0.3))
+    background: -webkit-linear-gradient(rgb(255, 187, 17, 0.3), rgb(170, 130, 0, 0.3) 50%, rgb(10, 10, 10, 0.3) 50%, rgb(0, 0, 0, 0.3));
 }
 
 .btn-exi:hover {
-    background: -webkit-linear-gradient(rgb(255, 187, 17, 0.6), rgba(170, 130, 0, 0.6) 50%,rgba(10, 10, 10, 0.8) 50%, rgba(0, 0, 0, 0.8))
+    background: -webkit-linear-gradient(rgb(255, 187, 17, 0.6), rgb(170, 130, 0, 0.6) 50%,rgb(10, 10, 10, 0.8) 50%, rgb(0, 0, 0, 0.8));
 }
 
 .btn-exi .icon {
-    background: url("") 0 0 no-repeat
+    background-image: url("");
 }
 /* #endregion */

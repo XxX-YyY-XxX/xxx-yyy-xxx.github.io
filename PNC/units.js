@@ -41,24 +41,24 @@ radioGroup(document.querySelector("#button"), "tables",
 /** @type {UnitObject[]} */
 const UNITS = (await Async.getJSON('./units.json')).slice(0, -1);
 const INTIMACY_STATS = {
-    "Code Robustness": ["hp", 1320],
-    "Power Connection": ["atk", 55],
-    "Neural Activation": ["hash", 55],
-    "Shield of Friendship": ["pdef", 55],
-    "Coordinated Strike": ["crate", 8],
-    "Victorious Inspiration": ["cdmg", 12],
-    "Risk Evasion Aid": ["dodge", -1],
-    "Mechanical Celerity": ["haste", 8],
-    "Coordinated Formation": ["dboost", 5],
-    "Through Fire and Water": ["reduc", 5],
-    "Healing Bond": ["heal", 5]
+    /** @type {[string, number]} */ "Code Robustness": ["hp", 1320],
+    /** @type {[string, number]} */ "Power Connection": ["atk", 55],
+    /** @type {[string, number]} */ "Neural Activation": ["hash", 55],
+    /** @type {[string, number]} */ "Shield of Friendship": ["pdef", 55],
+    /** @type {[string, number]} */ "Coordinated Strike": ["crate", 8],
+    /** @type {[string, number]} */ "Victorious Inspiration": ["cdmg", 12],
+    /** @type {[string, number]} */ "Risk Evasion Aid": ["dodge", -1],
+    /** @type {[string, number]} */ "Mechanical Celerity": ["haste", 8],
+    /** @type {[string, number]} */ "Coordinated Formation": ["dboost", 5],
+    /** @type {[string, number]} */ "Through Fire and Water": ["reduc", 5],
+    /** @type {[string, number]} */ "Healing Bond": ["heal", 5]
 }
 
 //#region Statistics Table
 class Units {
     //#region Variables
     name;
-    #class;
+    class;
 
     #hp; #armahp;
     get hp() {
@@ -116,14 +116,14 @@ class Units {
     #hasarma;
 
     row;
-    #updateStat;
+    updateStat;
     //#endregion
 
     /** @param {UnitObject} stat_object */
     constructor(stat_object) {
         //#region Assignment
         this.name = stat_object.name;
-        this.#class = stat_object.class;
+        this.class = stat_object.class;
 
         this.#hp = stat_object.hp;
         this.#atk = stat_object.atk;
@@ -175,7 +175,7 @@ class Units {
         const TD_PPEN = initializeHTML("td", {textContent: this.ppen});
         const TD_OPEN = initializeHTML("td", {textContent: this.open});
 
-        this.#updateStat = () => {
+        this.updateStat = () => {
             TD_HP.textContent = this.hp;
             TD_ATK.textContent = this.atk;
             TD_HASH.textContent = this.hash;
