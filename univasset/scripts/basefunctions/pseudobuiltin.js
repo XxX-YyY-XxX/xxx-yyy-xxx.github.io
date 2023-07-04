@@ -11,8 +11,8 @@ function iter(iterable) {
  * @param {Iterable<T0>} iterable0
  * @param {Iterable<T1>} iterable1
  * @param {boolean} extend
- * @returns {Generator<[T0, T1], void, unknown>} */
-function* zip(iterable0, iterable1, extend = false)
+ * @returns {Generator<[T0, T1], void, unknown>} */    
+//function* zip(iterable0, iterable1, extend = false)
 /** Iterates items per index in groups.
  * @template T0 @template T1 @template T2
  * @param {Iterable<T0>} iterable0
@@ -20,7 +20,7 @@ function* zip(iterable0, iterable1, extend = false)
  * @param {Iterable<T2>} iterable2
  * @param {boolean} extend
  * @returns {Generator<[T0, T1, T2], void, unknown>} */
-function* zip(iterable0, iterable1, iterable2, extend = false)
+//function* zip(iterable0, iterable1, iterable2, extend = false)
 /** Iterates items per index in groups.
  * @template T0 @template T1 @template T2 @template T3
  * @param {Iterable<T0>} iterable0
@@ -29,7 +29,7 @@ function* zip(iterable0, iterable1, iterable2, extend = false)
  * @param {Iterable<T3>} iterable3 
  * @param {boolean} extend
  * @returns {Generator<[T0, T1, T2, T3], void, unknown>} */
-function* zip(iterable0, iterable1, iterable2, iterable3, extend = false)
+//function* zip(iterable0, iterable1, iterable2, iterable3, extend = false)
 /** Iterates items per index in groups.
  * @template T0 @template T1 @template T2 @template T3, @template T4
  * @param {Iterable<T0>} iterable0
@@ -39,7 +39,7 @@ function* zip(iterable0, iterable1, iterable2, iterable3, extend = false)
  * @param {Iterable<T4>} iterable4 
  * @param {boolean} extend
  * @returns {Generator<[T0, T1, T2, T3, T4], void, unknown>} */
-function* zip(iterable0, iterable1, iterable2, iterable3, iterable4, extend = false)
+//function* zip(iterable0, iterable1, iterable2, iterable3, iterable4, extend = false)
 function* zip(...iterables) {
     /**@type {"some" | "every"} */ var extension;
     switch (iterables[iterables.length - 1]) {
