@@ -2,45 +2,11 @@
  * @template T
  * @param {Iterable<T>} iterable
  * @returns {Iterator<T, any, undefined>} */
-function iter(iterable) {
+export function iter(iterable) {
     return iterable[Symbol.iterator]();
 }
 
-/** Iterates items per index in groups.
- * @template T0 @template T1
- * @param {Iterable<T0>} iterable0
- * @param {Iterable<T1>} iterable1
- * @param {boolean} extend
- * @returns {Generator<[T0, T1], void, unknown>} */    
-//function* zip(iterable0, iterable1, extend = false)
-/** Iterates items per index in groups.
- * @template T0 @template T1 @template T2
- * @param {Iterable<T0>} iterable0
- * @param {Iterable<T1>} iterable1
- * @param {Iterable<T2>} iterable2
- * @param {boolean} extend
- * @returns {Generator<[T0, T1, T2], void, unknown>} */
-//function* zip(iterable0, iterable1, iterable2, extend = false)
-/** Iterates items per index in groups.
- * @template T0 @template T1 @template T2 @template T3
- * @param {Iterable<T0>} iterable0
- * @param {Iterable<T1>} iterable1
- * @param {Iterable<T2>} iterable2
- * @param {Iterable<T3>} iterable3 
- * @param {boolean} extend
- * @returns {Generator<[T0, T1, T2, T3], void, unknown>} */
-//function* zip(iterable0, iterable1, iterable2, iterable3, extend = false)
-/** Iterates items per index in groups.
- * @template T0 @template T1 @template T2 @template T3, @template T4
- * @param {Iterable<T0>} iterable0
- * @param {Iterable<T1>} iterable1
- * @param {Iterable<T2>} iterable2
- * @param {Iterable<T3>} iterable3
- * @param {Iterable<T4>} iterable4 
- * @param {boolean} extend
- * @returns {Generator<[T0, T1, T2, T3, T4], void, unknown>} */
-//function* zip(iterable0, iterable1, iterable2, iterable3, iterable4, extend = false)
-function* zip(...iterables) {
+export function* zip(...iterables) {
     /**@type {"some" | "every"} */ var extension;
     switch (iterables[iterables.length - 1]) {
         case true:
@@ -60,8 +26,42 @@ function* zip(...iterables) {
         yield OUTPUT.splice(0);
 }
 
+/** Iterates items per index in groups. */
+export class Zip {
+    /** @template T0 @template T1
+     * @param {Iterable<T0>} iterable0
+     * @param {Iterable<T1>} iterable1
+     * @param {boolean} extend
+     * @returns {Generator<[T0, T1], void, unknown>} */
+    static* two(iterable0, iterable1, extend = false) {yield* zip(iterable0, iterable1, extend)}
+    /** @template T0 @template T1 @template T2
+     * @param {Iterable<T0>} iterable0
+     * @param {Iterable<T1>} iterable1
+     * @param {Iterable<T2>} iterable2
+     * @param {boolean} extend
+     * @returns {Generator<[T0, T1, T2], void, unknown>} */
+    static* three(iterable0, iterable1, iterable2, extend = false) {yield* zip(iterable0, iterable1, iterable2, extend)}
+    /** @template T0 @template T1 @template T2 @template T3
+     * @param {Iterable<T0>} iterable0
+     * @param {Iterable<T1>} iterable1
+     * @param {Iterable<T2>} iterable2
+     * @param {Iterable<T3>} iterable3 
+     * @param {boolean} extend
+     * @returns {Generator<[T0, T1, T2, T3], void, unknown>} */
+    static* four(iterable0, iterable1, iterable2, iterable3, extend = false) {yield* zip(iterable0, iterable1, iterable2, iterable3, extend)}
+    /** @template T0 @template T1 @template T2 @template T3 @template T4
+     * @param {Iterable<T0>} iterable0
+     * @param {Iterable<T1>} iterable1
+     * @param {Iterable<T2>} iterable2
+     * @param {Iterable<T3>} iterable3
+     * @param {Iterable<T4>} iterable4 
+     * @param {boolean} extend
+     * @returns {Generator<[T0, T1, T2, T3, T4], void, unknown>} */
+    static* five(iterable0, iterable1, iterable2, iterable3, iterable4, extend = false) {yield* zip(iterable0, iterable1, iterable2, iterable3, iterable4, extend)}
+}
+
 /** typeof, but with extra steps. */
-function type(any) {
+export function type(any) {
     const TYPE = typeof any;
     try {
         if (TYPE !== "object")
@@ -89,7 +89,7 @@ function type(any) {
  * @param {number} params.start Start of the count. Default 0.
  * @param {number} params.stop End of count. Exclusive. If not given, increments infinitely.
  * @param {number} params.step Increment amount. Default 1. */
-function* range({start = 0, stop = null, step = 1} = {}) {
+export function* range({start = 0, stop = null, step = 1} = {}) {
     /** @type {function(number): boolean} */ var loop;
     if (stop === null)
         loop = x => true;
@@ -114,7 +114,7 @@ function* range({start = 0, stop = null, step = 1} = {}) {
  * @param {boolean} params.reverse
  * @param {T1[]} params.array Follows this array for specific order. Only useful for unique values for now.
  * @returns {function(T0, T0): number} */
-function cmp({key = x => x, reverse = false, array = null} = {}) {
+export function cmp({key = x => x, reverse = false, array = null} = {}) {
     //shall never fuse array and key parameters
     const _onReverse = reverse ? ((x, y) => [y, x]) : ((x, y) => [x, y]);
     const _getIndex = array ? (x => array.indexOf(x)) : (x => x);
@@ -158,5 +158,3 @@ function cmp({key = x => x, reverse = false, array = null} = {}) {
         return _currentFunc(a, b);
     }
 }
-
-export {iter, zip, type, range, cmp};

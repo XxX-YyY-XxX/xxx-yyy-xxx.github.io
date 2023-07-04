@@ -1,6 +1,6 @@
 import {tableSort, initializeHTML, brJoin, radioGroup, nestElements} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
 import {Async, setAttr} from "../univasset/scripts/externaljavascript.js";
-import {zip, cmp} from "../univasset/scripts/basefunctions/index.js"
+import {Zip, cmp} from "../univasset/scripts/basefunctions/index.js"
 
 /** @type {Promise<UnitObject[]>} */ const UNIT_PROMISE = Async.getJSON('./units.json');
 
@@ -278,7 +278,7 @@ const HEADER_VALUES = [
     []
 ]
 function* returnType() {yield "string"; while (true) yield "number"};
-for (const [NAME, KEY, TYPE] of zip(HEADER_NAMES, HEADER_KEYS, returnType())) {
+for (const [NAME, KEY, TYPE] of Zip.three(HEADER_NAMES, HEADER_KEYS, returnType())) {
     const TH = document.createElement("th");
     setAttr(TH, {textContent: NAME, addEventListener: ["click", sortMethod, true]})
     setAttr(TH.dataset, {sort: "no", key: KEY, type: TYPE});
