@@ -4,8 +4,6 @@ export {cmp as compare};
 //#region Constants
 /** Close to zero value. */
 const epsilon = 10 ** -10;
-/** Reusable element for offscreen DOM. */
-const dummyHTML = new DOMParser().parseFromString('', 'text/html').body;
 /** URL of current page. */
 export const pageURL = window.location.origin + window.location.pathname;
 //#endregion
@@ -119,7 +117,7 @@ export class Timer {
 //#region Functions
 /** @param {string} htmlString */
 export function removeHTMLTag(htmlString) {
-    return htmlString.replace(/<([^>]+)>/ig, '');
+    return htmlString.replace(/<[^>]+>/ig, "");
 }
 
 /** @param {number} min Inclusive @param {number} max Exclusive */

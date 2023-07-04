@@ -1,6 +1,6 @@
 import {tableSort, initializeHTML, brJoin, radioGroup, nestElements} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
 import {Async, setAttr} from "../univasset/scripts/externaljavascript.js";
-import {Zip, cmp} from "../univasset/scripts/basefunctions/index.js"
+import {zip, cmp} from "../univasset/scripts/basefunctions/index.js"
 
 /** @type {Promise<UnitObject[]>} */ const UNIT_PROMISE = Async.getJSON('./units.json');
 
@@ -103,6 +103,9 @@ class Units {
         return output;
     }
 
+    res = 0;
+    lash = 0;
+
     #dboost = 0;
     get dboost() {
         var output = this.#dboost;
@@ -188,9 +191,14 @@ class Units {
         const TD_PDEF = initializeHTML("td", {textContent: this.pdef});
         const TD_ODEF = initializeHTML("td", {textContent: this.odef});
         const TD_CRATE = initializeHTML("td", {textContent: `${this.crate}%`});
+        const TD_CDMG = initializeHTML("td", {textContent: `${this.cdmg}%`});
         const TD_PPEN = initializeHTML("td", {textContent: this.ppen});
         const TD_OPEN = initializeHTML("td", {textContent: this.open});
         const TD_DODGE = initializeHTML("td", {textContent: `${this.dodge}%`});
+        const TD_HASTE = initializeHTML("td", {textContent: `${this.haste}%`});
+        const TD_DBOOST = initializeHTML("td", {textContent: `${this.dboost}%`});
+        const TD_DREDUC = initializeHTML("td", {textContent: `${this.dreduc}%`});
+        const TD_HBOOST = initializeHTML("td", {textContent: `${this.hboost}%`});
 
         this.updateStat = () => {
             TD_HP.textContent = this.hp;
@@ -199,9 +207,14 @@ class Units {
             TD_PDEF.textContent = this.pdef;
             TD_ODEF.textContent = this.odef;
             TD_CRATE.textContent = `${this.crate}%`;
+            TD_CDMG.textContent = `${this.cdmg}%`;
             TD_PPEN.textContent = this.ppen;
             TD_OPEN.textContent = this.open;
             TD_DODGE.textContent = `${this.dodge}%`;
+            TD_HASTE.textContent = `${this.haste}%`;
+            TD_DBOOST.textContent = `${this.dboost}%`;
+            TD_DREDUC.textContent = `${this.dreduc}%`;
+            TD_HBOOST.textContent = `${this.hboost}%`;
         }
  
         this.row.append(
@@ -213,10 +226,17 @@ class Units {
             TD_ODEF,
             initializeHTML("td", {textContent: this.aspd}),
             TD_CRATE,
+            TD_CDMG,
             TD_PPEN,
             TD_OPEN,
             TD_DODGE,
-            initializeHTML("td", {textContent: this.regen})
+            initializeHTML("td", {textContent: this.regen}),
+            TD_HASTE,
+            initializeHTML("td", {textContent: this.res}),
+            initializeHTML("td", {textContent: `${this.lash}%`}),
+            TD_DBOOST,
+            TD_DREDUC,
+            TD_HBOOST
         )
         //#endregion
 
@@ -225,8 +245,12 @@ class Units {
 }
 
 function updateTable() {
-    TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));
+    const SHOWN_CLASS = CLASS_BUTTONS.filter(x => x.checked).map(x => x.value);
+    TBODY.replaceChildren(...UNIT_LIST.filter(x => SHOWN_CLASS.includes(x.class)).map(x => x.row));
 }
+
+/** @type {HTMLInputElement[]} */ const CLASS_BUTTONS = Array.from(document.querySelectorAll("#classes input"));
+for (const INPUT of CLASS_BUTTONS) INPUT.addEventListener("change", updateTable);
 
 const UNITS = (await UNIT_PROMISE).slice(0, -1);
 
@@ -235,7 +259,7 @@ const UNIT_LIST = UNITS.map(x => new Units(x));
 const [THEAD, HEADER_TR] = nestElements("thead", "tr");
 
 const TBODY = document.createElement("tbody");
-TBODY.append(...UNIT_LIST.map(unit => unit.row))
+updateTable()
 
 const TABLE = document.createElement("table");
 TABLE.classList.add("freeze-col", "freeze-row");
@@ -248,37 +272,39 @@ function sortMethod(event) {
         case "no":
         case "lo":
             DATA.sort = "hi";
-            switch (DATA.type) {
-                case "string":
-                    UNIT_LIST.sort(cmp({key: x => x[DATA.key]}));
-                    break;
-                case "number":
-                    UNIT_LIST.sort(cmp({key: x => x[DATA.key], reverse: true}));
-                    break;
-            }
+            UNIT_LIST.sort(cmp({key: x => x[DATA.key], reverse: (DATA.type === "number")}));
             break;
         case "hi":
             DATA.sort = "lo";
-            switch (DATA.type) {
-                case "string":
-                    UNIT_LIST.sort(cmp({key: x => x[DATA.key], reverse: true}));
-                    break;
-                case "number":
-                    UNIT_LIST.sort(cmp({key: x => x[DATA.key]}));
-                    break;
-            }
+            UNIT_LIST.sort(cmp({key: x => x[DATA.key], reverse: (DATA.type === "string")}));
             break;
     }
     updateTable();
 }
 
-const HEADER_NAMES = ["Doll Name", "Max HP", "Attack", "Hashrate", "Phys Def", "Op Def", "Atk Spd", "Crit Rate", "Phys Pen", "Op Pen", "Dodge", "Regen"];
-const HEADER_KEYS = ["name", "hp", "atk", "hash", "pdef", "odef", "aspd", "crate", "ppen", "open", "dodge", "regen"];
 const HEADER_VALUES = [
-    []
+    ["Doll Name", "name"],
+    ["Max HP", "hp"],
+    ["Attack", "atk"],
+    ["Hashrate", "hash"],
+    ["Physical Def", "pdef"],
+    ["Operand Def", "odef"],
+    ["Attack Speed", "aspd"],
+    ["Crit Rate", "crate"],
+    ["Crit Damage", "cdmg"],
+    ["Physical Pen", "ppen"],
+    ["Operand Pen", "open"],
+    ["Dodge Rate", "dodge"],
+    ["Post-battle Regen", "regen"],
+    ["Skill Haste", "haste"],
+    ["Debuff Resist", "res"],
+    ["Backlash", "lash"],
+    ["Damage Boost", "dboost"],
+    ["Injury Mitigation", "dreduc"],
+    ["Healing Effect", "hboost"]
 ]
 function* returnType() {yield "string"; while (true) yield "number"};
-for (const [NAME, KEY, TYPE] of Zip.three(HEADER_NAMES, HEADER_KEYS, returnType())) {
+for (const [[NAME, KEY], TYPE] of zip(HEADER_VALUES, returnType())) {
     const TH = document.createElement("th");
     setAttr(TH, {textContent: NAME, addEventListener: ["click", sortMethod, true]})
     setAttr(TH.dataset, {sort: "no", key: KEY, type: TYPE});
@@ -335,4 +361,3 @@ tableSort(
  * @property {[IntimacyStats, IntimacyStats, IntimacyStats]} UnitObject.intimacy */
 
 /** @typedef {"Code Robustness" | "Power Connection" | "Neural Activation" | "Shield of Friendship" | "Coordinated Strike" | "Victorious Inspiration" | "Risk Evasion Aid" | "Mechanical Celerity" | "Coordinated Formation" | "Through Fire and Water" | "Healing Bond"} IntimacyStats */
-/** @typedef {} Fragments */

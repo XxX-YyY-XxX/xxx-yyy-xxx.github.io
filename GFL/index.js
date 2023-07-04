@@ -1,9 +1,9 @@
 import {timer} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
 
-const nextEvent = timer.bind(null, document.getElementById('event'), "Jul 10, 2023 23:59 UTC-0800",
-    "https://iopwiki.com/images/e/e2/Mk_47_Artwork.jpg")
-timer(document.getElementById('event'), "Jul 03, 2023 23:59 UTC-0800",
-    "https://pbs.twimg.com/media/FyfnR_OaMAEqaYa?format=jpg&name=large", {onEnd: nextEvent});
+const nextEvent = timer.bind(null, document.getElementById('event'), "",
+    "")
+timer(document.getElementById('event'), "Jul 10, 2023 23:59 UTC-0800",
+    "https://iopwiki.com/images/e/e2/Mk_47_Artwork.jpg", {onEnd: nextEvent});
 
 const nextPass = timer.bind(null, document.getElementById('battlepass'), "",
     "");
@@ -15,10 +15,10 @@ const nextUnit = timer.bind(null, document.getElementById("coalition"), "",
 timer(document.getElementById("coalition"), "Jul 17, 2023, 23:59 UTC-0800",
     "https://preview.redd.it/7exas1lcp36b1.jpg?width=1400&format=pjpg&auto=webp&v=enabled&s=4b3bba0fee0da111ceafe07945db36db9af39d42", {onEnd: nextUnit});
 
-const nextBanner = timer.bind(null, document.getElementById('skin-banner'), "Jul 31, 2023 23:59 UTC-0800",
-    "https://iopwiki.com/images/a/a2/Mysterious_Footprints_in_the_Waves_Login_Wallpaper.jpg");
-timer(document.getElementById('skin-banner'), "Jul 03, 2023 23:59 UTC-0800",
-    "https://pbs.twimg.com/media/Fx8CrrnaAAE-28t?format=jpg&name=large", {onEnd: nextBanner});
+const nextBanner = timer.bind(null, document.getElementById('skin-banner'), "",
+    "");
+timer(document.getElementById('skin-banner'), "Jul 31, 2023 23:59 UTC-0800",
+    "https://pbs.twimg.com/media/F0MKr92aAAIajnt?format=jpg&name=large", {onEnd: nextBanner});
 
 //timer(document.getElementById('mini-event'), "",
 //    "");
