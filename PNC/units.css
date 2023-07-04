@@ -81,10 +81,10 @@ input[type="checkbox"], input[type="radio"] {
 .arma {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 .arma > img {
-    height: 1rem;
+    height: 1lh;
+    max-width: initial;
 }
 /* #endregion */

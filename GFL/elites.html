@@ -7,12 +7,12 @@
             import {table} from '/univasset/scripts/htmlgenerator/htmlgenerator.js';
             import {zip, range} from '/univasset/scripts/basefunctions/index.js';
 
-            const jsonObject = await Async.getJSON('https://raw.githubusercontent.com/randomqwerty/GFLData/main/en/stc/enemy_character_type.json');
+            const jsonObject = Async.getJSON('https://raw.githubusercontent.com/randomqwerty/GFLData/main/en/stc/enemy_character_type.json');
             const matrix = [['No', 'Elites', 'Non-Elites']];
             var elite = new Set(), nonelite = new Set();
 
-            for (const {passive_skill, code} of jsonObject) (String(passive_skill).includes('200304') ? nonelite : elite).add(code);
-            for (const [index, [unitE, unitNE]] of zip(range(null, 1), zip(elite, nonelite, true))) matrix.push([index, unitE, unitNE ?? '']);
+            for (const {passive_skill, code} of (await jsonObject)) (String(passive_skill).includes('200304') ? nonelite : elite).add(code);
+            for (const [index, [unitE, unitNE]] of zip(range({start: 1}), zip(elite, nonelite, true))) matrix.push([index, unitE, unitNE ?? '']);
 
             table(document.querySelector('#main_content div'), matrix);
         </script>

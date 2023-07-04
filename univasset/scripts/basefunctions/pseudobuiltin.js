@@ -2,18 +2,57 @@
  * @template T
  * @param {Iterable<T>} iterable
  * @returns {Iterator<T, any, undefined>} */
-export function iter(iterable) {
+function iter(iterable) {
     return iterable[Symbol.iterator]();
 }
 
-/** Iterates items per index in groups. Add "true" at the end to extend shortest.
- * @param {[...(Iterable<any> | Generator<any, any, any>), true]} iterables order of iterables = order of output
- * @returns {Generator<any[], void, unknown>} Array of values from each iterable */
-export function* zip(...iterables) {
-    var extension;
-    if (iterables[iterables.length - 1] === true) {
-        extension = 'some'; iterables.pop();
-    } else extension = 'every';
+/** Iterates items per index in groups.
+ * @template T0 @template T1
+ * @param {Iterable<T0>} iterable0
+ * @param {Iterable<T1>} iterable1
+ * @param {boolean} extend
+ * @returns {Generator<[T0, T1], void, unknown>} */
+function* zip(iterable0, iterable1, extend = false);
+/** Iterates items per index in groups.
+ * @template T0 @template T1 @template T2
+ * @param {Iterable<T0>} iterable0
+ * @param {Iterable<T1>} iterable1
+ * @param {Iterable<T2>} iterable2
+ * @param {boolean} extend
+ * @returns {Generator<[T0, T1, T2], void, unknown>} */
+function* zip(iterable0, iterable1, iterable2, extend = false);
+/** Iterates items per index in groups.
+ * @template T0 @template T1 @template T2 @template T3
+ * @param {Iterable<T0>} iterable0
+ * @param {Iterable<T1>} iterable1
+ * @param {Iterable<T2>} iterable2
+ * @param {Iterable<T3>} iterable3 
+ * @param {boolean} extend
+ * @returns {Generator<[T0, T1, T2, T3], void, unknown>} */
+function* zip(iterable0, iterable1, iterable2, iterable3, extend = false);
+/** Iterates items per index in groups.
+ * @template T0 @template T1 @template T2 @template T3, @template T4
+ * @param {Iterable<T0>} iterable0
+ * @param {Iterable<T1>} iterable1
+ * @param {Iterable<T2>} iterable2
+ * @param {Iterable<T3>} iterable3
+ * @param {Iterable<T4>} iterable4 
+ * @param {boolean} extend
+ * @returns {Generator<[T0, T1, T2, T3, T4], void, unknown>} */
+function* zip(iterable0, iterable1, iterable2, iterable3, iterable4, extend = false);
+function* zip(...iterables) {
+    /**@type {"some" | "every"} */ var extension;
+    switch (iterables[iterables.length - 1]) {
+        case true:
+            iterables.pop();
+            extension = "some";
+            break;
+        case false:
+            iterables.pop();
+        default:
+            extension = "every";
+            break;
+    }
 
     const OUTPUT = Array();
     const ITER_ARRAY = iterables.map(iter);
@@ -22,7 +61,7 @@ export function* zip(...iterables) {
 }
 
 /** typeof, but with extra steps. */
-export function type(any) {
+function type(any) {
     const TYPE = typeof any;
     try {
         if (TYPE !== "object")
@@ -47,10 +86,10 @@ export function type(any) {
 
 /**
  * @param {Object} params
- * @param {number} params.stop End of count. Exclusive. If not given, increments infinitely.
  * @param {number} params.start Start of the count. Default 0.
+ * @param {number} params.stop End of count. Exclusive. If not given, increments infinitely.
  * @param {number} params.step Increment amount. Default 1. */
-export function* range({start = 0, stop = null, step = 1} = {}) {
+function* range({start = 0, stop = null, step = 1} = {}) {
     /** @type {function(number): boolean} */ var loop;
     if (stop === null)
         loop = x => true;
@@ -75,7 +114,7 @@ export function* range({start = 0, stop = null, step = 1} = {}) {
  * @param {boolean} params.reverse
  * @param {T1[]} params.array Follows this array for specific order. Only useful for unique values for now.
  * @returns {function(T0, T0): number} */
-export function cmp({key = x => x, reverse = false, array = null} = {}) {
+function cmp({key = x => x, reverse = false, array = null} = {}) {
     //shall never fuse array and key parameters
     const _onReverse = reverse ? ((x, y) => [y, x]) : ((x, y) => [x, y]);
     const _getIndex = array ? (x => array.indexOf(x)) : (x => x);
@@ -119,3 +158,5 @@ export function cmp({key = x => x, reverse = false, array = null} = {}) {
         return _currentFunc(a, b);
     }
 }
+
+export {iter, zip, type, range, cmp};

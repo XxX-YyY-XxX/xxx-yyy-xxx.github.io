@@ -2,57 +2,15 @@ import {tableSort, initializeHTML, brJoin, radioGroup, nestElements} from '../un
 import {Async, setAttr} from "../univasset/scripts/externaljavascript.js";
 import {zip, cmp} from "../univasset/scripts/basefunctions/index.js"
 
+/** @type {Promise<UnitObject[]>} */ const UNIT_PROMISE = Async.getJSON('./units.json');
+
+//#region Radio Buttons
 const STAT = document.querySelector("#stats"), DATA = document.querySelector("#data");
 radioGroup(document.querySelector("#button"), "tables",
     [initializeHTML("h2", {textContent: "Stats"}), "stat", function(x) {STAT.style.display = x.checked ? "block" : "none"}],
     [initializeHTML("h2", {textContent: "Others"}), "data", function(x) {DATA.style.display = x.checked ? "block" : "none"}]
 );
-
-/** 
- * @typedef {{
- *  name: string, 
- *  class: "Guard" | "Sniper" | "Warrior" | "Specialist" | "Medic",
- *  reference: {[linkname: string]: string},
- *  fragments: string[],
- *  hp: number,
- *  atk: number,
- *  hash: number,
- *  pdef: number,
- *  odef: number,
- *  aspd: number,
- *  crate: number,
- *  ppen: number,
- *  open: number,
- *  dodge: number,
- *  regen: number,
- *  arma: {
- *      icon: string,
- *      hp: number,
- *      atk: number,
- *      hash: number,
- *      pdef: number,
- *      odef: number,
- *      ppen: number,
- *      open: number
- *  },
- *  intimacy: (keyof INTIMACY_STATS)[]}} UnitObject
- * */
-
-/** @type {UnitObject[]} */
-const UNITS = (await Async.getJSON('./units.json')).slice(0, -1);
-const INTIMACY_STATS = {
-    /** @type {[string, number]} */ "Code Robustness": ["hp", 1320],
-    /** @type {[string, number]} */ "Power Connection": ["atk", 55],
-    /** @type {[string, number]} */ "Neural Activation": ["hash", 55],
-    /** @type {[string, number]} */ "Shield of Friendship": ["pdef", 55],
-    /** @type {[string, number]} */ "Coordinated Strike": ["crate", 8],
-    /** @type {[string, number]} */ "Victorious Inspiration": ["cdmg", 12],
-    /** @type {[string, number]} */ "Risk Evasion Aid": ["dodge", -1],
-    /** @type {[string, number]} */ "Mechanical Celerity": ["haste", 8],
-    /** @type {[string, number]} */ "Coordinated Formation": ["dboost", 5],
-    /** @type {[string, number]} */ "Through Fire and Water": ["reduc", 5],
-    /** @type {[string, number]} */ "Healing Bond": ["heal", 5]
-}
+//#endregion
 
 //#region Statistics Table
 class Units {
@@ -63,57 +21,114 @@ class Units {
     #hp; #armahp;
     get hp() {
         var output = this.#hp;
-        if (this.#hasarma && this.#arma) output += this.#armahp;
+        if (this.#arma && this.#hasarma) output += this.#armahp;
+        if (this.#intimacy && this.#intistats.includes("Code Robustness")) output += 1320;
         return output;
     }
 
     #atk; #armaatk;
     get atk() {
         var output = this.#atk;
-        if (this.#hasarma && this.#arma) output += this.#armaatk;
+        if (this.#arma && this.#hasarma) output += this.#armaatk;
+        if (this.#intimacy && this.#intistats.includes("Power Connection")) output += 55;
         return output;
     }
 
     #hash; #armahash;
     get hash() {
         var output = this.#hash;
-        if (this.#hasarma && this.#arma) output += this.#armahash;
+        if (this.#arma && this.#hasarma) output += this.#armahash;
+        if (this.#intimacy && this.#intistats.includes("Neural Activation")) output += 55;
         return output;
     }
 
     #pdef; #armapdef;
     get pdef() {
         var output = this.#pdef;
-        if (this.#hasarma && this.#arma) output += this.#armapdef;
+        if (this.#arma && this.#hasarma) output += this.#armapdef;
+        if (this.#intimacy && this.#intistats.includes("Shield of Friendship")) output += 55;
         return output;
     }
 
     #odef; #armaodef;
     get odef() {
         var output = this.#odef;
-        if (this.#hasarma && this.#arma) output += this.#armaodef;
+        if (this.#arma && this.#hasarma) output += this.#armaodef;
         return output;
     }
 
     aspd;
-    crate;
+
+    #crate;
+    get crate() {
+        var output = this.#crate;
+        if (this.#intimacy && this.#intistats.includes("Coordinated Strike")) output += 8;
+        return output;
+    }
+
+    #cdmg = 50;
+    get cdmg() {
+        var output = this.#cdmg;
+        if (this.#intimacy && this.#intistats.includes("Victorious Inspiration")) output += 12;
+        return output;
+    }
 
     #ppen; #armappen;
     get ppen() {
         var output = this.#ppen;
-        if (this.#hasarma && this.#arma) output += this.#armappen;
+        if (this.#arma && this.#hasarma) output += this.#armappen;
         return output;
     }
 
     #open; #armaopen;
     get open() {
         var output = this.#open;
-        if (this.#hasarma && this.#arma) output += this.#armaopen;
+        if (this.#arma && this.#hasarma) output += this.#armaopen;
+        return output;
+    }
+
+    #dodge;
+    get dodge() {
+        var output = this.#dodge;
+        if (this.#intimacy && this.#intistats.includes("Risk Evasion Aid")) output += 8;
+        return output;
+    }
+
+    regen;
+
+    #haste = 0;
+    get haste() {
+        var output = this.#haste;
+        if (this.#intimacy && this.#intistats.includes("Mechanical Celerity")) output += 8;
+        return output;
+    }
+
+    #dboost = 0;
+    get dboost() {
+        var output = this.#dboost;
+        if (this.#intimacy && this.#intistats.includes("Coordinated Formation")) output += 5;
+        return output;
+    }
+
+    #dreduc = 0;
+    get dreduc() {
+        var output = this.#dreduc;
+        if (this.#intimacy && this.#intistats.includes("Through Fire and Water")) output += 5;
+        return output;
+    }
+
+    #hboost = 0;
+    get hboost() {
+        var output = this.#hboost;
+        if (this.#intimacy && this.#intistats.includes("Healing Bond")) output += 5;
         return output;
     }
 
     #arma = false;
     #hasarma;
+
+    #intimacy = false;
+    #intistats;
 
     row;
     updateStat;
@@ -131,10 +146,10 @@ class Units {
         this.#pdef = stat_object.pdef;
         this.#odef = stat_object.odef;
         this.aspd = stat_object.aspd;
-        this.crate = stat_object.crate;
+        this.#crate = stat_object.crate;
         this.#ppen = stat_object.ppen;
         this.#open = stat_object.open;
-        this.dodge = stat_object.dodge;
+        this.#dodge = stat_object.dodge;
         this.regen = stat_object.regen;
 
         const ARMA = stat_object.arma;
@@ -146,10 +161,10 @@ class Units {
         this.#armappen = ARMA.ppen;
         this.#armaopen = ARMA.open;
 
-        //stat_object.intimacy;
-        //#endregion
-
         this.#hasarma = /\.\/assets\/images\/arma\/\S+\.png/.test(ARMA.icon);
+
+        this.#intistats = stat_object.intimacy;
+        //#endregion
 
         //#region HTML Elements
         this.row = document.createElement("tr");
@@ -172,8 +187,10 @@ class Units {
         const TD_HASH = initializeHTML("td", {textContent: this.hash});
         const TD_PDEF = initializeHTML("td", {textContent: this.pdef});
         const TD_ODEF = initializeHTML("td", {textContent: this.odef});
+        const TD_CRATE = initializeHTML("td", {textContent: `${this.crate}%`});
         const TD_PPEN = initializeHTML("td", {textContent: this.ppen});
         const TD_OPEN = initializeHTML("td", {textContent: this.open});
+        const TD_DODGE = initializeHTML("td", {textContent: `${this.dodge}%`});
 
         this.updateStat = () => {
             TD_HP.textContent = this.hp;
@@ -181,8 +198,10 @@ class Units {
             TD_HASH.textContent = this.hash;
             TD_PDEF.textContent = this.pdef;
             TD_ODEF.textContent = this.odef;
+            TD_CRATE.textContent = `${this.crate}%`;
             TD_PPEN.textContent = this.ppen;
             TD_OPEN.textContent = this.open;
+            TD_DODGE.textContent = `${this.dodge}%`;
         }
  
         this.row.append(
@@ -193,10 +212,10 @@ class Units {
             TD_PDEF,
             TD_ODEF,
             initializeHTML("td", {textContent: this.aspd}),
-            initializeHTML("td", {textContent: `${this.crate}%`}),
+            TD_CRATE,
             TD_PPEN,
             TD_OPEN,
-            initializeHTML("td", {textContent: `${this.dodge}%`}),
+            TD_DODGE,
             initializeHTML("td", {textContent: this.regen})
         )
         //#endregion
@@ -208,6 +227,8 @@ class Units {
 function updateTable() {
     TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));
 }
+
+const UNITS = (await UNIT_PROMISE).slice(0, -1);
 
 const UNIT_LIST = UNITS.map(x => new Units(x));
 
@@ -253,11 +274,13 @@ function sortMethod(event) {
 
 const HEADER_NAMES = ["Doll Name", "Max HP", "Attack", "Hashrate", "Phys Def", "Op Def", "Atk Spd", "Crit Rate", "Phys Pen", "Op Pen", "Dodge", "Regen"];
 const HEADER_KEYS = ["name", "hp", "atk", "hash", "pdef", "odef", "aspd", "crate", "ppen", "open", "dodge", "regen"];
+const HEADER_VALUES = [
+    []
+]
 function* returnType() {yield "string"; while (true) yield "number"};
 for (const [NAME, KEY, TYPE] of zip(HEADER_NAMES, HEADER_KEYS, returnType())) {
     const TH = document.createElement("th");
-    TH.textContent = NAME;
-    TH.addEventListener("click", sortMethod, true);
+    setAttr(TH, {textContent: NAME, addEventListener: ["click", sortMethod, true]})
     setAttr(TH.dataset, {sort: "no", key: KEY, type: TYPE});
     HEADER_TR.appendChild(TH);
 }
@@ -282,3 +305,34 @@ tableSort(
     {frzcol: true, frzhdr: true}
 );
 //#endregion
+
+/**
+ * @typedef {Object} UnitObject
+ * @property {string} UnitObject.name
+ * @property {"Guard" | "Sniper" | "Warrior" | "Specialist" | "Medic"} UnitObject.class
+ * @property {{[linkname: string]: string}} UnitObject.reference {linkname: linkurl}
+ * @property {string[]} UnitObject.fragments Where to obtain unit fragments.
+ * @property {number} UnitObject.hp
+ * @property {number} UnitObject.atk
+ * @property {number} UnitObject.hash
+ * @property {number} UnitObject.pdef
+ * @property {number} UnitObject.odef
+ * @property {number} UnitObject.aspd
+ * @property {number} UnitObject.crate
+ * @property {number} UnitObject.ppen
+ * @property {number} UnitObject.open
+ * @property {number} UnitObject.dodge
+ * @property {number} UnitObject.regen
+ * @property {Object} UnitObject.arma
+ * @property {string} UnitObject.arma.icon Link to arma emblem.
+ * @property {number} UnitObject.arma.hp
+ * @property {number} UnitObject.arma.atk
+ * @property {number} UnitObject.arma.hash
+ * @property {number} UnitObject.arma.pdef
+ * @property {number} UnitObject.arma.odef
+ * @property {number} UnitObject.arma.ppen
+ * @property {number} UnitObject.arma.open
+ * @property {[IntimacyStats, IntimacyStats, IntimacyStats]} UnitObject.intimacy */
+
+/** @typedef {"Code Robustness" | "Power Connection" | "Neural Activation" | "Shield of Friendship" | "Coordinated Strike" | "Victorious Inspiration" | "Risk Evasion Aid" | "Mechanical Celerity" | "Coordinated Formation" | "Through Fire and Water" | "Healing Bond"} IntimacyStats */
+/** @typedef {} Fragments */
