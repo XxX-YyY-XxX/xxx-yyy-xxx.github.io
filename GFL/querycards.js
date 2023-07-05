@@ -671,7 +671,8 @@ export const cardData = [
     {
         id : '00052',
         questions : `I've heard of GFAlarm. Is it safe to use?`,
-        answers : `${link('Gamepress breakdown.', 'https://gamepress.gg/girlsfrontline/how-use-gfalarm-girls-frontline-alarm')} Also useful for getting data of HOc Chips.`,
+        answers : `${link("Gamepress breakdown", 'https://gamepress.gg/girlsfrontline/how-use-gfalarm-girls-frontline-alarm')}. Also useful for getting data of HOC Chips.<br>
+        ${link("Other usefulness.", "https://www.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jqn0nvu/")}`,
         tags : [dTag["3P"]]
     },
     {
@@ -1044,7 +1045,7 @@ export const cardData = [
             ],
             "PC Downloads": [
                 link('GFChipCalc Github page (Outdated).', 'https://github.com/Bunnyspa/GFChipCalc/releases'),
-                spoilerSummary("GFChipCalc .jar file (Updated).", Embed.google(Embed.G_FILE, "1LbZirmRxvwA5WXS9hwvc4mTUi_hYYjZ3"))
+                link("GFChipCalc .jar file (Updated).", "https://gall.dcinside.com/mgallery/board/view/?id=micateam&no=1785059")
             ],
             "Android Downloads": [
                 link('Android Chip Calc download page.', 'https://bunnyspa.github.io/gfl/chipcalc'),

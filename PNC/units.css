@@ -70,6 +70,7 @@ input[type="checkbox"], input[type="radio"] {
 .arma {
     display: flex;
     justify-content: space-between;
+    white-space: nowrap;
 }
 
 .arma > img {

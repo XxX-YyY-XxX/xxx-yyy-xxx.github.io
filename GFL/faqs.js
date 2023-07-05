@@ -22,9 +22,11 @@ for (const {name, description} of Object.values(dTag).sort(cmp({key: x => x.name
 
     const LABEL = document.createElement("label");
     LABEL.classList.add("tags", "tooltip");
-    LABEL.append(INPUT, name, initializeHTML('span', {textContent: description, classList: {add: ['tooltiptext']}}));
+    //LABEL.append(INPUT, name, initializeHTML('span', {textContent: description, classList: {add: ['tooltiptext']}}));
+    LABEL.append(INPUT, name);
     
-    toggleableTagsField.appendChild(LABEL);
+    //toggleableTagsField.appendChild(LABEL);
+    toggleableTagsField.appendChild(initializeHTML("span", {append: [LABEL, initializeHTML('span', {textContent: description, classList: {add: ['tooltiptext']}})]}));
 }
 //#endregion
 

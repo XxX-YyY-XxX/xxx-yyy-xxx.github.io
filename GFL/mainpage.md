@@ -463,3 +463,26 @@ Data Sim data arrangement is "Advanced, Intermediate, Basic"
 >- Probability of 2-star equipment: 48.5%
 >
 >*The above probabilities are all average probabilities. Depending on the construction formula, the probabilities of each star will fluctuate up and down.
+
+
+
+
+
+
+
+<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jqhq3cq/ -->
+<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jqhnttv/ -->
+<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jqfwlj2/ -->
+<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jqdwsbq/ -->
+<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jqd1lpx/ -->
+<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jqcr35x/ -->
+<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jqcnd2d/ -->
+<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jqa33qt/ -->
+<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jq6l1ec/ -->
+<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jq6o1yb/ -->
+<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jq5cqkr/ -->
+<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jq4shm3/ -->
+<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jq4jj2v/ -->
+<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jpzvz27/ -->
+<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jq0ikcx/ -->
+<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jpvjyew/ -->
