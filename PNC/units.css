@@ -6,20 +6,9 @@
 
 input[type="checkbox"], input[type="radio"] {
     appearance: none;
-    margin: 0px;
+    /* margin: 0px; */
+    margin: 0;
 }
-
-/* #region Common Stats */
-#common {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: fit-content;
-}
-
-#common > * {
-    padding: 0px 5px;
-}
-/* #endregion */
 
 /* #region Freeze */
 .func_table tr:nth-child(even) > :first-child {
@@ -88,3 +77,7 @@ input[type="checkbox"], input[type="radio"] {
     max-width: initial;
 }
 /* #endregion */
+
+#classes {
+    display: none;
+}

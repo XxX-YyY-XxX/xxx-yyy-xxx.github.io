@@ -6,7 +6,7 @@ export function iter(iterable) {
     return iterable[Symbol.iterator]();
 }
 
-function* zip(...iterables) {
+export function* zip(...iterables) {
     var extension;
     switch (iterables[iterables.length - 1]) {
         case true:
@@ -84,6 +84,8 @@ export function cmp({key = x => x, reverse = false, array = null} = {}) {
     //shall never fuse array and key parameters
     const _onReverse = reverse ? ((x, y) => [y, x]) : ((x, y) => [x, y]);
     const _getIndex = array ? (x => array.indexOf(x)) : (x => x);
+
+    //make getindex into a function
 
     const method = {
         /** @param {number} x @param {number} y */

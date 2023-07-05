@@ -1,3 +1,4 @@
+export * from "./typehint.d.ts";
+
 export * from "./pseudobuiltin.js";
-export * from "./overloads.ts";
 import "./prototype.js";
