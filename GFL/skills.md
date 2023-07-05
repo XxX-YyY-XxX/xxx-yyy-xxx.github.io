@@ -12,10 +12,6 @@
 >
 > [Pekola.](/GFL/assets/images/PekolaUse.png)
 
-### Can SAA MOD trigger M500 MOD?
-
-> Even better. It still works even after the initial three procs are used. Just make sure to cover the first few seconds of no shield.
-
 ### Which skills are able to get critical hits?
 
 > Rule of thumb: Unless otherwise stated, all skillshots, grenades, and molotovs don't get critical hits.

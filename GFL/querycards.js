@@ -188,6 +188,22 @@ export const cardData = [
         tags : [dTag.HOC, dTag.PRIME]
     },  //Privated - rsFyXRDAi6I
     {
+        id : '00420',
+        questions : `There's an event going on. What should I do?`,
+        answers : `${List.description({
+            "Seasonal Events": [
+                "Farm maps to get 60 (80/120 if rerun) event specific tokens daily. You can miss a day of farming and still get all items in the shop.",
+                "Complete the story to unlock farming maps. Story maps are largely balanced around a one-week player.",
+                "Farming maps are either separate nodes/chapters, or updated story maps.",
+                `Grind the farming maps to obtain ${getID("event-reward dolls", "00024")}. You can pity/guarantee them with ${getID("Platinum and Nova medals", "00104")}.`
+            ],
+            "Major Events": [
+                "Farm maps to get 60 crates daily."
+            ]
+        })}`,
+        tags : [dTag.SEASON, dTag.MAJOR, dTag.PRIME]
+    },
+    {
         id : '00008',
         questions : `How to do Theater/Theatre?`,
         answers : `${link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Theater_Mode')}<br>
@@ -364,8 +380,11 @@ export const cardData = [
         id : '00024',
         questions : `Where and how can I get my favorite gun/doll/unit/character?`,
         answers : `${List.description({
-            'Factory Production' : [spoilerSummary('Gamepress infographic for resource efficient recipes.', image('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/2020-01/rateup-crafting-infographic.jpg'))],
-            'Rescue Drops' : [
+            'Factory Production': [
+                spoilerSummary('Gamepress infographic for resource efficient recipes.', image('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/2020-01/rateup-crafting-infographic.jpg')),
+                link("GFDB Github Database.", 'https://gf-db.github.io/')
+            ],
+            'Rescue Drops': [
                 spoilerSummary('"Limited" drops in Combat Missions.', 'Limited to that particular map. Not limited by time, but by place. Until Rescue Event happens.' +
                     table(['Chapter', 'Doll', 'SPEQ'],
                         ['00', 'N/A',       'N/A'],
@@ -385,19 +404,19 @@ export const cardData = [
                 link(`Farmable dolls in campaign maps, both 3${star} monthly reward dolls and those that debuted on this event.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
                 `During collabs, major events, side events, and ${spoilerSummary('Rescue Events', `Also known as Boss Bully, where you get to farm for 4-5${star} event reward dolls in the story chapters 1-6.`)}, event rewards become temporarily available for farming.`,
                 'Obtainable from random nodes, however unlikely.',
-                'For units that can also be crafted, their drop rates are less than 1%.',
+                `For 5${star} units that can also be crafted, their drop rates are less than 1%.`,
                 "Whatever doll you recieved, whether you win, lose, or quit the stage, you keep it.",
                 getID("Farming maps and routing.", "00123")
             ],
-            'Event Rewards' : [
+            'Event Rewards': [
                 link("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls'),
                 'These dolls will become unavailable from major story clear rewards after being added to the campaign tab.'
             ],
-            'Shop' : [
+            'Shop': [
                 'Applicable to collab dolls using event currency.',
                 `5${star} dolls available in Production are the only ones elegible for True Core Masks, bar spaghetti.`
             ],
-            'Achievements' : [
+            'Achievements': [
                 "Type 97s and the AR Team, which are the only ones that can't be bought.",
                 'All dolls come preleveled.'
             ]
@@ -718,12 +737,6 @@ export const cardData = [
         answers : `Enter the GFAlarm proxy address to ProxyDroid or Drony.<br>
         ${link("u/Signal_Abroad1427's google-fu for Bluestacks.", 'https://www.reddit.com/r/girlsfrontline/comments/umdikk/weekly_commanders_lounge_may_10_2022/i8hj47h/')}`,
         tags : [dTag["3P"], dTag.EMU]
-    },
-    {
-        id : '00057',
-        questions : `Is there a list of voodoo recipes and their crafting rates for *insert pennies here*?`,
-        answers : `${link('GFDB Github Database.', 'https://gf-db.github.io/')} Freedom of information, just add internet connection.`,
-        tags : [dTag.PROD]
     },
     {
         id : '00058',
@@ -2268,7 +2281,8 @@ export const cardData = [
             "Ribeyrolles": [`MOD skill do not count for AS Val's MOD skill, most likely due to buff counting as a "unit".`],
             "LTLX": ["Skill knocks back bosses."],
             "M4A1": ["Main shot cannot crit. Explosion does."],
-            "KSVK": [`Main shot is normal shot, ${link("explosion coded as explosion", "https://iopwiki.com/wiki/KSVK")}.`]
+            "KSVK": [`Main shot is normal shot, ${link("explosion coded as explosion", "https://iopwiki.com/wiki/KSVK")}.`],
+            "SAA": ["MOD skill can \"proc\" after the first three."]
         })}`,
         tags : [dTag.TDOLL, dTag.SKILL]
     },
@@ -3276,12 +3290,6 @@ export const cardData = [
         tags : [dTag.TDOLL, dTag.SKIN]
     },
     {
-        id : '00420',
-        questions : `How many event currencies can I get in a day?`,
-        answers : `60, up to 80 if it's a rerun.`,
-        tags : [dTag.MAJOR, dTag.SEASON]
-    },
-    {
         id : '00422',
         questions : `Is there any damage sim? Or at least a DPS calculator?`,
         answers : `${spoilerSummary("u/corbsieboy's spreadsheet calculator.", Embed.google(Embed.G_EXCEL, "1HgLM886cjnlGeoff7sE5QkTN4KPbT-52"))}`,
@@ -3368,7 +3376,6 @@ export const cardData = [
         })}`,
         tags : [dTag.SIDE, dTag.ADJUNCT]
     },
-
     {
         id : '00431',
         questions : `Which map is the fastest for the killing armored units?`,
@@ -3451,6 +3458,12 @@ export const cardData = [
         questions : `What do I do with unused Keycards during the bingo event?`,
         answers : `Keep them. You'll get 5 Calibration Tickets per 1 Unused Keycard. Points go to trash. Source: Game info tab.`,
         tags : [dTag.MINI]
+    },  //@Visual
+    {
+        id : '00057',
+        questions : `Where can I see rankings?`,
+        answers : `Tap the bottom-right arrow at the main screen.`,
+        tags : [dTag.MISC]
     },  //@Visual
     {
         id : '00000',

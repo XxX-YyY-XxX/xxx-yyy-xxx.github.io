@@ -2,7 +2,7 @@ import {tableSort, initializeHTML, brJoin, radioGroup, nestElements} from '../un
 import {Async, setAttr} from "../univasset/scripts/externaljavascript.js";
 import {zip, cmp} from "../univasset/scripts/basefunctions/index.js"
 
-/** @type {Promise<UnitObject[]>} */ const UNIT_PROMISE = Async.getJSON('./units.json');
+/** @type {UnitObject[]} */ var UNITS = Async.getJSON('./units.json');
 
 //#region Radio Buttons
 const STAT = document.querySelector("#stats"), DATA = document.querySelector("#data");
@@ -16,7 +16,7 @@ radioGroup(document.querySelector("#button"), "tables",
 /** @type {HTMLInputElement[]} */ const CLASS_BUTTONS = Array.from(document.querySelectorAll("#classes input"));
 for (const INPUT of CLASS_BUTTONS) INPUT.addEventListener("change", updateTable);
 
-const UNITS = (await UNIT_PROMISE).slice(0, -1);
+UNITS = (await UNITS).slice(0, -1);
 
 const UNIT_LIST = UNITS.map(x => new Units(x));
 

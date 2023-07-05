@@ -400,10 +400,6 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 
 > Stand on a node. Lay it down on an adjacent empty node. It activates the moment an enemy steps on it. Don't retreat the mine layer or you'll lose the mine.
 
-### Where can I see rankings?
-
-> Tap the bottom-right arrow at the main screen.
-
 ### Can I get limited event dolls during rescue events using autobattles?
 
 > "These T-Dolls are obtainable through Auto-Battles as well." Hmm... I wonder. Note however that 1 auto-battle is equivalent to 1 roll for the doll.
@@ -463,26 +459,3 @@ Data Sim data arrangement is "Advanced, Intermediate, Basic"
 >- Probability of 2-star equipment: 48.5%
 >
 >*The above probabilities are all average probabilities. Depending on the construction formula, the probabilities of each star will fluctuate up and down.
-
-
-
-
-
-
-
-<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jqhq3cq/ -->
-<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jqhnttv/ -->
-<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jqfwlj2/ -->
-<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jqdwsbq/ -->
-<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jqd1lpx/ -->
-<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jqcr35x/ -->
-<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jqcnd2d/ -->
-<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jqa33qt/ -->
-<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jq6l1ec/ -->
-<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jq6o1yb/ -->
-<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jq5cqkr/ -->
-<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jq4shm3/ -->
-<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jq4jj2v/ -->
-<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jpzvz27/ -->
-<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jq0ikcx/ -->
-<!-- https://old.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jpvjyew/ -->
