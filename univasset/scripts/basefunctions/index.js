@@ -1,4 +1,2 @@
-//export * from "./typehint.d.ts";      //uncomment later when github ts mime bs is fixed
-
-export * from "./pseudobuiltin.js";
+export * from "./pseudobuiltin.js";     //Still takes hinting from .d.ts
 import "./prototype.js";

@@ -143,9 +143,9 @@ export function tableSort(grouper_elem, tablematrix, mapping, {frzcol = false, f
     }
     TABLE.append(THEAD, TBODY);
 
-    /** @param {MouseEvent} event */
+    /** @this {HTMLTableCellElement} @param {MouseEvent} event */
     function sortMethod(event) {
-        /** @type {DOMStringMap} */ const DATA = this.dataset;
+        const DATA = this.dataset;
         switch (DATA.sort) {
             case "no":
             case "lo":
