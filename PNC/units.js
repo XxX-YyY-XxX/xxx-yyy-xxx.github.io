@@ -4,130 +4,7 @@ import {zip, cmp} from "../univasset/scripts/basefunctions/index.js"
 
 /** @type {UnitObject[]} */ var UNITS = Async.getJSON('./units.json');
 
-//#region Radio Buttons
-const STAT = document.querySelector("#stats"), DATA = document.querySelector("#data");
-radioGroup(document.querySelector("#button"), "tables",
-    [initializeHTML("h2", {textContent: "Stats"}), "stat", function(x) {STAT.style.display = x.checked ? "block" : "none"}],
-    [initializeHTML("h2", {textContent: "Others"}), "data", function(x) {DATA.style.display = x.checked ? "block" : "none"}]
-);
-//#endregion
-
-//#region Statistics Table
-/** @type {HTMLInputElement[]} */ const CLASS_BUTTONS = Array.from(document.querySelectorAll("#classes input"));
-for (const INPUT of CLASS_BUTTONS) INPUT.addEventListener("change", updateTable);
-
-UNITS = (await UNITS).slice(0, -1);
-
-const UNIT_LIST = UNITS.map(x => new Units(x));
-
-const [THEAD, HEADER_TR] = nestElements("thead", "tr");
-
-const TBODY = document.createElement("tbody");
-updateTable()
-
-const TABLE = document.createElement("table");
-TABLE.classList.add("freeze-col", "freeze-row");
-TABLE.append(THEAD, TBODY);
-
-/** @this {HTMLTableCellElement} @param {MouseEvent} event */
-function sortMethod(event) {
-    const DATA = this.dataset;
-    switch (DATA.sort) {
-        case "no":
-        case "lo":
-            DATA.sort = "hi";
-            UNIT_LIST.sort(cmp({key: x => x[DATA.key], reverse: (DATA.type === "number")}));
-            break;
-        case "hi":
-            DATA.sort = "lo";
-            UNIT_LIST.sort(cmp({key: x => x[DATA.key], reverse: (DATA.type === "string")}));
-            break;
-    }
-    updateTable();
-}
-
-const HEADER_VALUES = [
-    ["Doll Name", "name"],
-    ["Max HP", "hp"],
-    ["Attack", "atk"],
-    ["Hashrate", "hash"],
-    ["Physical Def", "pdef"],
-    ["Operand Def", "odef"],
-    ["Attack Speed", "aspd"],
-    ["Crit Rate", "crate"],
-    ["Crit Damage", "cdmg"],
-    ["Physical Pen", "ppen"],
-    ["Operand Pen", "open"],
-    ["Dodge Rate", "dodge"],
-    ["Post-battle Regen", "regen"],
-    ["Skill Haste", "haste"],
-    ["Debuff Resist", "res"],
-    ["Backlash", "lash"],
-    ["Damage Boost", "dboost"],
-    ["Injury Mitigation", "dreduc"],
-    ["Healing Effect", "hboost"]
-]
-for (const [[NAME, KEY], TYPE] of zip(HEADER_VALUES, (function*() {yield "string"; while (true) yield "number"})())) {
-    const TH = document.createElement("th");
-    setAttr(TH, {textContent: NAME, addEventListener: ["click", sortMethod, true]})
-    setAttr(TH.dataset, {sort: "no", key: KEY, type: TYPE});
-    HEADER_TR.appendChild(TH);
-}
-
-const STAT_TABLE = document.querySelector("#stats > .table");
-STAT_TABLE.classList.add("func_table");
-STAT_TABLE.appendChild(TABLE);
-//#endregion
-
-//#region Others
-const DATA_ARRAY = UNITS.map(x => [x.name, x.class, x.reference, x.fragments]);
-DATA_ARRAY.unshift(["Doll Name", "Class", "Reference", "Fragments"]);
-tableSort(
-    document.querySelector("#data > .table"),
-    DATA_ARRAY,
-    [
-        x => x,
-        x => x,
-        x => brJoin(Object.entries(x).map(([name, link]) => initializeHTML("a", {textContent: name, href: link}))),
-        x => brJoin(x)
-    ],
-    {frzcol: true, frzhdr: true}
-);
-//#endregion
-
-//#region Type Declarations
-/**
- * @typedef {Object} UnitObject
- * @property {string} UnitObject.name
- * @property {"Guard" | "Sniper" | "Warrior" | "Specialist" | "Medic"} UnitObject.class
- * @property {{[linkname: string]: string}} UnitObject.reference {linkname: linkurl}
- * @property {string[]} UnitObject.fragments Where to obtain unit fragments.
- * @property {number} UnitObject.hp
- * @property {number} UnitObject.atk
- * @property {number} UnitObject.hash
- * @property {number} UnitObject.pdef
- * @property {number} UnitObject.odef
- * @property {number} UnitObject.aspd
- * @property {number} UnitObject.crate
- * @property {number} UnitObject.ppen
- * @property {number} UnitObject.open
- * @property {number} UnitObject.dodge
- * @property {number} UnitObject.regen
- * @property {Object} UnitObject.arma
- * @property {string} UnitObject.arma.icon Link to arma emblem.
- * @property {number} UnitObject.arma.hp
- * @property {number} UnitObject.arma.atk
- * @property {number} UnitObject.arma.hash
- * @property {number} UnitObject.arma.pdef
- * @property {number} UnitObject.arma.odef
- * @property {number} UnitObject.arma.ppen
- * @property {number} UnitObject.arma.open
- * @property {[IntimacyStats, IntimacyStats, IntimacyStats]} UnitObject.intimacy */
-
-/** @typedef {"Code Robustness" | "Power Connection" | "Neural Activation" | "Shield of Friendship" | "Coordinated Strike" | "Victorious Inspiration" | "Risk Evasion Aid" | "Mechanical Celerity" | "Coordinated Formation" | "Through Fire and Water" | "Healing Bond"} IntimacyStats */
-//#endregion
-
-//#region Classes and Function Declarations
+//#region Class Declarations
 class Units {
     name;
     class;
@@ -352,9 +229,135 @@ class Units {
         //#privatefield cannot be called dynamically, use exec/eval instead
     }
 }
+//#endregion
 
+//#region Function Declarations
 function updateTable() {
     const SHOWN_CLASS = CLASS_BUTTONS.filter(x => x.checked).map(x => x.value);
     TBODY.replaceChildren(...UNIT_LIST.filter(x => SHOWN_CLASS.includes(x.class)).map(x => x.row));
 }
 //#endregion
+
+//#region Radio Buttons
+const STAT = document.querySelector("#stats"), DATA = document.querySelector("#data");
+radioGroup(document.querySelector("#button"), "tables",
+    [initializeHTML("h2", {textContent: "Stats"}), "stat", function(x) {STAT.style.display = x.checked ? "block" : "none"}],
+    [initializeHTML("h2", {textContent: "Others"}), "data", function(x) {DATA.style.display = x.checked ? "block" : "none"}]
+);
+//#endregion
+
+//#region Statistics Table
+/** @type {HTMLInputElement[]} */ const CLASS_BUTTONS = Array.from(document.querySelectorAll("#classes input"));
+for (const INPUT of CLASS_BUTTONS) INPUT.addEventListener("change", updateTable);
+
+UNITS = (await UNITS).slice(0, -1);
+
+const UNIT_LIST = UNITS.map(x => new Units(x));
+
+const [THEAD, HEADER_TR] = nestElements("thead", "tr");
+
+const TBODY = document.createElement("tbody");
+updateTable()
+
+const TABLE = document.createElement("table");
+TABLE.classList.add("freeze-col", "freeze-row");
+TABLE.append(THEAD, TBODY);
+
+/** @this {HTMLTableCellElement} @param {MouseEvent} event */
+function sortMethod(event) {
+    const DATA = this.dataset;
+    switch (DATA.sort) {
+        case "no":
+        case "lo":
+            DATA.sort = "hi";
+            UNIT_LIST.sort(cmp({key: x => x[DATA.key], reverse: (DATA.type === "number")}));
+            break;
+        case "hi":
+            DATA.sort = "lo";
+            UNIT_LIST.sort(cmp({key: x => x[DATA.key], reverse: (DATA.type === "string")}));
+            break;
+    }
+    updateTable();
+}
+
+const HEADER_VALUES = [
+    ["Doll Name", "name"],
+    ["Max HP", "hp"],
+    ["Attack", "atk"],
+    ["Hashrate", "hash"],
+    ["Physical Def", "pdef"],
+    ["Operand Def", "odef"],
+    ["Attack Speed", "aspd"],
+    ["Crit Rate", "crate"],
+    ["Crit Damage", "cdmg"],
+    ["Physical Pen", "ppen"],
+    ["Operand Pen", "open"],
+    ["Dodge Rate", "dodge"],
+    ["Post-battle Regen", "regen"],
+    ["Skill Haste", "haste"],
+    ["Debuff Resist", "res"],
+    ["Backlash", "lash"],
+    ["Damage Boost", "dboost"],
+    ["Injury Mitigation", "dreduc"],
+    ["Healing Effect", "hboost"]
+]
+for (const [[NAME, KEY], TYPE] of zip(HEADER_VALUES, (function*() {yield "string"; while (true) yield "number"})())) {
+    const TH = document.createElement("th");
+    setAttr(TH, {textContent: NAME, addEventListener: ["click", sortMethod, true]})
+    setAttr(TH.dataset, {sort: "no", key: KEY, type: TYPE});
+    HEADER_TR.appendChild(TH);
+}
+
+const STAT_TABLE = document.querySelector("#stats > .table");
+STAT_TABLE.classList.add("func_table");
+STAT_TABLE.appendChild(TABLE);
+//#endregion
+
+//#region Others
+const DATA_ARRAY = UNITS.map(x => [x.name, x.class, x.reference, x.fragments]);
+DATA_ARRAY.unshift(["Doll Name", "Class", "Reference", "Fragments"]);
+tableSort(
+    document.querySelector("#data > .table"),
+    DATA_ARRAY,
+    [
+        x => x,
+        x => x,
+        x => brJoin(Object.entries(x).map(([name, link]) => initializeHTML("a", {textContent: name, href: link}))),
+        x => brJoin(x)
+    ],
+    {frzcol: true, frzhdr: true}
+);
+//#endregion
+
+//#region Type Declarations
+/**
+ * @typedef {Object} UnitObject
+ * @property {string} UnitObject.name
+ * @property {"Guard" | "Sniper" | "Warrior" | "Specialist" | "Medic"} UnitObject.class
+ * @property {{[linkname: string]: string}} UnitObject.reference {linkname: linkurl}
+ * @property {string[]} UnitObject.fragments Where to obtain unit fragments.
+ * @property {number} UnitObject.hp
+ * @property {number} UnitObject.atk
+ * @property {number} UnitObject.hash
+ * @property {number} UnitObject.pdef
+ * @property {number} UnitObject.odef
+ * @property {number} UnitObject.aspd
+ * @property {number} UnitObject.crate
+ * @property {number} UnitObject.ppen
+ * @property {number} UnitObject.open
+ * @property {number} UnitObject.dodge
+ * @property {number} UnitObject.regen
+ * @property {Object} UnitObject.arma
+ * @property {string} UnitObject.arma.icon Link to arma emblem.
+ * @property {number} UnitObject.arma.hp
+ * @property {number} UnitObject.arma.atk
+ * @property {number} UnitObject.arma.hash
+ * @property {number} UnitObject.arma.pdef
+ * @property {number} UnitObject.arma.odef
+ * @property {number} UnitObject.arma.ppen
+ * @property {number} UnitObject.arma.open
+ * @property {[IntimacyStats, IntimacyStats, IntimacyStats]} UnitObject.intimacy */
+
+/** @typedef {"Code Robustness" | "Power Connection" | "Neural Activation" | "Shield of Friendship" | "Coordinated Strike" | "Victorious Inspiration" | "Risk Evasion Aid" | "Mechanical Celerity" | "Coordinated Formation" | "Through Fire and Water" | "Healing Bond"} IntimacyStats */
+//#endregion
+
