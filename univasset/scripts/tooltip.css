@@ -1,13 +1,5 @@
-@supports selector(:has) {
-    :has(> .tooltiptext) {
-        position: relative;
-    }
-}
-
-@supports not selector(:has) {
-    .tooltip {
-        position: relative;
-    }
+:has(> .tooltiptext) {
+    position: relative;
 }
 
 .tooltiptext {
@@ -25,8 +17,9 @@
     left: 50%;
     visibility: hidden;
     opacity: 0;
+    transition: opacity 0.3s;
 }
-  
+
 @media screen and (max-width: 720px) {
     .tooltiptext {
         --tipwidth: 150px;
@@ -34,19 +27,16 @@
 }
 
 .tooltip + .tooltiptext {
-    transition: opacity 0.3s;
     bottom: 50%;
 }
 
 .tooltip > .tooltiptext {
-    transition: opacity 0.3s;
     bottom: 100%;
 }
 
 .tooltip:hover + .tooltiptext , .tooltip:hover > .tooltiptext {
     visibility: visible;
     opacity: 1;
-    transition: opacity 0.3s;
 }
 /* If desktop, on top of text
 /* If mobile, on top of screen */
