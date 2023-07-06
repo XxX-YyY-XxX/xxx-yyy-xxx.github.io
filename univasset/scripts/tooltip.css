@@ -3,11 +3,9 @@
 }
 
 .tooltiptext {
-    --tipwidth: 300px;
-    --offset: 3px;
-    width: var(--tipwidth);
-    margin-left: calc((var(--tipwidth) / -2) - var(--offset));
-    padding: var(--offset);
+    width: 300px;
+    padding: 3px;
+    transform: translateX(50%);
     position: absolute;
     background-color: #555;
     color: #fff;
@@ -22,7 +20,7 @@
 
 @media screen and (max-width: 720px) {
     .tooltiptext {
-        --tipwidth: 150px;
+        width: 150px;
     }
 }
 
