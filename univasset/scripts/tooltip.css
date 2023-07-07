@@ -48,6 +48,7 @@
         visibility: hidden;
         opacity: 0;
         transition: opacity 0.3s;
+        /* center position */
     }
     
     @media screen and (max-width: 720px) {
@@ -61,6 +62,3 @@
     visibility: visible;
     opacity: 1;
 }
-/* If desktop, on top of text
-/* If mobile, on top of screen */
-  

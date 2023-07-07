@@ -10,6 +10,10 @@ input[type="checkbox"], input[type="radio"] {
     margin: 0;
 }
 
+#stats, #data {
+    display: none;
+}
+
 /* #region Freeze */
 .func_table tr:nth-child(even) > :first-child {
     background: #282e1f !important;
@@ -62,10 +66,6 @@ input[type="checkbox"], input[type="radio"] {
 }
 /* #endregion */
 
-#stats, #data {
-    display: none;
-}
-
 /* #region Arma */
 .arma {
     display: flex;
@@ -79,6 +79,8 @@ input[type="checkbox"], input[type="radio"] {
 }
 /* #endregion */
 
-#classes {
-    display: none;
+/* #region Class */
+#classes img {
+    height: 30px;
 }
+/* #endregion */

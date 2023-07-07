@@ -246,11 +246,16 @@ radioGroup(document.querySelector("#button"), "tables",
 );
 //#endregion
 
+UNITS = (await UNITS).slice(0, -1);
+
 //#region Statistics Table
 /** @type {HTMLInputElement[]} */ const CLASS_BUTTONS = Array.from(document.querySelectorAll("#classes input"));
-for (const INPUT of CLASS_BUTTONS) INPUT.addEventListener("change", updateTable);
-
-UNITS = (await UNITS).slice(0, -1);
+for (const INPUT of CLASS_BUTTONS) {
+    INPUT.addEventListener("change", updateTable);
+    INPUT.addEventListener("change", function(event) {
+        this.nextElementSibling.src = this.checked ? `./assets/images/classes/${this.value}ON.png` : `./assets/images/classes/${this.value}OFF.png`;
+    });
+}
 
 const UNIT_LIST = UNITS.map(x => new Units(x));
 
