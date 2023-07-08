@@ -1,12 +1,12 @@
 @import "../univasset/scripts/externalcss.css";
 
 .func_table {
-    height: min(fit-content, 95vh);
+    height: 95vh;
+    margin-bottom: 10px;
 }
 
 input[type="checkbox"], input[type="radio"] {
     appearance: none;
-    /* margin: 0px; */
     margin: 0;
 }
 
@@ -80,7 +80,24 @@ input[type="checkbox"], input[type="radio"] {
 /* #endregion */
 
 /* #region Class */
+#classes {
+    width: fit-content;
+    background: #343434;
+    border-radius: 20px;
+    padding: 0 10px;
+    display: inline-block;
+    text-align: center;
+}
+
+/* If small space display: revert */
+
 #classes img {
     height: 30px;
+}
+/* #endregion */
+
+/* #region Bonus */
+#bonus {
+    display: none;
 }
 /* #endregion */

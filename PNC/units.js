@@ -236,6 +236,23 @@ function updateTable() {
     const SHOWN_CLASS = CLASS_BUTTONS.filter(x => x.checked).map(x => x.value);
     TBODY.replaceChildren(...UNIT_LIST.filter(x => SHOWN_CLASS.includes(x.class)).map(x => x.row));
 }
+
+/** @this {HTMLTableCellElement} @param {MouseEvent} event */
+function sortMethod(event) {
+    const DATA = this.dataset;
+    switch (DATA.sort) {
+        case "no":
+        case "lo":
+            DATA.sort = "hi";
+            UNIT_LIST.sort(cmp({key: x => x[DATA.key], reverse: (DATA.type === "number")}));
+            break;
+        case "hi":
+            DATA.sort = "lo";
+            UNIT_LIST.sort(cmp({key: x => x[DATA.key], reverse: (DATA.type === "string")}));
+            break;
+    }
+    updateTable();
+}
 //#endregion
 
 //#region Radio Buttons
@@ -267,23 +284,6 @@ updateTable()
 const TABLE = document.createElement("table");
 TABLE.classList.add("freeze-col", "freeze-row");
 TABLE.append(THEAD, TBODY);
-
-/** @this {HTMLTableCellElement} @param {MouseEvent} event */
-function sortMethod(event) {
-    const DATA = this.dataset;
-    switch (DATA.sort) {
-        case "no":
-        case "lo":
-            DATA.sort = "hi";
-            UNIT_LIST.sort(cmp({key: x => x[DATA.key], reverse: (DATA.type === "number")}));
-            break;
-        case "hi":
-            DATA.sort = "lo";
-            UNIT_LIST.sort(cmp({key: x => x[DATA.key], reverse: (DATA.type === "string")}));
-            break;
-    }
-    updateTable();
-}
 
 const HEADER_VALUES = [
     ["Doll Name", "name"],
@@ -319,13 +319,12 @@ STAT_TABLE.appendChild(TABLE);
 //#endregion
 
 //#region Others
-const DATA_ARRAY = UNITS.map(x => [x.name, x.class, x.reference, x.fragments]);
-DATA_ARRAY.unshift(["Doll Name", "Class", "Reference", "Fragments"]);
+const DATA_ARRAY = UNITS.map(x => [x.name, x.reference, x.fragments]);
+DATA_ARRAY.unshift(["Doll Name", "Reference", "Fragments"]);
 tableSort(
     document.querySelector("#data > .table"),
     DATA_ARRAY,
     [
-        x => x,
         x => x,
         x => brJoin(Object.entries(x).map(([name, link]) => initializeHTML("a", {textContent: name, href: link}))),
         x => brJoin(x)
