@@ -1,7 +1,7 @@
 @import "../univasset/scripts/externalcss.css";
 
 .func_table {
-    height: 95vh;
+    height: min(fit-content, 95vh);
 }
 
 input[type="checkbox"], input[type="radio"] {

@@ -1,4 +1,4 @@
-@supports (hover: hover) {
+/* @supports (hover: hover) { */
     :has(> .tooltiptext) {
         position: relative;
     }
@@ -8,12 +8,12 @@
         width: 300px;
         padding: 3px;
         transform: translateX(50%);
+        left: 50%;
         background-color: #555;
         color: #fff;
         text-align: center;
         border-radius: 8px;
         z-index: 1;
-        left: 50%;
         visibility: hidden;
         opacity: 0;
         transition: opacity 0.3s;
@@ -32,9 +32,9 @@
     .tooltip > .tooltiptext {
         bottom: 100%;
     }
-}
+/* } */
 
-@supports (hover: none) {
+/* @supports (hover: none) {
     .tooltiptext {
         position: fixed;
         top: 0;
@@ -48,7 +48,8 @@
         visibility: hidden;
         opacity: 0;
         transition: opacity 0.3s;
-        /* center position */
+        transform: translateX(50%);
+        left: 50%;
     }
     
     @media screen and (max-width: 720px) {
@@ -56,7 +57,7 @@
             width: 100vw;
         }
     }
-}
+} */
 
 .tooltip:hover + .tooltiptext , .tooltip:hover > .tooltiptext {
     visibility: visible;
