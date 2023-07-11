@@ -1,9 +1,7 @@
 import {timer} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
 
-const nextEvent = timer.bind(null, document.getElementById('event'), "",
-    "")
-timer(document.getElementById('event'), "Jul 10, 2023 23:59 UTC-0800",
-    "https://iopwiki.com/images/e/e2/Mk_47_Artwork.jpg", {onEnd: nextEvent});
+//timer(document.getElementById('event'), "",
+//    "");
 
 const nextPass = timer.bind(null, document.getElementById('battlepass'), "",
     "");
