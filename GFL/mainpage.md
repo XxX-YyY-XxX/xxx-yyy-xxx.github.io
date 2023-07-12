@@ -392,10 +392,6 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 
 [3.0 Features.](https://gamepress.gg/girlsfrontline/300-client-update-new-features)
 
-### How do I use Construction Fairy effectively?
-
-> Deploy on a node next to an enemy, then take a defensive stance.
-
 ### How do I use Landmine?
 
 > Stand on a node. Lay it down on an adjacent empty node. It activates the moment an enemy steps on it. Don't retreat the mine layer or you'll lose the mine.

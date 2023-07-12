@@ -437,13 +437,13 @@
         "regen": 728,
         "arma": {
             "icon": "",
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
+            "hp": 1800,
+            "atk": 80,
+            "hash": 78,
+            "pdef": 36,
+            "odef": 34,
+            "ppen": 79,
+            "open": 68
         },
         "intimacy": ["Shield of Friendship", "Neural Activation", "Risk Evasion Aid"]
     },
@@ -1473,6 +1473,34 @@
         "open": 254,
         "dodge": 5,
         "regen": 702,
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": []
+    },
+    {
+        "name": "Nora",
+        "class": "Specialist",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
+        "hp": 17573,
+        "atk": 577,
+        "hash": 552,
+        "pdef": 242,
+        "odef": 242,
+        "aspd": 100,
+        "crate": 8,
+        "ppen": 451,
+        "open": 383,
+        "dodge": 2,
+        "regen": 554,
         "arma": {
             "icon": "",
             "hp": -1,

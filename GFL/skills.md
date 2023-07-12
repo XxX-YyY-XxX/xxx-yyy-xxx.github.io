@@ -12,9 +12,6 @@
 >
 > [Pekola.](/GFL/assets/images/PekolaUse.png)
 
-### Which skills are able to get critical hits?
-
-> Rule of thumb: Unless otherwise stated, all skillshots, grenades, and molotovs don't get critical hits.
 
 ### How do I stop my Kord/CMS/Dorothy from cycling through their skills?
 

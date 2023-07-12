@@ -756,8 +756,9 @@ export const cardData = [
     {
         id : '00061',
         questions : `What is Central Data for?`,
-        answers : `Unlocking the corresponding FST, promoting said FST, and used as a Data Patch if 5${star}.`,
-        tags : [dTag.ITEM, dTag.HOC, dTag.FST]
+        answers : `Unlocking their respective FST, promoting said FST, and converted to Data Patch if the FST is already 5${star}.<br>
+        Obtainable in Theater and Intelligence Analysis.`,
+        tags : [dTag.ITEM, dTag.HOC, dTag.FST, dTag.GET]
     },
     {
         id : '00062',
@@ -1641,8 +1642,20 @@ export const cardData = [
     },
     {
         id : '00174',
-        questions : `I can't update/download the game properly/stuck at X%. What should I do?`,
-        answers : `Wait a minute, trudge through, change WiFi connection, change to data, use VPN, restart client, delete cache, ${link('do a manual patch', 'https://github.com/lloyddunamis/gfl_manualpatch/blob/main/FullResource_readme')}, ${link('delete some files', 'https://twitter.com/Synexcu/status/1310117595094216709?s=19')}, reinstall (with minimum data first), phone restart, or a combination of any of the above coupled with sheer determination to do it for days on end.`,
+        questions : `I can't enter the game (stuck downloading/loading). What should I do?`,
+        answers : `${List.unordered(
+            "Wait and trudge through",
+            "Restart client",
+            "Change/Reset WiFi connection",
+            "Switch to mobile data",
+            "Use VPN",
+            "Delete cache",
+            link('Do a manual patch', 'https://github.com/lloyddunamis/gfl_manualpatch/blob/main/FullResource_readme'),
+            spoilerSummary("Delete some files", Embed.twitter("Synexcu", "1310117595094216709")),
+            "Reinstall (with minimum data first)",
+            "Phone restart",
+            "Any of the above coupled with sheer determination to do it for days on end"
+        )}`,
         tags : [dTag.TECH]
     },
     {
@@ -3137,7 +3150,7 @@ export const cardData = [
     {
         id : '00398',
         questions : `How do I unlock mortars and anti-tanks?`,
-        answers : `FSTs can only be unlocked by their respective Central Data. These can be acquired from their Theater runs or at the Intelligence Analysis gacha pool.`,
+        answers : `FSTs can only be unlocked by their respective ${getID("Central Data", "00061")}.`,
         tags : [dTag.HOC, dTag.FST, dTag.GET]
     },
     {
@@ -3465,6 +3478,46 @@ export const cardData = [
         answers : `Tap the bottom-right arrow at the main screen.`,
         tags : [dTag.MISC]
     },  //@Visual
+    {
+        id : '00446',
+        questions : `How do Total Score and Final Battle ranking work?`,
+        answers : `${List.description({
+            "Total Score": [
+                "Cumulative score gained throughout Theater.",
+                "Score includes investigations, battles, and construction."
+            ],
+            "Final Battle": [
+                "Highest score of people who cleared Core 8.",
+                "Only the score gained in battle is used."
+            ]
+        })}`,
+        tags : [dTag.THEATER]
+    },
+    {
+        id : '00447',
+        questions : `What does "No fewer than 4 dolls present at the time of victory" mean?`,
+        answers : `No fewer than 4 dolls present: 4 dolls or more remaining.<br>
+        At the time of victory: Win the battle.
+        <br>
+        Win the battle with 4 dolls or more remaining (at the field).`,
+        tags : [dTag.THEATER]
+    },
+    {
+        id : '00448',
+        questions : `How do I use Construction Fairy effectively?`,
+        answers : `${List.ordered(
+            "Deploy on a node next to an enemy.",
+            "Go to that node.",
+            "Take a defensive stance."
+        )}`,
+        tags : [dTag.FAIRY, dTag.SKILL]
+    },
+    {
+        id : '00449',
+        questions : `Which skills are able to get critical hits?`,
+        answers : `Rule of thumb: Unless otherwise stated, all skillshots, grenades, and molotovs don't get critical hits.`,
+        tags : [dTag.SKILL, dTag.SYSMECH]
+    },
     {
         id : '00000',
         questions : ``,
