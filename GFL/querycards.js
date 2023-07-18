@@ -1835,9 +1835,16 @@ export const cardData = [
         answers : `${List.unordered(
             spoilerSummary("3rd Anniversary", Embed.youtube("PL4Z0akElhimzHHiVMCozfUn1B6tYKjwPR")), //u/paperrabbit
             spoilerSummary("4th Anniversary", Embed.youtube("PLoDB_FcnOA5zXkZ9XmQMTog1F7uIRZ_Qa")), //u/ConductorBichir
-            spoilerSummary("5th Anniversary", List.unordered(
-                link("Cutscene interpreter", "https://gfl.amaryllisworks.pw/#side-12-0"),
-                ""
+            spoilerSummary("5th Anniversary", List.unordered(                                       //plants zaza
+                spoilerSummary("Handguns", Embed.youtube("N-B_icnlDwg")),
+                spoilerSummary("Submachine Guns", Embed.youtube("lQQ7aBEOFlc")),
+                spoilerSummary("Rifles", Embed.youtube("gG8UUqZGzu4")),
+                spoilerSummary("Assault Rifles", Embed.youtube("PRHbKntfgzY")),
+                spoilerSummary("Machine Guns", Embed.youtube("AlbX92INYtY")),
+                spoilerSummary("Shotguns", Embed.youtube("oQn1CT6WvPM")),
+                spoilerSummary("Ringleaders", Embed.youtube("-erW_9CBkjQ")),
+                spoilerSummary("NPCs", Embed.youtube("20kEk-lrxqY")),
+                link("Cutscene interpreter", "https://gfl.amaryllisworks.pw/#side-12-0")
             ))
         )}`,
         tags : [dTag.LORE, dTag.ANNIV, dTag.ADJUNCT]
@@ -1882,8 +1889,11 @@ export const cardData = [
     {
         id : '00206',
         questions : `Why is this game downloading game files when I open it?`,
-        answers : `Either you're just booting it up at the most opportune of times or you closed the Bluestacks emulator directly before closing the GFL app.`,
-        tags : [dTag.EMU]
+        answers : `${List.unordered(
+            "You're just booting it up at the most opportune of times (maintenance/hotfix).",
+            "You closed the Bluestacks emulator directly before closing the GFL app."
+        )}`,
+        tags : [dTag.TECH, dTag.EMU]
     },
     {
         id : '00207',

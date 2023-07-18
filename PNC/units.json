@@ -437,13 +437,13 @@
         "regen": 728,
         "arma": {
             "icon": "",
-            "hp": 1800,
-            "atk": 80,
-            "hash": 78,
-            "pdef": 36,
-            "odef": 34,
-            "ppen": 79,
-            "open": 68
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
         },
         "intimacy": ["Shield of Friendship", "Neural Activation", "Risk Evasion Aid"]
     },
@@ -1024,14 +1024,14 @@
         "dodge": 4,
         "regen": 406,
         "arma": {
-            "icon": "",
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
+            "icon": "./assets/images/arma/Banxsy.png",
+            "hp": 1800,
+            "atk": 80,
+            "hash": 78,
+            "pdef": 36,
+            "odef": 34,
+            "ppen": 79,
+            "open": 68
         },
         "intimacy": []
     },
