@@ -3333,15 +3333,20 @@ export const cardData = [
     },
     {
         id : '00424',
-        questions : `How does Resource Recovery/Disassembly/Scrapping work?`,
-        answers : `${List.description({
-            "Tactical Dolls": [
+        questions : `I'm overflowing with units/gears/fairies/PA units. Where can I dump them off?`,
+        answers : `${image("./assets/images/Disassembly.png", "Found in the Factory Tab")}<br>
+        ${List.description({
+            "T-DOLL": [
                 "The final stage of core farming.",
                 `Cores received is equal to each scrapped doll's rarity, all other stats be damned. Collab dolls count as 5${star}.`
             ],
-            "Equipment": [],
-            "Fairies": [],
-            "Coalition Units": ["The only way to get Supernova and Dark Nova Crystals."]
+            "EQUIP": [
+                "Pretty much only useful if Equipment Enhancement is still locked or i there's no equipment to enhance."
+            ],
+            "FAIRY": [],
+            "COALITION FORCES": [
+                "The only way to get Supernova and Dark Nova Crystals."
+            ]
         })}`,
         tags : [dTag.SYSMECH, dTag.TDOLL, dTag.EQUIP, dTag.FAIRY, dTag.COALITION, dTag.ITEM]
     },
@@ -3527,6 +3532,14 @@ export const cardData = [
         questions : `Which skills are able to get critical hits?`,
         answers : `Rule of thumb: Unless otherwise stated, all skillshots, grenades, and molotovs don't get critical hits.`,
         tags : [dTag.SKILL, dTag.SYSMECH]
+    },
+    {
+        id : '00450',
+        questions : `My Samsung phone can't open up the game. Is there any fix for this?`,
+        answers : `${List.unordered(
+            link("u/Le_Trudos' Android 12 fix", "https://www.reddit.com/r/girlsfrontline/comments/tsmwen/possible_solution_to_android_12_updates_making/")
+        )}`,
+        tags : [dTag.TECH, dTag.ANDROID]
     },
     {
         id : '00000',

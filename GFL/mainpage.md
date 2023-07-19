@@ -112,39 +112,6 @@
 >
 > - [In-game text.](https://github.com/randomqwerty/GFLData/find/main)
 
-# Android Viability Checks (Mostly on Android 12)
-
-https://old.reddit.com/r/girlsfrontline/comments/t9bw95/weekly_commanders_lounge_march_08_2022/i0ji2ev/
-
-> https://old.reddit.com/r/girlsfrontline/comments/t9bw95/weekly_commanders_lounge_march_08_2022/i0nbzsa/
-
-https://old.reddit.com/r/girlsfrontline/comments/t9bw95/weekly_commanders_lounge_march_08_2022/i0ldmbf/
-
-https://old.reddit.com/r/girlsfrontline/comments/t9bw95/weekly_commanders_lounge_march_08_2022/i0goua8/
-
-https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i0ujnp3/
-
-https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i0xb1py/
-
-https://old.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i2zg3dw/
-
-https://old.reddit.com/r/girlsfrontline/comments/twps7w/weekly_commanders_lounge_april_05_2022/i3i643c/
-
-https://old.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1xovyt/
-
-https://old.reddit.com/r/girlsfrontline/comments/twps7w/weekly_commanders_lounge_april_05_2022/i3tv5gp/
-
-https://old.reddit.com/r/girlsfrontline/comments/twps7w/weekly_commanders_lounge_april_05_2022/i4a84l3/
-
-https://old.reddit.com/r/girlsfrontline/comments/u6ztfo/weekly_commanders_lounge_april_19_2022/i5m7qpb/
-
-https://old.reddit.com/r/girlsfrontline/comments/uhb3jo/weekly_commanders_lounge_may_03_2022/i7d81tt/
-
-https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/id8tjpd/
-
-https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/ide5o74/
-
-https://old.reddit.com/r/girlsfrontline/comments/vrsp23/weekly_commanders_lounge_july_05_2022/if1iimg/
 
 # Random Info
 
@@ -455,3 +422,48 @@ Data Sim data arrangement is "Advanced, Intermediate, Basic"
 >- Probability of 2-star equipment: 48.5%
 >
 >*The above probabilities are all average probabilities. Depending on the construction formula, the probabilities of each star will fluctuate up and down.
+
+
+
+
+
+
+
+
+
+
+# Android Viability Checks (Mostly on Android 12)
+
+https://old.reddit.com/r/girlsfrontline/comments/t9bw95/weekly_commanders_lounge_march_08_2022/i0ji2ev/
+
+> https://old.reddit.com/r/girlsfrontline/comments/t9bw95/weekly_commanders_lounge_march_08_2022/i0nbzsa/
+
+https://old.reddit.com/r/girlsfrontline/comments/t9bw95/weekly_commanders_lounge_march_08_2022/i0ldmbf/
+
+https://old.reddit.com/r/girlsfrontline/comments/t9bw95/weekly_commanders_lounge_march_08_2022/i0goua8/
+
+https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i0ujnp3/
+
+https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i0xb1py/
+
+https://old.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i2zg3dw/
+
+https://old.reddit.com/r/girlsfrontline/comments/twps7w/weekly_commanders_lounge_april_05_2022/i3i643c/
+
+https://old.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1xovyt/
+
+https://old.reddit.com/r/girlsfrontline/comments/twps7w/weekly_commanders_lounge_april_05_2022/i3tv5gp/
+
+https://old.reddit.com/r/girlsfrontline/comments/twps7w/weekly_commanders_lounge_april_05_2022/i4a84l3/
+
+https://old.reddit.com/r/girlsfrontline/comments/u6ztfo/weekly_commanders_lounge_april_19_2022/i5m7qpb/
+
+https://old.reddit.com/r/girlsfrontline/comments/uhb3jo/weekly_commanders_lounge_may_03_2022/i7d81tt/
+
+https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/id8tjpd/
+
+https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/ide5o74/
+
+https://old.reddit.com/r/girlsfrontline/comments/vrsp23/weekly_commanders_lounge_july_05_2022/if1iimg/
+
+https://old.reddit.com/r/girlsfrontline/comments/11qldhz/game_keeps_crashing_on_samsung/
