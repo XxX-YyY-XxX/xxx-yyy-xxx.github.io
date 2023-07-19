@@ -3537,7 +3537,7 @@ export const cardData = [
         id : '00450',
         questions : `My Samsung phone can't open up the game. Is there any fix for this?`,
         answers : `${List.unordered(
-            link("u/Le_Trudos' Android 12 fix", "https://www.reddit.com/r/girlsfrontline/comments/tsmwen/possible_solution_to_android_12_updates_making/")
+            link("u/Le_Trudos' Android 12 fix.", "https://www.reddit.com/r/girlsfrontline/comments/tsmwen/possible_solution_to_android_12_updates_making/")
         )}`,
         tags : [dTag.TECH, dTag.ANDROID]
     },

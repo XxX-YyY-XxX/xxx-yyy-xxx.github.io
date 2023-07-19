@@ -465,5 +465,3 @@ https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge
 https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/ide5o74/
 
 https://old.reddit.com/r/girlsfrontline/comments/vrsp23/weekly_commanders_lounge_july_05_2022/if1iimg/
-
-https://old.reddit.com/r/girlsfrontline/comments/11qldhz/game_keeps_crashing_on_samsung/
