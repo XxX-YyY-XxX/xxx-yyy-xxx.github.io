@@ -273,7 +273,7 @@ for (const INPUT of CLASS_BUTTONS) {
     });
 }
 
-/** @type {HTMLInputElement} */ const ARMA_BUTTON = document.querySelector(`#bonus > [value="Arma"]`);
+/** @type {HTMLInputElement} */ const ARMA_BUTTON = document.querySelector(`#bonus [value="Arma"]`);
 
 const UNIT_LIST = UNITS.map(x => new Units(x));
 for (const UNIT of UNIT_LIST) {
