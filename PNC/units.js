@@ -1,4 +1,4 @@
-import {tableSort, initializeHTML, brJoin, radioGroup, nestElements} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
+import {tableSort, initializeHTML, brJoin, nestElements} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
 import {Async, setAttr} from "../univasset/scripts/externaljavascript.js";
 import {zip, cmp} from "../univasset/scripts/basefunctions/index.js"
 
@@ -252,14 +252,6 @@ function sortMethod(event) {
     }
     updateTable();
 }
-//#endregion
-
-//#region Radio Buttons
-//const STAT = document.querySelector("#stats"), DATA = document.querySelector("#data");
-//radioGroup(document.querySelector("#button"), "tables",
-//    [initializeHTML("h2", {textContent: "Stats"}), "stat", function(x) {STAT.style.display = x.checked ? "block" : "none"}],
-//    [initializeHTML("h2", {textContent: "Others"}), "data", function(x) {DATA.style.display = x.checked ? "block" : "none"}]
-//);
 //#endregion
 
 UNITS = (await UNITS).slice(0, -1);
