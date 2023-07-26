@@ -255,11 +255,11 @@ function sortMethod(event) {
 //#endregion
 
 //#region Radio Buttons
-const STAT = document.querySelector("#stats"), DATA = document.querySelector("#data");
-radioGroup(document.querySelector("#button"), "tables",
-    [initializeHTML("h2", {textContent: "Stats"}), "stat", function(x) {STAT.style.display = x.checked ? "block" : "none"}],
-    [initializeHTML("h2", {textContent: "Others"}), "data", function(x) {DATA.style.display = x.checked ? "block" : "none"}]
-);
+//const STAT = document.querySelector("#stats"), DATA = document.querySelector("#data");
+//radioGroup(document.querySelector("#button"), "tables",
+//    [initializeHTML("h2", {textContent: "Stats"}), "stat", function(x) {STAT.style.display = x.checked ? "block" : "none"}],
+//    [initializeHTML("h2", {textContent: "Others"}), "data", function(x) {DATA.style.display = x.checked ? "block" : "none"}]
+//);
 //#endregion
 
 UNITS = (await UNITS).slice(0, -1);
