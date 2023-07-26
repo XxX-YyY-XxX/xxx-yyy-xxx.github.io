@@ -12,7 +12,7 @@ class Units {
     #hp; #armahp;
     get hp() {
         var output = this.#hp;
-        if (this.#arma && this.#hasarma) output += this.#armahp;
+        if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armahp;
         if (this.#intimacy && this.#intistats.includes("Code Robustness")) output += 1320;
         return output;
     }
@@ -20,7 +20,7 @@ class Units {
     #atk; #armaatk;
     get atk() {
         var output = this.#atk;
-        if (this.#arma && this.#hasarma) output += this.#armaatk;
+        if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armaatk;
         if (this.#intimacy && this.#intistats.includes("Power Connection")) output += 55;
         return output;
     }
@@ -28,7 +28,7 @@ class Units {
     #hash; #armahash;
     get hash() {
         var output = this.#hash;
-        if (this.#arma && this.#hasarma) output += this.#armahash;
+        if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armahash;
         if (this.#intimacy && this.#intistats.includes("Neural Activation")) output += 55;
         return output;
     }
@@ -36,7 +36,7 @@ class Units {
     #pdef; #armapdef;
     get pdef() {
         var output = this.#pdef;
-        if (this.#arma && this.#hasarma) output += this.#armapdef;
+        if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armapdef;
         if (this.#intimacy && this.#intistats.includes("Shield of Friendship")) output += 55;
         return output;
     }
@@ -44,7 +44,7 @@ class Units {
     #odef; #armaodef;
     get odef() {
         var output = this.#odef;
-        if (this.#arma && this.#hasarma) output += this.#armaodef;
+        if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armaodef;
         return output;
     }
 
@@ -67,14 +67,14 @@ class Units {
     #ppen; #armappen;
     get ppen() {
         var output = this.#ppen;
-        if (this.#arma && this.#hasarma) output += this.#armappen;
+        if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armappen;
         return output;
     }
 
     #open; #armaopen;
     get open() {
         var output = this.#open;
-        if (this.#arma && this.#hasarma) output += this.#armaopen;
+        if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armaopen;
         return output;
     }
 
@@ -118,7 +118,6 @@ class Units {
         return output;
     }
 
-    #arma = false;
     #hasarma;
 
     #intimacy = false;
@@ -274,7 +273,12 @@ for (const INPUT of CLASS_BUTTONS) {
     });
 }
 
+/** @type {HTMLInputElement} */ const ARMA_BUTTON = document.querySelector(`#bonus > [value="Arma"]`);
+
 const UNIT_LIST = UNITS.map(x => new Units(x));
+for (const UNIT of UNIT_LIST) {
+    ARMA_BUTTON.addEventListener("change", () => UNIT.updateStat())
+}
 
 const [THEAD, HEADER_TR] = nestElements("thead", "tr");
 

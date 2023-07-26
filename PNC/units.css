@@ -49,9 +49,23 @@ input[type="checkbox"], input[type="radio"] {
     flex-wrap: wrap;
     text-align: center;
     border-style: initial;
+
+    & > label {
+        background-color: transparent;
+        line-height: 10px;
+        flex: calc(100% / 2);
+    }
+    
+    & > label:has(input:checked) {
+        background-color: darkgreen;
+    }
+    
+    & h2 {
+        margin: 0px 0px 10px;
+    }    
 }
 
-#button > label {
+/* #button > label {
     background-color: transparent;
     line-height: 10px;
     flex: calc(100% / 2);
@@ -63,7 +77,7 @@ input[type="checkbox"], input[type="radio"] {
 
 #button h2 {
     margin: 0px 0px 10px;
-}
+} */
 /* #endregion */
 
 /* #region Arma */
@@ -98,6 +112,27 @@ input[type="checkbox"], input[type="radio"] {
 
 /* #region Bonus */
 #bonus {
-    display: none;
+    width: fit-content;
+    background: #343434;
+    border-radius: 20px;
+    padding: 0 10px;
+    display: inline-block;
+    text-align: center;
+}
+
+/* If small space display: revert */
+
+#bonus label {
+    --color: limegreen
+    outline: 2px solid var(--color);
+    border-radius: 10rem;
+    padding: 0px 3px;
+    background: transparent;
+    color: var(--color);
+}
+
+#bonus label:has(input:checked) {
+    background: var(--color);
+    color: black;
 }
 /* #endregion */
