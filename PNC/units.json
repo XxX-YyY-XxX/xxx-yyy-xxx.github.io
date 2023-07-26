@@ -241,13 +241,13 @@
         "regen": 637,
         "arma": {
             "icon": "",
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
+            "hp": 4043,
+            "atk": 82,
+            "hash": 121,
+            "pdef": 132,
+            "odef": 154,
+            "ppen": 51,
+            "open": 54
         },
         "intimacy": []
     },
@@ -1251,13 +1251,13 @@
         "regen": 327,
         "arma": {
             "icon": "",
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
+            "hp": 1452,
+            "atk": 89,
+            "hash": 72,
+            "pdef": 20,
+            "odef": 20,
+            "ppen": 60,
+            "open": 52
         },
         "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"]
     },
@@ -1501,6 +1501,34 @@
         "open": 383,
         "dodge": 2,
         "regen": 554,
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": []
+    },
+    {
+        "name": "Hannah",
+        "class": "Specialist",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
+        "hp": 18167,
+        "atk": 504,
+        "hash": 624,
+        "pdef": 352,
+        "odef": 352,
+        "aspd": 110,
+        "crate": 5,
+        "ppen": 249,
+        "open": 362,
+        "dodge": 5,
+        "regen": 577,
         "arma": {
             "icon": "",
             "hp": -1,

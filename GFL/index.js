@@ -1,8 +1,8 @@
 import {timer} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
 
 timer(
-    document.getElementById('event'),
-    "Jul 24, 2023 23:59 UTC-0800",
+    document.getElementById("event"),
+    "Jul 31, 2023 23:59 UTC-0800",
     "https://iopwiki.com/images/c/c1/Event_Logo_The_Waves_Wrangler.png"
 );
 
