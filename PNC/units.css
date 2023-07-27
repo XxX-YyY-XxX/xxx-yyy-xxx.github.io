@@ -99,18 +99,6 @@ input[type="checkbox"], input[type="radio"] {
 #classes img {
     height: 30px;
 }
-
-#stat tbody > tr {
-    display: none;
-}
-
-#stat:has(> #classes [value="Guard"]:checked) > .table .Guard,
-#stat:has(> #classes [value="Medic"]:checked) > .table .Medic,
-#stat:has(> #classes [value="Sniper"]:checked) > .table .Sniper,
-#stat:has(> #classes [value="Warrior"]:checked) > .table .Warrior,
-#stat:has(> #classes [value="Specialist"]:checked) > .table .Specialist {
-    display: revert;
-}
 /* #endregion */
 
 /* #region Bonus */

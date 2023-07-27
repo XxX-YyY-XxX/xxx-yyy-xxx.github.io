@@ -199,7 +199,6 @@ class Units {
             TD_HBOOST.textContent = `${this.hboost}%`;
         }
 
-        this.row.classList.add(this.class)
         this.row.append(
             TD_NAME,
             TD_HP,
@@ -228,10 +227,16 @@ class Units {
 //#endregion
 
 //#region Function Declarations
+/** @type {HTMLInputElement[]} */ const CLASS_BUTTONS = Array.from(document.querySelectorAll("#classes input"));
 function updateTable() {
-    //const SHOWN_CLASS = CLASS_BUTTONS.filter(x => x.checked).map(x => x.value);
-    //TBODY.replaceChildren(...UNIT_LIST.filter(x => SHOWN_CLASS.includes(x.class)).map(x => x.row));
-    TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));
+    const SHOWN_CLASS = CLASS_BUTTONS.filter(x => x.checked).map(x => x.value);
+    TBODY.replaceChildren(...UNIT_LIST.filter(x => SHOWN_CLASS.includes(x.class)).map(x => x.row));
+}
+for (const INPUT of CLASS_BUTTONS) {
+    INPUT.addEventListener("change", updateTable);
+    INPUT.addEventListener("change", function(event) {
+        this.nextElementSibling.src = this.checked ? `./assets/images/classes/${this.value}ON.png` : `./assets/images/classes/${this.value}OFF.png`;
+    });
 }
 
 /** @this {HTMLTableCellElement} @param {MouseEvent} event */
@@ -255,14 +260,6 @@ function sortMethod(event) {
 UNITS = (await UNITS).slice(0, -1);
 
 //#region Statistics Table
-/** @type {HTMLInputElement[]} */ const CLASS_BUTTONS = Array.from(document.querySelectorAll("#classes input"));
-for (const INPUT of CLASS_BUTTONS) {
-    INPUT.addEventListener("change", updateTable);
-    INPUT.addEventListener("change", function(event) {
-        this.nextElementSibling.src = this.checked ? `./assets/images/classes/${this.value}ON.png` : `./assets/images/classes/${this.value}OFF.png`;
-    });
-}
-
 /** @type {HTMLInputElement} */ const ARMA_BUTTON = document.querySelector(`#bonus [value="Arma"]`);
 
 const UNIT_LIST = UNITS.map(x => new Units(x));
