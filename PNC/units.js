@@ -1,6 +1,6 @@
 import {tableSort, initializeHTML, brJoin, nestElements} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
-import {Async, setAttr} from "../univasset/scripts/externaljavascript.js";
-import {zip, cmp} from "../univasset/scripts/basefunctions/index.js"
+import {Async} from "../univasset/scripts/externaljavascript.js";
+import {zip, cmp, setattr} from "../univasset/scripts/basefunctions/index.js"
 
 /** @type {UnitObject[]} */ var UNITS = Async.getJSON('./units.json');
 
@@ -160,11 +160,8 @@ class Units {
 
         const TD_NAME = document.createElement("td");
         if (this.#hasarma) {
-            const IMAGE = document.createElement("img");
-            setAttr(IMAGE, {alt: `${this.name} arma.`, src: ARMA.icon})
-
-            const SPAN = document.createElement("span");
-            setAttr(SPAN, {append: [this.name, IMAGE], classList: {add: ["arma"]}})
+            const IMAGE = setattr(document.createElement("img"), {alt: `${this.name} arma.`, src: ARMA.icon});
+            const SPAN = setattr(document.createElement("span"), {append: [this.name, IMAGE], classList: {add: ["arma"]}})
             TD_NAME.appendChild(SPAN);
         } else {
             TD_NAME.textContent = this.name;
@@ -201,7 +198,8 @@ class Units {
             TD_DREDUC.textContent = `${this.dreduc}%`;
             TD_HBOOST.textContent = `${this.hboost}%`;
         }
- 
+
+        this.row.classList.add(this.class)
         this.row.append(
             TD_NAME,
             TD_HP,
@@ -231,8 +229,9 @@ class Units {
 
 //#region Function Declarations
 function updateTable() {
-    const SHOWN_CLASS = CLASS_BUTTONS.filter(x => x.checked).map(x => x.value);
-    TBODY.replaceChildren(...UNIT_LIST.filter(x => SHOWN_CLASS.includes(x.class)).map(x => x.row));
+    //const SHOWN_CLASS = CLASS_BUTTONS.filter(x => x.checked).map(x => x.value);
+    //TBODY.replaceChildren(...UNIT_LIST.filter(x => SHOWN_CLASS.includes(x.class)).map(x => x.row));
+    TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));
 }
 
 /** @this {HTMLTableCellElement} @param {MouseEvent} event */
@@ -303,12 +302,12 @@ const HEADER_VALUES = [
 ]
 for (const [[NAME, KEY], TYPE] of zip(HEADER_VALUES, (function*() {yield "string"; while (true) yield "number"})())) {
     const TH = document.createElement("th");
-    setAttr(TH, {textContent: NAME, addEventListener: ["click", sortMethod, true]})
-    setAttr(TH.dataset, {sort: "no", key: KEY, type: TYPE});
+    setattr(TH, {textContent: NAME, addEventListener: ["click", sortMethod, true]})
+    setattr(TH.dataset, {sort: "no", key: KEY, type: TYPE});
     HEADER_TR.appendChild(TH);
 }
 
-const STAT_TABLE = document.querySelector("#stats > .table");
+const STAT_TABLE = document.querySelector("#stat > .table");
 STAT_TABLE.classList.add("func_table");
 STAT_TABLE.appendChild(TABLE);
 //#endregion
@@ -321,7 +320,7 @@ tableSort(
     DATA_ARRAY,
     [
         x => x,
-        x => brJoin(Object.entries(x).map(([name, link]) => initializeHTML("a", {textContent: name, href: link}))),
+        x => brJoin(Object.entries(x).map(([name, link]) => setattr(document.createElement("a"), {textContent: name, href: link}))),
         x => brJoin(x)
     ],
     {frzcol: true, frzhdr: true}

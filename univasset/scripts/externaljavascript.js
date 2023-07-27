@@ -1,5 +1,4 @@
-import {cmp, type} from './basefunctions/index.js';
-export {cmp as compare};
+export {cmp as compare, setattr as setAttr} from "./basefunctions/index.js";
 
 //#region Constants
 /** Close to zero value. */
@@ -151,28 +150,6 @@ export function splitTime(milliseconds) {
     var [min, sec] = Math.intdiv(sec, 60);
     var [hr, min] = Math.intdiv(min, 60);
     return [...Math.intdiv(hr, 24), min, sec, milli];
-}
-
-/** @param {{[ObjectAttribute: string]: any}} attributes arguments[] for function calls, {attribute: ???} for deeper calls, everything else for attribute assigment. */
-export function setAttr(base, attributes) {
-    for (const [attrib, value] of Object.entries(attributes)) {
-        switch (type(value)) {
-            case "string":
-            case "number":
-            case "boolean":
-                base[attrib] = value;
-                break;
-            case "array":
-                base[attrib](...value);
-                break;
-            case "object":
-                setAttr(base[attrib], value);
-                break;
-            default:
-                console.warn(`Unknown data type of ${attrib}: ${type(value)}`);
-                break;
-        }
-    }
 }
 //#endregion
 

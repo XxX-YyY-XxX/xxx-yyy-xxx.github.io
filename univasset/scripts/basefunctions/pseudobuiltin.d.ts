@@ -29,3 +29,10 @@ export function cmp<T0, T1>(params: {
     /** Follows this array for specific order. */
     array: T1[];
 } = {}): (arg0: T0, arg1: T0) => number;
+
+/** parameters[] for function calls.
+ * 
+ * {attribute: ???} for deeper calls.
+ * 
+ * Everything else for attribute assigment. */
+export function setattr<T0>(base: T0, attributes: {[ObjectAttribute: string]: any;}): T0;

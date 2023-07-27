@@ -117,3 +117,25 @@ export function cmp({key = x => x, reverse = false, array = null} = {}) {
         return _currentFunc(a, b);
     }
 }
+
+export function setattr(base, attributes) {
+    for (const [attrib, value] of Object.entries(attributes)) {
+        switch (type(value)) {
+            case "string":
+            case "number":
+            case "boolean":
+                base[attrib] = value;
+                break;
+            case "array":
+                base[attrib](...value);
+                break;
+            case "object":
+                setattr(base[attrib], value);
+                break;
+            default:
+                console.warn(`Unknown data type of ${attrib}: ${type(value)}`);
+                break;
+        }
+    }
+    return base;
+}

@@ -61,11 +61,11 @@ input[type="checkbox"], input[type="radio"] {
     margin: 0px 0px 10px;
 }
 
-#stats, #data {
+.tab-body {
     display: none;
 }
 
-#button:has([value="stat"]:checked) ~ #stats,
+#button:has([value="stat"]:checked) ~ #stat,
 #button:has([value="data"]:checked) ~ #data {
     display: revert;
 }
@@ -98,6 +98,18 @@ input[type="checkbox"], input[type="radio"] {
 
 #classes img {
     height: 30px;
+}
+
+#stat tbody > tr {
+    display: none;
+}
+
+#stat:has(> #classes [value="Guard"]:checked) > .table .Guard,
+#stat:has(> #classes [value="Medic"]:checked) > .table .Medic,
+#stat:has(> #classes [value="Sniper"]:checked) > .table .Sniper,
+#stat:has(> #classes [value="Warrior"]:checked) > .table .Warrior,
+#stat:has(> #classes [value="Specialist"]:checked) > .table .Specialist {
+    display: revert;
 }
 /* #endregion */
 
