@@ -240,7 +240,7 @@
         "dodge": 6,
         "regen": 637,
         "arma": {
-            "icon": "",
+            "icon": "./assets/images/arma/Souchun.png",
             "hp": 4043,
             "atk": 82,
             "hash": 121,
@@ -1120,6 +1120,34 @@
         },
         "intimacy": ["Power Connection", "Code Robustness", "Coordinated Formation"]
     },
+    {
+        "name": "Uranus",
+        "class": "Sniper",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy", "Critical Cascade"],
+        "hp": 10757,
+        "atk": 521,
+        "hash": 638,
+        "pdef": 188,
+        "odef": 188,
+        "aspd": 100,
+        "crate": 12,
+        "ppen": 314,
+        "open": 514,
+        "dodge": 0,
+        "regen": 322,
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": []
+    },
 
     {
         "name": "Aki",
@@ -1250,7 +1278,7 @@
         "dodge": 0,
         "regen": 327,
         "arma": {
-            "icon": "",
+            "icon": "./assets/images/arma/Daiyan.png",
             "hp": 1452,
             "atk": 89,
             "hash": 72,

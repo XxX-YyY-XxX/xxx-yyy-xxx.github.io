@@ -164,8 +164,7 @@ class Units {
             setAttr(IMAGE, {alt: `${this.name} arma.`, src: ARMA.icon})
 
             const SPAN = document.createElement("span");
-            SPAN.classList.add("arma");
-            SPAN.append(this.name, IMAGE);
+            setAttr(SPAN, {append: [this.name, IMAGE], classList: {add: ["arma"]}})
             TD_NAME.appendChild(SPAN);
         } else {
             TD_NAME.textContent = this.name;

@@ -465,3 +465,27 @@ https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge
 https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/ide5o74/
 
 https://old.reddit.com/r/girlsfrontline/comments/vrsp23/weekly_commanders_lounge_july_05_2022/if1iimg/
+
+
+---
+
+https://old.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jtb14rl/
+https://old.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jta6q65/
+https://old.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jt9jb69/
+https://old.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jt99lpp/
+https://old.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jt7xs8q/
+https://old.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jt17sph/
+https://old.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jt11svj/
+https://old.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jsy3iu5/
+https://old.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jsvhudo/
+https://old.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jstva78/
+https://old.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jstex2t/
+https://old.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jsr9kil/
+https://old.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jsq029c/
+https://old.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jsoh2kj/
+https://old.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jskxofg/
+https://old.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jsjs5pw/
+https://old.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jsjart3/
+https://old.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jsibwzm/
+https://old.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jshwj9v/
+https://old.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jsgyrsl/
