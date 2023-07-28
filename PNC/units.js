@@ -234,9 +234,9 @@ function updateTable() {
 }
 for (const INPUT of CLASS_BUTTONS) {
     INPUT.addEventListener("change", updateTable);
-    INPUT.addEventListener("change", function(event) {
-        this.nextElementSibling.src = this.checked ? `./assets/images/classes/${this.value}ON.png` : `./assets/images/classes/${this.value}OFF.png`;
-    });
+//    INPUT.addEventListener("change", function(event) {
+//        this.nextElementSibling.src = this.checked ? `./assets/images/classes/${this.value}ON.png` : `./assets/images/classes/${this.value}OFF.png`;
+//    });
 }
 
 /** @this {HTMLTableCellElement} @param {MouseEvent} event */
