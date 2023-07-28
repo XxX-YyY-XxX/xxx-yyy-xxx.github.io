@@ -194,11 +194,14 @@ export const cardData = [
             "Seasonal Events": [
                 "Farm maps to get 60 (80/120 if rerun) event specific tokens daily. You can miss a day of farming and still get all items in the shop.",
                 "Complete the story to unlock farming maps. Story maps are largely balanced around a one-week player.",
-                "Farming maps are either separate nodes/chapters, or updated story maps.",
-                `Grind the farming maps to obtain ${getID("event-reward dolls", "00024")}. You can pity/guarantee them with ${getID("Platinum and Nova medals", "00104")}.`
+                "Farming maps are either separate nodes/chapters, or updated story maps."
             ],
             "Major Events": [
-                "Farm maps to get 60 crates daily."
+                "Farm maps to get 60 crates daily.",
+                "Finish the event. Play on Normal and skip the story if you have to."
+            ],
+            "All of the above": [
+                `Grind the farming maps to obtain ${getID("event-reward dolls", "00024")}. You can pity/guarantee them with ${getID("Platinum and Nova medals", "00104")}.`
             ]
         })}`,
         tags : [dTag.SEASON, dTag.MAJOR, dTag.PRIME]
@@ -344,7 +347,7 @@ export const cardData = [
     },  //Wait for additional repo.
     {
         id : '00023',
-        questions : `Where can I read the MOD, costume, event stories, and all that?`,
+        questions : `Where can I read/rewatch the MOD, costume, event stories, and all that?`,
         answers : `${List.description({
             'Compilations' : [
                 link("GFL-RC verse collection.", "https://drive.google.com/drive/folders/1q5IMbZhCOEfdcLxjL5YbR11kzW8PRgw2"),
@@ -889,11 +892,9 @@ export const cardData = [
         id : '00078',
         questions : `How are people just rolling in 5${star} fairies?`,
         answers : `<p>${TextStyle.style('Even dust, when piled up, can become a mountain.', TextStyle.ITALIC)}</p>
-        Good logistics upkeep and rolling HECs everyday. Just think of crafting them a side thing that doesn't take a lot of attention.<br>
-        For perspective on how long to raise one:<br>
-        ${image('./assets/images/FairyRaising.png', 'From u/UnironicWeeaboo')}`,
+        Good logistics upkeep and rolling Fairy Construction everyday. Just think of crafting them a side thing that doesn't take a lot of attention.`,
         tags : [dTag.FAIRY, dTag.PROD]
-    },
+    },  //image('./assets/images/FairyRaising.png', 'From u/UnironicWeeaboo')
     {
         id : '00079',
         questions : `How high is a certain doll's pull rate during rate ups?`,
@@ -2942,15 +2943,15 @@ export const cardData = [
     {
         id : '00366',
         questions : `When will the current event end?`,
-        answers : `If major event or collab, 4 weeks after start. If minor or mini events, 3 weeks after start.`,
+        answers : `If major event or collab, 4 weeks after start. If minor or mini events, 3 weeks after start. If reruns, 2 weeks.`,
         tags : [dTag.MAJOR, dTag.COLLAB, dTag.SEASON, dTag.MINI]
     },
     {
         id : '00367',
-        questions : `How do we unlock the Additional Supplies/Blue Weekly Quest?`,
+        questions : `How to unlock the Additional Supplies/Blue Weekly Quest?`,
         answers : `By paying for the current battlepass.`,
         tags : [dTag.QUEST, dTag.BP]
-    },
+    },  //@Visual
     {
         id : '00368',
         questions : `I've been getting dupes about 3 days when the Key Card Event started. What gives?`,
@@ -3537,9 +3538,39 @@ export const cardData = [
         id : '00450',
         questions : `My Samsung phone can't open up the game. Is there any fix for this?`,
         answers : `${List.unordered(
-            link("u/Le_Trudos' Android 12 fix.", "https://www.reddit.com/r/girlsfrontline/comments/tsmwen/possible_solution_to_android_12_updates_making/")
+            link("u/Le_Trudos' Android 12 fix", "https://www.reddit.com/r/girlsfrontline/comments/tsmwen/possible_solution_to_android_12_updates_making/"),
+            link("Droidwin Android 12 fix", "https://droidwin.com/games-and-apps-crashing-not-working-on-android-12-how-to-fix/"),
+            link("u/tommykuah's Android 12 fix", "https://www.reddit.com/r/girlsfrontline/comments/tdsmjh/regarding_android_12_app_crashfreeze_issue_and/i0mjpop/")
         )}`,
         tags : [dTag.TECH, dTag.ANDROID]
+    },
+    {
+        id : '00451',
+        questions : `When a major event gets added to campaign mode, do I still need to do it again from the start?`,
+        answers : `All progress from its original run is kept, special circumstances notwithstanding.`,
+        tags : [dTag.MAJOR, dTag.CAMPAIGN]
+    },
+    {
+        id : '00452',
+        questions : `Is there a way to extract images fromt the game?`,
+        answers : `${link("GFAlarm route.", "https://www.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jtafnpx/")}`,
+        tags : [dTag.MISC]
+    },
+    {
+        id : '00453',
+        questions : `How do I strengthen fairies?`,
+        answers : `${List.unordered(
+            "Leveling up, primarily by CRs",
+            "Good talents, usually Fervor/Damage 2",
+            "Enhancements, by feeding duplicate/extra fairies"
+        )}`,
+        tags : [dTag.FAIRY, dTag.LEVEL]
+    },
+    {
+        id : '00454',
+        questions : `Which furnitures have associated BGM with them?`,
+        answers : `${link("Comment link.", "https://www.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jsopd26/")}`,
+        tags : [dTag.DORM, dTag.FURN]
     },
     {
         id : '00000',
