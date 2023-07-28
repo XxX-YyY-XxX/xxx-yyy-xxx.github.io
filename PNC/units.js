@@ -232,12 +232,7 @@ function updateTable() {
     const SHOWN_CLASS = CLASS_BUTTONS.filter(x => x.checked).map(x => x.value);
     TBODY.replaceChildren(...UNIT_LIST.filter(x => SHOWN_CLASS.includes(x.class)).map(x => x.row));
 }
-for (const INPUT of CLASS_BUTTONS) {
-    INPUT.addEventListener("change", updateTable);
-//    INPUT.addEventListener("change", function(event) {
-//        this.nextElementSibling.src = this.checked ? `./assets/images/classes/${this.value}ON.png` : `./assets/images/classes/${this.value}OFF.png`;
-//    });
-}
+for (const INPUT of CLASS_BUTTONS) INPUT.addEventListener("change", updateTable);
 
 /** @this {HTMLTableCellElement} @param {MouseEvent} event */
 function sortMethod(event) {

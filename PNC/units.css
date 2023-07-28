@@ -11,8 +11,8 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 /* #region Freeze */
-.func_table tr:nth-child(even) > :first-child {
-    background: #282e1f !important;
+.func_table > .freeze-row th {
+    background: #1b1b1b;
 }
 
 .func_table > .freeze-col tr > :first-child {
@@ -20,8 +20,8 @@ input[type="checkbox"], input[type="radio"] {
     background: #1b1b1b;
 }
 
-.func_table > .freeze-row th {
-    background: #1b1b1b;
+.func_table > .freeze-col tr:nth-child(even) > :first-child {
+    background: #282e1f;
 }
 /* #endregion */
 
@@ -97,11 +97,8 @@ input[type="checkbox"], input[type="radio"] {
 #classes > label {
     height: 30px;
     background-size: auto 100%;
-    background-position: left;
-}
-
-#classes > label:has(> :checked) {
-    background-position: right;
+    background-repeat: no-repeat;
+    display: inline-flex;
 }
 
 #classes > label:has([value="Guard"]) {
@@ -109,9 +106,17 @@ input[type="checkbox"], input[type="radio"] {
     aspect-ratio: 48/64;
 }
 
+#classes > label:has([value="Guard"]:checked) {
+    background-position: -23px 0;
+}
+
 #classes > label:has([value="Sniper"]) {
     background-image: url("./assets/images/classes/Sniper.png");
     aspect-ratio: 61/64;
+}
+
+#classes > label:has([value="Sniper"]:checked) {
+    background-position: -30px 0;
 }
 
 #classes > label:has([value="Warrior"]) {
@@ -119,9 +124,17 @@ input[type="checkbox"], input[type="radio"] {
     aspect-ratio: 64/64;
 }
 
+#classes > label:has([value="Warrior"]:checked) {
+    background-position: -30px 0;
+}
+
 #classes > label:has([value="Specialist"]) {
     background-image: url("./assets/images/classes/Specialist.png");
     aspect-ratio: 54/64;
+}
+
+#classes > label:has([value="Specialist"]:checked) {
+    background-position: -25px 0;
 }
 
 #classes > label:has([value="Medic"]) {
@@ -129,11 +142,11 @@ input[type="checkbox"], input[type="radio"] {
     aspect-ratio: 64/64;
 }
 
+#classes > label:has([value="Medic"]:checked) {
+    background-position: -28.5px 0;
+}
 /* If small space display: revert */
 
-/* #classes img {
-    height: 30px;
-} */
 /* #endregion */
 
 /* #region Bonus */
