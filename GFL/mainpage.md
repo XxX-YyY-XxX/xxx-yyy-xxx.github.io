@@ -392,8 +392,6 @@ Tap the radar button again to move your echelons or terminate mission.
 
 > Dummy links maybe?
 
-00128
-
 Data Sim data arrangement is "Advanced, Intermediate, Basic"
 
 ### What are the furniture sets as of now?
@@ -465,8 +463,6 @@ https://old.reddit.com/r/girlsfrontline/comments/u6ztfo/weekly_commanders_lounge
 https://old.reddit.com/r/girlsfrontline/comments/uhb3jo/weekly_commanders_lounge_may_03_2022/i7d81tt/
 
 https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/id8tjpd/
-
-https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/ide5o74/
 
 ---
 

@@ -11,18 +11,18 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 /* #region Freeze */
-.func_table > .freeze-row th {
+.freeze-row th {
     background: #1b1b1b;
 }
 
-.func_table > .freeze-col tr > :first-child {
+:where(.freeze-col) :where(tr) > :where(:first-child) {
     border-right: 1px dashed #b5e853;
     background: #1b1b1b;
 }
 
-.func_table > .freeze-col tr:nth-child(even) > :first-child {
+/* .freeze-col tr:nth-child(even) > :first-child {
     background: #282e1f;
-}
+} */
 /* #endregion */
 
 /* #region Sort */

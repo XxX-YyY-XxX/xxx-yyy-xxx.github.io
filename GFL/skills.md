@@ -9,9 +9,6 @@
 > [P90.](https://docs.google.com/document/d/1j5YzAAZ-_Q1bXMUvFKGUWnGgqwacatABv0u-MmY0JLw)
 >
 > [Galil Mod.](https://old.reddit.com/r/girlsfrontline/comments/qpyw46/weekly_commanders_lounge_november_09_2021/hkj3ce0/)
->
-> [Pekola.](/GFL/assets/images/PekolaUse.png)
-
 
 ### How do I stop my Kord/CMS/Dorothy from cycling through their skills?
 

@@ -413,11 +413,11 @@ export const cardData = [
             ],
             'Event Rewards': [
                 link("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls'),
-                'These dolls will become unavailable from major story clear rewards after being added to the campaign tab.'
+                'These dolls will become unavailable from campaign clear rewards.'
             ],
             'Shop': [
                 'Applicable to collab dolls using event currency.',
-                `5${star} dolls available in Production are the only ones elegible for True Core Masks, bar spaghetti.`
+                `5${star} dolls available in Factory Production are the only ones elegible for True Core Masks, bar spaghetti.`
             ],
             'Achievements': [
                 "Type 97s and the AR Team, which are the only ones that can't be bought.",
@@ -686,7 +686,7 @@ export const cardData = [
     },
     {
         id : '00051',
-        questions : `Will the current event currency carry over to the next event?`,
+        questions : `Will the current event token/currency carry over to the next event?`,
         answers : `No can do. Dissolves into nothingness one week after its corresponding event is finished.`,
         tags : [dTag.ITEM, dTag.SEASON, dTag.COLLAB]
     },
@@ -2306,7 +2306,8 @@ export const cardData = [
             "LTLX": ["Skill knocks back bosses."],
             "M4A1": ["Main shot cannot crit. Explosion does."],
             "KSVK": [`Main shot is normal shot, ${link("explosion coded as explosion", "https://iopwiki.com/wiki/KSVK")}.`],
-            "SAA": ["MOD skill can \"proc\" after the first three."]
+            "SAA": ["MOD skill can \"proc\" after the first three."],
+            "Pekola": [spoilerSummary(`"How to use" guide.`, image("./assets/images/PekolaUse.png"))]
         })}`,
         tags : [dTag.TDOLL, dTag.SKILL]
     },
@@ -3573,9 +3574,17 @@ export const cardData = [
         tags : [dTag.DORM, dTag.FURN]
     },
     {
+        id : '00455',
+        questions : `What are the changes for each client update?`,
+        answers : `${link("3.0", "https://gamepress.gg/girlsfrontline/v301-client-update-new-features-2022")}`,
+        tags : [dTag.MISC]
+    },
+    {
         id : '00000',
         questions : ``,
         answers : ``,
         tags : []
     },
 ];
+
+//00128
