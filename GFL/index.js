@@ -3,7 +3,12 @@ import {timer} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
 timer(
     document.getElementById("event"),
     "Jul 31, 2023 23:59 UTC-0800",
-    "https://iopwiki.com/images/c/c1/Event_Logo_The_Waves_Wrangler.png"
+    "https://iopwiki.com/images/c/c1/Event_Logo_The_Waves_Wrangler.png",
+    {onEnd: timer.bind(
+        null, document.getElementById("event"),
+        "Aug 28, 2023 23:59 UTC-0800",
+        "https://www.iopwiki.com/images/9/9d/Longitudinal_Strain_Login_Wallpaper.jpg"
+    )}
 );
 
 timer(
@@ -12,7 +17,7 @@ timer(
     "https://pbs.twimg.com/media/FznK2EmXoAENbqH?format=jpg&name=large",
     {onEnd: timer.bind(
         null, document.getElementById('battlepass'),
-        "",
+        "Sep 10, 2023 23:59 UTC-0800",
         ""
     )}
 );
@@ -24,7 +29,7 @@ timer(
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
         "Aug 21, 2023, 23:59 UTC-0800",
-        "https://preview.redd.it/f0eaevu2d2d91.jpg?width=1601&format=pjpg&auto=webp&v=enabled&s=d9cf80afd332b98cdf250334076983d90355ccb6"
+        "https://preview.redd.it/t59sszz3hoeb1.jpg?width=1400&format=pjpg&auto=webp&v=enabled&s=1635f6809bb91092b4b22cee2f68263f389d0efb"
     )}
 );
 
@@ -34,8 +39,8 @@ timer(
     "https://pbs.twimg.com/media/F0MKr92aAAIajnt?format=jpg&name=large",
     {onEnd: timer.bind(
         null, document.getElementById('skin-banner'),
-        "",
-        ""
+        "Aug 28, 2023 23:59 UTC-0800",
+        "https://iopwiki.com/images/e/e2/Black_Sails_on_Cerulean_Seas_Login_Wallpaper.jpg"
     )}
 );
 
