@@ -24,12 +24,12 @@ timer(
 
 timer(
     document.getElementById("coalition"),
-    "Jul 24, 2023, 23:59 UTC-0800",
-    "https://preview.redd.it/gpcqmircib791.jpg?width=1400&format=pjpg&auto=webp&v=enabled&s=e759a38a125f49b7aefff4a520347e72835ba14d", 
+    "Aug 21, 2023, 23:59 UTC-0800",
+    "./assets/images/coalition/AlinaMosasaurRider.webp", 
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
-        "Aug 21, 2023, 23:59 UTC-0800",
-        "https://preview.redd.it/t59sszz3hoeb1.jpg?width=1400&format=pjpg&auto=webp&v=enabled&s=1635f6809bb91092b4b22cee2f68263f389d0efb"
+        "",
+        ""
     )}
 );
 
