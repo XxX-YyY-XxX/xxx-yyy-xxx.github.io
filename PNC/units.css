@@ -15,14 +15,13 @@ input[type="checkbox"], input[type="radio"] {
     background: #1b1b1b !important;
 }
 
-.freeze-col tr:nth-child(odd) > :first-child {
+.freeze-col tr > :first-child {
     border-right: 1px dashed #b5e853;
-    background: #1b1b1b;
 }
 
-/* .freeze-col tr:nth-child(even) > :first-child {
-    background: #282e1f;
-} */
+.freeze-col tr:nth-child(odd) > :first-child {
+    background: #1b1b1b;
+}
 /* #endregion */
 
 /* #region Sort */
