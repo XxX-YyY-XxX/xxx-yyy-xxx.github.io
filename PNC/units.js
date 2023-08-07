@@ -13,7 +13,7 @@ class Units {
     get hp() {
         var output = this.#hp;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armahp;
-        if (this.#intimacy && this.#intistats.includes("Code Robustness")) output += 1320;
+        if (BOND_BUTTON.checked && this.#intistats.includes("Code Robustness")) output += 1320;
         return output;
     }
 
@@ -21,7 +21,7 @@ class Units {
     get atk() {
         var output = this.#atk;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armaatk;
-        if (this.#intimacy && this.#intistats.includes("Power Connection")) output += 55;
+        if (BOND_BUTTON.checked && this.#intistats.includes("Power Connection")) output += 55;
         return output;
     }
 
@@ -29,7 +29,7 @@ class Units {
     get hash() {
         var output = this.#hash;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armahash;
-        if (this.#intimacy && this.#intistats.includes("Neural Activation")) output += 55;
+        if (BOND_BUTTON.checked && this.#intistats.includes("Neural Activation")) output += 55;
         return output;
     }
 
@@ -37,7 +37,7 @@ class Units {
     get pdef() {
         var output = this.#pdef;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armapdef;
-        if (this.#intimacy && this.#intistats.includes("Shield of Friendship")) output += 55;
+        if (BOND_BUTTON.checked && this.#intistats.includes("Shield of Friendship")) output += 55;
         return output;
     }
 
@@ -53,14 +53,14 @@ class Units {
     #crate;
     get crate() {
         var output = this.#crate;
-        if (this.#intimacy && this.#intistats.includes("Coordinated Strike")) output += 8;
+        if (BOND_BUTTON.checked && this.#intistats.includes("Coordinated Strike")) output += 8;
         return output;
     }
 
     #cdmg = 50;
     get cdmg() {
         var output = this.#cdmg;
-        if (this.#intimacy && this.#intistats.includes("Victorious Inspiration")) output += 12;
+        if (BOND_BUTTON.checked && this.#intistats.includes("Victorious Inspiration")) output += 12;
         return output;
     }
 
@@ -81,7 +81,7 @@ class Units {
     #dodge;
     get dodge() {
         var output = this.#dodge;
-        if (this.#intimacy && this.#intistats.includes("Risk Evasion Aid")) output += 8;
+        if (BOND_BUTTON.checked && this.#intistats.includes("Risk Evasion Aid")) output += 8;
         return output;
     }
 
@@ -90,7 +90,7 @@ class Units {
     #haste = 0;
     get haste() {
         var output = this.#haste;
-        if (this.#intimacy && this.#intistats.includes("Mechanical Celerity")) output += 8;
+        if (BOND_BUTTON.checked && this.#intistats.includes("Mechanical Celerity")) output += 8;
         return output;
     }
 
@@ -100,27 +100,25 @@ class Units {
     #dboost = 0;
     get dboost() {
         var output = this.#dboost;
-        if (this.#intimacy && this.#intistats.includes("Coordinated Formation")) output += 5;
+        if (BOND_BUTTON.checked && this.#intistats.includes("Coordinated Formation")) output += 5;
         return output;
     }
 
     #dreduc = 0;
     get dreduc() {
         var output = this.#dreduc;
-        if (this.#intimacy && this.#intistats.includes("Through Fire and Water")) output += 5;
+        if (BOND_BUTTON.checked && this.#intistats.includes("Through Fire and Water")) output += 5;
         return output;
     }
 
     #hboost = 0;
     get hboost() {
         var output = this.#hboost;
-        if (this.#intimacy && this.#intistats.includes("Healing Bond")) output += 5;
+        if (BOND_BUTTON.checked && this.#intistats.includes("Healing Bond")) output += 5;
         return output;
     }
 
     #hasarma;
-
-    #intimacy = false;
     #intistats;
 
     row;
@@ -256,6 +254,7 @@ UNITS = (await UNITS).slice(0, -1);
 
 //#region Statistics Table
 /** @type {HTMLInputElement} */ const ARMA_BUTTON = document.querySelector(`#bonus [value="Arma"]`);
+/** @type {HTMLInputElement} */ const BOND_BUTTON = document.querySelector(`#bonus [value="Bond"]`);
 
 const UNIT_LIST = UNITS.map(x => new Units(x));
 for (const UNIT of UNIT_LIST) {

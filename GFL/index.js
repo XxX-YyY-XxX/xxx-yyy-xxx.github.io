@@ -18,7 +18,7 @@ timer(
     {onEnd: timer.bind(
         null, document.getElementById('battlepass'),
         "Sep 10, 2023 23:59 UTC-0800",
-        ""
+        "https://pbs.twimg.com/media/F2gi8PsaQAUVfgH?format=jpg&name=large"
     )}
 );
 

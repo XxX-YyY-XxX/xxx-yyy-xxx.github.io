@@ -1569,6 +1569,34 @@
         },
         "intimacy": []
     },
+    {
+        "name": "Turing",
+        "class": "Specialist",
+        "reference": {"Alan Turing" : "https://en.wikipedia.org/wiki/Alan_Turing"},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
+        "hp": 16626,
+        "atk": 504,
+        "hash": 624,
+        "pdef": 291,
+        "odef": 291,
+        "aspd": 110,
+        "crate": 5,
+        "ppen": 249,
+        "open": 288,
+        "dodge": 5,
+        "regen": 519,
+        "arma": {
+            "icon": "",
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": []
+    },
 
     {
         "name": "Doll Name",
