@@ -24,7 +24,7 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .freeze-col tr:nth-child(even) > :first-child {
-    background: inherit;
+    background: #292f20;
 }
 
 /* #endregion */
