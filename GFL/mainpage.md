@@ -99,6 +99,8 @@
 > - [Cheap SG tank.](https://old.reddit.com/r/girlsfrontline/comments/uc7eet/weekly_commanders_lounge_april_26_2022/i6ut0vo/)
 >
 > - [Top up gem month.](https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/idoig4j/)
+>
+> - [Google Pay.](https://old.reddit.com/r/girlsfrontline/comments/15f5xi4/weekly_commanders_lounge_august_01_2023/juk1l3n/)
 
 >Weeb
 >
@@ -462,7 +464,6 @@ https://old.reddit.com/r/girlsfrontline/comments/u6ztfo/weekly_commanders_lounge
 
 https://old.reddit.com/r/girlsfrontline/comments/uhb3jo/weekly_commanders_lounge_may_03_2022/i7d81tt/
 
-https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/id8tjpd/
 
 ---
 

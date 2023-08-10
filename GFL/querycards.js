@@ -198,13 +198,14 @@ export const cardData = [
             ],
             "Major Events": [
                 "Farm maps to get 60 crates daily.",
-                "Finish the event. Play on Normal and skip the story if you have to."
+                "Finish the event. Skip the story if you have to.",
+                "Normal is for new commanders or lazies. Hard/EX is for mid-game players who wants a challenge. Nightmare/UX is for late-gamers."
             ],
             "All of the above": [
                 `Grind the farming maps to obtain ${getID("event-reward dolls", "00024")}. You can pity/guarantee them with ${getID("Platinum and Nova medals", "00104")}.`
             ]
         })}`,
-        tags : [dTag.SEASON, dTag.MAJOR, dTag.PRIME]
+        tags : [dTag.SEASON, dTag.MAJOR, dTag.PRIME, dTag.NEWB]
     },
     {
         id : '00008',
@@ -384,7 +385,7 @@ export const cardData = [
         questions : `Where and how can I get my favorite gun/doll/unit/character?`,
         answers : `${List.description({
             'Factory Production': [
-                spoilerSummary('Gamepress infographic for resource efficient recipes.', image('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/2020-01/rateup-crafting-infographic.jpg')),
+                spoilerSummary('Infographic for resource efficient recipes.', image("https://media.discordapp.net/attachments/951085201658871820/1061272490309066762/recipes_2.png")),
                 link("GFDB Github Database.", 'https://gf-db.github.io/')
             ],
             'Rescue Drops': [
@@ -404,7 +405,7 @@ export const cardData = [
                         ['11', 'Mk46',      'N/A'],
                         ['12', 'MAT-49',    'N/A'],
                         ['13', 'Defender',  'N/A'])),
-                link(`Farmable dolls in campaign maps, both 3${star} monthly reward dolls and those that debuted on this event.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
+                link(`Farmable dolls in campaign maps, both 3${star} monthly reward dolls and 4-5${star} dolls that debuted on their corresponding event.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
                 `During collabs, major events, side events, and ${spoilerSummary('Rescue Events', `Also known as Boss Bully, where you get to farm for 4-5${star} event reward dolls in the story chapters 1-6.`)}, event rewards become temporarily available for farming.`,
                 'Obtainable from random nodes, however unlikely.',
                 `For 5${star} units that can also be crafted, their drop rates are less than 1%.`,
@@ -2307,7 +2308,8 @@ export const cardData = [
             "M4A1": ["Main shot cannot crit. Explosion does."],
             "KSVK": [`Main shot is normal shot, ${link("explosion coded as explosion", "https://iopwiki.com/wiki/KSVK")}.`],
             "SAA": ["MOD skill can \"proc\" after the first three."],
-            "Pekola": [spoilerSummary(`"How to use" guide.`, image("./assets/images/PekolaUse.png"))]
+            "Pekola": [spoilerSummary(`"How to use" guide.`, image("./assets/images/PekolaUse.png"))],
+            "M1897 Mod": [link("Flechette Storm!", "https://old.reddit.com/r/girlsfrontline/comments/osihvd/weekly_commanders_lounge_july_27_2021/h72czw7/")]
         })}`,
         tags : [dTag.TDOLL, dTag.SKILL]
     },
@@ -3343,7 +3345,7 @@ export const cardData = [
                 `Cores received is equal to each scrapped doll's rarity, all other stats be damned. Collab dolls count as 5${star}.`
             ],
             "EQUIP": [
-                "Pretty much only useful if Equipment Enhancement is still locked or i there's no equipment to enhance."
+                "Pretty much only useful if Equipment Enhancement is still locked or if there's no equipment to enhance."
             ],
             "FAIRY": [],
             "COALITION FORCES": [
@@ -3578,6 +3580,70 @@ export const cardData = [
         questions : `What are the changes for each client update?`,
         answers : `${link("3.0", "https://gamepress.gg/girlsfrontline/v301-client-update-new-features-2022")}`,
         tags : [dTag.MISC]
+    },
+    {
+        id : '00456',
+        questions : `Where can I get this particular fairy?`,
+        answers : `${table(
+            ["Fairies", "Where to get"],
+            ["Warrior Fairy", "Fairy Production"],
+            ["Fury Fairy", "Fairy Production"],
+            ["Armor Fairy", "Fairy Production"],
+            ["Shield Fairy", "Fairy Production"],
+            ["Defense Fairy", "Fairy Production"],
+            ["Taunt Fairy", "Fairy Production"],
+            ["Sniper Fairy", "Fairy Production"],
+            ["Artillery Fairy", "Fairy Production"],
+            ["Airstrike Fairy", "Fairy Production"],
+            ["Reinforcement Fairy", "Fairy Production"],
+            ["Parachute Fairy", "Fairy Production"],
+            ["Landmine Fairy", "Fairy Production"],
+            ["Rocket Fairy", "Fairy Production"],
+            ["Construction Fairy", "Fairy Production"],
+            ["Command Fairy", "Fairy Production"],
+            ["Rescue Fairy", "Fairy Production"],
+            ["Illumination Fairy", "Fairy Production"],
+            ["Golden Fairy", "Deep Dive Ranking"],
+            ["Cooking Fairy", "Singularity Ranking"],
+            ["Fireworks Fairy", "Continuum Turbulence Ranking"],
+            ["Zodiac Fairy", "Isomer Ranking"],
+            ["Beach Fairy", "Shattered Connexions Ranking"],
+            ["Combo Fairy", "Fairy Production"],
+            ["Barrier Fairy", "Fairy Production"],
+            ["Twin Fairy", "Fairy Production"],
+            ["Prototype Fairy", "Event Rewards/Shop"],
+            ["Auspicious Fairy", "Polarized Light Ranking"],
+            ["Sand Dancer Fairy", "Dual Randomness Ranking"],
+            ["Cheerleader Fairy", "Mirror Stage Ranking"],
+            ["Witch Fairy", "Poincare Recurrence Ranking"],
+            ["Trap Fairy", "Fixed Point Ranking"],
+            ["Peace Fairy", "Longitudinal Strain Ranking"],
+        )}<br>
+        For ranking reward fairies, they will only be available again once their corresponding ranking map reruns.`,
+        tags : [dTag.FAIRY, dTag.GET]
+    },
+    {
+        id : '00457',
+        questions : `Should I save my T-Doll Contracts?`,
+        answers : `Yes, due to the existence of ${getID("rate-ups", "00032")}. But if you're very new, pull some dolls to solidify your armory.`,
+        tags : [dTag.ITEM, dTag.TDOLL, dTag.PROD]
+    },
+    {
+        id : '00458',
+        questions : `What doew the Frontline Protocol battlepass give?`,
+        answers : `${List.unordered(
+            "Battlepass Skin",
+            "Animated Icon Frame",
+            "Resources",
+            "Extra Weekly Quest"
+        )}`,
+        tags : [dTag.BP, dTag.TDOLL, dTag.SKIN, dTag.ITEM, dTag.QUEST]
+    },
+    {
+        id : '00459',
+        questions : `Where can I get special equipments?`,
+        answers : `${link("Linked in the compilations page.", "https://xxx-yyy-xxx.github.io/GFL/docs")}`,
+        tags : [dTag.SPEQ, dTag.GET]
     },
     {
         id : '00000',

@@ -4,8 +4,6 @@
 
 ### How does a certain doll's skill work?
 
-> [M1897 Mod.](https://old.reddit.com/r/girlsfrontline/comments/osihvd/weekly_commanders_lounge_july_27_2021/h72czw7/) 
->
 > [P90.](https://docs.google.com/document/d/1j5YzAAZ-_Q1bXMUvFKGUWnGgqwacatABv0u-MmY0JLw)
 >
 > [Galil Mod.](https://old.reddit.com/r/girlsfrontline/comments/qpyw46/weekly_commanders_lounge_november_09_2021/hkj3ce0/)
