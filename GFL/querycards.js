@@ -425,7 +425,7 @@ export const cardData = [
                 'All dolls come preleveled.'
             ]
         })}`,
-        tags : [dTag.TDOLL, dTag.IMPT, dTag.GET, dTag.SPEQ, dTag.PROD, dTag.MAP]
+        tags : [dTag.TDOLL, dTag.IMPT, dTag.GET, dTag.SPEQ, dTag.PROD, dTag.MAP, dTag.TCM]
     },  //${spoilerSummary('Dolls EN are missing.', image('https://cdn.discordapp.com/attachments/951085201658871820/1033732620384751636/en_missing_dolls_varz_asked_edition.png'))}
     {
         id : '00025',
@@ -1033,11 +1033,11 @@ export const cardData = [
         answers : `${List.description({
             "Echelon Slots": [
                 "Costs 880, not 380.",
-                "Up to 6 minimum, 8 for actually constant (ranking not included) logistics. Preferably more."
+                "Up to 6 minimum, 8 for actually constant (ranking not included) logistics. Preferably maximum (14)."
             ],
             "Dormitories": [
-                "Additional 3-4 for for faster batteries, enough to quickly upgrade important facilities. More than that is your call.",
-                "Endgame players will almost always have full battery charges."
+                "Additional 3-4 for faster battery charge, enough to quickly upgrade important facilities. More than that is your call.",
+                "Endgame players will almost always have their battery storage overflow."
             ],
             "T-Doll Storage Slots": [
                 "Especially if you're a collector. Or whenever you're getting annoyed with the pop-up.",
@@ -1242,7 +1242,7 @@ export const cardData = [
         questions : `Is the package in the shop worth it?`,
         answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/energy-packages')}<br>
         For the 7 day new account package: Day 4 to jumpstart skill leveling (saves around 80 days of datasims on a normal day), Day 5 is the most efficient oath package so far, and Day 7 is a really good value for tokens.`,
-        tags : [dTag.ITEM, dTag.OATH, dTag.SHOP, dTag.NEWB]
+        tags : [dTag.ITEM, dTag.OATH, dTag.GEMS, dTag.SHOP, dTag.NEWB]
     },
     {
         id : '00121',
@@ -2309,7 +2309,8 @@ export const cardData = [
             "KSVK": [`Main shot is normal shot, ${link("explosion coded as explosion", "https://iopwiki.com/wiki/KSVK")}.`],
             "SAA": ["MOD skill can \"proc\" after the first three."],
             "Pekola": [spoilerSummary(`"How to use" guide.`, image("./assets/images/PekolaUse.png"))],
-            "M1897 Mod": [link("Flechette Storm!", "https://old.reddit.com/r/girlsfrontline/comments/osihvd/weekly_commanders_lounge_july_27_2021/h72czw7/")]
+            "M1897 Mod": [link("Flechette Storm!", "https://old.reddit.com/r/girlsfrontline/comments/osihvd/weekly_commanders_lounge_july_27_2021/h72czw7/")],
+            "P90": [spoilerSummary("Document by hina#8787", Embed.google(Embed.G_WORD, "1j5YzAAZ-_Q1bXMUvFKGUWnGgqwacatABv0u-MmY0JLw"))]
         })}`,
         tags : [dTag.TDOLL, dTag.SKILL]
     },
@@ -2686,7 +2687,7 @@ export const cardData = [
     {
         id : '00327',
         questions : `Are there welfare units in this game? And if so, are they permanently missable?`,
-        answers : `Yes. No.`,
+        answers : `There is no such thing as a welfare unit. All event units are farmable. If you missed them, better luck next time.`,
         tags : [dTag.TDOLL, dTag.GET, dTag.NEWB]
     },
     {
