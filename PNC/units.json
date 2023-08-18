@@ -53,7 +53,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
     },
     {
         "name": "Sol",
@@ -221,7 +221,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Neural Activation", "Code Robustness", "Risk Evasion Aid"]
     },
     {
         "name": "Souchun",
@@ -584,7 +584,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
     },
     {
         "name": "Imhotep",
@@ -668,7 +668,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
     },
     {
         "name": "Abigail",
@@ -724,7 +724,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Neural Activation", "Code Robustness", "Risk Evasion Aid"]
     },
     {
         "name": "Lam",
@@ -949,7 +949,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Power Connection", "Neural Activation", "Coordinated Formation"]
     },
     {
         "name": "Chanzhi",

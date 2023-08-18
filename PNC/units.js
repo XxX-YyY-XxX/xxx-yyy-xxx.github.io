@@ -1,4 +1,4 @@
-import {tableSort, initializeHTML, brJoin, nestElements} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
+import {tableSort, brJoin, nestElements} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
 import {Async} from "../univasset/scripts/externaljavascript.js";
 import {zip, cmp, setattr} from "../univasset/scripts/basefunctions/index.js"
 
@@ -22,6 +22,11 @@ class Units {
         var output = this.#atk;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armaatk;
         if (BOND_BUTTON.checked && this.#intistats.includes("Power Connection")) output += 55;
+        if (SPEC_BUTTON.checked) {
+            output += {
+                "Sniper": this.#atk * 1.22 + 38
+            }[this.class] || 0;
+        }
         return output;
     }
 
@@ -30,6 +35,11 @@ class Units {
         var output = this.#hash;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armahash;
         if (BOND_BUTTON.checked && this.#intistats.includes("Neural Activation")) output += 55;
+        if (SPEC_BUTTON.checked) {
+            output += {
+                "Sniper": this.#hash * 1.22 + 38
+            }[this.class] || 0;
+        }
         return output;
     }
 
@@ -54,6 +64,11 @@ class Units {
     get crate() {
         var output = this.#crate;
         if (BOND_BUTTON.checked && this.#intistats.includes("Coordinated Strike")) output += 8;
+        if (SPEC_BUTTON.checked) {
+            output += {
+                "Sniper": 9
+            }[this.class] || 0;
+        }
         return output;
     }
 
@@ -61,6 +76,11 @@ class Units {
     get cdmg() {
         var output = this.#cdmg;
         if (BOND_BUTTON.checked && this.#intistats.includes("Victorious Inspiration")) output += 12;
+        if (SPEC_BUTTON.checked) {
+            output += {
+                "Sniper": 18
+            }[this.class] || 0;
+        }
         return output;
     }
 
@@ -68,6 +88,11 @@ class Units {
     get ppen() {
         var output = this.#ppen;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armappen;
+        if (SPEC_BUTTON.checked) {
+            output += {
+                "Sniper": this.#ppen * 1.07 + 65
+            }[this.class] || 0;
+        }
         return output;
     }
 
@@ -129,6 +154,7 @@ class Units {
         this.name = stat_object.name;
         this.class = stat_object.class;
 
+        // Base Stats
         this.#hp = stat_object.hp;
         this.#atk = stat_object.atk;
         this.#hash = stat_object.hash;
@@ -141,7 +167,9 @@ class Units {
         this.#dodge = stat_object.dodge;
         this.regen = stat_object.regen;
 
+        // Arma Stats
         const ARMA = stat_object.arma;
+        this.#hasarma = /\.\/assets\/images\/arma\/\S+\.png/.test(ARMA.icon);
         this.#armahp = ARMA.hp;
         this.#armaatk = ARMA.atk;
         this.#armahash = ARMA.hash;
@@ -149,8 +177,6 @@ class Units {
         this.#armaodef = ARMA.odef;
         this.#armappen = ARMA.ppen;
         this.#armaopen = ARMA.open;
-
-        this.#hasarma = /\.\/assets\/images\/arma\/\S+\.png/.test(ARMA.icon);
 
         this.#intistats = stat_object.intimacy;
 
@@ -165,20 +191,20 @@ class Units {
             TD_NAME.textContent = this.name;
         }
 
-        const TD_HP = initializeHTML("td", {textContent: this.hp});
-        const TD_ATK = initializeHTML("td", {textContent: this.atk});
-        const TD_HASH = initializeHTML("td", {textContent: this.hash});
-        const TD_PDEF = initializeHTML("td", {textContent: this.pdef});
-        const TD_ODEF = initializeHTML("td", {textContent: this.odef});
-        const TD_CRATE = initializeHTML("td", {textContent: `${this.crate}%`});
-        const TD_CDMG = initializeHTML("td", {textContent: `${this.cdmg}%`});
-        const TD_PPEN = initializeHTML("td", {textContent: this.ppen});
-        const TD_OPEN = initializeHTML("td", {textContent: this.open});
-        const TD_DODGE = initializeHTML("td", {textContent: `${this.dodge}%`});
-        const TD_HASTE = initializeHTML("td", {textContent: `${this.haste}%`});
-        const TD_DBOOST = initializeHTML("td", {textContent: `${this.dboost}%`});
-        const TD_DREDUC = initializeHTML("td", {textContent: `${this.dreduc}%`});
-        const TD_HBOOST = initializeHTML("td", {textContent: `${this.hboost}%`});
+        const TD_HP = document.createElement("td");
+        const TD_ATK = document.createElement("td");
+        const TD_HASH = document.createElement("td");
+        const TD_PDEF = document.createElement("td");
+        const TD_ODEF = document.createElement("td");
+        const TD_CRATE = document.createElement("td");
+        const TD_CDMG = document.createElement("td");
+        const TD_PPEN = document.createElement("td");
+        const TD_OPEN = document.createElement("td");
+        const TD_DODGE = document.createElement("td");
+        const TD_HASTE = document.createElement("td");
+        const TD_DBOOST = document.createElement("td");
+        const TD_DREDUC = document.createElement("td");
+        const TD_HBOOST = document.createElement("td");
 
         this.updateStat = () => {
             TD_HP.textContent = this.hp;
@@ -196,6 +222,7 @@ class Units {
             TD_DREDUC.textContent = `${this.dreduc}%`;
             TD_HBOOST.textContent = `${this.hboost}%`;
         }
+        this.updateStat()
 
         this.row.append(
             TD_NAME,
@@ -204,16 +231,16 @@ class Units {
             TD_HASH,
             TD_PDEF,
             TD_ODEF,
-            initializeHTML("td", {textContent: this.aspd}),
+            setattr(document.createElement("td"), {textContent: this.aspd}),
             TD_CRATE,
             TD_CDMG,
             TD_PPEN,
             TD_OPEN,
             TD_DODGE,
-            initializeHTML("td", {textContent: this.regen}),
+            setattr(document.createElement("td"), {textContent: this.regen}),
             TD_HASTE,
-            initializeHTML("td", {textContent: this.res}),
-            initializeHTML("td", {textContent: `${this.lash}%`}),
+            setattr(document.createElement("td"), {textContent: this.res}),
+            setattr(document.createElement("td"), {textContent: `${this.lash}%`}),
             TD_DBOOST,
             TD_DREDUC,
             TD_HBOOST
@@ -255,6 +282,7 @@ UNITS = (await UNITS).slice(0, -1);
 //#region Statistics Table
 /** @type {HTMLInputElement} */ const ARMA_BUTTON = document.querySelector(`#bonus [value="Arma"]`);
 /** @type {HTMLInputElement} */ const BOND_BUTTON = document.querySelector(`#bonus [value="Bond"]`);
+/** @type {HTMLInputElement} */ const SPEC_BUTTON = document.querySelector(`#bonus [value="Spec"]`);
 
 const UNIT_LIST = UNITS.map(x => new Units(x));
 for (const UNIT of UNIT_LIST) {
@@ -271,25 +299,25 @@ TABLE.classList.add("freeze-col", "freeze-row");
 TABLE.append(THEAD, TBODY);
 
 const HEADER_VALUES = [
-    ["Doll Name", "name"],
-    ["Max HP", "hp"],
-    ["Attack", "atk"],
-    ["Hashrate", "hash"],
-    ["Physical Def", "pdef"],
-    ["Operand Def", "odef"],
-    ["Attack Speed", "aspd"],
-    ["Crit Rate", "crate"],
-    ["Crit Damage", "cdmg"],
-    ["Physical Pen", "ppen"],
-    ["Operand Pen", "open"],
-    ["Dodge Rate", "dodge"],
-    ["Post-battle Regen", "regen"],
-    ["Skill Haste", "haste"],
-    ["Debuff Resist", "res"],
-    ["Backlash", "lash"],
-    ["Damage Boost", "dboost"],
-    ["Injury Mitigation", "dreduc"],
-    ["Healing Effect", "hboost"]
+    ["Doll Name",           "name"],
+    ["Max HP",              "hp"],
+    ["Attack",              "atk"],
+    ["Hashrate",            "hash"],
+    ["Physical Def",        "pdef"],
+    ["Operand Def",         "odef"],
+    ["Attack Speed",        "aspd"],
+    ["Crit Rate",           "crate"],
+    ["Crit Damage",         "cdmg"],
+    ["Physical Pen",        "ppen"],
+    ["Operand Pen",         "open"],
+    ["Dodge Rate",          "dodge"],
+    ["Post-battle Regen",   "regen"],
+    ["Skill Haste",         "haste"],
+    ["Debuff Resist",       "res"],
+    ["Backlash",            "lash"],
+    ["Damage Boost",        "dboost"],
+    ["Injury Mitigation",   "dreduc"],
+    ["Healing Effect",      "hboost"]
 ]
 for (const [[NAME, KEY], TYPE] of zip(HEADER_VALUES, (function*() {yield "string"; while (true) yield "number"})())) {
     const TH = document.createElement("th");
