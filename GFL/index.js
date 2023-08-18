@@ -1,4 +1,4 @@
-import {timer} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
+import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
 timer(
     document.getElementById("event"),
@@ -12,19 +12,19 @@ timer(
 );
 
 timer(
-    document.getElementById('battlepass'),
-    "Aug 06, 2023 23:59 UTC-0800",
-    "https://pbs.twimg.com/media/FznK2EmXoAENbqH?format=jpg&name=large",
+    document.getElementById("battlepass"),
+    "Sep 10, 2023 23:59 UTC-0800",
+    "./assets/images/timer/BattlepassNow.webp",
     {onEnd: timer.bind(
-        null, document.getElementById('battlepass'),
-        "Sep 10, 2023 23:59 UTC-0800",
-        "https://pbs.twimg.com/media/F2gi8PsaQAUVfgH?format=jpg&name=large"
+        null, document.getElementById("battlepass"),
+        "",
+        "./assets/images/timer/BattlepassNext.webp"
     )}
 );
 
 timer(
     document.getElementById("coalition"),
-    "Aug 21, 2023, 23:59 UTC-0800",
+    "Aug 28, 2023, 23:59 UTC-0800",
     "./assets/images/coalition/AlinaMosasaurRider.webp", 
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
@@ -36,11 +36,11 @@ timer(
 timer(
     document.getElementById('skin-banner'),
     "Aug 28, 2023 23:59 UTC-0800",
-    "https://iopwiki.com/images/e/e2/Black_Sails_on_Cerulean_Seas_Login_Wallpaper.jpg",
+    "./assets/images/timer/SkinBannerNow.webp",
     {onEnd: timer.bind(
         null, document.getElementById('skin-banner'),
         "",
-        ""
+        "./assets/images/timer/SkinBannerNext.webp"
     )}
 );
 

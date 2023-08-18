@@ -5,6 +5,8 @@ import {zip, cmp, setattr} from "../univasset/scripts/basefunctions/index.js"
 /** @type {UnitObject[]} */ var UNITS = Async.getJSON('./units.json');
 
 //#region Class Declarations
+// output value probably ceiling
+// breakthrough growth probably variable
 class Units {
     name;
     class;
@@ -22,11 +24,7 @@ class Units {
         var output = this.#atk;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armaatk;
         if (BOND_BUTTON.checked && this.#intistats.includes("Power Connection")) output += 55;
-        if (SPEC_BUTTON.checked) {
-            output += {
-                "Sniper": this.#atk * 1.22 + 38
-            }[this.class] || 0;
-        }
+        if (SPEC_BUTTON.checked) output += {"Sniper": this.#atk * 0.22 + 38}[this.class] || 0;
         return output;
     }
 
@@ -35,11 +33,7 @@ class Units {
         var output = this.#hash;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armahash;
         if (BOND_BUTTON.checked && this.#intistats.includes("Neural Activation")) output += 55;
-        if (SPEC_BUTTON.checked) {
-            output += {
-                "Sniper": this.#hash * 1.22 + 38
-            }[this.class] || 0;
-        }
+        if (SPEC_BUTTON.checked) output += {"Sniper": this.#hash * 0.22 + 38}[this.class] || 0;
         return output;
     }
 
@@ -64,11 +58,7 @@ class Units {
     get crate() {
         var output = this.#crate;
         if (BOND_BUTTON.checked && this.#intistats.includes("Coordinated Strike")) output += 8;
-        if (SPEC_BUTTON.checked) {
-            output += {
-                "Sniper": 9
-            }[this.class] || 0;
-        }
+        if (SPEC_BUTTON.checked) output += {"Sniper": 9}[this.class] || 0;
         return output;
     }
 
@@ -76,11 +66,7 @@ class Units {
     get cdmg() {
         var output = this.#cdmg;
         if (BOND_BUTTON.checked && this.#intistats.includes("Victorious Inspiration")) output += 12;
-        if (SPEC_BUTTON.checked) {
-            output += {
-                "Sniper": 18
-            }[this.class] || 0;
-        }
+        if (SPEC_BUTTON.checked) output += {"Sniper": 18}[this.class] || 0;
         return output;
     }
 
@@ -88,11 +74,7 @@ class Units {
     get ppen() {
         var output = this.#ppen;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armappen;
-        if (SPEC_BUTTON.checked) {
-            output += {
-                "Sniper": this.#ppen * 1.07 + 65
-            }[this.class] || 0;
-        }
+        if (SPEC_BUTTON.checked) output += {"Sniper": this.#ppen * 0.07 + 65}[this.class] || 0;
         return output;
     }
 
