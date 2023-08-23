@@ -5,49 +5,53 @@ import {zip, cmp, setattr} from "../univasset/scripts/basefunctions/index.js"
 /** @type {UnitObject[]} */ var UNITS = Async.getJSON('./units.json');
 
 //#region Class Declarations
-// output value probably ceiling
-// breakthrough growth probably variable
+// output value probably floor
 class Units {
     name;
     class;
 
-    #hp; #armahp;
+    #hp; #pothp; #armahp;
     get hp() {
         var output = this.#hp;
+        if (POTB_BUTTON.checked) output += this.#pothp;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armahp;
         if (BOND_BUTTON.checked && this.#intistats.includes("Code Robustness")) output += 1320;
         return output;
     }
 
-    #atk; #armaatk;
+    #atk; #potatk; #armaatk;
     get atk() {
         var output = this.#atk;
+        if (POTB_BUTTON.checked) output += this.#potatk;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armaatk;
         if (BOND_BUTTON.checked && this.#intistats.includes("Power Connection")) output += 55;
         if (SPEC_BUTTON.checked) output += {"Sniper": this.#atk * 0.22 + 38}[this.class] || 0;
         return output;
     }
 
-    #hash; #armahash;
+    #hash; #pothash; #armahash;
     get hash() {
         var output = this.#hash;
+        if (POTB_BUTTON.checked) output += this.#pothash;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armahash;
         if (BOND_BUTTON.checked && this.#intistats.includes("Neural Activation")) output += 55;
         if (SPEC_BUTTON.checked) output += {"Sniper": this.#hash * 0.22 + 38}[this.class] || 0;
         return output;
     }
 
-    #pdef; #armapdef;
+    #pdef; #potpdef; #armapdef;
     get pdef() {
         var output = this.#pdef;
+        if (POTB_BUTTON.checked) output += this.#potpdef;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armapdef;
         if (BOND_BUTTON.checked && this.#intistats.includes("Shield of Friendship")) output += 55;
         return output;
     }
 
-    #odef; #armaodef;
+    #odef; #potodef; #armaodef;
     get odef() {
         var output = this.#odef;
+        if (POTB_BUTTON.checked) output += this.#potodef;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armaodef;
         return output;
     }
@@ -70,17 +74,19 @@ class Units {
         return output;
     }
 
-    #ppen; #armappen;
+    #ppen; #potppen; #armappen;
     get ppen() {
         var output = this.#ppen;
+        if (POTB_BUTTON.checked) output += this.#potppen;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armappen;
         if (SPEC_BUTTON.checked) output += {"Sniper": this.#ppen * 0.07 + 65}[this.class] || 0;
         return output;
     }
 
-    #open; #armaopen;
+    #open; #potopen; #armaopen;
     get open() {
         var output = this.#open;
+        if (POTB_BUTTON.checked) output += this.#potopen;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armaopen;
         return output;
     }
@@ -92,7 +98,12 @@ class Units {
         return output;
     }
 
-    regen;
+    #regen; #potregen;
+    get regen() {
+        var output = this.#regen;
+        if (POTB_BUTTON.checked) output += this.#potregen;
+        return output;
+    }
 
     #haste = 0;
     get haste() {
@@ -136,20 +147,34 @@ class Units {
         this.name = stat_object.name;
         this.class = stat_object.class;
 
-        // Base Stats
-        this.#hp = stat_object.hp;
-        this.#atk = stat_object.atk;
-        this.#hash = stat_object.hash;
-        this.#pdef = stat_object.pdef;
-        this.#odef = stat_object.odef;
-        this.aspd = stat_object.aspd;
-        this.#crate = stat_object.crate;
-        this.#ppen = stat_object.ppen;
-        this.#open = stat_object.open;
-        this.#dodge = stat_object.dodge;
-        this.regen = stat_object.regen;
+        const BASE = stat_object.base;
+        this.#hp = BASE.hp;
+        this.#atk = BASE.atk;
+        this.#hash = BASE.hash;
+        this.#pdef = BASE.pdef;
+        this.#odef = BASE.odef;
+        this.aspd = BASE.aspd;
+        this.#crate = BASE.crate;
+        this.#ppen = BASE.ppen;
+        this.#open = BASE.open;
+        this.#dodge = BASE.dodge;
+        this.#regen = BASE.regen;
 
-        // Arma Stats
+        const POT = stat_object.potential;
+        this.#pothp = POT.hp;
+        this.#potatk = POT.atk;
+        this.#pothash = POT.hash;
+        this.#potpdef = POT.pdef;
+        this.#potodef = POT.odef;
+        this.#potppen = POT.ppen;
+        this.#potopen = POT.open;
+        this.#potregen = POT.regen;
+
+        const a = `./assets/images/arma/${this.name.replace(" ", "")}.png`
+        console.log(a)
+        console.log(ARMA.icon)
+        console.log(a === ARMA.icon)
+
         const ARMA = stat_object.arma;
         this.#hasarma = /\.\/assets\/images\/arma\/\S+\.png/.test(ARMA.icon);
         this.#armahp = ARMA.hp;
@@ -183,6 +208,7 @@ class Units {
         const TD_PPEN = document.createElement("td");
         const TD_OPEN = document.createElement("td");
         const TD_DODGE = document.createElement("td");
+        const TD_REGEN = document.createElement("td");
         const TD_HASTE = document.createElement("td");
         const TD_DBOOST = document.createElement("td");
         const TD_DREDUC = document.createElement("td");
@@ -199,6 +225,7 @@ class Units {
             TD_PPEN.textContent = this.ppen;
             TD_OPEN.textContent = this.open;
             TD_DODGE.textContent = `${this.dodge}%`;
+            TD_REGEN.textContent = this.regen;
             TD_HASTE.textContent = `${this.haste}%`;
             TD_DBOOST.textContent = `${this.dboost}%`;
             TD_DREDUC.textContent = `${this.dreduc}%`;
@@ -219,7 +246,7 @@ class Units {
             TD_PPEN,
             TD_OPEN,
             TD_DODGE,
-            setattr(document.createElement("td"), {textContent: this.regen}),
+            TD_REGEN,
             TD_HASTE,
             setattr(document.createElement("td"), {textContent: this.res}),
             setattr(document.createElement("td"), {textContent: `${this.lash}%`}),
@@ -265,6 +292,7 @@ UNITS = (await UNITS).slice(0, -1);
 /** @type {HTMLInputElement} */ const ARMA_BUTTON = document.querySelector(`#bonus [value="Arma"]`);
 /** @type {HTMLInputElement} */ const BOND_BUTTON = document.querySelector(`#bonus [value="Bond"]`);
 /** @type {HTMLInputElement} */ const SPEC_BUTTON = document.querySelector(`#bonus [value="Spec"]`);
+/** @type {HTMLInputElement} */ const POTB_BUTTON = document.querySelector(`#bonus [value="PotB"]`);
 
 const UNIT_LIST = UNITS.map(x => new Units(x));
 for (const UNIT of UNIT_LIST) {
@@ -333,20 +361,33 @@ tableSort(
  * @typedef {Object} UnitObject
  * @property {string} UnitObject.name
  * @property {"Guard" | "Sniper" | "Warrior" | "Specialist" | "Medic"} UnitObject.class
- * @property {{[linkname: string]: string}} UnitObject.reference {linkname: linkurl}
+ * @property {{[linkname: string]: [linkurl: string]}} UnitObject.reference
  * @property {string[]} UnitObject.fragments Where to obtain unit fragments.
- * @property {number} UnitObject.hp
- * @property {number} UnitObject.atk
- * @property {number} UnitObject.hash
- * @property {number} UnitObject.pdef
- * @property {number} UnitObject.odef
- * @property {number} UnitObject.aspd
- * @property {number} UnitObject.crate
- * @property {number} UnitObject.ppen
- * @property {number} UnitObject.open
- * @property {number} UnitObject.dodge
- * @property {number} UnitObject.regen
- * @property {Object} UnitObject.arma
+
+ * @property {Object} UnitObject.base
+ * @property {number} UnitObject.base.hp
+ * @property {number} UnitObject.base.atk
+ * @property {number} UnitObject.base.hash
+ * @property {number} UnitObject.base.pdef
+ * @property {number} UnitObject.base.odef
+ * @property {number} UnitObject.base.aspd
+ * @property {number} UnitObject.base.crate
+ * @property {number} UnitObject.base.ppen
+ * @property {number} UnitObject.base.open
+ * @property {number} UnitObject.base.dodge
+ * @property {number} UnitObject.base.regen
+
+ * @property {Object} UnitObject.potential Potential Breakthrough
+ * @property {number} UnitObject.potential.hp
+ * @property {number} UnitObject.potential.atk
+ * @property {number} UnitObject.potential.hash
+ * @property {number} UnitObject.potential.pdef
+ * @property {number} UnitObject.potential.odef
+ * @property {number} UnitObject.potential.ppen
+ * @property {number} UnitObject.potential.open
+ * @property {number} UnitObject.potential.regen
+
+ * @property {Object} UnitObject.arma Arma Inscripta
  * @property {string} UnitObject.arma.icon Link to arma emblem.
  * @property {number} UnitObject.arma.hp
  * @property {number} UnitObject.arma.atk
@@ -355,7 +396,8 @@ tableSort(
  * @property {number} UnitObject.arma.odef
  * @property {number} UnitObject.arma.ppen
  * @property {number} UnitObject.arma.open
- * @property {[IntimacyStats, IntimacyStats, IntimacyStats]} UnitObject.intimacy */
+
+ * @property {[IntimacyStats, IntimacyStats, IntimacyStats]} UnitObject.intimacy Intimacy */
 
 /** @typedef {"Code Robustness" | "Power Connection" | "Neural Activation" | "Shield of Friendship" | "Coordinated Strike" | "Victorious Inspiration" | "Risk Evasion Aid" | "Mechanical Celerity" | "Coordinated Formation" | "Through Fire and Water" | "Healing Bond"} IntimacyStats */
 //#endregion
