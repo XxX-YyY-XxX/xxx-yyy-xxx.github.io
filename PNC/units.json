@@ -98,14 +98,14 @@
             "regen": 610
         },
         "potential": {
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1,
-            "regen": -1
+            "hp": 11791,
+            "atk": 338,
+            "hash": 357,
+            "pdef": 269,
+            "odef": 272,
+            "ppen": 250,
+            "open": 251,
+            "regen": 3301
         },
         "arma": {
             "icon": "",
