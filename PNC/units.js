@@ -171,9 +171,7 @@ class Units {
         this.#potregen = POT.regen;
 
         const a = `./assets/images/arma/${this.name.replace(" ", "")}.png`
-        console.log(a)
-        console.log(ARMA.icon)
-        console.log(a === ARMA.icon)
+        console.log(a, a === ARMA.icon ? "==" : "!=", ARMA.icon)
 
         const ARMA = stat_object.arma;
         this.#hasarma = /\.\/assets\/images\/arma\/\S+\.png/.test(ARMA.icon);

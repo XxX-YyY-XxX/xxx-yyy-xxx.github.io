@@ -47,6 +47,7 @@ export const dTag = {
             FURN : {name: 'Furniture', description: '"Dorm Equipments."'},
         HOC : {name: 'HeavyOrdnanceCorps', description: 'Shelling support.'},
         EXPED : {name: 'ForwardBasecamp', description: "Casual's dream QOL."},
+            BM : {name: 'BlackMarket', description: "Forward Basecamp's exclusive shop."},
         PA : {name: 'ProtocolAssimilation', description: 'PA pulling and coalition drills.'},
     //#endregion
     //#region Devices
@@ -755,7 +756,7 @@ export const cardData = [
         questions : `What's the Fire Control Component (FCC) used for and where can I get them?`,
         answers : `Upgrading 5${star} dolls to 6${star} through modding.<br>
         Obtainable through Black Market (2 monthly), major events/campaigns, special log-ins, shop packages, battlepass`,
-        tags : [dTag.ITEM, dTag.MOD, dTag.GET, dTag.EXPED, dTag.SHOP, dTag.MAJOR, dTag.CAMPAIGN, dTag.BP]
+        tags : [dTag.ITEM, dTag.MOD, dTag.GET, dTag.BM, dTag.MAJOR, dTag.CAMPAIGN, dTag.BP]
     },
     {
         id : '00061',
@@ -1018,7 +1019,7 @@ export const cardData = [
         id : '00094',
         questions : `Do the purchaseable items in the Expedition Black Market ever change?`,
         answers : `No.`,
-        tags : [dTag.EXPED, dTag.SHOP]
+        tags : [dTag.BM]
     },
     {
         id : '00095',
@@ -1647,6 +1648,7 @@ export const cardData = [
         questions : `I can't enter the game (stuck downloading/loading). What should I do?`,
         answers : `${List.unordered(
             "Wait and trudge through",
+            "Download the bare minimum files first",
             "Restart client",
             "Change/Reset WiFi connection",
             "Switch to mobile data",
@@ -1678,7 +1680,7 @@ export const cardData = [
         answers : `Shop for previous event only cosmetics.<br>
         ${image('./assets/images/BlackMarketCostumes.png', 'From u/UnironicWeeaboo')}<br>
         Currently released items in the older servers.`,
-        tags : [dTag.EXPED, dTag.SHOP]
+        tags : [dTag.BM]
     },
     {
         id : '00177',
@@ -1972,7 +1974,7 @@ export const cardData = [
             'Special Combat Reports',
             'Doll Enhancement Pills',
             'Equipment Enhancement Pills')}`,
-        tags : [dTag.EXPED, dTag.ITEM, dTag.SHOP]
+        tags : [dTag.BM, dTag.ITEM]
     },  //@Visual
     {
         id : '00218',
@@ -2310,7 +2312,8 @@ export const cardData = [
             "SAA": ["MOD skill can \"proc\" after the first three."],
             "Pekola": [spoilerSummary(`"How to use" guide.`, image("./assets/images/PekolaUse.png"))],
             "M1897 Mod": [link("Flechette Storm!", "https://old.reddit.com/r/girlsfrontline/comments/osihvd/weekly_commanders_lounge_july_27_2021/h72czw7/")],
-            "P90": [spoilerSummary("Document by hina#8787", Embed.google(Embed.G_WORD, "1j5YzAAZ-_Q1bXMUvFKGUWnGgqwacatABv0u-MmY0JLw"))]
+            "P90": [spoilerSummary("Document by hina#8787", Embed.google(Embed.G_WORD, "1j5YzAAZ-_Q1bXMUvFKGUWnGgqwacatABv0u-MmY0JLw"))],
+            "Galil Mod": [link("Reddit discussion", "https://old.reddit.com/r/girlsfrontline/comments/qpyw46/weekly_commanders_lounge_november_09_2021/hkj3ce0/")]
         })}`,
         tags : [dTag.TDOLL, dTag.SKILL]
     },
@@ -3257,7 +3260,7 @@ export const cardData = [
             "Acorns": ["SPEQs"],
             "Bottle": ["Cores", "Effects for posterity"]
         })}`,
-        tags : [dTag.EXPED, dTag.SHOP]
+        tags : [dTag.BM]
     },
     {
         id : '00412',
@@ -3273,7 +3276,7 @@ export const cardData = [
         id : '00022',
         questions : `What T-doll effects are available in the older servers?`,
         answers : `Global already has everything they have.`,
-        tags : [dTag.TDOLL, dTag.EXPED, dTag.SHOP]
+        tags : [dTag.TDOLL, dTag.BM]
     },
     {
         id : '00413',
@@ -3285,7 +3288,7 @@ export const cardData = [
         id : '00414',
         questions : `Does the Black Market shop ever refresh its stock?`,
         answers : `The ITEM section, yes. Every turn of a new month.`,
-        tags : [dTag.EXPED, dTag. SHOP]
+        tags : [dTag.BM]
     },
     {
         id : '00415',
@@ -3297,7 +3300,7 @@ export const cardData = [
         id : '00416',
         questions : `I missed some event furniture that can be acquired from crates. Will I ever have a chance to get them again?`,
         answers : `Yes. Wait for them in the Black Market Exchange.`,
-        tags : [dTag.FURN, dTag.MAJOR, dTag.EXPED, dTag.SHOP]
+        tags : [dTag.FURN, dTag.MAJOR, dTag.BM]
     },
     {
         id : '00417',
