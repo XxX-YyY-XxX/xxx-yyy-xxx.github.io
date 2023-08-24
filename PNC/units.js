@@ -170,9 +170,6 @@ class Units {
         this.#potopen = POT.open;
         this.#potregen = POT.regen;
 
-        const a = `./assets/images/arma/${this.name.replace(" ", "")}.png`
-        console.log(a, a === ARMA.icon ? "==" : "!=", ARMA.icon)
-
         const ARMA = stat_object.arma;
         this.#hasarma = /\.\/assets\/images\/arma\/\S+\.png/.test(ARMA.icon);
         this.#armahp = ARMA.hp;
@@ -182,6 +179,9 @@ class Units {
         this.#armaodef = ARMA.odef;
         this.#armappen = ARMA.ppen;
         this.#armaopen = ARMA.open;
+
+        const a = `./assets/images/arma/${this.name.replace(" ", "")}.png`
+        console.log(a, a === ARMA.icon ? "==" : "!=", ARMA.icon)
 
         this.#intistats = stat_object.intimacy;
 
