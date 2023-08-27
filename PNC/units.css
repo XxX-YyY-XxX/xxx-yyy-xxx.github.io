@@ -2,7 +2,6 @@
 
 .func_table {
     height: 95vh;
-    margin-bottom: 10px;
 }
 
 input[type="checkbox"], input[type="radio"] {
@@ -96,6 +95,7 @@ input[type="checkbox"], input[type="radio"] {
     padding: 0 10px;
     display: inline-block;
     text-align: center;
+    margin-top: 10px;
 }
 
 #classes > label {
@@ -161,9 +161,8 @@ input[type="checkbox"], input[type="radio"] {
     padding: 0 10px;
     display: inline-block;
     text-align: center;
+    margin-top: 10px;
 }
-
-/* If small space display: revert */
 
 #bonus label {
     --color: limegreen;

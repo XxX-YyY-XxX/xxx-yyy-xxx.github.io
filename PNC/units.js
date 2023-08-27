@@ -5,55 +5,54 @@ import {zip, cmp, setattr} from "../univasset/scripts/basefunctions/index.js"
 /** @type {UnitObject[]} */ var UNITS = Async.getJSON('./units.json');
 
 //#region Class Declarations
-// output value probably floor
 class Units {
     name;
     class;
 
-    #hp; #pothp; #armahp;
+    #hp; #armahp;
     get hp() {
         var output = this.#hp;
-        if (POTB_BUTTON.checked) output += this.#pothp;
+        if (POTB_BUTTON.checked) output += this.#hp * 0.61;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armahp;
         if (BOND_BUTTON.checked && this.#intistats.includes("Code Robustness")) output += 1320;
-        return output;
+        return Math.floor(output);
     }
 
-    #atk; #potatk; #armaatk;
+    #atk; #armaatk;
     get atk() {
         var output = this.#atk;
-        if (POTB_BUTTON.checked) output += this.#potatk;
+        if (POTB_BUTTON.checked) output += this.#atk * 0.61;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armaatk;
         if (BOND_BUTTON.checked && this.#intistats.includes("Power Connection")) output += 55;
-        if (SPEC_BUTTON.checked) output += {"Sniper": this.#atk * 0.22 + 38}[this.class] || 0;
-        return output;
+        if (SPEC_BUTTON.checked) output += {"Sniper": this.#atk * 0.22 + 38}[this.class] ?? 0;
+        return Math.floor(output);
     }
 
-    #hash; #pothash; #armahash;
+    #hash; #armahash;
     get hash() {
         var output = this.#hash;
-        if (POTB_BUTTON.checked) output += this.#pothash;
+        if (POTB_BUTTON.checked) output += this.#hash * 0.61;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armahash;
         if (BOND_BUTTON.checked && this.#intistats.includes("Neural Activation")) output += 55;
-        if (SPEC_BUTTON.checked) output += {"Sniper": this.#hash * 0.22 + 38}[this.class] || 0;
-        return output;
+        if (SPEC_BUTTON.checked) output += {"Sniper": this.#hash * 0.22 + 38}[this.class] ?? 0;
+        return Math.floor(output);
     }
 
-    #pdef; #potpdef; #armapdef;
+    #pdef; #armapdef;
     get pdef() {
         var output = this.#pdef;
-        if (POTB_BUTTON.checked) output += this.#potpdef;
+        if (POTB_BUTTON.checked) output += this.#pdef * 0.61;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armapdef;
         if (BOND_BUTTON.checked && this.#intistats.includes("Shield of Friendship")) output += 55;
-        return output;
+        return Math.floor(output);
     }
 
-    #odef; #potodef; #armaodef;
+    #odef; #armaodef;
     get odef() {
         var output = this.#odef;
-        if (POTB_BUTTON.checked) output += this.#potodef;
+        if (POTB_BUTTON.checked) output += this.#odef * 0.61;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armaodef;
-        return output;
+        return Math.floor(output);
     }
 
     aspd;
@@ -62,7 +61,7 @@ class Units {
     get crate() {
         var output = this.#crate;
         if (BOND_BUTTON.checked && this.#intistats.includes("Coordinated Strike")) output += 8;
-        if (SPEC_BUTTON.checked) output += {"Sniper": 9}[this.class] || 0;
+        if (SPEC_BUTTON.checked) output += {"Sniper": 9}[this.class] ?? 0;
         return output;
     }
 
@@ -70,25 +69,25 @@ class Units {
     get cdmg() {
         var output = this.#cdmg;
         if (BOND_BUTTON.checked && this.#intistats.includes("Victorious Inspiration")) output += 12;
-        if (SPEC_BUTTON.checked) output += {"Sniper": 18}[this.class] || 0;
+        if (SPEC_BUTTON.checked) output += {"Sniper": 18}[this.class] ?? 0;
         return output;
     }
 
-    #ppen; #potppen; #armappen;
+    #ppen; #armappen;
     get ppen() {
         var output = this.#ppen;
-        if (POTB_BUTTON.checked) output += this.#potppen;
+        if (POTB_BUTTON.checked) output += this.#ppen * 0.61;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armappen;
-        if (SPEC_BUTTON.checked) output += {"Sniper": this.#ppen * 0.07 + 65}[this.class] || 0;
-        return output;
+        if (SPEC_BUTTON.checked) output += {"Sniper": this.#ppen * 0.07 + 65}[this.class] ?? 0;
+        return Math.floor(output);
     }
 
-    #open; #potopen; #armaopen;
+    #open; #armaopen;
     get open() {
         var output = this.#open;
-        if (POTB_BUTTON.checked) output += this.#potopen;
+        if (POTB_BUTTON.checked) output += this.#open * 0.61;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armaopen;
-        return output;
+        return Math.floor(output);
     }
 
     #dodge;
@@ -161,14 +160,21 @@ class Units {
         this.#regen = BASE.regen;
 
         const POT = stat_object.potential;
-        this.#pothp = POT.hp;
-        this.#potatk = POT.atk;
-        this.#pothash = POT.hash;
-        this.#potpdef = POT.pdef;
-        this.#potodef = POT.odef;
-        this.#potppen = POT.ppen;
-        this.#potopen = POT.open;
+        //this.#pothp = POT.hp;
+        //this.#potatk = POT.atk;
+        //this.#pothash = POT.hash;
+        //this.#potpdef = POT.pdef;
+        //this.#potodef = POT.odef;
+        //this.#potppen = POT.ppen;
+        //this.#potopen = POT.open;
         this.#potregen = POT.regen;
+
+        const STAT = "hp"
+        console.log(
+            this.name, "HP:",
+            Math.floor(BASE[STAT] * 0.61) === POT[STAT],
+            POT[STAT] / BASE[STAT]
+        )
 
         const ARMA = stat_object.arma;
         this.#hasarma = ARMA.icon === `./assets/images/arma/${this.name.replace(" ", "")}.png`;
@@ -251,6 +257,59 @@ class Units {
         )
 
         //#privatefield cannot be called dynamically, use exec/eval instead
+
+        const I = document.createElement("img")
+        I.onload = () => console.log(this.name, "arma exists.")
+        I.onerror = () => console.log(this.name, "has no arma.")
+        I.src = ARMA.icon
+
+        /* function loadImage (url, timeoutOrCallback, maybeCallback) {
+            let timeout;
+            let callback;
+          
+            if (typeof timeoutOrCallback === 'number') {
+              timeout = timeoutOrCallback;
+              if (typeof maybeCallback === 'function') callback = maybeCallback;
+            }
+            else if (typeof timeoutOrCallback === 'function') callback = timeoutOrCallback;
+          
+            const promise = callback
+              ? undefined
+              : new Promise(resolve => void (callback = resolve));
+          
+            const onlyRunOnce = {once: true};
+            let timerId = 0;
+            let done = false;
+          
+            if (typeof timeout === 'number') {
+              timerId = setTimeout(() => {
+                done = true;
+                callback(false);
+              }, timeout);
+            }
+          
+            const img = new Image();
+          
+            img.addEventListener('load', () => {
+              if (done) return;
+              clearTimeout(timerId);
+              done = true;
+              callback(true);
+            }, onlyRunOnce); */
+        
+        /* function imageExists(url) {
+            return new Promise(resolve => {
+                var img = new Image()
+                img.addEventListener('load', () => resolve(true))
+                img.addEventListener('error', () => resolve(false))
+                img.src = url
+            })
+            }
+            
+            const url = 'http://www.google.com/images/srpr/nav_logo14.png'
+            imageExists(url)
+            .then(ok => console.log(`RESULT: exists=${ok}`))
+            //                    => RESULT: exists=true */
     }
 }
 //#endregion
