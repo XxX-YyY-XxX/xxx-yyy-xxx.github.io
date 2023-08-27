@@ -1,6 +1,6 @@
 import {tableSort, brJoin, nestElements} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
 import {Async} from "../univasset/scripts/externaljavascript.js";
-import {zip, cmp, setattr} from "../univasset/scripts/basefunctions/index.js"
+import {zip, cmp, setattr} from "../univasset/scripts/basefunctions/index.js";
 
 /** @type {UnitObject[]} */ var UNITS = Async.getJSON('./units.json');
 
