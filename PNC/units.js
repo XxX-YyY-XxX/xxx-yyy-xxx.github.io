@@ -160,7 +160,6 @@ class Units {
         this.#regen = BASE.regen;
 
         const POT = stat_object.potential;
-        //this.#potatk = POT.atk;
         //this.#pothash = POT.hash;
         //this.#potpdef = POT.pdef;
         //this.#potodef = POT.odef;
@@ -168,15 +167,14 @@ class Units {
         //this.#potopen = POT.open;
         this.#potregen = POT.regen;
 
-        const STAT = "atk"
+        const STAT = "hash"
         console.log(
-            this.name, "Attack:",
+            this.name,
             Math.floor(BASE[STAT] * 0.61) === POT[STAT],
             POT[STAT] / BASE[STAT]
         )
 
         const ARMA = stat_object.arma;
-        //this.#hasarma = ARMA.icon === `./assets/images/arma/${this.name.replace(" ", "")}.png`;
         this.#armahp = ARMA.hp;
         this.#armaatk = ARMA.atk;
         this.#armahash = ARMA.hash;
@@ -188,23 +186,14 @@ class Units {
         this.#intistats = stat_object.intimacy;
 
         const TD_NAME = document.createElement("td");
-        //if (this.#hasarma) {
-        //    const IMAGE = setattr(document.createElement("img"), {alt: `${this.name} arma.`, src: ARMA.icon});
-        //    const SPAN = setattr(document.createElement("span"), {append: [this.name, IMAGE], classList: {add: ["arma"]}})
-        //    TD_NAME.appendChild(SPAN);
-        //} else {
-        //    TD_NAME.textContent = this.name;
-        //}
-
         const IMAGE = document.createElement("img");
         IMAGE.addEventListener("load", () => {
-            console.log(this.name, "has arma.")
             this.#hasarma = true;
             setattr(IMAGE, {loading: "lazy", alt: `${this.name} arma.`});
-            TD_NAME.appendChild(setattr(document.createElement("span"), {append: [this.name, IMAGE], classList: {add: ["arma"]}}));
+            const SPAN = setattr(document.createElement("span"), {append: [this.name, IMAGE], classList: {add: ["arma"]}});
+            TD_NAME.appendChild(SPAN);
         });
         IMAGE.addEventListener("error", () => {
-            console.log(this.name, "has no arma.")
             this.#hasarma = false;
             TD_NAME.textContent = this.name;
         });
@@ -366,7 +355,8 @@ UNITS = (await UNITS).slice(0, -1);
 
 const UNIT_LIST = UNITS.map(x => new Units(x));
 for (const UNIT of UNIT_LIST) {
-    ARMA_BUTTON.addEventListener("change", () => UNIT.updateStat())
+    ARMA_BUTTON.addEventListener("change", () => UNIT.updateStat());
+    POTB_BUTTON.addEventListener("change", () => UNIT.updateStat());
 }
 
 const [THEAD, HEADER_TR] = nestElements("thead", "tr");
@@ -458,7 +448,6 @@ tableSort(
  * @property {number} UnitObject.potential.regen
 
  * @property {Object} UnitObject.arma Arma Inscripta
- * @property {string} UnitObject.arma.icon Link to arma emblem.
  * @property {number} UnitObject.arma.hp
  * @property {number} UnitObject.arma.atk
  * @property {number} UnitObject.arma.hash
