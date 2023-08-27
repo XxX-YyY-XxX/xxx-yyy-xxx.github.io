@@ -160,7 +160,6 @@ class Units {
         this.#regen = BASE.regen;
 
         const POT = stat_object.potential;
-        //this.#pothp = POT.hp;
         //this.#potatk = POT.atk;
         //this.#pothash = POT.hash;
         //this.#potpdef = POT.pdef;
@@ -169,15 +168,15 @@ class Units {
         //this.#potopen = POT.open;
         this.#potregen = POT.regen;
 
-        const STAT = "hp"
+        const STAT = "atk"
         console.log(
-            this.name, "HP:",
+            this.name, "Attack:",
             Math.floor(BASE[STAT] * 0.61) === POT[STAT],
             POT[STAT] / BASE[STAT]
         )
 
         const ARMA = stat_object.arma;
-        this.#hasarma = ARMA.icon === `./assets/images/arma/${this.name.replace(" ", "")}.png`;
+        //this.#hasarma = ARMA.icon === `./assets/images/arma/${this.name.replace(" ", "")}.png`;
         this.#armahp = ARMA.hp;
         this.#armaatk = ARMA.atk;
         this.#armahash = ARMA.hash;
@@ -188,16 +187,28 @@ class Units {
 
         this.#intistats = stat_object.intimacy;
 
-        this.row = document.createElement("tr");
-
         const TD_NAME = document.createElement("td");
-        if (this.#hasarma) {
-            const IMAGE = setattr(document.createElement("img"), {alt: `${this.name} arma.`, src: ARMA.icon});
-            const SPAN = setattr(document.createElement("span"), {append: [this.name, IMAGE], classList: {add: ["arma"]}})
-            TD_NAME.appendChild(SPAN);
-        } else {
+        //if (this.#hasarma) {
+        //    const IMAGE = setattr(document.createElement("img"), {alt: `${this.name} arma.`, src: ARMA.icon});
+        //    const SPAN = setattr(document.createElement("span"), {append: [this.name, IMAGE], classList: {add: ["arma"]}})
+        //    TD_NAME.appendChild(SPAN);
+        //} else {
+        //    TD_NAME.textContent = this.name;
+        //}
+
+        const IMAGE = document.createElement("img");
+        IMAGE.addEventListener("load", () => {
+            console.log(this.name, "has arma.")
+            this.#hasarma = true;
+            setattr(IMAGE, {loading: "lazy", alt: `${this.name} arma.`});
+            TD_NAME.appendChild(setattr(document.createElement("span"), {append: [this.name, IMAGE], classList: {add: ["arma"]}}));
+        });
+        IMAGE.addEventListener("error", () => {
+            console.log(this.name, "has no arma.")
+            this.#hasarma = false;
             TD_NAME.textContent = this.name;
-        }
+        });
+        IMAGE.src = `./assets/images/arma/${this.name.replace(" ", "")}.png`;
 
         const TD_HP = document.createElement("td");
         const TD_ATK = document.createElement("td");
@@ -234,6 +245,7 @@ class Units {
         }
         this.updateStat()
 
+        this.row = document.createElement("tr");
         this.row.append(
             TD_NAME,
             TD_HP,
@@ -258,21 +270,20 @@ class Units {
 
         //#privatefield cannot be called dynamically, use exec/eval instead
 
-        const I = document.createElement("img")
-        I.onload = () => console.log(this.name, "arma exists.")
-        I.onerror = () => console.log(this.name, "has no arma.")
-        I.src = ARMA.icon
-
         /* function loadImage (url, timeoutOrCallback, maybeCallback) {
             let timeout;
             let callback;
-          
-            if (typeof timeoutOrCallback === 'number') {
-              timeout = timeoutOrCallback;
-              if (typeof maybeCallback === 'function') callback = maybeCallback;
+
+            switch (typeof timeoutOrCallback) {
+                case "number":
+                    timeout = timeoutOrCallback;
+                    if (typeof maybeCallback === 'function') callback = maybeCallback;
+                    break;
+                case "function":
+                    callback = timeoutOrCallback;
+                    break;
             }
-            else if (typeof timeoutOrCallback === 'function') callback = timeoutOrCallback;
-          
+
             const promise = callback
               ? undefined
               : new Promise(resolve => void (callback = resolve));
@@ -295,7 +306,8 @@ class Units {
               clearTimeout(timerId);
               done = true;
               callback(true);
-            }, onlyRunOnce); */
+            }, onlyRunOnce);
+        } */
         
         /* function imageExists(url) {
             return new Promise(resolve => {
@@ -312,6 +324,10 @@ class Units {
             //                    => RESULT: exists=true */
     }
 }
+
+//class Algorithms {
+//    
+//}
 //#endregion
 
 //#region Function Declarations
