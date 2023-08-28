@@ -160,14 +160,13 @@ class Units {
         this.#regen = BASE.regen;
 
         const POT = stat_object.potential;
-        //this.#potodef = POT.odef;
         //this.#potppen = POT.ppen;
         //this.#potopen = POT.open;
         this.#potregen = POT.regen;
 
-        const STAT = "odef"
+        const STAT = "ppen"
         console.log(
-            this.name, "ODef:",
+            this.name, "PPen:",
             Math.floor(BASE[STAT] * 0.61) === POT[STAT],
             POT[STAT] / BASE[STAT]
         )
