@@ -160,16 +160,15 @@ class Units {
         this.#regen = BASE.regen;
 
         const POT = stat_object.potential;
-        //this.#pothash = POT.hash;
         //this.#potpdef = POT.pdef;
         //this.#potodef = POT.odef;
         //this.#potppen = POT.ppen;
         //this.#potopen = POT.open;
         this.#potregen = POT.regen;
 
-        const STAT = "hash"
+        const STAT = "pdef"
         console.log(
-            this.name,
+            this.name, "PDef:",
             Math.floor(BASE[STAT] * 0.61) === POT[STAT],
             POT[STAT] / BASE[STAT]
         )
@@ -186,18 +185,30 @@ class Units {
         this.#intistats = stat_object.intimacy;
 
         const TD_NAME = document.createElement("td");
-        const IMAGE = document.createElement("img");
-        IMAGE.addEventListener("load", () => {
+        //const IMAGE = document.createElement("img");
+        //IMAGE.addEventListener("load", () => {
+        //    this.#hasarma = true;
+        //    setattr(IMAGE, {loading: "lazy", alt: `${this.name} arma.`});
+        //    const SPAN = setattr(document.createElement("span"), {append: [this.name, IMAGE], classList: {add: ["arma"]}});
+        //    TD_NAME.appendChild(SPAN);
+        //});
+        //IMAGE.addEventListener("error", () => {
+        //    this.#hasarma = false;
+        //    TD_NAME.textContent = this.name;
+        //});
+        //IMAGE.src = `./assets/images/arma/${this.name.replace(" ", "")}.png`;
+
+        try {
             this.#hasarma = true;
-            setattr(IMAGE, {loading: "lazy", alt: `${this.name} arma.`});
+            const IMAGE = setattr(document.createElement("img"), {loading: "lazy", alt: `${this.name} arma.`, src: `./assets/images/arma/${this.name.replace(" ", "")}.png`});
             const SPAN = setattr(document.createElement("span"), {append: [this.name, IMAGE], classList: {add: ["arma"]}});
             TD_NAME.appendChild(SPAN);
-        });
-        IMAGE.addEventListener("error", () => {
+
+        } catch (error) {
+            console.log(error);
             this.#hasarma = false;
             TD_NAME.textContent = this.name;
-        });
-        IMAGE.src = `./assets/images/arma/${this.name.replace(" ", "")}.png`;
+        }
 
         const TD_HP = document.createElement("td");
         const TD_ATK = document.createElement("td");
