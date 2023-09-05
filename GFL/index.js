@@ -2,12 +2,12 @@ import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
 timer(
     document.getElementById("event"),
-    "Aug 28, 2023 23:59 UTC-0800",
-    "https://www.iopwiki.com/images/9/9d/Longitudinal_Strain_Login_Wallpaper.jpg",
+    "Sep 18, 2023 23:59 UTC-0800",
+    "./assets/images/timer/ujmrjucqfsib1.webp",
     {onEnd: timer.bind(
         null, document.getElementById("event"),
-        "Sep 18, 2023 23:59 UTC-0800",
-        "./assets/images/timer/ujmrjucqfsib1.webp"
+        "",
+        ""
     )}
 );
 
@@ -17,30 +17,30 @@ timer(
     "./assets/images/timer/BattlepassNow.webp",
     {onEnd: timer.bind(
         null, document.getElementById("battlepass"),
-        "",
-        "./assets/images/timer/BattlepassNext.webp"
+        "Oct 15, 2023 23:59 UTC-0800",
+        "./assets/images/timer/frontline-protocol-cloud-borne-wild-crane-preview-v0-pn0xk98rp5mb1.webp"
     )}
 );
 
 timer(
     document.getElementById("coalition"),
-    "Aug 28, 2023, 23:59 UTC-0800",
-    "./assets/images/coalition/AlinaMosasaurRider.webp", 
+    "Sep 18, 2023 23:59 UTC-0800",
+    "./assets/images/coalition/Scarecrow.webp", 
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
-        "Sep 18, 2023 23:59 UTC-0800",
-        "./assets/images/coalition/Scarecrow.webp"
+        "",
+        "./assets/images/coalition/.webp"
     )}
 );
 
 timer(
     document.getElementById('skin-banner'),
-    "Aug 28, 2023 23:59 UTC-0800",
-    "./assets/images/timer/SkinBannerNow.webp",
+    "Sep 25, 2023 23:59 UTC-0800",
+    "./assets/images/timer/a7bhcugaxlib1.webp",
     {onEnd: timer.bind(
         null, document.getElementById('skin-banner'),
-        "Sep 25, 2023 23:59 UTC-0800",
-        "./assets/images/timer/a7bhcugaxlib1.webp"
+        "",
+        "./assets/images/timer/.webp"
     )}
 );
 

@@ -4,6 +4,13 @@ import {zip, cmp, setattr} from "../univasset/scripts/basefunctions/index.js";
 
 /** @type {UnitObject[]} */ var UNITS = Async.getJSON('./units.json');
 
+//#region Constant Declarations
+/** @type {HTMLInputElement} */ const ARMA_BUTTON = document.querySelector(`#bonus [value="Arma"]`);
+/** @type {HTMLInputElement} */ const BOND_BUTTON = document.querySelector(`#bonus [value="Bond"]`);
+/** @type {HTMLInputElement} */ const SPEC_BUTTON = document.querySelector(`#bonus [value="Spec"]`);
+/** @type {HTMLInputElement} */ const POTB_BUTTON = document.querySelector(`#bonus [value="PotB"]`);
+//#endregion
+
 //#region Class Declarations
 class Units {
     name;
@@ -345,11 +352,6 @@ function sortMethod(event) {
 UNITS = (await UNITS).slice(0, -1);
 
 //#region Statistics Table
-/** @type {HTMLInputElement} */ const ARMA_BUTTON = document.querySelector(`#bonus [value="Arma"]`);
-/** @type {HTMLInputElement} */ const BOND_BUTTON = document.querySelector(`#bonus [value="Bond"]`);
-/** @type {HTMLInputElement} */ const SPEC_BUTTON = document.querySelector(`#bonus [value="Spec"]`);
-/** @type {HTMLInputElement} */ const POTB_BUTTON = document.querySelector(`#bonus [value="PotB"]`);
-
 const UNIT_LIST = UNITS.map(x => new Units(x));
 for (const UNIT of UNIT_LIST) {
     ARMA_BUTTON.addEventListener("change", () => UNIT.updateStat());
