@@ -1,6 +1,7 @@
 import {tableSort, brJoin, nestElements} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
 import {Async} from "../univasset/scripts/externaljavascript.js";
 import {zip, cmp, setattr} from "../univasset/scripts/basefunctions/index.js";
+//import {} from "./algorithms.js";
 
 /** @type {UnitObject[]} */ var UNITS = Async.getJSON('./units.json');
 
@@ -167,13 +168,12 @@ class Units {
         this.#regen = BASE.regen;
 
         const POT = stat_object.potential;
-        //this.#potppen = POT.ppen;
         //this.#potopen = POT.open;
         this.#potregen = POT.regen;
 
-        const STAT = "ppen"
+        const STAT = "open"
         console.log(
-            this.name, "PPen:",
+            this.name, "OPen:",
             Math.floor(BASE[STAT] * 0.61) === POT[STAT],
             POT[STAT] / BASE[STAT]
         )
@@ -187,7 +187,9 @@ class Units {
         this.#armappen = ARMA.ppen;
         this.#armaopen = ARMA.open;
 
-        this.#intistats = stat_object.intimacy;
+        const INTI = stat_object.intimacy;
+        this.#intistats = INTI;
+        if (INTI.length != 3) console.log(this.name, "lacks data: Intimacy");
 
         const TD_NAME = document.createElement("td");
         const IMAGE = document.createElement("img");
@@ -317,10 +319,6 @@ class Units {
             //                    => RESULT: exists=true */
     }
 }
-
-//class Algorithms {
-//    
-//}
 //#endregion
 
 //#region Function Declarations
