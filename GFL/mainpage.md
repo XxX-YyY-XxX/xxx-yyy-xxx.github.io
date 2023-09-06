@@ -458,7 +458,6 @@ https://old.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge
 
 https://old.reddit.com/r/girlsfrontline/comments/twps7w/weekly_commanders_lounge_april_05_2022/i3tv5gp/
 
-https://old.reddit.com/r/girlsfrontline/comments/twps7w/weekly_commanders_lounge_april_05_2022/i4a84l3/
 
 
 

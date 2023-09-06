@@ -768,7 +768,7 @@ export const cardData = [
     {
         id : '00062',
         questions : `When should I do T-Doll Heavy Production/craft shotguns?`,
-        answers : `Preferably during rate ups due to its high costs. Low priority otherwise since it's use at this stage of the game is for getting non-5${star} SGs and them not being widely used.`,
+        answers : `Preferably during rate ups due to its high costs. Low priority otherwise since it's use at this stage of the game is for getting non-5${star} SGs and them not being widely used. Recommended to use the high-cost shotgun recipe for better chances.`,
         tags : [dTag.TDOLL, dTag.PROD]
     },
     {
@@ -3213,7 +3213,7 @@ export const cardData = [
         questions : `Why are the gem package names incorrect/confusing?`,
         answers : `${link('Explanation 1.', 'https://www.reddit.com/r/girlsfrontline/comments/q1rscp/weekly_commanders_lounge_october_05_2021/hg3xpyr/')}<br>
         ${link('Explanation 2.', 'https://www.reddit.com/r/girlsfrontline/comments/mzjdl5/weekly_commanders_lounge_april_27_2021/gwrie7y/')}`,
-        tags : [dTag.GEMS]
+        tags : [dTag.GEMS, dTag.SHOP]
     },
     {
         id : '00406',
@@ -3650,11 +3650,28 @@ export const cardData = [
         tags : [dTag.SPEQ, dTag.GET]
     },
     {
+        id : '00460',
+        questions : `Should I level up my dolls' skills to 10?`,
+        answers : `Yes? Why would you not?<br>
+        If you're talking about NEED, depends on where you plan to use said doll. Some of them don't NEED them as much as the others.`,
+        tags : [dTag.TDOLL, dTag.SKILL]
+    },
+    {
+        id : '00461',
+        questions : `Where can I get echoes in Expolration/Expedition/Forward Basecamp?`,
+        answers : `Touch the large monitor where you can see dolls running/moving.`,
+        tags : [dTag.QUEST, dTag.EXPED]
+    },  //@Visual
+    {
+        id : '00128',
+        questions : `How do I stop my Kord/CMS/Dorothy from cycling through their skills?`,
+        answers : `Go to their Armory status page, tap the Forced Manual at the top-right of their skill to on/orange. Enjoy.`,
+        tags : [dTag.TDOLL, dTag.SKILL]
+    },  //@Visual
+    {
         id : '00000',
         questions : ``,
         answers : ``,
         tags : []
     },
 ];
-
-//00128
