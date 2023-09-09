@@ -43,34 +43,60 @@ input[type="checkbox"], input[type="radio"] {
 /* #endregion */
 
 /* #region Radio */
-#button {
+.tab-button {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
     border-style: initial;
 }
 
-#button > label {
+.tab-button > label {
     background-color: transparent;
     line-height: 10px;
     flex: calc(100% / 2);
 }
 
-#button > label:has(input:checked) {
+.tab-button > label:has(input:checked) {
     background-color: darkgreen;
 }
 
-#button h2 {
+.tab-button h2 {
     margin: 0px 0px 10px;
 }
+/* #endregion */
 
-.tab-body {
+/* #region Table tabs */
+#button ~ .tab-body {
     display: none;
 }
 
 #button:has([value="stat"]:checked) ~ #stat,
 #button:has([value="data"]:checked) ~ #data {
     display: revert;
+}
+/* #endregion */
+
+/* #region Algorithm tabs */
+#algo-modal {
+    border-radius: 10px;
+}
+
+#algo-modal > .tab-button {
+    display: none;
+}
+
+@media screen and (max-width: 720px) {
+    #algo-modal > .tab-body,
+    #algo-modal > .tab-body > span {
+        display: none;
+    }
+
+    #algo-modal > .tab-button,
+    #algo-modal > .tab-button:has([value="Offense"]:checked) ~ #Offense,
+    #algo-modal > .tab-button:has([value="Stability"]:checked) ~ #Stability,
+    #algo-modal > .tab-button:has([value="Special"]:checked) ~ #Special {
+        display: revert;
+    }
 }
 /* #endregion */
 

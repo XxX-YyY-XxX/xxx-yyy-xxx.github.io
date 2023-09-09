@@ -205,3 +205,56 @@ oXHR.send(); */
 
 //<th rowspan="3" colspan="2">Algorithm Stats</th>
 //<td colspan="2" align="center">2 Slot</td>
+
+/* function loadImage (url, timeoutOrCallback, maybeCallback) {
+    let timeout;
+    let callback;
+
+    switch (typeof timeoutOrCallback) {
+        case "number":
+            timeout = timeoutOrCallback;
+            if (typeof maybeCallback === 'function') callback = maybeCallback;
+            break;
+        case "function":
+            callback = timeoutOrCallback;
+            break;
+    }
+
+    const promise = callback
+        ? undefined
+        : new Promise(resolve => void (callback = resolve));
+    
+    const onlyRunOnce = {once: true};
+    let timerId = 0;
+    let done = false;
+    
+    if (typeof timeout === 'number') {
+        timerId = setTimeout(() => {
+        done = true;
+        callback(false);
+        }, timeout);
+    }
+    
+    const img = new Image();
+    
+    img.addEventListener('load', () => {
+        if (done) return;
+        clearTimeout(timerId);
+        done = true;
+        callback(true);
+    }, onlyRunOnce);
+} */
+
+/* function imageExists(url) {
+    return new Promise(resolve => {
+        var img = new Image()
+        img.addEventListener('load', () => resolve(true))
+        img.addEventListener('error', () => resolve(false))
+        img.src = url
+    })
+    }
+    
+    const url = 'http://www.google.com/images/srpr/nav_logo14.png'
+    imageExists(url)
+    .then(ok => console.log(`RESULT: exists=${ok}`))
+    //                    => RESULT: exists=true */

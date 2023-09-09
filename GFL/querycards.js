@@ -1312,7 +1312,7 @@ export const cardData = [
                 'Expedition.',
                 'Logistics (~19 weekly).',
                 'Achievements.',
-                'Mini-Events: Point Event (70), Keycard Event (20).',
+                'Mini-Events: Point Event (70), Keycard Event (70).',
                 'Major Event crate rewards.',
                 "Theater Point Rewards (70).",
                 'Shop. Especially when there is a seasonal/collab going on. Packages are also good.',
