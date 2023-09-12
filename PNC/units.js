@@ -11,6 +11,9 @@ import {UnitObject, STATS} from "./stats-type.js";
 /** @type {HTMLInputElement} */ const BOND_BUTTON = document.querySelector(`#bonus [value="Bond"]`);
 /** @type {HTMLInputElement} */ const SPEC_BUTTON = document.querySelector(`#bonus [value="Spec"]`);
 /** @type {HTMLInputElement} */ const POTB_BUTTON = document.querySelector(`#bonus [value="PotB"]`);
+
+/** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
+document.querySelector("#algo-modal > button").addEventListener("click", () => ALGO_MODAL.close());
 //#endregion
 
 //#region Class Declarations
@@ -209,6 +212,10 @@ class Units {
         // change name color if filled
         // show all on widescreen, tabs on narrow screen
         const TD_NAME = document.createElement("td");
+        TD_NAME.addEventListener("click", () => {
+            ALGO_MODAL.showModal()
+            //ALGO_MODAL.close()
+        })
         const IMAGE = document.createElement("img");
         IMAGE.addEventListener("load", () => {
             setattr(IMAGE, {loading: "lazy", alt: `${this.name} arma.`});
