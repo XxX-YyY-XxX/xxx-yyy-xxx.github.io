@@ -2263,6 +2263,45 @@
         },
         "intimacy": []
     },
+    {
+        "name": "Jiangyu",
+        "class": "Warrior",
+        "reference": {"Type 97": "https://iopwiki.com/wiki/Type_97"},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
+        "base": {
+            "hp": 19331,
+            "atk": 630,
+            "hash": 525,
+            "pdef": 479,
+            "odef": 479,
+            "aspd": 120,
+            "crate": 5,
+            "ppen": 398,
+            "open": 315,
+            "dodge": 5,
+            "regen": 610
+        },
+        "potential": {
+            "hp": 11791,
+            "atk": 384,
+            "hash": 320,
+            "pdef": 292,
+            "odef": 292,
+            "ppen": 242,
+            "open": 192,
+            "regen": 3301
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": []
+    },
 
     {
         "name": "Doll Name",

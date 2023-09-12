@@ -56,29 +56,34 @@
                     <p>All units at Lv.70 and 5★. Arma stats at Lv.30.<!-- Intimacy at Lv.15. Specialty at Lv.???. --></p>
                     <p>Data taken from <a href="http://wiki.42lab.cloud/w/%E5%BF%83%E6%99%BA%E4%BA%BA%E5%BD%A2%E5%9B%BE%E9%89%B4">42 wiki</a>.</p>
                 </div>
-                <dialog id="algo-modal">
-                    <div class="tab-button">
-                        <label><input type="radio" name="algorithms" value="Offense" checked/><h2>Offense</h2></label>
-                        <label><input type="radio" name="algorithms" value="Stability" /><h2>Stability</h2></label>        
-                        <label><input type="radio" name="algorithms" value="Special" /><h2>Special</h2></label>        
-                    </div>
-                    <div id="Offense" class="tab-body">
-                        <span>Offense</span>
-                    </div>
-                    <div id="Stability" class="tab-body">
-                        <span>Stability</span>
-                    </div>
-                    <div id="Special" class="tab-body">
-                        <span>Special</span>
-                    </div>
-                    <button type="button">Close</button>
-                </dialog>
 
                 <div id="data" class="tab-body">
                     <div class="table"></div>
                 </div>
             </section>
         </div>
+
+        <dialog id="algo-modal">
+            <span></span>
+            <div class="tab-button">
+                <label><input type="radio" name="algorithms" value="Offense" checked/><h2>Offense</h2></label>
+                <label><input type="radio" name="algorithms" value="Stability" /><h2>Stability</h2></label>        
+                <label><input type="radio" name="algorithms" value="Special" /><h2>Special</h2></label>        
+            </div>
+            <div id="Offense" class="tab-body">
+                <span>Offense</span>
+                <!-- 2x4 Grid -->
+            </div>
+            <div id="Stability" class="tab-body">
+                <span>Stability</span>
+                <!-- 2x4 Grid -->
+            </div>
+            <div id="Special" class="tab-body">
+                <span>Special</span>
+                <!-- 2x4 Grid -->
+            </div>
+            <button type="button">Close</button>
+        </dialog>
     </body>
 </html>
 
@@ -100,12 +105,6 @@
         "reference" : {"" : "King's Raid Jane"},
         "fragments" : ["Fragment Search"],
         "event" : "Halloween"
-    },
-    {
-        "name" : "Jiangyu (X)",
-        "reference" : {"Type 97" : "https://iopwiki.com/wiki/Type_97"},
-        "fragments" : ["Fragment Search"],
-        "event" : "CNY"
     },
     {
         "name" : "Yelena (X)",
@@ -157,6 +156,10 @@
     },
     {
         "name" : "Yuwang",
+        "reference" : {"" : ""}
+    },
+    {
+        "name" : "Persicaria - Shining Edge",
         "reference" : {"" : ""}
     },
 ] -->

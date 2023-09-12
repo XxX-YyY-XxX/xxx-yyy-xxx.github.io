@@ -1,6 +1,9 @@
 import {UnitObject, STATS} from "./stats-type.js";
 
 //#region Base
+/** @typedef {keyof MAINSTATS | keyof SUBSTATS} StatAttributes*/
+/** @typedef {[StatAttributes, number]} StatInfo */
+
 const MAINSTATS = {
     hpflat: 1800,   hpperc: 12,
     atkflat: 54,    atkperc: 12,
@@ -44,29 +47,40 @@ const SUBSTATS = {
 }
 
 class Algorithm {
-    /** @type {[string, "add" | "mul", number] | null}*/ EFFECT2;
+    /** @type {StatInfo?}*/ SET2;
 
     constructor() {
         this.#substat = new Array(2);
     }
 
-    /** @param {string?} attribute @returns {number} */
-    _mainstat(attribute = null) {
+    /** @param {StatAttributes?} attribute @returns {StatInfo} */
+    mainstat(attribute = null) {
         if (attribute)
-            this.#mainstat = [attribute, MAINSTATS[attribute]];
-        return this.#mainstat;
+            this.#mainstat = attribute;
+        return [this.#mainstat, MAINSTATS[this.#mainstat]];
     }
 
-    /** @param {number} position @param {string?} attribute @returns {number} */
-    _substat(position, attribute = null) {
+    /** @param {number} position @param {StatAttributes?} attribute @returns {StatInfo} */
+    substat(position, attribute = null) {
         if (attribute)
-            this.#substat[position] = [attribute, SUBSTATS[attribute]];
-        return this.#substat[position];
+            this.#substat[position] = attribute;
+        return [this.#substat[position], SUBSTATS[this.#substat[position]]];
     }
 
+    /** @param {UnitObject} unitstats @return {{[attributes: keyof STATS]: number | undefined}} */
     output(unitstats) {
+        const stats = {};
+        for (const [attr, value] of [this.SET2, this.mainstat(), ...this.#substat.map(x => [x, SUBSTATS[x]])].filter())
+            stats[attr] = (stats[attr] ?? 0) + value;
         const out = {};
         
+        for (const [unitattr, unitvalue] of Object.entries(unitstats.base)) {
+            if ([STATS.HEALTH, STATS.ATTACK, STATS.HASHRATE, STATS.PDEFENSE, STATS.ODEFENSE, STATS.PPENETRATE, STATS.OPENETRATE].includes(unitattr))
+                out[unitattr] = unitvalue * (stats[unitattr+"perc"] ?? 0) + (stats[unitattr+"flat"] ?? 0);
+            else
+                out[unitattr] = stats[unitattr+"perc"] ?? stats[unitattr+"flat"] ?? 0;
+        }
+        return out;
     }
 }
 //#endregion
@@ -78,64 +92,64 @@ class Algorithm {
 class Offense extends Algorithm {
     /** @param {OffenseMainstat?} attribute @returns {number} */
     mainstat(attribute = null) {
-        return super._mainstat(attribute);
+        return super.mainstat(attribute);
     }
 
     /** @param {OffenseSubstat?} attribute @returns {number} */
     substat1(attribute = null) {
-        return super._substat(0, attribute);
+        return super.substat(0, attribute);
     }
 
     /** @param {OffenseSubstat?} attribute @returns {number} */
     substat2(attribute = null) {
-        return super._substat(1, attribute);
+        return super.substat(1, attribute);
     }
 }
 
 export class Offense1Slot extends Algorithm {
-    EFFECT2 = null;
+    SET2 = null;
 
     /** @param {OffenseMainstat?} attribute @returns {number} */
     mainstat(attribute = null) {
-        return super._mainstat(attribute) / 2;
+        return super.mainstat(attribute) / 2;
     }
 
     /** @param {OffenseSubstat?} attribute @returns {number} */
     substat(attribute = null) {
-        return super._substat(0, attribute);
+        return super.substat(0, attribute);
     }
 }
 
 export class FeedForward extends Offense {
-    EFFECT2 = ["atk", "mul", 15];
+    SET2 = ["atkperc", 15];
 }
 
 export class Progression extends Offense {
-    EFFECT2 = ["hash", "mul", 15];
+    SET2 = ["hashperc", 15];
 }
 
 export class Stack extends Offense {
-    EFFECT2 = ["hash", "mul", 15];
+    SET2 = ["hashperc", 15];
 }
 
 export class Deduction extends Offense {
-    EFFECT2 = ["aspd", "add", 30];
+    SET2 = ["aspdflat", 30];
 }
 
 export class DataRepair extends Offense {
-    EFFECT2 = ["res", "add", 30];
+    SET2 = ["resflat", 30];
 }
 
 export class MLRMatrix extends Offense {
-    EFFECT2 = ["dboost", "add", 5];
+    SET2 = ["dboostperc", 5];
 }
 
 export class LimitValue extends Offense {
-    EFFECT2 = ["dboost", "add", 5];
+    SET2 = ["dboostperc", 5];
 }
 
 export class LowerLimit extends Offense {
-    EFFECT2 = null;
+    SET2 = null;
 }
 //#endregion
 
@@ -146,64 +160,64 @@ export class LowerLimit extends Offense {
 class Stability extends Algorithm {
     /** @param {StabilityMainstat?} attribute @returns {number} */
     mainstat(attribute) {
-        return super._mainstat(attribute);
+        return super.mainstat(attribute);
     }
 
     /** @param {StabilitySubstat?} attribute @returns {number} */
     substat1(attribute) {
-        return super._substat(0, attribute);
+        return super.substat(0, attribute);
     }
 
     /** @param {StabilitySubstat?} attribute @returns {number} */
     substat2(attribute) {
-        return super._substat(1, attribute);
+        return super.substat(1, attribute);
     }
 }
 
 export class Stability1Slot extends Algorithm {
-    EFFECT2 = null;
+    SET2 = null;
 
     /** @param {StabilityMainstat?} attribute @returns {number} */
     mainstat(attribute) {
-        return super._mainstat(attribute) / 2;
+        return super.mainstat(attribute) / 2;
     }
 
     /** @param {StabilitySubstat?} attribute @returns {number} */
     substat(attribute) {
-        return super._substat(0, attribute);
+        return super.substat(0, attribute);
     }
 }
 
 export class Perception extends Stability {
-    EFFECT2 = ["hp", "mul", 15];
+    SET2 = ["hpperc", 15];
 }
 
 export class Rationality extends Stability {
-    EFFECT2 = ["pdef", "mul", 15];
+    SET2 = ["pdefperc", 15];
 }
 
 export class Connection extends Stability {
-    EFFECT2 = ["res", "add", 50];
+    SET2 = ["resflat", 50];
 }
 
 export class Iteration extends Stability {
-    EFFECT2 = ["lash", "add", 5];
+    SET2 = ["lashperc", 5];
 }
 
 export class Reflection extends Stability {
-    EFFECT2 = ["lash", "add", 5];
+    SET2 = ["lashperc", 5];
 }
 
 export class Encapsulate extends Stability {
-    EFFECT2 = ["dreduc", "add", 5];
+    SET2 = ["dreducperc", 5];
 }
 
 export class Reflection extends Stability {
-    EFFECT2 = ["dreduc", "add", 5];
+    SET2 = ["dreducperc", 5];
 }
 
 export class Overflow extends Stability {
-    EFFECT2 = null;
+    SET2 = null;
 }
 //#endregion
 
@@ -214,67 +228,67 @@ export class Overflow extends Stability {
 class Special extends Algorithm {
     /** @param {SpecialMainstat?} attribute @returns {number} */
     mainstat(attribute) {
-        return super._mainstat(attribute);
+        return super.mainstat(attribute);
     }
 
     /** @param {SpecialSubstat?} attribute @returns {number} */
     substat1(attribute) {
-        return super._substat(0, attribute);
+        return super.substat(0, attribute);
     }
 
     /** @param {SpecialSubstat?} attribute @returns {number} */
     substat2(attribute) {
-        return super._substat(1, attribute);
+        return super.substat(1, attribute);
     }
 }
 
 export class Stability1Slot extends Algorithm {
-    EFFECT2 = null;
+    SET2 = null;
 
     /** @param {SpecialMainstat?} attribute @returns {number} */
     mainstat(attribute) {
-        return super._mainstat(attribute) / 2;
+        return super.mainstat(attribute) / 2;
     }
 
     /** @param {SpecialSubstat?} attribute @returns {number} */
     substat(attribute) {
-        return super._substat(0, attribute);
+        return super.substat(0, attribute);
     }
 }
 
 export class Paradigm extends Special {
-    EFFECT2 = ["aspd", "add", 30];
+    SET2 = ["aspdflat", 30];
 }
 
 export class Cluster extends Special {
-    EFFECT2 = ["crate", "add", 10];
+    SET2 = ["crateperc", 10];
 }
 
 export class Convolution extends Special {
-    EFFECT2 = ["cdmg", "add", 20];
+    SET2 = ["cdmgperc", 20];
 }
 
 export class Stratagem extends Special {
-    EFFECT2 = ["dodge", "add", 8];
+    SET2 = ["dodgeperc", 8];
 }
 
 export class DeltaV extends Special {
-    EFFECT2 = ["haste", "add", 10];
+    SET2 = ["hasteperc", 10];
 }
 
 export class Exploit extends Special {
-    EFFECT2 = ["haste", "add", 10];
+    SET2 = ["hasteperc", 10];
 }
 
 export class LoopGain extends Special {
-    EFFECT2 = ["hboost", "add", 7.5];
+    SET2 = ["hboostperc", 7.5];
 }
 
 export class SVM extends Special {
-    EFFECT2 = ["hboost", "add", 7.5];
+    SET2 = ["hboostperc", 7.5];
 }
 
 export class Inspiration extends Special {
-    EFFECT2 = null;
+    SET2 = null;
 }
 //#endregion

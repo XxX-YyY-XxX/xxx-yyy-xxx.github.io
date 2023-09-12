@@ -85,7 +85,7 @@ input[type="checkbox"], input[type="radio"] {
     display: none;
 }
 
-@media screen and (max-width: 720px) {
+/* @media screen and (max-width: 720px) {
     #algo-modal > .tab-body,
     #algo-modal > .tab-body > span {
         display: none;
@@ -97,7 +97,7 @@ input[type="checkbox"], input[type="radio"] {
     #algo-modal > .tab-button:has([value="Special"]:checked) ~ #Special {
         display: revert;
     }
-}
+} */
 /* #endregion */
 
 /* #region Arma */
