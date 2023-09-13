@@ -3,6 +3,7 @@ import {UnitObject, STATS} from "./stats-type.ts";
 //#region Base
 /** @typedef {keyof MAINSTATS | keyof SUBSTATS} StatAttributes*/
 /** @typedef {[StatAttributes, number]} StatInfo */
+/** @typedef {STATS[keyof STATS]} StatNames */
 
 const MAINSTATS = {
     hpflat: 1800,   hpperc: 12,
@@ -67,7 +68,7 @@ class Algorithm {
         return [this.#substat[position], SUBSTATS[this.#substat[position]]];
     }
 
-    /** @param {UnitObject} unitstats @return {{[attributes: keyof STATS]: number | undefined}} */
+    /** @param {UnitObject} unitstats @return {{StatNames: number | undefined}} */
     output(unitstats) {
         const stats = {};
         for (const [attr, value] of [this.SET2, this.mainstat(), ...this.#substat.map(x => [x, SUBSTATS[x]])].filter())
