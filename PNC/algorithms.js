@@ -1,4 +1,4 @@
-import {UnitObject, STATS} from "./stats-type.js";
+import {STATS} from "./stats-type.js";
 
 //#region Base
 /** @typedef {keyof MAINSTATS | keyof SUBSTATS} StatAttributes*/
@@ -292,4 +292,47 @@ export class SVM extends Special {
 export class Inspiration extends Special {
     SET2 = null;
 }
+//#endregion
+
+//#region Typed Definitions
+/** @typedef {"Code Robustness" | "Power Connection" | "Neural Activation" | "Shield of Friendship" | "Coordinated Strike" | "Victorious Inspiration" | "Risk Evasion Aid" | "Mechanical Celerity" | "Coordinated Formation" | "Through Fire and Water" | "Healing Bond"} IntimacyStats */
+
+/**
+ * @typedef UnitObject
+ * @property {string} UnitObject.name
+ * @property {"Guard" | "Sniper" | "Warrior" | "Specialist" | "Medic"} UnitObject.class
+ * @property {{[linkname: string]: [linkurl: string]}} UnitObject.reference
+ * @property {string[]} UnitObject.fragments
+
+ * @property {number} UnitObject.base.hp
+ * @property {number} UnitObject.base.atk
+ * @property {number} UnitObject.base.hash
+ * @property {number} UnitObject.base.pdef
+ * @property {number} UnitObject.base.odef
+ * @property {number} UnitObject.base.aspd
+ * @property {number} UnitObject.base.crate
+ * @property {number} UnitObject.base.ppen
+ * @property {number} UnitObject.base.open
+ * @property {number} UnitObject.base.dodge
+ * @property {number} UnitObject.base.regen
+
+ * @property {number} UnitObject.potential.hp
+ * @property {number} UnitObject.potential.atk
+ * @property {number} UnitObject.potential.hash
+ * @property {number} UnitObject.potential.pdef
+ * @property {number} UnitObject.potential.odef
+ * @property {number} UnitObject.potential.ppen
+ * @property {number} UnitObject.potential.open
+ * @property {number} UnitObject.potential.regen
+
+ * @property {number} UnitObject.arma.hp
+ * @property {number} UnitObject.arma.atk
+ * @property {number} UnitObject.arma.hash
+ * @property {number} UnitObject.arma.pdef
+ * @property {number} UnitObject.arma.odef
+ * @property {number} UnitObject.arma.ppen
+ * @property {number} UnitObject.arma.open
+
+ * @property {[IntimacyStats, IntimacyStats, IntimacyStats]} UnitObject.intimacy
+*/
 //#endregion
