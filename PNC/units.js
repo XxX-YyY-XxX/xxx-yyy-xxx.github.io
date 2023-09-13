@@ -17,10 +17,10 @@ document.querySelector("#algo-modal > button").addEventListener("click", functio
     console.log("Closed via button.")
     ALGO_MODAL.close()
 });
-document.querySelector(".ui-widget-overlay").addEventListener("click", function() {
+/* document.querySelector(".ui-widget-overlay").addEventListener("click", function() {
     console.log("Closed via overlay.")
     ALGO_MODAL.close()
-})
+}) */
 //#endregion
 
 //#region Class Declarations
