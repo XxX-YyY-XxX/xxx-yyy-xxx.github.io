@@ -277,6 +277,14 @@ export const cardData = [
     //#endregion
     //#region Tier Lists
     {
+        id : '00464',
+        questions : `Is there a tier list for this game?`,
+        answers : `${link("CN spreadsheet.", "https://shimo.im/sheets/47kgJne6BeIpR4qV")}<br>
+        Take them more as a suggestion rather than a rule. Tier lists are usually for those generally ok in majority of content or very good at highly recurring niche.<br>
+        It's better to know which units are good based on countering enemies and their formations.`,
+        tags : [dTag.TIER]
+    },
+    {
         id : '00014',
         questions : `Is XXX doll good and is it safe to retire them?`,
         answers : `Tier lists in general are a matter of countering enemies. And since the meta of this game varies wildly from event to event, most people would point to analysis links instead.<br>
@@ -807,7 +815,7 @@ export const cardData = [
         id : '00067',
         questions : `Which dolls should I dupe/duplicate?`,
         answers : `${link('Matsuda notes.', 'https://gfl.matsuda.tips/post/worthwhiledupes')}<br>
-        ${link('Gamepress suggestions.', 'https://gamepress.gg/girlsfrontline/t-doll-duping-guide')} Some details may not be applicable.<br>
+        ${link("Gamepress suggestions for dolls and coalition units.", "https://gamepress.gg/girlsfrontline/duping-recommendations-and-coalition-mooks")}<br>
         ${spoilerSummary('Discord recommendations.', image('https://cdn.discordapp.com/attachments/640157367056728133/1048531902065287188/dupe_gameing_pt3.png'))}`,
         tags : [dTag.TDOLL]
     },  //Jesse, Varz, etc.
@@ -2313,7 +2321,8 @@ export const cardData = [
             "Pekola": [spoilerSummary(`"How to use" guide.`, image("./assets/images/PekolaUse.png"))],
             "M1897 Mod": [link("Flechette Storm!", "https://old.reddit.com/r/girlsfrontline/comments/osihvd/weekly_commanders_lounge_july_27_2021/h72czw7/")],
             "P90": [spoilerSummary("Document by hina#8787", Embed.google(Embed.G_WORD, "1j5YzAAZ-_Q1bXMUvFKGUWnGgqwacatABv0u-MmY0JLw"))],
-            "Galil Mod": [link("Reddit discussion", "https://old.reddit.com/r/girlsfrontline/comments/qpyw46/weekly_commanders_lounge_november_09_2021/hkj3ce0/")]
+            "Galil Mod": [link("Reddit discussion", "https://old.reddit.com/r/girlsfrontline/comments/qpyw46/weekly_commanders_lounge_november_09_2021/hkj3ce0/")],
+            "NTW MOD": ["Second skill kicks in as long as the kill check is satisfied."]
         })}`,
         tags : [dTag.TDOLL, dTag.SKILL]
     },
@@ -3492,9 +3501,9 @@ export const cardData = [
     {
         id : '00445',
         questions : `What do I do with unused Keycards during the bingo event?`,
-        answers : `Keep them. You'll get 5 Calibration Tickets per 1 Unused Keycard. Points go to trash. Source: Game info tab.`,
+        answers : `${image("./assets/images/query/KeyCardRules.png", "Rule #7: 1 Key Card = 5 Calibration Tickets")}`,
         tags : [dTag.MINI]
-    },  //@Visual
+    },
     {
         id : '00057',
         questions : `Where can I see rankings?`,
@@ -3653,12 +3662,13 @@ export const cardData = [
         id : '00460',
         questions : `Should I level up my dolls' skills to 10?`,
         answers : `Yes? Why would you not?<br>
-        If you're talking about NEED, depends on where you plan to use said doll. Some of them don't NEED them as much as the others.`,
+        If you're talking about NEED, depends on where you plan to use said doll. Some of them don't NEED them as much as the others.<br>
+        ${link("BigStupidJellyfish analysis.", "https://big-stupid-jellyfish.github.io/GFMath/pages/skill-levels")}`,
         tags : [dTag.TDOLL, dTag.SKILL]
     },
     {
         id : '00461',
-        questions : `Where can I get echoes in Expolration/Expedition/Forward Basecamp?`,
+        questions : `Where can I get echoes in Exploration/Expedition/Forward Basecamp?`,
         answers : `Touch the large monitor where you can see dolls running/moving.`,
         tags : [dTag.QUEST, dTag.EXPED]
     },  //@Visual
@@ -3668,6 +3678,51 @@ export const cardData = [
         answers : `Go to their Armory status page, tap the Forced Manual at the top-right of their skill to on/orange. Enjoy.`,
         tags : [dTag.TDOLL, dTag.SKILL]
     },  //@Visual
+    {
+        id : '00462',
+        questions : `How do I unlock Chapter 4 of Continuum Turbulence?`,
+        answers : `Clear all previous maps.`,   //Pending
+        tags : [dTag.CAMPAIGN]
+    },
+    {
+        id : '00463',
+        questions : `Which equipment goes to which slot?`,
+        answers : `${List.description({
+            "Accessory": [
+                "Sniper Optics",
+                "Red Dot",
+                "Holosight",
+                "RMR",
+                "Suppressor",
+                "NV Laser",
+                "Tactical Light"
+            ],
+            "Ammunition": [
+                "High-Velocity",
+                "Hollow Point",
+                "Flare",
+                "Armor-Piercing",
+                "Sniper Ammo",
+                "SLAP",
+                "Slug",
+                "Buckshot",
+                "Flash",
+                "Birdshot"
+            ],
+            "Body": [
+                "T-Exo",
+                "X-Exo",
+                "#2 Chip",
+                "Focus Chip",
+                "Cape",
+                "Rangefinder",
+                "Ammo Box",
+                "Bipod",
+                "Body Armor"
+            ]
+        })}`,
+        tags : [dTag.EQUIP, dTag.NEWB]
+    },
     {
         id : '00000',
         questions : ``,

@@ -13,23 +13,23 @@ timer(
 
 timer(
     document.getElementById("battlepass"),
-    "Sep 10, 2023 23:59 UTC-0800",
-    "./assets/images/timer/BattlepassNow.webp",
+    "Oct 15, 2023 23:59 UTC-0800",
+    "./assets/images/timer/frontline-protocol-cloud-borne-wild-crane-preview-v0-pn0xk98rp5mb1.webp",
     {onEnd: timer.bind(
         null, document.getElementById("battlepass"),
-        "Oct 15, 2023 23:59 UTC-0800",
-        "./assets/images/timer/frontline-protocol-cloud-borne-wild-crane-preview-v0-pn0xk98rp5mb1.webp"
+        "",
+        ""
     )}
 );
 
 timer(
     document.getElementById("coalition"),
     "Sep 18, 2023 23:59 UTC-0800",
-    "./assets/images/coalition/Scarecrow.webp", 
+    "./assets/images/coalition/01Scarecrow.webp", 
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
-        "",
-        "./assets/images/coalition/.webp"
+        "Oct 16, 2023 23:59 UTC-0800",
+        "./assets/images/coalition/02Executioner.webp"
     )}
 );
 
