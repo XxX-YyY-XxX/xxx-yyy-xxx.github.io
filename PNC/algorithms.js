@@ -1,4 +1,4 @@
-import {UnitObject, STATS} from "./stats-type.ts";
+import {UnitObject, STATS} from "./stats-type.js";
 
 //#region Base
 /** @typedef {keyof MAINSTATS | keyof SUBSTATS} StatAttributes*/
