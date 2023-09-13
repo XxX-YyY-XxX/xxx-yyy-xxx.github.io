@@ -2,7 +2,7 @@ import {tableSort, brJoin, nestElements} from '../univasset/scripts/htmlgenerato
 import {Async} from "../univasset/scripts/externaljavascript.js";
 import {zip, cmp, setattr} from "../univasset/scripts/basefunctions/index.js";
 //import {} from "./algorithms.js";
-import {UnitObject, STATS} from "./stats-type.js";
+import {UnitObject, STATS} from "./stats-type.ts";
 
 /** @type {UnitObject[]} */ var UNITS = Async.getJSON('./units.json');
 
