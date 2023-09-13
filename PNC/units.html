@@ -64,25 +64,27 @@
         </div>
 
         <dialog id="algo-modal">
-            <span></span>
-            <div class="tab-button">
-                <label><input type="radio" name="algorithms" value="Offense" checked/><h2>Offense</h2></label>
-                <label><input type="radio" name="algorithms" value="Stability" /><h2>Stability</h2></label>        
-                <label><input type="radio" name="algorithms" value="Special" /><h2>Special</h2></label>        
+            <div>
+                <span></span>
+                <div class="tab-button">
+                    <label><input type="radio" name="algorithms" value="Offense" checked/><h2>Offense</h2></label>
+                    <label><input type="radio" name="algorithms" value="Stability" /><h2>Stability</h2></label>        
+                    <label><input type="radio" name="algorithms" value="Special" /><h2>Special</h2></label>        
+                </div>
+                <div id="Offense" class="tab-body">
+                    <span>Offense</span>
+                    <div class="algo-grid"></div>
+                </div>
+                <div id="Stability" class="tab-body">
+                    <span>Stability</span>
+                    <div class="algo-grid"></div>
+                </div>
+                <div id="Special" class="tab-body">
+                    <span>Special</span>
+                    <div class="algo-grid"></div>
+                </div>
+                <button type="button">Close</button>
             </div>
-            <div id="Offense" class="tab-body">
-                <span>Offense</span>
-                <!-- 2x4 Grid -->
-            </div>
-            <div id="Stability" class="tab-body">
-                <span>Stability</span>
-                <!-- 2x4 Grid -->
-            </div>
-            <div id="Special" class="tab-body">
-                <span>Special</span>
-                <!-- 2x4 Grid -->
-            </div>
-            <button type="button">Close</button>
         </dialog>
     </body>
 </html>

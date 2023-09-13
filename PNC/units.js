@@ -13,14 +13,15 @@ import {STATS} from "./stats-type.js";
 /** @type {HTMLInputElement} */ const POTB_BUTTON = document.querySelector(`#bonus [value="PotB"]`);
 
 /** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
+/** @type {HTMLDivElement} */ const ALGO_DIV = ALGO_MODAL.firstElementChild;
 document.querySelector("#algo-modal > button").addEventListener("click", function() {
     console.log("Closed via button.")
     ALGO_MODAL.close()
 });
-/* document.querySelector(".ui-widget-overlay").addEventListener("click", function() {
+ALGO_MODAL.addEventListener("click", function() {
     console.log("Closed via overlay.")
     ALGO_MODAL.close()
-}) */
+});
 //#endregion
 
 //#region Class Declarations
@@ -190,15 +191,10 @@ class Units {
         this.#regen = BASE.regen;
 
         const POT = stat_object.potential;
-        //this.#potopen = POT.open;
         this.#potregen = POT.regen;
 
-        const STAT = "open"
-        console.log(
-            this.name, "OPen:",
-            Math.floor(BASE[STAT] * 0.61) === POT[STAT],
-            POT[STAT] / BASE[STAT]
-        )
+        const STAT = "regen"
+        console.log(this.name, POT[STAT], BASE[STAT], this.class, POT[STAT] / BASE[STAT] * 100)
 
         const ARMA = stat_object.arma;
         this.#armahp = ARMA.hp;
@@ -220,7 +216,7 @@ class Units {
         const TD_NAME = document.createElement("td");
         TD_NAME.addEventListener("click", () => {
             ALGO_MODAL.showModal()
-            ALGO_MODAL.firstElementChild.textContent = this.name;
+            ALGO_DIV.firstElementChild.textContent = this.name;
         })
 
         const IMAGE = document.createElement("img");

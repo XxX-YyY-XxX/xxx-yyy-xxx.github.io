@@ -9,6 +9,11 @@ input[type="checkbox"], input[type="radio"] {
     margin: 0;
 }
 
+dialog {
+    border: 0;
+    padding: 0;
+}
+
 /* #region Freeze */
 .freeze-row th {
     background: #1b1b1b !important;
@@ -83,6 +88,30 @@ input[type="checkbox"], input[type="radio"] {
 
 #algo-modal > .tab-button {
     display: none;
+}
+
+#algo-modal .tab-body {
+    display: inline-block;
+}
+
+.algo-grid {
+    --gridsize: 50px;
+    display: grid;
+    grid-template-columns: repeat(8, var(--gridsize));
+    grid-auto-rows: var(--gridsize);
+    gap: 5px;
+}
+
+#algo0 {
+    background: gray;
+}
+
+#algo1 {
+    background: white;
+}
+
+#algo2 {
+    background: white;
 }
 
 /* @media screen and (max-width: 720px) {
