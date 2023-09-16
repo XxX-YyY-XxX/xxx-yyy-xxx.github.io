@@ -232,7 +232,7 @@ class Units {
         const POT = stat_object.potential;
         this.#potregen = POT.regen;
 
-        console.log(this.name, POT.regen, BASE.hp, this.class, POT.regen / BASE.hp)
+        console.log(this.name, POT.regen, this.class, {"Guard": 3584, "Sniper": 1084, "Warrior": 3301, "Specialist": 1485, "Medic": 1075}[this.class] === POT.regen)
 
         const ARMA = stat_object.arma;
         this.#armahp = ARMA.hp;
@@ -245,7 +245,7 @@ class Units {
 
         const INTI = stat_object.intimacy;
         this.#intistats = INTI;
-        if (INTI.length != 3) console.log(this.name, "lacks data: Intimacy");
+        if (INTI.length != 3) console.warn(this.name, "lacks data: Intimacy");
 
         //this.#algofield = new AlgoField(stat_object);
 
