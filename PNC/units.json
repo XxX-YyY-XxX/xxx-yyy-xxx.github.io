@@ -1134,7 +1134,7 @@
     {
         "name": "Hubble",
         "class": "Sniper",
-        "reference": {"Hubble Space Telescope": "https://en.wikipedia.org/wiki/Hubble_Space_Telescope"},
+        "reference": {"Edwin Hubble": "https://en.wikipedia.org/wiki/Edwin_Hubble"},
         "fragments": ["Neural Kits", "Intimacy", "Fragment Search", "Basic Search"],
         "base": {
             "hp": 11671,
