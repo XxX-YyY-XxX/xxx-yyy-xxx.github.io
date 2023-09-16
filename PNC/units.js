@@ -13,8 +13,10 @@ import {STATS} from "./stats-type.js";
  * @typedef UnitObject
  * @property {string} UnitObject.name
  * @property {"Guard" | "Sniper" | "Warrior" | "Specialist" | "Medic"} UnitObject.class
- * @property {{[linkname: string]: [linkurl: string]}} UnitObject.reference
+ * @property {{[linkname: string]: string}} UnitObject.reference
  * @property {string[]} UnitObject.fragments
+
+ * @property {object} UnitObject.base
  * @property {number} UnitObject.base.hp
  * @property {number} UnitObject.base.atk
  * @property {number} UnitObject.base.hash
@@ -26,14 +28,8 @@ import {STATS} from "./stats-type.js";
  * @property {number} UnitObject.base.open
  * @property {number} UnitObject.base.dodge
  * @property {number} UnitObject.base.regen
- * @property {number} UnitObject.potential.hp
- * @property {number} UnitObject.potential.atk
- * @property {number} UnitObject.potential.hash
- * @property {number} UnitObject.potential.pdef
- * @property {number} UnitObject.potential.odef
- * @property {number} UnitObject.potential.ppen
- * @property {number} UnitObject.potential.open
- * @property {number} UnitObject.potential.regen
+
+ * @property {object} UnitObject.arma
  * @property {number} UnitObject.arma.hp
  * @property {number} UnitObject.arma.atk
  * @property {number} UnitObject.arma.hash
@@ -41,6 +37,7 @@ import {STATS} from "./stats-type.js";
  * @property {number} UnitObject.arma.odef
  * @property {number} UnitObject.arma.ppen
  * @property {number} UnitObject.arma.open
+
  * @property {[IntimacyStats, IntimacyStats, IntimacyStats]} UnitObject.intimacy
 */
 //#endregion
@@ -159,10 +156,10 @@ class Units {
         return output;
     }
 
-    #regen; #potregen;
+    #regen;
     get [STATS.POSTHEAL]() {
         var output = this.#regen;
-        if (POTB_BUTTON.checked) output += this.#potregen;
+        if (POTB_BUTTON.checked) output += {"Guard": 3584, "Sniper": 1084, "Warrior": 3301, "Specialist": 1485, "Medic": 1075}[this.class];
         return output;
     }
 
@@ -228,11 +225,6 @@ class Units {
         this.#open = BASE.open;
         this.#dodge = BASE.dodge;
         this.#regen = BASE.regen;
-
-        const POT = stat_object.potential;
-        this.#potregen = POT.regen;
-
-        console.log(this.name, POT.regen, this.class, {"Guard": 3584, "Sniper": 1084, "Warrior": 3301, "Specialist": 1485, "Medic": 1075}[this.class] === POT.regen)
 
         const ARMA = stat_object.arma;
         this.#armahp = ARMA.hp;

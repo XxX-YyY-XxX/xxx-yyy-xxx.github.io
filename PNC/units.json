@@ -17,16 +17,6 @@
             "dodge": 7,
             "regen": 406
         },
-        "potential": {
-            "hp": 7829,
-            "atk": 279,
-            "hash": 366,
-            "pdef": 177,
-            "odef": 178,
-            "ppen": 85,
-            "open": 85,
-            "regen": 1075
-        },
         "arma": {
             "hp": -1,
             "atk": -1,
@@ -55,16 +45,6 @@
             "open": 347,
             "dodge": 3,
             "regen": 546
-        },
-        "potential": {
-            "hp": 10507,
-            "atk": 334,
-            "hash": 342,
-            "pdef": 216,
-            "odef": 228,
-            "ppen": 209,
-            "open": 211,
-            "regen": 1485
         },
         "arma": {
             "hp": 2400,
@@ -95,16 +75,6 @@
             "dodge": 5,
             "regen": 610
         },
-        "potential": {
-            "hp": 11791,
-            "atk": 338,
-            "hash": 357,
-            "pdef": 269,
-            "odef": 272,
-            "ppen": 250,
-            "open": 251,
-            "regen": 3301
-        },
         "arma": {
             "hp": -1,
             "atk": -1,
@@ -133,16 +103,6 @@
             "open": 436,
             "dodge": 0,
             "regen": 364
-        },
-        "potential": {
-            "hp": 7119,
-            "atk": 378,
-            "hash": 320,
-            "pdef": 158,
-            "odef": 166,
-            "ppen": 281,
-            "open": 265,
-            "regen": 1084
         },
         "arma": {
             "hp": -1,
@@ -173,16 +133,6 @@
             "dodge": 10,
             "regen": 728
         },
-        "potential": {
-            "hp": 13779,
-            "atk": 234,
-            "hash": 355,
-            "pdef": 504,
-            "odef": 370,
-            "ppen": 142,
-            "open": 136,
-            "regen": 3584
-        },
         "arma": {
             "hp": 4518,
             "atk": 77,
@@ -211,16 +161,6 @@
             "open": 461,
             "dodge": 0,
             "regen": 349
-        },
-        "potential": {
-            "hp": 6968,
-            "atk": 371,
-            "hash": 367,
-            "pdef": 136,
-            "odef": 137,
-            "ppen": 260,
-            "open": 281,
-            "regen": 1084
         },
         "arma": {
             "hp": -1,
@@ -251,16 +191,6 @@
             "dodge": 6,
             "regen": 637
         },
-        "potential": {
-            "hp": 12158,
-            "atk": 349,
-            "hash": 334,
-            "pdef": 291,
-            "odef": 300,
-            "ppen": 225,
-            "open": 204,
-            "regen": 3301
-        },
         "arma": {
             "hp": 2800,
             "atk": 83,
@@ -289,16 +219,6 @@
             "open": 346,
             "dodge": 5,
             "regen": 546
-        },
-        "potential": {
-            "hp": 10507,
-            "atk": 291,
-            "hash": 382,
-            "pdef": 222,
-            "odef": 225,
-            "ppen": 209,
-            "open": 211,
-            "regen": 1485
         },
         "arma": {
             "hp": -1,
@@ -329,16 +249,6 @@
             "dodge": 6,
             "regen": 637
         },
-        "potential": {
-            "hp": 12331,
-            "atk": 249,
-            "hash": 369,
-            "pdef": 403,
-            "odef": 468,
-            "ppen": 154,
-            "open": 165,
-            "regen": 3584
-        },
         "arma": {
             "hp": 4043,
             "atk": 82,
@@ -367,16 +277,6 @@
             "open": 364,
             "dodge": 5,
             "regen": 364
-        },
-        "potential": {
-            "hp": 7119,
-            "atk": 292,
-            "hash": 438,
-            "pdef": 118,
-            "odef": 117,
-            "ppen": 196,
-            "open": 222,
-            "regen": 1084
         },
         "arma": {
             "hp": -1,
@@ -407,16 +307,6 @@
             "dodge": 0,
             "regen": 610
         },
-        "potential": {
-            "hp": 11791,
-            "atk": 340,
-            "hash": 340,
-            "pdef": 333,
-            "odef": 323,
-            "ppen": 229,
-            "open": 203,
-            "regen": 3301
-        },
         "arma": {
             "hp": -1,
             "atk": -1,
@@ -445,16 +335,6 @@
             "open": 201,
             "dodge": 7,
             "regen": 455
-        },
-        "potential": {
-            "hp": 8557,
-            "atk": 284,
-            "hash": 408,
-            "pdef": 230,
-            "odef": 227,
-            "ppen": 123,
-            "open": 122,
-            "regen": 1075
         },
         "arma": {
             "hp": 2400,
@@ -485,16 +365,6 @@
             "dodge": 7,
             "regen": 364
         },
-        "potential": {
-            "hp": 7107,
-            "atk": 276,
-            "hash": 396,
-            "pdef": 177,
-            "odef": 183,
-            "ppen": 81,
-            "open": 87,
-            "regen": 1075
-        },
         "arma": {
             "hp": -1,
             "atk": -1,
@@ -523,16 +393,6 @@
             "open": 338,
             "dodge": 9,
             "regen": 546
-        },
-        "potential": {
-            "hp": 10507,
-            "atk": 309,
-            "hash": 308,
-            "pdef": 225,
-            "odef": 222,
-            "ppen": 208,
-            "open": 206,
-            "regen": 1485
         },
         "arma": {
             "hp": -1,
@@ -563,16 +423,6 @@
             "dodge": 6,
             "regen": 546
         },
-        "potential": {
-            "hp": 10708,
-            "atk": 265,
-            "hash": 415,
-            "pdef": 298,
-            "odef": 286,
-            "ppen": 293,
-            "open": 287,
-            "regen": 3301
-        },
         "arma": {
             "hp": 3511,
             "atk": 87,
@@ -601,16 +451,6 @@
             "open": 221,
             "dodge": 5,
             "regen": 728
-        },
-        "potential": {
-            "hp": 13779,
-            "atk": 245,
-            "hash": 339,
-            "pdef": 522,
-            "odef": 371,
-            "ppen": 134,
-            "open": 134,
-            "regen": 3584
         },
         "arma": {
             "hp": -1,
@@ -641,16 +481,6 @@
             "dodge": 10,
             "regen": 546
         },
-        "potential": {
-            "hp": 10507,
-            "atk": 316,
-            "hash": 341,
-            "pdef": 211,
-            "odef": 225,
-            "ppen": 211,
-            "open": 215,
-            "regen": 1485
-        },
         "arma": {
             "hp": 2400,
             "atk": 73,
@@ -679,16 +509,6 @@
             "open": 285,
             "dodge": 4,
             "regen": 637
-        },
-        "potential": {
-            "hp": 12331,
-            "atk": 228,
-            "hash": 339,
-            "pdef": 487,
-            "odef": 458,
-            "ppen": 173,
-            "open": 173,
-            "regen": 3584
         },
         "arma": {
             "hp": -1,
@@ -719,16 +539,6 @@
             "dodge": 0,
             "regen": 364
         },
-        "potential": {
-            "hp": 7119,
-            "atk": 280,
-            "hash": 408,
-            "pdef": 124,
-            "odef": 127,
-            "ppen": 216,
-            "open": 239,
-            "regen": 1084
-        },
         "arma": {
             "hp": -1,
             "atk": -1,
@@ -757,16 +567,6 @@
             "open": 221,
             "dodge": 10,
             "regen": 702
-        },
-        "potential": {
-            "hp": 13413,
-            "atk": 246,
-            "hash": 356,
-            "pdef": 432,
-            "odef": 356,
-            "ppen": 137,
-            "open": 134,
-            "regen": 3584
         },
         "arma": {
             "hp": -1,
@@ -797,16 +597,6 @@
             "dodge": 3,
             "regen": 546
         },
-        "potential": {
-            "hp": 10507,
-            "atk": 340,
-            "hash": 345,
-            "pdef": 215,
-            "odef": 229,
-            "ppen": 206,
-            "open": 210,
-            "regen": 1485
-        },
         "arma": {
             "hp": -1,
             "atk": -1,
@@ -835,16 +625,6 @@
             "open": 313,
             "dodge": 0,
             "regen": 546
-        },
-        "potential": {
-            "hp": 10006,
-            "atk": 290,
-            "hash": 384,
-            "pdef": 184,
-            "odef": 176,
-            "ppen": 125,
-            "open": 190,
-            "regen": 1075
         },
         "arma": {
             "hp": 3281,
@@ -875,16 +655,6 @@
             "dodge": 0,
             "regen": 364
         },
-        "potential": {
-            "hp": 7119,
-            "atk": 323,
-            "hash": 409,
-            "pdef": 132,
-            "odef": 129,
-            "ppen": 201,
-            "open": 226,
-            "regen": 1084
-        },
         "arma": {
             "hp": -1,
             "atk": -1,
@@ -913,16 +683,6 @@
             "open": 344,
             "dodge": 3,
             "regen": 546
-        },
-        "potential": {
-            "hp": 10507,
-            "atk": 272,
-            "hash": 342,
-            "pdef": 223,
-            "odef": 213,
-            "ppen": 212,
-            "open": 209,
-            "regen": 1485
         },
         "arma": {
             "hp": -1,
@@ -953,16 +713,6 @@
             "dodge": 10,
             "regen": 546
         },
-        "potential": {
-            "hp": 10507,
-            "atk": 267,
-            "hash": 269,
-            "pdef": 253,
-            "odef": 256,
-            "ppen": 151,
-            "open": 153,
-            "regen": 1485
-        },
         "arma": {
             "hp": 2400,
             "atk": 59,
@@ -991,16 +741,6 @@
             "open": 138,
             "dodge": 7,
             "regen": 406
-        },
-        "potential": {
-            "hp": 7829,
-            "atk": 278,
-            "hash": 358,
-            "pdef": 216,
-            "odef": 219,
-            "ppen": 84,
-            "open": 84,
-            "regen": 1075
         },
         "arma": {
             "hp": -1,
@@ -1031,16 +771,6 @@
             "dodge": 0,
             "regen": 364
         },
-        "potential": {
-            "hp": 7119,
-            "atk": 380,
-            "hash": 316,
-            "pdef": 166,
-            "odef": 168,
-            "ppen": 342,
-            "open": 304,
-            "regen": 1084
-        },
         "arma": {
             "hp": -1,
             "atk": -1,
@@ -1070,16 +800,6 @@
             "dodge": 8,
             "regen": 519
         },
-        "potential": {
-            "hp": 10141,
-            "atk": 367,
-            "hash": 365,
-            "pdef": 209,
-            "odef": 203,
-            "ppen": 248,
-            "open": 244,
-            "regen": 1485
-        },
         "arma": {
             "hp": -1,
             "atk": -1,
@@ -1108,16 +828,6 @@
             "open": 339,
             "dodge": 3,
             "regen": 546
-        },
-        "potential": {
-            "hp": 10507,
-            "atk": 307,
-            "hash": 308,
-            "pdef": 225,
-            "odef": 214,
-            "ppen": 210,
-            "open": 206,
-            "regen": 1485
         },
         "arma": {
             "hp": 2400,
@@ -1149,16 +859,6 @@
             "dodge": 0,
             "regen": 364
         },
-        "potential": {
-            "hp": 7119,
-            "atk": 403,
-            "hash": 367,
-            "pdef": 117,
-            "odef": 117,
-            "ppen": 305,
-            "open": 277,
-            "regen": 1084
-        },
         "arma": {
             "hp": -1,
             "atk": -1,
@@ -1187,16 +887,6 @@
             "open": 219,
             "dodge": 3,
             "regen": 747
-        },
-        "potential": {
-            "hp": 14138,
-            "atk": 251,
-            "hash": 362,
-            "pdef": 402,
-            "odef": 402,
-            "ppen": 133,
-            "open": 133,
-            "regen": 3584
         },
         "arma": {
             "hp": 4636,
@@ -1227,16 +917,6 @@
             "dodge": 0,
             "regen": 161
         },
-        "potential": {
-            "hp": 6522,
-            "atk": 261,
-            "hash": 362,
-            "pdef": 141,
-            "odef": 143,
-            "ppen": 87,
-            "open": 87,
-            "regen": 1075
-        },
         "arma": {
             "hp": 2400,
             "atk": 78,
@@ -1265,16 +945,6 @@
             "open": 339,
             "dodge": 4,
             "regen": 637
-        },
-        "potential": {
-            "hp": 12158,
-            "atk": 361,
-            "hash": 342,
-            "pdef": 304,
-            "odef": 318,
-            "ppen": 202,
-            "open": 206,
-            "regen": 3301
         },
         "arma": {
             "hp": 3986,
@@ -1305,16 +975,6 @@
             "dodge": 0,
             "regen": 455
         },
-        "potential": {
-            "hp": 9259,
-            "atk": 380,
-            "hash": 374,
-            "pdef": 203,
-            "odef": 200,
-            "ppen": 279,
-            "open": 250,
-            "regen": 3301
-        },
         "arma": {
             "hp": 2400,
             "atk": 70,
@@ -1343,16 +1003,6 @@
             "open": 414,
             "dodge": 3,
             "regen": 364
-        },
-        "potential": {
-            "hp": 7119,
-            "atk": 403,
-            "hash": 337,
-            "pdef": 135,
-            "odef": 130,
-            "ppen": 291,
-            "open": 252,
-            "regen": 1084
         },
         "arma": {
             "hp": 2334,
@@ -1383,16 +1033,6 @@
             "dodge": 7,
             "regen": 395
         },
-        "potential": {
-            "hp": 7682,
-            "atk": 303,
-            "hash": 384,
-            "pdef": 206,
-            "odef": 216,
-            "ppen": 120,
-            "open": 122,
-            "regen": 1075
-        },
         "arma": {
             "hp": -1,
             "atk": -1,
@@ -1422,16 +1062,6 @@
             "dodge": 4,
             "regen": 406
         },
-        "potential": {
-            "hp": 8330,
-            "atk": 341,
-            "hash": 336,
-            "pdef": 172,
-            "odef": 164,
-            "ppen": 322,
-            "open": 287,
-            "regen": 1485
-        },
         "arma": {
             "hp": 1800,
             "atk": 80,
@@ -1460,16 +1090,6 @@
             "open": 196,
             "dodge": 7,
             "regen": 334
-        },
-        "potential": {
-            "hp": 6704,
-            "atk": 276,
-            "hash": 394,
-            "pdef": 166,
-            "odef": 161,
-            "ppen": 122,
-            "open": 119,
-            "regen": 1075
         },
         "arma": {
             "hp": 1490,
@@ -1501,16 +1121,6 @@
             "dodge": 3,
             "regen": 595
         },
-        "potential": {
-            "hp": 11371,
-            "atk": 342,
-            "hash": 345,
-            "pdef": 217,
-            "odef": 225,
-            "ppen": 206,
-            "open": 208,
-            "regen": 1485
-        },
         "arma": {
             "hp": -1,
             "atk": -1,
@@ -1540,16 +1150,6 @@
             "dodge": 0,
             "regen": 364
         },
-        "potential": {
-            "hp": 7119,
-            "atk": 369,
-            "hash": 348,
-            "pdef": 131,
-            "odef": 131,
-            "ppen": 270,
-            "open": 270,
-            "regen": 1084
-        },
         "arma": {
             "hp": -1,
             "atk": -1,
@@ -1578,16 +1178,6 @@
             "open": 514,
             "dodge": 0,
             "regen": 322
-        },
-        "potential": {
-            "hp": 6561,
-            "atk": 317,
-            "hash": 389,
-            "pdef": 114,
-            "odef": 114,
-            "ppen": 191,
-            "open": 313,
-            "regen": 1084
         },
         "arma": {
             "hp": -1,
@@ -1619,16 +1209,6 @@
             "dodge": 5,
             "regen": 588
         },
-        "potential": {
-            "hp": 11430,
-            "atk": 380,
-            "hash": 303,
-            "pdef": 257,
-            "odef": 257,
-            "ppen": 271,
-            "open": 249,
-            "regen": 3301
-        },
         "arma": {
             "hp": 3748,
             "atk": 125,
@@ -1657,16 +1237,6 @@
             "open": 404,
             "dodge": 5,
             "regen": 364
-        },
-        "potential": {
-            "hp": 7119,
-            "atk": 312,
-            "hash": 420,
-            "pdef": 118,
-            "odef": 117,
-            "ppen": 196,
-            "open": 246,
-            "regen": 1084
         },
         "arma": {
             "hp": -1,
@@ -1697,16 +1267,6 @@
             "dodge": 7.5,
             "regen": 455
         },
-        "potential": {
-            "hp": 8557,
-            "atk": 298,
-            "hash": 383,
-            "pdef": 192,
-            "odef": 197,
-            "ppen": 101,
-            "open": 204,
-            "regen": 1075
-        },
         "arma": {
             "hp": 2806,
             "atk": 98,
@@ -1735,16 +1295,6 @@
             "open": 295,
             "dodge": 8,
             "regen": 588
-        },
-        "potential": {
-            "hp": 11430,
-            "atk": 384,
-            "hash": 326,
-            "pdef": 273,
-            "odef": 198,
-            "ppen": 289,
-            "open": 179,
-            "regen": 3301
         },
         "arma": {
             "hp": -1,
@@ -1775,16 +1325,6 @@
             "dodge": 0,
             "regen": 327
         },
-        "potential": {
-            "hp": 6580,
-            "atk": 386,
-            "hash": 324,
-            "pdef": 96,
-            "odef": 96,
-            "ppen": 270,
-            "open": 243,
-            "regen": 1084
-        },
         "arma": {
             "hp": 1452,
             "atk": 89,
@@ -1813,16 +1353,6 @@
             "open": 223,
             "dodge": 10,
             "regen": 577
-        },
-        "potential": {
-            "hp": 11455,
-            "atk": 234,
-            "hash": 355,
-            "pdef": 368,
-            "odef": 364,
-            "ppen": 142,
-            "open": 136,
-            "regen": 3584
         },
         "arma": {
             "hp": -1,
@@ -1853,16 +1383,6 @@
             "dodge": 5,
             "regen": 546
         },
-        "potential": {
-            "hp": 10708,
-            "atk": 374,
-            "hash": 324,
-            "pdef": 278,
-            "odef": 290,
-            "ppen": 272,
-            "open": 219,
-            "regen": 3301
-        },
         "arma": {
             "hp": -1,
             "atk": -1,
@@ -1891,16 +1411,6 @@
             "open": 362,
             "dodge": 5,
             "regen": 610
-        },
-        "potential": {
-            "hp": 11590,
-            "atk": 270,
-            "hash": 387,
-            "pdef": 249,
-            "odef": 249,
-            "ppen": 240,
-            "open": 220,
-            "regen": 1485
         },
         "arma": {
             "hp": -1,
@@ -1931,16 +1441,6 @@
             "dodge": 7,
             "regen": 364
         },
-        "potential": {
-            "hp": 7107,
-            "atk": 277,
-            "hash": 393,
-            "pdef": 178,
-            "odef": 178,
-            "ppen": 94,
-            "open": 94,
-            "regen": 1075
-        },
         "arma": {
             "hp": -1,
             "atk": -1,
@@ -1969,16 +1469,6 @@
             "open": 295,
             "dodge": 4,
             "regen": 679
-        },
-        "potential": {
-            "hp": 12879,
-            "atk": 363,
-            "hash": 326,
-            "pdef": 258,
-            "odef": 258,
-            "ppen": 252,
-            "open": 179,
-            "regen": 3301
         },
         "arma": {
             "hp": -1,
@@ -2009,16 +1499,6 @@
             "dodge": 5,
             "regen": 455
         },
-        "potential": {
-            "hp": 9058,
-            "atk": 283,
-            "hash": 373,
-            "pdef": 225,
-            "odef": 229,
-            "ppen": 210,
-            "open": 240,
-            "regen": 1485
-        },
         "arma": {
             "hp": -1,
             "atk": -1,
@@ -2047,16 +1527,6 @@
             "open": 428,
             "dodge": 5,
             "regen": 364
-        },
-        "potential": {
-            "hp": 7119,
-            "atk": 317,
-            "hash": 416,
-            "pdef": 131,
-            "odef": 131,
-            "ppen": 191,
-            "open": 261,
-            "regen": 1084
         },
         "arma": {
             "hp": -1,
@@ -2087,16 +1557,6 @@
             "dodge": 5,
             "regen": 702
         },
-        "potential": {
-            "hp": 13413,
-            "atk": 248,
-            "hash": 354,
-            "pdef": 439,
-            "odef": 439,
-            "ppen": 161,
-            "open": 154,
-            "regen": 3584
-        },
         "arma": {
             "hp": 4000,
             "atk": 66,
@@ -2125,16 +1585,6 @@
             "open": 383,
             "dodge": 2,
             "regen": 554
-        },
-        "potential": {
-            "hp": 10719,
-            "atk": 351,
-            "hash": 336,
-            "pdef": 147,
-            "odef": 147,
-            "ppen": 275,
-            "open": 233,
-            "regen": 1485
         },
         "arma": {
             "hp": -1,
@@ -2165,16 +1615,6 @@
             "dodge": 5,
             "regen": 577
         },
-        "potential": {
-            "hp": 11081,
-            "atk": 307,
-            "hash": 380,
-            "pdef": 214,
-            "odef": 214,
-            "ppen": 151,
-            "open": 220,
-            "regen": 1485
-        },
         "arma": {
             "hp": -1,
             "atk": -1,
@@ -2203,16 +1643,6 @@
             "open": 288,
             "dodge": 5,
             "regen": 519
-        },
-        "potential": {
-            "hp": 10141,
-            "atk": 307,
-            "hash": 380,
-            "pdef": 177,
-            "odef": 177,
-            "ppen": 151,
-            "open": 175,
-            "regen": 1485
         },
         "arma": {
             "hp": 2300,
@@ -2243,16 +1673,6 @@
             "dodge": 5,
             "regen": 364
         },
-        "potential": {
-            "hp": 7119,
-            "atk": 280,
-            "hash": 406,
-            "pdef": 131,
-            "odef": 131,
-            "ppen": 191,
-            "open": 191,
-            "regen": 1084
-        },
         "arma": {
             "hp": -1,
             "atk": -1,
@@ -2282,16 +1702,6 @@
             "dodge": 5,
             "regen": 610
         },
-        "potential": {
-            "hp": 11791,
-            "atk": 384,
-            "hash": 320,
-            "pdef": 292,
-            "odef": 292,
-            "ppen": 242,
-            "open": 192,
-            "regen": 3301
-        },
         "arma": {
             "hp": -1,
             "atk": -1,
@@ -2320,16 +1730,6 @@
             "ppen": -1,
             "open": -1,
             "dodge": -1,
-            "regen": -1
-        },
-        "potential": {
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1,
             "regen": -1
         },
         "arma": {
