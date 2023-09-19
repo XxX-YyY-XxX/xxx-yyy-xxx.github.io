@@ -71,6 +71,7 @@ class Units {
         if (POTB_BUTTON.checked) output += this.#hp * 0.61;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armahp;
         if (BOND_BUTTON.checked && this.#intistats.includes("Code Robustness")) output += 1320;
+        if (SPEC_BUTTON.checked) output += {"Specialist": this.#hp * 0.21 + 1200}[this.class] ?? 0;
         return Math.floor(output);
     }
 
@@ -80,7 +81,7 @@ class Units {
         if (POTB_BUTTON.checked) output += this.#atk * 0.61;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armaatk;
         if (BOND_BUTTON.checked && this.#intistats.includes("Power Connection")) output += 55;
-        if (SPEC_BUTTON.checked) output += {"Sniper": this.#atk * 0.22 + 38}[this.class] ?? 0;
+        if (SPEC_BUTTON.checked) output += {"Sniper": this.#atk * 0.22 + 38, "Specialist": this.#atk * 0.22 + 38}[this.class] ?? 0;
         return Math.floor(output);
     }
 
@@ -90,7 +91,7 @@ class Units {
         if (POTB_BUTTON.checked) output += this.#hash * 0.61;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armahash;
         if (BOND_BUTTON.checked && this.#intistats.includes("Neural Activation")) output += 55;
-        if (SPEC_BUTTON.checked) output += {"Sniper": this.#hash * 0.22 + 38}[this.class] ?? 0;
+        if (SPEC_BUTTON.checked) output += {"Sniper": this.#hash * 0.22 + 38, "Specialist": this.#hash * 0.22 + 38}[this.class] ?? 0;
         return Math.floor(output);
     }
 
@@ -167,6 +168,7 @@ class Units {
     get [STATS.HASTE]() {
         var output = this.#haste;
         if (BOND_BUTTON.checked && this.#intistats.includes("Mechanical Celerity")) output += 8;
+        if (SPEC_BUTTON.checked) output += {"Specialist": 25}[this.class] ?? 0;
         return output;
     }
 
@@ -470,7 +472,7 @@ const HEADER_VALUES = ["Doll Name", "Max HP", "Attack", "Hashrate", "Physical De
 const STATVAR = ["name", ...Object.values(STATS)];
 for (const [NAME, KEY, TYPE] of zip(HEADER_VALUES, STATVAR, (function*() {yield "string"; while (true) yield "number"})())) {
     const TH = document.createElement("th");
-    setattr(TH, {textContent: NAME, addEventListener: ["click", sortMethod, true]})
+    setattr(TH, {textContent: NAME, addEventListener: ["click", sortMethod, true]});
     setattr(TH.dataset, {sort: "no", key: KEY, type: TYPE});
     HEADER_TR.appendChild(TH);
 }

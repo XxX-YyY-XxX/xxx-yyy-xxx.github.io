@@ -18,9 +18,7 @@ const MAINSTATS = {
     openflat: 12,   openperc: 7.2,
 
     regenflat: 720,
-
     hasteperc: 8,
-
     hboostperc: 4
 }
 
@@ -40,15 +38,13 @@ const SUBSTATS = {
     regenflat: 432,
     hasteperc: 4.8,
     resflat: 30,
-
     dboostperc: 3.9,
-
     dreducperc: 3.9,
     hboostperc: 2.4
 }
 
 class Algorithm {
-    /** @type {StatInfo?}*/ SET2;
+    /** @type {StatInfo?} */ SET2;
 
     constructor() {
         this.#substat = new Array(2);
@@ -68,20 +64,39 @@ class Algorithm {
         return [this.#substat[position], SUBSTATS[this.#substat[position]]];
     }
 
-    /** @param {UnitObject} unitstats @return {{StatNames: number | undefined}} */
-    output(unitstats) {
-        const stats = {};
-        for (const [attr, value] of [this.SET2, this.mainstat(), ...this.#substat.map(x => [x, SUBSTATS[x]])].filter())
-            stats[attr] = (stats[attr] ?? 0) + value;
-        const out = {};
-        
-        for (const [unitattr, unitvalue] of Object.entries(unitstats.base)) {
-            if ([STATS.HEALTH, STATS.ATTACK, STATS.HASHRATE, STATS.PDEFENSE, STATS.ODEFENSE, STATS.PPENETRATE, STATS.OPENETRATE].includes(unitattr))
-                out[unitattr] = unitvalue * (stats[unitattr+"perc"] ?? 0) + (stats[unitattr+"flat"] ?? 0);
-            else
-                out[unitattr] = stats[unitattr+"perc"] ?? stats[unitattr+"flat"] ?? 0;
+    get stats() {
+        const OUT = {};
+
+        if (this.SET2 != null) {
+            let [name, value] = this.SET2;
+            OUT[name] = value;
         }
-        return out;
+
+        OUT[this.#mainstat] = (OUT[this.#mainstat] ?? 0) + MAINSTATS[this.#mainstat];
+
+        for (const name of this.#substat)
+            OUT[name] = (OUT[name] ?? 0) + SUBSTATS[name];
+
+        return {
+            /** @param {number} x @returns {number} */ [STATS.HEALTH]: x => x * (OUT["hpperc"] ?? 0) + (OUT["hpflat"] ?? 0),
+            /** @param {number} x @returns {number} */ [STATS.ATTACK]: x => x * (OUT["atkperc"] ?? 0) + (OUT["atkflat"] ?? 0),
+            /** @param {number} x @returns {number} */ [STATS.HASHRATE]: x => x * (OUT["hashperc"] ?? 0) + (OUT["hashflat"] ?? 0),
+            /** @param {number} x @returns {number} */ [STATS.PDEFENSE]: x => x * (OUT["pdefperc"] ?? 0) + (OUT["pdefflat"] ?? 0),
+            /** @param {number} x @returns {number} */ [STATS.ODEFENSE]: x => x * (OUT["odefperc"] ?? 0) + (OUT["odefflat"] ?? 0),
+            /** @returns {number} */ [STATS.ATKSPD]: () => OUT["aspdflat"],
+            /** @returns {number} */ [STATS.CRITRATE]: () => OUT["crateperc"],
+            /** @returns {number} */ [STATS.CRITDMG]: () => OUT["cdmgperc"],
+            /** @param {number} x @returns {number} */ [STATS.PPENETRATE]: x => x * (OUT["ppenperc"] ?? 0) + (OUT["ppenflat"] ?? 0),
+            /** @param {number} x @returns {number} */ [STATS.OPENETRATE]: x => x * (OUT["openperc"] ?? 0) + (OUT["openflat"] ?? 0),
+            /** @returns {number} */ [STATS.DODGE]: () => OUT["dodgeperc"],
+            /** @returns {number} */ [STATS.POSTHEAL]: () => OUT["regenflat"],
+            /** @returns {number} */ [STATS.HASTE]: () => OUT["hasteperc"],
+            /** @returns {number} */ [STATS.DEBUFFRES]: () => OUT["resflat"],
+            /** @returns {number} */ [STATS.BACKLASH]: () => OUT["lashperc"],
+            /** @returns {number} */ [STATS.DMGBOOST]: () => OUT["dboostperc"],
+            /** @returns {number} */ [STATS.DMGREDUCE]: () => OUT["dreducperc"],
+            /** @returns {number} */ [STATS.HEALBOOST]: () => OUT["hboostperc"]
+        };
     }
 }
 //#endregion
@@ -304,6 +319,7 @@ export class Inspiration extends Special {
  * @property {{[linkname: string]: [linkurl: string]}} UnitObject.reference
  * @property {string[]} UnitObject.fragments
 
+ * @property {object} UnitObject.base
  * @property {number} UnitObject.base.hp
  * @property {number} UnitObject.base.atk
  * @property {number} UnitObject.base.hash
@@ -316,15 +332,7 @@ export class Inspiration extends Special {
  * @property {number} UnitObject.base.dodge
  * @property {number} UnitObject.base.regen
 
- * @property {number} UnitObject.potential.hp
- * @property {number} UnitObject.potential.atk
- * @property {number} UnitObject.potential.hash
- * @property {number} UnitObject.potential.pdef
- * @property {number} UnitObject.potential.odef
- * @property {number} UnitObject.potential.ppen
- * @property {number} UnitObject.potential.open
- * @property {number} UnitObject.potential.regen
-
+ * @property {objecy} UnitObject.arma
  * @property {number} UnitObject.arma.hp
  * @property {number} UnitObject.arma.atk
  * @property {number} UnitObject.arma.hash
