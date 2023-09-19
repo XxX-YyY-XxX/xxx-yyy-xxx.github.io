@@ -1,15 +1,10 @@
 import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
-timer(
-    document.getElementById("event"),
-    "Sep 18, 2023 23:59 UTC-0800",
-    "./assets/images/timer/ujmrjucqfsib1.webp",
-    {onEnd: timer.bind(
-        null, document.getElementById("event"),
-        "",
-        ""
-    )}
-);
+//timer(
+//    document.getElementById("event"),
+//    "Sep 18, 2023 23:59 UTC-0800",
+//    "./assets/images/timer/ujmrjucqfsib1.webp"
+//);
 
 timer(
     document.getElementById("battlepass"),
@@ -24,12 +19,12 @@ timer(
 
 timer(
     document.getElementById("coalition"),
-    "Sep 18, 2023 23:59 UTC-0800",
-    "./assets/images/coalition/01Scarecrow.webp", 
+    "Oct 16, 2023 23:59 UTC-0800",
+    "./assets/images/coalition/02Executioner.webp", 
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
-        "Oct 16, 2023 23:59 UTC-0800",
-        "./assets/images/coalition/02Executioner.webp"
+        "",
+        "./assets/images/coalition/.webp"
     )}
 );
 
@@ -44,11 +39,11 @@ timer(
     )}
 );
 
-timer(
-    document.getElementById('mini-event'),
-    "Sep 18, 2023 23:59 UTC-0800",
-    "./assets/images/timer/9btufbjh4tjb1.webp"
-);
+//timer(
+//    document.getElementById('mini-event'),
+//    "Sep 18, 2023 23:59 UTC-0800",
+//    "./assets/images/timer/9btufbjh4tjb1.webp"
+//);
 
 //timer(document.getElementById('extra'), "",
 //    "");
