@@ -224,9 +224,10 @@ export const cardData = [
     },
     {
         id : '00009',
-        questions : `What's a True Core Mask and how do I use it?`,
-        answers : `${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/true-core-mask-revamped-who-get')}`,
-        tags : [dTag.TCM, dTag.PRIME]
+        questions : `What's a True Core Mask, where do I get them, and how do I use it?`,
+        answers : `One TCM is given out every major event and anniversary.<br>
+        ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/true-core-mask-revamped-who-get')}`,
+        tags : [dTag.TCM, dTag.PRIME, dTag.MAJOR, dTag.ANNIV, dTag.GET]
     },
     {
         id : '00010',
@@ -1757,12 +1758,6 @@ export const cardData = [
         tags : [dTag.SPEQ]
     },
     {
-        id : '00187',
-        questions : `When are True Core Masks given out?`,
-        answers : `One every major event and anniversary.`,
-        tags : [dTag.TCM, dTag.MAJOR, dTag.ANNIV]
-    },
-    {
         id : '00188',
         questions : `For Coalition Units, should I skip raising units that are below XL size?`,
         answers : `I say skip raising if you're satisfied with the units you have. Otherwise raise a unit regardless of size if you need them. Symmetric Infusion can cover the size problem.`,
@@ -2194,9 +2189,18 @@ export const cardData = [
         id : '00249',
         questions : `How can I get T-Doll skins?`,
         answers : `${List.description({
-            'Shop' : ['Dedicated gem-bought shop.', 'Event shop during seasonal events.'],
-            'Resupply' : ['Banners and Reruns.', 'Black Card Exchange.'],
-            'Mini-events' : ['Mini-events.'],
+            'Shop' : [
+                'Dedicated gem-bought shop.',
+                'Event shop during seasonal events.'
+            ],
+            'Resupply' : [
+                'Banners and Reruns.',
+                'Black Card Exchange.'
+            ],
+            'Mini-events' : [
+                'Mini-events.',
+                `Skins "rerun" during anniversary.`
+            ],
             'Ranking Rewards' : ['Arctic Warfare only.'],
             'Frontline Protocol' : ['Basically the battlepass of this game.', '10$ at minimum.'],
             'New Player Rewards' : ["UMP45's Valentine's Skin, which is also available as gacha."]
@@ -2322,7 +2326,8 @@ export const cardData = [
             "M1897 Mod": [link("Flechette Storm!", "https://old.reddit.com/r/girlsfrontline/comments/osihvd/weekly_commanders_lounge_july_27_2021/h72czw7/")],
             "P90": [spoilerSummary("Document by hina#8787", Embed.google(Embed.G_WORD, "1j5YzAAZ-_Q1bXMUvFKGUWnGgqwacatABv0u-MmY0JLw"))],
             "Galil Mod": [link("Reddit discussion", "https://old.reddit.com/r/girlsfrontline/comments/qpyw46/weekly_commanders_lounge_november_09_2021/hkj3ce0/")],
-            "NTW MOD": ["Second skill kicks in as long as the kill check is satisfied."]
+            "NTW MOD": ["Second skill kicks in as long as the kill check is satisfied."],
+            "Px4": ["Buffs crit damage of surecrits and 100% crit is still 100% crit."]
         })}`,
         tags : [dTag.TDOLL, dTag.SKILL]
     },
@@ -2577,7 +2582,7 @@ export const cardData = [
     {
         id : '00308',
         questions : `What happens when a Luffberry Chess season is over?`,
-        answers : `Unclaimed seasonal gacha skins will carry over to next seasonal gacha, and so are the tickets. Ranking rewards are different each season.`,
+        answers : `Unclaimed seasonal gacha skins will carry over to next seasonal gacha, and so are the tickets (which means they can be pre-farmed). Ranking rewards are different each season.`,
         tags : [dTag.OJ]
     },
     {
@@ -3656,7 +3661,7 @@ export const cardData = [
         id : '00459',
         questions : `Where can I get special equipments?`,
         answers : `${link("Linked in the compilations page.", "https://xxx-yyy-xxx.github.io/GFL/docs")}`,
-        tags : [dTag.SPEQ, dTag.GET]
+        tags : [dTag.EQUIP, dTag.SPEQ, dTag.GET]
     },
     {
         id : '00460',
@@ -3722,6 +3727,12 @@ export const cardData = [
             ]
         })}`,
         tags : [dTag.EQUIP, dTag.NEWB]
+    },
+    {
+        id : '00187',
+        questions : `Is there a rerun for special equipments?`,
+        answers : `For login SPEQs, wait for them in the Gray Zone. For ranking SPEQS, wait for ranking reruns/permanent rankings.`,
+        tags : [dTag.EQUIP, dTag.SPEQ, dTag.GET]
     },
     {
         id : '00000',

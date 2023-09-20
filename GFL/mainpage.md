@@ -14,9 +14,6 @@
 # [Tactical Dolls](/GFL/tdolls)*
 - Doll analysis, acquisition, builds and loadouts, and affections.
 
-# [Tactical Doll Skills](/GFL/skills)*
-- Skill issues, explanations, and interactions.
-
 # [Commander Wardrobe](/GFL/wardrobe)*
 - Costume skills, availability, and gender change.
 
@@ -454,7 +451,6 @@ https://old.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge
 
 https://old.reddit.com/r/girlsfrontline/comments/twps7w/weekly_commanders_lounge_april_05_2022/i3i643c/
 
-https://old.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1xovyt/
 
 
 
@@ -465,3 +461,6 @@ https://old.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge
 
 https://old.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jt9jb69/
 
+SPEQs and Limiteds drop rate buffed on 3.01 to some extent.
+
+https://old.reddit.com/r/girlsfrontline/comments/12u2j9k/client_302_whats_new/
