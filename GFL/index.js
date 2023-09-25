@@ -34,8 +34,8 @@ timer(
     "./assets/images/timer/a7bhcugaxlib1.webp",
     {onEnd: timer.bind(
         null, document.getElementById('skin-banner'),
-        "",
-        "./assets/images/timer/.webp"
+        "Oct 23, 2023 23:59 UTC-0800",
+        "https://iopwiki.com/images/c/c7/Basic_Deductions_Login_Wallpaper.png"
     )}
 );
 

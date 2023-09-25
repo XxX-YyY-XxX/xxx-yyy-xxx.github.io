@@ -68,35 +68,40 @@ class Algorithm {
         const OUT = {};
 
         if (this.SET2 != null) {
-            let [name, value] = this.SET2;
+            const [name, value] = this.SET2;
             OUT[name] = value;
         }
 
-        OUT[this.#mainstat] = (OUT[this.#mainstat] ?? 0) + MAINSTATS[this.#mainstat];
+        {
+            const [name, value] = this.mainstat();
+            OUT[name] = (OUT[name] ?? 0) + value * 2;
+        }
 
         for (const name of this.#substat)
-            OUT[name] = (OUT[name] ?? 0) + SUBSTATS[name];
-
-        return {
-            /** @param {number} x @returns {number} */ [STATS.HEALTH]: x => x * (OUT["hpperc"] ?? 0) + (OUT["hpflat"] ?? 0),
-            /** @param {number} x @returns {number} */ [STATS.ATTACK]: x => x * (OUT["atkperc"] ?? 0) + (OUT["atkflat"] ?? 0),
-            /** @param {number} x @returns {number} */ [STATS.HASHRATE]: x => x * (OUT["hashperc"] ?? 0) + (OUT["hashflat"] ?? 0),
-            /** @param {number} x @returns {number} */ [STATS.PDEFENSE]: x => x * (OUT["pdefperc"] ?? 0) + (OUT["pdefflat"] ?? 0),
-            /** @param {number} x @returns {number} */ [STATS.ODEFENSE]: x => x * (OUT["odefperc"] ?? 0) + (OUT["odefflat"] ?? 0),
-            /** @returns {number} */ [STATS.ATKSPD]: () => OUT["aspdflat"],
-            /** @returns {number} */ [STATS.CRITRATE]: () => OUT["crateperc"],
-            /** @returns {number} */ [STATS.CRITDMG]: () => OUT["cdmgperc"],
-            /** @param {number} x @returns {number} */ [STATS.PPENETRATE]: x => x * (OUT["ppenperc"] ?? 0) + (OUT["ppenflat"] ?? 0),
-            /** @param {number} x @returns {number} */ [STATS.OPENETRATE]: x => x * (OUT["openperc"] ?? 0) + (OUT["openflat"] ?? 0),
-            /** @returns {number} */ [STATS.DODGE]: () => OUT["dodgeperc"],
-            /** @returns {number} */ [STATS.POSTHEAL]: () => OUT["regenflat"],
-            /** @returns {number} */ [STATS.HASTE]: () => OUT["hasteperc"],
-            /** @returns {number} */ [STATS.DEBUFFRES]: () => OUT["resflat"],
-            /** @returns {number} */ [STATS.BACKLASH]: () => OUT["lashperc"],
-            /** @returns {number} */ [STATS.DMGBOOST]: () => OUT["dboostperc"],
-            /** @returns {number} */ [STATS.DMGREDUCE]: () => OUT["dreducperc"],
-            /** @returns {number} */ [STATS.HEALBOOST]: () => OUT["hboostperc"]
-        };
+            if (name !== undefined)
+                OUT[name] = (OUT[name] ?? 0) + SUBSTATS[name];
+        
+        return OUT;
+        //return {
+        //    /** @param {number} x @returns {number} */ [STATS.HEALTH]: x => x * (OUT["hpperc"] ?? 0) + (OUT["hpflat"] ?? 0),
+        //    /** @param {number} x @returns {number} */ [STATS.ATTACK]: x => x * (OUT["atkperc"] ?? 0) + (OUT["atkflat"] ?? 0),
+        //    /** @param {number} x @returns {number} */ [STATS.HASHRATE]: x => x * (OUT["hashperc"] ?? 0) + (OUT["hashflat"] ?? 0),
+        //    /** @param {number} x @returns {number} */ [STATS.PDEFENSE]: x => x * (OUT["pdefperc"] ?? 0) + (OUT["pdefflat"] ?? 0),
+        //    /** @param {number} x @returns {number} */ [STATS.ODEFENSE]: x => x * (OUT["odefperc"] ?? 0) + (OUT["odefflat"] ?? 0),
+        //    /** @returns {number} */ [STATS.ATKSPD]: () => OUT["aspdflat"],
+        //    /** @returns {number} */ [STATS.CRITRATE]: () => OUT["crateperc"],
+        //    /** @returns {number} */ [STATS.CRITDMG]: () => OUT["cdmgperc"],
+        //    /** @param {number} x @returns {number} */ [STATS.PPENETRATE]: x => x * (OUT["ppenperc"] ?? 0) + (OUT["ppenflat"] ?? 0),
+        //    /** @param {number} x @returns {number} */ [STATS.OPENETRATE]: x => x * (OUT["openperc"] ?? 0) + (OUT["openflat"] ?? 0),
+        //    /** @returns {number} */ [STATS.DODGE]: () => OUT["dodgeperc"],
+        //    /** @returns {number} */ [STATS.POSTHEAL]: () => OUT["regenflat"],
+        //    /** @returns {number} */ [STATS.HASTE]: () => OUT["hasteperc"],
+        //    /** @returns {number} */ [STATS.DEBUFFRES]: () => OUT["resflat"],
+        //    /** @returns {number} */ [STATS.BACKLASH]: () => OUT["lashperc"],
+        //    /** @returns {number} */ [STATS.DMGBOOST]: () => OUT["dboostperc"],
+        //    /** @returns {number} */ [STATS.DMGREDUCE]: () => OUT["dreducperc"],
+        //    /** @returns {number} */ [STATS.HEALBOOST]: () => OUT["hboostperc"]
+        //};
     }
 }
 //#endregion

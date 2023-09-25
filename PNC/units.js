@@ -51,11 +51,6 @@ import {STATS} from "./stats-type.js";
 /** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
 /** @type {HTMLDivElement} */ const ALGO_DIV = ALGO_MODAL.firstElementChild;
 document.querySelector("#algo-modal button").addEventListener("click", function() {
-    console.log("Closed via button.")
-    ALGO_MODAL.close()
-});
-ALGO_MODAL.addEventListener("click", function() {
-    console.log("Closed via overlay.")
     ALGO_MODAL.close()
 });
 //#endregion
