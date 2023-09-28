@@ -8,10 +8,6 @@
 
 @ Visual
 
-### How do I unlock Chapter 4 of Continuum Turbulence?
-
-> By completing all nodes and paths, including bad ends.
-
 ### Why can't I read the Griffin Stories/Bookshelf of Memories?
 
 > 2 things. Either you haven't redeemed your points from the STAR tab, or you lack one of the dolls.

@@ -198,7 +198,7 @@ export const cardData = [
                 "Farming maps are either separate nodes/chapters, or updated story maps."
             ],
             "Major Events": [
-                "Farm maps to get 60 crates daily.",
+                "Farm maps to get 60 crates/supply boxes daily.",
                 "Finish the event. Skip the story if you have to.",
                 "Normal is for new commanders or lazies. Hard/EX is for mid-game players who wants a challenge. Nightmare/UX is for late-gamers."
             ],
@@ -361,7 +361,6 @@ export const cardData = [
         questions : `Where can I read/rewatch the MOD, costume, event stories, and all that?`,
         answers : `${List.description({
             'Compilations' : [
-                link("GFL-RC verse collection.", "https://drive.google.com/drive/folders/1q5IMbZhCOEfdcLxjL5YbR11kzW8PRgw2"),
                 link('GF Translated Story Material (+ other stuff)', 'https://drive.google.com/drive/folders/14sNze_lnv5EwL1bl_g3IOVQIo6GGYUJp'),
                 link('GF Translations', 'https://drive.google.com/drive/folders/14bAuWaGbagJwucmlit3EkXFqMRV9NHZO'),
                 link('The Official #gf-loreroom Information Index', 'https://docs.google.com/spreadsheets/d/1LYV05D7kGTKp_FS7cJrNrJlVxeRAnFVnr6vCTo5F-YM'),
@@ -3686,7 +3685,7 @@ export const cardData = [
     {
         id : '00462',
         questions : `How do I unlock Chapter 4 of Continuum Turbulence?`,
-        answers : `Clear all previous maps.`,   //Pending
+        answers : `By completing all nodes and paths, including bad ends.`,
         tags : [dTag.CAMPAIGN]
     },
     {
