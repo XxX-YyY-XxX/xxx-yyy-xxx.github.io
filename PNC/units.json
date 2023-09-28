@@ -258,7 +258,7 @@
             "ppen": 51,
             "open": 54
         },
-        "intimacy": []
+        "intimacy": ["Shield of Friendship", "Neural Activation", "Risk Evasion Aid"]
     },
     {
         "name": "Max",
@@ -548,7 +548,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Power Connection", "Neural Activation", "Coordinated Strike"]
     },
     {
         "name": "Zion",
@@ -577,7 +577,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Shield of Friendship", "Neural Activation", "Risk Evasion Aid"]
     },
     {
         "name": "Ksenia",
@@ -897,7 +897,7 @@
             "ppen": 44,
             "open": 44
         },
-        "intimacy": []
+        "intimacy": ["Code Robustness", "Shield of Friendship", "Through Fire and Water"]
     },
     {
         "name": "Gin",
@@ -1701,6 +1701,35 @@
             "open": 315,
             "dodge": 5,
             "regen": 610
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": []
+    },
+    {
+        "name": "Clotho",
+        "class": "Guard",
+        "reference": {"" : "King's Raid Jane"},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
+        "base": {
+            "hp": 21397,
+            "atk": 396,
+            "hash": 581,
+            "pdef": 721,
+            "odef": 841,
+            "aspd": 100,
+            "crate": 0,
+            "ppen": 154,
+            "open": 367,
+            "dodge": 5,
+            "regen": 679
         },
         "arma": {
             "hp": -1,

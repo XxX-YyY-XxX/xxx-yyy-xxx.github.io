@@ -36,3 +36,6 @@ export function cmp<T0, T1>(params: {
  * 
  * Everything else for attribute assigment. */
 export function setattr<T0>(base: T0, attributes: {[ObjectAttribute: string]: any;}): T0;
+
+/** Returns elements in sequential order, starting from the first iterable. */
+export function* chain<T>(...iterables: Iterable<T>[]): Generator<T, void, unknown>;

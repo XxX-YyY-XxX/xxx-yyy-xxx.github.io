@@ -399,6 +399,27 @@ class AlgoField{
             "Medic": unit.name === "Imhotep" ? "546" : "456"
         }[unit.class]; */
 
+            //return {
+        //    /** @param {number} x @returns {number} */ [STATS.HEALTH]: x => x * (OUT["hpperc"] ?? 0) + (OUT["hpflat"] ?? 0),
+        //    /** @param {number} x @returns {number} */ [STATS.ATTACK]: x => x * (OUT["atkperc"] ?? 0) + (OUT["atkflat"] ?? 0),
+        //    /** @param {number} x @returns {number} */ [STATS.HASHRATE]: x => x * (OUT["hashperc"] ?? 0) + (OUT["hashflat"] ?? 0),
+        //    /** @param {number} x @returns {number} */ [STATS.PDEFENSE]: x => x * (OUT["pdefperc"] ?? 0) + (OUT["pdefflat"] ?? 0),
+        //    /** @param {number} x @returns {number} */ [STATS.ODEFENSE]: x => x * (OUT["odefperc"] ?? 0) + (OUT["odefflat"] ?? 0),
+        //    /** @returns {number} */ [STATS.ATKSPD]: () => OUT["aspdflat"],
+        //    /** @returns {number} */ [STATS.CRITRATE]: () => OUT["crateperc"],
+        //    /** @returns {number} */ [STATS.CRITDMG]: () => OUT["cdmgperc"],
+        //    /** @param {number} x @returns {number} */ [STATS.PPENETRATE]: x => x * (OUT["ppenperc"] ?? 0) + (OUT["ppenflat"] ?? 0),
+        //    /** @param {number} x @returns {number} */ [STATS.OPENETRATE]: x => x * (OUT["openperc"] ?? 0) + (OUT["openflat"] ?? 0),
+        //    /** @returns {number} */ [STATS.DODGE]: () => OUT["dodgeperc"],
+        //    /** @returns {number} */ [STATS.POSTHEAL]: () => OUT["regenflat"],
+        //    /** @returns {number} */ [STATS.HASTE]: () => OUT["hasteperc"],
+        //    /** @returns {number} */ [STATS.DEBUFFRES]: () => OUT["resflat"],
+        //    /** @returns {number} */ [STATS.BACKLASH]: () => OUT["lashperc"],
+        //    /** @returns {number} */ [STATS.DMGBOOST]: () => OUT["dboostperc"],
+        //    /** @returns {number} */ [STATS.DMGREDUCE]: () => OUT["dreducperc"],
+        //    /** @returns {number} */ [STATS.HEALBOOST]: () => OUT["hboostperc"]
+        //};
+
     }
 
     add() {

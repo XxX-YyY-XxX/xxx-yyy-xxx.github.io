@@ -139,3 +139,9 @@ export function setattr(base, attributes) {
     }
     return base;
 }
+
+export function* chain(...iterables) {
+    for (const iterable of iterables)
+        for (const item of iterable)
+            yield item;
+}

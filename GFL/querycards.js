@@ -3699,7 +3699,7 @@ export const cardData = [
                 "Holosight",
                 "RMR",
                 "Suppressor",
-                "NV Laser",
+                "NV Laser - Reduces user's night vision penalty",
                 "Tactical Light"
             ],
             "Ammunition": [
@@ -3733,6 +3733,12 @@ export const cardData = [
         questions : `Is there a rerun for special equipments?`,
         answers : `For login SPEQs, wait for them in the Gray Zone. For ranking SPEQS, wait for ranking reruns/permanent rankings.`,
         tags : [dTag.EQUIP, dTag.SPEQ, dTag.GET]
+    },
+    {
+        id : '00464',
+        questions : `Do Echelon Limits, Doll Storage, and the likes have dicounts?`,
+        answers : `First purchase only.`,
+        tags : [dTag.SHOP, dTag.GEMS]
     },
     {
         id : '00000',
