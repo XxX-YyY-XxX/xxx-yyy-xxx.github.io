@@ -64,24 +64,27 @@ class Algorithm {
         return [this.#substat[position], SUBSTATS[this.#substat[position]]];
     }
 
-    /** @returns {Object.<StatAttributes, number>} */
+    /** @returns {Map<StatAttributes, number>} */
     get stats() {
-        const OUT = {};
+        const OUT = new Map();
 
-        if (this.SET2 != null) {
+        if (this.SET2 !== null) {
             const [name, value] = this.SET2;
-            OUT[name] = value;
+            OUT.set(name, value);
         }
 
         {
             const [name, value] = this.mainstat();
-            OUT[name] = (OUT[name] ?? 0) + value * 2;
+            OUT.set(name, (OUT.get(name) ?? 0) + value * 2);
         }
 
-        for (const name of this.#substat)
-            if (name !== undefined)
-                OUT[name] = (OUT[name] ?? 0) + SUBSTATS[name];
-        
+        {
+            console.log(this.#substat)
+            const [first, second] = this.#substat;
+            OUT.set(first, (OUT.get(first) ?? 0) + SUBSTATS[first]);
+            OUT.set(second, (OUT.get(second) ?? 0) + (SUBSTATS[second] ?? 0));
+        }
+
         return OUT;
     }
 }
@@ -108,7 +111,7 @@ class Offense extends Algorithm {
     }
 }
 
-export class Offense1Slot extends Algorithm {
+class Offense1Slot extends Algorithm {
     SET2 = null;
 
     /** @param {OffenseMainstat?} attribute @returns {number} */
@@ -122,35 +125,35 @@ export class Offense1Slot extends Algorithm {
     }
 }
 
-export class FeedForward extends Offense {
+class FeedForward extends Offense {
     SET2 = ["atkperc", 15];
 }
 
-export class Progression extends Offense {
+class Progression extends Offense {
     SET2 = ["hashperc", 15];
 }
 
-export class Stack extends Offense {
+class Stack extends Offense {
     SET2 = ["hashperc", 15];
 }
 
-export class Deduction extends Offense {
+class Deduction extends Offense {
     SET2 = ["aspdflat", 30];
 }
 
-export class DataRepair extends Offense {
+class DataRepair extends Offense {
     SET2 = ["resflat", 30];
 }
 
-export class MLRMatrix extends Offense {
+class MLRMatrix extends Offense {
     SET2 = ["dboostperc", 5];
 }
 
-export class LimitValue extends Offense {
+class LimitValue extends Offense {
     SET2 = ["dboostperc", 5];
 }
 
-export class LowerLimit extends Offense {
+class LowerLimit extends Offense {
     SET2 = null;
 }
 //#endregion
@@ -176,7 +179,7 @@ class Stability extends Algorithm {
     }
 }
 
-export class Stability1Slot extends Algorithm {
+class Stability1Slot extends Algorithm {
     SET2 = null;
 
     /** @param {StabilityMainstat?} attribute @returns {number} */
@@ -190,35 +193,35 @@ export class Stability1Slot extends Algorithm {
     }
 }
 
-export class Perception extends Stability {
+class Perception extends Stability {
     SET2 = ["hpperc", 15];
 }
 
-export class Rationality extends Stability {
+class Rationality extends Stability {
     SET2 = ["pdefperc", 15];
 }
 
-export class Connection extends Stability {
+class Connection extends Stability {
     SET2 = ["resflat", 50];
 }
 
-export class Iteration extends Stability {
+class Iteration extends Stability {
     SET2 = ["lashperc", 5];
 }
 
-export class Reflection extends Stability {
+class Reflection extends Stability {
     SET2 = ["lashperc", 5];
 }
 
-export class Encapsulate extends Stability {
+class Encapsulate extends Stability {
     SET2 = ["dreducperc", 5];
 }
 
-export class Reflection extends Stability {
+class Reflection extends Stability {
     SET2 = ["dreducperc", 5];
 }
 
-export class Overflow extends Stability {
+class Overflow extends Stability {
     SET2 = null;
 }
 //#endregion
@@ -244,7 +247,7 @@ class Special extends Algorithm {
     }
 }
 
-export class Stability1Slot extends Algorithm {
+class Stability1Slot extends Algorithm {
     SET2 = null;
 
     /** @param {SpecialMainstat?} attribute @returns {number} */
@@ -258,39 +261,39 @@ export class Stability1Slot extends Algorithm {
     }
 }
 
-export class Paradigm extends Special {
+class Paradigm extends Special {
     SET2 = ["aspdflat", 30];
 }
 
-export class Cluster extends Special {
+class Cluster extends Special {
     SET2 = ["crateperc", 10];
 }
 
-export class Convolution extends Special {
+class Convolution extends Special {
     SET2 = ["cdmgperc", 20];
 }
 
-export class Stratagem extends Special {
+class Stratagem extends Special {
     SET2 = ["dodgeperc", 8];
 }
 
-export class DeltaV extends Special {
+class DeltaV extends Special {
     SET2 = ["hasteperc", 10];
 }
 
-export class Exploit extends Special {
+class Exploit extends Special {
     SET2 = ["hasteperc", 10];
 }
 
-export class LoopGain extends Special {
+class LoopGain extends Special {
     SET2 = ["hboostperc", 7.5];
 }
 
-export class SVM extends Special {
+class SVM extends Special {
     SET2 = ["hboostperc", 7.5];
 }
 
-export class Inspiration extends Special {
+class Inspiration extends Special {
     SET2 = null;
 }
 //#endregion
@@ -330,3 +333,129 @@ export class Inspiration extends Special {
  * @property {[IntimacyStats, IntimacyStats, IntimacyStats]} UnitObject.intimacy
 */
 //#endregion
+
+export class AlgoField{
+    #layout;
+    #statvalues;
+
+    get [STATS.HEALTH]() {
+        return 0;
+    }
+
+    get [STATS.ATTACK]() {
+        return 0;
+    }
+
+    get [STATS.HASHRATE]() {
+        return 0;
+    }
+
+    get [STATS.PDEFENSE]() {
+        return 0;
+    }
+
+    get [STATS.ODEFENSE]() {
+        return 0;
+    }
+
+    get [STATS.ATKSPD]() {
+        return 0;
+    }
+
+    get [STATS.CRITRATE]() {
+        return 0;
+    }
+
+    get [STATS.CRITDMG]() {
+        return 0;
+    }
+
+    get [STATS.PPENETRATE]() {
+        return 0;
+    }
+
+    get [STATS.OPENETRATE]() {
+        return 0;
+    }
+
+    get [STATS.DODGE]() {
+        return 0;
+    }
+
+    get [STATS.POSTHEAL]() {
+        return 0;
+    }
+
+    get [STATS.HASTE]() {
+        return 0;
+    }
+
+    get [STATS.DEBUFFRES]() {
+        return 0;
+    }
+
+    get [STATS.BACKLASH]() {
+        return 0;
+    }
+
+    get [STATS.DMGBOOST]() {
+        return 0;
+    }
+
+    get [STATS.DMGREDUCE]() {
+        return 0;
+    }
+
+    get [STATS.HEALBOOST]() {
+        return 0;
+    }
+
+    /** @param {UnitObject} unit */
+    constructor(unit) {
+        this.#layout = {
+            "Guard": "465",
+            "Sniper": "645",
+            "Warrior": "654",
+            "Specialist": "546",
+            "Medic": unit.name === "Imhotep" ? "546" : "456"
+        }[unit.class];
+
+            //return {
+        //    /** @param {number} x @returns {number} */ [STATS.HEALTH]: x => x * (OUT["hpperc"] ?? 0) + (OUT["hpflat"] ?? 0),
+        //    /** @param {number} x @returns {number} */ [STATS.ATTACK]: x => x * (OUT["atkperc"] ?? 0) + (OUT["atkflat"] ?? 0),
+        //    /** @param {number} x @returns {number} */ [STATS.HASHRATE]: x => x * (OUT["hashperc"] ?? 0) + (OUT["hashflat"] ?? 0),
+        //    /** @param {number} x @returns {number} */ [STATS.PDEFENSE]: x => x * (OUT["pdefperc"] ?? 0) + (OUT["pdefflat"] ?? 0),
+        //    /** @param {number} x @returns {number} */ [STATS.ODEFENSE]: x => x * (OUT["odefperc"] ?? 0) + (OUT["odefflat"] ?? 0),
+        //    /** @returns {number} */ [STATS.ATKSPD]: () => OUT["aspdflat"],
+        //    /** @returns {number} */ [STATS.CRITRATE]: () => OUT["crateperc"],
+        //    /** @returns {number} */ [STATS.CRITDMG]: () => OUT["cdmgperc"],
+        //    /** @param {number} x @returns {number} */ [STATS.PPENETRATE]: x => x * (OUT["ppenperc"] ?? 0) + (OUT["ppenflat"] ?? 0),
+        //    /** @param {number} x @returns {number} */ [STATS.OPENETRATE]: x => x * (OUT["openperc"] ?? 0) + (OUT["openflat"] ?? 0),
+        //    /** @returns {number} */ [STATS.DODGE]: () => OUT["dodgeperc"],
+        //    /** @returns {number} */ [STATS.POSTHEAL]: () => OUT["regenflat"],
+        //    /** @returns {number} */ [STATS.HASTE]: () => OUT["hasteperc"],
+        //    /** @returns {number} */ [STATS.DEBUFFRES]: () => OUT["resflat"],
+        //    /** @returns {number} */ [STATS.BACKLASH]: () => OUT["lashperc"],
+        //    /** @returns {number} */ [STATS.DMGBOOST]: () => OUT["dboostperc"],
+        //    /** @returns {number} */ [STATS.DMGREDUCE]: () => OUT["dreducperc"],
+        //    /** @returns {number} */ [STATS.HEALBOOST]: () => OUT["hboostperc"]
+        //};
+
+    }
+
+    add() {
+
+    }
+
+    remove() {
+
+    }
+
+    clear() {
+        
+    }
+
+    update() {
+
+    }
+}

@@ -4,61 +4,59 @@ import {zip, cmp, setattr} from "../univasset/scripts/basefunctions/index.js";
 import {AlgoField} from "./algorithms.js";
 import {STATS} from "./stats-type.js";
 
-/** @type {UnitObject[]} */ var UNITS = Async.getJSON("./units.json");
+const UNITS_PROMISE: Promise<UnitObject[]> = Async.getJSON("./units.json");
 
 //#region Type Definitions
-/** @typedef {"Code Robustness" | "Power Connection" | "Neural Activation" | "Shield of Friendship" | "Coordinated Strike" | "Victorious Inspiration" | "Risk Evasion Aid" | "Mechanical Celerity" | "Coordinated Formation" | "Through Fire and Water" | "Healing Bond"} IntimacyStats */
+type IntimacyStats = "Code Robustness" | "Power Connection" | "Neural Activation" | "Shield of Friendship" | "Coordinated Strike" | "Victorious Inspiration" | "Risk Evasion Aid" | "Mechanical Celerity" | "Coordinated Formation" | "Through Fire and Water" | "Healing Bond";
 
-/**
- * @typedef UnitObject
- * @property {string} UnitObject.name
- * @property {"Guard" | "Sniper" | "Warrior" | "Specialist" | "Medic"} UnitObject.class
- * @property {{[linkname: string]: string}} UnitObject.reference
- * @property {string[]} UnitObject.fragments
-
- * @property {object} UnitObject.base
- * @property {number} UnitObject.base.hp
- * @property {number} UnitObject.base.atk
- * @property {number} UnitObject.base.hash
- * @property {number} UnitObject.base.pdef
- * @property {number} UnitObject.base.odef
- * @property {number} UnitObject.base.aspd
- * @property {number} UnitObject.base.crate
- * @property {number} UnitObject.base.ppen
- * @property {number} UnitObject.base.open
- * @property {number} UnitObject.base.dodge
- * @property {number} UnitObject.base.regen
-
- * @property {object} UnitObject.arma
- * @property {number} UnitObject.arma.hp
- * @property {number} UnitObject.arma.atk
- * @property {number} UnitObject.arma.hash
- * @property {number} UnitObject.arma.pdef
- * @property {number} UnitObject.arma.odef
- * @property {number} UnitObject.arma.ppen
- * @property {number} UnitObject.arma.open
-
- * @property {[IntimacyStats, IntimacyStats, IntimacyStats]} UnitObject.intimacy
-*/
+interface UnitObject {
+    name: string;
+    class: "Guard" | "Sniper" | "Warrior" | "Specialist" | "Medic";
+    reference: { [linkname: string]: string; };
+    fragments: string[];
+    base: {
+        hp: number;
+        atk: number;
+        hash: number;
+        pdef: number;
+        odef: number;
+        aspd: number;
+        crate: number;
+        ppen: number;
+        open: number;
+        dodge: number;
+        regen: number;
+    };
+    arma: {
+        hp: number;
+        atk: number;
+        hash: number;
+        pdef: number;
+        odef: number;
+        ppen: number;
+        open: number;
+    };
+    intimacy: [IntimacyStats, IntimacyStats, IntimacyStats];
+}
 //#endregion
 
 //#region Constant Declarations
-/** @type {HTMLInputElement} */ const ARMA_BUTTON = document.querySelector(`#bonus [value="Arma"]`);
-/** @type {HTMLInputElement} */ const BOND_BUTTON = document.querySelector(`#bonus [value="Bond"]`);
-/** @type {HTMLInputElement} */ const SPEC_BUTTON = document.querySelector(`#bonus [value="Spec"]`);
-/** @type {HTMLInputElement} */ const POTB_BUTTON = document.querySelector(`#bonus [value="PotB"]`);
+const ARMA_BUTTON: HTMLInputElement = document.querySelector(`#bonus [value="Arma"]`)!;
+const BOND_BUTTON: HTMLInputElement = document.querySelector(`#bonus [value="Bond"]`)!;
+const SPEC_BUTTON: HTMLInputElement = document.querySelector(`#bonus [value="Spec"]`)!;
+const POTB_BUTTON: HTMLInputElement = document.querySelector(`#bonus [value="PotB"]`)!;
 
-/** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
-/** @type {HTMLDivElement} */ const ALGO_DIV = ALGO_MODAL.firstElementChild;
-document.querySelector("#algo-modal button").addEventListener("click", function() {
+const ALGO_MODAL: HTMLDialogElement = document.querySelector("#algo-modal")!;
+const ALGO_DIV: HTMLDivElement = ALGO_MODAL.firstElementChild as HTMLDivElement;
+document.querySelector("#algo-modal button")!.addEventListener("click", function() {
     ALGO_MODAL.close()
 });
 //#endregion
 
 //#region Class Declarations
 class Units {
-    name;
-    class;
+    name: string | null;
+    class: string;
 
     #hp; #armahp;
     get [STATS.HEALTH]() {
@@ -198,15 +196,15 @@ class Units {
         return output;
     }
 
-    /** @type {boolean} */ #hasarma;
+    /** @type {boolean} */ #hasarma: boolean;
     #intistats;
     #algofield;
 
-    row;
-    updateStat;
+    row: HTMLTableRowElement;
+    updateStat: () => void;
 
     /** @param {UnitObject} stat_object */
-    constructor(stat_object) {
+    constructor(stat_object: UnitObject) {
         this.name = stat_object.name;
         this.class = stat_object.class;
 
@@ -243,7 +241,7 @@ class Units {
         const TD_NAME = document.createElement("td");
         TD_NAME.addEventListener("click", () => {
             ALGO_MODAL.showModal()
-            ALGO_DIV.firstElementChild.textContent = this.name;
+            ALGO_DIV.firstElementChild!.textContent = this.name;
         })
 
         const IMAGE = document.createElement("img");
@@ -276,15 +274,15 @@ class Units {
         const TD_HBOOST = document.createElement("td");
 
         this.updateStat = () => {
-            TD_HP.textContent = this[STATS.HEALTH];
-            TD_ATK.textContent = this[STATS.ATTACK];
-            TD_HASH.textContent = this[STATS.HASHRATE];
-            TD_PDEF.textContent = this[STATS.PDEFENSE];
-            TD_ODEF.textContent = this[STATS.ODEFENSE];
+            TD_HP.textContent = String(this[STATS.HEALTH]);
+            TD_ATK.textContent = String(this[STATS.ATTACK]);
+            TD_HASH.textContent = String(this[STATS.HASHRATE]);
+            TD_PDEF.textContent = String(this[STATS.PDEFENSE]);
+            TD_ODEF.textContent = String(this[STATS.ODEFENSE]);
             TD_CRATE.textContent = `${this[STATS.CRITRATE]}%`;
             TD_CDMG.textContent = `${this[STATS.CRITDMG]}%`;
-            TD_PPEN.textContent = this[STATS.PPENETRATE];
-            TD_OPEN.textContent = this[STATS.OPENETRATE];
+            TD_PPEN.textContent = String(this[STATS.PPENETRATE]);
+            TD_OPEN.textContent = String(this[STATS.OPENETRATE]);
             TD_DODGE.textContent = `${this[STATS.DODGE]}%`;
             TD_REGEN.textContent = this[STATS.POSTHEAL];
             TD_HASTE.textContent = `${this[STATS.HASTE]}%`;
@@ -323,7 +321,7 @@ class Units {
 //#endregion
 
 //#region Function Declarations
-/** @type {HTMLInputElement[]} */ const CLASS_BUTTONS = Array.from(document.querySelectorAll("#classes input"));
+/** @type {HTMLInputElement[]} */ const CLASS_BUTTONS: HTMLInputElement[] = Array.from(document.querySelectorAll("#classes input"));
 function updateTable() {
     const SHOWN_CLASS = CLASS_BUTTONS.filter(x => x.checked).map(x => x.value);
     TBODY.replaceChildren(...UNIT_LIST.filter(x => SHOWN_CLASS.includes(x.class)).map(x => x.row));
@@ -331,7 +329,7 @@ function updateTable() {
 for (const INPUT of CLASS_BUTTONS) INPUT.addEventListener("change", updateTable);
 
 /** @this {HTMLTableCellElement} @param {MouseEvent} event */
-function sortMethod(event) {
+function sortMethod(event: MouseEvent) {
     const DATA = this.dataset;
     switch (DATA.sort) {
         case "no":
@@ -348,7 +346,7 @@ function sortMethod(event) {
 }
 //#endregion
 
-UNITS = (await UNITS).slice(0, -1);
+const UNITS = (await UNITS_PROMISE).slice(0, -1);
 
 //#region Statistics Table
 const UNIT_LIST = UNITS.map(x => new Units(x));
@@ -375,7 +373,7 @@ for (const [NAME, KEY, TYPE] of zip(HEADER_VALUES, STATVAR, (function*() {yield 
     HEADER_TR.appendChild(TH);
 }
 
-const STAT_TABLE = document.querySelector("#stat > .table");
+const STAT_TABLE: HTMLDivElement = document.querySelector("#stat > .table")!;
 STAT_TABLE.classList.add("func_table");
 STAT_TABLE.appendChild(TABLE);
 //#endregion

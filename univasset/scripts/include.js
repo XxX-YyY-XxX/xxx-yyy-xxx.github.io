@@ -26,9 +26,10 @@ async function includeDocument(include_elem, file_name) {
             if (response.ok) return response.text();
             return Promise.reject(`Missing ${SOURCE} in ${file_name}`);
         })
-        .then(html => html.replace(/<!--(?!>)[\S\s]*?-->/g, ""))
+        .then(html => html.replace(/<!--(?!>)[\S\s]*?-->/g, ""))                    //Remove comments
         .then(cleantext => new DOMParser().parseFromString(cleantext, "text/html"))
         .catch(error => {console.error(error); return null});
+
     if (INCLUDE_DOC === null) {
         include_elem.replaceWith(...include_elem.childNodes);
         return;
@@ -38,8 +39,8 @@ async function includeDocument(include_elem, file_name) {
 
     for (const INCLUDE of Array.from(INCLUDE_DOC.querySelectorAll("include[key]"))) {
         const VALUE = PARAM.get(INCLUDE.getAttribute("key"));
-        if (VALUE !== undefined)    INCLUDE.replaceWith(VALUE);
-        else                        INCLUDE.replaceWith(...INCLUDE.childNodes);
+        if (VALUE !== undefined)    INCLUDE.replaceWith(VALUE);                 //Replace with parameter value
+        else                        INCLUDE.replaceWith(...INCLUDE.childNodes); //Replace with default value
     }
 
     //attr-??? where ??? is attribute of first child, value is parameter name
