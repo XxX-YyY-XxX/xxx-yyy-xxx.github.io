@@ -240,6 +240,8 @@ Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr)
 
 [Lemmy World sub.](https://lemmy.world/c/girlsfrontline)
 
+[US gun doll accent.](https://old.reddit.com/r/girlsfrontline/comments/16shjiw/weekly_commanders_lounge_september_26_2023/k34h71h/)
+
 # Others
 
 >How do I buy gems if I use APK?
@@ -448,14 +450,6 @@ https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge
 https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i0xb1py/
 
 https://old.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i2zg3dw/
-
-https://old.reddit.com/r/girlsfrontline/comments/twps7w/weekly_commanders_lounge_april_05_2022/i3i643c/
-
-
-
-
-
-
 
 ---
 

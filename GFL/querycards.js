@@ -532,7 +532,8 @@ export const cardData = [
         Sometimes called wiggling which in this context means moving your DPS to retarget.<br>
         ${link('GFC guide','https://www.gflcorner.com/battle-controls/')}<br>
         ${spoilerSummary('Mitsu video guide', Embed.youtube('ITUtRuF4TLY'))}<br>
-        ${link("u/Reikyu09's reddit post", 'https://redd.it/8o18an')}`,
+        ${link("u/Reikyu09's reddit post", 'https://redd.it/8o18an')}<br>
+        ${link("Gamepress guide", "https://gamepress.gg/girlsfrontline/treatise-gfl-combat-kiting-basics")}`,
         tags : [dTag.BATTLE, dTag.IMPT]
     },
     {
@@ -3679,7 +3680,8 @@ export const cardData = [
     {
         id : '00128',
         questions : `How do I stop my Kord/CMS/Dorothy from cycling through their skills?`,
-        answers : `Go to their Armory status page, tap the Forced Manual at the top-right of their skill to on/orange. Enjoy.`,
+        answers : `Go to their Armory status page, tap the Forced Manual at the top-right of their skill to on/orange. Enjoy.<br>
+        ${link("Other dolls recommended to be put on force manual.", "https://gamepress.gg/girlsfrontline/list-forced-manual-dolls")}`,
         tags : [dTag.TDOLL, dTag.SKILL]
     },  //@Visual
     {
@@ -3739,6 +3741,12 @@ export const cardData = [
         answers : `First purchase only.`,
         tags : [dTag.SHOP, dTag.GEMS]
     },
+    {
+        id : '00465',
+        questions : `How to read the story again? It's not available in the story playback in Index.`,
+        answers : `Settings>Game>Story Playback then play the stage again. Or just Youtube it. Or cutscene interpreter. This also applies to nodes with story/cutscene snippets.`,
+        tags : [dTag.LORE]
+    },  //@ Visual
     {
         id : '00000',
         questions : ``,

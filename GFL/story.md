@@ -2,12 +2,6 @@
 
 # Story
 
-### How to read the story again? It's not available in the story playback in Index.
-
-> Settings>Game>Story Playback then play the stage again. Or just Youtube it. This also applies to nodes with story/cutscene snippets.
-
-@ Visual
-
 ### Why can't I read the Griffin Stories/Bookshelf of Memories?
 
 > 2 things. Either you haven't redeemed your points from the STAR tab, or you lack one of the dolls.
