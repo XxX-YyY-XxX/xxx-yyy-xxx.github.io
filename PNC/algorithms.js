@@ -114,7 +114,7 @@ class Offense extends Algorithm {
     }
 }
 
-class Offense1Slot extends Algorithm {
+class OffenseBlock extends Algorithm {
     SET2 = null;
 
     /** @param {OffenseMainstat?} attribute @returns {number} */
@@ -182,7 +182,7 @@ class Stability extends Algorithm {
     }
 }
 
-class Stability1Slot extends Algorithm {
+class StabilityBlock extends Algorithm {
     SET2 = null;
 
     /** @param {StabilityMainstat?} attribute @returns {number} */
@@ -250,7 +250,7 @@ class Special extends Algorithm {
     }
 }
 
-class Stability1Slot extends Algorithm {
+class StabilityBlock extends Algorithm {
     SET2 = null;
 
     /** @param {SpecialMainstat?} attribute @returns {number} */
