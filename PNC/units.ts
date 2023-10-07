@@ -2,7 +2,7 @@ import {tableSort, brJoin, nestElements} from '../univasset/scripts/htmlgenerato
 import {Async} from "../univasset/scripts/externaljavascript.js";
 import {zip, cmp, setattr} from "../univasset/scripts/basefunctions/index.js";
 import {AlgoField} from "./algorithms.js";
-import {STATS} from "./stats-type.js";
+import {STATS} from "./typing.js";
 
 const UNITS_PROMISE: Promise<UnitObject[]> = Async.getJSON("./units.json");
 
@@ -196,14 +196,13 @@ class Units {
         return output;
     }
 
-    /** @type {boolean} */ #hasarma: boolean;
+    #hasarma: boolean;
     #intistats;
     #algofield;
 
     row: HTMLTableRowElement;
     updateStat: () => void;
 
-    /** @param {UnitObject} stat_object */
     constructor(stat_object: UnitObject) {
         this.name = stat_object.name;
         this.class = stat_object.class;
@@ -321,25 +320,24 @@ class Units {
 //#endregion
 
 //#region Function Declarations
-/** @type {HTMLInputElement[]} */ const CLASS_BUTTONS: HTMLInputElement[] = Array.from(document.querySelectorAll("#classes input"));
+const CLASS_BUTTONS: HTMLInputElement[] = Array.from(document.querySelectorAll("#classes input"));
 function updateTable() {
     const SHOWN_CLASS = CLASS_BUTTONS.filter(x => x.checked).map(x => x.value);
     TBODY.replaceChildren(...UNIT_LIST.filter(x => SHOWN_CLASS.includes(x.class)).map(x => x.row));
 }
 for (const INPUT of CLASS_BUTTONS) INPUT.addEventListener("change", updateTable);
 
-/** @this {HTMLTableCellElement} @param {MouseEvent} event */
-function sortMethod(event: MouseEvent) {
+function sortMethod(this: HTMLTableCellElement, event: MouseEvent) {
     const DATA = this.dataset;
     switch (DATA.sort) {
         case "no":
         case "lo":
             DATA.sort = "hi";
-            UNIT_LIST.sort(cmp({key: x => x[DATA.key], reverse: (DATA.type === "number")}));
+            UNIT_LIST.sort(cmp({key: x => x[DATA.key!], reverse: (DATA.type === "number")}));
             break;
         case "hi":
             DATA.sort = "lo";
-            UNIT_LIST.sort(cmp({key: x => x[DATA.key], reverse: (DATA.type === "string")}));
+            UNIT_LIST.sort(cmp({key: x => x[DATA.key!], reverse: (DATA.type === "string")}));
             break;
     }
     updateTable();
@@ -379,11 +377,9 @@ STAT_TABLE.appendChild(TABLE);
 //#endregion
 
 //#region Others
-const DATA_ARRAY = UNITS.map(x => [x.name, x.reference, x.fragments]);
-DATA_ARRAY.unshift(["Doll Name", "Reference", "Fragments"]);
 tableSort(
-    document.querySelector("#data > .table"),
-    DATA_ARRAY,
+    document.querySelector("#data > .table")!,
+    [["Doll Name", "Reference", "Fragments"], ...UNITS.map(x => [x.name, x.reference, x.fragments])],
     [
         x => x,
         x => brJoin(Object.entries(x).map(([name, link]) => setattr(document.createElement("a"), {textContent: name, href: link}))),

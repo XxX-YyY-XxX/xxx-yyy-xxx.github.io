@@ -1,4 +1,4 @@
-import {STATS} from "./stats-type.js";
+import {STATS} from "./typing.js";
 
 //#region Base
 /** @typedef {keyof MAINSTATS | keyof SUBSTATS} StatAttributes */

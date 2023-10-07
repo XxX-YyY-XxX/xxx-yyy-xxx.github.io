@@ -23,14 +23,29 @@
         <title>PNC | Random Scraps</title>
     </head>
 
+    <style>
+        #links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            text-align: center;
+            place-items: center;
+        }
+
+        #links > * {
+            margin: 5px 0px;
+        }
+    </style>
+
     <body>
         <include src="/univasset/scripts/pageheader/header.html" 0="Anything related to GFL: Neural Cloud"></include>
 
         <div class="container">
             <section id="main_content">
-                <p><a href="./units">Unit Stats</a></p>
-                <p><a href="./googledocs">Guides</a></p>
-                <p><a href="https://neuralen.modoo.at/">NC Skin info</a></p>
+                <div id="links">
+                    <a href="./units">Unit Stats</a>
+                    <a href="./googledocs">Guides</a>
+                    <span><a href="https://neuralen.modoo.at/" class="tooltip">NC Skin info</a><span class="tooltiptext">Managed by Pineapple</span></span>
+                </div>
             </section>
         </div>
     </body>

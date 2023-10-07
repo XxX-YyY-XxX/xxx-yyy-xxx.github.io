@@ -16,15 +16,20 @@ export function range(params: {
     stop: number;
     /** Increment amount. Default 1. */
     step: number;
-} = {}): Generator<number, void, unknown>;
+}): Generator<number, void, unknown>;
 
+/** Creates a sorter key from the given parameters. */
+export function cmp<T0>(params: {
+    key: (arg0: T0) => any;
+    reverse: boolean;
+}): (arg0: T0, arg1: T0) => number;
 /** Creates a sorter key from the given parameters. */
 export function cmp<T0, T1>(params: {
     key: (arg0: T0) => T1;
     reverse: boolean;
     /** Follows this array for specific order. */
     array: T1[];
-} = {}): (arg0: T0, arg1: T0) => number;
+}): (arg0: T0, arg1: T0) => number;
 
 /** parameters[] for function calls.
  * 

@@ -2,7 +2,7 @@ import {tableSort, brJoin, nestElements} from '../univasset/scripts/htmlgenerato
 import {Async} from "../univasset/scripts/externaljavascript.js";
 import {zip, cmp, setattr} from "../univasset/scripts/basefunctions/index.js";
 import {AlgoField} from "./algorithms.js";
-import {STATS} from "./stats-type.js";
+import {STATS} from "./typing.js";
 
 /** @type {UnitObject[]} */ var UNITS = Async.getJSON("./units.json");
 
@@ -381,11 +381,9 @@ STAT_TABLE.appendChild(TABLE);
 //#endregion
 
 //#region Others
-const DATA_ARRAY = UNITS.map(x => [x.name, x.reference, x.fragments]);
-DATA_ARRAY.unshift(["Doll Name", "Reference", "Fragments"]);
 tableSort(
     document.querySelector("#data > .table"),
-    DATA_ARRAY,
+    [["Doll Name", "Reference", "Fragments"], ...UNITS.map(x => [x.name, x.reference, x.fragments])],
     [
         x => x,
         x => brJoin(Object.entries(x).map(([name, link]) => setattr(document.createElement("a"), {textContent: name, href: link}))),

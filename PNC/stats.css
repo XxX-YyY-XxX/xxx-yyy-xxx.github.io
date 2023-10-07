@@ -1,0 +1,107 @@
+label:has(input[disabled]) {
+    display: none;
+}
+
+/* #region Arma */
+.arma {
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+}
+
+.arma > img {
+    height: 1lh;
+    max-width: initial;
+}
+/* #endregion */
+
+/* #region Class */
+#classes {
+    width: fit-content;
+    background: #343434;
+    border-radius: 20px;
+    padding: 0 10px;
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#classes > label {
+    height: 30px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    display: inline-flex;
+}
+
+#classes > label:has([value="Guard"]) {
+    background-image: url("./assets/images/classes/Guard.png");
+    aspect-ratio: 48/64;
+}
+
+#classes > label:has([value="Guard"]:checked) {
+    background-position: -23px 0;
+}
+
+#classes > label:has([value="Sniper"]) {
+    background-image: url("./assets/images/classes/Sniper.png");
+    aspect-ratio: 61/64;
+}
+
+#classes > label:has([value="Sniper"]:checked) {
+    background-position: -30px 0;
+}
+
+#classes > label:has([value="Warrior"]) {
+    background-image: url("./assets/images/classes/Warrior.png");
+    aspect-ratio: 64/64;
+}
+
+#classes > label:has([value="Warrior"]:checked) {
+    background-position: -30px 0;
+}
+
+#classes > label:has([value="Specialist"]) {
+    background-image: url("./assets/images/classes/Specialist.png");
+    aspect-ratio: 54/64;
+}
+
+#classes > label:has([value="Specialist"]:checked) {
+    background-position: -25px 0;
+}
+
+#classes > label:has([value="Medic"]) {
+    background-image: url("./assets/images/classes/Medic.png");
+    aspect-ratio: 64/64;
+}
+
+#classes > label:has([value="Medic"]:checked) {
+    background-position: -28.5px 0;
+}
+/* #endregion */
+
+/* #region Bonus */
+#bonus {
+    width: fit-content;
+    background: #343434;
+    border-radius: 20px;
+    padding: 0 10px;
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#bonus label {
+    --color: limegreen;
+    outline: 2px solid var(--color);
+    border-radius: 10rem;
+    padding: 0px 3px;
+    background: transparent;
+    color: var(--color);
+    white-space: nowrap;
+}
+
+#bonus label:has(input:checked) {
+    background: var(--color);
+    color: black;
+}
+/* #endregion */
