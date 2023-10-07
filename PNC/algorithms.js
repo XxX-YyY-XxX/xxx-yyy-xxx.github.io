@@ -212,7 +212,7 @@ class Iteration extends Stability {
     SET2 = ["lashperc", 5];
 }
 
-class Reflection_ extends Stability {
+class Reflection extends Stability {
     SET2 = ["lashperc", 5];
 }
 
@@ -220,7 +220,7 @@ class Encapsulate extends Stability {
     SET2 = ["dreducperc", 5];
 }
 
-class Reflection extends Stability {
+class Resolve extends Stability {
     SET2 = ["dreducperc", 5];
 }
 
