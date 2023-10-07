@@ -46,6 +46,8 @@ const SUBSTATS = {
 class Algorithm {
     /** @type {StatInfo?} */ SET2;
 
+    /** @type {[StatAttributes, StatAttributes]} */ #substat;
+
     constructor() {
         this.#substat = new Array(2);
     }
