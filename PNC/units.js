@@ -380,9 +380,8 @@ STAT_TABLE.classList.add("func_table");
 STAT_TABLE.appendChild(TABLE);
 //#endregion
 
-//#region Others
 tableSort(
-    document.querySelector("#data > .table"),
+    document.querySelector("#data.table"),
     [["Doll Name", "Reference", "Fragments"], ...UNITS.map(x => [x.name, x.reference, x.fragments])],
     [
         x => x,
@@ -391,5 +390,3 @@ tableSort(
     ],
     {frzcol: true, frzhdr: true}
 );
-//#endregion
-

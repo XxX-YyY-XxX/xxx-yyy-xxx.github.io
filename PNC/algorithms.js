@@ -47,6 +47,7 @@ class Algorithm {
     /** @type {StatInfo?} */ SET2;
 
     /** @type {[StatAttributes, StatAttributes]} */ #substat;
+    /** @type {StatAttributes} */ #mainstat;
 
     constructor() {
         this.#substat = new Array(2);
