@@ -250,7 +250,7 @@ class Special extends Algorithm {
     }
 }
 
-class StabilityBlock extends Algorithm {
+class SpecialBlock extends Algorithm {
     SET2 = null;
 
     /** @param {SpecialMainstat?} attribute @returns {number} */
