@@ -47,12 +47,9 @@ import {STATS} from "./typing.js";
 /** @type {HTMLInputElement} */ const BOND_BUTTON = document.querySelector(`#bonus [value="Bond"]`);
 /** @type {HTMLInputElement} */ const SPEC_BUTTON = document.querySelector(`#bonus [value="Spec"]`);
 /** @type {HTMLInputElement} */ const POTB_BUTTON = document.querySelector(`#bonus [value="PotB"]`);
+/** @type {HTMLInputElement} */ const ALGO_BUTTON = document.querySelector(`#bonus [value="Algo"]`);
 
 /** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
-/** @type {HTMLDivElement} */ const ALGO_DIV = ALGO_MODAL.firstElementChild;
-document.querySelector("#algo-modal button").addEventListener("click", function() {
-    ALGO_MODAL.close()
-});
 //#endregion
 
 //#region Class Declarations
@@ -67,6 +64,7 @@ class Units {
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armahp;
         if (BOND_BUTTON.checked && this.#intistats.includes("Code Robustness")) output += 1320;
         if (SPEC_BUTTON.checked) output += {"Specialist": this.#hp * 0.21 + 1200}[this.class] ?? 0;
+        if (ALGO_BUTTON.checked) output += this.#algofield.hp;
         return Math.floor(output);
     }
 
@@ -77,6 +75,7 @@ class Units {
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armaatk;
         if (BOND_BUTTON.checked && this.#intistats.includes("Power Connection")) output += 55;
         if (SPEC_BUTTON.checked) output += {"Sniper": this.#atk * 0.22 + 38, "Specialist": this.#atk * 0.22 + 38}[this.class] ?? 0;
+        if (ALGO_BUTTON.checked) output += this.#algofield.atk;
         return Math.floor(output);
     }
 
@@ -87,6 +86,7 @@ class Units {
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armahash;
         if (BOND_BUTTON.checked && this.#intistats.includes("Neural Activation")) output += 55;
         if (SPEC_BUTTON.checked) output += {"Sniper": this.#hash * 0.22 + 38, "Specialist": this.#hash * 0.22 + 38}[this.class] ?? 0;
+        if (ALGO_BUTTON.checked) output += this.#algofield.hash;
         return Math.floor(output);
     }
 
@@ -96,6 +96,7 @@ class Units {
         if (POTB_BUTTON.checked) output += this.#pdef * 0.61;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armapdef;
         if (BOND_BUTTON.checked && this.#intistats.includes("Shield of Friendship")) output += 55;
+        if (ALGO_BUTTON.checked) output += this.#algofield.pdef;
         return Math.floor(output);
     }
 
@@ -104,12 +105,15 @@ class Units {
         var output = this.#odef;
         if (POTB_BUTTON.checked) output += this.#odef * 0.61;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armaodef;
+        if (ALGO_BUTTON.checked) output += this.#algofield.odef;
         return Math.floor(output);
     }
 
     #aspd;
     get [STATS.ATKSPD]() {
-        return this.#aspd;
+        var output = this.#aspd;
+        if (ALGO_BUTTON.checked) output += this.#algofield.aspd;
+        return output;
     }
 
     #crate;
@@ -117,6 +121,7 @@ class Units {
         var output = this.#crate;
         if (BOND_BUTTON.checked && this.#intistats.includes("Coordinated Strike")) output += 8;
         if (SPEC_BUTTON.checked) output += {"Sniper": 9}[this.class] ?? 0;
+        if (ALGO_BUTTON.checked) output += this.#algofield.crate;
         return output;
     }
 
@@ -125,6 +130,7 @@ class Units {
         var output = this.#cdmg;
         if (BOND_BUTTON.checked && this.#intistats.includes("Victorious Inspiration")) output += 12;
         if (SPEC_BUTTON.checked) output += {"Sniper": 18}[this.class] ?? 0;
+        if (ALGO_BUTTON.checked) output += this.#algofield.cdmg;
         return output;
     }
 
@@ -134,6 +140,7 @@ class Units {
         if (POTB_BUTTON.checked) output += this.#ppen * 0.61;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armappen;
         if (SPEC_BUTTON.checked) output += {"Sniper": this.#ppen * 0.07 + 65}[this.class] ?? 0;
+        if (ALGO_BUTTON.checked) output += this.#algofield.ppen;
         return Math.floor(output);
     }
 
@@ -142,6 +149,7 @@ class Units {
         var output = this.#open;
         if (POTB_BUTTON.checked) output += this.#open * 0.61;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armaopen;
+        if (ALGO_BUTTON.checked) output += this.#algofield.open;
         return Math.floor(output);
     }
 
@@ -149,6 +157,7 @@ class Units {
     get [STATS.DODGE]() {
         var output = this.#dodge;
         if (BOND_BUTTON.checked && this.#intistats.includes("Risk Evasion Aid")) output += 8;
+        if (ALGO_BUTTON.checked) output += this.#algofield.dodge;
         return output;
     }
 
@@ -156,6 +165,7 @@ class Units {
     get [STATS.POSTHEAL]() {
         var output = this.#regen;
         if (POTB_BUTTON.checked) output += {"Guard": 3584, "Sniper": 1084, "Warrior": 3301, "Specialist": 1485, "Medic": 1075}[this.class];
+        if (ALGO_BUTTON.checked) output += this.#algofield.regen;
         return output;
     }
 
@@ -164,23 +174,29 @@ class Units {
         var output = this.#haste;
         if (BOND_BUTTON.checked && this.#intistats.includes("Mechanical Celerity")) output += 8;
         if (SPEC_BUTTON.checked) output += {"Specialist": 25}[this.class] ?? 0;
+        if (ALGO_BUTTON.checked) output += this.#algofield.haste;
         return output;
     }
 
     #res = 0;
     get [STATS.DEBUFFRES]() {
-        return this.#res;
+        var output = this.#res;
+        if (ALGO_BUTTON.checked) output += this.#algofield.res;
+        return output;
     }
 
     #lash = 0;
     get [STATS.BACKLASH]() {
-        return this.#lash;
+        var output = this.#lash;
+        if (ALGO_BUTTON.checked) output += this.#algofield.lash;
+        return output;
     }
 
     #dboost = 0;
     get [STATS.DMGBOOST]() {
         var output = this.#dboost;
         if (BOND_BUTTON.checked && this.#intistats.includes("Coordinated Formation")) output += 5;
+        if (ALGO_BUTTON.checked) output += this.#algofield.dboost;
         return output;
     }
 
@@ -188,6 +204,7 @@ class Units {
     get [STATS.DMGREDUCE]() {
         var output = this.#dreduc;
         if (BOND_BUTTON.checked && this.#intistats.includes("Through Fire and Water")) output += 5;
+        if (ALGO_BUTTON.checked) output += this.#algofield.dreduc;
         return output;
     }
 
@@ -195,6 +212,7 @@ class Units {
     get [STATS.HEALBOOST]() {
         var output = this.#hboost;
         if (BOND_BUTTON.checked && this.#intistats.includes("Healing Bond")) output += 5;
+        if (ALGO_BUTTON.checked) output += this.#algofield.hboost;
         return output;
     }
 
@@ -207,6 +225,8 @@ class Units {
 
     /** @param {UnitObject} stat_object */
     constructor(stat_object) {
+        this.#algofield = new AlgoField(stat_object);
+
         this.name = stat_object.name;
         this.class = stat_object.class;
 
@@ -236,14 +256,12 @@ class Units {
         this.#intistats = INTI;
         if (INTI.length != 3) console.warn(this.name, "lacks data: Intimacy");
 
-        //this.#algofield = new AlgoField(stat_object);
-
         // change name color if filled
         // show all on widescreen, tabs on narrow screen
         const TD_NAME = document.createElement("td");
         TD_NAME.addEventListener("click", () => {
             ALGO_MODAL.showModal()
-            ALGO_DIV.firstElementChild.textContent = this.name;
+            ALGO_MODAL.firstElementChild.textContent = this.name;
         })
 
         const IMAGE = document.createElement("img");

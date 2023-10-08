@@ -1,4 +1,22 @@
 import {STATS} from "./typing.js";
+import {cmp, chain} from "../univasset/scripts/basefunctions/index.js";
+
+/** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
+document.querySelector("#algo-modal button").addEventListener("click", function() {
+    ALGO_MODAL.close()
+});
+
+/**
+ * @param {Map<StatAttributes, number>} object1 
+ * @param {Map<StatAttributes, number>} object2
+ * @returns {Map<StatAttributes, number>}
+ */
+function combine(object1, object2) {
+    const OUTPUT = new Map();
+    for (const attribute of new Set(chain(object1.keys(), object2.keys())))
+        OUTPUT.set(attribute, (object1.get(attribute) ?? 0) + (object2.get(attribute) ?? 0));
+    return OUTPUT;
+}
 
 //#region Base
 /** @typedef {keyof MAINSTATS | keyof SUBSTATS} StatAttributes */
@@ -45,6 +63,7 @@ const SUBSTATS = {
 
 class Algorithm {
     /** @type {StatInfo?} */ SET2;
+    SIZE = 2;
 
     /** @type {[StatAttributes, StatAttributes]} */ #substat;
     /** @type {StatAttributes} */ #mainstat;
@@ -116,6 +135,7 @@ class Offense extends Algorithm {
 
 class OffenseBlock extends Algorithm {
     SET2 = null;
+    SIZE = 1;
 
     /** @param {OffenseMainstat?} attribute @returns {number} */
     mainstat(attribute = null) {
@@ -184,6 +204,7 @@ class Stability extends Algorithm {
 
 class StabilityBlock extends Algorithm {
     SET2 = null;
+    SIZE = 1;
 
     /** @param {StabilityMainstat?} attribute @returns {number} */
     mainstat(attribute) {
@@ -252,6 +273,7 @@ class Special extends Algorithm {
 
 class SpecialBlock extends Algorithm {
     SET2 = null;
+    SIZE = 1;
 
     /** @param {SpecialMainstat?} attribute @returns {number} */
     mainstat(attribute) {
@@ -324,7 +346,7 @@ class Inspiration extends Special {
  * @property {number} UnitObject.base.dodge
  * @property {number} UnitObject.base.regen
 
- * @property {objecy} UnitObject.arma
+ * @property {object} UnitObject.arma
  * @property {number} UnitObject.arma.hp
  * @property {number} UnitObject.arma.atk
  * @property {number} UnitObject.arma.hash
@@ -337,80 +359,126 @@ class Inspiration extends Special {
 */
 //#endregion
 
+const GRIDS = {
+    /** @type {HTMLDivElement} */ Offense: document.querySelector("#algo-modal > #Offense > .algo-grid"),
+    /** @type {HTMLDivElement} */ Stability: document.querySelector("#algo-modal > #Stability > .algo-grid"),
+    /** @type {HTMLDivElement} */ Special: document.querySelector("#algo-modal > #Special > .algo-grid")
+}
+
+class AlgoGrid {
+    #grid;
+    #size
+    /** @type {Algorithm[]} */ #algorithms;
+
+    /** @param {"Offense" | "Stability" | "Special"} fieldtype @param {number} size */
+    constructor(fieldtype, size) {
+        this.#grid = GRIDS[fieldtype];
+        this.#size = size;
+        this.#algorithms = [];
+
+        for (let index = 0; index < size; index++) {
+            const BUTTON = document.createElement("button");
+            BUTTON.type = "button";
+            BUTTON.classList.add("algo-empty")
+            BUTTON.addEventListener("click", () => console.log(fieldtype, index))
+            this.#grid.appendChild(BUTTON);
+        }
+
+        for (let index = 0; index < (8 - size); index++) {
+            const DIV = document.createElement("div");
+            DIV.classList.add("algo-close")
+            this.#grid.appendChild(DIV)            
+        }
+    }
+
+    display() {
+        this.#algorithms.sort(cmp({key: x => x.SIZE, reverse: true}))
+    }
+
+    get stats() {
+        return this.#algorithms.map(x => x.stats).reduce(combine);
+    }
+}
+
 export class AlgoField{
     #layout;
-    #statvalues;
+    #algogrids;
+    #basestat;
+
+    get #stats() {
+        return this.#algogrids.map(x => x.stats).reduce(combine);
+    }
 
     get [STATS.HEALTH]() {
-        return 0;
+        return this.#basestat.hp * (this.#stats.get("hpperc") ?? 0) + (this.#stats.get("hpflat") ?? 0);
     }
 
     get [STATS.ATTACK]() {
-        return 0;
+        return this.#basestat.atk * (this.#stats.get("atkperc") ?? 0) + (this.#stats.get("atkflat") ?? 0);
     }
 
     get [STATS.HASHRATE]() {
-        return 0;
+        return this.#basestat.hash * (this.#stats.get("hashperc") ?? 0) + (this.#stats.get("hashflat") ?? 0);
     }
 
     get [STATS.PDEFENSE]() {
-        return 0;
+        return this.#basestat.pdef * (this.#stats.get("pdefperc") ?? 0) + (this.#stats.get("pdefflat") ?? 0);
     }
 
     get [STATS.ODEFENSE]() {
-        return 0;
+        return this.#basestat.odef * (this.#stats.get("odefperc") ?? 0) + (this.#stats.get("odefflat") ?? 0);
     }
 
     get [STATS.ATKSPD]() {
-        return 0;
+        return this.#stats.get("aspdflat") ?? 0;
     }
 
     get [STATS.CRITRATE]() {
-        return 0;
+        return this.#stats.get("crateperc") ?? 0;
     }
 
     get [STATS.CRITDMG]() {
-        return 0;
+        return this.#stats.get("cdmgperc") ?? 0;
     }
 
     get [STATS.PPENETRATE]() {
-        return 0;
+        return this.#basestat.ppen * (this.#stats.get("ppenperc") ?? 0) + (this.#stats.get("ppenflat") ?? 0);
     }
 
     get [STATS.OPENETRATE]() {
-        return 0;
+        return this.#basestat.open * (this.#stats.get("openperc") ?? 0) + (this.#stats.get("openflat") ?? 0);
     }
 
     get [STATS.DODGE]() {
-        return 0;
+        return this.#stats.get("dodgeperc") ?? 0;
     }
 
     get [STATS.POSTHEAL]() {
-        return 0;
+        return this.#stats.get("regenflat") ?? 0;
     }
 
     get [STATS.HASTE]() {
-        return 0;
+        return this.#stats.get("hasteperc") ?? 0;
     }
 
     get [STATS.DEBUFFRES]() {
-        return 0;
+        return this.#stats.get("resflat") ?? 0;
     }
 
     get [STATS.BACKLASH]() {
-        return 0;
+        return this.#stats.get("lashperc") ?? 0;
     }
 
     get [STATS.DMGBOOST]() {
-        return 0;
+        return this.#stats.get("dboostperc") ?? 0;
     }
 
     get [STATS.DMGREDUCE]() {
-        return 0;
+        return this.#stats.get("dreducperc") ?? 0;
     }
 
     get [STATS.HEALBOOST]() {
-        return 0;
+        return this.#stats.get("hboostperc") ?? 0;
     }
 
     /** @param {UnitObject} unit */
@@ -423,42 +491,16 @@ export class AlgoField{
             "Medic": unit.name === "Imhotep" ? "546" : "456"
         }[unit.class];
 
-            //return {
-        //    /** @param {number} x @returns {number} */ [STATS.HEALTH]: x => x * (OUT["hpperc"] ?? 0) + (OUT["hpflat"] ?? 0),
-        //    /** @param {number} x @returns {number} */ [STATS.ATTACK]: x => x * (OUT["atkperc"] ?? 0) + (OUT["atkflat"] ?? 0),
-        //    /** @param {number} x @returns {number} */ [STATS.HASHRATE]: x => x * (OUT["hashperc"] ?? 0) + (OUT["hashflat"] ?? 0),
-        //    /** @param {number} x @returns {number} */ [STATS.PDEFENSE]: x => x * (OUT["pdefperc"] ?? 0) + (OUT["pdefflat"] ?? 0),
-        //    /** @param {number} x @returns {number} */ [STATS.ODEFENSE]: x => x * (OUT["odefperc"] ?? 0) + (OUT["odefflat"] ?? 0),
-        //    /** @returns {number} */ [STATS.ATKSPD]: () => OUT["aspdflat"],
-        //    /** @returns {number} */ [STATS.CRITRATE]: () => OUT["crateperc"],
-        //    /** @returns {number} */ [STATS.CRITDMG]: () => OUT["cdmgperc"],
-        //    /** @param {number} x @returns {number} */ [STATS.PPENETRATE]: x => x * (OUT["ppenperc"] ?? 0) + (OUT["ppenflat"] ?? 0),
-        //    /** @param {number} x @returns {number} */ [STATS.OPENETRATE]: x => x * (OUT["openperc"] ?? 0) + (OUT["openflat"] ?? 0),
-        //    /** @returns {number} */ [STATS.DODGE]: () => OUT["dodgeperc"],
-        //    /** @returns {number} */ [STATS.POSTHEAL]: () => OUT["regenflat"],
-        //    /** @returns {number} */ [STATS.HASTE]: () => OUT["hasteperc"],
-        //    /** @returns {number} */ [STATS.DEBUFFRES]: () => OUT["resflat"],
-        //    /** @returns {number} */ [STATS.BACKLASH]: () => OUT["lashperc"],
-        //    /** @returns {number} */ [STATS.DMGBOOST]: () => OUT["dboostperc"],
-        //    /** @returns {number} */ [STATS.DMGREDUCE]: () => OUT["dreducperc"],
-        //    /** @returns {number} */ [STATS.HEALBOOST]: () => OUT["hboostperc"]
-        //};
+        this.#basestat = unit.base;
 
-    }
-
-    add() {
-
-    }
-
-    remove() {
-
-    }
-
-    clear() {
-        
+        this.#algogrids = [
+            new AlgoGrid("Offense", Number(this.#layout[0])),
+            new AlgoGrid("Stability", Number(this.#layout[1])),
+            new AlgoGrid("Special", Number(this.#layout[2]))
+        ];
     }
 
     update() {
-
+        // update #stats on algo change
     }
 }

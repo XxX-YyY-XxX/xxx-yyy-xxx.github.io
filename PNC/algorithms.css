@@ -1,0 +1,31 @@
+#algo-modal {
+    border-radius: 10px;
+}
+
+#algo-modal > :is(#Offense, #Stability, #Special) {
+    display: inline-block;
+}
+
+.algo-grid {
+    --gridsize: 50px;
+    display: grid;
+    grid-template-columns: repeat(8, var(--gridsize));
+    grid-auto-rows: var(--gridsize);
+    gap: 5px;
+}
+
+.algo-close {
+    background: black;
+}
+
+.algo-empty {
+    background: gray;
+}
+
+.algo-block {
+    background: white;
+}
+
+.double-block {
+    grid-row-end: span 2;
+}
