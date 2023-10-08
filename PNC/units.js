@@ -252,17 +252,11 @@ class Units {
         this.#armappen = ARMA.ppen;
         this.#armaopen = ARMA.open;
 
-        const INTI = stat_object.intimacy;
-        this.#intistats = INTI;
-        if (INTI.length != 3) console.warn(this.name, "lacks data: Intimacy");
+        this.#intistats = stat_object.intimacy;
+        if (this.#intistats.length != 3) console.warn(this.name, "lacks data: Intimacy");
 
-        // change name color if filled
-        // show all on widescreen, tabs on narrow screen
         const TD_NAME = document.createElement("td");
-        TD_NAME.addEventListener("click", () => {
-            ALGO_MODAL.showModal()
-            ALGO_MODAL.firstElementChild.textContent = this.name;
-        })
+        TD_NAME.addEventListener("click", () => this.#algofield.open());
 
         const IMAGE = document.createElement("img");
         IMAGE.addEventListener("load", () => {
@@ -336,6 +330,9 @@ class Units {
         )
 
         //#privatefield cannot be called dynamically, use exec/eval instead
+        ARMA_BUTTON.addEventListener("change", () => this.updateStat());
+        POTB_BUTTON.addEventListener("change", () => this.updateStat());
+        ALGO_MODAL.addEventListener("close", () => this.updateStat())
     }
 }
 //#endregion
@@ -370,10 +367,6 @@ UNITS = (await UNITS).slice(0, -1);
 
 //#region Statistics Table
 const UNIT_LIST = UNITS.map(x => new Units(x));
-for (const UNIT of UNIT_LIST) {
-    ARMA_BUTTON.addEventListener("change", () => UNIT.updateStat());
-    POTB_BUTTON.addEventListener("change", () => UNIT.updateStat());
-}
 
 const [THEAD, HEADER_TR] = nestElements("thead", "tr");
 

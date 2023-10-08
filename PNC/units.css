@@ -9,11 +9,6 @@ input[type="checkbox"], input[type="radio"] {
     margin: 0;
 }
 
-dialog {
-    border: 0;
-    padding: 0;
-}
-
 /* #region Freeze */
 .freeze-row th {
     background: #1b1b1b !important;

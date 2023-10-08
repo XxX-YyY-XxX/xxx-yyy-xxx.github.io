@@ -2,9 +2,7 @@ import {STATS} from "./typing.js";
 import {cmp, chain} from "../univasset/scripts/basefunctions/index.js";
 
 /** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
-document.querySelector("#algo-modal button").addEventListener("click", function() {
-    ALGO_MODAL.close()
-});
+/** @type {HTMLButtonElement} */ const ALGO_CLOSE = document.querySelector("#algo-modal button");
 
 /**
  * @param {Map<StatAttributes, number>} object1 
@@ -370,13 +368,22 @@ class AlgoGrid {
     #size
     /** @type {Algorithm[]} */ #algorithms;
 
+    #closedgrid;
+
     /** @param {"Offense" | "Stability" | "Special"} fieldtype @param {number} size */
     constructor(fieldtype, size) {
         this.#grid = GRIDS[fieldtype];
         this.#size = size;
         this.#algorithms = [];
+        this.#closedgrid = 8 - size;
+    }
 
-        for (let index = 0; index < size; index++) {
+    display() {
+        this.#algorithms.sort(cmp({key: x => x.SIZE, reverse: true}))
+
+        //display set algorithms
+
+        for (let index = 0; index < (8 - this.#closedgrid); index++) {
             const BUTTON = document.createElement("button");
             BUTTON.type = "button";
             BUTTON.classList.add("algo-empty")
@@ -384,15 +391,11 @@ class AlgoGrid {
             this.#grid.appendChild(BUTTON);
         }
 
-        for (let index = 0; index < (8 - size); index++) {
+        for (let index = 0; index < this.#closedgrid; index++) {
             const DIV = document.createElement("div");
             DIV.classList.add("algo-close")
             this.#grid.appendChild(DIV)            
         }
-    }
-
-    display() {
-        this.#algorithms.sort(cmp({key: x => x.SIZE, reverse: true}))
     }
 
     get stats() {
@@ -401,13 +404,13 @@ class AlgoGrid {
 }
 
 export class AlgoField{
-    #layout;
-    #algogrids;
+    #name;
     #basestat;
 
-    get #stats() {
-        return this.#algogrids.map(x => x.stats).reduce(combine);
-    }
+    #algogrids;
+    /** @type {Map<StatAttributes, number>} */#stats;
+
+    #listener;
 
     get [STATS.HEALTH]() {
         return this.#basestat.hp * (this.#stats.get("hpperc") ?? 0) + (this.#stats.get("hpflat") ?? 0);
@@ -483,7 +486,13 @@ export class AlgoField{
 
     /** @param {UnitObject} unit */
     constructor(unit) {
-        this.#layout = {
+        this.#name = unit.name;
+        this.#basestat = unit.base;
+
+        this.#stats = new Map();
+        this.#listener = () => this.close()
+
+        const LAYOUT = {
             "Guard": "465",
             "Sniper": "645",
             "Warrior": "654",
@@ -491,16 +500,30 @@ export class AlgoField{
             "Medic": unit.name === "Imhotep" ? "546" : "456"
         }[unit.class];
 
-        this.#basestat = unit.base;
-
         this.#algogrids = [
-            new AlgoGrid("Offense", Number(this.#layout[0])),
-            new AlgoGrid("Stability", Number(this.#layout[1])),
-            new AlgoGrid("Special", Number(this.#layout[2]))
+            new AlgoGrid("Offense", Number(LAYOUT[0])),
+            new AlgoGrid("Stability", Number(LAYOUT[1])),
+            new AlgoGrid("Special", Number(LAYOUT[2]))
         ];
+
+        this.#close = () => {
+            this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
+            ALGO_CLOSE.removeEventListener("click", this.#close);
+
+            ALGO_MODAL.close()
+
+            ALGO_MODAL.firstElementChild.textContent = "";
+            for (const DIV of Object.values(GRIDS)) DIV.replaceChildren();
+        }
     }
 
-    update() {
-        // update #stats on algo change
+    #close;
+    open() {
+        ALGO_MODAL.firstElementChild.textContent = this.#name;
+        for (const GRID of this.#algogrids) GRID.display()
+
+        ALGO_MODAL.showModal()
+
+        ALGO_CLOSE.addEventListener("click", this.#close)
     }
 }

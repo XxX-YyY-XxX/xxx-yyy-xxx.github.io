@@ -1,5 +1,6 @@
 #algo-modal {
     border-radius: 10px;
+    text-align: center;
 }
 
 #algo-modal > :is(#Offense, #Stability, #Special) {
@@ -9,7 +10,7 @@
 .algo-grid {
     --gridsize: 50px;
     display: grid;
-    grid-template-columns: repeat(8, var(--gridsize));
+    grid-template-columns: repeat(2, var(--gridsize));
     grid-auto-rows: var(--gridsize);
     gap: 5px;
 }
