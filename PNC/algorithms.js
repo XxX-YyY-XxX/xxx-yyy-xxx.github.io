@@ -14,9 +14,8 @@ function combine(object1, object2) {
 
 //#region Base
 /** @typedef {keyof MAINSTATS | keyof SUBSTATS} StatAttributes */
-/** @typedef {[StatAttributes, number]} StatInfo */
-/** @typedef {STATS[keyof STATS]} StatNames */
 /** @typedef {Map<StatAttributes, number>} StatDict */
+/** @typedef {STATS[keyof STATS]} StatNames */
 
 const MAINSTATS = {
     hpflat: 1800,   hpperc: 12,
@@ -57,7 +56,7 @@ const SUBSTATS = {
 }
 
 class Algorithm {
-    /** @type {StatInfo?} */ SET2;
+    /** @type {StatDict} */ SET2;
     SIZE = 2;
 
     /** @type {[StatAttributes, StatAttributes]} */ #substat;
@@ -67,33 +66,23 @@ class Algorithm {
         this.#substat = new Array(2);
     }
 
-    /** @param {StatAttributes?} attribute @returns {StatInfo} */
+    /** @param {StatAttributes?} attribute @returns {StatDict} */
     mainstat(attribute = null) {
-        if (attribute)
-            this.#mainstat = attribute;
-        return [this.#mainstat, MAINSTATS[this.#mainstat]];
+        if (attribute) this.#mainstat = attribute;
+        return new Map([[this.#mainstat, MAINSTATS[this.#mainstat]]]);
     }
 
-    /** @param {number} position @param {StatAttributes?} attribute @returns {StatInfo} */
+    /** @param {number} position @param {StatAttributes?} attribute @returns {StatDict} */
     substat(position, attribute = null) {
-        if (attribute)
-            this.#substat[position] = attribute;
-        return [this.#substat[position], SUBSTATS[this.#substat[position]]];
+        if (attribute) this.#substat[position] = attribute;
+        const ATTR = this.#substat[position];
+        return new Map([[ATTR, SUBSTATS[ATTR]]]);
     }
 
     /** @returns {StatDict} */
     get stats() {
-        const OUT = new Map();
 
-        if (this.SET2 !== null) {
-            const [name, value] = this.SET2;
-            OUT.set(name, value);
-        }
-
-        {
-            const [name, value] = this.mainstat();
-            OUT.set(name, (OUT.get(name) ?? 0) + value * 2);
-        }
+        const OUT = combine(this.SET2, this.mainstat()) ;
 
         {
             console.log(this.#substat)
@@ -129,7 +118,7 @@ class Offense extends Algorithm {
 }
 
 class OffenseBlock extends Algorithm {
-    SET2 = null;
+    SET2 = new Map();
     SIZE = 1;
 
     /** @param {OffenseMainstat?} attribute @returns {number} */
@@ -144,35 +133,35 @@ class OffenseBlock extends Algorithm {
 }
 
 class FeedForward extends Offense {
-    SET2 = ["atkperc", 15];
+    SET2 = new Map([["atkperc", 15]]);
 }
 
 class Progression extends Offense {
-    SET2 = ["hashperc", 15];
+    SET2 = new Map([["hashperc", 15]]);
 }
 
 class Stack extends Offense {
-    SET2 = ["hashperc", 15];
+    SET2 = new Map([["hashperc", 15]]);
 }
 
 class Deduction extends Offense {
-    SET2 = ["aspdflat", 30];
+    SET2 = new Map([["aspdflat", 30]]);
 }
 
 class DataRepair extends Offense {
-    SET2 = ["resflat", 30];
+    SET2 = new Map([["resflat", 30]]);
 }
 
 class MLRMatrix extends Offense {
-    SET2 = ["dboostperc", 5];
+    SET2 = new Map([["dboostperc", 5]]);
 }
 
 class LimitValue extends Offense {
-    SET2 = ["dboostperc", 5];
+    SET2 = new Map([["dboostperc", 5]]);
 }
 
 class LowerLimit extends Offense {
-    SET2 = null;
+    SET2 = new Map();
 }
 //#endregion
 
@@ -198,7 +187,7 @@ class Stability extends Algorithm {
 }
 
 class StabilityBlock extends Algorithm {
-    SET2 = null;
+    SET2 = new Map();
     SIZE = 1;
 
     /** @param {StabilityMainstat?} attribute @returns {number} */
@@ -213,35 +202,35 @@ class StabilityBlock extends Algorithm {
 }
 
 class Perception extends Stability {
-    SET2 = ["hpperc", 15];
+    SET2 = new Map([["hpperc", 15]]);
 }
 
 class Rationality extends Stability {
-    SET2 = ["pdefperc", 15];
+    SET2 = new Map([["pdefperc", 15]]);
 }
 
 class Connection extends Stability {
-    SET2 = ["resflat", 50];
+    SET2 = new Map([["resflat", 50]]);
 }
 
 class Iteration extends Stability {
-    SET2 = ["lashperc", 5];
+    SET2 = new Map([["lashperc", 5]]);
 }
 
 class Reflection extends Stability {
-    SET2 = ["lashperc", 5];
+    SET2 = new Map([["lashperc", 5]]);
 }
 
 class Encapsulate extends Stability {
-    SET2 = ["dreducperc", 5];
+    SET2 = new Map([["dreducperc", 5]]);
 }
 
 class Resolve extends Stability {
-    SET2 = ["dreducperc", 5];
+    SET2 = new Map([["dreducperc", 5]]);
 }
 
 class Overflow extends Stability {
-    SET2 = null;
+    SET2 = new Map();
 }
 //#endregion
 
@@ -267,7 +256,7 @@ class Special extends Algorithm {
 }
 
 class SpecialBlock extends Algorithm {
-    SET2 = null;
+    SET2 = new Map();
     SIZE = 1;
 
     /** @param {SpecialMainstat?} attribute @returns {number} */
@@ -282,39 +271,39 @@ class SpecialBlock extends Algorithm {
 }
 
 class Paradigm extends Special {
-    SET2 = ["aspdflat", 30];
+    SET2 = new Map([["aspdflat", 30]]);
 }
 
 class Cluster extends Special {
-    SET2 = ["crateperc", 10];
+    SET2 = new Map([["crateperc", 10]]);
 }
 
 class Convolution extends Special {
-    SET2 = ["cdmgperc", 20];
+    SET2 = new Map([["cdmgperc", 20]]);
 }
 
 class Stratagem extends Special {
-    SET2 = ["dodgeperc", 8];
+    SET2 = new Map([["dodgeperc", 8]]);
 }
 
 class DeltaV extends Special {
-    SET2 = ["hasteperc", 10];
+    SET2 = new Map([["hasteperc", 10]]);
 }
 
 class Exploit extends Special {
-    SET2 = ["hasteperc", 10];
+    SET2 = new Map([["hasteperc", 10]]);
 }
 
 class LoopGain extends Special {
-    SET2 = ["hboostperc", 7.5];
+    SET2 = new Map([["hboostperc", 7.5]]);
 }
 
 class SVM extends Special {
-    SET2 = ["hboostperc", 7.5];
+    SET2 = new Map([["hboostperc", 7.5]]);
 }
 
 class Inspiration extends Special {
-    SET2 = null;
+    SET2 = new Map();
 }
 //#endregion
 
@@ -491,7 +480,6 @@ export class AlgoField{
         this.#basestat = unit.base;
 
         this.#stats = new Map();
-        this.#listener = () => this.close()
 
         const LAYOUT = {
             "Guard": "465",
@@ -507,24 +495,24 @@ export class AlgoField{
             new AlgoGrid("Special", Number(LAYOUT[2]))
         ];
 
-        this.#close = () => {
-            this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
-            ALGO_CLOSE.removeEventListener("click", this.#close);
-
-            ALGO_MODAL.close()
-
-            ALGO_MODAL.firstElementChild.textContent = "";
-            for (const DIV of Object.values(GRIDS)) DIV.replaceChildren();
-        }
     }
 
-    #close;
-    open() {
+    show() {
         ALGO_MODAL.firstElementChild.textContent = this.#name;
         for (const GRID of this.#algogrids) GRID.display()
 
         ALGO_MODAL.showModal()
 
-        ALGO_CLOSE.addEventListener("click", this.#close)
+        ALGO_CLOSE.addEventListener("click", () => this.#close())
+    }
+
+    #close() {
+        this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
+        ALGO_CLOSE.removeEventListener("click", this.#close);
+
+        ALGO_MODAL.close()
+
+        ALGO_MODAL.firstElementChild.textContent = "";
+        for (const DIV of Object.values(GRIDS)) DIV.replaceChildren();
     }
 }

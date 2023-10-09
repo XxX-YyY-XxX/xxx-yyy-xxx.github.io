@@ -256,7 +256,7 @@ class Units {
         if (this.#intistats.length != 3) console.warn(this.name, "lacks data: Intimacy");
 
         const TD_NAME = document.createElement("td");
-        TD_NAME.addEventListener("click", () => this.#algofield.open());
+        TD_NAME.addEventListener("click", () => this.#algofield.show());
 
         const IMAGE = document.createElement("img");
         IMAGE.addEventListener("load", () => {
