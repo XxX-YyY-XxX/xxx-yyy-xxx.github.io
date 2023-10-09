@@ -4,11 +4,7 @@ import {cmp, chain} from "../univasset/scripts/basefunctions/index.js";
 /** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
 /** @type {HTMLButtonElement} */ const ALGO_CLOSE = document.querySelector("#algo-modal button");
 
-/**
- * @param {Map<StatAttributes, number>} object1 
- * @param {Map<StatAttributes, number>} object2
- * @returns {Map<StatAttributes, number>}
- */
+/** @param {StatDict} object1 @param {StatDict} object2 @returns {StatDict} */
 function combine(object1, object2) {
     const OUTPUT = new Map();
     for (const attribute of new Set(chain(object1.keys(), object2.keys())))
@@ -20,6 +16,7 @@ function combine(object1, object2) {
 /** @typedef {keyof MAINSTATS | keyof SUBSTATS} StatAttributes */
 /** @typedef {[StatAttributes, number]} StatInfo */
 /** @typedef {STATS[keyof STATS]} StatNames */
+/** @typedef {Map<StatAttributes, number>} StatDict */
 
 const MAINSTATS = {
     hpflat: 1800,   hpperc: 12,
@@ -84,7 +81,7 @@ class Algorithm {
         return [this.#substat[position], SUBSTATS[this.#substat[position]]];
     }
 
-    /** @returns {Map<StatAttributes, number>} */
+    /** @returns {StatDict} */
     get stats() {
         const OUT = new Map();
 
@@ -398,8 +395,14 @@ class AlgoGrid {
         }
     }
 
+    /** @returns {StatDict} */
     get stats() {
-        return this.#algorithms.map(x => x.stats).reduce(combine);
+        switch (this.#algorithms.length) {
+            case 0:
+                return new Map();
+            default:
+                return this.#algorithms.map(x => x.stats).reduce(combine);
+        }
     }
 }
 
@@ -408,9 +411,7 @@ export class AlgoField{
     #basestat;
 
     #algogrids;
-    /** @type {Map<StatAttributes, number>} */#stats;
-
-    #listener;
+    /** @type {StatDict} */ #stats;
 
     get [STATS.HEALTH]() {
         return this.#basestat.hp * (this.#stats.get("hpperc") ?? 0) + (this.#stats.get("hpflat") ?? 0);
