@@ -4,6 +4,10 @@ import {cmp, chain, setattr} from "../univasset/scripts/basefunctions/index.js";
 /** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
 /** @type {HTMLButtonElement} */ const ALGO_CLOSE = document.querySelector("#algo-modal button");
 
+/** @type {HTMLDialogElement} */ const ALGO_SELECT = document.querySelector("#algo-select");
+/** @type {HTMLDivElement} */ const ALGO_CHOICES = document.querySelector("#algo-select div");
+/** @type {HTMLButtonElement} */ const ALGO_PICK = document.querySelector("#algo-select button");
+
 //#region Functions
 /** @param {StatDict} object1 @param {StatDict} object2 @returns {StatDict} */
 function combine(object1, object2) {
@@ -74,7 +78,7 @@ const SUBSTATS = {
 
 class Algorithm {
     /** @type {StatDict} */ SET2;
-    SIZE = 2;
+    /** @type {number} */ SIZE;
 
     /** @type {[StatAttributes, StatAttributes]} */ #substat;
     /** @type {StatAttributes} */ #mainstat;
@@ -123,11 +127,20 @@ class Algorithm {
 }
 
 class SingleBlock extends Algorithm {
+    SET2 = new Map();
+    SIZE = 1;
 
+    get html() {
+        return super.html
+    }
 }
 
 class DoubleBlock extends Algorithm {
-    
+    SIZE = 2;
+
+    get html() {
+        return super.html
+    }
 }
 //#endregion
 
@@ -135,7 +148,7 @@ class DoubleBlock extends Algorithm {
 /** @typedef {"atkflat"|"atkperc"|"hashflat"|"hashperc"|"ppenflat"|"ppenperc"|"openflat"|"openperc"} OffenseMainstat */
 /** @typedef {"hpflat"|"atkflat"|"atkperc"|"hashflat"|"hashperc"|"pdefflat"|"odefflat"|"crateperc"|"cdmgperc"|"ppenflat"|"openflat"|"regenflat"|"resflat"|"dboostperc"} OffenseSubstat*/
 
-class Offense extends Algorithm {
+class Offense extends DoubleBlock {
     /** @param {OffenseMainstat?} attribute @returns {number} */
     mainstat(attribute = null) {
         return super.mainstat(attribute);
@@ -152,10 +165,7 @@ class Offense extends Algorithm {
     }
 }
 
-class OffenseBlock extends Algorithm {
-    SET2 = new Map();
-    SIZE = 1;
-
+class OffenseBlock extends SingleBlock {
     /** @param {OffenseMainstat?} attribute @returns {number} */
     mainstat(attribute = null) {
         return super.mainstat(attribute) / 2;
@@ -204,7 +214,7 @@ class LowerLimit extends Offense {
 /** @typedef {"hpflat"|"hpperc"|"pdefflat"|"pdefperc"|"odefflat"|"odefperc"|"regenflat"} StabilityMainstat */
 /** @typedef {"hpflat"|"hpperc"|"atkflat"|"hashflat"|"pdefflat"|"pdefperc"|"odefflat"|"odefperc"|"crateperc"|"cdmgperc"|"ppenflat"|"openflat"|"regenflat"|"resflat"|"dreducperc"} StabilitySubstat */
 
-class Stability extends Algorithm {
+class Stability extends DoubleBlock {
     /** @param {StabilityMainstat?} attribute @returns {number} */
     mainstat(attribute) {
         return super.mainstat(attribute);
@@ -221,10 +231,7 @@ class Stability extends Algorithm {
     }
 }
 
-class StabilityBlock extends Algorithm {
-    SET2 = new Map();
-    SIZE = 1;
-
+class StabilityBlock extends SingleBlock {
     /** @param {StabilityMainstat?} attribute @returns {number} */
     mainstat(attribute) {
         return super.mainstat(attribute) / 2;
@@ -273,7 +280,7 @@ class Overflow extends Stability {
 /** @typedef {"pdefflat"|"pdefperc"|"odefflat"|"odefperc"|"crateperc"|"cdmgperc"|"hasteperc"|"hboostperc"} SpecialMainstat */
 /** @typedef {"hpflat"|"atkflat"|"hashflat"|"pdefflat"|"pdefperc"|"odefflat"|"odefperc"|"crateperc"|"cdmgperc"|"ppenflat"|"openflat"|"dodgeperc"|"regenflat"|"hasteperc"|"resflat"|"hboostperc"} SpecialSubstat*/
 
-class Special extends Algorithm {
+class Special extends DoubleBlock {
     /** @param {SpecialMainstat?} attribute @returns {number} */
     mainstat(attribute) {
         return super.mainstat(attribute);
@@ -290,10 +297,7 @@ class Special extends Algorithm {
     }
 }
 
-class SpecialBlock extends Algorithm {
-    SET2 = new Map();
-    SIZE = 1;
-
+class SpecialBlock extends SingleBlock {
     /** @param {SpecialMainstat?} attribute @returns {number} */
     mainstat(attribute) {
         return super.mainstat(attribute) / 2;
@@ -551,3 +555,11 @@ export class AlgoField{
     }
 }
 //#endregion
+
+var a = new Algorithm()
+try {console.log("Instance:", a.name)}
+catch {console.log("Instance fail.")}
+try {console.log("Class:", Algorithm.name)}
+catch {console.log("Class fail.")}
+try {console.log("Prototype:", Object.getPrototypeOf(a).name)}
+catch {console.log("Prototype fail.")}
