@@ -1,9 +1,10 @@
 import {STATS} from "./typing.js";
-import {cmp, chain} from "../univasset/scripts/basefunctions/index.js";
+import {cmp, chain, setattr} from "../univasset/scripts/basefunctions/index.js";
 
 /** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
 /** @type {HTMLButtonElement} */ const ALGO_CLOSE = document.querySelector("#algo-modal button");
 
+//#region Functions
 /** @param {StatDict} object1 @param {StatDict} object2 @returns {StatDict} */
 function combine(object1, object2) {
     const OUTPUT = new Map();
@@ -11,6 +12,22 @@ function combine(object1, object2) {
         OUTPUT.set(attribute, (object1.get(attribute) ?? 0) + (object2.get(attribute) ?? 0));
     return OUTPUT;
 }
+
+/** @param  {...number} items @returns {number?} */
+function sum(...items) {
+    switch (items.length) {
+        case 0:
+            return null;
+        case 1:
+            return items[0];
+        default:
+            var output = 0;
+            for (const item of items)
+                output += item;
+            return output;
+    }
+}
+//#endregion
 
 //#region Base
 /** @typedef {keyof MAINSTATS | keyof SUBSTATS} StatAttributes */
@@ -93,6 +110,24 @@ class Algorithm {
 
         return OUT;
     }
+
+    get html() {
+        const OUTPUT = document.createElement("div")
+        OUTPUT.classList.add("algo-block")
+        //add symbol
+        //add mainstat
+        //add substat
+        //add remove
+        return null
+    }
+}
+
+class SingleBlock extends Algorithm {
+
+}
+
+class DoubleBlock extends Algorithm {
+    
 }
 //#endregion
 
@@ -343,6 +378,7 @@ class Inspiration extends Special {
 */
 //#endregion
 
+//#region Interface
 const GRIDS = {
     /** @type {HTMLDivElement} */ Offense: document.querySelector("#algo-modal > #Offense > .algo-grid"),
     /** @type {HTMLDivElement} */ Stability: document.querySelector("#algo-modal > #Stability > .algo-grid"),
@@ -351,7 +387,6 @@ const GRIDS = {
 
 class AlgoGrid {
     #grid;
-    #size
     /** @type {Algorithm[]} */ #algorithms;
 
     #closedgrid;
@@ -359,29 +394,28 @@ class AlgoGrid {
     /** @param {"Offense" | "Stability" | "Special"} fieldtype @param {number} size */
     constructor(fieldtype, size) {
         this.#grid = GRIDS[fieldtype];
-        this.#size = size;
         this.#algorithms = [];
         this.#closedgrid = 8 - size;
+
+        this.type = fieldtype
     }
 
     display() {
-        this.#algorithms.sort(cmp({key: x => x.SIZE, reverse: true}))
+        this.#algorithms.sort(cmp({key: x => x.SIZE, reverse: true}));
+        const ALGO_SIZE = sum(...this.#algorithms.map(x => x.SIZE)) ?? 0;
 
-        //display set algorithms
+        for (const algo of this.#algorithms) this.#grid.append(algo.html)
 
-        for (let index = 0; index < (8 - this.#closedgrid); index++) {
+        for (let index = 0; index < (6 - (this.#closedgrid + ALGO_SIZE)); index++) {
             const BUTTON = document.createElement("button");
             BUTTON.type = "button";
             BUTTON.classList.add("algo-empty")
-            BUTTON.addEventListener("click", () => console.log(fieldtype, index))
+            BUTTON.addEventListener("click", () => console.log(this.type, index))
             this.#grid.appendChild(BUTTON);
         }
 
-        for (let index = 0; index < this.#closedgrid; index++) {
-            const DIV = document.createElement("div");
-            DIV.classList.add("algo-close")
-            this.#grid.appendChild(DIV)            
-        }
+        for (let index = 0; index < this.#closedgrid; index++)
+            this.#grid.appendChild(setattr(document.createElement("div"), {classList: {add: ["algo-close"]}}))            
     }
 
     /** @returns {StatDict} */
@@ -516,3 +550,4 @@ export class AlgoField{
         for (const DIV of Object.values(GRIDS)) DIV.replaceChildren();
     }
 }
+//#endregion
