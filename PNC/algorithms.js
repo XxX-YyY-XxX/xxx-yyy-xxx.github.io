@@ -1,12 +1,54 @@
 import {STATS} from "./typing.js";
 import {cmp, chain, setattr, type} from "../univasset/scripts/basefunctions/index.js";
 
+//#region Type Definitions
+/** @typedef {"Code Robustness" | "Power Connection" | "Neural Activation" | "Shield of Friendship" | "Coordinated Strike" | "Victorious Inspiration" | "Risk Evasion Aid" | "Mechanical Celerity" | "Coordinated Formation" | "Through Fire and Water" | "Healing Bond"} IntimacyStats */
+
+/**
+ * @typedef UnitObject
+ * @property {string} UnitObject.name
+ * @property {"Guard" | "Sniper" | "Warrior" | "Specialist" | "Medic"} UnitObject.class
+ * @property {{[linkname: string]: [linkurl: string]}} UnitObject.reference
+ * @property {string[]} UnitObject.fragments
+
+ * @property {object} UnitObject.base
+ * @property {number} UnitObject.base.hp
+ * @property {number} UnitObject.base.atk
+ * @property {number} UnitObject.base.hash
+ * @property {number} UnitObject.base.pdef
+ * @property {number} UnitObject.base.odef
+ * @property {number} UnitObject.base.aspd
+ * @property {number} UnitObject.base.crate
+ * @property {number} UnitObject.base.ppen
+ * @property {number} UnitObject.base.open
+ * @property {number} UnitObject.base.dodge
+ * @property {number} UnitObject.base.regen
+
+ * @property {object} UnitObject.arma
+ * @property {number} UnitObject.arma.hp
+ * @property {number} UnitObject.arma.atk
+ * @property {number} UnitObject.arma.hash
+ * @property {number} UnitObject.arma.pdef
+ * @property {number} UnitObject.arma.odef
+ * @property {number} UnitObject.arma.ppen
+ * @property {number} UnitObject.arma.open
+
+ * @property {[IntimacyStats, IntimacyStats, IntimacyStats]} UnitObject.intimacy
+*/
+//#endregion
+
+//#region Constants
 /** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
 /** @type {HTMLButtonElement} */ const ALGO_CLOSE = document.querySelector("#algo-modal button");
 
 /** @type {HTMLDialogElement} */ const ALGO_SELECT = document.querySelector("#algo-select");
 /** @type {HTMLDivElement} */ const ALGO_CHOICES = document.querySelector("#algo-select div");
 /** @type {HTMLButtonElement} */ const ALGO_PICK = document.querySelector("#algo-select button");
+ALGO_PICK.addEventListener("click", function() {
+    ALGO_SELECT.close()
+    console.log("Algorith selector closed.")
+})
+//#endregion
 
 //#region Functions
 /** @param {StatDict} object1 @param {StatDict} object2 @returns {StatDict} */
@@ -116,13 +158,13 @@ class Algorithm {
     }
 
     get html() {
-        const OUTPUT = document.createElement("div")
-        OUTPUT.classList.add("algo-block")
+        const OUTPUT = document.createElement("div");
+        OUTPUT.classList.add("algo-block");
         //add symbol
         //add mainstat
         //add substat
         //add remove
-        return null
+        return OUTPUT;
     }
 }
 
@@ -346,48 +388,17 @@ class Inspiration extends Special {
 }
 //#endregion
 
-//#region Typed Definitions
-/** @typedef {"Code Robustness" | "Power Connection" | "Neural Activation" | "Shield of Friendship" | "Coordinated Strike" | "Victorious Inspiration" | "Risk Evasion Aid" | "Mechanical Celerity" | "Coordinated Formation" | "Through Fire and Water" | "Healing Bond"} IntimacyStats */
-
-/**
- * @typedef UnitObject
- * @property {string} UnitObject.name
- * @property {"Guard" | "Sniper" | "Warrior" | "Specialist" | "Medic"} UnitObject.class
- * @property {{[linkname: string]: [linkurl: string]}} UnitObject.reference
- * @property {string[]} UnitObject.fragments
-
- * @property {object} UnitObject.base
- * @property {number} UnitObject.base.hp
- * @property {number} UnitObject.base.atk
- * @property {number} UnitObject.base.hash
- * @property {number} UnitObject.base.pdef
- * @property {number} UnitObject.base.odef
- * @property {number} UnitObject.base.aspd
- * @property {number} UnitObject.base.crate
- * @property {number} UnitObject.base.ppen
- * @property {number} UnitObject.base.open
- * @property {number} UnitObject.base.dodge
- * @property {number} UnitObject.base.regen
-
- * @property {object} UnitObject.arma
- * @property {number} UnitObject.arma.hp
- * @property {number} UnitObject.arma.atk
- * @property {number} UnitObject.arma.hash
- * @property {number} UnitObject.arma.pdef
- * @property {number} UnitObject.arma.odef
- * @property {number} UnitObject.arma.ppen
- * @property {number} UnitObject.arma.open
-
- * @property {[IntimacyStats, IntimacyStats, IntimacyStats]} UnitObject.intimacy
-*/
-//#endregion
-
 //#region Interface
 const MAX_SIZE = 6;
 const GRIDS = {
-    /** @type {HTMLDivElement} */ Offense: document.querySelector("#algo-modal > #Offense > .algo-grid"),
-    /** @type {HTMLDivElement} */ Stability: document.querySelector("#algo-modal > #Stability > .algo-grid"),
-    /** @type {HTMLDivElement} */ Special: document.querySelector("#algo-modal > #Special > .algo-grid")
+    /** @type {HTMLDivElement} */ Offense: document.querySelector("#algo-modal #Offense > .algo-grid"),
+    /** @type {HTMLDivElement} */ Stability: document.querySelector("#algo-modal #Stability > .algo-grid"),
+    /** @type {HTMLDivElement} */ Special: document.querySelector("#algo-modal #Special > .algo-grid")
+}
+const ALGO_SETS = {
+    Offense: [OffenseBlock, FeedForward, Progression, Stack, Deduction, DataRepair, MLRMatrix, LimitValue, LowerLimit],
+    Stability: [StabilityBlock, Perception, Rationality, Connection, Iteration, Reflection, Encapsulate, Resolve, Overflow],
+    Special: [SpecialBlock, Paradigm, Cluster, Convolution, Stratagem, DeltaV, Exploit, LoopGain, SVM, Inspiration]
 }
 
 class AlgoGrid {
@@ -415,7 +426,11 @@ class AlgoGrid {
             const BUTTON = document.createElement("button");
             BUTTON.type = "button";
             BUTTON.classList.add("algo-empty")
-            BUTTON.addEventListener("click", () => console.log(this.type, index))
+            BUTTON.addEventListener("click", () => {
+                ALGO_CHOICES
+                ALGO_SELECT.showModal()
+                console.log(this.type, index)
+            })
             this.#grid.appendChild(BUTTON);
         }
 
@@ -512,12 +527,13 @@ export class AlgoField{
         return this.#stats.get("hboostperc") ?? 0;
     }
 
-    /** @param {UnitObject} unit */
-    constructor(unit) {
+    /** @param {UnitObject} unit @param {function(): void} onclose */
+    constructor(unit, onclose = () => {}) {
         this.#name = unit.name;
         this.#basestat = unit.base;
 
         this.#stats = new Map();
+        this.#onClose = onclose;
 
         const LAYOUT = {
             "Guard": "465",
@@ -539,16 +555,20 @@ export class AlgoField{
         ALGO_MODAL.firstElementChild.textContent = this.#name;
         for (const GRID of this.#algogrids) GRID.display()
 
+        ALGO_CLOSE.addEventListener("click", () => this.#close())
+
         ALGO_MODAL.showModal()
 
-        ALGO_CLOSE.addEventListener("click", () => this.#close())
     }
 
+    #onClose;
     #close() {
         this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
-        ALGO_CLOSE.removeEventListener("click", this.#close);
+        this.#onClose();
 
         ALGO_MODAL.close()
+
+        ALGO_CLOSE.removeEventListener("click", this.#close);
 
         ALGO_MODAL.firstElementChild.textContent = "";
         for (const DIV of Object.values(GRIDS)) DIV.replaceChildren();
@@ -556,20 +576,15 @@ export class AlgoField{
 }
 //#endregion
 
+console.log("Algorithm.name:", Algorithm.name, type(Algorithm.name))
+console.log("Algorithm.prototype.constructor.name:", Algorithm.prototype.constructor.name, type(Algorithm.prototype.constructor.name))
 
 var a = new Algorithm()
-console.log("Algorithm.name:", Algorithm.name, type(Algorithm.name))
+console.log("a.constructor:", a.constructor, type(a.constructor))
+console.log("a.constructor.name:", a.constructor.name, type(a.constructor.name))
+console.log("Object.getPrototypeOf(a):", Object.getPrototypeOf(a), type(Object.getPrototypeOf(a)))
 
-try {console.log("Name:", a.constructor.name)}
-catch {console.log("Name fail.")}
-try {console.log("Class:", Algorithm.prototype.constructor.name)}
-catch {console.log("Class fail.")}
-try {console.log("Constructor:", a.constructor)}
-catch {console.log("Constructor fail.")}
-try {console.log("Prototype:", Object.getPrototypeOf(a))}
-catch {console.log("Prototype fail.")}
-try {console.log("Call:", Object.prototype.toString.call(a).match(/^\[object\s(.*)\]$/)[1])}
-catch {console.log("Call fail.")}
-try {console.log("String:", a.constructor.toString().match(/function\s*(\w+)/))}
-catch {console.log("String fail.")}
-
+/* Failed
+    a.constructor.toString().match(/function\s*(\w+)/)                  null
+    Object.prototype.toString.call(a).match(/^\[object\s(.*)\]$/)[1]    Object
+*/

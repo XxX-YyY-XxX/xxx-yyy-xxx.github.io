@@ -48,8 +48,6 @@ import {STATS} from "./typing.js";
 /** @type {HTMLInputElement} */ const SPEC_BUTTON = document.querySelector(`#bonus [value="Spec"]`);
 /** @type {HTMLInputElement} */ const POTB_BUTTON = document.querySelector(`#bonus [value="PotB"]`);
 /** @type {HTMLInputElement} */ const ALGO_BUTTON = document.querySelector(`#bonus [value="Algo"]`);
-
-/** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
 //#endregion
 
 //#region Class Declarations
@@ -225,7 +223,7 @@ class Units {
 
     /** @param {UnitObject} stat_object */
     constructor(stat_object) {
-        this.#algofield = new AlgoField(stat_object);
+        this.#algofield = new AlgoField(stat_object, () => this.updateStat());
 
         this.name = stat_object.name;
         this.class = stat_object.class;
@@ -332,7 +330,7 @@ class Units {
         ARMA_BUTTON.addEventListener("change", () => this.updateStat());
         POTB_BUTTON.addEventListener("change", () => this.updateStat());
         // ALGO_BUTTON.addEventListener("change", () => this.updateStat());
-        ALGO_MODAL.addEventListener("close", () => console.log("Modal closed."))
+        //ALGO_MODAL.addEventListener("close", () => console.log("Modal closed."))
 
         //#privatefield cannot be called dynamically, use exec/eval instead
     }

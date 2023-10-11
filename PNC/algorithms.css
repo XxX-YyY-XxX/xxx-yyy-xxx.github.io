@@ -1,9 +1,10 @@
 #algo-modal {
+    --gold-algo: yellow;
     border-radius: 10px;
     text-align: center;
 }
 
-#algo-modal > :is(#Offense, #Stability, #Special) {
+#algo-modal :is(#Offense, #Stability, #Special) {
     display: inline-block;
 }
 
@@ -25,8 +26,19 @@
 
 .algo-block {
     background: white;
+    position: relative;
 }
 
 .double-block {
     grid-column-end: span 2;
+}
+
+.mainstat {
+    background-color: var(--gold-algo);
+    color: white;
+}
+
+.substat {
+    background-color: black;
+    color: var(--gold-algo);
 }
