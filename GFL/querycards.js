@@ -151,10 +151,9 @@ export const cardData = [
     {
         id : '00004',
         questions : `Are there any general guides for Protocol Assimilation/Coalition Units/SF Capture Operation?`,
-        answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
+        answers : `${link('Gamepress guide.', "https://gamepress.gg/girlsfrontline/protocol-assimilation-coalition-basics-and-teambuilding")}<br>
+        ${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
-        ${link('Gamepress guide 1.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-first-impressions-revamped')}<br>
-        ${link("Gamepress guide 2.", "https://gamepress.gg/girlsfrontline/protocol-assimilation-coalition-basics-and-teambuilding-how-acquire-sf-waifus")}
         ${spoilerSummary("Cleista's basic Twitter guide.", Embed.twitter('CleistaCeleste', '1409824210571214849'))}`,
         tags : [dTag.PA, dTag.PRIME]
     },
@@ -3561,7 +3560,8 @@ export const cardData = [
         answers : `${List.unordered(
             link("u/Le_Trudos' Android 12 fix", "https://www.reddit.com/r/girlsfrontline/comments/tsmwen/possible_solution_to_android_12_updates_making/"),
             link("Droidwin Android 12 fix", "https://droidwin.com/games-and-apps-crashing-not-working-on-android-12-how-to-fix/"),
-            link("u/tommykuah's Android 12 fix", "https://www.reddit.com/r/girlsfrontline/comments/tdsmjh/regarding_android_12_app_crashfreeze_issue_and/i0mjpop/")
+            link("u/tommykuah's Android 12 fix", "https://www.reddit.com/r/girlsfrontline/comments/tdsmjh/regarding_android_12_app_crashfreeze_issue_and/i0mjpop/"),
+            "Downgrading Android 12 to Android 11." //https://old.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1y59kl/
         )}`,
         tags : [dTag.TECH, dTag.ANDROID]
     },
@@ -3747,6 +3747,18 @@ export const cardData = [
         answers : `Settings>Game>Story Playback then play the stage again. Or just Youtube it. Or cutscene interpreter. This also applies to nodes with story/cutscene snippets.`,
         tags : [dTag.LORE]
     },  //@ Visual
+    {
+        id : '00466',
+        questions : `Where can I get oath certificates?`,
+        answers : `Newbie career quest (1), battlepass (?), shop.`,
+        tags : [dTag.OATH, dTag.ITEM, dTag.GET, dTag.QUEST, dTag.BP, dTag.SHOP]
+    },
+    {
+        id : '00467',
+        questions : `Why can't I read the Griffin Stories/Bookshelf of Memories?`,
+        answers : `2 things. Either you haven't redeemed your points from the STAR tab, or you lack one of the dolls.`,
+        tags : [dTag.LORE, dTag.SIDE]
+    },
     {
         id : '00000',
         questions : ``,

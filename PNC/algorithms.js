@@ -1,5 +1,5 @@
 import {STATS} from "./typing.js";
-import {cmp, chain, setattr} from "../univasset/scripts/basefunctions/index.js";
+import {cmp, chain, setattr, type} from "../univasset/scripts/basefunctions/index.js";
 
 /** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
 /** @type {HTMLButtonElement} */ const ALGO_CLOSE = document.querySelector("#algo-modal button");
@@ -383,6 +383,7 @@ class Inspiration extends Special {
 //#endregion
 
 //#region Interface
+const MAX_SIZE = 6;
 const GRIDS = {
     /** @type {HTMLDivElement} */ Offense: document.querySelector("#algo-modal > #Offense > .algo-grid"),
     /** @type {HTMLDivElement} */ Stability: document.querySelector("#algo-modal > #Stability > .algo-grid"),
@@ -399,7 +400,7 @@ class AlgoGrid {
     constructor(fieldtype, size) {
         this.#grid = GRIDS[fieldtype];
         this.#algorithms = [];
-        this.#closedgrid = 8 - size;
+        this.#closedgrid = MAX_SIZE - size;
 
         this.type = fieldtype
     }
@@ -408,9 +409,9 @@ class AlgoGrid {
         this.#algorithms.sort(cmp({key: x => x.SIZE, reverse: true}));
         const ALGO_SIZE = sum(...this.#algorithms.map(x => x.SIZE)) ?? 0;
 
-        for (const algo of this.#algorithms) this.#grid.append(algo.html)
+        this.#grid.append(...this.#algorithms.map(x => x.html));
 
-        for (let index = 0; index < (6 - (this.#closedgrid + ALGO_SIZE)); index++) {
+        for (let index = 0; index < (MAX_SIZE - (this.#closedgrid + ALGO_SIZE)); index++) {
             const BUTTON = document.createElement("button");
             BUTTON.type = "button";
             BUTTON.classList.add("algo-empty")
@@ -418,8 +419,7 @@ class AlgoGrid {
             this.#grid.appendChild(BUTTON);
         }
 
-        for (let index = 0; index < this.#closedgrid; index++)
-            this.#grid.appendChild(setattr(document.createElement("div"), {classList: {add: ["algo-close"]}}))            
+        for (let index = 0; index < this.#closedgrid; index++) this.#grid.appendChild(setattr(document.createElement("div"), {classList: {add: ["algo-close"]}}))            
     }
 
     /** @returns {StatDict} */
@@ -556,10 +556,20 @@ export class AlgoField{
 }
 //#endregion
 
+
 var a = new Algorithm()
-try {console.log("Instance:", a.name)}
-catch {console.log("Instance fail.")}
-try {console.log("Class:", Algorithm.name)}
+console.log("Algorithm.name:", Algorithm.name, type(Algorithm.name))
+
+try {console.log("Name:", a.constructor.name)}
+catch {console.log("Name fail.")}
+try {console.log("Class:", Algorithm.prototype.constructor.name)}
 catch {console.log("Class fail.")}
-try {console.log("Prototype:", Object.getPrototypeOf(a).name)}
+try {console.log("Constructor:", a.constructor)}
+catch {console.log("Constructor fail.")}
+try {console.log("Prototype:", Object.getPrototypeOf(a))}
 catch {console.log("Prototype fail.")}
+try {console.log("Call:", Object.prototype.toString.call(a).match(/^\[object\s(.*)\]$/)[1])}
+catch {console.log("Call fail.")}
+try {console.log("String:", a.constructor.toString().match(/function\s*(\w+)/))}
+catch {console.log("String fail.")}
+

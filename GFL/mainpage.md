@@ -449,7 +449,6 @@ https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge
 
 https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i0xb1py/
 
-https://old.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i2zg3dw/
 
 ---
 
