@@ -148,7 +148,7 @@ export function* chain(...iterables) {
 
 export function reduce(callback, iterable) {
     const ITEMS = Array.from(iterable);
-    var output = ITEMS.shift() ?? null;
+    var output = ITEMS.shift();
     for (const ITEM of ITEMS) output = callback(output, ITEM);
     return output;
 }

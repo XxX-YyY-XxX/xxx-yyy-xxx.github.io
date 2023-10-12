@@ -1,6 +1,6 @@
 import {tableSort, brJoin, nestElements} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
-import {Async} from "../univasset/scripts/externaljavascript.js";
 import {zip, cmp, setattr} from "../univasset/scripts/basefunctions/index.js";
+import {Async} from "../univasset/scripts/externaljavascript.js";
 import {AlgoField} from "./algorithms.js";
 import {STATS} from "./typing.js";
 
@@ -376,8 +376,7 @@ TABLE.classList.add("freeze-col", "freeze-row");
 TABLE.append(THEAD, TBODY);
 
 const HEADER_VALUES = ["Doll Name", "Max HP", "Attack", "Hashrate", "Physical Def", "Operand Def", "Attack Speed", "Crit Rate", "Crit Damage", "Physical Pen", "Operand Pen", "Dodge Rate", "Post-battle Regen", "Skill Haste", "Debuff Resist", "Backlash", "Damage Boost", "Injury Mitigation", "Healing Effect"];
-const STATVAR = ["name", ...Object.values(STATS)];
-for (const [NAME, KEY, TYPE] of zip(HEADER_VALUES, STATVAR, (function*() {yield "string"; while (true) yield "number"})())) {
+for (const [NAME, KEY, TYPE] of zip(HEADER_VALUES, ["name", ...Object.values(STATS)], (function*() {yield "string"; while (true) yield "number"})())) {
     const TH = document.createElement("th");
     setattr(TH, {textContent: NAME, addEventListener: ["click", sortMethod, true]});
     setattr(TH.dataset, {sort: "no", key: KEY, type: TYPE});

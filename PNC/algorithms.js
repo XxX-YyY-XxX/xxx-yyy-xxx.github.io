@@ -40,6 +40,7 @@ import {cmp, chain, setattr, type, reduce} from "../univasset/scripts/basefuncti
 //#region Constants
 /** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
 /** @type {HTMLButtonElement} */ const ALGO_CLOSE = document.querySelector("#algo-modal button");
+ALGO_MODAL.addEventListener("close", () => console.log("Algorithm modal closed."))
 
 /** @type {HTMLDialogElement} */ const ALGO_SELECT = document.querySelector("#algo-select");
 ALGO_SELECT.addEventListener("close", function(event) {
@@ -101,14 +102,17 @@ const SUBSTATS = {
 }
 
 class Algorithm {
-    /** @type {StatDict} */ SET2;
+    /** @type {[StatAttributes, number]?} */ SET2;
     /** @type {number} */ SIZE;
 
     /** @type {[StatAttributes, StatAttributes]} */ #substat;
     /** @type {StatAttributes} */ #mainstat;
 
+    /** @type {HTMLDivElement} */ html;
+
     constructor() {
-        this.#substat = new Array(2);
+        this.#mainstat = "hpperc";
+        this.#substat = ["hpperc", "hpflat"];
     }
 
     /** @param {StatAttributes?} attribute @returns {StatDict} */
@@ -126,35 +130,58 @@ class Algorithm {
 
     /** @returns {StatDict} */
     get stats() {
-        const OUT = combine(this.SET2, this.mainstat()) ;
+        const SET_MAP = this.SET2 !== null ? new Map([this.SET2]) : new Map();
+        const OUTPUT = combine(SET_MAP, this.mainstat());
 
-        {
-            console.log(this.#substat)
-            const [first, second] = this.#substat;
-            OUT.set(first, (OUT.get(first) ?? 0) + SUBSTATS[first]);
-            OUT.set(second, (OUT.get(second) ?? 0) + (SUBSTATS[second] ?? 0));
-        }
+        console.log(this.#substat)
+        const [first, second] = this.#substat;
+        OUTPUT.set(first, (OUTPUT.get(first) ?? 0) + SUBSTATS[first]);
+        OUTPUT.set(second, (OUTPUT.get(second) ?? 0) + (SUBSTATS[second] ?? 0));
 
-        return OUT;
+        return OUTPUT;
     }
+
+    get mainSelection() {
+        
+    }
+
+    get subSelection() {
+
+    }
+}
+
+{/* <template>
+<div class="algo-block">
+    <span class="mainstat"></span>
+    <span class="substat"></span>
+    <button type="button"></button>
+</div>
+</template>
+
+<template>
+<div class="algo-block double-block">
+    <button type="button"></button>
+    <span class="mainstat"></span>
+    <span class="substat" index="0"></span>
+    <span class="substat" index="1"></span>
+    <button type="button"></button>
+</div>
+</template> */}
+
+
+class SingleBlock extends Algorithm {
+    SET2 = null;
+    SIZE = 1;
 
     get html() {
         const OUTPUT = document.createElement("div");
         OUTPUT.classList.add("algo-block");
-        //add symbol
-        //add mainstat
-        //add substat
-        //add remove
-        return OUTPUT;
-    }
-}
+        // const MAINSTAT = document.createElement("span");
+        // MAINSTAT.classList.add("mainstat")
+        // MAINSTAT.textContent = Array.from(this.mainstat().keys())[0]
+        // const SUBSTAT = document.createElement("span");
+        // SUBSTAT.classList.add("substat")
 
-class SingleBlock extends Algorithm {
-    SET2 = new Map();
-    SIZE = 1;
-
-    get html() {
-        const OUTPUT = super.html;
         return OUTPUT;
     }
 }
@@ -163,8 +190,9 @@ class DoubleBlock extends Algorithm {
     SIZE = 2;
 
     get html() {
-        const OUTPUT = super.html;
-        OUTPUT.classList.add("double-block");
+        const OUTPUT = document.createElement("div");
+        OUTPUT.classList.add("algo-block", "double-block");
+        //add symbol
         return OUTPUT;
     }
 }
@@ -173,6 +201,18 @@ class DoubleBlock extends Algorithm {
 //#region Offense
 /** @typedef {"atkflat"|"atkperc"|"hashflat"|"hashperc"|"ppenflat"|"ppenperc"|"openflat"|"openperc"} OffenseMainstat */
 /** @typedef {"hpflat"|"atkflat"|"atkperc"|"hashflat"|"hashperc"|"pdefflat"|"odefflat"|"crateperc"|"cdmgperc"|"ppenflat"|"openflat"|"regenflat"|"resflat"|"dboostperc"} OffenseSubstat*/
+
+class OffenseBlock extends SingleBlock {
+    /** @param {OffenseMainstat?} attribute @returns {number} */
+    mainstat(attribute = null) {
+        return super.mainstat(attribute) / 2;
+    }
+
+    /** @param {OffenseSubstat?} attribute @returns {number} */
+    substat(attribute = null) {
+        return super.substat(0, attribute);
+    }
+}
 
 class Offense extends DoubleBlock {
     /** @param {OffenseMainstat?} attribute @returns {number} */
@@ -191,54 +231,31 @@ class Offense extends DoubleBlock {
     }
 }
 
-class OffenseBlock extends SingleBlock {
-    /** @param {OffenseMainstat?} attribute @returns {number} */
-    mainstat(attribute = null) {
-        return super.mainstat(attribute) / 2;
-    }
-
-    /** @param {OffenseSubstat?} attribute @returns {number} */
-    substat(attribute = null) {
-        return super.substat(0, attribute);
-    }
-}
-
-class FeedForward extends Offense {
-    SET2 = new Map([["atkperc", 15]]);
-}
-
-class Progression extends Offense {
-    SET2 = new Map([["hashperc", 15]]);
-}
-
-class Stack extends Offense {
-    SET2 = new Map([["hashperc", 15]]);
-}
-
-class Deduction extends Offense {
-    SET2 = new Map([["aspdflat", 30]]);
-}
-
-class DataRepair extends Offense {
-    SET2 = new Map([["resflat", 30]]);
-}
-
-class MLRMatrix extends Offense {
-    SET2 = new Map([["dboostperc", 5]]);
-}
-
-class LimitValue extends Offense {
-    SET2 = new Map([["dboostperc", 5]]);
-}
-
-class LowerLimit extends Offense {
-    SET2 = new Map();
-}
+class FeedForward extends Offense {SET2 = ["atkperc", 15]}
+class Progression extends Offense {SET2 = ["hashperc", 15]}
+class Stack extends Offense {SET2 = ["hashperc", 15]}
+class Deduction extends Offense {SET2 = ["aspdflat", 30]}
+class DataRepair extends Offense {SET2 = ["resflat", 30]}
+class MLRMatrix extends Offense {SET2 = ["dboostperc", 5]}
+class LimitValue extends Offense {SET2 = ["dboostperc", 5]}
+class LowerLimit extends Offense {SET2 = null}
 //#endregion
 
 //#region Stability
 /** @typedef {"hpflat"|"hpperc"|"pdefflat"|"pdefperc"|"odefflat"|"odefperc"|"regenflat"} StabilityMainstat */
 /** @typedef {"hpflat"|"hpperc"|"atkflat"|"hashflat"|"pdefflat"|"pdefperc"|"odefflat"|"odefperc"|"crateperc"|"cdmgperc"|"ppenflat"|"openflat"|"regenflat"|"resflat"|"dreducperc"} StabilitySubstat */
+
+class StabilityBlock extends SingleBlock {
+    /** @param {StabilityMainstat?} attribute @returns {number} */
+    mainstat(attribute) {
+        return super.mainstat(attribute) / 2;
+    }
+
+    /** @param {StabilitySubstat?} attribute @returns {number} */
+    substat(attribute) {
+        return super.substat(0, attribute);
+    }
+}
 
 class Stability extends DoubleBlock {
     /** @param {StabilityMainstat?} attribute @returns {number} */
@@ -257,54 +274,31 @@ class Stability extends DoubleBlock {
     }
 }
 
-class StabilityBlock extends SingleBlock {
-    /** @param {StabilityMainstat?} attribute @returns {number} */
-    mainstat(attribute) {
-        return super.mainstat(attribute) / 2;
-    }
-
-    /** @param {StabilitySubstat?} attribute @returns {number} */
-    substat(attribute) {
-        return super.substat(0, attribute);
-    }
-}
-
-class Perception extends Stability {
-    SET2 = new Map([["hpperc", 15]]);
-}
-
-class Rationality extends Stability {
-    SET2 = new Map([["pdefperc", 15]]);
-}
-
-class Connection extends Stability {
-    SET2 = new Map([["resflat", 50]]);
-}
-
-class Iteration extends Stability {
-    SET2 = new Map([["lashperc", 5]]);
-}
-
-class Reflection extends Stability {
-    SET2 = new Map([["lashperc", 5]]);
-}
-
-class Encapsulate extends Stability {
-    SET2 = new Map([["dreducperc", 5]]);
-}
-
-class Resolve extends Stability {
-    SET2 = new Map([["dreducperc", 5]]);
-}
-
-class Overflow extends Stability {
-    SET2 = new Map();
-}
+class Perception extends Stability {SET2 = ["hpperc", 15]}
+class Rationality extends Stability {SET2 = ["pdefperc", 15]}
+class Connection extends Stability {SET2 = ["resflat", 50]}
+class Iteration extends Stability {SET2 = ["lashperc", 5]}
+class Reflection extends Stability {SET2 = ["lashperc", 5]}
+class Encapsulate extends Stability {SET2 = ["dreducperc", 5]}
+class Resolve extends Stability {SET2 = ["dreducperc", 5]}
+class Overflow extends Stability {SET2 = null}
 //#endregion
 
 //#region Special
 /** @typedef {"pdefflat"|"pdefperc"|"odefflat"|"odefperc"|"crateperc"|"cdmgperc"|"hasteperc"|"hboostperc"} SpecialMainstat */
 /** @typedef {"hpflat"|"atkflat"|"hashflat"|"pdefflat"|"pdefperc"|"odefflat"|"odefperc"|"crateperc"|"cdmgperc"|"ppenflat"|"openflat"|"dodgeperc"|"regenflat"|"hasteperc"|"resflat"|"hboostperc"} SpecialSubstat*/
+
+class SpecialBlock extends SingleBlock {
+    /** @param {SpecialMainstat?} attribute @returns {number} */
+    mainstat(attribute) {
+        return super.mainstat(attribute) / 2;
+    }
+
+    /** @param {SpecialSubstat?} attribute @returns {number} */
+    substat(attribute) {
+        return super.substat(0, attribute);
+    }
+}
 
 class Special extends DoubleBlock {
     /** @param {SpecialMainstat?} attribute @returns {number} */
@@ -323,53 +317,15 @@ class Special extends DoubleBlock {
     }
 }
 
-class SpecialBlock extends SingleBlock {
-    /** @param {SpecialMainstat?} attribute @returns {number} */
-    mainstat(attribute) {
-        return super.mainstat(attribute) / 2;
-    }
-
-    /** @param {SpecialSubstat?} attribute @returns {number} */
-    substat(attribute) {
-        return super.substat(0, attribute);
-    }
-}
-
-class Paradigm extends Special {
-    SET2 = new Map([["aspdflat", 30]]);
-}
-
-class Cluster extends Special {
-    SET2 = new Map([["crateperc", 10]]);
-}
-
-class Convolution extends Special {
-    SET2 = new Map([["cdmgperc", 20]]);
-}
-
-class Stratagem extends Special {
-    SET2 = new Map([["dodgeperc", 8]]);
-}
-
-class DeltaV extends Special {
-    SET2 = new Map([["hasteperc", 10]]);
-}
-
-class Exploit extends Special {
-    SET2 = new Map([["hasteperc", 10]]);
-}
-
-class LoopGain extends Special {
-    SET2 = new Map([["hboostperc", 7.5]]);
-}
-
-class SVM extends Special {
-    SET2 = new Map([["hboostperc", 7.5]]);
-}
-
-class Inspiration extends Special {
-    SET2 = new Map();
-}
+class Paradigm extends Special {SET2 = ["aspdflat", 30]}
+class Cluster extends Special {SET2 = ["crateperc", 10]}
+class Convolution extends Special {SET2 = ["cdmgperc", 20]}
+class Stratagem extends Special {SET2 = ["dodgeperc", 8]}
+class DeltaV extends Special {SET2 = ["hasteperc", 10]}
+class Exploit extends Special {SET2 = ["hasteperc", 10]}
+class LoopGain extends Special {SET2 = ["hboostperc", 7.5]}
+class SVM extends Special {SET2 = ["hboostperc", 7.5]}
+class Inspiration extends Special {SET2 = null}
 //#endregion
 
 //#region Interface
@@ -380,16 +336,47 @@ const GRIDS = {
     /** @type {HTMLDivElement} */ Special: document.querySelector("#algo-modal #Special > .algo-grid")
 }
 const ALGO_SETS = {
-    Offense: [OffenseBlock, FeedForward, Progression, Stack, Deduction, DataRepair, MLRMatrix, LimitValue, LowerLimit],
-    Stability: [StabilityBlock, Perception, Rationality, Connection, Iteration, Reflection, Encapsulate, Resolve, Overflow],
-    Special: [SpecialBlock, Paradigm, Cluster, Convolution, Stratagem, DeltaV, Exploit, LoopGain, SVM, Inspiration]
-}
+    Offense: {
+        OffenseBlock: OffenseBlock,
+        FeedForward: FeedForward,
+        Progression: Progression,
+        Stack: Stack,
+        Deduction: Deduction,
+        DataRepair: DataRepair,
+        MLRMatrix: MLRMatrix,
+        LimitValue: LimitValue,
+        LowerLimit: LowerLimit
+    },
+    Stability: {
+        StabilityBlock: StabilityBlock,
+        Perception: Perception,
+        Rationality: Rationality,
+        Connection: Connection,
+        Iteration: Iteration,
+        Reflection: Reflection,
+        Encapsulate: Encapsulate,
+        Resolve: Resolve,
+        Overflow: Overflow
+    },
+    Special: {
+        SpecialBlock: SpecialBlock,
+        Paradigm: Paradigm,
+        Cluster: Cluster,
+        Convolution: Convolution,
+        Stratagem: Stratagem,
+        DeltaV: DeltaV,
+        Exploit: Exploit,
+        LoopGain: LoopGain,
+        SVM: SVM,
+        Inspiration: Inspiration
+    }
+};
 /** @param {typeof Algorithm} algoClass */
-function createAlgoButton(algoClass) {
+function algoSelectButton(algoClass) {
     const OUTPUT = document.createElement("button");
     OUTPUT.type = "submit";
     OUTPUT.value = algoClass.name;
-    // show algo symbol
+    OUTPUT.appendChild(setattr(document.createElement("img"), {src: `./assets/images/algorithms/${algoClass.name}.png`}))
     // show algo name
     return OUTPUT;
 }
@@ -418,6 +405,7 @@ class AlgoGrid {
         this.#algorithms.sort(cmp({key: x => x.SIZE, reverse: true}));
 
         this.#grid.append(...this.#algorithms.map(x => x.html));
+        console.log(this.#algorithms.map(x => x.SIZE))
 
         for (let index = 0; index < this.#emptycell; index++)
             this.#grid.appendChild(setattr(document.createElement("button"), {type: "button", classList: {add: ["algo-empty"]}, addEventListener: ["click", this.#open.bind(this)]}));
@@ -427,8 +415,10 @@ class AlgoGrid {
     }
 
     #open() {
-        if (this.#emptycell === 1)  ALGO_SELECT.firstElementChild.appendChild(createAlgoButton(ALGO_SETS[this.#fieldtype][0]));
-        else                        ALGO_SELECT.firstElementChild.append(...ALGO_SETS[this.#fieldtype].map(createAlgoButton));
+        if (this.#emptycell === 1)
+            ALGO_SELECT.firstElementChild.appendChild(algoSelectButton(ALGO_SETS[this.#fieldtype][`${this.#fieldtype}Block`]));
+        else
+            ALGO_SELECT.firstElementChild.append(...Object.values(ALGO_SETS[this.#fieldtype]).map(algoSelectButton));
 
         ALGO_SELECT.addEventListener("close", this.#close.bind(this));
 
@@ -439,13 +429,8 @@ class AlgoGrid {
     #close() {
         ALGO_SELECT.removeEventListener("close", this.#close.bind(this))
 
-        //might change according to ALGO_SETS
-        for (const algorithm of ALGO_SETS[this.#fieldtype]) {
-            if (algorithm.name === ALGO_SELECT.returnValue) {
-                this.#algorithms.push(new algorithm());
-                break;
-            }
-        }
+        this.#algorithms.push(new ALGO_SETS[this.#fieldtype][ALGO_SELECT.returnValue]());
+        console.log(ALGO_SELECT.returnValue)
 
         this.#grid.replaceChildren();
         this.display()

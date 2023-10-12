@@ -8,13 +8,9 @@
     display: inline-block;
 }
 
-#algo-modal > #algo-close {
-    left: 50%;
-    transform: translateX(-50%);
-}
-
+/* #region Algorithm Grid */
 .algo-grid {
-    --gridsize: 50px;
+    --gridsize: 100px;
     display: grid;
     grid-template-columns: repeat(2, var(--gridsize));
     grid-auto-rows: var(--gridsize);
@@ -22,20 +18,21 @@
 }
 
 .algo-close {
-    background-color: white;
     background-image: url("./assets/images/algorithms/Closed.png");
     background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .algo-empty {
-    background-color: white;
     background-image: url("./assets/images/algorithms/Empty.png");
     background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .algo-block {
     background: #eaeaea;
     position: relative;
+    padding: 5px;
 }
 
 .double-block {
@@ -50,4 +47,32 @@
 .substat {
     background-color: #343434;
     color: var(--gold-algo);
+}
+
+.delete-algo {
+    position: absolute;
+}
+/* #endregion */
+
+#algo-modal > #close-modal {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+#algo-select {
+    border-radius: 10px;
+}
+
+#algo-select > form {
+    --gridsize: 100px;
+    display: grid;
+    grid-auto-columns: var(--gridsize);
+    grid-auto-rows: var(--gridsize);
+    gap: 5px;
+}
+
+#algo-select img {
+    background-color: #494b4a;
 }
