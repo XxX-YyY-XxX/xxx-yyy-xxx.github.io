@@ -5,7 +5,7 @@
 }
 
 /* #region Algorithm Grid */
-#algo-modal.tab-body {
+#algo-modal .tab-body {
     --gridsize: 100px;
     display: grid;
     grid-template-columns: repeat(2, var(--gridsize));
@@ -16,13 +16,13 @@
 .algo-close {
     background-image: url("./assets/images/algorithms/Closed.png");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
 }
 
 .algo-empty {
     background-image: url("./assets/images/algorithms/Empty.png");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
 }
 
 .algo-block {
@@ -51,8 +51,8 @@
 /* #endregion */
 
 /* #region Tabs */
-#algo-modal .tab-button {
-    display: none;
+#algo-field {
+    container-type: inline-size;
 }
 
 #algo-modal .tab-button > label{
@@ -61,17 +61,15 @@
     flex: calc(100% / 3);
 }
 
-#algo-modal .tab-body {
-    display: inline-block;
+@container (width >= 650px) {
+    #algo-modal .tab-body {
+        display: inline-block;
+    }    
 }
 
-@media screen and (width < 700px) {
+@container (width < 650px) {
     #algo-modal .tab-button > label:has(input:checked) {
-        background-color: darkgreen;
-    }
-
-    #algo-modal .tab-button ~ .tab-body {
-        display: none;
+        background-color: var(--gold-algo);
     }
     
     #algo-modal .tab-button:has([value="Offense"]:checked) ~ #Offense,
