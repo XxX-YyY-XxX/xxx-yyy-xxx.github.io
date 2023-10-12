@@ -8,8 +8,9 @@
     display: inline-block;
 }
 
-#algo-modal button {
-    display: block;
+#algo-modal > #algo-close {
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .algo-grid {
@@ -21,15 +22,15 @@
 }
 
 .algo-close {
-    background: black;
-    /* background-size: auto 100%;
-    background-repeat: no-repeat; */
+    background-color: white;
+    background-image: url("./assets/images/algorithms/Closed.png");
+    background-repeat: no-repeat;
 }
 
 .algo-empty {
-    background: gray;
-    /* background-size: auto 100%;
-    background-repeat: no-repeat; */
+    background-color: white;
+    background-image: url("./assets/images/algorithms/Empty.png");
+    background-repeat: no-repeat;
 }
 
 .algo-block {

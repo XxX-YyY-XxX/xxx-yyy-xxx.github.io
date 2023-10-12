@@ -420,7 +420,7 @@ class AlgoGrid {
         this.#grid.append(...this.#algorithms.map(x => x.html));
 
         for (let index = 0; index < this.#emptycell; index++)
-            this.#grid.appendChild(setattr(document.createElement("button"), {type: "button", classList: {add: ["algo-empty"]}, addEventListener: ["click", this.#open]}));
+            this.#grid.appendChild(setattr(document.createElement("button"), {type: "button", classList: {add: ["algo-empty"]}, addEventListener: ["click", this.#open.bind(this)]}));
 
         for (let index = 0; index < this.#closedcell; index++)
             this.#grid.appendChild(setattr(document.createElement("div"), {classList: {add: ["algo-close"]}}))
@@ -430,14 +430,14 @@ class AlgoGrid {
         if (this.#emptycell === 1)  ALGO_SELECT.firstElementChild.appendChild(createAlgoButton(ALGO_SETS[this.#fieldtype][0]));
         else                        ALGO_SELECT.firstElementChild.append(...ALGO_SETS[this.#fieldtype].map(createAlgoButton));
 
-        ALGO_SELECT.addEventListener("close", this.#close);
+        ALGO_SELECT.addEventListener("close", this.#close.bind(this));
 
         ALGO_SELECT.showModal();
     }
 
     /** Only gets closed upon selecting an algorithm. */
     #close() {
-        ALGO_SELECT.removeEventListener("close", this.#close)
+        ALGO_SELECT.removeEventListener("close", this.#close.bind(this))
 
         //might change according to ALGO_SETS
         for (const algorithm of ALGO_SETS[this.#fieldtype]) {
@@ -564,7 +564,7 @@ export class AlgoField{
         ALGO_MODAL.firstElementChild.textContent = this.#name;
         for (const GRID of this.#algogrids) GRID.display()
 
-        ALGO_CLOSE.addEventListener("click", this.#close)
+        ALGO_CLOSE.addEventListener("click", this.#close.bind(this))
 
         ALGO_MODAL.showModal()
 
@@ -577,7 +577,7 @@ export class AlgoField{
 
         ALGO_MODAL.close()
 
-        ALGO_CLOSE.removeEventListener("click", this.#close);
+        ALGO_CLOSE.removeEventListener("click", this.#close.bind(this));
 
         ALGO_MODAL.firstElementChild.textContent = "";
         for (const DIV of Object.values(GRIDS)) DIV.replaceChildren();
@@ -585,17 +585,20 @@ export class AlgoField{
 }
 //#endregion
 
-console.log()
-
-console.log("Algorithm.prototype.constructor.name:", Algorithm.prototype.constructor.name, type(Algorithm.prototype.constructor.name))
-
 var a = new Algorithm()
-console.log("a.constructor:", a.constructor, type(a.constructor))
-console.log("a.constructor.name:", a.constructor.name, type(a.constructor.name))
-console.log("Object.getPrototypeOf(a):", Object.getPrototypeOf(a), type(Object.getPrototypeOf(a)))
+try {console.log("Object.getPrototypeOf(a).constructor:", Object.getPrototypeOf(a).constructor, type(Object.getPrototypeOf(a).constructor))}
+catch {console.log("Object.getPrototypeOf(a).constructor fail.")}
+try {console.log("Object.getPrototypeOf(a).prototype:", Object.getPrototypeOf(a).prototype, type(Object.getPrototypeOf(a).prototype))}
+catch {console.log("Object.getPrototypeOf(a).prototype fail.")}
 
 /* Success
-    Algorithm.name  Algorithm   string
+    Algorithm.name                          Algorithm       string
+    Algorithm.prototype.constructor.name    Algorithm       string
+    a.constructor                           <class repr>    function
+    a.constructor.name                      Algorithm       string
+    Object.getPrototypeOf(a)                <class>         object
+
+    prototype:  Basically an instance representation.
 
 */
 
