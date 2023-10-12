@@ -66,7 +66,7 @@ function combine(object1, object2) {
 /** @typedef {Map<StatAttributes, number>} StatDict */
 /** @typedef {STATS[keyof STATS]} StatNames */
 
-const MAINSTATS = {
+const MAINSTATS = Object.freeze({
     hpflat: 1800,   hpperc: 12,
     atkflat: 54,    atkperc: 12,
     hashflat: 54,   hashperc: 12,
@@ -81,9 +81,9 @@ const MAINSTATS = {
     regenflat: 720,
     hasteperc: 8,
     hboostperc: 4
-}
+})
 
-const SUBSTATS = {
+const SUBSTATS = Object.freeze({
     hpflat: 1080,   hpperc: 7.2,
     atkflat: 32,    atkperc: 7.2,
     hashflat: 32,   hashperc: 7.2,
@@ -102,7 +102,7 @@ const SUBSTATS = {
     dboostperc: 3.9,
     dreducperc: 3.9,
     hboostperc: 2.4
-}
+})
 
 class Algorithm {
     /** @type {[StatAttributes, number]?} */ SET2;
@@ -380,7 +380,7 @@ class AlgoGrid {
         this.#close = () => {
             ALGO_SELECT.removeEventListener("close", this.#close)
 
-            this.#algorithms.push(new ALGO_SETS[this.#fieldtype][ALGO_SELECT.returnValue]());
+            this.#algorithms.push(new ALGO_SETS[fieldtype][ALGO_SELECT.returnValue]());
     
             this.#grid.replaceChildren();
             this.display()    
@@ -404,8 +404,8 @@ class AlgoGrid {
         this.#algorithms.sort(cmp({key: x => x.SIZE, reverse: true}));
 
         this.#grid.append(...this.#algorithms.map(x => x.html));
-        console.log("HTML:", this.#algorithms.map(x => x.html))
-        console.log("Sizes:", this.#algorithms.map(x => x.SIZE))
+        console.log(this.#fieldtype, "HTML:", this.#algorithms.map(x => x.html))
+        console.log(this.#fieldtype, "sizes:", this.#algorithms.map(x => x.SIZE))
 
         for (let index = 0; index < this.#emptycell; index++)
             this.#grid.appendChild(setattr(document.createElement("button"), {type: "button", classList: {add: ["algo-empty"]}, addEventListener: ["click", this.#open.bind(this)]}));
