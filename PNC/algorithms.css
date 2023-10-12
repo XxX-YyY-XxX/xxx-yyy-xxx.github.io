@@ -78,7 +78,7 @@
 
     #algo-modal .tab-body > div {
         justify-content: center;
-        display: none !important;
+        display: none;
     }    
 
     #algo-modal .tab-button:has([value="Offense"]:checked) ~ #Offense,
@@ -105,8 +105,9 @@
 
 #algo-select > form {
     display: flex;
-    gap: 5px;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 5px;
 }
 
 #algo-select button {

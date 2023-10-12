@@ -376,6 +376,29 @@ class AlgoGrid {
 
         this.#fieldtype = fieldtype;
         this.#closedcell = MAX_SIZE - size;
+
+        this.#close = () => {
+            ALGO_SELECT.removeEventListener("close", this.#close)
+
+            // this.#algorithms.push(new ALGO_SETS[this.#fieldtype][ALGO_SELECT.returnValue]());
+            console.log(ALGO_SETS[fieldtype][ALGO_SELECT.returnValue], ALGO_SELECT.returnValue)
+    
+            this.#grid.replaceChildren();
+            this.display()    
+        }
+    }
+
+    /** Only gets closed upon selecting an algorithm. */
+    #close;
+    #open() {
+        if (this.#emptycell === 1)
+            ALGO_SELECT.firstElementChild.appendChild(algoSelectButton(ALGO_SETS[this.#fieldtype][`${this.#fieldtype}Block`]));
+        else
+            ALGO_SELECT.firstElementChild.append(...Object.values(ALGO_SETS[this.#fieldtype]).map(algoSelectButton));
+
+        ALGO_SELECT.addEventListener("close", this.#close);
+
+        ALGO_SELECT.showModal();
     }
 
     display() {
@@ -390,28 +413,6 @@ class AlgoGrid {
 
         for (let index = 0; index < this.#closedcell; index++)
             this.#grid.appendChild(setattr(document.createElement("div"), {classList: {add: ["algo-close"]}}))
-    }
-
-    #open() {
-        if (this.#emptycell === 1)
-            ALGO_SELECT.firstElementChild.appendChild(algoSelectButton(ALGO_SETS[this.#fieldtype][`${this.#fieldtype}Block`]));
-        else
-            ALGO_SELECT.firstElementChild.append(...Object.values(ALGO_SETS[this.#fieldtype]).map(algoSelectButton));
-
-        ALGO_SELECT.addEventListener("close", this.#close.bind(this));
-
-        ALGO_SELECT.showModal();
-    }
-
-    /** Only gets closed upon selecting an algorithm. */
-    #close() {
-        ALGO_SELECT.removeEventListener("close", this.#close.bind(this))
-
-        // this.#algorithms.push(new ALGO_SETS[this.#fieldtype][ALGO_SELECT.returnValue]());
-        console.log(ALGO_SETS[this.#fieldtype][ALGO_SELECT.returnValue], ALGO_SELECT.returnValue)
-
-        this.#grid.replaceChildren();
-        this.display()
     }
 
     /** @returns {StatDict} */
