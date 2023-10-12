@@ -40,3 +40,5 @@ export function setattr<T0>(base: T0, attributes: {[ObjectAttribute: string]: an
 
 /** Returns elements in sequential order, starting from the first iterable. */
 export function chain<T>(...iterables: Iterable<T>[]): Generator<T, void, unknown>;
+
+export function reduce<T>(callback: (total: T, current: T) => T, iterable: Iterable<T>): T | null;

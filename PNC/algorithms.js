@@ -1,5 +1,5 @@
 import {STATS} from "./typing.js";
-import {cmp, chain, setattr, type} from "../univasset/scripts/basefunctions/index.js";
+import {cmp, chain, setattr, type, reduce} from "../univasset/scripts/basefunctions/index.js";
 
 //#region Type Definitions
 /** @typedef {"Code Robustness" | "Power Connection" | "Neural Activation" | "Shield of Friendship" | "Coordinated Strike" | "Victorious Inspiration" | "Risk Evasion Aid" | "Mechanical Celerity" | "Coordinated Formation" | "Through Fire and Water" | "Healing Bond"} IntimacyStats */
@@ -42,12 +42,9 @@ import {cmp, chain, setattr, type} from "../univasset/scripts/basefunctions/inde
 /** @type {HTMLButtonElement} */ const ALGO_CLOSE = document.querySelector("#algo-modal button");
 
 /** @type {HTMLDialogElement} */ const ALGO_SELECT = document.querySelector("#algo-select");
-/** @type {HTMLDivElement} */ const ALGO_CHOICES = document.querySelector("#algo-select div");
-/** @type {HTMLButtonElement} */ const ALGO_PICK = document.querySelector("#algo-select button");
-ALGO_PICK.addEventListener("click", function() {
-    ALGO_SELECT.close()
-    console.log("Algorith selector closed.")
-})
+ALGO_SELECT.addEventListener("close", function(event) {
+    this.firstElementChild.replaceChildren();
+});
 //#endregion
 
 //#region Functions
@@ -57,21 +54,6 @@ function combine(object1, object2) {
     for (const attribute of new Set(chain(object1.keys(), object2.keys())))
         OUTPUT.set(attribute, (object1.get(attribute) ?? 0) + (object2.get(attribute) ?? 0));
     return OUTPUT;
-}
-
-/** @param  {...number} items @returns {number?} */
-function sum(...items) {
-    switch (items.length) {
-        case 0:
-            return null;
-        case 1:
-            return items[0];
-        default:
-            var output = 0;
-            for (const item of items)
-                output += item;
-            return output;
-    }
 }
 //#endregion
 
@@ -144,7 +126,6 @@ class Algorithm {
 
     /** @returns {StatDict} */
     get stats() {
-
         const OUT = combine(this.SET2, this.mainstat()) ;
 
         {
@@ -173,7 +154,8 @@ class SingleBlock extends Algorithm {
     SIZE = 1;
 
     get html() {
-        return super.html
+        const OUTPUT = super.html;
+        return OUTPUT;
     }
 }
 
@@ -181,7 +163,9 @@ class DoubleBlock extends Algorithm {
     SIZE = 2;
 
     get html() {
-        return super.html
+        const OUTPUT = super.html;
+        OUTPUT.classList.add("double-block");
+        return OUTPUT;
     }
 }
 //#endregion
@@ -400,51 +384,76 @@ const ALGO_SETS = {
     Stability: [StabilityBlock, Perception, Rationality, Connection, Iteration, Reflection, Encapsulate, Resolve, Overflow],
     Special: [SpecialBlock, Paradigm, Cluster, Convolution, Stratagem, DeltaV, Exploit, LoopGain, SVM, Inspiration]
 }
+/** @param {typeof Algorithm} algoClass */
+function createAlgoButton(algoClass) {
+    const OUTPUT = document.createElement("button");
+    OUTPUT.type = "submit";
+    OUTPUT.value = algoClass.name;
+    // show algo symbol
+    // show algo name
+    return OUTPUT;
+}
 
 class AlgoGrid {
     #grid;
     /** @type {Algorithm[]} */ #algorithms;
 
-    #closedgrid;
+    #fieldtype;
+
+    #closedcell;
+    get #emptycell() {
+        return MAX_SIZE - (this.#closedcell + (reduce((a, b) => a + b, this.#algorithms.map(x => x.SIZE)) ?? 0));
+    }
 
     /** @param {"Offense" | "Stability" | "Special"} fieldtype @param {number} size */
     constructor(fieldtype, size) {
         this.#grid = GRIDS[fieldtype];
         this.#algorithms = [];
-        this.#closedgrid = MAX_SIZE - size;
 
-        this.type = fieldtype
+        this.#fieldtype = fieldtype;
+        this.#closedcell = MAX_SIZE - size;
     }
 
     display() {
         this.#algorithms.sort(cmp({key: x => x.SIZE, reverse: true}));
-        const ALGO_SIZE = sum(...this.#algorithms.map(x => x.SIZE)) ?? 0;
 
         this.#grid.append(...this.#algorithms.map(x => x.html));
 
-        for (let index = 0; index < (MAX_SIZE - (this.#closedgrid + ALGO_SIZE)); index++) {
-            const BUTTON = document.createElement("button");
-            BUTTON.type = "button";
-            BUTTON.classList.add("algo-empty")
-            BUTTON.addEventListener("click", () => {
-                ALGO_CHOICES
-                ALGO_SELECT.showModal()
-                console.log(this.type, index)
-            })
-            this.#grid.appendChild(BUTTON);
+        for (let index = 0; index < this.#emptycell; index++)
+            this.#grid.appendChild(setattr(document.createElement("button"), {type: "button", classList: {add: ["algo-empty"]}, addEventListener: ["click", this.#open]}));
+
+        for (let index = 0; index < this.#closedcell; index++)
+            this.#grid.appendChild(setattr(document.createElement("div"), {classList: {add: ["algo-close"]}}))
+    }
+
+    #open() {
+        if (this.#emptycell === 1)  ALGO_SELECT.firstElementChild.appendChild(createAlgoButton(ALGO_SETS[this.#fieldtype][0]));
+        else                        ALGO_SELECT.firstElementChild.append(...ALGO_SETS[this.#fieldtype].map(createAlgoButton));
+
+        ALGO_SELECT.addEventListener("close", this.#close);
+
+        ALGO_SELECT.showModal();
+    }
+
+    /** Only gets closed upon selecting an algorithm. */
+    #close() {
+        ALGO_SELECT.removeEventListener("close", this.#close)
+
+        //might change according to ALGO_SETS
+        for (const algorithm of ALGO_SETS[this.#fieldtype]) {
+            if (algorithm.name === ALGO_SELECT.returnValue) {
+                this.#algorithms.push(new algorithm());
+                break;
+            }
         }
 
-        for (let index = 0; index < this.#closedgrid; index++) this.#grid.appendChild(setattr(document.createElement("div"), {classList: {add: ["algo-close"]}}))            
+        this.#grid.replaceChildren();
+        this.display()
     }
 
     /** @returns {StatDict} */
     get stats() {
-        switch (this.#algorithms.length) {
-            case 0:
-                return new Map();
-            default:
-                return this.#algorithms.map(x => x.stats).reduce(combine);
-        }
+        return reduce(combine, this.#algorithms.map(x => x.stats)) ?? new Map();
     }
 }
 
@@ -555,7 +564,7 @@ export class AlgoField{
         ALGO_MODAL.firstElementChild.textContent = this.#name;
         for (const GRID of this.#algogrids) GRID.display()
 
-        ALGO_CLOSE.addEventListener("click", () => this.#close())
+        ALGO_CLOSE.addEventListener("click", this.#close)
 
         ALGO_MODAL.showModal()
 
@@ -576,13 +585,19 @@ export class AlgoField{
 }
 //#endregion
 
-console.log("Algorithm.name:", Algorithm.name, type(Algorithm.name))
+console.log()
+
 console.log("Algorithm.prototype.constructor.name:", Algorithm.prototype.constructor.name, type(Algorithm.prototype.constructor.name))
 
 var a = new Algorithm()
 console.log("a.constructor:", a.constructor, type(a.constructor))
 console.log("a.constructor.name:", a.constructor.name, type(a.constructor.name))
 console.log("Object.getPrototypeOf(a):", Object.getPrototypeOf(a), type(Object.getPrototypeOf(a)))
+
+/* Success
+    Algorithm.name  Algorithm   string
+
+*/
 
 /* Failed
     a.constructor.toString().match(/function\s*(\w+)/)                  null

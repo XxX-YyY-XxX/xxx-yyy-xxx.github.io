@@ -145,3 +145,10 @@ export function* chain(...iterables) {
         for (const item of iterable)
             yield item;
 }
+
+export function reduce(callback, iterable) {
+    const ITEMS = Array.from(iterable);
+    var output = ITEMS.shift() ?? null;
+    for (const ITEM of ITEMS) output = callback(output, ITEM);
+    return output;
+}

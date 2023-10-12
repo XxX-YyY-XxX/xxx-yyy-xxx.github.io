@@ -1,11 +1,15 @@
 #algo-modal {
-    --gold-algo: yellow;
+    --gold-algo: #ffa418;
     border-radius: 10px;
     text-align: center;
 }
 
 #algo-modal :is(#Offense, #Stability, #Special) {
     display: inline-block;
+}
+
+#algo-modal button {
+    display: block;
 }
 
 .algo-grid {
@@ -18,14 +22,18 @@
 
 .algo-close {
     background: black;
+    /* background-size: auto 100%;
+    background-repeat: no-repeat; */
 }
 
 .algo-empty {
     background: gray;
+    /* background-size: auto 100%;
+    background-repeat: no-repeat; */
 }
 
 .algo-block {
-    background: white;
+    background: #eaeaea;
     position: relative;
 }
 
@@ -39,6 +47,6 @@
 }
 
 .substat {
-    background-color: black;
+    background-color: #343434;
     color: var(--gold-algo);
 }
