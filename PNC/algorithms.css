@@ -61,7 +61,6 @@
     background-color: transparent;
     line-height: 10px;
     flex: calc(100% / 3);
-    color: var(--dark);
 }
 
 #algo-modal .tab-button {

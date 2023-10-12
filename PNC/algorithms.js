@@ -132,12 +132,9 @@ class Algorithm {
 
     /** @returns {StatDict} */
     get stats() {
-        console.log(this.prototype)
-        const SET_MAP = this.SET2 !== null ? new Map([this.SET2]) : new Map();
-        console.log(this.mainstat())
-        const OUTPUT = combine(SET_MAP, this.mainstat());
+        console.log(this.constructor.name, this.#mainstat, this.mainstat())
+        const OUTPUT = combine(this.SET2 !== null ? new Map([this.SET2]) : new Map(), this.mainstat());
 
-        console.log(this.#substat)
         const [first, second] = this.#substat;
         OUTPUT.set(first, (OUTPUT.get(first) ?? 0) + SUBSTATS[first]);
         OUTPUT.set(second, (OUTPUT.get(second) ?? 0) + (SUBSTATS[second] ?? 0));
@@ -178,6 +175,7 @@ class SingleBlock extends Algorithm {
     SIZE = 1;
 
     get html() {
+        console.log("Single Block algo.");
         const OUTPUT = document.createElement("div");
         OUTPUT.classList.add("algo-block");
         // const MAINSTAT = document.createElement("span");
@@ -194,6 +192,7 @@ class DoubleBlock extends Algorithm {
     SIZE = 2;
 
     get html() {
+        console.log("Double Block algo.");
         const OUTPUT = document.createElement("div");
         OUTPUT.classList.add("algo-block", "double-block");
         //add symbol
@@ -560,4 +559,5 @@ export class AlgoField{
     a.constructor.toString().match(/function\s*(\w+)/)                  null
     Object.prototype.toString.call(a).match(/^\[object\s(.*)\]$/)[1]    Object
     Object.getPrototypeOf(a).prototype                                  undefined
+    this.prototype                                                      undefined
 */
