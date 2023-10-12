@@ -76,7 +76,7 @@
         background-color: var(--gold-algo);
     }
 
-    #algo-modal .tab-body > div {
+    #algo-modal .tab-body {
         justify-content: center;
         display: none;
     }    
@@ -84,7 +84,7 @@
     #algo-modal .tab-button:has([value="Offense"]:checked) ~ #Offense,
     #algo-modal .tab-button:has([value="Stability"]:checked) ~ #Stability,
     #algo-modal .tab-button:has([value="Special"]:checked) ~ #Special {
-        display: grid;
+        display: inline-block;
     }
 }
 /* #endregion */
