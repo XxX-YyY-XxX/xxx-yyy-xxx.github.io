@@ -3,7 +3,7 @@
     --dark: #343434;
     border-radius: 10px;
     text-align: center;
-    width: 700px;
+    width: 650px;
 }
 
 /* #region Algorithm Grid */
@@ -55,6 +55,7 @@
 /* #region Tabs */
 #algo-field {
     container-type: inline-size;
+    margin-bottom: 5px;
 }
 
 #algo-modal .tab-button > label{
@@ -64,7 +65,7 @@
 }
 
 #algo-modal .tab-button {
-    margin: 5px;
+    margin-bottom: 5px;
 }
 
 #algo-modal .tab-body {
