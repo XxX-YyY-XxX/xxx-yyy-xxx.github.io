@@ -1,5 +1,5 @@
 import {STATS} from "./typing.js";
-import {cmp, chain, setattr, type, reduce} from "../univasset/scripts/basefunctions/index.js";
+import {cmp, chain, setattr, reduce} from "../univasset/scripts/basefunctions/index.js";
 
 //#region Type Definitions
 /** @typedef {"Code Robustness" | "Power Connection" | "Neural Activation" | "Shield of Friendship" | "Coordinated Strike" | "Victorious Inspiration" | "Risk Evasion Aid" | "Mechanical Celerity" | "Coordinated Formation" | "Through Fire and Water" | "Healing Bond"} IntimacyStats */
@@ -81,8 +81,7 @@ const MAINSTATS = Object.freeze({
     regenflat: 720,
     hasteperc: 8,
     hboostperc: 4
-})
-
+});
 const SUBSTATS = Object.freeze({
     hpflat: 1080,   hpperc: 7.2,
     atkflat: 32,    atkperc: 7.2,
@@ -102,7 +101,7 @@ const SUBSTATS = Object.freeze({
     dboostperc: 3.9,
     dreducperc: 3.9,
     hboostperc: 2.4
-})
+});
 
 class Algorithm {
     /** @type {[StatAttributes, number]?} */ SET2;
@@ -114,8 +113,8 @@ class Algorithm {
     /** @type {HTMLDivElement} */ html;
 
     constructor() {
-        this.#mainstat = "hpperc";
-        this.#substat = ["hpperc", "hpflat"];
+        this.#mainstat = "crateperc";
+        this.#substat = ["crateperc", "cdmgperc"];
     }
 
     /** @param {StatAttributes?} attribute @returns {StatDict} */

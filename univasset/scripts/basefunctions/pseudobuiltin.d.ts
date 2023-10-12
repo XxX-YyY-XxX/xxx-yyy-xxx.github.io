@@ -19,10 +19,10 @@ export function range(params: {
 }): Generator<number, void, unknown>;
 
 /** Creates a sorter key from the given parameters. */
-export function cmp<T0>(params: {
-    key: (arg0: T0) => any;
+export function cmp<T>(params: {
+    key: (arg0: T) => any;
     reverse: boolean;
-}): (arg0: T0, arg1: T0) => number;
+}): (arg0: T, arg1: T) => number;
 /** Creates a sorter key from the given parameters. */
 export function cmp<T0, T1>(params: {
     key: (arg0: T0) => T1;
@@ -36,7 +36,7 @@ export function cmp<T0, T1>(params: {
  * {attribute: ???} for deeper calls.
  * 
  * Everything else for attribute assigment. */
-export function setattr<T0>(base: T0, attributes: {[ObjectAttribute: string]: any;}): T0;
+export function setattr<T>(base: T, attributes: {[ObjectAttribute: string]: any;}): T;
 
 /** Returns elements in sequential order, starting from the first iterable. */
 export function chain<T>(...iterables: Iterable<T>[]): Generator<T, void, unknown>;
