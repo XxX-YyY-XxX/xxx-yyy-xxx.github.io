@@ -1,5 +1,6 @@
 #algo-modal {
     --gold-algo: #ffa418;
+    --dark: #343434;
     border-radius: 10px;
     text-align: center;
     width: 700px;
@@ -42,7 +43,7 @@
 }
 
 .substat {
-    background-color: #343434;
+    background-color: var(--dark);
     color: var(--gold-algo);
 }
 
@@ -60,19 +61,19 @@
     background-color: transparent;
     line-height: 10px;
     flex: calc(100% / 3);
+    color: var(--dark);
+}
+
+#algo-modal .tab-button {
+    margin: 5px;
 }
 
 #algo-modal .tab-body {
     display: inline-block;
 }
 
-@container (width > 650px) {
-    #algo-modal .tab-button > label {
-        background-color: transparent;
-    }
-}
-
 @container (width < 650px) {
+    /* stylize later */
     #algo-modal .tab-button > label:has(input:checked) {
         background-color: var(--gold-algo);
     }
