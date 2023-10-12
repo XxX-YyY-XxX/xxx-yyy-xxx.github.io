@@ -1,0 +1,10 @@
+.tab-button {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    border-style: initial;
+}
+
+.tab-button ~ .tab-body {
+    display: none;
+}

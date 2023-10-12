@@ -305,9 +305,9 @@ class Special extends DoubleBlock {
 //#region Interface
 const MAX_SIZE = 6;
 const GRIDS = {
-    /** @type {HTMLDivElement} */ Offense: document.querySelector("#algo-modal #Offense > .algo-grid"),
-    /** @type {HTMLDivElement} */ Stability: document.querySelector("#algo-modal #Stability > .algo-grid"),
-    /** @type {HTMLDivElement} */ Special: document.querySelector("#algo-modal #Special > .algo-grid")
+    /** @type {HTMLDivElement} */ Offense: document.querySelector("#algo-modal #Offense"),
+    /** @type {HTMLDivElement} */ Stability: document.querySelector("#algo-modal #Stability"),
+    /** @type {HTMLDivElement} */ Special: document.querySelector("#algo-modal #Special")
 }
 const ALGO_SETS = {
     Offense: {

@@ -41,14 +41,7 @@ input[type="checkbox"], input[type="radio"] {
 }
 /* #endregion */
 
-/* #region Radio */
-.tab-button {
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    border-style: initial;
-}
-
+/* #region Tabs */
 .tab-button > label {
     background-color: transparent;
     line-height: 10px;
@@ -61,12 +54,6 @@ input[type="checkbox"], input[type="radio"] {
 
 .tab-button h2 {
     margin: 0px 0px 10px;
-}
-/* #endregion */
-
-/* #region Table tabs */
-#button ~ .tab-body {
-    display: none;
 }
 
 #button:has([value="stat"]:checked) ~ #stat,

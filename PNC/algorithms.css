@@ -5,7 +5,7 @@
 }
 
 /* #region Algorithm Grid */
-.algo-grid {
+#algo-modal.tab-body {
     --gridsize: 100px;
     display: grid;
     grid-template-columns: repeat(2, var(--gridsize));
@@ -55,6 +55,17 @@
     display: none;
 }
 
+#algo-modal .tab-button > label{
+    background-color: transparent;
+    line-height: 10px;
+    flex: calc(100% / 3);
+}
+
+/* Change color to image */
+.tab-button > label:has(input:checked) {
+    background-color: darkgreen;
+}
+
 #algo-modal .tab-body {
     display: inline-block;
 }
@@ -64,17 +75,13 @@
         display: block;
     }
 
-    #algo-modal .tab-body > :first-child{
-        display: none;
-    }
-
-    #button ~ .tab-body {
+    #algo-modal .tab-button ~ .tab-body {
         display: none;
     }
     
-    #button:has([value="Offense"]:checked) ~ #Offense,
-    #button:has([value="Stability"]:checked) ~ #Stability,
-    #button:has([value="Special"]:checked) ~ #Special {
+    #algo-modal .tab-button:has([value="Offense"]:checked) ~ #Offense,
+    #algo-modal .tab-button:has([value="Stability"]:checked) ~ #Stability,
+    #algo-modal .tab-button:has([value="Special"]:checked) ~ #Special {
             display: revert;
     }
 }
