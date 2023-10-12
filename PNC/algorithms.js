@@ -40,7 +40,10 @@ import {cmp, chain, setattr, type, reduce} from "../univasset/scripts/basefuncti
 //#region Constants
 /** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
 /** @type {HTMLButtonElement} */ const ALGO_CLOSE = document.querySelector("#algo-modal button");
-ALGO_MODAL.addEventListener("close", () => console.log("Algorithm modal closed."))
+ALGO_MODAL.addEventListener("close", function(event) {
+    this.firstElementChild.textContent = "";
+    for (const DIV of Object.values(GRIDS)) DIV.replaceChildren();
+});
 
 /** @type {HTMLDialogElement} */ const ALGO_SELECT = document.querySelector("#algo-select");
 ALGO_SELECT.addEventListener("close", function(event) {
@@ -538,9 +541,6 @@ export class AlgoField{
         ALGO_MODAL.close()
 
         ALGO_CLOSE.removeEventListener("click", this.#close.bind(this));
-
-        ALGO_MODAL.firstElementChild.textContent = "";
-        for (const DIV of Object.values(GRIDS)) DIV.replaceChildren();
     }
 }
 //#endregion

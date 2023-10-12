@@ -61,18 +61,13 @@
     flex: calc(100% / 3);
 }
 
-/* Change color to image */
-.tab-button > label:has(input:checked) {
-    background-color: darkgreen;
-}
-
 #algo-modal .tab-body {
     display: inline-block;
 }
 
-@media screen and (max-width: 700px) {
-    #algo-modal .tab-button {
-        display: block;
+@media screen and (width < 700px) {
+    #algo-modal .tab-button > label:has(input:checked) {
+        background-color: darkgreen;
     }
 
     #algo-modal .tab-button ~ .tab-body {
