@@ -4,10 +4,6 @@
     text-align: center;
 }
 
-#algo-modal :is(#Offense, #Stability, #Special) {
-    display: inline-block;
-}
-
 /* #region Algorithm Grid */
 .algo-grid {
     --gridsize: 100px;
@@ -54,6 +50,36 @@
 }
 /* #endregion */
 
+/* #region Tabs */
+#algo-modal .tab-button {
+    display: none;
+}
+
+#algo-modal .tab-body {
+    display: inline-block;
+}
+
+@media screen and (max-width: 700px) {
+    #algo-modal .tab-button {
+        display: block;
+    }
+
+    #algo-modal .tab-body > :first-child{
+        display: none;
+    }
+
+    #button ~ .tab-body {
+        display: none;
+    }
+    
+    #button:has([value="Offense"]:checked) ~ #Offense,
+    #button:has([value="Stability"]:checked) ~ #Stability,
+    #button:has([value="Special"]:checked) ~ #Special {
+            display: revert;
+    }
+}
+/* #endregion */
+
 #algo-modal > #close-modal {
     left: 50%;
     transform: translateX(-50%);
@@ -61,18 +87,24 @@
 
 
 
+
 #algo-select {
     border-radius: 10px;
+    max-width: 100%;
+    padding: 5px;
 }
 
 #algo-select > form {
-    --gridsize: 100px;
-    display: grid;
-    grid-auto-columns: var(--gridsize);
-    grid-auto-rows: var(--gridsize);
+    display: flex;
     gap: 5px;
+    justify-content: center;
+}
+
+#algo-select button {
+    padding: 0;
 }
 
 #algo-select img {
     background-color: #494b4a;
+    width: 100px;
 }

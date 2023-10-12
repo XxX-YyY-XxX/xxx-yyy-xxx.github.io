@@ -130,7 +130,9 @@ class Algorithm {
 
     /** @returns {StatDict} */
     get stats() {
+        console.log(this.prototype)
         const SET_MAP = this.SET2 !== null ? new Map([this.SET2]) : new Map();
+        console.log(this.mainstat())
         const OUTPUT = combine(SET_MAP, this.mainstat());
 
         console.log(this.#substat)
@@ -230,15 +232,6 @@ class Offense extends DoubleBlock {
         return super.substat(1, attribute);
     }
 }
-
-class FeedForward extends Offense {SET2 = ["atkperc", 15]}
-class Progression extends Offense {SET2 = ["hashperc", 15]}
-class Stack extends Offense {SET2 = ["hashperc", 15]}
-class Deduction extends Offense {SET2 = ["aspdflat", 30]}
-class DataRepair extends Offense {SET2 = ["resflat", 30]}
-class MLRMatrix extends Offense {SET2 = ["dboostperc", 5]}
-class LimitValue extends Offense {SET2 = ["dboostperc", 5]}
-class LowerLimit extends Offense {SET2 = null}
 //#endregion
 
 //#region Stability
@@ -273,15 +266,6 @@ class Stability extends DoubleBlock {
         return super.substat(1, attribute);
     }
 }
-
-class Perception extends Stability {SET2 = ["hpperc", 15]}
-class Rationality extends Stability {SET2 = ["pdefperc", 15]}
-class Connection extends Stability {SET2 = ["resflat", 50]}
-class Iteration extends Stability {SET2 = ["lashperc", 5]}
-class Reflection extends Stability {SET2 = ["lashperc", 5]}
-class Encapsulate extends Stability {SET2 = ["dreducperc", 5]}
-class Resolve extends Stability {SET2 = ["dreducperc", 5]}
-class Overflow extends Stability {SET2 = null}
 //#endregion
 
 //#region Special
@@ -316,16 +300,6 @@ class Special extends DoubleBlock {
         return super.substat(1, attribute);
     }
 }
-
-class Paradigm extends Special {SET2 = ["aspdflat", 30]}
-class Cluster extends Special {SET2 = ["crateperc", 10]}
-class Convolution extends Special {SET2 = ["cdmgperc", 20]}
-class Stratagem extends Special {SET2 = ["dodgeperc", 8]}
-class DeltaV extends Special {SET2 = ["hasteperc", 10]}
-class Exploit extends Special {SET2 = ["hasteperc", 10]}
-class LoopGain extends Special {SET2 = ["hboostperc", 7.5]}
-class SVM extends Special {SET2 = ["hboostperc", 7.5]}
-class Inspiration extends Special {SET2 = null}
 //#endregion
 
 //#region Interface
@@ -337,38 +311,38 @@ const GRIDS = {
 }
 const ALGO_SETS = {
     Offense: {
-        OffenseBlock: OffenseBlock,
-        FeedForward: FeedForward,
-        Progression: Progression,
-        Stack: Stack,
-        Deduction: Deduction,
-        DataRepair: DataRepair,
-        MLRMatrix: MLRMatrix,
-        LimitValue: LimitValue,
-        LowerLimit: LowerLimit
+        OffenseBlock:   OffenseBlock,
+        Feedforward:    class Feedforward extends Offense {SET2 = ["atkperc", 15]},
+        Progression:    class Progression extends Offense {SET2 = ["hashperc", 15]},
+        Stack:          class Stack extends Offense {SET2 = ["hashperc", 15]},
+        Deduction:      class Deduction extends Offense {SET2 = ["aspdflat", 30]},
+        DataRepair:     class DataRepair extends Offense {SET2 = ["resflat", 30]},
+        MLRMatrix:      class MLRMatrix extends Offense {SET2 = ["dboostperc", 5]},
+        LimitValue:     class LimitValue extends Offense {SET2 = ["dboostperc", 5]},
+        LowerLimit:     class LowerLimit extends Offense {SET2 = null}
     },
     Stability: {
         StabilityBlock: StabilityBlock,
-        Perception: Perception,
-        Rationality: Rationality,
-        Connection: Connection,
-        Iteration: Iteration,
-        Reflection: Reflection,
-        Encapsulate: Encapsulate,
-        Resolve: Resolve,
-        Overflow: Overflow
+        Perception:     class Perception extends Stability {SET2 = ["hpperc", 15]},
+        Rationality:    class Rationality extends Stability {SET2 = ["pdefperc", 15]},
+        Connection:     class Connection extends Stability {SET2 = ["resflat", 50]},
+        Iteration:      class Iteration extends Stability {SET2 = ["lashperc", 5]},
+        Reflection:     class Reflection extends Stability {SET2 = ["lashperc", 5]},
+        Encapsulate:    class Encapsulate extends Stability {SET2 = ["dreducperc", 5]},
+        Resolve:        class Resolve extends Stability {SET2 = ["dreducperc", 5]},
+        Overflow:       class Overflow extends Stability {SET2 = null}
     },
     Special: {
-        SpecialBlock: SpecialBlock,
-        Paradigm: Paradigm,
-        Cluster: Cluster,
-        Convolution: Convolution,
-        Stratagem: Stratagem,
-        DeltaV: DeltaV,
-        Exploit: Exploit,
-        LoopGain: LoopGain,
-        SVM: SVM,
-        Inspiration: Inspiration
+        SpecialBlock:   SpecialBlock,
+        Paradigm:       class Paradigm extends Special {SET2 = ["aspdflat", 30]},
+        Cluster:        class Cluster extends Special {SET2 = ["crateperc", 10]},
+        Convolution:    class Convolution extends Special {SET2 = ["cdmgperc", 20]},
+        Stratagem:      class Stratagem extends Special {SET2 = ["dodgeperc", 8]},
+        DeltaV:         class DeltaV extends Special {SET2 = ["hasteperc", 10]},
+        Exploit:        class Exploit extends Special {SET2 = ["hasteperc", 10]},
+        LoopGain:       class LoopGain extends Special {SET2 = ["hboostperc", 7.5]},
+        SVM:            class SVM extends Special {SET2 = ["hboostperc", 7.5]},
+        Inspiration:    class Inspiration extends Special {SET2 = null}
     }
 };
 /** @param {typeof Algorithm} algoClass */
@@ -405,7 +379,8 @@ class AlgoGrid {
         this.#algorithms.sort(cmp({key: x => x.SIZE, reverse: true}));
 
         this.#grid.append(...this.#algorithms.map(x => x.html));
-        console.log(this.#algorithms.map(x => x.SIZE))
+        console.log("HTML:", this.#algorithms.map(x => x.html))
+        console.log("Sizes:", this.#algorithms.map(x => x.SIZE))
 
         for (let index = 0; index < this.#emptycell; index++)
             this.#grid.appendChild(setattr(document.createElement("button"), {type: "button", classList: {add: ["algo-empty"]}, addEventListener: ["click", this.#open.bind(this)]}));
@@ -429,8 +404,8 @@ class AlgoGrid {
     #close() {
         ALGO_SELECT.removeEventListener("close", this.#close.bind(this))
 
-        this.#algorithms.push(new ALGO_SETS[this.#fieldtype][ALGO_SELECT.returnValue]());
-        console.log(ALGO_SELECT.returnValue)
+        // this.#algorithms.push(new ALGO_SETS[this.#fieldtype][ALGO_SELECT.returnValue]());
+        console.log(ALGO_SETS[this.#fieldtype][ALGO_SELECT.returnValue], ALGO_SELECT.returnValue)
 
         this.#grid.replaceChildren();
         this.display()
