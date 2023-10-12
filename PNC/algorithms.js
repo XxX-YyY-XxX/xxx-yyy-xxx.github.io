@@ -585,18 +585,13 @@ export class AlgoField{
 }
 //#endregion
 
-var a = new Algorithm()
-try {console.log("Object.getPrototypeOf(a).constructor:", Object.getPrototypeOf(a).constructor, type(Object.getPrototypeOf(a).constructor))}
-catch {console.log("Object.getPrototypeOf(a).constructor fail.")}
-try {console.log("Object.getPrototypeOf(a).prototype:", Object.getPrototypeOf(a).prototype, type(Object.getPrototypeOf(a).prototype))}
-catch {console.log("Object.getPrototypeOf(a).prototype fail.")}
-
 /* Success
     Algorithm.name                          Algorithm       string
     Algorithm.prototype.constructor.name    Algorithm       string
     a.constructor                           <class repr>    function
     a.constructor.name                      Algorithm       string
     Object.getPrototypeOf(a)                <class>         object
+    Object.getPrototypeOf(a).constructor,   <class repr>    function
 
     prototype:  Basically an instance representation.
 
@@ -605,4 +600,5 @@ catch {console.log("Object.getPrototypeOf(a).prototype fail.")}
 /* Failed
     a.constructor.toString().match(/function\s*(\w+)/)                  null
     Object.prototype.toString.call(a).match(/^\[object\s(.*)\]$/)[1]    Object
+    Object.getPrototypeOf(a).prototype                                  undefined
 */
