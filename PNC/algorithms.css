@@ -5,7 +5,7 @@
 }
 
 /* #region Algorithm Grid */
-#algo-modal .tab-body {
+#algo-modal .tab-body > div {
     --gridsize: 100px;
     display: grid;
     grid-template-columns: repeat(2, var(--gridsize));
@@ -61,21 +61,30 @@
     flex: calc(100% / 3);
 }
 
-@container (width >= 650px) {
-    #algo-modal .tab-body {
-        display: inline-block;
-    }    
+#algo-modal .tab-body {
+    display: inline-block;
+}
+
+@container (width > 650px) {
+    #algo-modal .tab-button > label {
+        background-color: transparent;
+    }
 }
 
 @container (width < 650px) {
     #algo-modal .tab-button > label:has(input:checked) {
         background-color: var(--gold-algo);
     }
-    
+
+    #algo-modal .tab-body > div {
+        justify-content: center;
+        display: none !important;
+    }    
+
     #algo-modal .tab-button:has([value="Offense"]:checked) ~ #Offense,
     #algo-modal .tab-button:has([value="Stability"]:checked) ~ #Stability,
     #algo-modal .tab-button:has([value="Special"]:checked) ~ #Special {
-            display: revert;
+        display: grid;
     }
 }
 /* #endregion */
