@@ -393,7 +393,7 @@ tableSort(
     [["Doll Name", "Reference", "Fragments"], ...UNITS.map(x => [x.name, x.reference, x.fragments])],
     [
         x => x,
-        x => brJoin(Object.entries(x).map(([name, link]) => setattr(document.createElement("a"), {textContent: name, href: link}))),
+        x => brJoin(Object.entries(x).filter(([name, link]) => name).map(([name, link]) => setattr(document.createElement("a"), {textContent: name, href: link}))),
         x => brJoin(x)
     ],
     {frzcol: true, frzhdr: true}

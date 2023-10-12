@@ -380,8 +380,7 @@ class AlgoGrid {
         this.#close = () => {
             ALGO_SELECT.removeEventListener("close", this.#close)
 
-            // this.#algorithms.push(new ALGO_SETS[this.#fieldtype][ALGO_SELECT.returnValue]());
-            console.log(ALGO_SETS[fieldtype][ALGO_SELECT.returnValue], ALGO_SELECT.returnValue)
+            this.#algorithms.push(new ALGO_SETS[this.#fieldtype][ALGO_SELECT.returnValue]());
     
             this.#grid.replaceChildren();
             this.display()    

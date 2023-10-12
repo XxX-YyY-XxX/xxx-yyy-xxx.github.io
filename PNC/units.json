@@ -345,7 +345,7 @@
             "ppen": 48,
             "open": 47
         },
-        "intimacy": []
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
     },
     {
         "name": "Panakeia",
@@ -374,7 +374,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Neural Activation", "Code Robustness", "Healing Bond"]
     },
     {
         "name": "Angela",
@@ -1716,7 +1716,7 @@
     {
         "name": "Clotho",
         "class": "Guard",
-        "reference": {"" : "King's Raid Jane"},
+        "reference": {"Clotho": "https://en.wikipedia.org/wiki/Clotho", "": "King's Raid Jane"},
         "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
         "base": {
             "hp": 21397,
