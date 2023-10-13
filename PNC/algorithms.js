@@ -119,6 +119,7 @@ class Algorithm {
 
     /** @param {StatAttributes?} attribute @returns {StatDict} */
     mainstat(attribute = null) {
+        console.log("Mainstat:", this.#mainstat, this.constructor.name);
         if (attribute) this.#mainstat = attribute;
         return new Map([[this.#mainstat, MAINSTATS[this.#mainstat]]]);
     }
@@ -132,7 +133,7 @@ class Algorithm {
 
     /** @returns {StatDict} */
     get stats() {
-        console.log(this.constructor.name, this.#mainstat, this.mainstat())
+        console.log(this.constructor.name, this.mainstat())
         const OUTPUT = combine(this.SET2 !== null ? new Map([this.SET2]) : new Map(), this.mainstat());
 
         const [first, second] = this.#substat;
