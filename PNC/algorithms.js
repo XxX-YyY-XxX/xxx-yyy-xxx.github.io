@@ -103,26 +103,32 @@ const SUBSTATS = Object.freeze({
     hboostperc: 2.4
 });
 
+/** @abstract */
 class Algorithm {
     /** @type {[StatAttributes, number]?} */ SET2;
     /** @type {number} */ SIZE;
 
     /** @type {[StatAttributes, StatAttributes]} */ #substat;
-    /** @type {StatAttributes} */ #mainstat;
 
     /** @type {HTMLDivElement} */ html;
 
     constructor() {
-        this.#mainstat = "crateperc";
         this.#substat = ["crateperc", "cdmgperc"];
     }
 
+    /** @type {StatAttributes} */ #mainstat = "crateperc";
     /** @param {StatAttributes?} attribute @returns {StatDict} */
-    mainstat(attribute = null) {
-        console.log("Mainstat:", this.#mainstat, this.constructor.name);
+    mainstat(attribute) {
         if (attribute) this.#mainstat = attribute;
         return new Map([[this.#mainstat, MAINSTATS[this.#mainstat]]]);
     }
+
+
+
+
+
+
+
 
     /** @param {number} position @param {StatAttributes?} attribute @returns {StatDict} */
     substat(position, attribute = null) {
@@ -133,8 +139,9 @@ class Algorithm {
 
     /** @returns {StatDict} */
     get stats() {
-        console.log(this.constructor.name, this.mainstat())
-        const OUTPUT = combine(this.SET2 !== null ? new Map([this.SET2]) : new Map(), this.mainstat());
+        const OUTPUT = combine(this.SET2 ? new Map([this.SET2]) : new Map(), this.mainstat());
+
+        console.log(this.constructor.name, this instanceof DoubleBlock)
 
         const [first, second] = this.#substat;
         OUTPUT.set(first, (OUTPUT.get(first) ?? 0) + SUBSTATS[first]);
@@ -176,7 +183,7 @@ class SingleBlock extends Algorithm {
     SIZE = 1;
 
     get html() {
-        console.log("Single Block algo.");
+        console.log("Single Block algo:", this.constructor.name);
         const OUTPUT = document.createElement("div");
         OUTPUT.classList.add("algo-block");
         // const MAINSTAT = document.createElement("span");
@@ -187,17 +194,32 @@ class SingleBlock extends Algorithm {
 
         return OUTPUT;
     }
+
+    /** @param {StatAttributes?} attribute @returns {StatDict} */
+    mainstat(attribute) {
+        const [[NAME, VALUE]] = super.mainstat(attribute).entries();
+        return new Map([[NAME, VALUE / 2]]);
+    }
 }
 
 class DoubleBlock extends Algorithm {
     SIZE = 2;
 
     get html() {
-        console.log("Double Block algo.");
+        console.log("Double Block algo:", this.constructor.name);
         const OUTPUT = document.createElement("div");
         OUTPUT.classList.add("algo-block", "double-block");
         //add symbol
+        //mainstat
+        //substat1
+        //substat2
+        //delete
         return OUTPUT;
+    }
+
+    /** @param {StatAttributes?} attribute @returns {StatDict} */
+    mainstat(attribute) {
+        return super.mainstat(attribute);
     }
 }
 //#endregion
@@ -207,20 +229,20 @@ class DoubleBlock extends Algorithm {
 /** @typedef {"hpflat"|"atkflat"|"atkperc"|"hashflat"|"hashperc"|"pdefflat"|"odefflat"|"crateperc"|"cdmgperc"|"ppenflat"|"openflat"|"regenflat"|"resflat"|"dboostperc"} OffenseSubstat*/
 
 class OffenseBlock extends SingleBlock {
-    /** @param {OffenseMainstat?} attribute @returns {number} */
-    mainstat(attribute = null) {
-        return super.mainstat(attribute) / 2;
+    /** @param {OffenseMainstat?} attribute @returns {StatDict} */
+    mainstat(attribute) {
+        return super.mainstat(attribute);
     }
 
     /** @param {OffenseSubstat?} attribute @returns {number} */
-    substat(attribute = null) {
+    substat1(attribute = null) {
         return super.substat(0, attribute);
     }
 }
 
 class Offense extends DoubleBlock {
-    /** @param {OffenseMainstat?} attribute @returns {number} */
-    mainstat(attribute = null) {
+    /** @param {OffenseMainstat?} attribute @returns {StatDict} */
+    mainstat(attribute) {
         return super.mainstat(attribute);
     }
 
@@ -241,19 +263,19 @@ class Offense extends DoubleBlock {
 /** @typedef {"hpflat"|"hpperc"|"atkflat"|"hashflat"|"pdefflat"|"pdefperc"|"odefflat"|"odefperc"|"crateperc"|"cdmgperc"|"ppenflat"|"openflat"|"regenflat"|"resflat"|"dreducperc"} StabilitySubstat */
 
 class StabilityBlock extends SingleBlock {
-    /** @param {StabilityMainstat?} attribute @returns {number} */
+    /** @param {StabilityMainstat?} attribute @returns {StatDict} */
     mainstat(attribute) {
-        return super.mainstat(attribute) / 2;
+        return super.mainstat(attribute);
     }
 
     /** @param {StabilitySubstat?} attribute @returns {number} */
-    substat(attribute) {
+    substat1(attribute) {
         return super.substat(0, attribute);
     }
 }
 
 class Stability extends DoubleBlock {
-    /** @param {StabilityMainstat?} attribute @returns {number} */
+    /** @param {StabilityMainstat?} attribute @returns {StatDict} */
     mainstat(attribute) {
         return super.mainstat(attribute);
     }
@@ -275,19 +297,19 @@ class Stability extends DoubleBlock {
 /** @typedef {"hpflat"|"atkflat"|"hashflat"|"pdefflat"|"pdefperc"|"odefflat"|"odefperc"|"crateperc"|"cdmgperc"|"ppenflat"|"openflat"|"dodgeperc"|"regenflat"|"hasteperc"|"resflat"|"hboostperc"} SpecialSubstat*/
 
 class SpecialBlock extends SingleBlock {
-    /** @param {SpecialMainstat?} attribute @returns {number} */
+    /** @param {SpecialMainstat?} attribute @returns {StatDict} */
     mainstat(attribute) {
-        return super.mainstat(attribute) / 2;
+        return super.mainstat(attribute);
     }
 
     /** @param {SpecialSubstat?} attribute @returns {number} */
-    substat(attribute) {
+    substat1(attribute) {
         return super.substat(0, attribute);
     }
 }
 
 class Special extends DoubleBlock {
-    /** @param {SpecialMainstat?} attribute @returns {number} */
+    /** @param {SpecialMainstat?} attribute @returns {StatDict} */
     mainstat(attribute) {
         return super.mainstat(attribute);
     }
@@ -403,8 +425,8 @@ class AlgoGrid {
         this.#algorithms.sort(cmp({key: x => x.SIZE, reverse: true}));
 
         this.#grid.append(...this.#algorithms.map(x => x.html));
+        console.log(this.#fieldtype, "algo:", this.#algorithms)
         console.log(this.#fieldtype, "HTML:", this.#algorithms.map(x => x.html))
-        console.log(this.#fieldtype, "sizes:", this.#algorithms.map(x => x.SIZE))
 
         for (let index = 0; index < this.#emptycell; index++)
             this.#grid.appendChild(setattr(document.createElement("button"), {type: "button", classList: {add: ["algo-empty"]}, addEventListener: ["click", this.#open.bind(this)]}));

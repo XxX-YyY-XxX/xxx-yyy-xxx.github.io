@@ -1,4 +1,4 @@
 {
     // https://stackoverflow.com/questions/76125833/container-type-property-and-container-rule-are-not-recognized-by-vs-code
-    "css.customData": ["./custom-css.json"]
+    "css.customData": [".vscode/custom-css.json"]
 }
