@@ -12,8 +12,8 @@ timer(
     "./assets/images/timer/frontline-protocol-cloud-borne-wild-crane-preview-v0-pn0xk98rp5mb1.webp",
     {onEnd: timer.bind(
         null, document.getElementById("battlepass"),
-        "",
-        ""
+        "Nov 19, 2023 23:59 UTC-0800",
+        "./assets/images/timer/c6rh2we7vhtb1.webp"
     )}
 );
 
@@ -23,19 +23,19 @@ timer(
     "./assets/images/coalition/02Executioner.webp", 
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
-        "",
-        "./assets/images/coalition/.webp"
+        "Nov 13, 2023 23:59 UTC-0800",
+        "./assets/images/coalition/16IntruderSorceressOfTheEnd.webp"
     )}
 );
 
 timer(
     document.getElementById('skin-banner'),
-    "Sep 25, 2023 23:59 UTC-0800",
-    "./assets/images/timer/a7bhcugaxlib1.webp",
+    "Oct 23, 2023 23:59 UTC-0800",
+    "https://iopwiki.com/images/c/c7/Basic_Deductions_Login_Wallpaper.png",
     {onEnd: timer.bind(
         null, document.getElementById('skin-banner'),
-        "Oct 23, 2023 23:59 UTC-0800",
-        "https://iopwiki.com/images/c/c7/Basic_Deductions_Login_Wallpaper.png"
+        "",
+        ""
     )}
 );
 
