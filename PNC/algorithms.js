@@ -110,8 +110,6 @@ class Algorithm {
 
     /** @type {[StatAttributes, StatAttributes]} */ #substat;
 
-    /** @type {HTMLDivElement} */ html;
-
     constructor() {
         this.#substat = ["crateperc", "cdmgperc"];
     }
@@ -128,13 +126,23 @@ class Algorithm {
 
 
 
-
+    get html() {
+        console.log("Base class HTML.")
+    }
 
     /** @param {number} position @param {StatAttributes?} attribute @returns {StatDict} */
     substat(position, attribute = null) {
         if (attribute) this.#substat[position] = attribute;
         const ATTR = this.#substat[position];
         return new Map([[ATTR, SUBSTATS[ATTR]]]);
+    }
+
+    substat1() {
+
+    }
+
+    substat2() {
+        
     }
 
     /** @returns {StatDict} */
