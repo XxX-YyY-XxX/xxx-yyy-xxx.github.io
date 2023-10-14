@@ -183,6 +183,7 @@ class Algorithm {
     <button type="button"></button>
 </div>
 </template> */}
+
 const STATNAMES = Object.freeze({
     hpflat: "Health+",      hpperc: "Health%",
     atkflat: "Attack+",     atkperc: "Attack%",
@@ -210,7 +211,6 @@ class SingleBlock extends Algorithm {
 
     /** @param {StatAttributes[]} mainstat @param {StatAttributes[]} substat @returns {HTMLDivElement} */
     html(mainstat, substat) {
-        console.log("HTML", this.constructor.name)
         const OUTPUT = super.html;
 
         const MAINSTAT = document.createElement("select");
@@ -512,9 +512,9 @@ class AlgoGrid {
 
     /** Only gets closed upon selecting an algorithm. */
     #close() {
-        console.log("Running...");
         ALGO_SELECT.removeEventListener("close", this.#close.bind(this));
 
+        console.log(ALGO_SETS[this.#fieldtype][ALGO_SELECT.returnValue], this.#fieldtype, ALGO_SELECT.returnValue)
         this.#algorithms.push(new ALGO_SETS[this.#fieldtype][ALGO_SELECT.returnValue](this));
 
         this.#grid.replaceChildren();
@@ -534,6 +534,7 @@ class AlgoGrid {
     /** @param {Algorithm} algorithm */
     delete(algorithm) {
         this.#algorithms.remove(algorithm);
+        this.#grid.replaceChildren();
         this.display();
     }
 

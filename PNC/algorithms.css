@@ -54,11 +54,14 @@
     right: var(--algo-pad);
     bottom: var(--algo-pad);
     background-color: #494b4a;
-    width: 10px;
 }
 
 .delete-algo > div {
     background-image: url("./assets/images/algorithms/Trash.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 10px;
+    height: 10px;
 }
 /* #endregion */
 
