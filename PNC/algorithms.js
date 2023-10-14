@@ -226,7 +226,7 @@ class DoubleBlock extends Algorithm {
 
         const EMBLEM = document.createElement("div");
         const IMG = document.createElement("img");
-        IMG.src = `./assets/image/algorithms/${this.constructor.name}.png`;
+        IMG.src = `./assets/images/algorithms/${this.constructor.name}.png`;
         EMBLEM.appendChild(IMG);
         OUTPUT.appendChild(EMBLEM);
 
@@ -569,6 +569,8 @@ export class AlgoField{
     }
 }
 //#endregion
+
+// use local storage to save preferences
 
 /* Success
     Algorithm.name                          Algorithm       string
