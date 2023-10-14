@@ -39,8 +39,13 @@
     grid-column-end: span 2;
 }
 
-.algo-emblem {
+.double-block > div:nth-child(1) {
     background-color: var(--gray-algo);
+}
+
+.double-block > div:nth-child(2) {
+    height: 100%;
+    aspect-ratio: 1/1;
 }
 
 .mainstat {

@@ -227,10 +227,13 @@ class DoubleBlock extends Algorithm {
         const OUTPUT = super.html;
         OUTPUT.classList.add("double-block");
 
-        //add symbol
-        console.log("DoubleBlock HTML:", this.constructor.name)
+        const EMBLEM = document.createElement("div");
+        const IMG = document.createElement("img");
+        IMG.src = `./assets/image/algorithm/${this.constructor.name}.png`;
+        EMBLEM.appendChild(IMG);
+        OUTPUT.appendChild(EMBLEM);
 
-        // div
+        const STATS = document.createElement("div");
 
         this.#mainstat = document.createElement("select");
         this.#mainstat.classList.add("mainstat");
@@ -241,7 +244,7 @@ class DoubleBlock extends Algorithm {
             OPTION.textContent = STATNAMES[attribute];
             this.#mainstat.appendChild(OPTION);
         }
-        OUTPUT.appendChild(this.#mainstat);
+        STATS.appendChild(this.#mainstat);
 
         this.#substat1 = document.createElement("select");
         this.#substat1.classList.add("substat");
@@ -253,9 +256,10 @@ class DoubleBlock extends Algorithm {
             this.#substat1.appendChild(OPTION);
         }
         this.#substat1.addEventListener("change", () => {
-            console.log("Substat 1 value changed.")
+            for (const OPTION of Array.from(this.#substat2.options))
+                OPTION.disabled = this.#substat1.value === OPTION.value;
         });
-        OUTPUT.appendChild(this.#substat1);
+        STATS.appendChild(this.#substat1);
 
         this.#substat2 = document.createElement("select");
         this.#substat2.classList.add("substat");
@@ -267,10 +271,13 @@ class DoubleBlock extends Algorithm {
             this.#substat2.appendChild(OPTION);
         }
         this.#substat2.addEventListener("change", () => {
-            console.log("Substat 2 value changed.")
+            for (const OPTION of Array.from(this.#substat1.options))
+                OPTION.disabled = this.#substat2.value === OPTION.value;
         });
-        OUTPUT.appendChild(this.#substat2);
-        // disable the option that the other substat has
+        STATS.appendChild(this.#substat2);
+        OUTPUT.appendChild(STATS);
+
+        setattr(Array.from(this.#substat2.options), {0: {disabled: true}, 1: {selected: true}});
 
         return OUTPUT;
     }
@@ -575,6 +582,7 @@ export class AlgoField{
 
     #onClose;
     #close() {
+        console.log(this.#name, "running...");
         this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
         this.#onClose();
 
