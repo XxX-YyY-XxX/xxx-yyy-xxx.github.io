@@ -209,23 +209,34 @@ class SingleBlock extends Algorithm {
     SET2 = null;
     SIZE = 1;
 
+    /** @type {HTMLSelectElement} */ #mainstat;
     /** @param {StatAttributes[]} mainstat @param {StatAttributes[]} substat @returns {HTMLDivElement} */
     html(mainstat, substat) {
         const OUTPUT = super.html;
 
-        const MAINSTAT = document.createElement("select");
-        MAINSTAT.classList.add("mainstat");
-        MAINSTAT.name = "mainstat";
+        // const MAINSTAT = document.createElement("select");
+        // MAINSTAT.classList.add("mainstat");
+        // MAINSTAT.name = "mainstat";
+        // for (const attribute of mainstat) {
+        //     const OPTION = document.createElement("option");
+        //     OPTION.value = attribute;
+        //     OPTION.textContent = STATNAMES[attribute];
+        //     MAINSTAT.appendChild(OPTION);
+        // }
+        // OUTPUT.appendChild(MAINSTAT);
+
+        this.#mainstat = document.createElement("select");
+        this.#mainstat.classList.add("mainstat");
+        this.#mainstat.name = "mainstat";
         for (const attribute of mainstat) {
             const OPTION = document.createElement("option");
             OPTION.value = attribute;
             OPTION.textContent = STATNAMES[attribute];
-            MAINSTAT.appendChild(OPTION);
+            this.#mainstat.appendChild(OPTION);
         }
-        OUTPUT.appendChild(MAINSTAT);
+        OUTPUT.appendChild(this.#mainstat);
 
-        // MAINSTAT.selectedOptions
-        // MAINSTAT.value
+
         // MAINSTAT.options[MAINSTAT.selectedIndex]
 
         const SUBSTAT = document.createElement("select");
@@ -248,10 +259,20 @@ class SingleBlock extends Algorithm {
         return OUTPUT;
     }
 
-    /** @param {StatAttributes?} attribute @returns {StatDict} */
-    mainstat(attribute) {
-        const [[NAME, VALUE]] = super.mainstat(attribute).entries();
-        return new Map([[NAME, VALUE / 2]]);
+    // /** @param {StatAttributes?} attribute @returns {StatDict} */
+    // mainstat(attribute) {
+    //     const [[NAME, VALUE]] = super.mainstat(attribute).entries();
+    //     return new Map([[NAME, VALUE / 2]]);
+    // }
+
+    mainstat() {
+        console.log(
+            Array.from(this.#mainstat.selectedOptions)[0].value,
+            this.#mainstat.value,
+            this.#mainstat.options[this.#mainstat.selectedIndex].value
+        )
+        const out = this.#mainstat.options[this.#mainstat.selectedIndex].value;
+        return new Map([[out, MAINSTATS[out] / 2]])
     }
 
     /** @type {StatAttributes} */ #substat1 = "crateperc";
@@ -497,28 +518,29 @@ class AlgoGrid {
 
         this.#fieldtype = fieldtype;
         this.#closedcell = MAX_SIZE - size;
+
+        this.#close = () => {
+            ALGO_SELECT.removeEventListener("close", this.#close);
+
+            console.log(ALGO_SETS[fieldtype][ALGO_SELECT.returnValue], fieldtype, ALGO_SELECT.returnValue)
+            this.#algorithms.push(new ALGO_SETS[fieldtype][ALGO_SELECT.returnValue](this));
+    
+            this.#grid.replaceChildren();
+            this.display();
+        }
     }
 
+    /** Only gets closed upon selecting an algorithm. */
+    #close;     // Function object required instead of class method for listener attachment and removal.
     #open() {
         if (this.#emptycell === 1)
             ALGO_SELECT.firstElementChild.appendChild(algoSelectButton(ALGO_SETS[this.#fieldtype][`${this.#fieldtype}Block`]));
         else
             ALGO_SELECT.firstElementChild.append(...Object.values(ALGO_SETS[this.#fieldtype]).map(algoSelectButton));
 
-        ALGO_SELECT.addEventListener("close", this.#close.bind(this));
+        ALGO_SELECT.addEventListener("close", this.#close);
 
         ALGO_SELECT.showModal();
-    }
-
-    /** Only gets closed upon selecting an algorithm. */
-    #close() {
-        ALGO_SELECT.removeEventListener("close", this.#close.bind(this));
-
-        console.log(ALGO_SETS[this.#fieldtype][ALGO_SELECT.returnValue], this.#fieldtype, ALGO_SELECT.returnValue)
-        this.#algorithms.push(new ALGO_SETS[this.#fieldtype][ALGO_SELECT.returnValue](this));
-
-        this.#grid.replaceChildren();
-        this.display();
     }
 
     display() {
@@ -536,6 +558,7 @@ class AlgoGrid {
         this.#algorithms.remove(algorithm);
         this.#grid.replaceChildren();
         this.display();
+        console.log("Delete:", this.#algorithms)
     }
 
     /** @returns {StatDict} */
