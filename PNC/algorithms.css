@@ -28,9 +28,10 @@
 }
 
 .algo-block {
+    --algo-pad: 5px;
     background: #eaeaea;
     position: relative;
-    padding: 5px;
+    padding: var(--algo-pad);
 }
 
 .double-block {
@@ -48,7 +49,16 @@
 }
 
 .delete-algo {
+    padding: 0;
     position: absolute;
+    right: var(--algo-pad);
+    bottom: var(--algo-pad);
+    background-color: #494b4a;
+    width: 10px;
+}
+
+.delete-algo > div {
+    background-image: url("./assets/images/algorithms/Trash.png");
 }
 /* #endregion */
 

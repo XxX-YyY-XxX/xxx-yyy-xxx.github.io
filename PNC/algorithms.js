@@ -103,6 +103,7 @@ const SUBSTATS = Object.freeze({
     hboostperc: 2.4
 });
 
+
 /** @abstract */
 class Algorithm {
     /** @type {[StatAttributes, number]?} */ SET2;
@@ -182,11 +183,70 @@ class Algorithm {
     <button type="button"></button>
 </div>
 </template> */}
+const STATNAMES = Object.freeze({
+    hpflat: "Health+",      hpperc: "Health%",
+    atkflat: "Attack+",     atkperc: "Attack%",
+    hashflat: "Hashrate+",  hashperc: "Hashrate%",
+    pdefflat: "PhysDef+",   pdefperc: "PhysDef%",
+    odefflat: "OpDef+",     odefperc: "OpDef%",
 
+    crateperc: "CritRate",
+    cdmgperc: "CritDmg",
+    ppenflat: "PhysPen+",   ppenperc: "PhysPen%",
+    openflat: "OpPen+",     openperc: "OpPen%",
+
+    dodgeperc: "Dodge",
+    regenflat: "PostRegen",
+    hasteperc: "SkillHaste",
+    resflat: "DebuffRes",
+    dboostperc: "DmgBoost",
+    dreducperc: "InjuryMtg",
+    hboostperc: "HealEffect"
+});
 
 class SingleBlock extends Algorithm {
     SET2 = null;
     SIZE = 1;
+
+    /** @param {StatAttributes[]} mainstat @param {StatAttributes[]} substat @returns {HTMLDivElement} */
+    html(mainstat, substat) {
+        console.log("HTML", this.constructor.name)
+        const OUTPUT = super.html;
+
+        const MAINSTAT = document.createElement("select");
+        MAINSTAT.classList.add("mainstat");
+        MAINSTAT.name = "mainstat";
+        for (const attribute of mainstat) {
+            const OPTION = document.createElement("option");
+            OPTION.value = attribute;
+            OPTION.textContent = STATNAMES[attribute];
+            MAINSTAT.appendChild(OPTION);
+        }
+        OUTPUT.appendChild(MAINSTAT);
+
+        // MAINSTAT.selectedOptions
+        // MAINSTAT.value
+        // MAINSTAT.options[MAINSTAT.selectedIndex]
+
+        const SUBSTAT = document.createElement("select");
+        SUBSTAT.classList.add("substat");
+        SUBSTAT.name = "substat1";
+        for (const attribute of substat) {
+            const OPTION = document.createElement("option");
+            OPTION.value = attribute;
+            OPTION.textContent = STATNAMES[attribute];
+            SUBSTAT.appendChild(OPTION);
+        }
+        OUTPUT.appendChild(SUBSTAT);
+
+        const BUTTON = document.createElement("button");
+        BUTTON.classList.add("delete-algo");
+        BUTTON.addEventListener("click", super.delete.bind(this));
+        BUTTON.appendChild(document.createElement("div"));
+        OUTPUT.appendChild(BUTTON);
+
+        return OUTPUT;
+    }
 
     /** @param {StatAttributes?} attribute @returns {StatDict} */
     mainstat(attribute) {
@@ -243,41 +303,12 @@ class DoubleBlock extends Algorithm {
 /** @typedef {"atkflat"|"atkperc"|"hashflat"|"hashperc"|"ppenflat"|"ppenperc"|"openflat"|"openperc"} OffenseMainstat */
 /** @typedef {"hpflat"|"atkflat"|"atkperc"|"hashflat"|"hashperc"|"pdefflat"|"odefflat"|"crateperc"|"cdmgperc"|"ppenflat"|"openflat"|"regenflat"|"resflat"|"dboostperc"} OffenseSubstat*/
 
-const OFFENSEMAINSTAT = [["atkflat", "Attack+"], ["atkperc", "Attack%"], ["hashflat", "Hashrate+"], ["hashperc", "Hashrate%"], ["ppenflat", "PhysPen+"], ["ppenperc", "PhysPen%"], ["openflat", "OpPen+"], ["openperc", "OpPen%"]];
-const OFFENSESUBSTAT = [["hpflat", "Health+"], ["atkflat", "Attack+"], ["atkperc", "Attack%"], ["hashflat", "Hashrate+"], ["hashperc", "Hashrate%"], ["pdefflat", "PhysDef+"], ["odefflat", "OpDef+"], ["crateperc", "CritRate"], ["cdmgperc", "CritDmg"], ["ppenflat", "PhysPen+"], ["openflat", "OpPen+"], ["regenflat", "PostRegen"], ["resflat", "DebuffRes"], ["dboostperc", "DmgBoost"]];
+const OFFENSEMAINSTAT = ["atkflat", "atkperc", "hashflat", "hashperc", "ppenflat", "ppenperc", "openflat", "openperc"];
+const OFFENSESUBSTAT = ["hpflat", "atkflat", "atkperc", "hashflat", "hashperc", "pdefflat", "odefflat", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dboostperc"];
 
 class OffenseBlock extends SingleBlock {
     get html() {
-        const OUTPUT = super.html;
-
-        const MAINSTAT = document.createElement("select");
-        MAINSTAT.classList.add("mainstat");
-        MAINSTAT.name = "mainstat";
-        for (const [attribute, name] of OFFENSEMAINSTAT) {
-            const OPTION = document.createElement("option");
-            OPTION.value = attribute;
-            OPTION.textContent = name;
-            MAINSTAT.appendChild(OPTION);
-        }
-        OUTPUT.appendChild(MAINSTAT);
-
-        const SUBSTAT = document.createElement("select");
-        SUBSTAT.classList.add("substat1");
-        SUBSTAT.name = "substat1";
-        for (const [attribute, name] of OFFENSESUBSTAT) {
-            const OPTION = document.createElement("option");
-            OPTION.value = attribute;
-            OPTION.textContent = name;
-            SUBSTAT.appendChild(OPTION);
-        }
-        OUTPUT.appendChild(SUBSTAT);
-
-        const BUTTON = document.createElement("button");
-        BUTTON.classList.add("delete-algo");
-        BUTTON.addEventListener("click", super.delete.bind(this))
-        OUTPUT.appendChild(BUTTON);
-
-        return OUTPUT;
+        return super.html(OFFENSEMAINSTAT, OFFENSESUBSTAT);
     }
 
     /** @param {OffenseMainstat?} attribute @returns {StatDict} */
@@ -317,7 +348,14 @@ class Offense extends DoubleBlock {
 /** @typedef {"hpflat"|"hpperc"|"pdefflat"|"pdefperc"|"odefflat"|"odefperc"|"regenflat"} StabilityMainstat */
 /** @typedef {"hpflat"|"hpperc"|"atkflat"|"hashflat"|"pdefflat"|"pdefperc"|"odefflat"|"odefperc"|"crateperc"|"cdmgperc"|"ppenflat"|"openflat"|"regenflat"|"resflat"|"dreducperc"} StabilitySubstat */
 
+const STABILITYMAINSTAT = ["hpflat", "hpperc", "pdefflat", "pdefperc", "odefflat", "odefperc", "regenflat"];
+const STABILITYSUBSTAT = ["hpflat", "hpperc", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dreducperc"];
+
 class StabilityBlock extends SingleBlock {
+    get html() {
+        return super.html(STABILITYMAINSTAT, STABILITYSUBSTAT);
+    }
+
     /** @param {StabilityMainstat?} attribute @returns {StatDict} */
     mainstat(attribute) {
         return super.mainstat(attribute);
@@ -351,7 +389,14 @@ class Stability extends DoubleBlock {
 /** @typedef {"pdefflat"|"pdefperc"|"odefflat"|"odefperc"|"crateperc"|"cdmgperc"|"hasteperc"|"hboostperc"} SpecialMainstat */
 /** @typedef {"hpflat"|"atkflat"|"hashflat"|"pdefflat"|"pdefperc"|"odefflat"|"odefperc"|"crateperc"|"cdmgperc"|"ppenflat"|"openflat"|"dodgeperc"|"regenflat"|"hasteperc"|"resflat"|"hboostperc"} SpecialSubstat*/
 
+const SPECIALMAINSTAT = ["pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "hasteperc", "hboostperc"];
+const SPECIALSUBSTAT = ["hpflat", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "dodgeperc", "regenflat", "hasteperc", "resflat", "hboostperc"];
+
 class SpecialBlock extends SingleBlock {
+    get html() {
+        return super.html(SPECIALMAINSTAT, SPECIALSUBSTAT);
+    }
+
     /** @param {SpecialMainstat?} attribute @returns {StatDict} */
     mainstat(attribute) {
         return super.mainstat(attribute);
@@ -470,7 +515,7 @@ class AlgoGrid {
         console.log("Running...");
         ALGO_SELECT.removeEventListener("close", this.#close.bind(this));
 
-        this.#algorithms.push(new ALGO_SETS[this.#fieldtype][ALGO_SELECT.returnValue]());
+        this.#algorithms.push(new ALGO_SETS[this.#fieldtype][ALGO_SELECT.returnValue](this));
 
         this.#grid.replaceChildren();
         this.display();
