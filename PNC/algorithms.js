@@ -140,7 +140,7 @@ class Algorithm {
 
     /** Only called on modal close. @returns {StatDict} */
     get stats() {
-        return [type(this.SET2) === "array" ? new Map([this.SET2]) : new Map(), this.mainstat, this.substat1, this.substat2].reduce(combine);
+        return [this.mainstat, this.substat1, this.substat2].reduce(combine);
     }
 
     #grid;
@@ -416,6 +416,25 @@ class AlgoGrid {
         return MAX_SIZE - (this.#closedcell + (reduce((a, b) => a + b, this.#algorithms.map(x => x.SIZE)) ?? 0));
     }
 
+    /** @returns {StatDict} */
+    get stats() {
+        const EFFECT = (() => {
+            const SETS = this.#algorithms.filter(x => type(x.SET2) === "array").map(x => [x.constructor.name, x.SET2])
+
+            /** @type {string[]} */ const TEMP = [];
+            for (const [NAME, SET2] of SETS) {
+                if (TEMP.includes(NAME))
+                    return new Map([SET2])
+                else
+                    TEMP.push(NAME)
+            }
+
+            return new Map()
+        })()
+
+        return reduce(combine, [EFFECT, ...this.#algorithms.map(x => x.stats)]) ?? new Map();
+    }
+    
     /** @param {"Offense" | "Stability" | "Special"} fieldtype @param {number} size */
     constructor(fieldtype, size) {
         this.#grid = GRIDS[fieldtype];
@@ -462,11 +481,6 @@ class AlgoGrid {
         this.#algorithms.remove(algorithm);
         this.#grid.replaceChildren();
         this.display();
-    }
-
-    /** @returns {StatDict} */
-    get stats() {
-        return reduce(combine, this.#algorithms.map(x => x.stats)) ?? new Map();
     }
 }
 
