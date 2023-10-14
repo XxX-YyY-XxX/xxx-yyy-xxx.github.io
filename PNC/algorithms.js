@@ -130,8 +130,11 @@ class Algorithm {
     /** @abstract @returns {StatDict} */
     get substat2() {}
 
-    /** @returns {StatDict} */
+    /** @type {[StatAttributes | undefined, StatAttributes | undefined, StatAttributes | undefined]} */ saved = [null, null, null];
+    /** Only called on modal close. @returns {StatDict} */
     get stats() {
+        const [MAIN] = this.mainstat.keys(), [SUB1] = this.substat1.keys(), [SUB2] = this.substat2.keys();
+        this.saved = [MAIN, SUB1, SUB2];
         return [this.SET2 ? new Map([this.SET2]) : new Map(), this.mainstat, this.substat1, this.substat2].reduce(combine);
     }
 
@@ -184,12 +187,20 @@ class SingleBlock extends Algorithm {
         this.#mainstat.name = "mainstat";
         this.#mainstat.append(...mainstat.map(createOption));
         OUTPUT.appendChild(this.#mainstat);
+        
+        if (super.saved[0])
+            for (const OPTION of Array.from(this.#mainstat.options))
+                OPTION.selected = OPTION.value === super.saved[0];
 
         this.#substat = document.createElement("select");
         this.#substat.classList.add("substat");
         this.#substat.name = "substat1";
         this.#substat.append(...substat.map(createOption));
         OUTPUT.appendChild(this.#substat);
+
+        if (super.saved[1])
+            for (const OPTION of Array.from(this.#substat.options))
+                OPTION.selected = OPTION.value === super.saved[1];
 
         return OUTPUT;
     }
@@ -238,6 +249,10 @@ class DoubleBlock extends Algorithm {
             this.#mainstat.append(...mainstat.map(createOption));
             STATS.appendChild(this.#mainstat);
 
+            if (super.saved[0])
+                for (const OPTION of Array.from(this.#mainstat.options))
+                    OPTION.selected = OPTION.value === super.saved[0];
+
             this.#substat1 = document.createElement("select");
             this.#substat1.classList.add("substat");
             this.#substat1.name = "substat1";
@@ -247,7 +262,16 @@ class DoubleBlock extends Algorithm {
                     OPTION.disabled = this.#substat1.value === OPTION.value;
             });
             STATS.appendChild(this.#substat1);
-            Array.from(this.#substat1.options)[1].disabled = true;
+
+            if (super.saved[1]) {
+                for (const OPTION of Array.from(this.#substat1.options))
+                    OPTION.selected = OPTION.value === super.saved[1];
+
+                for (const OPTION of Array.from(this.#substat1.options))
+                    OPTION.disabled = OPTION.value === super.saved[2];
+            } else {
+                Array.from(this.#substat1.options)[1].disabled = true;
+            }
 
             this.#substat2 = document.createElement("select");
             this.#substat2.classList.add("substat");
@@ -258,7 +282,16 @@ class DoubleBlock extends Algorithm {
                     OPTION.disabled = this.#substat2.value === OPTION.value;
             });
             STATS.appendChild(this.#substat2);
-            setattr(Array.from(this.#substat2.options), {0: {disabled: true}, 1: {selected: true}});
+
+            if (super.saved[2]) {
+                for (const OPTION of Array.from(this.#substat2.options))
+                    OPTION.selected = OPTION.value === super.saved[2];
+
+                for (const OPTION of Array.from(this.#substat2.options))
+                    OPTION.disabled = OPTION.value === super.saved[1];
+            } else {
+                setattr(Array.from(this.#substat2.options), {0: {disabled: true}, 1: {selected: true}});
+            }
 
         OUTPUT.appendChild(STATS);
 
@@ -458,23 +491,23 @@ export class AlgoField{
     /** @type {StatDict} */ #stats = new Map();
 
     get [STATS.HEALTH]() {
-        return this.#basestat.hp * (this.#stats.get("hpperc") ?? 0) + (this.#stats.get("hpflat") ?? 0);
+        return this.#basestat.hp * (this.#stats.get("hpperc") ?? 0) / 100 + (this.#stats.get("hpflat") ?? 0);
     }
 
     get [STATS.ATTACK]() {
-        return this.#basestat.atk * (this.#stats.get("atkperc") ?? 0) + (this.#stats.get("atkflat") ?? 0);
+        return this.#basestat.atk * (this.#stats.get("atkperc") ?? 0) / 100 + (this.#stats.get("atkflat") ?? 0);
     }
 
     get [STATS.HASHRATE]() {
-        return this.#basestat.hash * (this.#stats.get("hashperc") ?? 0) + (this.#stats.get("hashflat") ?? 0);
+        return this.#basestat.hash * (this.#stats.get("hashperc") ?? 0) / 100 + (this.#stats.get("hashflat") ?? 0);
     }
 
     get [STATS.PDEFENSE]() {
-        return this.#basestat.pdef * (this.#stats.get("pdefperc") ?? 0) + (this.#stats.get("pdefflat") ?? 0);
+        return this.#basestat.pdef * (this.#stats.get("pdefperc") ?? 0) / 100 + (this.#stats.get("pdefflat") ?? 0);
     }
 
     get [STATS.ODEFENSE]() {
-        return this.#basestat.odef * (this.#stats.get("odefperc") ?? 0) + (this.#stats.get("odefflat") ?? 0);
+        return this.#basestat.odef * (this.#stats.get("odefperc") ?? 0) / 100 + (this.#stats.get("odefflat") ?? 0);
     }
 
     get [STATS.ATKSPD]() {
@@ -490,11 +523,11 @@ export class AlgoField{
     }
 
     get [STATS.PPENETRATE]() {
-        return this.#basestat.ppen * (this.#stats.get("ppenperc") ?? 0) + (this.#stats.get("ppenflat") ?? 0);
+        return this.#basestat.ppen * (this.#stats.get("ppenperc") ?? 0) / 100 + (this.#stats.get("ppenflat") ?? 0);
     }
 
     get [STATS.OPENETRATE]() {
-        return this.#basestat.open * (this.#stats.get("openperc") ?? 0) + (this.#stats.get("openflat") ?? 0);
+        return this.#basestat.open * (this.#stats.get("openperc") ?? 0) / 100 + (this.#stats.get("openflat") ?? 0);
     }
 
     get [STATS.DODGE]() {
