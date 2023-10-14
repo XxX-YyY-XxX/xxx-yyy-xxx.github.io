@@ -397,10 +397,11 @@ const ALGO_SETS = {
 function algoSelectButton(algoClass) {
     const OUTPUT = setattr(document.createElement("button"), {type: "submit", value: algoClass.name});
     const SET_EFFECT = algoClass.prototype.SET2;
+    console.log("Button:", algoClass.name, SET_EFFECT)
     OUTPUT.append(
         setattr(document.createElement("img"), {src: `./assets/images/algorithms/${isSubclassOf(algoClass, SingleBlock) ? "SingleBlock" : algoClass.name}.png`}),
         setattr(document.createElement("div"), {textContent: algoClass.name}),
-        setattr(document.createElement("div"), {textContent: type(SET_EFFECT) === "array" ? STATNAMES[SET_EFFECT[0]] : SET_EFFECT}),
+        setattr(document.createElement("div"), {textContent: (type(SET_EFFECT) === "array" ? STATNAMES[SET_EFFECT[0]] : SET_EFFECT)}),
     )
     return OUTPUT;
 }
@@ -420,6 +421,7 @@ class AlgoGrid {
     get stats() {
         const EFFECT = (() => {
             const SETS = this.#algorithms.filter(x => type(x.SET2) === "array").map(x => [x.constructor.name, x.SET2])
+            console.log("Set Effect:", this.#algorithms, SETS)
 
             /** @type {string[]} */ const TEMP = [];
             for (const [NAME, SET2] of SETS) {
@@ -431,6 +433,7 @@ class AlgoGrid {
 
             return new Map()
         })()
+        console.log("Set Effect:", EFFECT)
 
         return reduce(combine, [EFFECT, ...this.#algorithms.map(x => x.stats)]) ?? new Map();
     }
@@ -512,6 +515,7 @@ export class AlgoField{
     }
 
     get [STATS.ATKSPD]() {
+        console.log("Atk Spd called:", this.#name)
         return this.#stats.get("aspdflat") ?? 0;
     }
 
