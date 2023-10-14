@@ -1,8 +1,17 @@
+dialog {
+    border-radius: 10px;
+    padding: 5px;
+}
+
+
+
+
+
+
 #algo-modal {
     --gold-algo: #ffa418;
     --gray-algo: #494b4a;
     --dark: #343434;
-    border-radius: 10px;
     text-align: center;
     width: 650px;
 }
@@ -123,12 +132,6 @@
 
 
 
-
-#algo-select {
-    border-radius: 10px;
-    max-width: 100%;
-    padding: 5px;
-}
 
 #algo-select > form {
     display: flex;

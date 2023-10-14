@@ -59,6 +59,14 @@ function combine(object1, object2) {
         OUTPUT.set(attribute, (object1.get(attribute) ?? 0) + (object2.get(attribute) ?? 0));
     return OUTPUT;
 }
+
+/**
+ * @param {typeof Object} subclass 
+ * @param {typeof Object} mainclass 
+ * @returns {boolean} */
+function isSubclassOf(subclass, mainclass) {
+    return subclass.prototype instanceof mainclass;
+}
 //#endregion
 
 //#region Base
@@ -390,7 +398,7 @@ function algoSelectButton(algoClass) {
     const OUTPUT = setattr(document.createElement("button"), {type: "submit", value: algoClass.name});
     const SET_EFFECT = algoClass.prototype.SET2;
     OUTPUT.append(
-        setattr(document.createElement("img"), {src: `./assets/images/algorithms/${algoClass.name}.png`}),
+        setattr(document.createElement("img"), {src: `./assets/images/algorithms/${isSubclassOf(algoClass, SingleBlock) ? "SingleBlock" : algoClass.name}.png`}),
         setattr(document.createElement("div"), {textContent: algoClass.name}),
         setattr(document.createElement("div"), {textContent: type(SET_EFFECT) === "array" ? STATNAMES[SET_EFFECT[0]] : SET_EFFECT}),
     )
