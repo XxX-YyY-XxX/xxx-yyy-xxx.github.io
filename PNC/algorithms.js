@@ -103,17 +103,36 @@ const SUBSTATS = Object.freeze({
     hboostperc: 2.4
 });
 
-
 /** @abstract */
 class Algorithm {
     /** @type {[StatAttributes, number]?} */ SET2;
     /** @type {number} */ SIZE;
 
-    /** @returns {HTMLDivElement} */
+    /** @abstract @returns {HTMLDivElement} */
     get html() {
         const OUTPUT = document.createElement("div");
         OUTPUT.classList.add("algo-block");
+
+        const BUTTON = document.createElement("button");
+        BUTTON.classList.add("delete-algo");
+        BUTTON.addEventListener("click", () => this.#grid.delete(this));
+        OUTPUT.appendChild(BUTTON);
+
         return OUTPUT;
+    }
+
+    /** @abstract @returns {StatDict} */
+    get mainstat() {}
+
+    /** @abstract @returns {StatDict} */
+    get substat1() {}
+
+    /** @abstract @returns {StatDict} */
+    get substat2() {}
+
+    /** @returns {StatDict} */
+    get stats() {
+        return [this.SET2 ? new Map([this.SET2]) : new Map(), this.mainstat, this.substat1, this.substat2].reduce(combine);
     }
 
     #grid;
@@ -121,68 +140,7 @@ class Algorithm {
     constructor(grid) {
         this.#grid = grid;
     }
-
-    /** @type {StatAttributes} */ #mainstat = "crateperc";
-    /** @param {StatAttributes?} attribute @returns {StatDict} */
-    mainstat(attribute) {
-        if (attribute) this.#mainstat = attribute;
-        return new Map([[this.#mainstat, MAINSTATS[this.#mainstat]]]);
-    }
-
-
-
-
-
-
-
-
-
-    /** @type {StatAttributes} */ #substat1 = "crateperc";
-    /** @param {StatAttributes?} attribute @returns {StatDict} */
-    substat1(attribute) {
-        console.log("Base substat1 used.");
-        if (attribute === this.#substat2) return;
-        if (attribute) this.#substat1 = attribute;
-        return new Map([[this.#substat1, SUBSTATS[this.#substat1]]]);
-    }
-
-    /** @type {StatAttributes} */ #substat2 = "cdmgperc";
-    /** @param {StatAttributes?} attribute @returns {StatDict} */
-    substat2(attribute) {
-        console.log("Base substat2 used.");
-        if (attribute === this.#substat1) return;
-        if (attribute) this.#substat2 = attribute;
-        return new Map([[this.#substat2, SUBSTATS[this.#substat2]]]);
-    }
-
-    delete() {
-        this.#grid.delete(this);
-    }
-
-    /** @returns {StatDict} */
-    get stats() {
-        return reduce(combine, [this.SET2 ? new Map([this.SET2]) : new Map(), this.mainstat(), this.substat1(), this.substat2()]);
-        // const OUTPUT = combine(this.SET2 ? new Map([this.SET2]) : new Map(), this.mainstat());
-
-        // console.log(this.constructor.name, this instanceof DoubleBlock)
-
-        // const [first, second] = this.#substat;
-        // OUTPUT.set(first, (OUTPUT.get(first) ?? 0) + SUBSTATS[first]);
-        // OUTPUT.set(second, (OUTPUT.get(second) ?? 0) + (SUBSTATS[second] ?? 0));
-
-        // return OUTPUT;
-    }
 }
-
-{/* <template>
-<div class="algo-block double-block">
-    <button type="button"></button>
-    <span class="mainstat"></span>
-    <span class="substat" index="0"></span>
-    <span class="substat" index="1"></span>
-    <button type="button"></button>
-</div>
-</template> */}
 
 const STATNAMES = Object.freeze({
     hpflat: "Health+",      hpperc: "Health%",
@@ -209,21 +167,9 @@ class SingleBlock extends Algorithm {
     SET2 = null;
     SIZE = 1;
 
-    /** @type {HTMLSelectElement} */ #mainstat;
     /** @param {StatAttributes[]} mainstat @param {StatAttributes[]} substat @returns {HTMLDivElement} */
     html(mainstat, substat) {
         const OUTPUT = super.html;
-
-        // const MAINSTAT = document.createElement("select");
-        // MAINSTAT.classList.add("mainstat");
-        // MAINSTAT.name = "mainstat";
-        // for (const attribute of mainstat) {
-        //     const OPTION = document.createElement("option");
-        //     OPTION.value = attribute;
-        //     OPTION.textContent = STATNAMES[attribute];
-        //     MAINSTAT.appendChild(OPTION);
-        // }
-        // OUTPUT.appendChild(MAINSTAT);
 
         this.#mainstat = document.createElement("select");
         this.#mainstat.classList.add("mainstat");
@@ -236,54 +182,39 @@ class SingleBlock extends Algorithm {
         }
         OUTPUT.appendChild(this.#mainstat);
 
-
-        // MAINSTAT.options[MAINSTAT.selectedIndex]
-
-        const SUBSTAT = document.createElement("select");
-        SUBSTAT.classList.add("substat");
-        SUBSTAT.name = "substat1";
+        this.#substat = document.createElement("select");
+        this.#substat.classList.add("substat");
+        this.#substat.name = "substat1";
         for (const attribute of substat) {
             const OPTION = document.createElement("option");
             OPTION.value = attribute;
             OPTION.textContent = STATNAMES[attribute];
-            SUBSTAT.appendChild(OPTION);
+            this.#substat.appendChild(OPTION);
         }
-        OUTPUT.appendChild(SUBSTAT);
-
-        const BUTTON = document.createElement("button");
-        BUTTON.classList.add("delete-algo");
-        BUTTON.addEventListener("click", super.delete.bind(this));
-        BUTTON.appendChild(document.createElement("div"));
-        OUTPUT.appendChild(BUTTON);
+        OUTPUT.appendChild(this.#substat);
 
         return OUTPUT;
     }
 
-    // /** @param {StatAttributes?} attribute @returns {StatDict} */
-    // mainstat(attribute) {
-    //     const [[NAME, VALUE]] = super.mainstat(attribute).entries();
-    //     return new Map([[NAME, VALUE / 2]]);
-    // }
-
-    mainstat() {
-        console.log(
-            Array.from(this.#mainstat.selectedOptions)[0].value,
-            this.#mainstat.value,
-            this.#mainstat.options[this.#mainstat.selectedIndex].value
-        )
-        const out = this.#mainstat.options[this.#mainstat.selectedIndex].value;
-        return new Map([[out, MAINSTATS[out] / 2]])
+    /** @type {HTMLSelectElement} */ #mainstat;
+    /** @returns {StatDict} */
+    get mainstat() {
+        // console.log(
+        //     Array.from(this.#mainstat.selectedOptions)[0].value,
+        //     this.#mainstat.value,
+        //     this.#mainstat.options[this.#mainstat.selectedIndex].value
+        // )
+        return new Map([[this.#mainstat.value, MAINSTATS[this.#mainstat.value] / 2]]);
     }
 
-    /** @type {StatAttributes} */ #substat1 = "crateperc";
-    /** @param {StatAttributes?} attribute @returns {StatDict} */
-    substat1(attribute) {
-        if (attribute) this.#substat1 = attribute;
-        return new Map([[this.#substat1, SUBSTATS[this.#substat1]]]);
+    /** @type {HTMLSelectElement} */ #substat;
+    /** @returns {StatDict} */
+    get substat1() {
+        return new Map([[this.#substat.value, SUBSTATS[this.#substat.value]]]);
     }
 
     /** @returns {StatDict} */
-    substat2() {
+    get substat2() {
         return new Map();
     }
 }
@@ -291,39 +222,80 @@ class SingleBlock extends Algorithm {
 class DoubleBlock extends Algorithm {
     SIZE = 2;
 
-    get html() {
+    /** @param {StatAttributes[]} mainstat @param {StatAttributes[]} substat @returns {HTMLDivElement} */
+    html(mainstat, substat) {
         const OUTPUT = super.html;
         OUTPUT.classList.add("double-block");
+
         //add symbol
-        //mainstat
-        //substat1
-        //substat2
-        //delete
+        console.log("DoubleBlock HTML:", this.constructor.name)
+
+        // div
+
+        this.#mainstat = document.createElement("select");
+        this.#mainstat.classList.add("mainstat");
+        this.#mainstat.name = "mainstat";
+        for (const attribute of mainstat) {
+            const OPTION = document.createElement("option");
+            OPTION.value = attribute;
+            OPTION.textContent = STATNAMES[attribute];
+            this.#mainstat.appendChild(OPTION);
+        }
+        OUTPUT.appendChild(this.#mainstat);
+
+        this.#substat1 = document.createElement("select");
+        this.#substat1.classList.add("substat");
+        this.#substat1.name = "substat1";
+        for (const attribute of substat) {
+            const OPTION = document.createElement("option");
+            OPTION.value = attribute;
+            OPTION.textContent = STATNAMES[attribute];
+            this.#substat1.appendChild(OPTION);
+        }
+        this.#substat1.addEventListener("change", () => {
+            console.log("Substat 1 value changed.")
+        });
+        OUTPUT.appendChild(this.#substat1);
+
+        this.#substat2 = document.createElement("select");
+        this.#substat2.classList.add("substat");
+        this.#substat2.name = "substat2";
+        for (const attribute of substat) {
+            const OPTION = document.createElement("option");
+            OPTION.value = attribute;
+            OPTION.textContent = STATNAMES[attribute];
+            this.#substat2.appendChild(OPTION);
+        }
+        this.#substat2.addEventListener("change", () => {
+            console.log("Substat 2 value changed.")
+        });
+        OUTPUT.appendChild(this.#substat2);
+        // disable the option that the other substat has
+
         return OUTPUT;
     }
 
-    /** @type {StatAttributes} */ #substat1 = "crateperc";
-    /** @param {StatAttributes?} attribute @returns {StatDict?} */
-    substat1(attribute) {
-        if (attribute === this.#substat2) return null;
-        if (attribute) this.#substat1 = attribute;
-        return new Map([[this.#substat1, SUBSTATS[this.#substat1]]]);
+    /** @type {HTMLSelectElement} */ #mainstat;
+    /** @returns {StatDict} */
+    get mainstat() {
+        return new Map([[this.#mainstat.value, MAINSTATS[this.#mainstat.value]]]);
     }
 
-    /** @type {StatAttributes} */ #substat2 = "cdmgperc";
-    /** @param {StatAttributes?} attribute @returns {StatDict?} */
-    substat2(attribute) {
-        if (attribute === this.#substat1) return null;
-        if (attribute) this.#substat2 = attribute;
-        return new Map([[this.#substat2, SUBSTATS[this.#substat2]]]);
+    /** @type {HTMLSelectElement} */ #substat1;
+    /** @returns {StatDict} */
+    get substat1() {
+        return new Map([[this.#substat1.value, SUBSTATS[this.#substat1.value]]]);
+    }
+
+    /** @type {HTMLSelectElement} */ #substat2;
+    /** @returns {StatDict} */
+    get substat2() {
+        return new Map([[this.#substat2.value, SUBSTATS[this.#substat2.value]]]);
     }
 }
 //#endregion
 
-//#region Offense
-/** @typedef {"atkflat"|"atkperc"|"hashflat"|"hashperc"|"ppenflat"|"ppenperc"|"openflat"|"openperc"} OffenseMainstat */
-/** @typedef {"hpflat"|"atkflat"|"atkperc"|"hashflat"|"hashperc"|"pdefflat"|"odefflat"|"crateperc"|"cdmgperc"|"ppenflat"|"openflat"|"regenflat"|"resflat"|"dboostperc"} OffenseSubstat*/
-
+//#region Algorithm Block Types
 const OFFENSEMAINSTAT = ["atkflat", "atkperc", "hashflat", "hashperc", "ppenflat", "ppenperc", "openflat", "openperc"];
 const OFFENSESUBSTAT = ["hpflat", "atkflat", "atkperc", "hashflat", "hashperc", "pdefflat", "odefflat", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dboostperc"];
 
@@ -331,43 +303,13 @@ class OffenseBlock extends SingleBlock {
     get html() {
         return super.html(OFFENSEMAINSTAT, OFFENSESUBSTAT);
     }
-
-    /** @param {OffenseMainstat?} attribute @returns {StatDict} */
-    mainstat(attribute) {
-        return super.mainstat(attribute);
-    }
-
-    /** @param {OffenseSubstat?} attribute @returns {StatDict} */
-    substat1(attribute) {
-        return super.substat1(attribute);
-    }
 }
 
 class Offense extends DoubleBlock {
     get html() {
-        return super.html
-    }
-
-    /** @param {OffenseMainstat?} attribute @returns {StatDict} */
-    mainstat(attribute) {
-        return super.mainstat(attribute);
-    }
-
-    /** @param {OffenseSubstat?} attribute @returns {StatDict} */
-    substat1(attribute) {
-        return super.substat1(attribute);
-    }
-
-    /** @param {OffenseSubstat?} attribute @returns {StatDict} */
-    substat2(attribute) {
-        return super.substat2(attribute);
+        return super.html(OFFENSEMAINSTAT, OFFENSESUBSTAT);
     }
 }
-//#endregion
-
-//#region Stability
-/** @typedef {"hpflat"|"hpperc"|"pdefflat"|"pdefperc"|"odefflat"|"odefperc"|"regenflat"} StabilityMainstat */
-/** @typedef {"hpflat"|"hpperc"|"atkflat"|"hashflat"|"pdefflat"|"pdefperc"|"odefflat"|"odefperc"|"crateperc"|"cdmgperc"|"ppenflat"|"openflat"|"regenflat"|"resflat"|"dreducperc"} StabilitySubstat */
 
 const STABILITYMAINSTAT = ["hpflat", "hpperc", "pdefflat", "pdefperc", "odefflat", "odefperc", "regenflat"];
 const STABILITYSUBSTAT = ["hpflat", "hpperc", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dreducperc"];
@@ -376,39 +318,13 @@ class StabilityBlock extends SingleBlock {
     get html() {
         return super.html(STABILITYMAINSTAT, STABILITYSUBSTAT);
     }
-
-    /** @param {StabilityMainstat?} attribute @returns {StatDict} */
-    mainstat(attribute) {
-        return super.mainstat(attribute);
-    }
-
-    /** @param {StabilitySubstat?} attribute @returns {StatDict} */
-    substat1(attribute) {
-        return super.substat1(attribute);
-    }
 }
 
 class Stability extends DoubleBlock {
-    /** @param {StabilityMainstat?} attribute @returns {StatDict} */
-    mainstat(attribute) {
-        return super.mainstat(attribute);
-    }
-
-    /** @param {StabilitySubstat?} attribute @returns {StatDict} */
-    substat1(attribute) {
-        return super.substat1(attribute);
-    }
-
-    /** @param {StabilitySubstat?} attribute @returns {StatDict} */
-    substat2(attribute) {
-        return super.substat2(attribute);
+    get html() {
+        return super.html(STABILITYMAINSTAT, STABILITYSUBSTAT);
     }
 }
-//#endregion
-
-//#region Special
-/** @typedef {"pdefflat"|"pdefperc"|"odefflat"|"odefperc"|"crateperc"|"cdmgperc"|"hasteperc"|"hboostperc"} SpecialMainstat */
-/** @typedef {"hpflat"|"atkflat"|"hashflat"|"pdefflat"|"pdefperc"|"odefflat"|"odefperc"|"crateperc"|"cdmgperc"|"ppenflat"|"openflat"|"dodgeperc"|"regenflat"|"hasteperc"|"resflat"|"hboostperc"} SpecialSubstat*/
 
 const SPECIALMAINSTAT = ["pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "hasteperc", "hboostperc"];
 const SPECIALSUBSTAT = ["hpflat", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "dodgeperc", "regenflat", "hasteperc", "resflat", "hboostperc"];
@@ -417,32 +333,11 @@ class SpecialBlock extends SingleBlock {
     get html() {
         return super.html(SPECIALMAINSTAT, SPECIALSUBSTAT);
     }
-
-    /** @param {SpecialMainstat?} attribute @returns {StatDict} */
-    mainstat(attribute) {
-        return super.mainstat(attribute);
-    }
-
-    /** @param {SpecialSubstat?} attribute @returns {StatDict} */
-    substat1(attribute) {
-        return super.substat1(attribute);
-    }
 }
 
 class Special extends DoubleBlock {
-    /** @param {SpecialMainstat?} attribute @returns {StatDict} */
-    mainstat(attribute) {
-        return super.mainstat(attribute);
-    }
-
-    /** @param {SpecialSubstat?} attribute @returns {StatDict} */
-    substat1(attribute) {
-        return super.substat1(attribute);
-    }
-
-    /** @param {SpecialSubstat?} attribute @returns {StatDict} */
-    substat2(attribute) {
-        return super.substat2(attribute);
+    get html() {
+        return super.html(SPECIALMAINSTAT, SPECIALSUBSTAT);
     }
 }
 //#endregion
@@ -522,7 +417,6 @@ class AlgoGrid {
         this.#close = () => {
             ALGO_SELECT.removeEventListener("close", this.#close);
 
-            console.log(ALGO_SETS[fieldtype][ALGO_SELECT.returnValue], fieldtype, ALGO_SELECT.returnValue)
             this.#algorithms.push(new ALGO_SETS[fieldtype][ALGO_SELECT.returnValue](this));
     
             this.#grid.replaceChildren();
@@ -558,7 +452,6 @@ class AlgoGrid {
         this.#algorithms.remove(algorithm);
         this.#grid.replaceChildren();
         this.display();
-        console.log("Delete:", this.#algorithms)
     }
 
     /** @returns {StatDict} */

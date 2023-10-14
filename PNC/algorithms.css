@@ -1,5 +1,6 @@
 #algo-modal {
     --gold-algo: #ffa418;
+    --gray-algo: #494b4a;
     --dark: #343434;
     border-radius: 10px;
     text-align: center;
@@ -38,6 +39,10 @@
     grid-column-end: span 2;
 }
 
+.algo-emblem {
+    background-color: var(--gray-algo);
+}
+
 .mainstat {
     background-color: var(--gold-algo);
     color: white;
@@ -53,15 +58,12 @@
     position: absolute;
     right: var(--algo-pad);
     bottom: var(--algo-pad);
-    background-color: #494b4a;
-}
-
-.delete-algo > div {
     background-image: url("./assets/images/algorithms/Trash.png");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     width: 10px;
     height: 10px;
+    border-width: 1px;
 }
 /* #endregion */
 
@@ -129,6 +131,6 @@
 }
 
 #algo-select img {
-    background-color: #494b4a;
+    background-color: var(--gray-algo);
     width: 100px;
 }

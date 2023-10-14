@@ -20,16 +20,16 @@ export function range(params: {
 
 /** Creates a sorter key from the given parameters. */
 export function cmp<T>(params: {
-    key: (arg0: T) => any;
+    key: (item: T) => any;
     reverse: boolean;
-}): (arg0: T, arg1: T) => number;
+}): (item0: T, item1: T) => number;
 /** Creates a sorter key from the given parameters. */
 export function cmp<T0, T1>(params: {
-    key: (arg0: T0) => T1;
+    key: (item: T0) => T1;
     reverse: boolean;
     /** Follows this array for specific order. */
     array: T1[];
-}): (arg0: T0, arg1: T0) => number;
+}): (item0: T0, item1: T0) => number;
 
 /** parameters[] for function calls.
  * 
