@@ -163,6 +163,14 @@ const STATNAMES = Object.freeze({
     hboostperc: "HealEffect"
 });
 
+/** @param {StatAttributes[]} attribute */
+function createOption(attribute) {
+    const OPTION = document.createElement("option");
+    OPTION.value = attribute;
+    OPTION.textContent = STATNAMES[attribute];
+    return OPTION;
+}
+
 class SingleBlock extends Algorithm {
     SET2 = null;
     SIZE = 1;
@@ -174,23 +182,13 @@ class SingleBlock extends Algorithm {
         this.#mainstat = document.createElement("select");
         this.#mainstat.classList.add("mainstat");
         this.#mainstat.name = "mainstat";
-        for (const attribute of mainstat) {
-            const OPTION = document.createElement("option");
-            OPTION.value = attribute;
-            OPTION.textContent = STATNAMES[attribute];
-            this.#mainstat.appendChild(OPTION);
-        }
+        this.#mainstat.append(...mainstat.map(createOption));
         OUTPUT.appendChild(this.#mainstat);
 
         this.#substat = document.createElement("select");
         this.#substat.classList.add("substat");
         this.#substat.name = "substat1";
-        for (const attribute of substat) {
-            const OPTION = document.createElement("option");
-            OPTION.value = attribute;
-            OPTION.textContent = STATNAMES[attribute];
-            this.#substat.appendChild(OPTION);
-        }
+        this.#substat.append(...substat.map(createOption));
         OUTPUT.appendChild(this.#substat);
 
         return OUTPUT;
@@ -224,60 +222,45 @@ class DoubleBlock extends Algorithm {
 
     /** @param {StatAttributes[]} mainstat @param {StatAttributes[]} substat @returns {HTMLDivElement} */
     html(mainstat, substat) {
-        const OUTPUT = super.html;
-        OUTPUT.classList.add("double-block");
+        const OUTPUT = setattr(super.html, {classList: {add: ["double-block"]}})
 
         const EMBLEM = document.createElement("div");
         const IMG = document.createElement("img");
-        IMG.src = `./assets/image/algorithm/${this.constructor.name}.png`;
+        IMG.src = `./assets/image/algorithms/${this.constructor.name}.png`;
         EMBLEM.appendChild(IMG);
         OUTPUT.appendChild(EMBLEM);
 
         const STATS = document.createElement("div");
 
-        this.#mainstat = document.createElement("select");
-        this.#mainstat.classList.add("mainstat");
-        this.#mainstat.name = "mainstat";
-        for (const attribute of mainstat) {
-            const OPTION = document.createElement("option");
-            OPTION.value = attribute;
-            OPTION.textContent = STATNAMES[attribute];
-            this.#mainstat.appendChild(OPTION);
-        }
-        STATS.appendChild(this.#mainstat);
+            this.#mainstat = document.createElement("select");
+            this.#mainstat.classList.add("mainstat");
+            this.#mainstat.name = "mainstat";
+            this.#mainstat.append(...mainstat.map(createOption));
+            STATS.appendChild(this.#mainstat);
 
-        this.#substat1 = document.createElement("select");
-        this.#substat1.classList.add("substat");
-        this.#substat1.name = "substat1";
-        for (const attribute of substat) {
-            const OPTION = document.createElement("option");
-            OPTION.value = attribute;
-            OPTION.textContent = STATNAMES[attribute];
-            this.#substat1.appendChild(OPTION);
-        }
-        this.#substat1.addEventListener("change", () => {
-            for (const OPTION of Array.from(this.#substat2.options))
-                OPTION.disabled = this.#substat1.value === OPTION.value;
-        });
-        STATS.appendChild(this.#substat1);
+            this.#substat1 = document.createElement("select");
+            this.#substat1.classList.add("substat");
+            this.#substat1.name = "substat1";
+            this.#substat1.append(...substat.map(createOption));
+            this.#substat1.addEventListener("change", () => {
+                for (const OPTION of Array.from(this.#substat2.options))
+                    OPTION.disabled = this.#substat1.value === OPTION.value;
+            });
+            STATS.appendChild(this.#substat1);
+            Array.from(this.#substat1.options)[1].disabled = true;
 
-        this.#substat2 = document.createElement("select");
-        this.#substat2.classList.add("substat");
-        this.#substat2.name = "substat2";
-        for (const attribute of substat) {
-            const OPTION = document.createElement("option");
-            OPTION.value = attribute;
-            OPTION.textContent = STATNAMES[attribute];
-            this.#substat2.appendChild(OPTION);
-        }
-        this.#substat2.addEventListener("change", () => {
-            for (const OPTION of Array.from(this.#substat1.options))
-                OPTION.disabled = this.#substat2.value === OPTION.value;
-        });
-        STATS.appendChild(this.#substat2);
+            this.#substat2 = document.createElement("select");
+            this.#substat2.classList.add("substat");
+            this.#substat2.name = "substat2";
+            this.#substat2.append(...substat.map(createOption));
+            this.#substat2.addEventListener("change", () => {
+                for (const OPTION of Array.from(this.#substat1.options))
+                    OPTION.disabled = this.#substat2.value === OPTION.value;
+            });
+            STATS.appendChild(this.#substat2);
+            setattr(Array.from(this.#substat2.options), {0: {disabled: true}, 1: {selected: true}});
+
         OUTPUT.appendChild(STATS);
-
-        setattr(Array.from(this.#substat2.options), {0: {disabled: true}, 1: {selected: true}});
 
         return OUTPUT;
     }
@@ -472,7 +455,7 @@ export class AlgoField{
     #basestat;
 
     #algogrids;
-    /** @type {StatDict} */ #stats;
+    /** @type {StatDict} */ #stats = new Map();
 
     get [STATS.HEALTH]() {
         return this.#basestat.hp * (this.#stats.get("hpperc") ?? 0) + (this.#stats.get("hpflat") ?? 0);
@@ -551,9 +534,6 @@ export class AlgoField{
         this.#name = unit.name;
         this.#basestat = unit.base;
 
-        this.#stats = new Map();
-        this.#onClose = onclose;
-
         const LAYOUT = {
             "Guard": "465",
             "Sniper": "645",
@@ -568,27 +548,24 @@ export class AlgoField{
             new AlgoGrid("Special", Number(LAYOUT[2]))
         ];
 
+        this.#close = () => {
+            this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
+            onclose();
+    
+            ALGO_CLOSE.removeEventListener("click", this.#close);
+
+            ALGO_MODAL.close();
+        };
     }
 
+    #close;
     show() {
         ALGO_MODAL.firstElementChild.textContent = this.#name;
         for (const GRID of this.#algogrids) GRID.display()
 
-        ALGO_CLOSE.addEventListener("click", this.#close.bind(this))
+        ALGO_CLOSE.addEventListener("click", this.#close)
 
         ALGO_MODAL.showModal()
-
-    }
-
-    #onClose;
-    #close() {
-        console.log(this.#name, "running...");
-        this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
-        this.#onClose();
-
-        ALGO_MODAL.close()
-
-        ALGO_CLOSE.removeEventListener("click", this.#close.bind(this));
     }
 }
 //#endregion
