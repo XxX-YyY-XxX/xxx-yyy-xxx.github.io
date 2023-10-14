@@ -138,10 +138,11 @@
 }
 
 #algo-select button {
+    background-color: var(--gray-algo);
     padding: 0;
+    text-align: center;
 }
 
 #algo-select img {
-    background-color: var(--gray-algo);
     width: 100px;
 }

@@ -1,5 +1,5 @@
 import {STATS} from "./typing.js";
-import {cmp, chain, setattr, reduce} from "../univasset/scripts/basefunctions/index.js";
+import {cmp, chain, setattr, reduce, type} from "../univasset/scripts/basefunctions/index.js";
 
 //#region Type Definitions
 /** @typedef {"Code Robustness" | "Power Connection" | "Neural Activation" | "Shield of Friendship" | "Coordinated Strike" | "Victorious Inspiration" | "Risk Evasion Aid" | "Mechanical Celerity" | "Coordinated Formation" | "Through Fire and Water" | "Healing Bond"} IntimacyStats */
@@ -105,7 +105,7 @@ const SUBSTATS = Object.freeze({
 
 /** @abstract */
 class Algorithm {
-    /** @type {[StatAttributes, number]?} */ SET2;
+    /** @type {[StatAttributes, number] | string} */ SET2;
     /** @type {number} */ SIZE;
 
     /** @abstract @returns {HTMLDivElement} */
@@ -130,12 +130,9 @@ class Algorithm {
     /** @abstract @returns {StatDict} */
     get substat2() {}
 
-    // /** @type {[StatAttributes | undefined, StatAttributes | undefined, StatAttributes | undefined]} */ saved = [null, null, null];
     /** Only called on modal close. @returns {StatDict} */
     get stats() {
-        // const [MAIN] = this.mainstat.keys(), [SUB1] = this.substat1.keys(), [SUB2] = this.substat2.keys();
-        // this.saved = [MAIN, SUB1, SUB2];
-        return [this.SET2 ? new Map([this.SET2]) : new Map(), this.mainstat, this.substat1, this.substat2].reduce(combine);
+        return [type(this.SET2) === "array" ? new Map([this.SET2]) : new Map(), this.mainstat, this.substat1, this.substat2].reduce(combine);
     }
 
     #grid;
@@ -175,7 +172,7 @@ function createOption(attribute) {
 }
 
 class SingleBlock extends Algorithm {
-    SET2 = null;
+    SET2 = "No Bonus";
     SIZE = 1;
 
     /** @param {StatAttributes[]} mainstat @param {StatAttributes[]} substat @returns {HTMLDivElement} */
@@ -190,10 +187,6 @@ class SingleBlock extends Algorithm {
         }
         OUTPUT.appendChild(this.#mainstat);
         
-        // if (super.saved[0])
-        //     for (const OPTION of Array.from(this.#mainstat.options))
-        //         OPTION.selected = OPTION.value === super.saved[0];
-
         if (!this.#substat) {
             this.#substat = document.createElement("select");
             this.#substat.classList.add("substat");
@@ -201,10 +194,6 @@ class SingleBlock extends Algorithm {
             this.#substat.append(...substat.map(createOption));
         }
         OUTPUT.appendChild(this.#substat);
-
-        // if (super.saved[1])
-        //     for (const OPTION of Array.from(this.#substat.options))
-        //         OPTION.selected = OPTION.value === super.saved[1];
 
         return OUTPUT;
     }
@@ -217,7 +206,7 @@ class SingleBlock extends Algorithm {
         //     this.#mainstat.value,
         //     this.#mainstat.options[this.#mainstat.selectedIndex].value
         // )
-        return new Map([[this.#mainstat.value, MAINSTATS[this.#mainstat.value] / 2]]);
+        return new Map([[this.#mainstat.value, MAINSTATS[this.#mainstat.value]]]);
     }
 
     /** @type {HTMLSelectElement} */ #substat;
@@ -255,10 +244,6 @@ class DoubleBlock extends Algorithm {
             }
             STATS.appendChild(this.#mainstat);
 
-            // if (super.saved[0])
-            //     for (const OPTION of Array.from(this.#mainstat.options))
-            //         OPTION.selected = OPTION.value === super.saved[0];
-
             if (!this.#substat1) {
                 this.#substat1 = document.createElement("select");
                 this.#substat1.classList.add("substat");
@@ -268,18 +253,9 @@ class DoubleBlock extends Algorithm {
                     for (const OPTION of Array.from(this.#substat2.options))
                         OPTION.disabled = this.#substat1.value === OPTION.value;
                 });
+                Array.from(this.#substat1.options)[1].disabled = true;
             }
             STATS.appendChild(this.#substat1);
-
-            // if (super.saved[1]) {
-            //     for (const OPTION of Array.from(this.#substat1.options))
-            //         OPTION.selected = OPTION.value === super.saved[1];
-
-            //     for (const OPTION of Array.from(this.#substat1.options))
-            //         OPTION.disabled = OPTION.value === super.saved[2];
-            // } else {
-            //     Array.from(this.#substat1.options)[1].disabled = true;
-            // }
 
             if (!this.#substat2) {
                 this.#substat2 = document.createElement("select");
@@ -289,19 +265,10 @@ class DoubleBlock extends Algorithm {
                 this.#substat2.addEventListener("change", () => {
                     for (const OPTION of Array.from(this.#substat1.options))
                         OPTION.disabled = this.#substat2.value === OPTION.value;
-                });    
+                });
+                setattr(Array.from(this.#substat2.options), {0: {disabled: true}, 1: {selected: true}});
             }
             STATS.appendChild(this.#substat2);
-
-            // if (super.saved[2]) {
-            //     for (const OPTION of Array.from(this.#substat2.options))
-            //         OPTION.selected = OPTION.value === super.saved[2];
-
-            //     for (const OPTION of Array.from(this.#substat2.options))
-            //         OPTION.disabled = OPTION.value === super.saved[1];
-            // } else {
-            //     setattr(Array.from(this.#substat2.options), {0: {disabled: true}, 1: {selected: true}});
-            // }
 
         OUTPUT.appendChild(STATS);
 
@@ -311,7 +278,7 @@ class DoubleBlock extends Algorithm {
     /** @type {HTMLSelectElement} */ #mainstat;
     /** @returns {StatDict} */
     get mainstat() {
-        return new Map([[this.#mainstat.value, MAINSTATS[this.#mainstat.value]]]);
+        return new Map([[this.#mainstat.value, MAINSTATS[this.#mainstat.value] * 2]]);
     }
 
     /** @type {HTMLSelectElement} */ #substat1;
@@ -392,7 +359,7 @@ const ALGO_SETS = {
         DataRepair:     class DataRepair extends Offense {SET2 = ["resflat", 30]},
         MLRMatrix:      class MLRMatrix extends Offense {SET2 = ["dboostperc", 5]},
         LimitValue:     class LimitValue extends Offense {SET2 = ["dboostperc", 5]},
-        LowerLimit:     class LowerLimit extends Offense {SET2 = null}
+        LowerLimit:     class LowerLimit extends Offense {SET2 = "Lifesteal"}
     },
     Stability: {
         StabilityBlock: StabilityBlock,
@@ -403,7 +370,7 @@ const ALGO_SETS = {
         Reflection:     class Reflection extends Stability {SET2 = ["lashperc", 5]},
         Encapsulate:    class Encapsulate extends Stability {SET2 = ["dreducperc", 5]},
         Resolve:        class Resolve extends Stability {SET2 = ["dreducperc", 5]},
-        Overflow:       class Overflow extends Stability {SET2 = null}
+        Overflow:       class Overflow extends Stability {SET2 = "HP Regen"}
     },
     Special: {
         SpecialBlock:   SpecialBlock,
@@ -415,16 +382,18 @@ const ALGO_SETS = {
         Exploit:        class Exploit extends Special {SET2 = ["hasteperc", 10]},
         LoopGain:       class LoopGain extends Special {SET2 = ["hboostperc", 7.5]},
         SVM:            class SVM extends Special {SET2 = ["hboostperc", 7.5]},
-        Inspiration:    class Inspiration extends Special {SET2 = null}
+        Inspiration:    class Inspiration extends Special {SET2 = "HP Regen"}
     }
 };
 /** @param {typeof Algorithm} algoClass */
 function algoSelectButton(algoClass) {
-    const OUTPUT = document.createElement("button");
-    OUTPUT.type = "submit";
-    OUTPUT.value = algoClass.name;
-    OUTPUT.appendChild(setattr(document.createElement("img"), {src: `./assets/images/algorithms/${algoClass.name}.png`}))
-    // show algo name
+    const OUTPUT = setattr(document.createElement("button"), {type: "submit", value: algoClass.name});
+    const SET_EFFECT = algoClass.prototype.SET2;
+    OUTPUT.append(
+        setattr(document.createElement("img"), {src: `./assets/images/algorithms/${algoClass.name}.png`}),
+        setattr(document.createElement("div"), {textContent: algoClass.name}),
+        setattr(document.createElement("div"), {textContent: type(SET_EFFECT) === "array" ? STATNAMES[SET_EFFECT[0]] : SET_EFFECT}),
+    )
     return OUTPUT;
 }
 
