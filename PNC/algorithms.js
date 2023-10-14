@@ -470,7 +470,7 @@ class AlgoGrid {
         console.log("Running...");
         ALGO_SELECT.removeEventListener("close", this.#close.bind(this));
 
-        this.#algorithms.push(new ALGO_SETS[fieldtype][ALGO_SELECT.returnValue]());
+        this.#algorithms.push(new ALGO_SETS[this.#fieldtype][ALGO_SELECT.returnValue]());
 
         this.#grid.replaceChildren();
         this.display();
