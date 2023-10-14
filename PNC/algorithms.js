@@ -130,11 +130,11 @@ class Algorithm {
     /** @abstract @returns {StatDict} */
     get substat2() {}
 
-    /** @type {[StatAttributes | undefined, StatAttributes | undefined, StatAttributes | undefined]} */ saved = [null, null, null];
+    // /** @type {[StatAttributes | undefined, StatAttributes | undefined, StatAttributes | undefined]} */ saved = [null, null, null];
     /** Only called on modal close. @returns {StatDict} */
     get stats() {
-        const [MAIN] = this.mainstat.keys(), [SUB1] = this.substat1.keys(), [SUB2] = this.substat2.keys();
-        this.saved = [MAIN, SUB1, SUB2];
+        // const [MAIN] = this.mainstat.keys(), [SUB1] = this.substat1.keys(), [SUB2] = this.substat2.keys();
+        // this.saved = [MAIN, SUB1, SUB2];
         return [this.SET2 ? new Map([this.SET2]) : new Map(), this.mainstat, this.substat1, this.substat2].reduce(combine);
     }
 
@@ -182,25 +182,29 @@ class SingleBlock extends Algorithm {
     html(mainstat, substat) {
         const OUTPUT = super.html;
 
-        this.#mainstat = document.createElement("select");
-        this.#mainstat.classList.add("mainstat");
-        this.#mainstat.name = "mainstat";
-        this.#mainstat.append(...mainstat.map(createOption));
+        if (!this.#mainstat) {
+            this.#mainstat = document.createElement("select");
+            this.#mainstat.classList.add("mainstat");
+            this.#mainstat.name = "mainstat";
+            this.#mainstat.append(...mainstat.map(createOption));
+        }
         OUTPUT.appendChild(this.#mainstat);
         
-        if (super.saved[0])
-            for (const OPTION of Array.from(this.#mainstat.options))
-                OPTION.selected = OPTION.value === super.saved[0];
+        // if (super.saved[0])
+        //     for (const OPTION of Array.from(this.#mainstat.options))
+        //         OPTION.selected = OPTION.value === super.saved[0];
 
-        this.#substat = document.createElement("select");
-        this.#substat.classList.add("substat");
-        this.#substat.name = "substat1";
-        this.#substat.append(...substat.map(createOption));
+        if (!this.#substat) {
+            this.#substat = document.createElement("select");
+            this.#substat.classList.add("substat");
+            this.#substat.name = "substat1";
+            this.#substat.append(...substat.map(createOption));
+        }
         OUTPUT.appendChild(this.#substat);
 
-        if (super.saved[1])
-            for (const OPTION of Array.from(this.#substat.options))
-                OPTION.selected = OPTION.value === super.saved[1];
+        // if (super.saved[1])
+        //     for (const OPTION of Array.from(this.#substat.options))
+        //         OPTION.selected = OPTION.value === super.saved[1];
 
         return OUTPUT;
     }
@@ -243,55 +247,61 @@ class DoubleBlock extends Algorithm {
 
         const STATS = document.createElement("div");
 
-            this.#mainstat = document.createElement("select");
-            this.#mainstat.classList.add("mainstat");
-            this.#mainstat.name = "mainstat";
-            this.#mainstat.append(...mainstat.map(createOption));
+            if (!this.#mainstat) {
+                this.#mainstat = document.createElement("select");
+                this.#mainstat.classList.add("mainstat");
+                this.#mainstat.name = "mainstat";
+                this.#mainstat.append(...mainstat.map(createOption));
+            }
             STATS.appendChild(this.#mainstat);
 
-            if (super.saved[0])
-                for (const OPTION of Array.from(this.#mainstat.options))
-                    OPTION.selected = OPTION.value === super.saved[0];
+            // if (super.saved[0])
+            //     for (const OPTION of Array.from(this.#mainstat.options))
+            //         OPTION.selected = OPTION.value === super.saved[0];
 
-            this.#substat1 = document.createElement("select");
-            this.#substat1.classList.add("substat");
-            this.#substat1.name = "substat1";
-            this.#substat1.append(...substat.map(createOption));
-            this.#substat1.addEventListener("change", () => {
-                for (const OPTION of Array.from(this.#substat2.options))
-                    OPTION.disabled = this.#substat1.value === OPTION.value;
-            });
+            if (!this.#substat1) {
+                this.#substat1 = document.createElement("select");
+                this.#substat1.classList.add("substat");
+                this.#substat1.name = "substat1";
+                this.#substat1.append(...substat.map(createOption));
+                this.#substat1.addEventListener("change", () => {
+                    for (const OPTION of Array.from(this.#substat2.options))
+                        OPTION.disabled = this.#substat1.value === OPTION.value;
+                });
+            }
             STATS.appendChild(this.#substat1);
 
-            if (super.saved[1]) {
-                for (const OPTION of Array.from(this.#substat1.options))
-                    OPTION.selected = OPTION.value === super.saved[1];
+            // if (super.saved[1]) {
+            //     for (const OPTION of Array.from(this.#substat1.options))
+            //         OPTION.selected = OPTION.value === super.saved[1];
 
-                for (const OPTION of Array.from(this.#substat1.options))
-                    OPTION.disabled = OPTION.value === super.saved[2];
-            } else {
-                Array.from(this.#substat1.options)[1].disabled = true;
+            //     for (const OPTION of Array.from(this.#substat1.options))
+            //         OPTION.disabled = OPTION.value === super.saved[2];
+            // } else {
+            //     Array.from(this.#substat1.options)[1].disabled = true;
+            // }
+
+            if (!this.#substat2) {
+                this.#substat2 = document.createElement("select");
+                this.#substat2.classList.add("substat");
+                this.#substat2.name = "substat2";
+                this.#substat2.append(...substat.map(createOption));
+                this.#substat2.addEventListener("change", () => {
+                    for (const OPTION of Array.from(this.#substat1.options))
+                        OPTION.disabled = this.#substat2.value === OPTION.value;
+                });    
             }
-
-            this.#substat2 = document.createElement("select");
-            this.#substat2.classList.add("substat");
-            this.#substat2.name = "substat2";
-            this.#substat2.append(...substat.map(createOption));
-            this.#substat2.addEventListener("change", () => {
-                for (const OPTION of Array.from(this.#substat1.options))
-                    OPTION.disabled = this.#substat2.value === OPTION.value;
-            });
             STATS.appendChild(this.#substat2);
 
-            if (super.saved[2]) {
-                for (const OPTION of Array.from(this.#substat2.options))
-                    OPTION.selected = OPTION.value === super.saved[2];
+            // if (super.saved[2]) {
+            //     for (const OPTION of Array.from(this.#substat2.options))
+            //         OPTION.selected = OPTION.value === super.saved[2];
 
-                for (const OPTION of Array.from(this.#substat2.options))
-                    OPTION.disabled = OPTION.value === super.saved[1];
-            } else {
-                setattr(Array.from(this.#substat2.options), {0: {disabled: true}, 1: {selected: true}});
-            }
+            //     for (const OPTION of Array.from(this.#substat2.options))
+            //         OPTION.disabled = OPTION.value === super.saved[1];
+            // } else {
+            //     setattr(Array.from(this.#substat2.options), {0: {disabled: true}, 1: {selected: true}});
+            // }
 
         OUTPUT.appendChild(STATS);
 
