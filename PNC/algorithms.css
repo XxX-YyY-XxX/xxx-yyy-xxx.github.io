@@ -45,6 +45,10 @@
     background-color: var(--gray-algo);
 }
 
+.double-block img {
+    height: 100%;
+}
+
 .double-block > div:last-of-type {
     height: 100%;
     aspect-ratio: 1;
