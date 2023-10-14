@@ -115,8 +115,10 @@ class Algorithm {
         return OUTPUT;
     }
 
-    constructor() {
-
+    #grid;
+    /** @param {AlgoGrid} grid */
+    constructor(grid) {
+        this.#grid = grid;
     }
 
     /** @type {StatAttributes} */ #mainstat = "crateperc";
@@ -152,6 +154,10 @@ class Algorithm {
         return new Map([[this.#substat2, SUBSTATS[this.#substat2]]]);
     }
 
+    delete() {
+        this.#grid.delete(this);
+    }
+
     /** @returns {StatDict} */
     get stats() {
         return reduce(combine, [this.SET2 ? new Map([this.SET2]) : new Map(), this.mainstat(), this.substat1(), this.substat2()]);
@@ -168,14 +174,6 @@ class Algorithm {
 }
 
 {/* <template>
-<div class="algo-block">
-    <span class="mainstat"></span>      change to dropdown
-    <span class="substat"></span>       change to dropdown
-    <button type="button"></button>
-</div>
-</template>
-
-<template>
 <div class="algo-block double-block">
     <button type="button"></button>
     <span class="mainstat"></span>
@@ -189,17 +187,6 @@ class Algorithm {
 class SingleBlock extends Algorithm {
     SET2 = null;
     SIZE = 1;
-
-    get html() {
-        const OUTPUT = super.html;
-        // const MAINSTAT = document.createElement("span");
-        // MAINSTAT.classList.add("mainstat")
-        // MAINSTAT.textContent = Array.from(this.mainstat().keys())[0]
-        // const SUBSTAT = document.createElement("span");
-        // SUBSTAT.classList.add("substat")
-
-        return OUTPUT;
-    }
 
     /** @param {StatAttributes?} attribute @returns {StatDict} */
     mainstat(attribute) {
@@ -235,17 +222,17 @@ class DoubleBlock extends Algorithm {
     }
 
     /** @type {StatAttributes} */ #substat1 = "crateperc";
-    /** @param {StatAttributes?} attribute @returns {StatDict} */
+    /** @param {StatAttributes?} attribute @returns {StatDict?} */
     substat1(attribute) {
-        if (attribute === this.#substat2) return;
+        if (attribute === this.#substat2) return null;
         if (attribute) this.#substat1 = attribute;
         return new Map([[this.#substat1, SUBSTATS[this.#substat1]]]);
     }
 
     /** @type {StatAttributes} */ #substat2 = "cdmgperc";
-    /** @param {StatAttributes?} attribute @returns {StatDict} */
+    /** @param {StatAttributes?} attribute @returns {StatDict?} */
     substat2(attribute) {
-        if (attribute === this.#substat1) return;
+        if (attribute === this.#substat1) return null;
         if (attribute) this.#substat2 = attribute;
         return new Map([[this.#substat2, SUBSTATS[this.#substat2]]]);
     }
@@ -256,7 +243,43 @@ class DoubleBlock extends Algorithm {
 /** @typedef {"atkflat"|"atkperc"|"hashflat"|"hashperc"|"ppenflat"|"ppenperc"|"openflat"|"openperc"} OffenseMainstat */
 /** @typedef {"hpflat"|"atkflat"|"atkperc"|"hashflat"|"hashperc"|"pdefflat"|"odefflat"|"crateperc"|"cdmgperc"|"ppenflat"|"openflat"|"regenflat"|"resflat"|"dboostperc"} OffenseSubstat*/
 
+const OFFENSEMAINSTAT = [["atkflat", "Attack+"], ["atkperc", "Attack%"], ["hashflat", "Hashrate+"], ["hashperc", "Hashrate%"], ["ppenflat", "PhysPen+"], ["ppenperc", "PhysPen%"], ["openflat", "OpPen+"], ["openperc", "OpPen%"]];
+const OFFENSESUBSTAT = [["hpflat", "Health+"], ["atkflat", "Attack+"], ["atkperc", "Attack%"], ["hashflat", "Hashrate+"], ["hashperc", "Hashrate%"], ["pdefflat", "PhysDef+"], ["odefflat", "OpDef+"], ["crateperc", "CritRate"], ["cdmgperc", "CritDmg"], ["ppenflat", "PhysPen+"], ["openflat", "OpPen+"], ["regenflat", "PostRegen"], ["resflat", "DebuffRes"], ["dboostperc", "DmgBoost"]];
+
 class OffenseBlock extends SingleBlock {
+    get html() {
+        const OUTPUT = super.html;
+
+        const MAINSTAT = document.createElement("select");
+        MAINSTAT.classList.add("mainstat");
+        MAINSTAT.name = "mainstat";
+        for (const [attribute, name] of OFFENSEMAINSTAT) {
+            const OPTION = document.createElement("option");
+            OPTION.value = attribute;
+            OPTION.textContent = name;
+            MAINSTAT.appendChild(OPTION);
+        }
+        OUTPUT.appendChild(MAINSTAT);
+
+        const SUBSTAT = document.createElement("select");
+        SUBSTAT.classList.add("substat1");
+        SUBSTAT.name = "substat1";
+        for (const [attribute, name] of OFFENSESUBSTAT) {
+            const OPTION = document.createElement("option");
+            OPTION.value = attribute;
+            OPTION.textContent = name;
+            SUBSTAT.appendChild(OPTION);
+        }
+        OUTPUT.appendChild(SUBSTAT);
+
+        const BUTTON = document.createElement("button");
+        BUTTON.classList.add("delete-algo");
+        BUTTON.addEventListener("click", super.delete.bind(this))
+        OUTPUT.appendChild(BUTTON);
+
+        return OUTPUT;
+    }
+
     /** @param {OffenseMainstat?} attribute @returns {StatDict} */
     mainstat(attribute) {
         return super.mainstat(attribute);
@@ -269,6 +292,10 @@ class OffenseBlock extends SingleBlock {
 }
 
 class Offense extends DoubleBlock {
+    get html() {
+        return super.html
+    }
+
     /** @param {OffenseMainstat?} attribute @returns {StatDict} */
     mainstat(attribute) {
         return super.mainstat(attribute);
@@ -457,6 +484,12 @@ class AlgoGrid {
 
         for (let index = 0; index < this.#closedcell; index++)
             this.#grid.appendChild(setattr(document.createElement("div"), {classList: {add: ["algo-close"]}}))
+    }
+
+    /** @param {Algorithm} algorithm */
+    delete(algorithm) {
+        this.#algorithms.remove(algorithm);
+        this.display();
     }
 
     /** @returns {StatDict} */

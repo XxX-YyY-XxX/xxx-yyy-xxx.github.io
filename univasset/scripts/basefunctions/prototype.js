@@ -17,7 +17,6 @@ Object.defineProperty(Array.prototype, "count", {
     writable: true, configurable: true
 })
 
-/** Removes item from the array. Mutates array. */
 Object.defineProperty(Array.prototype, "remove", {
     value: function(any) {
         const item_index = this.indexOf(any);
