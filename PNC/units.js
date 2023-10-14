@@ -274,6 +274,7 @@ class Units {
         const TD_HASH = document.createElement("td");
         const TD_PDEF = document.createElement("td");
         const TD_ODEF = document.createElement("td");
+        const TD_ASPD = document.createElement("td");
         const TD_CRATE = document.createElement("td");
         const TD_CDMG = document.createElement("td");
         const TD_PPEN = document.createElement("td");
@@ -281,6 +282,8 @@ class Units {
         const TD_DODGE = document.createElement("td");
         const TD_REGEN = document.createElement("td");
         const TD_HASTE = document.createElement("td");
+        const TD_DEBUFF = document.createElement("td");
+        const TD_LASH = document.createElement("td");
         const TD_DBOOST = document.createElement("td");
         const TD_DREDUC = document.createElement("td");
         const TD_HBOOST = document.createElement("td");
@@ -291,6 +294,7 @@ class Units {
             TD_HASH.textContent = this[STATS.HASHRATE];
             TD_PDEF.textContent = this[STATS.PDEFENSE];
             TD_ODEF.textContent = this[STATS.ODEFENSE];
+            TD_ASPD.textContent = this[STATS.ATKSPD];
             TD_CRATE.textContent = `${this[STATS.CRITRATE]}%`;
             TD_CDMG.textContent = `${this[STATS.CRITDMG]}%`;
             TD_PPEN.textContent = this[STATS.PPENETRATE];
@@ -298,6 +302,8 @@ class Units {
             TD_DODGE.textContent = `${this[STATS.DODGE]}%`;
             TD_REGEN.textContent = this[STATS.POSTHEAL];
             TD_HASTE.textContent = `${this[STATS.HASTE]}%`;
+            TD_DEBUFF.textContent = this[STATS.DEBUFFRES];
+            TD_LASH.textContent = `${this[STATS.BACKLASH]}%`;
             TD_DBOOST.textContent = `${this[STATS.DMGBOOST]}%`;
             TD_DREDUC.textContent = `${this[STATS.DMGREDUCE]}%`;
             TD_HBOOST.textContent = `${this[STATS.HEALBOOST]}%`;
@@ -312,7 +318,7 @@ class Units {
             TD_HASH,
             TD_PDEF,
             TD_ODEF,
-            setattr(document.createElement("td"), {textContent: this[STATS.ATKSPD]}),
+            TD_ASPD,
             TD_CRATE,
             TD_CDMG,
             TD_PPEN,
@@ -320,8 +326,8 @@ class Units {
             TD_DODGE,
             TD_REGEN,
             TD_HASTE,
-            setattr(document.createElement("td"), {textContent: this[STATS.DEBUFFRES]}),
-            setattr(document.createElement("td"), {textContent: `${this[STATS.BACKLASH]}%`}),
+            TD_DEBUFF,
+            TD_LASH,
             TD_DBOOST,
             TD_DREDUC,
             TD_HBOOST

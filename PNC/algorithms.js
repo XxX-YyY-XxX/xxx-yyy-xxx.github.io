@@ -113,7 +113,7 @@ const SUBSTATS = Object.freeze({
 
 /** @abstract */
 class Algorithm {
-    /** @type {[StatAttributes, number] | string} */ SET2;
+    /** @type {[StatAttributes, number] | string} */ SET2 = 69420;
     /** @type {number} */ SIZE;
 
     /** @abstract @returns {HTMLDivElement} */
@@ -421,7 +421,6 @@ class AlgoGrid {
     get stats() {
         const EFFECT = (() => {
             const SETS = this.#algorithms.filter(x => type(x.SET2) === "array").map(x => [x.constructor.name, x.SET2])
-            console.log("Set Effect:", this.#algorithms, SETS)
 
             /** @type {string[]} */ const TEMP = [];
             for (const [NAME, SET2] of SETS) {
@@ -433,7 +432,6 @@ class AlgoGrid {
 
             return new Map()
         })()
-        console.log("Set Effect:", EFFECT)
 
         return reduce(combine, [EFFECT, ...this.#algorithms.map(x => x.stats)]) ?? new Map();
     }
@@ -515,7 +513,6 @@ export class AlgoField{
     }
 
     get [STATS.ATKSPD]() {
-        console.log("Atk Spd called:", this.#name)
         return this.#stats.get("aspdflat") ?? 0;
     }
 
