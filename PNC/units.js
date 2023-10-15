@@ -173,7 +173,7 @@ class Units {
         if (BOND_BUTTON.checked && this.#intistats.includes("Mechanical Celerity")) output += 8;
         if (SPEC_BUTTON.checked) output += {"Specialist": 25}[this.class] ?? 0;
         if (ALGO_BUTTON.checked) output += this.#algofield.haste;
-        return output;
+        return Math.trunc(output, 1);
     }
 
     #res = 0;
@@ -211,7 +211,7 @@ class Units {
         var output = this.#hboost;
         if (BOND_BUTTON.checked && this.#intistats.includes("Healing Bond")) output += 5;
         if (ALGO_BUTTON.checked) output += this.#algofield.hboost;
-        return output;
+        return Math.trunc(output, 1);
     }
 
     /** @type {boolean} */ #hasarma;

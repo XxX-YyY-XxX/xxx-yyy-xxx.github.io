@@ -9,24 +9,25 @@ Object.defineProperty(Array.prototype, "subsetOf", {
     writable: true, configurable: true
 })
 
-/** @returns Number of instances of the object in the array. */
 Object.defineProperty(Array.prototype, "count", {
-    value: function(any) {
-        return this.filter(x => x === any).length;
+    value: function(value) {
+        return this.filter(x => x === value).length;
     },
     writable: true, configurable: true
 })
 
 Object.defineProperty(Array.prototype, "remove", {
-    value: function(any) {
-        const item_index = this.indexOf(any);
-        this.splice(item_index, Number(item_index !== -1));
+    value: function(value) {
+        const INDEX = this.indexOf(value);
+        this.splice(INDEX, Number(INDEX !== -1));
     },
     writable: true, configurable: true
 })
 //#endregion
 
 //#region Math
+const mathTrunc = Math.trunc;
+
 /** @param {number} value 
  * @param {number} lower Inclusive.
  * @param {number} upper Inclusive. */
@@ -39,6 +40,13 @@ Math.clip = function(value, lower, upper) {
  * @param {number} divisor
  * @returns {[number,number]} quotient, remainder */
 Math.intdiv = function(dividend, divisor) {
-    return [this.trunc(dividend / divisor), dividend % divisor]
+    return [mathTrunc(dividend / divisor), dividend % divisor];
+}
+
+Math.trunc = function(number, fixed = 0) {
+    if (fixed)
+        return Number(number.toString().replace(RegExp(`(?<=\\.\\d{${fixed}})\\d+`), ""));
+    else
+        return mathTrunc(number);
 }
 //#endregion

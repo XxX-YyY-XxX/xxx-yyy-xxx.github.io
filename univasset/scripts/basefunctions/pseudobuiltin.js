@@ -23,8 +23,8 @@ export function* zip(...iterables) {
 }
 
 export function type(any) {
-    const TYPE = typeof any;
     try {
+        const TYPE = typeof any;
         if (TYPE !== "object")
             return TYPE;
         else if (any === null)
@@ -51,21 +51,19 @@ export function* range({start = 0, stop = null, step = 1} = {}) {
         loop = x => x < stop;
     else if (step < 0)
         loop = x => x > stop;
-    else {
-        console.error("Error in range function:", stop, start, step);
-        loop = x => false;
-    }
+    else
+        return console.error("Error in range function:", stop, start, step);
 
     for (start; loop(start); start += step)
         yield start;
 }
 
 const METHOD = {
-    /** @param {number} x @param {number} y */
+    /** @param {number} x @param {number} y @returns {number} */
     number: (x, y) => x - y,
-    /** @param {string} x @param {string} y */
+    /** @param {string} x @param {string} y @returns {number} */
     string: (x, y) => x.localeCompare(y),
-    /** @param {boolean} x @param {boolean} y */
+    /** @param {boolean} x @param {boolean} y @returns {number} */
     boolean: (x, y) => x - y,
     /** @param {Array} x @param {Array} y @returns {number} */
     array: (x, y) => {

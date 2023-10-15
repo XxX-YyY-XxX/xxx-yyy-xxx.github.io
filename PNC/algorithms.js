@@ -72,7 +72,6 @@ function isSubclassOf(subclass, mainclass) {
 //#region Base
 /** @typedef {keyof MAINSTATS | keyof SUBSTATS} StatAttributes */
 /** @typedef {Map<StatAttributes, number>} StatDict */
-/** @typedef {STATS[keyof STATS]} StatNames */
 
 const MAINSTATS = Object.freeze({
     hpflat: 1800,   hpperc: 12,
@@ -113,7 +112,7 @@ const SUBSTATS = Object.freeze({
 
 /** @abstract */
 class Algorithm {
-    /** @type {[StatAttributes, number] | string} */ SET2 = 69420;
+    /** @abstract @static @type {[StatAttributes, number] | string} */ static SET2;
     /** @type {number} */ SIZE;
 
     /** @abstract @returns {HTMLDivElement} */
@@ -168,7 +167,10 @@ const STATNAMES = Object.freeze({
     resflat: "DebuffRes",
     dboostperc: "DmgBoost",
     dreducperc: "InjuryMtg",
-    hboostperc: "HealEffect"
+    hboostperc: "HealEffect",
+
+    aspdflat: "AtkSpd",
+    lashperc: "Backlash"
 });
 
 /** @param {StatAttributes[]} attribute */
@@ -180,7 +182,7 @@ function createOption(attribute) {
 }
 
 class SingleBlock extends Algorithm {
-    SET2 = "No Bonus";
+    static SET2 = "No Bonus";
     SIZE = 1;
 
     /** @param {StatAttributes[]} mainstat @param {StatAttributes[]} substat @returns {HTMLDivElement} */
@@ -360,43 +362,43 @@ const GRIDS = {
 const ALGO_SETS = {
     Offense: {
         OffenseBlock:   OffenseBlock,
-        Feedforward:    class Feedforward extends Offense {SET2 = ["atkperc", 15]},
-        Progression:    class Progression extends Offense {SET2 = ["hashperc", 15]},
-        Stack:          class Stack extends Offense {SET2 = ["hashperc", 15]},
-        Deduction:      class Deduction extends Offense {SET2 = ["aspdflat", 30]},
-        DataRepair:     class DataRepair extends Offense {SET2 = ["resflat", 30]},
-        MLRMatrix:      class MLRMatrix extends Offense {SET2 = ["dboostperc", 5]},
-        LimitValue:     class LimitValue extends Offense {SET2 = ["dboostperc", 5]},
-        LowerLimit:     class LowerLimit extends Offense {SET2 = "Lifesteal"}
+        Feedforward:    class Feedforward extends Offense {static SET2 = ["atkperc", 15]},
+        Progression:    class Progression extends Offense {static SET2 = ["hashperc", 15]},
+        Stack:          class Stack extends Offense {static SET2 = ["hashperc", 15]},
+        Deduction:      class Deduction extends Offense {static SET2 = ["aspdflat", 30]},
+        DataRepair:     class DataRepair extends Offense {static SET2 = ["resflat", 30]},
+        MLRMatrix:      class MLRMatrix extends Offense {static SET2 = ["dboostperc", 5]},
+        LimitValue:     class LimitValue extends Offense {static SET2 = ["dboostperc", 5]},
+        LowerLimit:     class LowerLimit extends Offense {static SET2 = "Lifesteal"}
     },
     Stability: {
         StabilityBlock: StabilityBlock,
-        Perception:     class Perception extends Stability {SET2 = ["hpperc", 15]},
-        Rationality:    class Rationality extends Stability {SET2 = ["pdefperc", 15]},
-        Connection:     class Connection extends Stability {SET2 = ["resflat", 50]},
-        Iteration:      class Iteration extends Stability {SET2 = ["lashperc", 5]},
-        Reflection:     class Reflection extends Stability {SET2 = ["lashperc", 5]},
-        Encapsulate:    class Encapsulate extends Stability {SET2 = ["dreducperc", 5]},
-        Resolve:        class Resolve extends Stability {SET2 = ["dreducperc", 5]},
-        Overflow:       class Overflow extends Stability {SET2 = "HP Regen"}
+        Perception:     class Perception extends Stability {static SET2 = ["hpperc", 15]},
+        Rationality:    class Rationality extends Stability {static SET2 = ["pdefperc", 15]},
+        Connection:     class Connection extends Stability {static SET2 = ["resflat", 50]},
+        Iteration:      class Iteration extends Stability {static SET2 = ["lashperc", 5]},
+        Reflection:     class Reflection extends Stability {static SET2 = ["lashperc", 5]},
+        Encapsulate:    class Encapsulate extends Stability {static SET2 = ["dreducperc", 5]},
+        Resolve:        class Resolve extends Stability {static SET2 = ["dreducperc", 5]},
+        Overflow:       class Overflow extends Stability {static SET2 = "HP Regen"}
     },
     Special: {
         SpecialBlock:   SpecialBlock,
-        Paradigm:       class Paradigm extends Special {SET2 = ["aspdflat", 30]},
-        Cluster:        class Cluster extends Special {SET2 = ["crateperc", 10]},
-        Convolution:    class Convolution extends Special {SET2 = ["cdmgperc", 20]},
-        Stratagem:      class Stratagem extends Special {SET2 = ["dodgeperc", 8]},
-        DeltaV:         class DeltaV extends Special {SET2 = ["hasteperc", 10]},
-        Exploit:        class Exploit extends Special {SET2 = ["hasteperc", 10]},
-        LoopGain:       class LoopGain extends Special {SET2 = ["hboostperc", 7.5]},
-        SVM:            class SVM extends Special {SET2 = ["hboostperc", 7.5]},
-        Inspiration:    class Inspiration extends Special {SET2 = "HP Regen"}
+        Paradigm:       class Paradigm extends Special {static SET2 = ["aspdflat", 30]},
+        Cluster:        class Cluster extends Special {static SET2 = ["crateperc", 10]},
+        Convolution:    class Convolution extends Special {static SET2 = ["cdmgperc", 20]},
+        Stratagem:      class Stratagem extends Special {static SET2 = ["dodgeperc", 8]},
+        DeltaV:         class DeltaV extends Special {static SET2 = ["hasteperc", 10]},
+        Exploit:        class Exploit extends Special {static SET2 = ["hasteperc", 10]},
+        LoopGain:       class LoopGain extends Special {static SET2 = ["hboostperc", 7.5]},
+        SVM:            class SVM extends Special {static SET2 = ["hboostperc", 7.5]},
+        Inspiration:    class Inspiration extends Special {static SET2 = "HP Regen"}
     }
 };
 /** @param {typeof Algorithm} algoClass */
 function algoSelectButton(algoClass) {
     const OUTPUT = setattr(document.createElement("button"), {type: "submit", value: algoClass.name});
-    const SET_EFFECT = algoClass.prototype.SET2;
+    const SET_EFFECT = algoClass.SET2;
     console.log("Button:", algoClass.name, SET_EFFECT)
     OUTPUT.append(
         setattr(document.createElement("img"), {src: `./assets/images/algorithms/${isSubclassOf(algoClass, SingleBlock) ? "SingleBlock" : algoClass.name}.png`}),
@@ -419,18 +421,18 @@ class AlgoGrid {
 
     /** @returns {StatDict} */
     get stats() {
-        const EFFECT = (() => {
-            const SETS = this.#algorithms.filter(x => type(x.SET2) === "array").map(x => [x.constructor.name, x.SET2])
+        const EFFECT = (() => {            
+            const SETS = this.#algorithms.map(x => [x.constructor.name, ALGO_SETS[this.#fieldtype][x.constructor.name].SET2]).filter(([name, set]) => type(set) === "array");
 
             /** @type {string[]} */ const TEMP = [];
             for (const [NAME, SET2] of SETS) {
                 if (TEMP.includes(NAME))
-                    return new Map([SET2])
+                    return new Map([SET2]);
                 else
-                    TEMP.push(NAME)
+                    TEMP.push(NAME);
             }
 
-            return new Map()
+            return new Map();
         })()
 
         return reduce(combine, [EFFECT, ...this.#algorithms.map(x => x.stats)]) ?? new Map();
