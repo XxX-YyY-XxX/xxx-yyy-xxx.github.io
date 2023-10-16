@@ -112,19 +112,14 @@ const SUBSTATS = Object.freeze({
 
 /** @abstract */
 class Algorithm {
-    /** @abstract @static @type {[StatAttributes, number] | string} */ static SET2;
+    /** @abstract @static @type {[StatAttributes, number][] | string} */ static SET2;
     /** @type {number} */ SIZE;
 
     /** @abstract @returns {HTMLDivElement} */
     get html() {
         const OUTPUT = document.createElement("div");
         OUTPUT.classList.add("algo-block");
-
-        const BUTTON = document.createElement("button");
-        BUTTON.classList.add("delete-algo");
-        BUTTON.addEventListener("click", () => this.#grid.delete(this));
-        OUTPUT.appendChild(BUTTON);
-
+        OUTPUT.appendChild(setattr(document.createElement("button"), {addEventListener: ["click", () => this.#grid.delete(this)]}));
         return OUTPUT;
     }
 
@@ -362,36 +357,36 @@ const GRIDS = {
 const ALGO_SETS = {
     Offense: {
         OffenseBlock:   OffenseBlock,
-        Feedforward:    class Feedforward extends Offense {static SET2 = ["atkperc", 15]},
-        Progression:    class Progression extends Offense {static SET2 = ["hashperc", 15]},
-        Stack:          class Stack extends Offense {static SET2 = ["hashperc", 15]},
-        Deduction:      class Deduction extends Offense {static SET2 = ["aspdflat", 30]},
-        DataRepair:     class DataRepair extends Offense {static SET2 = ["resflat", 30]},
-        MLRMatrix:      class MLRMatrix extends Offense {static SET2 = ["dboostperc", 5]},
-        LimitValue:     class LimitValue extends Offense {static SET2 = ["dboostperc", 5]},
+        Feedforward:    class Feedforward extends Offense {static SET2 = [["atkperc", 15]]},
+        Progression:    class Progression extends Offense {static SET2 = [["hashperc", 15]]},
+        Stack:          class Stack extends Offense {static SET2 = [["hashperc", 15]]},
+        Deduction:      class Deduction extends Offense {static SET2 = [["aspdflat", 30]]},
+        DataRepair:     class DataRepair extends Offense {static SET2 = [["resflat", 30]]},
+        MLRMatrix:      class MLRMatrix extends Offense {static SET2 = [["dboostperc", 5]]},
+        LimitValue:     class LimitValue extends Offense {static SET2 = [["dboostperc", 5]]},
         LowerLimit:     class LowerLimit extends Offense {static SET2 = "Lifesteal"}
     },
     Stability: {
         StabilityBlock: StabilityBlock,
-        Perception:     class Perception extends Stability {static SET2 = ["hpperc", 15]},
-        Rationality:    class Rationality extends Stability {static SET2 = ["pdefperc", 15]},
-        Connection:     class Connection extends Stability {static SET2 = ["resflat", 50]},
-        Iteration:      class Iteration extends Stability {static SET2 = ["lashperc", 5]},
-        Reflection:     class Reflection extends Stability {static SET2 = ["lashperc", 5]},
-        Encapsulate:    class Encapsulate extends Stability {static SET2 = ["dreducperc", 5]},
-        Resolve:        class Resolve extends Stability {static SET2 = ["dreducperc", 5]},
+        Perception:     class Perception extends Stability {static SET2 = [["hpperc", 15]]},
+        Rationality:    class Rationality extends Stability {static SET2 = [["pdefperc", 15]]},
+        Connection:     class Connection extends Stability {static SET2 = [["resflat", 50]]},
+        Iteration:      class Iteration extends Stability {static SET2 = [["lashperc", 5]]},
+        Reflection:     class Reflection extends Stability {static SET2 = [["lashperc", 5]]},
+        Encapsulate:    class Encapsulate extends Stability {static SET2 = [["dreducperc", 5]]},
+        Resolve:        class Resolve extends Stability {static SET2 = [["dreducperc", 5]]},
         Overflow:       class Overflow extends Stability {static SET2 = "HP Regen"}
     },
     Special: {
         SpecialBlock:   SpecialBlock,
-        Paradigm:       class Paradigm extends Special {static SET2 = ["aspdflat", 30]},
-        Cluster:        class Cluster extends Special {static SET2 = ["crateperc", 10]},
-        Convolution:    class Convolution extends Special {static SET2 = ["cdmgperc", 20]},
-        Stratagem:      class Stratagem extends Special {static SET2 = ["dodgeperc", 8]},
-        DeltaV:         class DeltaV extends Special {static SET2 = ["hasteperc", 10]},
-        Exploit:        class Exploit extends Special {static SET2 = ["hasteperc", 10]},
-        LoopGain:       class LoopGain extends Special {static SET2 = ["hboostperc", 7.5]},
-        SVM:            class SVM extends Special {static SET2 = ["hboostperc", 7.5]},
+        Paradigm:       class Paradigm extends Special {static SET2 = [["aspdflat", 30]]},
+        Cluster:        class Cluster extends Special {static SET2 = [["crateperc", 10]]},
+        Convolution:    class Convolution extends Special {static SET2 = [["cdmgperc", 20]]},
+        Stratagem:      class Stratagem extends Special {static SET2 = [["dodgeperc", 8]]},
+        DeltaV:         class DeltaV extends Special {static SET2 = [["hasteperc", 10]]},
+        Exploit:        class Exploit extends Special {static SET2 = [["hasteperc", 10]]},
+        LoopGain:       class LoopGain extends Special {static SET2 = [["hboostperc", 7.5]]},
+        SVM:            class SVM extends Special {static SET2 = [["hboostperc", 7.5]]},
         Inspiration:    class Inspiration extends Special {static SET2 = "HP Regen"}
     }
 };
@@ -403,7 +398,7 @@ function algoSelectButton(algoClass) {
     OUTPUT.append(
         setattr(document.createElement("img"), {src: `./assets/images/algorithms/${isSubclassOf(algoClass, SingleBlock) ? "SingleBlock" : algoClass.name}.png`}),
         setattr(document.createElement("div"), {textContent: algoClass.name}),
-        setattr(document.createElement("div"), {textContent: (type(SET_EFFECT) === "array" ? STATNAMES[SET_EFFECT[0]] : SET_EFFECT)}),
+        setattr(document.createElement("div"), {textContent: (type(SET_EFFECT) === "array" ? SET_EFFECT.map(([attr,]) => STATNAMES[attr]).join("|") : SET_EFFECT)}),
     )
     return OUTPUT;
 }
@@ -422,18 +417,18 @@ class AlgoGrid {
     /** @returns {StatDict} */
     get stats() {
         const EFFECT = (() => {            
-            const SETS = this.#algorithms.map(x => [x.constructor.name, ALGO_SETS[this.#fieldtype][x.constructor.name].SET2]).filter(([name, set]) => type(set) === "array");
+            const SETS = this.#algorithms.map(x => [x.constructor.name, ALGO_SETS[this.#fieldtype][x.constructor.name].SET2]).filter(([, set]) => type(set) === "array");
 
             /** @type {string[]} */ const TEMP = [];
             for (const [NAME, SET2] of SETS) {
                 if (TEMP.includes(NAME))
-                    return new Map([SET2]);
+                    return new Map(SET2);
                 else
                     TEMP.push(NAME);
             }
 
             return new Map();
-        })()
+        })();
 
         return reduce(combine, [EFFECT, ...this.#algorithms.map(x => x.stats)]) ?? new Map();
     }

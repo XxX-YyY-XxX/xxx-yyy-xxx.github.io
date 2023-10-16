@@ -73,7 +73,7 @@ dialog {
     color: var(--gold-algo);
 }
 
-.delete-algo {
+.algo-block button {
     padding: 0;
     position: absolute;
     right: var(--algo-pad);
