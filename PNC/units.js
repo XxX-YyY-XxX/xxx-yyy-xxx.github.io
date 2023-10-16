@@ -63,7 +63,7 @@ class Units {
         if (BOND_BUTTON.checked && this.#intistats.includes("Code Robustness")) output += 1320;
         if (SPEC_BUTTON.checked) output += {"Specialist": this.#hp * 0.21 + 1200}[this.class] ?? 0;
         if (ALGO_BUTTON.checked) output += this.#algofield.hp;
-        return Math.floor(output);
+        return Math.trunc(output);
     }
 
     #atk; #armaatk;
@@ -74,7 +74,7 @@ class Units {
         if (BOND_BUTTON.checked && this.#intistats.includes("Power Connection")) output += 55;
         if (SPEC_BUTTON.checked) output += {"Sniper": this.#atk * 0.22 + 38, "Specialist": this.#atk * 0.22 + 38}[this.class] ?? 0;
         if (ALGO_BUTTON.checked) output += this.#algofield.atk;
-        return Math.floor(output);
+        return Math.trunc(output);
     }
 
     #hash; #armahash;
@@ -85,7 +85,7 @@ class Units {
         if (BOND_BUTTON.checked && this.#intistats.includes("Neural Activation")) output += 55;
         if (SPEC_BUTTON.checked) output += {"Sniper": this.#hash * 0.22 + 38, "Specialist": this.#hash * 0.22 + 38}[this.class] ?? 0;
         if (ALGO_BUTTON.checked) output += this.#algofield.hash;
-        return Math.floor(output);
+        return Math.trunc(output);
     }
 
     #pdef; #armapdef;
@@ -95,7 +95,7 @@ class Units {
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armapdef;
         if (BOND_BUTTON.checked && this.#intistats.includes("Shield of Friendship")) output += 55;
         if (ALGO_BUTTON.checked) output += this.#algofield.pdef;
-        return Math.floor(output);
+        return Math.trunc(output);
     }
 
     #odef; #armaodef;
@@ -104,7 +104,7 @@ class Units {
         if (POTB_BUTTON.checked) output += this.#odef * 0.61;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armaodef;
         if (ALGO_BUTTON.checked) output += this.#algofield.odef;
-        return Math.floor(output);
+        return Math.trunc(output);
     }
 
     #aspd;
@@ -139,7 +139,7 @@ class Units {
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armappen;
         if (SPEC_BUTTON.checked) output += {"Sniper": this.#ppen * 0.07 + 65}[this.class] ?? 0;
         if (ALGO_BUTTON.checked) output += this.#algofield.ppen;
-        return Math.floor(output);
+        return Math.trunc(output);
     }
 
     #open; #armaopen;
@@ -148,7 +148,7 @@ class Units {
         if (POTB_BUTTON.checked) output += this.#open * 0.61;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armaopen;
         if (ALGO_BUTTON.checked) output += this.#algofield.open;
-        return Math.floor(output);
+        return Math.trunc(output);
     }
 
     #dodge;
@@ -336,6 +336,8 @@ class Units {
         ARMA_BUTTON.addEventListener("change", () => this.updateStat());
         POTB_BUTTON.addEventListener("change", () => this.updateStat());
         ALGO_BUTTON.addEventListener("change", () => this.updateStat());
+        // BOND_BUTTON.addEventListener("change", () => this.updateStat());
+        // SPEC_BUTTON.addEventListener("change", () => this.updateStat());
 
         //#privatefield cannot be called dynamically, use exec/eval instead
     }

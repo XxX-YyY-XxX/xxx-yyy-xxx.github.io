@@ -587,6 +587,7 @@ export class AlgoField{
 
         this.#close = () => {
             this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
+
             onclose();
     
             ALGO_CLOSE.removeEventListener("click", this.#close);
