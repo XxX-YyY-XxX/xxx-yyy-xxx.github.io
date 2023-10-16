@@ -394,7 +394,6 @@ const ALGO_SETS = {
 function algoSelectButton(algoClass) {
     const OUTPUT = setattr(document.createElement("button"), {type: "submit", value: algoClass.name});
     const SET_EFFECT = algoClass.SET2;
-    console.log("Button:", algoClass.name, SET_EFFECT)
     OUTPUT.append(
         setattr(document.createElement("img"), {src: `./assets/images/algorithms/${isSubclassOf(algoClass, SingleBlock) ? "SingleBlock" : algoClass.name}.png`}),
         setattr(document.createElement("div"), {textContent: algoClass.name}),
