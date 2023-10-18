@@ -12,19 +12,14 @@ const CARDFIELD = document.querySelector("#cards-field");
 //#region Tags Field
 const toggleableTagsField = document.getElementById('tags-list');
 for (const {name, description} of Object.values(dTag).sort(cmp({key: x => x.name}))) {
-    const INPUT = document.createElement("input");
-    setattr(INPUT, {value: name, type: "checkbox"});
+    const INPUT = setattr(document.createElement("input"), {value: name, type: "checkbox"});
     INPUT.addEventListener("change", function() {
         TEXT_FIELD.value = this.checked ?
             (TEXT_FIELD.value + " " + this.value).trim() :
             TEXT_FIELD.value.replace(this.value, "").replace("  ", " ").trim();
     });
-
-    const LABEL = document.createElement("label");
-    setattr(LABEL, {classList: {add: ["tags", "tooltip"]}, append: [INPUT, name]});
-
-    const SPAN = document.createElement("span");
-    setattr(SPAN, {textContent: description, classList: {add: ["tooltiptext"]}});
+    const LABEL = setattr(document.createElement("label"), {classList: {add: ["tags", "tooltip"]}, append: [INPUT, name]});
+    const SPAN = setattr(document.createElement("span"), {textContent: description, classList: {add: ["tooltiptext"]}});
     toggleableTagsField.appendChild(setattr(document.createElement("span"), {append: [LABEL, SPAN]}));
 }
 //#endregion
