@@ -4,7 +4,7 @@ import {radioGroup} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
 import {dTag, cardData} from "./querycards.js";
 
 //#region Constants
-const searchTextField = document.querySelector("#search-text");
+const TEXT_FIELD = document.querySelector("#search-text");
 const SEARCH_PARAMS = new URLSearchParams(location.search);
 const CARDFIELD = document.querySelector("#cards-field");
 //#endregion
@@ -15,9 +15,9 @@ for (const {name, description} of Object.values(dTag).sort(cmp({key: x => x.name
     const INPUT = document.createElement("input");
     setattr(INPUT, {value: name, type: "checkbox"});
     INPUT.addEventListener("change", function() {
-        searchTextField.value = this.checked ?
-            (searchTextField.value + " " + this.value).trim() :
-            searchTextField.value.replace(this.value, "").replace("  ", " ").trim();
+        TEXT_FIELD.value = this.checked ?
+            (TEXT_FIELD.value + " " + this.value).trim() :
+            TEXT_FIELD.value.replace(this.value, "").replace("  ", " ").trim();
     });
 
     const LABEL = document.createElement("label");
@@ -35,20 +35,20 @@ const cardsForm = document.getElementById('submission-form'), browseField = docu
 radioGroup(document.querySelector('#input-type-container'), 'input-type',
     [setattr(document.createElement("h2"), {textContent: 'Keyword'}), 'search', function(button) {
         if (button.checked) {
-            searchTextField.style.display = 'inline';
-            searchTextField.name = button.value;
+            TEXT_FIELD.style.display = 'inline';
+            TEXT_FIELD.name = button.value;
         } else {
-            searchTextField.style.display = 'none';
-            searchTextField.value = '';
+            TEXT_FIELD.style.display = 'none';
+            TEXT_FIELD.value = '';
         }
     }],
     [setattr(document.createElement("h2"), {textContent: 'Tags'}), 'tags', function(button) {
         if (button.checked) {
             toggleableTagsField.style.display = 'block';
-            searchTextField.name = button.value;
+            TEXT_FIELD.name = button.value;
         } else {
             toggleableTagsField.style.display = 'none';
-            searchTextField.value = '';
+            TEXT_FIELD.value = '';
             for (const input_true of tag_label_inputs.filter(input => input.checked))
                 input_true.checked = false;
         }
@@ -68,40 +68,27 @@ CARDFIELD.innerHTML =
 //#region Private Functions
 function searchCards() {
     const searchText = SEARCH_PARAMS.get('search');
+    if (!searchText) return 'Empty search.';
+
     var output = '';
+    const KEYWORDS = searchText.toLowerCase().split(" ");
 
-    if (searchText) {
-        const KEYWORDS = searchText.toLowerCase().split(" ");
+    for (const cards of cardData.filter(({questions, answers}) => KEYWORDS.every(str => removeHTMLTag(questions).toLowerCase().includes(str) || removeHTMLTag(answers).toLowerCase().includes(str))))
+        output += setQuestionBoxes(cards);
 
-        for (const cards of cardData.filter(({questions, answers}) => KEYWORDS.every(str => removeHTMLTag(questions).toLowerCase().includes(str) || removeHTMLTag(answers).toLowerCase().includes(str))))
-            output += setQuestionBoxes(cards);
-
-
-
-
-
-        // const phrase = new RegExp(searchText, 'i');
-
-        // for (const cards of cardData.filter(({questions, answers}) => phrase.test(removeHTMLTag(questions)) || phrase.test(removeHTMLTag(answers))))
-        //     output += setQuestionBoxes(cards);
-
-        return output || 'No matches found.';
-    } else
-        return 'Empty search.';
+    return output || 'No matches found.';        
 }
 
 function tagsCards() {
     const cardTags = SEARCH_PARAMS.get('tags').split(' ');
+    if (!cardTags.length) return 'Empty search.';
+
     var output = '';
 
-    if (cardTags.length) {
-        for (const cards of cardData.filter(({tags}) => cardTags.subsetOf(tags.map(x => x.name))))
-            output += setQuestionBoxes(cards);
+    for (const cards of cardData.filter(({tags}) => cardTags.subsetOf(tags.map(x => x.name))))
+        output += setQuestionBoxes(cards);
 
-        return output || 'No matches found.';
-    } else {
-        return 'Empty search.';
-    }
+    return output || 'No matches found.';
 }
 
 function idCards() {

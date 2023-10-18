@@ -340,8 +340,8 @@ class Units {
         ARMA_BUTTON.addEventListener("change", () => this.updateStat());
         POTB_BUTTON.addEventListener("change", () => this.updateStat());
         ALGO_BUTTON.addEventListener("change", () => this.updateStat());
-        // BOND_BUTTON.addEventListener("change", () => this.updateStat());
-        // SPEC_BUTTON.addEventListener("change", () => this.updateStat());
+        SPEC_BUTTON.addEventListener("change", () => this.updateStat());
+        BOND_BUTTON.addEventListener("change", () => this.updateStat());
 
         //#privatefield cannot be called dynamically, use exec/eval instead
     }
