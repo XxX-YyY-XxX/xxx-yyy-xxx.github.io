@@ -149,3 +149,12 @@ dialog {
 #algo-select img {
     width: 100px;
 }
+
+
+
+
+
+
+#stats tbody > tr > :first-child {
+    cursor: pointer;
+}

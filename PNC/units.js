@@ -61,7 +61,7 @@ class Units {
         if (POTB_BUTTON.checked) output += this.#hp * 0.61;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armahp;
         if (BOND_BUTTON.checked && this.#intistats.includes("Code Robustness")) output += 1320;
-        if (SPEC_BUTTON.checked) output += {"Specialist": this.#hp * 0.21 + 1200}[this.class] ?? 0;
+        if (SPEC_BUTTON.checked && ["Guard", "Warrior", "Specialist"].includes(this.class)) output += this.#hp * 0.21 + 1200;
         if (ALGO_BUTTON.checked) output += this.#algofield.hp;
         return Math.trunc(output);
     }
@@ -72,7 +72,7 @@ class Units {
         if (POTB_BUTTON.checked) output += this.#atk * 0.61;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armaatk;
         if (BOND_BUTTON.checked && this.#intistats.includes("Power Connection")) output += 55;
-        if (SPEC_BUTTON.checked) output += {"Sniper": this.#atk * 0.22 + 38, "Specialist": this.#atk * 0.22 + 38}[this.class] ?? 0;
+        if (SPEC_BUTTON.checked && ["Sniper", "Warrior", "Specialist"].includes(this.class)) output += this.#atk * 0.22 + 38;
         if (ALGO_BUTTON.checked) output += this.#algofield.atk;
         return Math.trunc(output);
     }
@@ -83,7 +83,7 @@ class Units {
         if (POTB_BUTTON.checked) output += this.#hash * 0.61;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armahash;
         if (BOND_BUTTON.checked && this.#intistats.includes("Neural Activation")) output += 55;
-        if (SPEC_BUTTON.checked) output += {"Sniper": this.#hash * 0.22 + 38, "Specialist": this.#hash * 0.22 + 38}[this.class] ?? 0;
+        if (SPEC_BUTTON.checked && ["Sniper", "Warrior", "Specialist", "Medic"].includes(this.class)) output += this.#hash * 0.22 + 38;
         if (ALGO_BUTTON.checked) output += this.#algofield.hash;
         return Math.trunc(output);
     }
@@ -94,6 +94,7 @@ class Units {
         if (POTB_BUTTON.checked) output += this.#pdef * 0.61;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armapdef;
         if (BOND_BUTTON.checked && this.#intistats.includes("Shield of Friendship")) output += 55;
+        if (SPEC_BUTTON.checked && ["Guard", "Medic"].includes(this.class)) output += this.#pdef * 0.21 + 31;
         if (ALGO_BUTTON.checked) output += this.#algofield.pdef;
         return Math.trunc(output);
     }
@@ -103,6 +104,7 @@ class Units {
         var output = this.#odef;
         if (POTB_BUTTON.checked) output += this.#odef * 0.61;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armaodef;
+        if (SPEC_BUTTON.checked && ["Guard", "Medic"].includes(this.class)) output += this.#odef * 0.21 + 31;
         if (ALGO_BUTTON.checked) output += this.#algofield.odef;
         return Math.trunc(output);
     }
@@ -118,7 +120,7 @@ class Units {
     get [STATS.CRITRATE]() {
         var output = this.#crate;
         if (BOND_BUTTON.checked && this.#intistats.includes("Coordinated Strike")) output += 8;
-        if (SPEC_BUTTON.checked) output += {"Sniper": 9}[this.class] ?? 0;
+        if (SPEC_BUTTON.checked && ["Sniper", "Warrior"].includes(this.class)) output += 9;
         if (ALGO_BUTTON.checked) output += this.#algofield.crate;
         return output;
     }
@@ -127,7 +129,7 @@ class Units {
     get [STATS.CRITDMG]() {
         var output = this.#cdmg;
         if (BOND_BUTTON.checked && this.#intistats.includes("Victorious Inspiration")) output += 12;
-        if (SPEC_BUTTON.checked) output += {"Sniper": 18}[this.class] ?? 0;
+        if (SPEC_BUTTON.checked && ["Sniper"].includes(this.class)) output += 18;
         if (ALGO_BUTTON.checked) output += this.#algofield.cdmg;
         return output;
     }
@@ -137,7 +139,7 @@ class Units {
         var output = this.#ppen;
         if (POTB_BUTTON.checked) output += this.#ppen * 0.61;
         if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armappen;
-        if (SPEC_BUTTON.checked) output += {"Sniper": this.#ppen * 0.07 + 65}[this.class] ?? 0;
+        if (SPEC_BUTTON.checked && ["Sniper"].includes(this.class)) output += this.#ppen * 0.07 + 65;
         if (ALGO_BUTTON.checked) output += this.#algofield.ppen;
         return Math.trunc(output);
     }
@@ -171,7 +173,7 @@ class Units {
     get [STATS.HASTE]() {
         var output = this.#haste;
         if (BOND_BUTTON.checked && this.#intistats.includes("Mechanical Celerity")) output += 8;
-        if (SPEC_BUTTON.checked) output += {"Specialist": 25}[this.class] ?? 0;
+        if (SPEC_BUTTON.checked) output += {"Guard": 20, "Specialist": 25, "Medic": 15}[this.class] ?? 0;
         if (ALGO_BUTTON.checked) output += this.#algofield.haste;
         return Math.trunc(output, 1);
     }
@@ -179,6 +181,7 @@ class Units {
     #res = 0;
     get [STATS.DEBUFFRES]() {
         var output = this.#res;
+        if (SPEC_BUTTON.checked && ["Guard", "Warrior"].includes(this.class)) output += 150;
         if (ALGO_BUTTON.checked) output += this.#algofield.res;
         return output;
     }
@@ -210,6 +213,7 @@ class Units {
     get [STATS.HEALBOOST]() {
         var output = this.#hboost;
         if (BOND_BUTTON.checked && this.#intistats.includes("Healing Bond")) output += 5;
+        if (SPEC_BUTTON.checked && ["Medic"].includes(this.class)) output += 9;
         if (ALGO_BUTTON.checked) output += this.#algofield.hboost;
         return Math.trunc(output, 1);
     }
