@@ -1,5 +1,5 @@
 import {STATS} from "./typing.js";
-import {cmp, chain, setattr, reduce, type} from "../univasset/scripts/basefunctions/index.js";
+import {cmp, chain, setattr, reduce, type, subclassof} from "../univasset/scripts/basefunctions/index.js";
 
 //#region Type Definitions
 /** @typedef {"Code Robustness" | "Power Connection" | "Neural Activation" | "Shield of Friendship" | "Coordinated Strike" | "Victorious Inspiration" | "Risk Evasion Aid" | "Mechanical Celerity" | "Coordinated Formation" | "Through Fire and Water" | "Healing Bond"} IntimacyStats */
@@ -58,14 +58,6 @@ function combine(object1, object2) {
     for (const attribute of new Set(chain(object1.keys(), object2.keys())))
         OUTPUT.set(attribute, (object1.get(attribute) ?? 0) + (object2.get(attribute) ?? 0));
     return OUTPUT;
-}
-
-/**
- * @param {typeof Object} subclass 
- * @param {typeof Object} mainclass 
- * @returns {boolean} */
-function isSubclassOf(subclass, mainclass) {
-    return subclass.prototype instanceof mainclass;
 }
 //#endregion
 
@@ -395,7 +387,7 @@ function algoSelectButton(algoClass) {
     const OUTPUT = setattr(document.createElement("button"), {type: "submit", value: algoClass.name});
     const SET_EFFECT = algoClass.SET2;
     OUTPUT.append(
-        setattr(document.createElement("img"), {src: `./assets/images/algorithms/${isSubclassOf(algoClass, SingleBlock) ? "SingleBlock" : algoClass.name}.png`}),
+        setattr(document.createElement("img"), {src: `./assets/images/algorithms/${subclassof(algoClass, SingleBlock) ? "SingleBlock" : algoClass.name}.png`}),
         setattr(document.createElement("div"), {textContent: algoClass.name}),
         setattr(document.createElement("div"), {textContent: (type(SET_EFFECT) === "array" ? SET_EFFECT.map(([attr,]) => STATNAMES[attr]).join("|") : SET_EFFECT)}),
     )

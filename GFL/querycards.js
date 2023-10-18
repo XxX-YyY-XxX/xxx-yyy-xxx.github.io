@@ -1616,7 +1616,7 @@ export const cardData = [
     },
     {
         id : '00169',
-        questions : `Are the previous monthly Special Equipments obtainable in some way?`,
+        questions : `Are the previous monthly Special Equipments obtainable in some way/getting a rerun?`,
         answers : `Soon in Gray Zone Exploration`,
         tags : [dTag.SPEQ]
     },
@@ -3758,6 +3758,12 @@ export const cardData = [
         questions : `Why can't I read the Griffin Stories/Bookshelf of Memories?`,
         answers : `2 things. Either you haven't redeemed your points from the STAR tab, or you lack one of the dolls.`,
         tags : [dTag.LORE, dTag.SIDE]
+    },
+    {
+        id : '00468',
+        questions : `What's the blurb for the Listening Post?`,
+        answers : `${link("u/UnironicWeeaboo's reply.", "https://www.reddit.com/r/girlsfrontline/comments/t42t86/weekly_commanders_lounge_march_01_2022/hz2dti3/")}`,
+        tags : [dTag.MISC]
     },
     {
         id : '00000',

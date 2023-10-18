@@ -42,3 +42,5 @@ export function setattr<T>(base: T, attributes: {[ObjectAttribute: string]: any;
 export function chain<T>(...iterables: Iterable<T>[]): Generator<T, void, unknown>;
 
 export function reduce<T>(callback: (total: T, current: T) => T, iterable: Iterable<T>): T | undefined;
+
+export function subclassof<T>(subclass: typeof Object, superclass: T): subclass is T;

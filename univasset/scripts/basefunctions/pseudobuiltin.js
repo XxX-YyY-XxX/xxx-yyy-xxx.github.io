@@ -150,3 +150,7 @@ export function reduce(callback, iterable) {
     for (const ITEM of ITEMS) output = callback(output, ITEM);
     return output;
 }
+
+export function subclassof(subclass, superclass) {
+    return subclass.prototype instanceof superclass;
+}

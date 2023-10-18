@@ -5,9 +5,6 @@
 # [Technical Help](/GFL/technical)
 - Troubleshooting, bug reports, and customer support.
 
-# [Story](/GFL/story)*
-- Lore, major events, timeline, and costume stories.
-
 # [Theater](/GFL/theater)
 - Theater guides, battles, and formations.
 
@@ -445,10 +442,8 @@ https://old.reddit.com/r/girlsfrontline/comments/t9bw95/weekly_commanders_lounge
 
 https://old.reddit.com/r/girlsfrontline/comments/t9bw95/weekly_commanders_lounge_march_08_2022/i0goua8/
 
-https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i0ujnp3/
 
-https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i0xb1py/
-
+<!-- https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i0xb1py/ -->
 
 ---
 
@@ -457,3 +452,8 @@ https://old.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_loung
 SPEQs and Limiteds drop rate buffed on 3.01 to some extent.
 
 https://old.reddit.com/r/girlsfrontline/comments/12u2j9k/client_302_whats_new/
+
+# Android 13 Permissions
+
+https://old.reddit.com/r/girlsfrontline/comments/174fpb1/weekly_commanders_lounge_october_10_2023/k5408hz/
+https://old.reddit.com/r/girlsfrontline/comments/174fpb1/weekly_commanders_lounge_october_10_2023/k4wzvx1/
