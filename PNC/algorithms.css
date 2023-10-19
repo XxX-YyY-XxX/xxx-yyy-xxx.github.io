@@ -1,6 +1,7 @@
 dialog {
     border-radius: 10px;
     padding: 5px;
+    background-color: slategrey;
 }
 
 
@@ -140,9 +141,11 @@ dialog {
 }
 
 #algo-select button {
-    background-color: var(--gray-algo);
     padding: 0;
-    text-align: center;
+}
+
+#algo-select button :first-child {
+    background-color: var(--gray-algo);
 }
 
 #algo-select img {

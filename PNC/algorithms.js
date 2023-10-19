@@ -387,7 +387,7 @@ function algoSelectButton(algoClass) {
     const OUTPUT = setattr(document.createElement("button"), {type: "submit", value: algoClass.name});
     const SET_EFFECT = algoClass.SET2;
     OUTPUT.append(
-        setattr(document.createElement("img"), {src: `./assets/images/algorithms/${subclassof(algoClass, SingleBlock) ? "SingleBlock" : algoClass.name}.png`}),
+        setattr(document.createElement("div"), {appendChild: [setattr(document.createElement("img"), {src: `./assets/images/algorithms/${subclassof(algoClass, SingleBlock) ? "SingleBlock" : algoClass.name}.png`, alt: algoClass.name})]}),
         setattr(document.createElement("div"), {textContent: algoClass.name}),
         setattr(document.createElement("div"), {textContent: (type(SET_EFFECT) === "array" ? SET_EFFECT.map(([attr,]) => STATNAMES[attr]).join("|") : SET_EFFECT)}),
     )
