@@ -157,6 +157,6 @@ dialog {
 
 
 
-#stats tbody > tr > :first-child {
+#stat tbody > tr > td:first-child {
     cursor: pointer;
 }

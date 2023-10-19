@@ -49,6 +49,9 @@ ALGO_MODAL.addEventListener("close", function(event) {
 ALGO_SELECT.addEventListener("close", function(event) {
     this.firstElementChild.replaceChildren();
 });
+
+/** @typedef {[string, StatAttributes, StatAttributes, StatAttributes | ""]} AlgoInfo */
+/** @type {[AlgoInfo[], AlgoInfo[], AlgoInfo[]]?} */ var current_deck;
 //#endregion
 
 //#region Functions
@@ -127,6 +130,16 @@ class Algorithm {
     /** Only called on modal close. @returns {StatDict} */
     get stats() {
         return [this.mainstat, this.substat1, this.substat2].reduce(combine);
+    }
+
+    /** @returns {string[]} */
+    get dict() {
+        return [
+            this.constructor.name,
+            Array.from(this.mainstat)[0][0],
+            Array.from(this.substat1)[0][0],
+            this instanceof DoubleBlock ? Array.from(this.substat2)[0][0] : ""
+        ];
     }
 
     #grid;
@@ -423,6 +436,11 @@ class AlgoGrid {
 
         return reduce(combine, [EFFECT, ...this.#algorithms.map(x => x.stats)]) ?? new Map();
     }
+
+    /** @returns {string[][]} */
+    get dict() {
+        return this.#algorithms.map(x => x.dict);
+    }
     
     /** @param {"Offense" | "Stability" | "Special"} fieldtype @param {number} size */
     constructor(fieldtype, size) {
@@ -557,6 +575,8 @@ export class AlgoField{
         this.#name = unit.name;
         this.#basestat = unit.base;
 
+        current_deck = localStorage.getItem(this.#name) ? JSON.parse(localStorage.getItem(this.#name)) : null;
+
         const LAYOUT = {
             "Guard": "465",
             "Sniper": "645",
@@ -573,6 +593,7 @@ export class AlgoField{
 
         this.#close = () => {
             this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
+            localStorage.setItem(this.#name, JSON.stringify(this.#algogrids.map(x => x.dict)))
 
             onclose();
     
