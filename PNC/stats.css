@@ -26,10 +26,6 @@ label:has(input[disabled]) {
     margin-top: 10px;
 }
 
-#classes .tooltiptext {
-    bottom: 100%;
-}
-
 #classes > label {
     height: 30px;
     background-size: auto 100%;
@@ -107,5 +103,9 @@ label:has(input[disabled]) {
 #bonus label:has(input:checked) {
     background: var(--color);
     color: black;
+}
+
+#bonus .tooltiptext {
+    bottom: 100%;
 }
 /* #endregion */
