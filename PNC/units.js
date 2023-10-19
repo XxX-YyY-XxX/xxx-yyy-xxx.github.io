@@ -227,7 +227,7 @@ class Units {
 
     /** @param {UnitObject} stat_object */
     constructor(stat_object) {
-        this.#algofield = new AlgoField(stat_object, this.updateStat);
+        this.#algofield = new AlgoField(stat_object, () => this.updateStat());
 
         this.name = stat_object.name;
         this.class = stat_object.class;
@@ -337,11 +337,7 @@ class Units {
             TD_HBOOST
         )
 
-        ARMA_BUTTON.addEventListener("change", () => this.updateStat());
-        POTB_BUTTON.addEventListener("change", () => this.updateStat());
-        ALGO_BUTTON.addEventListener("change", () => this.updateStat());
-        SPEC_BUTTON.addEventListener("change", () => this.updateStat());
-        BOND_BUTTON.addEventListener("change", () => this.updateStat());
+        for (const BUTTON of [ARMA_BUTTON, POTB_BUTTON, ALGO_BUTTON, SPEC_BUTTON, BOND_BUTTON]) BUTTON.addEventListener("change", () => this.updateStat());
 
         //#privatefield cannot be called dynamically, use exec/eval instead
     }

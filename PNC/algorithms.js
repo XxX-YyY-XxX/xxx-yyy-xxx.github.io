@@ -573,7 +573,6 @@ export class AlgoField{
 
         this.#close = () => {
             this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
-            console.log(this.#stats)
 
             onclose();
     

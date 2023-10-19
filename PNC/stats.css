@@ -26,6 +26,10 @@ label:has(input[disabled]) {
     margin-top: 10px;
 }
 
+#classes .tooltiptext {
+    bottom: 100%;
+}
+
 #classes > label {
     height: 30px;
     background-size: auto 100%;
