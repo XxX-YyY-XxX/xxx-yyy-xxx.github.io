@@ -27,6 +27,7 @@ Object.defineProperty(Array.prototype, "remove", {
 
 //#region Math
 const mathTrunc = Math.trunc;
+const mathRound = Math.round;
 
 /** @param {number} value 
  * @param {number} lower Inclusive.
@@ -44,9 +45,12 @@ Math.intdiv = function(dividend, divisor) {
 }
 
 Math.trunc = function(number, fixed = 0) {
-    if (fixed)
-        return Number(number.toString().replace(RegExp(`(?<=\\.\\d{${fixed}})\\d+`), ""));
-    else
-        return mathTrunc(number);
+    const MULTIPLIER = 10 ** fixed;
+    return mathTrunc(number * MULTIPLIER) / MULTIPLIER;
+}
+
+Math.round = function(number, fixed = 0) {
+    const MULTIPLIER = 10 ** fixed;
+    return mathRound(number * MULTIPLIER) / MULTIPLIER;
 }
 //#endregion

@@ -7,10 +7,14 @@ interface Array<T> {
 }
 
 interface Math {
-    /** Truncates the number and returns the remaining parts.
+    /** Returns a truncated numeric expression, removing any decimal digits according to the fixed value.
      * @param number A numeric expression.
-     * @param fixed Amount of decimal places to retain. Default 0.
-     */
+     * @param fixed Amount of decimal places to retain. Default 0. */
     trunc(number: number, fixed?: number): number;
+
+    /** Returns a supplied numeric expression rounded to the nearest position.
+     * @param number The value to be rounded to the nearest integer.
+     * @param fixed Decimal position to round off. Default 0. */
+    round(number: number, fixed?: number): number;
 }
 

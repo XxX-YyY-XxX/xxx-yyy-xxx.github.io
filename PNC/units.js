@@ -122,7 +122,7 @@ class Units {
         if (BOND_BUTTON.checked && this.#intistats.includes("Coordinated Strike")) output += 8;
         if (SPEC_BUTTON.checked && ["Sniper", "Warrior"].includes(this.class)) output += 9;
         if (ALGO_BUTTON.checked) output += this.#algofield.crate;
-        return output;
+        return Math.round(output, 1);
     }
 
     #cdmg = 50;
@@ -131,7 +131,7 @@ class Units {
         if (BOND_BUTTON.checked && this.#intistats.includes("Victorious Inspiration")) output += 12;
         if (SPEC_BUTTON.checked && ["Sniper"].includes(this.class)) output += 18;
         if (ALGO_BUTTON.checked) output += this.#algofield.cdmg;
-        return output;
+        return Math.round(output, 1);
     }
 
     #ppen; #armappen;
@@ -175,7 +175,7 @@ class Units {
         if (BOND_BUTTON.checked && this.#intistats.includes("Mechanical Celerity")) output += 8;
         if (SPEC_BUTTON.checked) output += {"Guard": 20, "Specialist": 25, "Medic": 15}[this.class] ?? 0;
         if (ALGO_BUTTON.checked) output += this.#algofield.haste;
-        return Math.trunc(output, 1);
+        return Math.round(output, 1);
     }
 
     #res = 0;
@@ -215,7 +215,7 @@ class Units {
         if (BOND_BUTTON.checked && this.#intistats.includes("Healing Bond")) output += 5;
         if (SPEC_BUTTON.checked && ["Medic"].includes(this.class)) output += 9;
         if (ALGO_BUTTON.checked) output += this.#algofield.hboost;
-        return Math.trunc(output, 1);
+        return Math.round(output, 1);
     }
 
     /** @type {boolean} */ #hasarma;
@@ -227,7 +227,7 @@ class Units {
 
     /** @param {UnitObject} stat_object */
     constructor(stat_object) {
-        this.#algofield = new AlgoField(stat_object, () => this.updateStat());
+        this.#algofield = new AlgoField(stat_object, this.updateStat);
 
         this.name = stat_object.name;
         this.class = stat_object.class;
