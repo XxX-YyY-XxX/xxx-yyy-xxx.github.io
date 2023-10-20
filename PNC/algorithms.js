@@ -341,8 +341,8 @@ class DoubleBlock extends Algorithm {
     html(mainstat, substat) {
         const OUTPUT = setattr(super.html, {classList: {add: ["double-block"]}})
 
-        const EMBLEM = document.createElement("div");
-        EMBLEM.style.backgroundImage = `./assets/images/algorithms/${this.constructor.name}.png`;
+        const EMBLEM = document.createElement("img");
+        EMBLEM.src = `./assets/images/algorithms/${this.constructor.name}.png`;
         OUTPUT.appendChild(EMBLEM);
 
         const STATS = document.createElement("div");
@@ -530,18 +530,18 @@ const ALGO_SETS = {
 function algoSelectButton(algoClass) {
     const OUTPUT = setattr(document.createElement("button"), {type: "submit", value: algoClass.name});
 
+    const IMG = document.createElement("img");
+    IMG.src = `./assets/images/algorithms/${subclassof(algoClass, SingleBlock) ? "SingleBlock" : algoClass.name}.png`;
+    OUTPUT.appendChild(IMG);
+
     const DIV1 = document.createElement("div");
-    DIV1.style.backgroundImage = `./assets/images/algorithms/${subclassof(algoClass, SingleBlock) ? "SingleBlock" : algoClass.name}.png`;
+    DIV1.textContent = algoClass.name;
     OUTPUT.appendChild(DIV1);
 
-    const DIV2 = document.createElement("div");
-    DIV2.textContent = algoClass.name;
-    OUTPUT.appendChild(DIV2);
-
     const SET_EFFECT = algoClass.SET2;
-    const DIV3 = document.createElement("div");
-    DIV3.textContent = Array.isArray(SET_EFFECT) ? SET_EFFECT.map(([attr,]) => STATNAMES[attr]).join("|") : SET_EFFECT;
-    OUTPUT.appendChild(DIV3);
+    const DIV2 = document.createElement("div");
+    DIV2.textContent = Array.isArray(SET_EFFECT) ? SET_EFFECT.map(([attr,]) => STATNAMES[attr]).join("|") : SET_EFFECT;
+    OUTPUT.appendChild(DIV2);
 
     return OUTPUT;
 }
