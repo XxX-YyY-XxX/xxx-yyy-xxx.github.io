@@ -1,5 +1,5 @@
 import {STATS} from "./typing.js";
-import {cmp, chain, setattr, reduce, type, subclassof} from "../univasset/scripts/basefunctions/index.js";
+import {cmp, chain, setattr, reduce, subclassof} from "../univasset/scripts/basefunctions/index.js";
 
 //#region Type Definitions
 /** @typedef {"Code Robustness" | "Power Connection" | "Neural Activation" | "Shield of Friendship" | "Coordinated Strike" | "Victorious Inspiration" | "Risk Evasion Aid" | "Mechanical Celerity" | "Coordinated Formation" | "Through Fire and Water" | "Healing Bond"} IntimacyStats */
@@ -37,22 +37,64 @@ import {cmp, chain, setattr, reduce, type, subclassof} from "../univasset/script
 */
 //#endregion
 
-//#region Constants
-/** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
-/** @type {HTMLButtonElement} */ const ALGO_CLOSE = document.querySelector("#algo-modal button");
-ALGO_MODAL.addEventListener("close", function(event) {
-    this.firstElementChild.textContent = "";
-    for (const DIV of Object.values(GRIDS)) DIV.replaceChildren();
-});
+function databaseCreate() {
+    // https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB
+    // https://javascript.info/indexeddb
+    
+    // ask user permission
+    const DB_REQUEST = indexedDB.open("Algorithms", 1);
+    DB_REQUEST.addEventListener("error", function(event) {
+        console.log("Database error.")
+    });
 
-/** @type {HTMLDialogElement} */ const ALGO_SELECT = document.querySelector("#algo-select");
-ALGO_SELECT.addEventListener("close", function(event) {
-    this.firstElementChild.replaceChildren();
-});
+    /** @type {IDBDatabase?} */ var database = null;
+    DB_REQUEST.addEventListener("success", function(event) {
+        console.log("Database success.")
+        database = this.result
+        database.addEventListener("error", function(db_event) {
+            console.warn("Database error:", this.errorCode)
+        });
 
-/** @typedef {[string, StatAttributes, StatAttributes, StatAttributes | ""]} AlgoInfo */
-/** @type {[AlgoInfo[], AlgoInfo[], AlgoInfo[]]?} */ var current_deck;
-//#endregion
+        // // This event is only implemented in recent browsers
+        // request.onupgradeneeded = (event) => {
+        //     // Save the IDBDatabase interface
+        //     const db = event.target.result;
+        
+        //     // Create an objectStore for this database
+        //     const objectStore = db.createObjectStore("name", { keyPath: "myKey" });
+        // };
+
+        // request.onupgradeneeded = (event) => {
+        //     const db = event.target.result;
+          
+        //     // Create an objectStore to hold information about our customers. We're
+        //     // going to use "ssn" as our key path because it's guaranteed to be
+        //     // unique - or at least that's what I was told during the kickoff meeting.
+        //     const objectStore = db.createObjectStore("customers", { keyPath: "ssn" });
+          
+        //     // Create an index to search customers by name. We may have duplicates
+        //     // so we can't use a unique index.
+        //     objectStore.createIndex("name", "name", { unique: false });
+          
+        //     // Create an index to search customers by email. We want to ensure that
+        //     // no two customers have the same email, so use a unique index.
+        //     objectStore.createIndex("email", "email", { unique: true });
+          
+        //     // Use transaction oncomplete to make sure the objectStore creation is
+        //     // finished before adding data into it.
+        //     objectStore.transaction.oncomplete = (event) => {
+        //       // Store values in the newly created objectStore.
+        //       const customerObjectStore = db
+        //         .transaction("customers", "readwrite")
+        //         .objectStore("customers");
+        //       customerData.forEach((customer) => {
+        //         customerObjectStore.add(customer);
+        //       });
+        //     };
+        //   };
+    });
+    
+}
 
 //#region Functions
 /** @param {StatDict} object1 @param {StatDict} object2 @returns {StatDict} */
@@ -65,6 +107,7 @@ function combine(object1, object2) {
 //#endregion
 
 //#region Base
+/** @typedef {[string, StatAttributes, StatAttributes, StatAttributes | ""]} AlgoInfo */
 /** @typedef {keyof MAINSTATS | keyof SUBSTATS} StatAttributes */
 /** @typedef {Map<StatAttributes, number>} StatDict */
 
@@ -112,8 +155,7 @@ class Algorithm {
 
     /** @abstract @returns {HTMLDivElement} */
     get html() {
-        const OUTPUT = document.createElement("div");
-        OUTPUT.classList.add("algo-block");
+        const OUTPUT = setattr(document.createElement("div"), {classList: {add: ["algo-block"]}});
         OUTPUT.appendChild(setattr(document.createElement("button"), {addEventListener: ["click", () => this.#grid.delete(this)]}));
         return OUTPUT;
     }
@@ -132,7 +174,7 @@ class Algorithm {
         return [this.mainstat, this.substat1, this.substat2].reduce(combine);
     }
 
-    /** @returns {string[]} */
+    /** @returns {AlgoInfo} */
     get dict() {
         return [
             this.constructor.name,
@@ -239,9 +281,7 @@ class DoubleBlock extends Algorithm {
         const OUTPUT = setattr(super.html, {classList: {add: ["double-block"]}})
 
         const EMBLEM = document.createElement("div");
-        const IMG = document.createElement("img");
-        IMG.src = `./assets/images/algorithms/${this.constructor.name}.png`;
-        EMBLEM.appendChild(IMG);
+        EMBLEM.style.backgroundImage = `./assets/images/algorithms/${this.constructor.name}.png`;
         OUTPUT.appendChild(EMBLEM);
 
         const STATS = document.createElement("div");
@@ -398,14 +438,26 @@ const ALGO_SETS = {
 /** @param {typeof Algorithm} algoClass */
 function algoSelectButton(algoClass) {
     const OUTPUT = setattr(document.createElement("button"), {type: "submit", value: algoClass.name});
+
+    const DIV1 = document.createElement("div");
+    DIV1.style.backgroundImage = `./assets/images/algorithms/${subclassof(algoClass, SingleBlock) ? "SingleBlock" : algoClass.name}.png`;
+    OUTPUT.appendChild(DIV1);
+
+    const DIV2 = document.createElement("div");
+    DIV2.textContent = algoClass.name;
+    OUTPUT.appendChild(DIV2);
+
     const SET_EFFECT = algoClass.SET2;
-    OUTPUT.append(
-        setattr(document.createElement("div"), {appendChild: [setattr(document.createElement("img"), {src: `./assets/images/algorithms/${subclassof(algoClass, SingleBlock) ? "SingleBlock" : algoClass.name}.png`, alt: algoClass.name})]}),
-        setattr(document.createElement("div"), {textContent: algoClass.name}),
-        setattr(document.createElement("div"), {textContent: (type(SET_EFFECT) === "array" ? SET_EFFECT.map(([attr,]) => STATNAMES[attr]).join("|") : SET_EFFECT)}),
-    )
+    const DIV3 = document.createElement("div");
+    DIV3.textContent = Array.isArray(SET_EFFECT) ? SET_EFFECT.map(([attr,]) => STATNAMES[attr]).join("|") : SET_EFFECT;
+    OUTPUT.appendChild(OUTPUT);
+
     return OUTPUT;
 }
+/** @type {HTMLDialogElement} */ const ALGO_SELECT = document.querySelector("#algo-select");
+ALGO_SELECT.addEventListener("close", function(event) {
+    this.firstElementChild.replaceChildren();
+});
 
 class AlgoGrid {
     #grid;
@@ -420,8 +472,8 @@ class AlgoGrid {
 
     /** @returns {StatDict} */
     get stats() {
-        const EFFECT = (() => {            
-            const SETS = this.#algorithms.map(x => [x.constructor.name, ALGO_SETS[this.#fieldtype][x.constructor.name].SET2]).filter(([, set]) => type(set) === "array");
+        const EFFECT = (() => {
+            const SETS = this.#algorithms.map(x => [x.constructor.name, ALGO_SETS[this.#fieldtype][x.constructor.name].SET2]).filter(([, set]) => Array.isArray(set));
 
             /** @type {string[]} */ const TEMP = [];
             for (const [NAME, SET2] of SETS) {
@@ -437,7 +489,6 @@ class AlgoGrid {
         return reduce(combine, [EFFECT, ...this.#algorithms.map(x => x.stats)]) ?? new Map();
     }
 
-    /** @returns {string[][]} */
     get dict() {
         return this.#algorithms.map(x => x.dict);
     }
@@ -490,6 +541,14 @@ class AlgoGrid {
         this.display();
     }
 }
+
+/** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
+/** @type {HTMLButtonElement} */ const ALGO_CLOSE = document.querySelector("#close-modal");
+ALGO_MODAL.addEventListener("close", function(event) {
+    this.firstElementChild.textContent = "";
+    for (const DIV of Object.values(GRIDS)) DIV.replaceChildren();
+});
+/** @type {{[UnitName: string]: [AlgoInfo[], AlgoInfo[], AlgoInfo[]]}} */ const ALGO_SETUPS = {}
 
 export class AlgoField{
     #name;
@@ -575,7 +634,7 @@ export class AlgoField{
         this.#name = unit.name;
         this.#basestat = unit.base;
 
-        current_deck = localStorage.getItem(this.#name) ? JSON.parse(localStorage.getItem(this.#name)) : null;
+        // current_deck = localStorage.getItem(this.#name) ? JSON.parse(localStorage.getItem(this.#name)) : null;
 
         const LAYOUT = {
             "Guard": "465",
@@ -593,7 +652,8 @@ export class AlgoField{
 
         this.#close = () => {
             this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
-            localStorage.setItem(this.#name, JSON.stringify(this.#algogrids.map(x => x.dict)))
+            // this.#algogrids.map(x => x.dict)
+            // localStorage.setItem(this.#name, JSON.stringify(this.#algogrids.map(x => x.dict)))
 
             onclose();
     
@@ -614,8 +674,6 @@ export class AlgoField{
     }
 }
 //#endregion
-
-// use local storage to save preferences
 
 /* Success
     Algorithm.name                          Algorithm       string

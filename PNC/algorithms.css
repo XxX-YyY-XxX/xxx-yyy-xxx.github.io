@@ -11,7 +11,6 @@ dialog {
 
 #algo-modal {
     --gold-algo: #ffa418;
-    --gray-algo: #494b4a;
     --dark: #343434;
     text-align: center;
     width: 650px;
@@ -50,17 +49,14 @@ dialog {
     justify-content: space-between;
 }
 
-.double-block > div:first-of-type {
-    background-color: var(--gray-algo);
-}
-
-.double-block img {
-    height: 100%;
-}
-
-.double-block > div:last-of-type {
+.double-block > div {
     height: 100%;
     aspect-ratio: 1;
+}
+
+.double-block > div:first-of-type {
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .mainstat {
@@ -144,12 +140,10 @@ dialog {
     padding: 0;
 }
 
-#algo-select button :first-child {
-    background-color: var(--gray-algo);
-}
-
-#algo-select img {
+#algo-select button > div:first-child {
     width: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -160,3 +154,5 @@ dialog {
 #stat tbody > tr > td:first-child {
     cursor: pointer;
 }
+
+/* --gray-algo: #494b4a; */
