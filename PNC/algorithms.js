@@ -652,7 +652,7 @@ export class AlgoField{
     #basestat;
 
     #algogrids;
-    /** @type {StatDict} */ #stats = new Map();
+    #stats;
 
     get [STATS.HEALTH]() {
         return this.#basestat.hp * (this.#stats.get("hpperc") ?? 0) / 100 + (this.#stats.get("hpflat") ?? 0);
@@ -746,6 +746,8 @@ export class AlgoField{
                 ([type, size, info]) => new AlgoGrid(type, Number(size), info)
             );
         })();
+
+        this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
 
         this.#close = () => {
             this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
