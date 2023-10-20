@@ -1,5 +1,5 @@
 import {STATS} from "./typing.js";
-import {cmp, chain, setattr, reduce, subclassof} from "../univasset/scripts/basefunctions/index.js";
+import {cmp, chain, setattr, reduce, subclassof, zip} from "../univasset/scripts/basefunctions/index.js";
 
 //#region Type Definitions
 /** @typedef {"Code Robustness" | "Power Connection" | "Neural Activation" | "Shield of Friendship" | "Coordinated Strike" | "Victorious Inspiration" | "Risk Evasion Aid" | "Mechanical Celerity" | "Coordinated Formation" | "Through Fire and Water" | "Healing Bond"} IntimacyStats */
@@ -37,64 +37,65 @@ import {cmp, chain, setattr, reduce, subclassof} from "../univasset/scripts/base
 */
 //#endregion
 
-function databaseCreate() {
-    // https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB
-    // https://javascript.info/indexeddb
+// cache images
+// function databaseCreate() {
+//     // https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB
+//     // https://javascript.info/indexeddb
     
-    // ask user permission
-    const DB_REQUEST = indexedDB.open("Algorithms", 1);
-    DB_REQUEST.addEventListener("error", function(event) {
-        console.log("Database error.")
-    });
+//     // ask user permission
+//     const DB_REQUEST = indexedDB.open("Algorithms", 1);
+//     DB_REQUEST.addEventListener("error", function(event) {
+//         console.log("Database error.")
+//     });
 
-    /** @type {IDBDatabase?} */ var database = null;
-    DB_REQUEST.addEventListener("success", function(event) {
-        console.log("Database success.")
-        database = this.result
-        database.addEventListener("error", function(db_event) {
-            console.warn("Database error:", this.errorCode)
-        });
+//     /** @type {IDBDatabase?} */ var database = null;
+//     DB_REQUEST.addEventListener("success", function(event) {
+//         console.log("Database success.")
+//         database = this.result
+//         database.addEventListener("error", function(db_event) {
+//             console.warn("Database error:", this.errorCode)
+//         });
 
-        // // This event is only implemented in recent browsers
-        // request.onupgradeneeded = (event) => {
-        //     // Save the IDBDatabase interface
-        //     const db = event.target.result;
+//         // // This event is only implemented in recent browsers
+//         // request.onupgradeneeded = (event) => {
+//         //     // Save the IDBDatabase interface
+//         //     const db = event.target.result;
         
-        //     // Create an objectStore for this database
-        //     const objectStore = db.createObjectStore("name", { keyPath: "myKey" });
-        // };
+//         //     // Create an objectStore for this database
+//         //     const objectStore = db.createObjectStore("name", { keyPath: "myKey" });
+//         // };
 
-        // request.onupgradeneeded = (event) => {
-        //     const db = event.target.result;
+//         // request.onupgradeneeded = (event) => {
+//         //     const db = event.target.result;
           
-        //     // Create an objectStore to hold information about our customers. We're
-        //     // going to use "ssn" as our key path because it's guaranteed to be
-        //     // unique - or at least that's what I was told during the kickoff meeting.
-        //     const objectStore = db.createObjectStore("customers", { keyPath: "ssn" });
+//         //     // Create an objectStore to hold information about our customers. We're
+//         //     // going to use "ssn" as our key path because it's guaranteed to be
+//         //     // unique - or at least that's what I was told during the kickoff meeting.
+//         //     const objectStore = db.createObjectStore("customers", { keyPath: "ssn" });
           
-        //     // Create an index to search customers by name. We may have duplicates
-        //     // so we can't use a unique index.
-        //     objectStore.createIndex("name", "name", { unique: false });
+//         //     // Create an index to search customers by name. We may have duplicates
+//         //     // so we can't use a unique index.
+//         //     objectStore.createIndex("name", "name", { unique: false });
           
-        //     // Create an index to search customers by email. We want to ensure that
-        //     // no two customers have the same email, so use a unique index.
-        //     objectStore.createIndex("email", "email", { unique: true });
+//         //     // Create an index to search customers by email. We want to ensure that
+//         //     // no two customers have the same email, so use a unique index.
+//         //     objectStore.createIndex("email", "email", { unique: true });
           
-        //     // Use transaction oncomplete to make sure the objectStore creation is
-        //     // finished before adding data into it.
-        //     objectStore.transaction.oncomplete = (event) => {
-        //       // Store values in the newly created objectStore.
-        //       const customerObjectStore = db
-        //         .transaction("customers", "readwrite")
-        //         .objectStore("customers");
-        //       customerData.forEach((customer) => {
-        //         customerObjectStore.add(customer);
-        //       });
-        //     };
-        //   };
-    });
+//         //     // Use transaction oncomplete to make sure the objectStore creation is
+//         //     // finished before adding data into it.
+//         //     objectStore.transaction.oncomplete = (event) => {
+//         //       // Store values in the newly created objectStore.
+//         //       const customerObjectStore = db
+//         //         .transaction("customers", "readwrite")
+//         //         .objectStore("customers");
+//         //       customerData.forEach((customer) => {
+//         //         customerObjectStore.add(customer);
+//         //       });
+//         //     };
+//         //   };
+//     });
     
-}
+// }
 
 //#region Functions
 /** @param {StatDict} object1 @param {StatDict} object2 @returns {StatDict} */
@@ -175,7 +176,7 @@ class Algorithm {
     }
 
     /** @returns {AlgoInfo} */
-    get dict() {
+    get info() {
         return [
             this.constructor.name,
             Array.from(this.mainstat)[0][0],
@@ -227,6 +228,26 @@ class SingleBlock extends Algorithm {
     static SET2 = "No Bonus";
     SIZE = 1;
 
+    /** @param {AlgoGrid} grid @param {StatAttributes[]} mainstat @param {StatAttributes[]} substat @param {[StatAttributes, StatAttributes, "" | StatAttributes]?} attributes */
+    constructor(grid, mainstat, substat, attributes) {
+        super(grid);
+        if (attributes) {
+            const [MAIN, SUB,] = attributes;
+
+            this.#mainstat = document.createElement("select");
+            this.#mainstat.classList.add("mainstat");
+            this.#mainstat.name = "mainstat";
+            this.#mainstat.append(...mainstat.map(createOption));
+            for (const OPTION of Array.from(this.#mainstat.options)) OPTION.selected = OPTION.value === MAIN;
+
+            this.#substat = document.createElement("select");
+            this.#substat.classList.add("substat");
+            this.#substat.name = "substat1";
+            this.#substat.append(...substat.map(createOption));
+            for (const OPTION of Array.from(this.#substat.options)) OPTION.selected = OPTION.value === SUB;
+        }
+    }
+
     /** @param {StatAttributes[]} mainstat @param {StatAttributes[]} substat @returns {HTMLDivElement} */
     html(mainstat, substat) {
         const OUTPUT = super.html;
@@ -275,6 +296,46 @@ class SingleBlock extends Algorithm {
 
 class DoubleBlock extends Algorithm {
     SIZE = 2;
+
+    /** @param {AlgoGrid} grid @param {StatAttributes[]} mainstat @param {StatAttributes[]} substat @param {[StatAttributes, StatAttributes, "" | StatAttributes]?} attributes */
+    constructor(grid, mainstat, substat, attributes) {
+        super(grid);
+        if (attributes) {
+            const [MAIN, SUB1, SUB2] = attributes;
+
+            this.#mainstat = document.createElement("select");
+            this.#mainstat.classList.add("mainstat");
+            this.#mainstat.name = "mainstat";
+            this.#mainstat.append(...mainstat.map(createOption));
+            for (const OPTION of Array.from(this.#mainstat.options)) OPTION.selected = OPTION.value === MAIN;
+
+            this.#substat1 = document.createElement("select");
+            this.#substat1.classList.add("substat");
+            this.#substat1.name = "substat1";
+            this.#substat1.append(...substat.map(createOption));
+            this.#substat1.addEventListener("change", () => {
+                for (const OPTION of Array.from(this.#substat2.options))
+                    OPTION.disabled = this.#substat1.value === OPTION.value;
+            });
+            for (const OPTION of Array.from(this.#substat1.options)) {
+                OPTION.selected = OPTION.value === SUB1;
+                OPTION.disabled = OPTION.value === SUB2;
+            }
+
+            this.#substat2 = document.createElement("select");
+            this.#substat2.classList.add("substat");
+            this.#substat2.name = "substat2";
+            this.#substat2.append(...substat.map(createOption));
+            this.#substat2.addEventListener("change", () => {
+                for (const OPTION of Array.from(this.#substat1.options))
+                    OPTION.disabled = this.#substat2.value === OPTION.value;
+            });
+            for (const OPTION of Array.from(this.#substat2.options)) {
+                OPTION.selected = OPTION.value === SUB2;
+                OPTION.disabled = OPTION.value === SUB1;
+            }
+        }
+    }
 
     /** @param {StatAttributes[]} mainstat @param {StatAttributes[]} substat @returns {HTMLDivElement} */
     html(mainstat, substat) {
@@ -350,12 +411,22 @@ const OFFENSEMAINSTAT = ["atkflat", "atkperc", "hashflat", "hashperc", "ppenflat
 const OFFENSESUBSTAT = ["hpflat", "atkflat", "atkperc", "hashflat", "hashperc", "pdefflat", "odefflat", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dboostperc"];
 
 class OffenseBlock extends SingleBlock {
+    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, "" | StatAttributes]?} attributes */
+    constructor(grid, attributes = null) {
+        super(grid, OFFENSEMAINSTAT, OFFENSESUBSTAT, attributes);
+    }
+
     get html() {
         return super.html(OFFENSEMAINSTAT, OFFENSESUBSTAT);
     }
 }
 
 class Offense extends DoubleBlock {
+    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, "" | StatAttributes]?} attributes */
+    constructor(grid, attributes = null) {
+        super(grid, OFFENSEMAINSTAT, OFFENSESUBSTAT, attributes);
+    }
+
     get html() {
         return super.html(OFFENSEMAINSTAT, OFFENSESUBSTAT);
     }
@@ -365,12 +436,22 @@ const STABILITYMAINSTAT = ["hpflat", "hpperc", "pdefflat", "pdefperc", "odefflat
 const STABILITYSUBSTAT = ["hpflat", "hpperc", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dreducperc"];
 
 class StabilityBlock extends SingleBlock {
+    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, "" | StatAttributes]?} attributes */
+    constructor(grid, attributes = null) {
+        super(grid, STABILITYMAINSTAT, STABILITYSUBSTAT, attributes);
+    }
+
     get html() {
         return super.html(STABILITYMAINSTAT, STABILITYSUBSTAT);
     }
 }
 
 class Stability extends DoubleBlock {
+    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, "" | StatAttributes]?} attributes */
+    constructor(grid, attributes = null) {
+        super(grid, STABILITYMAINSTAT, STABILITYSUBSTAT, attributes);
+    }
+
     get html() {
         return super.html(STABILITYMAINSTAT, STABILITYSUBSTAT);
     }
@@ -380,12 +461,22 @@ const SPECIALMAINSTAT = ["pdefflat", "pdefperc", "odefflat", "odefperc", "cratep
 const SPECIALSUBSTAT = ["hpflat", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "dodgeperc", "regenflat", "hasteperc", "resflat", "hboostperc"];
 
 class SpecialBlock extends SingleBlock {
+    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, "" | StatAttributes]?} attributes */
+    constructor(grid, attributes = null) {
+        super(grid, SPECIALMAINSTAT, SPECIALSUBSTAT, attributes);
+    }
+
     get html() {
         return super.html(SPECIALMAINSTAT, SPECIALSUBSTAT);
     }
 }
 
 class Special extends DoubleBlock {
+    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, "" | StatAttributes]?} attributes */
+    constructor(grid, attributes = null) {
+        super(grid, SPECIALMAINSTAT, SPECIALSUBSTAT, attributes);
+    }
+
     get html() {
         return super.html(SPECIALMAINSTAT, SPECIALSUBSTAT);
     }
@@ -489,14 +580,14 @@ class AlgoGrid {
         return reduce(combine, [EFFECT, ...this.#algorithms.map(x => x.stats)]) ?? new Map();
     }
 
-    get dict() {
-        return this.#algorithms.map(x => x.dict);
+    get info() {
+        return this.#algorithms.map(x => x.info);
     }
     
-    /** @param {"Offense" | "Stability" | "Special"} fieldtype @param {number} size */
-    constructor(fieldtype, size) {
+    /** @param {"Offense" | "Stability" | "Special"} fieldtype @param {number} size @param {AlgoInfo[]?} init_array */
+    constructor(fieldtype, size, init_array = null) {
         this.#grid = GRIDS[fieldtype];
-        this.#algorithms = [];
+        this.#algorithms = init_array?.map(([set, ...attr]) => new ALGO_SETS[fieldtype][set](this, attr)) ?? [];
 
         this.#fieldtype = fieldtype;
         this.#closedcell = MAX_SIZE - size;
@@ -547,8 +638,13 @@ class AlgoGrid {
 ALGO_MODAL.addEventListener("close", function(event) {
     this.firstElementChild.textContent = "";
     for (const DIV of Object.values(GRIDS)) DIV.replaceChildren();
+    localStorage.setItem("algorithms", JSON.stringify(ALGO_SAVE));
 });
-/** @type {{[UnitName: string]: [AlgoInfo[], AlgoInfo[], AlgoInfo[]]}} */ const ALGO_SETUPS = {}
+
+/** @type {{[UnitName: string]: [AlgoInfo[], AlgoInfo[], AlgoInfo[]]}} */ const ALGO_SAVE = (() => {
+    const SAVE_DATA = localStorage.getItem("algorithms");
+    return SAVE_DATA ? JSON.parse(SAVE_DATA) : {};
+})()
 
 export class AlgoField{
     #name;
@@ -634,26 +730,25 @@ export class AlgoField{
         this.#name = unit.name;
         this.#basestat = unit.base;
 
-        // current_deck = localStorage.getItem(this.#name) ? JSON.parse(localStorage.getItem(this.#name)) : null;
-
-        const LAYOUT = {
-            "Guard": "465",
-            "Sniper": "645",
-            "Warrior": "654",
-            "Specialist": "546",
-            "Medic": unit.name === "Imhotep" ? "546" : "456"
-        }[unit.class];
-
-        this.#algogrids = [
-            new AlgoGrid("Offense", Number(LAYOUT[0])),
-            new AlgoGrid("Stability", Number(LAYOUT[1])),
-            new AlgoGrid("Special", Number(LAYOUT[2]))
-        ];
+        this.#algogrids = (() => {
+            const LAYOUT = {
+                "Guard": "465",
+                "Sniper": "645",
+                "Warrior": "654",
+                "Specialist": "546",
+                "Medic": unit.name === "Imhotep" ? "546" : "456"
+            }[unit.class];
+    
+            return Array.from(
+                zip(["Offense", "Stability", "Special"], LAYOUT, ALGO_SAVE[unit.name] ?? [null, null, null])
+            ).map(
+                ([type, size, info]) => new AlgoGrid(type, Number(size), info)
+            );
+        })();
 
         this.#close = () => {
             this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
-            // this.#algogrids.map(x => x.dict)
-            // localStorage.setItem(this.#name, JSON.stringify(this.#algogrids.map(x => x.dict)))
+            ALGO_SAVE[this.#name] = this.#algogrids.map(x => x.info);
 
             onclose();
     
