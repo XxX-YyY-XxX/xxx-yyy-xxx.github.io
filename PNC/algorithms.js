@@ -228,7 +228,7 @@ class SingleBlock extends Algorithm {
     static SET2 = "No Bonus";
     SIZE = 1;
 
-    /** @param {AlgoGrid} grid @param {StatAttributes[]} mainstat @param {StatAttributes[]} substat @param {[StatAttributes, StatAttributes, "" | StatAttributes]?} attributes */
+    /** @param {AlgoGrid} grid @param {StatAttributes[]} mainstat @param {StatAttributes[]} substat @param {[StatAttributes, StatAttributes, ""]?} attributes */
     constructor(grid, mainstat, substat, attributes) {
         super(grid);
         if (attributes) {
@@ -297,7 +297,7 @@ class SingleBlock extends Algorithm {
 class DoubleBlock extends Algorithm {
     SIZE = 2;
 
-    /** @param {AlgoGrid} grid @param {StatAttributes[]} mainstat @param {StatAttributes[]} substat @param {[StatAttributes, StatAttributes, "" | StatAttributes]?} attributes */
+    /** @param {AlgoGrid} grid @param {StatAttributes[]} mainstat @param {StatAttributes[]} substat @param {[StatAttributes, StatAttributes, StatAttributes]?} attributes */
     constructor(grid, mainstat, substat, attributes) {
         super(grid);
         if (attributes) {
