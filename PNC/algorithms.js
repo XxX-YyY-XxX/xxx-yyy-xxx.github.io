@@ -541,7 +541,7 @@ function algoSelectButton(algoClass) {
     const SET_EFFECT = algoClass.SET2;
     const DIV3 = document.createElement("div");
     DIV3.textContent = Array.isArray(SET_EFFECT) ? SET_EFFECT.map(([attr,]) => STATNAMES[attr]).join("|") : SET_EFFECT;
-    OUTPUT.appendChild(OUTPUT);
+    OUTPUT.appendChild(DIV3);
 
     return OUTPUT;
 }
@@ -645,6 +645,7 @@ ALGO_MODAL.addEventListener("close", function(event) {
     const SAVE_DATA = localStorage.getItem("algorithms");
     return SAVE_DATA ? JSON.parse(SAVE_DATA) : {};
 })()
+console.log(ALGO_SAVE)
 
 export class AlgoField{
     #name;
