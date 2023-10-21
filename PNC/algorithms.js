@@ -523,12 +523,17 @@ class AlgoGrid {
 
     #closedcell;
     get #emptycell() {
-        return MAX_SIZE - (this.#closedcell + (reduce((a, b) => a + b, this.#algorithms.map(x => x.SIZE)) ?? 0));
+        try {
+            return MAX_SIZE - (this.#closedcell + this.#algorithms.map(x => x.SIZE).reduce((a, b) => a + b, 0));
+        } catch {
+            console.warn("empty cell fail")
+            return MAX_SIZE - (this.#closedcell + (reduce((a, b) => a + b, this.#algorithms.map(x => x.SIZE)) ?? 0));
+        }
     }
 
     /** @returns {StatDict} */
     get stats() {
-        const EFFECT = (() => {
+        /** @type {StatDict} */ const EFFECT = (() => {
             const SETS = this.#algorithms.map(x => [x.constructor.name, ALGO_SETS[this.#fieldtype][x.constructor.name].SET2]).filter(([, set]) => Array.isArray(set));
 
             /** @type {string[]} */ const TEMP = [];
@@ -542,7 +547,12 @@ class AlgoGrid {
             return new Map();
         })();
 
-        return reduce(combine, [EFFECT, ...this.#algorithms.map(x => x.stats)]) ?? new Map();
+        try {
+            return [EFFECT, ...this.#algorithms.map(x => x.stats)].reduce(combine, new Map());
+        } catch {
+            console.warn("stats fail")
+            return reduce(combine, [EFFECT, ...this.#algorithms.map(x => x.stats)]) ?? new Map();
+        }
     }
 
     get info() {
