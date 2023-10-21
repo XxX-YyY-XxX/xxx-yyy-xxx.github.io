@@ -1,5 +1,5 @@
 import {STATS} from "./typing.js";
-import {cmp, chain, setattr, reduce, subclassof, zip} from "../univasset/scripts/basefunctions/index.js";
+import {cmp, chain, setattr, subclassof, zip} from "../univasset/scripts/basefunctions/index.js";
 
 //#region Type Definitions
 /** @typedef {"Code Robustness" | "Power Connection" | "Neural Activation" | "Shield of Friendship" | "Coordinated Strike" | "Victorious Inspiration" | "Risk Evasion Aid" | "Mechanical Celerity" | "Coordinated Formation" | "Through Fire and Water" | "Healing Bond"} IntimacyStats */
@@ -523,12 +523,7 @@ class AlgoGrid {
 
     #closedcell;
     get #emptycell() {
-        try {
-            return MAX_SIZE - (this.#closedcell + this.#algorithms.map(x => x.SIZE).reduce((a, b) => a + b, 0));
-        } catch {
-            console.warn("empty cell fail")
-            return MAX_SIZE - (this.#closedcell + (reduce((a, b) => a + b, this.#algorithms.map(x => x.SIZE)) ?? 0));
-        }
+        return MAX_SIZE - (this.#closedcell + this.#algorithms.map(x => x.SIZE).reduce((a, b) => a + b, 0));
     }
 
     /** @returns {StatDict} */
@@ -547,12 +542,7 @@ class AlgoGrid {
             return new Map();
         })();
 
-        try {
-            return [EFFECT, ...this.#algorithms.map(x => x.stats)].reduce(combine, new Map());
-        } catch {
-            console.warn("stats fail")
-            return reduce(combine, [EFFECT, ...this.#algorithms.map(x => x.stats)]) ?? new Map();
-        }
+        return [EFFECT, ...this.#algorithms.map(x => x.stats)].reduce(combine, new Map());
     }
 
     get info() {

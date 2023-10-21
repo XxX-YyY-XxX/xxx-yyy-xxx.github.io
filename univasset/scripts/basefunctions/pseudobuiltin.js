@@ -144,13 +144,6 @@ export function* chain(...iterables) {
             yield item;
 }
 
-export function reduce(callback, iterable) {
-    const ITEMS = Array.from(iterable);
-    var output = ITEMS.shift();
-    for (const ITEM of ITEMS) output = callback(output, ITEM);
-    return output;
-}
-
 export function subclassof(subclass, superclass) {
     return subclass.prototype instanceof superclass;
 }
