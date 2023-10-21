@@ -216,12 +216,13 @@ const STATNAMES = Object.freeze({
     lashperc: "Backlash"
 });
 
-/** @param {StatAttributes} attribute */
-function createOption(attribute) {
-    const OPTION = document.createElement("option");
-    OPTION.value = attribute;
-    OPTION.textContent = STATNAMES[attribute];
-    return OPTION;
+/** @param {"mainstat" | "substat1" | "substat2"} name @param {StatAttributes[]} attributes */
+function createSelect(name, attributes) {
+    const OUTPUT = document.createElement("select");
+    OUTPUT.classList.add(["substat1", "substat2"].includes(name) ? "substat" : "mainstat");
+    OUTPUT.name = name;
+    OUTPUT.append(...attributes.map(x => setattr(document.createElement("option"), {value: x, textContent: STATNAMES[x]})));
+    return OUTPUT;
 }
 
 class SingleBlock extends Algorithm {
@@ -234,16 +235,10 @@ class SingleBlock extends Algorithm {
         if (attributes) {
             const [MAIN, SUB,] = attributes;
 
-            this.#mainstat = document.createElement("select");
-            this.#mainstat.classList.add("mainstat");
-            this.#mainstat.name = "mainstat";
-            this.#mainstat.append(...mainstat.map(createOption));
+            this.#mainstat = createSelect("mainstat", mainstat);
             for (const OPTION of Array.from(this.#mainstat.options)) OPTION.selected = OPTION.value === MAIN;
 
-            this.#substat = document.createElement("select");
-            this.#substat.classList.add("substat");
-            this.#substat.name = "substat1";
-            this.#substat.append(...substat.map(createOption));
+            this.#substat = createSelect("substat1", substat);
             for (const OPTION of Array.from(this.#substat.options)) OPTION.selected = OPTION.value === SUB;
         }
     }
@@ -252,20 +247,10 @@ class SingleBlock extends Algorithm {
     html(mainstat, substat) {
         const OUTPUT = super.html;
 
-        if (!this.#mainstat) {
-            this.#mainstat = document.createElement("select");
-            this.#mainstat.classList.add("mainstat");
-            this.#mainstat.name = "mainstat";
-            this.#mainstat.append(...mainstat.map(createOption));
-        }
+        this.#mainstat ??= createSelect("mainstat", mainstat);
         OUTPUT.appendChild(this.#mainstat);
         
-        if (!this.#substat) {
-            this.#substat = document.createElement("select");
-            this.#substat.classList.add("substat");
-            this.#substat.name = "substat1";
-            this.#substat.append(...substat.map(createOption));
-        }
+        this.#substat ??= createSelect("substat1", substat);
         OUTPUT.appendChild(this.#substat);
 
         return OUTPUT;
@@ -303,16 +288,10 @@ class DoubleBlock extends Algorithm {
         if (attributes) {
             const [MAIN, SUB1, SUB2] = attributes;
 
-            this.#mainstat = document.createElement("select");
-            this.#mainstat.classList.add("mainstat");
-            this.#mainstat.name = "mainstat";
-            this.#mainstat.append(...mainstat.map(createOption));
+            this.#mainstat = createSelect("mainstat", mainstat);
             for (const OPTION of Array.from(this.#mainstat.options)) OPTION.selected = OPTION.value === MAIN;
 
-            this.#substat1 = document.createElement("select");
-            this.#substat1.classList.add("substat");
-            this.#substat1.name = "substat1";
-            this.#substat1.append(...substat.map(createOption));
+            this.#substat1 = createSelect("substat1", substat);
             this.#substat1.addEventListener("change", () => {
                 for (const OPTION of Array.from(this.#substat2.options))
                     OPTION.disabled = this.#substat1.value === OPTION.value;
@@ -322,10 +301,7 @@ class DoubleBlock extends Algorithm {
                 OPTION.disabled = OPTION.value === SUB2;
             }
 
-            this.#substat2 = document.createElement("select");
-            this.#substat2.classList.add("substat");
-            this.#substat2.name = "substat2";
-            this.#substat2.append(...substat.map(createOption));
+            this.#substat2 = createSelect("substat2", substat);
             this.#substat2.addEventListener("change", () => {
                 for (const OPTION of Array.from(this.#substat1.options))
                     OPTION.disabled = this.#substat2.value === OPTION.value;
@@ -347,19 +323,11 @@ class DoubleBlock extends Algorithm {
 
         const STATS = document.createElement("div");
 
-            if (!this.#mainstat) {
-                this.#mainstat = document.createElement("select");
-                this.#mainstat.classList.add("mainstat");
-                this.#mainstat.name = "mainstat";
-                this.#mainstat.append(...mainstat.map(createOption));
-            }
+            this.#mainstat ??= createSelect("mainstat", mainstat);
             STATS.appendChild(this.#mainstat);
 
             if (!this.#substat1) {
-                this.#substat1 = document.createElement("select");
-                this.#substat1.classList.add("substat");
-                this.#substat1.name = "substat1";
-                this.#substat1.append(...substat.map(createOption));
+                this.#substat1 = createSelect("substat1", substat);
                 this.#substat1.addEventListener("change", () => {
                     for (const OPTION of Array.from(this.#substat2.options))
                         OPTION.disabled = this.#substat1.value === OPTION.value;
@@ -369,10 +337,7 @@ class DoubleBlock extends Algorithm {
             STATS.appendChild(this.#substat1);
 
             if (!this.#substat2) {
-                this.#substat2 = document.createElement("select");
-                this.#substat2.classList.add("substat");
-                this.#substat2.name = "substat2";
-                this.#substat2.append(...substat.map(createOption));
+                this.#substat2 = createSelect("substat2", substat);
                 this.#substat2.addEventListener("change", () => {
                     for (const OPTION of Array.from(this.#substat1.options))
                         OPTION.disabled = this.#substat2.value === OPTION.value;
@@ -411,7 +376,7 @@ const OFFENSEMAINSTAT = ["atkflat", "atkperc", "hashflat", "hashperc", "ppenflat
 const OFFENSESUBSTAT = ["hpflat", "atkflat", "atkperc", "hashflat", "hashperc", "pdefflat", "odefflat", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dboostperc"];
 
 class OffenseBlock extends SingleBlock {
-    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, "" | StatAttributes]?} attributes */
+    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, ""]?} attributes */
     constructor(grid, attributes = null) {
         super(grid, OFFENSEMAINSTAT, OFFENSESUBSTAT, attributes);
     }
@@ -422,7 +387,7 @@ class OffenseBlock extends SingleBlock {
 }
 
 class Offense extends DoubleBlock {
-    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, "" | StatAttributes]?} attributes */
+    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, StatAttributes]?} attributes */
     constructor(grid, attributes = null) {
         super(grid, OFFENSEMAINSTAT, OFFENSESUBSTAT, attributes);
     }
@@ -436,7 +401,7 @@ const STABILITYMAINSTAT = ["hpflat", "hpperc", "pdefflat", "pdefperc", "odefflat
 const STABILITYSUBSTAT = ["hpflat", "hpperc", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dreducperc"];
 
 class StabilityBlock extends SingleBlock {
-    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, "" | StatAttributes]?} attributes */
+    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, ""]?} attributes */
     constructor(grid, attributes = null) {
         super(grid, STABILITYMAINSTAT, STABILITYSUBSTAT, attributes);
     }
@@ -447,7 +412,7 @@ class StabilityBlock extends SingleBlock {
 }
 
 class Stability extends DoubleBlock {
-    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, "" | StatAttributes]?} attributes */
+    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, StatAttributes]?} attributes */
     constructor(grid, attributes = null) {
         super(grid, STABILITYMAINSTAT, STABILITYSUBSTAT, attributes);
     }
@@ -461,7 +426,7 @@ const SPECIALMAINSTAT = ["pdefflat", "pdefperc", "odefflat", "odefperc", "cratep
 const SPECIALSUBSTAT = ["hpflat", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "dodgeperc", "regenflat", "hasteperc", "resflat", "hboostperc"];
 
 class SpecialBlock extends SingleBlock {
-    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, "" | StatAttributes]?} attributes */
+    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, ""]?} attributes */
     constructor(grid, attributes = null) {
         super(grid, SPECIALMAINSTAT, SPECIALSUBSTAT, attributes);
     }
@@ -472,7 +437,7 @@ class SpecialBlock extends SingleBlock {
 }
 
 class Special extends DoubleBlock {
-    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, "" | StatAttributes]?} attributes */
+    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, StatAttributes]?} attributes */
     constructor(grid, attributes = null) {
         super(grid, SPECIALMAINSTAT, SPECIALSUBSTAT, attributes);
     }
@@ -645,7 +610,6 @@ ALGO_MODAL.addEventListener("close", function(event) {
     const SAVE_DATA = localStorage.getItem("algorithms");
     return SAVE_DATA ? JSON.parse(SAVE_DATA) : {};
 })()
-console.log(ALGO_SAVE)
 
 export class AlgoField{
     #name;
