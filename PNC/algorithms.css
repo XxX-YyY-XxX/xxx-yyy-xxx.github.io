@@ -89,7 +89,7 @@ dialog {
 }
 
 #algo-modal .tab-button > label{
-    background-color: transparent;
+    /* background-color: transparent; */
     line-height: 10px;
     flex: calc(100% / 3);
 }
@@ -103,9 +103,25 @@ dialog {
 }
 
 @container (width < 650px) {
-    /* stylize later */
     #algo-modal .tab-button > label:has(input:checked) {
-        background-color: var(--gold-algo);
+        /* background-color: var(--gold-algo); */
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+    }
+
+    #algo-modal .tab-button > label:has([value="Offense"]:checked) {
+        background-image: url("./assets/images/algorithms/Offense.png");
+        background-position: left;
+    }
+
+    #algo-modal .tab-button > label:has([value="Stability"]:checked) {
+        background-image: url("./assets/images/algorithms/Stability.png");
+        background-position: center;
+    }
+
+    #algo-modal .tab-button > label:has([value="Special"]:checked) {
+        background-image: url("./assets/images/algorithms/Special.png");
+        background-position: right;
     }
 
     #algo-modal .tab-body {

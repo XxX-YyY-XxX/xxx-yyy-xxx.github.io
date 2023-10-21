@@ -106,6 +106,6 @@ label:has(input[disabled]) {
 }
 
 #bonus .tooltiptext {
-    bottom: 100%;
+    bottom: 150%;
 }
 /* #endregion */
