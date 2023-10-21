@@ -318,7 +318,9 @@ class DoubleBlock extends Algorithm {
         const OUTPUT = setattr(super.html, {classList: {add: ["double-block"]}})
 
         const EMBLEM = document.createElement("img");
+        EMBLEM.alt = this.constructor.name;
         EMBLEM.src = `./assets/images/algorithms/${this.constructor.name}.png`;
+        EMBLEM.loading = "lazy";
         OUTPUT.appendChild(EMBLEM);
 
         const STATS = document.createElement("div");
@@ -496,6 +498,7 @@ function algoSelectButton(algoClass) {
     const OUTPUT = setattr(document.createElement("button"), {type: "submit", value: algoClass.name});
 
     const IMG = document.createElement("img");
+    IMG.alt = algoClass.name;
     IMG.src = `./assets/images/algorithms/${subclassof(algoClass, SingleBlock) ? "SingleBlock" : algoClass.name}.png`;
     OUTPUT.appendChild(IMG);
 

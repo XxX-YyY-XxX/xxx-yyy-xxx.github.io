@@ -36,6 +36,7 @@ dialog {
 
 .algo-block {
     --algo-pad: 5px;
+    --gold-algo: #ffa418;
     background-color: #eaeaea;
     position: relative;
     padding: var(--algo-pad);
@@ -57,7 +58,6 @@ dialog {
 }
 
 .mainstat {
-    --gold-algo: #ffa418;
     background-color: var(--gold-algo);
     color: white;
 }
