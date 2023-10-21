@@ -10,8 +10,6 @@ dialog {
 
 
 #algo-modal {
-    --gold-algo: #ffa418;
-    --dark: #343434;
     text-align: center;
     width: 650px;
 }
@@ -38,7 +36,7 @@ dialog {
 
 .algo-block {
     --algo-pad: 5px;
-    background: #eaeaea;
+    background-color: #eaeaea;
     position: relative;
     padding: var(--algo-pad);
 }
@@ -59,12 +57,13 @@ dialog {
 }
 
 .mainstat {
+    --gold-algo: #ffa418;
     background-color: var(--gold-algo);
     color: white;
 }
 
 .substat {
-    background-color: var(--dark);
+    background-color: #343434;
     color: var(--gold-algo);
 }
 
