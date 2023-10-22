@@ -22,25 +22,22 @@ for (const INCLUDE of Array.from(document.querySelectorAll("include[src]"))) awa
 async function includeDocument(include_elem, file_name) {
     const SOURCE = include_elem.getAttribute("src") ?? "";
     const INCLUDE_DOC = await fetch(SOURCE)
-        .then(response => {
-            if (response.ok) return response.text();
-            return Promise.reject(`Missing ${SOURCE} in ${file_name}`);
-        })
+        .then(response => response.ok ? response.text() : Promise.reject(`Missing ${SOURCE} in ${file_name}`))
         .then(html => html.replace(/<!--(?!>)[\S\s]*?-->/g, ""))                    //Remove comments
         .then(cleantext => new DOMParser().parseFromString(cleantext, "text/html"))
         .catch(error => {console.error(error); return null});
-
-    if (INCLUDE_DOC === null) {
-        include_elem.replaceWith(...include_elem.childNodes);
+    if (!INCLUDE_DOC) {
+        defaultValue(include_elem);
         return;
     }
 
     const PARAM = new Map(Array.from(include_elem.attributes).map(({name, value}) => [name, value]));
 
+    // Key
     for (const INCLUDE of Array.from(INCLUDE_DOC.querySelectorAll("include[key]"))) {
         const VALUE = PARAM.get(INCLUDE.getAttribute("key"));
-        if (VALUE !== undefined)    INCLUDE.replaceWith(VALUE);                 //Replace with parameter value
-        else                        INCLUDE.replaceWith(...INCLUDE.childNodes); //Replace with default value
+        if (VALUE !== undefined)    INCLUDE.replaceWith(VALUE);
+        else                        defaultValue(INCLUDE);
     }
 
     //attr-??? where ??? is attribute of first child, value is parameter name
@@ -62,4 +59,9 @@ async function includeDocument(include_elem, file_name) {
         console.warn("Wild include element found:", INCLUDE, "from", SOURCE);
     
     include_elem.replaceWith(...INCLUDE_DOC.body.childNodes);
+}
+
+/** @param {HTMLElement} include_element */
+function defaultValue(include_element) {
+    include_element.replaceWith(...include_element.childNodes);
 }

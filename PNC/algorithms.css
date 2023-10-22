@@ -104,22 +104,20 @@ dialog {
 @container (width < 650px) {
     #algo-modal .tab-button > label:has(input:checked) {
         background-repeat: no-repeat;
+        background-position: center;
         background-size: 100%;
     }
 
     #algo-modal .tab-button > label:has([value="Offense"]:checked) {
         background-image: url("./assets/images/algorithms/tabs/Offense.png");
-        background-position: left;
     }
 
     #algo-modal .tab-button > label:has([value="Stability"]:checked) {
         background-image: url("./assets/images/algorithms/tabs/Stability.png");
-        background-position: center;
     }
 
     #algo-modal .tab-button > label:has([value="Special"]:checked) {
         background-image: url("./assets/images/algorithms/tabs/Special.png");
-        background-position: right;
     }
 
     #algo-modal .tab-body {
