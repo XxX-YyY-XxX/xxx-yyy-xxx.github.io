@@ -711,7 +711,7 @@ export const cardData = [
         id : '00053',
         questions : `Is there any way to reset my battles so I can get a win?`,
         answers : `${List.description({
-            "Method 1: In-game restart": [image("./assets/images/BattleRestart.png", "Restart Battle button in Pause menu. Beware the Withdraw button.")],
+            "Method 1: In-game restart": [image("./assets/images/query/BattleRestart.png", "Restart Battle button in Pause menu. Beware the Withdraw button.")],
             "Method 2: Client restart": [
                 "Turn off WiFi during battle. You can still finish the fight with no connection. Though be wary of connection timeouts so do it near the end.",
                 "If you don't like the result or you lost, exit client, turn on WiFi, re-enter client, take the fight again.",
@@ -1505,9 +1505,9 @@ export const cardData = [
         id : '00154',
         questions : `What happens to the reshuffle/refresh timer when the banner changes?`,
         answers : `Restarts from the top. Meaning refreshing just hours before Ringleader change has the same effect as refreshing 2 days ago.<br>
-        Pool refresh doesn't start on banner change until after opening the bombing screen.`,
+        Pool refresh timer doesn't start on banner change until after opening the bombing screen.`,
         tags : [dTag.PA]
-    },  //@Test - Check refresh timer after hours of banner change
+    },
     {
         id : '00155',
         questions : `Do links matter regarding the amount of resources a coalition unit would take on resupply?`,
@@ -1744,12 +1744,13 @@ export const cardData = [
     },
     {
         id : '00185',
-        questions : `If I scrapped/retired my only copy of a doll, can I recover/get them back?`,
+        questions : `If I scrapped/retired/disassembled my only copy of a doll, can I recover/get them back?`,
         answers : `First of all, how dare you?<br>
         Second of all, yes you can. Can also work on ${spoilerSummary('collab units', image('./assets/images/CollabScrap.png', 'From u/Angelic_Force'))} and the AR Team.<br>
-        Can only work once a week, costs however much is needed for a x1 dummy-link, and scrapped dupes are poof.`,
+        Can only work once a week, costs however much is needed for a x1 dummy-link, and scrapped dupes are poof.<br>
+        Go to Index, then their Index page then Recover, which will need cores.`,
         tags : [dTag.TDOLL, dTag.COLLAB, dTag.SYSMECH]
-    },
+    },  //@ Visual
     {
         id : '00186',
         questions : `Does AA-12's SPEQ count as a slug?`,
@@ -2037,7 +2038,7 @@ export const cardData = [
         Dupe RLs are autofed to your first copy, raising their petals. Any more pulls of the same RL with full petal is an autoscrap.<br>
         Getting full petals is pretty much only relevant to Theater.`,
         tags : [dTag.COALITION, dTag.PA]
-    },
+    },  //@Visual
     {
         id : '00227',
         questions : `How many ways can I terminate the current mission?`,
@@ -2055,7 +2056,7 @@ export const cardData = [
     {
         id : '00229',
         questions : `When will the ringleader capture special animation start playing?`,
-        answers : `When they get captured with Svarog's airstrikes.`,
+        answers : `When they get captured with Svarog's airstrikes or through the shop.`,
         tags : [dTag.PA, dTag.COALITION]
     },
     {
@@ -2855,7 +2856,7 @@ export const cardData = [
     {
         id : '00350',
         questions : `Is it a good idea to get duplicate Ringleaders and Manticores (aka one-link units) for linking/PVA?`,
-        answers : `Good? Yes. Necessary? For RLs, not really, since they be powerful enough already. For mooks though...`,
+        answers : `Good? Yes. Necessary? For RLs, not really, since they would be powerful enough already. For mooks though, they'd need it.`,
         tags : [dTag.PA, dTag.COALITION]
     },
     {
@@ -3764,6 +3765,18 @@ export const cardData = [
         questions : `What's the blurb for the Listening Post?`,
         answers : `${link("u/UnironicWeeaboo's reply.", "https://www.reddit.com/r/girlsfrontline/comments/t42t86/weekly_commanders_lounge_march_01_2022/hz2dti3/")}`,
         tags : [dTag.MISC]
+    },
+    {
+        id : '00469',
+        questions : `Can I get the ringleader after the banner changes?`,
+        answers : `By reruns or by PA shop.`,
+        tags : [dTag.PA, dTag.COALITION]
+    },
+    {
+        id : '00470',
+        questions : `Are units with Flare skill and the like useful?`,
+        answers : `${link("BigStupidJellyfish's write-up.", "https://big-stupid-jellyfish.github.io/GFMath/pages/rf-nvg")}`,
+        tags : [dTag.TDOLL, dTag.SKILL]
     },
     {
         id : '00000',

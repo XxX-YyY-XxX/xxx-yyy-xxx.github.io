@@ -440,7 +440,6 @@ https://old.reddit.com/r/girlsfrontline/comments/t9bw95/weekly_commanders_lounge
 
 https://old.reddit.com/r/girlsfrontline/comments/t9bw95/weekly_commanders_lounge_march_08_2022/i0ldmbf/
 
-https://old.reddit.com/r/girlsfrontline/comments/t9bw95/weekly_commanders_lounge_march_08_2022/i0goua8/
 
 
 <!-- https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i0xb1py/ -->

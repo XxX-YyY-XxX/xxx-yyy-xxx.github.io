@@ -24,12 +24,6 @@
 
 > Random acquisition unless stated otherwise.
 
-### Can I recover disassembled T-dolls?
-
-> Go to Index, then their Index page then Recover, which will need cores.
-
-@ Visual
-
 ### Is there a repository of all dolls currently in the game?
 
 > [CN Wiki.](http://www.gfwiki.org/w/%E9%A6%96%E9%A1%B5)

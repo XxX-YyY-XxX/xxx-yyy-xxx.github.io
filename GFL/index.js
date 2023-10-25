@@ -8,12 +8,12 @@ import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
 timer(
     document.getElementById("battlepass"),
-    "Oct 15, 2023 23:59 UTC-0800",
-    "./assets/images/timer/frontline-protocol-cloud-borne-wild-crane-preview-v0-pn0xk98rp5mb1.webp",
+    "Nov 19, 2023 23:59 UTC-0800",
+    "./assets/images/timer/c6rh2we7vhtb1.webp",
     {onEnd: timer.bind(
         null, document.getElementById("battlepass"),
-        "Nov 19, 2023 23:59 UTC-0800",
-        "./assets/images/timer/c6rh2we7vhtb1.webp"
+        "",
+        ""
     )}
 );
 
@@ -30,8 +30,8 @@ timer(
 
 timer(
     document.getElementById('skin-banner'),
-    "Oct 23, 2023 23:59 UTC-0800",
-    "https://iopwiki.com/images/c/c7/Basic_Deductions_Login_Wallpaper.png",
+    "Nov 20, 2023 23:59 UTC-0800",
+    "./assets/images/timer/sjlg3j4ed4wb1.webp",
     {onEnd: timer.bind(
         null, document.getElementById('skin-banner'),
         "",
@@ -39,11 +39,11 @@ timer(
     )}
 );
 
-//timer(
-//    document.getElementById('mini-event'),
-//    "Sep 18, 2023 23:59 UTC-0800",
-//    "./assets/images/timer/9btufbjh4tjb1.webp"
-//);
+timer(
+   document.getElementById('mini-event'),
+   "Nov 13, 2023 23:59 UTC-0800",
+   "./assets/images/timer/vo5n43ssr3vb1.webp"
+);
 
 //timer(document.getElementById('extra'), "",
 //    "");
