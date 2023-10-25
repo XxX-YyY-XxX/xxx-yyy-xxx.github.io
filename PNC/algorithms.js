@@ -457,40 +457,58 @@ const GRIDS = {
     /** @type {HTMLDivElement} */ Stability: document.querySelector("#algo-modal #Stability"),
     /** @type {HTMLDivElement} */ Special: document.querySelector("#algo-modal #Special")
 }
+const SET2_EFFECTS = {
+    ATTACK: [["atkperc", 15]],
+    HASHRATE: [["hashperc", 15]],
+    ATKSPD: [["aspdflat", 30]],
+    DEBUFFRES: [["resflat", 50]],
+    DMGBOOST: [["dboostperc", 5]],
+    LIFESTEAL: "Lifesteal",
+    HEALTHPERC: [["hpperc", 15]],
+    PHYSDEF: [["pdefperc", 15]],
+    BACKLASH: [["lashperc", 5]],
+    DMGREDUCE: [["dreducperc", 5]],
+    HPREGEN: "HP Regen",
+    CRITRATE: [["crateperc", 10]],
+    CRITDMG: [["cdmgperc", 20]],
+    DODGE: [["dodgeperc", 8]],
+    SKILLHASTE: [["hasteperc", 10]],
+    HEALBOOST: [["hboostperc", 7.5]]
+}
 const ALGO_SETS = {
     Offense: {
         OffenseBlock:   OffenseBlock,
-        Feedforward:    class Feedforward extends Offense {static SET2 = [["atkperc", 15]]},
-        Progression:    class Progression extends Offense {static SET2 = [["hashperc", 15]]},
-        Stack:          class Stack extends Offense {static SET2 = [["hashperc", 15]]},
-        Deduction:      class Deduction extends Offense {static SET2 = [["aspdflat", 30]]},
-        DataRepair:     class DataRepair extends Offense {static SET2 = [["resflat", 50]]},
-        MLRMatrix:      class MLRMatrix extends Offense {static SET2 = [["dboostperc", 5]]},
-        LimitValue:     class LimitValue extends Offense {static SET2 = [["dboostperc", 5]]},
-        LowerLimit:     class LowerLimit extends Offense {static SET2 = "Lifesteal"}
+        Feedforward:    class Feedforward extends Offense {static SET2 = SET2_EFFECTS.ATTACK},
+        Progression:    class Progression extends Offense {static SET2 = SET2_EFFECTS.HASHRATE},
+        Stack:          class Stack extends Offense {static SET2 = SET2_EFFECTS.HASHRATE},
+        Deduction:      class Deduction extends Offense {static SET2 = SET2_EFFECTS.ATKSPD},
+        DataRepair:     class DataRepair extends Offense {static SET2 = SET2_EFFECTS.DEBUFFRES},
+        MLRMatrix:      class MLRMatrix extends Offense {static SET2 = SET2_EFFECTS.DMGBOOST},
+        LimitValue:     class LimitValue extends Offense {static SET2 = SET2_EFFECTS.DMGBOOST},
+        LowerLimit:     class LowerLimit extends Offense {static SET2 = SET2_EFFECTS.LIFESTEAL}
     },
     Stability: {
         StabilityBlock: StabilityBlock,
-        Perception:     class Perception extends Stability {static SET2 = [["hpperc", 15]]},
-        Rationality:    class Rationality extends Stability {static SET2 = [["pdefperc", 15]]},
-        Connection:     class Connection extends Stability {static SET2 = [["resflat", 50]]},
-        Iteration:      class Iteration extends Stability {static SET2 = [["lashperc", 5]]},
-        Reflection:     class Reflection extends Stability {static SET2 = [["lashperc", 5]]},
-        Encapsulate:    class Encapsulate extends Stability {static SET2 = [["dreducperc", 5]]},
-        Resolve:        class Resolve extends Stability {static SET2 = [["dreducperc", 5]]},
-        Overflow:       class Overflow extends Stability {static SET2 = "HP Regen"}
+        Perception:     class Perception extends Stability {static SET2 = SET2_EFFECTS.HEALTHPERC},
+        Rationality:    class Rationality extends Stability {static SET2 = SET2_EFFECTS.PHYSDEF},
+        Connection:     class Connection extends Stability {static SET2 = SET2_EFFECTS.DEBUFFRES},
+        Iteration:      class Iteration extends Stability {static SET2 = SET2_EFFECTS.BACKLASH},
+        Reflection:     class Reflection extends Stability {static SET2 = SET2_EFFECTS.BACKLASH},
+        Encapsulate:    class Encapsulate extends Stability {static SET2 = SET2_EFFECTS.DMGREDUCE},
+        Resolve:        class Resolve extends Stability {static SET2 = SET2_EFFECTS.DMGREDUCE},
+        Overflow:       class Overflow extends Stability {static SET2 = SET2_EFFECTS.HPREGEN}
     },
     Special: {
         SpecialBlock:   SpecialBlock,
-        Paradigm:       class Paradigm extends Special {static SET2 = [["aspdflat", 30]]},
-        Cluster:        class Cluster extends Special {static SET2 = [["crateperc", 10]]},
-        Convolution:    class Convolution extends Special {static SET2 = [["cdmgperc", 20]]},
-        Stratagem:      class Stratagem extends Special {static SET2 = [["dodgeperc", 8]]},
-        DeltaV:         class DeltaV extends Special {static SET2 = [["hasteperc", 10]]},
-        Exploit:        class Exploit extends Special {static SET2 = [["hasteperc", 10]]},
-        LoopGain:       class LoopGain extends Special {static SET2 = [["hboostperc", 7.5]]},
-        SVM:            class SVM extends Special {static SET2 = [["hboostperc", 7.5]]},
-        Inspiration:    class Inspiration extends Special {static SET2 = "HP Regen"}
+        Paradigm:       class Paradigm extends Special {static SET2 = SET2_EFFECTS.ATKSPD},
+        Cluster:        class Cluster extends Special {static SET2 = SET2_EFFECTS.CRITRATE},
+        Convolution:    class Convolution extends Special {static SET2 = SET2_EFFECTS.CRITDMG},
+        Stratagem:      class Stratagem extends Special {static SET2 = SET2_EFFECTS.DODGE},
+        DeltaV:         class DeltaV extends Special {static SET2 = SET2_EFFECTS.SKILLHASTE},
+        Exploit:        class Exploit extends Special {static SET2 = SET2_EFFECTS.SKILLHASTE},
+        LoopGain:       class LoopGain extends Special {static SET2 = SET2_EFFECTS.HEALBOOST},
+        SVM:            class SVM extends Special {static SET2 = SET2_EFFECTS.HEALBOOST},
+        Inspiration:    class Inspiration extends Special {static SET2 = SET2_EFFECTS.HPREGEN}
     }
 };
 /** @param {typeof Algorithm} algoClass */
