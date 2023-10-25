@@ -1742,6 +1742,35 @@
         },
         "intimacy": []
     },
+    {
+        "name": "Yelena",
+        "class": "Sniper",
+        "reference": {"RMB-93" : "https://iopwiki.com/wiki/RMB-93", "": "LoL Twisted Fate"},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
+        "base": {
+            "hp": 10712,
+            "atk": 638,
+            "hash": 638,
+            "pdef": 181,
+            "odef": 181,
+            "aspd": 110,
+            "crate": 12,
+            "ppen": 428,
+            "open": 428,
+            "dodge": 2.5,
+            "regen": 322
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": []
+    },
 
     {
         "name": "Doll Name",
