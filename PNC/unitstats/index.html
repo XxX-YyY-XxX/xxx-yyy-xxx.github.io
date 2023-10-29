@@ -9,8 +9,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./units.css">
-        <link rel="stylesheet" href="./unitstats/stats.css">
-        <link rel="stylesheet" href="./unitstats/algorithms.css">
+        <link rel="stylesheet" href="./stats.css">
+        <link rel="stylesheet" href="./algorithms.css">
         
         <!-- Setup theme-color -->
 
@@ -28,39 +28,30 @@
     </head>
 
     <body>
-        <include src="/univasset/scripts/pageheader/header.html" 0="Unit stat table"></include>
+        <include src="/univasset/scripts/pageheader/header.html" 0="Stats comparison and algo builder"></include>
 
         <div class="container">
             <section id="main_content">
-                <div id="button" class="tab-button">
-                    <label><input type="radio" name="tables" value="stat" checked/><h2>Stats</h2></label>
-                    <label><input type="radio" name="tables" value="data" /><h2>Others</h2></label>
+                <div id="table"></div>
+                <div id="classes">
+                    <div>Class</div>
+                    <label><input type="checkbox" value="Guard" checked /></label>
+                    <label><input type="checkbox" value="Sniper" checked /></label>
+                    <label><input type="checkbox" value="Warrior" checked /></label>
+                    <label><input type="checkbox" value="Specialist" checked /></label>
+                    <label><input type="checkbox" value="Medic" checked /></label>
                 </div>
-
-                <div id="stat" class="tab-body">
-                    <div class="table"></div>
-                    <div id="classes">
-                        <div>Class</div>
-                        <label><input type="checkbox" value="Guard" checked /></label>
-                        <label><input type="checkbox" value="Sniper" checked /></label>
-                        <label><input type="checkbox" value="Warrior" checked /></label>
-                        <label><input type="checkbox" value="Specialist" checked /></label>
-                        <label><input type="checkbox" value="Medic" checked /></label>
-                    </div>
-                    <div id="bonus">
-                        <div>Bonus</div>
-                        <span><label class="tooltip"><input type="checkbox" value="PotB" />Potential Breakthrough</label>   <span class="tooltiptext">Units at Lv.70 and 5★.</span></span>
-                        <span><label class="tooltip"><input type="checkbox" value="Spec" />Specialty Training</label>       <span class="tooltiptext">Specialty at max level<!-- Lv.??? -->.</span></span>
-                        <span><label class="tooltip"><input type="checkbox" value="Bond" disabled/>Intimacy</label>         <span class="tooltiptext">Intimacy at Lv.15.</span></span>
-                        <span><label class="tooltip"><input type="checkbox" value="Arma" />Arma Inscripta</label>           <span class="tooltiptext">Arma stats at Lv.30.</span></span>
-                        <span><label class="tooltip"><input type="checkbox" value="Algo" />Algorithm</label>                <span class="tooltiptext">Algorithms at Gold rarity and Efficiency at 2x.</span></span>
-                        <!-- Fairies -->
-                    </div>
-                    <p>Click on the unit's name to open the algorithm window.</p>
-                    <p>Data taken from <a href="http://wiki.42lab.cloud/w/%E5%BF%83%E6%99%BA%E4%BA%BA%E5%BD%A2%E5%9B%BE%E9%89%B4">42 wiki</a>.</p>
+                <div id="bonus">
+                    <div>Bonus</div>
+                    <span><label class="tooltip"><input type="checkbox" value="PotB" />Potential Breakthrough</label>   <span class="tooltiptext">Units at Lv.70 and 5★.</span></span>
+                    <span><label class="tooltip"><input type="checkbox" value="Spec" />Specialty Training</label>       <span class="tooltiptext">Specialty at max level<!-- Lv.??? -->.</span></span>
+                    <span><label class="tooltip"><input type="checkbox" value="Bond" disabled/>Intimacy</label>         <span class="tooltiptext">Intimacy at Lv.15.</span></span>
+                    <span><label class="tooltip"><input type="checkbox" value="Arma" />Arma Inscripta</label>           <span class="tooltiptext">Arma stats at Lv.30.</span></span>
+                    <span><label class="tooltip"><input type="checkbox" value="Algo" />Algorithm</label>                <span class="tooltiptext">Algorithms at Gold rarity and Efficiency at 2x.</span></span>
+                    <!-- Fairies -->
                 </div>
-
-                <div id="data" class="tab-body table"></div>
+                <p>Click on the unit's name to open the algorithm window.</p>
+                <p>Data taken from <a href="http://wiki.42lab.cloud/w/%E5%BF%83%E6%99%BA%E4%BA%BA%E5%BD%A2%E5%9B%BE%E9%89%B4">42 wiki</a>.</p>
             </section>
         </div>
 
@@ -86,7 +77,6 @@
             <form method="dialog"></form>
         </dialog>
 
-        <!-- <div></div> -->
     </body>
 </html>
 

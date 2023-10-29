@@ -1,10 +1,10 @@
-import {tableSort, brJoin, nestElements} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
-import {zip, cmp, setattr} from "../univasset/scripts/basefunctions/index.js";
-import {Async} from "../univasset/scripts/externaljavascript.js";
-import {AlgoField} from "./unitstats/algorithms.js";
-import {STATS} from "./unitstats/typing.js";
+import {nestElements} from '../../univasset/scripts/htmlgenerator/htmlgenerator.js';
+import {zip, cmp, setattr} from "../../univasset/scripts/basefunctions/index.js";
+import {Async} from "../../univasset/scripts/externaljavascript.js";
+import {AlgoField} from "./algorithms.js";
+import {STATS} from "./typing.js";
 
-/** @type {UnitObject[]} */ var UNITS = Async.getJSON("./units.json");
+/** @type {Promise<UnitObject[]>} */ const UNIT_PROMISE = Async.getJSON("../units.json");
 
 //#region Type Definitions
 /** @typedef {"Code Robustness" | "Power Connection" | "Neural Activation" | "Shield of Friendship" | "Coordinated Strike" | "Victorious Inspiration" | "Risk Evasion Aid" | "Mechanical Celerity" | "Coordinated Formation" | "Through Fire and Water" | "Healing Bond"} IntimacyStats */
@@ -13,8 +13,6 @@ import {STATS} from "./unitstats/typing.js";
  * @typedef UnitObject
  * @property {string} UnitObject.name
  * @property {"Guard" | "Sniper" | "Warrior" | "Specialist" | "Medic"} UnitObject.class
- * @property {{[linkname: string]: string}} UnitObject.reference
- * @property {string[]} UnitObject.fragments
 
  * @property {object} UnitObject.base
  * @property {number} UnitObject.base.hp
@@ -271,7 +269,7 @@ class Units {
             TD_NAME.textContent = this.name;
             this.#hasarma = false;
         });
-        IMAGE.src = `./assets/images/arma/${this.name.replace(" ", "")}.png`;
+        IMAGE.src = `../assets/images/arma/${this.name.replace(" ", "")}.png`;
 
         const TD_HP = document.createElement("td");
         const TD_ATK = document.createElement("td");
@@ -370,10 +368,7 @@ function sortMethod(event) {
 }
 //#endregion
 
-UNITS = (await UNITS).slice(0, -1);
-
-//#region Statistics Table
-const UNIT_LIST = UNITS.map(x => new Units(x));
+const UNIT_LIST = (await UNIT_PROMISE).slice(0, -1).map(x => new Units(x));
 
 const [THEAD, HEADER_TR] = nestElements("thead", "tr");
 
@@ -392,18 +387,6 @@ for (const [NAME, KEY, TYPE] of zip(HEADER_VALUES, ["name", ...Object.values(STA
     HEADER_TR.appendChild(TH);
 }
 
-const STAT_TABLE = document.querySelector("#stat > .table");
+const STAT_TABLE = document.querySelector("#table");
 STAT_TABLE.classList.add("func_table");
 STAT_TABLE.appendChild(TABLE);
-//#endregion
-
-tableSort(
-    document.querySelector("#data.table"),
-    [["Doll Name", "Reference", "Fragments"], ...UNITS.map(x => [x.name, x.reference, x.fragments])],
-    [
-        x => x,
-        x => brJoin(Object.entries(x).filter(([name, link]) => name).map(([name, link]) => setattr(document.createElement("a"), {textContent: name, href: link}))),
-        x => brJoin(x)
-    ],
-    {frzcol: true, frzhdr: true}
-);

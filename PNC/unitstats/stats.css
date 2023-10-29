@@ -1,7 +1,3 @@
-label:has(input[disabled]) {
-    display: none;
-}
-
 /* #region Arma */
 .arma {
     display: flex;
@@ -80,6 +76,10 @@ label:has(input[disabled]) {
 /* #endregion */
 
 /* #region Bonus */
+#bonus label:has(input[disabled]) {
+    display: none;
+}
+
 #bonus {
     width: fit-content;
     background: #343434;
