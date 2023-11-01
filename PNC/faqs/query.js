@@ -10,7 +10,7 @@ const tm = '™️';
 //🍰
 //#endregion
 
-export const dTag = {
+/** @type {{[tag: string]: {name: string, description: string}}} */ export const dTag = {
     LORE: {name: 'Story/Lore', description: 'Main meat of the series.'},
 };
 
