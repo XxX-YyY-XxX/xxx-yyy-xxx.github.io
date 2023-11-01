@@ -361,10 +361,6 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 
 [3.0 Features.](https://gamepress.gg/girlsfrontline/300-client-update-new-features)
 
-### How do I use Landmine?
-
-> Stand on a node. Lay it down on an adjacent empty node. It activates the moment an enemy steps on it. Don't retreat the mine layer or you'll lose the mine.
-
 ### Can I get limited event dolls during rescue events using autobattles?
 
 > "These T-Dolls are obtainable through Auto-Battles as well." Hmm... I wonder. Note however that 1 auto-battle is equivalent to 1 roll for the doll.
@@ -451,6 +447,8 @@ https://old.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_loung
 SPEQs and Limiteds drop rate buffed on 3.01 to some extent.
 
 https://old.reddit.com/r/girlsfrontline/comments/12u2j9k/client_302_whats_new/
+
+[Client 3.02](https://gamepress.gg/girlsfrontline/client-update-v302-new-features)
 
 # Android 13 Permissions
 

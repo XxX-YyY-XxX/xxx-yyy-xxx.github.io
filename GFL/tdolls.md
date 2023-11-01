@@ -2,10 +2,6 @@
 
 # Tactical Dolls
 
-### Why are the guns' names excluding their manufacturer names?
-
-> <blockquote class="twitter-tweet"><p lang="en" dir="ltr">We modified some names to avoid licensing risk. We thank you for your understanding.</p>&mdash; Girls&#39; Frontline-EN Official (@GirlsFrontlineE) <a href="https://twitter.com/GirlsFrontlineE/status/1001058278728548354?ref_src=twsrc%5Etfw">May 28, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 ### Where can I repair my damaged dolls?
 
 > Repair button at the main menu. You can also repair them on helipads pre and post-deployment. **Do note though that repairing post-deployment cost twice the resources and locks you out of S rank (gold) medals.**

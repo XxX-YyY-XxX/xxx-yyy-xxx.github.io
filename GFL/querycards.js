@@ -324,11 +324,11 @@ export const cardData = [
             link('General reviews.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/fairy-reviews'),
             link('Sniper review.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/sniper-rework')
         ))}`,
-        tags : [dTag.FAIRY, dTag.EQUIP, dTag.TIER]
+        tags : [dTag.FAIRY, dTag.EQUIP, dTag.TDOLL, dTag.TIER]
     },
     {
         id : '00018',
-        questions : `Anyone have a nice infographic for equipment priority and how many to have ideally?`,
+        questions : `Anyone have a nice infographic for equipment priority and recommended/ideal number/amount of equipments?`,
         answers : `${image('https://cdn.discordapp.com/attachments/951085201658871820/1063837601351610389/eq_prior_notheater.png', 'Discord: $eqpriority')}`,
         tags : [dTag.EQUIP, dTag.TDOLL, dTag.TIER]
     },
@@ -3778,6 +3778,31 @@ export const cardData = [
         answers : `${link("BigStupidJellyfish's write-up.", "https://big-stupid-jellyfish.github.io/GFMath/pages/rf-nvg")}`,
         tags : [dTag.TDOLL, dTag.SKILL]
     },
+    {
+        id : '00471',
+        questions : `How to tank/mech/mobile armor?`,
+        answers : `${link("UnironicWeeaboo response.", "https://www.reddit.com/r/girlsfrontline/comments/17f7kla/weekly_commanders_lounge_october_24_2023/k6e6ja1/")}<br>
+        Very WIP and will prioritize EN guides once this drops.`,
+        tags : [dTag.MISC]
+    },
+    {
+        id : '00472',
+        questions : `How do I reset my dorm message?`,
+        answers : `Type ${TextStyle.style("<>", TextStyle.CODE)}.`, //https://www.reddit.com/r/girlsfrontline/comments/17f7kla/weekly_commanders_lounge_october_24_2023/k6elqov/
+        tags : [dTag.DORM]
+    },
+    {
+        id : '00473',
+        questions : `How do I use the Landmine Fairy?`,
+        answers : `Stand on a node. Lay it down on an adjacent empty node. It activates the moment an enemy steps on it. Don't retreat the mine layer or you'll lose the mine.`,
+        tags : [dTag.FAIRY, dTag.SKILL]
+    },
+    {
+        id : '00474',
+        questions : `Why are the guns' names excluding their manufacturer names?`,
+        answers : `${Embed.twitter("GirlsFrontlineE", "1001058278728548354")}`,
+        tags : [dTag.MISC]
+    },  //<blockquote class="twitter-tweet"><p lang="en" dir="ltr">We modified some names to avoid licensing risk. We thank you for your understanding.</p>&mdash; Girls&#39; Frontline-EN Official (@GirlsFrontlineE) <a href="https://twitter.com//status/?ref_src=twsrc%5Etfw">May 28, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     {
         id : '00000',
         questions : ``,
