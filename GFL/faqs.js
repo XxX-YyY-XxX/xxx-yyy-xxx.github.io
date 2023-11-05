@@ -80,7 +80,7 @@ function tagsCards() {
 
     var output = '';
 
-    for (const cards of cardData.filter(({tags}) => cardTags.subsetOf(tags.map(x => x.name))))
+    for (const cards of cardData.filter(({tags}) => cardTags.subsetof(tags.map(x => x.name))))
         output += setQuestionBoxes(cards);
 
     return output || 'No matches found.';

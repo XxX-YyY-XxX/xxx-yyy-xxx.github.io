@@ -4,6 +4,9 @@ interface Array<T> {
 
     /** Returns the number of occurences of the object. */
     count(value: T): number;
+
+    /** Checks if current array's elements are present in the given array. */
+    subsetof(main_array: T[]): boolean;
 }
 
 interface Math {

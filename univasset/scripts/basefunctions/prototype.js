@@ -1,14 +1,4 @@
 //#region Arrays
-/** Checks if current array's elements are present in the given array.
- * @param {Array} array An array to base from. */
-Object.defineProperty(Array.prototype, "subsetOf", {
-    value: function(array) {
-        //What if duplicate on subset?
-        return this.every(val => array.includes(val));
-    },
-    writable: true, configurable: true
-})
-
 Object.defineProperty(Array.prototype, "count", {
     value: function(value) {
         return this.filter(x => x === value).length;
@@ -20,6 +10,18 @@ Object.defineProperty(Array.prototype, "remove", {
     value: function(value) {
         const INDEX = this.indexOf(value);
         this.splice(INDEX, Number(INDEX !== -1));
+    },
+    writable: true, configurable: true
+})
+
+Object.defineProperty(Array.prototype, "subsetof", {
+    value: function(main_array) {
+        const COPY = main_array.slice();
+        for (const ITEM of this) {
+            if (COPY.includes(ITEM))    COPY.remove(ITEM);
+            else                        return false;
+        }
+        return true;
     },
     writable: true, configurable: true
 })

@@ -30,7 +30,7 @@
 }
 
 #classes > label:has([value="Guard"]) {
-    background-image: url("./assets/images/classes/Guard.png");
+    background-image: url("../assets/images/classes/Guard.png");
     aspect-ratio: 48/64;
 }
 
@@ -39,7 +39,7 @@
 }
 
 #classes > label:has([value="Sniper"]) {
-    background-image: url("./assets/images/classes/Sniper.png");
+    background-image: url("../assets/images/classes/Sniper.png");
     aspect-ratio: 61/64;
 }
 
@@ -48,7 +48,7 @@
 }
 
 #classes > label:has([value="Warrior"]) {
-    background-image: url("./assets/images/classes/Warrior.png");
+    background-image: url("../assets/images/classes/Warrior.png");
     aspect-ratio: 64/64;
 }
 
@@ -57,7 +57,7 @@
 }
 
 #classes > label:has([value="Specialist"]) {
-    background-image: url("./assets/images/classes/Specialist.png");
+    background-image: url("../assets/images/classes/Specialist.png");
     aspect-ratio: 54/64;
 }
 
@@ -66,7 +66,7 @@
 }
 
 #classes > label:has([value="Medic"]) {
-    background-image: url("./assets/images/classes/Medic.png");
+    background-image: url("../assets/images/classes/Medic.png");
     aspect-ratio: 64/64;
 }
 

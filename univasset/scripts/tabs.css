@@ -5,6 +5,11 @@
     border-style: initial;
 }
 
-.tab-button ~ .tab-body {
+.tab-button input {
+    appearance: none;
+    margin: 0;
+}
+
+.tab-body {
     display: none;
 }

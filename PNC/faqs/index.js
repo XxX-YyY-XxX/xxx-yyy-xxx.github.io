@@ -1,64 +1,71 @@
 import {cmp, setattr} from '../../univasset/scripts/basefunctions/index.js';
 import {removeHTMLTag, randInt} from '../../univasset/scripts/externaljavascript.js';
-import {radioGroup} from '../../univasset/scripts/htmlgenerator/htmlgenerator.js';
 import {dTag, cardData} from "./query.js";
 
-//#region Constants
 const SEARCH_PARAMS = new URLSearchParams(location.search);
-const TEXT_FIELD = document.querySelector(`#Keywords [type="text"]`);
 const CARDFIELD = document.querySelector("#cards-field");
-//#endregion
 
 //#region Tags Field
-const toggleableTagsField = document.getElementById('tags-list');
+const TAGS_FIELD = document.querySelector("#Tags div");
+/** @type {HTMLInputElement} */ const TAGS_TEXT = document.querySelector('#Tags [input="text"]');
 for (const {name, description} of Object.values(dTag).sort(cmp({key: x => x.name}))) {
-    const INPUT = setattr(document.createElement("input"), {value: name, type: "checkbox", name: "tag"});
-    INPUT.addEventListener("change", function() {
-        TEXT_FIELD.value = this.checked ?
-            (TEXT_FIELD.value + " " + this.value).trim() :
-            TEXT_FIELD.value.replace(this.value, "").replace("  ", " ").trim();
+    const INPUT = setattr(document.createElement("input"), {value: name, type: "checkbox"});
+    INPUT.addEventListener("change", function(event) {
+        console.log(this.value, this.checked)
+        TAGS_TEXT.value = (this.checked ? TAGS_TEXT.value + " " + this.value : TAGS_TEXT.value.replace(this.value, "")).replace("  ", " ").trim();
     });
     const LABEL = setattr(document.createElement("label"), {classList: {add: ["tags", "tooltip"]}, append: [INPUT, name]});
     const SPAN = setattr(document.createElement("span"), {textContent: description, classList: {add: ["tooltiptext"]}});
-    toggleableTagsField.appendChild(setattr(document.createElement("span"), {append: [LABEL, SPAN]}));
+    TAGS_FIELD.appendChild(setattr(document.createElement("span"), {append: [LABEL, SPAN]}));
 }
 //#endregion
 
-//#region Initialize
-/** @type {HTMLInputElement[]} */ const tag_label_inputs = Array.from(toggleableTagsField.children).map(label => label.firstElementChild);
-const cardsForm = document.getElementById('submission-form'), browseField = document.getElementById('browse-page');
-radioGroup(document.querySelector('#input-type-container'), 'input-type',
-    [setattr(document.createElement("h2"), {textContent: 'Keyword'}), 'search', function(button) {
-        if (button.checked) {
-            TEXT_FIELD.style.display = 'inline';
-            TEXT_FIELD.name = button.value;
-        } else {
-            TEXT_FIELD.style.display = 'none';
-            TEXT_FIELD.value = '';
-        }
-    }],
-    [setattr(document.createElement("h2"), {textContent: 'Tags'}), 'tags', function(button) {
-        if (button.checked) {
-            toggleableTagsField.style.display = 'block';
-            TEXT_FIELD.name = button.value;
-        } else {
-            toggleableTagsField.style.display = 'none';
-            TEXT_FIELD.value = '';
-            for (const input_true of tag_label_inputs.filter(input => input.checked))
-                input_true.checked = false;
-        }
-    }],
-    [setattr(document.createElement("h2"), {textContent: 'Browse'}), 'browse', function(button) {
-        browseField.style.display = button.checked ? 'block' : 'none';
-        cardsForm.style.display = button.checked ? 'none' : 'block';
-    }]
-)
+//#region Tag Buttons
+/** @type {HTMLInputElement} */ const KEY_BUTTON = document.querySelector('.tab-button [value="Keywords"]');
+/** @type {HTMLInputElement} */ const TAG_BUTTON = document.querySelector('.tab-button [value="Tags"]');
+/** @type {HTMLInputElement} */ const BWS_BUTTON = document.querySelector('.tab-button [value="Browse"]');
+/** @type {HTMLInputElement} */ var current_checked;
 
+/** @type {HTMLInputElement} */ const TEXT_FIELD = document.querySelector(`#Keywords [type="text"]`);
+KEY_BUTTON.addEventListener("change", function(event) {
+    current_checked.dispatchEvent(new Event("change"))
+    // current_checked.onchange();
+    current_checked = this;
+
+    if (!this.checked) TEXT_FIELD.value = "";
+});
+
+/** @type {HTMLInputElement[]} */ const TAG_CHECKBOXES = Array.from(document.querySelectorAll("#Tags div input"));
+TAG_BUTTON.addEventListener("change", function(event) {
+    current_checked.dispatchEvent(new Event("change"))
+    // current_checked.onchange();
+    current_checked = this;
+
+    if (!this.checked) {
+        // TAGS_TEXT.value = "";
+        console.log("Clearing:", TAGS_TEXT.value)
+        for (const INPUT_TRUE of TAG_CHECKBOXES.filter(input => input.checked))
+            INPUT_TRUE.checked = false;
+    }
+    
+});
+
+BWS_BUTTON.addEventListener("change", function(event) {
+    current_checked.dispatchEvent(new Event("change"))
+    // current_checked.onchange();
+    current_checked = this;
+});
+//#endregion
+
+// CARDFIELD.appendChild(
+//     SEARCH_PARAMS.has('search') ? searchCards() :
+//     SEARCH_PARAMS.has('tags') ? tagsCards() :
+//     SEARCH_PARAMS.has('id') ? idCards() : randomCards()
+// )
 CARDFIELD.innerHTML =
     SEARCH_PARAMS.has('search') ? searchCards() :
     SEARCH_PARAMS.has('tags') ? tagsCards() :
     SEARCH_PARAMS.has('id') ? idCards() : randomCards();
-//#endregion
 
 //#region Private Functions
 function searchCards() {
@@ -66,7 +73,7 @@ function searchCards() {
     if (!searchText) return 'Empty search.';
 
     var output = '';
-    const KEYWORDS = searchText.toLowerCase().split(" ");
+    const KEYWORDS = searchText.replace(/\s+/, " ").toLowerCase().split(" ");
 
     for (const cards of cardData.filter(({questions, answers}) => KEYWORDS.every(str => removeHTMLTag(questions).toLowerCase().includes(str) || removeHTMLTag(answers).toLowerCase().includes(str))))
         output += setQuestionBoxes(cards);
@@ -80,7 +87,7 @@ function tagsCards() {
 
     var output = '';
 
-    for (const cards of cardData.filter(({tags}) => cardTags.subsetOf(tags.map(x => x.name))))
+    for (const cards of cardData.filter(({tags}) => cardTags.subsetof(tags.map(x => x.name))))
         output += setQuestionBoxes(cards);
 
     return output || 'No matches found.';
