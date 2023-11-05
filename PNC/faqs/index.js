@@ -112,6 +112,13 @@ function randomCards() {
     return output;
 }
 
+/** @param {string} text @returns {DocumentFragment} */
+function stringToHTML(text) {
+    const FRAGMENT = new DocumentFragment();
+    FRAGMENT.append(...(new DOMParser()).parseFromString(text, "text/html").body.childNodes);
+    return FRAGMENT;
+}
+
 /** @param {cardData} */
 function setQuestionBoxes({questions, answers, tags}) {
     return `<fieldset>
@@ -124,13 +131,14 @@ function setQuestionBoxes({questions, answers, tags}) {
     const FIELDSET = document.createElement("fieldset");
 
     const [LEGEND, H3] = nestElements("legend", "h3");
-    H3.innerHTML = questions;
+    H3.appendChild(stringToHTML(questions));
 
     FIELDSET.append(
         LEGEND,
-        ...(new DOMParser()).parseFromString(answers, "text/html").body.childNodes,
+        stringToHTML(answers),
         document.createElement("hr"),
-        ""
+        "Tags: ",
+        ...tags.map(tag => setattr(document.createElement("span"), {classList: {add: ["tags", "card-tags"]}, textContent: tag.name}))
     );
     return FIELDSET;
 }
