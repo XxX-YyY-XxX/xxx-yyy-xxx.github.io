@@ -3809,4 +3809,4 @@ export const cardData = [
         answers : ``,
         tags : []
     },
-];
+].slice(0, -1);

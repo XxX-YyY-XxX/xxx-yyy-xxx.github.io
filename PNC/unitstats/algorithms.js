@@ -88,6 +88,11 @@ function combine(object1, object2) {
         OUTPUT.set(attribute, (object1.get(attribute) ?? 0) + (object2.get(attribute) ?? 0));
     return OUTPUT;
 }
+
+/** @param {string} algoname @returns {string} */
+function algoPath(algoname) {
+    return `../assets/images/algorithms/${algoname}.png`;
+}
 //#endregion
 
 //#region Base
@@ -301,10 +306,7 @@ class DoubleBlock extends Algorithm {
     html(mainstat, substat) {
         const OUTPUT = setattr(super.html, {classList: {add: ["double-block"]}})
 
-        const EMBLEM = document.createElement("img");
-        EMBLEM.alt = this.constructor.name;
-        EMBLEM.src = `./assets/images/algorithms/${this.constructor.name}.png`;
-        EMBLEM.loading = "lazy";
+        const EMBLEM = setattr(document.createElement("img"), {src: algoPath(this.constructor.name), alt: this.constructor.name, loading: "lazy"});
         OUTPUT.appendChild(EMBLEM);
 
         const STATS = document.createElement("div");
@@ -501,7 +503,7 @@ function algoSelectButton(algoClass) {
 
     const IMG = document.createElement("img");
     IMG.alt = algoClass.name;
-    IMG.src = `./assets/images/algorithms/${subclassof(algoClass, SingleBlock) ? "SingleBlock" : algoClass.name}.png`;
+    IMG.src = algoPath(subclassof(algoClass, SingleBlock) ? "SingleBlock" : algoClass.name);
     OUTPUT.appendChild(IMG);
 
     const DIV1 = document.createElement("div");

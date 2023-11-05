@@ -1,6 +1,7 @@
 import {cmp, setattr} from '../../univasset/scripts/basefunctions/index.js';
 import {removeHTMLTag, randInt} from '../../univasset/scripts/externaljavascript.js';
 import {dTag, cardData} from "./query.js";
+import {nestElements} from "../../univasset/scripts/htmlgenerator/htmlgenerator.js"
 
 const SEARCH_PARAMS = new URLSearchParams(location.search);
 const CARDFIELD = document.querySelector("#cards-field");
@@ -57,11 +58,6 @@ BWS_BUTTON.addEventListener("change", function(event) {
 });
 //#endregion
 
-// CARDFIELD.appendChild(
-//     SEARCH_PARAMS.has('search') ? searchCards() :
-//     SEARCH_PARAMS.has('tags') ? tagsCards() :
-//     SEARCH_PARAMS.has('id') ? idCards() : randomCards()
-// )
 CARDFIELD.innerHTML =
     SEARCH_PARAMS.has('search') ? searchCards() :
     SEARCH_PARAMS.has('tags') ? tagsCards() :
@@ -75,7 +71,7 @@ function searchCards() {
     var output = '';
     const KEYWORDS = searchText.replace(/\s+/, " ").toLowerCase().split(" ");
 
-    for (const cards of cardData.filter(({questions, answers}) => KEYWORDS.every(str => removeHTMLTag(questions).toLowerCase().includes(str) || removeHTMLTag(answers).toLowerCase().includes(str))))
+    for (const cards of cardData.filter(({questions, answers}) => KEYWORDS.every(str => [questions, answers].some(x => removeHTMLTag(x).toLowerCase().includes(str)))))
         output += setQuestionBoxes(cards);
 
     return output || 'No matches found.';        
@@ -104,11 +100,10 @@ function idCards() {
 }
 
 function randomCards() {
-    const maxValue = cardData.length - 1;
     const indices = new Set();
     var output = '';
 
-    do indices.add(randInt(0, maxValue));
+    do indices.add(randInt(0, cardData.length));
     while (indices.size < 3)
 
     for (const index of indices)
@@ -125,11 +120,24 @@ function setQuestionBoxes({questions, answers, tags}) {
         <hr>
         Tags: ${tags.map(tag => `<span class="tags card-tags">${tag.name}</span>` ).join(' ')}
         </fieldset>`;
+    
+    const FIELDSET = document.createElement("fieldset");
+
+    const [LEGEND, H3] = nestElements("legend", "h3");
+    H3.innerHTML = questions;
+
+    FIELDSET.append(
+        LEGEND,
+        ...(new DOMParser()).parseFromString(answers, "text/html").body.childNodes,
+        document.createElement("hr"),
+        ""
+    );
+    return FIELDSET;
 }
 //#endregion
 
 //#region Browse Field
-const MAXPAGE = Math.ceil((cardData.length - 1) / 5)
+const MAXPAGE = Math.ceil((cardData.length) / 5)
 document.getElementById('maxpage').textContent = MAXPAGE;
 
 const PAGENO = document.getElementById('page-no');
@@ -145,7 +153,7 @@ for (const BUTT of Array.from(document.querySelectorAll("'#Button button"))) {
         var output = "";
         const PAGE = getPage();
         PAGENO.textContent = PAGE;
-        for (var i = (PAGE * 5) - 5; i < Math.min(PAGE * 5, cardData.length - 1); i++)
+        for (var i = (PAGE * 5) - 5; i < Math.min(PAGE * 5, cardData.length); i++)
             output += setQuestionBoxes(cardData[i]);
         CARDFIELD.innerHTML = output;    
     })

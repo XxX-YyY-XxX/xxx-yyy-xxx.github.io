@@ -97,11 +97,10 @@ function idCards() {
 }
 
 function randomCards() {
-    const maxValue = cardData.length - 1;
     const indices = new Set();
     var output = '';
 
-    do indices.add(randInt(0, maxValue));
+    do indices.add(randInt(0, cardData.length));
     while (indices.size < 3)
 
     for (const index of indices)
@@ -122,7 +121,7 @@ function setQuestionBoxes({questions, answers, tags}) {
 //#endregion
 
 //#region Browse Field
-const maxPage = Math.ceil((cardData.length - 1) / 5)
+const maxPage = Math.ceil((cardData.length) / 5)
 document.getElementById('maxpage').textContent = maxPage;
 const pageNo = document.getElementById('page-no');
 for (const BUTT of Array.from(document.querySelectorAll("button"))) {
@@ -137,7 +136,7 @@ for (const BUTT of Array.from(document.querySelectorAll("button"))) {
         var output = "";
         const PAGE = getPage();
         pageNo.textContent = PAGE;
-        for (var i = (PAGE * 5) - 5; i < Math.min(PAGE * 5, cardData.length - 1); i++)
+        for (var i = (PAGE * 5) - 5; i < Math.min(PAGE * 5, cardData.length); i++)
             output += setQuestionBoxes(cardData[i]);
         CARDFIELD.innerHTML = output;    
     })
