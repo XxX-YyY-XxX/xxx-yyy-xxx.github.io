@@ -94,7 +94,7 @@ function tagsCards() {
 }
 
 function idCards() {
-    const id_list = SEARCH_PARAMS.get('id').split(' ');
+    const id_list = SEARCH_PARAMS.get('id').split(' ').map(Number);
     var output = '';
 
     for (const cards of cardData.filter(({id}) => id_list.includes(id)))
@@ -129,21 +129,22 @@ function setQuestionBoxes({questions, answers, tags}) {
 //#endregion
 
 //#region Browse Field
-const maxPage = Math.ceil((cardData.length - 1) / 5)
-document.getElementById('maxpage').textContent = maxPage;
-const pageNo = document.getElementById('page-no');
-for (const BUTT of Array.from(document.querySelectorAll("button"))) {
+const MAXPAGE = Math.ceil((cardData.length - 1) / 5)
+document.getElementById('maxpage').textContent = MAXPAGE;
+
+const PAGENO = document.getElementById('page-no');
+for (const BUTT of Array.from(document.querySelectorAll("'#Button button"))) {
     /** @type {function(): number} */
     const getPage = {
         first: () => 1,
-        previous: () => Math.max(1, Number(pageNo.textContent) - 1),
-        next: () => Math.min(maxPage, Number(pageNo.textContent) + 1),
-        last: () => maxPage
+        previous: () => Math.max(1, Number(PAGENO.textContent) - 1),
+        next: () => Math.min(MAXPAGE, Number(PAGENO.textContent) + 1),
+        last: () => MAXPAGE
     }[BUTT.value];
     BUTT.addEventListener("click", function(event) {
         var output = "";
         const PAGE = getPage();
-        pageNo.textContent = PAGE;
+        PAGENO.textContent = PAGE;
         for (var i = (PAGE * 5) - 5; i < Math.min(PAGE * 5, cardData.length - 1); i++)
             output += setQuestionBoxes(cardData[i]);
         CARDFIELD.innerHTML = output;    
