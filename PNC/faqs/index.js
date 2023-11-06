@@ -1,7 +1,7 @@
-import {cmp, setattr} from '../../univasset/scripts/basefunctions/index.js';
 import {removeHTMLTag, randInt} from '../../univasset/scripts/externaljavascript.js';
-import {dTag, cardData} from "./query.js";
 import {nestElements} from "../../univasset/scripts/htmlgenerator/htmlgenerator.js"
+import {cmp, setattr} from '../../univasset/scripts/basefunctions/index.js';
+import {dTag, cardData} from "./query.js";
 
 const SEARCH_PARAMS = new URLSearchParams(location.search);
 const CARDFIELD = document.querySelector("#cards-field");
@@ -9,15 +9,16 @@ const CARDFIELD = document.querySelector("#cards-field");
 //#region Tags Field
 const TAGS_FIELD = document.querySelector("#Tags div");
 /** @type {HTMLInputElement} */ const TAGS_TEXT = document.querySelector('#Tags [input="text"]');
+/** @type {HTMLInputElement[]} */ const TAG_CHECKBOXES = [];
 for (const {name, description} of Object.values(dTag).sort(cmp({key: x => x.name}))) {
     const INPUT = setattr(document.createElement("input"), {value: name, type: "checkbox"});
     INPUT.addEventListener("change", function(event) {
-        console.log(this.value, this.checked)
         TAGS_TEXT.value = (this.checked ? TAGS_TEXT.value + " " + this.value : TAGS_TEXT.value.replace(this.value, "")).replace("  ", " ").trim();
     });
     const LABEL = setattr(document.createElement("label"), {classList: {add: ["tags", "tooltip"]}, append: [INPUT, name]});
     const SPAN = setattr(document.createElement("span"), {textContent: description, classList: {add: ["tooltiptext"]}});
     TAGS_FIELD.appendChild(setattr(document.createElement("span"), {append: [LABEL, SPAN]}));
+    TAG_CHECKBOXES.push(INPUT);
 }
 //#endregion
 
@@ -36,15 +37,13 @@ KEY_BUTTON.addEventListener("change", function(event) {
     if (!this.checked) TEXT_FIELD.value = "";
 });
 
-/** @type {HTMLInputElement[]} */ const TAG_CHECKBOXES = Array.from(document.querySelectorAll("#Tags div input"));
 TAG_BUTTON.addEventListener("change", function(event) {
     current_checked.dispatchEvent(new Event("change"))
     // current_checked.onchange();
     current_checked = this;
 
     if (!this.checked) {
-        // TAGS_TEXT.value = "";
-        console.log("Clearing:", TAGS_TEXT.value)
+        TAGS_TEXT.value = "";
         for (const INPUT_TRUE of TAG_CHECKBOXES.filter(input => input.checked))
             INPUT_TRUE.checked = false;
     }
@@ -58,10 +57,14 @@ BWS_BUTTON.addEventListener("change", function(event) {
 });
 //#endregion
 
-CARDFIELD.innerHTML =
-    SEARCH_PARAMS.has('search') ? searchCards() :
-    SEARCH_PARAMS.has('tags') ? tagsCards() :
-    SEARCH_PARAMS.has('id') ? idCards() : randomCards();
+CARDFIELD.innerHTML = (() => {
+    switch (true) {
+        case SEARCH_PARAMS.has('search'):   return searchCards();
+        case SEARCH_PARAMS.has('tags'):     return tagsCards();
+        case SEARCH_PARAMS.has('id'):       return idCards();
+        default:                            return randomCards();
+    }
+})()
 
 //#region Private Functions
 function searchCards() {

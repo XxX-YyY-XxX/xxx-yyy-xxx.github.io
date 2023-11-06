@@ -19,12 +19,12 @@ timer(
 
 timer(
     document.getElementById("coalition"),
-    "Oct 16, 2023 23:59 UTC-0800",
-    "./assets/images/coalition/02Executioner.webp", 
+    "Nov 13, 2023 23:59 UTC-0800",
+    "./assets/images/coalition/16IntruderSorceressOfTheEnd.webp", 
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
-        "Nov 13, 2023 23:59 UTC-0800",
-        "./assets/images/coalition/16IntruderSorceressOfTheEnd.webp"
+        "Dec 11, 2023 23:59 UTC-0800",
+        "./assets/images/coalition/04Intruder.webp"
     )}
 );
 

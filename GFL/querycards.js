@@ -1686,7 +1686,7 @@ export const cardData = [
         id : '00176',
         questions : `Just noticed that the Black Market Shop in the Forward Basecamp has a Costumes tab. Anyone know what that's about?`,
         answers : `Shop for previous event only cosmetics.<br>
-        ${image('./assets/images/BlackMarketCostumes.png', 'From u/UnironicWeeaboo')}<br>
+        ${image('./assets/images/query/BlackMarketCostumes.png', 'From u/UnironicWeeaboo')}<br>
         Currently released items in the older servers.`,
         tags : [dTag.BM]
     },
