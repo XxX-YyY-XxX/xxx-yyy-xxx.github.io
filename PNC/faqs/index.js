@@ -74,7 +74,7 @@ function searchCards() {
     var output = '';
     const KEYWORDS = searchText.replace(/\s+/, " ").toLowerCase().split(" ");
 
-    for (const cards of cardData.filter(({questions, answers}) => KEYWORDS.every(str => [questions, answers].some(x => removeHTMLTag(x).toLowerCase().includes(str)))))
+    for (const cards of cardData.filter(({question, answer}) => KEYWORDS.every(str => [question, answer].some(x => removeHTMLTag(x).toLowerCase().includes(str)))))
         output += setQuestionBoxes(cards);
 
     return output || 'No matches found.';        
@@ -123,10 +123,10 @@ function stringToHTML(text) {
 }
 
 /** @param {cardData} */
-function setQuestionBoxes({questions, answers, tags}) {
+function setQuestionBoxes({question, answer, tags}) {
     return `<fieldset>
-        <legend><h3>${questions}</h3></legend>
-        ${answers}
+        <legend><h3>${question}</h3></legend>
+        ${answer}
         <hr>
         Tags: ${tags.map(tag => `<span class="tags card-tags">${tag.name}</span>` ).join(' ')}
         </fieldset>`;
@@ -134,11 +134,11 @@ function setQuestionBoxes({questions, answers, tags}) {
     const FIELDSET = document.createElement("fieldset");
 
     const [LEGEND, H3] = nestElements("legend", "h3");
-    H3.appendChild(stringToHTML(questions));
+    H3.appendChild(stringToHTML(question));
 
     FIELDSET.append(
         LEGEND,
-        stringToHTML(answers),
+        stringToHTML(answer),
         document.createElement("hr"),
         "Tags: ",
         ...tags.map(tag => setattr(document.createElement("span"), {classList: {add: ["tags", "card-tags"]}, textContent: tag.name}))

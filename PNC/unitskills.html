@@ -2,6 +2,9 @@
 <html>
     <head>
         <script type="module" src="/univasset/scripts/include.js"></script>
+        <script type="module">
+            //document.querySelectorAll('a[href^="#"]')
+        </script>
 
         <meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,6 +26,12 @@
         <title>Unit Attack and Skill Quirks | Random Scraps</title>
     </head>
 
+    <style>
+        a[href^="#"] {
+            text-decoration: none;
+        }
+    </style>
+
     <body>
         <include src="/univasset/scripts/pageheader/header.html" 0="Questionable use on memebuiliding and theorycrafting"></include>
 
@@ -30,14 +39,18 @@
             <section id="main_content">
                 <dl>
                     <dt>Dushevnaya</dt>
-                    <dd>Normal Attack is turned into a 2-tile radius Special Normal Attack.</dd>
-                    <dd>Active expands the Special Normal Attack to the whole field.</dd>
-                    <dd>Buff/Debuff applies after each Special Normal Attack hit.</dd>
+                    <dd>Normal Attack is turned into a 2-tile radius <a href="#NormalAttackSkills">Normal Attack Skill</a>.</dd>
+                    <dd>Active expands the Normal Attack to the whole field.</dd>
+                    <dd>Buff/Debuff applies after each Normal Attack hit.</dd>
+
+                    <dt>Daiyan</dt>
+                    <dd>Concordia only affects the damaging parts of Active Skills.</dd>
                 </dl>
 
-                <ul>
-                    <li>Special Normal Attack - Can only critically strike through function sets and Bloodthirst Sigils.</li>
-                </ul>
+                <dl>
+                    <dt id="NormalAttackSkills">Normal Attack Skills</dt>
+                    <dd>Can only critically strike through function sets and Bloodthirst Sigils.</dd>
+                </dl>
             </section>
         </div>
     </body>

@@ -16,41 +16,42 @@ function getID(text, ...ids) {
     return `<a href="https://xxx-yyy-xxx.github.io/PNC/faqs/?id=${ids.map(x => String(x).padStart(5, "0")).join("+")}">${text}</a>`
 }//#endregion
 
-/** @type {{[tag: string]: {name: string, description: string}}} */ export const dTag = {
-    LORE: {name: 'Story/Lore', description: 'Main meat of the series.'},
+export const dTag = {
+    ASST: {name: "Assistant", description: "Unit shown in your home screen."},
+    ALGO: {name: "Algorithms", description: "Equipments in this game."},
 };
 
 /**
  * @typedef Card
  * @property {number} Card.id
- * @property {string} Card.questions
- * @property {string} Card.answers
- * @property {dTag[keyof dTag][]} Card.tags
+ * @property {string} Card.question
+ * @property {string} Card.answer
+ * @property {{name: string, description: string}[]} Card.tags
  */
 
 /** @type {Card[]} */ export const cardData = [
     {
         id: 0,
-        questions: `q1`,
-        answers: `a1`,
-        tags: []
+        question: `How do I change what weapon Jiangyu holds in her L2D`,
+        answer: `Shoulder tap.`,   // https://old.reddit.com/r/GFLNeuralCloud/comments/17jqslr/weekly_professors_lounge_october_30_2023/k7sr357/
+        tags: [dTag.ASST]
     },
     {
         id: 1,
-        questions: `q2`,
-        answers: `a2`,
-        tags: []
+        question: `Which algorithms should I decompose?`,
+        answer: `Purple algos, blue algos if you're lazy, trash single slot algos.`,
+        tags: [dTag.ALGO]
     },
     {
         id: 2,
-        questions: `q3`,
-        answers: `a3`,
+        question: `q3`,
+        answer: `a3`,
         tags: []
     },
     {
         id: 0,
-        questions: ``,
-        answers: ``,
+        question: ``,
+        answer: ``,
         tags: []
     },
 ].slice(0, -1);
