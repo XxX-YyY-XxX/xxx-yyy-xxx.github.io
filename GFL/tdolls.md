@@ -16,10 +16,6 @@
 
 > Does her costume have one? Is she strictly on a single adjutant slot? Is the L2D toggle in settings on? Is the L2D toggle in adjutant postioning on?
 
-### How does HG targeting work?
-
-> Random acquisition unless stated otherwise.
-
 ### Is there a repository of all dolls currently in the game?
 
 > [CN Wiki.](http://www.gfwiki.org/w/%E9%A6%96%E9%A1%B5)
@@ -39,16 +35,6 @@
 > [From redditor u/BigStupidJellyfish_.](https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls.html)
 >
 > [Explains when they can come back.](https://gfl.matsuda.tips/post/limitedeventdolls) For non-collab dolls only.
-
-### What's the best way to farm a map drop doll?
-
-> Resource efficiency: What formation and least amount of dolls that would be able to minimize damage while being able to clear fights.
->
-> Time efficiency: Routes that take the least amount of turns. If S-ranking the map requires effort, then don't.
->
-> Drop efficiency: All fights should be able to drop the farmable doll as much as possible. Take as little non-drop fights or as many drop chances per run.
->
-> Note that is just a base guideline and not a rule. Or just copy from others.
 
 ### Is there a way to inventorize my dolls?
 

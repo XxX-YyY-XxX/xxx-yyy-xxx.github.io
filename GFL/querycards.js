@@ -288,12 +288,12 @@ export const cardData = [
         id : '00014',
         questions : `Is XXX doll good and is it safe to retire them?`,
         answers : `Tier lists in general are a matter of countering enemies. And since the meta of this game varies wildly from event to event, most people would point to analysis links instead.<br>
-        ${link('Matsuda Quips.', 'https://gfl.matsuda.tips/dolls/')}<br>
         ${link('Gamepress Overview.', 'https://gamepress.gg/girlsfrontline/t-dolls-list')}<br>
+        ${spoilerSummary("u/LuckyTenth's spreadsheet.", Embed.google(Embed.G_EXCEL, '1w2qEbnNluSc6C4U73yyAnYE_zmXdARvDu3GZmMO7hl4'))}<br>
+        ${link('Matsuda Quips.', 'https://gfl.matsuda.tips/dolls/')}<br>
         ${link('KR Wiki.', 'https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0/%EC%9D%B8%ED%98%95%EB%8F%84%EA%B0%90')}<br>
         ${link("Fatalchapter's bilibili guide.", 'https://www.bilibili.com/read/readlist/rl100361')} Updated up to Jashin dolls.<br>
         ${link("Sijun's list.", 'https://www.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1rph1l/')} Translated by u/ConductorBichir.<br>
-        ${spoilerSummary("u/LuckyTenth's spreadsheet.", Embed.google(Embed.G_EXCEL, '1w2qEbnNluSc6C4U73yyAnYE_zmXdARvDu3GZmMO7hl4'))}<br>
         ${spoilerSummary('BigStupidJellyfish analyses.', List.unordered(
             link('Vallhalla girls.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/valhalla'),
             link('AK-15.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ak15')))}`,
@@ -629,7 +629,7 @@ export const cardData = [
         id : '00041',
         questions : `Which emulators are good for GFL?`,
         answers : `${List.ordered('Mumu.', 'Memu.', 'LDPlayer.', 'Nox.', 'Bluestacks.')}`,
-        tags : [dTag.EMU]
+        tags : [dTag.EMU, dTag.NEWB]
     },
     {
         id : '00042',
@@ -1039,7 +1039,8 @@ export const cardData = [
     {
         id : '00096',
         questions : `What's the priority to spend gems?`,
-        answers : `${List.description({
+        answers : `${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/kalinas-shop-and-gems")}<br>
+        ${List.description({
             "Echelon Slots": [
                 "Costs 880, not 380.",
                 "Up to 6 minimum, 8 for actually constant (ranking not included) logistics. Preferably maximum (14)."
@@ -1448,7 +1449,7 @@ export const cardData = [
         id : '00146',
         questions : `How many Tactical Doll slots can I have?`,
         answers : `Up to 1200 it seems.`,
-        tags : [dTag.MISC]
+        tags : [dTag.MISC, dTag.TDOLL]
     },  //Condolensces to u/headphone_question's wallet. Previously 1000.
     {
         id : '00147',
@@ -3802,7 +3803,27 @@ export const cardData = [
         questions : `Why are the guns' names excluding their manufacturer names?`,
         answers : `${Embed.twitter("GirlsFrontlineE", "1001058278728548354")}`,
         tags : [dTag.MISC]
-    },  //<blockquote class="twitter-tweet"><p lang="en" dir="ltr">We modified some names to avoid licensing risk. We thank you for your understanding.</p>&mdash; Girls&#39; Frontline-EN Official (@GirlsFrontlineE) <a href="https://twitter.com//status/?ref_src=twsrc%5Etfw">May 28, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    },
+    {
+        id : '00475',
+        questions : `Where can I get the limited drop/equipment in a particular map?`,
+        answers : `${image("./assets/images/query/CombatSummary.png", "Tap on the Combat Summary button")}<br>
+        ${image("./assets/images/query/MapRewards.png", "Rewards tab then tap on your desired drop")}<br>
+        ${image("./assets/images/query/RewardLocations.png", "Look for glowing enemies and defeat them")}<br>
+        You can also S Rank the map for an additional chance.`,
+        tags : [dTag.BATTLE, dTag.GET, dTag.TDOLL, dTag.EQUIP]
+    },
+    {
+        id : '00476',
+        questions : `What's the best way to farm a map drop doll/equipment?`,
+        answers : `${List.description({
+            "Resource efficiency": ["What formation and least amount of dolls that would be able to minimize damage while being able to clear fights."],
+            "Time efficiency": ["Routes that take the least amount of turns. If S-ranking the map requires effort, then don't."],
+            "Drop efficiency": ["All fights should be able to drop the farmable doll as much as possible. Take as little non-drop fights or as many drop chances per run."]
+        })}<br>
+        Note that these are just base guidelines and not a rule. Or just copy from others.`,
+        tags : [dTag.GET, dTag.BATTLE, dTag.TDOLL, dTag.EQUIP]
+    },
     {
         id : '00000',
         questions : ``,

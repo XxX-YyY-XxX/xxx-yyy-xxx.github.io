@@ -347,10 +347,6 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 
 ## Visual
 
-### Where can I get the limited drop/equipment in a particular map?
-
-> Enter the map>Combat Info>Rewards>Tap the one you want to get>Look for glowing enemies in the map>Defeat said enemies. You can also S Rank the map for an additional chance.
-
 ### I just had a skirmish and saw that my team isn't in proper formation. Can I fix it without quitting the map?
 
 > [*me not caring enough to paraphrase it*](https://old.reddit.com/r/girlsfrontline/comments/e8nuro/weekly_commanders_lounge_december_10_2019/fb6xvhz/)
@@ -449,8 +445,11 @@ SPEQs and Limiteds drop rate buffed on 3.01 to some extent.
 https://old.reddit.com/r/girlsfrontline/comments/12u2j9k/client_302_whats_new/
 
 [Client 3.02](https://gamepress.gg/girlsfrontline/client-update-v302-new-features)
+[Client 3.02](https://old.reddit.com/r/girlsfrontline/comments/12u2j9k/client_302_whats_new/)
 
 # Android 13 Permissions
 
 https://old.reddit.com/r/girlsfrontline/comments/174fpb1/weekly_commanders_lounge_october_10_2023/k5408hz/
 https://old.reddit.com/r/girlsfrontline/comments/174fpb1/weekly_commanders_lounge_october_10_2023/k4wzvx1/
+
+[Small update could corrupt game file?](https://old.reddit.com/r/girlsfrontline/comments/17kfw5l/weekly_commanders_lounge_october_31_2023/k7co6po/)
