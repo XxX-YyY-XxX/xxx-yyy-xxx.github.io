@@ -664,7 +664,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Power Connection", "Neural Activation", "Coordinated Strike"]
     },
     {
         "name": "Rise",
@@ -722,7 +722,7 @@
             "ppen": 32,
             "open": 32
         },
-        "intimacy": []
+        "intimacy": ["Neural Activation", "Code Robustness", "Risk Evasion Aid"]
     },
     {
         "name": "Jessie",
@@ -1013,7 +1013,7 @@
             "ppen": 96,
             "open": 83
         },
-        "intimacy": []
+        "intimacy": ["Power Connection", "Mechanical Celerity", "Coordinated Formation"]
     },
     {
         "name": "Nanaka",
@@ -1071,7 +1071,7 @@
             "ppen": 79,
             "open": 68
         },
-        "intimacy": []
+        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"]
     },
     {
         "name": "Florence",
@@ -1102,7 +1102,6 @@
         },
         "intimacy": []
     },
-
     {
         "name": "Willow",
         "class": "Specialist",
@@ -1132,65 +1131,6 @@
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
     },
-    {
-        "name": "Sockdolager",
-        "class": "Sniper",
-        "reference": {"Falcon" : "https://iopwiki.com/wiki/Falcon"},
-        "fragments": ["Neural Kits", "Intimacy", "Aberrance's Chain"],
-        "base": {
-            "hp": 11671,
-            "atk": 605,
-            "hash": 572,
-            "pdef": 216,
-            "odef": 216,
-            "aspd": 130,
-            "crate": 10,
-            "ppen": 444,
-            "open": 444,
-            "dodge": 0,
-            "regen": 364
-        },
-        "arma": {
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
-        },
-        "intimacy": ["Power Connection", "Code Robustness", "Coordinated Formation"]
-    },
-    {
-        "name": "Uranus",
-        "class": "Sniper",
-        "reference": {},
-        "fragments": ["Neural Kits", "Intimacy", "Critical Cascade"],
-        "base": {
-            "hp": 10757,
-            "atk": 521,
-            "hash": 638,
-            "pdef": 188,
-            "odef": 188,
-            "aspd": 100,
-            "crate": 12,
-            "ppen": 314,
-            "open": 514,
-            "dodge": 0,
-            "regen": 322
-        },
-        "arma": {
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
-        },
-        "intimacy": []
-    },
-
     {
         "name": "Aki",
         "class": "Warrior",
@@ -1482,6 +1422,35 @@
         "intimacy": []
     },
     {
+        "name": "Sockdolager",
+        "class": "Sniper",
+        "reference": {"Falcon" : "https://iopwiki.com/wiki/Falcon"},
+        "fragments": ["Neural Kits", "Intimacy", "Aberrance's Chain"],
+        "base": {
+            "hp": 11671,
+            "atk": 605,
+            "hash": 572,
+            "pdef": 216,
+            "odef": 216,
+            "aspd": 130,
+            "crate": 10,
+            "ppen": 444,
+            "open": 444,
+            "dodge": 0,
+            "regen": 364
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": ["Power Connection", "Code Robustness", "Coordinated Formation"]
+    },
+    {
         "name": "Sueyoi",
         "class": "Specialist",
         "reference": {},
@@ -1598,6 +1567,35 @@
         "intimacy": []
     },
     {
+        "name": "Uranus",
+        "class": "Sniper",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy", "Critical Cascade"],
+        "base": {
+            "hp": 10757,
+            "atk": 521,
+            "hash": 638,
+            "pdef": 188,
+            "odef": 188,
+            "aspd": 100,
+            "crate": 12,
+            "ppen": 314,
+            "open": 514,
+            "dodge": 0,
+            "regen": 322
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
+    },
+    {
         "name": "Hannah",
         "class": "Specialist",
         "reference": {},
@@ -1711,7 +1709,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Power Connection", "Code Robustness", "Coordinated Strike"]
     },
     {
         "name": "Clotho",

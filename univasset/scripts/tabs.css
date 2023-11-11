@@ -10,6 +10,10 @@
     margin: 0;
 }
 
+.tab-button label h2 {
+    margin-bottom: 10px;
+}
+
 .tab-body {
     display: none;
 }
