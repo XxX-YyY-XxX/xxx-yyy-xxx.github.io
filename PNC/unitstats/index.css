@@ -34,8 +34,8 @@ input[type="checkbox"], input[type="radio"] {
 /* #endregion */
 
 /* #region Filter */
-.hidden {
-    display: none;
+tr:not(.hidden):nth-child(even) {
+	background-color: rgba(85, 107, 47, 0.25);
 }
 
 .freeze-col tr:not(.hidden):nth-child(odd) > :first-child {

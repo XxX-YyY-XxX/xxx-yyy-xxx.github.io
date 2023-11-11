@@ -13,11 +13,15 @@ code {
 	border-radius: 2px;
 }
 
+dd {
+    display: list-item;
+    margin-inline-start: 20px;
+}
+
 tr:nth-child(even) {
 	background-color: rgba(85, 107, 47, 0.25);
 }
 
-dd {
-    display: list-item;
-    margin-inline-start: 20px;
+.hidden {
+	display: none;
 }

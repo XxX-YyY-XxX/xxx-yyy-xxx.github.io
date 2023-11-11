@@ -56,6 +56,26 @@ const CLASS_BUTTONS = {
 }
 //#endregion
 
+/**
+ * 
+ * @param {IntimacyStats} bond 
+ */
+function bondstats(bond) {
+    switch (bond) {
+        case 'Code Robustness':         return "HP";
+        case 'Power Connection':        return "ATTACK";
+        case 'Neural Activation':       return "HASH";
+        case 'Shield of Friendship':    return "PDEF";
+        case 'Coordinated Strike':      return "CRATE";
+        case 'Victorious Inspiration':  return "CDMG";
+        case 'Risk Evasion Aid':        return "DODGE";
+        case 'Mechanical Celerity':     return "HASTE";
+        case 'Coordinated Formation':   return "DBOOST";
+        case 'Through Fire and Water':  return "DREDUC";
+        case 'Healing Bond':            return "HBOOST";
+    }
+}
+
 //#region Class Declarations
 class Units {
     name;
@@ -261,7 +281,17 @@ class Units {
         this.#armaopen = ARMA.open;
 
         this.#intistats = stat_object.intimacy;
-        if (this.#intistats.length != 3) console.warn(this.name, "lacks data: Intimacy");
+        switch (this.#intistats.length) {
+            case 0:
+                console.warn(this.name, "lacks data: Intimacy");
+                break;
+            case 3:
+                console.log(this.name, ...this.#intistats.map(bondstats));
+                break;
+            default:
+                console.warn(this.name, this.#intistats.length)
+                break;
+        }
 
         const TD_NAME = document.createElement("td");
         TD_NAME.addEventListener("click", () => this.#algofield.show());
