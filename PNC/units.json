@@ -345,7 +345,7 @@
             "ppen": 48,
             "open": 47
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity", "HARAM"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
     },
     {
         "name": "Panakeia",
@@ -606,7 +606,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity", "HARAM"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
     },
     {
         "name": "Imhotep",
@@ -897,7 +897,7 @@
             "ppen": 44,
             "open": 44
         },
-        "intimacy": ["Code Robustness", "Shield of Friendship", "Through Fire and Water", "HARAM"]
+        "intimacy": ["Code Robustness", "Shield of Friendship", "Through Fire and Water"]
     },
     {
         "name": "Gin",
@@ -1013,7 +1013,7 @@
             "ppen": 96,
             "open": 83
         },
-        "intimacy": ["Power Connection", "Mechanical Celerity", "Coordinated Formation", "HARAM"]
+        "intimacy": ["Power Connection", "Mechanical Celerity", "Coordinated Formation"]
     },
     {
         "name": "Nanaka",
@@ -1071,7 +1071,7 @@
             "ppen": 79,
             "open": 68
         },
-        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity", "HARAM"]
+        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"]
     },
     {
         "name": "Florence",
@@ -1768,6 +1768,64 @@
             "open": -1
         },
         "intimacy": ["Code Robustness", "Coordinated Formation", "Coordinated Strike", "HARAM"]
+    },
+    {
+        "name": "Horizon",
+        "class": "Specialist",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy", "Perilous Advancement"],
+        "base": {
+            "hp": 19001,
+            "atk": 643,
+            "hash": 479,
+            "pdef": 610,
+            "odef": 610,
+            "aspd": 120,
+            "crate": 5,
+            "ppen": 402,
+            "open": 288,
+            "dodge": 0,
+            "regen": 610
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": []
+    },
+    {
+        "name": "Lind",
+        "class": "Warrior",
+        "reference": {"AA-12": "https://iopwiki.com/wiki/AA-12"},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
+        "base": {
+            "hp": 19331,
+            "atk": 630,
+            "hash": 525,
+            "pdef": 479,
+            "odef": 479,
+            "aspd": 120,
+            "crate": 5,
+            "ppen": 398,
+            "open": 315,
+            "dodge": 5,
+            "regen": 610
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": []
     },
 
     {
