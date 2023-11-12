@@ -284,11 +284,7 @@ class Units {
 
         this.#intistats = stat_object.intimacy;
         switch (this.#intistats.length) {
-            case 0:
-                console.warn(this.name, "lacks data: Intimacy");
-                break;
             case 3:
-                console.log(this.name, ...this.#intistats.map(bondstats));
                 break;
             case 4:
                 console.log("Get your own", this.name, "NOW!");

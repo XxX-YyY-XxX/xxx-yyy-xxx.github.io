@@ -84,7 +84,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity", "HARAM"]
     },
     {
         "name": "Simo",
@@ -113,7 +113,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Power Connection", "Risk Evasion Aid", "Coordinated Strike", "HARAM"]
     },
     {
         "name": "Croque",
@@ -171,7 +171,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Power Connection", "Neural Activation", "Coordinated Formation", "HARAM"]
     },
     {
         "name": "Chelsea",
@@ -345,7 +345,7 @@
             "ppen": 48,
             "open": 47
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity", "HARAM"]
     },
     {
         "name": "Panakeia",
@@ -432,7 +432,7 @@
             "ppen": 96,
             "open": 94
         },
-        "intimacy": []
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity", "HARAM"]
     },
     {
         "name": "Yanny",
@@ -490,7 +490,7 @@
             "ppen": 48,
             "open": 50
         },
-        "intimacy": []
+        "intimacy": ["Neural Activation", "Code Robustness", "Risk Evasion Aid", "HARAM"]
     },
     {
         "name": "Bonee",
@@ -606,7 +606,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity", "HARAM"]
     },
     {
         "name": "Imhotep",
@@ -897,7 +897,7 @@
             "ppen": 44,
             "open": 44
         },
-        "intimacy": ["Code Robustness", "Shield of Friendship", "Through Fire and Water"]
+        "intimacy": ["Code Robustness", "Shield of Friendship", "Through Fire and Water", "HARAM"]
     },
     {
         "name": "Gin",
@@ -926,7 +926,7 @@
             "ppen": 48,
             "open": 49
         },
-        "intimacy": []
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity", "HARAM"]
     },
     {
         "name": "Centaureissi",
@@ -955,7 +955,7 @@
             "ppen": 66,
             "open": 68
         },
-        "intimacy": []
+        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity", "HARAM"]
     },
     {
         "name": "Vee",
@@ -1013,7 +1013,7 @@
             "ppen": 96,
             "open": 83
         },
-        "intimacy": ["Power Connection", "Mechanical Celerity", "Coordinated Formation"]
+        "intimacy": ["Power Connection", "Mechanical Celerity", "Coordinated Formation", "HARAM"]
     },
     {
         "name": "Nanaka",
@@ -1042,7 +1042,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity", "HARAM"]
     },
     {
         "name": "Banxsy",
@@ -1071,7 +1071,7 @@
             "ppen": 79,
             "open": 68
         },
-        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity", "HARAM"]
     },
     {
         "name": "Florence",
@@ -1100,7 +1100,7 @@
             "ppen": 30,
             "open": 29
         },
-        "intimacy": []
+        "intimacy": ["Neural Activation", "Code Robustness", "Healing Bond", "HARAM"]
     },
     {
         "name": "Willow",
@@ -1158,7 +1158,7 @@
             "ppen": 89,
             "open": 82
         },
-        "intimacy": []
+        "intimacy": ["Power Connection", "Code Robustness", "Coordinated Strike", "HARAM"]
     },
     {
         "name": "Kuro",
@@ -1303,7 +1303,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Code Robustness", "Mechanical Celerity", "Through Fire and Water", "HARAM"]
     },
     {
         "name": "Nascita",
@@ -1361,7 +1361,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity", "HARAM"]
     },
     {
         "name": "Helix",
@@ -1419,7 +1419,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Power Connection", "Code Robustness", "Shield of Friendship", "HARAM"]
     },
     {
         "name": "Sockdolager",
@@ -1477,7 +1477,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Neural Activation", "Code Robustness", "Coordinated Formation", "HARAM"]
     },
     {
         "name": "Clukay",
@@ -1535,7 +1535,7 @@
             "ppen": 31,
             "open": 30
         },
-        "intimacy": []
+        "intimacy": ["Code Robustness", "Shield of Friendship", "Through Fire and Water", "HARAM"]
     },
     {
         "name": "Nora",
@@ -1564,7 +1564,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Power Connection", "Risk Evasion Aid", "Mechanical Celerity", "HARAM"]
     },
     {
         "name": "Uranus",
@@ -1651,7 +1651,7 @@
             "ppen": 32,
             "open": 38
         },
-        "intimacy": []
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity", "HARAM"]
     },
     {
         "name": "Zangyin",
@@ -1680,7 +1680,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Neural Activation", "Code Robustness", "Coordinated Strike", "HARAM"]
     },
     {
         "name": "Jiangyu",
@@ -1738,7 +1738,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Neural Activation", "Risk Evasion Aid", "Through Fire and Water", "HARAM"]
     },
     {
         "name": "Yelena",
@@ -1767,7 +1767,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Code Robustness", "Coordinated Formation", "Coordinated Strike", "HARAM"]
     },
 
     {
