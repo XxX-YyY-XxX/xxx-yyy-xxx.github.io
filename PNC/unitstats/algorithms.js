@@ -91,7 +91,7 @@ function combine(object1, object2) {
 
 /** @param {string} algoname @returns {string} */
 function algoPath(algoname) {
-    return `../assets/images/algorithms/${algoname}.png`;
+    return `../assets/images/algorithms/sets/${algoname}.png`;
 }
 //#endregion
 
@@ -444,22 +444,27 @@ const GRIDS = {
     /** @type {HTMLDivElement} */ Special: document.querySelector("#algo-modal #Special")
 }
 const SET2_EFFECTS = {
-    ATTACK: [["atkperc", 15]],
-    HASHRATE: [["hashperc", 15]],
-    ATKSPD: [["aspdflat", 30]],
-    DEBUFFRES: [["resflat", 50]],
-    DMGBOOST: [["dboostperc", 5]],
-    LIFESTEAL: "Lifesteal",
-    HEALTHPERC: [["hpperc", 15]],
-    PHYSDEF: [["pdefperc", 15]],
-    BACKLASH: [["lashperc", 5]],
-    DMGREDUCE: [["dreducperc", 5]],
-    HPREGEN: "HP Regen",
-    CRITRATE: [["crateperc", 10]],
-    CRITDMG: [["cdmgperc", 20]],
-    DODGE: [["dodgeperc", 8]],
-    SKILLHASTE: [["hasteperc", 10]],
-    HEALBOOST: [["hboostperc", 7.5]]
+    /** @type {[StatAttributes, number][]} */ ATTACK: [["atkperc", 15]],
+    /** @type {[StatAttributes, number][]} */ HASHRATE: [["hashperc", 15]],
+    /** @type {[StatAttributes, number][]} */ ATKSPD: [["aspdflat", 30]],
+    /** @type {[StatAttributes, number][]} */ DEBUFFRES: [["resflat", 50]],
+    /** @type {[StatAttributes, number][]} */ DMGBOOST: [["dboostperc", 5]],
+    /** @type {[StatAttributes, number][]} */ LIFESTEAL: "Lifesteal",
+    /** @type {[StatAttributes, number][]} */ HEALTHPERC: [["hpperc", 15]],
+    /** @type {[StatAttributes, number][]} */ HEALTHFLAT: [["hpflat", 2500]],
+    /** @type {[StatAttributes, number][]} */ PHYSDEF: [["pdefperc", 15]],
+    /** @type {[StatAttributes, number][]} */ OPDEF: [["odefperc", 15]],
+    /** @type {[StatAttributes, number][]} */ BACKLASH: [["lashperc", 5]],
+    /** @type {[StatAttributes, number][]} */ DMGREDUCE: [["dreducperc", 5]],
+    /** @type {[StatAttributes, number][]} */ HPREGEN: "HP Regen",
+    /** @type {[StatAttributes, number][]} */ CRITRATE: [["crateperc", 10]],
+    /** @type {[StatAttributes, number][]} */ CRITDMG: [["cdmgperc", 20]],
+    /** @type {[StatAttributes, number][]} */ DODGE: [["dodgeperc", 8]],
+    /** @type {[StatAttributes, number][]} */ SKILLHASTE: [["hasteperc", 10]],
+    /** @type {[StatAttributes, number][]} */ HEALBOOST: [["hboostperc", 7.5]],
+    /** @type {[StatAttributes, number][]} */ PENFLAT: [["ppenflat", 80], ["openflat", 80]],
+    /** @type {[StatAttributes, number][]} */ PENPERC: [["ppenperc", 20], ["openperc", 20]],
+    /** @type {[StatAttributes, number][]} */ DEFPERC: [["pdefperc", 10], ["odefperc", 10]],
 }
 const ALGO_SETS = {
     Offense: {
@@ -469,14 +474,23 @@ const ALGO_SETS = {
         Stack:          class Stack extends Offense {static SET2 = SET2_EFFECTS.HASHRATE},
         Deduction:      class Deduction extends Offense {static SET2 = SET2_EFFECTS.ATKSPD},
         DataRepair:     class DataRepair extends Offense {static SET2 = SET2_EFFECTS.DEBUFFRES},
+        Surplus:        class Surplus extends Offense {static SET2 = SET2_EFFECTS.DMGBOOST},
         MLRMatrix:      class MLRMatrix extends Offense {static SET2 = SET2_EFFECTS.DMGBOOST},
         LimitValue:     class LimitValue extends Offense {static SET2 = SET2_EFFECTS.DMGBOOST},
-        LowerLimit:     class LowerLimit extends Offense {static SET2 = SET2_EFFECTS.LIFESTEAL}
+        Hyperpulse:     class Hyperpulse extends Offense {static SET2 = SET2_EFFECTS.DMGBOOST},
+        LowerLimit:     class LowerLimit extends Offense {static SET2 = SET2_EFFECTS.LIFESTEAL},
+        Puncture:       class Puncture extends Offense {static SET2 = SET2_EFFECTS.PENFLAT},
+        Permeate:       class Permeate extends Offense {static SET2 = SET2_EFFECTS.PENPERC},
+        Polybore:       class Polybore extends Offense {static SET2 = SET2_EFFECTS.PENPERC}
     },
     Stability: {
         StabilityBlock: StabilityBlock,
         Perception:     class Perception extends Stability {static SET2 = SET2_EFFECTS.HEALTHPERC},
+        Acclimate:      class Acclimate extends Stability {static SET2 = SET2_EFFECTS.HEALTHPERC},
         Rationality:    class Rationality extends Stability {static SET2 = SET2_EFFECTS.PHYSDEF},
+        Lattice:        class Lattice extends Stability {static SET2 = SET2_EFFECTS.OPDEF},
+        Twinform:       class Twinform extends Stability {static SET2 = SET2_EFFECTS.DEFPERC},
+        Buildup:        class Buildup extends Stability {static SET2 = SET2_EFFECTS.DEFPERC},
         Connection:     class Connection extends Stability {static SET2 = SET2_EFFECTS.DEBUFFRES},
         Iteration:      class Iteration extends Stability {static SET2 = SET2_EFFECTS.BACKLASH},
         Reflection:     class Reflection extends Stability {static SET2 = SET2_EFFECTS.BACKLASH},
@@ -486,15 +500,21 @@ const ALGO_SETS = {
     },
     Special: {
         SpecialBlock:   SpecialBlock,
+        Rapidity:       class Rapidity extends Special {static SET2 = SET2_EFFECTS.ATKSPD},
         Paradigm:       class Paradigm extends Special {static SET2 = SET2_EFFECTS.ATKSPD},
         Cluster:        class Cluster extends Special {static SET2 = SET2_EFFECTS.CRITRATE},
         Convolution:    class Convolution extends Special {static SET2 = SET2_EFFECTS.CRITDMG},
         Stratagem:      class Stratagem extends Special {static SET2 = SET2_EFFECTS.DODGE},
+        FastLoad:       class FastLoad extends Special {static SET2 = SET2_EFFECTS.SKILLHASTE},
         DeltaV:         class DeltaV extends Special {static SET2 = SET2_EFFECTS.SKILLHASTE},
         Exploit:        class Exploit extends Special {static SET2 = SET2_EFFECTS.SKILLHASTE},
+        Delivery:       class Delivery extends Special {static SET2 = SET2_EFFECTS.SKILLHASTE},
+        Flush:          class Flush extends Special {static SET2 = SET2_EFFECTS.SKILLHASTE},
+        Increment:      class Increment extends Special {static SET2 = SET2_EFFECTS.HEALBOOST},
         LoopGain:       class LoopGain extends Special {static SET2 = SET2_EFFECTS.HEALBOOST},
         SVM:            class SVM extends Special {static SET2 = SET2_EFFECTS.HEALBOOST},
-        Inspiration:    class Inspiration extends Special {static SET2 = SET2_EFFECTS.HPREGEN}
+        Inspiration:    class Inspiration extends Special {static SET2 = SET2_EFFECTS.HPREGEN},
+        Threshold:      class Threshold extends Special {static SET2 = SET2_EFFECTS.HEALTHFLAT}
     }
 };
 /** @param {typeof Algorithm} algoClass */

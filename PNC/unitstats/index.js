@@ -46,6 +46,7 @@ import {STATS} from "./typing.js";
 /** @type {HTMLInputElement} */ const SPEC_BUTTON = document.querySelector(`#bonus [value="Spec"]`);
 /** @type {HTMLInputElement} */ const POTB_BUTTON = document.querySelector(`#bonus [value="PotB"]`);
 /** @type {HTMLInputElement} */ const ALGO_BUTTON = document.querySelector(`#bonus [value="Algo"]`);
+/** @type {HTMLInputElement} */ const OATH_BUTTON = document.querySelector(`#bonus [value="Oath"]`);
 
 const CLASS_BUTTONS = {
     /** @type {HTMLInputElement} */ Guard: document.querySelector('#classes [value="Guard"]'),
@@ -89,6 +90,7 @@ class Units {
         if (BOND_BUTTON.checked && this.#intistats.includes("Code Robustness")) output += 1320;
         if (SPEC_BUTTON.checked && ["Guard", "Warrior", "Specialist"].includes(this.class)) output += this.#hp * 0.21 + 1200;
         if (ALGO_BUTTON.checked) output += this.#algofield.hp;
+        if (OATH_BUTTON.checked) output += this.#hp * 0.08;
         return Math.trunc(output);
     }
 
@@ -288,6 +290,9 @@ class Units {
             case 3:
                 console.log(this.name, ...this.#intistats.map(bondstats));
                 break;
+            case 4:
+                console.log("Get your own", this.name, "NOW!");
+                break;
             default:
                 console.warn(this.name, this.#intistats.length)
                 break;
@@ -373,12 +378,12 @@ class Units {
             TD_HBOOST
         )
 
-        for (const BUTTON of [ARMA_BUTTON, POTB_BUTTON, ALGO_BUTTON, SPEC_BUTTON, BOND_BUTTON]) BUTTON.addEventListener("change", this.updateStat);
+        for (const BUTTON of [ARMA_BUTTON, POTB_BUTTON, ALGO_BUTTON, SPEC_BUTTON, BOND_BUTTON, OATH_BUTTON]) BUTTON.addEventListener("change", this.updateStat);
 
-        const UNIT_ROW = this.row;
-        CLASS_BUTTONS[this.class].addEventListener("change", function(event) {
-            UNIT_ROW.classList.toggle("hidden", !this.checked);
-        });
+        // const UNIT_ROW = this.row;
+        // CLASS_BUTTONS[this.class].addEventListener("change", function(event) {
+        //     UNIT_ROW.classList.toggle("hidden", !this.checked);
+        // });
 
         //#privatefield cannot be called dynamically, use exec/eval instead
     }
@@ -386,11 +391,11 @@ class Units {
 //#endregion
 
 //#region Function Declarations
-// function updateTable() {
-//     const SHOWN_CLASS = Object.values(CLASS_BUTTONS).filter(x => x.checked).map(x => x.value);
-//     TBODY.replaceChildren(...UNIT_LIST.filter(x => SHOWN_CLASS.includes(x.class)).map(x => x.row));
-// }
-// for (const INPUT of Object.values(CLASS_BUTTONS)) INPUT.addEventListener("change", updateTable);
+function updateTable() {
+    const SHOWN_CLASS = Object.values(CLASS_BUTTONS).filter(x => x.checked).map(x => x.value);
+    TBODY.replaceChildren(...UNIT_LIST.filter(x => SHOWN_CLASS.includes(x.class)).map(x => x.row));
+}
+for (const INPUT of Object.values(CLASS_BUTTONS)) INPUT.addEventListener("change", updateTable);
 
 /** @this {HTMLTableCellElement} @param {MouseEvent} event */
 function sortMethod(event) {
@@ -406,8 +411,8 @@ function sortMethod(event) {
             UNIT_LIST.sort(cmp({key: x => x[DATA.key], reverse: DATA.type === "string"}));
             break;
     }
-    // updateTable();
-    TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));
+    updateTable();
+    // TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));
 
 }
 //#endregion
@@ -417,8 +422,8 @@ const UNIT_LIST = (await UNIT_PROMISE).slice(0, -1).map(x => new Units(x));
 const [THEAD, HEADER_TR] = nestElements("thead", "tr");
 
 const TBODY = document.createElement("tbody");
-// updateTable()
-TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));
+updateTable()
+// TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));
 
 const TABLE = document.createElement("table");
 TABLE.classList.add("freeze-col", "freeze-row");
