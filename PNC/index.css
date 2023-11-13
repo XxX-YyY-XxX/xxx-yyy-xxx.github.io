@@ -19,10 +19,17 @@
 .func_timer > span {
     position: absolute;
     left: 0;
-    bottom: 0;
     width: 100%;
     white-space: nowrap;
     font-size: min(8cqw, 50px);
     -webkit-text-stroke: 1px white;
     color: black;
+}
+
+.func_timer > span:first-of-type {
+    top: 0;
+}
+
+.func_timer > span:last-of-type {
+    bottom: 0;
 }
