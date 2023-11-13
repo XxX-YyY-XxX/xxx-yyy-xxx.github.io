@@ -1,14 +1,8 @@
-import {spoilerSummary, image, table, link, tooltip, getID} from '../univasset/scripts/htmlfunctions/htmlfunctions.js';
-import TextStyle from '../univasset/scripts/htmlfunctions/textstyle.js';
-import Embed from '../univasset/scripts/htmlfunctions/linkembed.js';
-import List from '../univasset/scripts/htmlfunctions/lists.js'
-
-//#region Special Characters
-const lessEqual = '≤';
-const star = '★';
-const tm = '™️';
-//🍰
-//#endregion
+import {spoilerSummary, image, table, link, tooltip, getID} from '../../univasset/scripts/htmlfunctions/htmlfunctions.js';
+import TextStyle from '../../univasset/scripts/htmlfunctions/textstyle.js';
+import Embed from '../../univasset/scripts/htmlfunctions/linkembed.js';
+import List from '../../univasset/scripts/htmlfunctions/lists.js';
+import {LESSEQUAL, STAR, TM} from "../../univasset/scripts/specialchars.js";
 
 export const dTag = {
     //#region Combat Tabs
@@ -30,7 +24,7 @@ export const dTag = {
         EQUIP : {name: 'Equipments', description: 'Gun attachments, FST chips, PA chips.'},
             SPEQ : {name: 'SpecialEquipments', description: 'Equipments specific to a doll.'},
         ITEM : {name: 'ConsumableItems', description: 'Tickets, cores, shop items...'},
-            TCM : {name: 'TrueCoreMask', description: `Used to redeem 5${star} prod dolls.`},
+            TCM : {name: 'TrueCoreMask', description: `Used to redeem 5${STAR} prod dolls.`},
             GEMS : {name: 'Gems', description: 'Kalina demands you spend these on her.'},
             BATTERY : {name: 'Battery', description: 'Currency for upgrading facilities.'},
             CORE : {name: 'DummyCore', description: 'Used for dummy-linking, neural upgrades, and fairy/SG crafts.'},
@@ -413,10 +407,10 @@ export const cardData = [
                         ['11', 'Mk46',      'N/A'],
                         ['12', 'MAT-49',    'N/A'],
                         ['13', 'Defender',  'N/A'])),
-                link(`Farmable dolls in campaign maps, both 3${star} monthly reward dolls and 4-5${star} dolls that debuted on their corresponding event.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
-                `During collabs, major events, side events, and ${spoilerSummary('Rescue Events', `Also known as Boss Bully, where you get to farm for 4-5${star} event reward dolls in the story chapters 1-6.`)}, event rewards become temporarily available for farming.`,
+                link(`Farmable dolls in campaign maps, both 3${STAR} monthly reward dolls and 4-5${STAR} dolls that debuted on their corresponding event.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
+                `During collabs, major events, side events, and ${spoilerSummary('Rescue Events', `Also known as Boss Bully, where you get to farm for 4-5${STAR} event reward dolls in the story chapters 1-6.`)}, event rewards become temporarily available for farming.`,
                 'Obtainable from random nodes, however unlikely.',
-                `For 5${star} units that can also be crafted, their drop rates are less than 1%.`,
+                `For 5${STAR} units that can also be crafted, their drop rates are less than 1%.`,
                 "Whatever doll you recieved, whether you win, lose, or quit the stage, you keep it.",
                 getID("Farming maps and routing.", "00123")
             ],
@@ -426,7 +420,7 @@ export const cardData = [
             ],
             'Shop': [
                 'Applicable to collab dolls using event currency.',
-                `5${star} dolls available in Factory Production are the only ones elegible for True Core Masks, bar spaghetti.`
+                `5${STAR} dolls available in Factory Production are the only ones elegible for True Core Masks, bar spaghetti.`
             ],
             'Achievements': [
                 "Type 97s and the AR Team, which are the only ones that can't be bought.",
@@ -498,7 +492,7 @@ export const cardData = [
     {
         id : '00027',
         questions : `When should I begin trying to produce fairies/do Heavy Equipment Constructions (HEC)?`,
-        answers : `When you have sufficient income for 4 resources and cores. Ideally ASAP since raising one to 5${star} takes a considerable amount of time.`,
+        answers : `When you have sufficient income for 4 resources and cores. Ideally ASAP since raising one to 5${STAR} takes a considerable amount of time.`,
         tags : [dTag.FAIRY, dTag.PROD, dTag.IMPT]
     },
     {
@@ -546,7 +540,7 @@ export const cardData = [
     {
         id : '00031',
         questions : `Is fairy leveling for increasing rarity only?`,
-        answers : `Mainly yes, but there is a gradual aura boost where a Lv.20 is better than Lv.1 even at 1${star}. And increasing rarity is very important, from increasing the aura stat cap, to making the talent proc more consistently. Not to mention that you can cap them to Lv.100 even as a 1${star} so there's no hurry to raise their rarity.`,
+        answers : `Mainly yes, but there is a gradual aura boost where a Lv.20 is better than Lv.1 even at 1${STAR}. And increasing rarity is very important, from increasing the aura stat cap, to making the talent proc more consistently. Not to mention that you can cap them to Lv.100 even as a 1${STAR} so there's no hurry to raise their rarity.`,
         tags : [dTag.FAIRY, dTag.LEVEL, dTag.IMPT]
     },
     {
@@ -556,7 +550,7 @@ export const cardData = [
         ${List.description({
             'Anchored Construction' : [
                 link(`Available for new players ${TextStyle.style('and for veterans not bothering with it', TextStyle.STRIKE)}.`, 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681'),
-                link('Available on Saturdays and Sundays whenever a new batch of production dolls are released.', 'https://redd.it/szdua2') + ` Recommended anchors are 4${star} due to TCM existing, especially for shotguns.`, 
+                link('Available on Saturdays and Sundays whenever a new batch of production dolls are released.', 'https://redd.it/szdua2') + ` Recommended anchors are 4${STAR} due to TCM existing, especially for shotguns.`, 
                 "Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate up."
             ],
             'Targeted Rate Up' : [
@@ -580,7 +574,7 @@ export const cardData = [
         questions : `How do I strengthen FSTs?`,
         answers : `${List.unordered(
             'Leveling up mostly by SCR',
-            `Raising ${star}s using their central data or general data`,
+            `Raising ${STAR}s using their central data or general data`,
             'Iterations by data patches (only available at LV100 and 5★)',
             'Enhancements using pills',
             'Skill levels',
@@ -762,21 +756,21 @@ export const cardData = [
     {
         id : '00059',
         questions : `What's the Fire Control Component (FCC) used for and where can I get them?`,
-        answers : `Upgrading 5${star} dolls to 6${star} through modding.<br>
+        answers : `Upgrading 5${STAR} dolls to 6${STAR} through modding.<br>
         Obtainable through Black Market (2 monthly), major events/campaigns, special log-ins, shop packages, battlepass`,
         tags : [dTag.ITEM, dTag.MOD, dTag.GET, dTag.BM, dTag.MAJOR, dTag.CAMPAIGN, dTag.BP]
     },
     {
         id : '00061',
         questions : `What is Central Data for?`,
-        answers : `Unlocking their respective FST, promoting said FST, and converted to Data Patch if the FST is already 5${star}.<br>
+        answers : `Unlocking their respective FST, promoting said FST, and converted to Data Patch if the FST is already 5${STAR}.<br>
         Obtainable in Theater and Intelligence Analysis.`,
         tags : [dTag.ITEM, dTag.HOC, dTag.FST, dTag.GET]
     },
     {
         id : '00062',
         questions : `When should I do T-Doll Heavy Production/craft shotguns?`,
-        answers : `Preferably during rate ups due to its high costs. Low priority otherwise since it's use at this stage of the game is for getting non-5${star} SGs and them not being widely used. Recommended to use the high-cost shotgun recipe for better chances.`,
+        answers : `Preferably during rate ups due to its high costs. Low priority otherwise since it's use at this stage of the game is for getting non-5${STAR} SGs and them not being widely used. Recommended to use the high-cost shotgun recipe for better chances.`,
         tags : [dTag.TDOLL, dTag.PROD]
     },
     {
@@ -828,7 +822,7 @@ export const cardData = [
     {
         id : '00069',
         questions : `What's the drop rate for farmable dolls?`,
-        answers : `Limited dolls on Combat Missions aproximately have 0.8% drop rate on normal and 1% on emergency, with 5${star} seemingly have rates way below 1%. Their droprates Chapter 10 onwards are reported to have higher rates. If you do plan to farm a 5${star} doll, just do Productions. You'll get more chances there.<br>
+        answers : `Limited dolls on Combat Missions aproximately have 0.8% drop rate on normal and 1% on emergency, with 5${STAR} seemingly have rates way below 1%. Their droprates Chapter 10 onwards are reported to have higher rates. If you do plan to farm a 5${STAR} doll, just do Productions. You'll get more chances there.<br>
         Event farms have around 1%, which also carries over to their respective campaign missions.<br>
         As for SPEQs, probably 1% too.`,
         tags : [dTag.TDOLL, dTag.MAIN, dTag.SPEQ, dTag.MAJOR, dTag.CAMPAIGN, dTag.SEASON, dTag.COLLAB]
@@ -900,7 +894,7 @@ export const cardData = [
     },
     {
         id : '00078',
-        questions : `How are people just rolling in 5${star} fairies?`,
+        questions : `How are people just rolling in 5${STAR} fairies?`,
         answers : `<p>${TextStyle.style('Even dust, when piled up, can become a mountain.', TextStyle.ITALIC)}</p>
         Good logistics upkeep and rolling Fairy Construction everyday. Just think of crafting them a side thing that doesn't take a lot of attention.`,
         tags : [dTag.FAIRY, dTag.PROD]
@@ -929,10 +923,10 @@ export const cardData = [
         questions : `What's the gacha rate for costumes?`,
         answers : `${table(['Item',                                                             'Rate'],
         [link('Costumes', 'https://big-stupid-jellyfish.github.io/GFMath/pages/gacha-rates'),   '02.00%'],
-        [`5${star} furniture`,                                                                  '08.00%'],
-        [`4${star} furniture`,                                                                  '34.20%'],
-        [`4${star} gifts/cakes`,                                                                '01.80%'],
-        [`3${star} furniture`,                                                                  '54.00%'])}`,
+        [`5${STAR} furniture`,                                                                  '08.00%'],
+        [`4${STAR} furniture`,                                                                  '34.20%'],
+        [`4${STAR} gifts/cakes`,                                                                '01.80%'],
+        [`3${STAR} furniture`,                                                                  '54.00%'])}`,
         tags : [dTag.RESUPPLY, dTag.TDOLL, dTag.SKIN, dTag.FURN]
     },
     {
@@ -991,7 +985,7 @@ export const cardData = [
         id : '00091',
         questions : `For T-Doll Heavy Construction, how much worth is Tier 1 to Tier 2 or 3?`,
         answers : `Individual SG rate as of Feb 28-Mar 8, 2022 (Normal)<br>
-        ${table(['Tiers', `3${star}`, `4${star}`, `5${star}`],
+        ${table(['Tiers', `3${STAR}`, `4${STAR}`, `5${STAR}`],
         ['Tier 1', '2.5-2.7%', '1.6/2.5-3.3%', '0.5/1-1.5%'],
         ['Tier 2', '1.2-1.5%', '1.9/2.7-4%', '0.8/1-2%'],
         ['Tier 3', '0%', '3-5.5%', '1-1.9%'],
@@ -1123,7 +1117,7 @@ export const cardData = [
     {
         id : '00104',
         questions : `How do I get Platinum and Nova Medals?`,
-        answers : `From whatever Major/Seasonal/Collab Event running right now. Platinum are for 5${star} dolls and Nova are for dolls 4${star} and below.`,
+        answers : `From whatever Major/Seasonal/Collab Event running right now. Platinum are for 5${STAR} dolls and Nova are for dolls 4${STAR} and below.`,
         tags : [dTag.ITEM, dTag.TDOLL, dTag.MAJOR, dTag.SEASON, dTag.COLLAB, dTag.GET]
     },
     {
@@ -1345,7 +1339,7 @@ export const cardData = [
     },
     {
         id : '00132',
-        questions : `Read a guide that said to use a team of 2${star} & 3${star} dolls until I get enough cores to spend. Is it still worth doing it now?`,
+        questions : `Read a guide that said to use a team of 2${STAR} & 3${STAR} dolls until I get enough cores to spend. Is it still worth doing it now?`,
         answers : `With the advent of Expeditions and Newbie Career Quests, you get enough dummy cores right off the bat. Don't overspend still.`,
         tags : [dTag.ITEM, dTag.CORE]
     },
@@ -1353,8 +1347,8 @@ export const cardData = [
         id : '00133',
         questions : `What's the rate up increment for Anchored Construction?`,
         answers : `${table(['Target', 'Estimated Increment'],
-        ['4' + star,  '0.396%'],
-        ['5' + star,  '0.083%'],
+        ['4' + STAR,  '0.396%'],
+        ['5' + STAR,  '0.083%'],
         ['Starter',   '0.19%'])}
         ${link('Base rate shown per doll is more or less their true rates.','https://www.reddit.com/r/girlsfrontline/comments/s6s9xj/weekly_commanders_lounge_january_18_2022/htmbjuc/')}`,
         tags : [dTag.PROD]
@@ -1479,7 +1473,7 @@ export const cardData = [
         questions : `How do general rate ups work?`,
         answers : `There are 2 sets of rate ups per general rate up.<br>
         First is the HOC rate up, where every 2 days is a specific FST's day for rate up. Note that only that FST's rate is increased within the Central Data pool. The core data rate remains the same.<br>
-        Second is the tried amd tested Production rate up. Goes from Normal Doll, Normal Equip, Heavy Doll, Heavy Equip. Pulling chance for all 4${star} and 5${star} are increased. IOP equipment crafts are also affected.`,
+        Second is the tried amd tested Production rate up. Goes from Normal Doll, Normal Equip, Heavy Doll, Heavy Equip. Pulling chance for all 4${STAR} and 5${STAR} are increased. IOP equipment crafts are also affected.`,
         tags : [dTag.PROD, dTag.HOC, dTag.FST, dTag.TDOLL, dTag.EQUIP]
     },  //@Check for errors
     {
@@ -1497,7 +1491,7 @@ export const cardData = [
     {
         id : '00153',
         questions : `How many Quick Autobattle Tickets does it cost per stage?`,
-        answers : `${lessEqual} 1 hour: 1 ticket per run.<br>
+        answers : `${LESSEQUAL} 1 hour: 1 ticket per run.<br>
         1-2 hours: 2 tickets per run.<br>
         2+ hours: 3 tickets per run.`,
         tags : [dTag.AUTO, dTag.ITEM]
@@ -1581,13 +1575,13 @@ export const cardData = [
         answers : `AR: Any.<br>
         SMG: Direct-fire SMGs are hard to sell because of low base ACC and night ACC penalty, so molotovs or grenades.<br>
         HG: Used for expanding vision 1 node away. Stacks with Illumination Fairy.<br>
-        PEQ: Mainly used by ARs since SMGs are mostly either tank or AoE. 4${star} is a good stopgap.`,
+        PEQ: Mainly used by ARs since SMGs are mostly either tank or AoE. 4${STAR} is a good stopgap.`,
         tags : [dTag.ECH, dTag.TDOLL]
     },
     {
         id : '00165',
         questions : `Which T-Doll would be better to anchor for the rate up?`,
-        answers : `On one hand, 4${star} can't be TCM'd. On the other hand, 5${star} have low construction rates. And it also depends on the skills of said dolls.`,
+        answers : `On one hand, 4${STAR} can't be TCM'd. On the other hand, 5${STAR} have low construction rates. And it also depends on the skills of said dolls.`,
         tags : [dTag.PROD, dTag.TDOLL, dTag.TCM]
     },
     {
@@ -1674,7 +1668,7 @@ export const cardData = [
     {
         id : '00175',
         questions : `What are these General Data I keep getting?`,
-        answers : `Used for FSTs that are not yet 5${star}.<br>
+        answers : `Used for FSTs that are not yet 5${STAR}.<br>
         ${TextStyle.style('Limitations:', TextStyle.BOLD)}<br>
         ${List.unordered(
             'Only usable to FSTs in the gacha pool (added after a Theater for a new FST is ran).',
@@ -1822,7 +1816,7 @@ export const cardData = [
     {
         id : '00197',
         questions : `Will the TCM icons become available in the Friend Shop?`,
-        answers : `Yes, otherwise SOON${tm}.`,
+        answers : `Yes, otherwise SOON${TM}.`,
         tags : [dTag.TCM]
     },
     {
@@ -1983,7 +1977,7 @@ export const cardData = [
     {
         id : '00218',
         questions : `Is Radiant Collection worth it?`,
-        answers : `Not in the slightest. For early game furnishing, the Black Market is better since you can get a 5${star} bonus.<br>
+        answers : `Not in the slightest. For early game furnishing, the Black Market is better since you can get a 5${STAR} bonus.<br>
         Rates being 2% divided by the number of costumes in the radiant is the chance of pulling a specific skin. Aside from the fact that no exchange tickets and no L2D.<br>`,
         tags : [dTag.RESUPPLY, dTag.FURN, dTag.EXPED, dTag.TDOLL, dTag.SKIN]
     },
@@ -2164,8 +2158,8 @@ export const cardData = [
     {
         id : '00245',
         questions : `What are Data Patches for and how do I get them?`,
-        answers : `Used for iterating FSTs beyond yellow 5${star} (the red ${star}). Can also be used across all FSTs.<br>
-        You can get them by getting a 5${star}'d FST's Central Data or by Code Refactoring in the Garage.`,
+        answers : `Used for iterating FSTs beyond yellow 5${STAR} (the red ${STAR}). Can also be used across all FSTs.<br>
+        You can get them by getting a 5${STAR}'d FST's Central Data or by Code Refactoring in the Garage.`,
         tags : [dTag.HOC, dTag.FST, dTag.LEVEL, dTag.ITEM, dTag.GET]
     },
     {
@@ -2833,7 +2827,7 @@ export const cardData = [
     {
         id : '00346',
         questions : `Where to get kernels?`,
-        answers : `Supernova = 2-3${star}. Dark Star = 1${star}.`,
+        answers : `Supernova = 2-3${STAR}. Dark Star = 1${STAR}.`,
         tags : [dTag.PA, dTag.ITEM]
     },
     {
@@ -3361,7 +3355,7 @@ export const cardData = [
         ${List.description({
             "T-DOLL": [
                 "The final stage of core farming.",
-                `Cores received is equal to each scrapped doll's rarity, all other stats be damned. Collab dolls count as 5${star}.`
+                `Cores received is equal to each scrapped doll's rarity, all other stats be damned. Collab dolls count as 5${STAR}.`
             ],
             "EQUIP": [
                 "Pretty much only useful if Equipment Enhancement is still locked or if there's no equipment to enhance."

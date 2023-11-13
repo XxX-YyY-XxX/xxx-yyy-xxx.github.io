@@ -1,4 +1,4 @@
-@import "../univasset/scripts/externalcss.css";
+@import "/univasset/scripts/externalcss.css";
 
 /* #region General */
 input[type="checkbox"], input[type="radio"] {

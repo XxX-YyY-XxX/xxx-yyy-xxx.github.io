@@ -2,11 +2,12 @@
 <html>
     <head>
         <script type="module" src="/univasset/scripts/include.js"></script>
+        <script type="module" src="./index.js"></script>
 
         <meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/univasset/scripts/externalcss.css">
+        <link rel="stylesheet" href="./index.css">
         
         <!-- Setup theme-color -->
 
@@ -23,19 +24,6 @@
         <title>PNC | Random Scraps</title>
     </head>
 
-    <style>
-        #links {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            text-align: center;
-            place-items: center;
-        }
-
-        #links > * {
-            margin: 5px 0px;
-        }
-    </style>
-
     <body>
         <include src="/univasset/scripts/pageheader/header.html" 0="Anything related to GFL: Neural Cloud"></include>
 
@@ -48,8 +36,11 @@
                     <a href="./unitskills">Unit Skills</a>
                     <a href="./googledocs">Guides</a>
                     <a href="https://neuralen.modoo.at/" class="tooltip">NC Skin info<span class="tooltiptext">Managed by Pineapple</span></a>
-                    <a href="./faqs/changelog">Changelog</a>
+                    <a href="./changelog">Changelog</a>
                 </div>
+
+                <div id="current"></div>
+                <div id="previous"></div>
             </section>
         </div>
     </body>

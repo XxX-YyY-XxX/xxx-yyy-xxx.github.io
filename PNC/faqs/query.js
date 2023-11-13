@@ -2,13 +2,7 @@ import {spoilerSummary, image, table, link, tooltip} from '../../univasset/scrip
 import TextStyle from '../../univasset/scripts/htmlfunctions/textstyle.js';
 import Embed from '../../univasset/scripts/htmlfunctions/linkembed.js';
 import List from '../../univasset/scripts/htmlfunctions/lists.js'
-
-//#region Special Characters
-const lessEqual = '≤';
-const star = '★';
-const tm = '™️';
-//🍰
-//#endregion
+import * as SC from '../../univasset/scripts/specialchars.js';
 
 //#region Functions
 /** @param {string} text @param {...number} ids */

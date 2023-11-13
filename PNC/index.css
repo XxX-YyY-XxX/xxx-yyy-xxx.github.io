@@ -1,0 +1,28 @@
+@import "../univasset/scripts/externalcss.css";
+
+#links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    place-items: center;
+}
+
+#links > * {
+    margin: 5px 0px;
+}
+
+.func_timer {
+    position: relative;
+    margin: 10px 0px;
+}
+
+.func_timer > span {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    font-size: min(8cqw, 50px);
+    -webkit-text-stroke: 1px white;
+    color: black;
+}

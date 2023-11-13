@@ -1,6 +1,6 @@
-import {cmp, setattr} from '../univasset/scripts/basefunctions/index.js';
-import {removeHTMLTag, randInt} from '../univasset/scripts/externaljavascript.js';
-import {radioGroup} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
+import {cmp, setattr} from '../../univasset/scripts/basefunctions/index.js';
+import {removeHTMLTag, randInt} from '../../univasset/scripts/externaljavascript.js';
+import {radioGroup} from '../../univasset/scripts/htmlgenerator/htmlgenerator.js';
 import {dTag, cardData} from "./querycards.js";
 
 //#region Constants

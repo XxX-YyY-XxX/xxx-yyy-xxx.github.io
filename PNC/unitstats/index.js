@@ -57,26 +57,6 @@ const CLASS_BUTTONS = {
 }
 //#endregion
 
-/**
- * 
- * @param {IntimacyStats} bond 
- */
-function bondstats(bond) {
-    switch (bond) {
-        case 'Code Robustness':         return "HP";
-        case 'Power Connection':        return "ATTACK";
-        case 'Neural Activation':       return "HASH";
-        case 'Shield of Friendship':    return "PDEF";
-        case 'Coordinated Strike':      return "CRATE";
-        case 'Victorious Inspiration':  return "CDMG";
-        case 'Risk Evasion Aid':        return "DODGE";
-        case 'Mechanical Celerity':     return "HASTE";
-        case 'Coordinated Formation':   return "DBOOST";
-        case 'Through Fire and Water':  return "DREDUC";
-        case 'Healing Bond':            return "HBOOST";
-    }
-}
-
 //#region Class Declarations
 class Units {
     name;
@@ -284,13 +264,11 @@ class Units {
 
         this.#intistats = stat_object.intimacy;
         switch (this.#intistats.length) {
-            case 3:
+            case 0:
+                console.warn(this.name, "lacks data: Initmacy.");
                 break;
             case 4:
                 console.log("Get your own", this.name, "NOW!");
-                break;
-            default:
-                console.warn(this.name, this.#intistats.length)
                 break;
         }
 

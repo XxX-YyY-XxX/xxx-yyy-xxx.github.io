@@ -221,13 +221,13 @@
             "regen": 546
         },
         "arma": {
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
+            "hp": 3445,
+            "atk": 96,
+            "hash": 125,
+            "pdef": 73,
+            "odef": 74,
+            "ppen": 69,
+            "open": 69
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Risk Evasion Aid"]
     },
@@ -860,13 +860,13 @@
             "regen": 364
         },
         "arma": {
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
+            "hp": 2101,
+            "atk": 108,
+            "hash": 139,
+            "pdef": 35,
+            "odef": 35,
+            "ppen": 90,
+            "open": 232
         },
         "intimacy": ["Power Connection", "Neural Activation", "Coordinated Strike"]
     },
