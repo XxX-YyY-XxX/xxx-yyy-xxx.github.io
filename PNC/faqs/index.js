@@ -8,7 +8,7 @@ const CARDFIELD = document.querySelector("#cards-field");
 
 //#region Tags Field
 const TAGS_FIELD = document.querySelector("#Tags div");
-/** @type {HTMLInputElement} */ const TAGS_TEXT = document.querySelector('#Tags [input="text"]');
+/** @type {HTMLInputElement} */ const TAGS_TEXT = document.querySelector('#Tags [type="text"]');
 /** @type {HTMLInputElement[]} */ const TAG_CHECKBOXES = [];
 for (const {name, description} of Object.values(dTag).sort(cmp({key: x => x.name}))) {
     const INPUT = setattr(document.createElement("input"), {value: name, type: "checkbox"});
