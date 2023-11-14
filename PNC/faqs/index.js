@@ -24,38 +24,38 @@ for (const {name, description} of Object.values(dTag).sort(cmp({key: x => x.name
 }
 //#endregion
 
-/** Creates a radio group. Clicked button only runs when it's unchecked. First button is the default checked.
- * @param {HTMLElement} grouper_elem
- * @param {string} radioname Name of the radio group. Most useful on form submissions.
- * @param {...[string | HTMLElement, string, function(HTMLInputElement): void]} buttondata [textContent, value, onclick function] Each function should have code on select and deselect. */
-function radioGroup(grouper_elem, radioname, ...buttondata) {
-    /** @type {Map<string, function(HTMLInputElement): void>}*/ const radio_functions = new Map();
-    /** @type {HTMLInputElement} */ var current_checked;
-    const fragment = new DocumentFragment();
+// /** Creates a radio group. Clicked button only runs when it's unchecked. First button is the default checked.
+//  * @param {HTMLElement} grouper_elem
+//  * @param {string} radioname Name of the radio group. Most useful on form submissions.
+//  * @param {...[string | HTMLElement, string, function(HTMLInputElement): void]} buttondata [textContent, value, onclick function] Each function should have code on select and deselect. */
+// function radioGroup(grouper_elem, radioname, ...buttondata) {
+//     /** @type {Map<string, function(HTMLInputElement): void>}*/ const radio_functions = new Map();
+//     /** @type {HTMLInputElement} */ var current_checked;
+//     const fragment = new DocumentFragment();
 
-    for (const [index, [text, value, func]] of Object.entries(buttondata)) {
-        radio_functions.set(value, func)
+//     for (const [index, [text, value, func]] of Object.entries(buttondata)) {
+//         radio_functions.set(value, func)
 
-        const input_elem = document.createElement("input");
-        setattr(input_elem, {value: value, type: "radio", name: radioname, checked: !Number(index)});
-        input_elem.addEventListener("click", function() {
-            if (current_checked === this) return;
-            radio_functions.get(current_checked.value)(current_checked);
-            current_checked = this;
-            func(this);
-        });
-        func(input_elem);
+//         const input_elem = document.createElement("input");
+//         setattr(input_elem, {value: value, type: "radio", name: radioname, checked: !Number(index)});
+//         input_elem.addEventListener("click", function() {
+//             if (current_checked === this) return;
+//             radio_functions.get(current_checked.value)(current_checked);
+//             current_checked = this;
+//             func(this);
+//         });
+//         func(input_elem);
 
-        const label_elem = document.createElement("label");
-        label_elem.append(input_elem, text);
-        fragment.appendChild(label_elem);
-    }
+//         const label_elem = document.createElement("label");
+//         label_elem.append(input_elem, text);
+//         fragment.appendChild(label_elem);
+//     }
 
-    current_checked = fragment.firstElementChild.firstElementChild;
+//     current_checked = fragment.firstElementChild.firstElementChild;
 
-    grouper_elem.classList.add('func_radioGroup');
-    grouper_elem.appendChild(fragment);
-}
+//     grouper_elem.classList.add('func_radioGroup');
+//     grouper_elem.appendChild(fragment);
+// }
 
 
 //#region Tag Buttons
