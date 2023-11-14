@@ -1,6 +1,6 @@
 // event timers only too lazy to do others
 
-import { Timer, splitTime } from "../univasset/scripts/externaljavascript";
+import { Timer, splitTime } from "../univasset/scripts/externaljavascript.js";
 
 /** Creates a timer for events.
  * @param {HTMLElement} grouper_elem
