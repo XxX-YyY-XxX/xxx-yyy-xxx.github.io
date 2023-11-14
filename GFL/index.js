@@ -12,8 +12,8 @@ timer(
     "./assets/images/timer/c6rh2we7vhtb1.webp",
     {onEnd: timer.bind(
         null, document.getElementById("battlepass"),
-        "",
-        ""
+        "Dec 24, 2023 23:59 UTC-0800",
+        "pending"
     )}
 );
 
@@ -24,7 +24,7 @@ timer(
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
         "Dec 11, 2023 23:59 UTC-0800",
-        "./assets/images/coalition/04Intruder.webp"
+        "./assets/images/coalition/21ExecutionerBloodFiendHuntress.webp"
     )}
 );
 

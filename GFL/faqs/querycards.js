@@ -85,6 +85,7 @@ export const dTag = {
     OJ : {name: 'LuffberryChess', description: 'PVP sidegame.'},
     CE : {name: 'CombatEffectiveness', description: 'Clutch metric.'},
     KALINA : {name: 'Kalina', description: 'Overworked logistics officer.'},
+    GRAY : {name: 'GrayZoneExploration', description: 'SPEQ reruns and sets, tank and mech parts.'},    
 };
 
 export const cardData = [

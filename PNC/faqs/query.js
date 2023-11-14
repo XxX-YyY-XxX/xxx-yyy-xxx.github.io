@@ -13,6 +13,10 @@ function getID(text, ...ids) {
 export const dTag = {
     ASST: {name: "Assistant", description: "Unit shown in your home screen."},
     ALGO: {name: "Algorithms", description: "Equipments in this game."},
+    TIER: {name: "TierList", description: "Power ratings of doll units."},
+    DOLL: {name: "Dolls", description: "Collectible units of this game."},
+    MISC: {name: "Miscellaneous", description: "Queries with no specific tag as of yet."},
+    PRIME: {name: "TopicPrimer", description: "Write-ups that should answer majority of the questions."},
 };
 
 /**
@@ -38,9 +42,9 @@ export const dTag = {
     },
     {
         id: 2,
-        question: `q3`,
-        answer: `a3`,
-        tags: []
+        question: `How many pulls can I get per month?`,
+        answer: `${image("https://i.imgur.com/WoonBbq.png", "Discord: .rolls")}`,
+        tags: [dTag.MISC]
     },
     {
         id: 0,
