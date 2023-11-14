@@ -1,6 +1,7 @@
 // event timers only too lazy to do others
 
 import { Timer, splitTime } from "../univasset/scripts/externaljavascript.js";
+import { setattr } from "../univasset/scripts/basefunctions/pseudobuiltin.js";
 
 /** Creates a timer for events.
  * @param {HTMLElement} grouper_elem
@@ -14,7 +15,7 @@ function timer(grouper_elem, date, title, eventURL) {
 
     const TITLE_SPAN = document.createElement("span");
 
-    const IMG = setAttr(document.createElement("img"), {src: eventURL, alt: title, loading: "lazy"});
+    const IMG = setattr(document.createElement("img"), {src: eventURL, alt: title, loading: "lazy"});
 
     const TIMER_SPAN = document.createElement("span");
     const COUNTDOWN = setInterval(function() {
