@@ -27,7 +27,7 @@ for (const {name, description} of Object.values(dTag).sort(cmp({key: x => x.name
 /** @type {HTMLInputElement} */ const KEY_BUTTON = document.querySelector('.tab-button [value="Keywords"]');
 /** @type {HTMLInputElement} */ const TAG_BUTTON = document.querySelector('.tab-button [value="Tags"]');
 /** @type {HTMLInputElement} */ const BWS_BUTTON = document.querySelector('.tab-button [value="Browse"]');
-/** @type {HTMLInputElement} */ var current_checked;
+/** @type {HTMLInputElement} */ var current_checked = KEY_BUTTON;
 
 /** @type {HTMLInputElement} */ const TEXT_FIELD = document.querySelector(`#Keywords [type="text"]`);
 KEY_BUTTON.addEventListener("change", function(event) {
