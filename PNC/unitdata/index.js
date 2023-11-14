@@ -4,7 +4,7 @@ import {Async} from "../../univasset/scripts/externaljavascript.js";
 
 tableSort(
     document.querySelector("#main_content div"),
-    [["Doll Name", "Reference", "Fragments"], ...(await Async.getJSON("./units.json")).slice(0, -1).map(x => [x.name, x.reference, x.fragments])],
+    [["Doll Name", "Reference", "Fragments"], ...(await Async.getJSON("../units.json")).slice(0, -1).map(x => [x.name, x.reference, x.fragments])],
     [
         x => x,
         x => brJoin(Object.entries(x).filter(([name, link]) => name).map(([name, link]) => setattr(document.createElement("a"), {textContent: name, href: link}))),
