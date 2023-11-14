@@ -14,6 +14,7 @@ function timer(grouper_elem, date, title, eventURL) {
     if (TIME.done) return;
 
     const TITLE_SPAN = document.createElement("span");
+    TITLE_SPAN.textContent = title;
 
     const IMG = setattr(document.createElement("img"), {src: eventURL, alt: title, loading: "lazy"});
 

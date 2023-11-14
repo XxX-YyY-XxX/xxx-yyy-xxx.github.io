@@ -31,17 +31,21 @@ for (const {name, description} of Object.values(dTag).sort(cmp({key: x => x.name
 
 /** @type {HTMLInputElement} */ const TEXT_FIELD = document.querySelector(`#Keywords [type="text"]`);
 KEY_BUTTON.addEventListener("change", function(event) {
+    if (current_checked === this) return;
     current_checked.dispatchEvent(new Event("change"))
     // current_checked.onchange();
     current_checked = this;
+    console.log("Key pressed.")
 
     if (!this.checked) TEXT_FIELD.value = "";
 });
 
 TAG_BUTTON.addEventListener("change", function(event) {
+    if (current_checked === this) return;
     current_checked.dispatchEvent(new Event("change"))
     // current_checked.onchange();
     current_checked = this;
+    console.log("Tag pressed.")
 
     if (!this.checked) {
         TAGS_TEXT.value = "";
@@ -52,9 +56,11 @@ TAG_BUTTON.addEventListener("change", function(event) {
 });
 
 BWS_BUTTON.addEventListener("change", function(event) {
+    if (current_checked === this) return;
     current_checked.dispatchEvent(new Event("change"))
     // current_checked.onchange();
     current_checked = this;
+    console.log("Browse pressed.")
 });
 //#endregion
 
