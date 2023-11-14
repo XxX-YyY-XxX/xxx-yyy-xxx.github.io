@@ -13,6 +13,7 @@ const TAGS_FIELD = document.querySelector("#Tags div");
 for (const {name, description} of Object.values(dTag).sort(cmp({key: x => x.name}))) {
     const INPUT = setattr(document.createElement("input"), {value: name, type: "checkbox"});
     INPUT.addEventListener("change", function(event) {
+        console.log(this.value, this.checked ? "selected." : "deselected.")
         TAGS_TEXT.value = (this.checked ? TAGS_TEXT.value + " " + this.value : TAGS_TEXT.value.replace(this.value, "")).replace("  ", " ").trim();
     });
     const LABEL = setattr(document.createElement("label"), {classList: {add: ["tags", "tooltip"]}, append: [INPUT, name]});
@@ -152,7 +153,7 @@ const MAXPAGE = Math.ceil((cardData.length) / 5)
 document.getElementById('maxpage').textContent = MAXPAGE;
 
 const PAGENO = document.getElementById('page-no');
-for (const BUTT of Array.from(document.querySelectorAll("'#Button button"))) {
+for (const BUTT of Array.from(document.querySelectorAll("#Button button"))) {
     /** @type {function(): number} */
     const getPage = {
         first: () => 1,
