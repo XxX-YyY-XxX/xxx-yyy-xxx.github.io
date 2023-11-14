@@ -1,5 +1,4 @@
 import {removeHTMLTag, randInt} from '../../univasset/scripts/externaljavascript.js';
-import {nestElements} from "../../univasset/scripts/htmlgenerator/htmlgenerator.js"
 import {cmp, setattr} from '../../univasset/scripts/basefunctions/index.js';
 import {dTag, cardData} from "./query.js";
 
@@ -8,13 +7,11 @@ const CARDFIELD = document.querySelector("#cards-field");
 
 //#region Tags Field
 const TAGS_FIELD = document.querySelector("#Tags div");
-/** @type {HTMLInputElement} */ const TAGS_TEXT = document.querySelector('#Tags [type="text"]');
-console.log(TAGS_TEXT)
 /** @type {HTMLInputElement[]} */ const TAG_CHECKBOXES = [];
+/** @type {HTMLInputElement} */ const TAGS_TEXT = document.querySelector('#Tags input[type="text"]');
 for (const {name, description} of Object.values(dTag).sort(cmp({key: x => x.name}))) {
     const INPUT = setattr(document.createElement("input"), {value: name, type: "checkbox"});
     INPUT.addEventListener("change", function(event) {
-        console.log(this.value, this.checked ? "selected." : "deselected.")
         TAGS_TEXT.value = (this.checked ? TAGS_TEXT.value + " " + this.value : TAGS_TEXT.value.replace(this.value, "")).replace("  ", " ").trim();
     });
     const LABEL = setattr(document.createElement("label"), {classList: {add: ["tags", "tooltip"]}, append: [INPUT, name]});
@@ -24,78 +21,44 @@ for (const {name, description} of Object.values(dTag).sort(cmp({key: x => x.name
 }
 //#endregion
 
-// /** Creates a radio group. Clicked button only runs when it's unchecked. First button is the default checked.
-//  * @param {HTMLElement} grouper_elem
-//  * @param {string} radioname Name of the radio group. Most useful on form submissions.
-//  * @param {...[string | HTMLElement, string, function(HTMLInputElement): void]} buttondata [textContent, value, onclick function] Each function should have code on select and deselect. */
-// function radioGroup(grouper_elem, radioname, ...buttondata) {
-//     /** @type {Map<string, function(HTMLInputElement): void>}*/ const radio_functions = new Map();
-//     /** @type {HTMLInputElement} */ var current_checked;
-//     const fragment = new DocumentFragment();
-
-//     for (const [index, [text, value, func]] of Object.entries(buttondata)) {
-//         radio_functions.set(value, func)
-
-//         const input_elem = document.createElement("input");
-//         setattr(input_elem, {value: value, type: "radio", name: radioname, checked: !Number(index)});
-//         input_elem.addEventListener("click", function() {
-//             if (current_checked === this) return;
-//             radio_functions.get(current_checked.value)(current_checked);
-//             current_checked = this;
-//             func(this);
-//         });
-//         func(input_elem);
-
-//         const label_elem = document.createElement("label");
-//         label_elem.append(input_elem, text);
-//         fragment.appendChild(label_elem);
-//     }
-
-//     current_checked = fragment.firstElementChild.firstElementChild;
-
-//     grouper_elem.classList.add('func_radioGroup');
-//     grouper_elem.appendChild(fragment);
-// }
-
-
 //#region Tag Buttons
 /** @type {HTMLInputElement} */ const KEY_BUTTON = document.querySelector('.tab-button [value="Keywords"]');
 /** @type {HTMLInputElement} */ const TAG_BUTTON = document.querySelector('.tab-button [value="Tags"]');
 /** @type {HTMLInputElement} */ const BWS_BUTTON = document.querySelector('.tab-button [value="Browse"]');
+const CHANGE = new Event("change");
 var current_checked = KEY_BUTTON;
 
 /** @type {HTMLInputElement} */ const TEXT_FIELD = document.querySelector(`#Keywords [type="text"]`);
 KEY_BUTTON.addEventListener("change", function(event) {
-    if (current_checked === this) return;
-    current_checked.dispatchEvent(new Event("change"))
-    // current_checked.onchange();
-    current_checked = this;
-    console.log("Key pressed.")
+    if (event.isTrusted) {
+        if (current_checked === this) return;
+        current_checked.dispatchEvent(CHANGE);
+        current_checked = this;
+    }
 
     if (!this.checked) TEXT_FIELD.value = "";
 });
 
 TAG_BUTTON.addEventListener("change", function(event) {
-    if (current_checked === this) return;
-    current_checked.dispatchEvent(new Event("change"))
-    // current_checked.onchange();
-    current_checked = this;
-    console.log("Tag pressed.")
+    if (event.isTrusted) {
+        if (current_checked === this) return;
+        current_checked.dispatchEvent(CHANGE);
+        current_checked = this;
+    }
 
     if (!this.checked) {
         TAGS_TEXT.value = "";
         for (const INPUT_TRUE of TAG_CHECKBOXES.filter(input => input.checked))
             INPUT_TRUE.checked = false;
     }
-    
 });
 
 BWS_BUTTON.addEventListener("change", function(event) {
-    if (current_checked === this) return;
-    current_checked.dispatchEvent(new Event("change"))
-    // current_checked.onchange();
-    current_checked = this;
-    console.log("Browse pressed.")
+    if (event.isTrusted) {
+        if (current_checked === this) return;
+        current_checked.dispatchEvent(CHANGE);
+        current_checked = this;
+    }
 });
 //#endregion
 
@@ -173,19 +136,19 @@ function setQuestionBoxes({question, answer, tags}) {
         Tags: ${tags.map(tag => `<span class="tags card-tags">${tag.name}</span>` ).join(' ')}
         </fieldset>`;
     
-    const FIELDSET = document.createElement("fieldset");
+    // const FIELDSET = document.createElement("fieldset");
 
-    const [LEGEND, H3] = nestElements("legend", "h3");
-    H3.appendChild(stringToHTML(question));
+    // const [LEGEND, H3] = nestElements("legend", "h3");
+    // H3.appendChild(stringToHTML(question));
 
-    FIELDSET.append(
-        LEGEND,
-        stringToHTML(answer),
-        document.createElement("hr"),
-        "Tags: ",
-        ...tags.map(tag => setattr(document.createElement("span"), {classList: {add: ["tags", "card-tags"]}, textContent: tag.name}))
-    );
-    return FIELDSET;
+    // FIELDSET.append(
+    //     LEGEND,
+    //     stringToHTML(answer),
+    //     document.createElement("hr"),
+    //     "Tags: ",
+    //     ...tags.map(tag => setattr(document.createElement("span"), {classList: {add: ["tags", "card-tags"]}, textContent: tag.name}))
+    // );
+    // return FIELDSET;
 }
 //#endregion
 
