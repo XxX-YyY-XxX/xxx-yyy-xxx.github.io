@@ -4,6 +4,11 @@ import Embed from '../../univasset/scripts/htmlfunctions/linkembed.js';
 import List from '../../univasset/scripts/htmlfunctions/lists.js';
 import {LESSEQUAL, STAR, TM} from "../../univasset/scripts/specialchars.js";
 
+/** @param {string} imagename file name and extension @returns {string} */
+function imgAsset(imagename) {
+    return `../assets/images/query/${imagename}`;
+}
+
 export const dTag = {
     //#region Combat Tabs
         LORE : {name: 'Story/Lore', description: 'Main meat of the series.'},
@@ -16,7 +21,8 @@ export const dTag = {
         SIMS : {name: 'CombatSimulations', description: 'Place to get upgrade materials.'},
         CAMPAIGN : {name: 'CampaignMissions', description: 'Permanent Major Events.'},
         THEATER : {name: 'Theater', description: 'Backstab central.'},
-    //#endregion
+        GZ : {name: 'GrayZoneExploration', description: 'SPEQ and Limited doll reruns, SPEQ sets, tank and mech parts.'},    
+        //#endregion
     //#region Armory Tabs
         TDOLL : {name: 'TacticalDolls', description: 'Anything T-Doll related. Use as secondary tag.'},
             LEDOLL : {name: 'CycleDropDolls', description: 'Reward dolls that now wander the rerun hell.'},
@@ -85,7 +91,6 @@ export const dTag = {
     OJ : {name: 'LuffberryChess', description: 'PVP sidegame.'},
     CE : {name: 'CombatEffectiveness', description: 'Clutch metric.'},
     KALINA : {name: 'Kalina', description: 'Overworked logistics officer.'},
-    GRAY : {name: 'GrayZoneExploration', description: 'SPEQ reruns and sets, tank and mech parts.'},    
 };
 
 export const cardData = [
@@ -107,7 +112,7 @@ export const cardData = [
             ],
             "Combat Reports (CR)": [
                 'Acquired through Forward Basecamp, Data Room, the shop during events, EXP Sim, or as a reward.',
-                `Can be gifted by going to the ${spoilerSummary('Dorm Gifts screen', image('./assets/images/SkinLocation.png', 'Dorms > Warehouse > Gifts'))} or your ${spoilerSummary("Doll's Profile", image("./assets/images/DollEXP.png", "+ button by the EXP bar"))}.`,
+                `Can be gifted by going to the ${spoilerSummary('Dorm Gifts screen', image(imgAsset("SkinLocation.png"), 'Dorms > Warehouse > Gifts'))} or your ${spoilerSummary("Doll's Profile", image("../assets/images/DollEXP.png", "+ button by the EXP bar"))}.`,
                 'Gives 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.',
                 'Gives 6000 fixed EXP per report only when used on oathed+modded dolls.'
             ],
@@ -201,6 +206,12 @@ export const cardData = [
             ]
         })}`,
         tags : [dTag.SEASON, dTag.MAJOR, dTag.PRIME, dTag.NEWB]
+    },
+    {
+        id : '00477',
+        questions : `What is Gray Zone Exploration?`,
+        answers : `${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/gray-zone-introduction")}`,
+        tags : [dTag.GZ, dTag.PRIME]
     },
     {
         id : '00008',
@@ -306,7 +317,7 @@ export const cardData = [
         id : '00016',
         questions : `Who should I prioritize to MOD first?`,
         answers : `${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/neural-upgrade-priority-guide')}<br>
-        ${spoilerSummary('CN MOD list.', image('./assets/images/CNMODTier.png'))}`,
+        ${spoilerSummary('CN MOD list.', image(imgAsset("CNMODTier.png")))}`,
         tags : [dTag.MOD, dTag.TIER]
     },
     {
@@ -336,8 +347,8 @@ export const cardData = [
     {
         id : '00020',
         questions : `Which doll should I get with True Core Masks?`,
-        answers : `${image('./assets/images/VeryReliableTCMGuide.png')}<br>
-        ${image('./assets/images/SeriousTCMGuide.png')}`,
+        answers : `${image(imgAsset("VeryReliableTCMGuide.png"))}<br>
+        ${image(imgAsset("SeriousTCMGuide.png"))}`,
         tags : [dTag.TCM, dTag.TIER]
     },
     //#endregion
@@ -410,6 +421,7 @@ export const cardData = [
                         ['13', 'Defender',  'N/A'])),
                 link(`Farmable dolls in campaign maps, both 3${STAR} monthly reward dolls and 4-5${STAR} dolls that debuted on their corresponding event.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
                 `During collabs, major events, side events, and ${spoilerSummary('Rescue Events', `Also known as Boss Bully, where you get to farm for 4-5${STAR} event reward dolls in the story chapters 1-6.`)}, event rewards become temporarily available for farming.`,
+                `Gray Zone cycles event reward dolls every season.`,
                 'Obtainable from random nodes, however unlikely.',
                 `For 5${STAR} units that can also be crafted, their drop rates are less than 1%.`,
                 "Whatever doll you recieved, whether you win, lose, or quit the stage, you keep it.",
@@ -428,7 +440,7 @@ export const cardData = [
                 'All dolls come preleveled.'
             ]
         })}`,
-        tags : [dTag.TDOLL, dTag.IMPT, dTag.GET, dTag.SPEQ, dTag.PROD, dTag.MAP, dTag.TCM]
+        tags : [dTag.TDOLL, dTag.IMPT, dTag.GET, dTag.SPEQ, dTag.PROD, dTag.MAP, dTag.TCM, dTag.GZ]
     },  //${spoilerSummary('Dolls EN are missing.', image('https://cdn.discordapp.com/attachments/951085201658871820/1033732620384751636/en_missing_dolls_varz_asked_edition.png'))}
     {
         id : '00025',
@@ -485,7 +497,7 @@ export const cardData = [
                 'Good for dragging coalition units.',
                 spoilerSummary("Ceia's SC 3-1Ex guide.", Embed.youtube('UdmOZqypu_c')),
                 spoilerSummary("Aqua's SC 3-1Ex.", Embed.streamable('0dpjje')),
-                spoilerSummary("BigStupidJellyfish's SC 3-1Ex auto-pathing.", image('./assets/images/SC%20Auto-path.png'))
+                spoilerSummary("BigStupidJellyfish's SC 3-1Ex auto-pathing.", image(imgAsset("SCAuto-path.png")))
             ],
         })}`,
         tags : [dTag.TDOLL, dTag.COALITION, dTag.LEVEL, dTag.IMPT]
@@ -501,7 +513,7 @@ export const cardData = [
         questions : `Is there a guide on how to build echelons/team compositions?`,
         answers : `Basic tip in this game is counterplay is more important than fixed synergy.<br>
         ${List.description({
-            'Mixed' : [spoilerSummary("CheneyQWER's infographic.", image('./assets/images/EchelonComps.png'))],
+            'Mixed' : [spoilerSummary("CheneyQWER's infographic.", image(imgAsset("EchelonComps.png")))],
             'Coalition Echelons' : [
                 link('Reddit flowchart post.', 'https://redd.it/rkvisq'),
                 link('Gamepress list of units and build suggestions.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units'),
@@ -586,7 +598,7 @@ export const cardData = [
     {
         id : '00035',
         questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
-        answers : `${image('./assets/images/SFEnemy.png', 'Jupiter Cannons count as unarmored machine type')}`,
+        answers : `${image(imgAsset("SFEnemy.png"), 'Jupiter Cannons count as unarmored machine type')}`,
         tags : [dTag.ENEMY]
     },
     {
@@ -706,7 +718,7 @@ export const cardData = [
         id : '00053',
         questions : `Is there any way to reset my battles so I can get a win?`,
         answers : `${List.description({
-            "Method 1: In-game restart": [image("./assets/images/query/BattleRestart.png", "Restart Battle button in Pause menu. Beware the Withdraw button.")],
+            "Method 1: In-game restart": [image(imgAsset("BattleRestart.png"), "Restart Battle button in Pause menu. Beware the Withdraw button.")],
             "Method 2: Client restart": [
                 "Turn off WiFi during battle. You can still finish the fight with no connection. Though be wary of connection timeouts so do it near the end.",
                 "If you don't like the result or you lost, exit client, turn on WiFi, re-enter client, take the fight again.",
@@ -733,7 +745,7 @@ export const cardData = [
             'GFAlarm' : [
                 'Use GFLMaps to take the enemy IDs you want to fight and enter them in the Custom Target Train under Packet Forger, with IDs separated by commas.',
                 `Works for comps that has been loaded into the client and is ${link('very', 'https://www.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i312oo2/')} ${link("safe", "https://www.reddit.com/r/girlsfrontline/comments/11e0hpg/weekly_commanders_lounge_february_28_2023/jan16s5/")}.`,
-                image('./assets/images/GFAlarmCTT.png', 'From u/UnironicWeeaboo')
+                image(imgAsset("GFAlarmCTT.png"), 'From u/UnironicWeeaboo')
             ],
             '<a href="https://gfl.matsuda.tips/post/everything-sucks-forever">Matsuda recommendations</a>' : []
         })}`,
@@ -857,7 +869,7 @@ export const cardData = [
     {
         id : '00073',
         questions : `How can I resupply a single doll and not the whole echelon?`,
-        answers : `${image('./assets/images/OneDollEchelon.png', 'Single-Doll Echelon')}`,
+        answers : `${image(imgAsset("OneDollEchelon.png"), 'Single-Doll Echelon')}`,
         tags : [dTag.TDOLL, dTag.MAP, dTag.ECH]
     },
     {
@@ -899,7 +911,7 @@ export const cardData = [
         answers : `<p>${TextStyle.style('Even dust, when piled up, can become a mountain.', TextStyle.ITALIC)}</p>
         Good logistics upkeep and rolling Fairy Construction everyday. Just think of crafting them a side thing that doesn't take a lot of attention.`,
         tags : [dTag.FAIRY, dTag.PROD]
-    },  //image('./assets/images/FairyRaising.png', 'From u/UnironicWeeaboo')
+    },  //image('../assets/images/FairyRaising.png', 'From u/UnironicWeeaboo')
     {
         id : '00079',
         questions : `How high is a certain doll's pull rate during rate ups?`,
@@ -909,7 +921,7 @@ export const cardData = [
     {
         id : '00080',
         questions : `What are the resources I can get from Kalina's Daily Gift?`,
-        answers : `${image('./assets/images/DailyGift.png')}<br>
+        answers : `${image(imgAsset("DailyGift.png"))}<br>
         Gift amount apparently scales with her affection.`,
         tags : [dTag.MARP, dTag.ITEM, dTag.KALINA]
     },
@@ -953,7 +965,7 @@ export const cardData = [
     {
         id : '00086',
         questions : `What does the PA chip Pilfer do?`,
-        answers : `Allows players to have a ${spoilerSummary('chance', image('./assets/images/PIlferRNG.png', 'Pilfer subject to RNG'))} of getting ${spoilerSummary('S-Rank drops', Embed.youtube('t6Vu72cajO0') + TextStyle.style('Context: Coalition Medals require S-Rank battles.', TextStyle.QUOTE))} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
+        answers : `Allows players to have a ${spoilerSummary('chance', image('../assets/images/PIlferRNG.png', 'Pilfer subject to RNG'))} of getting ${spoilerSummary('S-Rank drops', Embed.youtube('t6Vu72cajO0') + TextStyle.style('Context: Coalition Medals require S-Rank battles.', TextStyle.QUOTE))} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
         Combine this with the ability to fight on one ammo bar to get two chances on one enemy.`,
         tags : [dTag.COALITION, dTag.EQUIP]
     },
@@ -1172,12 +1184,12 @@ export const cardData = [
     {
         id : '00112',
         questions : `What does equipment calibration and enhancement do?`,
-        answers : `${image('./assets/images/EquipCalibEnhance.png', 'Calibration and enhancement are independent of each other')}
+        answers : `${image('../assets/images/EquipCalibEnhance.png', 'Calibration and enhancement are independent of each other')}
         ${List.description({
             'Equipment Calibration' : [
                 "Raises the equipment's base stat.",
                 'RNG dictates how many calibration tickets are wasted before maxing.',
-                `When it's on its highest calibration, ${image('./assets/images/BlueMAXBox.png', 'inline')} appears on said equipment.`
+                `When it's on its highest calibration, ${image('../assets/images/BlueMAXBox.png', 'inline')} appears on said equipment.`
             ],
             'Equipment Enhancement' : [
                 'Multiplies the base stat up to Lv. 10.',
@@ -1197,7 +1209,7 @@ export const cardData = [
     {
         id : '00114',
         questions : `What are all the available pets right now?`,
-        answers : `${image('./assets/images/PetSale.png', 'From u/UnironicWeeaboo')}<br>
+        answers : `${image('../assets/images/PetSale.png', 'From u/UnironicWeeaboo')}<br>
         If you see a pet that is not on this list, it's a Cafe Story reward, collab pet, or event reward that haven't been added yet to the station.`,
         tags : [dTag.PET]
     },
@@ -1261,7 +1273,7 @@ export const cardData = [
         id : '00122',
         questions : `How do I unlock special effects on commanders like flame auras etc.?`,
         answers : `${List.ordered(
-            "Get a complete 5-slot from a set. Doesn't matter if male only or female only.",
+            "Get a complete 5-slot from a costume set. Doesn't matter if male only or female only.",
             'Get their rare color variants.',
             '???',
             'Profit.'
@@ -1293,7 +1305,7 @@ export const cardData = [
     {
         id : '00126',
         questions : `If I delete my unused speqs, will I be able to recover them?`,
-        answers : `As of 2.09, dismantled/disassembled SPEQs can now be ${spoilerSummary('recovered/retrieved', image('./assets/images/SPEQRecover.png', 'From u/UnironicWeeaboo'))}. Collab SPEQs can be found under the Limited tab.`,
+        answers : `As of 2.09, dismantled/disassembled SPEQs can now be ${spoilerSummary('recovered/retrieved', image('../assets/images/SPEQRecover.png', 'From u/UnironicWeeaboo'))}. Collab SPEQs can be found under the Limited tab.`,
         tags : [dTag.EQUIP, dTag.SPEQ, dTag.COLLAB]
     },
     {
@@ -1363,7 +1375,7 @@ export const cardData = [
     {
         id : '00135',
         questions : `I can't deploy a friend echelon. What do I do?`,
-        answers : `${image('./assets/images/InitialDeploySupports.png')}<br>
+        answers : `${image('../assets/images/InitialDeploySupports.png')}<br>
         Either after operation start, a client restart, or a no due to limit.`,
         tags : [dTag.FRIEND, dTag.ECH, dTag.TECH]
     },
@@ -1564,7 +1576,7 @@ export const cardData = [
         ${link('Matsuda Guide and Line-up, circa 2.08.', 'https://gfl.matsuda.tips/post/defdrill')}<br>
         ${TextStyle.style('2.09 waves', TextStyle.BOLD)}:<br>
         ${spoilerSummary('Discord Leaderboard Comps.', `${image('https://cdn.discordapp.com/attachments/453784246515925003/988812408929804328/unknown.png')}<br>
-            ${image('./assets/images/DiscordDefenseDrill.png')}`)}<br>
+            ${image('../assets/images/DiscordDefenseDrill.png')}`)}<br>
         ${spoilerSummary('General BLT vid.', Embed.youtube('P-GLrBNvFVs'))}<br>
         ${spoilerSummary('Ceia vid.', Embed.youtube('qgbF2eiIzps'))}<br>
         ${spoilerSummary("CosmicArcher's comfy clear.", Embed.youtube('avKEYzKSp0U'))}`,
@@ -1606,8 +1618,8 @@ export const cardData = [
     {
         id : '00168',
         questions : `Will I get the rewards after adding a returning commander as friend for the callback event?`,
-        answers : `${image('./assets/images/CallbackSupporter.png')}<br>
-        ${image('./assets/images/CallbackReturner.png')}`,
+        answers : `${image('../assets/images/CallbackSupporter.png')}<br>
+        ${image('../assets/images/CallbackReturner.png')}`,
         tags : [dTag.FRIEND, dTag.ITEM, dTag.MARP]
     },
     {
@@ -1633,7 +1645,7 @@ export const cardData = [
     {
         id : '00172',
         questions : `Where are the skins? I can't find them.`,
-        answers : `${image('./assets/images/SkinLocation.png', 'Dorms > Warehouse > Gifts')}<br>
+        answers : `${image(imgAsset("SkinLocation.png"), 'Dorms > Warehouse > Gifts')}<br>
         You get Black Cards here by gifting it.`,
         tags : [dTag.TDOLL, dTag.SKIN]
     },
@@ -1673,7 +1685,7 @@ export const cardData = [
         ${TextStyle.style('Limitations:', TextStyle.BOLD)}<br>
         ${List.unordered(
             'Only usable to FSTs in the gacha pool (added after a Theater for a new FST is ran).',
-            "Cannot be used for iteration."
+            "Cannot be used for iteration, or anythimg else for that matter."
         )}
         If you plan to big brain with this, churn your FST-specific central data to patches first, because they're the priority data to use before general data.`,
         tags : [dTag.HOC, dTag.FST, dTag.ITEM]
@@ -1682,7 +1694,7 @@ export const cardData = [
         id : '00176',
         questions : `Just noticed that the Black Market Shop in the Forward Basecamp has a Costumes tab. Anyone know what that's about?`,
         answers : `Shop for previous event only cosmetics.<br>
-        ${image('./assets/images/query/BlackMarketCostumes.png', 'From u/UnironicWeeaboo')}<br>
+        ${image('../assets/images/query/BlackMarketCostumes.png', 'From u/UnironicWeeaboo')}<br>
         Currently released items in the older servers.`,
         tags : [dTag.BM]
     },
@@ -1742,7 +1754,7 @@ export const cardData = [
         id : '00185',
         questions : `If I scrapped/retired/disassembled my only copy of a doll, can I recover/get them back?`,
         answers : `First of all, how dare you?<br>
-        Second of all, yes you can. Can also work on ${spoilerSummary('collab units', image('./assets/images/CollabScrap.png', 'From u/Angelic_Force'))} and the AR Team.<br>
+        Second of all, yes you can. Can also work on ${spoilerSummary('collab units', image('../assets/images/CollabScrap.png', 'From u/Angelic_Force'))} and the AR Team.<br>
         Can only work once a week, costs however much is needed for a x1 dummy-link, and scrapped dupes are poof.<br>
         Go to Index, then their Index page then Recover, which will need cores.`,
         tags : [dTag.TDOLL, dTag.COLLAB, dTag.SYSMECH]
@@ -1865,7 +1877,7 @@ export const cardData = [
     },  //@Visual
     {
         id : '00202',
-        questions : `What does the ${link('glitter/sparkle', './assets/images/ShinyIndicator.png')} in my coalition unit's portrait mean? Their sprites also has a golden aura/glow around it.`,
+        questions : `What does the ${link('glitter/sparkle', '../assets/images/ShinyIndicator.png')} in my coalition unit's portrait mean? Their sprites also has a golden aura/glow around it.`,
         answers : `A shiny ${TextStyle.style('pokemon', TextStyle.STRIKE)} coalition unit. And the very reason Golden Infusion is a thing.<br>
         If put on a Lv.100, XL unit, something special may happen.`,
         tags : [dTag.COALITION]
@@ -1907,7 +1919,7 @@ export const cardData = [
     {
         id : '00208',
         questions : `I don't know how to change the AI behaviour of my support/friend echelon, anyone can help me?`,
-        answers : `${image('./assets/images/FriendEchelonCommand.png', 'Double-tap the Friend Echelon to show options')}`,
+        answers : `${image('../assets/images/FriendEchelonCommand.png', 'Double-tap the Friend Echelon to show options')}`,
         tags : [dTag.FRIEND, dTag.ECH, dTag.MAP]
     },
     {
@@ -1960,7 +1972,7 @@ export const cardData = [
         id : '00216',
         questions : `Do HP shields stack?`,
         answers : `TLDR: Yes.<br>
-        ${image('./assets/images/HPShield.png', 'From u/UnironicWeeaboo')}`,
+        ${image('../assets/images/HPShield.png', 'From u/UnironicWeeaboo')}`,
         tags : [dTag.BATTLE, dTag.SKILL]
     },  //@Trim Image
     {
@@ -2318,7 +2330,7 @@ export const cardData = [
             "M4A1": ["Main shot cannot crit. Explosion does."],
             "KSVK": [`Main shot is normal shot, ${link("explosion coded as explosion", "https://iopwiki.com/wiki/KSVK")}.`],
             "SAA": ["MOD skill can \"proc\" after the first three."],
-            "Pekola": [spoilerSummary(`"How to use" guide.`, image("./assets/images/PekolaUse.png"))],
+            "Pekola": [spoilerSummary(`"How to use" guide.`, image("../assets/images/PekolaUse.png"))],
             "M1897 Mod": [link("Flechette Storm!", "https://old.reddit.com/r/girlsfrontline/comments/osihvd/weekly_commanders_lounge_july_27_2021/h72czw7/")],
             "P90": [spoilerSummary("Document by hina#8787", Embed.google(Embed.G_WORD, "1j5YzAAZ-_Q1bXMUvFKGUWnGgqwacatABv0u-MmY0JLw"))],
             "Galil Mod": [link("Reddit discussion", "https://old.reddit.com/r/girlsfrontline/comments/qpyw46/weekly_commanders_lounge_november_09_2021/hkj3ce0/")],
@@ -2421,7 +2433,7 @@ export const cardData = [
     {
         id : '00280',
         questions : `How does one change their dormitory representative/avatar/visitor?`,
-        answers : `${image('./assets/images/VisitorAvatar.png', 'Visit > Setting > Dorm Visit')}<br>
+        answers : `${image('../assets/images/VisitorAvatar.png', 'Visit > Setting > Dorm Visit')}<br>
         Checked uses your commander avatar, unchecked and it uses your first adjutant.`,
         tags : [dTag.DORM]
     },
@@ -2619,7 +2631,7 @@ export const cardData = [
     {
         id : '00314',
         questions : `How do I complete Command Mission: Map Completion: Griffin Elite in Career Quests?`,
-        answers : `${spoilerSummary('Elite Griffin Combat Medals', image('./assets/images/GriffinEliteMedal.png', 'Taken from GFLDB'))} are acquired during the major story events on their original run.`,
+        answers : `${spoilerSummary('Elite Griffin Combat Medals', image('../assets/images/GriffinEliteMedal.png', 'Taken from GFLDB'))} are acquired during the major story events on their original run.`,
         tags : [dTag.MAJOR, dTag.QUEST]
     },
     {
@@ -2694,7 +2706,7 @@ export const cardData = [
     {
         id : '00326',
         questions : `Counter says I still have maps to do. How do I know which ones are those?`,
-        answers : `${image('./assets/images/StoryProgress.png', 'Tap the encircled counter to see the remaining maps')}`,
+        answers : `${image('../assets/images/StoryProgress.png', 'Tap the encircled counter to see the remaining maps')}`,
         tags : [dTag.MAJOR, dTag.CAMPAIGN, dTag.COLLAB]
     },
     {
@@ -2763,7 +2775,7 @@ export const cardData = [
     {
         id : '00337',
         questions : `I want to clean my furniture inventory. How do I do that?`,
-        answers : `${image('./assets/images/FurnitureTrash.png', 'Trash Icon')}`,
+        answers : `${image('../assets/images/FurnitureTrash.png', 'Trash Icon')}`,
         tags : [dTag.FURN]
     },
     {
@@ -2810,7 +2822,7 @@ export const cardData = [
     {
         id : '00343',
         questions : `Do auto-battle card bonus stack with combat exp bonus?`,
-        answers : `${image('./assets/images/XPUpAuto.png', 'Note that Monthly Auto-Battle Card is active, and 100% bonus is from XP up event')}`,
+        answers : `${image('../assets/images/XPUpAuto.png', 'Note that Monthly Auto-Battle Card is active, and 100% bonus is from XP up event')}`,
         tags : [dTag.LEVEL, dTag.AUTO]
     },  //@Source
     {
@@ -3111,7 +3123,7 @@ export const cardData = [
     {
         id : '00390',
         questions : `What happens to the Resupply Exchange Tickets after the banner ends? How do I get Black Cards?`,
-        answers : `${image('./assets/images/ResupplyMechanics.png')}`,
+        answers : `${image('../assets/images/ResupplyMechanics.png')}`,
         tags : [dTag.RESUPPLY, dTag.ITEM, dTag.GET]
     },
     {
@@ -3209,7 +3221,7 @@ export const cardData = [
     {
         id : '00403',
         questions : `Anyone knows what resources and how much do we get for a failed PA capture?`,
-        answers : `${image('./assets/images/CaptureFail.png', 'Slashes are because probability')}`,
+        answers : `${image('../assets/images/CaptureFail.png', 'Slashes are because probability')}`,
         tags : [dTag.ITEM, dTag.PA]
     },
     {
@@ -3352,7 +3364,7 @@ export const cardData = [
     {
         id : '00424',
         questions : `I'm overflowing with units/gears/fairies/PA units. Where can I dump them off?`,
-        answers : `${image("./assets/images/Disassembly.png", "Found in the Factory Tab")}<br>
+        answers : `${image("../assets/images/Disassembly.png", "Found in the Factory Tab")}<br>
         ${List.description({
             "T-DOLL": [
                 "The final stage of core farming.",
@@ -3403,7 +3415,7 @@ export const cardData = [
     {
         id : '00430',
         questions : `Where is Bookshelf of Memories?`,
-        answers : `${image("./assets/images/GriffinMemories.png", "Bookshelf of Memories found in the Data Room")}<br>
+        answers : `${image("../assets/images/GriffinMemories.png", "Bookshelf of Memories found in the Data Room")}<br>
         Sidestories for the featured dolls (Griffin Memories). Rewards ${getID("Friend Gossips", "00060")} or ${getID("Unity Skills", "00442")}.`,
         tags : [dTag.SIDE]
     },
@@ -3502,7 +3514,7 @@ export const cardData = [
     {
         id : '00445',
         questions : `What do I do with unused Keycards during the bingo event?`,
-        answers : `${image("./assets/images/query/KeyCardRules.png", "Rule #7: 1 Key Card = 5 Calibration Tickets")}`,
+        answers : `${image("../assets/images/query/KeyCardRules.png", "Rule #7: 1 Key Card = 5 Calibration Tickets")}`,
         tags : [dTag.MINI]
     },
     {
@@ -3802,9 +3814,9 @@ export const cardData = [
     {
         id : '00475',
         questions : `Where can I get the limited drop/equipment in a particular map?`,
-        answers : `${image("./assets/images/query/CombatSummary.png", "Tap on the Combat Summary button")}<br>
-        ${image("./assets/images/query/MapRewards.png", "Rewards tab then tap on your desired drop")}<br>
-        ${image("./assets/images/query/RewardLocations.png", "Look for glowing enemies and defeat them")}<br>
+        answers : `${image("../assets/images/query/CombatSummary.png", "Tap on the Combat Summary button")}<br>
+        ${image("../assets/images/query/MapRewards.png", "Rewards tab then tap on your desired drop")}<br>
+        ${image("../assets/images/query/RewardLocations.png", "Look for glowing enemies and defeat them")}<br>
         You can also S Rank the map for an additional chance.`,
         tags : [dTag.BATTLE, dTag.GET, dTag.TDOLL, dTag.EQUIP]
     },
@@ -3819,6 +3831,19 @@ export const cardData = [
         Note that these are just base guidelines and not a rule. Or just copy from others.`,
         tags : [dTag.GET, dTag.BATTLE, dTag.TDOLL, dTag.EQUIP]
     },
+    {
+        id : '00478',
+        questions : `I can't hit the enemies in night missions. What do I do?`,
+        answers : `Your accuracy is multiplied by 0.1 so a 100 accuracy which may or may not have a scope equipped will turn to 10. And this is before all skills and buffs are taken into account. Equipe PEQs, or if they can't, use skills with night penalty reduction or flat accuracy boosts.`,
+        tags : [dTag.BATTLE]
+    },
+    {
+        id : '00479',
+        questions : `Where can I repair my damaged dolls?`,
+        answers : `Repair button at the main menu. You can also repair them on helipads pre and post-deployment.<br>
+        ${TextStyle.style("Do note though that repairing post-deployment cost twice the resources and locks you out of S rank (gold) medals.", TextStyle.BOLD)}`,
+        tags : [dTag.SYSMECH]
+    },  //@ Visual
     {
         id : '00000',
         questions : ``,

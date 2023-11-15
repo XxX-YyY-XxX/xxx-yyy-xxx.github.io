@@ -19,12 +19,12 @@ timer(
 
 timer(
     document.getElementById("coalition"),
-    "Nov 13, 2023 23:59 UTC-0800",
-    "./assets/images/coalition/16IntruderSorceressOfTheEnd.webp", 
+    "Dec 11, 2023 23:59 UTC-0800",
+    "./assets/images/coalition/21ExecutionerBloodFiendHuntress.webp", 
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
-        "Dec 11, 2023 23:59 UTC-0800",
-        "./assets/images/coalition/21ExecutionerBloodFiendHuntress.webp"
+        "",
+        "./assets/images/coalition/.webp"
     )}
 );
 
@@ -39,11 +39,11 @@ timer(
     )}
 );
 
-timer(
-   document.getElementById('mini-event'),
-   "Nov 13, 2023 23:59 UTC-0800",
-   "./assets/images/timer/vo5n43ssr3vb1.webp"
-);
+// timer(
+//    document.getElementById('mini-event'),
+//    "Nov 13, 2023 23:59 UTC-0800",
+//    "./assets/images/timer/vo5n43ssr3vb1.webp"
+// );
 
 //timer(document.getElementById('extra'), "",
 //    "");

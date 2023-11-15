@@ -8,7 +8,8 @@ import * as SC from '../../univasset/scripts/specialchars.js';
 /** @param {string} text @param {...number} ids */
 function getID(text, ...ids) {
     return `<a href="https://xxx-yyy-xxx.github.io/PNC/faqs/?id=${ids.map(x => String(x).padStart(5, "0")).join("+")}">${text}</a>`
-}//#endregion
+}
+//#endregion
 
 export const dTag = {
     ASST: {name: "Assistant", description: "Unit shown in your home screen."},

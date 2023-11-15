@@ -34,7 +34,9 @@ KEY_BUTTON.addEventListener("change", function(event) {
         if (current_checked === this) return;
         current_checked.dispatchEvent(CHANGE);
         current_checked = this;
+        console.log("Key selected.")
     }
+    console.log("Key running.")
 
     if (!this.checked) TEXT_FIELD.value = "";
 });
@@ -44,7 +46,9 @@ TAG_BUTTON.addEventListener("change", function(event) {
         if (current_checked === this) return;
         current_checked.dispatchEvent(CHANGE);
         current_checked = this;
+        console.log("Tag selected.")
     }
+    console.log("Tag running.")
 
     if (!this.checked) {
         TAGS_TEXT.value = "";
@@ -58,7 +62,9 @@ BWS_BUTTON.addEventListener("change", function(event) {
         if (current_checked === this) return;
         current_checked.dispatchEvent(CHANGE);
         current_checked = this;
+        console.log("Bws selected.")
     }
+    console.log("Bws running.")
 });
 //#endregion
 
@@ -157,7 +163,7 @@ const MAXPAGE = Math.ceil((cardData.length) / 5)
 document.getElementById('maxpage').textContent = MAXPAGE;
 
 const PAGENO = document.getElementById('page-no');
-for (const BUTT of Array.from(document.querySelectorAll("#Button button"))) {
+for (const BUTT of Array.from(document.querySelectorAll("#Browse button"))) {
     /** @type {function(): number} */
     const getPage = {
         first: () => 1,

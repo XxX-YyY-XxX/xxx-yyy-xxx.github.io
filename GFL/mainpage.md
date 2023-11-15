@@ -275,10 +275,6 @@ Node-based TRPG for maps, RTS for battles.
 
 Remember to do them all in order as given by the Career Quest.
 
->I can't hit the enemies in night missions. What do I do?
-
-Read the above answer again. Anyway, to elaborate, your accuracy is multiplied by 0.1 so a 100 accuracy which may or may not have a scope equipped will turn to 10. And this is before all skills and buffs are taken into account.
-
 >Help. My Echelon is not good enough to tackle a specific group of enemies.
 
 1. CE is a trash metric in this case.
@@ -313,8 +309,6 @@ Read the above answer again. Anyway, to elaborate, your accuracy is multiplied b
 > - Save Svarog (bottom-right) and Extra Impulses (top-right, the +N next to Regular Impulses) until you get to the pool you want to pull. Regular Impulses are free real estate.
 >
 > - [In-depth guide for maximum efficiency.](https://old.reddit.com/r/girlsfrontline/comments/ojazqj/weekly_commanders_lounge_july_13_2021/h5gg71b/)
->
-> - If using Svarog Tickets, do it one at a time. 10x is just 1 pull done 10 times.
 >
 > Note that if you get a displayed unit using the ticket, the whole impulse capture pool (the 3 units shown) will reset... probably. <!-- @ Fix -->
 >

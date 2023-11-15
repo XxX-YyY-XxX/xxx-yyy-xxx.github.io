@@ -2,12 +2,6 @@
 
 # Tactical Dolls
 
-### Where can I repair my damaged dolls?
-
-> Repair button at the main menu. You can also repair them on helipads pre and post-deployment. **Do note though that repairing post-deployment cost twice the resources and locks you out of S rank (gold) medals.**
-
-@ Visual
-
 ### Is a doll worth farming?
 
 > Worth it if they can only be acquired by running the maps, otherwise just do construction.
