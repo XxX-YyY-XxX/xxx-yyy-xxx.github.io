@@ -1,6 +1,7 @@
 @import "/assets/css/style.css?v=2d3b5126dd9bdaf552f3aef918356c51b10c15a9";
 @import "./htmlgenerator/htmlgenerator.css";
 @import "./pageheader/header.css";
+@import "./htmlmacro/index.css";
 @import "./tooltip.css";
 @import "./tabs.css";
 

@@ -5,6 +5,19 @@ import {dTag, cardData} from "./query.js";
 const SEARCH_PARAMS = new URLSearchParams(location.search);
 const CARDFIELD = document.querySelector("#cards-field");
 
+/** Checks if the element is interacted by the user. 
+ * @param {Event} event 
+ * @returns
+ */
+function isUserInput(event) {
+    if (event instanceof MouseEvent)
+        return Boolean(event.screenX && event.screenY);
+    else if (!event.isTrusted)  // dispatchEvent
+        return false;
+    else    // Keyboard, other script calls?
+        return true;
+}
+
 //#region Tags Field
 const TAGS_FIELD = document.querySelector("#Tags div");
 /** @type {HTMLInputElement[]} */ const TAG_CHECKBOXES = [];
@@ -34,9 +47,7 @@ KEY_BUTTON.addEventListener("change", function(event) {
         if (current_checked === this) return;
         current_checked.dispatchEvent(CHANGE);
         current_checked = this;
-        console.log("Key selected.")
     }
-    console.log("Key running.")
 
     if (!this.checked) TEXT_FIELD.value = "";
 });
@@ -46,9 +57,7 @@ TAG_BUTTON.addEventListener("change", function(event) {
         if (current_checked === this) return;
         current_checked.dispatchEvent(CHANGE);
         current_checked = this;
-        console.log("Tag selected.")
     }
-    console.log("Tag running.")
 
     if (!this.checked) {
         TAGS_TEXT.value = "";
@@ -62,9 +71,7 @@ BWS_BUTTON.addEventListener("change", function(event) {
         if (current_checked === this) return;
         current_checked.dispatchEvent(CHANGE);
         current_checked = this;
-        console.log("Bws selected.")
     }
-    console.log("Bws running.")
 });
 //#endregion
 
