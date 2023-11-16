@@ -43,8 +43,9 @@ export const dTag = {
     },
     {
         id: 2,
-        question: `How many pulls can I get per month?`,
-        answer: `${image("https://i.imgur.com/WoonBbq.png", "Discord: .rolls")}`,
+        question: `How many pulls/Advanced Search Commands can I get per month?`,
+        answer: `${image("https://i.imgur.com/WoonBbq.png", "Discord: .rolls")}
+        Event and Discrete Point Redemption Center spoils not included.`,
         tags: [dTag.MISC]
     },
     {
