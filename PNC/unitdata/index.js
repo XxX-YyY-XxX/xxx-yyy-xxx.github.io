@@ -41,7 +41,7 @@ class Units {
     /** @param {UnitObject} unit_object */
     constructor(unit_object) {
         this.name = unit_object.name;
-        this.reference = Object.keys(unit_object.reference).filter();
+        this.reference = Object.keys(unit_object.reference).filter(x => x);
         this.frag_loc = unit_object.fragments;
 
         this.row = document.createElement("tr");
