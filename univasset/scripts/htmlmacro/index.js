@@ -11,7 +11,10 @@ export function googleDocsCompilation(...namelinkpair) {
     BUTTON.addEventListener("click", function(event) {window.open(SELECT.value)});
 
     SELECT.append(...namelinkpair.map(([name, link]) => setattr(document.createElement("option"), {textContent: name, value: link})));
-    IFRAME.src = SELECT.firstElementChild.value + EMBED;
+    IFRAME.src = namelinkpair[0][1] + EMBED;
 
-    return setattr(document.createElement("div"), {classList: {add: ["google-docs"]}, append: [SELECT, BUTTON, document.createElement("br"), IFRAME]});
+    var out = setattr(document.createElement("div"), {classList: {add: ["google-docs-compilation"]}, append: [SELECT, BUTTON, document.createElement("br"), IFRAME]});
+    console.log("outerHTML:", out.outerHTML)
+    console.log("toString():", out.toString())
+    return out
 }

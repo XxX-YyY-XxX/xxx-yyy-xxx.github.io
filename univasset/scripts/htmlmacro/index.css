@@ -1,9 +1,9 @@
 /* #region Google Document */
-.google-docs > button {
+.google-docs-compilation > button {
     float: right;
 }
 
-.google-docs > iframe {
+.google-docs-compilation > iframe {
     aspect-ratio: 1/1;
     width: 100%;
     border: 0;

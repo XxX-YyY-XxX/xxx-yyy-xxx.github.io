@@ -4,8 +4,9 @@
         <script type="module" src="/univasset/scripts/include.js"></script>
         <script type="module">
             import {gdocDropdown} from '../univasset/scripts/htmlgenerator/htmlgenerator.js';
+            import {googleDocsCompilation} from "/univasset/scripts/htmlmacro/index.js"
 
-            gdocDropdown(document.querySelector("#main_content div"),
+            var out = googleDocsCompilation(
                 ["Project Neural Cloud Character Usage Tips (by Jurisdiction)", "https://docs.google.com/document/d/1IJAFKL61Lyxa9a1oXt0ACb7dKTa7819dtzWViS6RqBI"],
                 ["Character Attribute Values and In Game Formulas", "https://docs.google.com/document/d/1HHEBOWzqvyPCggI2SasIA0vYQtCh-dOXgsW2o7n74r0"],
                 ["Lizzy Amaranth's Matrix Guide (LAM Guide)", "https://docs.google.com/spreadsheets/d/1wlKPot-Gi1MM6OGAO7ivzSiA8Tdq081OqCqeL2E6DU8"],
@@ -23,6 +24,7 @@
                 ['Algorithms', 'https://docs.google.com/spreadsheets/d/1eNVCADDvoelcOFeag4BxIouw1Na8KwxZjRD_rbBJdEU'],
             )
             // ["iana's Unit Rating & Teambuilding Spreadsheet", 'https://docs.google.com/spreadsheets/d/1ugEerWZZcjcXyF7ZlYOUPISbnarrg2DCqRyHxpYsH4o'],
+            document.querySelector("#main_content div").replaceWith(out)
             </script>
 
         <meta charset='utf-8'>
