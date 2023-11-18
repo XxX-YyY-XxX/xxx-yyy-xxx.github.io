@@ -14,7 +14,7 @@ export function googleDocsCompilation(...namelinkpair) {
     IFRAME.src = namelinkpair[0][1] + EMBED;
 
     var out = setattr(document.createElement("div"), {classList: {add: ["google-docs-compilation"]}, append: [SELECT, BUTTON, document.createElement("br"), IFRAME]});
-    console.log("outerHTML:", out.outerHTML)
-    console.log("toString():", out.toString())
+    // console.log("outerHTML:", out.outerHTML)     lacks listeners
+    // console.log("toString():", out.toString())   [object HTMLDivElement]
     return out
 }

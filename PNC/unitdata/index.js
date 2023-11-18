@@ -11,25 +11,13 @@ import {Async} from "../../univasset/scripts/externaljavascript.js";
  * @property {string[]} UnitObject.fragments
  */
 
-// tableSort(
-//     document.querySelector("#main_content div"),
-//     [["Doll Name", "Reference", "Fragments"], ...(await UNIT_PROMISE).slice(0, -1).map(x => [x.name, x.reference, x.fragments])],
-//     [
-//         x => x,
-//         x => brJoin(Object.entries(x).filter(([name, link]) => name).map(([name, link]) => setattr(document.createElement("a"), {textContent: name, href: link}))),
-//         x => brJoin(x)
-//     ],
-//     {frzcol: true, frzhdr: true}
-// );
-
-const FILTER_TEXT = document.querySelector("input");
-FILTER_TEXT.addEventListener("input", function(event) {
+document.querySelector("input").addEventListener("input", function(event) {
     const INPUT_VALUE = this.value.toLowerCase();
     if (INPUT_VALUE)
         TBODY.replaceChildren(...UNIT_LIST.filter(x => x.name.toLowerCase().includes(INPUT_VALUE) || x.reference.some(x => x.toLowerCase().includes(INPUT_VALUE)) || x.frag_loc.some(x => x.toLowerCase().includes(INPUT_VALUE))).map(x => x.row));
     else
         TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));
-})
+});
 
 class Units {
     name;
