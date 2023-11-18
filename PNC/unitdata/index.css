@@ -5,6 +5,10 @@
     max-height: 95vh;
 }
 
+input[type="text"] {
+    display: block;
+}
+
 /* #region Freeze */
 .freeze-row th {
     background: #1b1b1b !important;
@@ -20,19 +24,5 @@
 
 .freeze-col tr:nth-child(even) > :first-child {
     background: #292f20;
-}
-/* #endregion */
-
-/* #region Sort */
-.func_table th[data-sort="hi"] {
-    background: linear-gradient(135deg, #1b1b1b, transparent 50%),
-        linear-gradient(-135deg, #1b1b1b, transparent 50%),
-        linear-gradient(blue, gray 50%) !important;
-}
-
-.func_table th[data-sort="lo"] {
-    background: linear-gradient(45deg, #1b1b1b, transparent 50%),
-        linear-gradient(-45deg, #1b1b1b, transparent 50%),
-        linear-gradient(gray 50%, red) !important;
 }
 /* #endregion */
