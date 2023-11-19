@@ -15,7 +15,6 @@ export function googleDocsCompilation(...namelinkpair) {
 
     const DIV = setattr(document.createElement("div"), {classList: {add: ["google-docs-compilation"]}, append: [SELECT, BUTTON, document.createElement("br"), IFRAME]});
     DIV.toString = function() {
-        console.log("Identity check:", this === DIV)
         /** @type {HTMLDivElement} */ const CLONE = this.cloneNode(true);
 
         CLONE.querySelector("select").setAttribute("onchange", "googleDocsCompilationSelect(this)");
@@ -30,7 +29,5 @@ export function googleDocsCompilation(...namelinkpair) {
 
         return CLONE.outerHTML;
     }
-    console.log("outerHTML:", DIV.outerHTML)     //lacks listeners
-    console.log("toString():", DIV.toString())   //[object HTMLDivElement]
     return DIV
 }
