@@ -13,8 +13,24 @@ export function googleDocsCompilation(...namelinkpair) {
     SELECT.append(...namelinkpair.map(([name, link]) => setattr(document.createElement("option"), {textContent: name, value: link})));
     IFRAME.src = namelinkpair[0][1] + EMBED;
 
-    var out = setattr(document.createElement("div"), {classList: {add: ["google-docs-compilation"]}, append: [SELECT, BUTTON, document.createElement("br"), IFRAME]});
-    // console.log("outerHTML:", out.outerHTML)     lacks listeners
-    // console.log("toString():", out.toString())   [object HTMLDivElement]
-    return out
+    const DIV = setattr(document.createElement("div"), {classList: {add: ["google-docs-compilation"]}, append: [SELECT, BUTTON, document.createElement("br"), IFRAME]});
+    DIV.toString = function() {
+        console.log("Identity check:", this === DIV)
+        /** @type {HTMLDivElement} */ const CLONE = this.cloneNode(true);
+
+        CLONE.querySelector("select").setAttribute("onchange", "googleDocsCompilationSelect(this)");
+        window.googleDocsCompilationSelect ??= /** @param {HTMLSelectElement} select */ function(select) {
+            select.parentElement.querySelector("iframe").src = select.value + EMBED;
+        }
+
+        CLONE.querySelector("button").setAttribute("onclick", "googleDocsCompilationButton(this)");
+        window.googleDocsCompilationButton ??= /** @param {HTMLButtonElement} button */ function(button) {
+            window.open(button.previousElementSibling.value);
+        }
+
+        return CLONE.outerHTML;
+    }
+    console.log("outerHTML:", DIV.outerHTML)     //lacks listeners
+    console.log("toString():", DIV.toString())   //[object HTMLDivElement]
+    return DIV
 }
