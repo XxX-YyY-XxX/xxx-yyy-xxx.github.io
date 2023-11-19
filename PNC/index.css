@@ -14,6 +14,7 @@
 .func_timer {
     position: relative;
     margin: 10px 0px;
+    container: inline-size;
 }
 
 .func_timer > span {
@@ -28,6 +29,7 @@
 
 .func_timer > span:first-of-type {
     top: 0;
+    font-size: min(7cqw, 8rem);
 }
 
 .func_timer > span:last-of-type {
