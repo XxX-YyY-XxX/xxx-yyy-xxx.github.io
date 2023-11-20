@@ -1,10 +1,10 @@
 import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
-// timer(
-//    document.getElementById("event"),
-//    "Dec 04, 2023 23:59 UTC-0800",
-//    "./assets/images/timer/warcraft3.png"
-// );
+timer(
+   document.getElementById("event"),
+   "Dec 04, 2023 23:59 UTC-0800",
+   "./assets/images/timer/warcraft3.png"
+);
 
 timer(
     document.getElementById("battlepass"),
