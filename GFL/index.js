@@ -1,10 +1,10 @@
 import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
-//timer(
+// timer(
 //    document.getElementById("event"),
-//    "Sep 18, 2023 23:59 UTC-0800",
-//    "./assets/images/timer/ujmrjucqfsib1.webp"
-//);
+//    "Dec 04, 2023 23:59 UTC-0800",
+//    "./assets/images/timer/warcraft3.png"
+// );
 
 timer(
     document.getElementById("battlepass"),
@@ -13,7 +13,7 @@ timer(
     {onEnd: timer.bind(
         null, document.getElementById("battlepass"),
         "Dec 24, 2023 23:59 UTC-0800",
-        "pending"
+        "./assets/images/timer/1zqlm8vfpn0c1.webp"
     )}
 );
 
