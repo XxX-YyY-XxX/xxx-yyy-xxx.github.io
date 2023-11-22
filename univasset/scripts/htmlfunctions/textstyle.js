@@ -5,9 +5,15 @@ export default class TextStyle {
     static CODE = 'code';
     static QUOTE = 'blockquote';
     static SUPER = 'sup';
+    static OVER = 'overline';
     
     /** @param {string} text @param {TextStyle} style*/
     static style(text, style) {
-        return `<${style}>${text}</${style}>`;
+        switch (style) {
+            case this.OVER:
+                return `<span style="text-decoration: ${style};">${text}</span>`;
+            default:
+                return `<${style}>${text}</${style}>`;
+        }
     }
 }
