@@ -251,10 +251,6 @@ Data-mining [guide 1](https://redd.it/eosenk), [Guide 2](https://redd.it/eq3njr)
 
 [Github 1.](https://github.com/markhydroxyl/GFL-notes/tree/main/tls)
 
-> Is there a limit to using Friend Echelons?
-
-20\. [This is where you can see how many support calls you have used, courtesy of BSJ.](https://imgur.com/7VHlmlN) The counter rises whenever you deploy a support echelon, win or lose, griffin or friend.
-
 # Totally Random Things
 
 [YZ n GR](https://old.reddit.com/r/girlsfrontline/comments/u6ztfo/weekly_commanders_lounge_april_19_2022/i5d03x7/)

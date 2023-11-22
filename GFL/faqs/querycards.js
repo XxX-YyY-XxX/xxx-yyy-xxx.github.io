@@ -421,7 +421,7 @@ export const cardData = [
                         ['13', 'Defender',  'N/A'])),
                 link(`Farmable dolls in campaign maps, both 3${STAR} monthly reward dolls and 4-5${STAR} dolls that debuted on their corresponding event.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
                 `During collabs, major events, side events, and ${spoilerSummary('Rescue Events', `Also known as Boss Bully, where you get to farm for 4-5${STAR} event reward dolls in the story chapters 1-6.`)}, event rewards become temporarily available for farming.`,
-                `Gray Zone cycles event reward dolls every season.`,
+                `Gray Zone cycles event reward dolls every season. Obtainable on grayzone node/field map S-rank.`,  // https://old.reddit.com/r/girlsfrontline/comments/17uxhw7/weekly_commanders_lounge_november_14_2023/k9edfcy/
                 'Obtainable from random nodes, however unlikely.',
                 `For 5${STAR} units that can also be crafted, their drop rates are less than 1%.`,
                 "Whatever doll you recieved, whether you win, lose, or quit the stage, you keep it.",
@@ -1478,7 +1478,8 @@ export const cardData = [
         JP - Japan<br>
         KR - Korea<br>
         EN - Everywhere else<br>
-        As for how to download it, check the sidebar of ${link('this', 'https://www.reddit.com/r/girlsfrontline/')} link under Downloads.`,
+        As for how to download it, check the sidebar of ${link('this', 'https://www.reddit.com/r/girlsfrontline/')} link under Downloads.<br>
+        Try downloading from Qooapp or ${link("APKpure", "https://apkpure.com/")}`,
         tags : [dTag.MISC]
     },  //@Totally gonna fix
     {
@@ -1489,12 +1490,6 @@ export const cardData = [
         Second is the tried amd tested Production rate up. Goes from Normal Doll, Normal Equip, Heavy Doll, Heavy Equip. Pulling chance for all 4${STAR} and 5${STAR} are increased. IOP equipment crafts are also affected.`,
         tags : [dTag.PROD, dTag.HOC, dTag.FST, dTag.TDOLL, dTag.EQUIP]
     },  //@Check for errors
-    {
-        id : '00151',
-        questions : `How do I scrap/retire coalition units? I'm lost.`,
-        answers : `Factory > Retirement (Disassemble) > Fourth + symbol.`,
-        tags : [dTag.COALITION]
-    },  //@Visual, change to anything that can be scrapped, "Where do I scrap/retire X?", "What to do with extra/duplicate X?"
     {
         id : '00152',
         questions : `What do advantaged dolls in combat map mean?`,
@@ -2470,7 +2465,7 @@ export const cardData = [
     {
         id : '00286',
         questions : `If a ringleader equips a support buff/debuff chip, does it apply on themselves as well?`,
-        answers : `Yes.`,
+        answers : `Yes. But only as an engaging unit.`,
         tags : [dTag.COALITION, dTag.EQUIP]
     },
     {
@@ -3363,7 +3358,7 @@ export const cardData = [
     },
     {
         id : '00424',
-        questions : `I'm overflowing with units/gears/fairies/PA units. Where can I dump them off?`,
+        questions : `I'm overflowing with units/gears/fairies/PA units. Where can I dump/scrap/recycle/retire them off?`,
         answers : `${image("../assets/images/Disassembly.png", "Found in the Factory Tab")}<br>
         ${List.description({
             "T-DOLL": [
@@ -3844,6 +3839,26 @@ export const cardData = [
         ${TextStyle.style("Do note though that repairing post-deployment cost twice the resources and locks you out of S rank (gold) medals.", TextStyle.BOLD)}`,
         tags : [dTag.SYSMECH]
     },  //@ Visual
+    {
+        id : '00480',
+        questions : `How can I get my rewards from participating in community events?`,
+        answers : `On Reddit, once the community manager replied to your entry, reply with your IGN and UID.`,
+        tags : [dTag.MISC]
+    },
+    {
+        id : '00151',
+        questions : `Is there a limit to using Friend Echelons?`,
+        answers : `20.<br>
+        ${image("https://i.imgur.com/7VHlmlN.png", "Counter for supports used, courtesy of BSJ")}<br>
+        The counter rises whenever you deploy a support echelon, win or lose, griffin or friend.`,
+        tags : [dTag.FRIEND, dTag.ECH]
+    },
+    {
+        id : '00481',
+        questions : `Is a doll worth farming?`,
+        answers : `Worth it if they can only be acquired by running the maps, otherwise just do construction. But hey, you do you.`,
+        tags : [dTag.TDOLL, dTag.GET]
+    },
     {
         id : '00000',
         questions : ``,

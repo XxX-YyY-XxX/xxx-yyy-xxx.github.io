@@ -2,10 +2,6 @@
 
 # Tactical Dolls
 
-### Is a doll worth farming?
-
-> Worth it if they can only be acquired by running the maps, otherwise just do construction.
-
 ### How do you set L2Ds for adjutants?
 
 > Does her costume have one? Is she strictly on a single adjutant slot? Is the L2D toggle in settings on? Is the L2D toggle in adjutant postioning on?

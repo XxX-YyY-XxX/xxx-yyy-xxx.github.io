@@ -30,12 +30,12 @@ timer(
 
 timer(
     document.getElementById('skin-banner'),
-    "Nov 20, 2023 23:59 UTC-0800",
-    "./assets/images/timer/sjlg3j4ed4wb1.webp",
+    "Dec 18, 2023 23:59 UTC-0800",
+    "./assets/images/timer/2kcrg4upyo1c1.webp",
     {onEnd: timer.bind(
         null, document.getElementById('skin-banner'),
-        "Nov 20, 2023 23:59 UTC-0800",
-        ""
+        "",
+        "./assets/images/timer/.webp"
     )}
 );
 
