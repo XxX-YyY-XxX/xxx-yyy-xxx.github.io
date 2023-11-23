@@ -142,12 +142,6 @@ img:not(.inline-img) {
     margin: 0 auto;
     display: block;
 }
-
-img.inline-img {
-    vertical-align: middle;
-    display: inline;
-    height: 1rem;
-}
 /* #endregion */
 
 #submission-form, #browse-page {

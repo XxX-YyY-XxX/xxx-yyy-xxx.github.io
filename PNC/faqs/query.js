@@ -1,7 +1,8 @@
 import {spoilerSummary, image, table, link, tooltip} from '../../univasset/scripts/htmlfunctions/htmlfunctions.js';
+import {googleDocsCompilation} from "../../univasset/scripts/html/index.js";
 import TextStyle from '../../univasset/scripts/htmlfunctions/textstyle.js';
 import Embed from '../../univasset/scripts/htmlfunctions/linkembed.js';
-import List from '../../univasset/scripts/htmlfunctions/lists.js'
+import List from '../../univasset/scripts/htmlfunctions/lists.js';
 import * as SC from '../../univasset/scripts/specialchars.js';
 
 //#region Functions
@@ -11,15 +12,22 @@ function getID(text, ...ids) {
 }
 //#endregion
 
+try {
+    console.log("import.meta.url:", import.meta.url)
+} catch {
+    console.warn("import.meta.url unavailable.")
+}
+
 export const dTag = {
     ASST: {name: "Assistant", description: "Unit shown in your home screen."},
     ALGO: {name: "Algorithms", description: "Equipments in this game."},
-    TIER: {name: "TierList", description: "Power ratings of doll units."},
+    TIER: {name: "TierList", description: "Power ratings of doll units. Approach with caution."},
     DOLL: {name: "Dolls", description: "Collectible units of this game."},
     MISC: {name: "Miscellaneous", description: "Queries with no specific tag as of yet."},
     PRIME: {name: "TopicPrimer", description: "Write-ups that should answer majority of the questions."},
     SKIN: {name: "NeuralProjections", description: "The money-bait, so to speak."},
     OATH: {name: "OathSystem", description: "Reject real life, marry PNGs."},
+    GACHA: {name: "NeuralSearch", description: "Modern monetization."},
 };
 
 /**
@@ -48,12 +56,12 @@ export const dTag = {
         question: `How many pulls/Advanced Search Commands can I get per month?`,
         answer: `${image("https://i.imgur.com/WoonBbq.png", "Discord: .rolls")}
         Event and Discrete Point Redemption Center spoils not included.`,
-        tags: [dTag.MISC]
+        tags: [dTag.GACHA]
     },
     {
         id: 3,
         question: `If I oath my doll, do I get an oath skin?`,
-        answer: `Great as it may, they're separate purchases.`,
+        answer: `Great as it may be, they're separate purchases.`,
         tags: [dTag.SKIN, dTag.OATH]
     },
     {
@@ -70,19 +78,19 @@ export const dTag = {
     },
     {
         id: 6,
-        question: `What's the difference Neural Search - Kits and Neural Search - Fragments when pulling for limiteds?`,
+        question: `What's the difference between Neural Search - Kits and Neural Search - Fragments when pulling for limiteds?`,
         answer: `Spark counter is separate, while pity counter is shared (as usual).<br>
         ${List.description({
             "Search Mode - Kits": [
                 `3.6% chance for a 3${SC.STAR}, essentially making the banner unit 27.${TextStyle.style("77", TextStyle.OVER)}%.`,
                 "Gives neural kits on duplicates."
             ],
-            "Search Mode- Fragments": [
+            "Search Mode - Fragments": [
                 `2% chance for a 3${SC.STAR}, essentially making the banner unit 50%.`,
                 "Gives neural fragments on duplicates."
             ]
         })}`,
-        tags: [dTag.MISC]
+        tags: [dTag.GACHA]
     },
     {
         id: 0,

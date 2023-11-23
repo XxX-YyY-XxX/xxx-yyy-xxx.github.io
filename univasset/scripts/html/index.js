@@ -1,4 +1,6 @@
-import { setattr } from "../basefunctions/index.js";
+import {setattr} from "../basefunctions/index.js";
+
+export const STDHTMLELEMS = [];
 
 export function googleDocsCompilation(...namelinkpair) {
     const EMBED = "/preview?pli=1";

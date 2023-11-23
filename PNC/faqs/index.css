@@ -118,12 +118,6 @@ fieldset hr {
 /* #endregion */
 
 /* #region Embed */
-iframe[src*="docs.google.com"] {
-    width: 100%;
-    aspect-ratio: 1/1;
-    border: 0px;
-}
-
 iframe[src*="www.youtube.com"], iframe[src*="streamable.com"] {
     width: 100%;
     aspect-ratio: 16/9;
@@ -141,11 +135,4 @@ img:not(.inline-img) {
     margin: 0 auto;
     display: block;
 }
-
-img.inline-img {
-    vertical-align: middle;
-    display: inline;
-    height: 1rem;
-}
 /* #endregion */
-

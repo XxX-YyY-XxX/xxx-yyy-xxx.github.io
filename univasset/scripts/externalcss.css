@@ -22,3 +22,9 @@ dd {
 tr:nth-child(even) {
 	background-color: rgba(85, 107, 47, 0.25);
 }
+
+img.inline-img {
+    vertical-align: middle;
+    display: inline;
+    height: 1rem;
+}
