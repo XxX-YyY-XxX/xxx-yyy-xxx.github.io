@@ -2,6 +2,7 @@
 @import "./htmlgenerator/htmlgenerator.css";
 @import "./pageheader/header.css";
 @import "./html/index.css";
+@import "./changelog.css";
 @import "./tooltip.css";
 @import "./tabs.css";
 
@@ -27,4 +28,8 @@ img.inline-img {
     vertical-align: middle;
     display: inline;
     height: 1rem;
+}
+
+a[href^="#"] {
+	text-decoration: none;
 }
