@@ -1827,6 +1827,35 @@
         },
         "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"]
     },
+    {
+        "name": "Erika",
+        "class": "Sniper",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
+        "base": {
+            "hp": 15230,
+            "atk": 671,
+            "hash": 521,
+            "pdef": 216,
+            "odef": 216,
+            "aspd": 120,
+            "crate": 5,
+            "ppen": 428,
+            "open": 309,
+            "dodge": 10,
+            "regen": 497
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": []
+    },
 
     {
         "name": "Doll Name",
