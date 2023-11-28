@@ -7,9 +7,6 @@ const epsilon = 10 ** -10;
 export const pageURL = window.location.origin + window.location.pathname;
 //#endregion
 
-//#region Enumerators
-//#endregion
-
 //#region Class
 /** @template T */
 export class Cycle {
