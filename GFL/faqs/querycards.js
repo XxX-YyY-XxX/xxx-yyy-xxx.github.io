@@ -762,7 +762,7 @@ export const cardData = [
         id : '00058',
         questions : `Is there a way for my game to feel smoother?`,
         answers : `${link('Gamepress article.', 'https://gamepress.gg/girlsfrontline/fixing-gfl-client-lag-possible-workarounds')}<br>
-        ${link('Decompressed obb.', 'https://www.mediafire.com/file/rxuj9ke35he81lr/main.407.com.sunborn.girlsfrontline.en.obb/file')}<br>
+        ${link('Decompressed obb.', "https://drive.google.com/drive/folders/1QoWsDyh4rlh0DtpxomSGOKkaAzXPfvBG") /* https://old.reddit.com/r/girlsfrontline/comments/180bxy6/weekly_commanders_lounge_november_21_2023/kae6x8k/ */}<br>
         ${link('DIY decompression.', 'https://www.reddit.com/r/girlsfrontline/comments/lvwwtv/weekly_commanders_lounge_march_02_2021/gpugenl/')}`,
         tags : [dTag.MISC]
     },
@@ -844,7 +844,10 @@ export const cardData = [
         id : '00070',
         questions : `Do events get a rerun? And if so, when?`,
         answers : `${List.description({
-            "Major Events": ["Gets a permanent rerun called Campaign Missions 6-12 months or more after their initial release."],
+            "Major Events": [
+                "Gets a permanent rerun called Campaign Missions 6-12 months or more after their initial release.",
+                "You can read past major events in their entirety."
+            ],
             "Seasonal Events": ["Gets one when it's their time.", "Much older ones will be added to Campaign Mission."],
             "Collab Events": ["Subjected to their holders whims."]
         })}`,
@@ -1620,8 +1623,8 @@ export const cardData = [
     {
         id : '00169',
         questions : `Are the previous monthly Special Equipments obtainable in some way/getting a rerun?`,
-        answers : `Soon in Gray Zone Exploration`,
-        tags : [dTag.SPEQ]
+        answers : `Yes. 4 returning SPEQs are added every season.`,
+        tags : [dTag.SPEQ, dTag.GZ]
     },
     {
         id : '00170',
@@ -3136,7 +3139,7 @@ export const cardData = [
     },
     {
         id : '00281',
-        questions : `How are the limited bonus gems for the monrhly card applied?`,
+        questions : `How are the limited bonus gems for the monthly card applied?`,
         answers : `Only within the time the event is ongoing, which is for a week. Note that it immediately becomes active as long as a monthly gem is active, old or new purchase.`,
         tags : [dTag.GEMS]
     },
@@ -3842,7 +3845,7 @@ export const cardData = [
     {
         id : '00480',
         questions : `How can I get my rewards from participating in community events?`,
-        answers : `On Reddit, once the community manager replied to your entry, reply with your IGN and UID.`,
+        answers : `On Reddit, once the community manager replied to your entry, reply with your IGN and UID.`,  //https://old.reddit.com/r/girlsfrontline/comments/180bxy6/weekly_commanders_lounge_november_21_2023/kaydjpt/
         tags : [dTag.MISC]
     },
     {
@@ -3859,6 +3862,49 @@ export const cardData = [
         answers : `Worth it if they can only be acquired by running the maps, otherwise just do construction. But hey, you do you.`,
         tags : [dTag.TDOLL, dTag.GET]
     },
+    {
+        id : '00482',
+        questions : `My game crashed during Defense Drill and when I try to terminate it after opening the game, it doesn't let me. What do I do?`,
+        answers : `Costumer support or wait for maintenance to forcefully boot you out.`,   //https://old.reddit.com/r/girlsfrontline/comments/180bxy6/weekly_commanders_lounge_november_21_2023/kaydu4y/
+        tags : [dTag.TECH, dTag.SIMS, dTag.BATTLE]
+    },
+    {
+        id : '00483',
+        questions : `How do I "share" to get my weekly gems?`,
+        answers : `Home screen > commander name at the top left > top right button.<br>
+        You don't need to actually share it.`,
+        tags : [dTag.GEMS]
+    },  //@Visual
+    {
+        id : '00484',
+        questions : `Are the push notifications busted?`,
+        answers : `Yes. Will only work when the app is running. Will work when the first part of the queue finishes.`,   //https://old.reddit.com/r/girlsfrontline/comments/180bxy6/weekly_commanders_lounge_november_21_2023/ka988nh/
+        tags : [dTag.SYSMECH, dTag.ANDROID]
+    },
+    {
+        id : '00485',
+        questions : `How do I successfully occupy a buff node in Gray Zone?`,
+        answers : `After selecting a buff, tap the yellow "Select" button beside it.`,
+        tags : [dTag.GZ]
+    },  //@Visual
+    {
+        id : '00486',
+        questions : `What are Dusty Blueprints for?`,
+        answers : `For Mobile Armors${TM}. `,
+        tags : [dTag.GZ]
+    },
+    {
+        id : '00487',
+        questions : `Can I get limited event dolls during rescue events using autobattles?`,
+        answers : `"These T-Dolls are obtainable through Auto-Battles as well." Hmm... I wonder. Note however that 1 auto-battle is equivalent to 1 roll for the doll.`,
+        tags : [dTag.TDOLL, dTag.AUTO, dTag.GET]
+    },  //@Visual
+    {
+        id : '00488',
+        questions : `How do I see a detailed version of a doll's stat?`,
+        answers : `Formation>Show Equip. The stats are above the equip boxes.`,
+        tags : [dTag.TDOLL]
+    },  //@Visual
     {
         id : '00000',
         questions : ``,

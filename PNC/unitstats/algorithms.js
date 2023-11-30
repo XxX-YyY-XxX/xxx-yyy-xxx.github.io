@@ -485,6 +485,7 @@ const ALGO_SETS = {
     },
     Stability: {
         StabilityBlock: StabilityBlock,
+        Threshold:      class Threshold extends Stability {static SET2 = SET2_EFFECTS.HEALTHFLAT},
         Perception:     class Perception extends Stability {static SET2 = SET2_EFFECTS.HEALTHPERC},
         Acclimate:      class Acclimate extends Stability {static SET2 = SET2_EFFECTS.HEALTHPERC},
         Rationality:    class Rationality extends Stability {static SET2 = SET2_EFFECTS.PHYSDEF},
@@ -514,7 +515,6 @@ const ALGO_SETS = {
         LoopGain:       class LoopGain extends Special {static SET2 = SET2_EFFECTS.HEALBOOST},
         SVM:            class SVM extends Special {static SET2 = SET2_EFFECTS.HEALBOOST},
         Inspiration:    class Inspiration extends Special {static SET2 = SET2_EFFECTS.HPREGEN},
-        Threshold:      class Threshold extends Special {static SET2 = SET2_EFFECTS.HEALTHFLAT}
     }
 };
 /** @param {typeof Algorithm} algoClass */

@@ -33,14 +33,14 @@ function timer(grouper_elem, date, title, eventURL) {
 
 timer(
     document.querySelector("#current"),
-    "Dec 12, 2023 18:29 UTC-0800",
-    "Perilous Advancement",
-    "./assets/images/timer/cpt00_e_cg027.png"
+    "Dec 19, 2023 18:29 UTC-0800",
+    "Cleansing Aria",
+    "./assets/images/timer/cpt00_e_cg033.png"
 )
 
 timer(
     document.querySelector("#previous"),
-    "Nov 21, 2023 18:29 UTC-0800",
-    "Divining the Heart",
-    "./assets/images/timer/cpt00_e_cg026.png"
+    "Dec 12, 2023 18:29 UTC-0800",
+    "Perilous Advancement",
+    "./assets/images/timer/cpt00_e_cg027.png"
 )

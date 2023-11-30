@@ -347,9 +347,6 @@ Remember to do them all in order as given by the Career Quest.
 
 [3.0 Features.](https://gamepress.gg/girlsfrontline/300-client-update-new-features)
 
-### Can I get limited event dolls during rescue events using autobattles?
-
-> "These T-Dolls are obtainable through Auto-Battles as well." Hmm... I wonder. Note however that 1 auto-battle is equivalent to 1 roll for the doll.
 
 
 

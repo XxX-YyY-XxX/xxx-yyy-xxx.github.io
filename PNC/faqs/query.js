@@ -28,6 +28,7 @@ export const dTag = {
     SKIN: {name: "NeuralProjections", description: "The money-bait, so to speak."},
     OATH: {name: "OathSystem", description: "Reject real life, marry PNGs."},
     GACHA: {name: "NeuralSearch", description: "Modern monetization."},
+    BP: {name: "MagraseaBattlePass", description: "Gives skin, resources, frames, furnitures."},
 };
 
 /**
@@ -41,7 +42,7 @@ export const dTag = {
 /** @type {Card[]} */ export const cardData = [
     {
         id: 0,
-        question: `How do I change what weapon Jiangyu holds in her L2D`,
+        question: `How do I change what weapon Jiangyu holds in her L2D?`,
         answer: `Shoulder tap.`,   // https://old.reddit.com/r/GFLNeuralCloud/comments/17jqslr/weekly_professors_lounge_october_30_2023/k7sr357/
         tags: [dTag.ASST]
     },
@@ -92,6 +93,21 @@ export const dTag = {
         })}`,
         tags: [dTag.GACHA]
     },
+    {
+        id: 7,
+        question: `Where do I enter the redemption code?`,
+        answer: `${List.description({
+            "Android": ["In the Settings, there is a Redeem Code tab."],
+            "iOS": [link("Redemption page", "https://42lab-us.sunborngame.com/redeem")]
+        })}`,
+        tags: [dTag.MISC]
+    },  //@Visual
+    {
+        id: 8,
+        question: `Do battlepass skins rerun?`,
+        answer: `Yes.`,
+        tags: [dTag.SKIN, dTag.BP]
+    },  
     {
         id: 0,
         question: ``,

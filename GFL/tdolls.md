@@ -14,12 +14,6 @@
 >
 > [KR "Wiki".](https://gfl.zzzzz.kr/dolls.php?lang=en) Includes in-depth stat analysis.
 
-### How do I see a detailed version of a doll's stat?
-
-> Formation>Show Equip. The stats are above the equip boxes.
-
-@ Visual
-
 ### Is there a comprehensive list of Limited Event Dolls?
 
 > [From redditor u/BigStupidJellyfish_.](https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls.html)
