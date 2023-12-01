@@ -58,6 +58,7 @@ tr:not(.hidden):nth-child(even) {
 .arma > img {
     height: 1lh;
     max-width: initial;
+    margin-left: 5px;
 }
 /* #endregion */
 
@@ -125,7 +126,7 @@ tr:not(.hidden):nth-child(even) {
 }
 /* #endregion */
 
-/* #region Bonus */
+/* #region Pre Bonus */
 #bonus label:has(input[disabled]) {
     display: none;
 }
