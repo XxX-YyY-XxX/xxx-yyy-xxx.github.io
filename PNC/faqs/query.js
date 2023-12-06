@@ -9,13 +9,19 @@ import * as SC from '../../univasset/scripts/specialchars.js';
 function getID(text, ...ids) {
     return `<a href="https://xxx-yyy-xxx.github.io/PNC/faqs/?id=${ids.map(x => String(x).padStart(5, "0")).join("+")}">${text}</a>`
 }
+
+/** @param {string} imagename @returns {string} */
+function imageAsset(imagename) {
+    return `../assets/images/faqs/${imagename}`;
+}
+
 //#endregion
 
-try {
-    console.log("import.meta.url:", import.meta.url)
-} catch {
-    console.warn("import.meta.url unavailable.")
-}
+// try {
+//     console.log("import.meta.url:", import.meta.url)
+// } catch {
+//     console.warn("import.meta.url unavailable.")
+// }
 
 export const dTag = {
     ASST: {name: "Assistant", description: "Unit shown in your home screen."},
@@ -96,17 +102,17 @@ export const dTag = {
         id: 7,
         question: `Where do I enter the redemption code?`,
         answer: `${List.description({
-            "Android": ["In the Settings, there is a Redeem Code tab."],
+            "Android": [image(imageAsset("RedeemGift.png"), "Under Settings")],
             "iOS": [link("Redemption page.", "https://42lab-us.sunborngame.com/redeem")]
         })}`,
         tags: [dTag.MISC]
-    },  //@Visual
+    },
     {
         id: 8,
         question: `Do battlepass skins rerun?`,
         answer: `Yes.`,
         tags: [dTag.SKIN, dTag.BP]
-    },  
+    },  //@Visual
     {
         id: 9,
         question: `What resources can I get from a Character Event?`,
@@ -138,9 +144,24 @@ export const dTag = {
         tags: [dTag.DOLL]
     },
     {
+        id: 11,
+        question: `What's the best way to pull for limited units?`,
+        answer: `General consensus is to pull on kits banner (because kits is more in-demand than fragments) until 59/60 soft pity, switch to fragment banner (due to 50% banner unit chance on a 3${SC.STAR} pull), and pull one.`,
+        tags: [dTag.GACHA]
+    },
+    {
+        id: 12,
+        question: `Will limited units get a rerun?`,
+        answer: `Yes.`,
+        tags: [dTag.DOLL, dTag.GACHA]
+    },
+    {
         id: 0,
         question: ``,
         answer: ``,
         tags: []
     },
 ].slice(0, -1);
+
+//what is arma
+//updgrading to l2d

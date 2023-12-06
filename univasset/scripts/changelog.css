@@ -1,8 +1,8 @@
-.changelog details {
+details {
     --indent: 1rem;
     padding-left: var(--indent);
 }
 
-.changelog summary {
+summary {
     margin-left: calc(-1 * var(--indent));
 }

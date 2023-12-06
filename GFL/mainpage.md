@@ -292,10 +292,6 @@ Remember to do them all in order as given by the Career Quest.
 >
 > [Gamepress guide](https://gamepress.gg/girlsfrontline/how-use-gf-battle-tester-girls-frontline-battle-tester) for the battle tester. [Guide on setting up.](https://old.reddit.com/r/girlsfrontline/comments/twps7w/weekly_commanders_lounge_april_05_2022/i3t3fu0/)
 
-### What does total exp in the auto-battle completion mean?
-
-> <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/hzark0/weekly_commanders_lounge_july_28_2020/g082rwn/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="195" width="640" scrolling="no"></iframe>
-
 ### How do I see what rank I am in?
 
 > <iframe id="reddit-embed" src="https://www.redditmedia.com/r/girlsfrontline/comments/z7neql/weekly_commanders_lounge_november_29_2022/iyaf84l/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="269" width="640" scrolling="no"></iframe>

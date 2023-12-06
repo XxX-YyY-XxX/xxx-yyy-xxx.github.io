@@ -6,14 +6,6 @@
 
 > Does her costume have one? Is she strictly on a single adjutant slot? Is the L2D toggle in settings on? Is the L2D toggle in adjutant postioning on?
 
-### Is there a repository of all dolls currently in the game?
-
-> [CN Wiki.](http://www.gfwiki.org/w/%E9%A6%96%E9%A1%B5)
->
-> [EN Wiki.](https://iopwiki.com/wiki/)
->
-> [KR "Wiki".](https://gfl.zzzzz.kr/dolls.php?lang=en) Includes in-depth stat analysis.
-
 ### Is there a comprehensive list of Limited Event Dolls?
 
 > [From redditor u/BigStupidJellyfish_.](https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls.html)

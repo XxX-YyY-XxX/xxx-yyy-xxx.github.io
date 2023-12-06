@@ -563,12 +563,12 @@ export const cardData = [
         ${List.description({
             'Anchored Construction' : [
                 link(`Available for new players ${TextStyle.style('and for veterans not bothering with it', TextStyle.STRIKE)}.`, 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681'),
-                link('Available on Saturdays and Sundays whenever a new batch of production dolls are released.', 'https://redd.it/szdua2') + ` Recommended anchors are 4${STAR} due to TCM existing, especially for shotguns.`, 
+                link('Available on Tuesdays whenever a new batch of production dolls are released.', 'https://redd.it/szdua2') + ` Recommended anchors are usually 4${STAR} due to ${getID("TCM", "00009")} existing, especially for shotguns.`, 
                 "Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate up."
             ],
             'Targeted Rate Up' : [
-                'Available when a new skin banner is released.',
-                'Rate up dolls are those who are present in the banner.'
+                'Available when a new skin banner is released. Rate up dolls are those who are present in the banner.',
+                'Available during weekends when a new doll batch enters construction.'
             ],
             'General Rate Up' : ['January, May, September.']
         })}`,
@@ -3905,6 +3905,28 @@ export const cardData = [
         answers : `Formation>Show Equip. The stats are above the equip boxes.`,
         tags : [dTag.TDOLL]
     },  //@Visual
+    {
+        id : '00469',
+        questions : `Will the coalition team I set up as a support echelon (with Night Vision equipped) have 2-node vision range when my friends use it?`,
+        answers : `No.`,    //https://old.reddit.com/r/girlsfrontline/comments/185qw10/weekly_commanders_lounge_november_28_2023/kbozp93/
+        tags : [dTag.COALITION, dTag.EQUIP, dTag.FRIEND, dTag.ECH]
+    },
+    {
+        id : '00470',
+        questions : `What does total exp in the auto-battle completion mean?`,
+        answers : `${link("Reddit reply.", "https://www.reddit.com/r/girlsfrontline/comments/hzark0/weekly_commanders_lounge_july_28_2020/g082rwn/")}`,
+        tags : [dTag.LEVEL, dTag.AUTO]
+    },
+    {
+        id : '00471',
+        questions : `Is there a repository of all dolls currently in the game?`,
+        answers : `${List.unordered(
+            link("CN Wiki", "http://www.gfwiki.org/w/%E9%A6%96%E9%A1%B5"),
+            link("EN Wiki", "https://iopwiki.com/wiki/"),
+            link("KR Wiki", "https://gfl.zzzzz.kr/dolls.php?lang=en")
+        )}`,
+        tags : [dTag.TDOLL]
+    },
     {
         id : '00000',
         questions : ``,
