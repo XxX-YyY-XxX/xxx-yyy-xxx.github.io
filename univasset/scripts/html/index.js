@@ -1,6 +1,7 @@
 import {setattr} from "../basefunctions/index.js";
 
-export const STDHTMLELEMS = [];
+// /** @type {(keyof HTMLElementTagNameMap)[]} */
+// export const STDHTMLELEMS = [];
 
 export function googleDocsCompilation(...namelinkpair) {
     const EMBED = "/preview?pli=1";
@@ -32,4 +33,41 @@ export function googleDocsCompilation(...namelinkpair) {
         return CLONE.outerHTML;
     }
     return DIV
+}
+
+// const TextStyle = {
+//     strike: text => textStyleGenerator(text, "del"),
+//     italic: text => textStyleGenerator(text, "em"),
+//     bold: text => textStyleGenerator(text, "strong"),
+//     code: text => textStyleGenerator(text, "code"),
+//     quote: text => textStyleGenerator(text, "blockquote"),
+//     super: text => textStyleGenerator(text, "sup"),
+// }
+
+const TEXTSTYLE_CLASSES = {
+    over: "overline"
+}
+
+export function textStyle(text, ...styles) {
+    const SPAN = document.createElement("span");
+    SPAN.textContent = text;
+    SPAN.classList.add(...styles.map(x => "text-" + TEXTSTYLE_CLASSES[x]));
+    SPAN.toString = function() {return this.outerHTML};
+    return SPAN;
+}
+
+/** @param {string} link @param {string | "inline" | null} caption Image description or 'inline' for inline img. */
+export function image(link, alt, caption = null) {
+    const IMG = setattr(document.createElement("img"), {src: link, alt: alt, loading: "lazy"});
+
+    switch (caption) {
+        case null:
+            return IMG;
+        case "inline":
+            IMG.classList.add("inline-img");
+            return IMG;
+        default:
+            const FIGCAPTION = setattr(document.createElement("figcaption"), {textContent: caption});
+            return setattr(document.createElement("figure"), {append: [IMG, FIGCAPTION]});
+    }
 }

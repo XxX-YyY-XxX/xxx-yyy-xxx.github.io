@@ -1,6 +1,5 @@
 import {spoilerSummary, image, table, link, tooltip} from '../../univasset/scripts/htmlfunctions/htmlfunctions.js';
-import {googleDocsCompilation} from "../../univasset/scripts/html/index.js";
-import TextStyle from '../../univasset/scripts/htmlfunctions/textstyle.js';
+import {googleDocsCompilation, textStyle} from "../../univasset/scripts/html/index.js";
 import Embed from '../../univasset/scripts/htmlfunctions/linkembed.js';
 import List from '../../univasset/scripts/htmlfunctions/lists.js';
 import * as SC from '../../univasset/scripts/specialchars.js';
@@ -83,7 +82,7 @@ export const dTag = {
         answer: `Spark counter is separate, while pity counter is shared (as usual).<br>
         ${List.description({
             "Search Mode - Kits": [
-                `3.6% chance for a 3${SC.STAR}, essentially making the banner unit 27.${TextStyle.style("77", TextStyle.OVER)}%.`,
+                `3.6% chance for a 3${SC.STAR}, essentially making the banner unit 27.${textStyle("77", "over")}%.`,
                 "Gives neural kits on duplicates."
             ],
             "Search Mode - Fragments": [
@@ -98,7 +97,7 @@ export const dTag = {
         question: `Where do I enter the redemption code?`,
         answer: `${List.description({
             "Android": ["In the Settings, there is a Redeem Code tab."],
-            "iOS": [link("Redemption page", "https://42lab-us.sunborngame.com/redeem")]
+            "iOS": [link("Redemption page.", "https://42lab-us.sunborngame.com/redeem")]
         })}`,
         tags: [dTag.MISC]
     },  //@Visual
@@ -108,6 +107,36 @@ export const dTag = {
         answer: `Yes.`,
         tags: [dTag.SKIN, dTag.BP]
     },  
+    {
+        id: 9,
+        question: `What resources can I get from a Character Event?`,
+        answer: `${List.unordered(
+            "30 Neural Fragments for the featured Doll",
+            "150 Neural Kits",
+            "30 Pioneering Breakthrough Widgets for the featured Doll's class",
+            "500 Furniture Coins",
+            "1000 AI Enhancement Experience",
+            "30 AI Core Fragments",
+            "8 Special Algorithm Selection Box",
+            "9 Reconfiguration Generator",
+            "25 3-Pc Set Orange Algorithm - α",
+            "3 Advanced Search Command",
+            "54000+ Combat EXP",
+            "16000+ Diggcoins",
+            "4000+ Skill Sample",
+            "12+ Skill Pivots",
+            "1 Painting",
+            "1 Profile Background",
+            "1 Accolade"
+        )}`,
+        tags: [dTag.MISC]
+    },
+    {
+        id: 10,
+        question: `I'm 15 Neural Fragments away from raising the welfare unit to 5${SC.STAR}. Where can I get the remaining frags?`,
+        answer: `Intimacy.`,
+        tags: [dTag.DOLL]
+    },
     {
         id: 0,
         question: ``,
