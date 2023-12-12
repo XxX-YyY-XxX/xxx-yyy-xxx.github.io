@@ -15,6 +15,7 @@ Object.defineProperty(Array.prototype, "remove", {
 })
 
 Object.defineProperty(Array.prototype, "subsetof", {
+    /** @param {Array} main_array */
     value: function(main_array) {
         const COPY = main_array.slice();
         for (const ITEM of this) {

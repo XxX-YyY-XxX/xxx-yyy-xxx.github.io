@@ -57,9 +57,12 @@ export const dTag = {
     },
     {
         id: 2,
-        question: `How many pulls/Advanced Search Commands can I get per month?`,
+        question: `How many pulls/Advanced Search Commands/Quartz Sands can I get per month?`,
         answer: `${image("https://i.imgur.com/WoonBbq.png", "Discord: .rolls")}
-        Event and Discrete Point Redemption Center spoils not included.`,
+        Maintenance (150 sands each > 600~ sands)<br>
+        Character Events (3 tickets)<br>
+        Discrete Point Redemption Center (1 ticket per 200 points)<br>
+        + other events`,
         tags: [dTag.GACHA]
     },
     {
