@@ -43,7 +43,7 @@ async function includeDocument(include_elem, file_name, depth = 0) {
         .then(cleantext => new DOMParser().parseFromString(cleantext, "text/html"))
         .catch(error => {console.error(error); return null});
     if (!INCLUDE_DOC) {
-        include_elem.default()
+        include_elem.default();
         return;
     }
 
@@ -122,19 +122,24 @@ class HTMLIncludeElement extends HTMLElement {
 
 /** @param {HTMLElement} html_element @returns {HTMLIncludeElement} */
 function convert(html_element) {
+    const MEMOIZE = {};
+
     Object.defineProperty(html_element, "src", {
-        get: function() {return this.getAttribute("src")},
+        get: function() {return MEMOIZE.src ??= this.getAttribute("src")},
+        enumerable: true
     });
 
     Object.defineProperty(html_element, "key", {
-        get: function() {return this.getAttribute("key")}
+        get: function() {return MEMOIZE.key ??= this.getAttribute("key")},
+        enumerable: true
     });
 
     Object.defineProperty(html_element, "default", {
         value: function() {
             console.warn(this.outerHTML, "is invalid.");
             this.replaceWith(...this.childNodes);
-        }
+        },
+        enumerable: true
     });
 
     return html_element;
