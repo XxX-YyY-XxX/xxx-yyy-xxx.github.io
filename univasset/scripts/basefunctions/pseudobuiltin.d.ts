@@ -1,5 +1,5 @@
 /** Create an iterator from an iterable object. */
-export function iter<T>(iterable: Iterable<T>): Iterator<T, any, undefined>;
+export function iter<T>(iterable: Iterable<T>): Iterator<T, void, undefined>;
 
 /** Iterates items per index in groups. */
 export function zip<T0, T1>(iterable0: Iterable<T0>, iterable1: Iterable<T1>, extend?: boolean): Generator<[T0, T1], void, unknown>;
