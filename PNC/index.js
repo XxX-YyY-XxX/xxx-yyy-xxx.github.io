@@ -31,17 +31,17 @@ function timer(end_date, title, imgpath) {
     TIMER_FIELD.appendChild(TIMER_DIV);
 }
 
-// timer(
-//     "Jan 12, 2024 18:29 UTC-0800",
-//     "Starchasers' Concerto",
-//     "./assets/images/timer/cpt00_e_cg022.png"
-// )
+timer(
+    "Jan 12, 2024 18:29 UTC-0800",
+    "Starchasers' Concerto",
+    "./assets/images/timer/cpt00_e_cg022.png"
+)
 
-// timer(
-//     "Jan 09, 2024 18:29 UTC-0800",
-//     "Symphonic Reprise",
-//     "./assets/images/timer/cpt00_e_cg021.png"
-// )
+timer(
+    "Jan 09, 2024 18:29 UTC-0800",
+    "Symphonic Reprise",
+    "./assets/images/timer/cpt00_e_cg021.png"
+)
 
 timer(
     "Dec 19, 2023 18:29 UTC-0800",
