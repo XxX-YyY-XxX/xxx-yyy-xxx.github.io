@@ -1,6 +1,5 @@
 import {spoilerSummary, image, table, link, tooltip} from '../../univasset/scripts/htmlfunctions/htmlfunctions.js';
-import {googleDocsCompilation, textStyle} from "../../univasset/scripts/html/index.js";
-import Embed from '../../univasset/scripts/htmlfunctions/linkembed.js';
+import {Embed, textStyle} from "../../univasset/scripts/html/index.js";
 import List from '../../univasset/scripts/htmlfunctions/lists.js';
 import * as SC from '../../univasset/scripts/specialchars.js';
 
@@ -14,7 +13,6 @@ function getID(text, ...ids) {
 function imageAsset(imagename) {
     return `../assets/images/faqs/${imagename}`;
 }
-
 //#endregion
 
 // try {
@@ -48,7 +46,7 @@ export const dTag = {
     {
         id: 0,
         question: `How do I change what weapon Jiangyu holds in her L2D?`,
-        answer: `Shoulder tap.`,   // https://old.reddit.com/r/GFLNeuralCloud/comments/17jqslr/weekly_professors_lounge_october_30_2023/k7sr357/
+        answer: `Left hand tap.`,
         tags: [dTag.ASST]
     },
     {
@@ -123,13 +121,13 @@ export const dTag = {
             "500 Furniture Coins",
             "1000 AI Enhancement Experience",
             "30 AI Core Fragments",
-            "8 Special Algorithm Selection Box",
-            "9 Reconfiguration Generator",
+            "8 Special Algorithm Selection Boxes",
+            "9 Reconfiguration Generators",
             "25 3-Pc Set Orange Algorithm - α",
-            "3 Advanced Search Command",
-            "54000+ Combat EXP",
+            "3 Advanced Search Commands",
+            "54000+ Combat EXPs",
             "16000+ Diggcoins",
-            "4000+ Skill Sample",
+            "4000+ Skill Samples",
             "12+ Skill Pivots",
             "1 Painting",
             "1 Profile Background",

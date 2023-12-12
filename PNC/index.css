@@ -15,6 +15,7 @@
     position: relative;
     margin: 10px 0px;
     container: inline-size;
+    aspect-ratio: 2/1;
 }
 
 .func_timer > span {

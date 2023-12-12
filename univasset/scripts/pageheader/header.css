@@ -1,46 +1,37 @@
-.icon {
+@import "./icons.css";
+
+#a-title {
+	text-decoration: none
+}
+
+#a-title > h1 {
+    display: inline;
+}
+
+#downloads a {
+	display: inline-block;
+	text-align: center;
+	margin: 0;
+	padding: 8px 18px;
+	border-radius: 50px;
+	border: 2px solid rgba(0,0,0,0.7);
+	border-bottom: 2px solid rgba(0,0,0,0.7);
+	border-top: 2px solid #000;
+	color: rgba(255,255,255,0.8);
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 13px;
+	text-decoration: none;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.75);
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.05)
+}
+
+#downloads span {
     opacity: 0.6;
     background: 0 0 no-repeat;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin: 1px 8px 0 0;
+	float: left;
 }
-
-/* #region GFL Button */
-.btn-gfl {
-    background: -webkit-linear-gradient(rgb(255, 187, 17, 0.3), rgb(170, 130, 0, 0.3) 50%, rgb(10, 10, 10, 0.3) 50%, rgb(0, 0, 0, 0.3));
-}
-
-.btn-gfl:hover {
-    background: -webkit-linear-gradient(rgb(255, 187, 17, 0.6), rgb(170, 130, 0, 0.6) 50%,rgb(10, 10, 10, 0.8) 50%, rgb(0, 0, 0, 0.8));
-}
-
-.btn-gfl .icon {
-    background-image: url("./gnk.png");
-}
-/* #endregion */
-
-/* #region PNC Button */
-.btn-pnc {
-    background: -webkit-linear-gradient(rgb(255 255 255 / 30%), rgb(109 163 163 / 30%) 50%, rgb(104 137 163 / 30%) 50%, rgb(0 64 55 / 30%));
-}
-
-.btn-pnc:hover {
-    background: -webkit-linear-gradient(rgb(255 255 255 / 60%), rgb(109 163 163 / 60%) 50%, rgb(104 137 163 / 80%) 50%, rgb(0 64 55 / 80%));
-}
-
-.btn-pnc .icon {
-    background-image: url("./exiles.png");
-}
-/* #endregion */
-
-/* #region EXI Button */
-.btn-exi {
-    background: -webkit-linear-gradient(rgb(255, 187, 17, 0.3), rgb(170, 130, 0, 0.3) 50%, rgb(10, 10, 10, 0.3) 50%, rgb(0, 0, 0, 0.3));
-}
-
-.btn-exi:hover {
-    background: -webkit-linear-gradient(rgb(255, 187, 17, 0.6), rgb(170, 130, 0, 0.6) 50%,rgb(10, 10, 10, 0.8) 50%, rgb(0, 0, 0, 0.8));
-}
-
-.btn-exi .icon {
-    background-image: url("");
-}
-/* #endregion */

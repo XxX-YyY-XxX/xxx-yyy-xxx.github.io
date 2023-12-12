@@ -1,10 +1,10 @@
 import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
-// timer(
-//    document.getElementById("event"),
-//    "Dec 04, 2023 23:59 UTC-0800",
-//    "./assets/images/timer/warcraft3.png"
-// );
+timer(
+   document.getElementById("event"),
+   "Dec 25, 2023 23:59 UTC-0800",
+   "https://iopwiki.com/images/7/71/Event_Logo_One_Coin_Short.png"
+);
 
 timer(
     document.getElementById("battlepass"),
@@ -23,8 +23,8 @@ timer(
     "./assets/images/coalition/21ExecutionerBloodFiendHuntress.webp", 
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
-        "",
-        "./assets/images/coalition/.webp"
+        "Jan 08, 2024 23:59 UTC-0800",
+        "./assets/images/coalition/17DestroyerDashingReindeer.webp"
     )}
 );
 

@@ -1856,6 +1856,35 @@
         },
         "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity", "HARAM"]
     },
+    {
+        "name": "Undine",
+        "class": "Specialist",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
+        "base": {
+            "hp": 16626,
+            "atk": 443,
+            "hash": 652,
+            "pdef": 398,
+            "odef": 398,
+            "aspd": 120,
+            "crate": 5,
+            "ppen": 390,
+            "open": 390,
+            "dodge": 0,
+            "regen": 519
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": []
+    },
 
     {
         "name": "Doll Name",

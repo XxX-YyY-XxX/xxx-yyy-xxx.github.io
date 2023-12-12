@@ -1,0 +1,55 @@
+/* #region GIT Button */
+.btn-github {
+	background: -webkit-linear-gradient(top, rgba(40,40,40,0.3), rgba(35,35,35,0.3) 50%, rgba(10,10,10,0.3) 50%, rgba(0,0,0,0.3));
+}
+
+.btn-github:hover{
+	background:-webkit-linear-gradient(top, rgba(40,40,40,0.6), rgba(35,35,35,0.6) 50%, rgba(10,10,10,0.8) 50%, rgba(0,0,0,0.8))
+}
+
+.btn-github span {
+	background:url("/assets/css/images/blacktocat.png");
+}
+/* #endregion */
+
+/* #region GFL Button */
+.btn-gfl {
+    background: -webkit-linear-gradient(rgb(255, 187, 17, 0.3), rgb(170, 130, 0, 0.3) 50%, rgb(10, 10, 10, 0.3) 50%, rgb(0, 0, 0, 0.3));
+}
+
+.btn-gfl:hover {
+    background: -webkit-linear-gradient(rgb(255, 187, 17, 0.6), rgb(170, 130, 0, 0.6) 50%,rgb(10, 10, 10, 0.8) 50%, rgb(0, 0, 0, 0.8));
+}
+
+.btn-gfl span {
+    background-image: url("./gnk.png");
+}
+/* #endregion */
+
+/* #region PNC Button */
+.btn-pnc {
+    background: -webkit-linear-gradient(rgb(255 255 255 / 30%), rgb(109 163 163 / 30%) 50%, rgb(104 137 163 / 30%) 50%, rgb(0 64 55 / 30%));
+}
+
+.btn-pnc:hover {
+    background: -webkit-linear-gradient(rgb(255 255 255 / 60%), rgb(109 163 163 / 60%) 50%, rgb(104 137 163 / 80%) 50%, rgb(0 64 55 / 80%));
+}
+
+.btn-pnc span {
+    background-image: url("./exiles.png");
+}
+/* #endregion */
+
+/* #region EXI Button */
+.btn-exi {
+    background: -webkit-linear-gradient(rgb(255, 187, 17, 0.3), rgb(170, 130, 0, 0.3) 50%, rgb(10, 10, 10, 0.3) 50%, rgb(0, 0, 0, 0.3));
+}
+
+.btn-exi:hover {
+    background: -webkit-linear-gradient(rgb(255, 187, 17, 0.6), rgb(170, 130, 0, 0.6) 50%,rgb(10, 10, 10, 0.8) 50%, rgb(0, 0, 0, 0.8));
+}
+
+.btn-exi span {
+    background-image: url("");
+}
+/* #endregion */

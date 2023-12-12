@@ -71,3 +71,7 @@ export function image(link, alt, caption = null) {
             return setattr(document.createElement("figure"), {append: [IMG, FIGCAPTION]});
     }
 }
+
+export class Embed {
+    static google = googleDocsCompilation;
+}
