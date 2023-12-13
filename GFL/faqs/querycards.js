@@ -3967,11 +3967,9 @@ export const cardData = [
 
 //checked skipped or duplicate ids
 (function() {
-    const LENGTH = cardData.length;
-    const INSERT_ARRAY = new Array(length);
-    console.log(INSERT_ARRAY)
-    console.log(INSERT_ARRAY[0] === undefined)
-    // for (const CARD of cardData) {
-
-    // }
+    /** @type {{[id: string]: number}}*/ const COUNTER = {};
+    for (const {id} of cardData)
+        COUNTER[id] = (COUNTER[id] ?? 0) + 1;
+    
+    console.log(Object.entries(COUNTER).filter(([, count]) => count !== 1));
 })()
