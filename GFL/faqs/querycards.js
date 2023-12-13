@@ -433,7 +433,8 @@ export const cardData = [
             ],
             'Shop': [
                 'Applicable to collab dolls using event currency.',
-                `5${STAR} dolls available in Factory Production are the only ones elegible for True Core Masks, bar spaghetti.`
+                `5${STAR} dolls available in Factory Production are the only ones elegible for True Core Masks, bar spaghetti.`,
+                `Paid ${link("Transfer Letters", "https://redd.it/zqfkzw")} for any 4 or 5${STAR} units. Very useful for 4${STAR} SGs. Rare occurence.`
             ],
             'Achievements': [
                 "Type 97s and the AR Team, which are the only ones that can't be bought.",
@@ -2333,7 +2334,8 @@ export const cardData = [
             "P90": [spoilerSummary("Document by hina#8787", Embed.google(Embed.G_WORD, "1j5YzAAZ-_Q1bXMUvFKGUWnGgqwacatABv0u-MmY0JLw"))],
             "Galil Mod": [link("Reddit discussion", "https://old.reddit.com/r/girlsfrontline/comments/qpyw46/weekly_commanders_lounge_november_09_2021/hkj3ce0/")],
             "NTW MOD": ["Second skill kicks in as long as the kill check is satisfied."],
-            "Px4": ["Buffs crit damage of surecrits and 100% crit is still 100% crit."]
+            "Px4": ["Buffs crit damage of surecrits and 100% crit is still 100% crit."],
+            "PPK Mod": [link("Reddit breakdown.", "https://old.reddit.com/r/girlsfrontline/comments/v1l5po/weekly_commanders_lounge_may_31_2022/ib1eu2w/")]
         })}`,
         tags : [dTag.TDOLL, dTag.SKILL]
     },
@@ -3906,19 +3908,19 @@ export const cardData = [
         tags : [dTag.TDOLL]
     },  //@Visual
     {
-        id : '00469',
+        id : '00489',
         questions : `Will the coalition team I set up as a support echelon (with Night Vision equipped) have 2-node vision range when my friends use it?`,
         answers : `No.`,    //https://old.reddit.com/r/girlsfrontline/comments/185qw10/weekly_commanders_lounge_november_28_2023/kbozp93/
         tags : [dTag.COALITION, dTag.EQUIP, dTag.FRIEND, dTag.ECH]
     },
     {
-        id : '00470',
+        id : '00490',
         questions : `What does total exp in the auto-battle completion mean?`,
         answers : `${link("Reddit reply.", "https://www.reddit.com/r/girlsfrontline/comments/hzark0/weekly_commanders_lounge_july_28_2020/g082rwn/")}`,
         tags : [dTag.LEVEL, dTag.AUTO]
     },
     {
-        id : '00471',
+        id : '00491',
         questions : `Is there a repository of all dolls currently in the game?`,
         answers : `${List.unordered(
             link("CN Wiki", "http://www.gfwiki.org/w/%E9%A6%96%E9%A1%B5"),
@@ -3928,9 +3930,47 @@ export const cardData = [
         tags : [dTag.TDOLL]
     },
     {
+        id : '00492',
+        questions : `Are there any event clear guides for this game?`,
+        answers : `${link("Serzha's Youtube", "https://www.youtube.com/@Serzha")}<br>
+        ${link("Matsuda guide.", "https://gfl.matsuda.tips/blog/")}`,   //https://old.reddit.com/r/girlsfrontline/comments/18b74sm/weekly_commanders_lounge_december_05_2023/kcbkiv9/
+        tags : [dTag.MISC]
+    },
+    {
+        id : '00493',
+        questions : `What's the best strategy for Gray Zone?`,
+        answers : `${List.unordered(
+            "Picking the hardest difficulty you can deal.",
+            "Beelining to the boss for points per time."
+        )}`,
+        tags : [dTag.GZ]
+    },
+    {
+        id : '00494',
+        questions : `How do I know if a SPEQ gives additional skills?`,
+        answers : `If the equipment has an "Enhances Skill" as a stat or if it can only be equipped by a Neurally Upgraded doll.`,
+        tags : [dTag.EQUIP, dTag.SPEQ, dTag.GZ, dTag.MOD]
+    },
+    {
+        id : '00495',
+        questions : `How do you set L2Ds for adjutants?`,
+        answers : `Does her costume have one? Is she strictly on a single adjutant slot? Is the L2D toggle in settings on? Is the L2D toggle in adjutant postioning on?`,
+        tags : [dTag.SKIN, dTag.ADJUNCT, dTag.TDOLL]
+    },
+    {
         id : '00000',
         questions : ``,
         answers : ``,
         tags : []
     },
 ].slice(0, -1);
+
+//checked skipped or duplicate ids
+(function() {
+    const LENGTH = cardData.length;
+    const INSERT_ARRAY = new Array(length);
+    console.log(INSERT_ARRAY)
+    // for (const CARD of cardData) {
+
+    // }
+})()

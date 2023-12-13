@@ -15,12 +15,6 @@ function imageAsset(imagename) {
 }
 //#endregion
 
-// try {
-//     console.log("import.meta.url:", import.meta.url)
-// } catch {
-//     console.warn("import.meta.url unavailable.")
-// }
-
 export const dTag = {
     ASST: {name: "Assistant", description: "Unit shown in your home screen."},
     ALGO: {name: "Algorithms", description: "Equipments in this game."},
@@ -32,6 +26,7 @@ export const dTag = {
     OATH: {name: "OathSystem", description: "Reject real life, marry PNGs."},
     GACHA: {name: "NeuralSearch", description: "Modern monetization."},
     BP: {name: "MagraseaBattlePass", description: "Gives skin, resources, frames, furnitures."},
+    MAJOR: {name: "MajorEvents", description: "A Mica staple."},    
 };
 
 /**
@@ -111,9 +106,9 @@ export const dTag = {
     {
         id: 8,
         question: `Do battlepass skins rerun?`,
-        answer: `Yes.`,
+        answer: `${image(imageAsset("BPRerun.png"))}`,
         tags: [dTag.SKIN, dTag.BP]
-    },  //@Visual
+    },
     {
         id: 9,
         question: `What resources can I get from a Character Event?`,
@@ -147,7 +142,8 @@ export const dTag = {
     {
         id: 11,
         question: `What's the best way to pull for limited units?`,
-        answer: `General consensus is to pull on kits banner (because kits is more in-demand than fragments) until 59/60 soft pity, switch to fragment banner (due to 50% banner unit chance on a 3${SC.STAR} pull), and pull one.`,
+        answer: `General consensus is to pull on kits banner (because kits is more in-demand than fragments) until 59/60 soft pity, switch to fragment banner (due to 50% banner unit chance on a 3${SC.STAR} pull), and pull one.<br>
+        In terms of sand expenditure, the only important part here is pulling on the fragments on pity.`,
         tags: [dTag.GACHA]
     },
     {
@@ -155,6 +151,33 @@ export const dTag = {
         question: `Will limited units get a rerun?`,
         answer: `Yes.`,
         tags: [dTag.DOLL, dTag.GACHA]
+    },
+    {
+        id: 13,
+        question: `I can't see the character in Fragment Search. Where would I get their fragments?`,
+        answer: `Shop is the only option. Applicable only to Limited and Welfare units.`,
+        tags: [dTag.DOLL]
+    },
+    {
+        id: 14,
+        question: `How long is the gap between major story events?`,
+        answer: `Usually around 2-3 months.`,
+        tags: [dTag.MAJOR]
+    },
+    {
+        id: 15,
+        question: `Which gifts are liked by which unit?`,
+        answer: `${Embed.google(
+            ["Neural Cloud Gift Stuff", "https://docs.google.com/spreadsheets/d/1CSqGRSHz51spQXjwHN8LRNrW21_OHf9zlTgWnx3Y2Tg"],
+            ["Neural Cloud Gifts", "https://docs.google.com/spreadsheets/d/1vohWGNxRO0kXSBxAGlVBezleV2YgxnCHY2yE_4scdTc"],  //@Owner
+        )}`,
+        tags: [dTag.DOLL]
+    },
+    {
+        id: 16,
+        question: `Who should I get in Designated Neural Acquisition?`,
+        answer: `${image("https://media.discordapp.net/attachments/648373344600850434/1183221959643889684/image.png?ex=65878c52&is=65751752&hm=0bdf4e93564225c0dab105e618eab2f4e348b2f8902042da82d3e5b460f442a5&=&format=webp&quality=lossless", "By u/Whole-Arm4526")}`,
+        tags: [dTag.DOLL]
     },
     {
         id: 0,
@@ -165,4 +188,11 @@ export const dTag = {
 ].slice(0, -1);
 
 //what is arma
-//updgrading to l2d
+//upgrading to l2d
+
+
+// try {
+//     console.log("import.meta.url:", import.meta.url)
+// } catch {
+//     console.warn("import.meta.url unavailable.")
+// }

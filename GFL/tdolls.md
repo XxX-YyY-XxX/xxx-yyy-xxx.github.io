@@ -2,10 +2,6 @@
 
 # Tactical Dolls
 
-### How do you set L2Ds for adjutants?
-
-> Does her costume have one? Is she strictly on a single adjutant slot? Is the L2D toggle in settings on? Is the L2D toggle in adjutant postioning on?
-
 ### Is there a comprehensive list of Limited Event Dolls?
 
 > [From redditor u/BigStupidJellyfish_.](https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls.html)
