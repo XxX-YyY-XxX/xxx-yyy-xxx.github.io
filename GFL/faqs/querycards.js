@@ -3970,6 +3970,7 @@ export const cardData = [
     const LENGTH = cardData.length;
     const INSERT_ARRAY = new Array(length);
     console.log(INSERT_ARRAY)
+    console.log(INSERT_ARRAY[0] === undefined)
     // for (const CARD of cardData) {
 
     // }
