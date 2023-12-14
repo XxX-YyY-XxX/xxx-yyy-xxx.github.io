@@ -26,7 +26,8 @@ export const dTag = {
     OATH: {name: "OathSystem", description: "Reject real life, marry PNGs."},
     GACHA: {name: "NeuralSearch", description: "Modern monetization."},
     BP: {name: "MagraseaBattlePass", description: "Gives skin, resources, frames, furnitures."},
-    MAJOR: {name: "MajorEvents", description: "A Mica staple."},    
+    MAJOR: {name: "MajorEvents", description: "A Mica staple."},
+    FRAGS: {name: "NeuralFragments", description: "Used for Neural Expansion and Arma Inscripta."},
 };
 
 /**
@@ -137,7 +138,7 @@ export const dTag = {
         id: 10,
         question: `I'm 15 Neural Fragments away from raising the welfare unit to 5${SC.STAR}. Where can I get the remaining frags?`,
         answer: `Intimacy.`,
-        tags: [dTag.DOLL]
+        tags: [dTag.DOLL, dTag.FRAGS]
     },
     {
         id: 11,
@@ -156,7 +157,7 @@ export const dTag = {
         id: 13,
         question: `I can't see the character in Fragment Search. Where would I get their fragments?`,
         answer: `Shop is the only option. Applicable only to Limited and Welfare units.`,
-        tags: [dTag.DOLL]
+        tags: [dTag.DOLL, dTag.FRAGS]
     },
     {
         id: 14,

@@ -1,9 +1,9 @@
 interface Array<T> {
-    /** Removes the first occurence of the element from the array in-place. */
-    remove(value: T): void;
-
     /** Returns the number of occurences of the object. */
     count(value: T): number;
+
+    /** Removes the first occurence of the element from the array in-place. Returns true if value is removed, else returns false. */
+    remove(value: T): boolean;
 
     /** Checks if current array's elements are present in the given array. */
     subsetof(main_array: T[]): boolean;

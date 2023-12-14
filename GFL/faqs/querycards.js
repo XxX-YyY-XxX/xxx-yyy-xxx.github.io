@@ -3965,11 +3965,14 @@ export const cardData = [
     },
 ].slice(0, -1);
 
-//checked skipped or duplicate ids
 (function() {
-    /** @type {{[id: string]: number}}*/ const COUNTER = {};
-    for (const {id} of cardData)
-        COUNTER[id] = (COUNTER[id] ?? 0) + 1;
-    
-    console.log(Object.entries(COUNTER).filter(([, count]) => count !== 1));
+    const INDICES = Object.keys(cardData).map(Number);
+    /** @type {Set<number>} */ const DUPLICATES = new Set();
+
+    for (const ID of cardData.map(({id}) => Number(id)))
+        if (!INDICES.remove(ID))
+            DUPLICATES.add(ID)
+
+    console.log("Skipped:", INDICES);
+    console.log("Duplicate:", Array.from(DUPLICATES));
 })()

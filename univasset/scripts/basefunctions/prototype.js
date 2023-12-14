@@ -3,28 +3,29 @@ Object.defineProperty(Array.prototype, "count", {
     value: function(value) {
         return this.filter(x => x === value).length;
     },
-    writable: true, configurable: true
+    writable: true, configurable: true, enumerable: true
 })
 
 Object.defineProperty(Array.prototype, "remove", {
     value: function(value) {
         const INDEX = this.indexOf(value);
-        this.splice(INDEX, Number(INDEX !== -1));
+        const PRESENT = INDEX !== -1;
+        if (PRESENT) this.splice(INDEX, 1);
+        return PRESENT;
     },
-    writable: true, configurable: true
+    writable: true, configurable: true, enumerable: true
 })
 
 Object.defineProperty(Array.prototype, "subsetof", {
     /** @param {Array} main_array */
     value: function(main_array) {
         const COPY = main_array.slice();
-        for (const ITEM of this) {
-            if (COPY.includes(ITEM))    COPY.remove(ITEM);
-            else                        return false;
-        }
+        for (const ITEM of this)
+            if (!COPY.remove(ITEM))
+                return false;
         return true;
     },
-    writable: true, configurable: true
+    writable: true, configurable: true, enumerable: true
 })
 //#endregion
 

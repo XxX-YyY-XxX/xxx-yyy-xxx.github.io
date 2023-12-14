@@ -1,25 +1,6 @@
+//#region 0th-order functions/Uses native functions
 export function iter(iterable) {
     return iterable[Symbol.iterator]();
-}
-
-export function* zip(...iterables) {
-    var extension;
-    switch (iterables[iterables.length - 1]) {
-        case true:
-            iterables.pop();
-            extension = "some";
-            break;
-        case false:
-            iterables.pop();
-        default:
-            extension = "every";
-            break;
-    }
-
-    const OUTPUT = Array();
-    const ITER_ARRAY = iterables.map(iter);
-    while (ITER_ARRAY.map(x => x.next()).map(({value, done}) => {OUTPUT.push(value); return !done;})[extension](x => x))
-        yield OUTPUT.splice(0);
 }
 
 export function type(any) {
@@ -43,10 +24,14 @@ export function type(any) {
     return "object";
 }
 
+export function subclassof(subclass, superclass) {
+    return subclass.prototype instanceof superclass;
+}
+
 export function* range({start = 0, stop = null, step = 1} = {}) {
     var loop;
     if (stop === null)
-        loop = x => true;
+        loop = () => true;
     else if (step > 0)
         loop = x => x < stop;
     else if (step < 0)
@@ -54,10 +39,68 @@ export function* range({start = 0, stop = null, step = 1} = {}) {
     else
         return console.error("Error in range function:", stop, start, step);
 
-    for (start; loop(start); start += step)
-        yield start;
+    for (var i = start; loop(i); i += step) yield i;
 }
 
+export function* chain(...iterables) {
+    for (const iterable of iterables)
+        for (const item of iterable)
+            yield item;
+}
+
+export function* enumerate(iterable) {
+    var index = 0;
+    for (const ITEM of iterable) yield [index++, ITEM];
+}
+//#endregion
+
+//#region 1st-order functions/Uses 0th and above
+export function setattr(base, attributes) {
+    for (const [ATTR, VALUE] of Object.entries(attributes)) {
+        switch (type(VALUE)) {
+            // case "string":
+            // case "number":
+            // case "boolean":
+            //     base[attrib] = value;
+            //     break;
+            case "array":
+                base[ATTR](...VALUE);
+                break;
+            case "object":
+                setattr(base[ATTR], VALUE);
+                break;
+            default:
+                base[ATTR] = VALUE;
+                break;
+            // console.warn(`Unknown data type of ${attrib}: ${type(value)}`);
+            //     break;
+        }
+    }
+    return base;
+}
+
+export function* zip(...iterables) {
+    const EXT = (function() {
+        switch (iterables[iterables.length - 1]) {
+            case true:
+                iterables.pop();
+                return "some";
+            case false:
+                iterables.pop();
+            default:
+                return "every";
+        }
+    })()
+
+    const OUTPUT = Array();
+    const ITER_ARRAY = iterables.map(iter);
+    while (ITER_ARRAY.map(x => x.next()).map(({value, done}) => {OUTPUT.push(value); return !done;})[EXT](x => x))
+        yield OUTPUT.splice(0);
+}
+//#endregion
+
+//#region 2nd-order functions/Uses 1st and above
+/** Used only for `cmp` function. */
 const METHOD = {
     /** @param {number} x @param {number} y @returns {number} */
     number: (x, y) => x - y,
@@ -67,12 +110,13 @@ const METHOD = {
     boolean: (x, y) => x - y,
     /** @param {Array} x @param {Array} y @returns {number} */
     array: (x, y) => {
-        for (const [first, second] of zip(x, y)) {
-            const val = METHOD[type(first)](first, second);
-            if (val) return val;    //-1 = true, 0 = false, 1 = true
+        for (const [A, B] of zip(x, y)) {
+            const VAL = METHOD[type(A)](A, B);
+            if (VAL) return VAL;                // -1 = true, 0 = false, 1 = true
         }
         return 0;
     },
+
     /** @param {{}} x @param {{}} y @returns {number} */
     object: (x, y) => {
         //Longest clipped so [first, second] never undefined
@@ -86,64 +130,36 @@ const METHOD = {
 };
 
 export function cmp({key = x => x, reverse = false, array = null} = {}) {
-    //shall never fuse array and key parameters
+    // Never fuse array and key parameters
     const _onReverse = reverse ? ((x, y) => [y, x]) : ((x, y) => [x, y]);
 
     function _getIndex(a) {
-        if (array) {
-            const COPY = array.slice();
-            _getIndex = x => {
-                const OUT = COPY.indexOf(x);
-                COPY.splice(OUT, Number(OUT !== -1));
-                return OUT;
+        _getIndex = (function() {
+            if (array) {
+                const COPY = array.slice();
+                return x => {
+                    const OUT = COPY.indexOf(x);
+                    if (OUT !== -1) COPY.splice(OUT, 1);
+                    return OUT;
+                }
+            } else {
+                return x => x;
             }
-        } else {
-            _getIndex = x => x;
-        }
+        })();
         return _getIndex(a);
     }
 
-    function _currentFunc(a, b) {
-        _currentFunc = METHOD[type(a)];
-        return _currentFunc(a, b);
+    function _sorterFunc(a, b) {
+        _sorterFunc = METHOD[type(a)];
+        if (_sorterFunc === undefined) console.error(type(a), "is unset in METHOD.")
+        return _sorterFunc(a, b);
     }
 
     return function(a, b) {
         [a, b] = [key(a), key(b)];
         [a, b] = [_getIndex(a), _getIndex(b)];
         [a, b] = _onReverse(a, b);
-        return _currentFunc(a, b);
+        return _sorterFunc(a, b);
     }
 }
-
-export function setattr(base, attributes) {
-    for (const [attrib, value] of Object.entries(attributes)) {
-        switch (type(value)) {
-            case "string":
-            case "number":
-            case "boolean":
-                base[attrib] = value;
-                break;
-            case "array":
-                base[attrib](...value);
-                break;
-            case "object":
-                setattr(base[attrib], value);
-                break;
-            default:
-                console.warn(`Unknown data type of ${attrib}: ${type(value)}`);
-                break;
-        }
-    }
-    return base;
-}
-
-export function* chain(...iterables) {
-    for (const iterable of iterables)
-        for (const item of iterable)
-            yield item;
-}
-
-export function subclassof(subclass, superclass) {
-    return subclass.prototype instanceof superclass;
-}
+//#endregion
