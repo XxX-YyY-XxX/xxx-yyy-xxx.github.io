@@ -2,7 +2,7 @@
 export function iter<T>(iterable: Iterable<T>): Iterator<T, void, unknown>;
 
 /** typeof, but with extra steps. */
-export function type(any: any): "string" | "number" | "bigint" | "boolean" | "symbol" | "undefined" | "function" | "object" | "null" | "array" | "set" | "dom" | "iterator";
+export function type(any: any): "string" | "number" | "bigint" | "boolean" | "symbol" | "undefined" | "function" | "object" | "null" | "array" | "iterable" | "class";
 
 export function subclassof<T>(subclass: typeof Object, superclass: T): subclass is T;
 

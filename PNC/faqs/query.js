@@ -3,15 +3,14 @@ import {Embed, textStyle} from "../../univasset/scripts/html/index.js";
 import List from '../../univasset/scripts/htmlfunctions/lists.js';
 import * as SC from '../../univasset/scripts/specialchars.js';
 
+//#region Constants
+const IMG_ASSET = "../assets/images/faqs/"
+//#endregion
+
 //#region Functions
 /** @param {string} text @param {...number} ids */
 function getID(text, ...ids) {
     return `<a href="https://xxx-yyy-xxx.github.io/PNC/faqs/?id=${ids.map(x => String(x).padStart(5, "0")).join("+")}">${text}</a>`
-}
-
-/** @param {string} imagename @returns {string} */
-function imageAsset(imagename) {
-    return `../assets/images/faqs/${imagename}`;
 }
 //#endregion
 
@@ -99,7 +98,7 @@ export const dTag = {
         id: 7,
         question: `Where do I enter the redemption code?`,
         answer: `${List.description({
-            "Android": [image(imageAsset("RedeemGift.png"), "Under Settings")],
+            "Android": [image(IMG_ASSET+"RedeemGift.png", "Under Settings")],
             "iOS": [link("Redemption page.", "https://42lab-us.sunborngame.com/redeem")]
         })}`,
         tags: [dTag.MISC]
@@ -107,7 +106,7 @@ export const dTag = {
     {
         id: 8,
         question: `Do battlepass skins rerun?`,
-        answer: `${image(imageAsset("BPRerun.png"))}`,
+        answer: `${image(IMG_ASSET+"BPRerun.png")}`,
         tags: [dTag.SKIN, dTag.BP]
     },
     {

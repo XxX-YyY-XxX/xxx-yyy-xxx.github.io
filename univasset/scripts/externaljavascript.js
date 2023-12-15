@@ -255,3 +255,83 @@ oXHR.send(); */
     imageExists(url)
     .then(ok => console.log(`RESULT: exists=${ok}`))
     //                    => RESULT: exists=true */
+
+/* Success
+    Algorithm.name                          Algorithm       string
+    Algorithm.prototype.constructor.name    Algorithm       string
+    a.constructor                           <class repr>    function
+    a.constructor.name                      Algorithm       string
+    Object.getPrototypeOf(a)                <class>         object
+    Object.getPrototypeOf(a).constructor,   <class repr>    function
+
+    prototype:  Basically an instance representation.
+
+*/
+
+/* Failed
+    a.constructor.toString().match(/function\s*(\w+)/)                  null
+    Object.prototype.toString.call(a).match(/^\[object\s(.*)\]$/)[1]    Object
+    Object.getPrototypeOf(a).prototype                                  undefined
+    this.prototype                                                      undefined
+*/
+
+// cache images
+// function databaseCreate() {
+//     // https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB
+//     // https://javascript.info/indexeddb
+    
+//     // ask user permission
+//     const DB_REQUEST = indexedDB.open("Algorithms", 1);
+//     DB_REQUEST.addEventListener("error", function(event) {
+//         console.log("Database error.")
+//     });
+
+//     /** @type {IDBDatabase?} */ var database = null;
+//     DB_REQUEST.addEventListener("success", function(event) {
+//         console.log("Database success.")
+//         database = this.result
+//         database.addEventListener("error", function(db_event) {
+//             console.warn("Database error:", this.errorCode)
+//         });
+
+//         // // This event is only implemented in recent browsers
+//         // request.onupgradeneeded = (event) => {
+//         //     // Save the IDBDatabase interface
+//         //     const db = event.target.result;
+        
+//         //     // Create an objectStore for this database
+//         //     const objectStore = db.createObjectStore("name", { keyPath: "myKey" });
+//         // };
+
+//         // request.onupgradeneeded = (event) => {
+//         //     const db = event.target.result;
+          
+//         //     // Create an objectStore to hold information about our customers. We're
+//         //     // going to use "ssn" as our key path because it's guaranteed to be
+//         //     // unique - or at least that's what I was told during the kickoff meeting.
+//         //     const objectStore = db.createObjectStore("customers", { keyPath: "ssn" });
+          
+//         //     // Create an index to search customers by name. We may have duplicates
+//         //     // so we can't use a unique index.
+//         //     objectStore.createIndex("name", "name", { unique: false });
+          
+//         //     // Create an index to search customers by email. We want to ensure that
+//         //     // no two customers have the same email, so use a unique index.
+//         //     objectStore.createIndex("email", "email", { unique: true });
+          
+//         //     // Use transaction oncomplete to make sure the objectStore creation is
+//         //     // finished before adding data into it.
+//         //     objectStore.transaction.oncomplete = (event) => {
+//         //       // Store values in the newly created objectStore.
+//         //       const customerObjectStore = db
+//         //         .transaction("customers", "readwrite")
+//         //         .objectStore("customers");
+//         //       customerData.forEach((customer) => {
+//         //         customerObjectStore.add(customer);
+//         //       });
+//         //     };
+//         //   };
+//     });
+    
+// }
+

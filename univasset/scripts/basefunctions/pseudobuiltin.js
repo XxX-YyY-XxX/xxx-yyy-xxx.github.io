@@ -4,24 +4,32 @@ export function iter(iterable) {
 }
 
 export function type(any) {
-    try {
-        const TYPE = typeof any;
-        if (TYPE !== "object")
-            return TYPE;
-        else if (any === null)
-            return "null";
+    // var tempvar;
+    const TYPE = typeof any;
+    if (TYPE === "object") {
+        if (any === null)
+            return "null";      
         else if (Array.isArray(any))
             return "array";
-        else if (any instanceof Set)
-            return "set";
-        else if (any instanceof HTMLElement || any instanceof DocumentFragment)
-            return "dom";
         else if (Symbol.iterator in any)
-            return "iterator";
-    } catch (exception) {
-        console.error(exception);
-    }
-    return "object";
+            return "iterable";
+        // else if (any instanceof Set)
+        //     return "set";
+        // else if (any instanceof HTMLElement || any instanceof DocumentFragment)
+        //     return "dom";
+        // else if (typeof (tempvar = any.constructor.name) === "string" && tempvar)  // Custom Classes
+        //     return tempvar;
+        // else if (typeof (tempvar = any[Symbol.toStringTag]) === "string")   // Class Display Name
+        //     return tempvar;
+        else
+            return "object";
+    } else if (TYPE === "function") {
+        if (Function.prototype.toString.call(any).startsWith("class"))
+            return "class";
+        else
+            return "function";
+    } else
+        return TYPE;
 }
 
 export function subclassof(subclass, superclass) {
