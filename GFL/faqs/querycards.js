@@ -3745,7 +3745,7 @@ export const cardData = [
         tags : [dTag.EQUIP, dTag.SPEQ, dTag.GET]
     },
     {
-        id : '00464',
+        id : '00496',
         questions : `Do Echelon Limits, Doll Storage, and the likes have dicounts?`,
         answers : `First purchase only.`,
         tags : [dTag.SHOP, dTag.GEMS]
@@ -3962,17 +3962,17 @@ export const cardData = [
         questions : ``,
         answers : ``,
         tags : []
-    },
+    },  //497 next
 ].slice(0, -1);
 
-(function() {
-    const INDICES = Object.keys(cardData).map(Number);
-    /** @type {Set<number>} */ const DUPLICATES = new Set();
+// (function() {
+//     const INDICES = Object.keys(cardData).map(Number);
+//     /** @type {Set<number>} */ const DUPLICATES = new Set();
 
-    for (const ID of cardData.map(({id}) => Number(id)))
-        if (!INDICES.remove(ID))
-            DUPLICATES.add(ID)
+//     for (const ID of cardData.map(({id}) => Number(id)))
+//         if (!INDICES.remove(ID))
+//             DUPLICATES.add(ID)
 
-    console.log("Skipped:", INDICES);
-    console.log("Duplicate:", Array.from(DUPLICATES));
-})()
+//     console.log("Skipped:", INDICES);
+//     console.log("Duplicate:", Array.from(DUPLICATES));
+// })()

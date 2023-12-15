@@ -143,33 +143,10 @@ function combine(object1, object2) {
 function algoPath(algoname) {
     return `../assets/images/algorithms/sets/${algoname}.png`;
 }
-
-// /**
-//  * @template T
-//  * @param {T} object 
-//  * @returns {Readonly<T>}
-//  */
-// function deepFreeze(object) {
-//     // Retrieve the property names defined on object
-//     const propNames = Reflect.ownKeys(object);
-  
-//     // Freeze properties before freezing self
-//     for (const name of propNames) {
-//       const value = object[name];
-  
-//       if ((value && typeof value === "object") || typeof value === "function") {
-//         deepFreeze(value);
-//       }
-//     }
-  
-//     return Object.freeze(object);
-//   }
 //#endregion
 
 //#region Base
-
-/** @abstract */
-class Algorithm {
+/** @abstract */ class Algorithm {
     /** @abstract @static @type {[StatAttributes, number][] | string} */ static SET2;
     /** @abstract @static @type {string?} */ static SET3;
     /** @abstract @type {number} */ SIZE;
@@ -199,9 +176,9 @@ class Algorithm {
     get info() {
         return [
             this.constructor.name,
-            Array.from(this.mainstat)[0][0],
-            Array.from(this.substat1)[0][0],
-            this instanceof DoubleBlock ? Array.from(this.substat2)[0][0] : ""
+            Array.from(this.mainstat.keys())[0],
+            Array.from(this.substat1.keys())[0],
+            this instanceof DoubleBlock ? Array.from(this.substat2.keys())[0] : ""
         ];
     }
 
@@ -228,17 +205,31 @@ class Algorithm {
         //     algoClass.SET3
         // }
     
-        // threshold
         const SET_EFFECT = this.SET2;
         const DIV2 = document.createElement("div");
-        DIV2.textContent = Array.isArray(SET_EFFECT) ? SET_EFFECT.map(([attr,]) => STATVALUES.NAME[attr]).join("|") : SET_EFFECT;
+        if (Array.isArray(SET_EFFECT)) {
+            // if (SET_EFFECT === STATVALUES.SET.HEALTHFLAT) {
+            //     if (AlgoField.current.basestat.hp < STATVALUES.SET_THRESH.hp)
+            //         DIV2.classList.add("algo-better");
+            //     else
+            //         DIV2.classList.add("algo-worse");
+            // } else if (SET_EFFECT === STATVALUES.SET.HEALTHPERC) {
+            //     if (AlgoField.current.basestat.hp > STATVALUES.SET_THRESH.hp)
+            //         DIV2.classList.add("algo-better");
+            //     else
+            //         DIV2.classList.add("algo-worse");
+            // } else if (SET_EFFECT === STATVALUES.SET.PENFLAT) {
+
+            // } else if (SET_EFFECT === STATVALUES.SET.PENPERC) {
+
+            // }
+            DIV2.textContent = SET_EFFECT.map(([attr,]) => STATVALUES.NAME[attr]).join("|");
+        } else {
+            DIV2.textContent = SET_EFFECT;
+        }
         OUTPUT.appendChild(DIV2);
     
-        // AlgoField.current.basestat
-        // STATVALUES.SET_THRESH
-    
         return OUTPUT;
-    
     }
 }
 
@@ -472,15 +463,7 @@ class Special extends DoubleBlock {
         return super.html(SPECIALMAINSTAT, SPECIALSUBSTAT);
     }
 }
-//#endregion
 
-//#region Interface
-const MAX_SIZE = 6;
-const GRIDS = {
-    /** @type {HTMLDivElement} */ Offense: document.querySelector("#algo-modal #Offense"),
-    /** @type {HTMLDivElement} */ Stability: document.querySelector("#algo-modal #Stability"),
-    /** @type {HTMLDivElement} */ Special: document.querySelector("#algo-modal #Special")
-}
 const ALGO_SETS = {
     Offense: {
         OffenseBlock:   OffenseBlock,
@@ -532,35 +515,44 @@ const ALGO_SETS = {
         Inspiration:    class extends Special {static SET2 = STATVALUES.SET.HPREGEN;      static SET3 = null;},
     }
 };
-/** @param {typeof Algorithm} algoClass */
-function algoSelectButton(algoClass) {
-    const OUTPUT = setattr(document.createElement("button"), {type: "submit", value: algoClass.name});
+//#endregion
 
-    const IMG = document.createElement("img");
-    IMG.alt = algoClass.name;
-    IMG.src = algoPath(subclassof(algoClass, SingleBlock) ? "SingleBlock" : algoClass.name);
-    OUTPUT.appendChild(IMG);
-
-    // 3set effect
-    const DIV1 = document.createElement("div");
-    DIV1.textContent = algoClass.name;
-    OUTPUT.appendChild(DIV1);
-
-    // if (algoClass.SET3) {
-    //     algoClass.SET3
-    // }
-
-    // threshold
-    const SET_EFFECT = algoClass.SET2;
-    const DIV2 = document.createElement("div");
-    DIV2.textContent = Array.isArray(SET_EFFECT) ? SET_EFFECT.map(([attr,]) => STATVALUES.NAME[attr]).join("|") : SET_EFFECT;
-    OUTPUT.appendChild(DIV2);
-
-    // AlgoField.current.basestat
-    // STATVALUES.SET_THRESH
-
-    return OUTPUT;
+//#region Interface
+const MAX_SIZE = 6;
+const GRIDS = {
+    /** @type {HTMLDivElement} */ Offense: document.querySelector("#algo-modal #Offense"),
+    /** @type {HTMLDivElement} */ Stability: document.querySelector("#algo-modal #Stability"),
+    /** @type {HTMLDivElement} */ Special: document.querySelector("#algo-modal #Special")
 }
+// /** @param {typeof Algorithm} algoClass */
+// function algoSelectButton(algoClass) {
+//     const OUTPUT = setattr(document.createElement("button"), {type: "submit", value: algoClass.name});
+
+//     const IMG = document.createElement("img");
+//     IMG.alt = algoClass.name;
+//     IMG.src = algoPath(subclassof(algoClass, SingleBlock) ? "SingleBlock" : algoClass.name);
+//     OUTPUT.appendChild(IMG);
+
+//     // 3set effect
+//     const DIV1 = document.createElement("div");
+//     DIV1.textContent = algoClass.name;
+//     OUTPUT.appendChild(DIV1);
+
+//     // if (algoClass.SET3) {
+//     //     algoClass.SET3
+//     // }
+
+//     // threshold
+//     const SET_EFFECT = algoClass.SET2;
+//     const DIV2 = document.createElement("div");
+//     DIV2.textContent = Array.isArray(SET_EFFECT) ? SET_EFFECT.map(([attr,]) => STATVALUES.NAME[attr]).join("|") : SET_EFFECT;
+//     OUTPUT.appendChild(DIV2);
+
+//     // AlgoField.current.basestat
+//     // STATVALUES.SET_THRESH
+
+//     return OUTPUT;
+// }
 /** @type {HTMLDialogElement} */ const ALGO_SELECT = document.querySelector("#algo-select");
 ALGO_SELECT.addEventListener("close", function(event) {
     this.firstElementChild.replaceChildren();
@@ -622,9 +614,9 @@ class AlgoGrid {
     #close;     // Function object required instead of class method for listener attachment and removal.
     #open() {
         if (this.#emptycell === 1)
-            ALGO_SELECT.firstElementChild.appendChild(algoSelectButton(ALGO_SETS[this.#fieldtype][`${this.#fieldtype}Block`]));
+            ALGO_SELECT.firstElementChild.appendChild(ALGO_SETS[this.#fieldtype][this.#fieldtype+"Block"].createSelectButton());
         else
-            ALGO_SELECT.firstElementChild.append(...Object.values(ALGO_SETS[this.#fieldtype]).map(algoSelectButton));
+            ALGO_SELECT.firstElementChild.append(...Object.values(ALGO_SETS[this.#fieldtype]).map(x => x.createSelectButton()));
 
         ALGO_SELECT.addEventListener("close", this.#close);
 
@@ -649,16 +641,18 @@ class AlgoGrid {
     }
 }
 
+const STORAGEKEY = "algorithms";
+
 /** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
 /** @type {HTMLButtonElement} */ const ALGO_CLOSE = document.querySelector("#close-modal");
 ALGO_MODAL.addEventListener("close", function(event) {
     this.firstElementChild.textContent = "";
     for (const DIV of Object.values(GRIDS)) DIV.replaceChildren();
-    localStorage.setItem("algorithms", JSON.stringify(ALGO_SAVE));
+    localStorage.setItem(STORAGEKEY, JSON.stringify(ALGO_SAVE));
 });
 
 /** @type {{[UnitName: string]: [AlgoInfo[], AlgoInfo[], AlgoInfo[]]}} */ const ALGO_SAVE = (function() {
-    const SAVE_DATA = localStorage.getItem("algorithms");
+    const SAVE_DATA = localStorage.getItem(STORAGEKEY);
     return SAVE_DATA ? JSON.parse(SAVE_DATA) : {};
 })()
 
