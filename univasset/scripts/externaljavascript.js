@@ -355,3 +355,17 @@ oXHR.send(); */
   
 //     return Object.freeze(object);
 //   }
+
+// function deepFreeze(o,promises,oldestParent){
+//     promises = promises || [];
+//     oldestParent = oldestParent || o;
+//     promises.push(
+//         Promise.resolve().then(function(){
+//             Object.values(Object.freeze(o)).forEach(function(d,i){
+//                 typeof d === "object" && deepFreeze(d,promises,oldestParent);
+//             });
+//             return oldestParent;
+//         })
+//     );
+//     return Promise.all(promises).then((a)=>a[0]);
+// }

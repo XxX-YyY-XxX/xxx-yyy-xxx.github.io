@@ -32,7 +32,7 @@
  * @property {[IntimacyStats, IntimacyStats, IntimacyStats]} UnitObject.intimacy
 */
 
-export const STATS = Object.freeze({
+export const STAT_KEYS = Object.freeze({
     HEALTH:     "hp",
     ATTACK:     "atk",
     HASHRATE:   "hash",
@@ -52,3 +52,5 @@ export const STATS = Object.freeze({
     DMGREDUCE:  "dreduc",
     HEALBOOST:  "hboost",
 });
+
+export const STATS = STAT_KEYS;

@@ -1,4 +1,4 @@
-import {STATS as STAT_KEYS} from "./typing.js";
+import {STAT_KEYS} from "./typing.js";
 import {cmp, chain, setattr, subclassof, zip} from "../../univasset/scripts/basefunctions/index.js";
 
 //#region Types
@@ -52,27 +52,27 @@ const STATVALUES = Object.freeze({
         lashperc: "Backlash"
     }),
     SET: Object.freeze({
-        /** @type {[StatAttributes, number][]} */ ATTACK: [["atkperc", 15]],
-        /** @type {[StatAttributes, number][]} */ HASHRATE: [["hashperc", 15]],
-        /** @type {[StatAttributes, number][]} */ ATKSPD: [["aspdflat", 30]],
-        /** @type {[StatAttributes, number][]} */ DEBUFFRES: [["resflat", 50]],
-        /** @type {[StatAttributes, number][]} */ DMGBOOST: [["dboostperc", 5]],
+        /** @type {[StatAttributes, number][]} */ atkperc: [["atkperc", 15]],
+        /** @type {[StatAttributes, number][]} */ hashperc: [["hashperc", 15]],
+        /** @type {[StatAttributes, number][]} */ aspdflat: [["aspdflat", 30]],
+        /** @type {[StatAttributes, number][]} */ resflat: [["resflat", 50]],
+        /** @type {[StatAttributes, number][]} */ dboostperc: [["dboostperc", 5]],
         LIFESTEAL: "Lifesteal",
-        /** @type {[StatAttributes, number][]} */ PENFLAT: [["ppenflat", 80], ["openflat", 80]],
-        /** @type {[StatAttributes, number][]} */ PENPERC: [["ppenperc", 20], ["openperc", 20]],
-        /** @type {[StatAttributes, number][]} */ HEALTHFLAT: [["hpflat", 2500]],
-        /** @type {[StatAttributes, number][]} */ HEALTHPERC: [["hpperc", 15]],
-        /** @type {[StatAttributes, number][]} */ PHYSDEF: [["pdefperc", 15]],
-        /** @type {[StatAttributes, number][]} */ OPDEF: [["odefperc", 15]],
-        /** @type {[StatAttributes, number][]} */ DEFPERC: [["pdefperc", 10], ["odefperc", 10]],
-        /** @type {[StatAttributes, number][]} */ BACKLASH: [["lashperc", 5]],
-        /** @type {[StatAttributes, number][]} */ DMGREDUCE: [["dreducperc", 5]],
+        /** @type {[StatAttributes, number][]} */ dpenflat: [["ppenflat", 80], ["openflat", 80]],
+        /** @type {[StatAttributes, number][]} */ dpenperc: [["ppenperc", 20], ["openperc", 20]],
+        /** @type {[StatAttributes, number][]} */ hpflat: [["hpflat", 2500]],
+        /** @type {[StatAttributes, number][]} */ hpperc: [["hpperc", 15]],
+        /** @type {[StatAttributes, number][]} */ pdefperc: [["pdefperc", 15]],
+        /** @type {[StatAttributes, number][]} */ odefperc: [["odefperc", 15]],
+        /** @type {[StatAttributes, number][]} */ ddefperc: [["pdefperc", 10], ["odefperc", 10]],
+        /** @type {[StatAttributes, number][]} */ lashperc: [["lashperc", 5]],
+        /** @type {[StatAttributes, number][]} */ dreducperc: [["dreducperc", 5]],
         HPREGEN: "HP Regen",
-        /** @type {[StatAttributes, number][]} */ CRITRATE: [["crateperc", 10]],
-        /** @type {[StatAttributes, number][]} */ CRITDMG: [["cdmgperc", 20]],
-        /** @type {[StatAttributes, number][]} */ DODGE: [["dodgeperc", 8]],
-        /** @type {[StatAttributes, number][]} */ SKILLHASTE: [["hasteperc", 10]],
-        /** @type {[StatAttributes, number][]} */ HEALBOOST: [["hboostperc", 7.5]],
+        /** @type {[StatAttributes, number][]} */ crateperc: [["crateperc", 10]],
+        /** @type {[StatAttributes, number][]} */ cdmgperc: [["cdmgperc", 20]],
+        /** @type {[StatAttributes, number][]} */ dodgeperc: [["dodgeperc", 8]],
+        /** @type {[StatAttributes, number][]} */ hasteperc: [["hasteperc", 10]],
+        /** @type {[StatAttributes, number][]} */ hboostperc: [["hboostperc", 7.5]],
     }),
     SET_THRESH: Object.freeze({
         hp: 16666.5,
@@ -127,7 +127,21 @@ const STATVALUES = Object.freeze({
         pdef: 767.5,    odef: 1000
     })
 })
-// const STATNAMES = STATVALUES.NAME;
+
+const ATTRIBUTES = {
+    Offense: {
+        MAIN: ["atkflat", "atkperc", "hashflat", "hashperc", "ppenflat", "ppenperc", "openflat", "openperc"],
+        SUB: ["hpflat", "atkflat", "atkperc", "hashflat", "hashperc", "pdefflat", "odefflat", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dboostperc"]
+    },
+    Stability: {
+        MAIN: ["hpflat", "hpperc", "pdefflat", "pdefperc", "odefflat", "odefperc", "regenflat"],
+        SUB: ["hpflat", "hpperc", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dreducperc"]
+    },
+    Special: {
+        MAIN: ["pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "hasteperc", "hboostperc"],
+        SUB: ["hpflat", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "dodgeperc", "regenflat", "hasteperc", "resflat", "hboostperc"]
+    }
+}
 //#endregion
 
 //#region Functions
@@ -208,21 +222,36 @@ function algoPath(algoname) {
         const SET_EFFECT = this.SET2;
         const DIV2 = document.createElement("div");
         if (Array.isArray(SET_EFFECT)) {
-            // if (SET_EFFECT === STATVALUES.SET.HEALTHFLAT) {
-            //     if (AlgoField.current.basestat.hp < STATVALUES.SET_THRESH.hp)
-            //         DIV2.classList.add("algo-better");
-            //     else
-            //         DIV2.classList.add("algo-worse");
-            // } else if (SET_EFFECT === STATVALUES.SET.HEALTHPERC) {
-            //     if (AlgoField.current.basestat.hp > STATVALUES.SET_THRESH.hp)
-            //         DIV2.classList.add("algo-better");
-            //     else
-            //         DIV2.classList.add("algo-worse");
-            // } else if (SET_EFFECT === STATVALUES.SET.PENFLAT) {
-
-            // } else if (SET_EFFECT === STATVALUES.SET.PENPERC) {
-
-            // }
+            switch (SET_EFFECT) {
+                case STATVALUES.SET.hpflat:                                             // Stability
+                    if (AlgoField.current.basestat.hp < STATVALUES.SET_THRESH.hp)
+                        DIV2.classList.add("algo-left", "algo-right");
+                    else
+                        DIV2.classList.add("algo-worse");
+                    break;
+                case STATVALUES.SET.hpperc:
+                    if (AlgoField.current.basestat.hp > STATVALUES.SET_THRESH.hp)
+                        DIV2.classList.add("algo-left", "algo-right");
+                    else
+                        DIV2.classList.add("algo-worse");
+                    break;
+                case STATVALUES.SET.dpenflat:                                                // Offense
+                    if (AlgoField.current.basestat.ppen < STATVALUES.SET_THRESH.dpen)
+                        DIV2.classList.add("algo-left")
+                    if (AlgoField.current.basestat.open < STATVALUES.SET_THRESH.dpen)
+                        DIV2.classList.add("algo-right")
+                    if (!["algo-left", "algo-right"].some(x => DIV2.classList.contains(x)))
+                        DIV2.classList.add("algo-worse");
+                    break;
+                case STATVALUES.SET.dpenperc:
+                    if (AlgoField.current.basestat.ppen > STATVALUES.SET_THRESH.dpen)
+                        DIV2.classList.add("algo-left")
+                    if (AlgoField.current.basestat.open > STATVALUES.SET_THRESH.dpen)
+                        DIV2.classList.add("algo-right")
+                    if (!["algo-left", "algo-right"].some(x => DIV2.classList.contains(x)))
+                        DIV2.classList.add("algo-worse");
+                    break;
+            }
             DIV2.textContent = SET_EFFECT.map(([attr,]) => STATVALUES.NAME[attr]).join("|");
         } else {
             DIV2.textContent = SET_EFFECT;
@@ -233,12 +262,43 @@ function algoPath(algoname) {
     }
 }
 
-/** @param {"mainstat" | "substat1" | "substat2"} name @param {StatAttributes[]} attributes */
-function createSelect(name, attributes) {
+/** @param {Algorithm} obj @param {"mainstat" | "substat1" | "substat2"} name */
+function createSelect(obj, name) {
     const OUTPUT = document.createElement("select");
     OUTPUT.classList.add(["substat1", "substat2"].includes(name) ? "substat" : "mainstat");
     OUTPUT.name = name;
-    OUTPUT.append(...attributes.map(x => setattr(document.createElement("option"), {value: x, textContent: STATVALUES.NAME[x]})));
+
+    // high low threshold check
+    const ATTR_LIST = (function() {
+        if (obj instanceof Offense || obj instanceof OffenseBlock) {
+            if (name === "mainstat") {
+                return ATTRIBUTES.Offense.MAIN;
+            } else {
+                return ATTRIBUTES.Offense.SUB;
+            }
+        } else if (obj instanceof Stability || obj instanceof StabilityBlock) {
+            if (name === "mainstat") {
+                return ATTRIBUTES.Stability.MAIN;
+            } else {
+                return ATTRIBUTES.Stability.SUB;
+            }
+        } else {
+            if (name === "mainstat") {
+                return ATTRIBUTES.Special.MAIN;
+            } else {
+                return ATTRIBUTES.Special.SUB;
+            }
+        }
+    })();
+    for (const ATTR of ATTR_LIST) {
+        // ATTR.slice(0, -4)
+        const OPTION = document.createElement("option");
+        OPTION.value = ATTR;
+        OPTION.textContent = STATVALUES.NAME[x];
+
+        OUTPUT.appendChild(OPTION);
+    }
+
     return OUTPUT;
 }
 
@@ -247,28 +307,28 @@ class SingleBlock extends Algorithm {
     static SET3 = null;
     SIZE = 1;
 
-    /** @param {AlgoGrid} grid @param {StatAttributes[]} mainstat @param {StatAttributes[]} substat @param {[StatAttributes, StatAttributes, ""]?} attributes */
-    constructor(grid, mainstat, substat, attributes) {
+    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, ""]?} attributes */
+    constructor(grid, attributes = null) {
         super(grid);
         if (attributes) {
             const [MAIN, SUB,] = attributes;
 
-            this.#mainstat = createSelect("mainstat", mainstat);
+            this.#mainstat = createSelect(this, "mainstat");
             for (const OPTION of Array.from(this.#mainstat.options)) OPTION.selected = OPTION.value === MAIN;
 
-            this.#substat = createSelect("substat1", substat);
+            this.#substat = createSelect(this, "substat1");
             for (const OPTION of Array.from(this.#substat.options)) OPTION.selected = OPTION.value === SUB;
         }
     }
 
-    /** @param {StatAttributes[]} mainstat @param {StatAttributes[]} substat @returns {HTMLDivElement} */
-    html(mainstat, substat) {
+    /** @returns {HTMLDivElement} */
+    get html() {
         const OUTPUT = super.html;
 
-        this.#mainstat ??= createSelect("mainstat", mainstat);
+        this.#mainstat ??= createSelect(this, "mainstat");
         OUTPUT.appendChild(this.#mainstat);
         
-        this.#substat ??= createSelect("substat1", substat);
+        this.#substat ??= createSelect(this, "substat1");
         OUTPUT.appendChild(this.#substat);
 
         return OUTPUT;
@@ -300,16 +360,16 @@ class SingleBlock extends Algorithm {
 class DoubleBlock extends Algorithm {
     SIZE = 2;
 
-    /** @param {AlgoGrid} grid @param {StatAttributes[]} mainstat @param {StatAttributes[]} substat @param {[StatAttributes, StatAttributes, StatAttributes]?} attributes */
-    constructor(grid, mainstat, substat, attributes) {
+    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, StatAttributes]?} attributes */
+    constructor(grid, attributes = null) {
         super(grid);
         if (attributes) {
             const [MAIN, SUB1, SUB2] = attributes;
 
-            this.#mainstat = createSelect("mainstat", mainstat);
+            this.#mainstat = createSelect(this, "mainstat");
             for (const OPTION of Array.from(this.#mainstat.options)) OPTION.selected = OPTION.value === MAIN;
 
-            this.#substat1 = createSelect("substat1", substat);
+            this.#substat1 = createSelect(this, "substat1");
             this.#substat1.addEventListener("change", () => {
                 for (const OPTION of Array.from(this.#substat2.options))
                     OPTION.disabled = this.#substat1.value === OPTION.value;
@@ -319,7 +379,7 @@ class DoubleBlock extends Algorithm {
                 OPTION.disabled = OPTION.value === SUB2;
             }
 
-            this.#substat2 = createSelect("substat2", substat);
+            this.#substat2 = createSelect(this, "substat2");
             this.#substat2.addEventListener("change", () => {
                 for (const OPTION of Array.from(this.#substat1.options))
                     OPTION.disabled = this.#substat2.value === OPTION.value;
@@ -331,8 +391,8 @@ class DoubleBlock extends Algorithm {
         }
     }
 
-    /** @param {StatAttributes[]} mainstat @param {StatAttributes[]} substat @returns {HTMLDivElement} */
-    html(mainstat, substat) {
+    /** @returns {HTMLDivElement} */
+    get html() {
         const OUTPUT = setattr(super.html, {classList: {add: ["double-block"]}})
 
         const EMBLEM = setattr(document.createElement("img"), {src: algoPath(this.constructor.name), alt: this.constructor.name, loading: "lazy"});
@@ -340,11 +400,11 @@ class DoubleBlock extends Algorithm {
 
         const STATS = document.createElement("div");
 
-            this.#mainstat ??= createSelect("mainstat", mainstat);
+            this.#mainstat ??= createSelect(this, "mainstat");
             STATS.appendChild(this.#mainstat);
 
             if (!this.#substat1) {
-                this.#substat1 = createSelect("substat1", substat);
+                this.#substat1 = createSelect(this, "substat1");
                 this.#substat1.addEventListener("change", () => {
                     for (const OPTION of Array.from(this.#substat2.options))
                         OPTION.disabled = this.#substat1.value === OPTION.value;
@@ -354,7 +414,7 @@ class DoubleBlock extends Algorithm {
             STATS.appendChild(this.#substat1);
 
             if (!this.#substat2) {
-                this.#substat2 = createSelect("substat2", substat);
+                this.#substat2 = createSelect(this, "substat2");
                 this.#substat2.addEventListener("change", () => {
                     for (const OPTION of Array.from(this.#substat1.options))
                         OPTION.disabled = this.#substat2.value === OPTION.value;
@@ -389,130 +449,62 @@ class DoubleBlock extends Algorithm {
 //#endregion
 
 //#region Algorithm Block Types
-const OFFENSEMAINSTAT = ["atkflat", "atkperc", "hashflat", "hashperc", "ppenflat", "ppenperc", "openflat", "openperc"];
-const OFFENSESUBSTAT = ["hpflat", "atkflat", "atkperc", "hashflat", "hashperc", "pdefflat", "odefflat", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dboostperc"];
-
-class OffenseBlock extends SingleBlock {
-    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, ""]?} attributes */
-    constructor(grid, attributes = null) {
-        super(grid, OFFENSEMAINSTAT, OFFENSESUBSTAT, attributes);
-    }
-
-    get html() {
-        return super.html(OFFENSEMAINSTAT, OFFENSESUBSTAT);
-    }
-}
-
-class Offense extends DoubleBlock {
-    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, StatAttributes]?} attributes */
-    constructor(grid, attributes = null) {
-        super(grid, OFFENSEMAINSTAT, OFFENSESUBSTAT, attributes);
-    }
-
-    get html() {
-        return super.html(OFFENSEMAINSTAT, OFFENSESUBSTAT);
-    }
-}
-
-const STABILITYMAINSTAT = ["hpflat", "hpperc", "pdefflat", "pdefperc", "odefflat", "odefperc", "regenflat"];
-const STABILITYSUBSTAT = ["hpflat", "hpperc", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dreducperc"];
-
-class StabilityBlock extends SingleBlock {
-    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, ""]?} attributes */
-    constructor(grid, attributes = null) {
-        super(grid, STABILITYMAINSTAT, STABILITYSUBSTAT, attributes);
-    }
-
-    get html() {
-        return super.html(STABILITYMAINSTAT, STABILITYSUBSTAT);
-    }
-}
-
-class Stability extends DoubleBlock {
-    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, StatAttributes]?} attributes */
-    constructor(grid, attributes = null) {
-        super(grid, STABILITYMAINSTAT, STABILITYSUBSTAT, attributes);
-    }
-
-    get html() {
-        return super.html(STABILITYMAINSTAT, STABILITYSUBSTAT);
-    }
-}
-
-const SPECIALMAINSTAT = ["pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "hasteperc", "hboostperc"];
-const SPECIALSUBSTAT = ["hpflat", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "dodgeperc", "regenflat", "hasteperc", "resflat", "hboostperc"];
-
-class SpecialBlock extends SingleBlock {
-    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, ""]?} attributes */
-    constructor(grid, attributes = null) {
-        super(grid, SPECIALMAINSTAT, SPECIALSUBSTAT, attributes);
-    }
-
-    get html() {
-        return super.html(SPECIALMAINSTAT, SPECIALSUBSTAT);
-    }
-}
-
-class Special extends DoubleBlock {
-    /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, StatAttributes]?} attributes */
-    constructor(grid, attributes = null) {
-        super(grid, SPECIALMAINSTAT, SPECIALSUBSTAT, attributes);
-    }
-
-    get html() {
-        return super.html(SPECIALMAINSTAT, SPECIALSUBSTAT);
-    }
-}
+class OffenseBlock extends SingleBlock {};
+class Offense extends DoubleBlock {};
+class StabilityBlock extends SingleBlock {};
+class Stability extends DoubleBlock {};
+class SpecialBlock extends SingleBlock {};
+class Special extends DoubleBlock {};
 
 const ALGO_SETS = {
     Offense: {
         OffenseBlock:   OffenseBlock,
-        Feedforward:    class extends Offense {static SET2 = STATVALUES.SET.ATTACK;       static SET3 = null;},
-        Progression:    class extends Offense {static SET2 = STATVALUES.SET.HASHRATE;     static SET3 = null;},
-        Stack:          class extends Offense {static SET2 = STATVALUES.SET.HASHRATE;     static SET3 = "";},
-        Deduction:      class extends Offense {static SET2 = STATVALUES.SET.ATKSPD;       static SET3 = null;},
-        DataRepair:     class extends Offense {static SET2 = STATVALUES.SET.DEBUFFRES;    static SET3 = "";},
-        Surplus:        class extends Offense {static SET2 = STATVALUES.SET.DMGBOOST;     static SET3 = null;},
-        MLRMatrix:      class extends Offense {static SET2 = STATVALUES.SET.DMGBOOST;     static SET3 = "";},
-        LimitValue:     class extends Offense {static SET2 = STATVALUES.SET.DMGBOOST;     static SET3 = "";},
-        Hyperpulse:     class extends Offense {static SET2 = STATVALUES.SET.DMGBOOST;     static SET3 = "";},
-        LowerLimit:     class extends Offense {static SET2 = STATVALUES.SET.LIFESTEAL;    static SET3 = "";},
-        Puncture:       class extends Offense {static SET2 = STATVALUES.SET.PENFLAT;      static SET3 = null;},
-        Permeate:       class extends Offense {static SET2 = STATVALUES.SET.PENPERC;      static SET3 = null;},
-        Polybore:       class extends Offense {static SET2 = STATVALUES.SET.PENPERC;      static SET3 = "";}
+        Feedforward:    class extends Offense {static SET2 = STATVALUES.SET.atkperc;        static SET3 = null;},
+        Progression:    class extends Offense {static SET2 = STATVALUES.SET.hashperc;       static SET3 = null;},
+        Stack:          class extends Offense {static SET2 = STATVALUES.SET.hashperc;       static SET3 = "";},
+        Deduction:      class extends Offense {static SET2 = STATVALUES.SET.aspdflat;       static SET3 = null;},
+        DataRepair:     class extends Offense {static SET2 = STATVALUES.SET.resflat;        static SET3 = "";},
+        Surplus:        class extends Offense {static SET2 = STATVALUES.SET.dboostperc;     static SET3 = null;},
+        MLRMatrix:      class extends Offense {static SET2 = STATVALUES.SET.dboostperc;     static SET3 = "";},
+        LimitValue:     class extends Offense {static SET2 = STATVALUES.SET.dboostperc;     static SET3 = "";},
+        Hyperpulse:     class extends Offense {static SET2 = STATVALUES.SET.dboostperc;     static SET3 = "";},
+        LowerLimit:     class extends Offense {static SET2 = STATVALUES.SET.LIFESTEAL;      static SET3 = "";},
+        Puncture:       class extends Offense {static SET2 = STATVALUES.SET.dpenflat;       static SET3 = null;},
+        Permeate:       class extends Offense {static SET2 = STATVALUES.SET.dpenperc;       static SET3 = null;},
+        Polybore:       class extends Offense {static SET2 = STATVALUES.SET.dpenperc;       static SET3 = "";}
     },
     Stability: {
         StabilityBlock: StabilityBlock,
-        Threshold:      class extends Stability {static SET2 = STATVALUES.SET.HEALTHFLAT; static SET3 = null;},
-        Perception:     class extends Stability {static SET2 = STATVALUES.SET.HEALTHPERC; static SET3 = null;},
-        Acclimate:      class extends Stability {static SET2 = STATVALUES.SET.HEALTHPERC; static SET3 = "";},
-        Rationality:    class extends Stability {static SET2 = STATVALUES.SET.PHYSDEF;    static SET3 = null;},
-        Lattice:        class extends Stability {static SET2 = STATVALUES.SET.OPDEF;      static SET3 = null;},
-        Twinform:       class extends Stability {static SET2 = STATVALUES.SET.DEFPERC;    static SET3 = null;},
-        Buildup:        class extends Stability {static SET2 = STATVALUES.SET.DEFPERC;    static SET3 = "";},
-        Connection:     class extends Stability {static SET2 = STATVALUES.SET.DEBUFFRES;  static SET3 = null;},
-        Iteration:      class extends Stability {static SET2 = STATVALUES.SET.BACKLASH;   static SET3 = "";},
-        Reflection:     class extends Stability {static SET2 = STATVALUES.SET.BACKLASH;   static SET3 = "";},
-        Encapsulate:    class extends Stability {static SET2 = STATVALUES.SET.DMGREDUCE;  static SET3 = "";},
-        Resolve:        class extends Stability {static SET2 = STATVALUES.SET.DMGREDUCE;  static SET3 = "";},
-        Overflow:       class extends Stability {static SET2 = STATVALUES.SET.HPREGEN;    static SET3 = "";}
+        Threshold:      class extends Stability {static SET2 = STATVALUES.SET.hpflat;       static SET3 = null;},
+        Perception:     class extends Stability {static SET2 = STATVALUES.SET.hpperc;       static SET3 = null;},
+        Acclimate:      class extends Stability {static SET2 = STATVALUES.SET.hpperc;       static SET3 = "";},
+        Rationality:    class extends Stability {static SET2 = STATVALUES.SET.pdefperc;     static SET3 = null;},
+        Lattice:        class extends Stability {static SET2 = STATVALUES.SET.odefperc;     static SET3 = null;},
+        Twinform:       class extends Stability {static SET2 = STATVALUES.SET.ddefperc;     static SET3 = null;},
+        Buildup:        class extends Stability {static SET2 = STATVALUES.SET.ddefperc;     static SET3 = "";},
+        Connection:     class extends Stability {static SET2 = STATVALUES.SET.resflat;      static SET3 = null;},
+        Iteration:      class extends Stability {static SET2 = STATVALUES.SET.lashperc;     static SET3 = "";},
+        Reflection:     class extends Stability {static SET2 = STATVALUES.SET.lashperc;     static SET3 = "";},
+        Encapsulate:    class extends Stability {static SET2 = STATVALUES.SET.dreducperc;   static SET3 = "";},
+        Resolve:        class extends Stability {static SET2 = STATVALUES.SET.dreducperc;   static SET3 = "";},
+        Overflow:       class extends Stability {static SET2 = STATVALUES.SET.HPREGEN;      static SET3 = "";}
     },
     Special: {
         SpecialBlock:   SpecialBlock,
-        Rapidity:       class extends Special {static SET2 = STATVALUES.SET.ATKSPD;       static SET3 = null;},
-        Paradigm:       class extends Special {static SET2 = STATVALUES.SET.ATKSPD;       static SET3 = "";},
-        Cluster:        class extends Special {static SET2 = STATVALUES.SET.CRITRATE;     static SET3 = null;},
-        Convolution:    class extends Special {static SET2 = STATVALUES.SET.CRITDMG;      static SET3 = null;},
-        Stratagem:      class extends Special {static SET2 = STATVALUES.SET.DODGE;        static SET3 = null;},
-        FastLoad:       class extends Special {static SET2 = STATVALUES.SET.SKILLHASTE;   static SET3 = null;},
-        DeltaV:         class extends Special {static SET2 = STATVALUES.SET.SKILLHASTE;   static SET3 = "";},
-        Exploit:        class extends Special {static SET2 = STATVALUES.SET.SKILLHASTE;   static SET3 = "";},
-        Delivery:       class extends Special {static SET2 = STATVALUES.SET.SKILLHASTE;   static SET3 = "";},
-        Flush:          class extends Special {static SET2 = STATVALUES.SET.SKILLHASTE;   static SET3 = "";},
-        Increment:      class extends Special {static SET2 = STATVALUES.SET.HEALBOOST;    static SET3 = null;},
-        LoopGain:       class extends Special {static SET2 = STATVALUES.SET.HEALBOOST;    static SET3 = "";},
-        SVM:            class extends Special {static SET2 = STATVALUES.SET.HEALBOOST;    static SET3 = "";},
-        Inspiration:    class extends Special {static SET2 = STATVALUES.SET.HPREGEN;      static SET3 = null;},
+        Rapidity:       class extends Special {static SET2 = STATVALUES.SET.aspdflat;       static SET3 = null;},
+        Paradigm:       class extends Special {static SET2 = STATVALUES.SET.aspdflat;       static SET3 = "";},
+        Cluster:        class extends Special {static SET2 = STATVALUES.SET.crateperc;      static SET3 = null;},
+        Convolution:    class extends Special {static SET2 = STATVALUES.SET.cdmgperc;       static SET3 = null;},
+        Stratagem:      class extends Special {static SET2 = STATVALUES.SET.dodgeperc;      static SET3 = null;},
+        FastLoad:       class extends Special {static SET2 = STATVALUES.SET.hasteperc;      static SET3 = null;},
+        DeltaV:         class extends Special {static SET2 = STATVALUES.SET.hasteperc;      static SET3 = "";},
+        Exploit:        class extends Special {static SET2 = STATVALUES.SET.hasteperc;      static SET3 = "";},
+        Delivery:       class extends Special {static SET2 = STATVALUES.SET.hasteperc;      static SET3 = "";},
+        Flush:          class extends Special {static SET2 = STATVALUES.SET.hasteperc;      static SET3 = "";},
+        Increment:      class extends Special {static SET2 = STATVALUES.SET.hboostperc;     static SET3 = null;},
+        LoopGain:       class extends Special {static SET2 = STATVALUES.SET.hboostperc;     static SET3 = "";},
+        SVM:            class extends Special {static SET2 = STATVALUES.SET.hboostperc;     static SET3 = "";},
+        Inspiration:    class extends Special {static SET2 = STATVALUES.SET.HPREGEN;        static SET3 = null;},
     }
 };
 //#endregion

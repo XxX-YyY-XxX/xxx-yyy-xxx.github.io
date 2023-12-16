@@ -4,11 +4,7 @@ dialog {
     background-color: slategrey;
 }
 
-
-
-
-
-
+/* #region Algo Modal */
 #algo-modal {
     text-align: center;
     width: 650px;
@@ -136,10 +132,9 @@ dialog {
     left: 50%;
     transform: translateX(-50%);
 }
+/* #endregion */
 
-
-
-
+/* #region Algo Select */
 #algo-select > form {
     display: flex;
     flex-wrap: wrap;
@@ -155,13 +150,21 @@ dialog {
     width: 100px;
 }
 
-
-
-
-
-
-#stat tbody > tr > td:first-child {
-    cursor: pointer;
+#algo-select button > div.algo-left {
+    background-image: -webkit-linear-gradient(left, #ffcd49, #8acdf3);
 }
+
+#algo-select button > div.algo-right {
+    background-image: -webkit-linear-gradient(left, #8acdf3, #ffcd49);
+}
+
+#algo-select button > div.algo-left.algo-right {
+    background-color: #ffcd49;
+}
+
+#algo-select button > div.algo-worse {
+    background-color: #8acdf3;
+}
+/* #endregion */
 
 /* --gray-algo: #494b4a; */

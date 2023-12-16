@@ -10,6 +10,10 @@ input[type="checkbox"], input[type="radio"] {
     margin: 0;
 }
 
+tbody > tr > td:first-child, thead > tr > td {
+    cursor: pointer;
+}
+
 /* #region Freeze */
 .freeze-row th {
     background: #1b1b1b !important;
