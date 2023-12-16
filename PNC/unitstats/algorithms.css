@@ -160,6 +160,7 @@ dialog {
 
 #algo-select button > div.algo-left.algo-right {
     background-color: #ffcd49;
+    background-image: revert;
 }
 
 #algo-select button > div.algo-worse {

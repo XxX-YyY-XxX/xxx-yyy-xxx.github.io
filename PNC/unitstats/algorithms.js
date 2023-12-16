@@ -294,7 +294,7 @@ function createSelect(obj, name) {
         // ATTR.slice(0, -4)
         const OPTION = document.createElement("option");
         OPTION.value = ATTR;
-        OPTION.textContent = STATVALUES.NAME[x];
+        OPTION.textContent = STATVALUES.NAME[ATTR];
 
         OUTPUT.appendChild(OPTION);
     }
