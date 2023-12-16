@@ -273,7 +273,6 @@ function createSelect(obj, name) {
     const SELECT = document.createElement("select");
     SELECT.classList.add(name === "MAIN" ? "mainstat" : "substat");
 
-    // matchMedia("(hover: hover)")
     const [ATTR_LIST, _threshCheck] = (function() {
         /** @type {["Offense"|"Stability"|"Special", STAT_KEYS[keyof STAT_KEYS][]]} */
         const [ALGO_TYPE, VIABLE] = (function() {

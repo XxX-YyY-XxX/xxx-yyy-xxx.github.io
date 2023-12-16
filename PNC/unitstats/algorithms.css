@@ -10,6 +10,10 @@ dialog {
     width: 650px;
 }
 
+#algo-modal select {
+    max-width: 100%;
+}
+
 /* #region Algorithm Grid */
 #algo-modal .tab-body {
     --gridsize: 100px;
