@@ -128,25 +128,22 @@ dialog {
 }
 /* #endregion */
 
-#algo-modal .mainstat .algo-stat-good {
-    background-image: url("../assets/images/algorithms/up2.png");
+#algo-modal option[class*="algo-stat"] {
     background-position: right;
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+#algo-modal .mainstat .algo-stat-good {
+    background-image: url("../assets/images/algorithms/up2.png");
 }
 
 #algo-modal .substat .algo-stat-good {
     background-image: url("../assets/images/algorithms/up1.png");
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: contain;
 }
 
 #algo-modal .algo-stat-bad {
     background-image: url("../assets/images/algorithms/down1.png");
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: contain;
 }
 
 #algo-modal > #close-modal {
