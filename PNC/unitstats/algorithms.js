@@ -223,33 +223,39 @@ function algoPath(algoname) {
         const DIV2 = document.createElement("div");
         if (Array.isArray(SET_EFFECT)) {
             switch (SET_EFFECT) {
-                case STATVALUES.SET.hpflat:                                             // Stability
+                case STATVALUES.SET.hpflat:                                                 // Stability
                     if (AlgoField.current.basestat.hp < STATVALUES.SET_THRESH.hp)
-                        DIV2.classList.add("algo-left", "algo-right");
+                        DIV2.classList.add("algo-left-good", "algo-right-good");
                     else
-                        DIV2.classList.add("algo-worse");
+                        DIV2.classList.add("algo-left-bad", "algo-right-bad");
                     break;
                 case STATVALUES.SET.hpperc:
                     if (AlgoField.current.basestat.hp > STATVALUES.SET_THRESH.hp)
-                        DIV2.classList.add("algo-left", "algo-right");
+                        DIV2.classList.add("algo-left-good", "algo-right-good");
                     else
-                        DIV2.classList.add("algo-worse");
+                        DIV2.classList.add("algo-left-bad", "algo-right-bad");
                     break;
                 case STATVALUES.SET.dpenflat:                                                // Offense
                     if (AlgoField.current.basestat.ppen < STATVALUES.SET_THRESH.dpen)
-                        DIV2.classList.add("algo-left")
+                        DIV2.classList.add("algo-left-good")
+                    else if (AlgoField.current.basestat.ppen > STATVALUES.SET_THRESH.dpen)
+                        DIV2.classList.add("algo-left-bad")
+
                     if (AlgoField.current.basestat.open < STATVALUES.SET_THRESH.dpen)
-                        DIV2.classList.add("algo-right")
-                    if (!["algo-left", "algo-right"].some(x => DIV2.classList.contains(x)))
-                        DIV2.classList.add("algo-worse");
+                        DIV2.classList.add("algo-right-good")
+                    else if (AlgoField.current.basestat.open > STATVALUES.SET_THRESH.dpen)
+                        DIV2.classList.add("algo-right-bad")
                     break;
                 case STATVALUES.SET.dpenperc:
                     if (AlgoField.current.basestat.ppen > STATVALUES.SET_THRESH.dpen)
-                        DIV2.classList.add("algo-left")
+                        DIV2.classList.add("algo-left-good")
+                    else if (AlgoField.current.basestat.ppen < STATVALUES.SET_THRESH.dpen)
+                        DIV2.classList.add("algo-left-bad")
+
                     if (AlgoField.current.basestat.open > STATVALUES.SET_THRESH.dpen)
-                        DIV2.classList.add("algo-right")
-                    if (!["algo-left", "algo-right"].some(x => DIV2.classList.contains(x)))
-                        DIV2.classList.add("algo-worse");
+                        DIV2.classList.add("algo-right-good")
+                    else if (AlgoField.current.basestat.open < STATVALUES.SET_THRESH.dpen)
+                        DIV2.classList.add("algo-right-bad")
                     break;
             }
             DIV2.textContent = SET_EFFECT.map(([attr,]) => STATVALUES.NAME[attr]).join("|");
@@ -262,44 +268,72 @@ function algoPath(algoname) {
     }
 }
 
-/** @param {Algorithm} obj @param {"mainstat" | "substat1" | "substat2"} name */
+/** @param {Algorithm} obj @param {"MAIN" | "SUB"} name */
 function createSelect(obj, name) {
-    const OUTPUT = document.createElement("select");
-    OUTPUT.classList.add(["substat1", "substat2"].includes(name) ? "substat" : "mainstat");
-    OUTPUT.name = name;
+    const SELECT = document.createElement("select");
+    SELECT.classList.add(name === "MAIN" ? "mainstat" : "substat");
 
-    // high low threshold check
-    const ATTR_LIST = (function() {
-        if (obj instanceof Offense || obj instanceof OffenseBlock) {
-            if (name === "mainstat") {
-                return ATTRIBUTES.Offense.MAIN;
-            } else {
-                return ATTRIBUTES.Offense.SUB;
+    // matchMedia("(hover: hover)")
+    const [ATTR_LIST, _threshCheck] = (function() {
+        /** @type {["Offense"|"Stability"|"Special", STAT_KEYS[keyof STAT_KEYS][]]} */
+        const [ALGO_TYPE, VIABLE] = (function() {
+            switch (true) {
+                case obj instanceof Offense || obj instanceof OffenseBlock:
+                    return ["Offense", name === "MAIN" ? ["atk", "hash", "ppen", "open"] : ["atk", "hash"]];
+                case obj instanceof Stability || obj instanceof StabilityBlock:
+                    return ["Stability", ["hp", "pdef", "odef"]];
+                case obj instanceof Special || obj instanceof SpecialBlock:
+                    return ["Special", ["pdef", "odef"]];
             }
-        } else if (obj instanceof Stability || obj instanceof StabilityBlock) {
-            if (name === "mainstat") {
-                return ATTRIBUTES.Stability.MAIN;
-            } else {
-                return ATTRIBUTES.Stability.SUB;
-            }
-        } else {
-            if (name === "mainstat") {
-                return ATTRIBUTES.Special.MAIN;
-            } else {
-                return ATTRIBUTES.Special.SUB;
+        })();
+
+        /** @param {StatAttributes} attr */ function output(attr) {
+            /** @type {[, STAT_KEYS[keyof STAT_KEYS], "flat"|"perc"]} */
+            const [, STAT, VALTYPE] = attr.match(/(.+)(flat|perc)/);
+            if (!VIABLE.includes(STAT)) return null;
+
+            switch (VALTYPE) {
+                case "flat":
+                    if (AlgoField.current.basestat[STAT] < STATVALUES[name+"_THRESH"][STAT])        return "algo-stat-good";
+                    else if (AlgoField.current.basestat[STAT] > STATVALUES[name+"_THRESH"][STAT])   return "algo-stat-bad";
+                    else                                                                            return null;
+                case "perc":
+                    if (AlgoField.current.basestat[STAT] > STATVALUES[name+"_THRESH"][STAT])        return "algo-stat-good";
+                    else if (AlgoField.current.basestat[STAT] < STATVALUES[name+"_THRESH"][STAT])   return "algo-stat-bad";
+                    else                                                                            return null;
             }
         }
+
+        return [ATTRIBUTES[ALGO_TYPE][name], output];
     })();
+
+    /** @type {"algo-stat-good" | "algo-stat-bad" | null} */ var temp;
     for (const ATTR of ATTR_LIST) {
-        // ATTR.slice(0, -4)
         const OPTION = document.createElement("option");
         OPTION.value = ATTR;
         OPTION.textContent = STATVALUES.NAME[ATTR];
 
-        OUTPUT.appendChild(OPTION);
+        temp = _threshCheck(ATTR);
+        if (temp) OPTION.classList.add(temp);
+        // if ("ontouchstart" in window) {
+        //         switch (temp) {
+        //             case "algo-stat-good":
+        //                 OPTION.textContent = "+ " + STATVALUES.NAME[ATTR];
+        //                 break;
+        //             case "algo-stat-bad":
+        //                 OPTION.textContent = "- " + STATVALUES.NAME[ATTR];
+        //                 break;
+        //             case null:
+        //                 OPTION.textContent = "= " + STATVALUES.NAME[ATTR];
+        //                 break;
+        //         }
+        //     } else {
+        //     }
+
+        SELECT.appendChild(OPTION);
     }
 
-    return OUTPUT;
+    return SELECT;
 }
 
 class SingleBlock extends Algorithm {
@@ -313,10 +347,10 @@ class SingleBlock extends Algorithm {
         if (attributes) {
             const [MAIN, SUB,] = attributes;
 
-            this.#mainstat = createSelect(this, "mainstat");
+            this.#mainstat = createSelect(this, "MAIN");
             for (const OPTION of Array.from(this.#mainstat.options)) OPTION.selected = OPTION.value === MAIN;
 
-            this.#substat = createSelect(this, "substat1");
+            this.#substat = createSelect(this, "SUB");
             for (const OPTION of Array.from(this.#substat.options)) OPTION.selected = OPTION.value === SUB;
         }
     }
@@ -325,10 +359,10 @@ class SingleBlock extends Algorithm {
     get html() {
         const OUTPUT = super.html;
 
-        this.#mainstat ??= createSelect(this, "mainstat");
+        this.#mainstat ??= createSelect(this, "MAIN");
         OUTPUT.appendChild(this.#mainstat);
         
-        this.#substat ??= createSelect(this, "substat1");
+        this.#substat ??= createSelect(this, "SUB");
         OUTPUT.appendChild(this.#substat);
 
         return OUTPUT;
@@ -366,10 +400,10 @@ class DoubleBlock extends Algorithm {
         if (attributes) {
             const [MAIN, SUB1, SUB2] = attributes;
 
-            this.#mainstat = createSelect(this, "mainstat");
+            this.#mainstat = createSelect(this, "MAIN");
             for (const OPTION of Array.from(this.#mainstat.options)) OPTION.selected = OPTION.value === MAIN;
 
-            this.#substat1 = createSelect(this, "substat1");
+            this.#substat1 = createSelect(this, "SUB");
             this.#substat1.addEventListener("change", () => {
                 for (const OPTION of Array.from(this.#substat2.options))
                     OPTION.disabled = this.#substat1.value === OPTION.value;
@@ -379,7 +413,7 @@ class DoubleBlock extends Algorithm {
                 OPTION.disabled = OPTION.value === SUB2;
             }
 
-            this.#substat2 = createSelect(this, "substat2");
+            this.#substat2 = createSelect(this, "SUB");
             this.#substat2.addEventListener("change", () => {
                 for (const OPTION of Array.from(this.#substat1.options))
                     OPTION.disabled = this.#substat2.value === OPTION.value;
@@ -400,11 +434,11 @@ class DoubleBlock extends Algorithm {
 
         const STATS = document.createElement("div");
 
-            this.#mainstat ??= createSelect(this, "mainstat");
+            this.#mainstat ??= createSelect(this, "MAIN");
             STATS.appendChild(this.#mainstat);
 
             if (!this.#substat1) {
-                this.#substat1 = createSelect(this, "substat1");
+                this.#substat1 = createSelect(this, "SUB");
                 this.#substat1.addEventListener("change", () => {
                     for (const OPTION of Array.from(this.#substat2.options))
                         OPTION.disabled = this.#substat1.value === OPTION.value;
@@ -414,7 +448,7 @@ class DoubleBlock extends Algorithm {
             STATS.appendChild(this.#substat1);
 
             if (!this.#substat2) {
-                this.#substat2 = createSelect(this, "substat2");
+                this.#substat2 = createSelect(this, "SUB");
                 this.#substat2.addEventListener("change", () => {
                     for (const OPTION of Array.from(this.#substat1.options))
                         OPTION.disabled = this.#substat2.value === OPTION.value;

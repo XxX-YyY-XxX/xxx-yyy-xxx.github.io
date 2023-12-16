@@ -10,7 +10,7 @@ input[type="checkbox"], input[type="radio"] {
     margin: 0;
 }
 
-tbody > tr > td:first-child, thead > tr > td {
+tbody > tr > td:first-child, thead > tr > th {
     cursor: pointer;
 }
 

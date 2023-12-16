@@ -128,6 +128,27 @@ dialog {
 }
 /* #endregion */
 
+#algo-modal .mainstat .algo-stat-good {
+    background-image: url("../assets/images/algorithms/up2.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#algo-modal .substat .algo-stat-good {
+    background-image: url("../assets/images/algorithms/up1.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#algo-modal .algo-stat-bad {
+    background-image: url("../assets/images/algorithms/down1.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 #algo-modal > #close-modal {
     left: 50%;
     transform: translateX(-50%);
@@ -143,6 +164,9 @@ dialog {
 }
 
 #algo-select button {
+    --blank: #00000000;
+    --good: #ffcd49;
+    --bad: #8acdf3;
     padding: 0;
 }
 
@@ -150,21 +174,38 @@ dialog {
     width: 100px;
 }
 
-#algo-select button > div.algo-left {
-    background-image: -webkit-linear-gradient(left, #ffcd49, #8acdf3);
+#algo-select button > div.algo-left-good {
+    background-image: -webkit-linear-gradient(left, var(--good), var(--blank));
 }
 
-#algo-select button > div.algo-right {
-    background-image: -webkit-linear-gradient(left, #8acdf3, #ffcd49);
+#algo-select button > div.algo-right-good {
+    background-image: -webkit-linear-gradient(left, var(--blank), var(--good));
 }
 
-#algo-select button > div.algo-left.algo-right {
-    background-color: #ffcd49;
+#algo-select button > div.algo-left-bad {
+    background-image: -webkit-linear-gradient(left, var(--bad), var(--blank));
+}
+
+#algo-select button > div.algo-right-bad {
+    background-image: -webkit-linear-gradient(left, var(--blank), var(--bad));
+}
+
+#algo-select button > div.algo-left-good.algo-right-good {
+    background-color: var(--good);
     background-image: revert;
 }
 
-#algo-select button > div.algo-worse {
-    background-color: #8acdf3;
+#algo-select button > div.algo-left-good.algo-right-bad {
+    background-image: -webkit-linear-gradient(left, var(--good), var(--bad));
+}
+
+#algo-select button > div.algo-left-bad.algo-right-good {
+    background-image: -webkit-linear-gradient(left, var(--bad), var(--good));
+}
+
+#algo-select button > div.algo-left-bad.algo-right-bad {
+    background-color: var(--bad);
+    background-image: revert;
 }
 /* #endregion */
 

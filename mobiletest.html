@@ -176,11 +176,12 @@
                     ["'ontouchstart' in document.documentElement", "ontouchstart" in document.documentElement],
                     ["userAgentMatch()", userAgentMatch()],
                     ["createTouchEvent()", createTouchEvent()],
+                    ["matchMedia('(hover: hover)').matches", matchMedia("(hover: hover)").matches]
                     //["", ],
                 ]
 
                 const JS = document.querySelector("#js");
-                JS.append(...TOUCH_CHECK.map(([NAME, CHECK] ) => {
+                JS.append(...TOUCH_CHECK.map(([NAME, CHECK]) => {
                     const DIV = document.createElement("div");
                     DIV.textContent = `${NAME}: ${CHECK}`;
                     DIV.classList.add("touch-check");
