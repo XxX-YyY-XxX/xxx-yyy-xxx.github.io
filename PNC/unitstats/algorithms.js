@@ -311,22 +311,22 @@ function createSelect(obj, name) {
     for (const ATTR of ATTR_LIST) {
         const OPTION = document.createElement("option");
         OPTION.value = ATTR;
-        OPTION.textContent = STATVALUES.NAME[ATTR];
+        // OPTION.textContent = STATVALUES.NAME[ATTR];
 
         temp = _threshCheck(ATTR);
-        if (temp) OPTION.classList.add(temp);
+        // if (temp) OPTION.classList.add(temp);
         // if ("ontouchstart" in window) {
-        //         switch (temp) {
-        //             case "algo-stat-good":
-        //                 OPTION.textContent = "+ " + STATVALUES.NAME[ATTR];
-        //                 break;
-        //             case "algo-stat-bad":
-        //                 OPTION.textContent = "- " + STATVALUES.NAME[ATTR];
-        //                 break;
-        //             case null:
-        //                 OPTION.textContent = "= " + STATVALUES.NAME[ATTR];
-        //                 break;
-        //         }
+        switch (temp) {
+            case "algo-stat-good":
+                OPTION.textContent = "+ " + STATVALUES.NAME[ATTR];
+                break;
+            case "algo-stat-bad":
+                OPTION.textContent = "- " + STATVALUES.NAME[ATTR];
+                break;
+            case null:
+                OPTION.textContent = "= " + STATVALUES.NAME[ATTR];
+                break;
+        }
         //     } else {
         //     }
 
@@ -763,6 +763,8 @@ export class AlgoField{
 
     /** @param {UnitObject} unit @param {function(): void} onclose */
     constructor(unit, onclose = () => {}) {
+        AlgoField.#current = this;
+
         this.#name = unit.name;
         this.#basestat = unit.base;
 
@@ -811,7 +813,7 @@ export class AlgoField{
     /** @type {AlgoField?} */ static #current = null;
     static get current() {
         return {
-            name: AlgoField.#current.#name,
+            // name: AlgoField.#current.#name,
             basestat: AlgoField.#current.#basestat
         }
     }
