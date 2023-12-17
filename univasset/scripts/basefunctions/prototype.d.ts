@@ -7,6 +7,9 @@ interface Array<T> {
 
     /** Checks if current array's elements are present in the given array. */
     subsetof(main_array: T[]): boolean;
+
+    /** Returns an object wherein its index is the instances present in the original array, stored in subarrays.*/
+    collate(): {[count: number]: T[] | undefined};
 }
 
 interface Math {

@@ -561,7 +561,7 @@ ALGO_SELECT.addEventListener("close", function(event) {
     this.firstElementChild.replaceChildren();   // Empties algo buttons selection.
 });
 
-/** @type {{[UnitName: string]: [AlgoInfo[], AlgoInfo[], AlgoInfo[]]}} */ const ALGO_SAVE = (function() {
+/** @type {{[UnitName: string]: [AlgoInfo[], AlgoInfo[], AlgoInfo[]]?}} */ const ALGO_SAVE = (function() {
     const SAVE_DATA = localStorage.getItem(STORAGEKEY);
     return SAVE_DATA ? JSON.parse(SAVE_DATA) : {};
 })()
@@ -649,13 +649,34 @@ class AlgoGrid {
     }
 }
 
-/** @param {AlgoInfo} algoinfo @returns {StatDict} */
-function infoToDict([, main, sub1, sub2]) {
-    if (sub2)
-        return [new Map([[main, STATVALUES.MAIN[main] * 2]]), new Map([[sub1, STATVALUES.SUB[sub1]], [sub2, STATVALUES.SUB[sub2]]])].reduce(combine);
-    else
-        return [new Map([[main, STATVALUES.MAIN[main]]]), new Map([[sub1, STATVALUES.SUB[sub1]]])].reduce(combine);
+/** @param {string} name @returns {StatDict} */
+function getDict(name) {
+    const INFOS = ALGO_SAVE[name]?.flat();
+    if (!INFOS) return new Map();
+
+    /** @type {StatDict} */ const SET_DICT = INFOS.map(x => x[0]).collate()[2]
+        ?.map(x => ({...ALGO_SETS.Offense, ...ALGO_SETS.Stability, ...ALGO_SETS.Special})[x].SET2)
+        .filter(Array.isArray).map(x => new Map(x)).reduce(combine) ?? new Map();
+
+    /** @type {StatDict} */ const MAINSUB = (function() {
+        for (const [, main, sub1, sub2] of INFOS) {
+            if (sub2)
+                return [new Map([[main, STATVALUES.MAIN[main] * 2]]), new Map([[sub1, STATVALUES.SUB[sub1]], [sub2, STATVALUES.SUB[sub2]]])].reduce(combine);
+            else
+                return [new Map([[main, STATVALUES.MAIN[main]]]), new Map([[sub1, STATVALUES.SUB[sub1]]])].reduce(combine);        
+        }            
+    })();
+
+    return combine(SET_DICT, MAINSUB);
 }
+
+// /** @param {AlgoInfo} algoinfo @returns {StatDict} */
+// function infoToDict([, main, sub1, sub2]) {
+//     if (sub2)
+//         return [new Map([[main, STATVALUES.MAIN[main] * 2]]), new Map([[sub1, STATVALUES.SUB[sub1]], [sub2, STATVALUES.SUB[sub2]]])].reduce(combine);
+//     else
+//         return [new Map([[main, STATVALUES.MAIN[main]]]), new Map([[sub1, STATVALUES.SUB[sub1]]])].reduce(combine);
+// }
 
 export class AlgoField{
     #name;
@@ -755,11 +776,11 @@ export class AlgoField{
 
         this.#algogrids = (() => {
             const LAYOUT = {
-                "Guard": "465",
-                "Sniper": "645",
-                "Warrior": "654",
-                "Specialist": "546",
-                "Medic": unit.name === "Imhotep" ? "546" : "456"
+                Guard: "465",
+                Sniper: "645",
+                Warrior: "654",
+                Specialist: "546",
+                Medic: unit.name === "Imhotep" ? "546" : "456"
             }[unit.class];
     
             return Array.from(
@@ -775,9 +796,12 @@ export class AlgoField{
 
         try {
             var temp;
+            console.log(this.#name)
             console.log(this.#stats)
-            console.log(temp = ALGO_SAVE[this.#name]?.flat().map(infoToDict).reduce(combine, new Map()) ?? new Map())
-            console.log(this.#stats === temp)    
+            // console.log(temp = ALGO_SAVE[this.#name]?.flat().map(infoToDict).reduce(combine, new Map()) ?? new Map())
+            // console.log(this.#stats === temp)    
+            console.log(temp = getDict(this.#name))
+            console.log(this.#stats === temp)
         } catch (e) {
             console.warn(e)
         }
