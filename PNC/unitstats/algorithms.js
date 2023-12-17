@@ -535,7 +535,8 @@ const ALGO_SETS = {
         LoopGain:       class extends Special {static SET2 = STATVALUES.SET.hboostperc;     static SET3 = "";},
         SVM:            class extends Special {static SET2 = STATVALUES.SET.hboostperc;     static SET3 = "";},
         Inspiration:    class extends Special {static SET2 = STATVALUES.SET.HPREGEN;        static SET3 = null;},
-    }
+    },
+    get classdict() {return {...this.Offense, ...this.Stability, ...this.Special}}
 };
 //#endregion
 
@@ -580,6 +581,12 @@ class AlgoGrid {
     /** @returns {StatDict} */
     get stats() {
         /** @type {StatDict} */ const EFFECT = (() => {
+            // const SETS = this.#algorithms.map(x => x.constructor.name).collate();
+            // return new Map((SETS[2] ?? SETS[3])?.map(x => ALGO_SETS[this.#fieldtype][x].SET2).filter(Array.isArray)[0] ?? []);
+            
+            
+            
+            
             const SETS = this.#algorithms.map(x => [x.constructor.name, ALGO_SETS[this.#fieldtype][x.constructor.name].SET2]).filter(([, set]) => Array.isArray(set));
 
             /** @type {string[]} */ const TEMP = [];
@@ -652,31 +659,20 @@ class AlgoGrid {
 /** @param {string} name @returns {StatDict} */
 function getDict(name) {
     const INFOS = ALGO_SAVE[name]?.flat();
-    if (!INFOS) return new Map();
+    if (!INFOS || !INFOS.length) return new Map();
 
-    /** @type {StatDict} */ const SET_DICT = INFOS.map(x => x[0]).collate()[2]
-        ?.map(x => ({...ALGO_SETS.Offense, ...ALGO_SETS.Stability, ...ALGO_SETS.Special})[x].SET2)
-        .filter(Array.isArray).map(x => new Map(x)).reduce(combine) ?? new Map();
-
-    /** @type {StatDict} */ const MAINSUB = (function() {
-        for (const [, main, sub1, sub2] of INFOS) {
-            if (sub2)
-                return [new Map([[main, STATVALUES.MAIN[main] * 2]]), new Map([[sub1, STATVALUES.SUB[sub1]], [sub2, STATVALUES.SUB[sub2]]])].reduce(combine);
-            else
-                return [new Map([[main, STATVALUES.MAIN[main]]]), new Map([[sub1, STATVALUES.SUB[sub1]]])].reduce(combine);        
-        }            
+    /** @type {StatDict} */ const SET_DICT = (function() {
+        const SETS = INFOS.map(x => x[0]).collate();
+        return [(SETS[2] ?? []), (SETS[3] ?? [])].flat().map(x => ALGO_SETS.classdict[x].SET2).filter(Array.isArray).map(x => new Map(x)).reduce(combine, new Map());
     })();
+
+    /** @type {StatDict} */ const MAINSUB = INFOS.flatMap(([, main, sub1, sub2]) => {
+        if (sub2)   return [new Map([[main, STATVALUES.MAIN[main] * 2]]), new Map([[sub1, STATVALUES.SUB[sub1]], [sub2, STATVALUES.SUB[sub2]]])];
+        else        return [new Map([[main, STATVALUES.MAIN[main]]]), new Map([[sub1, STATVALUES.SUB[sub1]]])];
+    }).reduce(combine);
 
     return combine(SET_DICT, MAINSUB);
 }
-
-// /** @param {AlgoInfo} algoinfo @returns {StatDict} */
-// function infoToDict([, main, sub1, sub2]) {
-//     if (sub2)
-//         return [new Map([[main, STATVALUES.MAIN[main] * 2]]), new Map([[sub1, STATVALUES.SUB[sub1]], [sub2, STATVALUES.SUB[sub2]]])].reduce(combine);
-//     else
-//         return [new Map([[main, STATVALUES.MAIN[main]]]), new Map([[sub1, STATVALUES.SUB[sub1]]])].reduce(combine);
-// }
 
 export class AlgoField{
     #name;

@@ -1,4 +1,5 @@
 //#region Arrays
+//#region 0th-order methods
 Object.defineProperty(Array.prototype, "count", {
     value: function(value) {
         return this.filter(x => x === value).length;
@@ -14,6 +15,21 @@ Object.defineProperty(Array.prototype, "remove", {
     }, writable: true, configurable: true, enumerable: true
 })
 
+Object.defineProperty(Array.prototype, "collate", {
+    value: function() {
+        /** @template T */
+        /** @type {Map<T, number>} */ const COUNTER = new Map();
+        for (const ITEM of this) COUNTER.set(ITEM, (COUNTER.get(ITEM) ?? 0) + 1);
+
+        /** @type {{[count: number]: T[]}} */ const OUTPUT = {};
+        for (const [ITEM, COUNT] of COUNTER) (OUTPUT[COUNT] ??= []).push(ITEM); // equivalent to Python's dict.setdefault
+
+        return OUTPUT;
+    }, writable: true, configurable: true, enumerable: true
+})
+//#endregion
+
+//#region 1st-order methods
 Object.defineProperty(Array.prototype, "subsetof", {
     /** @param {Array} main_array */
     value: function(main_array) {
@@ -24,19 +40,7 @@ Object.defineProperty(Array.prototype, "subsetof", {
         return true;
     }, writable: true, configurable: true, enumerable: true
 })
-
-Object.defineProperty(Array.prototype, "collate", {
-    value: function() {
-        /** @template T */
-        /** @type {Map<T, number>} */ const COUNTER = new Map()
-        for (const ITEM of this) COUNTER.set(ITEM, (COUNTER.get(ITEM) ?? 0) + 1)
-
-        /** @type {{[count: number]: T[]}} */ const OUTPUT = {}
-        for (const [ITEM, COUNT] of COUNTER) (OUTPUT[COUNT] ??= []).push(ITEM)  // equivalent to Python's dict.setdefault
-
-        return OUTPUT
-    }, writable: true, configurable: true, enumerable: true
-})
+//#endregion
 //#endregion
 
 //#region Math
