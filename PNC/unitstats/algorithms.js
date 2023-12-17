@@ -26,7 +26,7 @@ import {cmp, chain, setattr, subclassof, zip} from "../../univasset/scripts/base
 /** @typedef {Map<StatAttributes, number>} StatDict */
 //#endregion
 
-//#region Constants
+//#region Generic Constants
 const STATVALUES = Object.freeze({
     NAME: Object.freeze({
         hpflat: "Health+",      hpperc: "Health%",
@@ -144,7 +144,7 @@ const ATTRIBUTES = {
 }
 //#endregion
 
-//#region Functions
+//#region Generic Functions
 /** @param {StatDict} object1 @param {StatDict} object2 @returns {StatDict} */
 function combine(object1, object2) {
     const OUTPUT = new Map();
@@ -159,7 +159,7 @@ function algoPath(algoname) {
 }
 //#endregion
 
-//#region Base
+//#region Algorithm Base Classes
 /** @abstract */ class Algorithm {
     /** @abstract @static @type {[StatAttributes, number][] | string} */ static SET2;
     /** @abstract @static @type {string?} */ static SET3;
@@ -340,7 +340,7 @@ class SingleBlock extends Algorithm {
     SIZE = 1;
 
     /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, ""]?} attributes */
-    constructor(grid, attributes = null) {
+    constructor(grid, attributes) {
         super(grid);
         if (attributes) {
             const [MAIN, SUB,] = attributes;
@@ -393,7 +393,7 @@ class DoubleBlock extends Algorithm {
     SIZE = 2;
 
     /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, StatAttributes]?} attributes */
-    constructor(grid, attributes = null) {
+    constructor(grid, attributes) {
         super(grid);
         if (attributes) {
             const [MAIN, SUB1, SUB2] = attributes;
@@ -478,9 +478,7 @@ class DoubleBlock extends Algorithm {
         return new Map([[this.#substat2.value, STATVALUES.SUB[this.#substat2.value]]]);
     }
 }
-//#endregion
 
-//#region Algorithm Block Types
 class OffenseBlock extends SingleBlock {};
 class Offense extends DoubleBlock {};
 class StabilityBlock extends SingleBlock {};
@@ -543,16 +541,30 @@ const ALGO_SETS = {
 
 //#region Interface
 const MAX_SIZE = 6;
+const STORAGEKEY = "algorithms";
 const GRIDS = {
     /** @type {HTMLDivElement} */ Offense: document.querySelector("#algo-modal #Offense"),
     /** @type {HTMLDivElement} */ Stability: document.querySelector("#algo-modal #Stability"),
     /** @type {HTMLDivElement} */ Special: document.querySelector("#algo-modal #Special")
 }
 
+/** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
+/** @type {HTMLButtonElement} */ const ALGO_CLOSE = document.querySelector("#close-modal");
+ALGO_MODAL.addEventListener("close", function(event) {
+    this.firstElementChild.textContent = "";
+    for (const DIV of Object.values(GRIDS)) DIV.replaceChildren();
+    localStorage.setItem(STORAGEKEY, JSON.stringify(ALGO_SAVE));
+});
+
 /** @type {HTMLDialogElement} */ const ALGO_SELECT = document.querySelector("#algo-select");
 ALGO_SELECT.addEventListener("close", function(event) {
-    this.firstElementChild.replaceChildren();
+    this.firstElementChild.replaceChildren();   // Empties algo buttons selection.
 });
+
+/** @type {{[UnitName: string]: [AlgoInfo[], AlgoInfo[], AlgoInfo[]]}} */ const ALGO_SAVE = (function() {
+    const SAVE_DATA = localStorage.getItem(STORAGEKEY);
+    return SAVE_DATA ? JSON.parse(SAVE_DATA) : {};
+})()
 
 class AlgoGrid {
     #grid;
@@ -589,7 +601,7 @@ class AlgoGrid {
     }
     
     /** @param {"Offense" | "Stability" | "Special"} fieldtype @param {number} size @param {AlgoInfo[]?} init_array */
-    constructor(fieldtype, size, init_array = null) {
+    constructor(fieldtype, size, init_array) {
         this.#grid = GRIDS[fieldtype];
         this.#algorithms = init_array?.map(([set, ...attr]) => new ALGO_SETS[fieldtype][set](this, attr)) ?? [];
 
@@ -636,21 +648,6 @@ class AlgoGrid {
         this.display();
     }
 }
-
-const STORAGEKEY = "algorithms";
-
-/** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
-/** @type {HTMLButtonElement} */ const ALGO_CLOSE = document.querySelector("#close-modal");
-ALGO_MODAL.addEventListener("close", function(event) {
-    this.firstElementChild.textContent = "";
-    for (const DIV of Object.values(GRIDS)) DIV.replaceChildren();
-    localStorage.setItem(STORAGEKEY, JSON.stringify(ALGO_SAVE));
-});
-
-/** @type {{[UnitName: string]: [AlgoInfo[], AlgoInfo[], AlgoInfo[]]}} */ const ALGO_SAVE = (function() {
-    const SAVE_DATA = localStorage.getItem(STORAGEKEY);
-    return SAVE_DATA ? JSON.parse(SAVE_DATA) : {};
-})()
 
 /** @param {AlgoInfo} algoinfo @returns {StatDict} */
 function infoToDict([, main, sub1, sub2]) {
@@ -779,7 +776,7 @@ export class AlgoField{
         try {
             var temp;
             console.log(this.#stats)
-            console.log(temp = ALGO_SAVE[this.#name]?.flat().map(infoToDict).reduce(combine, new Map()))
+            console.log(temp = ALGO_SAVE[this.#name]?.flat().map(infoToDict).reduce(combine, new Map()) ?? new Map())
             console.log(this.#stats === temp)    
         } catch (e) {
             console.warn(e)
