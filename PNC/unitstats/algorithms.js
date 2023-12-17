@@ -22,7 +22,7 @@ import {cmp, chain, setattr, subclassof, zip} from "../../univasset/scripts/base
 */
 
 /** @typedef {"hpflat"|"hpperc"|"atkflat"|"atkperc"|"hashflat"|"hashperc"|"pdefflat"|"pdefperc"|"odefflat"|"odefperc"|"crateperc"|"cdmgperc"|"ppenflat"|"ppenperc"|"openflat"|"openperc"|"dodgeperc"|"regenflat"|"hasteperc"|"resflat"|"dboostperc"|"dreducperc"|"hboostperc"|"aspdflat"|"lashperc"} StatAttributes */
-/** @typedef {[string, StatAttributes, StatAttributes, StatAttributes | ""]} AlgoInfo */
+/** @typedef {[[algoname: string], [main: StatAttributes], [sub1: StatAttributes], [sub2: StatAttributes | ""]]} AlgoInfo */
 /** @typedef {Map<StatAttributes, number>} StatDict */
 //#endregion
 
@@ -657,7 +657,7 @@ export class AlgoField{
     #basestat;
 
     /** @type {[AlgoGrid, AlgoGrid, AlgoGrid]} */ #algogrids;
-    #stats;
+    /** @type {StatDict} */ #stats;
 
     #layout;
 
@@ -735,36 +735,37 @@ export class AlgoField{
 
     /** @param {UnitObject} unit @param {function(): void} onclose */
     constructor(unit, onclose = () => {}) {
-        // AlgoField.#current = this;
+        AlgoField.#current = this;
 
         this.#name = unit.name;
         this.#basestat = unit.base;
 
-        this.#layout = {
-            "Guard": "465",
-            "Sniper": "645",
-            "Warrior": "654",
-            "Specialist": "546",
-            "Medic": unit.name === "Imhotep" ? "546" : "456"
-        }[unit.class];
+        // this.#layout = {
+        //     "Guard": "465",
+        //     "Sniper": "645",
+        //     "Warrior": "654",
+        //     "Specialist": "546",
+        //     "Medic": unit.name === "Imhotep" ? "546" : "456"
+        // }[unit.class];
 
-        // this.#algogrids = (() => {
-        //     const LAYOUT = {
-        //         "Guard": "465",
-        //         "Sniper": "645",
-        //         "Warrior": "654",
-        //         "Specialist": "546",
-        //         "Medic": unit.name === "Imhotep" ? "546" : "456"
-        //     }[unit.class];
+        this.#algogrids = (() => {
+            const LAYOUT = {
+                "Guard": "465",
+                "Sniper": "645",
+                "Warrior": "654",
+                "Specialist": "546",
+                "Medic": unit.name === "Imhotep" ? "546" : "456"
+            }[unit.class];
     
-        //     return Array.from(
-        //         zip(["Offense", "Stability", "Special"], LAYOUT, ALGO_SAVE[unit.name] ?? [null, null, null])
-        //     ).map(
-        //         ([type, size, info]) => new AlgoGrid(type, Number(size), info)
-        //     );
-        // })();
+            return Array.from(
+                zip(["Offense", "Stability", "Special"], LAYOUT, ALGO_SAVE[unit.name] ?? [null, null, null])
+            ).map(
+                ([type, size, info]) => new AlgoGrid(type, Number(size), info)
+            );
+        })();
 
-        this.#stats = this.#algogrids?.map(x => x.stats).reduce(combine) ?? new Map();
+        // what if algo stats checked without opening modal
+        this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
 
         this.#close = () => {
             this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
@@ -783,11 +784,11 @@ export class AlgoField{
     show() {
         AlgoField.#current = this;
 
-        this.#algogrids ??= Array.from(
-            zip(["Offense", "Stability", "Special"], this.#layout, ALGO_SAVE[this.#name] ?? [null, null, null])
-        ).map(
-            ([type, size, info]) => new AlgoGrid(type, Number(size), info)
-        );
+        // this.#algogrids ??= Array.from(
+        //     zip(["Offense", "Stability", "Special"], this.#layout, ALGO_SAVE[this.#name] ?? [null, null, null])
+        // ).map(
+        //     ([type, size, info]) => new AlgoGrid(type, Number(size), info)
+        // );
 
         ALGO_MODAL.firstElementChild.textContent = this.#name;
         for (const GRID of this.#algogrids) GRID.display()
