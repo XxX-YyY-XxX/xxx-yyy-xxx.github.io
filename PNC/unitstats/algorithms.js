@@ -22,7 +22,7 @@ import {cmp, chain, setattr, subclassof, zip} from "../../univasset/scripts/base
 */
 
 /** @typedef {"hpflat"|"hpperc"|"atkflat"|"atkperc"|"hashflat"|"hashperc"|"pdefflat"|"pdefperc"|"odefflat"|"odefperc"|"crateperc"|"cdmgperc"|"ppenflat"|"ppenperc"|"openflat"|"openperc"|"dodgeperc"|"regenflat"|"hasteperc"|"resflat"|"dboostperc"|"dreducperc"|"hboostperc"|"aspdflat"|"lashperc"} StatAttributes */
-/** @typedef {[[algoname: string], [main: StatAttributes], [sub1: StatAttributes], [sub2: StatAttributes | ""]]} AlgoInfo */
+/** @typedef {[string, StatAttributes, StatAttributes, StatAttributes | ""]} AlgoInfo [algoname, main, sub1, sub2] */
 /** @typedef {Map<StatAttributes, number>} StatDict */
 //#endregion
 
@@ -652,12 +652,20 @@ ALGO_MODAL.addEventListener("close", function(event) {
     return SAVE_DATA ? JSON.parse(SAVE_DATA) : {};
 })()
 
+/** @param {AlgoInfo} algoinfo @returns {StatDict} */
+function infoToDict([, main, sub1, sub2]) {
+    if (sub2)
+        return [new Map([[main, STATVALUES.MAIN[main] * 2]]), new Map([[sub1, STATVALUES.SUB[sub1]], [sub2, STATVALUES.SUB[sub2]]])].reduce(combine);
+    else
+        return [new Map([[main, STATVALUES.MAIN[main]]]), new Map([[sub1, STATVALUES.SUB[sub1]]])].reduce(combine);
+}
+
 export class AlgoField{
     #name;
     #basestat;
 
     /** @type {[AlgoGrid, AlgoGrid, AlgoGrid]} */ #algogrids;
-    /** @type {StatDict} */ #stats;
+    #stats;
 
     #layout;
 
@@ -765,7 +773,17 @@ export class AlgoField{
         })();
 
         // what if algo stats checked without opening modal
+        // this.#stats = ALGO_SAVE[this.#name]?.flat().map(infoToDict).reduce(combine, new Map())
         this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
+
+        try {
+            var temp;
+            console.log(this.#stats)
+            console.log(temp = ALGO_SAVE[this.#name]?.flat().map(infoToDict).reduce(combine, new Map()))
+            console.log(this.#stats === temp)    
+        } catch (e) {
+            console.warn(e)
+        }
 
         this.#close = () => {
             this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
