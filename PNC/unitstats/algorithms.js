@@ -581,20 +581,27 @@ class AlgoGrid {
     /** @returns {StatDict} */
     get stats() {
         /** @type {StatDict} */ const EFFECT = (() => {
-            // const SETS = this.#algorithms.map(x => x.constructor.name).collate();
-            // return new Map((SETS[2] ?? SETS[3])?.map(x => ALGO_SETS[this.#fieldtype][x].SET2).filter(Array.isArray)[0] ?? []);
-            
-            
-            
-            
-            const SETS = this.#algorithms.map(x => [x.constructor.name, ALGO_SETS[this.#fieldtype][x.constructor.name].SET2]).filter(([, set]) => Array.isArray(set));
+                const SETS = this.#algorithms.map(x => [x.constructor.name, ALGO_SETS[this.#fieldtype][x.constructor.name].SET2]).filter(([, set]) => Array.isArray(set));
 
-            /** @type {string[]} */ const TEMP = [];
-            for (const [NAME, SET2] of SETS) {
-                if (TEMP.includes(NAME))
-                    return new Map(SET2);
-                else
-                    TEMP.push(NAME);
+                /** @type {string[]} */ const TEMP = [];
+                for (const [NAME, SET2] of SETS) {
+                    if (TEMP.includes(NAME))
+                        return new Map(SET2);
+                    else
+                        TEMP.push(NAME);
+            }
+
+            try {
+                const TRIAL = (() => {
+                    const SETS = this.#algorithms.map(x => x.constructor.name).collate();
+                    return new Map((SETS[2]??SETS[3])?.map(x => ALGO_SETS[this.#fieldtype][x].SET2).filter(Array.isArray)[0] ?? []);
+                })();
+    
+                console.log(AlgoField.current.name, this.#fieldtype)
+                console.log(EFFECT)
+                console.log(TRIAL)    
+            } catch (e) {
+                console.warn(e)
             }
 
             return new Map();
@@ -656,32 +663,14 @@ class AlgoGrid {
     }
 }
 
-/** @param {string} name @returns {StatDict} */
-function getDict(name) {
-    const INFOS = ALGO_SAVE[name]?.flat();
-    if (!INFOS || !INFOS.length) return new Map();
-
-    /** @type {StatDict} */ const SET_DICT = (function() {
-        const SETS = INFOS.map(x => x[0]).collate();
-        return [(SETS[2] ?? []), (SETS[3] ?? [])].flat().map(x => ALGO_SETS.classdict[x].SET2).filter(Array.isArray).map(x => new Map(x)).reduce(combine, new Map());
-    })();
-
-    /** @type {StatDict} */ const MAINSUB = INFOS.flatMap(([, main, sub1, sub2]) => {
-        if (sub2)   return [new Map([[main, STATVALUES.MAIN[main] * 2]]), new Map([[sub1, STATVALUES.SUB[sub1]], [sub2, STATVALUES.SUB[sub2]]])];
-        else        return [new Map([[main, STATVALUES.MAIN[main]]]), new Map([[sub1, STATVALUES.SUB[sub1]]])];
-    }).reduce(combine);
-
-    return combine(SET_DICT, MAINSUB);
-}
-
 export class AlgoField{
     #name;
     #basestat;
+    #layout;
 
     /** @type {[AlgoGrid, AlgoGrid, AlgoGrid]} */ #algogrids;
-    #stats;
+    /** @type {StatDict} */ #stats;
 
-    #layout;
 
     get [STAT_KEYS.HEALTH]() {
         return this.#basestat.hp * (this.#stats.get("hpperc") ?? 0) / 100 + (this.#stats.get("hpflat") ?? 0);
@@ -757,50 +746,33 @@ export class AlgoField{
 
     /** @param {UnitObject} unit @param {function(): void} onclose */
     constructor(unit, onclose = () => {}) {
-        AlgoField.#current = this;
-
         this.#name = unit.name;
         this.#basestat = unit.base;
 
-        // this.#layout = {
-        //     "Guard": "465",
-        //     "Sniper": "645",
-        //     "Warrior": "654",
-        //     "Specialist": "546",
-        //     "Medic": unit.name === "Imhotep" ? "546" : "456"
-        // }[unit.class];
+        this.#layout = {
+            Guard: "465",
+            Sniper: "645",
+            Warrior: "654",
+            Specialist: "546",
+            Medic: this.#name === "Imhotep" ? "546" : "456"
+        }[unit.class];
 
-        this.#algogrids = (() => {
-            const LAYOUT = {
-                Guard: "465",
-                Sniper: "645",
-                Warrior: "654",
-                Specialist: "546",
-                Medic: unit.name === "Imhotep" ? "546" : "456"
-            }[unit.class];
-    
-            return Array.from(
-                zip(["Offense", "Stability", "Special"], LAYOUT, ALGO_SAVE[unit.name] ?? [null, null, null])
-            ).map(
-                ([type, size, info]) => new AlgoGrid(type, Number(size), info)
-            );
+        this.#stats = (() => {  // For when algorithm button is checked without opening modal
+            const INFOS = ALGO_SAVE[this.#name]?.flat();
+            if (!INFOS || !INFOS.length) return new Map();
+
+            /** @type {StatDict} */ const SET_DICT = (function() {
+                const SETS = INFOS.map(x => x[0]).collate();
+                return [SETS[2]??[], SETS[3]??[]].flat().map(x => ALGO_SETS.classdict[x].SET2).filter(Array.isArray).map(x => new Map(x)).reduce(combine, new Map());
+            })();
+
+            /** @type {StatDict} */ const MAINSUB = INFOS.flatMap(([, main, sub1, sub2]) => {
+                if (sub2)   return [new Map([[main, STATVALUES.MAIN[main] * 2]]), new Map([[sub1, STATVALUES.SUB[sub1]], [sub2, STATVALUES.SUB[sub2]]])];
+                else        return [new Map([[main, STATVALUES.MAIN[main]]]), new Map([[sub1, STATVALUES.SUB[sub1]]])];
+            }).reduce(combine);
+
+            return combine(SET_DICT, MAINSUB);
         })();
-
-        // what if algo stats checked without opening modal
-        // this.#stats = ALGO_SAVE[this.#name]?.flat().map(infoToDict).reduce(combine, new Map())
-        this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
-
-        try {
-            var temp;
-            console.log(this.#name)
-            console.log(this.#stats)
-            // console.log(temp = ALGO_SAVE[this.#name]?.flat().map(infoToDict).reduce(combine, new Map()) ?? new Map())
-            // console.log(this.#stats === temp)    
-            console.log(temp = getDict(this.#name))
-            console.log(this.#stats === temp)
-        } catch (e) {
-            console.warn(e)
-        }
 
         this.#close = () => {
             this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
@@ -819,11 +791,11 @@ export class AlgoField{
     show() {
         AlgoField.#current = this;
 
-        // this.#algogrids ??= Array.from(
-        //     zip(["Offense", "Stability", "Special"], this.#layout, ALGO_SAVE[this.#name] ?? [null, null, null])
-        // ).map(
-        //     ([type, size, info]) => new AlgoGrid(type, Number(size), info)
-        // );
+        this.#algogrids ??= Array.from(
+            zip(["Offense", "Stability", "Special"], this.#layout, ALGO_SAVE[this.#name] ?? [null, null, null])
+        ).map(
+            ([type, size, info]) => new AlgoGrid(type, Number(size), info)
+        );
 
         ALGO_MODAL.firstElementChild.textContent = this.#name;
         for (const GRID of this.#algogrids) GRID.display()

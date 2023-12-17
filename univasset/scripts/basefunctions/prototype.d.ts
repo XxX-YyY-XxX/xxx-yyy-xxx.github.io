@@ -1,3 +1,8 @@
+/** Object whose numeric indices represent the number of instances present in the array. Returns an array of those instances, or undefined. */
+type Collator<T> = {
+    [count: number]: T[] | undefined;
+}
+
 interface Array<T> {
     /** Returns the number of occurences of the object. */
     count(value: T): number;
@@ -9,7 +14,7 @@ interface Array<T> {
     subsetof(main_array: T[]): boolean;
 
     /** Returns an object wherein its index is the instances present in the original array, stored in subarrays.*/
-    collate(): {[count: number]: T[] | undefined};
+    collate(): Collator<T>;
 }
 
 interface Math {
