@@ -784,7 +784,7 @@ export class AlgoField{
         AlgoField.#current = this;
 
         this.#algogrids ??= Array.from(
-            zip(["Offense", "Stability", "Special"], this.#layout, ALGO_SAVE[unit.name] ?? [null, null, null])
+            zip(["Offense", "Stability", "Special"], this.#layout, ALGO_SAVE[this.#name] ?? [null, null, null])
         ).map(
             ([type, size, info]) => new AlgoGrid(type, Number(size), info)
         );
