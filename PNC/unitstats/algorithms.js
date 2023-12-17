@@ -306,24 +306,23 @@ function createSelect(obj, name) {
         return [ATTRIBUTES[ALGO_TYPE][name], output];
     })();
 
-    /** @type {"algo-stat-good" | "algo-stat-bad" | null} */ var temp;
+    // /** @type {"algo-stat-good" | "algo-stat-bad" | null} */ var temp;
     for (const ATTR of ATTR_LIST) {
         const OPTION = document.createElement("option");
         OPTION.value = ATTR;
         // OPTION.textContent = STATVALUES.NAME[ATTR];
 
-        temp = _threshCheck(ATTR);
         // if (temp) OPTION.classList.add(temp);
         // if ("ontouchstart" in window) {
-        switch (temp) {
+        switch (_threshCheck(ATTR)) {
             case "algo-stat-good":
-                OPTION.textContent = "+ " + STATVALUES.NAME[ATTR];
+                OPTION.textContent = STATVALUES.NAME[ATTR] + " (+)";
                 break;
             case "algo-stat-bad":
-                OPTION.textContent = "- " + STATVALUES.NAME[ATTR];
+                OPTION.textContent = STATVALUES.NAME[ATTR] + " (-)";
                 break;
             case null:
-                OPTION.textContent = "= " + STATVALUES.NAME[ATTR];
+                OPTION.textContent = STATVALUES.NAME[ATTR];
                 break;
         }
         //     } else {
@@ -549,35 +548,7 @@ const GRIDS = {
     /** @type {HTMLDivElement} */ Stability: document.querySelector("#algo-modal #Stability"),
     /** @type {HTMLDivElement} */ Special: document.querySelector("#algo-modal #Special")
 }
-// /** @param {typeof Algorithm} algoClass */
-// function algoSelectButton(algoClass) {
-//     const OUTPUT = setattr(document.createElement("button"), {type: "submit", value: algoClass.name});
 
-//     const IMG = document.createElement("img");
-//     IMG.alt = algoClass.name;
-//     IMG.src = algoPath(subclassof(algoClass, SingleBlock) ? "SingleBlock" : algoClass.name);
-//     OUTPUT.appendChild(IMG);
-
-//     // 3set effect
-//     const DIV1 = document.createElement("div");
-//     DIV1.textContent = algoClass.name;
-//     OUTPUT.appendChild(DIV1);
-
-//     // if (algoClass.SET3) {
-//     //     algoClass.SET3
-//     // }
-
-//     // threshold
-//     const SET_EFFECT = algoClass.SET2;
-//     const DIV2 = document.createElement("div");
-//     DIV2.textContent = Array.isArray(SET_EFFECT) ? SET_EFFECT.map(([attr,]) => STATVALUES.NAME[attr]).join("|") : SET_EFFECT;
-//     OUTPUT.appendChild(DIV2);
-
-//     // AlgoField.current.basestat
-//     // STATVALUES.SET_THRESH
-
-//     return OUTPUT;
-// }
 /** @type {HTMLDialogElement} */ const ALGO_SELECT = document.querySelector("#algo-select");
 ALGO_SELECT.addEventListener("close", function(event) {
     this.firstElementChild.replaceChildren();
@@ -685,8 +656,10 @@ export class AlgoField{
     #name;
     #basestat;
 
-    #algogrids;
+    /** @type {[AlgoGrid, AlgoGrid, AlgoGrid]} */ #algogrids;
     #stats;
+
+    #layout;
 
     get [STAT_KEYS.HEALTH]() {
         return this.#basestat.hp * (this.#stats.get("hpperc") ?? 0) / 100 + (this.#stats.get("hpflat") ?? 0);
@@ -762,28 +735,36 @@ export class AlgoField{
 
     /** @param {UnitObject} unit @param {function(): void} onclose */
     constructor(unit, onclose = () => {}) {
-        AlgoField.#current = this;
+        // AlgoField.#current = this;
 
         this.#name = unit.name;
         this.#basestat = unit.base;
 
-        this.#algogrids = (() => {
-            const LAYOUT = {
-                "Guard": "465",
-                "Sniper": "645",
-                "Warrior": "654",
-                "Specialist": "546",
-                "Medic": unit.name === "Imhotep" ? "546" : "456"
-            }[unit.class];
-    
-            return Array.from(
-                zip(["Offense", "Stability", "Special"], LAYOUT, ALGO_SAVE[unit.name] ?? [null, null, null])
-            ).map(
-                ([type, size, info]) => new AlgoGrid(type, Number(size), info)
-            );
-        })();
+        this.#layout = {
+            "Guard": "465",
+            "Sniper": "645",
+            "Warrior": "654",
+            "Specialist": "546",
+            "Medic": unit.name === "Imhotep" ? "546" : "456"
+        }[unit.class];
 
-        this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
+        // this.#algogrids = (() => {
+        //     const LAYOUT = {
+        //         "Guard": "465",
+        //         "Sniper": "645",
+        //         "Warrior": "654",
+        //         "Specialist": "546",
+        //         "Medic": unit.name === "Imhotep" ? "546" : "456"
+        //     }[unit.class];
+    
+        //     return Array.from(
+        //         zip(["Offense", "Stability", "Special"], LAYOUT, ALGO_SAVE[unit.name] ?? [null, null, null])
+        //     ).map(
+        //         ([type, size, info]) => new AlgoGrid(type, Number(size), info)
+        //     );
+        // })();
+
+        this.#stats = this.#algogrids?.map(x => x.stats).reduce(combine) ?? new Map();
 
         this.#close = () => {
             this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
@@ -801,6 +782,13 @@ export class AlgoField{
     #close;
     show() {
         AlgoField.#current = this;
+
+        this.#algogrids ??= Array.from(
+            zip(["Offense", "Stability", "Special"], this.#layout, ALGO_SAVE[unit.name] ?? [null, null, null])
+        ).map(
+            ([type, size, info]) => new AlgoGrid(type, Number(size), info)
+        );
+
         ALGO_MODAL.firstElementChild.textContent = this.#name;
         for (const GRID of this.#algogrids) GRID.display()
 
@@ -812,7 +800,7 @@ export class AlgoField{
     /** @type {AlgoField?} */ static #current = null;
     static get current() {
         return {
-            // name: AlgoField.#current.#name,
+            name: AlgoField.#current.#name,
             basestat: AlgoField.#current.#basestat
         }
     }
