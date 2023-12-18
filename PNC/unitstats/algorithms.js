@@ -159,7 +159,7 @@ function algoPath(algoname) {
 }
 //#endregion
 
-//#region Algorithm Base Classes
+//#region Algorithm Classes
 /** @abstract */ class Algorithm {
     /** @abstract @static @type {[StatAttributes, number][] | string} */ static SET2;
     /** @abstract @static @type {string?} */ static SET3;
@@ -545,16 +545,13 @@ ALGO_MODAL.addEventListener("close", function(event) {
     localStorage.setItem(STORAGEKEY, JSON.stringify(ALGO_SAVE));
 });
 
-/** @type {HTMLDialogElement} */ const ALGO_SELECT = document.querySelector("#algo-select");
-ALGO_SELECT.addEventListener("close", function(event) {
-    this.firstElementChild.replaceChildren();   // Empties algo buttons selection.
-});
-
 /** @type {{[UnitName: string]: [AlgoInfo[], AlgoInfo[], AlgoInfo[]]?}} */ const ALGO_SAVE = (function() {
     const SAVE_DATA = localStorage.getItem(STORAGEKEY);
     return SAVE_DATA ? JSON.parse(SAVE_DATA) : {};
 })()
 
+/** @type {HTMLDialogElement} */ const ALGO_SELECT = document.querySelector("#algo-select");
+ALGO_SELECT.addEventListener("close", function(event) {this.firstElementChild.replaceChildren()});  // Empties algo buttons selection.
 class AlgoGrid {
     #fieldtype;
     #closedcell;
