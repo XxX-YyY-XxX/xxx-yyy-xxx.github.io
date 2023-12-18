@@ -538,15 +538,12 @@ ALGO_SELECT.addEventListener("close", function(event) {
 })()
 
 class AlgoGrid {
+    #fieldtype;
+    #closedcell;
+    get #emptycell() {return MAX_SIZE - (this.#closedcell + this.#algorithms.map(x => x.SIZE).reduce((a, b) => a + b, 0))}
+
     #grid;
     /** @type {Algorithm[]} */ #algorithms;
-
-    #fieldtype;
-
-    #closedcell;
-    get #emptycell() {
-        return MAX_SIZE - (this.#closedcell + this.#algorithms.map(x => x.SIZE).reduce((a, b) => a + b, 0));
-    }
 
     /** @returns {StatDict} */
     get stats() {
@@ -577,20 +574,18 @@ class AlgoGrid {
             console.warn(e)
         }
 
-        return [EFFECT, ...this.#algorithms.map(x => x.stats)].reduce(combine, new Map());
+        return [EFFECT, ...this.#algorithms.map(x => x.stats)].reduce(combine);
     }
 
-    get info() {
-        return this.#algorithms.map(x => x.info);
-    }
+    get info() {return this.#algorithms.map(x => x.info)}
     
     /** @param {"Offense" | "Stability" | "Special"} fieldtype @param {number} size @param {AlgoInfo[]?} init_array */
     constructor(fieldtype, size, init_array) {
-        this.#grid = GRIDS[fieldtype];
-        this.#algorithms = init_array?.map(([set, ...attr]) => new ALGO_SETS[fieldtype][set](this, attr)) ?? [];
-
         this.#fieldtype = fieldtype;
         this.#closedcell = MAX_SIZE - size;
+
+        this.#grid = GRIDS[fieldtype];
+        this.#algorithms = init_array?.map(([set, ...attr]) => new ALGO_SETS[fieldtype][set](this, attr)) ?? [];
 
         this.#close = () => {
             ALGO_SELECT.removeEventListener("close", this.#close);
