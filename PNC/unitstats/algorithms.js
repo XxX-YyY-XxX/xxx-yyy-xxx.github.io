@@ -24,6 +24,8 @@ import {cmp, chain, setattr, subclassof, zip} from "../../univasset/scripts/base
 /** @typedef {"hpflat"|"hpperc"|"atkflat"|"atkperc"|"hashflat"|"hashperc"|"pdefflat"|"pdefperc"|"odefflat"|"odefperc"|"crateperc"|"cdmgperc"|"ppenflat"|"ppenperc"|"openflat"|"openperc"|"dodgeperc"|"regenflat"|"hasteperc"|"resflat"|"dboostperc"|"dreducperc"|"hboostperc"|"aspdflat"|"lashperc"} StatAttributes */
 /** @typedef {[string, StatAttributes, StatAttributes, StatAttributes | ""]} AlgoInfo [algoname, main, sub1, sub2] */
 /** @typedef {Map<StatAttributes, number>} StatDict */
+
+/** @typedef {"Offense"|"Stability"|"Special"} GridFields */
 //#endregion
 
 //#region Generic Constants
@@ -273,7 +275,7 @@ function createSelect(obj, name) {
     SELECT.classList.add(name === "MAIN" ? "mainstat" : "substat");
 
     const [ATTR_LIST, _threshCheck] = (function() {
-        /** @type {["Offense"|"Stability"|"Special", STAT_KEYS[keyof STAT_KEYS][]]} */
+        /** @type {[GridFields, STAT_KEYS[keyof STAT_KEYS][]]} */
         const [ALGO_TYPE, VIABLE] = (function() {
             switch (true) {
                 case obj instanceof Offense || obj instanceof OffenseBlock:
@@ -511,26 +513,7 @@ const ALGO_SETS = {
 //#endregion
 
 //#region Interface
-// const asdf = new (class {
-//     /** @type {"algorithms"} */ #KEY = "algorithms";
-//     /** @type {{[UnitName: string]: [AlgoInfo[], AlgoInfo[], AlgoInfo[]]?}} */ #DATA;
-
-//     constructor() {
-//         const SAVE_DATA = localStorage.getItem(this.#KEY);
-//         this.#DATA = SAVE_DATA ? JSON.parse(SAVE_DATA) : {};
-
-//         ALGO_MODAL.addEventListener("close", (event) => localStorage.setItem(this.#KEY, JSON.stringify(this.#DATA)));
-//     }
-
-//     /** @param {string} name */
-//     get(name) {return this.#DATA[name] ?? [[], [], []]}
-
-//     /** @param {string} name @param {[AlgoInfo[], AlgoInfo[], AlgoInfo[]]} algoinfo */
-//     set(name, algoinfo) {this.#DATA[name] = algoinfo}
-// })()
-
-const MAX_SIZE = 6;
-const STORAGEKEY = "algorithms";
+// const STORAGEKEY = "algorithms";
 const GRIDS = {
     /** @type {HTMLDivElement} */ Offense: document.querySelector("#algo-modal #Offense"),
     /** @type {HTMLDivElement} */ Stability: document.querySelector("#algo-modal #Stability"),
@@ -538,18 +521,38 @@ const GRIDS = {
 }
 
 /** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
-/** @type {HTMLButtonElement} */ const ALGO_CLOSE = document.querySelector("#close-modal");
 ALGO_MODAL.addEventListener("close", function(event) {
     this.firstElementChild.textContent = "";
     for (const DIV of Object.values(GRIDS)) DIV.replaceChildren();
-    localStorage.setItem(STORAGEKEY, JSON.stringify(ALGO_SAVE));
+    // localStorage.setItem(STORAGEKEY, JSON.stringify(ALGO_SAVE));
 });
 
-/** @type {{[UnitName: string]: [AlgoInfo[], AlgoInfo[], AlgoInfo[]]?}} */ const ALGO_SAVE = (function() {
-    const SAVE_DATA = localStorage.getItem(STORAGEKEY);
-    return SAVE_DATA ? JSON.parse(SAVE_DATA) : {};
-})()
+const ALGO_SAVE = new (class {
+    /** @type {"algorithms"} */ #KEY = "algorithms";
+    /** @type {{[UnitName: string]: [AlgoInfo[], AlgoInfo[], AlgoInfo[]]?}} */ #DATA;
 
+    constructor() {
+        const SAVE_DATA = localStorage.getItem(this.#KEY);
+        this.#DATA = SAVE_DATA ? JSON.parse(SAVE_DATA) : {};
+
+        ALGO_MODAL.addEventListener("close", (event) => localStorage.setItem(this.#KEY, JSON.stringify(this.#DATA)));
+    }
+
+    /** @param {string} name */
+    get(name) {return this.#DATA[name] ?? [[], [], []]}
+
+    /** @param {string} name @param {[AlgoInfo[], AlgoInfo[], AlgoInfo[]]} algoinfo */
+    set(name, algoinfo) {this.#DATA[name] = algoinfo}
+})();
+
+
+
+// /** @type {{[UnitName: string]: [AlgoInfo[], AlgoInfo[], AlgoInfo[]]?}} */ const ALGO_SAVE = (function() {
+//     const SAVE_DATA = localStorage.getItem(STORAGEKEY);
+//     return SAVE_DATA ? JSON.parse(SAVE_DATA) : {};
+// })()
+
+const MAX_SIZE = 6;
 /** @type {HTMLDialogElement} */ const ALGO_SELECT = document.querySelector("#algo-select");
 ALGO_SELECT.addEventListener("close", function(event) {this.firstElementChild.replaceChildren()});  // Empties algo buttons selection.
 class AlgoGrid {
@@ -572,13 +575,15 @@ class AlgoGrid {
 
     get info() {return this.#algorithms.map(x => x.info)}
     
-    /** @param {"Offense" | "Stability" | "Special"} fieldtype @param {number} size @param {AlgoInfo[]?} init_array */
+    // /** @param {"Offense" | "Stability" | "Special"} fieldtype @param {number} size @param {AlgoInfo[]?} init_array */
+    /** @param {GridFields} fieldtype @param {number} size @param {AlgoInfo[]} init_array */
     constructor(fieldtype, size, init_array) {
         this.#fieldtype = fieldtype;
         this.#closedcell = MAX_SIZE - size;
 
         this.#grid = GRIDS[fieldtype];
-        this.#algorithms = init_array?.map(([set, ...attr]) => new ALGO_SETS[fieldtype][set](this, attr)) ?? [];
+        // this.#algorithms = init_array?.map(([set, ...attr]) => new ALGO_SETS[fieldtype][set](this, attr)) ?? [];
+        this.#algorithms = init_array.map(([set, ...attr]) => new ALGO_SETS[fieldtype][set](this, attr));
 
         this.#close = () => {
             ALGO_SELECT.removeEventListener("close", this.#close);
@@ -621,6 +626,7 @@ class AlgoGrid {
     }
 }
 
+/** @type {HTMLButtonElement} */ const ALGO_CLOSE = document.querySelector("#close-modal");
 export class AlgoField{
     #name;
     #basestat;
@@ -717,7 +723,8 @@ export class AlgoField{
         }[unit.class];
 
         this.#stats = (() => {  // For when algorithm button is checked without opening modal
-            const INFOS = ALGO_SAVE[this.#name]?.flat() ?? [];
+            // const INFOS = ALGO_SAVE[this.#name]?.flat() ?? [];
+            const INFOS = ALGO_SAVE.get(this.#name).flat();
             if (!INFOS.length) return new Map();
 
             /** @type {StatDict} */ const SET_DICT = (function() {
@@ -735,7 +742,8 @@ export class AlgoField{
 
         this.#close = () => {
             this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
-            ALGO_SAVE[this.#name] = this.#algogrids.map(x => x.info);
+            // ALGO_SAVE[this.#name] = this.#algogrids.map(x => x.info);
+            ALGO_SAVE.set(this.#name, this.#algogrids.map(x => x.info));
 
             this.onclose();
     
@@ -751,7 +759,8 @@ export class AlgoField{
         AlgoField.#current = this;
 
         this.#algogrids ??= Array.from(
-            zip(["Offense", "Stability", "Special"], this.#layout, ALGO_SAVE[this.#name] ?? [null, null, null])
+            // zip(["Offense", "Stability", "Special"], this.#layout, ALGO_SAVE[this.#name] ?? [null, null, null])
+            zip(["Offense", "Stability", "Special"], this.#layout, ALGO_SAVE.get(this.#name))
         ).map(
             ([type, size, info]) => new AlgoGrid(type, Number(size), info)
         );
