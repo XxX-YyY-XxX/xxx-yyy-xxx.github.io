@@ -2,7 +2,7 @@ import {nestElements} from '../../univasset/scripts/htmlgenerator/htmlgenerator.
 import {zip, cmp, setattr} from "../../univasset/scripts/basefunctions/index.js";
 import {Async} from "../../univasset/scripts/externaljavascript.js";
 import {AlgoField} from "./algorithms.js";
-import {STATS} from "./typing.js";
+import {STAT_KEYS} from "./typing.js";
 
 /** @type {Promise<UnitObject[]>} */ const UNIT_PROMISE = Async.getJSON("../units.json");
 
@@ -41,14 +41,16 @@ import {STATS} from "./typing.js";
 //#endregion
 
 //#region Constant Declarations
-/** @type {HTMLInputElement} */ const ARMA_BUTTON = document.querySelector(`#bonus [value="Arma"]`);
-/** @type {HTMLInputElement} */ const BOND_BUTTON = document.querySelector(`#bonus [value="Bond"]`);
-/** @type {HTMLInputElement} */ const SPEC_BUTTON = document.querySelector(`#bonus [value="Spec"]`);
-/** @type {HTMLInputElement} */ const POTB_BUTTON = document.querySelector(`#bonus [value="PotB"]`);
-/** @type {HTMLInputElement} */ const ALGO_BUTTON = document.querySelector(`#bonus [value="Algo"]`);
-/** @type {HTMLInputElement} */ const OATH_BUTTON = document.querySelector(`#bonus [value="Oath"]`);
+const BUTTON = {
+    /** @type {HTMLInputElement} */ ARMA: document.querySelector(`#bonus [value="Arma"]`),
+    /** @type {HTMLInputElement} */ BOND: document.querySelector(`#bonus [value="Bond"]`),
+    /** @type {HTMLInputElement} */ SPEC: document.querySelector(`#bonus [value="Spec"]`),
+    /** @type {HTMLInputElement} */ POTB: document.querySelector(`#bonus [value="PotB"]`),
+    /** @type {HTMLInputElement} */ ALGO: document.querySelector(`#bonus [value="Algo"]`),
+    /** @type {HTMLInputElement} */ OATH: document.querySelector(`#bonus [value="Oath"]`),
+}
 
-const CLASS_BUTTONS = {
+const CLASSES = {
     /** @type {HTMLInputElement} */ Guard: document.querySelector('#classes [value="Guard"]'),
     /** @type {HTMLInputElement} */ Sniper: document.querySelector('#classes [value="Sniper"]'),
     /** @type {HTMLInputElement} */ Warrior: document.querySelector('#classes [value="Warrior"]'),
@@ -63,166 +65,166 @@ class Units {
     class;
 
     #hp; #armahp;
-    get [STATS.HEALTH]() {
+    get [STAT_KEYS.HEALTH]() {
         var output = this.#hp;
-        if (POTB_BUTTON.checked) output += this.#hp * 0.61;
-        if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armahp;
-        if (BOND_BUTTON.checked && this.#intistats.includes("Code Robustness")) output += 1320;
-        if (SPEC_BUTTON.checked && ["Guard", "Warrior", "Specialist"].includes(this.class)) output += this.#hp * 0.21 + 1200;
-        if (ALGO_BUTTON.checked) output += this.#algofield.hp;
-        if (OATH_BUTTON.checked) output += this.#hp * 0.08;
+        if (BUTTON.POTB.checked) output += this.#hp * 0.61;
+        if (BUTTON.ARMA.checked && this.#hasarma) output += this.#armahp;
+        if (BUTTON.BOND.checked && this.#intistats.includes("Code Robustness")) output += 1320;
+        if (BUTTON.SPEC.checked && ["Guard", "Warrior", "Specialist"].includes(this.class)) output += this.#hp * 0.21 + 1200;
+        if (BUTTON.ALGO.checked) output += this.#algofield.hp;
+        if (BUTTON.OATH.checked) output += this.#hp * 0.08;
         return Math.trunc(output);
     }
 
     #atk; #armaatk;
-    get [STATS.ATTACK]() {
+    get [STAT_KEYS.ATTACK]() {
         var output = this.#atk;
-        if (POTB_BUTTON.checked) output += this.#atk * 0.61;
-        if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armaatk;
-        if (BOND_BUTTON.checked && this.#intistats.includes("Power Connection")) output += 55;
-        if (SPEC_BUTTON.checked && ["Sniper", "Warrior", "Specialist"].includes(this.class)) output += this.#atk * 0.22 + 38;
-        if (ALGO_BUTTON.checked) output += this.#algofield.atk;
+        if (BUTTON.POTB.checked) output += this.#atk * 0.61;
+        if (BUTTON.ARMA.checked && this.#hasarma) output += this.#armaatk;
+        if (BUTTON.BOND.checked && this.#intistats.includes("Power Connection")) output += 55;
+        if (BUTTON.SPEC.checked && ["Sniper", "Warrior", "Specialist"].includes(this.class)) output += this.#atk * 0.22 + 38;
+        if (BUTTON.ALGO.checked) output += this.#algofield.atk;
         return Math.trunc(output);
     }
 
     #hash; #armahash;
-    get [STATS.HASHRATE]() {
+    get [STAT_KEYS.HASHRATE]() {
         var output = this.#hash;
-        if (POTB_BUTTON.checked) output += this.#hash * 0.61;
-        if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armahash;
-        if (BOND_BUTTON.checked && this.#intistats.includes("Neural Activation")) output += 55;
-        if (SPEC_BUTTON.checked && ["Sniper", "Warrior", "Specialist", "Medic"].includes(this.class)) output += this.#hash * 0.22 + 38;
-        if (ALGO_BUTTON.checked) output += this.#algofield.hash;
+        if (BUTTON.POTB.checked) output += this.#hash * 0.61;
+        if (BUTTON.ARMA.checked && this.#hasarma) output += this.#armahash;
+        if (BUTTON.BOND.checked && this.#intistats.includes("Neural Activation")) output += 55;
+        if (BUTTON.SPEC.checked && ["Sniper", "Warrior", "Specialist", "Medic"].includes(this.class)) output += this.#hash * 0.22 + 38;
+        if (BUTTON.ALGO.checked) output += this.#algofield.hash;
         return Math.trunc(output);
     }
 
     #pdef; #armapdef;
-    get [STATS.PDEFENSE]() {
+    get [STAT_KEYS.PDEFENSE]() {
         var output = this.#pdef;
-        if (POTB_BUTTON.checked) output += this.#pdef * 0.61;
-        if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armapdef;
-        if (BOND_BUTTON.checked && this.#intistats.includes("Shield of Friendship")) output += 55;
-        if (SPEC_BUTTON.checked && ["Guard", "Medic"].includes(this.class)) output += this.#pdef * 0.21 + 31;
-        if (ALGO_BUTTON.checked) output += this.#algofield.pdef;
+        if (BUTTON.POTB.checked) output += this.#pdef * 0.61;
+        if (BUTTON.ARMA.checked && this.#hasarma) output += this.#armapdef;
+        if (BUTTON.BOND.checked && this.#intistats.includes("Shield of Friendship")) output += 55;
+        if (BUTTON.SPEC.checked && ["Guard", "Medic"].includes(this.class)) output += this.#pdef * 0.21 + 31;
+        if (BUTTON.ALGO.checked) output += this.#algofield.pdef;
         return Math.trunc(output);
     }
 
     #odef; #armaodef;
-    get [STATS.ODEFENSE]() {
+    get [STAT_KEYS.ODEFENSE]() {
         var output = this.#odef;
-        if (POTB_BUTTON.checked) output += this.#odef * 0.61;
-        if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armaodef;
-        if (SPEC_BUTTON.checked && ["Guard", "Medic"].includes(this.class)) output += this.#odef * 0.21 + 31;
-        if (ALGO_BUTTON.checked) output += this.#algofield.odef;
+        if (BUTTON.POTB.checked) output += this.#odef * 0.61;
+        if (BUTTON.ARMA.checked && this.#hasarma) output += this.#armaodef;
+        if (BUTTON.SPEC.checked && ["Guard", "Medic"].includes(this.class)) output += this.#odef * 0.21 + 31;
+        if (BUTTON.ALGO.checked) output += this.#algofield.odef;
         return Math.trunc(output);
     }
 
     #aspd;
-    get [STATS.ATKSPD]() {
+    get [STAT_KEYS.ATKSPD]() {
         var output = this.#aspd;
-        if (ALGO_BUTTON.checked) output += this.#algofield.aspd;
+        if (BUTTON.ALGO.checked) output += this.#algofield.aspd;
         return output;
     }
 
     #crate;
-    get [STATS.CRITRATE]() {
+    get [STAT_KEYS.CRITRATE]() {
         var output = this.#crate;
-        if (BOND_BUTTON.checked && this.#intistats.includes("Coordinated Strike")) output += 8;
-        if (SPEC_BUTTON.checked && ["Sniper", "Warrior"].includes(this.class)) output += 9;
-        if (ALGO_BUTTON.checked) output += this.#algofield.crate;
+        if (BUTTON.BOND.checked && this.#intistats.includes("Coordinated Strike")) output += 8;
+        if (BUTTON.SPEC.checked && ["Sniper", "Warrior"].includes(this.class)) output += 9;
+        if (BUTTON.ALGO.checked) output += this.#algofield.crate;
         return Math.round(output, 1);
     }
 
     #cdmg = 50;
-    get [STATS.CRITDMG]() {
+    get [STAT_KEYS.CRITDMG]() {
         var output = this.#cdmg;
-        if (BOND_BUTTON.checked && this.#intistats.includes("Victorious Inspiration")) output += 12;
-        if (SPEC_BUTTON.checked && ["Sniper"].includes(this.class)) output += 18;
-        if (ALGO_BUTTON.checked) output += this.#algofield.cdmg;
+        if (BUTTON.BOND.checked && this.#intistats.includes("Victorious Inspiration")) output += 12;
+        if (BUTTON.SPEC.checked && ["Sniper"].includes(this.class)) output += 18;
+        if (BUTTON.ALGO.checked) output += this.#algofield.cdmg;
         return Math.round(output, 1);
     }
 
     #ppen; #armappen;
-    get [STATS.PPENETRATE]() {
+    get [STAT_KEYS.PPENETRATE]() {
         var output = this.#ppen;
-        if (POTB_BUTTON.checked) output += this.#ppen * 0.61;
-        if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armappen;
-        if (SPEC_BUTTON.checked && ["Sniper"].includes(this.class)) output += this.#ppen * 0.07 + 65;
-        if (ALGO_BUTTON.checked) output += this.#algofield.ppen;
+        if (BUTTON.POTB.checked) output += this.#ppen * 0.61;
+        if (BUTTON.ARMA.checked && this.#hasarma) output += this.#armappen;
+        if (BUTTON.SPEC.checked && ["Sniper"].includes(this.class)) output += this.#ppen * 0.07 + 65;
+        if (BUTTON.ALGO.checked) output += this.#algofield.ppen;
         return Math.trunc(output);
     }
 
     #open; #armaopen;
-    get [STATS.OPENETRATE]() {
+    get [STAT_KEYS.OPENETRATE]() {
         var output = this.#open;
-        if (POTB_BUTTON.checked) output += this.#open * 0.61;
-        if (ARMA_BUTTON.checked && this.#hasarma) output += this.#armaopen;
-        if (ALGO_BUTTON.checked) output += this.#algofield.open;
+        if (BUTTON.POTB.checked) output += this.#open * 0.61;
+        if (BUTTON.ARMA.checked && this.#hasarma) output += this.#armaopen;
+        if (BUTTON.ALGO.checked) output += this.#algofield.open;
         return Math.trunc(output);
     }
 
     #dodge;
-    get [STATS.DODGE]() {
+    get [STAT_KEYS.DODGE]() {
         var output = this.#dodge;
-        if (BOND_BUTTON.checked && this.#intistats.includes("Risk Evasion Aid")) output += 8;
-        if (ALGO_BUTTON.checked) output += this.#algofield.dodge;
+        if (BUTTON.BOND.checked && this.#intistats.includes("Risk Evasion Aid")) output += 8;
+        if (BUTTON.ALGO.checked) output += this.#algofield.dodge;
         return output;
     }
 
     #regen;
-    get [STATS.POSTHEAL]() {
+    get [STAT_KEYS.POSTHEAL]() {
         var output = this.#regen;
-        if (POTB_BUTTON.checked) output += {"Guard": 3584, "Sniper": 1084, "Warrior": 3301, "Specialist": 1485, "Medic": 1075}[this.class];
-        if (ALGO_BUTTON.checked) output += this.#algofield.regen;
+        if (BUTTON.POTB.checked) output += {"Guard": 3584, "Sniper": 1084, "Warrior": 3301, "Specialist": 1485, "Medic": 1075}[this.class];
+        if (BUTTON.ALGO.checked) output += this.#algofield.regen;
         return output;
     }
 
     #haste = 0;
-    get [STATS.HASTE]() {
+    get [STAT_KEYS.HASTE]() {
         var output = this.#haste;
-        if (BOND_BUTTON.checked && this.#intistats.includes("Mechanical Celerity")) output += 8;
-        if (SPEC_BUTTON.checked) output += {"Guard": 20, "Specialist": 25, "Medic": 15}[this.class] ?? 0;
-        if (ALGO_BUTTON.checked) output += this.#algofield.haste;
+        if (BUTTON.BOND.checked && this.#intistats.includes("Mechanical Celerity")) output += 8;
+        if (BUTTON.SPEC.checked) output += {"Guard": 20, "Specialist": 25, "Medic": 15}[this.class] ?? 0;
+        if (BUTTON.ALGO.checked) output += this.#algofield.haste;
         return Math.round(output, 1);
     }
 
     #res = 0;
-    get [STATS.DEBUFFRES]() {
+    get [STAT_KEYS.DEBUFFRES]() {
         var output = this.#res;
-        if (SPEC_BUTTON.checked && ["Guard", "Warrior"].includes(this.class)) output += 150;
-        if (ALGO_BUTTON.checked) output += this.#algofield.res;
+        if (BUTTON.SPEC.checked && ["Guard", "Warrior"].includes(this.class)) output += 150;
+        if (BUTTON.ALGO.checked) output += this.#algofield.res;
         return output;
     }
 
     #lash = 0;
-    get [STATS.BACKLASH]() {
+    get [STAT_KEYS.BACKLASH]() {
         var output = this.#lash;
-        if (ALGO_BUTTON.checked) output += this.#algofield.lash;
+        if (BUTTON.ALGO.checked) output += this.#algofield.lash;
         return output;
     }
 
     #dboost = 0;
-    get [STATS.DMGBOOST]() {
+    get [STAT_KEYS.DMGBOOST]() {
         var output = this.#dboost;
-        if (BOND_BUTTON.checked && this.#intistats.includes("Coordinated Formation")) output += 5;
-        if (ALGO_BUTTON.checked) output += this.#algofield.dboost;
+        if (BUTTON.BOND.checked && this.#intistats.includes("Coordinated Formation")) output += 5;
+        if (BUTTON.ALGO.checked) output += this.#algofield.dboost;
         return output;
     }
 
     #dreduc = 0;
-    get [STATS.DMGREDUCE]() {
+    get [STAT_KEYS.DMGREDUCE]() {
         var output = this.#dreduc;
-        if (BOND_BUTTON.checked && this.#intistats.includes("Through Fire and Water")) output += 5;
-        if (ALGO_BUTTON.checked) output += this.#algofield.dreduc;
+        if (BUTTON.BOND.checked && this.#intistats.includes("Through Fire and Water")) output += 5;
+        if (BUTTON.ALGO.checked) output += this.#algofield.dreduc;
         return output;
     }
 
     #hboost = 0;
-    get [STATS.HEALBOOST]() {
+    get [STAT_KEYS.HEALBOOST]() {
         var output = this.#hboost;
-        if (BOND_BUTTON.checked && this.#intistats.includes("Healing Bond")) output += 5;
-        if (SPEC_BUTTON.checked && ["Medic"].includes(this.class)) output += 9;
-        if (ALGO_BUTTON.checked) output += this.#algofield.hboost;
+        if (BUTTON.BOND.checked && this.#intistats.includes("Healing Bond")) output += 5;
+        if (BUTTON.SPEC.checked && ["Medic"].includes(this.class)) output += 9;
+        if (BUTTON.ALGO.checked) output += this.#algofield.hboost;
         return Math.round(output, 1);
     }
 
@@ -235,7 +237,7 @@ class Units {
 
     /** @param {UnitObject} stat_object */
     constructor(stat_object) {
-        this.#algofield = new AlgoField(stat_object, () => this.updateStat());
+        this.#algofield = new AlgoField(stat_object);
 
         this.name = stat_object.name;
         this.class = stat_object.class;
@@ -308,25 +310,26 @@ class Units {
         const TD_HBOOST = document.createElement("td");
 
         this.updateStat = () => {
-            TD_HP.textContent = this[STATS.HEALTH];
-            TD_ATK.textContent = this[STATS.ATTACK];
-            TD_HASH.textContent = this[STATS.HASHRATE];
-            TD_PDEF.textContent = this[STATS.PDEFENSE];
-            TD_ODEF.textContent = this[STATS.ODEFENSE];
-            TD_ASPD.textContent = this[STATS.ATKSPD];
-            TD_CRATE.textContent = `${this[STATS.CRITRATE]}%`;
-            TD_CDMG.textContent = `${this[STATS.CRITDMG]}%`;
-            TD_PPEN.textContent = this[STATS.PPENETRATE];
-            TD_OPEN.textContent = this[STATS.OPENETRATE];
-            TD_DODGE.textContent = `${this[STATS.DODGE]}%`;
-            TD_REGEN.textContent = this[STATS.POSTHEAL];
-            TD_HASTE.textContent = `${this[STATS.HASTE]}%`;
-            TD_DEBUFF.textContent = this[STATS.DEBUFFRES];
-            TD_LASH.textContent = `${this[STATS.BACKLASH]}%`;
-            TD_DBOOST.textContent = `${this[STATS.DMGBOOST]}%`;
-            TD_DREDUC.textContent = `${this[STATS.DMGREDUCE]}%`;
-            TD_HBOOST.textContent = `${this[STATS.HEALBOOST]}%`;
+            TD_HP.textContent = this[STAT_KEYS.HEALTH];
+            TD_ATK.textContent = this[STAT_KEYS.ATTACK];
+            TD_HASH.textContent = this[STAT_KEYS.HASHRATE];
+            TD_PDEF.textContent = this[STAT_KEYS.PDEFENSE];
+            TD_ODEF.textContent = this[STAT_KEYS.ODEFENSE];
+            TD_ASPD.textContent = this[STAT_KEYS.ATKSPD];
+            TD_CRATE.textContent = `${this[STAT_KEYS.CRITRATE]}%`;
+            TD_CDMG.textContent = `${this[STAT_KEYS.CRITDMG]}%`;
+            TD_PPEN.textContent = this[STAT_KEYS.PPENETRATE];
+            TD_OPEN.textContent = this[STAT_KEYS.OPENETRATE];
+            TD_DODGE.textContent = `${this[STAT_KEYS.DODGE]}%`;
+            TD_REGEN.textContent = this[STAT_KEYS.POSTHEAL];
+            TD_HASTE.textContent = `${this[STAT_KEYS.HASTE]}%`;
+            TD_DEBUFF.textContent = this[STAT_KEYS.DEBUFFRES];
+            TD_LASH.textContent = `${this[STAT_KEYS.BACKLASH]}%`;
+            TD_DBOOST.textContent = `${this[STAT_KEYS.DMGBOOST]}%`;
+            TD_DREDUC.textContent = `${this[STAT_KEYS.DMGREDUCE]}%`;
+            TD_HBOOST.textContent = `${this[STAT_KEYS.HEALBOOST]}%`;
         }
+        this.#algofield.onclose = this.updateStat;
         this.updateStat()
 
         this.row = document.createElement("tr");
@@ -351,8 +354,8 @@ class Units {
             TD_DREDUC,
             TD_HBOOST
         )
-
-        for (const BUTTON of [ARMA_BUTTON, POTB_BUTTON, ALGO_BUTTON, SPEC_BUTTON, BOND_BUTTON, OATH_BUTTON]) BUTTON.addEventListener("change", this.updateStat);
+        
+        for (const BUTT of Object.values(BUTTON)) BUTT.addEventListener("change", this.updateStat);
 
         // const UNIT_ROW = this.row;
         // CLASS_BUTTONS[this.class].addEventListener("change", function(event) {
@@ -365,11 +368,12 @@ class Units {
 //#endregion
 
 //#region Function Declarations
+/** Needs `UNIT_LIST` loaded. */
 function updateTable() {
-    const SHOWN_CLASS = Object.values(CLASS_BUTTONS).filter(x => x.checked).map(x => x.value);
+    const SHOWN_CLASS = Object.values(CLASSES).filter(x => x.checked).map(x => x.value);
     TBODY.replaceChildren(...UNIT_LIST.filter(x => SHOWN_CLASS.includes(x.class)).map(x => x.row));
 }
-for (const INPUT of Object.values(CLASS_BUTTONS)) INPUT.addEventListener("change", updateTable);
+for (const INPUT of Object.values(CLASSES)) INPUT.addEventListener("change", updateTable);
 
 /** @this {HTMLTableCellElement} @param {MouseEvent} event */
 function sortMethod(event) {
@@ -399,18 +403,13 @@ const TBODY = document.createElement("tbody");
 updateTable()
 // TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));
 
-const TABLE = document.createElement("table");
-TABLE.classList.add("freeze-col", "freeze-row");
-TABLE.append(THEAD, TBODY);
+setattr(document.createElement("table"), {classList: {add: ["freeze-col", "freeze-row"]}, append: [THEAD, TBODY]})
 
 const HEADER_VALUES = ["Doll Name", "Max HP", "Attack", "Hashrate", "Physical Def", "Operand Def", "Attack Speed", "Crit Rate", "Crit Damage", "Physical Pen", "Operand Pen", "Dodge Rate", "Post-battle Regen", "Skill Haste", "Debuff Resist", "Backlash", "Damage Boost", "Injury Mitigation", "Healing Effect"];
-for (const [NAME, KEY, TYPE] of zip(HEADER_VALUES, ["name", ...Object.values(STATS)], (function*() {yield "string"; while (true) yield "number"})())) {
-    const TH = document.createElement("th");
-    setattr(TH, {textContent: NAME, addEventListener: ["click", sortMethod, true]});
+for (const [NAME, KEY, TYPE] of zip(HEADER_VALUES, ["name", ...Object.values(STAT_KEYS)], (function*() {yield "string"; while (true) yield "number"})())) {
+    const TH = setattr(document.createElement("th"), {textContent: NAME, addEventListener: ["click", sortMethod, true]});
     setattr(TH.dataset, {sort: "no", key: KEY, type: TYPE});
     HEADER_TR.appendChild(TH);
 }
 
-const STAT_TABLE = document.querySelector("#table");
-STAT_TABLE.classList.add("func_table");
-STAT_TABLE.appendChild(TABLE);
+setattr(document.querySelector("#table"), {classList: {add: ["func_table"]}, appendChild: [TABLE]});

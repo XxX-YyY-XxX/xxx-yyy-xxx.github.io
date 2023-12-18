@@ -52,27 +52,27 @@ const STATVALUES = Object.freeze({
         lashperc: "Backlash"
     }),
     SET: Object.freeze({
-        /** @type {[StatAttributes, number][]} */ atkperc: [["atkperc", 15]],
-        /** @type {[StatAttributes, number][]} */ hashperc: [["hashperc", 15]],
-        /** @type {[StatAttributes, number][]} */ aspdflat: [["aspdflat", 30]],
-        /** @type {[StatAttributes, number][]} */ resflat: [["resflat", 50]],
-        /** @type {[StatAttributes, number][]} */ dboostperc: [["dboostperc", 5]],
+        /** @type {[["atkperc", 15]]} */ atkperc: [["atkperc", 15]],
+        /** @type {[["hashperc", 15]]} */ hashperc: [["hashperc", 15]],
+        /** @type {[["aspdflat", 30]]} */ aspdflat: [["aspdflat", 30]],
+        /** @type {[["resflat", 50]]} */ resflat: [["resflat", 50]],
+        /** @type {[["dboostperc", 5]]} */ dboostperc: [["dboostperc", 5]],
         LIFESTEAL: "Lifesteal",
-        /** @type {[StatAttributes, number][]} */ dpenflat: [["ppenflat", 80], ["openflat", 80]],
-        /** @type {[StatAttributes, number][]} */ dpenperc: [["ppenperc", 20], ["openperc", 20]],
-        /** @type {[StatAttributes, number][]} */ hpflat: [["hpflat", 2500]],
-        /** @type {[StatAttributes, number][]} */ hpperc: [["hpperc", 15]],
-        /** @type {[StatAttributes, number][]} */ pdefperc: [["pdefperc", 15]],
-        /** @type {[StatAttributes, number][]} */ odefperc: [["odefperc", 15]],
-        /** @type {[StatAttributes, number][]} */ ddefperc: [["pdefperc", 10], ["odefperc", 10]],
-        /** @type {[StatAttributes, number][]} */ lashperc: [["lashperc", 5]],
-        /** @type {[StatAttributes, number][]} */ dreducperc: [["dreducperc", 5]],
+        /** @type {[["ppenflat", 80], ["openflat", 80]]} */ dpenflat: [["ppenflat", 80], ["openflat", 80]],
+        /** @type {[["ppenperc", 20], ["openperc", 20]]} */ dpenperc: [["ppenperc", 20], ["openperc", 20]],
+        /** @type {[["hpflat", 2500]]} */ hpflat: [["hpflat", 2500]],
+        /** @type {[["hpperc", 15]]} */ hpperc: [["hpperc", 15]],
+        /** @type {[["pdefperc", 15]]} */ pdefperc: [["pdefperc", 15]],
+        /** @type {[["odefperc", 15]]} */ odefperc: [["odefperc", 15]],
+        /** @type {[["pdefperc", 10], ["odefperc", 10]]} */ ddefperc: [["pdefperc", 10], ["odefperc", 10]],
+        /** @type {[["lashperc", 5]]} */ lashperc: [["lashperc", 5]],
+        /** @type {[["dreducperc", 5]]} */ dreducperc: [["dreducperc", 5]],
         HPREGEN: "HP Regen",
-        /** @type {[StatAttributes, number][]} */ crateperc: [["crateperc", 10]],
-        /** @type {[StatAttributes, number][]} */ cdmgperc: [["cdmgperc", 20]],
-        /** @type {[StatAttributes, number][]} */ dodgeperc: [["dodgeperc", 8]],
-        /** @type {[StatAttributes, number][]} */ hasteperc: [["hasteperc", 10]],
-        /** @type {[StatAttributes, number][]} */ hboostperc: [["hboostperc", 7.5]],
+        /** @type {[["crateperc", 10]]} */ crateperc: [["crateperc", 10]],
+        /** @type {[["cdmgperc", 20]]} */ cdmgperc: [["cdmgperc", 20]],
+        /** @type {[["dodgeperc", 8]]} */ dodgeperc: [["dodgeperc", 8]],
+        /** @type {[["hasteperc", 10]]} */ hasteperc: [["hasteperc", 10]],
+        /** @type {[["hboostperc", 7.5]]} */ hboostperc: [["hboostperc", 7.5]],
     }),
     SET_THRESH: Object.freeze({
         hp: 16666.5,
@@ -130,16 +130,16 @@ const STATVALUES = Object.freeze({
 
 const ATTRIBUTES = {
     Offense: {
-        MAIN: ["atkflat", "atkperc", "hashflat", "hashperc", "ppenflat", "ppenperc", "openflat", "openperc"],
-        SUB: ["hpflat", "atkflat", "atkperc", "hashflat", "hashperc", "pdefflat", "odefflat", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dboostperc"]
+        /** @type {StatAttributes[]} */ MAIN: ["atkflat", "atkperc", "hashflat", "hashperc", "ppenflat", "ppenperc", "openflat", "openperc"],
+        /** @type {StatAttributes[]} */ SUB: ["hpflat", "atkflat", "atkperc", "hashflat", "hashperc", "pdefflat", "odefflat", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dboostperc"]
     },
     Stability: {
-        MAIN: ["hpflat", "hpperc", "pdefflat", "pdefperc", "odefflat", "odefperc", "regenflat"],
-        SUB: ["hpflat", "hpperc", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dreducperc"]
+        /** @type {StatAttributes[]} */ MAIN: ["hpflat", "hpperc", "pdefflat", "pdefperc", "odefflat", "odefperc", "regenflat"],
+        /** @type {StatAttributes[]} */ SUB: ["hpflat", "hpperc", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dreducperc"]
     },
     Special: {
-        MAIN: ["pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "hasteperc", "hboostperc"],
-        SUB: ["hpflat", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "dodgeperc", "regenflat", "hasteperc", "resflat", "hboostperc"]
+        /** @type {StatAttributes[]} */ MAIN: ["pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "hasteperc", "hboostperc"],
+        /** @type {StatAttributes[]} */ SUB: ["hpflat", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "dodgeperc", "regenflat", "hasteperc", "resflat", "hboostperc"]
     }
 }
 //#endregion
@@ -219,10 +219,9 @@ function algoPath(algoname) {
         //     algoClass.SET3
         // }
     
-        const SET_EFFECT = this.SET2;
         const DIV2 = document.createElement("div");
-        if (Array.isArray(SET_EFFECT)) {
-            switch (SET_EFFECT) {
+        if (Array.isArray(this.SET2)) {
+            switch (this.SET2) {
                 case STATVALUES.SET.hpflat:                                                 // Stability
                     if (AlgoField.current.basestat.hp < STATVALUES.SET_THRESH.hp)
                         DIV2.classList.add("algo-left-good", "algo-right-good");
@@ -258,9 +257,9 @@ function algoPath(algoname) {
                         DIV2.classList.add("algo-right-bad")
                     break;
             }
-            DIV2.textContent = SET_EFFECT.map(([attr,]) => STATVALUES.NAME[attr]).join("|");
+            DIV2.textContent = this.SET2.map(([attr,]) => STATVALUES.NAME[attr]).join("|");
         } else {
-            DIV2.textContent = SET_EFFECT;
+            DIV2.textContent = this.SET2;
         }
         OUTPUT.appendChild(DIV2);
     
@@ -353,22 +352,17 @@ class SingleBlock extends Algorithm {
         }
     }
 
-    /** @returns {HTMLDivElement} */
+    /** @type {HTMLDivElement} */ #html;
     get html() {
-        const OUTPUT = super.html;
-
-        this.#mainstat ??= createSelect(this, "MAIN");
-        OUTPUT.appendChild(this.#mainstat);
-        
-        this.#substat ??= createSelect(this, "SUB");
-        OUTPUT.appendChild(this.#substat);
-
-        return OUTPUT;
+        return this.#html ??= (() => {
+            this.#mainstat ??= createSelect(this, "MAIN");
+            this.#substat ??= createSelect(this, "SUB");
+            return setattr(super.html, {append: [this.#mainstat, this.#substat]});                
+        })();
     }
 
     /** @type {HTMLSelectElement} */ #mainstat;
-    /** @returns {StatDict} */
-    get mainstat() {
+    /** @returns {StatDict} */ get mainstat() {
         // console.log(
         //     Array.from(this.#mainstat.selectedOptions)[0].value,
         //     this.#mainstat.value,
@@ -378,15 +372,11 @@ class SingleBlock extends Algorithm {
     }
 
     /** @type {HTMLSelectElement} */ #substat;
-    /** @returns {StatDict} */
-    get substat1() {
+    /** @returns {StatDict} */ get substat1() {
         return new Map([[this.#substat.value, STATVALUES.SUB[this.#substat.value]]]);
     }
 
-    /** @returns {StatDict} */
-    get substat2() {
-        return new Map();
-    }
+    /** @returns {StatDict} */ get substat2() {return new Map()}
 }
 
 class DoubleBlock extends Algorithm {
@@ -402,20 +392,12 @@ class DoubleBlock extends Algorithm {
             for (const OPTION of Array.from(this.#mainstat.options)) OPTION.selected = OPTION.value === MAIN;
 
             this.#substat1 = createSelect(this, "SUB");
-            this.#substat1.addEventListener("change", () => {
-                for (const OPTION of Array.from(this.#substat2.options))
-                    OPTION.disabled = this.#substat1.value === OPTION.value;
-            });
             for (const OPTION of Array.from(this.#substat1.options)) {
                 OPTION.selected = OPTION.value === SUB1;
                 OPTION.disabled = OPTION.value === SUB2;
             }
 
             this.#substat2 = createSelect(this, "SUB");
-            this.#substat2.addEventListener("change", () => {
-                for (const OPTION of Array.from(this.#substat1.options))
-                    OPTION.disabled = this.#substat2.value === OPTION.value;
-            });
             for (const OPTION of Array.from(this.#substat2.options)) {
                 OPTION.selected = OPTION.value === SUB2;
                 OPTION.disabled = OPTION.value === SUB1;
@@ -423,68 +405,56 @@ class DoubleBlock extends Algorithm {
         }
     }
 
-    /** @returns {HTMLDivElement} */
+    /** @type {HTMLDivElement} */ #html;
     get html() {
-        const OUTPUT = setattr(super.html, {classList: {add: ["double-block"]}})
-
-        const EMBLEM = setattr(document.createElement("img"), {src: algoPath(this.constructor.name), alt: this.constructor.name, loading: "lazy"});
-        OUTPUT.appendChild(EMBLEM);
-
-        const STATS = document.createElement("div");
+        return this.#html ??= (() => {
+            const EMBLEM = setattr(document.createElement("img"), {src: algoPath(this.constructor.name), alt: this.constructor.name, loading: "lazy"});
 
             this.#mainstat ??= createSelect(this, "MAIN");
-            STATS.appendChild(this.#mainstat);
-
+    
             if (!this.#substat1) {
                 this.#substat1 = createSelect(this, "SUB");
-                this.#substat1.addEventListener("change", () => {
-                    for (const OPTION of Array.from(this.#substat2.options))
-                        OPTION.disabled = this.#substat1.value === OPTION.value;
-                });
                 Array.from(this.#substat1.options)[1].disabled = true;
             }
-            STATS.appendChild(this.#substat1);
+            this.#substat1.addEventListener("change", () => {
+                for (const OPTION of Array.from(this.#substat2.options)) OPTION.disabled = this.#substat1.value === OPTION.value;
+            });
 
             if (!this.#substat2) {
                 this.#substat2 = createSelect(this, "SUB");
-                this.#substat2.addEventListener("change", () => {
-                    for (const OPTION of Array.from(this.#substat1.options))
-                        OPTION.disabled = this.#substat2.value === OPTION.value;
-                });
                 setattr(Array.from(this.#substat2.options), {0: {disabled: true}, 1: {selected: true}});
             }
-            STATS.appendChild(this.#substat2);
-
-        OUTPUT.appendChild(STATS);
-
-        return OUTPUT;
+            this.#substat2.addEventListener("change", () => {
+                for (const OPTION of Array.from(this.#substat1.options)) OPTION.disabled = this.#substat2.value === OPTION.value;
+            });
+        
+            const STATS = setattr(document.createElement("div"), {append: [this.#mainstat, this.#substat1, this.#substat2]});
+            return setattr(super.html, {classList: {add: ["double-block"]}, append: [EMBLEM, STATS]});    
+        })();
     }
 
     /** @type {HTMLSelectElement} */ #mainstat;
-    /** @returns {StatDict} */
-    get mainstat() {
+    /** @returns {StatDict} */ get mainstat() {
         return new Map([[this.#mainstat.value, STATVALUES.MAIN[this.#mainstat.value] * 2]]);
     }
 
     /** @type {HTMLSelectElement} */ #substat1;
-    /** @returns {StatDict} */
-    get substat1() {
+    /** @returns {StatDict} */ get substat1() {
         return new Map([[this.#substat1.value, STATVALUES.SUB[this.#substat1.value]]]);
     }
 
     /** @type {HTMLSelectElement} */ #substat2;
-    /** @returns {StatDict} */
-    get substat2() {
+    /** @returns {StatDict} */ get substat2() {
         return new Map([[this.#substat2.value, STATVALUES.SUB[this.#substat2.value]]]);
     }
 }
 
-class OffenseBlock extends SingleBlock {};
-class Offense extends DoubleBlock {};
-class StabilityBlock extends SingleBlock {};
-class Stability extends DoubleBlock {};
-class SpecialBlock extends SingleBlock {};
-class Special extends DoubleBlock {};
+class OffenseBlock      extends SingleBlock {};
+class Offense           extends DoubleBlock {};
+class StabilityBlock    extends SingleBlock {};
+class Stability         extends DoubleBlock {};
+class SpecialBlock      extends SingleBlock {};
+class Special           extends DoubleBlock {};
 
 const ALGO_SETS = {
     Offense: {
@@ -591,21 +561,21 @@ class AlgoGrid {
                         TEMP.push(NAME);
             }
 
-            try {
-                const TRIAL = (() => {
-                    const SETS = this.#algorithms.map(x => x.constructor.name).collate();
-                    return new Map((SETS[2]??SETS[3])?.map(x => ALGO_SETS[this.#fieldtype][x].SET2).filter(Array.isArray)[0] ?? []);
-                })();
-    
-                console.log(AlgoField.current.name, this.#fieldtype)
-                console.log(EFFECT)
-                console.log(TRIAL)    
-            } catch (e) {
-                console.warn(e)
-            }
-
             return new Map();
         })();
+
+        try {
+            const TRIAL = (() => {
+                const SETS = this.#algorithms.map(x => x.constructor.name).collate();
+                return new Map((SETS[2]??SETS[3])?.map(x => ALGO_SETS[this.#fieldtype][x].SET2).filter(Array.isArray)[0] ?? []);
+            })();
+
+            console.log(AlgoField.current.name, this.#fieldtype)
+            console.log(EFFECT)
+            console.log(TRIAL)    
+        } catch (e) {
+            console.warn(e)
+        }
 
         return [EFFECT, ...this.#algorithms.map(x => x.stats)].reduce(combine, new Map());
     }
@@ -670,7 +640,6 @@ export class AlgoField{
 
     /** @type {[AlgoGrid, AlgoGrid, AlgoGrid]} */ #algogrids;
     /** @type {StatDict} */ #stats;
-
 
     get [STAT_KEYS.HEALTH]() {
         return this.#basestat.hp * (this.#stats.get("hpperc") ?? 0) / 100 + (this.#stats.get("hpflat") ?? 0);
@@ -744,8 +713,10 @@ export class AlgoField{
         return this.#stats.get("hboostperc") ?? 0;
     }
 
-    /** @param {UnitObject} unit @param {function(): void} onclose */
-    constructor(unit, onclose = () => {}) {
+    onclose = function() {};
+
+    /** @param {UnitObject} unit */
+    constructor(unit) {
         this.#name = unit.name;
         this.#basestat = unit.base;
 
@@ -758,8 +729,8 @@ export class AlgoField{
         }[unit.class];
 
         this.#stats = (() => {  // For when algorithm button is checked without opening modal
-            const INFOS = ALGO_SAVE[this.#name]?.flat();
-            if (!INFOS || !INFOS.length) return new Map();
+            const INFOS = ALGO_SAVE[this.#name]?.flat() ?? [];
+            if (!INFOS.length) return new Map();
 
             /** @type {StatDict} */ const SET_DICT = (function() {
                 const SETS = INFOS.map(x => x[0]).collate();
@@ -778,7 +749,7 @@ export class AlgoField{
             this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
             ALGO_SAVE[this.#name] = this.#algogrids.map(x => x.info);
 
-            onclose();
+            this.onclose();
     
             ALGO_CLOSE.removeEventListener("click", this.#close);
 
@@ -798,11 +769,11 @@ export class AlgoField{
         );
 
         ALGO_MODAL.firstElementChild.textContent = this.#name;
-        for (const GRID of this.#algogrids) GRID.display()
+        for (const GRID of this.#algogrids) GRID.display();
 
-        ALGO_CLOSE.addEventListener("click", this.#close)
+        ALGO_CLOSE.addEventListener("click", this.#close);
 
-        ALGO_MODAL.showModal()
+        ALGO_MODAL.showModal();
     }
 
     /** @type {AlgoField?} */ static #current = null;
