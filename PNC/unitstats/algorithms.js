@@ -57,7 +57,7 @@ const STATVALUES = Object.freeze({
         /** @type {[["aspdflat", 30]]} */ aspdflat: [["aspdflat", 30]],
         /** @type {[["resflat", 50]]} */ resflat: [["resflat", 50]],
         /** @type {[["dboostperc", 5]]} */ dboostperc: [["dboostperc", 5]],
-        LIFESTEAL: "Lifesteal",
+        lifesteal: "Lifesteal",
         /** @type {[["ppenflat", 80], ["openflat", 80]]} */ dpenflat: [["ppenflat", 80], ["openflat", 80]],
         /** @type {[["ppenperc", 20], ["openperc", 20]]} */ dpenperc: [["ppenperc", 20], ["openperc", 20]],
         /** @type {[["hpflat", 2500]]} */ hpflat: [["hpflat", 2500]],
@@ -67,7 +67,7 @@ const STATVALUES = Object.freeze({
         /** @type {[["pdefperc", 10], ["odefperc", 10]]} */ ddefperc: [["pdefperc", 10], ["odefperc", 10]],
         /** @type {[["lashperc", 5]]} */ lashperc: [["lashperc", 5]],
         /** @type {[["dreducperc", 5]]} */ dreducperc: [["dreducperc", 5]],
-        HPREGEN: "HP Regen",
+        hpregen: "HP Regen",
         /** @type {[["crateperc", 10]]} */ crateperc: [["crateperc", 10]],
         /** @type {[["cdmgperc", 20]]} */ cdmgperc: [["cdmgperc", 20]],
         /** @type {[["dodgeperc", 8]]} */ dodgeperc: [["dodgeperc", 8]],
@@ -468,7 +468,7 @@ const ALGO_SETS = {
         MLRMatrix:      class extends Offense {static SET2 = STATVALUES.SET.dboostperc;     static SET3 = "";},
         LimitValue:     class extends Offense {static SET2 = STATVALUES.SET.dboostperc;     static SET3 = "";},
         Hyperpulse:     class extends Offense {static SET2 = STATVALUES.SET.dboostperc;     static SET3 = "";},
-        LowerLimit:     class extends Offense {static SET2 = STATVALUES.SET.LIFESTEAL;      static SET3 = "";},
+        LowerLimit:     class extends Offense {static SET2 = STATVALUES.SET.lifesteal;      static SET3 = "";},
         Puncture:       class extends Offense {static SET2 = STATVALUES.SET.dpenflat;       static SET3 = null;},
         Permeate:       class extends Offense {static SET2 = STATVALUES.SET.dpenperc;       static SET3 = null;},
         Polybore:       class extends Offense {static SET2 = STATVALUES.SET.dpenperc;       static SET3 = "";}
@@ -487,7 +487,7 @@ const ALGO_SETS = {
         Reflection:     class extends Stability {static SET2 = STATVALUES.SET.lashperc;     static SET3 = "";},
         Encapsulate:    class extends Stability {static SET2 = STATVALUES.SET.dreducperc;   static SET3 = "";},
         Resolve:        class extends Stability {static SET2 = STATVALUES.SET.dreducperc;   static SET3 = "";},
-        Overflow:       class extends Stability {static SET2 = STATVALUES.SET.HPREGEN;      static SET3 = "";}
+        Overflow:       class extends Stability {static SET2 = STATVALUES.SET.hpregen;      static SET3 = "";}
     },
     Special: {
         SpecialBlock:   SpecialBlock,
@@ -504,13 +504,31 @@ const ALGO_SETS = {
         Increment:      class extends Special {static SET2 = STATVALUES.SET.hboostperc;     static SET3 = null;},
         LoopGain:       class extends Special {static SET2 = STATVALUES.SET.hboostperc;     static SET3 = "";},
         SVM:            class extends Special {static SET2 = STATVALUES.SET.hboostperc;     static SET3 = "";},
-        Inspiration:    class extends Special {static SET2 = STATVALUES.SET.HPREGEN;        static SET3 = null;},
+        Inspiration:    class extends Special {static SET2 = STATVALUES.SET.hpregen;        static SET3 = null;},
     },
     get classdict() {return {...this.Offense, ...this.Stability, ...this.Special}}
 };
 //#endregion
 
 //#region Interface
+// const asdf = new (class {
+//     /** @type {"algorithms"} */ #KEY = "algorithms";
+//     /** @type {{[UnitName: string]: [AlgoInfo[], AlgoInfo[], AlgoInfo[]]?}} */ #DATA;
+
+//     constructor() {
+//         const SAVE_DATA = localStorage.getItem(this.#KEY);
+//         this.#DATA = SAVE_DATA ? JSON.parse(SAVE_DATA) : {};
+
+//         ALGO_MODAL.addEventListener("close", (event) => localStorage.setItem(this.#KEY, JSON.stringify(this.#DATA)));
+//     }
+
+//     /** @param {string} name */
+//     get(name) {return this.#DATA[name] ?? [[], [], []]}
+
+//     /** @param {string} name @param {[AlgoInfo[], AlgoInfo[], AlgoInfo[]]} algoinfo */
+//     set(name, algoinfo) {this.#DATA[name] = algoinfo}
+// })()
+
 const MAX_SIZE = 6;
 const STORAGEKEY = "algorithms";
 const GRIDS = {
@@ -548,31 +566,9 @@ class AlgoGrid {
     /** @returns {StatDict} */
     get stats() {
         /** @type {StatDict} */ const EFFECT = (() => {
-                const SETS = this.#algorithms.map(x => [x.constructor.name, ALGO_SETS[this.#fieldtype][x.constructor.name].SET2]).filter(([, set]) => Array.isArray(set));
-
-                /** @type {string[]} */ const TEMP = [];
-                for (const [NAME, SET2] of SETS) {
-                    if (TEMP.includes(NAME))
-                        return new Map(SET2);
-                    else
-                        TEMP.push(NAME);
-            }
-
-            return new Map();
+            const SETS = this.#algorithms.map(x => x.constructor.name).collate();
+            return new Map((SETS[2]??SETS[3])?.map(x => ALGO_SETS[this.#fieldtype][x].SET2).filter(Array.isArray)[0] ?? []);
         })();
-
-        try {
-            const TRIAL = (() => {
-                const SETS = this.#algorithms.map(x => x.constructor.name).collate();
-                return new Map((SETS[2]??SETS[3])?.map(x => ALGO_SETS[this.#fieldtype][x].SET2).filter(Array.isArray)[0] ?? []);
-            })();
-
-            console.log(AlgoField.current.name, this.#fieldtype)
-            console.log(EFFECT)
-            console.log(TRIAL)    
-        } catch (e) {
-            console.warn(e)
-        }
 
         return [EFFECT, ...this.#algorithms.map(x => x.stats)].reduce(combine);
     }

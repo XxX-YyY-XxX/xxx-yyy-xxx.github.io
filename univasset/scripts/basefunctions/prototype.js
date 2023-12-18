@@ -21,10 +21,15 @@ Object.defineProperty(Array.prototype, "collate", {
         /** @type {Map<T, number>} */ const COUNTER = new Map();
         for (const ITEM of this) COUNTER.set(ITEM, (COUNTER.get(ITEM) ?? 0) + 1);
 
-        /** @type {{[count: number]: T[]}} */ const OUTPUT = {};
-        for (const [ITEM, COUNT] of COUNTER) (OUTPUT[COUNT] ??= []).push(ITEM); // equivalent to Python's dict.setdefault
+        /** @type {Collator<T>} */ const OUTPUT = {
+            highest: 0
+        };
+        for (const [ITEM, COUNT] of COUNTER) {
+            if (COUNT > OUTPUT.highest) OUTPUT.highest = COUNT;
+            (OUTPUT[COUNT] ??= []).push(ITEM);      // equivalent to Python's dict.setdefault
+        }
 
-        return OUTPUT;
+        return Object.freeze(OUTPUT);
     }, writable: true, configurable: true, enumerable: true
 })
 //#endregion
