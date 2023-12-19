@@ -129,21 +129,6 @@ const STATVALUES = Object.freeze({
         pdef: 767.5,    odef: 1000
     })
 })
-
-const ATTRIBUTES = {
-    Offense: {
-        /** @type {StatAttributes[]} */ MAIN: ["atkflat", "atkperc", "hashflat", "hashperc", "ppenflat", "ppenperc", "openflat", "openperc"],
-        /** @type {StatAttributes[]} */ SUB: ["hpflat", "atkflat", "atkperc", "hashflat", "hashperc", "pdefflat", "odefflat", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dboostperc"]
-    },
-    Stability: {
-        /** @type {StatAttributes[]} */ MAIN: ["hpflat", "hpperc", "pdefflat", "pdefperc", "odefflat", "odefperc", "regenflat"],
-        /** @type {StatAttributes[]} */ SUB: ["hpflat", "hpperc", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dreducperc"]
-    },
-    Special: {
-        /** @type {StatAttributes[]} */ MAIN: ["pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "hasteperc", "hboostperc"],
-        /** @type {StatAttributes[]} */ SUB: ["hpflat", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "dodgeperc", "regenflat", "hasteperc", "resflat", "hboostperc"]
-    }
-}
 //#endregion
 
 //#region Generic Functions
@@ -225,38 +210,26 @@ function algoPath(algoname) {
         if (Array.isArray(this.SET2)) {
             switch (this.SET2) {
                 case STATVALUES.SET.hpflat:                                                 // Stability
-                    if (AlgoField.current.basestat.hp < STATVALUES.SET_THRESH.hp)
-                        DIV2.classList.add("algo-left-good", "algo-right-good");
-                    else
-                        DIV2.classList.add("algo-left-bad", "algo-right-bad");
+                    if (AlgoField.current.basestat.hp < STATVALUES.SET_THRESH.hp)   DIV2.classList.add("algo-left-good", "algo-right-good");
+                    else                                                            DIV2.classList.add("algo-left-bad", "algo-right-bad");
                     break;
                 case STATVALUES.SET.hpperc:
-                    if (AlgoField.current.basestat.hp > STATVALUES.SET_THRESH.hp)
-                        DIV2.classList.add("algo-left-good", "algo-right-good");
-                    else
-                        DIV2.classList.add("algo-left-bad", "algo-right-bad");
+                    if (AlgoField.current.basestat.hp > STATVALUES.SET_THRESH.hp)   DIV2.classList.add("algo-left-good", "algo-right-good");
+                    else                                                            DIV2.classList.add("algo-left-bad", "algo-right-bad");
                     break;
                 case STATVALUES.SET.dpenflat:                                                // Offense
-                    if (AlgoField.current.basestat.ppen < STATVALUES.SET_THRESH.dpen)
-                        DIV2.classList.add("algo-left-good")
-                    else if (AlgoField.current.basestat.ppen > STATVALUES.SET_THRESH.dpen)
-                        DIV2.classList.add("algo-left-bad")
+                    if (AlgoField.current.basestat.ppen < STATVALUES.SET_THRESH.dpen)       DIV2.classList.add("algo-left-good");
+                    else if (AlgoField.current.basestat.ppen > STATVALUES.SET_THRESH.dpen)  DIV2.classList.add("algo-left-bad");
 
-                    if (AlgoField.current.basestat.open < STATVALUES.SET_THRESH.dpen)
-                        DIV2.classList.add("algo-right-good")
-                    else if (AlgoField.current.basestat.open > STATVALUES.SET_THRESH.dpen)
-                        DIV2.classList.add("algo-right-bad")
+                    if (AlgoField.current.basestat.open < STATVALUES.SET_THRESH.dpen)       DIV2.classList.add("algo-right-good");
+                    else if (AlgoField.current.basestat.open > STATVALUES.SET_THRESH.dpen)  DIV2.classList.add("algo-right-bad");
                     break;
                 case STATVALUES.SET.dpenperc:
-                    if (AlgoField.current.basestat.ppen > STATVALUES.SET_THRESH.dpen)
-                        DIV2.classList.add("algo-left-good")
-                    else if (AlgoField.current.basestat.ppen < STATVALUES.SET_THRESH.dpen)
-                        DIV2.classList.add("algo-left-bad")
+                    if (AlgoField.current.basestat.ppen > STATVALUES.SET_THRESH.dpen)       DIV2.classList.add("algo-left-good");
+                    else if (AlgoField.current.basestat.ppen < STATVALUES.SET_THRESH.dpen)  DIV2.classList.add("algo-left-bad");
 
-                    if (AlgoField.current.basestat.open > STATVALUES.SET_THRESH.dpen)
-                        DIV2.classList.add("algo-right-good")
-                    else if (AlgoField.current.basestat.open < STATVALUES.SET_THRESH.dpen)
-                        DIV2.classList.add("algo-right-bad")
+                    if (AlgoField.current.basestat.open > STATVALUES.SET_THRESH.dpen)       DIV2.classList.add("algo-right-good");
+                    else if (AlgoField.current.basestat.open < STATVALUES.SET_THRESH.dpen)  DIV2.classList.add("algo-right-bad");
                     break;
             }
             DIV2.textContent = this.SET2.map(([attr,]) => STATVALUES.NAME[attr]).join("|");
@@ -269,21 +242,32 @@ function algoPath(algoname) {
     }
 }
 
+const ATTRIBUTES = {
+    Offense: {
+        /** @type {StatAttributes[]} */ MAIN: ["atkflat", "atkperc", "hashflat", "hashperc", "ppenflat", "ppenperc", "openflat", "openperc"],
+        /** @type {StatAttributes[]} */ SUB: ["hpflat", "atkflat", "atkperc", "hashflat", "hashperc", "pdefflat", "odefflat", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dboostperc"]
+    },
+    Stability: {
+        /** @type {StatAttributes[]} */ MAIN: ["hpflat", "hpperc", "pdefflat", "pdefperc", "odefflat", "odefperc", "regenflat"],
+        /** @type {StatAttributes[]} */ SUB: ["hpflat", "hpperc", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dreducperc"]
+    },
+    Special: {
+        /** @type {StatAttributes[]} */ MAIN: ["pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "hasteperc", "hboostperc"],
+        /** @type {StatAttributes[]} */ SUB: ["hpflat", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "dodgeperc", "regenflat", "hasteperc", "resflat", "hboostperc"]
+    }
+}
+
 /** @param {Algorithm} obj @param {"MAIN" | "SUB"} name */
 function createSelect(obj, name) {
     const SELECT = document.createElement("select");
     SELECT.classList.add(name === "MAIN" ? "mainstat" : "substat");
 
     const [ATTR_LIST, _threshCheck] = (function() {
-        /** @type {[GridFields, STAT_KEYS[keyof STAT_KEYS][]]} */
-        const [ALGO_TYPE, VIABLE] = (function() {
+        /** @type {[GridFields, STAT_KEYS[keyof STAT_KEYS][]]} */ const [ALGO_TYPE, VIABLE] = (function() {
             switch (true) {
-                case obj instanceof Offense || obj instanceof OffenseBlock:
-                    return ["Offense", name === "MAIN" ? ["atk", "hash", "ppen", "open"] : ["atk", "hash"]];
-                case obj instanceof Stability || obj instanceof StabilityBlock:
-                    return ["Stability", ["hp", "pdef", "odef"]];
-                case obj instanceof Special || obj instanceof SpecialBlock:
-                    return ["Special", ["pdef", "odef"]];
+                case obj instanceof Offense || obj instanceof OffenseBlock:     return ["Offense", name === "MAIN" ? ["atk", "hash", "ppen", "open"] : ["atk", "hash"]];
+                case obj instanceof Stability || obj instanceof StabilityBlock: return ["Stability", ["hp", "pdef", "odef"]];
+                case obj instanceof Special || obj instanceof SpecialBlock:     return ["Special", ["pdef", "odef"]];
             }
         })();
 
@@ -307,6 +291,7 @@ function createSelect(obj, name) {
         return [ATTRIBUTES[ALGO_TYPE][name], output];
     })();
 
+    const indicator = {"algo-stat-good": " (+)", "algo-stat-bad": " (-)"}
     // /** @type {"algo-stat-good" | "algo-stat-bad" | null} */ var temp;
     for (const ATTR of ATTR_LIST) {
         const OPTION = document.createElement("option");
@@ -315,17 +300,21 @@ function createSelect(obj, name) {
 
         // if (temp) OPTION.classList.add(temp);
         // if ("ontouchstart" in window) {
-        switch (_threshCheck(ATTR)) {
-            case "algo-stat-good":
-                OPTION.textContent = STATVALUES.NAME[ATTR] + " (+)";
-                break;
-            case "algo-stat-bad":
-                OPTION.textContent = STATVALUES.NAME[ATTR] + " (-)";
-                break;
-            case null:
-                OPTION.textContent = STATVALUES.NAME[ATTR];
-                break;
-        }
+        
+        OPTION.textContent = STATVALUES.NAME[ATTR] + indicator[_threshCheck(ATTR)] ?? ""
+
+        // switch (_threshCheck(ATTR)) {
+        //     case "algo-stat-good":
+        //         OPTION.textContent = STATVALUES.NAME[ATTR] + " (+)";
+        //         break;
+        //     case "algo-stat-bad":
+        //         OPTION.textContent = STATVALUES.NAME[ATTR] + " (-)";
+        //         break;
+        //     case null:
+        //         OPTION.textContent = STATVALUES.NAME[ATTR];
+        //         break;
+        // }
+
         //     } else {
         //     }
 
@@ -513,7 +502,6 @@ const ALGO_SETS = {
 //#endregion
 
 //#region Interface
-// const STORAGEKEY = "algorithms";
 const GRIDS = {
     /** @type {HTMLDivElement} */ Offense: document.querySelector("#algo-modal #Offense"),
     /** @type {HTMLDivElement} */ Stability: document.querySelector("#algo-modal #Stability"),
@@ -524,7 +512,6 @@ const GRIDS = {
 ALGO_MODAL.addEventListener("close", function(event) {
     this.firstElementChild.textContent = "";
     for (const DIV of Object.values(GRIDS)) DIV.replaceChildren();
-    // localStorage.setItem(STORAGEKEY, JSON.stringify(ALGO_SAVE));
 });
 
 const ALGO_SAVE = new (class {
@@ -545,20 +532,17 @@ const ALGO_SAVE = new (class {
     set(name, algoinfo) {this.#DATA[name] = algoinfo}
 })();
 
-
-
-// /** @type {{[UnitName: string]: [AlgoInfo[], AlgoInfo[], AlgoInfo[]]?}} */ const ALGO_SAVE = (function() {
-//     const SAVE_DATA = localStorage.getItem(STORAGEKEY);
-//     return SAVE_DATA ? JSON.parse(SAVE_DATA) : {};
-// })()
-
-const MAX_SIZE = 6;
-/** @type {HTMLDialogElement} */ const ALGO_SELECT = document.querySelector("#algo-select");
-ALGO_SELECT.addEventListener("close", function(event) {this.firstElementChild.replaceChildren()});  // Empties algo buttons selection.
 class AlgoGrid {
+    static #MAX_SIZE = 6;
+    /** @type {HTMLDialogElement} */ static #SELECT = document.querySelector("#algo-select");
+
+    static {
+        this.#SELECT.addEventListener("close", function(event) {this.firstElementChild.replaceChildren()});  // Empties algo buttons selection.
+    }
+
     #fieldtype;
     #closedcell;
-    get #emptycell() {return MAX_SIZE - (this.#closedcell + this.#algorithms.map(x => x.SIZE).reduce((a, b) => a + b, 0))}
+    get #emptycell() {return AlgoGrid.#MAX_SIZE - (this.#closedcell + this.#algorithms.map(x => x.SIZE).reduce((a, b) => a + b, 0))}
 
     #grid;
     /** @type {Algorithm[]} */ #algorithms;
@@ -575,20 +559,18 @@ class AlgoGrid {
 
     get info() {return this.#algorithms.map(x => x.info)}
     
-    // /** @param {"Offense" | "Stability" | "Special"} fieldtype @param {number} size @param {AlgoInfo[]?} init_array */
     /** @param {GridFields} fieldtype @param {number} size @param {AlgoInfo[]} init_array */
     constructor(fieldtype, size, init_array) {
         this.#fieldtype = fieldtype;
-        this.#closedcell = MAX_SIZE - size;
+        this.#closedcell = AlgoGrid.#MAX_SIZE - size;
 
         this.#grid = GRIDS[fieldtype];
-        // this.#algorithms = init_array?.map(([set, ...attr]) => new ALGO_SETS[fieldtype][set](this, attr)) ?? [];
         this.#algorithms = init_array.map(([set, ...attr]) => new ALGO_SETS[fieldtype][set](this, attr));
 
         this.#close = () => {
-            ALGO_SELECT.removeEventListener("close", this.#close);
+            AlgoGrid.#SELECT.removeEventListener("close", this.#close);
 
-            this.#algorithms.push(new ALGO_SETS[fieldtype][ALGO_SELECT.returnValue](this));
+            this.#algorithms.push(new ALGO_SETS[fieldtype][AlgoGrid.#SELECT.returnValue](this));
     
             this.#grid.replaceChildren();
             this.display();
@@ -599,13 +581,13 @@ class AlgoGrid {
     #close;     // Function object required instead of class method for listener attachment and removal.
     #open() {
         if (this.#emptycell === 1)
-            ALGO_SELECT.firstElementChild.appendChild(ALGO_SETS[this.#fieldtype][this.#fieldtype+"Block"].createSelectButton());
+            AlgoGrid.#SELECT.firstElementChild.appendChild(ALGO_SETS[this.#fieldtype][this.#fieldtype+"Block"].createSelectButton());
         else
-            ALGO_SELECT.firstElementChild.append(...Object.values(ALGO_SETS[this.#fieldtype]).map(x => x.createSelectButton()));
+            AlgoGrid.#SELECT.firstElementChild.append(...Object.values(ALGO_SETS[this.#fieldtype]).map(x => x.createSelectButton()));
 
-        ALGO_SELECT.addEventListener("close", this.#close);
+        AlgoGrid.#SELECT.addEventListener("close", this.#close);
 
-        ALGO_SELECT.showModal();
+        AlgoGrid.#SELECT.showModal();
     }
 
     display() {
@@ -626,8 +608,9 @@ class AlgoGrid {
     }
 }
 
-/** @type {HTMLButtonElement} */ const ALGO_CLOSE = document.querySelector("#close-modal");
 export class AlgoField{
+    /** @type {HTMLButtonElement} */ static #CLOSE = document.querySelector("#close-modal");
+
     #name;
     #basestat;
     #layout;
@@ -635,77 +618,24 @@ export class AlgoField{
     /** @type {[AlgoGrid, AlgoGrid, AlgoGrid]} */ #algogrids;
     /** @type {StatDict} */ #stats;
 
-    get [STAT_KEYS.HEALTH]() {
-        return this.#basestat.hp * (this.#stats.get("hpperc") ?? 0) / 100 + (this.#stats.get("hpflat") ?? 0);
-    }
-
-    get [STAT_KEYS.ATTACK]() {
-        return this.#basestat.atk * (this.#stats.get("atkperc") ?? 0) / 100 + (this.#stats.get("atkflat") ?? 0);
-    }
-
-    get [STAT_KEYS.HASHRATE]() {
-        return this.#basestat.hash * (this.#stats.get("hashperc") ?? 0) / 100 + (this.#stats.get("hashflat") ?? 0);
-    }
-
-    get [STAT_KEYS.PDEFENSE]() {
-        return this.#basestat.pdef * (this.#stats.get("pdefperc") ?? 0) / 100 + (this.#stats.get("pdefflat") ?? 0);
-    }
-
-    get [STAT_KEYS.ODEFENSE]() {
-        return this.#basestat.odef * (this.#stats.get("odefperc") ?? 0) / 100 + (this.#stats.get("odefflat") ?? 0);
-    }
-
-    get [STAT_KEYS.ATKSPD]() {
-        return this.#stats.get("aspdflat") ?? 0;
-    }
-
-    get [STAT_KEYS.CRITRATE]() {
-        return this.#stats.get("crateperc") ?? 0;
-    }
-
-    get [STAT_KEYS.CRITDMG]() {
-        return this.#stats.get("cdmgperc") ?? 0;
-    }
-
-    get [STAT_KEYS.PPENETRATE]() {
-        return this.#basestat.ppen * (this.#stats.get("ppenperc") ?? 0) / 100 + (this.#stats.get("ppenflat") ?? 0);
-    }
-
-    get [STAT_KEYS.OPENETRATE]() {
-        return this.#basestat.open * (this.#stats.get("openperc") ?? 0) / 100 + (this.#stats.get("openflat") ?? 0);
-    }
-
-    get [STAT_KEYS.DODGE]() {
-        return this.#stats.get("dodgeperc") ?? 0;
-    }
-
-    get [STAT_KEYS.POSTHEAL]() {
-        return this.#stats.get("regenflat") ?? 0;
-    }
-
-    get [STAT_KEYS.HASTE]() {
-        return this.#stats.get("hasteperc") ?? 0;
-    }
-
-    get [STAT_KEYS.DEBUFFRES]() {
-        return this.#stats.get("resflat") ?? 0;
-    }
-
-    get [STAT_KEYS.BACKLASH]() {
-        return this.#stats.get("lashperc") ?? 0;
-    }
-
-    get [STAT_KEYS.DMGBOOST]() {
-        return this.#stats.get("dboostperc") ?? 0;
-    }
-
-    get [STAT_KEYS.DMGREDUCE]() {
-        return this.#stats.get("dreducperc") ?? 0;
-    }
-
-    get [STAT_KEYS.HEALBOOST]() {
-        return this.#stats.get("hboostperc") ?? 0;
-    }
+    get [STAT_KEYS.HEALTH]()        {return this.#basestat.hp * (this.#stats.get("hpperc") ?? 0) / 100 + (this.#stats.get("hpflat") ?? 0)}
+    get [STAT_KEYS.ATTACK]()        {return this.#basestat.atk * (this.#stats.get("atkperc") ?? 0) / 100 + (this.#stats.get("atkflat") ?? 0)}
+    get [STAT_KEYS.HASHRATE]()      {return this.#basestat.hash * (this.#stats.get("hashperc") ?? 0) / 100 + (this.#stats.get("hashflat") ?? 0)}
+    get [STAT_KEYS.PDEFENSE]()      {return this.#basestat.pdef * (this.#stats.get("pdefperc") ?? 0) / 100 + (this.#stats.get("pdefflat") ?? 0)}
+    get [STAT_KEYS.ODEFENSE]()      {return this.#basestat.odef * (this.#stats.get("odefperc") ?? 0) / 100 + (this.#stats.get("odefflat") ?? 0)}
+    get [STAT_KEYS.ATKSPD]()        {return this.#stats.get("aspdflat") ?? 0}
+    get [STAT_KEYS.CRITRATE]()      {return this.#stats.get("crateperc") ?? 0}
+    get [STAT_KEYS.CRITDMG]()       {return this.#stats.get("cdmgperc") ?? 0}
+    get [STAT_KEYS.PPENETRATE]()    {return this.#basestat.ppen * (this.#stats.get("ppenperc") ?? 0) / 100 + (this.#stats.get("ppenflat") ?? 0)}
+    get [STAT_KEYS.OPENETRATE]()    {return this.#basestat.open * (this.#stats.get("openperc") ?? 0) / 100 + (this.#stats.get("openflat") ?? 0)}
+    get [STAT_KEYS.DODGE]()         {return this.#stats.get("dodgeperc") ?? 0}
+    get [STAT_KEYS.POSTHEAL]()      {return this.#stats.get("regenflat") ?? 0}
+    get [STAT_KEYS.HASTE]()         {return this.#stats.get("hasteperc") ?? 0}
+    get [STAT_KEYS.DEBUFFRES]()     {return this.#stats.get("resflat") ?? 0}
+    get [STAT_KEYS.BACKLASH]()      {return this.#stats.get("lashperc") ?? 0}
+    get [STAT_KEYS.DMGBOOST]()      {return this.#stats.get("dboostperc") ?? 0}
+    get [STAT_KEYS.DMGREDUCE]()     {return this.#stats.get("dreducperc") ?? 0}
+    get [STAT_KEYS.HEALBOOST]()     {return this.#stats.get("hboostperc") ?? 0}
 
     onclose = function() {};
 
@@ -723,7 +653,6 @@ export class AlgoField{
         }[unit.class];
 
         this.#stats = (() => {  // For when algorithm button is checked without opening modal
-            // const INFOS = ALGO_SAVE[this.#name]?.flat() ?? [];
             const INFOS = ALGO_SAVE.get(this.#name).flat();
             if (!INFOS.length) return new Map();
 
@@ -742,12 +671,11 @@ export class AlgoField{
 
         this.#close = () => {
             this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
-            // ALGO_SAVE[this.#name] = this.#algogrids.map(x => x.info);
             ALGO_SAVE.set(this.#name, this.#algogrids.map(x => x.info));
 
             this.onclose();
     
-            ALGO_CLOSE.removeEventListener("click", this.#close);
+            AlgoField.#CLOSE.removeEventListener("click", this.#close);
 
             ALGO_MODAL.close();
             AlgoField.#current = null;
@@ -758,17 +686,12 @@ export class AlgoField{
     show() {
         AlgoField.#current = this;
 
-        this.#algogrids ??= Array.from(
-            // zip(["Offense", "Stability", "Special"], this.#layout, ALGO_SAVE[this.#name] ?? [null, null, null])
-            zip(["Offense", "Stability", "Special"], this.#layout, ALGO_SAVE.get(this.#name))
-        ).map(
-            ([type, size, info]) => new AlgoGrid(type, Number(size), info)
-        );
+        this.#algogrids ??= Array.from(zip(["Offense", "Stability", "Special"], this.#layout, ALGO_SAVE.get(this.#name))).map(([type, size, info]) => new AlgoGrid(type, Number(size), info));
 
         ALGO_MODAL.firstElementChild.textContent = this.#name;
         for (const GRID of this.#algogrids) GRID.display();
 
-        ALGO_CLOSE.addEventListener("click", this.#close);
+        AlgoField.#CLOSE.addEventListener("click", this.#close);
 
         ALGO_MODAL.showModal();
     }
