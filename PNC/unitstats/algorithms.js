@@ -296,27 +296,8 @@ function createSelect(obj, name) {
     for (const ATTR of ATTR_LIST) {
         const OPTION = document.createElement("option");
         OPTION.value = ATTR;
-        // OPTION.textContent = STATVALUES.NAME[ATTR];
-
-        // if (temp) OPTION.classList.add(temp);
-        // if ("ontouchstart" in window) {
-        
-        OPTION.textContent = STATVALUES.NAME[ATTR] + indicator[_threshCheck(ATTR)] ?? ""
-
-        // switch (_threshCheck(ATTR)) {
-        //     case "algo-stat-good":
-        //         OPTION.textContent = STATVALUES.NAME[ATTR] + " (+)";
-        //         break;
-        //     case "algo-stat-bad":
-        //         OPTION.textContent = STATVALUES.NAME[ATTR] + " (-)";
-        //         break;
-        //     case null:
-        //         OPTION.textContent = STATVALUES.NAME[ATTR];
-        //         break;
-        // }
-
-        //     } else {
-        //     }
+        // "ontouchstart" in window
+        OPTION.textContent = STATVALUES.NAME[ATTR] + (indicator[_threshCheck(ATTR)] ?? "");
 
         SELECT.appendChild(OPTION);
     }
