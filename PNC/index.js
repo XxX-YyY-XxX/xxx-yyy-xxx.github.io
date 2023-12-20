@@ -25,30 +25,27 @@ function timer(start_date, end_date, title, imgpath) {
         TIMER_SPAN.textContent = splitTime(TIME.remaining).slice(0, -1).map(num => String(num).padStart(2, '0')).join(' : ');
         if (TIME.done) {
             clearInterval(COUNTDOWN);
-            TIMER_DIV.remove()
+            TIMER_DIV.remove();
+            resetTimer();
         }
     }, 1000);
 
     TIMER_FIELD.appendChild(TIMER_DIV);
 }
 
-timer(
-    "Dec 22, 2023 05:00 UTC-0800",
-    "Jan 12, 2024 04:59 UTC-0800",
-    "Starchasers' Concerto",
-    "./assets/images/timer/cpt00_e_cg022.png"
-)
-
-timer(
-    "Dec 19, 2023 18:30 UTC-0800",
-    "Jan 09, 2024 18:29 UTC-0800",
-    "Symphonic Reprise",
-    "./assets/images/timer/cpt00_e_cg021.png"
-)
-
-timer(
-    "Dec 01, 2023 18:29 UTC-0800",
-    "Dec 19, 2023 18:29 UTC-0800",
-    "Cleansing Aria",
-    "./assets/images/timer/cpt00_e_cg033.png"
-)
+function resetTimer() {
+    timer(
+        "Dec 22, 2023 05:00 UTC-0800",
+        "Jan 12, 2024 05:00 UTC-0800",
+        "Starchasers' Concerto",
+        "./assets/images/timer/cpt00_e_cg022.png"
+    )
+    
+    timer(
+        "Dec 19, 2023 18:30 UTC-0800",
+        "Jan 09, 2024 18:30 UTC-0800",
+        "Symphonic Reprise",
+        "./assets/images/timer/cpt00_e_cg021.png"
+    )        
+};
+resetTimer();

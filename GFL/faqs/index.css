@@ -1,9 +1,13 @@
 @import "/univasset/scripts/externalcss.css";
 
-/* #region General */
 input[type="checkbox"], input[type="radio"] {
     appearance: none;
     margin: 0px;
+}
+
+input[type="submit"] {
+    left: calc(100% - 60px);
+    position: relative;
 }
 
 dl, table, figure, blockquote {
@@ -20,8 +24,9 @@ figcaption {
     display: block;
 }
 
-a {
-    cursor: pointer;
+/* #region Cards Field Specific */
+#cards-field a {
+    /* cursor: pointer; */
     text-decoration: none;
 }
 /* #endregion */
@@ -88,7 +93,9 @@ details {
 
 details[open] {
     display: block;
-    border: dashed 1px honeydew;
+    background-color: #3a3a3a;
+    border-radius: 10px;
+    padding: 5px;
 }
 
 details summary {

@@ -908,7 +908,7 @@ export const cardData = [
             'Use predicted damage instead of combat effectiveness.')}<br>
         This sheet already takes into account advantaged doll bonuses.`,
         tags : [dTag["3P"], dTag.THEATER, dTag.CE]
-    },
+    },  //https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i0ttpc0/
     {
         id : '00078',
         questions : `How are people just rolling in 5${STAR} fairies?`,
@@ -988,7 +988,7 @@ export const cardData = [
     {
         id : '00089',
         questions : `Which map is best for auto-battles, or just leveling in general?`,
-        answers : `Includes EXP per fight and level threshold to EXP penalty.<br>
+        answers : `Includes EXP per fight and level threshold to EXP penalty/drop-off.<br>
         ${Embed.google(Embed.G_EXCEL, '1e_1oAa9Qm_tmWqbgFQca8ohzo29qcjctIwyIU9Mc1H0')}`,
         tags : [dTag.AUTO, dTag.TDOLL, dTag.LEVEL]
     },
@@ -3573,7 +3573,7 @@ export const cardData = [
             "Downgrading Android 12 to Android 11." //https://old.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1y59kl/
         )}`,
         tags : [dTag.TECH, dTag.ANDROID]
-    },
+    },  // What if Android 13/14?
     {
         id : '00451',
         questions : `When a major event gets added to campaign mode, do I still need to do it again from the start?`,
@@ -3958,11 +3958,36 @@ export const cardData = [
         tags : [dTag.SKIN, dTag.ADJUNCT, dTag.TDOLL]
     },
     {
+        id : '00497',
+        questions : `What is corpse dragging?`,
+        answers : `${link("Gamepress guide", "https://gamepress.gg/girlsfrontline/corpse-dragging-how-optimize-leveling")}`,
+        tags : [dTag.LEVEL, dTag.IMPT]
+    },
+    {
+        id : '00498',
+        questions : `Do I still need to supply ammo and rations to the echelon with Frugal Mobilization equipped?`,
+        answers : `Yes.`,
+        tags : [dTag.BATTLE, dTag.COALITION, dTag.EQUIP]
+    },
+    {
+        id : '00499',
+        questions : `How is the commander evaluation star calculated?`,
+        answers : `u/UnironicWeeaboo's sheet.<br>
+        ${Embed.google(Embed.G_EXCEL, "1HYLAx1NDnXIJqloBL9pD1cvuLLiXBD-8kE3aXwaMol8")}`,
+        tags : [dTag.CMDR]
+    },
+    {
+        id : '00500',
+        questions : `Is there a way to inventorize my dolls?`,
+        answers : `${Embed.google(Embed.G_EXCEL, "1X-ZnlXabFQSk6_nTd94pu6Ww3KqWCc1ABt-gTkJy99s")}`,
+        tags : [dTag['3P'], dTag.TDOLL]
+    },  //@Owner
+    {
         id : '00000',
         questions : ``,
         answers : ``,
         tags : []
-    },  //497 next
+    },
 ].slice(0, -1);
 
 // (function() {

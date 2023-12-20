@@ -25,8 +25,9 @@ export const dTag = {
     OATH: {name: "OathSystem", description: "Reject real life, marry PNGs."},
     GACHA: {name: "NeuralSearch", description: "Modern monetization."},
     BP: {name: "MagraseaBattlePass", description: "Gives skin, resources, frames, furnitures."},
-    MAJOR: {name: "MajorEvents", description: "A Mica staple."},
     FRAGS: {name: "NeuralFragments", description: "Used for Neural Expansion and Arma Inscripta."},
+    STORY: {name: "StoryAndEvents", description: "Story and lore."},
+        MAJOR: {name: "MajorEvents", description: "A Mica staple."},
 };
 
 /**
@@ -180,6 +181,18 @@ export const dTag = {
         tags: [dTag.DOLL]
     },
     {
+        id: 17,
+        question: `Why does the set suggestion button not show the new (and better) algorithms for the dolls?`,
+        answer: `Maybe it's actually not better? Or maybe, it actually means "Set Use Rate", not "Set Recommendation".`,
+        tags: [dTag.ALGO]
+    },
+    {
+        id: 18,
+        question: `Where can I read the events I've missed?`,
+        answer: `In-game file room or ${link("Shoul's playlist", "https://youtube.com/playlist?list=PLTpD-lAtY-jDF5A945-HEjqzdVjJ57XJJ&si=K0GaXy1NpDH9aQbt")}.`,
+        tags: [dTag.STORY, dTag.MAJOR]
+    },
+    {
         id: 0,
         question: ``,
         answer: ``,
@@ -189,6 +202,8 @@ export const dTag = {
 
 //what is arma
 //upgrading to l2d
+//algorithm guide - lizzy?
+//character event guide
 
 
 // try {

@@ -497,20 +497,10 @@ ALGO_MODAL.addEventListener("close", function(event) {
 
 const ALGO_SAVE = new (class {
     /** @type {"algorithms"} */ #KEY = "algorithms";
-    /** @type {{[UnitName: string]: [AlgoInfo[], AlgoInfo[], AlgoInfo[]]?}} */ #DATA;
-
-    constructor() {
-        const SAVE_DATA = localStorage.getItem(this.#KEY);
-        this.#DATA = SAVE_DATA ? JSON.parse(SAVE_DATA) : {};
-
-        ALGO_MODAL.addEventListener("close", (event) => localStorage.setItem(this.#KEY, JSON.stringify(this.#DATA)));
-    }
-
-    /** @param {string} name */
-    get(name) {return this.#DATA[name] ?? [[], [], []]}
-
-    /** @param {string} name @param {[AlgoInfo[], AlgoInfo[], AlgoInfo[]]} algoinfo */
-    set(name, algoinfo) {this.#DATA[name] = algoinfo}
+    /** @type {{[UnitName: string]: [AlgoInfo[], AlgoInfo[], AlgoInfo[]]?}} */ #DATA = JSON.parse(localStorage.getItem(this.#KEY) ?? "{}");
+    constructor() {ALGO_MODAL.addEventListener("close", (event) => localStorage.setItem(this.#KEY, JSON.stringify(this.#DATA)))}
+    /** @param {string} name */ get(name) {return this.#DATA[name] ?? [[], [], []]}
+    /** @param {string} name @param {[AlgoInfo[], AlgoInfo[], AlgoInfo[]]} algoinfo */ set(name, algoinfo) {this.#DATA[name] = algoinfo}
 })();
 
 class AlgoGrid {
