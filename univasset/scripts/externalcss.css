@@ -30,9 +30,8 @@ img.inline-img {
 }
 
 a {
-	color:#63c0f5;
+	color: rgb(99, 192, 245);
 	text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
-	cursor: pointer;
 }
 
 a[href^="#"] {

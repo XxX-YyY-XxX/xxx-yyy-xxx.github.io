@@ -5,10 +5,10 @@ input[type="checkbox"], input[type="radio"] {
     margin: 0px;
 }
 
-input[type="submit"] {
+/* input[type="submit"] {
     left: calc(100% - 60px);
     position: relative;
-}
+} */
 
 dl, table, figure, blockquote {
     margin: 0px;

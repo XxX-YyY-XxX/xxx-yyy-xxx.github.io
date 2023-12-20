@@ -1,0 +1,260 @@
+@import "../../univasset/scripts/externalcss.css";
+
+input[type="checkbox"], input[type="radio"] {
+    appearance: none;
+    margin: 0px;
+}
+
+input[type="submit"] {
+    left: calc(100% - 60px);
+    position: relative;
+}
+
+dl, table, blockquote {
+    margin: 0px;
+}
+
+/* Staples */
+fieldset {
+    margin-top: 5px;
+
+    & > legend > h3 {
+        margin: 0px;
+    }
+
+    & > hr {
+        border-top: 1px dashed;
+    }
+}
+
+/* Contents */
+fieldset {
+    & :is(ol, ul) {
+        margin: 0px;
+    }
+
+    & a {
+        text-decoration: none;
+    }
+}
+
+/* #region Tags */
+.tags {
+    outline: 2px solid aqua;
+    border-radius: 10rem;
+    padding: 0px 3px;
+    background: transparent;
+    color: aqua;
+    display: inline-grid;                       /* For making the tag buttons stay together on wrap. */
+}
+
+label.tags {
+    margin: 0px 5px;
+}
+
+label.tags:has(input:checked) {
+    background: aqua;
+    color: black;
+}
+
+.card-tags {
+    line-height: 20px;
+}
+/* #endregion */
+
+/* #region Figure */
+figure {
+    margin: 0px;
+}
+
+figcaption {
+    font-size: 0.5rem;
+    text-align: center;
+    display: block;
+}
+/* #endregion */
+
+/* #region Details and Summary */
+details {
+    display: inline;
+}
+
+details summary {
+    cursor: pointer;
+    display: inline;
+    color: rgb(233, 161, 152);
+    text-shadow: 0 0 5px rgba(238, 151, 162, 0.5);
+}
+
+details[open] {
+    display: block;
+    background-color: #3a3a3a;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+details[open] summary {
+    text-align: center;
+    display: block;
+}
+/* #endregion */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #region Input Type Selector */
+#input-type-container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    border-style: initial;
+}
+
+#input-type-container > label {
+    background-color: transparent;
+    line-height: 10px;
+    flex: calc(100% / 3);
+}
+
+#input-type-container > label:has(input:checked) {
+    background-color: darkgreen;
+}
+
+#input-type-container h2 {
+    margin: 0px 0px 10px;
+}
+
+#search-text {
+    width: calc(100% - 76px);
+}
+
+#tags-list, #browse-page {
+    text-align: center;
+}
+/* #endregion */
+
+
+
+/* #region Embed */
+iframe[src*="docs.google.com"] {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border: 0px;
+}
+
+iframe[src*="www.youtube.com"], iframe[src*="streamable.com"] {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: 0px;
+    display: block;
+}
+
+.twitter-tweet > iframe[src*="platform.twitter.com"] {
+    max-width: 100%;
+}
+/* #endregion */
+
+/* #region Img */
+img:not(.inline-img) {
+    margin: 0 auto;
+    display: block;
+}
+/* #endregion */
+
+#submission-form, #browse-page {
+    display: none;
+}
+
+
+
+
+
+/* #region Tabs */
+.tab-button > label {
+    background-color: transparent;
+    line-height: 10px;
+    flex: calc(100% / 3);
+}
+
+.tab-button > label:has(input:checked) {
+    background-color: darkgreen;
+}
+
+.tab-button h2 {
+    margin: 0px 0px 10px;
+}
+
+.tab-button:has([value="Keywords"]:checked) ~ #Keywords,
+.tab-button:has([value="Tags"]:checked) ~ #Tags,
+.tab-button:has([value="Browse"]:checked) ~ #Browse {
+    display: block;
+}
+
+input[name="search"] {
+    width: calc(100% - 76px);
+}
+
+#Tags div, #Browse {
+    text-align: center;
+}
+/* #endregion */
+
+
+
+
+/* #region Embed */
+iframe[src*="www.youtube.com"], iframe[src*="streamable.com"] {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: 0px;
+    display: block;
+}
+
+.twitter-tweet > iframe[src*="platform.twitter.com"] {
+    max-width: 100%;
+}
+/* #endregion */
+
+/* #region Img */
+img:not(.inline-img) {
+    margin: 0 auto;
+    display: block;
+}
+/* #endregion */
