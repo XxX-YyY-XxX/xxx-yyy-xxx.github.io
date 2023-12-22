@@ -1,10 +1,7 @@
+/* temp until css nesting is supported */
+
 @import "../../univasset/scripts/externalcss.css";
 @import "../../univasset/scripts/tabs.css";
-
-/* temp */
-#Tags input[type="text"] {
-    display: none;
-}
 
 /* #region Tabs */
 .tab-button > label {
