@@ -27,7 +27,11 @@
     
     ChildNode.replaceWith() does not work with open tags.
     array
+
+    must run first before all others
 */
+
+// const REPLACE_EVENT = new Event("replace");
 
 for (const INCLUDE of Array.from(document.querySelectorAll("include[src]")).map(convert)) await includeDocument(INCLUDE, location.pathname);
 
@@ -106,6 +110,7 @@ async function includeDocument(include_elem, file_name, depth = 0) {
     // for (const {outerHTML} of INCLUDE_DOC.querySelectorAll("include")) console.warn("Unparsed include element found:", outerHTML, "from", SOURCE);
     
     include_elem.replaceWith(...INCLUDE_DOC.body.childNodes);
+    // include_elem.dispatchEvent(REPLACE_EVENT);
 }
 
 // #region Setup

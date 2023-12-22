@@ -2,6 +2,8 @@
 <html>
     <head>
         <script defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <script type="module" src="/univasset/scripts/include.js"></script>
+        <script type="module" src="./index.js"></script>
         
         <meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,8 +30,8 @@
 
         <div class="container">
             <section id="main_content">
-                <include src="/univasset/scripts/faqs/index.html"></include>
-                <!-- <div class="tab-button">
+                <!-- <include src="/univasset/scripts/faqs/index.html"></include> -->
+                <div class="tab-button">
                     <label><input type="radio" name="tabs" value="Keywords" checked /><h2>Keywords</h2></label>
                     <label><input type="radio" name="tabs" value="Tags" /><h2>Tags</h2></label>
                     <label><input type="radio" name="tabs" value="Browse" /><h2>Browse</h2></label>
@@ -58,11 +60,9 @@
                     <button type="button" value="last">Last</button>
                 </div>
 
-                <div id="cards-field"></div> -->
+                <div id="cards-field"></div>
             </section>
         </div>
 
-        <script type="module" src="/univasset/scripts/include.js"></script>
-        <script type="module" src="./index.js"></script>
     </body>
 </html>
