@@ -7,8 +7,9 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 input[type="submit"] {
-    left: calc(100% - 60px);
+    margin-top: 5px;
     position: relative;
+    left: calc(100% - 60px);
 }
 
 dl, table, blockquote {

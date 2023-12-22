@@ -2,12 +2,17 @@
 <html>
     <head>
         <!-- <script defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
-        
+        <script type="module" src="/univasset/scripts/include.js"></script>
+        <script type="module">
+            import {getQueryJS} from "/univasset/scripts/faqs/index.js";
+            import {dTag, cardData} from "./query.js"
+            document.querySelector('include[src="/univasset/scripts/faqs/index.html"]').addEventListener("replace", getQueryJS.bind(null, dTag, cardData));
+        </script>
+
         <meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <link rel="stylesheet" href="/univasset/scripts/faqs/index.css"> -->
-        <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="/univasset/scripts/faqs/index.css">
         
         <!-- Setup theme-color -->
 
@@ -32,12 +37,5 @@
                 <include src="/univasset/scripts/faqs/index.html"></include>
             </section>
         </div>
-
-        <script type="module" src="/univasset/scripts/include.js"></script>
-        <script type="module">
-            import {getQueryJS} from "/univasset/scripts/faqs/index.js";
-            import {dTag, cardData} from "./query.js"
-            getQueryJS(dTag, cardData);
-        </script>
     </body>
 </html>
