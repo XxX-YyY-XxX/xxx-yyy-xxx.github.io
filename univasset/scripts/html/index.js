@@ -1,5 +1,4 @@
 import {setattr} from "../basefunctions/index.js";
-export const googleDocsCompilation = Embed.google;
 
 // /** @type {(keyof HTMLElementTagNameMap)[]} */
 // export const STDHTMLELEMS = [];
@@ -87,3 +86,5 @@ export function img(link, alt = "Image", caption = {inline: false}) {
     IMG.toString = function() {return this.outerHTML}
     return IMG;
 }
+
+export const googleDocsCompilation = Embed.google;
