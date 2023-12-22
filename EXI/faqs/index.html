@@ -2,12 +2,16 @@
 <html>
     <head>
         <!-- <script defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
-        <script type="module" src="/univasset/scripts/include.js"></script>
         <script type="module">
             import {getQueryJS} from "/univasset/scripts/faqs/index.js";
             import {dTag, cardData} from "./query.js"
-            document.querySelector('include[src="/univasset/scripts/faqs/index.html"]').addEventListener("replace", getQueryJS.bind(null, dTag, cardData));
+            document.querySelector('include[src="/univasset/scripts/faqs/index.html"]')
+                .addEventListener("replace", () => {
+                    getQueryJS.bind(null, dTag, cardData)
+                    alert("include listener ran")
+            });
         </script>
+        <script type="module" src="/univasset/scripts/include.js"></script>
 
         <meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
