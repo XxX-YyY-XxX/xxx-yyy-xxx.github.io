@@ -111,6 +111,7 @@ async function includeDocument(include_elem, file_name, depth = 0) {
     
     include_elem.replaceWith(...INCLUDE_DOC.body.childNodes);
     include_elem.dispatchEvent(REPLACE_EVENT);
+    // onreplace event
 }
 
 // #region Setup
@@ -123,6 +124,8 @@ class HTMLIncludeElement extends HTMLElement {
 
     /** Replace self with child node. */
     default() {}
+
+    // onreplace() {}
 }
 
 /** @param {HTMLElement} html_element @returns {HTMLIncludeElement} */
