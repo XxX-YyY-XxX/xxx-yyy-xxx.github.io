@@ -1042,7 +1042,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity", "HARAM"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
     },
     {
         "name": "Banxsy",
@@ -1100,7 +1100,7 @@
             "ppen": 30,
             "open": 29
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Healing Bond", "HARAM"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Healing Bond"]
     },
     {
         "name": "Willow",
@@ -1883,7 +1883,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": ["Neural Activation", "Code Robustness", "Coordinated Strike"]
     },
 
     {

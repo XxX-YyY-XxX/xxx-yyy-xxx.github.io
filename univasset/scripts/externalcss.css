@@ -3,7 +3,6 @@
 @import "./pageheader/header.css";
 @import "./html/index.css";
 @import "./tooltip.css";
-@import "./tabs.css";
 
 code {
 	background: rgba(0, 0, 0, 0.9);
@@ -21,12 +20,6 @@ dd {
 
 tr:nth-child(even) {
 	background-color: rgba(85, 107, 47, 0.25);
-}
-
-img.inline-img {
-    vertical-align: middle;
-    display: inline;
-    height: 1rem;
 }
 
 a {

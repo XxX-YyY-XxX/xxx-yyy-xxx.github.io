@@ -1,4 +1,5 @@
 @import "/univasset/scripts/externalcss.css";
+@import "../../univasset/scripts/tabs.css";
 
 input[type="checkbox"], input[type="radio"] {
     appearance: none;

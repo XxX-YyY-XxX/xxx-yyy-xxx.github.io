@@ -1,13 +1,19 @@
 @import "./textstyle.css";
 
 /* #region Google Document */
-.google-docs-compilation > button {
+.embed-google > button {
     float: right;
 }
 
-.google-docs-compilation > iframe {
+.embed-google > iframe {
     aspect-ratio: 1/1;
     width: 100%;
     border: 0;
 }
 /* #endregion */
+
+img.inline-img {
+    vertical-align: middle;
+    display: inline;
+    height: 1rem;
+}

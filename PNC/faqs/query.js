@@ -1,5 +1,5 @@
-import {spoilerSummary, image, table, link, tooltip} from '../../univasset/scripts/htmlfunctions/htmlfunctions.js';
-import {Embed, textStyle} from "../../univasset/scripts/html/index.js";
+import {spoilerSummary, table, link, tooltip} from '../../univasset/scripts/htmlfunctions/htmlfunctions.js';
+import {Embed, textStyle, img} from "../../univasset/scripts/html/index.js";
 import List from '../../univasset/scripts/htmlfunctions/lists.js';
 import * as SC from '../../univasset/scripts/specialchars.js';
 
@@ -10,11 +10,13 @@ const IMG_ASSET = "../assets/images/faqs/"
 //#region Functions
 /** @param {string} text @param {...number} ids */
 function getID(text, ...ids) {
-    return `<a href="https://xxx-yyy-xxx.github.io/PNC/faqs/?id=${ids.map(x => String(x).padStart(5, "0")).join("+")}">${text}</a>`
+    return `<a href="https://xxx-yyy-xxx.github.io/PNC/faqs/?id=${ids.join("+")}">${text}</a>`
 }
 //#endregion
 
 export const dTag = {
+    STORY: {name: "StoryAndEvents", description: "Story and lore."},
+        MAJOR: {name: "MajorEvents", description: "A Mica staple."},
     ASST: {name: "Assistant", description: "Unit shown in your home screen."},
     ALGO: {name: "Algorithms", description: "Equipments in this game."},
     TIER: {name: "TierList", description: "Power ratings of doll units. Approach with caution."},
@@ -26,8 +28,7 @@ export const dTag = {
     GACHA: {name: "NeuralSearch", description: "Modern monetization."},
     BP: {name: "MagraseaBattlePass", description: "Gives skin, resources, frames, furnitures."},
     FRAGS: {name: "NeuralFragments", description: "Used for Neural Expansion and Arma Inscripta."},
-    STORY: {name: "StoryAndEvents", description: "Story and lore."},
-        MAJOR: {name: "MajorEvents", description: "A Mica staple."},
+    DAILY: {name: "DailyWeeklyMissions", description: 'Missions under the "Permanent" tab.'},
 };
 
 /**
@@ -54,7 +55,7 @@ export const dTag = {
     {
         id: 2,
         question: `How many pulls/Advanced Search Commands/Quartz Sands can I get per month?`,
-        answer: `${image("https://i.imgur.com/WoonBbq.png", "Discord: .rolls")}
+        answer: `${img("https://i.imgur.com/WoonBbq.png", "Available rolls per month.", "Discord: .rolls")}
         Maintenance (150 sands each > 600~ sands)<br>
         Character Events (3 tickets)<br>
         Discrete Point Redemption Center (1 ticket per 200 points)<br>
@@ -99,7 +100,7 @@ export const dTag = {
         id: 7,
         question: `Where do I enter the redemption code?`,
         answer: `${List.description({
-            "Android": [image(IMG_ASSET+"RedeemGift.png", "Under Settings")],
+            "Android": [img(IMG_ASSET+"RedeemGift.png", "Redeem gift tab.", "Under Settings")],
             "iOS": [link("Redemption page.", "https://42lab-us.sunborngame.com/redeem")]
         })}`,
         tags: [dTag.MISC]
@@ -107,7 +108,7 @@ export const dTag = {
     {
         id: 8,
         question: `Do battlepass skins rerun?`,
-        answer: `${image(IMG_ASSET+"BPRerun.png")}`,
+        answer: `${img(IMG_ASSET+"BPRerun.png", "Battlepass rerun shop.")}`,
         tags: [dTag.SKIN, dTag.BP]
     },
     {
@@ -177,7 +178,7 @@ export const dTag = {
     {
         id: 16,
         question: `Who should I get in Designated Neural Acquisition?`,
-        answer: `${image("https://media.discordapp.net/attachments/648373344600850434/1183221959643889684/image.png?ex=65878c52&is=65751752&hm=0bdf4e93564225c0dab105e618eab2f4e348b2f8902042da82d3e5b460f442a5&=&format=webp&quality=lossless", "By u/Whole-Arm4526")}`,
+        answer: `${img("https://media.discordapp.net/attachments/648373344600850434/1183221959643889684/image.png?ex=65878c52&is=65751752&hm=0bdf4e93564225c0dab105e618eab2f4e348b2f8902042da82d3e5b460f442a5&=&format=webp&quality=lossless", "Designated Neural Acquisition suggestion guide.", "By u/Whole-Arm4526")}`,
         tags: [dTag.DOLL]
     },
     {
@@ -191,7 +192,13 @@ export const dTag = {
         question: `Where can I read the events I've missed?`,
         answer: `In-game file room or ${link("Shoul's playlist", "https://youtube.com/playlist?list=PLTpD-lAtY-jDF5A945-HEjqzdVjJ57XJJ&si=K0GaXy1NpDH9aQbt")}.`,
         tags: [dTag.STORY, dTag.MAJOR]
-    },
+    },  //@Visual
+    {
+        id: 19,
+        question: `What stages do I need to do to complete the weekly mission "Complete 20 battles with a Support Doll"?`,
+        answer: `Main Story Sectors - Standard and Dark Mode. As long as the "Amount of Support left today" counter can go down, it counts.`,
+        tags: [dTag.DAILY]
+    },  //@Visual
     {
         id: 0,
         question: ``,
@@ -200,11 +207,10 @@ export const dTag = {
     },
 ].slice(0, -1);
 
-//what is arma
+//what is arma - cleista?
 //upgrading to l2d
 //algorithm guide - lizzy?
 //character event guide
-
 
 // try {
 //     console.log("import.meta.url:", import.meta.url)

@@ -1,0 +1,159 @@
+@import "../externalcss.css";
+@import "../tabs.css";
+
+input[type="checkbox"], input[type="radio"] {
+    appearance: none;
+    margin: 0px;
+}
+
+input[type="submit"] {
+    left: calc(100% - 60px);
+    position: relative;
+}
+
+dl, table, blockquote {
+    margin: 0px;
+}
+
+/* #region Tabs */
+.tab-button {
+    & > label {
+        background-color: transparent;
+        line-height: 10px;
+        flex: calc(100% / 3);
+    }
+
+    & > label:has(input:checked) {
+        background-color: darkgreen;
+    }
+
+    & h2 {
+        margin: 0px 0px 10px;
+    }
+
+    &:has([value="Keywords"]:checked) ~ #Keywords,
+    &:has([value="Tags"]:checked) ~ #Tags,
+    &:has([value="Browse"]:checked) ~ #Browse {
+        display: block;
+    }
+}
+
+#Keywords input[type="text"] {
+    width: calc(100% - 76px);
+}
+
+#Tags input[type="text"] {
+    display: none;
+}
+
+#Tags div, #Browse {
+    text-align: center;
+}
+/* #endregion */
+
+.tags {
+    outline: 2px solid aqua;
+    border-radius: 10rem;
+    padding: 0px 3px;
+    background: transparent;
+    color: aqua;
+    display: inline-grid;                       /* For making the tag buttons stay together on wrap. */
+
+    #Tags & {
+        margin: 0px 5px;
+    }
+
+    #Tags &:has(input:checked) {
+        background: aqua;
+        color: black;
+    }
+}
+
+/* Staples */
+fieldset {
+    margin-top: 5px;
+
+    & > legend > h3 {
+        margin: 0px;
+    }
+
+    & > hr {
+        border-top: 1px dashed;
+    }
+
+    & > .tags {
+        line-height: 20px;
+    }
+}
+
+/* Contents */
+fieldset {
+    & :is(ol, ul) {
+        margin: 0px;
+    }
+
+    & a {
+        text-decoration: none;
+    }
+
+    & img:not(.inline-img) {
+        margin: 0 auto;
+        display: block;
+    }    
+}
+
+/* #region Figure */
+figure {
+    margin: 0px;
+}
+
+figcaption {
+    font-size: 0.5rem;
+    text-align: center;
+    display: block;
+}
+/* #endregion */
+
+/* #region Details and Summary */
+details {
+    display: inline;
+}
+
+details summary {
+    cursor: pointer;
+    display: inline;
+    color: rgb(233, 161, 152);
+    text-shadow: 0 0 5px rgba(238, 151, 162, 0.5);
+}
+
+details[open] {
+    display: block;
+    background-color: #3a3a3a;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+details[open] summary {
+    text-align: center;
+    display: block;
+}
+/* #endregion */
+
+/* #region Embed */
+iframe[src*="docs.google.com"] {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border: 0px;
+}
+
+iframe[src*="www.youtube.com"], iframe[src*="streamable.com"] {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: 0px;
+    display: block;
+}
+
+.twitter-tweet > iframe[src*="platform.twitter.com"] {
+    max-width: 100%;
+}
+/* #endregion */
