@@ -32,7 +32,6 @@ export function getQueryJS(tags_dict, cards_list) {
     const SEARCH_PARAMS = new URLSearchParams(location.search);
     const CARDFIELD = document.querySelector("#cards-field");
 
-
     //#region Tags Field
     const TAGS_FIELD = document.querySelector("#Tags div");
     /** @type {HTMLInputElement[]} */ const TAG_CHECKBOXES = [];
@@ -50,14 +49,16 @@ export function getQueryJS(tags_dict, cards_list) {
     //#endregion
 
     //#region Tag Buttons
-    /** @type {HTMLInputElement} */ const KEY_BUTTON = document.querySelector('.tab-button [value="Keywords"]');
-    /** @type {HTMLInputElement} */ const TAG_BUTTON = document.querySelector('.tab-button [value="Tags"]');
-    /** @type {HTMLInputElement} */ const BWS_BUTTON = document.querySelector('.tab-button [value="Browse"]');
+    const BUTTON = {
+        /** @type {HTMLInputElement} */ KEY: document.querySelector('.tab-button [value="Keywords"]'),
+        /** @type {HTMLInputElement} */ TAG: document.querySelector('.tab-button [value="Tags"]'),
+        /** @type {HTMLInputElement} */ BWS: document.querySelector('.tab-button [value="Browse"]')
+    }
     const CHANGE = new Event("change");
-    var current_checked = KEY_BUTTON;
+    var current_checked = BUTTON.KEY;
 
     /** @type {HTMLInputElement} */ const TEXT_FIELD = document.querySelector(`#Keywords [type="text"]`);
-    KEY_BUTTON.addEventListener("change", function(event) {
+    BUTTON.KEY.addEventListener("change", function(event) {
         if (event.isTrusted) {  // To check if user input or programmatic
             if (current_checked === this) return;
             current_checked.dispatchEvent(CHANGE);
@@ -67,7 +68,7 @@ export function getQueryJS(tags_dict, cards_list) {
         if (!this.checked) TEXT_FIELD.value = "";
     });
 
-    TAG_BUTTON.addEventListener("change", function(event) {
+    BUTTON.TAG.addEventListener("change", function(event) {
         if (event.isTrusted) {
             if (current_checked === this) return;
             current_checked.dispatchEvent(CHANGE);
@@ -81,7 +82,7 @@ export function getQueryJS(tags_dict, cards_list) {
         }
     });
 
-    BWS_BUTTON.addEventListener("change", function(event) {
+    BUTTON.BWS.addEventListener("change", function(event) {
         if (event.isTrusted) {
             if (current_checked === this) return;
             current_checked.dispatchEvent(CHANGE);
@@ -90,94 +91,89 @@ export function getQueryJS(tags_dict, cards_list) {
     });
     //#endregion
 
-    CARDFIELD.innerHTML = (() => {
-        switch (true) {
-            case SEARCH_PARAMS.has('search'):   return searchCards();
-            case SEARCH_PARAMS.has('tags'):     return tagsCards();
-            case SEARCH_PARAMS.has('id'):       return idCards();
-            default:                            return randomCards();
-        }
-    })()
+    CARDFIELD.appendChild(
+        (() => {
+            switch (true) {
+                case SEARCH_PARAMS.has('search'):   return searchCards();
+                case SEARCH_PARAMS.has('tags'):     return tagsCards();
+                case SEARCH_PARAMS.has('id'):       return idCards();
+                default:                            return randomCards();
+            }
+        })()
+    );
 
     //#region Private Functions
     function searchCards() {
-        const searchText = SEARCH_PARAMS.get('search');
-        if (!searchText) return 'Empty search.';
+        const FRAGMENT = new DocumentFragment();
 
-        var output = '';
+        const searchText = SEARCH_PARAMS.get("search");
+        if (!searchText) return FRAGMENT;//'Empty search.';
+
         const KEYWORDS = searchText.replace(/\s+/, " ").toLowerCase().split(" ");
 
         for (const cards of cards_list.filter(({question, answer}) => KEYWORDS.every(str => [question, answer].some(x => removeHTMLTag(x).toLowerCase().includes(str)))))
-            output += setQuestionBoxes(cards);
+            FRAGMENT.appendChild(setQuestionBoxes(cards));
 
-        return output || 'No matches found.';        
+        return FRAGMENT;// || 'No matches found.';        
     }
 
     function tagsCards() {
-        const cardTags = SEARCH_PARAMS.get('tags').split(' ');
-        if (!cardTags.length) return 'Empty search.';
+        const FRAGMENT = new DocumentFragment();
 
-        var output = '';
+        const cardTags = SEARCH_PARAMS.get("tags").split(" ");
+        if (!cardTags.length) return FRAGMENT;//'Empty search.';
+
 
         for (const cards of cards_list.filter(({tags}) => cardTags.subsetof(tags.map(x => x.name))))
-            output += setQuestionBoxes(cards);
+            FRAGMENT.appendChild(setQuestionBoxes(cards))
 
-        return output || 'No matches found.';
+        return FRAGMENT;// || 'No matches found.';
     }
 
     function idCards() {
-        const id_list = SEARCH_PARAMS.get('id').split(' ').map(Number);
-        var output = '';
+        const FRAGMENT = new DocumentFragment();
+        const IDS = SEARCH_PARAMS.get("id").split(" ").map(Number);
 
-        for (const cards of cards_list.filter(({id}) => id_list.includes(id)))
-            output += setQuestionBoxes(cards);
+        for (const cards of cards_list.filter(({id}) => IDS.includes(id)))
+            FRAGMENT.appendChild(setQuestionBoxes(cards))
 
-        return output || 'No matches found.';
+        return FRAGMENT;// || 'No matches found.';
     }
 
     function randomCards() {
+        const FRAGMENT = new DocumentFragment();
+
         const LENGTH = cards_list.length;
         const indices = new Set();
-        var output = '';
 
         do indices.add(randInt(0, LENGTH));
         while (indices.size < 3)
 
-        for (const index of indices)
-            output += setQuestionBoxes(cards_list[index]);
+        for (const index of indices) FRAGMENT.appendChild(setQuestionBoxes(cards_list[index]));
 
-        return output;
+        return FRAGMENT;
     }
 
     /** @param {string} text @returns {DocumentFragment} */
     function stringToHTML(text) {
-        const FRAGMENT = new DocumentFragment();
-        FRAGMENT.append(...(new DOMParser()).parseFromString(text, "text/html").body.childNodes);
-        return FRAGMENT;
+        return setattr(new DocumentFragment(), {append: [...(new DOMParser()).parseFromString(text, "text/html").body.childNodes]});
     }
 
-    /** @param {cardData} */
+    /** @param {Card} */
     function setQuestionBoxes({question, answer, tags}) {
-        return `<fieldset>
-            <legend><h3>${question}</h3></legend>
-            ${answer}
-            <hr>
-            Tags: ${tags.map(tag => `<span class="tags">${tag.name}</span>` ).join(' ')}
-            </fieldset>`;
-        
-        // const FIELDSET = document.createElement("fieldset");
+        const FIELDSET = document.createElement("fieldset");
 
-        // const [LEGEND, H3] = nestElements("legend", "h3");
-        // H3.appendChild(stringToHTML(question));
+        const [LEGEND, H3] = nestElements("legend", "h3");
+        H3.appendChild(stringToHTML(question));
 
-        // FIELDSET.append(
-        //     LEGEND,
-        //     stringToHTML(answer),
-        //     document.createElement("hr"),
-        //     "Tags: ",
-        //     ...tags.map(tag => setattr(document.createElement("span"), {classList: {add: ["tags", "card-tags"]}, textContent: tag.name}))
-        // );
-        // return FIELDSET;
+        FIELDSET.append(
+            LEGEND,
+            stringToHTML(answer),
+            document.createElement("hr"),
+            "Tags: ",
+            ...tags.map(tag => setattr(document.createElement("span"), {classList: {add: ["tags"]}, textContent: tag.name}))
+        );
+        return FIELDSET;
     }
     //#endregion
 

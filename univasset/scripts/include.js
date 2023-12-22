@@ -7,6 +7,9 @@
         => 34
     
     Default value is textContent value.
+
+    HTMLIncludeElement-specific events:
+        replace: Runs when the element has been successfully replaced by its contents.
     ------------------------------------------------------------------------------------------------------------
     
     attr-???: change first child element's ??? attribute value to parameter value, must have a child element
@@ -27,8 +30,6 @@
     
     ChildNode.replaceWith() does not work with open tags.
     array
-
-    must run first before all others
 */
 
 const REPLACE_EVENT = new Event("replace");
@@ -126,6 +127,8 @@ class HTMLIncludeElement extends HTMLElement {
     default() {}
 
     // onreplace() {}
+
+    // is() {}
 }
 
 /** @param {HTMLElement} html_element @returns {HTMLIncludeElement} */

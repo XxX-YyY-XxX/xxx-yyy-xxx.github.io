@@ -6,12 +6,6 @@ input[type="checkbox"], input[type="radio"] {
     margin: 0px;
 }
 
-input[type="submit"] {
-    margin-top: 5px;
-    position: relative;
-    left: calc(100% - 60px);
-}
-
 dl, table, blockquote {
     margin: 0px;
 }
@@ -45,6 +39,12 @@ dl, table, blockquote {
 
 #Tags input[type="text"] {
     display: none;
+}
+
+#Tags input[type="submit"] {
+    margin-top: 5px;
+    position: relative;
+    left: calc(100% - 60px);
 }
 
 #Tags div, #Browse {
