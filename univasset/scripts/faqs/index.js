@@ -1,6 +1,6 @@
 import {removeHTMLTag, randInt} from '../externaljavascript.js';
 import {cmp, setattr} from '../basefunctions/index.js';
-import {nestElements} from "../htmlgenerator/htmlgenerator.js"
+import {nestElements} from "../htmlgenerator/htmlgenerator.js";
 
 // /** Checks if the element is interacted by the user. 
 //  * @param {Event} event 
