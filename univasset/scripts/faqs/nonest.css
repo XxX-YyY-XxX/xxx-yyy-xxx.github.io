@@ -1,0 +1,57 @@
+/* #region Tabs */
+.tab-button > label {
+    background-color: transparent;
+    line-height: 10px;
+    flex: calc(100% / 3);
+}
+
+.tab-button > label:has(input:checked) {
+    background-color: darkgreen;
+}
+
+.tab-button h2 {
+    margin: 0px 0px 10px;
+}
+
+.tab-button:has([value="Keywords"]:checked) ~ #Keywords,
+.tab-button:has([value="Tags"]:checked) ~ #Tags,
+.tab-button:has([value="Browse"]:checked) ~ #Browse {
+    display: block;
+}
+/* #endregion */
+
+#Tags .tags {
+    margin: 0px 5px;
+}
+
+#Tags .tags:has(input:checked) {
+    background: aqua;
+    color: black;
+}
+
+/* Staples */
+fieldset > legend > h3 {
+    margin: 0px;
+}
+
+fieldset > hr {
+    border-top: 1px dashed;
+}
+
+fieldset > .tags {
+    line-height: 20px;
+}
+
+/* Contents */
+fieldset :is(ol, ul) {
+    margin: 0px;
+}
+
+fieldset a {
+    text-decoration: none;
+}
+
+fieldset img:not(.inline-img) {
+    margin: 0 auto;
+    display: block;
+}    
