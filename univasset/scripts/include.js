@@ -9,7 +9,7 @@
     Default value is textContent value.
 
     HTMLIncludeElement-specific events:
-        replace: Runs when the element has been successfully replaced by its contents.
+        replace: Runs when the `include` element has been successfully replaced by its contents.
     ------------------------------------------------------------------------------------------------------------
     
     attr-???: change first child element's ??? attribute value to parameter value, must have a child element
@@ -33,6 +33,10 @@
     ChildNode.replaceWith() does not work with open tags.
     array
 */
+
+//#region Temporary Constants
+
+//#endregion
 
 const REPLACE_EVENT = new Event("replace");
 // const REPLACEALL_EVENT = new Event("replaceall");
@@ -118,9 +122,8 @@ async function includeDocument(include_elem, file_name, depth = 0) {
     include_elem.dispatchEvent(REPLACE_EVENT);
     // onreplace event
 
-    console.log(file_name)
-    console.log(PARAM.get("onreplace"))
-    console.log(include_elem.getAttribute("onreplace"))
+    // console.log(file_name)
+    // console.log(PARAM.get("onreplace"))
     // eval()
 }
 

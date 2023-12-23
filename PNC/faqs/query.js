@@ -212,8 +212,6 @@ export const dTag = {
 //algorithm guide - lizzy?
 //character event guide
 
-// try {
-//     console.log("import.meta.url:", import.meta.url)
-// } catch {
-//     console.warn("import.meta.url unavailable.")
-// }
+import {getQueryJS} from "../../univasset/scripts/faqs/index.js";
+document.querySelector('include[src="/univasset/scripts/faqs/index.html"]')
+    .addEventListener("replace", getQueryJS.bind(null, dTag, cardData));
