@@ -34,6 +34,9 @@
     array
 */
 
+//https://stackoverflow.com/questions/8401879/get-absolute-path-in-javascript
+//https://stackoverflow.com/questions/14780350/convert-relative-path-to-absolute-using-javascript
+
 //#region Temporary Constants
 
 //#endregion

@@ -192,12 +192,12 @@ export function getQueryJS(tags_dict, cards_list) {
             last: () => MAXPAGE
         }[BUTT.value];
         BUTT.addEventListener("click", function(event) {
-            var output = "";
+            const FRAGMENT = new DocumentFragment();
             const PAGE = getPage();
             PAGENO.textContent = PAGE;
             for (var i = (PAGE * 5) - 5; i < Math.min(PAGE * 5, cards_list.length); i++)
-                output += setQuestionBoxes(cards_list[i]);
-            CARDFIELD.innerHTML = output;    
+                FRAGMENT.appendChild(setQuestionBoxes(cards_list[i]));
+            CARDFIELD.appendChild(FRAGMENT);
         })
     }
     //#endregion
