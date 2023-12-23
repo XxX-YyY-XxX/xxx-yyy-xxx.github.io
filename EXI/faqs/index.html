@@ -2,12 +2,7 @@
 <html>
     <head>
         <!-- <script defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
-        <script type="module">
-            import {getQueryJS} from "/univasset/scripts/faqs/index.js";
-            import {dTag, cardData} from "./query.js";
-            document.querySelector('include[src="/univasset/scripts/faqs/index.html"]')
-                .addEventListener("replace", getQueryJS.bind(null, dTag, cardData));
-        </script>
+        <script type="module" src="./query.js"></script>
         <script type="module" src="/univasset/scripts/include.js"></script>
 
         <meta charset='utf-8'>
@@ -35,7 +30,7 @@
 
         <div class="container">
             <section id="main_content">
-                <include src="/univasset/scripts/faqs/index.html"></include>
+                <include src="/univasset/scripts/faqs/index.html" onreplace="import('./query.js')"></include>
             </section>
         </div>
     </body>

@@ -186,6 +186,15 @@ function memoize(func) {
         return bank.get(args);
     }
 }
+
+/**
+ * @param {string} path Path relative to caller file
+ * @param {string} relative_to Caller file URL
+ * @returns {string}
+ */
+function getPath(path, relative_to) {
+    return ""    
+}
 //#endregion
 
 /*const oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');

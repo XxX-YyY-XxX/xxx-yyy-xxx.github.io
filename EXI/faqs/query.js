@@ -14,7 +14,7 @@ function getID(text, ...ids) {
 }
 //#endregion
 
-export const dTag = {
+const dTag = {
     MISC: {name: "Miscellaneous", description: "Cards with undecided tags."}
 };
 
@@ -26,7 +26,7 @@ export const dTag = {
  * @property {{name: string, description: string}[]} Card.tags
  */
 
-/** @type {Card[]} */ export const cardData = [
+/** @type {Card[]} */ const cardData = [
     {
         id: 0,
         question: `dummy 1`,
@@ -53,4 +53,9 @@ export const dTag = {
     },
 ].slice(0, -1);
 
-console.log(import.meta)
+// console.log(import.meta)
+
+import {getQueryJS} from "../../univasset/scripts/faqs/index.js";
+// getQueryJS(dTag, cardData)
+document.querySelector('include[src="/univasset/scripts/faqs/index.html"]')
+    .addEventListener("replace", getQueryJS.bind(null, dTag, cardData));

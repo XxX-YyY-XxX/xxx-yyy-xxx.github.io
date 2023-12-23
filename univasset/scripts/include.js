@@ -28,13 +28,17 @@
         <include ifnot="f" key="s"></include>
         => 34
     
+    load or onreplace: ???
+
     ChildNode.replaceWith() does not work with open tags.
     array
 */
 
 const REPLACE_EVENT = new Event("replace");
+// const REPLACEALL_EVENT = new Event("replaceall");
 
 for (const INCLUDE of Array.from(document.querySelectorAll("include[src]")).map(convert)) await includeDocument(INCLUDE, location.pathname);
+// document.dispatchEvent(REPLACEALL_EVENT);
 
 /**
  * @param {HTMLIncludeElement} include_elem
@@ -113,6 +117,11 @@ async function includeDocument(include_elem, file_name, depth = 0) {
     include_elem.replaceWith(...INCLUDE_DOC.body.childNodes);
     include_elem.dispatchEvent(REPLACE_EVENT);
     // onreplace event
+
+    console.log(file_name)
+    console.log(PARAM.get("onreplace"))
+    console.log(include_elem.getAttribute("onreplace"))
+    // eval()
 }
 
 // #region Setup
