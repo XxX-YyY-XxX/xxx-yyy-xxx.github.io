@@ -57,5 +57,5 @@ const dTag = {
 
 import {getQueryJS} from "../../univasset/scripts/faqs/index.js";
 // getQueryJS(dTag, cardData)
-document.querySelector('include[src="/univasset/scripts/faqs/index.html"]')
-    .addEventListener("replace", getQueryJS.bind(null, dTag, cardData));
+// document.querySelector('include[src="/univasset/scripts/faqs/index.html"]')
+//     .addEventListener("replace", getQueryJS.bind(null, dTag, cardData));

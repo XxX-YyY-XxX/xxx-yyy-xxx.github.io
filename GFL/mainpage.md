@@ -90,15 +90,11 @@
 
 >EarSpeaker
 >
-> - [Cheap SG tank.](https://old.reddit.com/r/girlsfrontline/comments/uc7eet/weekly_commanders_lounge_april_26_2022/i6ut0vo/)
->
 > - [Top up gem month.](https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/idoig4j/)
 >
 > - [Google Pay.](https://old.reddit.com/r/girlsfrontline/comments/15f5xi4/weekly_commanders_lounge_august_01_2023/juk1l3n/)
 
 >Weeb
->
-> - [Smasher cheese.](https://old.reddit.com/r/girlsfrontline/comments/w2n556/weekly_commanders_lounge_july_19_2022/ihcdm9j/)
 >
 > - [Luffberry Gacha.](https://old.reddit.com/r/girlsfrontline/comments/x74mpx/weekly_commanders_lounge_september_06_2022/ingul31/)
 >
@@ -425,6 +421,7 @@ https://old.reddit.com/r/girlsfrontline/comments/12u2j9k/client_302_whats_new/
 
 [Client 3.02](https://gamepress.gg/girlsfrontline/client-update-v302-new-features)
 [Client 3.02](https://old.reddit.com/r/girlsfrontline/comments/12u2j9k/client_302_whats_new/)
+[Client 3.03](https://docs.google.com/document/d/1YhzuYv2BDWmTIrJjnwA95ys5PHEiYjFPi2cI86upKBE/edit#heading=h.b5nx1qqz1i78)
 
 # Android 13 Permissions
 

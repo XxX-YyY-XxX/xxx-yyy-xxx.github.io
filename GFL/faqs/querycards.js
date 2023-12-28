@@ -430,7 +430,7 @@ export const cardData = [
             'Event Rewards': [
                 link("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls'),
                 'These dolls will become unavailable from campaign clear rewards.'
-            ],
+            ],  // https://gfl.matsuda.tips/post/limitedeventdolls
             'Shop': [
                 'Applicable to collab dolls using event currency.',
                 `5${STAR} dolls available in Factory Production are the only ones elegible for True Core Masks, bar spaghetti.`,
@@ -524,7 +524,8 @@ export const cardData = [
                 link("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv'),
                 link("ARSMG by warorpeace#7149.", "https://docs.google.com/document/d/e/2PACX-1vR4OYslSVaE5mv6xyu7rIun24Ltu0SWsEzwOrER2MiWseDt5Fy5LjFFEZZzTDvl9C2Xb7g3pcWObSC4/pub"),
                 link("RFHG by warorpeace#7149.", "https://docs.google.com/document/d/e/2PACX-1vTR8LNVuBX4FiaAxLus5zZO6M4hQCu_4Fec0S0rqMmhPMXQXMcnU4uPhwwYAHOQDB5I9nq0VqSJd4-p/pub"),
-                spoilerSummary("MGSG by canoxin#2789.", Embed.google(Embed.G_WORD, "1-O7398S5sHcowCI8lp5Ktu_AiUBydJuvVHV-dX7g-l8"))
+                spoilerSummary("MGSG by canoxin#2789.", Embed.google(Embed.G_WORD, "1-O7398S5sHcowCI8lp5Ktu_AiUBydJuvVHV-dX7g-l8")),
+                link("Gamepress MGSG guide.", "https://gamepress.gg/girlsfrontline/mgs-sgs-and-teambuilding")
             ]
         })}<br>
         Shouldn't be a gospel but a good starting point nonetheless.<br>
@@ -3565,12 +3566,13 @@ export const cardData = [
     },
     {
         id : '00450',
-        questions : `My Samsung phone can't open up the game. Is there any fix for this?`,
+        questions : `My Samsung/Pixel phone can't open up the game. Is there any fix for this?`,
         answers : `${List.unordered(
             link("u/Le_Trudos' Android 12 fix", "https://www.reddit.com/r/girlsfrontline/comments/tsmwen/possible_solution_to_android_12_updates_making/"),
             link("Droidwin Android 12 fix", "https://droidwin.com/games-and-apps-crashing-not-working-on-android-12-how-to-fix/"),
             link("u/tommykuah's Android 12 fix", "https://www.reddit.com/r/girlsfrontline/comments/tdsmjh/regarding_android_12_app_crashfreeze_issue_and/i0mjpop/"),
-            "Downgrading Android 12 to Android 11." //https://old.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1y59kl/
+            "Downgrading Android 12/14 to Android 11.", //https://old.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1y59kl/
+            "Switch battery usage to unrestricted." // https://old.reddit.com/r/girlsfrontline/comments/18ggxcs/weekly_commanders_lounge_december_12_2023/kdz3dxq/
         )}`,
         tags : [dTag.TECH, dTag.ANDROID]
     },  // What if Android 13/14?
@@ -3982,6 +3984,21 @@ export const cardData = [
         answers : `${Embed.google(Embed.G_EXCEL, "1X-ZnlXabFQSk6_nTd94pu6Ww3KqWCc1ABt-gTkJy99s")}`,
         tags : [dTag['3P'], dTag.TDOLL]
     },  //@Owner
+    {
+        id : '00501',
+        questions : `What's the highest commander level?`,
+        answers : `370.`,   // https://old.reddit.com/r/girlsfrontline/comments/18lwouj/weekly_commanders_lounge_december_19_2023/kex2o7k/
+        tags : [dTag.CMDR]
+    },
+    {
+        id : '00502',
+        questions : `Which dolls should I get for the newbie anchored construction?`,
+        answers : `${List.unordered(
+            "Carcano M19/31 for her disgusting multiplier.",
+            "Suomi for her busted Neural Upgrade."  // https://old.reddit.com/r/girlsfrontline/comments/18lwouj/weekly_commanders_lounge_december_19_2023/ke5rt4z/
+        )}`,
+        tags : [dTag.PROD, dTag.TDOLL, dTag.NEWB]
+    },
     {
         id : '00000',
         questions : ``,

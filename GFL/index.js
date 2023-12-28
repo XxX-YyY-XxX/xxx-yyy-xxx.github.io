@@ -24,7 +24,7 @@ timer(
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
         "Jan 22, 2024 23:59 UTC-0800",
-        "./assets/images/coalition/.webp"   //Tareus
+        "./assets/images/coalition/22Tareus.webp"
     )}
 );
 

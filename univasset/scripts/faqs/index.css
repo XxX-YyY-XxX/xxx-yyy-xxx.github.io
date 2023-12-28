@@ -86,6 +86,7 @@ fieldset {
 
     & > .tags {
         line-height: 20px;
+        margin: 0 5px;
     }
 }
 

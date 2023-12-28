@@ -1,3 +1,5 @@
+@import "/univasset/scripts/tabs.css";
+
 dialog {
     border-radius: 10px;
     padding: 5px;
@@ -138,7 +140,7 @@ dialog {
     background-size: contain;
 }
 
-#algo-modal .mainstat .algo-stat-good {
+/* #algo-modal .mainstat .algo-stat-good {
     background-image: url("../assets/images/algorithms/up2.png");
 }
 
@@ -148,7 +150,7 @@ dialog {
 
 #algo-modal .algo-stat-bad {
     background-image: url("../assets/images/algorithms/down1.png");
-}
+} */
 
 #algo-modal > #close-modal {
     left: 50%;

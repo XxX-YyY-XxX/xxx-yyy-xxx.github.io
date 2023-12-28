@@ -200,6 +200,14 @@ export const dTag = {
         tags: [dTag.DAILY]
     },  //@Visual
     {
+        id: 20,
+        question: `Which units are good and how should I build them?`,
+        answer: `${Embed.google(
+            ["L.U.S.T. 2", "https://docs.google.com/spreadsheets/d/1FMK713okcJNQuCv625Ut0TZuQbm9RlHk7l1yOUF9Qdw"],
+        )}`,
+        tags: [dTag.DOLL, dTag.TIER]
+    },
+    {
         id: 0,
         question: ``,
         answer: ``,
@@ -211,6 +219,9 @@ export const dTag = {
 //upgrading to l2d
 //algorithm guide - lizzy?
 //character event guide
+
+// https://old.reddit.com/r/GFLNeuralCloud/comments/18l63g8/weekly_professors_lounge_december_18_2023/kepo2px/
+// https://old.reddit.com/r/GFLNeuralCloud/comments/18l63g8/weekly_professors_lounge_december_18_2023/kerq0qj/
 
 import {getQueryJS} from "../../univasset/scripts/faqs/index.js";
 document.querySelector('include[src="/univasset/scripts/faqs/index.html"]')

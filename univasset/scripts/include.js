@@ -44,7 +44,9 @@
 const REPLACE_EVENT = new Event("replace");
 // const REPLACEALL_EVENT = new Event("replaceall");
 
-for (const INCLUDE of Array.from(document.querySelectorAll("include[src]")).map(convert)) await includeDocument(INCLUDE, location.pathname);
+for (const INCLUDE of Array.from(document.querySelectorAll("include[src]")).map(convert)) {
+    await includeDocument(INCLUDE, location.pathname);
+}
 // document.dispatchEvent(REPLACEALL_EVENT);
 
 /**
@@ -127,7 +129,8 @@ async function includeDocument(include_elem, file_name, depth = 0) {
 
     // console.log(file_name)
     // console.log(PARAM.get("onreplace"))
-    // eval()
+    var temp = PARAM.get("onreplace")
+    if (temp) eval?.(temp)
 }
 
 // #region Setup
