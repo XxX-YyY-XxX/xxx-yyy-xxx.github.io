@@ -9,7 +9,9 @@
     Default value is textContent value.
 
     HTMLIncludeElement-specific events:
-        replace: Runs when the `include` element has been successfully replaced by its contents.
+        replace: Runs when the `include` element has been replaced.
+
+    ChildNode.replaceWith() does not work with open tags.
     ------------------------------------------------------------------------------------------------------------
     
     attr-???: change first child element's ??? attribute value to parameter value, must have a child element
@@ -30,7 +32,6 @@
     
     load or onreplace: ???
 
-    ChildNode.replaceWith() does not work with open tags.
     array
 */
 
@@ -60,6 +61,10 @@ async function includeDocument(include_elem, file_name, depth = 0) {
         .catch(error => {console.error(error); return null});
     if (!INCLUDE_DOC) {
         include_elem.default();
+        Object.defineProperty(include_elem, "success", {
+            value: false,
+            enumerable: true
+        });
         return;
     }
 
@@ -131,7 +136,7 @@ async function includeDocument(include_elem, file_name, depth = 0) {
 
     Object.defineProperty(include_elem, "success", {
         value: true,
-        enumerable: true, writable: false
+        enumerable: true
     });
 }
 
@@ -154,11 +159,6 @@ function convert(html_element) {
         value: function() {
             console.warn(this.outerHTML, "is invalid.");
             this.replaceWith(...this.childNodes);
-
-            Object.defineProperty(this, "success", {
-                value: false,
-                enumerable: true, writable: false
-            });
         },
         enumerable: true
     });

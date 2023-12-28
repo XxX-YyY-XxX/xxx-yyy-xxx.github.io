@@ -59,5 +59,4 @@ import {getQueryJS} from "../../univasset/scripts/faqs/index.js";
 // getQueryJS(dTag, cardData)
 document.querySelector('include[src="/univasset/scripts/faqs/index.html"]').addEventListener("replace", /** @this {HTMLIncludeElement} */ function() {
     getQueryJS(dTag, cardData)
-    console.log(this.success)
 });
