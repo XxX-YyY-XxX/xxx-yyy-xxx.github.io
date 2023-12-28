@@ -30,7 +30,7 @@
 
         <div class="container">
             <section id="main_content">
-                <include src="/univasset/scripts/faqs/index.html" onreplace="getQueryJS(dTag, cardData)"></include>
+                <include src="/univasset/scripts/faqs/index.html" onreplace="console.log(`getQueryJS: ${window.getQueryJS}`); console.log(`dTag: ${window.dTag}`); console.log(`cardData: ${window.cardData}`);"></include>
             </section>
         </div>
     </body>

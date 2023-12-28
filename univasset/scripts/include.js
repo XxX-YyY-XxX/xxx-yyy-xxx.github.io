@@ -46,6 +46,7 @@ const REPLACE_EVENT = new Event("replace");
 
 for (const INCLUDE of Array.from(document.querySelectorAll("include[src]")).map(convert)) {
     await includeDocument(INCLUDE, location.pathname);
+    INCLUDE.dispatchEvent(REPLACE_EVENT);
 }
 // document.dispatchEvent(REPLACEALL_EVENT);
 
@@ -124,13 +125,17 @@ async function includeDocument(include_elem, file_name, depth = 0) {
     // for (const {outerHTML} of INCLUDE_DOC.querySelectorAll("include")) console.warn("Unparsed include element found:", outerHTML, "from", SOURCE);
     
     include_elem.replaceWith(...INCLUDE_DOC.body.childNodes);
-    include_elem.dispatchEvent(REPLACE_EVENT);
     // onreplace event
 
     // console.log(file_name)
     // console.log(PARAM.get("onreplace"))
     var temp = PARAM.get("onreplace")
     if (temp) eval?.(temp)
+
+    Object.defineProperty(include_elem, "success", {
+        value: true,
+        enumerable: true, writable: false
+    });
 }
 
 // #region Setup
@@ -147,6 +152,9 @@ class HTMLIncludeElement extends HTMLElement {
     // onreplace() {}
 
     // is() {}
+
+    /** @returns {boolean} */
+    get success() {}
 }
 
 /** @param {HTMLElement} html_element @returns {HTMLIncludeElement} */
@@ -167,6 +175,11 @@ function convert(html_element) {
         value: function() {
             console.warn(this.outerHTML, "is invalid.");
             this.replaceWith(...this.childNodes);
+
+            Object.defineProperty(this, "success", {
+                value: false,
+                enumerable: true, writable: false
+            });
         },
         enumerable: true
     });
