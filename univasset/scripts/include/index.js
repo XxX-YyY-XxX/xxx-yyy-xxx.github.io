@@ -62,7 +62,6 @@ async function includeDocument(include_elem, file_name, depth = 0) {
         .catch(error => {console.error(error); return null});
     if (!INCLUDE_DOC) {
         include_elem.default();
-        onReturn(include_elem, false);
         return;
     }
 
@@ -77,7 +76,7 @@ async function includeDocument(include_elem, file_name, depth = 0) {
 
         if (INCLUDE.key !== null) { // Key
             const VALUE = PARAM.get(INCLUDE.key);
-            if (VALUE !== undefined)    INCLUDE.replaceWith(VALUE);
+            if (VALUE !== undefined)    INCLUDE.loadContent(VALUE);
             else                        INCLUDE.default();
             continue;
         }
@@ -124,12 +123,12 @@ async function includeDocument(include_elem, file_name, depth = 0) {
     // for (const {outerHTML} of INCLUDE_DOC.querySelectorAll("include")) console.warn("Unparsed include element found:", outerHTML, "from", SOURCE);
     
     // console.log(file_name)
-    include_elem.replaceWith(...INCLUDE_DOC.body.childNodes);
-    onReturn(include_elem, true);
+    include_elem.loadContent(...INCLUDE_DOC.body.childNodes);
 }
 
+// #region Setup
 /** @param {HTMLIncludeElement} include @param {boolean} success */
-function onReturn(include, success) {
+function onReplace(include, success) {
     Object.defineProperty(include, "success", {
         value: success,
         enumerable: true
@@ -140,7 +139,6 @@ function onReturn(include, success) {
     eval?.(include.getAttribute(success ? "onreplace" : "ondefault") ?? "");
 }
 
-// #region Setup
 /** @param {HTMLElement} html_element @returns {HTMLIncludeElement} */
 function convert(html_element) {
     const MEMOIZE = {};
@@ -155,10 +153,18 @@ function convert(html_element) {
         enumerable: true
     });
 
+    Object.defineProperty(html_element, "loadContent", {
+        value: function(...value) {
+            this.replaceWith(...value);
+            onReplace(this, true);
+        },
+        enumerable: true
+    });
+
     Object.defineProperty(html_element, "default", {
         value: function() {
-            console.warn(this.outerHTML, "is invalid.");
             this.replaceWith(...this.childNodes);
+            onReplace(this, false);
         },
         enumerable: true
     });

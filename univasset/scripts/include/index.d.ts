@@ -8,11 +8,20 @@ class HTMLIncludeElement extends HTMLElement {
     //#endregion
 
     //#region Implentation helper
+    /** Implentation helper. */
     get src(): string | null;
 
+    /** Implentation helper. */
     get key(): string | null;
 
-    /** Replace self with child node. */
+    /** Replace self with loaded page/value.
+     * 
+     * Implentation helper. */
+    loadContent(...content: (string | Node)[]): void;
+
+    /** Replace self with child node.
+    * 
+    * Implentation helper. */
     default(): void;
     //#endregion
 
