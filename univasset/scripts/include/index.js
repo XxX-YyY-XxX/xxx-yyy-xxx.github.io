@@ -42,6 +42,10 @@
 
 // const REPLACEALL_EVENT = new Event("replaceall");
 
+//#region Constants
+const REPLACE_EVENT = new Event("replace");
+//#endregion
+
 for (const INCLUDE of Array.from(document.querySelectorAll("include[src]")).map(convert)) await includeDocument(INCLUDE, location.pathname);
 // document.dispatchEvent(REPLACEALL_EVENT);
 
@@ -71,8 +75,7 @@ async function includeDocument(include_elem, file_name, depth = 0) {
     for (const INCLUDE of Array.from(INCLUDE_DOC.querySelectorAll("include")).map(convert)) {
         // check if element satisfies "if", "ifnot"
 
-        // Key
-        if (INCLUDE.key !== null) {
+        if (INCLUDE.key !== null) { // Key
             const VALUE = PARAM.get(INCLUDE.key);
             if (VALUE !== undefined)    INCLUDE.replaceWith(VALUE);
             else                        INCLUDE.default();
@@ -125,7 +128,6 @@ async function includeDocument(include_elem, file_name, depth = 0) {
     onReturn(include_elem, true);
 }
 
-const REPLACE_EVENT = new Event("replace");
 /** @param {HTMLIncludeElement} include @param {boolean} success */
 function onReturn(include, success) {
     Object.defineProperty(include, "success", {
