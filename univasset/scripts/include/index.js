@@ -1,8 +1,8 @@
 /* 
-    src: url of file whose content will replace this element
+    src: URL of file whose content will replace this element
         <include src="" a="12" s="34"></include>
 
-    key: parent parameter whose value will replace this element
+    key: Parent parameter whose value will replace this element
         <include key="s"></include>
         => 34
     
@@ -13,7 +13,6 @@
 
     HTMLIncludeElement-specific events:
         replace: Runs when the `include` element has been replaced.
-
     ------------------------------------------------------------------------------------------------------------
     
     attr-???: change first child element's ??? attribute value to parameter value, must have a child element
@@ -34,8 +33,6 @@
     
     array
 */
-
-// ChildNode.replaceWith() does not work with open tags.
 
 //https://stackoverflow.com/questions/8401879/get-absolute-path-in-javascript
 //https://stackoverflow.com/questions/14780350/convert-relative-path-to-absolute-using-javascript
@@ -127,6 +124,8 @@ async function includeDocument(include_elem, file_name, depth = 0) {
 }
 
 // #region Setup
+// ChildNode.replaceWith() does not work with open tags.
+
 /** @param {HTMLIncludeElement} include @param {boolean} success */
 function onReplace(include, success) {
     Object.defineProperty(include, "success", {
@@ -135,6 +134,8 @@ function onReplace(include, success) {
     });
 
     include.dispatchEvent(REPLACE_EVENT);
+
+    //----------------------------------------------------------------------
 
     eval?.(include.getAttribute(success ? "onreplace" : "ondefault") ?? "");
 }
