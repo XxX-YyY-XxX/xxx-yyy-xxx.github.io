@@ -130,9 +130,8 @@ async function includeDocument(include_elem, file_name, depth = 0) {
     // onreplace event
 
     // console.log(file_name)
-    // console.log(PARAM.get("onreplace"))
-    // var temp = PARAM.get("onreplace")
-    // if (temp) eval?.(temp)
+    var temp = PARAM.get("onreplace")
+    if (temp) eval?.(temp)
 
     Object.defineProperty(include_elem, "success", {
         value: true,

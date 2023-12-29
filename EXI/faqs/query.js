@@ -17,6 +17,7 @@ function getID(text, ...ids) {
 const dTag = {
     MISC: {name: "Miscellaneous", description: "Cards with undecided tags."}
 };
+window.tags = dTag;
 
 /**
  * @typedef Card
@@ -52,11 +53,13 @@ const dTag = {
         tags: []
     },
 ].slice(0, -1);
+window.cards = cardData;
 
 // console.log(import.meta)
 
 import {getQueryJS} from "../../univasset/scripts/faqs/index.js";
 // getQueryJS(dTag, cardData)
-document.querySelector('include[src="/univasset/scripts/faqs/index.html"]').addEventListener("replace", /** @this {HTMLIncludeElement} */ function() {
-    getQueryJS(dTag, cardData)
-});
+// document.querySelector('include[src="/univasset/scripts/faqs/index.html"]').addEventListener("replace", /** @this {HTMLIncludeElement} */ function() {
+//     getQueryJS(dTag, cardData)
+// });
+window.queryFunc = getQueryJS;
