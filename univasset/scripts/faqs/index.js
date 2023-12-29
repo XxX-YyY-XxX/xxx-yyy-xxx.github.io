@@ -167,12 +167,13 @@ export function getQueryJS(tags_dict, cards_list) {
         const [LEGEND, H3] = nestElements("legend", "h3");
         H3.appendChild(stringToHTML(question));
 
+        // make tags clickable?
         FIELDSET.append(
             LEGEND,
             stringToHTML(answer),
             document.createElement("hr"),
             "Tags: ",
-            ...tags.map(tag => setattr(document.createElement("span"), {classList: {add: ["tags"]}, textContent: tag.name}))
+            ...tags.map(({name}) => setattr(document.createElement("span"), {classList: {add: ["tags"]}, textContent: name}))
         );
         return FIELDSET;
     }
@@ -184,21 +185,22 @@ export function getQueryJS(tags_dict, cards_list) {
 
     const PAGENO = document.getElementById('page-no');
     for (const BUTT of Array.from(document.querySelectorAll("#Browse button"))) {
-        /** @type {function(): number} */
-        const getPage = {
+        /** @type {function(): number} */ const getPage = {
             first: () => 1,
             previous: () => Math.max(1, Number(PAGENO.textContent) - 1),
             next: () => Math.min(MAXPAGE, Number(PAGENO.textContent) + 1),
             last: () => MAXPAGE
         }[BUTT.value];
+
         BUTT.addEventListener("click", function(event) {
             const FRAGMENT = new DocumentFragment();
             const PAGE = getPage();
             PAGENO.textContent = PAGE;
             for (var i = (PAGE * 5) - 5; i < Math.min(PAGE * 5, cards_list.length); i++)
                 FRAGMENT.appendChild(setQuestionBoxes(cards_list[i]));
-            CARDFIELD.appendChild(FRAGMENT);
+            CARDFIELD.replaceChildren(FRAGMENT);
         })
     }
     //#endregion
 }
+window.queryFunc = getQueryJS;

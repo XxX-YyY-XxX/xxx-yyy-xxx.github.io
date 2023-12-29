@@ -48,5 +48,5 @@ window.cards = [
 
 // console.log(import.meta)
 
-import {getQueryJS} from "../../univasset/scripts/faqs/index.js";
-window.queryFunc = getQueryJS;
+// import {getQueryJS} from "../../univasset/scripts/faqs/index.js";
+// window.queryFunc = getQueryJS;
