@@ -12,7 +12,7 @@
     Default value is textContent value.
 
     HTMLIncludeElement-specific events:
-        replace: Runs when the `include` element has been replaced.
+        replace: Executed when the `include` element has been replaced.
     ------------------------------------------------------------------------------------------------------------
     
     attr-???: change first child element's ??? attribute value to parameter value, must have a child element

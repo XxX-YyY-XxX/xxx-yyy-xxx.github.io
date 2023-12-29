@@ -19,15 +19,7 @@ const dTag = {
 };
 window.tags = dTag;
 
-/**
- * @typedef Card
- * @property {number} Card.id
- * @property {string} Card.question
- * @property {string} Card.answer
- * @property {{name: string, description: string}[]} Card.tags
- */
-
-/** @type {Card[]} */ const cardData = [
+window.cards = [
     {
         id: 0,
         question: `dummy 1`,
@@ -53,13 +45,8 @@ window.tags = dTag;
         tags: []
     },
 ].slice(0, -1);
-window.cards = cardData;
 
 // console.log(import.meta)
 
 import {getQueryJS} from "../../univasset/scripts/faqs/index.js";
-// getQueryJS(dTag, cardData)
-// document.querySelector('include[src="/univasset/scripts/faqs/index.html"]').addEventListener("replace", /** @this {HTMLIncludeElement} */ function() {
-//     getQueryJS(dTag, cardData)
-// });
 window.queryFunc = getQueryJS;

@@ -224,5 +224,4 @@ export const dTag = {
 // https://old.reddit.com/r/GFLNeuralCloud/comments/18l63g8/weekly_professors_lounge_december_18_2023/kerq0qj/
 
 import {getQueryJS} from "../../univasset/scripts/faqs/index.js";
-document.querySelector('include[src="/univasset/scripts/faqs/index.html"]')
-    .addEventListener("replace", getQueryJS.bind(null, dTag, cardData));
+document.querySelector('include[src="/univasset/scripts/faqs/index.html"]').addEventListener("replace", getQueryJS.bind(null, dTag, cardData));
