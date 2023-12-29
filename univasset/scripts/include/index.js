@@ -6,12 +6,14 @@
         <include key="s"></include>
         => 34
     
+    onreplace: Executed when `include` element has successfully been replaced by its contents. Equivalent to "replace" event and success property true.
+    ondefault: Executed when `include` element has been replaced by its default value. Equivalent to "replace" event and success property false.
+    
     Default value is textContent value.
 
     HTMLIncludeElement-specific events:
         replace: Runs when the `include` element has been replaced.
 
-    ChildNode.replaceWith() does not work with open tags.
     ------------------------------------------------------------------------------------------------------------
     
     attr-???: change first child element's ??? attribute value to parameter value, must have a child element
@@ -30,22 +32,17 @@
         <include ifnot="f" key="s"></include>
         => 34
     
-    load or onreplace: ???
-
     array
 */
+
+// ChildNode.replaceWith() does not work with open tags.
 
 //https://stackoverflow.com/questions/8401879/get-absolute-path-in-javascript
 //https://stackoverflow.com/questions/14780350/convert-relative-path-to-absolute-using-javascript
 
-
-const REPLACE_EVENT = new Event("replace");
 // const REPLACEALL_EVENT = new Event("replaceall");
 
-for (const INCLUDE of Array.from(document.querySelectorAll("include[src]")).map(convert)) {
-    await includeDocument(INCLUDE, location.pathname);
-    INCLUDE.dispatchEvent(REPLACE_EVENT);
-}
+for (const INCLUDE of Array.from(document.querySelectorAll("include[src]")).map(convert)) await includeDocument(INCLUDE, location.pathname);
 // document.dispatchEvent(REPLACEALL_EVENT);
 
 /**
@@ -61,10 +58,7 @@ async function includeDocument(include_elem, file_name, depth = 0) {
         .catch(error => {console.error(error); return null});
     if (!INCLUDE_DOC) {
         include_elem.default();
-        Object.defineProperty(include_elem, "success", {
-            value: false,
-            enumerable: true
-        });
+        onReturn(include_elem, false);
         return;
     }
 
@@ -126,17 +120,22 @@ async function includeDocument(include_elem, file_name, depth = 0) {
     //untested
     // for (const {outerHTML} of INCLUDE_DOC.querySelectorAll("include")) console.warn("Unparsed include element found:", outerHTML, "from", SOURCE);
     
-    include_elem.replaceWith(...INCLUDE_DOC.body.childNodes);
-    // onreplace event
-
     // console.log(file_name)
-    var temp = PARAM.get("onreplace")
-    if (temp) eval?.(temp)
+    include_elem.replaceWith(...INCLUDE_DOC.body.childNodes);
+    onReturn(include_elem, true);
+}
 
-    Object.defineProperty(include_elem, "success", {
-        value: true,
+const REPLACE_EVENT = new Event("replace");
+/** @param {HTMLIncludeElement} include @param {boolean} success */
+function onReturn(include, success) {
+    Object.defineProperty(include, "success", {
+        value: success,
         enumerable: true
     });
+
+    include.dispatchEvent(REPLACE_EVENT);
+
+    eval?.(include.getAttribute(success ? "onreplace" : "ondefault") ?? "");
 }
 
 // #region Setup

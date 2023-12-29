@@ -4,7 +4,7 @@ import List from '../../univasset/scripts/htmlfunctions/lists.js';
 import * as SC from '../../univasset/scripts/specialchars.js';
 
 //#region Constants
-const IMG_ASSET = "../assets/images/faqs/"
+const IMG_ASSET = "../assets/images/faqs/";
 //#endregion
 
 //#region Functions
