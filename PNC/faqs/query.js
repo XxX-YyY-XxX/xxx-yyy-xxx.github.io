@@ -14,7 +14,7 @@ function getID(text, ...ids) {
 }
 //#endregion
 
-export const dTag = {
+const dTag = {
     STORY: {name: "StoryAndEvents", description: "Story and lore."},
         MAJOR: {name: "MajorEvents", description: "A Mica staple."},
     ASST: {name: "Assistant", description: "Unit shown in your home screen."},
@@ -30,16 +30,9 @@ export const dTag = {
     FRAGS: {name: "NeuralFragments", description: "Used for Neural Expansion and Arma Inscripta."},
     DAILY: {name: "DailyWeeklyMissions", description: 'Missions under the "Permanent" tab.'},
 };
+window.tags = dTag;
 
-/**
- * @typedef Card
- * @property {number} Card.id
- * @property {string} Card.question
- * @property {string} Card.answer
- * @property {{name: string, description: string}[]} Card.tags
- */
-
-/** @type {Card[]} */ export const cardData = [
+window.cards = [
     {
         id: 0,
         question: `How do I change what weapon Jiangyu holds in her L2D?`,
@@ -219,9 +212,7 @@ export const dTag = {
 //upgrading to l2d
 //algorithm guide - lizzy?
 //character event guide
+//l2d upgrade for bp has time limit
 
 // https://old.reddit.com/r/GFLNeuralCloud/comments/18l63g8/weekly_professors_lounge_december_18_2023/kepo2px/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/18l63g8/weekly_professors_lounge_december_18_2023/kerq0qj/
-
-import {getQueryJS} from "../../univasset/scripts/faqs/index.js";
-document.querySelector('include[src="/univasset/scripts/faqs/index.html"]').addEventListener("replace", getQueryJS.bind(null, dTag, cardData));

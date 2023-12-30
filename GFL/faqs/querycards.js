@@ -3,11 +3,9 @@ import TextStyle from '../../univasset/scripts/htmlfunctions/textstyle.js';
 import Embed from '../../univasset/scripts/htmlfunctions/linkembed.js';
 import List from '../../univasset/scripts/htmlfunctions/lists.js';
 import {LESSEQUAL, STAR, TM} from "../../univasset/scripts/specialchars.js";
+// import {} from "../../univasset/scripts/html/index.js";
 
-/** @param {string} imagename file name and extension @returns {string} */
-function imgAsset(imagename) {
-    return `../assets/images/query/${imagename}`;
-}
+const IMG_ASSET = "../assets/images/query/";
 
 export const dTag = {
     //#region Combat Tabs
@@ -112,7 +110,7 @@ export const cardData = [
             ],
             "Combat Reports (CR)": [
                 'Acquired through Forward Basecamp, Data Room, the shop during events, EXP Sim, or as a reward.',
-                `Can be gifted by going to the ${spoilerSummary('Dorm Gifts screen', image(imgAsset("SkinLocation.png"), 'Dorms > Warehouse > Gifts'))} or your ${spoilerSummary("Doll's Profile", image("../assets/images/DollEXP.png", "+ button by the EXP bar"))}.`,
+                `Can be gifted by going to the ${spoilerSummary('Dorm Gifts screen', image(IMG_ASSET+"SkinLocation.png", 'Dorms > Warehouse > Gifts'))} or your ${spoilerSummary("Doll's Profile", image("../assets/images/DollEXP.png", "+ button by the EXP bar"))}.`,
                 'Gives 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.',
                 'Gives 6000 fixed EXP per report only when used on oathed+modded dolls.'
             ],
@@ -317,7 +315,7 @@ export const cardData = [
         id : '00016',
         questions : `Who should I prioritize to MOD first?`,
         answers : `${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/neural-upgrade-priority-guide')}<br>
-        ${spoilerSummary('CN MOD list.', image(imgAsset("CNMODTier.png")))}`,
+        ${spoilerSummary('CN MOD list.', image(IMG_ASSET+"CNMODTier.png"))}`,
         tags : [dTag.MOD, dTag.TIER]
     },
     {
@@ -347,8 +345,8 @@ export const cardData = [
     {
         id : '00020',
         questions : `Which doll should I get with True Core Masks?`,
-        answers : `${image(imgAsset("VeryReliableTCMGuide.png"))}<br>
-        ${image(imgAsset("SeriousTCMGuide.png"))}`,
+        answers : `${image(IMG_ASSET+"VeryReliableTCMGuide.png")}<br>
+        ${image(IMG_ASSET+"SeriousTCMGuide.png")}`,
         tags : [dTag.TCM, dTag.TIER]
     },
     //#endregion
@@ -498,7 +496,7 @@ export const cardData = [
                 'Good for dragging coalition units.',
                 spoilerSummary("Ceia's SC 3-1Ex guide.", Embed.youtube('UdmOZqypu_c')),
                 spoilerSummary("Aqua's SC 3-1Ex.", Embed.streamable('0dpjje')),
-                spoilerSummary("BigStupidJellyfish's SC 3-1Ex auto-pathing.", image(imgAsset("SCAuto-path.png")))
+                spoilerSummary("BigStupidJellyfish's SC 3-1Ex auto-pathing.", image(IMG_ASSET+"SCAuto-path.png"))
             ],
         })}`,
         tags : [dTag.TDOLL, dTag.COALITION, dTag.LEVEL, dTag.IMPT]
@@ -514,7 +512,7 @@ export const cardData = [
         questions : `Is there a guide on how to build echelons/team compositions?`,
         answers : `Basic tip in this game is counterplay is more important than fixed synergy.<br>
         ${List.description({
-            'Mixed' : [spoilerSummary("CheneyQWER's infographic.", image(imgAsset("EchelonComps.png")))],
+            'Mixed' : [spoilerSummary("CheneyQWER's infographic.", image(IMG_ASSET+"EchelonComps.png"))],
             'Coalition Echelons' : [
                 link('Reddit flowchart post.', 'https://redd.it/rkvisq'),
                 link('Gamepress list of units and build suggestions.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units'),
@@ -600,7 +598,7 @@ export const cardData = [
     {
         id : '00035',
         questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
-        answers : `${image(imgAsset("SFEnemy.png"), 'Jupiter Cannons count as unarmored machine type')}`,
+        answers : `${image(IMG_ASSET+"SFEnemy.png", 'Jupiter Cannons count as unarmored machine type')}`,
         tags : [dTag.ENEMY]
     },
     {
@@ -720,7 +718,7 @@ export const cardData = [
         id : '00053',
         questions : `Is there any way to reset my battles so I can get a win?`,
         answers : `${List.description({
-            "Method 1: In-game restart": [image(imgAsset("BattleRestart.png"), "Restart Battle button in Pause menu. Beware the Withdraw button.")],
+            "Method 1: In-game restart": [image(IMG_ASSET+"BattleRestart.png", "Restart Battle button in Pause menu. Beware the Withdraw button.")],
             "Method 2: Client restart": [
                 "Turn off WiFi during battle. You can still finish the fight with no connection. Though be wary of connection timeouts so do it near the end.",
                 "If you don't like the result or you lost, exit client, turn on WiFi, re-enter client, take the fight again.",
@@ -747,7 +745,7 @@ export const cardData = [
             'GFAlarm' : [
                 'Use GFLMaps to take the enemy IDs you want to fight and enter them in the Custom Target Train under Packet Forger, with IDs separated by commas.',
                 `Works for comps that has been loaded into the client and is ${link('very', 'https://www.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i312oo2/')} ${link("safe", "https://www.reddit.com/r/girlsfrontline/comments/11e0hpg/weekly_commanders_lounge_february_28_2023/jan16s5/")}.`,
-                image(imgAsset("GFAlarmCTT.png"), 'From u/UnironicWeeaboo')
+                image(IMG_ASSET+"GFAlarmCTT.png", 'From u/UnironicWeeaboo')
             ],
             '<a href="https://gfl.matsuda.tips/post/everything-sucks-forever">Matsuda recommendations</a>' : []
         })}`,
@@ -874,7 +872,7 @@ export const cardData = [
     {
         id : '00073',
         questions : `How can I resupply a single doll and not the whole echelon?`,
-        answers : `${image(imgAsset("OneDollEchelon.png"), 'Single-Doll Echelon')}`,
+        answers : `${image(IMG_ASSET+"OneDollEchelon.png", 'Single-Doll Echelon')}`,
         tags : [dTag.TDOLL, dTag.MAP, dTag.ECH]
     },
     {
@@ -926,7 +924,7 @@ export const cardData = [
     {
         id : '00080',
         questions : `What are the resources I can get from Kalina's Daily Gift?`,
-        answers : `${image(imgAsset("DailyGift.png"))}<br>
+        answers : `${image(IMG_ASSET+"DailyGift.png")}<br>
         Gift amount apparently scales with her affection.`,
         tags : [dTag.MARP, dTag.ITEM, dTag.KALINA]
     },
@@ -1194,7 +1192,7 @@ export const cardData = [
             'Equipment Calibration' : [
                 "Raises the equipment's base stat.",
                 'RNG dictates how many calibration tickets are wasted before maxing.',
-                `When it's on its highest calibration, ${image('../assets/images/BlueMAXBox.png', 'inline')} appears on said equipment.`
+                `When it's on its highest calibration, ${image(IMG_ASSET+"BlueMAXBox.png", 'inline')} appears on said equipment.`
             ],
             'Equipment Enhancement' : [
                 'Multiplies the base stat up to Lv. 10.',
@@ -1618,8 +1616,8 @@ export const cardData = [
     {
         id : '00168',
         questions : `Will I get the rewards after adding a returning commander as friend for the callback event?`,
-        answers : `${image('../assets/images/CallbackSupporter.png')}<br>
-        ${image('../assets/images/CallbackReturner.png')}`,
+        answers : `${image(IMG_ASSET+"CallbackSupporter.png")}<br>
+        ${image(IMG_ASSET+"CallbackReturner.png")}`,
         tags : [dTag.FRIEND, dTag.ITEM, dTag.MARP]
     },
     {
@@ -1645,7 +1643,7 @@ export const cardData = [
     {
         id : '00172',
         questions : `Where are the skins? I can't find them.`,
-        answers : `${image(imgAsset("SkinLocation.png"), 'Dorms > Warehouse > Gifts')}<br>
+        answers : `${image(IMG_ASSET+"SkinLocation.png", 'Dorms > Warehouse > Gifts')}<br>
         You get Black Cards here by gifting it.`,
         tags : [dTag.TDOLL, dTag.SKIN]
     },
@@ -1754,7 +1752,7 @@ export const cardData = [
         id : '00185',
         questions : `If I scrapped/retired/disassembled my only copy of a doll, can I recover/get them back?`,
         answers : `First of all, how dare you?<br>
-        Second of all, yes you can. Can also work on ${spoilerSummary('collab units', image('../assets/images/CollabScrap.png', 'From u/Angelic_Force'))} and the AR Team.<br>
+        Second of all, yes you can. Can also work on ${spoilerSummary('collab units', image(IMG_ASSET+"CollabScrap.png", 'From u/Angelic_Force'))} and the AR Team.<br>
         Can only work once a week, costs however much is needed for a x1 dummy-link, and scrapped dupes are poof.<br>
         Go to Index, then their Index page then Recover, which will need cores.`,
         tags : [dTag.TDOLL, dTag.COLLAB, dTag.SYSMECH]
@@ -3222,7 +3220,7 @@ export const cardData = [
     {
         id : '00403',
         questions : `Anyone knows what resources and how much do we get for a failed PA capture?`,
-        answers : `${image('../assets/images/CaptureFail.png', 'Slashes are because probability')}`,
+        answers : `${image(IMG_ASSET+"CaptureFail.png", 'Slashes are because probability')}`,
         tags : [dTag.ITEM, dTag.PA]
     },
     {

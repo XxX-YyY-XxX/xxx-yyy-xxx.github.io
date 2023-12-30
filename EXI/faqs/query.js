@@ -45,8 +45,3 @@ window.cards = [
         tags: []
     },
 ].slice(0, -1);
-
-// console.log(import.meta)
-
-// import {getQueryJS} from "../../univasset/scripts/faqs/index.js";
-// window.queryFunc = getQueryJS;

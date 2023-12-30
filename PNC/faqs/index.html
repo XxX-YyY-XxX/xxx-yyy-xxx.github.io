@@ -3,6 +3,7 @@
     <head>
         <script defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         <script type="module" src="./query.js"></script>
+        <script type="module" src="/univasset/scripts/faqs/index.js"></script>
         <script type="module" src="/univasset/scripts/include.js"></script>
         
         <meta charset='utf-8'>
@@ -30,7 +31,7 @@
 
         <div class="container">
             <section id="main_content">
-                <include src="/univasset/scripts/faqs/index.html"></include>
+                <include src="/univasset/scripts/faqs/index.html" onreplace="queryFunc(tags, cards)"></include>
             </section>
         </div>
     </body>

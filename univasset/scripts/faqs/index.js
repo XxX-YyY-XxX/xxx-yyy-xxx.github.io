@@ -25,13 +25,11 @@ import {nestElements} from "../htmlgenerator/htmlgenerator.js";
  * @property {Tag[keyof Tag][]} Card.tags
  */
 
-/**
- * @param {Tag} tags_dict 
- * @param {Card[]} cards_list 
- */
-export function getQueryJS(tags_dict, cards_list) {
+/** @param {Tag} tags_dict @param {Card[]} cards_list */
+window.queryFunc = function(tags_dict, cards_list) {
     const SEARCH_PARAMS = new URLSearchParams(location.search);
     const CARDFIELD = document.querySelector("#cards-field");
+    const HREF = location.href;
 
     //#region Tags Field
     const TAGS_FIELD = document.querySelector("#Tags div");
@@ -166,14 +164,13 @@ export function getQueryJS(tags_dict, cards_list) {
 
         const [LEGEND, H3] = nestElements("legend", "h3");
         H3.appendChild(stringToHTML(question));
-
-        // make tags clickable?
+        
         FIELDSET.append(
             LEGEND,
             stringToHTML(answer),
             document.createElement("hr"),
             "Tags: ",
-            ...tags.map(({name}) => setattr(document.createElement("span"), {classList: {add: ["tags"]}, textContent: name}))
+            ...tags.map(({name}) => setattr(document.createElement("a"), {classList: {add: ["tags"]}, textContent: name, href: HREF+"?tags="+name}))
         );
         return FIELDSET;
     }
@@ -203,4 +200,3 @@ export function getQueryJS(tags_dict, cards_list) {
     }
     //#endregion
 }
-window.queryFunc = getQueryJS;
