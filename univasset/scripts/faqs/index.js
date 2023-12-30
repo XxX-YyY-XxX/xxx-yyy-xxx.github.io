@@ -29,7 +29,6 @@ import {nestElements} from "../htmlgenerator/htmlgenerator.js";
 window.queryFunc = function(tags_dict, cards_list) {
     const SEARCH_PARAMS = new URLSearchParams(location.search);
     const CARDFIELD = document.querySelector("#cards-field");
-    const HREF = location.href;
 
     //#region Tags Field
     const TAGS_FIELD = document.querySelector("#Tags div");
@@ -158,8 +157,8 @@ window.queryFunc = function(tags_dict, cards_list) {
         return setattr(new DocumentFragment(), {append: [...(new DOMParser()).parseFromString(text, "text/html").body.childNodes]});
     }
 
-    /** @param {Card} */
-    function setQuestionBoxes({question, answer, tags}) {
+    const HREF = location.href;
+    /** @param {Card} */ function setQuestionBoxes({question, answer, tags}) {
         const FIELDSET = document.createElement("fieldset");
 
         const [LEGEND, H3] = nestElements("legend", "h3");
