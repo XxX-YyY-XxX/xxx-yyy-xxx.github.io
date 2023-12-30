@@ -29,7 +29,7 @@ import {nestElements} from "../htmlgenerator/htmlgenerator.js";
 window.queryFunc = function(tags_dict, cards_list) {
     const SEARCH_PARAMS = new URLSearchParams(location.search);
     const CARDFIELD = document.querySelector("#cards-field");
-    const HREF = location.href;
+    const HREF = location.origin + location.pathname;
 
     //#region Tags Field
     const TAGS_FIELD = document.querySelector("#Tags div");
