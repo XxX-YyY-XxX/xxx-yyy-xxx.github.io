@@ -110,7 +110,7 @@ export const cardData = [
             ],
             "Combat Reports (CR)": [
                 'Acquired through Forward Basecamp, Data Room, the shop during events, EXP Sim, or as a reward.',
-                `Can be gifted by going to the ${spoilerSummary('Dorm Gifts screen', image(IMG_ASSET+"SkinLocation.png", 'Dorms > Warehouse > Gifts'))} or your ${spoilerSummary("Doll's Profile", image("../assets/images/DollEXP.png", "+ button by the EXP bar"))}.`,
+                `Can be gifted by going to the ${spoilerSummary('Dorm Gifts screen', image(IMG_ASSET+"SkinLocation.png", 'Dorms > Warehouse > Gifts'))} or your ${spoilerSummary("Doll's Profile", image(IMG_ASSET+"DollEXP.png", "+ button by the EXP bar"))}.`,
                 'Gives 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.',
                 'Gives 6000 fixed EXP per report only when used on oathed+modded dolls.'
             ],
@@ -914,7 +914,7 @@ export const cardData = [
         answers : `<p>${TextStyle.style('Even dust, when piled up, can become a mountain.', TextStyle.ITALIC)}</p>
         Good logistics upkeep and rolling Fairy Construction everyday. Just think of crafting them a side thing that doesn't take a lot of attention.`,
         tags : [dTag.FAIRY, dTag.PROD]
-    },  //image('../assets/images/FairyRaising.png', 'From u/UnironicWeeaboo')
+    },
     {
         id : '00079',
         questions : `How high is a certain doll's pull rate during rate ups?`,
@@ -1187,7 +1187,7 @@ export const cardData = [
     {
         id : '00112',
         questions : `What does equipment calibration and enhancement do?`,
-        answers : `${image('../assets/images/EquipCalibEnhance.png', 'Calibration and enhancement are independent of each other')}
+        answers : `${image(IMG_ASSET+"EquipCalibEnhance.png", 'Calibration and enhancement are independent of each other')}
         ${List.description({
             'Equipment Calibration' : [
                 "Raises the equipment's base stat.",
@@ -1574,7 +1574,7 @@ export const cardData = [
         ${link('Matsuda Guide and Line-up, circa 2.08.', 'https://gfl.matsuda.tips/post/defdrill')}<br>
         ${TextStyle.style('2.09 waves', TextStyle.BOLD)}:<br>
         ${spoilerSummary('Discord Leaderboard Comps.', `${image('https://cdn.discordapp.com/attachments/453784246515925003/988812408929804328/unknown.png')}<br>
-            ${image('../assets/images/DiscordDefenseDrill.png')}`)}<br>
+            ${image(IMG_ASSET+"DiscordDefenseDrill.png")}`)}<br>
         ${spoilerSummary('General BLT vid.', MBD.youtube('P-GLrBNvFVs'))}<br>
         ${spoilerSummary('Ceia vid.', MBD.youtube('qgbF2eiIzps'))}<br>
         ${spoilerSummary("CosmicArcher's comfy clear.", MBD.youtube('avKEYzKSp0U'))}`,
@@ -1917,7 +1917,7 @@ export const cardData = [
     {
         id : '00208',
         questions : `I don't know how to change the AI behaviour of my support/friend echelon, anyone can help me?`,
-        answers : `${image('../assets/images/FriendEchelonCommand.png', 'Double-tap the Friend Echelon to show options')}`,
+        answers : `${image(IMG_ASSET+"FriendEchelonCommand.png", 'Double-tap the Friend Echelon to show options')}`,
         tags : [dTag.FRIEND, dTag.ECH, dTag.MAP]
     },
     {
@@ -3363,7 +3363,7 @@ export const cardData = [
     {
         id : '00424',
         questions : `I'm overflowing with units/gears/fairies/PA units. Where can I dump/scrap/recycle/retire them off?`,
-        answers : `${image("../assets/images/Disassembly.png", "Found in the Factory Tab")}<br>
+        answers : `${image(IMG_ASSET+"Disassembly.png", "Found in the Factory Tab")}<br>
         ${List.description({
             "T-DOLL": [
                 "The final stage of core farming.",

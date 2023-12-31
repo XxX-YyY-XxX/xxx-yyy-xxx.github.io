@@ -1,16 +1,4 @@
 /* 
-    src: URL of file whose content will replace this element
-        <include src="" a="12" s="34"></include>
-
-    key: Parent parameter whose value will replace this element
-        <include key="s"></include>
-        => 34
-    
-    onreplace: Executed when `include` element has successfully been replaced by its contents. Equivalent to "replace" event and success property true.
-    ondefault: Executed when `include` element has been replaced by its default value. Equivalent to "replace" event and success property false.
-    
-    Default value is textContent value.
-
     HTMLIncludeElement-specific events:
         replace: Executed when the `include` element has been replaced.
     ------------------------------------------------------------------------------------------------------------

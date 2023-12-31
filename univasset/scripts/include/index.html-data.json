@@ -1,0 +1,28 @@
+{
+    "version": 1.1,
+    "$schema": "https://raw.githubusercontent.com/microsoft/vscode-html-languageservice/master/docs/customData.schema.json",
+    "tags": [{
+        "name": "include",
+        "description": "Loads html file/value in place of the element, else replaces itself with its children. Can also use parameters like Django.",
+        "attributes": [
+            {
+                "name": "src",
+                "description": "URL of file whose content will replace this element."
+            },
+            {
+                "name": "onreplace",
+                "description": "Executed when `include` element has successfully been replaced by its contents. Equivalent to 'replace' event and success property true."
+            },
+            {
+                "name": "ondefault",
+                "description": "Executed when `include` element has been replaced by its default value. Equivalent to 'replace' event and success property false."
+            },
+            {
+                "name": "key",
+                "description": "Parent parameter whose value will replace this element, else default if parameter not found.\n\nParent: `<include src='' s='34'></include>`\n\nChild: `<include key='s'></include>`\n\n\t\t=> 34"
+            }
+        ]
+    }],
+    "globalAttributes": [],
+    "valueSets": []
+}
