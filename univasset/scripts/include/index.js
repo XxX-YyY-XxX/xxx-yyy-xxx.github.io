@@ -43,38 +43,39 @@
 const REPLACE_EVENT = new Event("replace");
 //#endregion
 
-for (const INCLUDE of Array.from(document.querySelectorAll("include[src]")).map(convert)) await includeDocument(INCLUDE, location.pathname);
+for (const INCLUDE of Array.from(document.querySelectorAll("include[src]")).map(convert)) await includeDocument(INCLUDE, location.origin+location.pathname);
 // document.dispatchEvent(REPLACEALL_EVENT);
 
 /**
- * @param {HTMLIncludeElement} include_elem
+ * @param {HTMLIncludeElement} include
  * @param {string} file_name Name of file where include element is taken. Used for error handling.
  * @param {number} depth File call depth. Could be used to prevent looping. */
-async function includeDocument(include_elem, file_name, depth = 0) {
-    const SOURCE = include_elem.src ?? "";
-    const INCLUDE_DOC = await fetch(SOURCE)
+async function includeDocument(include, file_name, depth = 0) {
+    const SOURCE = include.getAttribute("src") ?? "";
+    const DOCUMENT = await fetch(SOURCE)
         .then(response => response.ok ? response.text() : Promise.reject(`Missing ${SOURCE} in ${file_name}`))
         .then(html => html.replace(/<!--(?!>)[\S\s]*?-->/g, ""))                    //Remove comments
         .then(cleantext => new DOMParser().parseFromString(cleantext, "text/html"))
         .catch(error => {console.error(error); return null});
-    if (!INCLUDE_DOC) {
-        include_elem.default();
+    if (!DOCUMENT) {
+        default_(include);
         return;
     }
 
-    const PARAM = new Map(Array.from(include_elem.attributes).map(({name, value}) => [name, value]));
+    const PARAM = new Map(Array.from(include.attributes).map(({name, value}) => [name, value]));
     
     // for (const [INDEX, QUERY] of Object.entries(["include[if][ifnot]", "include[if]", "include[ifnot]", "include"]).map(/** @returns {[number, string]} */ ([a, b]) => [Number(a), b])) {
         
     // }
 
-    for (const INCLUDE of Array.from(INCLUDE_DOC.querySelectorAll("include")).map(convert)) {
+    for (const INCLUDE of Array.from(DOCUMENT.querySelectorAll("include")).map(convert)) {
         // check if element satisfies "if", "ifnot"
 
-        if (INCLUDE.key !== null) { // Key
-            const VALUE = PARAM.get(INCLUDE.key);
-            if (VALUE !== undefined)    INCLUDE.loadContent(VALUE);
-            else                        INCLUDE.default();
+        const KEY = INCLUDE.getAttribute("key");
+        if (KEY !== null) {
+            const VALUE = PARAM.get(KEY);
+            if (VALUE !== undefined)    load(INCLUDE, VALUE);
+            else                        default_(INCLUDE);
             continue;
         }
 
@@ -120,7 +121,7 @@ async function includeDocument(include_elem, file_name, depth = 0) {
     // for (const {outerHTML} of INCLUDE_DOC.querySelectorAll("include")) console.warn("Unparsed include element found:", outerHTML, "from", SOURCE);
     
     // console.log(file_name)
-    include_elem.loadContent(...INCLUDE_DOC.body.childNodes);
+    load(include, ...DOCUMENT.body.childNodes);
 }
 
 // #region Setup
@@ -140,35 +141,21 @@ function onReplace(include, success) {
     eval?.(include.getAttribute(success ? "onreplace" : "ondefault") ?? "");
 }
 
+/** @param {HTMLIncludeElement} include @param  {...(string|Node)} values */
+function load(include, ...values) {
+    include.replaceWith(...values);
+    onReplace(include, true);
+}
+
+/** @param {HTMLIncludeElement} include */
+function default_(include) {
+    include.replaceWith(...include.childNodes);
+    onReplace(include, false);
+}
+
 /** @param {HTMLElement} html_element @returns {HTMLIncludeElement} */
 function convert(html_element) {
-    const MEMOIZE = {};
-
-    Object.defineProperty(html_element, "src", {
-        get: function() {return MEMOIZE.src ??= this.getAttribute("src")},
-        enumerable: true
-    });
-
-    Object.defineProperty(html_element, "key", {
-        get: function() {return MEMOIZE.key ??= this.getAttribute("key")},
-        enumerable: true
-    });
-
-    Object.defineProperty(html_element, "loadContent", {
-        value: function(...value) {
-            this.replaceWith(...value);
-            onReplace(this, true);
-        },
-        enumerable: true
-    });
-
-    Object.defineProperty(html_element, "default", {
-        value: function() {
-            this.replaceWith(...this.childNodes);
-            onReplace(this, false);
-        },
-        enumerable: true
-    });
+    // const MEMOIZE = {};
 
     return html_element;
 }

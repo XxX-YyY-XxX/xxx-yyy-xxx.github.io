@@ -1,9 +1,9 @@
 import {spoilerSummary, image, table, link, tooltip, getID} from '../../univasset/scripts/htmlfunctions/htmlfunctions.js';
 import TextStyle from '../../univasset/scripts/htmlfunctions/textstyle.js';
-import Embed from '../../univasset/scripts/htmlfunctions/linkembed.js';
+import MBD from '../../univasset/scripts/htmlfunctions/linkembed.js';
 import List from '../../univasset/scripts/htmlfunctions/lists.js';
 import {LESSEQUAL, STAR, TM} from "../../univasset/scripts/specialchars.js";
-// import {} from "../../univasset/scripts/html/index.js";
+// import {img} from "../../univasset/scripts/html/index.js";
 
 const IMG_ASSET = "../assets/images/query/";
 
@@ -152,7 +152,7 @@ export const cardData = [
         answers : `${link('Gamepress guide.', "https://gamepress.gg/girlsfrontline/protocol-assimilation-coalition-basics-and-teambuilding")}<br>
         ${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
-        ${spoilerSummary("Cleista's basic Twitter guide.", Embed.twitter('CleistaCeleste', '1409824210571214849'))}`,
+        ${spoilerSummary("Cleista's basic Twitter guide.", MBD.twitter('CleistaCeleste', '1409824210571214849'))}`,
         tags : [dTag.PA, dTag.PRIME]
     },
     {
@@ -170,9 +170,9 @@ export const cardData = [
         answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/fairies')}<br>
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Technical_Fairies')} Unupdated rework skills.<br>
         ${link('GFC guide Part 1.', 'https://www.gflcorner.com/fairy/')} Fairies up to CT only.<br>
-        ${spoilerSummary('GFC guide Part 2.', Embed.google(Embed.G_EXCEL, '1x6_YysDi0h89jKE9vEW2_fbxi7gG7XV5jjJqX8O41rw'))} Unupdated fairy list.<br>
+        ${spoilerSummary('GFC guide Part 2.', MBD.google(MBD.G_EXCEL, '1x6_YysDi0h89jKE9vEW2_fbxi7gG7XV5jjJqX8O41rw'))} Unupdated fairy list.<br>
         ${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/fairies-where-they-live-and-how-craft-them")}<br>
-        ${spoilerSummary('Jesse #6406 doc.', Embed.google(Embed.G_WORD, '1dXZkOmAR0SWqL7UKCxmTP2hUPjpoRhskbJHn1ZlpNWc'))}`,
+        ${spoilerSummary('Jesse #6406 doc.', MBD.google(MBD.G_WORD, '1dXZkOmAR0SWqL7UKCxmTP2hUPjpoRhskbJHn1ZlpNWc'))}`,
         tags : [dTag.FAIRY, dTag.PRIME]
     },
     {
@@ -275,7 +275,7 @@ export const cardData = [
         And it's called "chess" only because boardgame.<br>
         ${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/springfields-cafe-haven-soothe-weary-souls-and-luffberry-chess")}
         ${link("u/fortis_99's tips.", 'https://redd.it/rz4uye')}<br>
-        ${spoilerSummary("u/StarBase10's doc guide.", Embed.google(Embed.G_WORD, '1BHZ36zTKdQ9gd81a-RAHEzbs9OEgJraSRp5LQv8CB_A'))}`,
+        ${spoilerSummary("u/StarBase10's doc guide.", MBD.google(MBD.G_WORD, '1BHZ36zTKdQ9gd81a-RAHEzbs9OEgJraSRp5LQv8CB_A'))}`,
         tags : [dTag.OJ, dTag.PRIME]
     },
     //#endregion
@@ -293,7 +293,7 @@ export const cardData = [
         questions : `Is XXX doll good and is it safe to retire them?`,
         answers : `Tier lists in general are a matter of countering enemies. And since the meta of this game varies wildly from event to event, most people would point to analysis links instead.<br>
         ${link('Gamepress Overview.', 'https://gamepress.gg/girlsfrontline/t-dolls-list')}<br>
-        ${spoilerSummary("u/LuckyTenth's spreadsheet.", Embed.google(Embed.G_EXCEL, '1w2qEbnNluSc6C4U73yyAnYE_zmXdARvDu3GZmMO7hl4'))}<br>
+        ${spoilerSummary("u/LuckyTenth's spreadsheet.", MBD.google(MBD.G_EXCEL, '1w2qEbnNluSc6C4U73yyAnYE_zmXdARvDu3GZmMO7hl4'))}<br>
         ${link('Matsuda Quips.', 'https://gfl.matsuda.tips/dolls/')}<br>
         ${link('KR Wiki.', 'https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0/%EC%9D%B8%ED%98%95%EB%8F%84%EA%B0%90')}<br>
         ${link("Fatalchapter's bilibili guide.", 'https://www.bilibili.com/read/readlist/rl100361')} Updated up to Jashin dolls.<br>
@@ -323,7 +323,7 @@ export const cardData = [
         questions : `Is there a tier list for fairies and equipment?`,
         answers : `${image('https://i.imgur.com/2nh8xHs.jpeg', "Sijun's list")}<br>
         For the equipments, top number is the recommended quantity, bottom number is the reserve quantity.<br>
-        ${spoilerSummary(`u/UnironicWeeaboo's fairy stat calculator.`, Embed.google(Embed.G_EXCEL, '1RORciafqtspkxy3fqBrFdKIxVfanV2-fLl9FlvY3QtM'))}<br>
+        ${spoilerSummary(`u/UnironicWeeaboo's fairy stat calculator.`, MBD.google(MBD.G_EXCEL, '1RORciafqtspkxy3fqBrFdKIxVfanV2-fLl9FlvY3QtM'))}<br>
         ${spoilerSummary('u/BigStupidJellyfish_ reviews.', List.unordered(
             link('General reviews.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/fairy-reviews'),
             link('Sniper review.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/sniper-rework')
@@ -384,7 +384,7 @@ export const cardData = [
                 link("Shoul's Story Scenes Playlists", 'https://www.youtube.com/channel/UC_JmwXOfYqOKpGGtc5gcVmw'),
                 link("Girls' Frontline Full Story Comprehension Playlist Translated up to Isomer", 'https://youtube.com/playlist?list=PL9y52Flm1yM-tJJoom2zfrWTpaO1mTw8M'),
                 link("u/DoctuhD's Girls' Frontline Summary", 'https://docs.google.com/document/d/1oA07O2HGwvmoBqm-UKTTuSdxjLnSIbRHd5b2FuYOph0'),
-                spoilerSummary("u/Signal_Abroad1427's Hurricane Rescue video", Embed.youtube("oH1st5OxdyY")),
+                spoilerSummary("u/Signal_Abroad1427's Hurricane Rescue video", MBD.youtube("oH1st5OxdyY")),
                 link("u/pointblanksniper collection", "https://old.reddit.com/r/girlsfrontline/comments/13phxi5/weekly_commanders_lounge_may_23_2023/jlv5bns/")
             ]
         })}`,
@@ -479,13 +479,13 @@ export const cardData = [
                 link('DMesse guide.', 'http://dmesse.egloos.com/m/3567918')
             ],
             '0-2': [
-                spoilerSummary("Ceia's 0-2 drag guide.", Embed.google(Embed.G_WORD, '1PkxJ7ObdGW_cS_qbzAxQ_hoC1SFse3HNYWlnywZfPuo'))
+                spoilerSummary("Ceia's 0-2 drag guide.", MBD.google(MBD.G_WORD, '1PkxJ7ObdGW_cS_qbzAxQ_hoC1SFse3HNYWlnywZfPuo'))
             ],
             "4-3E": [
                 "For AR DPS, do not use MGs or caped RFs."
             ],
             '8-1N': [
-                spoilerSummary('Zas drag.', Embed.google(Embed.G_EXCEL, '1VT52c-_m4zTx-OFRPcxE9iFmmJY_AMC7CyJT1B7FLt8'))
+                spoilerSummary('Zas drag.', MBD.google(MBD.G_EXCEL, '1VT52c-_m4zTx-OFRPcxE9iFmmJY_AMC7CyJT1B7FLt8'))
             ],
             '13-4': [
                 link('tempkaridc calculator for Vector.', 'https://tempkaridc.github.io/gf/vec'),
@@ -494,8 +494,8 @@ export const cardData = [
             ],
             'SC 3-1 EX': [
                 'Good for dragging coalition units.',
-                spoilerSummary("Ceia's SC 3-1Ex guide.", Embed.youtube('UdmOZqypu_c')),
-                spoilerSummary("Aqua's SC 3-1Ex.", Embed.streamable('0dpjje')),
+                spoilerSummary("Ceia's SC 3-1Ex guide.", MBD.youtube('UdmOZqypu_c')),
+                spoilerSummary("Aqua's SC 3-1Ex.", MBD.streamable('0dpjje')),
                 spoilerSummary("BigStupidJellyfish's SC 3-1Ex auto-pathing.", image(IMG_ASSET+"SCAuto-path.png"))
             ],
         })}`,
@@ -522,7 +522,7 @@ export const cardData = [
                 link("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv'),
                 link("ARSMG by warorpeace#7149.", "https://docs.google.com/document/d/e/2PACX-1vR4OYslSVaE5mv6xyu7rIun24Ltu0SWsEzwOrER2MiWseDt5Fy5LjFFEZZzTDvl9C2Xb7g3pcWObSC4/pub"),
                 link("RFHG by warorpeace#7149.", "https://docs.google.com/document/d/e/2PACX-1vTR8LNVuBX4FiaAxLus5zZO6M4hQCu_4Fec0S0rqMmhPMXQXMcnU4uPhwwYAHOQDB5I9nq0VqSJd4-p/pub"),
-                spoilerSummary("MGSG by canoxin#2789.", Embed.google(Embed.G_WORD, "1-O7398S5sHcowCI8lp5Ktu_AiUBydJuvVHV-dX7g-l8")),
+                spoilerSummary("MGSG by canoxin#2789.", MBD.google(MBD.G_WORD, "1-O7398S5sHcowCI8lp5Ktu_AiUBydJuvVHV-dX7g-l8")),
                 link("Gamepress MGSG guide.", "https://gamepress.gg/girlsfrontline/mgs-sgs-and-teambuilding")
             ]
         })}<br>
@@ -537,7 +537,7 @@ export const cardData = [
         This is the reason why putting your whole team at the back of the grid is preferable.<br>
         Sometimes called wiggling which in this context means moving your DPS to retarget.<br>
         ${link('GFC guide','https://www.gflcorner.com/battle-controls/')}<br>
-        ${spoilerSummary('Mitsu video guide', Embed.youtube('ITUtRuF4TLY'))}<br>
+        ${spoilerSummary('Mitsu video guide', MBD.youtube('ITUtRuF4TLY'))}<br>
         ${link("u/Reikyu09's reddit post", 'https://redd.it/8o18an')}<br>
         ${link("Gamepress guide", "https://gamepress.gg/girlsfrontline/treatise-gfl-combat-kiting-basics")}`,
         tags : [dTag.BATTLE, dTag.IMPT]
@@ -797,9 +797,9 @@ export const cardData = [
         questions : `What best-in-slot (BiS) equipments should I use on my dolls?`,
         answers : `${spoilerSummary('General equipments.', image("https://cdn.discordapp.com/attachments/951085201658871820/1059432568321224704/eq_suggestions.png", "Taken from Discord."))}<br>
         ${spoilerSummary('#2 Chip equipment.', List.unordered(
-            spoilerSummary('BigStupidJellyfish_ doc.', Embed.google(Embed.G_EXCEL, '14xV50MSMBFGgN75E-Gy10WtzACb_KZdpxRKCYQ6FDQA')),
+            spoilerSummary('BigStupidJellyfish_ doc.', MBD.google(MBD.G_EXCEL, '14xV50MSMBFGgN75E-Gy10WtzACb_KZdpxRKCYQ6FDQA')),
             spoilerSummary('BigStupidJellyfish_ infograph.', link(image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png'), 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')),
-            spoilerSummary('mis doc.', Embed.google(Embed.G_EXCEL, '1c0JhaSX9WyL3EB-7RCDE4NrfzR1YuWdYWidQ_06-PrQ'))))}<br>
+            spoilerSummary('mis doc.', MBD.google(MBD.G_EXCEL, '1c0JhaSX9WyL3EB-7RCDE4NrfzR1YuWdYWidQ_06-PrQ'))))}<br>
         ${spoilerSummary('AP thresholds.', image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/newquip/armor-reference.png'))}<br>
         ${link("2.09 equips.", "https://big-stupid-jellyfish.github.io/GFMath/pages/newquip")}<br>
         ${link('3.0 equips.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/newerquip')}`,
@@ -809,7 +809,7 @@ export const cardData = [
         id : '00065',
         questions : `How do I maximize the efficiency of my echelon's ROF?`,
         answers : `${link("u/BigStupidJellyfish_'s ROF calc.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/rof-calc')}<br>
-        ${spoilerSummary('GFC Spreadsheet.', Embed.google(Embed.G_EXCEL, '1k74SCGGMHtwbl8gmTaETLsa8t12A7dWdj0V1tjdMD4Y'))}`,
+        ${spoilerSummary('GFC Spreadsheet.', MBD.google(MBD.G_EXCEL, '1k74SCGGMHtwbl8gmTaETLsa8t12A7dWdj0V1tjdMD4Y'))}`,
         tags : [dTag.TDOLL, dTag.BATTLE, dTag.SYSMECH]
     },
     {
@@ -829,7 +829,7 @@ export const cardData = [
     {
         id : '00068',
         questions : `How high is fairy rate up?`,
-        answers : `${Embed.google(Embed.G_EXCEL, '1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI')}`,
+        answers : `${MBD.google(MBD.G_EXCEL, '1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI')}`,
         tags : [dTag.FAIRY, dTag.PROD]
     },  //Redditor u/ConductorBichir's list IIRC
     {
@@ -968,7 +968,7 @@ export const cardData = [
     {
         id : '00086',
         questions : `What does the PA chip Pilfer do?`,
-        answers : `Allows players to have a ${spoilerSummary('chance', image('../assets/images/PIlferRNG.png', 'Pilfer subject to RNG'))} of getting ${spoilerSummary('S-Rank drops', Embed.youtube('t6Vu72cajO0') + TextStyle.style('Context: Coalition Medals require S-Rank battles.', TextStyle.QUOTE))} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
+        answers : `Allows players to have a ${spoilerSummary('chance', image('../assets/images/PIlferRNG.png', 'Pilfer subject to RNG'))} of getting ${spoilerSummary('S-Rank drops', MBD.youtube('t6Vu72cajO0') + TextStyle.style('Context: Coalition Medals require S-Rank battles.', TextStyle.QUOTE))} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
         Combine this with the ability to fight on one ammo bar to get two chances on one enemy.`,
         tags : [dTag.COALITION, dTag.EQUIP]
     },
@@ -988,7 +988,7 @@ export const cardData = [
         id : '00089',
         questions : `Which map is best for auto-battles, or just leveling in general?`,
         answers : `Includes EXP per fight and level threshold to EXP penalty/drop-off.<br>
-        ${Embed.google(Embed.G_EXCEL, '1e_1oAa9Qm_tmWqbgFQca8ohzo29qcjctIwyIU9Mc1H0')}`,
+        ${MBD.google(MBD.G_EXCEL, '1e_1oAa9Qm_tmWqbgFQca8ohzo29qcjctIwyIU9Mc1H0')}`,
         tags : [dTag.AUTO, dTag.TDOLL, dTag.LEVEL]
     },
     {
@@ -1076,7 +1076,7 @@ export const cardData = [
         answers : `${List.description({
             "Guides": [
                 link('Reddit guide for desktop chip calculator.', 'https://redd.it/fnh1ey'),
-                spoilerSummary('Google Docs guide.', Embed.google(Embed.G_WORD, '1pR6g-mgsy22_MhRPASL9c1wDoCuxfUwr-DCCMYmb7Ss')),
+                spoilerSummary('Google Docs guide.', MBD.google(MBD.G_WORD, '1pR6g-mgsy22_MhRPASL9c1wDoCuxfUwr-DCCMYmb7Ss')),
                 spoilerSummary('5-block chips that can be disassembled.', image('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/2020-01/hoc-chip-shape-minmax-example.jpg', 'Taken from Gamepress'))
             ],
             "PC Downloads": [
@@ -1286,9 +1286,9 @@ export const cardData = [
     {
         id : '00123',
         questions : `Is there a list of doll farming routes for each map?`,
-        answers : `${spoilerSummary('Compilation of all farm routes for limited dolls and equipments on both campaign and main story.', Embed.google(Embed.G_WORD, '1GUcA1ZHYVKBhTspdRYPIkECVZRoLFvqDnLrgrFb6VcU'))}<br>
+        answers : `${spoilerSummary('Compilation of all farm routes for limited dolls and equipments on both campaign and main story.', MBD.google(MBD.G_WORD, '1GUcA1ZHYVKBhTspdRYPIkECVZRoLFvqDnLrgrFb6VcU'))}<br>
         ${link('Farming routes by RevenantXIII (with Pilfer strats), focusing on events and ranking-relevant campaign dolls.', 'https://rosedrake.github.io/GFL.html')}<br>
-        ${spoilerSummary('416 SPEQ Pilfer route.', Embed.youtube('5v6gEqydGm4'))}`,
+        ${spoilerSummary('416 SPEQ Pilfer route.', MBD.youtube('5v6gEqydGm4'))}`,
         tags : [dTag.TDOLL, dTag.GET, dTag.MAIN, dTag.CAMPAIGN, dTag.SPEQ]
     },  //GDoc by u/rcpz93 most likely
     {
@@ -1470,7 +1470,7 @@ export const cardData = [
     {
         id : '00148',
         questions : `How does a StrawberryPython team work?`,
-        answers : `${Embed.google(Embed.G_WORD, '105DXX2AlMB_wX0JpKGjPGsJ_zjsKOz_0bbd5ZshUx_o')}`,
+        answers : `${MBD.google(MBD.G_WORD, '105DXX2AlMB_wX0JpKGjPGsJ_zjsKOz_0bbd5ZshUx_o')}`,
         tags : [dTag.ECH, dTag.TDOLL]
     },
     {
@@ -1529,7 +1529,7 @@ export const cardData = [
     {
         id : '00157',
         questions : `Where can I see the stat previews for PA units?`,
-        answers : `${Embed.google(Embed.G_EXCEL, '1TYKbdjuOdOMsvaaIduWW_8FF0tm27BjwKbC4uggl1wE')}`,
+        answers : `${MBD.google(MBD.G_EXCEL, '1TYKbdjuOdOMsvaaIduWW_8FF0tm27BjwKbC4uggl1wE')}`,
         tags : [dTag.PA, dTag.COALITION]
     },
     {
@@ -1575,9 +1575,9 @@ export const cardData = [
         ${TextStyle.style('2.09 waves', TextStyle.BOLD)}:<br>
         ${spoilerSummary('Discord Leaderboard Comps.', `${image('https://cdn.discordapp.com/attachments/453784246515925003/988812408929804328/unknown.png')}<br>
             ${image('../assets/images/DiscordDefenseDrill.png')}`)}<br>
-        ${spoilerSummary('General BLT vid.', Embed.youtube('P-GLrBNvFVs'))}<br>
-        ${spoilerSummary('Ceia vid.', Embed.youtube('qgbF2eiIzps'))}<br>
-        ${spoilerSummary("CosmicArcher's comfy clear.", Embed.youtube('avKEYzKSp0U'))}`,
+        ${spoilerSummary('General BLT vid.', MBD.youtube('P-GLrBNvFVs'))}<br>
+        ${spoilerSummary('Ceia vid.', MBD.youtube('qgbF2eiIzps'))}<br>
+        ${spoilerSummary("CosmicArcher's comfy clear.", MBD.youtube('avKEYzKSp0U'))}`,
         tags : [dTag.SIMS]
     },  //Proper guide under construction
     {
@@ -1631,7 +1631,7 @@ export const cardData = [
         questions : `Is there an efficient way of raising a Parachute Fairy?`,
         answers : `${link("markhydroxyl's github notes.", 'https://github.com/markhydroxyl/GFL-notes/blob/main/tls/nga_raising_paras.md')}<br>
         ${link('Logistics for HEC crafting.', 'https://github.com/markhydroxyl/GFL-notes/blob/main/tls/nga_hec_logis.md')}<br>
-        ${spoilerSummary('Fairy Development Calculator.', Embed.google(Embed.G_EXCEL, '1Zcz6Yp3sduhUXY9jo2HCX4pOdiIQioZcS8v6xMK01Pk'))}`,
+        ${spoilerSummary('Fairy Development Calculator.', MBD.google(MBD.G_EXCEL, '1Zcz6Yp3sduhUXY9jo2HCX4pOdiIQioZcS8v6xMK01Pk'))}`,
         tags : [dTag.FAIRY, dTag.LEVEL]
     },
     {
@@ -1669,7 +1669,7 @@ export const cardData = [
             "Use VPN",
             "Delete cache",
             link('Do a manual patch', 'https://github.com/lloyddunamis/gfl_manualpatch/blob/main/FullResource_readme'),
-            spoilerSummary("Delete some files", Embed.twitter("Synexcu", "1310117595094216709")),
+            spoilerSummary("Delete some files", MBD.twitter("Synexcu", "1310117595094216709")),
             "Reinstall (with minimum data first)",
             "Phone restart",
             "Any of the above coupled with sheer determination to do it for days on end"
@@ -1846,17 +1846,17 @@ export const cardData = [
         id : '00200',
         questions : `Is there a compilation of anniversary adjutant lines?`,
         answers : `${List.unordered(
-            spoilerSummary("3rd Anniversary", Embed.youtube("PL4Z0akElhimzHHiVMCozfUn1B6tYKjwPR")), //u/paperrabbit
-            spoilerSummary("4th Anniversary", Embed.youtube("PLoDB_FcnOA5zXkZ9XmQMTog1F7uIRZ_Qa")), //u/ConductorBichir
+            spoilerSummary("3rd Anniversary", MBD.youtube("PL4Z0akElhimzHHiVMCozfUn1B6tYKjwPR")), //u/paperrabbit
+            spoilerSummary("4th Anniversary", MBD.youtube("PLoDB_FcnOA5zXkZ9XmQMTog1F7uIRZ_Qa")), //u/ConductorBichir
             spoilerSummary("5th Anniversary", List.unordered(                                       //plants zaza
-                spoilerSummary("Handguns", Embed.youtube("N-B_icnlDwg")),
-                spoilerSummary("Submachine Guns", Embed.youtube("lQQ7aBEOFlc")),
-                spoilerSummary("Rifles", Embed.youtube("gG8UUqZGzu4")),
-                spoilerSummary("Assault Rifles", Embed.youtube("PRHbKntfgzY")),
-                spoilerSummary("Machine Guns", Embed.youtube("AlbX92INYtY")),
-                spoilerSummary("Shotguns", Embed.youtube("oQn1CT6WvPM")),
-                spoilerSummary("Ringleaders", Embed.youtube("-erW_9CBkjQ")),
-                spoilerSummary("NPCs", Embed.youtube("20kEk-lrxqY")),
+                spoilerSummary("Handguns", MBD.youtube("N-B_icnlDwg")),
+                spoilerSummary("Submachine Guns", MBD.youtube("lQQ7aBEOFlc")),
+                spoilerSummary("Rifles", MBD.youtube("gG8UUqZGzu4")),
+                spoilerSummary("Assault Rifles", MBD.youtube("PRHbKntfgzY")),
+                spoilerSummary("Machine Guns", MBD.youtube("AlbX92INYtY")),
+                spoilerSummary("Shotguns", MBD.youtube("oQn1CT6WvPM")),
+                spoilerSummary("Ringleaders", MBD.youtube("-erW_9CBkjQ")),
+                spoilerSummary("NPCs", MBD.youtube("20kEk-lrxqY")),
                 link("Cutscene interpreter", "https://gfl.amaryllisworks.pw/#side-12-0")
             ))
         )}`,
@@ -2021,7 +2021,7 @@ export const cardData = [
     {
         id : '00223',
         questions : `What's the release order for PA banners?`,
-        answers : `${spoilerSummary('Google Doc.', Embed.google(Embed.G_EXCEL, '1nwlyZxoYaC44idP8SnAjk1OgQX4ND0lIzG3_Fs1We_0'))}<br>
+        answers : `${spoilerSummary('Google Doc.', MBD.google(MBD.G_EXCEL, '1nwlyZxoYaC44idP8SnAjk1OgQX4ND0lIzG3_Fs1We_0'))}<br>
         ${spoilerSummary('Image.', image('https://cdn.discordapp.com/attachments/564028599682727937/1003511535387283556/Proass_order.png'))}`,
         tags : [dTag.PA, dTag.COALITION]
     },
@@ -2279,7 +2279,7 @@ export const cardData = [
         id : '00260',
         questions : `Which of the enemies count as an elite?`,
         answers : `${link('Powered by randomqwerty.', './elites')}<br>
-        ${spoilerSummary("pengu's enemy dex spreadsheet (includes high threat).", Embed.google(Embed.G_EXCEL, "1_WPjx2WUE8zYhhfJ3wJkGCmpLn6dgwmcY-R7ZfKWTZ8"))}`,  //according to u/MrFunkyBoy (https://old.reddit.com/r/girlsfrontline/comments/111xab7/weekly_commanders_lounge_february_14_2023/j957swj/)
+        ${spoilerSummary("pengu's enemy dex spreadsheet (includes high threat).", MBD.google(MBD.G_EXCEL, "1_WPjx2WUE8zYhhfJ3wJkGCmpLn6dgwmcY-R7ZfKWTZ8"))}`,  //according to u/MrFunkyBoy (https://old.reddit.com/r/girlsfrontline/comments/111xab7/weekly_commanders_lounge_february_14_2023/j957swj/)
         tags : [dTag.ENEMY]
     },  
     {
@@ -2330,7 +2330,7 @@ export const cardData = [
             "SAA": ["MOD skill can \"proc\" after the first three."],
             "Pekola": [spoilerSummary(`"How to use" guide.`, image("../assets/images/PekolaUse.png"))],
             "M1897 Mod": [link("Flechette Storm!", "https://old.reddit.com/r/girlsfrontline/comments/osihvd/weekly_commanders_lounge_july_27_2021/h72czw7/")],
-            "P90": [spoilerSummary("Document by hina#8787", Embed.google(Embed.G_WORD, "1j5YzAAZ-_Q1bXMUvFKGUWnGgqwacatABv0u-MmY0JLw"))],
+            "P90": [spoilerSummary("Document by hina#8787", MBD.google(MBD.G_WORD, "1j5YzAAZ-_Q1bXMUvFKGUWnGgqwacatABv0u-MmY0JLw"))],
             "Galil Mod": [link("Reddit discussion", "https://old.reddit.com/r/girlsfrontline/comments/qpyw46/weekly_commanders_lounge_november_09_2021/hkj3ce0/")],
             "NTW MOD": ["Second skill kicks in as long as the kill check is satisfied."],
             "Px4": ["Buffs crit damage of surecrits and 100% crit is still 100% crit."],
@@ -2384,7 +2384,7 @@ export const cardData = [
     {
         id : '00273',
         questions : `Will I lose the tile buffs if my dolls retreated/moved/lose link/die?`,
-        answers : `${spoilerSummary('No', Embed.youtube('tQRqcTDmAKE'))}. On that note, retreating dolls who had their buffs activate will not remove said buff. Also, tile buffs don't degrade even if your dummy count does.`,
+        answers : `${spoilerSummary('No', MBD.youtube('tQRqcTDmAKE'))}. On that note, retreating dolls who had their buffs activate will not remove said buff. Also, tile buffs don't degrade even if your dummy count does.`,
         tags : [dTag.TDOLL, dTag.SKILL, dTag.BATTLE]
     },
     {
@@ -2397,7 +2397,7 @@ export const cardData = [
         id : '00275',
         questions : `How long does it take to max out Kalina's affection?`,
         answers : `A very long time.<br>
-        ${Embed.google(Embed.G_EXCEL, '1rshL9qGZfmuacCzjs7GdLN4qNs_ZWRoJNn-1vTwr6hc')}<br>
+        ${MBD.google(MBD.G_EXCEL, '1rshL9qGZfmuacCzjs7GdLN4qNs_ZWRoJNn-1vTwr6hc')}<br>
         You can increase it by collecting an affection point from her at the shop or by buying things from the shop.`,
         tags : [dTag.KALINA, dTag.LOVE]
     },
@@ -2925,7 +2925,7 @@ export const cardData = [
     {
         id : '00359',
         questions : `Is the Rescue Fairy's skill actually good?`,
-        answers : `For core farming purposes, ${spoilerSummary('very noticeable', Embed.google(Embed.G_EXCEL, '1DSYyTdC3Yk7JV4YGuj8zFMZqbPcH2zpNShtAFpR2Qmw'))}.<br>
+        answers : `For core farming purposes, ${spoilerSummary('very noticeable', MBD.google(MBD.G_EXCEL, '1DSYyTdC3Yk7JV4YGuj8zFMZqbPcH2zpNShtAFpR2Qmw'))}.<br>
         Note that it only works on dolls, not equipments.`,
         tags : [dTag.FAIRY, dTag.SKILL]
     },
@@ -3036,15 +3036,15 @@ export const cardData = [
     {
         id : '00375',
         questions : `What are the possible dailies and weeklies for the 3.0 quests?`,
-        answers : `${Embed.google(Embed.G_EXCEL,  '1gyn-6r_XBriYonFpj-RPkoQnCK36StTWJ0E5_yTU048')}<br>
+        answers : `${MBD.google(MBD.G_EXCEL,  '1gyn-6r_XBriYonFpj-RPkoQnCK36StTWJ0E5_yTU048')}<br>
         This also counts as a brief overview of the system.`,
         tags : [dTag.QUEST]
     },
     {
         id : '00376',
         questions : `Is there any way to rewatch the PA tutorial?`,
-        answers : `${Embed.youtube('tD7JgQcIQHM')}<br>
-        ${Embed.youtube('_s9ZY5wDLYE')}`,
+        answers : `${MBD.youtube('tD7JgQcIQHM')}<br>
+        ${MBD.youtube('_s9ZY5wDLYE')}`,
         tags : [dTag.PA, dTag.LORE]
     },
     {
@@ -3135,7 +3135,7 @@ export const cardData = [
         id : '00392',
         questions : `Can I change which dolls get targeted by the enemy?`,
         answers : `${link('By echelon positioning.', 'https://www.reddit.com/r/girlsfrontline/comments/g11mag/weekly_commanders_lounge_april_14_2020/fny91zz/')}<br>
-        ${spoilerSummary('In-depth study on positioning, targeting, and some peculiar requirements involving acquire dates.', Embed.google(Embed.G_WORD, '1LPqpSCNWiu1HJOnK1FOB1o30FSwTQRQvcK-tAjO4SSI'))}`,
+        ${spoilerSummary('In-depth study on positioning, targeting, and some peculiar requirements involving acquire dates.', MBD.google(MBD.G_WORD, '1LPqpSCNWiu1HJOnK1FOB1o30FSwTQRQvcK-tAjO4SSI'))}`,
         tags : [dTag.BATTLE]
     },
     {
@@ -3344,7 +3344,7 @@ export const cardData = [
     {
         id : '00422',
         questions : `Is there any damage sim? Or at least a DPS calculator?`,
-        answers : `${spoilerSummary("u/corbsieboy's spreadsheet calculator.", Embed.google(Embed.G_EXCEL, "1HgLM886cjnlGeoff7sE5QkTN4KPbT-52"))}`,
+        answers : `${spoilerSummary("u/corbsieboy's spreadsheet calculator.", MBD.google(MBD.G_EXCEL, "1HgLM886cjnlGeoff7sE5QkTN4KPbT-52"))}`,
         tags : [dTag['3P']]
     },
     {
@@ -3401,7 +3401,7 @@ export const cardData = [
         id : '00428',
         questions : `How do I deal with each enemy?`,
         answers : `GFC Spreadsheet. A bit outdated though.
-        ${Embed.google(Embed.G_EXCEL, "1TjHC4Vaed8dFqSkagM6teNlmBjFGPiUbTRnTnvxnnu4")}`,
+        ${MBD.google(MBD.G_EXCEL, "1TjHC4Vaed8dFqSkagM6teNlmBjFGPiUbTRnTnvxnnu4")}`,
         tags : [dTag.ENEMY]
     },
     {
@@ -3808,7 +3808,7 @@ export const cardData = [
     {
         id : '00474',
         questions : `Why are the guns' names excluding their manufacturer names?`,
-        answers : `${Embed.twitter("GirlsFrontlineE", "1001058278728548354")}`,
+        answers : `${MBD.twitter("GirlsFrontlineE", "1001058278728548354")}`,
         tags : [dTag.MISC]
     },
     {
@@ -3973,13 +3973,13 @@ export const cardData = [
         id : '00499',
         questions : `How is the commander evaluation star calculated?`,
         answers : `u/UnironicWeeaboo's sheet.<br>
-        ${Embed.google(Embed.G_EXCEL, "1HYLAx1NDnXIJqloBL9pD1cvuLLiXBD-8kE3aXwaMol8")}`,
+        ${MBD.google(MBD.G_EXCEL, "1HYLAx1NDnXIJqloBL9pD1cvuLLiXBD-8kE3aXwaMol8")}`,
         tags : [dTag.CMDR]
     },
     {
         id : '00500',
         questions : `Is there a way to inventorize my dolls?`,
-        answers : `${Embed.google(Embed.G_EXCEL, "1X-ZnlXabFQSk6_nTd94pu6Ww3KqWCc1ABt-gTkJy99s")}`,
+        answers : `${MBD.google(MBD.G_EXCEL, "1X-ZnlXabFQSk6_nTd94pu6Ww3KqWCc1ABt-gTkJy99s")}`,
         tags : [dTag['3P'], dTag.TDOLL]
     },  //@Owner
     {
