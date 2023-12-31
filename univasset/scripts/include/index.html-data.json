@@ -3,11 +3,11 @@
     "$schema": "https://raw.githubusercontent.com/microsoft/vscode-html-languageservice/master/docs/customData.schema.json",
     "tags": [{
         "name": "include",
-        "description": "Loads html file/value in place of the element, else replaces itself with its children. Can also use parameters like Django.",
+        "description": "Loads file/value in place of the element, else replaces itself with its children. Can also use parameters like Django.",
         "attributes": [
             {
                 "name": "src",
-                "description": "URL of file whose content will replace this element."
+                "description": "URL of html file whose content will replace this element. Defaults if file not found."
             },
             {
                 "name": "onreplace",
@@ -19,7 +19,7 @@
             },
             {
                 "name": "key",
-                "description": "Parent parameter whose value will replace this element, else default if parameter not found.\n\nParent: `<include src='' s='34'></include>`\n\nChild: `<include key='s'></include>`\n\n\t\t=> 34"
+                "description": "Parent parameter whose value will replace this element. Defaults if parameter not found.\n\nParent: `<include src='' s='34'></include>`\n\nChild: `<include key='s'></include>`\n\n\t\t=> 34"
             }
         ]
     }],
