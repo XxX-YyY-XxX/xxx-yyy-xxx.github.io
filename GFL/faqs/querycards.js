@@ -1378,7 +1378,7 @@ export const cardData = [
     {
         id : '00135',
         questions : `I can't deploy a friend echelon. What do I do?`,
-        answers : `${image('../assets/images/InitialDeploySupports.png')}<br>
+        answers : `${image(IMG_ASSET+"InitialDeploySupports.png")}<br>
         Either after operation start, a client restart, or a no due to limit.`,
         tags : [dTag.FRIEND, dTag.ECH, dTag.TECH]
     },
@@ -1970,7 +1970,7 @@ export const cardData = [
         id : '00216',
         questions : `Do HP shields stack?`,
         answers : `TLDR: Yes.<br>
-        ${image('../assets/images/HPShield.png', 'From u/UnironicWeeaboo')}`,
+        ${image(IMG_ASSET+"HPShield.png", 'From u/UnironicWeeaboo')}`,
         tags : [dTag.BATTLE, dTag.SKILL]
     },  //@Trim Image
     {
@@ -2630,7 +2630,7 @@ export const cardData = [
     {
         id : '00314',
         questions : `How do I complete Command Mission: Map Completion: Griffin Elite in Career Quests?`,
-        answers : `${spoilerSummary('Elite Griffin Combat Medals', image('../assets/images/GriffinEliteMedal.png', 'Taken from GFLDB'))} are acquired during the major story events on their original run.`,
+        answers : `${spoilerSummary('Elite Griffin Combat Medals', image(IMG_ASSET+"GriffinEliteMedal.png", 'Taken from GFLDB'))} are acquired during the major story events on their original run.`,
         tags : [dTag.MAJOR, dTag.QUEST]
     },
     {
@@ -2774,7 +2774,7 @@ export const cardData = [
     {
         id : '00337',
         questions : `I want to clean my furniture inventory. How do I do that?`,
-        answers : `${image('../assets/images/FurnitureTrash.png', 'Trash Icon')}`,
+        answers : `${image(IMG_ASSET+"FurnitureTrash.png", 'Trash Icon')}`,
         tags : [dTag.FURN]
     },
     {
@@ -3414,7 +3414,7 @@ export const cardData = [
     {
         id : '00430',
         questions : `Where is Bookshelf of Memories?`,
-        answers : `${image("../assets/images/GriffinMemories.png", "Bookshelf of Memories found in the Data Room")}<br>
+        answers : `${image(IMG_ASSET+"GriffinMemories.png", "Bookshelf of Memories found in the Data Room")}<br>
         Sidestories for the featured dolls (Griffin Memories). Rewards ${getID("Friend Gossips", "00060")} or ${getID("Unity Skills", "00442")}.`,
         tags : [dTag.SIDE]
     },
