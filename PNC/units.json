@@ -1885,6 +1885,35 @@
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Coordinated Strike"]
     },
+    {
+        "name": "Taisch",
+        "class": "Specialist",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
+        "base": {
+            "hp": 18642,
+            "atk": 443,
+            "hash": 624,
+            "pdef": 370,
+            "odef": 365,
+            "aspd": 100,
+            "crate": 0,
+            "ppen": 341,
+            "open": 338,
+            "dodge": 9,
+            "regen": 595
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": []
+    },
 
     {
         "name": "Doll Name",

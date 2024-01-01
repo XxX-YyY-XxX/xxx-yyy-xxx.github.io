@@ -2,25 +2,6 @@ import {STAT_KEYS} from "./typing.js";
 import {cmp, chain, setattr, subclassof, zip} from "../../univasset/scripts/basefunctions/index.js";
 
 //#region Types
-/**
- * @typedef UnitObject
- * @property {string} UnitObject.name
- * @property {"Guard" | "Sniper" | "Warrior" | "Specialist" | "Medic"} UnitObject.class
-
- * @property {object} UnitObject.base
- * @property {number} UnitObject.base.hp
- * @property {number} UnitObject.base.atk
- * @property {number} UnitObject.base.hash
- * @property {number} UnitObject.base.pdef
- * @property {number} UnitObject.base.odef
- * @property {number} UnitObject.base.aspd
- * @property {number} UnitObject.base.crate
- * @property {number} UnitObject.base.ppen
- * @property {number} UnitObject.base.open
- * @property {number} UnitObject.base.dodge
- * @property {number} UnitObject.base.regen
-*/
-
 /** @typedef {"hpflat"|"hpperc"|"atkflat"|"atkperc"|"hashflat"|"hashperc"|"pdefflat"|"pdefperc"|"odefflat"|"odefperc"|"crateperc"|"cdmgperc"|"ppenflat"|"ppenperc"|"openflat"|"openperc"|"dodgeperc"|"regenflat"|"hasteperc"|"resflat"|"dboostperc"|"dreducperc"|"hboostperc"|"aspdflat"|"lashperc"} StatAttributes */
 /** @typedef {[string, StatAttributes, StatAttributes, StatAttributes | ""]} AlgoInfo [algoname, main, sub1, sub2] */
 /** @typedef {Map<StatAttributes, number>} StatDict */
