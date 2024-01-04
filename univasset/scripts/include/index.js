@@ -27,15 +27,39 @@
 
 // const REPLACEALL_EVENT = new Event("replaceall");
 
-//#region Constants
-const REPLACE_EVENT = new Event("replace");
-//#endregion
+// #region Setup
+// ChildNode.replaceWith() does not work with open tags.
 
-for (const INCLUDE of Array.from(document.querySelectorAll("include[src]")).map(convert)) await includeDocument(INCLUDE, location.origin+location.pathname);
-// document.dispatchEvent(REPLACEALL_EVENT);
+const REPLACE_EVENT = new Event("replace");
+/** @param {HTMLElement} include @param {boolean} success */
+function onReplace(include, success) {
+    Object.defineProperty(include, "success", {
+        value: success,
+        enumerable: true
+    });
+
+    include.dispatchEvent(REPLACE_EVENT);
+
+    //----------------------------------------------------------------------
+
+    eval?.(include.getAttribute(success ? "onreplace" : "ondefault") ?? "");
+}
+
+/** @param {HTMLElement} include @param  {...(string|Node)} values */
+function load(include, ...values) {
+    include.replaceWith(...values);
+    onReplace(include, true);
+}
+
+/** @param {HTMLElement} include */
+function default_(include) {
+    include.replaceWith(...include.childNodes);
+    onReplace(include, false);
+}
+// #endregion
 
 /**
- * @param {HTMLIncludeElement} include
+ * @param {HTMLElement} include
  * @param {string} file_name Name of file where include element is taken. Used for error handling.
  * @param {number} depth File call depth. Could be used to prevent looping. */
 async function includeDocument(include, file_name, depth = 0) {
@@ -52,11 +76,7 @@ async function includeDocument(include, file_name, depth = 0) {
 
     const PARAM = new Map(Array.from(include.attributes).map(({name, value}) => [name, value]));
     
-    // for (const [INDEX, QUERY] of Object.entries(["include[if][ifnot]", "include[if]", "include[ifnot]", "include"]).map(/** @returns {[number, string]} */ ([a, b]) => [Number(a), b])) {
-        
-    // }
-
-    for (const INCLUDE of Array.from(DOCUMENT.querySelectorAll("include")).map(convert)) {
+    for (const INCLUDE of DOCUMENT.querySelectorAll("include")) {
         // check if element satisfies "if", "ifnot"
 
         const KEY = INCLUDE.getAttribute("key");
@@ -69,6 +89,10 @@ async function includeDocument(include, file_name, depth = 0) {
 
         // https://stackoverflow.com/questions/41623353/queryselector-get-elements-where-attribute-starts-with-xxx
         // document.evaluate()
+
+        // const ATTRIBUTES = Array.from(INCLUDE.attributes).map(x => x.name);
+
+        // ATTRIBUTES.some(x => x.startsWith("attr-"))
 
         //untested
         // for (const INCLUDE of Array.from(INCLUDE_DOC.querySelectorAll("include")).filter(({attributes}) => Array.from(attributes).some(({name}) => name.startsWith("attr-")))) {
@@ -112,39 +136,5 @@ async function includeDocument(include, file_name, depth = 0) {
     load(include, ...DOCUMENT.body.childNodes);
 }
 
-// #region Setup
-// ChildNode.replaceWith() does not work with open tags.
-
-/** @param {HTMLIncludeElement} include @param {boolean} success */
-function onReplace(include, success) {
-    Object.defineProperty(include, "success", {
-        value: success,
-        enumerable: true
-    });
-
-    include.dispatchEvent(REPLACE_EVENT);
-
-    //----------------------------------------------------------------------
-
-    eval?.(include.getAttribute(success ? "onreplace" : "ondefault") ?? "");
-}
-
-/** @param {HTMLIncludeElement} include @param  {...(string|Node)} values */
-function load(include, ...values) {
-    include.replaceWith(...values);
-    onReplace(include, true);
-}
-
-/** @param {HTMLIncludeElement} include */
-function default_(include) {
-    include.replaceWith(...include.childNodes);
-    onReplace(include, false);
-}
-
-/** @param {HTMLElement} html_element @returns {HTMLIncludeElement} */
-function convert(html_element) {
-    // const MEMOIZE = {};
-
-    return html_element;
-}
-// #endregion
+for (const INCLUDE of document.querySelectorAll("include[src]")) await includeDocument(INCLUDE, location.origin+location.pathname);
+// document.dispatchEvent(REPLACEALL_EVENT);

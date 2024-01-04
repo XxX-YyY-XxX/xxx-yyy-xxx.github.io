@@ -44,7 +44,7 @@ function resetTimer() {
     timer(
         "Jan 09, 2024 18:30 UTC-0800",
         "Jan 30, 2024 18:30 UTC-0800",
-        "Oneiric Oddysey",
+        "Oneiric Odyssey",
         "./assets/images/timer/cpt00_e_cg036_4.png"
     )
 

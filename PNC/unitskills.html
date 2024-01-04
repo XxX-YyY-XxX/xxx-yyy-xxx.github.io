@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script type="module" src="/univasset/scripts/include.js"></script>
+        <script type="module" src="/univasset/scripts/include/index.js"></script>
         <script type="module">
             //document.querySelectorAll('a[href^="#"]')
         </script>
@@ -33,16 +33,23 @@
             <section id="main_content">
                 <dl>
                     <dt>Dushevnaya</dt>
-                    <dd>Normal Attack is turned into a 2-tile radius Normal Attack that cannot crit.</dd>
+                    <dd>Normal Attack is turned into a 2-tile radius Normal Attack that cannot crit, cannot affect self.</dd>   <!-- apparently does normal attacks like sueyoi, undine, taisch. damage part likely normal attack skill -->
                     <dd>Active expands the Normal Attack to the whole field.</dd>
-                    <dd>Buff/Debuff applies after each Normal Attack hit.</dd>
+                    <dd>Buff/Debuff refreshes after each Normal Attack hit.</dd>
 
                     <dt>Daiyan</dt>
                     <dd>Concordia only affects the damaging parts of Active Skills, non-<a href="#NormalAttackSkills">Normal Attack Skill</a> Passive Skills, and Ultimates.</dd>
                     <!-- Concordia does not work on derivative attacks. -->
+                    <!-- <dd>Concordia does not work on Normal Attacks, and Derivative attacks.</dd> -->
 
                     <dt>Vee</dt>
                     <dd>Normal Attack is turned into an "infinite range" melee attack.</dd>
+
+                    <dt>De Lacey</dt>
+                    <dd>Arma II can self heal in 2-man compositions.</dd>
+
+                    <dt>Yanny</dt>
+                    <dd>25% P.Def boost only takes into account in-battle base Hashrate.</dd>
 
                     <!-- souchun arma 3 can bypass superarmor or just boss immunity? or only effective on bosses with resist value-->
                     <!-- antonina arma 3 can hit a single target twice, though only one counts as normal attack -->

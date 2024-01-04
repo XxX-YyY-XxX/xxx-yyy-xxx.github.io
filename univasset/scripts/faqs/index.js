@@ -90,7 +90,7 @@ window.queryFunc = function(tags_dict, cards_list) {
     });
     //#endregion
 
-    CARDFIELD.appendChild(
+    CARDFIELD.append(
         (() => {
             switch (true) {
                 case SEARCH_PARAMS.has('search'):   return searchCards();
@@ -106,37 +106,45 @@ window.queryFunc = function(tags_dict, cards_list) {
         const FRAGMENT = new DocumentFragment();
 
         const searchText = SEARCH_PARAMS.get("search");
-        if (!searchText) return FRAGMENT;//'Empty search.';
+        if (!searchText) return "Empty field.";
 
         const KEYWORDS = searchText.replace(/\s+/, " ").toLowerCase().split(" ");
 
-        for (const cards of cards_list.filter(({question, answer}) => KEYWORDS.every(str => [question, answer].some(x => removeHTMLTag(x).toLowerCase().includes(str)))))
+        var run = false;
+        for (const cards of cards_list.filter(({question, answer}) => KEYWORDS.every(str => [question, answer].some(x => removeHTMLTag(x).toLowerCase().includes(str))))) {
             FRAGMENT.appendChild(setQuestionBoxes(cards));
+            run = true;
+        }
 
-        return FRAGMENT;// || 'No matches found.';        
+        return run ? FRAGMENT : "No matches found.";        
     }
 
     function tagsCards() {
         const FRAGMENT = new DocumentFragment();
 
         const cardTags = SEARCH_PARAMS.get("tags").split(" ");
-        if (!cardTags.length) return FRAGMENT;//'Empty search.';
+        if (!cardTags.length) return "Empty field.";
 
-
-        for (const cards of cards_list.filter(({tags}) => cardTags.subsetof(tags.map(x => x.name))))
-            FRAGMENT.appendChild(setQuestionBoxes(cards))
-
-        return FRAGMENT;// || 'No matches found.';
+        var run = false;
+        for (const cards of cards_list.filter(({tags}) => cardTags.subsetof(tags.map(x => x.name)))) {
+            FRAGMENT.appendChild(setQuestionBoxes(cards));
+            run = true;
+        }
+            
+        return run ? FRAGMENT : "No matches found.";
     }
 
     function idCards() {
         const FRAGMENT = new DocumentFragment();
         const IDS = SEARCH_PARAMS.get("id").split(" ").map(Number);
 
-        for (const cards of cards_list.filter(({id}) => IDS.includes(id)))
-            FRAGMENT.appendChild(setQuestionBoxes(cards))
-
-        return FRAGMENT;// || 'No matches found.';
+        var run = false;
+        for (const cards of cards_list.filter(({id}) => IDS.includes(id))) {
+            FRAGMENT.appendChild(setQuestionBoxes(cards));
+            run = true;
+        }
+        
+        return run ? FRAGMENT : "No matches found.";
     }
 
     function randomCards() {
