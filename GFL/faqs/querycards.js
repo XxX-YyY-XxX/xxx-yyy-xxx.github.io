@@ -90,6 +90,7 @@ export const dTag = {
     CE : {name: 'CombatEffectiveness', description: 'Clutch metric.'},
     KALINA : {name: 'Kalina', description: 'Overworked logistics officer.'},
 };
+window.tags = dTag;
 
 export const cardData = [
     //#region Topic Primers
@@ -968,7 +969,7 @@ export const cardData = [
     {
         id : '00086',
         questions : `What does the PA chip Pilfer do?`,
-        answers : `Allows players to have a ${spoilerSummary('chance', image('../assets/images/PIlferRNG.png', 'Pilfer subject to RNG'))} of getting ${spoilerSummary('S-Rank drops', MBD.youtube('t6Vu72cajO0') + TextStyle.style('Context: Coalition Medals require S-Rank battles.', TextStyle.QUOTE))} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
+        answers : `Allows players to have a ${spoilerSummary('chance', image(IMG_ASSET+"PIlferRNG.png", 'Pilfer subject to RNG'))} of getting ${spoilerSummary('S-Rank drops', MBD.youtube('t6Vu72cajO0') + TextStyle.style('Context: Coalition Medals require S-Rank battles.', TextStyle.QUOTE))} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
         Combine this with the ability to fight on one ammo bar to get two chances on one enemy.`,
         tags : [dTag.COALITION, dTag.EQUIP]
     },
@@ -1212,7 +1213,7 @@ export const cardData = [
     {
         id : '00114',
         questions : `What are all the available pets right now?`,
-        answers : `${image('../assets/images/PetSale.png', 'From u/UnironicWeeaboo')}<br>
+        answers : `${image(IMG_ASSET+"PetSale.png", 'From u/UnironicWeeaboo')}<br>
         If you see a pet that is not on this list, it's a Cafe Story reward, collab pet, or event reward that haven't been added yet to the station.`,
         tags : [dTag.PET]
     },
@@ -1875,7 +1876,7 @@ export const cardData = [
     },  //@Visual
     {
         id : '00202',
-        questions : `What does the ${link('glitter/sparkle', '../assets/images/ShinyIndicator.png')} in my coalition unit's portrait mean? Their sprites also has a golden aura/glow around it.`,
+        questions : `What does the ${link('glitter/sparkle', IMG_ASSET+"ShinyIndicator.png")} in my coalition unit's portrait mean? Their sprites also has a golden aura/glow around it.`,
         answers : `A shiny ${TextStyle.style('pokemon', TextStyle.STRIKE)} coalition unit. And the very reason Golden Infusion is a thing.<br>
         If put on a Lv.100, XL unit, something special may happen.`,
         tags : [dTag.COALITION]
@@ -2328,7 +2329,7 @@ export const cardData = [
             "M4A1": ["Main shot cannot crit. Explosion does."],
             "KSVK": [`Main shot is normal shot, ${link("explosion coded as explosion", "https://iopwiki.com/wiki/KSVK")}.`],
             "SAA": ["MOD skill can \"proc\" after the first three."],
-            "Pekola": [spoilerSummary(`"How to use" guide.`, image("../assets/images/PekolaUse.png"))],
+            "Pekola": [spoilerSummary(`"How to use" guide.`, image(IMG_ASSET+"PekolaUse.png"))],
             "M1897 Mod": [link("Flechette Storm!", "https://old.reddit.com/r/girlsfrontline/comments/osihvd/weekly_commanders_lounge_july_27_2021/h72czw7/")],
             "P90": [spoilerSummary("Document by hina#8787", MBD.google(MBD.G_WORD, "1j5YzAAZ-_Q1bXMUvFKGUWnGgqwacatABv0u-MmY0JLw"))],
             "Galil Mod": [link("Reddit discussion", "https://old.reddit.com/r/girlsfrontline/comments/qpyw46/weekly_commanders_lounge_november_09_2021/hkj3ce0/")],
@@ -3122,7 +3123,7 @@ export const cardData = [
     {
         id : '00390',
         questions : `What happens to the Resupply Exchange Tickets after the banner ends? How do I get Black Cards?`,
-        answers : `${image('../assets/images/ResupplyMechanics.png')}`,
+        answers : `${image(IMG_ASSET+"ResupplyMechanics.png")}`,
         tags : [dTag.RESUPPLY, dTag.ITEM, dTag.GET]
     },
     {
@@ -4004,6 +4005,7 @@ export const cardData = [
         tags : []
     },
 ].slice(0, -1);
+window.cards = cardData;
 
 // (function() {
 //     const INDICES = Object.keys(cardData).map(Number);
@@ -4016,3 +4018,5 @@ export const cardData = [
 //     console.log("Skipped:", INDICES);
 //     console.log("Duplicate:", Array.from(DUPLICATES));
 // })()
+
+// https://old.reddit.com/r/girlsfrontline/comments/18r36mw/weekly_commanders_lounge_december_26_2023/
