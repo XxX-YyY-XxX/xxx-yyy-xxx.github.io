@@ -4,45 +4,45 @@ import {Async} from "../../univasset/scripts/externaljavascript.js";
 
 /** @type {Promise<UnitObject[]} */ const UNIT_PROMISE = Async.getJSON("../units.json");
 
-/** @type {HTMLInputElement} */ const INVERSION = null;
+/** @type {HTMLInputElement} */ const INVERSION = document.querySelector("input");
 document.querySelector("input").addEventListener("input", function(event) {
     const INPUT_VALUE = this.value.toLowerCase();
     if (INPUT_VALUE)
-        TBODY.replaceChildren(...UNIT_LIST.filter(x => x.viable(INPUT_VALUE)).map(x => x.row));
-        // TBODY.replaceChildren(...UNIT_LIST.filter(x => x.name.toLowerCase().includes(INPUT_VALUE) || x.reference.some(x => x.toLowerCase().includes(INPUT_VALUE)) || x.frag_loc.some(x => x.toLowerCase().includes(INPUT_VALUE))).map(x => x.row));
+        TBODY.replaceChildren(...UNIT_LIST.filter(x => x.viable(INPUT_VALUE)).map(x => x.ROW));
     else
-        TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));
+        TBODY.replaceChildren(...UNIT_LIST.map(x => x.ROW));
 });
 
 class Units {
-    #name;
-    #reference;
-    #frag_loc;
+    #NAME;
+    #REFERENCE;
+    #FRAGMENTS;
 
-    row;
+    ROW;
 
-    /** @param {UnitObject} unit_object */
-    constructor(unit_object) {
-        this.#name = unit_object.name;
-        this.#reference = Object.keys(unit_object.reference).filter(x => x);
-        this.#frag_loc = unit_object.fragments;
+    /** @param {UnitObject} unit */
+    constructor(unit) {
+        this.#NAME = unit.name.toLowerCase();
+        const REF = Object.keys(unit.reference).filter(x => x);
+        this.#REFERENCE = REF.map(x => x.toLowerCase());
+        this.#FRAGMENTS = unit.fragments.map(x => x.toLowerCase());
 
-        this.row = document.createElement("tr");
-        this.row.append(
-            setattr(document.createElement("td"), {textContent: this.#name}),
-            setattr(document.createElement("td"), {appendChild: [brJoin(this.#reference.map(x => setattr(document.createElement("a"), {textContent: x, href: unit_object.reference[x]})))]}),
-            setattr(document.createElement("td"), {appendChild: [brJoin(this.#frag_loc)]})
+        this.ROW = document.createElement("tr");
+        this.ROW.append(
+            setattr(document.createElement("td"), {textContent: unit.name}),
+            setattr(document.createElement("td"), {appendChild: [brJoin(REF.map(x => setattr(document.createElement("a"), {textContent: x, href: unit.reference[x]})))]}),
+            setattr(document.createElement("td"), {appendChild: [brJoin(unit.fragments)]})
         )
     }
 
+    /** @param {string} value */
     viable(value) {
         const FOUND = (
-            this.#name.toLowerCase().includes(value)
-            || this.#reference.some(x => x.toLowerCase().includes(value))
-            || this.#frag_loc.some(x => x.toLowerCase().includes(value))
+            this.#NAME.includes(value)
+            || this.#REFERENCE.some(x => x.includes(value))
+            || this.#FRAGMENTS.some(x => x.includes(value))
         );
-        // return INVERSION.checked ^ FOUND;
-        return false ^ FOUND;
+        return INVERSION.checked !== FOUND;
     }
 }
 
@@ -52,13 +52,6 @@ const [THEAD, HEADER_TR] = nestElements("thead", "tr");
 const HEADER_VALUES = ["Doll Name", "Reference", "Fragment Locations"];
 HEADER_TR.append(...HEADER_VALUES.map(x => setattr(document.createElement("th"), {textContent: x})));
 
-const TBODY = document.createElement("tbody");
-TBODY.append(...UNIT_LIST.map(x => x.row));
-
-const TABLE = document.createElement("table");
-TABLE.classList.add("freeze-col", "freeze-row");
-TABLE.append(THEAD, TBODY);
-
-const STAT_TABLE = document.querySelector("#table");
-STAT_TABLE.classList.add("func_table");
-STAT_TABLE.appendChild(TABLE);
+const TBODY = setattr(document.createElement("tbody"), {append: UNIT_LIST.map(x => x.ROW)});
+const TABLE = setattr(document.createElement("table"), {classList: {add: ["freeze-col", "freeze-row"]}, append: [THEAD, TBODY]});
+setattr(document.querySelector("#table"), {classList: {add: ["func_table"]}, appendChild: [TABLE]});
