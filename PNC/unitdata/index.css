@@ -5,13 +5,17 @@
     max-height: 95vh;
 }
 
+/* looks like a button */
+/* input[type="checkbox"] {
+} */
+
 input[type="text"] {
-    width: 100%;
+    width: 500%;
 }
 
 /* #region Freeze */
-.freeze-row th {
-    background: #1b1b1b !important;
+.freeze-row.freeze-row th {
+    background: #1b1b1b;
 }
 
 .freeze-col tr > :first-child {
