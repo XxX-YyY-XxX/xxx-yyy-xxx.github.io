@@ -4,13 +4,16 @@ import {Async} from "../../univasset/scripts/externaljavascript.js";
 
 /** @type {Promise<UnitObject[]} */ const UNIT_PROMISE = Async.getJSON("../units.json");
 
-/** @type {HTMLInputElement} */ const INVERSION = document.querySelector('input[type="checkbox"]');
-document.querySelector('input[type="text"]').addEventListener("input", function(event) {
-    const INPUT_VALUE = this.value.toLowerCase();
-    if (INPUT_VALUE)
-        TBODY.replaceChildren(...UNIT_LIST.filter(x => x.viable(INPUT_VALUE)).map(x => x.ROW));
-    else
-        TBODY.replaceChildren(...UNIT_LIST.map(x => x.ROW));
+/** @type {HTMLInputElement} */ const NOT = document.querySelector('input[type="checkbox"]');
+NOT.addEventListener("change", function(event) {
+    const INPUT_VALUE = TEXT.value.toLowerCase();
+    if (INPUT_VALUE)    TBODY.replaceChildren(...UNIT_LIST.filter(x => x.viable(INPUT_VALUE)).map(x => x.ROW));
+});
+/** @type {HTMLInputElement} */ const TEXT = document.querySelector('input[type="text"]');
+TEXT.addEventListener("input", function(event) {
+    const INPUT_VALUE = TEXT.value.toLowerCase();
+    if (INPUT_VALUE)    TBODY.replaceChildren(...UNIT_LIST.filter(x => x.viable(INPUT_VALUE)).map(x => x.ROW));
+    else                TBODY.replaceChildren(...UNIT_LIST.map(x => x.ROW));
 });
 
 class Units {
@@ -44,7 +47,7 @@ class Units {
 
     /** @param {string} value */
     viable(value) {
-        return INVERSION.checked !== this.#SEARCH_VALUES.some(x => x.includes(value));
+        return NOT.checked !== this.#SEARCH_VALUES.some(x => x.includes(value));
     }
 }
 

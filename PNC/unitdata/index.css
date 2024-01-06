@@ -5,10 +5,16 @@
     max-height: 95vh;
 }
 
-/* looks like a button */
+/* #region Filter */
 label {
-    border: black 1px solid;
     border-radius: 5px;
+    color: black;
+    background-color: #c8c8c84d;
+    padding: 1px 5px;
+}
+
+label:has(input:checked) {
+    background-color: #c8c8c8;
 }
 
 input[type="checkbox"] {
@@ -17,8 +23,9 @@ input[type="checkbox"] {
 }
 
 input[type="text"] {
-    width: 500%;
+    width: calc(100% - 60px);
 }
+/* #endregion */
 
 /* #region Freeze */
 .freeze-row.freeze-row th {
