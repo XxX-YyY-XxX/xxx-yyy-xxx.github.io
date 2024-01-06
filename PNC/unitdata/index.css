@@ -6,8 +6,15 @@
 }
 
 /* looks like a button */
-/* input[type="checkbox"] {
-} */
+label {
+    border: black 1px solid;
+    border-radius: 5px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    margin: 0;
+}
 
 input[type="text"] {
     width: 500%;
