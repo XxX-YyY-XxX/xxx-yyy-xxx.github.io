@@ -353,7 +353,7 @@ function sortMethod(event) {
 }
 //#endregion
 
-const UNIT_LIST = (await UNIT_PROMISE).slice(0, -1).filter(({tags}) => !tags.includes("Unreleased")).map(x => new Units(x));
+const UNIT_LIST = (await UNIT_PROMISE).filter(({tags}) => !tags.includes("Unreleased")).map(x => new Units(x));
 
 const [THEAD, HEADER_TR] = nestElements("thead", "tr");
 
