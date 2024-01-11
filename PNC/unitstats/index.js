@@ -231,14 +231,6 @@ class Units {
         this.#armaopen = ARMA.open;
 
         this.#intistats = stat_object.intimacy;
-        switch (this.#intistats.length) {
-            case 0:
-                console.warn(this.name, "lacks data: Initmacy.");
-                break;
-            case 4:
-                console.log("Get your own", this.name, "NOW!");
-                break;
-        }
 
         const TD_NAME = document.createElement("td");
         TD_NAME.addEventListener("click", () => this.#algofield.show());
@@ -361,7 +353,7 @@ function sortMethod(event) {
 }
 //#endregion
 
-const UNIT_LIST = (await UNIT_PROMISE).slice(0, -1).map(x => new Units(x));
+const UNIT_LIST = (await UNIT_PROMISE).slice(0, -1).filter(({tags}) => !tags.includes("Unreleased")).map(x => new Units(x));
 
 const [THEAD, HEADER_TR] = nestElements("thead", "tr");
 

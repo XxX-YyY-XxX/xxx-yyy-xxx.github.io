@@ -1,5 +1,6 @@
 [
     {
+        "id": 0,
         "name": "Persicaria",
         "class": "Medic",
         "reference": {"Persica": "https://iopwiki.com/wiki/Persica"},
@@ -26,9 +27,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Antonina",
         "class": "Specialist",
         "reference": {},
@@ -55,9 +58,11 @@
             "ppen": 48,
             "open": 49
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Sol",
         "class": "Warrior",
         "reference": {},
@@ -84,9 +89,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Simo",
         "class": "Sniper",
         "reference": {"Simo Häyhä": "https://en.wikipedia.org/wiki/Simo_H%C3%A4yh%C3%A4"},
@@ -113,9 +120,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Power Connection", "Risk Evasion Aid", "Coordinated Strike"]
+        "intimacy": ["Power Connection", "Risk Evasion Aid", "Coordinated Strike"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Croque",
         "class": "Guard",
         "reference": {},
@@ -142,9 +151,11 @@
             "ppen": 47,
             "open": 45
         },
-        "intimacy": ["Code Robustness", "Shield of Friendship", "Through Fire and Water"]
+        "intimacy": ["Code Robustness", "Shield of Friendship", "Through Fire and Water"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Fresnel",
         "class": "Sniper",
         "reference": {"Augustin-Jean Fresnel": "https://en.wikipedia.org/wiki/Augustin-Jean_Fresnel"},
@@ -171,9 +182,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Power Connection", "Neural Activation", "Coordinated Formation"]
+        "intimacy": ["Power Connection", "Neural Activation", "Coordinated Formation"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Chelsea",
         "class": "Warrior",
         "reference": {},
@@ -200,9 +213,11 @@
             "ppen": 52,
             "open": 47
         },
-        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Mai",
         "class": "Specialist",
         "reference": {},
@@ -229,9 +244,11 @@
             "ppen": 69,
             "open": 69
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Risk Evasion Aid"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Risk Evasion Aid"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Souchun",
         "class": "Guard",
         "reference": {"Type 64": "https://iopwiki.com/wiki/Type_64"},
@@ -258,9 +275,11 @@
             "ppen": 51,
             "open": 54
         },
-        "intimacy": ["Shield of Friendship", "Neural Activation", "Risk Evasion Aid"]
+        "intimacy": ["Shield of Friendship", "Neural Activation", "Risk Evasion Aid"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Max",
         "class": "Sniper",
         "reference": {},
@@ -287,9 +306,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Power Connection", "Neural Activation", "Coordinated Formation"]
+        "intimacy": ["Power Connection", "Neural Activation", "Coordinated Formation"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Betty",
         "class": "Warrior",
         "reference": {"IDW": "https://iopwiki.com/wiki/IDW"},
@@ -316,9 +337,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Power Connection", "Code Robustness", "Coordinated Formation"]
+        "intimacy": ["Power Connection", "Code Robustness", "Coordinated Formation"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Choco",
         "class": "Medic",
         "reference": {"FNC": "https://iopwiki.com/wiki/FNC"},
@@ -345,9 +368,11 @@
             "ppen": 48,
             "open": 47
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Panakeia",
         "class": "Medic",
         "reference": {"wz.29": "https://iopwiki.com/wiki/wz.29"},
@@ -374,9 +399,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Healing Bond"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Healing Bond"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Angela",
         "class": "Specialist",
         "reference": {},
@@ -403,9 +430,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Fern",
         "class": "Warrior",
         "reference": {},
@@ -432,9 +461,11 @@
             "ppen": 96,
             "open": 94
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Yanny",
         "class": "Guard",
         "reference": {},
@@ -461,9 +492,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Shield of Friendship", "Neural Activation", "Risk Evasion Aid"]
+        "intimacy": ["Shield of Friendship", "Neural Activation", "Risk Evasion Aid"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Groove",
         "class": "Specialist",
         "reference": {},
@@ -490,9 +523,11 @@
             "ppen": 48,
             "open": 50
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Risk Evasion Aid"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Risk Evasion Aid"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Bonee",
         "class": "Guard",
         "reference": {},
@@ -519,9 +554,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Code Robustness", "Neural Activation", "Through Fire and Water"]
+        "intimacy": ["Code Robustness", "Neural Activation", "Through Fire and Water"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Earhart",
         "class": "Sniper",
         "reference": {"Amelia Earhart": "https://en.wikipedia.org/wiki/Amelia_Earhart"},
@@ -548,9 +585,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Power Connection", "Neural Activation", "Coordinated Strike"]
+        "intimacy": ["Power Connection", "Neural Activation", "Coordinated Strike"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Zion",
         "class": "Guard",
         "reference": {},
@@ -577,9 +616,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Shield of Friendship", "Neural Activation", "Risk Evasion Aid"]
+        "intimacy": ["Shield of Friendship", "Neural Activation", "Risk Evasion Aid"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Ksenia",
         "class": "Specialist",
         "reference": {"Stechkin": "https://iopwiki.com/wiki/Stechkin"},
@@ -606,9 +647,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Imhotep",
         "class": "Medic",
         "reference": {"": "Lowlight"},
@@ -635,9 +678,11 @@
             "ppen": 41,
             "open": 63
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Octogen",
         "class": "Sniper",
         "reference": {},
@@ -664,9 +709,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Power Connection", "Neural Activation", "Coordinated Strike"]
+        "intimacy": ["Power Connection", "Neural Activation", "Coordinated Strike"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Rise",
         "class": "Specialist",
         "reference": {"MG36": "https://iopwiki.com/wiki/MG36"},
@@ -693,9 +740,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Abigail",
         "class": "Specialist",
         "reference": {"M500": "https://iopwiki.com/wiki/M500"},
@@ -722,9 +771,11 @@
             "ppen": 32,
             "open": 32
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Risk Evasion Aid"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Risk Evasion Aid"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Jessie",
         "class": "Medic",
         "reference": {"M1897": "https://iopwiki.com/wiki/M1897"},
@@ -751,9 +802,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Risk Evasion Aid"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Risk Evasion Aid"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Lam",
         "class": "Sniper",
         "reference": {"LWMMG": "https://iopwiki.com/wiki/LWMMG"},
@@ -780,9 +833,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Power Connection", "Coordinated Strike", "Victorious Inspiration"]
+        "intimacy": ["Power Connection", "Coordinated Strike", "Victorious Inspiration"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Sakuya",
         "class": "Specialist",
         "reference": {},
@@ -809,9 +864,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Dushevnaya",
         "class": "Specialist",
         "reference": {"KSVK": "https://iopwiki.com/wiki/KSVK"},
@@ -838,10 +895,12 @@
             "ppen": 48,
             "open": 47
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
 
     {
+        "id": 0,
         "name": "Hubble",
         "class": "Sniper",
         "reference": {"Edwin Hubble": "https://en.wikipedia.org/wiki/Edwin_Hubble"},
@@ -868,9 +927,11 @@
             "ppen": 90,
             "open": 232
         },
-        "intimacy": ["Power Connection", "Neural Activation", "Coordinated Strike"]
+        "intimacy": ["Power Connection", "Neural Activation", "Coordinated Strike"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Evelyn",
         "class": "Guard",
         "reference": {},
@@ -897,9 +958,11 @@
             "ppen": 44,
             "open": 44
         },
-        "intimacy": ["Code Robustness", "Shield of Friendship", "Through Fire and Water"]
+        "intimacy": ["Code Robustness", "Shield of Friendship", "Through Fire and Water"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Gin",
         "class": "Medic",
         "reference": {},
@@ -926,9 +989,11 @@
             "ppen": 48,
             "open": 49
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Centaureissi",
         "class": "Warrior",
         "reference": {"G36": "https://iopwiki.com/wiki/G36"},
@@ -955,9 +1020,11 @@
             "ppen": 66,
             "open": 68
         },
-        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Vee",
         "class": "Warrior",
         "reference": {"": "https://www.medicaldaily.com/two-towers-jaw-bone-korean-plastic-surgeon-gets-fined-takes-down-glass-towers-patients-extractions"},
@@ -984,9 +1051,11 @@
             "ppen": 48,
             "open": 47
         },
-        "intimacy": ["Power Connection", "Neural Activation", "Coordinated Formation"]
+        "intimacy": ["Power Connection", "Neural Activation", "Coordinated Formation"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Chanzhi",
         "class": "Sniper",
         "reference": {"QBU-88": "https://iopwiki.com/wiki/QBU-88"},
@@ -1013,9 +1082,11 @@
             "ppen": 96,
             "open": 83
         },
-        "intimacy": ["Power Connection", "Mechanical Celerity", "Coordinated Formation"]
+        "intimacy": ["Power Connection", "Mechanical Celerity", "Coordinated Formation"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Nanaka",
         "class": "Medic",
         "reference": {},
@@ -1042,9 +1113,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Banxsy",
         "class": "Specialist",
         "reference": {"Banksy": "https://en.wikipedia.org/wiki/Banksy"},
@@ -1071,9 +1144,11 @@
             "ppen": 79,
             "open": 68
         },
-        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Florence",
         "class": "Medic",
         "reference": {"PA-15": "https://iopwiki.com/wiki/PA-15"},
@@ -1100,9 +1175,11 @@
             "ppen": 30,
             "open": 29
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Healing Bond"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Healing Bond"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Willow",
         "class": "Specialist",
         "reference": {"": "Suzuhara Lulu"},
@@ -1129,9 +1206,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Aki",
         "class": "Warrior",
         "reference": {},
@@ -1158,9 +1237,11 @@
             "ppen": 89,
             "open": 82
         },
-        "intimacy": ["Power Connection", "Code Robustness", "Coordinated Strike"]
+        "intimacy": ["Power Connection", "Code Robustness", "Coordinated Strike"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Kuro",
         "class": "Sniper",
         "reference": {"MDR": "https://iopwiki.com/wiki/MDR"},
@@ -1187,9 +1268,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Coordinated Formation"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Coordinated Formation"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "De Lacey",
         "class": "Medic",
         "reference": {},
@@ -1216,9 +1299,11 @@
             "ppen": 33,
             "open": 67
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Healing Bond"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Healing Bond"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Hatsuchiri",
         "class": "Warrior",
         "reference": {"": "LoL Reksai, Mountain of Madness"},
@@ -1245,9 +1330,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Power Connection", "Mechanical Celerity", "Coordinated Formation"]
+        "intimacy": ["Power Connection", "Mechanical Celerity", "Coordinated Formation"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Daiyan",
         "class": "Sniper",
         "reference": {"Type 95": "https://iopwiki.com/wiki/Type_95"},
@@ -1274,9 +1361,11 @@
             "ppen": 60,
             "open": 52
         },
-        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Python",
         "class": "Guard",
         "reference": {"Snake": "https://en.wikipedia.org/wiki/Metal_Gear"},
@@ -1303,9 +1392,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Code Robustness", "Mechanical Celerity", "Through Fire and Water", "HARAM"]
+        "intimacy": ["Code Robustness", "Mechanical Celerity", "Through Fire and Water"],
+        "tags": ["Unowned"]
     },
     {
+        "id": 0,
         "name": "Nascita",
         "class": "Warrior",
         "reference": {},
@@ -1332,9 +1423,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Power Connection", "Code Robustness", "Coordinated Formation"]
+        "intimacy": ["Power Connection", "Code Robustness", "Coordinated Formation"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Puzzle",
         "class": "Specialist",
         "reference": {},
@@ -1361,9 +1454,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity", "HARAM"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
+        "tags": ["Unowned"]
     },
     {
+        "id": 0,
         "name": "Helix",
         "class": "Medic",
         "reference": {},
@@ -1390,9 +1485,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Magnhilda",
         "class": "Warrior",
         "reference": {},
@@ -1419,9 +1516,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Power Connection", "Code Robustness", "Shield of Friendship", "HARAM"]
+        "intimacy": ["Power Connection", "Code Robustness", "Shield of Friendship"],
+        "tags": ["Unowned"]
     },
     {
+        "id": 0,
         "name": "Sockdolager",
         "class": "Sniper",
         "reference": {"Falcon" : "https://iopwiki.com/wiki/Falcon"},
@@ -1448,9 +1547,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Power Connection", "Code Robustness", "Coordinated Formation"]
+        "intimacy": ["Power Connection", "Code Robustness", "Coordinated Formation"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Sueyoi",
         "class": "Specialist",
         "reference": {},
@@ -1477,9 +1578,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Coordinated Formation", "HARAM"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Coordinated Formation"],
+        "tags": ["Unowned"]
     },
     {
+        "id": 0,
         "name": "Clukay",
         "class": "Sniper",
         "reference": {"HK416" : "https://iopwiki.com/wiki/HK416"},
@@ -1506,9 +1609,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Coordinated Strike", "Victorious Inspiration"]
+        "intimacy": ["Neural Activation", "Coordinated Strike", "Victorious Inspiration"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Millau",
         "class": "Guard",
         "reference": {},
@@ -1535,9 +1640,11 @@
             "ppen": 31,
             "open": 30
         },
-        "intimacy": ["Code Robustness", "Shield of Friendship", "Through Fire and Water"]
+        "intimacy": ["Code Robustness", "Shield of Friendship", "Through Fire and Water"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Nora",
         "class": "Specialist",
         "reference": {},
@@ -1564,9 +1671,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Power Connection", "Risk Evasion Aid", "Mechanical Celerity", "HARAM"]
+        "intimacy": ["Power Connection", "Risk Evasion Aid", "Mechanical Celerity"],
+        "tags": ["Unowned"]
     },
     {
+        "id": 0,
         "name": "Uranus",
         "class": "Sniper",
         "reference": {},
@@ -1593,9 +1702,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Hannah",
         "class": "Specialist",
         "reference": {},
@@ -1622,9 +1733,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Turing",
         "class": "Specialist",
         "reference": {"Alan Turing" : "https://en.wikipedia.org/wiki/Alan_Turing"},
@@ -1651,9 +1764,11 @@
             "ppen": 32,
             "open": 38
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity", "HARAM"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
+        "tags": ["Unowned"]
     },
     {
+        "id": 0,
         "name": "Zangyin",
         "class": "Sniper",
         "reference": {},
@@ -1680,9 +1795,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Coordinated Strike", "HARAM"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Coordinated Strike"],
+        "tags": ["Unowned"]
     },
     {
+        "id": 0,
         "name": "Jiangyu",
         "class": "Warrior",
         "reference": {"Type 97": "https://iopwiki.com/wiki/Type_97"},
@@ -1709,9 +1826,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Power Connection", "Code Robustness", "Coordinated Strike"]
+        "intimacy": ["Power Connection", "Code Robustness", "Coordinated Strike"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Clotho",
         "class": "Guard",
         "reference": {"Clotho": "https://en.wikipedia.org/wiki/Clotho", "": "King's Raid Jane"},
@@ -1738,9 +1857,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Risk Evasion Aid", "Through Fire and Water", "HARAM"]
+        "intimacy": ["Neural Activation", "Risk Evasion Aid", "Through Fire and Water"],
+        "tags": ["Unowned"]
     },
     {
+        "id": 0,
         "name": "Yelena",
         "class": "Sniper",
         "reference": {"RMB-93" : "https://iopwiki.com/wiki/RMB-93", "": "LoL Twisted Fate"},
@@ -1767,9 +1888,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Code Robustness", "Coordinated Formation", "Coordinated Strike", "HARAM"]
+        "intimacy": ["Code Robustness", "Coordinated Formation", "Coordinated Strike"],
+        "tags": ["Unowned"]
     },
     {
+        "id": 0,
         "name": "Horizon",
         "class": "Specialist",
         "reference": {},
@@ -1796,9 +1919,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Lind",
         "class": "Warrior",
         "reference": {"AA-12": "https://iopwiki.com/wiki/AA-12"},
@@ -1825,9 +1950,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"]
+        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Erika",
         "class": "Sniper",
         "reference": {},
@@ -1854,9 +1981,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity", "HARAM"]
+        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"],
+        "tags": ["Unowned"]
     },
     {
+        "id": 0,
         "name": "Undine",
         "class": "Specialist",
         "reference": {},
@@ -1883,9 +2012,11 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Coordinated Strike"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Coordinated Strike"],
+        "tags": []
     },
     {
+        "id": 0,
         "name": "Taisch",
         "class": "Specialist",
         "reference": {},
@@ -1912,10 +2043,12 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity", "HARAM"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
+        "tags": ["Unowned"]
     },
 
     {
+        "id": 0,
         "name": "Doll Name",
         "class": "Class",
         "reference": {},
@@ -1942,6 +2075,7 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": []
+        "intimacy": [],
+        "tags": []
     }
 ]

@@ -1,6 +1,8 @@
 type IntimacyStat = "Code Robustness" | "Power Connection" | "Neural Activation" | "Shield of Friendship" | "Coordinated Strike" | "Victorious Inspiration" | "Risk Evasion Aid" | "Mechanical Celerity" | "Coordinated Formation" | "Through Fire and Water" | "Healing Bond";
+type UnitTags = "Unowned" | "Unreleased";
 
 interface UnitObject {
+    id: number;
     name: string;
     class: "Guard" | "Sniper" | "Warrior" | "Specialist" | "Medic";
     reference: { [linkname: string]: string; };
@@ -28,4 +30,5 @@ interface UnitObject {
         open: number;
     };
     intimacy: [IntimacyStat, IntimacyStat, IntimacyStat];
+    tags: UnitTags[];
 }

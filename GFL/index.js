@@ -23,8 +23,8 @@ timer(
     "./assets/images/coalition/22Tareus.webp", 
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
-        "",
-        "./assets/images/coalition/.webp"
+        "Feb 05, 2024 23:59 UTC-0800",
+        "./assets/images/coalition/06Architect.webp"
     )}
 );
 
@@ -39,11 +39,11 @@ timer(
     )}
 );
 
-timer(
-   document.getElementById('mini-event'),
-   "Jan 08, 2024 23:59 UTC-0800",
-   "./assets/images/timer/yblyicqyc76c1.webp"
-);
+// timer(
+//    document.getElementById('mini-event'),
+//    "",
+//    ""
+// );
 
 //timer(document.getElementById('extra'), "",
 //    "");
