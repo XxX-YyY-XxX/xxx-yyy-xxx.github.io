@@ -240,10 +240,12 @@ class Units {
             setattr(IMAGE, {loading: "lazy", alt: `${this.name} arma.`});
             const SPAN = setattr(document.createElement("span"), {append: [this.name, IMAGE], classList: {add: ["arma"]}});
             TD_NAME.appendChild(SPAN);
+            if (!stat_object.tags.includes("Arma")) console.log("Arma tag mismatch:", this.name)
             this.#hasarma = true;
         });
         IMAGE.addEventListener("error", () => {
             TD_NAME.textContent = this.name;
+            if (stat_object.tags.includes("Arma")) console.log("Arma tag mismatch:", this.name)
             this.#hasarma = false;
         });
         IMAGE.src = `../assets/images/arma/${this.name.replace(" ", "")}.png`;

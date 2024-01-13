@@ -1,6 +1,6 @@
 [
     {
-        "id": 0,
+        "id": 1001,
         "name": "Persicaria",
         "class": "Medic",
         "reference": {"Persica": "https://iopwiki.com/wiki/Persica"},
@@ -31,7 +31,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1002,
         "name": "Antonina",
         "class": "Specialist",
         "reference": {},
@@ -59,10 +59,10 @@
             "open": 49
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
-        "id": 0,
+        "id": 1003,
         "name": "Sol",
         "class": "Warrior",
         "reference": {},
@@ -93,7 +93,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1004,
         "name": "Simo",
         "class": "Sniper",
         "reference": {"Simo Häyhä": "https://en.wikipedia.org/wiki/Simo_H%C3%A4yh%C3%A4"},
@@ -124,7 +124,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1005,
         "name": "Croque",
         "class": "Guard",
         "reference": {},
@@ -155,7 +155,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1006,
         "name": "Fresnel",
         "class": "Sniper",
         "reference": {"Augustin-Jean Fresnel": "https://en.wikipedia.org/wiki/Augustin-Jean_Fresnel"},
@@ -186,7 +186,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1007,
         "name": "Chelsea",
         "class": "Warrior",
         "reference": {},
@@ -214,10 +214,10 @@
             "open": 47
         },
         "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
-        "id": 0,
+        "id": 1009,
         "name": "Mai",
         "class": "Specialist",
         "reference": {},
@@ -248,7 +248,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1011,
         "name": "Souchun",
         "class": "Guard",
         "reference": {"Type 64": "https://iopwiki.com/wiki/Type_64"},
@@ -276,10 +276,10 @@
             "open": 54
         },
         "intimacy": ["Shield of Friendship", "Neural Activation", "Risk Evasion Aid"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
-        "id": 0,
+        "id": 1012,
         "name": "Max",
         "class": "Sniper",
         "reference": {},
@@ -310,7 +310,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1013,
         "name": "Betty",
         "class": "Warrior",
         "reference": {"IDW": "https://iopwiki.com/wiki/IDW"},
@@ -341,7 +341,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1014,
         "name": "Choco",
         "class": "Medic",
         "reference": {"FNC": "https://iopwiki.com/wiki/FNC"},
@@ -369,10 +369,10 @@
             "open": 47
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
-        "id": 0,
+        "id": 1015,
         "name": "Panakeia",
         "class": "Medic",
         "reference": {"wz.29": "https://iopwiki.com/wiki/wz.29"},
@@ -403,7 +403,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1017,
         "name": "Angela",
         "class": "Specialist",
         "reference": {},
@@ -434,7 +434,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1019,
         "name": "Fern",
         "class": "Warrior",
         "reference": {},
@@ -462,10 +462,10 @@
             "open": 94
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
-        "id": 0,
+        "id": 1020,
         "name": "Yanny",
         "class": "Guard",
         "reference": {},
@@ -496,7 +496,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1021,
         "name": "Groove",
         "class": "Specialist",
         "reference": {},
@@ -524,10 +524,10 @@
             "open": 50
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Risk Evasion Aid"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
-        "id": 0,
+        "id": 1023,
         "name": "Bonee",
         "class": "Guard",
         "reference": {},
@@ -558,7 +558,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1024,
         "name": "Earhart",
         "class": "Sniper",
         "reference": {"Amelia Earhart": "https://en.wikipedia.org/wiki/Amelia_Earhart"},
@@ -589,7 +589,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1027,
         "name": "Zion",
         "class": "Guard",
         "reference": {},
@@ -620,7 +620,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1030,
         "name": "Ksenia",
         "class": "Specialist",
         "reference": {"Stechkin": "https://iopwiki.com/wiki/Stechkin"},
@@ -651,7 +651,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1031,
         "name": "Imhotep",
         "class": "Medic",
         "reference": {"": "Lowlight"},
@@ -679,10 +679,10 @@
             "open": 63
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
-        "id": 0,
+        "id": 1032,
         "name": "Octogen",
         "class": "Sniper",
         "reference": {},
@@ -713,7 +713,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1033,
         "name": "Rise",
         "class": "Specialist",
         "reference": {"MG36": "https://iopwiki.com/wiki/MG36"},
@@ -744,7 +744,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1034,
         "name": "Abigail",
         "class": "Specialist",
         "reference": {"M500": "https://iopwiki.com/wiki/M500"},
@@ -775,7 +775,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1035,
         "name": "Jessie",
         "class": "Medic",
         "reference": {"M1897": "https://iopwiki.com/wiki/M1897"},
@@ -806,7 +806,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1036,
         "name": "Lam",
         "class": "Sniper",
         "reference": {"LWMMG": "https://iopwiki.com/wiki/LWMMG"},
@@ -837,7 +837,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1038,
         "name": "Sakuya",
         "class": "Specialist",
         "reference": {},
@@ -868,7 +868,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1040,
         "name": "Dushevnaya",
         "class": "Specialist",
         "reference": {"KSVK": "https://iopwiki.com/wiki/KSVK"},
@@ -900,7 +900,7 @@
     },
 
     {
-        "id": 0,
+        "id": 1037,
         "name": "Hubble",
         "class": "Sniper",
         "reference": {"Edwin Hubble": "https://en.wikipedia.org/wiki/Edwin_Hubble"},
@@ -928,10 +928,10 @@
             "open": 232
         },
         "intimacy": ["Power Connection", "Neural Activation", "Coordinated Strike"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
-        "id": 0,
+        "id": 1010,
         "name": "Evelyn",
         "class": "Guard",
         "reference": {},
@@ -959,10 +959,10 @@
             "open": 44
         },
         "intimacy": ["Code Robustness", "Shield of Friendship", "Through Fire and Water"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
-        "id": 0,
+        "id": 1008,
         "name": "Gin",
         "class": "Medic",
         "reference": {},
@@ -993,7 +993,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1039,
         "name": "Centaureissi",
         "class": "Warrior",
         "reference": {"G36": "https://iopwiki.com/wiki/G36"},
@@ -1021,10 +1021,10 @@
             "open": 68
         },
         "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
-        "id": 0,
+        "id": 1028,
         "name": "Vee",
         "class": "Warrior",
         "reference": {"": "https://www.medicaldaily.com/two-towers-jaw-bone-korean-plastic-surgeon-gets-fined-takes-down-glass-towers-patients-extractions"},
@@ -1055,7 +1055,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1025,
         "name": "Chanzhi",
         "class": "Sniper",
         "reference": {"QBU-88": "https://iopwiki.com/wiki/QBU-88"},
@@ -1083,10 +1083,10 @@
             "open": 83
         },
         "intimacy": ["Power Connection", "Mechanical Celerity", "Coordinated Formation"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
-        "id": 0,
+        "id": 1026,
         "name": "Nanaka",
         "class": "Medic",
         "reference": {},
@@ -1117,7 +1117,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1016,
         "name": "Banxsy",
         "class": "Specialist",
         "reference": {"Banksy": "https://en.wikipedia.org/wiki/Banksy"},
@@ -1145,10 +1145,10 @@
             "open": 68
         },
         "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
-        "id": 0,
+        "id": 1018,
         "name": "Florence",
         "class": "Medic",
         "reference": {"PA-15": "https://iopwiki.com/wiki/PA-15"},
@@ -1176,10 +1176,11 @@
             "open": 29
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Healing Bond"],
-        "tags": []
+        "tags": ["Arma"]
     },
+
     {
-        "id": 0,
+        "id": 1029,
         "name": "Willow",
         "class": "Specialist",
         "reference": {"": "Suzuhara Lulu"},
@@ -1209,8 +1210,9 @@
         "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
         "tags": []
     },
+
     {
-        "id": 0,
+        "id": 1022,
         "name": "Aki",
         "class": "Warrior",
         "reference": {},
@@ -1238,10 +1240,10 @@
             "open": 82
         },
         "intimacy": ["Power Connection", "Code Robustness", "Coordinated Strike"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
-        "id": 0,
+        "id": 1044,
         "name": "Kuro",
         "class": "Sniper",
         "reference": {"MDR": "https://iopwiki.com/wiki/MDR"},
@@ -1272,7 +1274,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1041,
         "name": "De Lacey",
         "class": "Medic",
         "reference": {},
@@ -1300,10 +1302,10 @@
             "open": 67
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Healing Bond"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
-        "id": 0,
+        "id": 1042,
         "name": "Hatsuchiri",
         "class": "Warrior",
         "reference": {"": "LoL Reksai, Mountain of Madness"},
@@ -1334,7 +1336,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1046,
         "name": "Daiyan",
         "class": "Sniper",
         "reference": {"Type 95": "https://iopwiki.com/wiki/Type_95"},
@@ -1362,10 +1364,10 @@
             "open": 52
         },
         "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
-        "id": 0,
+        "id": 1043,
         "name": "Python",
         "class": "Guard",
         "reference": {"Snake": "https://en.wikipedia.org/wiki/Metal_Gear"},
@@ -1396,7 +1398,7 @@
         "tags": ["Unowned"]
     },
     {
-        "id": 0,
+        "id": 1051,
         "name": "Nascita",
         "class": "Warrior",
         "reference": {},
@@ -1427,7 +1429,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1050,
         "name": "Puzzle",
         "class": "Specialist",
         "reference": {},
@@ -1458,7 +1460,7 @@
         "tags": ["Unowned"]
     },
     {
-        "id": 0,
+        "id": 1052,
         "name": "Helix",
         "class": "Medic",
         "reference": {},
@@ -1489,7 +1491,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1049,
         "name": "Magnhilda",
         "class": "Warrior",
         "reference": {},
@@ -1520,7 +1522,7 @@
         "tags": ["Unowned"]
     },
     {
-        "id": 0,
+        "id": 1047,
         "name": "Sockdolager",
         "class": "Sniper",
         "reference": {"Falcon" : "https://iopwiki.com/wiki/Falcon"},
@@ -1551,7 +1553,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1045,
         "name": "Sueyoi",
         "class": "Specialist",
         "reference": {},
@@ -1582,7 +1584,7 @@
         "tags": ["Unowned"]
     },
     {
-        "id": 0,
+        "id": 1058,
         "name": "Clukay",
         "class": "Sniper",
         "reference": {"HK416" : "https://iopwiki.com/wiki/HK416"},
@@ -1613,7 +1615,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1054,
         "name": "Millau",
         "class": "Guard",
         "reference": {},
@@ -1641,10 +1643,10 @@
             "open": 30
         },
         "intimacy": ["Code Robustness", "Shield of Friendship", "Through Fire and Water"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
-        "id": 0,
+        "id": 1048,
         "name": "Nora",
         "class": "Specialist",
         "reference": {},
@@ -1675,7 +1677,7 @@
         "tags": ["Unowned"]
     },
     {
-        "id": 0,
+        "id": 1056,
         "name": "Uranus",
         "class": "Sniper",
         "reference": {},
@@ -1706,7 +1708,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1055,
         "name": "Hannah",
         "class": "Specialist",
         "reference": {},
@@ -1737,7 +1739,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1057,
         "name": "Turing",
         "class": "Specialist",
         "reference": {"Alan Turing" : "https://en.wikipedia.org/wiki/Alan_Turing"},
@@ -1765,10 +1767,10 @@
             "open": 38
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
-        "tags": ["Unowned"]
+        "tags": ["Unowned", "Arma"]
     },
     {
-        "id": 0,
+        "id": 1053,
         "name": "Zangyin",
         "class": "Sniper",
         "reference": {},
@@ -1799,7 +1801,7 @@
         "tags": ["Unowned"]
     },
     {
-        "id": 0,
+        "id": 1062,
         "name": "Jiangyu",
         "class": "Warrior",
         "reference": {"Type 97": "https://iopwiki.com/wiki/Type_97"},
@@ -1830,7 +1832,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1059,
         "name": "Clotho",
         "class": "Guard",
         "reference": {"Clotho": "https://en.wikipedia.org/wiki/Clotho", "": "King's Raid Jane"},
@@ -1861,7 +1863,7 @@
         "tags": ["Unowned"]
     },
     {
-        "id": 0,
+        "id": 1063,
         "name": "Yelena",
         "class": "Sniper",
         "reference": {"RMB-93" : "https://iopwiki.com/wiki/RMB-93", "": "LoL Twisted Fate"},
@@ -1892,7 +1894,7 @@
         "tags": ["Unowned"]
     },
     {
-        "id": 0,
+        "id": 1064,
         "name": "Horizon",
         "class": "Specialist",
         "reference": {},
@@ -1923,7 +1925,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1065,
         "name": "Lind",
         "class": "Warrior",
         "reference": {"AA-12": "https://iopwiki.com/wiki/AA-12"},
@@ -1954,7 +1956,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1066,
         "name": "Erika",
         "class": "Sniper",
         "reference": {},
@@ -1985,7 +1987,7 @@
         "tags": ["Unowned"]
     },
     {
-        "id": 0,
+        "id": 1061,
         "name": "Undine",
         "class": "Specialist",
         "reference": {},
@@ -2016,7 +2018,7 @@
         "tags": []
     },
     {
-        "id": 0,
+        "id": 1069,
         "name": "Taisch",
         "class": "Specialist",
         "reference": {},

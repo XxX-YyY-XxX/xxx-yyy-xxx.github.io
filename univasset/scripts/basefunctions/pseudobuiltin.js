@@ -137,37 +137,65 @@ const METHOD = {
     }
 };
 
-export function cmp({key = x => x, reverse = false, array = null} = {}) {
-    // Never fuse array and key parameters
-    const _onReverse = reverse ? ((x, y) => [y, x]) : ((x, y) => [x, y]);
+// export function cmp({key = x => x, reverse = false, array = null} = {}) {
+//     // Never fuse array and key parameters
+//     const _onReverse = reverse ? ((x, y) => [y, x]) : ((x, y) => [x, y]);
 
-    function _getIndex(a) {
-        _getIndex = (function() {
-            if (array) {
-                const COPY = array.slice();
-                return x => {
-                    const OUT = COPY.indexOf(x);
-                    if (OUT !== -1) COPY.splice(OUT, 1);
-                    return OUT;
-                }
-            } else {
-                return x => x;
+//     function _getIndex(a) {
+//         _getIndex = (function() {
+//             if (array) {
+//                 const COPY = array.slice();
+//                 return x => {
+//                     const OUT = COPY.indexOf(x);
+//                     if (OUT !== -1) COPY.splice(OUT, 1);
+//                     return OUT;
+//                 }
+//             } else {
+//                 return x => x;
+//             }
+//         })();
+//         return _getIndex(a);
+//     }
+
+//     function _sorterFunc(a, b) {
+//         _sorterFunc = METHOD[type(a)];
+//         if (_sorterFunc === undefined) console.error(type(a), "is unset in METHOD.")
+//         return _sorterFunc(a, b);
+//     }
+
+//     return function(a, b) {
+//         [a, b] = [key(a), key(b)];
+//         [a, b] = [_getIndex(a), _getIndex(b)];
+//         [a, b] = _onReverse(a, b);
+//         return _sorterFunc(a, b);
+//     }
+// }
+
+export function cmp(...sort_params) {
+    var method;
+
+    if (sort_params.length) {
+        for (const KEYOBJ of sort_params) {
+            KEYOBJ.key ??= x => x;
+            KEYOBJ.reverse ??= false;
+        }
+
+        return function(a, b) {
+            method ??= sort_params.map(({key}) => key(a)).map(type);
+            for (const [{key, reverse}, M] of zip(sort_params, method)) {
+                [a, b] = [key(a), key(b)];
+                if (reverse) [a, b] = [b, a];
+                const OUTPUT = METHOD[M](a, b);
+                if (OUTPUT) return OUTPUT;
             }
-        })();
-        return _getIndex(a);
-    }
-
-    function _sorterFunc(a, b) {
-        _sorterFunc = METHOD[type(a)];
-        if (_sorterFunc === undefined) console.error(type(a), "is unset in METHOD.")
-        return _sorterFunc(a, b);
-    }
-
-    return function(a, b) {
-        [a, b] = [key(a), key(b)];
-        [a, b] = [_getIndex(a), _getIndex(b)];
-        [a, b] = _onReverse(a, b);
-        return _sorterFunc(a, b);
+            return 0;
+        }
+    } else {
+        return function(a, b) {
+            method ??= type(a);
+            return METHOD[method](a, b);
+        }
     }
 }
 //#endregion
+
