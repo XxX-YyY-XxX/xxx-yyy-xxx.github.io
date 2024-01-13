@@ -199,3 +199,6 @@ export function cmp(...sort_params) {
 }
 //#endregion
 
+function classtype(params) {
+    // return class name
+}
