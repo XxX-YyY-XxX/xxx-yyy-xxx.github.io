@@ -3,6 +3,8 @@ type Collator<T> = {
     [count: number]: T[] | undefined;
     /** The highest number of instances of a given value. */
     highest: number;
+    /** Returns an array of items with the given count size. */
+    get(...counts: number[]): T[];
 }
 
 interface Array<T> {

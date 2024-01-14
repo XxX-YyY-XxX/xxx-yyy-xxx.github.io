@@ -47,19 +47,5 @@ function resetTimer() {
         "Oneiric Odyssey",
         "./assets/images/timer/cpt00_e_cg036_4.png"
     )
-
-    timer(
-        "Dec 22, 2023 05:00 UTC-0800",
-        "Jan 12, 2024 05:00 UTC-0800",
-        "Starchasers' Concerto",
-        "./assets/images/timer/cpt00_e_cg022.png"
-    )
-    
-    timer(
-        "Dec 19, 2023 18:30 UTC-0800",
-        "Jan 09, 2024 18:30 UTC-0800",
-        "Symphonic Reprise",
-        "./assets/images/timer/cpt00_e_cg021.png"
-    )        
 };
 resetTimer();

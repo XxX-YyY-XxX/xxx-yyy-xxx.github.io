@@ -22,7 +22,10 @@ Object.defineProperty(Array.prototype, "collate", {
         for (const ITEM of this) COUNTER.set(ITEM, (COUNTER.get(ITEM) ?? 0) + 1);
 
         /** @type {Collator<T>} */ const OUTPUT = {
-            highest: 0
+            highest: 0,
+            /** @param  {...number} counts */ get(...counts) {
+                return counts.flatMap(x => this[x] ?? []);
+            }
         };
         for (const [ITEM, COUNT] of COUNTER) {
             if (COUNT > OUTPUT.highest) OUTPUT.highest = COUNT;

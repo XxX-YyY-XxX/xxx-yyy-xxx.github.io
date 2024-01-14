@@ -2,7 +2,7 @@
 
 .func_table {
     height: fit-content;
-    max-height: 95vh;
+    max-height: 95lvh;
 }
 
 input[type="checkbox"], input[type="radio"] {

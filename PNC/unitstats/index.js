@@ -194,7 +194,7 @@ class Units {
         return Math.round(output, 1);
     }
 
-    /** @type {boolean} */ #hasarma;
+    #hasarma;
     #intistats;
     #algofield;
 
@@ -229,26 +229,19 @@ class Units {
         this.#armaodef = ARMA.odef;
         this.#armappen = ARMA.ppen;
         this.#armaopen = ARMA.open;
+        this.#hasarma = stat_object.tags.includes("Arma");
 
         this.#intistats = stat_object.intimacy;
 
         const TD_NAME = document.createElement("td");
         TD_NAME.addEventListener("click", () => this.#algofield.show());
-
-        const IMAGE = document.createElement("img");
-        IMAGE.addEventListener("load", () => {
-            setattr(IMAGE, {loading: "lazy", alt: `${this.name} arma.`});
+        if (this.#hasarma) {
+            const IMAGE = setattr(document.createElement("img"), {loading: "lazy", alt: `${this.name} arma.`, src: `../assets/images/arma/${this.name.replace(" ", "")}.png`});
             const SPAN = setattr(document.createElement("span"), {append: [this.name, IMAGE], classList: {add: ["arma"]}});
             TD_NAME.appendChild(SPAN);
-            if (!stat_object.tags.includes("Arma")) console.log("Arma tag mismatch:", this.name)
-            this.#hasarma = true;
-        });
-        IMAGE.addEventListener("error", () => {
+        } else {
             TD_NAME.textContent = this.name;
-            if (stat_object.tags.includes("Arma")) console.log("Arma tag mismatch:", this.name)
-            this.#hasarma = false;
-        });
-        IMAGE.src = `../assets/images/arma/${this.name.replace(" ", "")}.png`;
+        }
 
         const TD_HP = document.createElement("td");
         const TD_ATK = document.createElement("td");

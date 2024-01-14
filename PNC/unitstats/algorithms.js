@@ -246,9 +246,9 @@ function createSelect(obj, name) {
     const [ATTR_LIST, _threshCheck] = (function() {
         /** @type {[GridFields, STAT_KEYS[keyof STAT_KEYS][]]} */ const [ALGO_TYPE, VIABLE] = (function() {
             switch (true) {
-                case obj instanceof Offense || obj instanceof OffenseBlock:     return ["Offense", name === "MAIN" ? ["atk", "hash", "ppen", "open"] : ["atk", "hash"]];
+                case obj instanceof Offense   || obj instanceof OffenseBlock:   return ["Offense", name === "MAIN" ? ["atk", "hash", "ppen", "open"] : ["atk", "hash"]];
                 case obj instanceof Stability || obj instanceof StabilityBlock: return ["Stability", ["hp", "pdef", "odef"]];
-                case obj instanceof Special || obj instanceof SpecialBlock:     return ["Special", ["pdef", "odef"]];
+                case obj instanceof Special   || obj instanceof SpecialBlock:   return ["Special", ["pdef", "odef"]];
             }
         })();
 
@@ -476,14 +476,6 @@ ALGO_MODAL.addEventListener("close", function(event) {
     for (const DIV of Object.values(GRIDS)) DIV.replaceChildren();
 });
 
-const ALGO_SAVE = new (class {
-    /** @type {"algorithms"} */ #KEY = "algorithms";
-    /** @type {{[UnitName: string]: [AlgoInfo[], AlgoInfo[], AlgoInfo[]]?}} */ #DATA = JSON.parse(localStorage.getItem(this.#KEY) ?? "{}");
-    constructor() {ALGO_MODAL.addEventListener("close", (event) => localStorage.setItem(this.#KEY, JSON.stringify(this.#DATA)))}
-    /** @param {string} name */ get(name) {return this.#DATA[name] ?? [[], [], []]}
-    /** @param {string} name @param {[AlgoInfo[], AlgoInfo[], AlgoInfo[]]} algoinfo */ set(name, algoinfo) {this.#DATA[name] = algoinfo}
-})();
-
 class AlgoGrid {
     static #MAX_SIZE = 6;
     /** @type {HTMLDialogElement} */ static #SELECT = document.querySelector("#algo-select");
@@ -501,11 +493,10 @@ class AlgoGrid {
 
     /** @returns {StatDict} */
     get stats() {
-        /** @type {StatDict} */ const EFFECT = (() => {
-            const SETS = this.#algorithms.map(x => x.constructor.name).collate();
-            return new Map((SETS[2]??SETS[3])?.map(x => ALGO_SETS[this.#fieldtype][x].SET2).filter(Array.isArray)[0] ?? []);
-        })();
-
+        /** @type {StatDict} */ const EFFECT = new Map(
+            this.#algorithms.map(x => x.constructor.name).collate().get(2, 3)
+                .map(x => ALGO_SETS[this.#fieldtype][x].SET2).filter(Array.isArray)[0] ?? []
+        );
         return [EFFECT, ...this.#algorithms.map(x => x.stats)].reduce(combine);
     }
 
@@ -560,7 +551,34 @@ class AlgoGrid {
     }
 }
 
-export class AlgoField{
+const ALGO_SAVE = new (class {
+    /** @type {"algorithms"} */
+    #KEY = "algorithms";
+    
+    /** @type {{[UnitName: string]: [AlgoInfo[], AlgoInfo[], AlgoInfo[]]?}} */
+    #DATA = JSON.parse(localStorage.getItem(this.#KEY) ?? "{}");
+
+    constructor() {
+        ALGO_MODAL.addEventListener("close", (event) => localStorage.setItem(this.#KEY, JSON.stringify(this.#DATA)));
+    }
+
+    /** @param {string} name */
+    get(name) {
+        return this.#DATA[name] ?? [[], [], []];
+    }
+
+    /** @param {string} name @param {[AlgoInfo[], AlgoInfo[], AlgoInfo[]]} algoinfo */
+    set(name, algoinfo) {
+        this.#DATA[name] = algoinfo;
+    }
+
+    /** @param {string} name */
+    del(name) {
+        delete this.#DATA[name];
+    }
+})();
+
+export class AlgoField {
     /** @type {HTMLButtonElement} */ static #CLOSE = document.querySelector("#close-modal");
 
     #name;
@@ -608,10 +626,9 @@ export class AlgoField{
             const INFOS = ALGO_SAVE.get(this.#name).flat();
             if (!INFOS.length) return new Map();
 
-            /** @type {StatDict} */ const SET_DICT = (function() {
-                const SETS = INFOS.map(x => x[0]).collate();
-                return [SETS[2]??[], SETS[3]??[]].flat().map(x => ALGO_SETS.classdict[x].SET2).filter(Array.isArray).map(x => new Map(x)).reduce(combine, new Map());
-            })();
+            /** @type {StatDict} */ const SET_DICT = INFOS.map(x => x[0]).collate().get(2, 3)
+                .map(x => ALGO_SETS.classdict[x].SET2).filter(Array.isArray)
+                .map(x => new Map(x)).reduce(combine, new Map());
 
             /** @type {StatDict} */ const MAINSUB = INFOS.flatMap(([, main, sub1, sub2]) => {
                 if (sub2)   return [new Map([[main, STATVALUES.MAIN[main] * 2]]), new Map([[sub1, STATVALUES.SUB[sub1]], [sub2, STATVALUES.SUB[sub2]]])];

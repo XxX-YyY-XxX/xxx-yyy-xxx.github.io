@@ -1,5 +1,5 @@
 import {brJoin, nestElements} from '../../univasset/scripts/htmlgenerator/htmlgenerator.js';
-import {setattr} from "../../univasset/scripts/basefunctions/index.js";
+import {cmp, setattr} from "../../univasset/scripts/basefunctions/index.js";
 import {Async} from "../../univasset/scripts/externaljavascript.js";
 
 /** @type {Promise<UnitObject[]} */ const UNIT_PROMISE = Async.getJSON("../units.json");
@@ -51,7 +51,7 @@ class Units {
     }
 }
 
-const UNIT_LIST = (await UNIT_PROMISE).slice(0, -1).map(x => new Units(x));
+const UNIT_LIST = (await UNIT_PROMISE).filter(({tags}) => !tags.includes("Unreleased")).sort(cmp({key: x => x.id})).map(x => new Units(x));
 
 const [THEAD, HEADER_TR] = nestElements("thead", "tr");
 HEADER_TR.append(...Units.HEADERS.map(x => setattr(document.createElement("th"), {textContent: x})));
