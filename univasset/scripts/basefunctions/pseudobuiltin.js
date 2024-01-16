@@ -110,12 +110,10 @@ export function* zip(...iterables) {
 //#region 2nd-order functions/Uses 1st and above
 /** Used only for `cmp` function. */
 const METHOD = {
-    /** @param {number} x @param {number} y @returns {number} */
-    number: (x, y) => x - y,
-    /** @param {string} x @param {string} y @returns {number} */
-    string: (x, y) => x.localeCompare(y),
-    /** @param {boolean} x @param {boolean} y @returns {number} */
-    boolean: (x, y) => x - y,
+    /** @param {number} x @param {number} y @returns {number} */    number: (x, y) => x - y,
+    /** @param {string} x @param {string} y @returns {number} */    string: (x, y) => x.localeCompare(y),
+    /** @param {boolean} x @param {boolean} y @returns {number} */  boolean: (x, y) => x - y,
+
     /** @param {Array} x @param {Array} y @returns {number} */
     array: (x, y) => {
         for (const [A, B] of zip(x, y)) {
