@@ -1,5 +1,10 @@
 import {setattr} from "../basefunctions/index.js";
 
+/** @this {HTMLElement} */
+function htmlString() {return this.outerHTML}
+
+
+
 // /** @type {(keyof HTMLElementTagNameMap)[]} */
 // export const STDHTMLELEMS = [];
 
@@ -69,22 +74,20 @@ export class Embed {
     };
 }
 
-export function img(link, alt = "Image", caption = {inline: false}) {
-    const IMG = setattr(document.createElement("img"), {src: link, alt: alt, loading: "lazy"});
+export const googleDocsCompilation = Embed.google;
 
-    if (typeof caption === "string") {
-        const FIGURE = document.createElement("figure");
-        const FIGCAPTION = document.createElement("figcaption");
-        FIGCAPTION.textContent = caption;
-        FIGURE.append(IMG, FIGCAPTION);
+export function image(link, alt, {inline = false}) {
+    const IMG = setattr(document.createElement("img"), {src: link, alt: alt, loading: "lazy", toString: htmlString});
 
-        FIGURE.toString = function() {return this.outerHTML}
-        return FIGURE;
-    } else if (caption.inline) {
+    if (inline) {
         IMG.classList.add("inline-img");
     }
-    IMG.toString = function() {return this.outerHTML}
+
     return IMG;
 }
 
-export const googleDocsCompilation = Embed.google;
+export function figure(content, caption) {
+    const FIGURE = setattr(document.createElement("figure"), {toString: htmlString});
+    FIGURE.append(content, setattr(document.createElement("figcaption"), {textContent: caption}));
+    return FIGURE;
+}

@@ -34,8 +34,8 @@ timer(
     "https://iopwiki.com/images/c/c8/Dreams_By_The_Fireplace_Login_Wallpaper.png",
     {onEnd: timer.bind(
         null, document.getElementById('skin-banner'),
-        "",
-        ""
+        "Feb 12, 2024 23:59 UTC-0800",
+        "https://iopwiki.com/images/5/5e/Frost_of_Winter_Dreams_Login_Wallpaper.jpg"
     )}
 );
 

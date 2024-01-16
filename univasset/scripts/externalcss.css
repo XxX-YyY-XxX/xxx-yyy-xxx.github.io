@@ -1,6 +1,8 @@
 /* @import "/assets/css/style.css?v=2d3b5126dd9bdaf552f3aef918356c51b10c15a9"; */
-@import "./htmlgenerator/htmlgenerator.css";
 @import "./pageheader/header.css";
+
+
+@import "./htmlgenerator/htmlgenerator.css";
 @import "./html/index.css";
 @import "./tooltip.css";
 
@@ -29,6 +31,11 @@ a {
 
 a[href^="#"] {
 	text-decoration: none;
+}
+
+figcaption {
+	font-size: 0.5rem;
+	text-align: center;
 }
 
 

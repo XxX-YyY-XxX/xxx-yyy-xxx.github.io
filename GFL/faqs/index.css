@@ -19,12 +19,6 @@ dd > figure {
     width: fit-content;
 }
 
-figcaption {
-    font-size: 0.5em;
-    text-align: center;
-    display: block;
-}
-
 /* #region Cards Field Specific */
 #cards-field a {
     /* cursor: pointer; */

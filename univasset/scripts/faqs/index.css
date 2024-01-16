@@ -8,7 +8,7 @@ input[type="checkbox"], input[type="radio"] {
     margin: 0px;
 }
 
-dl, table, blockquote {
+dl, table, blockquote, figure {
     margin: 0px;
 }
 
@@ -72,8 +72,8 @@ dl, table, blockquote {
     }
 }
 
-/* Staples */
 fieldset {
+    /* Staples */
     margin-top: 5px;
 
     & > legend > h3 {
@@ -89,10 +89,8 @@ fieldset {
         margin: 0 5px;
         text-shadow: none;
     }
-}
 
-/* Contents */
-fieldset {
+    /* Contents */
     & :is(ol, ul) {
         margin: 0px;
     }
@@ -106,18 +104,6 @@ fieldset {
         display: block;
     }    
 }
-
-/* #region Figure */
-figure {
-    margin: 0px;
-}
-
-figcaption {
-    font-size: 0.5rem;
-    text-align: center;
-    display: block;
-}
-/* #endregion */
 
 /* #region Details and Summary */
 details {

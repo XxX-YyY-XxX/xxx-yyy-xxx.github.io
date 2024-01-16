@@ -27,11 +27,6 @@ export class Embed {
 /** Placehoder while no official implementation exists.  */
 type HTMLFigureElement = HTMLElement;
 
-/** Returns HTMLFigureElement if caption is given, else HTMLImageElement. */
-export function img(link: string, alt?: string): HTMLImageElement;
-/** Returns HTMLFigureElement if caption is given, else HTMLImageElement. */
-export function img(link: string, alt: string, caption: string): HTMLFigureElement;
-/** Returns HTMLFigureElement if caption is given, else HTMLImageElement. */
-export function img(link: string, alt: string, params: {
-    inline?: boolean
-}): HTMLImageElement;
+export function image(link: string, alt: string, keys?: {inline?: boolean}): HTMLImageElement;
+
+export function figure(content: HTMLElement, caption: string): HTMLFigureElement;
