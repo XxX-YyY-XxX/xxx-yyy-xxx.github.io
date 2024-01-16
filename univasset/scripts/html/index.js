@@ -76,12 +76,11 @@ export class Embed {
 
 export const googleDocsCompilation = Embed.google;
 
-export function image(link, alt, {inline = false}) {
+export function image(link, alt, {inline = false} = {}) {
     const IMG = setattr(document.createElement("img"), {src: link, alt: alt, loading: "lazy", toString: htmlString});
 
-    if (inline) {
+    if (inline)
         IMG.classList.add("inline-img");
-    }
 
     return IMG;
 }
@@ -90,4 +89,21 @@ export function figure(content, caption) {
     const FIGURE = setattr(document.createElement("figure"), {toString: htmlString});
     FIGURE.append(content, setattr(document.createElement("figcaption"), {textContent: caption}));
     return FIGURE;
+}
+
+
+
+
+
+
+
+
+
+
+
+function anchor(text, link) {
+    const A = document.createElement("a")
+    A.href = link
+    A.append(text)
+    return A
 }
