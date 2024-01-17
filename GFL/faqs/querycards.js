@@ -4023,3 +4023,4 @@ window.cards = cardData;
 // https://old.reddit.com/r/girlsfrontline/comments/18wk6dz/weekly_commanders_lounge_january_02_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/
 // https://old.reddit.com/r/girlsfrontline/comments/uc7eet/weekly_commanders_lounge_april_26_2022/i6mqo74/
+// https://old.reddit.com/r/girlsfrontline/comments/1929lxq/weekly_commanders_lounge_january_09_2024/

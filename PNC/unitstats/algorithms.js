@@ -640,7 +640,9 @@ export class AlgoField {
 
         this.#close = () => {
             this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
-            ALGO_SAVE.set(this.#name, this.#algogrids.map(x => x.info));
+            const INFO = this.#algogrids.map(x => x.info)
+            if (INFO.flat().length) ALGO_SAVE.set(this.#name, INFO);
+            else                    ALGO_SAVE.del(this.#name)
 
             this.onclose();
     

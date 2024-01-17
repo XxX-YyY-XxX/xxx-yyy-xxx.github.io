@@ -152,7 +152,7 @@
             "open": 45
         },
         "intimacy": ["Code Robustness", "Shield of Friendship", "Through Fire and Water"],
-        "tags": []
+        "tags": ["Lv70"]
     },
     {
         "id": 1006,
@@ -214,7 +214,7 @@
             "open": 47
         },
         "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"],
-        "tags": ["Arma"]
+        "tags": ["Arma", "Lv70", "AI30", "Inti15"]
     },
     {
         "id": 1009,
@@ -1488,7 +1488,7 @@
             "open": -1
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
-        "tags": []
+        "tags": ["Lv70"]
     },
     {
         "id": 1049,
@@ -1612,7 +1612,7 @@
             "open": -1
         },
         "intimacy": ["Neural Activation", "Coordinated Strike", "Victorious Inspiration"],
-        "tags": []
+        "tags": ["Lv70"]
     },
     {
         "id": 1054,

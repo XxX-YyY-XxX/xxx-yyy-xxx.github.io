@@ -1,10 +1,8 @@
 /* @import "/assets/css/style.css?v=2d3b5126dd9bdaf552f3aef918356c51b10c15a9"; */
 @import "./pageheader/header.css";
 
-
 @import "./htmlgenerator/htmlgenerator.css";
 @import "./html/index.css";
-@import "./tooltip.css";
 
 code {
 	background: rgba(0, 0, 0, 0.9);

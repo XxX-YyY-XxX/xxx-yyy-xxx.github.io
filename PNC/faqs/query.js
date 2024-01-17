@@ -29,6 +29,8 @@ const dtag = {
     BP: {name: "MagraseaBattlePass", description: "Gives skin, resources, frames, furnitures."},
     FRAGS: {name: "NeuralFragments", description: "Used for Neural Expansion and Arma Inscripta."},
     DAILY: {name: "DailyWeeklyMissions", description: 'Missions under the "Permanent" tab.'},
+    LEVEL: {name: "Leveling", description: "Ways to strengthen/level up a unit/equipment."},
+    TECH: {name: "Troubleshooting", description: "Firstly, have you tried turning it off and on?"},
 };
 window.tags = dtag;
 
@@ -101,7 +103,7 @@ window.cards = [
     {
         id: 8,
         question: `Do battlepass skins rerun?`,
-        answer: `${image(IMG_ASSET+"BPRerun.png", "Battlepass rerun shop.")}`,
+        answer: `${figure(image(IMG_ASSET+"BPRerun.png", "Battlepass rerun shop."), "Requires Gestalt Aspect currency")}`,
         tags: [dtag.SKIN, dtag.BP]
     },
     {
@@ -204,21 +206,39 @@ window.cards = [
         tags: [dtag.DOLL, dtag.TIER]
     },
     {
-        id: 0,
-        question: ``,
-        answer: ``,
-        tags: []
+        id: 21,
+        question: `What things do I need to do to strengthen my dolls?`,
+        answer: `${List.unordered(
+            "Potential Breakthrough up to Lv. 60 (Lv. 70 optional).",
+            `Neural Upgrade to 5${SC.STAR}.`,
+            "Algorithm Efficiency at 2x.",
+            "Algorithms with matching sets, useful mainstats, and at least one useful substat.",
+            "Arma Inscripta (stopping point dependent on the doll in question)."
+        )}`,
+        tags: [dtag.DOLL, dtag.LEVEL]
     },
-].slice(0, -1);
+    {
+        id: 22,
+        question: `I'm having trouble logging into the game. Any solutions?`,
+        answer: `Might be a service provider issue. Use VPN for now.`,
+        tags: [dtag.TECH]
+    },
+    // {
+    //     id: 0,
+    //     question: ``,
+    //     answer: ``,
+    //     tags: []
+    // },
+];
 
 //what is arma - cleista?
 //upgrading to l2d
 //algorithm guide - lizzy?
 //character event guide
 //l2d upgrade for bp has time limit
+//unit skill ui breakdown
 
 // https://old.reddit.com/r/GFLNeuralCloud/comments/18l63g8/weekly_professors_lounge_december_18_2023/kepo2px/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/18l63g8/weekly_professors_lounge_december_18_2023/kerq0qj/
-
-// https://old.reddit.com/r/GFLNeuralCloud/comments/18qglj9/weekly_professors_lounge_december_25_2023/
-// https://old.reddit.com/r/GFLNeuralCloud/comments/18vukqz/weekly_professors_lounge_january_01_2024/
+// https://old.reddit.com/r/GFLNeuralCloud/comments/18qglj9/weekly_professors_lounge_december_25_2023/kfe8yxm/
+// https://old.reddit.com/r/GFLNeuralCloud/comments/191ipmg/weekly_professors_lounge_january_08_2024/khmz92o/
