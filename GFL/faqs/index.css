@@ -1,5 +1,7 @@
 @import "/univasset/scripts/externalcss.css";
-@import "../../univasset/scripts/tabs.css";
+@import "/univasset/scripts/tabs.css";
+@import "/univasset/scripts/tooltip.css";
+@import "/univasset/scripts/html/index.css";
 
 input[type="checkbox"], input[type="radio"] {
     appearance: none;
