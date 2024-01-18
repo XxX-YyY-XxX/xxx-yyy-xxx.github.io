@@ -91,7 +91,11 @@ export function figure(content, caption) {
     return FIGURE;
 }
 
-
+function details(summary, content) {
+    const DETAILS = setattr(document.createElement("details"), {toString: htmlString});
+    const SUMMARY = setattr(document.createElement("summary"), {textContent: summary});
+    return setattr(DETAILS, {append: [SUMMARY, content]});
+}
 
 
 

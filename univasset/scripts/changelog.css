@@ -1,4 +1,4 @@
-@import "./externalcss.css";
+@import "/main.css";
 
 details {
     --indent: 1rem;

@@ -122,13 +122,6 @@ export function randInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-/** @param {HTMLIFrameElement} iframeElement*/
-export function reloadIFrame(iframeElement) {
-    const temp = iframeElement.src;
-    iframeElement.src = '';
-    iframeElement.src = temp;
-}
-
 /** @param {string} path @returns {[string, string]} basename, extension */
 export function splitExt(path) {
     //remove base url to prevent false positive

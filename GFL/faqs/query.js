@@ -1878,8 +1878,8 @@ export const cardData = [
         id : '00200',
         questions : `Is there a compilation of anniversary adjutant lines?`,
         answers : `${List.unordered(
-            spoilerSummary("3rd Anniversary", MBD.youtube("PL4Z0akElhimzHHiVMCozfUn1B6tYKjwPR")), //u/paperrabbit
-            spoilerSummary("4th Anniversary", MBD.youtube("PLoDB_FcnOA5zXkZ9XmQMTog1F7uIRZ_Qa")), //u/ConductorBichir
+            spoilerSummary("3rd Anniversary", MBD.youtube("PL4Z0akElhimzHHiVMCozfUn1B6tYKjwPR")),   //u/paperrabbit
+            spoilerSummary("4th Anniversary", MBD.youtube("PLoDB_FcnOA5zXkZ9XmQMTog1F7uIRZ_Qa")),   //u/ConductorBichir
             spoilerSummary("5th Anniversary", List.unordered(                                       //plants zaza
                 spoilerSummary("Handguns", MBD.youtube("N-B_icnlDwg")),
                 spoilerSummary("Submachine Guns", MBD.youtube("lQQ7aBEOFlc")),
@@ -4026,13 +4026,13 @@ export const cardData = [
         )}`,
         tags : [dTag.PROD, dTag.TDOLL, dTag.NEWB]
     },
-    {
-        id : '00000',
-        questions : ``,
-        answers : ``,
-        tags : []
-    },
-].slice(0, -1);
+    // {
+    //     id : '00000',
+    //     questions : ``,
+    //     answers : ``,
+    //     tags : []
+    // },
+];
 window.cards = cardData;
 
 // (function() {

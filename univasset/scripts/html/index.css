@@ -2,8 +2,11 @@
 
 /* #region Google Document */
 div.embed-google > select:disabled {
-    color: initial;
     opacity: 1;
+    color: initial;
+    padding: 1px 3px;
+    appearance: none;
+    background-color: lightgray;
 }
 
 div.embed-google > button {

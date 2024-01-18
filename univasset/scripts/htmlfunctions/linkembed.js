@@ -1,20 +1,4 @@
-import {reloadIFrame} from '../externaljavascript.js';
-
 export default class Embed {
-    static G_EXCEL = "spreadsheets";
-    static G_WORD = "document";
-    static G_FILE = "file";
-
-    /** Create an innerHTML text for Google document embeds.
-     * @param {Embed} docType Starts with G_
-     * @param {string} docID */
-    static google(docType, docID) {
-        return `<figure>
-            <iframe src="https://docs.google.com/${docType}/d/${docID}/preview?pli=1" loading="lazy"></iframe>
-            <figcaption><a onclick="refreshDoc(this)">Reload Frame</a> \| <a href="https://docs.google.com/${docType}/d/${docID}">Source Link</a></figcaption>
-        </figure>`;
-    }
-
     /** Create an innerHTML text for Youtube embeds.
      * @param {string} videoID Youtube video or playlist ID*/
     static youtube(videoID) {
@@ -39,11 +23,6 @@ export default class Embed {
             <a href="https://twitter.com/${handle}/status/${tweetID}?ref_src=twsrc%5Etfw">Source Tweet</a>
         </blockquote>`;
     }
-}
-
-/** @param {HTMLElement} element */
-window.refreshDoc = function(element) {
-    reloadIFrame(element.parentElement.previousElementSibling);
 }
 
 /** @param permalink ...comments/${permalink}/?...*

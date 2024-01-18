@@ -1,0 +1,22 @@
+/* Classes used:
+    .freeze-row
+    .freeze-col
+ */
+
+/* #region Freeze */
+.freeze-row th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.freeze-col tr > :first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+}
+
+.freeze-col.freeze-row th:first-child {
+    z-index: 2;
+}
+/* #endregion */

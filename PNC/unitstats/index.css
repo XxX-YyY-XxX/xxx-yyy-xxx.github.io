@@ -1,5 +1,6 @@
-@import "/univasset/scripts/externalcss.css" layer(user);
+@import "/main.css";
 @import "/univasset/scripts/tooltip.css";
+@import "/univasset/scripts/table.css";
 
 .func_table {
     height: fit-content;
@@ -15,43 +16,35 @@ tbody > tr > td:first-child, thead > tr > th {
     cursor: pointer;
 }
 
-@layer cell-color {
-    /* #region Freeze */
-    .freeze-row th {
-        background: #1b1b1b /* !important */;
-    }
-
-    .freeze-col tr > :first-child {
-        border-right: 1px dashed #b5e853;
-    }
-    /* #endregion */
-
-    /* #region Sort */
-    .func_table th[data-sort="hi"] {
-        background: linear-gradient(135deg, #1b1b1b, transparent 50%),
-            linear-gradient(-135deg, #1b1b1b, transparent 50%),
-            linear-gradient(blue, gray 50%) /* !important */;
-    }
-
-    .func_table th[data-sort="lo"] {
-        background: linear-gradient(45deg, #1b1b1b, transparent 50%),
-            linear-gradient(-45deg, #1b1b1b, transparent 50%),
-            linear-gradient(gray 50%, red) /* !important */;
-    }
-    /* #endregion */
-}
-
-/* #region Filter */
-tr:not(.hidden):nth-child(even) {
-	background-color: rgba(85, 107, 47, 0.25);
-}
-
-.freeze-col tr:not(.hidden):nth-child(odd) > :first-child {
+/* #region Freeze */
+.freeze-row th {
     background: #1b1b1b;
 }
 
-.freeze-col tr:not(.hidden):nth-child(even) > :first-child {
+.freeze-col tr > :first-child {
+    border-right: 1px dashed #b5e853;
+}
+
+.freeze-col tbody > tr:nth-child(odd) > td:first-child {
+    background: #1b1b1b;
+}
+
+.freeze-col tbody > tr:nth-child(even) > td:first-child {
     background: #292f20;
+}
+/* #endregion */
+
+/* #region Sort */
+.func_table th[data-sort="hi"] {
+    background: linear-gradient(135deg, #1b1b1b, transparent 50%),
+        linear-gradient(-135deg, #1b1b1b, transparent 50%),
+        linear-gradient(blue, gray 50%);
+}
+
+.func_table th[data-sort="lo"] {
+    background: linear-gradient(45deg, #1b1b1b, transparent 50%),
+        linear-gradient(-45deg, #1b1b1b, transparent 50%),
+        linear-gradient(gray 50%, red);
 }
 /* #endregion */
 
