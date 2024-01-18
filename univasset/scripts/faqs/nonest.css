@@ -47,6 +47,7 @@ fieldset > .tags {
 /* Contents */
 fieldset :is(ol, ul) {
     margin: 0px;
+    padding-inline-start: 20px;
 }
 
 fieldset a {

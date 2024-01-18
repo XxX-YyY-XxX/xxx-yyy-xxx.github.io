@@ -5,6 +5,11 @@
 .func_table {
     height: fit-content;
     max-height: 95lvh;
+    overflow: scroll;
+}
+
+table {
+    margin: 0;
 }
 
 input[type="checkbox"], input[type="radio"] {

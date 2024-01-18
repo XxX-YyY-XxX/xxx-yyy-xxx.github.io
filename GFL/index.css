@@ -26,4 +26,5 @@
     font-size: min(8cqw, 50px);
     -webkit-text-stroke: 1px white;
     color: black;
+    text-align: center;
 }

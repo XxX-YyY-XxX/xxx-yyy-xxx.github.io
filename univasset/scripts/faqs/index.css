@@ -95,6 +95,7 @@ fieldset {
     /* Contents */
     & :is(ol, ul) {
         margin: 0px;
+        padding-inline-start: 20px;
     }
 
     & a {
@@ -133,12 +134,6 @@ details[open] summary {
 /* #endregion */
 
 /* #region Embed */
-iframe[src*="docs.google.com"] {
-    width: 100%;
-    aspect-ratio: 1/1;
-    border: 0px;
-}
-
 iframe[src*="www.youtube.com"], iframe[src*="streamable.com"] {
     width: 100%;
     aspect-ratio: 16/9;

@@ -105,7 +105,7 @@ function details(summary, content) {
 
 
 
-function anchor(text, link) {
+function anchor(text, link, {target = ""} = {}) {
     const A = document.createElement("a")
     A.href = link
     A.append(text)

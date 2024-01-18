@@ -1,9 +1,14 @@
-@import "/maincss.css";
+@import "/main.css";
 @import "/univasset/scripts/table.css";
 
 .func_table {
     height: fit-content;
     max-height: 95lvh;
+    overflow: scroll;
+}
+
+table {
+    margin: 0;
 }
 
 /* #region Filter */
