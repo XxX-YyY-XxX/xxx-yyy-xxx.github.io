@@ -10,9 +10,6 @@
         -->
         <!-- Some GDoc fails to load and reloading it blanks the whole page. -->
         <!-- script defer type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script -->
-        <!-- <script defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        <script type="module" src="/univasset/scripts/include.js"></script>
-        <script type="module" src="./index.js"></script> -->
 
         <script defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         <script type="module" src="./query.js"></script>
@@ -22,7 +19,6 @@
         <meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <link rel="stylesheet" href="./index.css"> -->
         <link rel="stylesheet" href="/univasset/scripts/faqs/index.css">
         
         <!-- Setup theme-color -->
@@ -46,25 +42,6 @@
         <div class="container">
             <section id="main_content">
                 <include src="/univasset/scripts/faqs/index.html" onreplace="queryFunc(tags, cards)"></include>
-
-                <!-- <div id="input-type-container"></div>
-
-                <form id="submission-form">
-                    <div id="tags-list"></div>
-
-                    <input type="text" id="search-text" placeholder="Search..." name="search">
-                    <input type="submit">
-                </form>
-
-                <div id="browse-page">
-                    <button type="button" value="first">First</button>
-                    <button type="button" value="previous">Prev</button>
-                    <span id="page-no">0</span>/<span id="maxpage"></span>
-                    <button type="button" value="next">Next</button>
-                    <button type="button" value="last">Last</button>
-                </div>
-
-                <div id="cards-field"></div> -->
             </section>
         </div>
     </body>

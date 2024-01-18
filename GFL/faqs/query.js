@@ -96,14 +96,14 @@ export const cardData = [
     //#region Topic Primers
     {
         id : '00000',
-        questions : `I can't access/press/see things, what do I do?`,
-        answers : `Have you tried restarting your application/phone? This should be the default response to everything.`,
+        question: `I can't access/press/see things, what do I do?`,
+        answer: `Have you tried restarting your application/phone? This should be the default response to everything.`,
         tags : [dTag.TECH, dTag.PRIME, dTag.IMPT]
     },
     {
         id : '00001',
-        questions : `How do I level my girls?`,
-        answers : `${List.description({
+        question: `How do I level my girls?`,
+        answer: `${List.description({
             "Leveling Maps": [
                 `Done mainly through ${spoilerSummary('corpse dragging', "Also called Poor Run or Beggar Run, it is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.")}.`,
                 getID('Draggable stages.', '00026'),
@@ -121,27 +121,27 @@ export const cardData = [
     },
     {
         id : '00421',
-        questions : `Is there a guide on how to use the equipments/attachments for Tactical Dolls?`,
-        answers : `${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/equipment-basics-how-juggernaut-t-dolls")}`,
+        question: `Is there a guide on how to use the equipments/attachments for Tactical Dolls?`,
+        answer: `${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/equipment-basics-how-juggernaut-t-dolls")}`,
         tags : [dTag.TDOLL, dTag.EQUIP, dTag.PRIME]
     },
     {
         id : '00002',
-        questions : `What is Combat Effectiveness?`,
-        answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ce')}<br>
+        question: `What is Combat Effectiveness?`,
+        answer: `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ce')}<br>
         ${link("u/elgatoroid's CE calculation.", 'https://old.reddit.com/r/girlsfrontline/comments/kqtpcv/weekly_commanders_lounge_january_05_2021/gifxq8v/')}`,
         tags : [dTag.CE, dTag.PRIME]
     },
     {
         id : '00444',
-        questions : `What are batteries (battery) and where do I get them?`,
-        answers : `Used to upgrade facilities, and more. You can get them from the Black Market, your dorm, and your friends' dorms.`,
+        question: `What are batteries (battery) and where do I get them?`,
+        answer: `Used to upgrade facilities, and more. You can get them from the Black Market, your dorm, and your friends' dorms.`,
         tags : [dTag.BATTERY, dTag.PRIME, dTag.GET]
     },
     {
         id : '00003',
-        questions : `What is Expedition/Forward Basecamp?`,
-        answers : `${link('Gamepress Detailed Guide.', 'https://gamepress.gg/girlsfrontline/gfl-explained-basecamp-and-exploration')}<br>
+        question: `What is Expedition/Forward Basecamp?`,
+        answer: `${link('Gamepress Detailed Guide.', 'https://gamepress.gg/girlsfrontline/gfl-explained-basecamp-and-exploration')}<br>
         ${link('GFC Primer.', 'https://www.gflcorner.com/expedition-system-mini-guide/')}<br>
         ${link('ATM Guide.', 'https://gfl.matsuda.tips/post/weareabsolutenotlostiswear')}<br>
         Important note is that FB unlocks at Commander Lv. 20.`,
@@ -149,8 +149,8 @@ export const cardData = [
     },
     {
         id : '00004',
-        questions : `Are there any general guides for Protocol Assimilation/Coalition Units/SF Capture Operation?`,
-        answers : `${link('Gamepress guide.', "https://gamepress.gg/girlsfrontline/protocol-assimilation-coalition-basics-and-teambuilding")}<br>
+        question: `Are there any general guides for Protocol Assimilation/Coalition Units/SF Capture Operation?`,
+        answer: `${link('Gamepress guide.', "https://gamepress.gg/girlsfrontline/protocol-assimilation-coalition-basics-and-teambuilding")}<br>
         ${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
         ${spoilerSummary("Cleista's basic Twitter guide.", MBD.twitter('CleistaCeleste', '1409824210571214849'))}`,
@@ -158,8 +158,8 @@ export const cardData = [
     },
     {
         id : '00005',
-        questions : `How do Neural Upgrades/MODs work?`,
-        answers : `The only way to raise dolls beyond Lv. 100.<br>
+        question: `How do Neural Upgrades/MODs work?`,
+        answer: `The only way to raise dolls beyond Lv. 100.<br>
         ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/gfl-explained-neural-upgrade')}<br>
         ${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/modding')}<br>
         ${link('GFC guide.', 'https://www.gflcorner.com/neural')}`,
@@ -167,8 +167,8 @@ export const cardData = [
     },
     {
         id : '00006',
-        questions : `What are Fairies?`,
-        answers : `${List.unordered(
+        question: `What are Fairies?`,
+        answer: `${List.unordered(
             link('Matsuda guide.', 'https://gfl.matsuda.tips/post/fairies'),
             link('IOPWiki guide.', 'https://iopwiki.com/wiki/Technical_Fairies') + " Unupdated rework skills.",
             link('GFC guide.', 'https://www.gflcorner.com/fairy/') + " Fairies up to CT only.",
@@ -182,8 +182,8 @@ export const cardData = [
     },
     {
         id : '00007',
-        questions : `How to HOC?`,
-        answers : `${link('Gamepress Guide.', 'https://gamepress.gg/girlsfrontline/gfl-explained-hoc-combat-basics')}<br>
+        question: `How to HOC?`,
+        answer: `${link('Gamepress Guide.', 'https://gamepress.gg/girlsfrontline/gfl-explained-hoc-combat-basics')}<br>
         ${link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Heavy_Ordnance_Corps')}<br>
         ${link('Matsuda Guide.', 'https://gfl.matsuda.tips/post/hocs')}<br>
         ${link('GFC Guide.', 'https://www.gflcorner.com/hoc-guide-by-gfc/')}<br>
@@ -192,8 +192,8 @@ export const cardData = [
     },  //Privated - rsFyXRDAi6I
     {
         id : '00420',
-        questions : `There's an event going on. What should I do?`,
-        answers : `${List.description({
+        question: `There's an event going on. What should I do?`,
+        answer: `${List.description({
             "Seasonal Events": [
                 "Farm maps to get 60 (80/120 if rerun) event specific tokens daily. You can miss a day of farming and still get all items in the shop.",
                 "Complete the story to unlock farming maps. Story maps are largely balanced around a one-week player.",
@@ -212,14 +212,14 @@ export const cardData = [
     },
     {
         id : '00477',
-        questions : `What is Gray Zone Exploration?`,
-        answers : `${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/gray-zone-introduction")}`,
+        question: `What is Gray Zone Exploration?`,
+        answer: `${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/gray-zone-introduction")}`,
         tags : [dTag.GZ, dTag.PRIME]
     },
     {
         id : '00008',
-        questions : `How to do Theater/Theatre?`,
-        answers : `${link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Theater_Mode')}<br>
+        question: `How to do Theater/Theatre?`,
+        answer: `${link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Theater_Mode')}<br>
         ${link('GFC Guide.', 'https://www.gflcorner.com/theater-system-introduction-by-gfc/')}<br>
         ${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/rng_backstabbing')}<br>
         ${link('Gamepress Guide Part 1.', 'https://gamepress.gg/girlsfrontline/theater-8-overhaul-guide-new-mechanics-new-enemies-same-pain')} The latest theater version.<br>
@@ -232,27 +232,27 @@ export const cardData = [
     },
     {
         id : '00009',
-        questions : `What's a True Core Mask, where do I get them, and how do I use it?`,
-        answers : `One TCM is given out every major event and anniversary.<br>
+        question: `What's a True Core Mask, where do I get them, and how do I use it?`,
+        answer: `One TCM is given out every major event and anniversary.<br>
         ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/true-core-mask-revamped-who-get')}`,
         tags : [dTag.TCM, dTag.PRIME, dTag.MAJOR, dTag.ANNIV, dTag.GET]
     },
     {
         id : '00010',
-        questions : `Are there any sort of guides on how and when to roll for skins?`,
-        answers : `${link('BigStupidJellyfish guide.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/gacha')}`,
+        question: `Are there any sort of guides on how and when to roll for skins?`,
+        answer: `${link('BigStupidJellyfish guide.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/gacha')}`,
         tags : [dTag.RESUPPLY, dTag.TDOLL, dTag.SKIN, dTag.PRIME]
     },
     {
         id : '00011',
-        questions : `What are auto-battles for?`,
-        answers : `Saves your sanity from painful-AF-to-grind-for-drops maps for starters. Useful for getting the map limited dolls you want.`,
+        question: `What are auto-battles for?`,
+        answer: `Saves your sanity from painful-AF-to-grind-for-drops maps for starters. Useful for getting the map limited dolls you want.`,
         tags : [dTag.AUTO, dTag.PRIME]
     },
     {
         id : '00012',
-        questions : `What does Affection do?`,
-        answers : `${List.description({
+        question: `What does Affection do?`,
+        answer: `${List.description({
             'Tactical Dolls' : [
                 'At 90 and above, gives stat bonuses indicated by pink numbers.',
                 'At 10 below, gives stat penalties indicated by blue numbers.',
@@ -269,14 +269,14 @@ export const cardData = [
     },  //@Clarify - https://old.reddit.com/r/girlsfrontline/comments/w2n556/weekly_commanders_lounge_july_19_2022/igti9c1/
     {
         id : '00098',
-        questions : `How does the Rescue Station work?`,
-        answers : `${link('DMesse guide.', 'http://dmesse.egloos.com/m/3588696')}`,
+        question: `How does the Rescue Station work?`,
+        answer: `${link('DMesse guide.', 'http://dmesse.egloos.com/m/3588696')}`,
         tags : [dTag.PET, dTag.PRIME]
     },
     {
         id : '00013',
-        questions : `What is Luffberry Chess?`,
-        answers : `GFL version of 100% Orange Juice, I guess?<br>
+        question: `What is Luffberry Chess?`,
+        answer: `GFL version of 100% Orange Juice, I guess?<br>
         And it's called "chess" only because boardgame.<br>
         ${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/springfields-cafe-haven-soothe-weary-souls-and-luffberry-chess")}
         ${link("u/fortis_99's tips.", 'https://redd.it/rz4uye')}<br>
@@ -289,16 +289,16 @@ export const cardData = [
     //#region Tier Lists
     {
         id : '00464',
-        questions : `Is there a tier list for this game?`,
-        answers : `${link("CN spreadsheet.", "https://shimo.im/sheets/47kgJne6BeIpR4qV")}<br>
+        question: `Is there a tier list for this game?`,
+        answer: `${link("CN spreadsheet.", "https://shimo.im/sheets/47kgJne6BeIpR4qV")}<br>
         Take them more as a suggestion rather than a rule. Tier lists are usually for those generally ok in majority of content or very good at highly recurring niche.<br>
         It's better to know which units are good based on countering enemies and their formations.`,
         tags : [dTag.TIER]
     },
     {
         id : '00014',
-        questions : `Is XXX doll good and is it safe to retire them?`,
-        answers : `Tier lists in general are a matter of countering enemies. And since the meta of this game varies wildly from event to event, most people would point to analysis links instead.
+        question: `Is XXX doll good and is it safe to retire them?`,
+        answer: `Tier lists in general are a matter of countering enemies. And since the meta of this game varies wildly from event to event, most people would point to analysis links instead.
         ${List.unordered(
             link('Gamepress Overview.', 'https://gamepress.gg/girlsfrontline/t-dolls-list'),
             spoilerSummary("u/LuckyTenth's spreadsheet.", Embed.google(["T-doll relevance", "https://docs.google.com/spreadsheets/d/1w2qEbnNluSc6C4U73yyAnYE_zmXdARvDu3GZmMO7hl4"])),
@@ -315,23 +315,23 @@ export const cardData = [
     },
     {
         id : '00015',
-        questions : `Is there a tier list for good PA units?`,
-        answers : `${link("u/CheneyQWER's tier list.", 'https://redd.it/uirvxz')}<br>
+        question: `Is there a tier list for good PA units?`,
+        answer: `${link("u/CheneyQWER's tier list.", 'https://redd.it/uirvxz')}<br>
         ${link('Gamepress units guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units')} Use the search bar if a certain PA unit is unavailable in the page.<br>
         ${link("Matsuda tips.", "https://gfl.matsuda.tips/captures/")}`,
         tags : [dTag.PA, dTag.COALITION, dTag.TIER]
     },
     {
         id : '00016',
-        questions : `Who should I prioritize to MOD first?`,
-        answers : `${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/neural-upgrade-priority-guide')}<br>
+        question: `Who should I prioritize to MOD first?`,
+        answer: `${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/neural-upgrade-priority-guide')}<br>
         ${spoilerSummary('CN MOD list.', img(IMG_ASSET+"CNMODTier.png"))}`,
         tags : [dTag.MOD, dTag.TIER]
     },
     {
         id : '00017',
-        questions : `Is there a tier list for fairies and equipment?`,
-        answers : `${List.unordered(
+        question: `Is there a tier list for fairies and equipment?`,
+        answer: `${List.unordered(
             spoilerSummary("Sijun's infographic", `${image("https://i.imgur.com/2nh8xHs.jpeg", "Fairy and equipment tier list")}<br>
             For the equipments, top number is the recommended quantity, bottom number is the reserve quantity.`),
             spoilerSummary("u/UnironicWeeaboo's fairy stat calculator", Embed.google(
@@ -346,20 +346,20 @@ export const cardData = [
     },
     {
         id : '00018',
-        questions : `Anyone have a nice infographic for equipment priority and recommended/ideal number/amount of equipments?`,
-        answers : `${img('https://cdn.discordapp.com/attachments/951085201658871820/1063837601351610389/eq_prior_notheater.png', 'Discord: $eqpriority')}`,
+        question: `Anyone have a nice infographic for equipment priority and recommended/ideal number/amount of equipments?`,
+        answer: `${img('https://cdn.discordapp.com/attachments/951085201658871820/1063837601351610389/eq_prior_notheater.png', 'Discord: $eqpriority')}`,
         tags : [dTag.EQUIP, dTag.TDOLL, dTag.TIER]
     },
     {
         id : '00019',
-        questions : `Which HOC FSTs should I raise first?`,
-        answers : `${img('https://cdn.discordapp.com/attachments/444348972035866634/971135326150090842/HOC_Priority.png', 'Discord: $hocpriority')}`,
+        question: `Which HOC FSTs should I raise first?`,
+        answer: `${img('https://cdn.discordapp.com/attachments/444348972035866634/971135326150090842/HOC_Priority.png', 'Discord: $hocpriority')}`,
         tags : [dTag.HOC, dTag.FST, dTag.TIER]
     },
     {
         id : '00020',
-        questions : `Which doll should I get with True Core Masks?`,
-        answers : `${img(IMG_ASSET+"VeryReliableTCMGuide.png")}<br>
+        question: `Which doll should I get with True Core Masks?`,
+        answer: `${img(IMG_ASSET+"VeryReliableTCMGuide.png")}<br>
         ${img(IMG_ASSET+"SeriousTCMGuide.png")}`,
         tags : [dTag.TCM, dTag.TIER]
     },
@@ -367,16 +367,16 @@ export const cardData = [
     //#region Compilations
     {
         id : '00297',
-        questions : `Is there a good place where I can find a spreadsheet on detailed doll stats?`,
-        answers : `${link("u/UnironicWeeaboo's repository.", 'https://randomqwerty.github.io/?server=ch&file=gun')}<br>
+        question: `Is there a good place where I can find a spreadsheet on detailed doll stats?`,
+        answer: `${link("u/UnironicWeeaboo's repository.", 'https://randomqwerty.github.io/?server=ch&file=gun')}<br>
         ${link('GFLDB.', 'https://gfl.zzzzz.kr/dolls.php?lang=en')}<br>
         ${link('GFWiki CN.', 'https://gfwiki.org/w/%E6%88%98%E6%9C%AF%E4%BA%BA%E5%BD%A2%E5%9B%BE%E9%89%B4')}`,
         tags : [dTag.TDOLL, dTag.REF]
     },  //Wait for additional repo.
     {
         id : '00023',
-        questions : `Where can I read/rewatch the MOD, costume, event stories, and all that?`,
-        answers : `${List.description({
+        question: `Where can I read/rewatch the MOD, costume, event stories, and all that?`,
+        answer: `${List.description({
             'Compilations' : [
                 link('GF Translated Story Material (+ other stuff)', 'https://drive.google.com/drive/folders/14sNze_lnv5EwL1bl_g3IOVQIo6GGYUJp'),
                 link('GF Translations', 'https://drive.google.com/drive/folders/14bAuWaGbagJwucmlit3EkXFqMRV9NHZO'),
@@ -408,8 +408,8 @@ export const cardData = [
     //#region Important Details
     {
         id : '00024',
-        questions : `Where and how can I get my favorite gun/doll/unit/character?`,
-        answers : `${List.description({
+        question: `Where and how can I get my favorite gun/doll/unit/character?`,
+        answer: `${List.description({
             'Factory Production': [
                 spoilerSummary('Infographic for resource efficient recipes.', img("https://media.discordapp.net/attachments/951085201658871820/1061272490309066762/recipes_2.png")),
                 link("GFDB Github Database.", 'https://gf-db.github.io/')
@@ -457,8 +457,8 @@ export const cardData = [
     },  //${spoilerSummary('Dolls EN are missing.', image('https://cdn.discordapp.com/attachments/951085201658871820/1033732620384751636/en_missing_dolls_varz_asked_edition.png'))}
     {
         id : '00025',
-        questions : `How do I strengthen T-Dolls?`,
-        answers : `${List.description({
+        question: `How do I strengthen T-Dolls?`,
+        answer: `${List.description({
             'As an individual unit' : ['Leveling up',
                 'Stat enhancements',
                 'Equipments',
@@ -473,8 +473,8 @@ export const cardData = [
     },
     {
         id : '00433',
-        questions : `What is Dummy-linking and how do I do it?`,
-        answers : `A game mechanic to increase the total damage dealt and the health pool of a doll, and tile bonuses for HGs.<br>
+        question: `What is Dummy-linking and how do I do it?`,
+        answer: `A game mechanic to increase the total damage dealt and the health pool of a doll, and tile bonuses for HGs.<br>
         Each newly-acquired doll starts at dummy link x1.<br>
         The level thresholds of dolls to enable linking are levels 10(x2), 30(x3), 70(x4), 90(x5).<br>
         Which is why the general consensus on leveling is to stop at Lv.90, and why RFHGs are often regarded as mid-late game builds.<br>
@@ -484,8 +484,8 @@ export const cardData = [
     },
     {
         id : '00026',
-        questions : `What are the leveling stages I can corpse drag and how do I run them?`,
-        answers : `${List.description({
+        question: `What are the leveling stages I can corpse drag and how do I run them?`,
+        answer: `${List.description({
             'General': [
                 link('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide'),
                 link('Gamepress guide.', "https://gamepress.gg/girlsfrontline/optimized-levelling-corpse-dragging-maps"),
@@ -521,14 +521,14 @@ export const cardData = [
     },
     {
         id : '00027',
-        questions : `When should I begin trying to produce fairies/do Heavy Equipment Constructions (HEC)?`,
-        answers : `When you have sufficient income for 4 resources and cores. Ideally ASAP since raising one to 5${STAR} takes a considerable amount of time.`,
+        question: `When should I begin trying to produce fairies/do Heavy Equipment Constructions (HEC)?`,
+        answer: `When you have sufficient income for 4 resources and cores. Ideally ASAP since raising one to 5${STAR} takes a considerable amount of time.`,
         tags : [dTag.FAIRY, dTag.PROD, dTag.IMPT]
     },
     {
         id : '00028',
-        questions : `Is there a guide on how to build echelons/team compositions?`,
-        answers : `Basic tip in this game is counterplay is more important than fixed synergy.<br>
+        question: `Is there a guide on how to build echelons/team compositions?`,
+        answer: `Basic tip in this game is counterplay is more important than fixed synergy.<br>
         ${List.description({
             'Mixed' : [spoilerSummary("CheneyQWER's infographic.", img(IMG_ASSET+"EchelonComps.png"))],
             'Coalition Echelons' : [
@@ -552,8 +552,8 @@ export const cardData = [
     },
     {
         id : '00029',
-        questions : `What is kiting?`,
-        answers : `Kiting, in general, is the method of moving your tanks rightwards to make the enemy aim at them then moving leftwards to make the enemy walk towards you, while your DPS constantly shoots them. This is effective because most enemies have aim time where they do nothing, and range where you have to be in their sights to start aiming. Therefore, lengthening the lifespans of your dolls, especially the tanks.<br>
+        question: `What is kiting?`,
+        answer: `Kiting, in general, is the method of moving your tanks rightwards to make the enemy aim at them then moving leftwards to make the enemy walk towards you, while your DPS constantly shoots them. This is effective because most enemies have aim time where they do nothing, and range where you have to be in their sights to start aiming. Therefore, lengthening the lifespans of your dolls, especially the tanks.<br>
         This is the reason why putting your whole team at the back of the grid is preferable.<br>
         Sometimes called wiggling which in this context means moving your DPS to retarget.<br>
         ${link('GFC guide','https://www.gflcorner.com/battle-controls/')}<br>
@@ -564,22 +564,22 @@ export const cardData = [
     },
     {
         id : '00030',
-        questions : `What are Main Tanks and Off Tanks?`,
-        answers : `${List.description({'Main Tanks' : ['Guns that have survivability skills (i.e. smoke, eva boost, stun etc.).', 'Generally situated at the middle of the pack.'],
+        question: `What are Main Tanks and Off Tanks?`,
+        answer: `${List.description({'Main Tanks' : ['Guns that have survivability skills (i.e. smoke, eva boost, stun etc.).', 'Generally situated at the middle of the pack.'],
         'Off Tanks' : ['Guns that generally have damage skills (i.e. molotov, grenade, damage boost etc.) and/or a secondary damage soaker in some instances.', 'Situated at either middle-top or middle-bottom.']})}<br>
         All of these usually refer to SMGs.`,
         tags : [dTag.ECH, dTag.IMPT]
     },
     {
         id : '00031',
-        questions : `Is fairy leveling for increasing rarity only?`,
-        answers : `Mainly yes, but there is a gradual aura boost where a Lv.20 is better than Lv.1 even at 1${STAR}. And increasing rarity is very important, from increasing the aura stat cap, to making the talent proc more consistently. Not to mention that you can cap them to Lv.100 even as a 1${STAR} so there's no hurry to raise their rarity.`,
+        question: `Is fairy leveling for increasing rarity only?`,
+        answer: `Mainly yes, but there is a gradual aura boost where a Lv.20 is better than Lv.1 even at 1${STAR}. And increasing rarity is very important, from increasing the aura stat cap, to making the talent proc more consistently. Not to mention that you can cap them to Lv.100 even as a 1${STAR} so there's no hurry to raise their rarity.`,
         tags : [dTag.FAIRY, dTag.LEVEL, dTag.IMPT]
     },
     {
         id : '00032',
-        questions : `Is there a rate up in this game? If so, how do they work?`,
-        answers : `When a rate-up is in progress, an "EVENT" marker will be plastered on top of the Factory Production button.<br>
+        question: `Is there a rate up in this game? If so, how do they work?`,
+        answer: `When a rate-up is in progress, an "EVENT" marker will be plastered on top of the Factory Production button.<br>
         ${List.description({
             'Anchored Construction' : [
                 link(`Available for new players ${TextStyle.style('and for veterans not bothering with it', TextStyle.STRIKE)}.`, 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681'),
@@ -596,16 +596,16 @@ export const cardData = [
     },
     {
         id : '00033',
-        questions : `Why are the doll skills not activating?`,
-        answers : `Is the auto skill button on? Is it on forced manual? Is it a flare skill?<br>
+        question: `Why are the doll skills not activating?`,
+        answer: `Is the auto skill button on? Is it on forced manual? Is it a flare skill?<br>
         Active skills cannot activate when they cannot shoot, i.e. reloading, dolls moving, no enemy in range, no ammo/ration<!--, in-between shot cooldowns-->.<br>
         Passive skills on the other hand will not activate only if they have no ammo or ration. This includes Slug's 3x damage and Flash's -3 damage. Though that there are a handful of exceptions.`,
         tags : [dTag.TDOLL, dTag.SKILL, dTag.IMPT]
     },  //@Visual
     {
         id : '00034',
-        questions : `How do I strengthen FSTs?`,
-        answers : `${List.unordered(
+        question: `How do I strengthen FSTs?`,
+        answer: `${List.unordered(
             'Leveling up mostly by SCR',
             `Raising ${STAR}s using their central data or general data`,
             'Iterations by data patches (only available at LV100 and 5★)',
@@ -617,69 +617,69 @@ export const cardData = [
     //#endregion
     {
         id : '00035',
-        questions : `Which SF units are considered dolls/machines/armored/unarmored?`,
-        answers : `${img(IMG_ASSET+"SFEnemy.png", 'Jupiter Cannons count as unarmored machine type')}`,
+        question: `Which SF units are considered dolls/machines/armored/unarmored?`,
+        answer: `${img(IMG_ASSET+"SFEnemy.png", 'Jupiter Cannons count as unarmored machine type')}`,
         tags : [dTag.ENEMY]
     },
     {
         id : '00036',
-        questions : `Will there be problems with switching between multiple devices regularly?`,
-        answers : `Only if you think that manually logging in every switch is a problem.`,
+        question: `Will there be problems with switching between multiple devices regularly?`,
+        answer: `Only if you think that manually logging in every switch is a problem.`,
         tags : [dTag.ACCT]
     },  //If there's two simultaneous logins, who gets kicked the first or the second?
     {
         id : '00037',
-        questions : `Where to go for tech support?`,
-        answers : `FB and Twitter is said to be responsive enough. Or you can use ${link('this', 'https://forms.gle/bZNnQeh5sJaD3pim8')} for reporting.`,
+        question: `Where to go for tech support?`,
+        answer: `FB and Twitter is said to be responsive enough. Or you can use ${link('this', 'https://forms.gle/bZNnQeh5sJaD3pim8')} for reporting.`,
         tags : [dTag.TECH, dTag["3P"]]
     },
     {
         id : '00038',
-        questions : `Which combat sim is better to focus on?`,
-        answers : `Data. Always data.`,
+        question: `Which combat sim is better to focus on?`,
+        answer: `Data. Always data.`,
         tags : [dTag.SIMS, dTag.ITEM, dTag.NEWB]
     },
     {
         id : '00039',
-        questions : `How do I get more Quick Training Contracts?`,
-        answers : `End of daily log-ins, battlepass, Keycard Event, gem shop.<br>
+        question: `How do I get more Quick Training Contracts?`,
+        answer: `End of daily log-ins, battlepass, Keycard Event, gem shop.<br>
         This contract/ticket is doesn't come in droves so use carefully.`,
         tags : [dTag.ITEM, dTag.MINI, dTag.SHOP, dTag.GET]
     },
     {
         id : '00040',
-        questions : `How do I unlock the next chapter?`,
-        answers : `Beat X-6 Normal of the last unlocked chapter again. If it still doesn't appear after that, restart client.`,
+        question: `How do I unlock the next chapter?`,
+        answer: `Beat X-6 Normal of the last unlocked chapter again. If it still doesn't appear after that, restart client.`,
         tags : [dTag.MAIN, dTag.TECH]
     },
     {
         id : '00041',
-        questions : `Which emulators are good for GFL?`,
-        answers : `${List.ordered('Mumu.', 'Memu.', 'LDPlayer.', 'Nox.', 'Bluestacks.')}`,
+        question: `Which emulators are good for GFL?`,
+        answer: `${List.ordered('Mumu.', 'Memu.', 'LDPlayer.', 'Nox.', 'Bluestacks.')}`,
         tags : [dTag.EMU, dTag.NEWB]
     },
     {
         id : '00042',
-        questions : `How can I play GFL if Apple Store doesn't have it?`,
-        answers : `Use Android, use emulator, use VPN, use jailbreak.`,
+        question: `How can I play GFL if Apple Store doesn't have it?`,
+        answer: `Use Android, use emulator, use VPN, use jailbreak.`,
         tags : [dTag.APPLE]
     },
     {
         id : '00043',
-        questions : `When is the anniversary?`,
-        answers : `May 8 for EN server.`,
+        question: `When is the anniversary?`,
+        answer: `May 8 for EN server.`,
         tags : [dTag.ANNIV]
     },
     {
         id : '00044',
-        questions : `How do I unlock Chapter 0?`,
-        answers : `Beat Chapter 4 Emergency Map 4.`,
+        question: `How do I unlock Chapter 0?`,
+        answer: `Beat Chapter 4 Emergency Map 4.`,
         tags : [dTag.MAIN]
     },
     {
         id : '00046',
-        questions : `Is there a list of which logistics to do if I want to prioritize certain resources?`,
-        answers : `${link('GFC GDoc.', 'https://docs.google.com/spreadsheets/d/1ah2JO6ggWuVaBho9yxgDMC-ucEKA8C42SBkjIlnIcWk')} Up to Chapter 11.<br>
+        question: `Is there a list of which logistics to do if I want to prioritize certain resources?`,
+        answer: `${link('GFC GDoc.', 'https://docs.google.com/spreadsheets/d/1ah2JO6ggWuVaBho9yxgDMC-ucEKA8C42SBkjIlnIcWk')} Up to Chapter 11.<br>
         ${link("u/elgatoroid's calculator.", 'https://gfl-logistics.neko.gg/')} Up to Chapter 11.<br>
         ${link('GFGFork site.', 'https://gfgfork.github.io/gf/main')} Up to Chapter 12.<br>
         ${link('Tempkaridc calculator.', 'https://tempkaridc.github.io/gf/')} Up to Chapter 13.<br>
@@ -688,8 +688,8 @@ export const cardData = [
     },
     {
         id : '00047',
-        questions : `Do I still need to use advantaged dolls for Theater?`,
-        answers : `Not as much as before. They no longer make or break the CE, though they do get stat boosts, even outside strongholds.<br>
+        question: `Do I still need to use advantaged dolls for Theater?`,
+        answer: `Not as much as before. They no longer make or break the CE, though they do get stat boosts, even outside strongholds.<br>
         HG = 20% CDR, SMG/SG = 15% Arm, 50% EVA, AR/RF/MG = 20% FP, 20% ACC.<br>
         The endgame now goes to MODs and oaths.<br>
         The CE you see on each doll when toggling the Boss CE button is the adjusted number, with the advantaged dolls having 20% bonus CE accounted for.`,
@@ -697,8 +697,8 @@ export const cardData = [
     },
     {
         id : '00048',
-        questions : `For limited-time bonuses (i.e. auto-battles, logistics), when are the rewards calculated?`,
-        answers : `${List.description({
+        question: `For limited-time bonuses (i.e. auto-battles, logistics), when are the rewards calculated?`,
+        answer: `${List.description({
            'If the runs can be cancelled without penalty, rewards are calculated at the end.' : [
                 'The "Use Battery" bingo mission when exp-training HOCs.',
                 'Auto-Battles.'],
@@ -710,34 +710,34 @@ export const cardData = [
     },
     {
         id : '00049',
-        questions : `How does Armor Penetration work?`,
-        answers : `${link('Matsuda explanation.', 'https://gfl.matsuda.tips/post/armour')}`,
+        question: `How does Armor Penetration work?`,
+        answer: `${link('Matsuda explanation.', 'https://gfl.matsuda.tips/post/armour')}`,
         tags : [dTag.BATTLE, dTag.SYSMECH]
     },
     {
         id : '00050',
-        questions : `Is there a penalty for using HOC charges and Fairy points in Theater battles?`,
-        answers : `Nope. Joins boss battle regardless of charges and has no bearing on final score. Go ham.<br>
+        question: `Is there a penalty for using HOC charges and Fairy points in Theater battles?`,
+        answer: `Nope. Joins boss battle regardless of charges and has no bearing on final score. Go ham.<br>
         Except if you used them and lost that battle, they won't be refunded, even in Electronic Warfare.`,
         tags : [dTag.THEATER, dTag.HOC, dTag.FAIRY]
     },
     {
         id : '00051',
-        questions : `Will the current event token/currency carry over to the next event?`,
-        answers : `No can do. Dissolves into nothingness one week after its corresponding event is finished.`,
+        question: `Will the current event token/currency carry over to the next event?`,
+        answer: `No can do. Dissolves into nothingness one week after its corresponding event is finished.`,
         tags : [dTag.ITEM, dTag.SEASON, dTag.COLLAB]
     },
     {
         id : '00052',
-        questions : `I've heard of GFAlarm. Is it safe to use?`,
-        answers : `${link("Gamepress breakdown", 'https://gamepress.gg/girlsfrontline/how-use-gfalarm-girls-frontline-alarm')}. Also useful for getting data of HOC Chips.<br>
+        question: `I've heard of GFAlarm. Is it safe to use?`,
+        answer: `${link("Gamepress breakdown", 'https://gamepress.gg/girlsfrontline/how-use-gfalarm-girls-frontline-alarm')}. Also useful for getting data of HOC Chips.<br>
         ${link("Other usefulness.", "https://www.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jqn0nvu/")}`,
         tags : [dTag["3P"]]
     },
     {
         id : '00053',
-        questions : `Is there any way to reset my battles so I can get a win?`,
-        answers : `${List.description({
+        question: `Is there any way to reset my battles so I can get a win?`,
+        answer: `${List.description({
             "Method 1: In-game restart": [img(IMG_ASSET+"BattleRestart.png", "Restart Battle button in Pause menu. Beware the Withdraw button.")],
             "Method 2: Client restart": [
                 "Turn off WiFi during battle. You can still finish the fight with no connection. Though be wary of connection timeouts so do it near the end.",
@@ -749,14 +749,14 @@ export const cardData = [
     },
     {
         id : '00054',
-        questions : `Is there a way to know the map layout and its spawnable enemy units?`,
-        answers : `${link('Pengu GFLMaps site.', 'https://pengupengupengu.github.io/gflmaps/')}`,
+        question: `Is there a way to know the map layout and its spawnable enemy units?`,
+        answer: `${link('Pengu GFLMaps site.', 'https://pengupengupengu.github.io/gflmaps/')}`,
         tags : [dTag["3P"], dTag.MAP, dTag.ENEMY]
     },
     {
         id : '00055',
-        questions : `How can I save the enemy composition for later practice?`,
-        answers : `${List.description({
+        question: `How can I save the enemy composition for later practice?`,
+        answer: `${List.description({
             'Add Target' : [
                 "Long press the enemy on the map and you'll see the button on the top-left.",
                 'Pause while in battle to see the button on the bottom-left.',
@@ -773,49 +773,49 @@ export const cardData = [
     },  //@Visual
     {
         id : '00056',
-        questions : `How do I connect to GFAlarm with an emulator?`,
-        answers : `Enter the GFAlarm proxy address to ProxyDroid or Drony.<br>
+        question: `How do I connect to GFAlarm with an emulator?`,
+        answer: `Enter the GFAlarm proxy address to ProxyDroid or Drony.<br>
         ${link("u/Signal_Abroad1427's google-fu for Bluestacks.", 'https://www.reddit.com/r/girlsfrontline/comments/umdikk/weekly_commanders_lounge_may_10_2022/i8hj47h/')}`,
         tags : [dTag["3P"], dTag.EMU]
     },
     {
         id : '00058',
-        questions : `Is there a way for my game to feel smoother?`,
-        answers : `${link('Gamepress article.', 'https://gamepress.gg/girlsfrontline/fixing-gfl-client-lag-possible-workarounds')}<br>
+        question: `Is there a way for my game to feel smoother?`,
+        answer: `${link('Gamepress article.', 'https://gamepress.gg/girlsfrontline/fixing-gfl-client-lag-possible-workarounds')}<br>
         ${link('Decompressed obb.', "https://drive.google.com/drive/folders/1QoWsDyh4rlh0DtpxomSGOKkaAzXPfvBG") /* https://old.reddit.com/r/girlsfrontline/comments/180bxy6/weekly_commanders_lounge_november_21_2023/kae6x8k/ */}<br>
         ${link('DIY decompression.', 'https://www.reddit.com/r/girlsfrontline/comments/lvwwtv/weekly_commanders_lounge_march_02_2021/gpugenl/')}`,
         tags : [dTag.MISC]
     },
     {
         id : '00059',
-        questions : `What's the Fire Control Component (FCC) used for and where can I get them?`,
-        answers : `Upgrading 5${STAR} dolls to 6${STAR} through modding.<br>
+        question: `What's the Fire Control Component (FCC) used for and where can I get them?`,
+        answer: `Upgrading 5${STAR} dolls to 6${STAR} through modding.<br>
         Obtainable through Black Market (2 monthly), major events/campaigns, special log-ins, shop packages, battlepass`,
         tags : [dTag.ITEM, dTag.MOD, dTag.GET, dTag.BM, dTag.MAJOR, dTag.CAMPAIGN, dTag.BP]
     },
     {
         id : '00061',
-        questions : `What is Central Data for?`,
-        answers : `Unlocking their respective FST, promoting said FST, and converted to Data Patch if the FST is already 5${STAR}.<br>
+        question: `What is Central Data for?`,
+        answer: `Unlocking their respective FST, promoting said FST, and converted to Data Patch if the FST is already 5${STAR}.<br>
         Obtainable in Theater and Intelligence Analysis.`,
         tags : [dTag.ITEM, dTag.HOC, dTag.FST, dTag.GET]
     },
     {
         id : '00062',
-        questions : `When should I do T-Doll Heavy Production/craft shotguns?`,
-        answers : `Preferably during rate ups due to its high costs. Low priority otherwise since it's use at this stage of the game is for getting non-5${STAR} SGs and them not being widely used. Recommended to use the high-cost shotgun recipe for better chances.`,
+        question: `When should I do T-Doll Heavy Production/craft shotguns?`,
+        answer: `Preferably during rate ups due to its high costs. Low priority otherwise since it's use at this stage of the game is for getting non-5${STAR} SGs and them not being widely used. Recommended to use the high-cost shotgun recipe for better chances.`,
         tags : [dTag.TDOLL, dTag.PROD]
     },
     {
         id : '00063',
-        questions : `How do I fill up/unlock enemies in the Enemy Index?`,
-        answers : `Just fight them. Win or lose, we get them.`,
+        question: `How do I fill up/unlock enemies in the Enemy Index?`,
+        answer: `Just fight them. Win or lose, we get them.`,
         tags : [dTag.ENEMY]
     },
     {
         id : '00064',
-        questions : `What best-in-slot (BiS) equipments should I use on my dolls?`,
-        answers : `${List.unordered(
+        question: `What best-in-slot (BiS) equipments should I use on my dolls?`,
+        answer: `${List.unordered(
             spoilerSummary('General equipments.', figure(image("https://cdn.discordapp.com/attachments/951085201658871820/1059432568321224704/eq_suggestions.png", "Standard equipment setup."), "Taken from Discord")),
             spoilerSummary('#2 Chip equipment.', List.unordered(
                 spoilerSummary('BigStupidJellyfish_ infograph.', link(image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png', "#2 Chip flowchart."), 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')),
@@ -832,8 +832,8 @@ export const cardData = [
     },
     {
         id : '00065',
-        questions : `How do I maximize the efficiency of my echelon's ROF?`,
-        answers : `${List.unordered(
+        question: `How do I maximize the efficiency of my echelon's ROF?`,
+        answer: `${List.unordered(
             link("u/BigStupidJellyfish_'s ROF calc.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/rof-calc'),
             spoilerSummary("GFC Spreadsheet.", Embed.google(
                 ["RoF chart by GF Corner (Credits: 25thNight-, Aria, Dabby, Omega)", "https://docs.google.com/spreadsheets/d/1k74SCGGMHtwbl8gmTaETLsa8t12A7dWdj0V1tjdMD4Y"]
@@ -843,36 +843,36 @@ export const cardData = [
     },
     {
         id : '00066',
-        questions : `How do I get some Extra Potential Energy for Coalition Drills?`,
-        answers : `Shop.`,
+        question: `How do I get some Extra Potential Energy for Coalition Drills?`,
+        answer: `Shop.`,
         tags : [dTag.ITEM, dTag.PA, dTag.SIMS, dTag.SHOP, dTag.GET]
     },
     {
         id : '00067',
-        questions : `Which dolls should I dupe/duplicate?`,
-        answers : `${link('Matsuda notes.', 'https://gfl.matsuda.tips/post/worthwhiledupes')}<br>
+        question: `Which dolls should I dupe/duplicate?`,
+        answer: `${link('Matsuda notes.', 'https://gfl.matsuda.tips/post/worthwhiledupes')}<br>
         ${link("Gamepress suggestions for dolls and coalition units.", "https://gamepress.gg/girlsfrontline/duping-recommendations-and-coalition-mooks")}<br>
         ${spoilerSummary('Discord recommendations.', img('https://cdn.discordapp.com/attachments/640157367056728133/1048531902065287188/dupe_gameing_pt3.png'))}`,
         tags : [dTag.TDOLL]
     },  //Jesse, Varz, etc.
     {
         id : '00068',
-        questions : `How high is fairy rate up?`,
-        answers : `${Embed.google(["Fairy enhancement rateup strategy", "https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI"])}`,  // u/ConductorBichir's list IIRC
+        question: `How high is fairy rate up?`,
+        answer: `${Embed.google(["Fairy enhancement rateup strategy", "https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI"])}`,  // u/ConductorBichir's list IIRC
         tags : [dTag.FAIRY, dTag.PROD]
     },
     {
         id : '00069',
-        questions : `What's the drop rate for farmable dolls?`,
-        answers : `Limited dolls on Combat Missions aproximately have 0.8% drop rate on normal and 1% on emergency, with 5${STAR} seemingly have rates way below 1%. Their droprates Chapter 10 onwards are reported to have higher rates. If you do plan to farm a 5${STAR} doll, just do Productions. You'll get more chances there.<br>
+        question: `What's the drop rate for farmable dolls?`,
+        answer: `Limited dolls on Combat Missions aproximately have 0.8% drop rate on normal and 1% on emergency, with 5${STAR} seemingly have rates way below 1%. Their droprates Chapter 10 onwards are reported to have higher rates. If you do plan to farm a 5${STAR} doll, just do Productions. You'll get more chances there.<br>
         Event farms have around 1%, which also carries over to their respective campaign missions.<br>
         As for SPEQs, probably 1% too.`,
         tags : [dTag.TDOLL, dTag.MAIN, dTag.SPEQ, dTag.MAJOR, dTag.CAMPAIGN, dTag.SEASON, dTag.COLLAB]
     },
     {
         id : '00070',
-        questions : `Do events get a rerun? And if so, when?`,
-        answers : `${List.description({
+        question: `Do events get a rerun? And if so, when?`,
+        answer: `${List.description({
             "Major Events": [
                 "Gets a permanent rerun called Campaign Missions 6-12 months or more after their initial release.",
                 "You can read past major events in their entirety."
@@ -884,14 +884,14 @@ export const cardData = [
     },
     {
         id : '00071',
-        questions : `How do I remove HOCs from Target Practice?`,
-        answers : `Unselect them like how you selected them.`,
+        question: `How do I remove HOCs from Target Practice?`,
+        answer: `Unselect them like how you selected them.`,
         tags : [dTag.SIMS, dTag.HOC]
     },
     {
         id : '00072',
-        questions : `How can I save my own voodoo recipe?`,
-        answers : `${List.ordered(
+        question: `How can I save my own voodoo recipe?`,
+        answer: `${List.ordered(
             'Craft from production using your own recipe.',
             'Take the item.',
             'Wait for 10 minutes for the voodoo list to refresh.',
@@ -900,32 +900,32 @@ export const cardData = [
     },
     {
         id : '00073',
-        questions : `How can I resupply a single doll and not the whole echelon?`,
-        answers : `${img(IMG_ASSET+"OneDollEchelon.png", 'Single-Doll Echelon')}`,
+        question: `How can I resupply a single doll and not the whole echelon?`,
+        answer: `${img(IMG_ASSET+"OneDollEchelon.png", 'Single-Doll Echelon')}`,
         tags : [dTag.TDOLL, dTag.MAP, dTag.ECH]
     },
     {
         id : '00074',
-        questions : `If I MOD my T-Doll, is Level 100 still considered max level?`,
-        answers : `Thankfully, this is where common sense wins. In short, ${TextStyle.style('NO', TextStyle.BOLD)}.`,
+        question: `If I MOD my T-Doll, is Level 100 still considered max level?`,
+        answer: `Thankfully, this is where common sense wins. In short, ${TextStyle.style('NO', TextStyle.BOLD)}.`,
         tags : [dTag.MOD, dTag.LEVEL]
     },
     {
         id : '00075',
-        questions : `I can't get the gold (S Rank) and silver medals in maps because the enemies keep running all over me. How do I get them?`,
-        answers : `Not now. Blaze through chapters until 7-6 first to get your account running, then come back to it later when you have at least 2 strong (Lv. 90, 5 links) echelons.`,
+        question: `I can't get the gold (S Rank) and silver medals in maps because the enemies keep running all over me. How do I get them?`,
+        answer: `Not now. Blaze through chapters until 7-6 first to get your account running, then come back to it later when you have at least 2 strong (Lv. 90, 5 links) echelons.`,
         tags : [dTag.NEWB, dTag.MAIN]
     },  // You can get this quickly through Newbie Career Quests. And you can complete the quests faster if you use friend/support echelons.
     {
         id : '00076',
-        questions : `Can I transfer my Google Account to a Sunborn one?`,
-        answers : `It's a one-way street from there.`,
+        question: `Can I transfer my Google Account to a Sunborn one?`,
+        answer: `It's a one-way street from there.`,
         tags : [dTag.ACCT]
     },
     {
         id : '00077',
-        questions : `Does anyone know how to CE stack using GFAlarm?`,
-        answers : `${List.ordered(
+        question: `Does anyone know how to CE stack using GFAlarm?`,
+        answer: `${List.ordered(
             'GFAlarm.',
             'File Save under Settings tab.',
             'Check "Save Theater Optimize Team".',
@@ -939,34 +939,34 @@ export const cardData = [
     },  //https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i0ttpc0/
     {
         id : '00078',
-        questions : `How are people just rolling in 5${STAR} fairies?`,
-        answers : `<p>${TextStyle.style('Even dust, when piled up, can become a mountain.', TextStyle.ITALIC)}</p>
+        question: `How are people just rolling in 5${STAR} fairies?`,
+        answer: `<p>${TextStyle.style('Even dust, when piled up, can become a mountain.', TextStyle.ITALIC)}</p>
         Good logistics upkeep and rolling Fairy Construction everyday. Just think of crafting them a side thing that doesn't take a lot of attention.`,
         tags : [dTag.FAIRY, dTag.PROD]
     },
     {
         id : '00079',
-        questions : `How high is a certain doll's pull rate during rate ups?`,
-        answers : `Something like Anchored > Targeted > General >>> Normal.`,
+        question: `How high is a certain doll's pull rate during rate ups?`,
+        answer: `Something like Anchored > Targeted > General >>> Normal.`,
         tags : [dTag.TDOLL, dTag.PROD]
     },
     {
         id : '00080',
-        questions : `What are the resources I can get from Kalina's Daily Gift?`,
-        answers : `${img(IMG_ASSET+"DailyGift.png")}<br>
+        question: `What are the resources I can get from Kalina's Daily Gift?`,
+        answer: `${img(IMG_ASSET+"DailyGift.png")}<br>
         Gift amount apparently scales with her affection.`,
         tags : [dTag.MARP, dTag.ITEM, dTag.KALINA]
     },
     {
         id : '00081',
-        questions : `What is Corpse Whipping?`,
-        answers : `The act of overkilling a dummy link by a huge amount. Especially egregious if 2 RFs hit an enemy on its deathbed. This is generally the reason why ROF-based guns are favored against low link-HP enemies.`,
+        question: `What is Corpse Whipping?`,
+        answer: `The act of overkilling a dummy link by a huge amount. Especially egregious if 2 RFs hit an enemy on its deathbed. This is generally the reason why ROF-based guns are favored against low link-HP enemies.`,
         tags : [dTag.BATTLE]
     },
     {
         id : '00082',
-        questions : `What's the gacha rate for costumes?`,
-        answers : `${table(['Item',                                                             'Rate'],
+        question: `What's the gacha rate for costumes?`,
+        answer: `${table(['Item',                                                             'Rate'],
         [link('Costumes', 'https://big-stupid-jellyfish.github.io/GFMath/pages/gacha-rates'),   '02.00%'],
         [`5${STAR} furniture`,                                                                  '08.00%'],
         [`4${STAR} furniture`,                                                                  '34.20%'],
@@ -976,59 +976,59 @@ export const cardData = [
     },
     {
         id : '00083',
-        questions : `Why is the PA notification in the home screen always lit up?`,
-        answers : `There are available pulls left to burn, particularly Svarog EMPs it seems.`,
+        question: `Why is the PA notification in the home screen always lit up?`,
+        answer: `There are available pulls left to burn, particularly Svarog EMPs it seems.`,
         tags : [dTag.PA]
     },
     {
         id : '00084',
-        questions : `What are Black Beans/Red Beans?`,
-        answers : `Golyat and Golyat+, respectively.`,
+        question: `What are Black Beans/Red Beans?`,
+        answer: `Golyat and Golyat+, respectively.`,
         tags : [dTag.ENEMY]
     },
     {
         id : '00085',
-        questions : `What is Combat Effectiveness Stacking?`,
-        answers : `The process of stacking the useless number as high as possible, battle performance be damned.<br>
+        question: `What is Combat Effectiveness Stacking?`,
+        answer: `The process of stacking the useless number as high as possible, battle performance be damned.<br>
         ARSMG = 80k+, RFHG = 40-90k, MGSG = 100k+ average max CE, including maxed dolls, maxed fairies, equips, mods, oaths, and formation bonuses.<br>
         It's main purpose is for Theater Bosses and being on top of the Friend List.`,
         tags : [dTag.CE]
     },
     {
         id : '00086',
-        questions : `What does the PA chip Pilfer do?`,
-        answers : `Allows players to have a ${spoilerSummary('chance', img(IMG_ASSET+"PIlferRNG.png", 'Pilfer subject to RNG'))} of getting ${spoilerSummary('S-Rank drops', MBD.youtube('t6Vu72cajO0') + TextStyle.style('Context: Coalition Medals require S-Rank battles.', TextStyle.QUOTE))} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
+        question: `What does the PA chip Pilfer do?`,
+        answer: `Allows players to have a ${spoilerSummary('chance', img(IMG_ASSET+"PIlferRNG.png", 'Pilfer subject to RNG'))} of getting ${spoilerSummary('S-Rank drops', MBD.youtube('t6Vu72cajO0') + TextStyle.style('Context: Coalition Medals require S-Rank battles.', TextStyle.QUOTE))} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
         Combine this with the ability to fight on one ammo bar to get two chances on one enemy.`,
         tags : [dTag.COALITION, dTag.EQUIP]
     },
     {
         id : '00087',
-        questions : `What does oathing a doll do?`,
-        answers : `Additional adjutant line after oath, higher affection cap, double EXP gain (map EXP, auto-battles, CRs) on MODs, complete repair and resupply (one-time only), stat bonuses for damage/evasion/accuracy (because higher affection cap).`,
+        question: `What does oathing a doll do?`,
+        answer: `Additional adjutant line after oath, higher affection cap, double EXP gain (map EXP, auto-battles, CRs) on MODs, complete repair and resupply (one-time only), stat bonuses for damage/evasion/accuracy (because higher affection cap).`,
         tags : [dTag.TDOLL, dTag.OATH, dTag.MOD, dTag.LEVEL, dTag.LOVE]
     },
     {
         id : '00088',
-        questions : `How do I get more support echelons?`,
-        answers : `Add friends. Post your UID on a GFL community board and someone would ${TextStyle.style('surely', TextStyle.STRIKE)}probably add you.`,
+        question: `How do I get more support echelons?`,
+        answer: `Add friends. Post your UID on a GFL community board and someone would ${TextStyle.style('surely', TextStyle.STRIKE)}probably add you.`,
         tags : [dTag.FRIEND, dTag.ECH]
     },
     {
         id : '00089',
-        questions : `Which map is best for auto-battles, or just leveling in general?`,
-        answers : `${figure(Embed.google(["GFL EN Autobattle Comparison", "https://docs.google.com/spreadsheets/d/1e_1oAa9Qm_tmWqbgFQca8ohzo29qcjctIwyIU9Mc1H0"]), "Includes EXP per fight and level threshold to EXP penalty/drop-off")}`,
+        question: `Which map is best for auto-battles, or just leveling in general?`,
+        answer: `${figure(Embed.google(["GFL EN Autobattle Comparison", "https://docs.google.com/spreadsheets/d/1e_1oAa9Qm_tmWqbgFQca8ohzo29qcjctIwyIU9Mc1H0"]), "Includes EXP per fight and level threshold to EXP penalty/drop-off")}`,
         tags : [dTag.AUTO, dTag.TDOLL, dTag.LEVEL]
     },
     {
         id : '00090',
-        questions : `Where can I fight Goliath Factories?`,
-        answers : `In your dreams. Or maybe a custom enemy ID. Thing is, it's for PA purposes only.`,
+        question: `Where can I fight Goliath Factories?`,
+        answer: `In your dreams. Or maybe a custom enemy ID. Thing is, it's for PA purposes only.`,
         tags : [dTag.ENEMY]
     },
     {
         id : '00091',
-        questions : `For T-Doll Heavy Construction, how much worth is Tier 1 to Tier 2 or 3?`,
-        answers : `Individual SG rate as of Feb 28-Mar 8, 2022 (Normal)<br>
+        question: `For T-Doll Heavy Construction, how much worth is Tier 1 to Tier 2 or 3?`,
+        answer: `Individual SG rate as of Feb 28-Mar 8, 2022 (Normal)<br>
         ${table(['Tiers', `3${STAR}`, `4${STAR}`, `5${STAR}`],
         ['Tier 1', '2.5-2.7%', '1.6/2.5-3.3%', '0.5/1-1.5%'],
         ['Tier 2', '1.2-1.5%', '1.9/2.7-4%', '0.8/1-2%'],
@@ -1039,15 +1039,15 @@ export const cardData = [
     },
     {
         id : '00092',
-        questions : `I can't beat the current stage. Is this it for me?`,
-        answers : `For the triple stages, just fall back to the last boss node you can handle. These nodes can mitigate the "Cleared Stage" penalty so it's worth more than non-boss higher node.<br>
+        question: `I can't beat the current stage. Is this it for me?`,
+        answer: `For the triple stages, just fall back to the last boss node you can handle. These nodes can mitigate the "Cleared Stage" penalty so it's worth more than non-boss higher node.<br>
         For Core stage, highest node clearable.`,
         tags : [dTag.THEATER]
     },
     {
         id : '00093',
-        questions : `Which facilities/base upgrades should I prioritize for battery expenditures?`,
-        answers : `${List.ordered(
+        question: `Which facilities/base upgrades should I prioritize for battery expenditures?`,
+        answer: `${List.ordered(
             spoilerSummary('Forward Basecamp', List.ordered(
                 'Gate Console',
                 'Loot Rack')),
@@ -1063,21 +1063,21 @@ export const cardData = [
     },  //@Upgrade priority per facility
     {
         id : '00094',
-        questions : `Do the purchaseable items in the Expedition Black Market ever change?`,
-        answers : `No.`,
+        question: `Do the purchaseable items in the Expedition Black Market ever change?`,
+        answer: `No.`,
         tags : [dTag.BM]
     },
     {
         id : '00095',
-        questions : `Which dolls should I use for expedition?`,
-        answers : `${img('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/inline-images/expedition-advantaged-dolls_0.jpg', 'Taken from Gamepress')}<br>
+        question: `Which dolls should I use for expedition?`,
+        answer: `${img('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/inline-images/expedition-advantaged-dolls_0.jpg', 'Taken from Gamepress')}<br>
         Dummy links and skill levels are not taken into account.`,
         tags : [dTag.EXPED, dTag.TDOLL]
     },
     {
         id : '00096',
-        questions : `What's the priority to spend gems?`,
-        answers : `${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/kalinas-shop-and-gems")}<br>
+        question: `What's the priority to spend gems?`,
+        answer: `${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/kalinas-shop-and-gems")}<br>
         ${List.description({
             "Echelon Slots": [
                 "Costs 880, not 380.",
@@ -1100,8 +1100,8 @@ export const cardData = [
     },
     {
         id : '00097',
-        questions : `Which HOC chips should I use?`,
-        answers : `${List.description({
+        question: `Which HOC chips should I use?`,
+        answer: `${List.description({
             "Guides": [
                 link('Reddit guide for desktop chip calculator.', 'https://redd.it/fnh1ey'),
                 // spoilerSummary('Google Docs guide.', .google(MBD.G_WORD, '1pR6g-mgsy22_MhRPASL9c1wDoCuxfUwr-DCCMYmb7Ss')),
@@ -1123,21 +1123,21 @@ export const cardData = [
     },  //@Outdated soon
     {
         id : '00099',
-        questions : `Do autobattles give affection?`,
-        answers : `A tiny bit.`,
+        question: `Do autobattles give affection?`,
+        answer: `A tiny bit.`,
         tags : [dTag.AUTO, dTag.LOVE]
     },  //@Visual (loading screen)
     {
         id : '00100',
-        questions : `Do support echelons use equipment?`,
-        answers : `Equipments used, formation, and apparently costumes too are saved instances.<br>
+        question: `Do support echelons use equipment?`,
+        answer: `Equipments used, formation, and apparently costumes too are saved instances.<br>
         Doll levels, equipment levels, skill levels, and chibis aren't. Meaning supports can be saved then leveled afterwards.`,
         tags : [dTag.FRIEND, dTag.ECH, dTag.EQUIP]
     },
     {
         id : '00101',
-        questions : `I wasn't able to clear the event during it's initial runtime. Will I still get the clear rewards when they get added to Campaign?`,
-        answers : `${List.unordered(
+        question: `I wasn't able to clear the event during it's initial runtime. Will I still get the clear rewards when they get added to Campaign?`,
+        answer: `${List.unordered(
             'Gutted rewards compared to original.',
             'No True Core Masks (TCM).',
             link('Reward and crate dolls get shuffled to farming lottery.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls')
@@ -1147,40 +1147,40 @@ export const cardData = [
     },
     {
         id : '00102',
-        questions : `How do tilescan skills work?`,
-        answers : `Real-time scanning of dolls on own tiles when activating their skills. Meaning setup formation can have them with no dolls on top of their tiles and when they activate their skills in battle, whoever are on top of their bufftiles will get the effects of their skill. Note that their bufftiles basically move with them.`,
+        question: `How do tilescan skills work?`,
+        answer: `Real-time scanning of dolls on own tiles when activating their skills. Meaning setup formation can have them with no dolls on top of their tiles and when they activate their skills in battle, whoever are on top of their bufftiles will get the effects of their skill. Note that their bufftiles basically move with them.`,
         tags : [dTag.TDOLL, dTag.SKILL, dTag.IMPT]
     },
     {
         id : '00103',
-        questions : `My resources (Manpower, Ammunitions/Ammo, Rations, Parts) are uncomfortably low? Where can I get some?`,
-        answers : `${TextStyle.style("Most efficient and consistent is logistics.", TextStyle.BOLD)}<br>
+        question: `My resources (Manpower, Ammunitions/Ammo, Rations, Parts) are uncomfortably low? Where can I get some?`,
+        answer: `${TextStyle.style("Most efficient and consistent is logistics.", TextStyle.BOLD)}<br>
         Though you can get them through the shop, quest and event/crate rewards, campaign/major story node clears, and random nodes.`,
         tags : [dTag.MARP, dTag.LOGI, dTag.NEWB, dTag.GET]
     },
     {
         id : '00104',
-        questions : `How do I get Platinum and Nova Medals?`,
-        answers : `From whatever Major/Seasonal/Collab Event running right now. Platinum are for 5${STAR} dolls and Nova are for dolls 4${STAR} and below.`,
+        question: `How do I get Platinum and Nova Medals?`,
+        answer: `From whatever Major/Seasonal/Collab Event running right now. Platinum are for 5${STAR} dolls and Nova are for dolls 4${STAR} and below.`,
         tags : [dTag.ITEM, dTag.TDOLL, dTag.MAJOR, dTag.SEASON, dTag.COLLAB, dTag.GET]
     },
     {
         id : '00105',
-        questions : `How do I get a higher success rate for logistics?`,
-        answers : `${TextStyle.style('floor(mean of doll levels in echelon) * 0.45 + 15', TextStyle.CODE)} for normal logistics and<br>
+        question: `How do I get a higher success rate for logistics?`,
+        answer: `${TextStyle.style('floor(mean of doll levels in echelon) * 0.45 + 15', TextStyle.CODE)} for normal logistics and<br>
         ${TextStyle.style('floor(mean of doll levels in echelon) * 0.60 + 30', TextStyle.CODE)} for rate up logistics.`,
         tags : [dTag.LOGI]
     },
     {
         id : '00106',
-        questions : `What do they mean by bamboo?`,
-        answers : `Bamboos are, in general, rifles with skills like Locked Shot, Steady Shot, Interdiction Shot, and the likes, wherein off cooldown, they have a charge gauge that dictates how powerful the skillshot is on activation. They're usually used to deal massive damage to a target, especially if coupled with FP buffers.`,
+        question: `What do they mean by bamboo?`,
+        answer: `Bamboos are, in general, rifles with skills like Locked Shot, Steady Shot, Interdiction Shot, and the likes, wherein off cooldown, they have a charge gauge that dictates how powerful the skillshot is on activation. They're usually used to deal massive damage to a target, especially if coupled with FP buffers.`,
         tags : [dTag.TDOLL, dTag.SKILL, dTag.IMPT]
     },
     {
         id : '00107',
-        questions : `What are the resources that has a defined max capacity and how much can they store?`,
-        answers : `Resource limit for each currency.<br>
+        question: `What are the resources that has a defined max capacity and how much can they store?`,
+        answer: `Resource limit for each currency.<br>
         ${img('https://cdn.discordapp.com/attachments/410790982116966400/905090370675830884/image0.jpg', 'Train Coin = Training Data | Furniture Coin = Tokens | Memory Pieces = Neural Fragments<br>' + link('Source', 'https://randomqwerty.github.io/?server=en&file=item'))}<br>
         Even then, all resources can be obtained without regards to max capacity through daily gifts, mission rewards, and whaling.<br>
         And no, the four resources will stay at 300k.`,
@@ -1188,34 +1188,34 @@ export const cardData = [
     },
     {
         id : '00108',
-        questions : `Is there a way to buy a missed day for daily log-ins?`,
-        answers : `No chance.`,
+        question: `Is there a way to buy a missed day for daily log-ins?`,
+        answer: `No chance.`,
         tags : [dTag.MISC]
     },
     {
         id : '00109',
-        questions : `I'm trying to clear the newbie career quests but I haven't gotten the rewards yet. Did I miss something?`,
-        answers : `Those quests are not retroactive and should be cleared in sequence. Try clearing them from the top.`,
+        question: `I'm trying to clear the newbie career quests but I haven't gotten the rewards yet. Did I miss something?`,
+        answer: `Those quests are not retroactive and should be cleared in sequence. Try clearing them from the top.`,
         tags : [dTag.NEWB]
     },
     {
         id : '00110',
-        questions : `What does the Aid Commissions do and how do I get more of them?`,
-        answers : `Also known as Svarog/High Altitude EMP Bombing Runs, it pulls from the entire pool where the entire pool is the X in the X/100 units.<br>
+        question: `What does the Aid Commissions do and how do I get more of them?`,
+        answer: `Also known as Svarog/High Altitude EMP Bombing Runs, it pulls from the entire pool where the entire pool is the X in the X/100 units.<br>
         Recommended to pull one at a time since 10-pull is literally 10 1-pulls.<br>
         Acquired from the daily quest's final node, daily log-in, major events, battlepass, shop (whenever a new banner starts).`,
         tags : [dTag.ITEM, dTag.PA, dTag.GET]
     },
     {
         id : '00111',
-        questions : `Recipe for Parachute/Paradrop Fairy?`,
-        answers : `${link('The official recipe.', 'https://gf-db.github.io/gfdb/gfdb.html?type=fairy&id=11&epoch.fairy=29.0')}`,
+        question: `Recipe for Parachute/Paradrop Fairy?`,
+        answer: `${link('The official recipe.', 'https://gf-db.github.io/gfdb/gfdb.html?type=fairy&id=11&epoch.fairy=29.0')}`,
         tags : [dTag.FAIRY, dTag.PROD]
     },
     {
         id : '00112',
-        questions : `What does equipment calibration and enhancement do?`,
-        answers : `${img(IMG_ASSET+"EquipCalibEnhance.png", 'Calibration and enhancement are independent of each other')}
+        question: `What does equipment calibration and enhancement do?`,
+        answer: `${img(IMG_ASSET+"EquipCalibEnhance.png", 'Calibration and enhancement are independent of each other')}
         ${List.description({
             'Equipment Calibration' : [
                 "Raises the equipment's base stat.",
@@ -1232,22 +1232,22 @@ export const cardData = [
     },
     {
         id : '00113',
-        questions : `How viable is 2AR2SMG1HG?`,
-        answers : `${link('BigStupidJellyfish analysis vs. 3AR2SMG.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/2v3ar')}<br>
+        question: `How viable is 2AR2SMG1HG?`,
+        answer: `${link('BigStupidJellyfish analysis vs. 3AR2SMG.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/2v3ar')}<br>
         Depends on if there is no good AR-buffing AR for position 4. If there is one, 3AR1SMG1HG is a thing, specially for night maps.`,
         tags : [dTag.TDOLL, dTag.ECH]
     },
     {
         id : '00114',
-        questions : `What are all the available pets right now?`,
-        answers : `${img(IMG_ASSET+"PetSale.png", 'From u/UnironicWeeaboo')}<br>
+        question: `What are all the available pets right now?`,
+        answer: `${img(IMG_ASSET+"PetSale.png", 'From u/UnironicWeeaboo')}<br>
         If you see a pet that is not on this list, it's a Cafe Story reward, collab pet, or event reward that haven't been added yet to the station.`,
         tags : [dTag.PET]
     },
     {
         id : '00115',
-        questions : `How do friend batteries work?`,
-        answers : `${List.unordered(
+        question: `How do friend batteries work?`,
+        answer: `${List.unordered(
             `Friend batteries recharge at 3am and 3pm UTC-8, or whenever ${link("Netlify", "https://gftimers.netlify.app/")} says the time is.`,
             'The amount of charges/batteries depend on the number of dorms your friend has.',   //Tentative
             'A set number of people can claim one once per cycle.',
@@ -1257,29 +1257,29 @@ export const cardData = [
     },  //@Clarify
     {
         id : '00116',
-        questions : `Is there an optimal recipe guide I could use for my production?`,
-        answers : `${link('Applicable Reddit Post.', 'https://redd.it/gfmelo')}<br>
+        question: `Is there an optimal recipe guide I could use for my production?`,
+        answer: `${link('Applicable Reddit Post.', 'https://redd.it/gfmelo')}<br>
         For the new equips, 150/151/50/50 (with armor), 150/151/10/50 (without armor).`,
         tags : [dTag.PROD]
     },
     {
         id : '00117',
-        questions : `Whats the best way of farming affection?`,
-        answers : `Being in the leader slot in a battle echelon, being the MVP of a battle echelon, collecting daily hearts in dorms, cakes/lollipops/icecreams, passive regen by being in a dorm, gifting skins.<br>
+        question: `Whats the best way of farming affection?`,
+        answer: `Being in the leader slot in a battle echelon, being the MVP of a battle echelon, collecting daily hearts in dorms, cakes/lollipops/icecreams, passive regen by being in a dorm, gifting skins.<br>
         ${link('Write-up on what affects affection.', 'https://www.reddit.com/r/girlsfrontline/comments/cgpt7y/weekly_commanders_lounge_july_23_2019/ev0gw64/')}<br>
         ${link('Additional info on dorm affection.', 'https://www.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i29h382/')}`,
         tags : [dTag.LOVE]
     },
     {
         id : '00118',
-        questions : `As a beginner, is it worth to use batteries for combat reports?`,
-        answers : `Probably if surplus EXP is maxed out, otherwise doubt it.`,
+        question: `As a beginner, is it worth to use batteries for combat reports?`,
+        answer: `Probably if surplus EXP is maxed out, otherwise doubt it.`,
         tags : [dTag.NEWB, dTag.ITEM, dTag.BATTERY]
     },
     {
         id : '00119',
-        questions : `How does Symmetric Infusion work exactly?`,
-        answers : `${List.description({
+        question: `How does Symmetric Infusion work exactly?`,
+        answer: `${List.description({
             'Cognitive Infusion' : ['Basically, swaps sizes. Technically, swaps all stats aside from size. If both sides are upgraded, say Lv. 31 and Lv. 23, they become 23 and 31, not 1 and 31+.'], 
             'Golden Infusion' : ['Swaps the golden status between the two units, nothing more, nothing less.']
         })}`,
@@ -1287,23 +1287,23 @@ export const cardData = [
     },  //@Visual
     {
         id : '00120',
-        questions : `Is the package in the shop worth it?`,
-        answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/energy-packages')}<br>
+        question: `Is the package in the shop worth it?`,
+        answer: `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/energy-packages')}<br>
         For the 7 day new account package: Day 4 to jumpstart skill leveling (saves around 80 days of datasims on a normal day), Day 5 is the most efficient oath package so far, and Day 7 is a really good value for tokens.`,
         tags : [dTag.ITEM, dTag.OATH, dTag.GEMS, dTag.SHOP, dTag.NEWB]
     },
     {
         id : '00121',
-        questions : `Can I put 2 L2D skins in the double adjutant slot?`,
-        answers : `${TextStyle.style('L2D mode', TextStyle.QUOTE)}<br>
+        question: `Can I put 2 L2D skins in the double adjutant slot?`,
+        answer: `${TextStyle.style('L2D mode', TextStyle.QUOTE)}<br>
         ${TextStyle.style('Double Adjutant', TextStyle.QUOTE)}<br>
         Pick one.`,
         tags : [dTag.TDOLL, dTag.SKIN, dTag.ADJUNCT]
     },
     {
         id : '00122',
-        questions : `How do I unlock special effects on commanders like flame auras etc.?`,
-        answers : `${List.ordered(
+        question: `How do I unlock special effects on commanders like flame auras etc.?`,
+        answer: `${List.ordered(
             "Get a complete 5-slot from a costume set. Doesn't matter if male only or female only.",
             'Get their rare color variants.',
             '???',
@@ -1313,8 +1313,8 @@ export const cardData = [
     },
     {
         id : '00123',
-        questions : `Is there a list of doll farming routes for each map?`,
-        answers : `${List.unordered(
+        question: `Is there a list of doll farming routes for each map?`,
+        answer: `${List.unordered(
             spoilerSummary('Compilation of all farm routes for limited dolls and equipments on both campaign and main story.', Embed.google(["Compilation of farming guides for limited dolls", "https://docs.google.com/document/d/1GUcA1ZHYVKBhTspdRYPIkECVZRoLFvqDnLrgrFb6VcU"])),   // by u/rcpz93 most likely
             link('Farming routes by RevenantXIII (with Pilfer strats), focusing on events and ranking-relevant campaign dolls.', 'https://rosedrake.github.io/GFL.html'),
             spoilerSummary('416 SPEQ Pilfer route.', MBD.youtube('5v6gEqydGm4'))
@@ -1323,34 +1323,34 @@ export const cardData = [
     },
     {
         id : '00124',
-        questions : `What's the chronological order for the story?`,
-        answers : `u/pointblanksniper's observations.<br>
+        question: `What's the chronological order for the story?`,
+        answer: `u/pointblanksniper's observations.<br>
         ${link('Overall.', 'https://www.reddit.com/r/girlsfrontline/comments/sm75vk/where_can_i_see_mirror_stage_story_line/hvvpppk/')}<br>
         ${link('Night Chapters.', 'https://www.reddit.com/r/girlsfrontline/comments/scouvz/questions_regarding_404/hu995o6/')}`,
         tags : [dTag.LORE]
     },  //@Fix, https://www.reddit.com/r/girlsfrontline/comments/sc8jed/weekly_commanders_lounge_january_25_2022/hupfxsr/
     {
         id : '00125',
-        questions : `Is it possible to earn previously missed hidden achievements in Campaign Missions?`,
-        answers : `Yes.`,
+        question: `Is it possible to earn previously missed hidden achievements in Campaign Missions?`,
+        answer: `Yes.`,
         tags : [dTag.CAMPAIGN]
     },
     {
         id : '00126',
-        questions : `If I delete my unused speqs, will I be able to recover them?`,
-        answers : `As of 2.09, dismantled/disassembled SPEQs can now be ${spoilerSummary('recovered/retrieved', img(IMG_ASSET+"SPEQRecover.png", 'From u/UnironicWeeaboo'))}. Collab SPEQs can be found under the Limited tab.`,
+        question: `If I delete my unused speqs, will I be able to recover them?`,
+        answer: `As of 2.09, dismantled/disassembled SPEQs can now be ${spoilerSummary('recovered/retrieved', img(IMG_ASSET+"SPEQRecover.png", 'From u/UnironicWeeaboo'))}. Collab SPEQs can be found under the Limited tab.`,
         tags : [dTag.EQUIP, dTag.SPEQ, dTag.COLLAB]
     },
     {
         id : '00127',
-        questions : `Is there a way to expand the armory, or am I stuck with 100 doll slots forever?`,
-        answers : `${List.unordered( 'Shop>Items>Infrastructure>T-Doll slots +10.', 'Tap the locked echelon button.')}`,
+        question: `Is there a way to expand the armory, or am I stuck with 100 doll slots forever?`,
+        answer: `${List.unordered( 'Shop>Items>Infrastructure>T-Doll slots +10.', 'Tap the locked echelon button.')}`,
         tags : [dTag.SHOP]
     },
     {
         id : '00129',
-        questions : `I want to F2PBTW. How do I do that?`,
-        answers : `${List.description({
+        question: `I want to F2PBTW. How do I do that?`,
+        answer: `${List.description({
             'Gems' : ['Daily log-ins (300 monthly).', 
                 'Sharing in FB/Twitter (30 weekly). You can cancel it at the last minute.',
                 'S-Ranking Normal (10) and Emergency (30) Chapters.',
@@ -1371,28 +1371,28 @@ export const cardData = [
     },  //Site down - https://dmesse.egloos.com/m/3594243
     {
         id : '00130',
-        questions : `Why aren't my dorm batteries appearing?`,
-        answers : `If it's not within 11:00-14:00, 17:00-20:00, and 22:00-01:00 UTC-8, restart app.<br>
+        question: `Why aren't my dorm batteries appearing?`,
+        answer: `If it's not within 11:00-14:00, 17:00-20:00, and 22:00-01:00 UTC-8, restart app.<br>
         You'll know that it's collection time if the dorm button has a number on top of it (for the facility shortcuts) or Dorm No.1 flashes pink/purple in the BASE button.`,
         tags : [dTag.DORM, dTag.ITEM, dTag.TECH]
     },
     {
         id : '00131',
-        questions : `What are Extra Impulses and where can I get them?`,
-        answers : `Stockable versions of Electronic Impulses.<br>
+        question: `What are Extra Impulses and where can I get them?`,
+        answer: `Stockable versions of Electronic Impulses.<br>
         You can get them through daily log-ins, weekly quests, achievements, and events.`,
         tags : [dTag.PA, dTag.ITEM, dTag.GET]
     },
     {
         id : '00132',
-        questions : `Read a guide that said to use a team of 2${STAR} & 3${STAR} dolls until I get enough cores to spend. Is it still worth doing it now?`,
-        answers : `With the advent of Expeditions and Newbie Career Quests, you get enough dummy cores right off the bat. Don't overspend still.`,
+        question: `Read a guide that said to use a team of 2${STAR} & 3${STAR} dolls until I get enough cores to spend. Is it still worth doing it now?`,
+        answer: `With the advent of Expeditions and Newbie Career Quests, you get enough dummy cores right off the bat. Don't overspend still.`,
         tags : [dTag.ITEM, dTag.CORE]
     },
     {
         id : '00133',
-        questions : `What's the rate up increment for Anchored Construction?`,
-        answers : `${table(['Target', 'Estimated Increment'],
+        question: `What's the rate up increment for Anchored Construction?`,
+        answer: `${table(['Target', 'Estimated Increment'],
         ['4' + STAR,  '0.396%'],
         ['5' + STAR,  '0.083%'],
         ['Starter',   '0.19%'])}
@@ -1401,70 +1401,70 @@ export const cardData = [
     },
     {
         id : '00134',
-        questions : `I got an "Illegal Action Detected" warning. What happened?`,
-        answers : `Mostly desyncs and having "invalid" inputs. Just restart it.`,
+        question: `I got an "Illegal Action Detected" warning. What happened?`,
+        answer: `Mostly desyncs and having "invalid" inputs. Just restart it.`,
         tags : [dTag.TECH]
     },
     {
         id : '00135',
-        questions : `I can't deploy a friend echelon. What do I do?`,
-        answers : `${img(IMG_ASSET+"InitialDeploySupports.png")}<br>
+        question: `I can't deploy a friend echelon. What do I do?`,
+        answer: `${img(IMG_ASSET+"InitialDeploySupports.png")}<br>
         Either after operation start, a client restart, or a no due to limit.`,
         tags : [dTag.FRIEND, dTag.ECH, dTag.TECH]
     },
     {
         id : '00136',
-        questions : `How do I find Ouroburos in Operation Cube 1-4?`,
-        answers : `${link('Oreo Finder.', 'https://kyouko.moe/urouro/#')}`,
+        question: `How do I find Ouroburos in Operation Cube 1-4?`,
+        answer: `${link('Oreo Finder.', 'https://kyouko.moe/urouro/#')}`,
         tags : [dTag.CAMPAIGN, dTag.ENEMY, dTag["3P"]]
     },
     {
         id : '00137',
-        questions : `Which HOC can destroy buildings?`,
-        answers : `All of them. Building damage uses the Pierce stat, which is also used for destroying Force Shields.<br>
+        question: `Which HOC can destroy buildings?`,
+        answer: `All of them. Building damage uses the Pierce stat, which is also used for destroying Force Shields.<br>
         As for which class is best for the job, ATWs.`,
         tags : [dTag.HOC]
     },
     {
         id : '00138',
-        questions : `What does "Rescue 5 T-Dolls" mean?`,
-        answers : `Getting them as drops.`,
+        question: `What does "Rescue 5 T-Dolls" mean?`,
+        answer: `Getting them as drops.`,
         tags : [dTag.MISC]
     },
     {
         id : '00139',
-        questions : `Where can I see doll voicelines?`,
-        answers : `Doll Index Page>Top left as speaker. If it's missing, check if you downloaded the voice pack yet. Or just go to IOPWiki. Though some do not have voices yet.`,
+        question: `Where can I see doll voicelines?`,
+        answer: `Doll Index Page>Top left as speaker. If it's missing, check if you downloaded the voice pack yet. Or just go to IOPWiki. Though some do not have voices yet.`,
         tags : [dTag.TDOLL]
     },  //@Visual
     {
         id : '00140',
-        questions : `Is a particular doll already available in the EN server?`,
-        answers : `Check Index.`,
+        question: `Is a particular doll already available in the EN server?`,
+        answer: `Check Index.`,
         tags : [dTag.TDOLL]
     },
     {
         id : '00141',
-        questions : `I'm trying to contact support and one of the infos they need is Account ID. Where can I see it?`,
-        answers : `UID that is present in your commander screen or intro card.`,
+        question: `I'm trying to contact support and one of the infos they need is Account ID. Where can I see it?`,
+        answer: `UID that is present in your commander screen or intro card.`,
         tags : [dTag.TECH]
     },
     {
         id : '00142',
-        questions : `Where can I get doll/fairy costume art?`,
-        answers : `${link('36base Github Repository.', 'https://github.com/36base/girlsfrontline-resources')}`,
+        question: `Where can I get doll/fairy costume art?`,
+        answer: `${link('36base Github Repository.', 'https://github.com/36base/girlsfrontline-resources')}`,
         tags : [dTag.MISC]
     },
     {
         id : '00143',
-        questions : `Which oath packages are better?`,
-        answers : `2.09 Week 1 Package > Double Oath Package (Valentine's, White Day, <!-- Qixi/Tanabata,  -->Christmas), New Year's Package`,
+        question: `Which oath packages are better?`,
+        answer: `2.09 Week 1 Package > Double Oath Package (Valentine's, White Day, <!-- Qixi/Tanabata,  -->Christmas), New Year's Package`,
         tags : [dTag.OATH]
     },
     {
         id : '00144',
-        questions : `What does "Event" mean on the left side of the mission select screen?`,
-        answers : `${List.description({
+        question: `What does "Event" mean on the left side of the mission select screen?`,
+        answer: `${List.description({
             'Combat Missions' : ['SPEQ Rate Up for X-4N',
                 'Special Rescue Event for X-6'],
             'Campaign Missions' : ['Newly added campaign'],
@@ -1479,34 +1479,34 @@ export const cardData = [
     },
     {
         id : '00145',
-        questions : `Can someone tell me what the difference is between Charge, Destroy, and Defend commands for coalition units?`,
-        answers : `Lets melee units ${TextStyle.style('Charge', TextStyle.BOLD)} down the lane.<br>
+        question: `Can someone tell me what the difference is between Charge, Destroy, and Defend commands for coalition units?`,
+        answer: `Lets melee units ${TextStyle.style('Charge', TextStyle.BOLD)} down the lane.<br>
         Lets melee units approach and ${TextStyle.style('Destroy', TextStyle.BOLD)} the nearest enemy.<br>
         Return and ${TextStyle.style('Defend', TextStyle.BOLD)} their grid position.`,
         tags : [dTag.COALITION, dTag.BATTLE]
     },
     {
         id : '00146',
-        questions : `How many Tactical Doll slots can I have?`,
-        answers : `Up to 1200 it seems.`,
+        question: `How many Tactical Doll slots can I have?`,
+        answer: `Up to 1200 it seems.`,
         tags : [dTag.MISC, dTag.TDOLL]
     },  //Condolensces to u/headphone_question's wallet. Previously 1000.
     {
         id : '00147',
-        questions : `Why do people use M16 as tank for 0-2 corpse dragging?`,
-        answers : `Can use Armor/SPEQ to reduce damage taken to 1, and T-Exo for reducing the number of hits taken.`,
+        question: `Why do people use M16 as tank for 0-2 corpse dragging?`,
+        answer: `Can use Armor/SPEQ to reduce damage taken to 1, and T-Exo for reducing the number of hits taken.`,
         tags : [dTag.TDOLL, dTag.LEVEL]
     },
     {
         id : '00148',
-        questions : `How does a StrawberryPython team work?`,
-        answers : `${Embed.google(["GFL Team Analysis: Strawberry + Python", "https://docs.google.com/document/d/105DXX2AlMB_wX0JpKGjPGsJ_zjsKOz_0bbd5ZshUx_o"])}`,
+        question: `How does a StrawberryPython team work?`,
+        answer: `${Embed.google(["GFL Team Analysis: Strawberry + Python", "https://docs.google.com/document/d/105DXX2AlMB_wX0JpKGjPGsJ_zjsKOz_0bbd5ZshUx_o"])}`,
         tags : [dTag.ECH, dTag.TDOLL]
     },
     {
         id : '00149',
-        questions : `The client in the Play Store is in a language I can't understand. Is there a way to download other server clients?`,
-        answers : `CN - China (Bilibili and DigitalSky)<br>
+        question: `The client in the Play Store is in a language I can't understand. Is there a way to download other server clients?`,
+        answer: `CN - China (Bilibili and DigitalSky)<br>
         TW - Taiwan, Malaysia, Singapore<br>
         JP - Japan<br>
         KR - Korea<br>
@@ -1517,61 +1517,61 @@ export const cardData = [
     },  //@Totally gonna fix
     {
         id : '00150',
-        questions : `How do general rate ups work?`,
-        answers : `There are 2 sets of rate ups per general rate up.<br>
+        question: `How do general rate ups work?`,
+        answer: `There are 2 sets of rate ups per general rate up.<br>
         First is the HOC rate up, where every 2 days is a specific FST's day for rate up. Note that only that FST's rate is increased within the Central Data pool. The core data rate remains the same.<br>
         Second is the tried amd tested Production rate up. Goes from Normal Doll, Normal Equip, Heavy Doll, Heavy Equip. Pulling chance for all 4${STAR} and 5${STAR} are increased. IOP equipment crafts are also affected.`,
         tags : [dTag.PROD, dTag.HOC, dTag.FST, dTag.TDOLL, dTag.EQUIP]
     },  //@Check for errors
     {
         id : '00152',
-        questions : `What do advantaged dolls in combat map mean?`,
-        answers : `20% FP boost for AR, RF, MG. 20% EVA boost for SMG, HG, SG.`,
+        question: `What do advantaged dolls in combat map mean?`,
+        answer: `20% FP boost for AR, RF, MG. 20% EVA boost for SMG, HG, SG.`,
         tags : [dTag.MAP, dTag.TDOLL]
     },
     {
         id : '00153',
-        questions : `How many Quick Autobattle Tickets does it cost per stage?`,
-        answers : `${LESSEQUAL} 1 hour: 1 ticket per run.<br>
+        question: `How many Quick Autobattle Tickets does it cost per stage?`,
+        answer: `${LESSEQUAL} 1 hour: 1 ticket per run.<br>
         1-2 hours: 2 tickets per run.<br>
         2+ hours: 3 tickets per run.`,
         tags : [dTag.AUTO, dTag.ITEM]
     },
     {
         id : '00154',
-        questions : `What happens to the reshuffle/refresh timer when the banner changes?`,
-        answers : `Restarts from the top. Meaning refreshing just hours before Ringleader change has the same effect as refreshing 2 days ago.<br>
+        question: `What happens to the reshuffle/refresh timer when the banner changes?`,
+        answer: `Restarts from the top. Meaning refreshing just hours before Ringleader change has the same effect as refreshing 2 days ago.<br>
         Pool refresh timer doesn't start on banner change until after opening the bombing screen.`,
         tags : [dTag.PA]
     },
     {
         id : '00155',
-        questions : `Do links matter regarding the amount of resources a coalition unit would take on resupply?`,
-        answers : `From a single-link Dinergate to an entire gunner stack, they all take 360 Ammo/Ration.`,
+        question: `Do links matter regarding the amount of resources a coalition unit would take on resupply?`,
+        answer: `From a single-link Dinergate to an entire gunner stack, they all take 360 Ammo/Ration.`,
         tags : [dTag.COALITION, dTag.MAP]
     },
     {
         id : '00156',
-        questions : `Anyone know what type of equipment "Medals" is?`,
-        answers : `For now, placeholder. No equipment of its type exists yet.`,
+        question: `Anyone know what type of equipment "Medals" is?`,
+        answer: `For now, placeholder. No equipment of its type exists yet.`,
         tags : [dTag.EQUIP]
     },
     {
         id : '00157',
-        questions : `Where can I see the stat previews for PA units?`,
-        answers : `${Embed.google(["GFL - Protocol Assimilation Stat Calculator", "https://docs.google.com/spreadsheets/d/1TYKbdjuOdOMsvaaIduWW_8FF0tm27BjwKbC4uggl1wE"])}`,
+        question: `Where can I see the stat previews for PA units?`,
+        answer: `${Embed.google(["GFL - Protocol Assimilation Stat Calculator", "https://docs.google.com/spreadsheets/d/1TYKbdjuOdOMsvaaIduWW_8FF0tm27BjwKbC4uggl1wE"])}`,
         tags : [dTag.PA, dTag.COALITION]
     },
     {
         id : '00158',
-        questions : `I haven't seen this icon/card BG before. Where can I get some of it?`,
-        answers : `Most likely a Cafe Costume Side Story reward.`,
+        question: `I haven't seen this icon/card BG before. Where can I get some of it?`,
+        answer: `Most likely a Cafe Costume Side Story reward.`,
         tags : [dTag.MISC, dTag.GET]
     },
     {
         id : '00159',
-        questions : `I'm in dummy core hell. How do I get some more?`,
-        answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/its_still_not_enough_fuck')}<br>
+        question: `I'm in dummy core hell. How do I get some more?`,
+        answer: `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/its_still_not_enough_fuck')}<br>
         ${link('BigStupidJellyfish write-up.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/core-rates')}<br>
         ${link("u/UnironicWeeaboo's easier 11-6.", 'https://www.reddit.com/r/girlsfrontline/comments/u1tr33/weekly_commanders_lounge_april_12_2022/i5178cy/')}<br>
         Run any daytime leveling maps for combined core and exp farming.<br>
@@ -1581,26 +1581,26 @@ export const cardData = [
     },
     {
         id : '00160',
-        questions : `Any way to increase commander level really quickly?`,
-        answers : `Leveling dolls through leveling maps.`,
+        question: `Any way to increase commander level really quickly?`,
+        answer: `Leveling dolls through leveling maps.`,
         tags : [dTag.CMDR, dTag.LEVEL]
     },  //@Test - exact values per doll leveling
     {
         id : '00161',
-        questions : `How do I switch accounts?`,
-        answers : `Settings>Manage Accounts>Log out, then on the log-in screen, switch accounts.`,
+        question: `How do I switch accounts?`,
+        answer: `Settings>Manage Accounts>Log out, then on the log-in screen, switch accounts.`,
         tags : [dTag.ACCT]
     },
     {
         id : '00162',
-        questions : `What's the use case for 5HGs?`,
-        answers : `Good single target burst damage. Quick movespeed. Consumes minimal resources.`,
+        question: `What's the use case for 5HGs?`,
+        answer: `Good single target burst damage. Quick movespeed. Consumes minimal resources.`,
         tags : [dTag.ECH, dTag.TDOLL]
     },
     {
         id : '00163',
-        questions : `What're the rewards for the Defense Drill?`,
-        answers : `Unlocks after clearing 2-4N.<br>
+        question: `What're the rewards for the Defense Drill?`,
+        answer: `Unlocks after clearing 2-4N.<br>
         ${link('Matsuda Guide and Line-up, circa 2.08.', 'https://gfl.matsuda.tips/post/defdrill')}<br>
         ${TextStyle.style('2.09 waves', TextStyle.BOLD)}:<br>
         ${spoilerSummary('Discord Leaderboard Comps.', `${img('https://cdn.discordapp.com/attachments/453784246515925003/988812408929804328/unknown.png')}<br>
@@ -1612,8 +1612,8 @@ export const cardData = [
     },  //Proper guide under construction
     {
         id : '00164',
-        questions : `What would I need when building night ARSMGs?`,
-        answers : `AR: Any.<br>
+        question: `What would I need when building night ARSMGs?`,
+        answer: `AR: Any.<br>
         SMG: Direct-fire SMGs are hard to sell because of low base ACC and night ACC penalty, so molotovs or grenades.<br>
         HG: Used for expanding vision 1 node away. Stacks with Illumination Fairy.<br>
         PEQ: Mainly used by ARs since SMGs are mostly either tank or AoE. 4${STAR} is a good stopgap.`,
@@ -1621,14 +1621,14 @@ export const cardData = [
     },
     {
         id : '00165',
-        questions : `Which T-Doll would be better to anchor for the rate up?`,
-        answers : `On one hand, 4${STAR} can't be TCM'd. On the other hand, 5${STAR} have low construction rates. And it also depends on the skills of said dolls.`,
+        question: `Which T-Doll would be better to anchor for the rate up?`,
+        answer: `On one hand, 4${STAR} can't be TCM'd. On the other hand, 5${STAR} have low construction rates. And it also depends on the skills of said dolls.`,
         tags : [dTag.PROD, dTag.TDOLL, dTag.TCM]
     },
     {
         id : '00166',
-        questions : `What does each gun class do?`,
-        answers : `${table(['Class', 'Roles', 'Target Priority', 'Caveat'],
+        question: `What does each gun class do?`,
+        answer: `${table(['Class', 'Roles', 'Target Priority', 'Caveat'],
         ['Assualt Rifle (AR)',      'Anti-Swarm<br>Sustained DPS',  'Frontline',    'Weak to armored enemies'],
         ['Submachine Gun (SMG)',    'Evasion Tank<br>Anti-Swarm',   'Frontline',    'Accuracy is non-existent'],
         ['Rifle (RF)',              'Big Damage<br>Anti-Armor',     'Backline',     'Weak to swarms<br>Affected by night penalty'],
@@ -1639,27 +1639,27 @@ export const cardData = [
     },
     {
         id : '00167',
-        questions : `What's the time frame for modding dolls?`,
-        answers : `From their release until EOS.`,
+        question: `What's the time frame for modding dolls?`,
+        answer: `From their release until EOS.`,
         tags : [dTag.MOD]
     },
     {
         id : '00168',
-        questions : `Will I get the rewards after adding a returning commander as friend for the callback event?`,
-        answers : `${img(IMG_ASSET+"CallbackSupporter.png")}<br>
+        question: `Will I get the rewards after adding a returning commander as friend for the callback event?`,
+        answer: `${img(IMG_ASSET+"CallbackSupporter.png")}<br>
         ${img(IMG_ASSET+"CallbackReturner.png")}`,
         tags : [dTag.FRIEND, dTag.ITEM, dTag.MARP]
     },
     {
         id : '00169',
-        questions : `Are the previous monthly Special Equipments obtainable in some way/getting a rerun?`,
-        answers : `Yes. 4 returning SPEQs are added every season.`,
+        question: `Are the previous monthly Special Equipments obtainable in some way/getting a rerun?`,
+        answer: `Yes. 4 returning SPEQs are added every season.`,
         tags : [dTag.SPEQ, dTag.GZ]
     },
     {
         id : '00170',
-        questions : `Is there an efficient way of raising a Parachute Fairy?`,
-        answers : `${List.unordered(
+        question: `Is there an efficient way of raising a Parachute Fairy?`,
+        answer: `${List.unordered(
             link("markhydroxyl's github notes.", 'https://github.com/markhydroxyl/GFL-notes/blob/main/tls/nga_raising_paras.md'),
             link('Logistics for HEC crafting.', 'https://github.com/markhydroxyl/GFL-notes/blob/main/tls/nga_hec_logis.md'),
             spoilerSummary('Fairy Development Calculator.', Embed.google(["Girls' Frontline: Fairy Development Calculator", "https://docs.google.com/spreadsheets/d/1Zcz6Yp3sduhUXY9jo2HCX4pOdiIQioZcS8v6xMK01Pk"]))
@@ -1668,21 +1668,21 @@ export const cardData = [
     },
     {
         id : '00171',
-        questions : `Which HOC/FSTs have L2Ds?`,
-        answers : `AT4, BGM-71, AGS-30`,
+        question: `Which HOC/FSTs have L2Ds?`,
+        answer: `AT4, BGM-71, AGS-30`,
         tags : [dTag.FST]
     },
     {
         id : '00172',
-        questions : `Where are the skins? I can't find them.`,
-        answers : `${img(IMG_ASSET+"SkinLocation.png", 'Dorms > Warehouse > Gifts')}<br>
+        question: `Where are the skins? I can't find them.`,
+        answer: `${img(IMG_ASSET+"SkinLocation.png", 'Dorms > Warehouse > Gifts')}<br>
         You get Black Cards here by gifting it.`,
         tags : [dTag.TDOLL, dTag.SKIN]
     },
     {
         id : '00173',
-        questions : `What should I do during a collab?`,
-        answers : `${List.unordered(
+        question: `What should I do during a collab?`,
+        answer: `${List.unordered(
             "Farm event specific currencies (NOT Platinum or Nova medals) (60 daily).",
             "Get all collab characters (Clear Reward, Farming, Shop), their Special Equipments, and the fairy.",
             "Combat reports and affection boosters are low on the shop priority list (costing 2 per item)."
@@ -1691,8 +1691,8 @@ export const cardData = [
     },
     {
         id : '00174',
-        questions : `I can't enter the game (stuck downloading/loading). What should I do?`,
-        answers : `${List.unordered(
+        question: `I can't enter the game (stuck downloading/loading). What should I do?`,
+        answer: `${List.unordered(
             "Wait and trudge through",
             "Download the bare minimum files first",
             "Restart client",
@@ -1710,8 +1710,8 @@ export const cardData = [
     },
     {
         id : '00175',
-        questions : `What are these General Data I keep getting?`,
-        answers : `Used for FSTs that are not yet 5${STAR}.<br>
+        question: `What are these General Data I keep getting?`,
+        answer: `Used for FSTs that are not yet 5${STAR}.<br>
         ${TextStyle.style('Limitations:', TextStyle.BOLD)}<br>
         ${List.unordered(
             'Only usable to FSTs in the gacha pool (added after a Theater for a new FST is ran).',
@@ -1722,22 +1722,22 @@ export const cardData = [
     },  //@Visual (5 yellow stars)
     {
         id : '00176',
-        questions : `Just noticed that the Black Market Shop in the Forward Basecamp has a Costumes tab. Anyone know what that's about?`,
-        answers : `Shop for previous event only cosmetics.<br>
+        question: `Just noticed that the Black Market Shop in the Forward Basecamp has a Costumes tab. Anyone know what that's about?`,
+        answer: `Shop for previous event only cosmetics.<br>
         ${img('../assets/images/query/BlackMarketCostumes.png', 'From u/UnironicWeeaboo')}<br>
         Currently released items in the older servers.`,
         tags : [dTag.BM]
     },
     {
         id : '00177',
-        questions : `Should I try getting all ringleaders or should I just save for who I want?`,
-        answers : `Ideally, yes. Statistically, getting all ringleaders on their first run is through luck or money. As an F2P, you could probably get a Ringleader every other month.`,
+        question: `Should I try getting all ringleaders or should I just save for who I want?`,
+        answer: `Ideally, yes. Statistically, getting all ringleaders on their first run is through luck or money. As an F2P, you could probably get a Ringleader every other month.`,
         tags : [dTag.PA, dTag.COALITION]
     },
     {
         id : '00178',
-        questions : `I'm getting a "resource full" warning. What would that item be?`,
-        answers : `Or "Items have reached the max capacity, unable to receive."<br>
+        question: `I'm getting a "resource full" warning. What would that item be?`,
+        answer: `Or "Items have reached the max capacity, unable to receive."<br>
         ${img('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/inline-images/expedition-loot-rack.jpg', 'Taken from Gamepress')}<br>
         If the Mid Rewards rack is not empty, look at your armory.<br>
         If it's the End Rewards, check your Black Market currencies.<br>
@@ -1746,44 +1746,44 @@ export const cardData = [
     },
     {
         id : '00179',
-        questions : `I'm trying to S-Rank the stage and I got the kill requirements but I can't get the gold medal. What gives?`,
-        answers : `Allied/support/friend echelons do not count. There's a counter on the bottom-left and the white number is what's being counted.`,
+        question: `I'm trying to S-Rank the stage and I got the kill requirements but I can't get the gold medal. What gives?`,
+        answer: `Allied/support/friend echelons do not count. There's a counter on the bottom-left and the white number is what's being counted.`,
         tags : [dTag.MAP]
     },
     {
         id : '00180',
-        questions : `Is it worth it to reset the pool once I got the Ringleader?`,
-        answers : `Depends on if you want the remaining units.`,
+        question: `Is it worth it to reset the pool once I got the Ringleader?`,
+        answer: `Depends on if you want the remaining units.`,
         tags : [dTag.PA]
     },
     {
         id : '00181',
-        questions : `Does cooldown reduction also reduce initial cooldown?`,
-        answers : `Yes.`,
+        question: `Does cooldown reduction also reduce initial cooldown?`,
+        answer: `Yes.`,
         tags : [dTag.SYSMECH, dTag.TDOLL, dTag.SKILL]
     },
     {
         id : '00182',
-        questions : `What's the uncensor recipe?`,
-        answers : `522/320/404/137 for EN, 666/666/666/666 everywhere else... probably.`,
+        question: `What's the uncensor recipe?`,
+        answer: `522/320/404/137 for EN, 666/666/666/666 everywhere else... probably.`,
         tags : [dTag.TDOLL, dTag.SKIN]
     },
     {
         id : '00183',
-        questions : `When will the costumes go to the Black Card Exchange?`,
-        answers : `After around 2 banners. Banners with "4 skins, no L2D" will also go to Radiant Collections.`,
+        question: `When will the costumes go to the Black Card Exchange?`,
+        answer: `After around 2 banners. Banners with "4 skins, no L2D" will also go to Radiant Collections.`,
         tags : [dTag.TDOLL, dTag.SKIN]
     },
     {
         id : '00184',
-        questions : `Just bought a gem pack/monthly card but I didn't get it yet. What do I do?`,
-        answers : `Go through the process again then back out at the payment screen. If it fails, contact support first if you're planning a refund.`,
+        question: `Just bought a gem pack/monthly card but I didn't get it yet. What do I do?`,
+        answer: `Go through the process again then back out at the payment screen. If it fails, contact support first if you're planning a refund.`,
         tags : [dTag.TECH, dTag.GEMS]
     },
     {
         id : '00185',
-        questions : `If I scrapped/retired/disassembled my only copy of a doll, can I recover/get them back?`,
-        answers : `First of all, how dare you?<br>
+        question: `If I scrapped/retired/disassembled my only copy of a doll, can I recover/get them back?`,
+        answer: `First of all, how dare you?<br>
         Second of all, yes you can. Can also work on ${spoilerSummary('collab units', img(IMG_ASSET+"CollabScrap.png", 'From u/Angelic_Force'))} and the AR Team.<br>
         Can only work once a week, costs however much is needed for a x1 dummy-link, and scrapped dupes are poof.<br>
         Go to Index, then their Index page then Recover, which will need cores.`,
@@ -1791,34 +1791,34 @@ export const cardData = [
     },  //@ Visual
     {
         id : '00186',
-        questions : `Does AA-12's SPEQ count as a slug?`,
-        answers : `No, apparently due to lacking x3 damage.`,
+        question: `Does AA-12's SPEQ count as a slug?`,
+        answer: `No, apparently due to lacking x3 damage.`,
         tags : [dTag.SPEQ]
     },
     {
         id : '00188',
-        questions : `For Coalition Units, should I skip raising units that are below XL size?`,
-        answers : `I say skip raising if you're satisfied with the units you have. Otherwise raise a unit regardless of size if you need them. Symmetric Infusion can cover the size problem.`,
+        question: `For Coalition Units, should I skip raising units that are below XL size?`,
+        answer: `I say skip raising if you're satisfied with the units you have. Otherwise raise a unit regardless of size if you need them. Symmetric Infusion can cover the size problem.`,
         tags : [dTag.COALITION]
     },
     {
         id : '00189',
-        questions : `Where can I see the costumes I have acquired?`,
-        answers : `${List.unordered(
+        question: `Where can I see the costumes I have acquired?`,
+        answer: `${List.unordered(
             'Commander Stat Card > Adjutants > Filter > Unlocked. Works for doll you have in inventory.',
             'Index > Furniture > Posters. Works for costumes that have been gifted/given.')}`,
         tags : [dTag.TDOLL, dTag.SKIN]
     },
     {
         id : '00190',
-        questions : `Does Luffberry Chess have any exclusive rewards?`,
-        answers : `${link('Icons, furnitures, and as of 2.09, skins.', 'https://www.reddit.com/r/girlsfrontline/comments/uhb3jo/weekly_commanders_lounge_may_03_2022/i7kg6bu/')}`,
+        question: `Does Luffberry Chess have any exclusive rewards?`,
+        answer: `${link('Icons, furnitures, and as of 2.09, skins.', 'https://www.reddit.com/r/girlsfrontline/comments/uhb3jo/weekly_commanders_lounge_may_03_2022/i7kg6bu/')}`,
         tags : [dTag.OJ, dTag.FURN, dTag.TDOLL, dTag.SKIN]
     },
     {
         id : '00191',
-        questions : `General tips on defeating deathstacks?`,
-        answers : `For the most part, you don't. But if you really want to, this is the epitome of "CE is useless", "what dolls, formation, fairy to use depend on what you're going against", and "learn kiting". Just don't expect to come out of it unscathed.<br>
+        question: `General tips on defeating deathstacks?`,
+        answer: `For the most part, you don't. But if you really want to, this is the epitome of "CE is useless", "what dolls, formation, fairy to use depend on what you're going against", and "learn kiting". Just don't expect to come out of it unscathed.<br>
         ${List.description({
             'Swarm deathstacks' : ['Usually AoE attacks such as Kord, Type 88, M4 exodia, KSVK with HOC support, and tank/delay fairies.',
                 'Kill them all before they kill you.'],
@@ -1828,56 +1828,56 @@ export const cardData = [
     },
     {
         id : '00192',
-        questions : `Can fairies be recovered from Index?`,
-        answers : `No, unfortunately.`,
+        question: `Can fairies be recovered from Index?`,
+        answer: `No, unfortunately.`,
         tags : [dTag.FAIRY]
     },
     {
         id : '00193',
-        questions : `Is there anything similar to the True Core Mask but for Coalition units?`,
-        answers : `PA shop. 800 supernovas.`,
+        question: `Is there anything similar to the True Core Mask but for Coalition units?`,
+        answer: `PA shop. 800 supernovas.`,
         tags : [dTag.PA, dTag.ITEM, dTag.COALITION, dTag.TCM, dTag.SHOP]
     },
     {
         id : '00194',
-        questions : `Can I get gold tier fairy talents through calibration?`,
-        answers : `Pretty much the main way of getting it.`,
+        question: `Can I get gold tier fairy talents through calibration?`,
+        answer: `Pretty much the main way of getting it.`,
         tags : [dTag.FAIRY]
     },
     {
         id : '00195',
-        questions : `What are Prototype Fairies used for?`,
-        answers : `A Prototype Fairy is used to enhance other fairies. They act like dupes in a sense that they give 100 enhancement EXP a pop, or 150 with matching talents. Recommended to use on expensive craft fairies.`,
+        question: `What are Prototype Fairies used for?`,
+        answer: `A Prototype Fairy is used to enhance other fairies. They act like dupes in a sense that they give 100 enhancement EXP a pop, or 150 with matching talents. Recommended to use on expensive craft fairies.`,
         tags : [dTag.FAIRY, dTag.LEVEL]
     },
     {
         id : '00196',
-        questions : `Where can I redeem the event boxes?`,
-        answers : `Main Screen > Event > Time-Limited Event Tab > Supply Boxes.`,
+        question: `Where can I redeem the event boxes?`,
+        answer: `Main Screen > Event > Time-Limited Event Tab > Supply Boxes.`,
         tags : [dTag.ANNIV, dTag.ITEM]
     },  //@Visual
     {
         id : '00197',
-        questions : `Will the TCM icons become available in the Friend Shop?`,
-        answers : `Yes, otherwise SOON${TM}.`,
+        question: `Will the TCM icons become available in the Friend Shop?`,
+        answer: `Yes, otherwise SOON${TM}.`,
         tags : [dTag.TCM]
     },
     {
         id : '00198',
-        questions : `Do I keep the drops if I terminate/restart?`,
-        answers : `"Recently acquired" option in the armory says yes.`,
+        question: `Do I keep the drops if I terminate/restart?`,
+        answer: `"Recently acquired" option in the armory says yes.`,
         tags : [dTag.TDOLL, dTag.MAP]
     },
     {
         id : '00199',
-        questions : `Found out that there are seasonal lines for some dolls. How do I trigger them?`,
-        answers : `Set them as your adjutant wearing the appropriate costume for the occasion.`,
+        question: `Found out that there are seasonal lines for some dolls. How do I trigger them?`,
+        answer: `Set them as your adjutant wearing the appropriate costume for the occasion.`,
         tags : [dTag.TDOLL, dTag.SKIN, dTag.ADJUNCT]
     },  //@Clarify
     {
         id : '00200',
-        questions : `Is there a compilation of anniversary adjutant lines?`,
-        answers : `${List.unordered(
+        question: `Is there a compilation of anniversary adjutant lines?`,
+        answer: `${List.unordered(
             spoilerSummary("3rd Anniversary", MBD.youtube("PL4Z0akElhimzHHiVMCozfUn1B6tYKjwPR")),   //u/paperrabbit
             spoilerSummary("4th Anniversary", MBD.youtube("PLoDB_FcnOA5zXkZ9XmQMTog1F7uIRZ_Qa")),   //u/ConductorBichir
             spoilerSummary("5th Anniversary", List.unordered(                                       //plants zaza
@@ -1896,8 +1896,8 @@ export const cardData = [
     },
     {
         id : '00201',
-        questions : `My team says Ammo/Ration depleted. How do I fill it up?`,
-        answers : `${List.ordered(
+        question: `My team says Ammo/Ration depleted. How do I fill it up?`,
+        answer: `${List.ordered(
             'Stand on a captured Command Center, captured open Heliport, captured open Heavy Heliport, or Cache Box.',
             'Double-tap the echelon standing on it.',
             'Yellow Resupply button on the bottom-right.')}<br>
@@ -1907,34 +1907,34 @@ export const cardData = [
     },  //@Visual
     {
         id : '00202',
-        questions : `What does the ${link('glitter/sparkle', IMG_ASSET+"ShinyIndicator.png")} in my coalition unit's portrait mean? Their sprites also has a golden aura/glow around it.`,
-        answers : `A shiny ${TextStyle.style('pokemon', TextStyle.STRIKE)} coalition unit. And the very reason Golden Infusion is a thing.<br>
+        question: `What does the ${link('glitter/sparkle', IMG_ASSET+"ShinyIndicator.png")} in my coalition unit's portrait mean? Their sprites also has a golden aura/glow around it.`,
+        answer: `A shiny ${TextStyle.style('pokemon', TextStyle.STRIKE)} coalition unit. And the very reason Golden Infusion is a thing.<br>
         If put on a Lv.100, XL unit, something special may happen.`,
         tags : [dTag.COALITION]
     },
     {
         id : '00203',
-        questions : `My audio is gone when I exit the app and return to it. What's happening?`,
-        answers : `Just iOS things. One way to get around it is client restart.`,
+        question: `My audio is gone when I exit the app and return to it. What's happening?`,
+        answer: `Just iOS things. One way to get around it is client restart.`,
         tags : [dTag.APPLE, dTag.TECH]
     },
     {
         id : '00204',
-        questions : `How do I throw/get Abandonded Goliaths/interact with consoles?`,
-        answers : `There should be panels on thhe left side of the screen. If they don't appear, restart app.`,
+        question: `How do I throw/get Abandonded Goliaths/interact with consoles?`,
+        answer: `There should be panels on thhe left side of the screen. If they don't appear, restart app.`,
         tags : [dTag.MAP, dTag.TECH]
     },  //@Visual
     {
         id : '00205',
-        questions : `When should I start doing night chapters?`,
-        answers : `Anytime. Unlock them by completing the next chapter's last emergency map (i.e. 11-4e unlocks 10-1n). Remember to equip PEQs to negate the accuracy penalty and bring HGs for map vision. ARSMG should be fine for the first few night maps.<br>
+        question: `When should I start doing night chapters?`,
+        answer: `Anytime. Unlock them by completing the next chapter's last emergency map (i.e. 11-4e unlocks 10-1n). Remember to equip PEQs to negate the accuracy penalty and bring HGs for map vision. ARSMG should be fine for the first few night maps.<br>
         ${link("BigStupidJellyfish_ requirements breakdown.", 'https://www.reddit.com/r/girlsfrontline/comments/pf1dsb/weekly_commanders_lounge_august_31_2021/hb4b257/')}`,
         tags : [dTag.MAIN]
     },
     {
         id : '00206',
-        questions : `Why is this game downloading game files when I open it?`,
-        answers : `${List.unordered(
+        question: `Why is this game downloading game files when I open it?`,
+        answer: `${List.unordered(
             "You're just booting it up at the most opportune of times (maintenance/hotfix).",
             "You closed the Bluestacks emulator directly before closing the GFL app."
         )}`,
@@ -1942,73 +1942,73 @@ export const cardData = [
     },
     {
         id : '00207',
-        questions : `I can't log-in with Facebook. What are my options?`,
-        answers : `One solution is through the FB app.`,
+        question: `I can't log-in with Facebook. What are my options?`,
+        answer: `One solution is through the FB app.`,
         tags : [dTag.TECH]
     },
     {
         id : '00208',
-        questions : `I don't know how to change the AI behaviour of my support/friend echelon, anyone can help me?`,
-        answers : `${img(IMG_ASSET+"FriendEchelonCommand.png", 'Double-tap the Friend Echelon to show options')}`,
+        question: `I don't know how to change the AI behaviour of my support/friend echelon, anyone can help me?`,
+        answer: `${img(IMG_ASSET+"FriendEchelonCommand.png", 'Double-tap the Friend Echelon to show options')}`,
         tags : [dTag.FRIEND, dTag.ECH, dTag.MAP]
     },
     {
         id : '00209',
-        questions : `When will dorm battery, daily gift, friend battery reset?`,
-        answers : `${link('Netlify timer.', 'https://gftimers.netlify.app')} Note that ranking updates one hour after Kalina's Daily Gift.`,
+        question: `When will dorm battery, daily gift, friend battery reset?`,
+        answer: `${link('Netlify timer.', 'https://gftimers.netlify.app')} Note that ranking updates one hour after Kalina's Daily Gift.`,
         tags : [dTag.DORM, dTag.FRIEND, dTag["3P"]]
     },
     {
         id : '00210',
-        questions : `Visited a random dorm and they had a different audio playing, what caused that?`,
-        answers : `Specific furniture with a specific doll or a complete furniture set.`,
+        question: `Visited a random dorm and they had a different audio playing, what caused that?`,
+        answer: `Specific furniture with a specific doll or a complete furniture set.`,
         tags : [dTag.DORM, dTag.FURN]
     },
     {
         id : '00211',
-        questions : `I didn't get *insert reward here*. I checked my inventory but they're not there. How do I get them?`,
-        answers : `Have you checked the quests?<br>
+        question: `I didn't get *insert reward here*. I checked my inventory but they're not there. How do I get them?`,
+        answer: `Have you checked the quests?<br>
         What about the mail? Stage clear rewards are sent there.<br>
         If you did and they're still not there, either restart or wait for a few days.`,
         tags : [dTag.TECH, dTag.GET]
     },
     {
         id : '00212',
-        questions : `What are the chances on getting a specific fairy talent?`,
-        answers : `${link('u/BigStupidJellyfish_ analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/talent-data')}`,
+        question: `What are the chances on getting a specific fairy talent?`,
+        answer: `${link('u/BigStupidJellyfish_ analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/talent-data')}`,
         tags : [dTag.FAIRY]
     },
     {
         id : '00213',
-        questions : `Why is the event map still here? It should've ended, right?`,
-        answers : `Happens if you didn't close the app throughout maintenance. Can still be played and drop limited dolls.<!-- u/BigStupidJellyfish_ -->`,
+        question: `Why is the event map still here? It should've ended, right?`,
+        answer: `Happens if you didn't close the app throughout maintenance. Can still be played and drop limited dolls.<!-- u/BigStupidJellyfish_ -->`,
         tags : [dTag.MAJOR, dTag.SEASON, dTag.COLLAB]
     },
     {
         id : '00214',
-        questions : `Is there a list of game terms and their abbreviations? And is there any for dolls' nicknames?`,
-        answers : `${link('u/BigStupidJellyfish_.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/terms')} Includes in-game and community terms.<br>
+        question: `Is there a list of game terms and their abbreviations? And is there any for dolls' nicknames?`,
+        answer: `${link('u/BigStupidJellyfish_.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/terms')} Includes in-game and community terms.<br>
         ${link('u/Kipdid.', 'https://www.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge_may_17_2022/i9fmiwm/')}<br>
         ${link('u/totestemp.', 'https://www.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge_may_17_2022/i972mqd/')}`,
         tags : [dTag.MISC]
     },
     {
         id : '00215',
-        questions : `How do I oath Ringleaders?`,
-        answers : `Through the Formations route or the Armory route, with 100 Affection in hand, just like the Dolls. Going through the Protocol Control Center route is reported to be bugged.`,
+        question: `How do I oath Ringleaders?`,
+        answer: `Through the Formations route or the Armory route, with 100 Affection in hand, just like the Dolls. Going through the Protocol Control Center route is reported to be bugged.`,
         tags : [dTag.PA, dTag.COALITION, dTag.OATH, dTag.TECH]
     },
     {
         id : '00216',
-        questions : `Do HP shields stack?`,
-        answers : `TLDR: Yes.<br>
+        question: `Do HP shields stack?`,
+        answer: `TLDR: Yes.<br>
         ${img(IMG_ASSET+"HPShield.png", 'From u/UnironicWeeaboo')}`,
         tags : [dTag.BATTLE, dTag.SKILL]
     },  //@Trim Image
     {
         id : '00217',
-        questions : `What should I prioritize buying from the black market?`,
-        answers : `${List.ordered(
+        question: `What should I prioritize buying from the black market?`,
+        answer: `${List.ordered(
             'Fire Control Cores',
             'Dummy Cores',
             'Standard Combat Reports',
@@ -2019,41 +2019,41 @@ export const cardData = [
     },  //@Visual
     {
         id : '00218',
-        questions : `Is Radiant Collection worth it?`,
-        answers : `Not in the slightest. For early game furnishing, the Black Market is better since you can get a 5${STAR} bonus.<br>
+        question: `Is Radiant Collection worth it?`,
+        answer: `Not in the slightest. For early game furnishing, the Black Market is better since you can get a 5${STAR} bonus.<br>
         Rates being 2% divided by the number of costumes in the radiant is the chance of pulling a specific skin. Aside from the fact that no exchange tickets and no L2D.<br>`,
         tags : [dTag.RESUPPLY, dTag.FURN, dTag.EXPED, dTag.TDOLL, dTag.SKIN]
     },
     {
         id : '00219',
-        questions : `What are pets used for?`,
-        answers : `Extra comfort for dorms and raises chance to go to a specific expedition biome.`,
+        question: `What are pets used for?`,
+        answer: `Extra comfort for dorms and raises chance to go to a specific expedition biome.`,
         tags : [dTag.PET, dTag.DORM, dTag.EXPED]
     },
     {
         id : '00220',
-        questions : `Are keybinds bannable?`,
-        answers : `${link('Highly recommended against using keybinds.', 'https://www.reddit.com/r/girlsfrontline/comments/grht76/monthly_qa/fs239z8/')}<br>
+        question: `Are keybinds bannable?`,
+        answer: `${link('Highly recommended against using keybinds.', 'https://www.reddit.com/r/girlsfrontline/comments/grht76/monthly_qa/fs239z8/')}<br>
         A lot of emulator players still use them, especially for ${link('kiting', 'https://www.reddit.com/r/girlsfrontline/comments/hmqhw8/weekly_commanders_lounge_july_07_2020/fxgu8g8/')}, so if you're willing to take the risk, go for it. Macros ARE a bannable offense, full stop.`,
         tags : [dTag.EMU]
     },
     {
         id : '00221',
-        questions : `Why do I get the "Ammo/Ration depleted" warning and sometimes not?`,
-        answers : `You'll get the warning when you lack either of them, when you can see the enemy, and when you engage them first in battle.`,
+        question: `Why do I get the "Ammo/Ration depleted" warning and sometimes not?`,
+        answer: `You'll get the warning when you lack either of them, when you can see the enemy, and when you engage them first in battle.`,
         tags : [dTag.MAP]
     },
     {
         id : '00222',
-        questions : `What are the best deals for RL money?`,
-        answers : `${List.unordered(
+        question: `What are the best deals for RL money?`,
+        answer: `${List.unordered(
             'Monthly gems card')}`,
         tags : [dTag.MISC]
     },
     {
         id : '00223',
-        questions : `What's the release order for PA banners?`,
-        answers : `${List.unordered(
+        question: `What's the release order for PA banners?`,
+        answer: `${List.unordered(
             spoilerSummary('Google Doc.', Embed.google(["GFL Protocol Assimilation Banner Order", "https://docs.google.com/spreadsheets/d/1nwlyZxoYaC44idP8SnAjk1OgQX4ND0lIzG3_Fs1We_0"])),
             spoilerSummary('Image.', image('https://cdn.discordapp.com/attachments/564028599682727937/1003511535387283556/Proass_order.png', "Protocol Assimilation banner order."))
         )}`,
@@ -2061,73 +2061,73 @@ export const cardData = [
     },
     {
         id : '00224',
-        questions : `Should I keep equipping capes to RFs?`,
-        answers : `${link('Yes.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/myths#capes')}`,
+        question: `Should I keep equipping capes to RFs?`,
+        answer: `${link('Yes.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/myths#capes')}`,
         tags : [dTag.TDOLL, dTag.EQUIP]
     },
     {
         id : '00225',
-        questions : `Where can I get calibration tickets?`,
-        answers : `Defense Drill, expeditions, shop, mini-events, log-in.`,
+        question: `Where can I get calibration tickets?`,
+        answer: `Defense Drill, expeditions, shop, mini-events, log-in.`,
         tags : [dTag.ITEM, dTag.SIMS, dTag.EXPED, dTag.MINI, dTag.SHOP, dTag.GET]
     },
     {
         id : '00226',
-        questions : `How do I get duplicate ringleaders?`,
-        answers : `If you successfully captured the RL, there is a "Reset Pool" button beside the Svarog button. This allows you to refresh the pool back to 100 for another round of RL pulling.<br>
+        question: `How do I get duplicate ringleaders?`,
+        answer: `If you successfully captured the RL, there is a "Reset Pool" button beside the Svarog button. This allows you to refresh the pool back to 100 for another round of RL pulling.<br>
         Dupe RLs are autofed to your first copy, raising their petals. Any more pulls of the same RL with full petal is an autoscrap.<br>
         Getting full petals is pretty much only relevant to Theater.`,
         tags : [dTag.COALITION, dTag.PA]
     },  //@Visual
     {
         id : '00227',
-        questions : `How many ways can I terminate the current mission?`,
-        answers : `${List.unordered(
+        question: `How many ways can I terminate the current mission?`,
+        answer: `${List.unordered(
             'Terminate mission button on the top-left of the field map.',
             "Combat Missions/Campaign/Event Map > the mission you're currently doing > Terminate.")}`,
         tags : [dTag.MAIN, dTag.CAMPAIGN, dTag.MAJOR, dTag.SEASON, dTag.COLLAB]
     },
     {
         id : '00228',
-        questions : `I keep fat-fingering my kiting. Any help?`,
-        answers : `To move a doll, you would have to drag their feet, not on their body.`,
+        question: `I keep fat-fingering my kiting. Any help?`,
+        answer: `To move a doll, you would have to drag their feet, not on their body.`,
         tags : [dTag.BATTLE]
     },
     {
         id : '00229',
-        questions : `When will the ringleader capture special animation start playing?`,
-        answers : `When they get captured with Svarog's airstrikes or through the shop.`,
+        question: `When will the ringleader capture special animation start playing?`,
+        answer: `When they get captured with Svarog's airstrikes or through the shop.`,
         tags : [dTag.PA, dTag.COALITION]
     },
     {
         id : '00230',
-        questions : `Is there any particular reason why not to overextend on crafting for dailies?`,
-        answers : `Rate ups. They exist. They take our contracts and quick prods.`,
+        question: `Is there any particular reason why not to overextend on crafting for dailies?`,
+        answer: `Rate ups. They exist. They take our contracts and quick prods.`,
         tags : [dTag.PROD]
     },
     {
         id : '00231',
-        questions : `Can I farm for the equipment/doll without clearing the map first?`,
-        answers : `Yes, but better to clear it to remove the objectives pop-up.`,
+        question: `Can I farm for the equipment/doll without clearing the map first?`,
+        answer: `Yes, but better to clear it to remove the objectives pop-up.`,
         tags : [dTag.SPEQ, dTag.TDOLL]
     },
     {
         id : '00232',
-        questions : `Is there any Live2D viewer for GFL?`,
-        answers : `${link('Pengu.', 'https://pengupengupengu.github.io/live2d-viewer-web/')} Don't know how this works.<br>
+        question: `Is there any Live2D viewer for GFL?`,
+        answer: `${link('Pengu.', 'https://pengupengupengu.github.io/live2d-viewer-web/')} Don't know how this works.<br>
         Or try IOPWiki.`,
         tags : [dTag['3P']]
     },
     {
         id : '00233',
-        questions : `How long would visitors stay in my dormitory?`,
-        answers : `${link('u/BigStupidJellyfish_ says 8 hours.', 'https://old.reddit.com/r/girlsfrontline/comments/v6pt9o/weekly_commanders_lounge_june_07_2022/ibyvjnm/')}`,
+        question: `How long would visitors stay in my dormitory?`,
+        answer: `${link('u/BigStupidJellyfish_ says 8 hours.', 'https://old.reddit.com/r/girlsfrontline/comments/v6pt9o/weekly_commanders_lounge_june_07_2022/ibyvjnm/')}`,
         tags : [dTag.DORM]
     },
     {
         id : '00234',
-        questions : `Which exped location gives which resources and which pet is best for each?`,
-        answers : `${table(
+        question: `Which exped location gives which resources and which pet is best for each?`,
+        answer: `${table(
             ['Pets', 'Location', 'Currency', 'Ration'],
             ['Cat', 'City', 'Toy Brick', '???'],
             ['Dog', 'Snowfield', 'Buttstock', '???'],
@@ -2138,97 +2138,97 @@ export const cardData = [
     },  //@Visual
     {
         id : '00235',
-        questions : `Does getting S rank in a mission increase the chance of getting the map specific doll in story and events?`,
-        answers : `Yes.`,
+        question: `Does getting S rank in a mission increase the chance of getting the map specific doll in story and events?`,
+        answer: `Yes.`,
         tags : [dTag.TDOLL]
     },
     {
         id : '00236',
-        questions : `What is "ranking" that people are talking about?`,
-        answers : `${link("u/pointblanksniper's essay.", 'https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/id4n4dr/')}`,
+        question: `What is "ranking" that people are talking about?`,
+        answer: `${link("u/pointblanksniper's essay.", 'https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/id4n4dr/')}`,
         tags : [dTag.MAJOR]
     },
     {
         id : '00237',
-        questions : `What are Specified Equipment Contracts for and how do I use them?`,
-        answers : `Extra IOP Special Orders. Gets used when Equipment Production Special Order's 20 free charges are used up.`,
+        question: `What are Specified Equipment Contracts for and how do I use them?`,
+        answer: `Extra IOP Special Orders. Gets used when Equipment Production Special Order's 20 free charges are used up.`,
         tags : [dTag.ITEM, dTag.EQUIP, dTag.PROD]
     },  //@Visual
     {
         id : '00238',
-        questions : `Where is the in-game chip calculator and is it better than GFCalc?`,
-        answers : `Under that specific FST's chip page.<br>
+        question: `Where is the in-game chip calculator and is it better than GFCalc?`,
+        answer: `Under that specific FST's chip page.<br>
         IMO no, since it can't maximize strengths, though it is useful for temporary set-ups.<br>
         To use it properly, enable Preview Max-level Chip Stats.`,
         tags : [dTag.HOC, dTag.FST, dTag.EQUIP, dTag["3P"]]
     },  //@Visual
     {
         id : '00239',
-        questions : `How do I change my assistant/adjutant/lobby character?`,
-        answers : `Commander Level > Base Management (bottom-left).<br>
+        question: `How do I change my assistant/adjutant/lobby character?`,
+        answer: `Commander Level > Base Management (bottom-left).<br>
         You can also change each one's background.`,
         tags : [dTag.ADJUNCT]
     },  //@Visual
     {
         id : '00240',
-        questions : `How do I edit my Friend Card?`,
-        answers : `Friend > ID Card Tab`,
+        question: `How do I edit my Friend Card?`,
+        answer: `Friend > ID Card Tab`,
         tags : [dTag.MISC]
     },  //@Visual
     {
         id : '00241',
-        questions : `How do I dye my commander's clothes?`,
-        answers : `Use an Infinite Surprise Dye or a Colorful Dye on a costume piece. Note that not every piece is dyeable, dirty and basic costumes in particular.`,
+        question: `How do I dye my commander's clothes?`,
+        answer: `Use an Infinite Surprise Dye or a Colorful Dye on a costume piece. Note that not every piece is dyeable, dirty and basic costumes in particular.`,
         tags : [dTag.CMDR, dTag.SKIN]
     },  //@Visual
     {
         id : '00242',
-        questions : `Where can I get a dyeable and free commander costume?`,
-        answers : `Shattered Connexions.`,
+        question: `Where can I get a dyeable and free commander costume?`,
+        answer: `Shattered Connexions.`,
         tags : [dTag.CMDR, dTag.SKIN, dTag.GET]
     },
     {
         id : '00243',
-        questions : `Why does the iOS version crash a lot?`,
-        answers : `Grapevine: Mix iOS RAM overload prevention and GFL memory leak, and you have a totally definitely good time.<br>
+        question: `Why does the iOS version crash a lot?`,
+        answer: `Grapevine: Mix iOS RAM overload prevention and GFL memory leak, and you have a totally definitely good time.<br>
         iPhone 7 and above should work really well though.`,
         tags : [dTag.TECH, dTag.APPLE]
     },
     {
         id : '00244',
-        questions : `How do I do EXP Sim?`,
-        answers : `Deploy at least one echelon that can clear the whole map. Rewards 96 CRs on Advanced.`,
+        question: `How do I do EXP Sim?`,
+        answer: `Deploy at least one echelon that can clear the whole map. Rewards 96 CRs on Advanced.`,
         tags : [dTag.SIMS]
     },  //@Check. Add SCR gain.
     {
         id : '00245',
-        questions : `What are Data Patches for and how do I get them?`,
-        answers : `Used for iterating FSTs beyond yellow 5${STAR} (the red ${STAR}). Can also be used across all FSTs.<br>
+        question: `What are Data Patches for and how do I get them?`,
+        answer: `Used for iterating FSTs beyond yellow 5${STAR} (the red ${STAR}). Can also be used across all FSTs.<br>
         You can get them by getting a 5${STAR}'d FST's Central Data or by Code Refactoring in the Garage.`,
         tags : [dTag.HOC, dTag.FST, dTag.LEVEL, dTag.ITEM, dTag.GET]
     },
     {
         id : '00246',
-        questions : `Can I get Black Cards if I have a dupe of Luffberry skin?`,
-        answers : `7000 Friend Points, take it or leave it.`,
+        question: `Can I get Black Cards if I have a dupe of Luffberry skin?`,
+        answer: `7000 Friend Points, take it or leave it.`,
         tags : [dTag.TDOLL, dTag.SKIN, dTag.OJ, dTag.ITEM]
     },
     {
         id : '00247',
-        questions : `How exactly does the Devastation Card work?`,
-        answers : `Boosts all out-of-combat damage.`,
+        question: `How exactly does the Devastation Card work?`,
+        answer: `Boosts all out-of-combat damage.`,
         tags : [dTag.OJ]
     },
     {
         id : '00248',
-        questions : `How does Enhancement work in Luffberry Chess?`,
-        answers : `Gives permanent buffs to a doll.`,
+        question: `How does Enhancement work in Luffberry Chess?`,
+        answer: `Gives permanent buffs to a doll.`,
         tags : [dTag.OJ]
     },
     {
         id : '00249',
-        questions : `How can I get T-Doll skins?`,
-        answers : `${List.description({
+        question: `How can I get T-Doll skins?`,
+        answer: `${List.description({
             'Shop' : [
                 'Dedicated gem-bought shop.',
                 'Event shop during seasonal events.'
@@ -2249,88 +2249,88 @@ export const cardData = [
     },
     {
         id : '00250',
-        questions : `How do I know which dolls are in the Targeted rate up?`,
-        answers : `Scrolling banner at the bottom-left of the home screen.`,
+        question: `How do I know which dolls are in the Targeted rate up?`,
+        answer: `Scrolling banner at the bottom-left of the home screen.`,
         tags : [dTag.PROD, dTag.TDOLL]
     },
     {
         id : '00251',
-        questions : `How do I get Friend ID icons?`,
-        answers : `Resupply gacha (10 pulls), shop or clear reward during events, or Friend Shop.`,
+        question: `How do I get Friend ID icons?`,
+        answer: `Resupply gacha (10 pulls), shop or clear reward during events, or Friend Shop.`,
         tags : [dTag.GET]
     },
     {
         id : '00252',
-        questions : `How do I know the final value of the doll stats? And what are the caps for each stat?`,
-        answers : `${link('Matsuda Formula.', 'https://gfl.matsuda.tips/post/basicformula')}<br>
+        question: `How do I know the final value of the doll stats? And what are the caps for each stat?`,
+        answer: `${link('Matsuda Formula.', 'https://gfl.matsuda.tips/post/basicformula')}<br>
         99999 for final damage. FOR ROF, it's listed on the formation screen, but in reality, it's by 5, so max for 120 is 116, i.e. 116-120 ROF has no difference. Crit Rate is 100% as per common sense.`,
         tags : [dTag.SYSMECH, dTag.TDOLL]
     },
     {
         id : '00253',
-        questions : `How good are AR-15 and SOP's SPEQs?`,
-        answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/star-buffs')}`,
+        question: `How good are AR-15 and SOP's SPEQs?`,
+        answer: `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/star-buffs')}`,
         tags : [dTag.SPEQ]
     },
     {
         id : '00254',
-        questions : `What are Dream Astralites and where do I get it?`,
-        answers : `Milestone currency for Bookshelf of Memories.`,
+        question: `What are Dream Astralites and where do I get it?`,
+        answer: `Milestone currency for Bookshelf of Memories.`,
         tags : [dTag.ITEM, dTag.SIDE, dTag.GET]
     },
     {
         id : '00255',
-        questions : `Is there a way to quickly unequip dolls?`,
-        answers : `Armory > Equipment > Remove All at bottom-right.`,
+        question: `Is there a way to quickly unequip dolls?`,
+        answer: `Armory > Equipment > Remove All at bottom-right.`,
         tags : [dTag.EQUIP]
     },  //@Visual
     {
         id : '00256',
-        questions : `Is there a chibi viewer for each doll?`,
-        answers : `${link('IOPWiki', 'https://iopwiki.com/wiki/Category:T-Dolls')}<br>
+        question: `Is there a chibi viewer for each doll?`,
+        answer: `${link('IOPWiki', 'https://iopwiki.com/wiki/Category:T-Dolls')}<br>
         ${link('GFWiki', 'http://www.gfwiki.org/w/%E6%88%98%E6%9C%AF%E4%BA%BA%E5%BD%A2%E5%9B%BE%E9%89%B4')}`,
         tags : [dTag.TDOLL, dTag.MISC]
     },
     {
         id : '00257',
-        questions : `I'm moving overseas. Will there be problems for playing the same account?`,
-        answers : `Each client is tied to their specific server.`,
+        question: `I'm moving overseas. Will there be problems for playing the same account?`,
+        answer: `Each client is tied to their specific server.`,
         tags : [dTag.ACCT]
     },
     {
         id : '00258',
-        questions : `I see people have their Tdolls as their avatar in other people's dorms. How do you do that?`,
-        answers : `In dorm, bottom-left, top-right, uncheck third checkbox.`,
+        question: `I see people have their Tdolls as their avatar in other people's dorms. How do you do that?`,
+        answer: `In dorm, bottom-left, top-right, uncheck third checkbox.`,
         tags : [dTag.DORM]
     },  //@Visual
     {
         id : '00259',
-        questions : `Why does the current event not have auto-battles?`,
-        answers : `All currently running "limited" events have no auto-battles, only main chapters and campaign map have those. Why? Engagement, probably.`,
+        question: `Why does the current event not have auto-battles?`,
+        answer: `All currently running "limited" events have no auto-battles, only main chapters and campaign map have those. Why? Engagement, probably.`,
         tags : [dTag.AUTO, dTag.MAJOR, dTag.SEASON, dTag.COLLAB]
     },
     {
         id : '00260',
-        questions : `Which of the enemies count as an elite?`,
-        answers : `${spoilerSummary("pengu's enemy dex spreadsheet (includes high threat).", Embed.google(["GFL Enemy Dex Dump", "https://docs.google.com/spreadsheets/d/1_WPjx2WUE8zYhhfJ3wJkGCmpLn6dgwmcY-R7ZfKWTZ8"]))}`,  //according to u/MrFunkyBoy (https://old.reddit.com/r/girlsfrontline/comments/111xab7/weekly_commanders_lounge_february_14_2023/j957swj/)
+        question: `Which of the enemies count as an elite?`,
+        answer: `${spoilerSummary("pengu's enemy dex spreadsheet (includes high threat).", Embed.google(["GFL Enemy Dex Dump", "https://docs.google.com/spreadsheets/d/1_WPjx2WUE8zYhhfJ3wJkGCmpLn6dgwmcY-R7ZfKWTZ8"]))}`,  //according to u/MrFunkyBoy (https://old.reddit.com/r/girlsfrontline/comments/111xab7/weekly_commanders_lounge_february_14_2023/j957swj/)
         tags : [dTag.ENEMY]
     },  //${link('Powered by randomqwerty.', '../elites')}<br>
     {
         id : '00261',
-        questions : `Can I unbind my Sunborn Account?`,
-        answers : `AFAIK, can't.`,
+        question: `Can I unbind my Sunborn Account?`,
+        answer: `AFAIK, can't.`,
         tags : [dTag.ACCT]
     },
     {
         id : '00262',
-        questions : `Is it fine to use green equips?`,
-        answers : `Advised to use if lacking gold equips. Do calibration only on gold ones for calibration ticket efficiency. Otherwise, fine to level them up.`,
+        question: `Is it fine to use green equips?`,
+        answer: `Advised to use if lacking gold equips. Do calibration only on gold ones for calibration ticket efficiency. Otherwise, fine to level them up.`,
         tags : [dTag.TDOLL, dTag.EQUIP]
     },
     {
         id : '00263',
-        questions : `How do I get the gold medals in maps?`,
-        answers : `${List.unordered(
+        question: `How do I get the gold medals in maps?`,
+        answer: `${List.unordered(
             'Read the Gold Medal description in the combat summary.',
             'Never retreat your team from the field map either by losing skirmishes (losses) or manual retreating (withdrawing).',
             "Never repair fielded teams (red warning at the bottom left tells you this, don't miss it).",
@@ -2340,14 +2340,14 @@ export const cardData = [
     },  //@Visual + Fix + Clarify
     {
         id : '00264',
-        questions : `What level is a good stopping point for raising dolls?`,
-        answers : `Lv. 90 is the last level to get a power spike, before MODs, due to the 5th link.`,
+        question: `What level is a good stopping point for raising dolls?`,
+        answer: `Lv. 90 is the last level to get a power spike, before MODs, due to the 5th link.`,
         tags : [dTag.TDOLL, dTag.LEVEL]
     },
     {
         id : '00265',
-        questions : `Which T-Doll skill's quirks should I be aware of?`,
-        answers : `${List.description({
+        question: `Which T-Doll skill's quirks should I be aware of?`,
+        answer: `${List.description({
             'General Liu' : [link('Clones can get stat buffs, albeit with restrictions.', 'https://iopwiki.com/wiki/General_Liu#Trivia')],
             'C-93' : ["Passive can trigger in response to other dolls' self-debuffs."],
             'Hanyang Type 88' : [link('Can still miss on certain positions.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/hanyangle-2')],
@@ -2373,88 +2373,88 @@ export const cardData = [
     },  //move to skills page
     {
         id : '00266',
-        questions : `Why do some attacks ignore my doll's armor/gets orange hits?`,
-        answers : `Enemy has higher AP or they hit with explosive attacks.`,
+        question: `Why do some attacks ignore my doll's armor/gets orange hits?`,
+        answer: `Enemy has higher AP or they hit with explosive attacks.`,
         tags : [dTag.ENEMY, dTag.BATTLE]
     },
     {
         id : '00267',
-        questions : `Is there a limit to how many people I can blacklist?`,
-        answers : `50.`,
+        question: `Is there a limit to how many people I can blacklist?`,
+        answer: `50.`,
         tags : [dTag.MISC]
     },
     {
         id : '00268',
-        questions : `Can I use duplicates to raise my doll's MOD level?`,
-        answers : `Yes, unless you're modding 2★ dolls. First, go to factory then dismantle all dupes. When you get enough cores, you can use them to raise MOD levels.`,
+        question: `Can I use duplicates to raise my doll's MOD level?`,
+        answer: `Yes, unless you're modding 2★ dolls. First, go to factory then dismantle all dupes. When you get enough cores, you can use them to raise MOD levels.`,
         tags : [dTag.MOD]
     },
     {
         id : '00269',
-        questions : `How do I bind my account?`,
-        answers : `${link('Settings>Manage Account>Bind to your preferred account.', 'https://old.reddit.com/r/girlsfrontline/comments/h9zoat/weekly_commanders_lounge_june_16_2020/fvpm1q8/')} To see your account password, check the spam section of your bound email address.<br>
+        question: `How do I bind my account?`,
+        answer: `${link('Settings>Manage Account>Bind to your preferred account.', 'https://old.reddit.com/r/girlsfrontline/comments/h9zoat/weekly_commanders_lounge_june_16_2020/fvpm1q8/')} To see your account password, check the spam section of your bound email address.<br>
         You can then change devices provided that you use the same account.`,
         tags : [dTag.ACCT]
     },  //@Visual
     {
         id : '00270',
-        questions : `Why do I sometimes get 1 defense die in battle?`,
-        answers : `Opponent piece landed on top of your own, signified by a die breaking.`,
+        question: `Why do I sometimes get 1 defense die in battle?`,
+        answer: `Opponent piece landed on top of your own, signified by a die breaking.`,
         tags : [dTag.OJ]
     },  //@In-game manual
     {
         id : '00271',
-        questions : `Do SMGs and HGs need to bother with PEQs?`,
-        answers : `Direct-fire guns do.`,
+        question: `Do SMGs and HGs need to bother with PEQs?`,
+        answer: `Direct-fire guns do.`,
         tags : [dTag.TDOLL, dTag.EQUIP]
     },
     {
         id : '00272',
-        questions : `What's a T-Doll Memoir?`,
-        answers : `MOD stories.`,
+        question: `What's a T-Doll Memoir?`,
+        answer: `MOD stories.`,
         tags : [dTag.SIDE, dTag.MOD]
     },  //@Clarify
     {
         id : '00273',
-        questions : `Will I lose the tile buffs if my dolls retreated/moved/lose link/die?`,
-        answers : `${spoilerSummary('No', MBD.youtube('tQRqcTDmAKE'))}. On that note, retreating dolls who had their buffs activate will not remove said buff. Also, tile buffs don't degrade even if your dummy count does.`,
+        question: `Will I lose the tile buffs if my dolls retreated/moved/lose link/die?`,
+        answer: `${spoilerSummary('No', MBD.youtube('tQRqcTDmAKE'))}. On that note, retreating dolls who had their buffs activate will not remove said buff. Also, tile buffs don't degrade even if your dummy count does.`,
         tags : [dTag.TDOLL, dTag.SKILL, dTag.BATTLE]
     },
     {
         id : '00274',
-        questions : `I'm planning to use a max level oathed MOD doll to farm surplus exp. Is that a good idea?`,
-        answers : `${img("https://cdn.discordapp.com/attachments/410790982116966400/970892903247384576/Surplus-and-fairy-exp-oath-no-oath.gif", "From u/UnironicWeeaboo")}`,
+        question: `I'm planning to use a max level oathed MOD doll to farm surplus exp. Is that a good idea?`,
+        answer: `${img("https://cdn.discordapp.com/attachments/410790982116966400/970892903247384576/Surplus-and-fairy-exp-oath-no-oath.gif", "From u/UnironicWeeaboo")}`,
         tags : [dTag.TDOLL, dTag.LEVEL, dTag.MOD, dTag.OATH]
     },
     {
         id : '00275',
-        questions : `How long does it take to max out Kalina's affection?`,
-        answers : `${spoilerSummary("A very long time.", Embed.google(["Kalina Affection Level and Gifts by 25thNight-", "https://docs.google.com/spreadsheets/d/1rshL9qGZfmuacCzjs7GdLN4qNs_ZWRoJNn-1vTwr6hc"]))}<br>
+        question: `How long does it take to max out Kalina's affection?`,
+        answer: `${spoilerSummary("A very long time.", Embed.google(["Kalina Affection Level and Gifts by 25thNight-", "https://docs.google.com/spreadsheets/d/1rshL9qGZfmuacCzjs7GdLN4qNs_ZWRoJNn-1vTwr6hc"]))}<br>
         You can increase it by collecting an affection point from her at the shop or by buying things from the shop.`,
         tags : [dTag.KALINA, dTag.LOVE]
     },
     {
         id : '00276',
-        questions : `I think I drove myself into a wall by not doing things efficiently. Do I have to restart my account to progress better?`,
-        answers : `Nah. You'll be just fine continuing. Just do things better from now on.`,
+        question: `I think I drove myself into a wall by not doing things efficiently. Do I have to restart my account to progress better?`,
+        answer: `Nah. You'll be just fine continuing. Just do things better from now on.`,
         tags : [dTag.NEWB]
     },
     {
         id : '00277',
-        questions : `Do spare dorms contribute to comfort/battery generation?`,
-        answers : `No. The comfort values shown in it is for when they're actually used.`,
+        question: `Do spare dorms contribute to comfort/battery generation?`,
+        answer: `No. The comfort values shown in it is for when they're actually used.`,
         tags : [dTag.DORM, dTag.ITEM, dTag.BATTERY]
     },
     {
         id : '00278',
-        questions : `Is there a way to change the skill icon order in battle?`,
-        answers : `${link('Explanation and manipulation.', 'https://old.reddit.com/r/girlsfrontline/comments/oeqgwt/weekly_commanders_lounge_july_06_2021/h48qu1v/')}`,
+        question: `Is there a way to change the skill icon order in battle?`,
+        answer: `${link('Explanation and manipulation.', 'https://old.reddit.com/r/girlsfrontline/comments/oeqgwt/weekly_commanders_lounge_july_06_2021/h48qu1v/')}`,
         tags : [dTag.BATTLE, dTag.SKILL]
     },
     {
         id : '00279',
-        questions : `Is there an easy way to get Luffberry tickets?`,
-        answers : `${List.ordered(
+        question: `Is there an easy way to get Luffberry tickets?`,
+        answer: `${List.ordered(
             'Create private lobby.',
             'Start match with bots.',
             'Recover game every 5 minutes or buy cards during shop phase. Important or else you get no tickets.',
@@ -2463,21 +2463,21 @@ export const cardData = [
     },
     {
         id : '00280',
-        questions : `How does one change their dormitory representative/avatar/visitor?`,
-        answers : `${img(IMG_ASSET+"VisitorAvatar.png", 'Visit > Setting > Dorm Visit')}<br>
+        question: `How does one change their dormitory representative/avatar/visitor?`,
+        answer: `${img(IMG_ASSET+"VisitorAvatar.png", 'Visit > Setting > Dorm Visit')}<br>
         Checked uses your commander avatar, unchecked and it uses your first adjutant.`,
         tags : [dTag.DORM]
     },
     {
         id : '00282',
-        questions : `I bought the L2D background but I saw nothing move. Is this really L2D?`,
-        answers : `If you won't move then it wouldn't. Yes, panoramic${TextStyle.style('sorta L2D', TextStyle.SUPER)}.`,
+        question: `I bought the L2D background but I saw nothing move. Is this really L2D?`,
+        answer: `If you won't move then it wouldn't. Yes, panoramic${TextStyle.style('sorta L2D', TextStyle.SUPER)}.`,
         tags : [dTag.MISC]
     },
     {
         id : '00283',
-        questions : `How do I bypass enemy defenses?`,
-        answers : `${table(['Defense', 'Counter'],
+        question: `How do I bypass enemy defenses?`,
+        answer: `${table(['Defense', 'Counter'],
             ['Health Bar', 'Just shoot them'],
             ['Evasion', 'High accuracy<br>Evasion debuff<br>Surehits like skillshots or explosives'],
             ['Armor', 'High firepower<br>AP bullets<br>Explosives<br>Armor-ignoring attacks'],
@@ -2488,146 +2488,146 @@ export const cardData = [
     },
     {
         id : '00284',
-        questions : `How do I know when my registration date was?`,
-        answers : `user_info.json from GFAlarm > reg_time value > convert to gregorian ("reg_time" unix time) with ${link('this', 'https://www.wolframalpha.com/')}.`,
+        question: `How do I know when my registration date was?`,
+        answer: `user_info.json from GFAlarm > reg_time value > convert to gregorian ("reg_time" unix time) with ${link('this', 'https://www.wolframalpha.com/')}.`,
         tags : [dTag.ACCT]
     },
     {
         id : '00285',
-        questions : `How do fairy talents work?`,
-        answers : `Activates at the start of battle but activates after the echelon's fairy skll. As for it's effects, aside from Fervor (which boosts at 0s, 8s, 16s mark), exactly what it says (i.e. unlimited if no limit was stated).`,
+        question: `How do fairy talents work?`,
+        answer: `Activates at the start of battle but activates after the echelon's fairy skll. As for it's effects, aside from Fervor (which boosts at 0s, 8s, 16s mark), exactly what it says (i.e. unlimited if no limit was stated).`,
         tags : [dTag.FAIRY, dTag.BATTLE]
     },
     {
         id : '00286',
-        questions : `If a ringleader equips a support buff/debuff chip, does it apply on themselves as well?`,
-        answers : `Yes. But only as an engaging unit.`,
+        question: `If a ringleader equips a support buff/debuff chip, does it apply on themselves as well?`,
+        answer: `Yes. But only as an engaging unit.`,
         tags : [dTag.COALITION, dTag.EQUIP]
     },
     {
         id : '00287',
-        questions : `Can I deploy two or three of the same pets in expedition?`,
-        answers : `Actually, that is the method used by min-maxers regarding advantaged pets.`,
+        question: `Can I deploy two or three of the same pets in expedition?`,
+        answer: `Actually, that is the method used by min-maxers regarding advantaged pets.`,
         tags : [dTag.EXPED, dTag.PET]
     },
     {
         id : '00288',
-        questions : `Does the flare equipment's accuracy boost stack?`,
-        answers : `Yes.`,
+        question: `Does the flare equipment's accuracy boost stack?`,
+        answer: `Yes.`,
         tags : [dTag.TDOLL, dTag.EQUIP]
     },
     {
         id : '00289',
-        questions : `How can Alina get black marks/Adeline get white marks?`,
-        answers : `Have them support each other as HOCs.`,
+        question: `How can Alina get black marks/Adeline get white marks?`,
+        answer: `Have them support each other as HOCs.`,
         tags : [dTag.COALITION, dTag.BATTLE]
     },
     {
         id : '00290',
-        questions : `How do I complete the quest for taking on drill targets?`,
-        answers : `Drill target = permanent preset of enemies. You know, the ones already available.`,
+        question: `How do I complete the quest for taking on drill targets?`,
+        answer: `Drill target = permanent preset of enemies. You know, the ones already available.`,
         tags : [dTag.MISC]
     },
     {
         id : '00291',
-        questions : `Can I change the censored sprites to uncensored/rejected ones?`,
-        answers : `Apparently no since it'll revert back to its default file., And you might get in trouble.`,
+        question: `Can I change the censored sprites to uncensored/rejected ones?`,
+        answer: `Apparently no since it'll revert back to its default file., And you might get in trouble.`,
         tags : [dTag.TDOLL, dTag.SKIN]
     },
     {
         id : '00292',
-        questions : `How can I unlock the Fairy Room?`,
-        answers : `Clear 60 different maps, then get your first fairy using Heavy Equipment Production.`,
+        question: `How can I unlock the Fairy Room?`,
+        answer: `Clear 60 different maps, then get your first fairy using Heavy Equipment Production.`,
         tags : [dTag.FAIRY]
     },
     {
         id : '00293',
-        questions : `Which PA unit has explosion attacks?`,
-        answers : `Manticores, Goliaths, Jaguars`,
+        question: `Which PA unit has explosion attacks?`,
+        answer: `Manticores, Goliaths, Jaguars`,
         tags : [dTag.COALITION]
     },
     {
         id : '00294',
-        questions : `Which fairy talent should I get?`,
-        answers : `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/fairy-talents')}`,
+        question: `Which fairy talent should I get?`,
+        answer: `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/fairy-talents')}`,
         tags : [dTag.FAIRY]
     },
     {
         id : '00295',
-        questions : `Can I farm ranking maps for the cumulative points?`,
-        answers : `Yes.`,
+        question: `Can I farm ranking maps for the cumulative points?`,
+        answer: `Yes.`,
         tags : [dTag.MAJOR]
     },
     {
         id : '00296',
-        questions : `Where did my Ringleader duplicates go?`,
-        answers : `As petals or as kernels. There can never be a dupe of the same Ringleader (literally same, alters are different).`,
+        question: `Where did my Ringleader duplicates go?`,
+        answer: `As petals or as kernels. There can never be a dupe of the same Ringleader (literally same, alters are different).`,
         tags : [dTag.PA, dTag.COALITION]
     },
     {
         id : '00298',
-        questions : `Guides show more echelons deployed than regular heliports in the map. What am I missing?`,
-        answers : `Heavy Heliports > Top Tab > Choose Echelon`,
+        question: `Guides show more echelons deployed than regular heliports in the map. What am I missing?`,
+        answer: `Heavy Heliports > Top Tab > Choose Echelon`,
         tags : [dTag.MAP]
     },
     {
         id : '00299',
-        questions : `What is vulnerability?`,
-        answers : `A debuff that amplifies all damage recieved from all sources after armor calculation.`,
+        question: `What is vulnerability?`,
+        answer: `A debuff that amplifies all damage recieved from all sources after armor calculation.`,
         tags : [dTag.SKILL]
     },
     {
         id : '00300',
-        questions : `Is there something like an account/inventory/roster spreadsheet for this game?`,
-        answers : `${link('Make a copy for personal use.', 'https://old.reddit.com/r/girlsfrontline/comments/wpoce9/weekly_commanders_lounge_august_16_2022/ikyqyb1/')}`,
+        question: `Is there something like an account/inventory/roster spreadsheet for this game?`,
+        answer: `${link('Make a copy for personal use.', 'https://old.reddit.com/r/girlsfrontline/comments/wpoce9/weekly_commanders_lounge_august_16_2022/ikyqyb1/')}`,
         tags : [dTag.MISC]
     },
     {
         id : '00302',
-        questions : `How do I place dolls in dorms?`,
-        answers : `Having a doll in an echelon. Dorm 1 corresponds to Echelon 1, Dorm 2 to Echelon 2, etc.`,
+        question: `How do I place dolls in dorms?`,
+        answer: `Having a doll in an echelon. Dorm 1 corresponds to Echelon 1, Dorm 2 to Echelon 2, etc.`,
         tags : [dTag.DORM]
     },
     {
         id : '00303',
-        questions : `Do I get Friend Points if someone likes my dorm?`,
-        answers : `No<!--KookyInspection-->, but you get FP when you like theirs.`,
+        question: `Do I get Friend Points if someone likes my dorm?`,
+        answer: `No<!--KookyInspection-->, but you get FP when you like theirs.`,
         tags : [dTag.FRIEND]
     },
     {
         id : '00304',
-        questions : `Do auto-battles count for "Defeat Enemies"?`,
-        answers : `No.`,
+        question: `Do auto-battles count for "Defeat Enemies"?`,
+        answer: `No.`,
         tags : [dTag.AUTO]
     },  //See [question in sys mech]
     {
         id : '00305',
-        questions : `Where can I see my event ranking map placement?`,
-        answers : `Homescreen > Rank > Event Rank Tab`,
+        question: `Where can I see my event ranking map placement?`,
+        answer: `Homescreen > Rank > Event Rank Tab`,
         tags : [dTag.MAJOR]
     },
     {
         id : '00306',
-        questions : `I haven't used my starter anchor. Do I have to use it to see the new doll anchors?`,
-        answers : `You can swipe between them. If you can't, restart app.`,
+        question: `I haven't used my starter anchor. Do I have to use it to see the new doll anchors?`,
+        answer: `You can swipe between them. If you can't, restart app.`,
         tags : [dTag.PROD, dTag.TECH]
     },
     {
         id : '00307',
-        questions : `Can I change my name?`,
-        answers : `Using Name Change Card, which only appears during certain packages.`,
+        question: `Can I change my name?`,
+        answer: `Using Name Change Card, which only appears during certain packages.`,
         tags : [dTag.MISC]
     },
     {
         id : '00308',
-        questions : `What happens when a Luffberry Chess season is over?`,
-        answers : `Unclaimed seasonal gacha skins will carry over to next seasonal gacha, and so are the tickets (which means they can be pre-farmed). Ranking rewards are different each season.`,
+        question: `What happens when a Luffberry Chess season is over?`,
+        answer: `Unclaimed seasonal gacha skins will carry over to next seasonal gacha, and so are the tickets (which means they can be pre-farmed). Ranking rewards are different each season.`,
         tags : [dTag.OJ]
     },
     {
         id : '00309',
-        questions : `What are the other battery sinks besides facilities?`,
-        answers : `${List.unordered(
+        question: `What are the other battery sinks besides facilities?`,
+        answer: `${List.unordered(
             'Slaving Kalina (CR/SCR)',
             'Making an animal kingdom (3 of each purchasable pets in Rescue Station)',
             'Raising FSTs',
@@ -2637,188 +2637,188 @@ export const cardData = [
     },
     {
         id : '00310',
-        questions : `What does the Download Data button in the settings do?`,
-        answers : `${link('Basically fairy and equipment texture, and dorm-related stuff.', 'https://old.reddit.com/r/girlsfrontline/comments/gziv26/weekly_commanders_lounge_june_09_2020/fut4man/')}`,
+        question: `What does the Download Data button in the settings do?`,
+        answer: `${link('Basically fairy and equipment texture, and dorm-related stuff.', 'https://old.reddit.com/r/girlsfrontline/comments/gziv26/weekly_commanders_lounge_june_09_2020/fut4man/')}`,
         tags : [dTag.MISC]
     },
     {
         id : '00311',
-        questions : `It's the last day of Theater. Do I still have to vote?`,
-        answers : `Yes.`,
+        question: `It's the last day of Theater. Do I still have to vote?`,
+        answer: `Yes.`,
         tags : [dTag.THEATER]
     },
     {
         id : '00312',
-        questions : `Can I change my Sunborn Account's attached e-mail?`,
-        answers : `Apparently no.`,
+        question: `Can I change my Sunborn Account's attached e-mail?`,
+        answer: `Apparently no.`,
         tags : [dTag.ACCT]
     },
     {
         id : '00313',
-        questions : `Can the Sniper Fairy pierce shields?`,
-        answers : `No.`,
+        question: `Can the Sniper Fairy pierce shields?`,
+        answer: `No.`,
         tags : [dTag.FAIRY, dTag.SKILL]
     },
     {
         id : '00314',
-        questions : `How do I complete Command Mission: Map Completion: Griffin Elite in Career Quests?`,
-        answers : `${spoilerSummary('Elite Griffin Combat Medals', img(IMG_ASSET+"GriffinEliteMedal.png", 'Taken from GFLDB'))} are acquired during the major story events on their original run.`,
+        question: `How do I complete Command Mission: Map Completion: Griffin Elite in Career Quests?`,
+        answer: `${spoilerSummary('Elite Griffin Combat Medals', img(IMG_ASSET+"GriffinEliteMedal.png", 'Taken from GFLDB'))} are acquired during the major story events on their original run.`,
         tags : [dTag.MAJOR, dTag.QUEST]
     },
     {
         id : '00315',
-        questions : `I'm using coalition units but I can't raise my final score enough. What do I need to do?`,
-        answers : `Use Griffin echelons. All coalition units give lower score for rankings.`,
+        question: `I'm using coalition units but I can't raise my final score enough. What do I need to do?`,
+        answer: `Use Griffin echelons. All coalition units give lower score for rankings.`,
         tags : [dTag.COALITION, dTag.THEATER]
     },
     {
         id : '00316',
-        questions : `What are Challenger Medals for?`,
-        answers : `Flex.`,
+        question: `What are Challenger Medals for?`,
+        answer: `Flex.`,
         tags : [dTag.MISC]
     },
     {
         id : '00317',
-        questions : `What are the arching thread lines for?`,
-        answers : `For coalition units, it's to see who are affected by their support chips.<br>
+        question: `What are the arching thread lines for?`,
+        answer: `For coalition units, it's to see who are affected by their support chips.<br>
         For FSTs, it's for ally units under fire support.`,
         tags : [dTag.MAP, dTag.COALITION, dTag.FST]
     },
     {
         id : '00318',
-        questions : `Is it worth to wait for a veteran callback?`,
-        answers : `Negligible I say. Returning rewards can be farmed by just playing. And there could be many events before a major/collab event.`,
+        question: `Is it worth to wait for a veteran callback?`,
+        answer: `Negligible I say. Returning rewards can be farmed by just playing. And there could be many events before a major/collab event.`,
         tags : [dTag.MISC]
     },
     {
         id : '00319',
-        questions : `Are HP shields affected by armor, flash shells, and damage reduction?`,
-        answers : `Yes. They're more or less extensions of HP.`,
+        question: `Are HP shields affected by armor, flash shells, and damage reduction?`,
+        answer: `Yes. They're more or less extensions of HP.`,
         tags : [dTag.SKILL]
     },
     {
         id : '00320',
-        questions : `I'm stuck in EXP Sim. Losing or withdrawing gives me an "Illegal Action Detected". What should I do?`,
-        answers : `Since restarting won't help, contact support.`,
+        question: `I'm stuck in EXP Sim. Losing or withdrawing gives me an "Illegal Action Detected". What should I do?`,
+        answer: `Since restarting won't help, contact support.`,
         tags : [dTag.SIMS, dTag.TECH]
     },
     {
         id : '00321',
-        questions : `How do I unlock the farming stages in the event?`,
-        answers : `It should be a pair of nodes separate from the rest of the nodes.`,
+        question: `How do I unlock the farming stages in the event?`,
+        answer: `It should be a pair of nodes separate from the rest of the nodes.`,
         tags : [dTag.MAJOR, dTag.COLLAB, dTag.SEASON, dTag.CAMPAIGN]
     },
     {
         id : '00322',
-        questions : `There is a spinning pinwheel, a diamond, and an almost complete gauge-like icon beside the map names. What do they mean?`,
-        answers : `Spinning pinwheel: Node split.<br>
+        question: `There is a spinning pinwheel, a diamond, and an almost complete gauge-like icon beside the map names. What do they mean?`,
+        answer: `Spinning pinwheel: Node split.<br>
         Diamond: Story node.<br>
         Gauge-like icon: Combat node.`,
         tags : [dTag.MAJOR, dTag.SEASON, dTag.COLLAB, dTag.CAMPAIGN]
     },
     {
         id : '00323',
-        questions : `I can't do an auto-battle even though I met the required CE. What's happening?`,
-        answers : `Is it a night map? If it is, refer to night CE. If it still doesn't let you, increase CE, some required CE are listed wrong.`,
+        question: `I can't do an auto-battle even though I met the required CE. What's happening?`,
+        answer: `Is it a night map? If it is, refer to night CE. If it still doesn't let you, increase CE, some required CE are listed wrong.`,
         tags : [dTag.AUTO]
     },
     {
         id : '00324',
-        questions : `Will the seasonal coalition units return to they're base/original form?`,
-        answers : `That's already their actual form, as seen with their skills being completely different from the original's.`,
+        question: `Will the seasonal coalition units return to they're base/original form?`,
+        answer: `That's already their actual form, as seen with their skills being completely different from the original's.`,
         tags : [dTag.COALITION]
     },
     {
         id : '00325',
-        questions : `I saw that commander costumes have skills. How do I level it up?`,
-        answers : `Get another costume set with the same skill to upgrade it.`,
+        question: `I saw that commander costumes have skills. How do I level it up?`,
+        answer: `Get another costume set with the same skill to upgrade it.`,
         tags : [dTag.CMDR, dTag.SKIN, dTag.SKILL]
     },
     {
         id : '00326',
-        questions : `Counter says I still have maps to do. How do I know which ones are those?`,
-        answers : `${img(IMG_ASSET+"StoryProgress.png", 'Tap the encircled counter to see the remaining maps')}`,
+        question: `Counter says I still have maps to do. How do I know which ones are those?`,
+        answer: `${img(IMG_ASSET+"StoryProgress.png", 'Tap the encircled counter to see the remaining maps')}`,
         tags : [dTag.MAJOR, dTag.CAMPAIGN, dTag.COLLAB]
     },
     {
         id : '00327',
-        questions : `Are there welfare units in this game? And if so, are they permanently missable?`,
-        answers : `There is no such thing as a welfare unit. All event units are farmable. If you missed them, better luck next time.`,
+        question: `Are there welfare units in this game? And if so, are they permanently missable?`,
+        answer: `There is no such thing as a welfare unit. All event units are farmable. If you missed them, better luck next time.`,
         tags : [dTag.TDOLL, dTag.GET, dTag.NEWB]
     },
     {
         id : '00328',
-        questions : `Can I set the damaged art as default for dolls?`,
-        answers : `Only on the main screen as an adjutant, unless you want them critically damaged forever.`,
+        question: `Can I set the damaged art as default for dolls?`,
+        answer: `Only on the main screen as an adjutant, unless you want them critically damaged forever.`,
         tags : [dTag.TDOLL, dTag.SKIN]
     },
     {
         id : '00329',
-        questions : `The speech bubble hearts, SKK. What do they mean?`,
-        answers : `Dorm? Tap them to gain ¼ of an affection.<br>
+        question: `The speech bubble hearts, SKK. What do they mean?`,
+        answer: `Dorm? Tap them to gain ¼ of an affection.<br>
         Echelon portrait? They're at 90 affection pts. and above.`,
         tags : [dTag.TDOLL, dTag.LOVE]
     },
     {
         id : '00330',
-        questions : `Do I need to level up my duplicates in order to use them as dummy-links?`,
-        answers : `Nope. They're merely DPS and health multiplier basically. Pretty much used as the equivalent of limit-break fodders in other gachas.`,
+        question: `Do I need to level up my duplicates in order to use them as dummy-links?`,
+        answer: `Nope. They're merely DPS and health multiplier basically. Pretty much used as the equivalent of limit-break fodders in other gachas.`,
         tags : [dTag.TDOLL, dTag.LEVEL]
     },
     {
         id : '00331',
-        questions : `What is duping and how do I dupe?`,
-        answers : `Duping is the art of keeping a duplicate of the same unit instead of turning them into dummy cores.<br>
+        question: `What is duping and how do I dupe?`,
+        answer: `Duping is the art of keeping a duplicate of the same unit instead of turning them into dummy cores.<br>
         The only dupeable dolls are farmables, craftables, and capturables.<br>
         For Griffin T-Dolls, this only comes in rankings. For Coalition Units, this is, at the very least, expected.`,
         tags : [dTag.TDOLL, dTag.COALITION]
     },
     {
         id : '00332',
-        questions : `I can't see my dolls MOD in the Neural Upgrade tab. Where are they?`,
-        answers : `Maybe because it's not yet released on whatever server you're in right now?`,
+        question: `I can't see my dolls MOD in the Neural Upgrade tab. Where are they?`,
+        answer: `Maybe because it's not yet released on whatever server you're in right now?`,
         tags : [dTag.TDOLL, dTag.MOD]
     },
     {
         id : '00333',
-        questions : `If I mod my doll, would I still be able to use other skins?`,
-        answers : `Yes, considering that costumes are this game's main revenue.`,
+        question: `If I mod my doll, would I still be able to use other skins?`,
+        answer: `Yes, considering that costumes are this game's main revenue.`,
         tags : [dTag.TDOLL, dTag.MOD, dTag.SKIN]
     },
     {
         id : '00334',
-        questions : `I just got an Old Letter. WhoWhenWhereWhatWhyHow?`,
-        answers : `KSVK. After Modding her to 3. Mail. Connected to Mod Story. More story and immersion. Mica mail.`,
+        question: `I just got an Old Letter. WhoWhenWhereWhatWhyHow?`,
+        answer: `KSVK. After Modding her to 3. Mail. Connected to Mod Story. More story and immersion. Mica mail.`,
         tags : [dTag.MOD]
     },
     {
         id : '00335',
-        questions : `What if I don't have the doll I have costume for?`,
-        answers : `Make Kalina wear it and she gives it when the owner comes home.`,
+        question: `What if I don't have the doll I have costume for?`,
+        answer: `Make Kalina wear it and she gives it when the owner comes home.`,
         tags : [dTag.TDOLL, dTag.SKIN]
     },
     {
         id : '00336',
-        questions : `Where can I get furniture for my dorms?`,
-        answers : `Collateral of skin pulling, aka Resupply. Or Expedition shop. Or crates from major events. Or shop during seasonal.`,
+        question: `Where can I get furniture for my dorms?`,
+        answer: `Collateral of skin pulling, aka Resupply. Or Expedition shop. Or crates from major events. Or shop during seasonal.`,
         tags : [dTag.FURN, dTag.DORM, dTag.RESUPPLY, dTag.SHOP, dTag.MAJOR, dTag.SEASON]
     },
     {
         id : '00337',
-        questions : `I want to clean my furniture inventory. How do I do that?`,
-        answers : `${img(IMG_ASSET+"FurnitureTrash.png", 'Trash Icon')}`,
+        question: `I want to clean my furniture inventory. How do I do that?`,
+        answer: `${img(IMG_ASSET+"FurnitureTrash.png", 'Trash Icon')}`,
         tags : [dTag.FURN]
     },
     {
         id : '00338',
-        questions : `I won't be using the costume. How can I scrap it?`,
-        answers : `I bring this news with a heavy heart that it is impossible. Deal with it.`,
+        question: `I won't be using the costume. How can I scrap it?`,
+        answer: `I bring this news with a heavy heart that it is impossible. Deal with it.`,
         tags : [dTag.TDOLL, dTag.SKIN]
     },
     {
         id : '00339',
-        questions : `What's the difference between L2D and Simplified L2D?`,
-        answers : `${List.description({
+        question: `What's the difference between L2D and Simplified L2D?`,
+        answer: `${List.description({
             'Live2D' : [
                 'Sometimes called Reactive Live2Ds.',
                 'Can follow your touch with their eyes/head.',
@@ -2834,167 +2834,167 @@ export const cardData = [
     },
     {
         id : '00340',
-        questions : `Do Gem Package skins go to Black Card Exchange?`,
-        answers : `Some do, some don't. What's for sure is that collab skins don't. Obviously.`,
+        question: `Do Gem Package skins go to Black Card Exchange?`,
+        answer: `Some do, some don't. What's for sure is that collab skins don't. Obviously.`,
         tags : [dTag.TDOLL, dTag.SKIN, dTag.GEMS]
     },
     {
         id : '00341',
-        questions : `Is there any checklist for the base bonus?`,
-        answers : `${link("u/headphone_question's doll index checklist.", 'https://redd.it/xqtpd9')}`,
+        question: `Is there any checklist for the base bonus?`,
+        answer: `${link("u/headphone_question's doll index checklist.", 'https://redd.it/xqtpd9')}`,
         tags : [dTag.TDOLL]
     },
     {
         id : '00342',
-        questions : `Can I get SPEQs/Limited dolls from auto-battles?`,
-        answers : `Yes we can.`,
+        question: `Can I get SPEQs/Limited dolls from auto-battles?`,
+        answer: `Yes we can.`,
         tags : [dTag.AUTO, dTag.GET, dTag.SPEQ, dTag.TDOLL]
     },
     {
         id : '00343',
-        questions : `Do auto-battle card bonus stack with combat exp bonus?`,
-        answers : `${img(IMG_ASSET+"XPUpAuto.png", 'Note that Monthly Auto-Battle Card is active, and 100% bonus is from XP up event')}`,
+        question: `Do auto-battle card bonus stack with combat exp bonus?`,
+        answer: `${img(IMG_ASSET+"XPUpAuto.png", 'Note that Monthly Auto-Battle Card is active, and 100% bonus is from XP up event')}`,
         tags : [dTag.LEVEL, dTag.AUTO]
     },  //@Source
     {
         id : '00344',
-        questions : `What can fairies do during auto-battles?`,
-        answers : `Raise your CE to help you get the required amount.`,
+        question: `What can fairies do during auto-battles?`,
+        answer: `Raise your CE to help you get the required amount.`,
         tags : [dTag.FAIRY, dTag.AUTO]
     },
     {
         id : '00345',
-        questions : `Is the monthly autobattle card worth it?`,
-        answers : `Well, considering exp shown in autobattle window is the total undistributed exp, one team basically gets 2x exp than no monthly card. And you can also do it for one more echelon.`,
+        question: `Is the monthly autobattle card worth it?`,
+        answer: `Well, considering exp shown in autobattle window is the total undistributed exp, one team basically gets 2x exp than no monthly card. And you can also do it for one more echelon.`,
         tags : [dTag.AUTO]
     },
     {
         id : '00346',
-        questions : `Where to get kernels?`,
-        answers : `Supernova = 2-3${STAR}. Dark Star = 1${STAR}.`,
+        question: `Where to get kernels?`,
+        answer: `Supernova = 2-3${STAR}. Dark Star = 1${STAR}.`,
         tags : [dTag.PA, dTag.ITEM]
     },
     {
         id : '00347',
-        questions : `What is Peak Value Analysis?`,
-        answers : `Dummy-linking basically. But dupes are required. For ringleaders, the duplicates are automatically consumed.`,
+        question: `What is Peak Value Analysis?`,
+        answer: `Dummy-linking basically. But dupes are required. For ringleaders, the duplicates are automatically consumed.`,
         tags : [dTag.PA, dTag.COALITION, dTag.LEVEL]
     },
     {
         id : '00348',
-        questions : `If I fail to capture a coalition unit, will I lose them?`,
-        answers : `Rather than that, they're recycled back into the pool.`,
+        question: `If I fail to capture a coalition unit, will I lose them?`,
+        answer: `Rather than that, they're recycled back into the pool.`,
         tags : [dTag.PA, dTag.COALITION]
     },
     {
         id : '00349',
-        questions : `What does size imply in regards to PA units?`,
-        answers : `Stats. Bigger is better. Also subject to RNG, by impulse, svarog capture, or kernel shop.`,
+        question: `What does size imply in regards to PA units?`,
+        answer: `Stats. Bigger is better. Also subject to RNG, by impulse, svarog capture, or kernel shop.`,
         tags : [dTag.PA, dTag.COALITION]
     },
     {
         id : '00350',
-        questions : `Is it a good idea to get duplicate Ringleaders and Manticores (aka one-link units) for linking/PVA?`,
-        answers : `Good? Yes. Necessary? For RLs, not really, since they would be powerful enough already. For mooks though, they'd need it.`,
+        question: `Is it a good idea to get duplicate Ringleaders and Manticores (aka one-link units) for linking/PVA?`,
+        answer: `Good? Yes. Necessary? For RLs, not really, since they would be powerful enough already. For mooks though, they'd need it.`,
         tags : [dTag.PA, dTag.COALITION]
     },
     {
         id : '00301',
-        questions : `When do I get to unlock the whole FST grid/matrix/board?`,
-        answers : `At full promotion. The yellow ★★★★★ one.`,
+        question: `When do I get to unlock the whole FST grid/matrix/board?`,
+        answer: `At full promotion. The yellow ★★★★★ one.`,
         tags : [dTag.HOC, dTag.FST]
     },
     {
         id : '00351',
-        questions : `How do FST HOC skills work?`,
-        answers : `Depends. Either by timer or by number of shots fired. And all skills are active, meaning no need to choose which one you'll use.`,
+        question: `How do FST HOC skills work?`,
+        answer: `Depends. Either by timer or by number of shots fired. And all skills are active, meaning no need to choose which one you'll use.`,
         tags : [dTag.HOC, dTag.FST, dTag.SKILL]
     },
     {
         id : '00352',
-        questions : `Can HOCs reduce armor just like they do with force shields?`,
-        answers : `No. Armor is a stat, not a gauge. Unless it's part of their skill.`,
+        question: `Can HOCs reduce armor just like they do with force shields?`,
+        answer: `No. Armor is a stat, not a gauge. Unless it's part of their skill.`,
         tags : [dTag.HOC, dTag.FST]
     },
     {
         id : '00353',
-        questions : `What's the rate for HOC rate-up?`,
-        answers : `No exact numbers, but note that it only increases the chance of getting a particular HOC's Central Data. Rate for Data as a whole remains unchanged.`,
+        question: `What's the rate for HOC rate-up?`,
+        answer: `No exact numbers, but note that it only increases the chance of getting a particular HOC's Central Data. Rate for Data as a whole remains unchanged.`,
         tags : [dTag.HOC]
     },
     {
         id : '00354',
-        questions : `After a banner ends, would the extra impulses and aid commissions expire?`,
-        answers : `They're basically the equivalent of gacha currency, so it wouldn't make sense for them to expire.`,
+        question: `After a banner ends, would the extra impulses and aid commissions expire?`,
+        answer: `They're basically the equivalent of gacha currency, so it wouldn't make sense for them to expire.`,
         tags : [dTag.PA, dTag.ITEM]
     },
     {
         id : '00355',
-        questions : `What are Petri Dishes for?`,
-        answers : `Raising Coalition units' rarity.`,
+        question: `What are Petri Dishes for?`,
+        answer: `Raising Coalition units' rarity.`,
         tags : [dTag.PA, dTag.COALITION, dTag.ITEM]
     },
     {
         id : '00356',
-        questions : `What are the fonts used in the game?`,
-        answers : `${List.description({
+        question: `What are the fonts used in the game?`,
+        answer: `${List.description({
             'Noto sans' : ['Story dialogue', 'Unit/Skill descriptions']
         })}`,
         tags : [dTag.MISC]
     },
     {
         id : '00357',
-        questions : `What's the enemy targeting priority?`,
-        answers : `By default, the most forward unit. Note that due to asymmetrical angle, the top row is a smidge forward than the middle and the bottom is backward.`,
+        question: `What's the enemy targeting priority?`,
+        answer: `By default, the most forward unit. Note that due to asymmetrical angle, the top row is a smidge forward than the middle and the bottom is backward.`,
         tags : [dTag.ENEMY, dTag.BATTLE]
     },
     {
         id : '00358',
-        questions : `Can the basecamp not give expedition loots?`,
-        answers : `Only if you didn't do one. If you did and no visible loot, restart app.`,
+        question: `Can the basecamp not give expedition loots?`,
+        answer: `Only if you didn't do one. If you did and no visible loot, restart app.`,
         tags : [dTag.EXPED, dTag.TECH]
     },
     {
         id : '00359',
-        questions : `Is the Rescue Fairy's skill actually good?`,
-        answers : `For core farming purposes, ${spoilerSummary('very noticeable', Embed.google(["GFL 10-4E Rescue Core Rate Stats", "https://docs.google.com/spreadsheets/d/1DSYyTdC3Yk7JV4YGuj8zFMZqbPcH2zpNShtAFpR2Qmw"]))}.<br>
+        question: `Is the Rescue Fairy's skill actually good?`,
+        answer: `For core farming purposes, ${spoilerSummary('very noticeable', Embed.google(["GFL 10-4E Rescue Core Rate Stats", "https://docs.google.com/spreadsheets/d/1DSYyTdC3Yk7JV4YGuj8zFMZqbPcH2zpNShtAFpR2Qmw"]))}.<br>
         Note that it only works on dolls, not equipments.`,
         tags : [dTag.FAIRY, dTag.SKILL]
     },
     {
         id : '00360',
-        questions : `Which expedition duration should I do to maximize efficiency?`,
-        answers : `8 hours. More chances to get into hidden areas.`,
+        question: `Which expedition duration should I do to maximize efficiency?`,
+        answer: `8 hours. More chances to get into hidden areas.`,
         tags : [dTag.EXPED]
     },
     {
         id : '00361',
-        questions : `I can't log-in with my third party account. Is there any way to get back?`,
-        answers : `Might be because the third party is down. Contacting ${TextStyle.style('support@sunborngame.com', TextStyle.BOLD)} to change to Sunborn account might help. Having account details, particularly UID and username, may help.`,
+        question: `I can't log-in with my third party account. Is there any way to get back?`,
+        answer: `Might be because the third party is down. Contacting ${TextStyle.style('support@sunborngame.com', TextStyle.BOLD)} to change to Sunborn account might help. Having account details, particularly UID and username, may help.`,
         tags : [dTag.ACCT, dTag.TECH]
     },
     {
         id : '00362',
-        questions : `Will the *insert ranking reward here* be available in the future?`,
-        answers : `Only if they rerun ranking maps. AW and DD maps are slated to be reworked.`,
+        question: `Will the *insert ranking reward here* be available in the future?`,
+        answer: `Only if they rerun ranking maps. AW and DD maps are slated to be reworked.`,
         tags : [dTag.GET, dTag.FAIRY, dTag.SPEQ, dTag.MAJOR]
     },
     {
         id : '00363',
-        questions : `How valueable are Black Cards?`,
-        answers : `Very.`,
+        question: `How valueable are Black Cards?`,
+        answer: `Very.`,
         tags : [dTag.TDOLL, dTag.SKIN, dTag.ITEM]
     },
     {
         id : '00364',
-        questions : `What's the optimal way of clearing ${TextStyle.style('Bingo', TextStyle.STRIKE)} Key Card Events?`,
-        answers : `Using the Targeted Draws to fully clear the board in one go.`,
+        question: `What's the optimal way of clearing ${TextStyle.style('Bingo', TextStyle.STRIKE)} Key Card Events?`,
+        answer: `Using the Targeted Draws to fully clear the board in one go.`,
         tags : [dTag.MINI]
     },
     {
         id : '00365',
-        questions : `What do the numbers mean when talking about tile positioning?`,
-        answers : `${table(null,
+        question: `What do the numbers mean when talking about tile positioning?`,
+        answer: `${table(null,
             [7, 8, 9],
             [4, 5, 6],
             [1, 2, 3])}`,
@@ -3002,26 +3002,26 @@ export const cardData = [
     },
     {
         id : '00366',
-        questions : `When will the current event end?`,
-        answers : `If major event or collab, 4 weeks after start. If minor or mini events, 3 weeks after start. If reruns, 2 weeks.`,
+        question: `When will the current event end?`,
+        answer: `If major event or collab, 4 weeks after start. If minor or mini events, 3 weeks after start. If reruns, 2 weeks.`,
         tags : [dTag.MAJOR, dTag.COLLAB, dTag.SEASON, dTag.MINI]
     },
     {
         id : '00367',
-        questions : `How to unlock the Additional Supplies/Blue Weekly Quest?`,
-        answers : `By paying for the current battlepass.`,
+        question: `How to unlock the Additional Supplies/Blue Weekly Quest?`,
+        answer: `By paying for the current battlepass.`,
         tags : [dTag.QUEST, dTag.BP]
     },  //@Visual
     {
         id : '00368',
-        questions : `I've been getting dupes about 3 days when the Key Card Event started. What gives?`,
-        answers : `First, "Coupon Collector's Problem". Second, ${link('it actually kinda seems rigged to some extent', 'https://www.reddit.com/r/girlsfrontline/comments/o5hpk4/weekly_commanders_lounge_june_22_2021/h2pa27f/')}.`,
+        question: `I've been getting dupes about 3 days when the Key Card Event started. What gives?`,
+        answer: `First, "Coupon Collector's Problem". Second, ${link('it actually kinda seems rigged to some extent', 'https://www.reddit.com/r/girlsfrontline/comments/o5hpk4/weekly_commanders_lounge_june_22_2021/h2pa27f/')}.`,
         tags : [dTag.MINI]
     },
     {
         id : '00369',
-        questions : `How many Parachute Fairies would I need?`,
-        answers : `${List.description({
+        question: `How many Parachute Fairies would I need?`,
+        answer: `${List.description({
             'Casual' : ['1 - 2'],
             'Competetive' : ['3 - 5'],
             'Top Ranker' : ['6 - 10'],
@@ -3031,32 +3031,32 @@ export const cardData = [
     },
     {
         id : '00370',
-        questions : `Can Support Fairy Skills (i.e. Construction) work on Coalition units?`,
-        answers : `${link('Yes.', 'https://old.reddit.com/r/girlsfrontline/comments/q1rscp/weekly_commanders_lounge_october_05_2021/hg4vntx/')}`,
+        question: `Can Support Fairy Skills (i.e. Construction) work on Coalition units?`,
+        answer: `${link('Yes.', 'https://old.reddit.com/r/girlsfrontline/comments/q1rscp/weekly_commanders_lounge_october_05_2021/hg4vntx/')}`,
         tags : [dTag.FAIRY, dTag.COALITION, dTag.BATTLE]
     },
     {
         id : '00371',
-        questions : `If I plan to buy the BP, do I have to do it at the start?`,
-        answers : `You can do it whenever. Whataver level you are at as F2P, that's also the level when you buy it.`,
+        question: `If I plan to buy the BP, do I have to do it at the start?`,
+        answer: `You can do it whenever. Whataver level you are at as F2P, that's also the level when you buy it.`,
         tags : [dTag.MISC]
     },
     {
         id : '00372',
-        questions : `Where do I get Transfer Catalysts?`,
-        answers : `Daily gifts, failed captures, PA store.`,
+        question: `Where do I get Transfer Catalysts?`,
+        answer: `Daily gifts, failed captures, PA store.`,
         tags : [dTag.PA, dTag.ITEM]
     },
     {
         id : '00373',
-        questions : `How do I get my daily resources from quests?`,
-        answers : `Do any of the dailies until it has 6 icons, then a blue gift box with obtainable will appear, and finally tap on it to claim it.`,
+        question: `How do I get my daily resources from quests?`,
+        answer: `Do any of the dailies until it has 6 icons, then a blue gift box with obtainable will appear, and finally tap on it to claim it.`,
         tags : [dTag.QUEST, dTag.MARP, dTag.ITEM]
     },  //@Visual
     {
         id : '00374',
-        questions : `I want a specific unit. How will I be able to pull for them in this banner?`,
-        answers : `${List.description({
+        question: `I want a specific unit. How will I be able to pull for them in this banner?`,
+        answer: `${List.description({
             'Pulses' : [
                 'Only works for the three units on the field at that time.',
                 'Once an attempt is made, captured or not, they will be replaced with another unit from the pool.'
@@ -3067,246 +3067,246 @@ export const cardData = [
     },
     {
         id : '00375',
-        questions : `What are the possible dailies and weeklies for the 3.0 quests?`,
-        answers : `${figure(Embed.google(["GFL 3.010 Daily/Weekly System", "https://docs.google.com/spreadsheets/d/1gyn-6r_XBriYonFpj-RPkoQnCK36StTWJ0E5_yTU048"]), "Can also count as a brief overview of the system")}`,
+        question: `What are the possible dailies and weeklies for the 3.0 quests?`,
+        answer: `${figure(Embed.google(["GFL 3.010 Daily/Weekly System", "https://docs.google.com/spreadsheets/d/1gyn-6r_XBriYonFpj-RPkoQnCK36StTWJ0E5_yTU048"]), "Can also count as a brief overview of the system")}`,
         tags : [dTag.QUEST]
     },
     {
         id : '00376',
-        questions : `Is there any way to rewatch the PA tutorial?`,
-        answers : `${MBD.youtube('tD7JgQcIQHM')}<br>
+        question: `Is there any way to rewatch the PA tutorial?`,
+        answer: `${MBD.youtube('tD7JgQcIQHM')}<br>
         ${MBD.youtube('_s9ZY5wDLYE')}`,
         tags : [dTag.PA, dTag.LORE]
     },
     {
         id : '00377',
-        questions : `What are Original and Pure Samples?`,
-        answers : `Used in the Intelligence Center to craft for FST chips and central data.`,
+        question: `What are Original and Pure Samples?`,
+        answer: `Used in the Intelligence Center to craft for FST chips and central data.`,
         tags : [dTag.HOC, dTag.ITEM]
     },
     {
         id : '00378',
-        questions : `Can I increase the ringleader's 25% capture rate?`,
-        answers : `Drop the pool until you have 3/100 then use Svarog tickets.`,
+        question: `Can I increase the ringleader's 25% capture rate?`,
+        answer: `Drop the pool until you have 3/100 then use Svarog tickets.`,
         tags : [dTag.PA]
     },
     {
         id : '00380',
-        questions : `Do I need Dummy Cores for upgrading Coalition Units?`,
-        answers : `No. They have their own resources.`,
+        question: `Do I need Dummy Cores for upgrading Coalition Units?`,
+        answer: `No. They have their own resources.`,
         tags : [dTag.COALITION, dTag.LEVEL, dTag.ITEM, dTag.CORE]
     },
     {
         id : '00381',
-        questions : `How long do ringleader banners last?`,
-        answers : `28 days. Anniversary banners last for 1 week.`,
+        question: `How long do ringleader banners last?`,
+        answer: `28 days. Anniversary banners last for 1 week.`,
         tags : [dTag.PA]
     },
     {
         id : '00382',
-        questions : `Can I change the command type (Defend/Charge/Destroy) automatically?`,
-        answers : `No can do for now.`,
+        question: `Can I change the command type (Defend/Charge/Destroy) automatically?`,
+        answer: `No can do for now.`,
         tags : [dTag.COALITION, dTag.BATTLE]
     },
     {
         id : '00383',
-        questions : `I have one copy of a ringleader. Can I scrap them?`,
-        answers : `Why would you? How could you? Can you even anyway?`,
+        question: `I have one copy of a ringleader. Can I scrap them?`,
+        answer: `Why would you? How could you? Can you even anyway?`,
         tags : [dTag.PA, dTag.COALITION]
     },
     {
         id : '00384',
-        questions : `How are the Striker's ROF calculated?`,
-        answers : `${link('u/UnironicWeeaboo testing.', 'https://www.reddit.com/r/girlsfrontline/comments/qkzc9s/comment/hjecs3p/')}`,
+        question: `How are the Striker's ROF calculated?`,
+        answer: `${link('u/UnironicWeeaboo testing.', 'https://www.reddit.com/r/girlsfrontline/comments/qkzc9s/comment/hjecs3p/')}`,
         tags : [dTag.ENEMY, dTag.COALITION]
     },
     {
         id : '00385',
-        questions : `How do I stop my dolls from retreating on critical damage?`,
-        answers : `Heavy Damage Protection off in Game Settings or in Combat Pause Settings.`,
+        question: `How do I stop my dolls from retreating on critical damage?`,
+        answer: `Heavy Damage Protection off in Game Settings or in Combat Pause Settings.`,
         tags : [dTag.BATTLE]
     },  //@Visual
     {
         id : '00386',
-        questions : `Can I zoom out during combat?`,
-        answers : `You'd have to zoom in first. If you mean zooming well outside the doll's shooting range, then no.`,
+        question: `Can I zoom out during combat?`,
+        answer: `You'd have to zoom in first. If you mean zooming well outside the doll's shooting range, then no.`,
         tags : [dTag.BATTLE]
     },
     {
         id : '00387',
-        questions : `What are these nameless mails with resources?`,
-        answers : `Battlepass overfill or dailies reward.`,
+        question: `What are these nameless mails with resources?`,
+        answer: `Battlepass overfill or dailies reward.`,
         tags : [dTag.QUEST, dTag.ITEM]
     },
     {
         id : '00388',
-        questions : `How can I start reading Griffin Memories?`,
-        answers : `Get all the dolls involved in the story. Tap a story and fill the bar at the top to progress. You can fill it up by doing the missions at the right side of the bar.`,
+        question: `How can I start reading Griffin Memories?`,
+        answer: `Get all the dolls involved in the story. Tap a story and fill the bar at the top to progress. You can fill it up by doing the missions at the right side of the bar.`,
         tags : [dTag.SIDE]
     },
     {
         id : '00389',
-        questions : `Do debuffs stick if I retreat my dolls?`,
-        answers : `Rudimentary testing says no. Mainly applies to enemy side on-screen effects like molotovs, smoke, grenade, stun, etc.`,
+        question: `Do debuffs stick if I retreat my dolls?`,
+        answer: `Rudimentary testing says no. Mainly applies to enemy side on-screen effects like molotovs, smoke, grenade, stun, etc.`,
         tags : [dTag.SKILL, dTag.BATTLE, dTag.SYSMECH]
     },
     {
         id : '00390',
-        questions : `What happens to the Resupply Exchange Tickets after the banner ends? How do I get Black Cards?`,
-        answers : `${img(IMG_ASSET+"ResupplyMechanics.png")}`,
+        question: `What happens to the Resupply Exchange Tickets after the banner ends? How do I get Black Cards?`,
+        answer: `${img(IMG_ASSET+"ResupplyMechanics.png")}`,
         tags : [dTag.RESUPPLY, dTag.ITEM, dTag.GET]
     },
     {
         id : '00391',
-        questions : `When all dolls' DPS contribution is equal, who becomes the MVP?`,
-        answers : `By acquire sequence starting from latest, including collab units. MODding affects nothing.`,
+        question: `When all dolls' DPS contribution is equal, who becomes the MVP?`,
+        answer: `By acquire sequence starting from latest, including collab units. MODding affects nothing.`,
         tags : [dTag.TDOLL, dTag.BATTLE, dTag.LEVEL]
     },
     {
         id : '00392',
-        questions : `Can I change which dolls get targeted by the enemy?`,
-        answers : `${link('By echelon positioning.', 'https://www.reddit.com/r/girlsfrontline/comments/g11mag/weekly_commanders_lounge_april_14_2020/fny91zz/')}<br>
+        question: `Can I change which dolls get targeted by the enemy?`,
+        answer: `${link('By echelon positioning.', 'https://www.reddit.com/r/girlsfrontline/comments/g11mag/weekly_commanders_lounge_april_14_2020/fny91zz/')}<br>
         ${spoilerSummary('In-depth study on positioning, targeting, and some peculiar requirements involving acquire dates.', Embed.google(["Enemy Targeting Guide", "https://docs.google.com/document/d/1LPqpSCNWiu1HJOnK1FOB1o30FSwTQRQvcK-tAjO4SSI"]))}`,
         tags : [dTag.BATTLE]
     },  //acquire dates to echelon formation position
     {
         id : '00281',
-        questions : `How are the limited bonus gems for the monthly card applied?`,
-        answers : `Only within the time the event is ongoing, which is for a week. Note that it immediately becomes active as long as a monthly gem is active, old or new purchase.`,
+        question: `How are the limited bonus gems for the monthly card applied?`,
+        answer: `Only within the time the event is ongoing, which is for a week. Note that it immediately becomes active as long as a monthly gem is active, old or new purchase.`,
         tags : [dTag.GEMS]
     },
     {
         id : '00045',
-        questions : `If I bought the battlepass in the middle/end, will I still able to get the previous level rewards?`,
-        answers : `Yes.`,
+        question: `If I bought the battlepass in the middle/end, will I still able to get the previous level rewards?`,
+        answer: `Yes.`,
         tags : [dTag.QUEST, dTag.BP]
     },
     {
         id : '00379',
-        questions : `Where can I use Calibration Tickets?`,
-        answers : `Equipment Calibration, Fairy Talent Calibration, HOC Chip Rotation, More Anticipation...`,
+        question: `Where can I use Calibration Tickets?`,
+        answer: `Equipment Calibration, Fairy Talent Calibration, HOC Chip Rotation, More Anticipation...`,
         tags : [dTag.ITEM]
     },
     {
         id : '00393',
-        questions : `Do first purchase gem bonus reset?`,
-        answers : `Only on server anniversary which, on Global, is on May.`,
+        question: `Do first purchase gem bonus reset?`,
+        answer: `Only on server anniversary which, on Global, is on May.`,
         tags : [dTag.GEMS]
     },
     {
         id : '00394',
-        questions : `If I buy multiple Monthly Gem Packages, will it stack?`,
-        answers : `As in more than 30 a day? No. It being a 2 month distribution? Yes.`,
+        question: `If I buy multiple Monthly Gem Packages, will it stack?`,
+        answer: `As in more than 30 a day? No. It being a 2 month distribution? Yes.`,
         tags : [dTag.GEMS]
     },
     {
         id : '00395',
-        questions : `How rare are Quick Repair Tickets?`,
-        answers : `As rare as water on a beach.`,
+        question: `How rare are Quick Repair Tickets?`,
+        answer: `As rare as water on a beach.`,
         tags : [dTag.ITEM]
     },
     {
         id : '00396',
-        questions : `Which should I prioritize in the Data Room, Combat Reports or Special Combat Reports?`,
-        answers : `SCRs primarily because you can just corpse drag, and auto-battle the dolls, and also because basecamp sells far more CR than SCR. Note that you'd need 5000 SCRs to fully level a fresh HOC.`,
+        question: `Which should I prioritize in the Data Room, Combat Reports or Special Combat Reports?`,
+        answer: `SCRs primarily because you can just corpse drag, and auto-battle the dolls, and also because basecamp sells far more CR than SCR. Note that you'd need 5000 SCRs to fully level a fresh HOC.`,
         tags : [dTag.ITEM, dTag.LEVEL]
     },
     {
         id : '00397',
-        questions : `I've seen players have around 500 T-doll contracts. How did they have that much?`,
-        answers : `Logistics and doing production for daily quests. The last one basically applies to long-time players though.`,
+        question: `I've seen players have around 500 T-doll contracts. How did they have that much?`,
+        answer: `Logistics and doing production for daily quests. The last one basically applies to long-time players though.`,
         tags : [dTag.ITEM]
     },
     {
         id : '00398',
-        questions : `How do I unlock mortars and anti-tanks?`,
-        answers : `FSTs can only be unlocked by their respective ${getID("Central Data", "00061")}.`,
+        question: `How do I unlock mortars and anti-tanks?`,
+        answer: `FSTs can only be unlocked by their respective ${getID("Central Data", "00061")}.`,
         tags : [dTag.HOC, dTag.FST, dTag.GET]
     },
     {
         id : '00399',
-        questions : `When do we get discounted tokens?`,
-        answers : `Around x-mas, cny, anni, April 16 week, and the likes.`,
+        question: `When do we get discounted tokens?`,
+        answer: `Around x-mas, cny, anni, April 16 week, and the likes.`,
         tags : [dTag.RESUPPLY, dTag.ITEM]
     },
     {
         id : '00400',
-        questions : `If I bought a Monthly Gem Card, do I get them immediately every day or do I have to log-in?`,
-        answers : `Sent as mail, procured as mail, expires as mail. One week expiration.`,
+        question: `If I bought a Monthly Gem Card, do I get them immediately every day or do I have to log-in?`,
+        answer: `Sent as mail, procured as mail, expires as mail. One week expiration.`,
         tags : [dTag.GEMS, dTag.GET]
     },
     {
         id : '00401',
-        questions : `Do debuffs stack i.e. smoke, stat downs?`,
-        answers : `Unless stated otherwise, yes.`,
+        question: `Do debuffs stack i.e. smoke, stat downs?`,
+        answer: `Unless stated otherwise, yes.`,
         tags : [dTag.SKILL]
     },
     {
         id : '00402',
-        questions : `How many combat reports should I have ideally?`,
-        answers : `660 CRs to raise a doll from Lv.1 to Lv.90.<br>
+        question: `How many combat reports should I have ideally?`,
+        answer: `660 CRs to raise a doll from Lv.1 to Lv.90.<br>
         As for how much is the recommended stock, if your main source of raising dolls is map leveling/corpse dragging, you'll get a truck load of them before you know it.`,
         tags : [dTag.TDOLL, dTag.LEVEL]
     },
     {
         id : '00403',
-        questions : `Anyone knows what resources and how much do we get for a failed PA capture?`,
-        answers : `${img(IMG_ASSET+"CaptureFail.png", 'Slashes are because probability')}`,
+        question: `Anyone knows what resources and how much do we get for a failed PA capture?`,
+        answer: `${img(IMG_ASSET+"CaptureFail.png", 'Slashes are because probability')}`,
         tags : [dTag.ITEM, dTag.PA]
     },
     {
         id : '00404',
-        questions : `How often do Electronic Impulses replenish?`,
-        answers : `With a maxed-out Impulse Reactor, 2 a day.`,
+        question: `How often do Electronic Impulses replenish?`,
+        answer: `With a maxed-out Impulse Reactor, 2 a day.`,
         tags : [dTag.PA, dTag.ITEM]
     },
     {
         id : '00405',
-        questions : `Why are the gem package names incorrect/confusing?`,
-        answers : `${link('Explanation 1.', 'https://www.reddit.com/r/girlsfrontline/comments/q1rscp/weekly_commanders_lounge_october_05_2021/hg3xpyr/')}<br>
+        question: `Why are the gem package names incorrect/confusing?`,
+        answer: `${link('Explanation 1.', 'https://www.reddit.com/r/girlsfrontline/comments/q1rscp/weekly_commanders_lounge_october_05_2021/hg3xpyr/')}<br>
         ${link('Explanation 2.', 'https://www.reddit.com/r/girlsfrontline/comments/mzjdl5/weekly_commanders_lounge_april_27_2021/gwrie7y/')}`,
         tags : [dTag.GEMS, dTag.SHOP]
     },
     {
         id : '00406',
-        questions : `How do dorms work?`,
-        answers : `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/what-happens-in-the-dorms-stays-in-the-dorms')}`,
+        question: `How do dorms work?`,
+        answer: `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/what-happens-in-the-dorms-stays-in-the-dorms')}`,
         tags : [dTag.DORM]
     },
     {
         id : '00407',
-        questions : `I see posters of certain dolls on some of my friends' dorm walls. How do I get them?`,
-        answers : `It's either from a skin where you give it to a doll, mail reward, or a campaign poster that can bought in the cafe.`,
+        question: `I see posters of certain dolls on some of my friends' dorm walls. How do I get them?`,
+        answer: `It's either from a skin where you give it to a doll, mail reward, or a campaign poster that can bought in the cafe.`,
         tags : [dTag.DORM, dTag.FURN]
     },
     {
         id : '00408',
-        questions : `How many hours do visitors stay in the dorm?`,
-        answers : `8.`,
+        question: `How many hours do visitors stay in the dorm?`,
+        answer: `8.`,
         tags : [dTag.DORM]
     },
     {
         id : '00409',
-        questions : `How do I change my commander's gender so I can change their dirty clothes?`,
-        answers : `Change gender in the commander's wardrobe, which can be visited by tapping the arrow below then tapping WARDROBE, or tapping your commander name then tapping on the "???" speech bubble.`,
+        question: `How do I change my commander's gender so I can change their dirty clothes?`,
+        answer: `Change gender in the commander's wardrobe, which can be visited by tapping the arrow below then tapping WARDROBE, or tapping your commander name then tapping on the "???" speech bubble.`,
         tags : [dTag.CMDR, dTag.SKIN]
     },  //@Visual
     {
         id : '00410',
-        questions : `What are spare dorms and what are they for?`,
-        answers : `They're dorm rooms that act as presets by saving dorm configuration with 6 free slots. They can also be used to swap dorm order. Also, they don't contribute to battery generation.`,
+        question: `What are spare dorms and what are they for?`,
+        answer: `They're dorm rooms that act as presets by saving dorm configuration with 6 free slots. They can also be used to swap dorm order. Also, they don't contribute to battery generation.`,
         tags : [dTag.DORM]
     },
     {
         id : '00411',
-        questions : `Which dolls appear in which dorms?`,
-        answers : `Echelon position corresponds to dorm positions i.e. Echelon 1 in Dorm 1, Echelon 2 in Dorm 2, etc.`,
+        question: `Which dolls appear in which dorms?`,
+        answer: `Echelon position corresponds to dorm positions i.e. Echelon 1 in Dorm 1, Echelon 2 in Dorm 2, etc.`,
         tags : [dTag.DORM]
     },
     {
         id : '00021',
-        questions : `What is the priority for each currency?`,
-        answers : `${List.description({
+        question: `What is the priority for each currency?`,
+        answer: `${List.description({
             "Toy Block": ["Furnitures", "Batteries if really strapped"],
             "Buttstock": ["Fire Control Cores", "CR/SCR if needed"],
             "Acorns": ["SPEQs"],
@@ -3316,8 +3316,8 @@ export const cardData = [
     },
     {
         id : '00412',
-        questions : `What is a deathstack?`,
-        answers : `${List.unordered(
+        question: `What is a deathstack?`,
+        answer: `${List.unordered(
             "Strong enemies that can cover each others weaknesses.",
             "Large amount of enemies in a single formation.",
             "Even with superior kiting and armory, taking critical damage is inevitable."
@@ -3326,62 +3326,62 @@ export const cardData = [
     },
     {
         id : '00022',
-        questions : `What T-doll effects are available in the older servers?`,
-        answers : `Global already has everything they have.`,
+        question: `What T-doll effects are available in the older servers?`,
+        answer: `Global already has everything they have.`,
         tags : [dTag.TDOLL, dTag.BM]
     },
     {
         id : '00413',
-        questions : `Can I use the same unit in different echelons?`,
-        answers : `The exact same? No. But this game allows the use of duplicates, in other words ${getID("duping", "00331")}. This would still cost resources to raise the dupe.`,
+        question: `Can I use the same unit in different echelons?`,
+        answer: `The exact same? No. But this game allows the use of duplicates, in other words ${getID("duping", "00331")}. This would still cost resources to raise the dupe.`,
         tags : [dTag.TDOLL, dTag.COALITION, dTag.ECH]
     },
     {
         id : '00414',
-        questions : `Does the Black Market shop ever refresh its stock?`,
-        answers : `The ITEM section, yes. Every turn of a new month.`,
+        question: `Does the Black Market shop ever refresh its stock?`,
+        answer: `The ITEM section, yes. Every turn of a new month.`,
         tags : [dTag.BM]
     },
     {
         id : '00415',
-        questions : `How do I unlock new HOCs?`,
-        answers : `From chip analyzer or from their status page (accessible through garage or echelon formation).`,
+        question: `How do I unlock new HOCs?`,
+        answer: `From chip analyzer or from their status page (accessible through garage or echelon formation).`,
         tags : [dTag.HOC, dTag.FST, dTag.GET]
     },  //@Visual
     {
         id : '00416',
-        questions : `I missed some event furniture that can be acquired from crates. Will I ever have a chance to get them again?`,
-        answers : `Yes. Wait for them in the Black Market Exchange.`,
+        question: `I missed some event furniture that can be acquired from crates. Will I ever have a chance to get them again?`,
+        answer: `Yes. Wait for them in the Black Market Exchange.`,
         tags : [dTag.FURN, dTag.MAJOR, dTag.BM]
     },
     {
         id : '00417',
-        questions : `How do I establish a supply route?`,
-        answers : `${img("https://i.ibb.co/N3MVNnd/IMG-20230314-093923.jpg", "Capturing all nodes along the blue line will create one (from u/WhistleOfDeath)")}`,
+        question: `How do I establish a supply route?`,
+        answer: `${img("https://i.ibb.co/N3MVNnd/IMG-20230314-093923.jpg", "Capturing all nodes along the blue line will create one (from u/WhistleOfDeath)")}`,
         tags : [dTag.MAP, dTag.SYSMECH]
     },
     {
         id : '00418',
-        questions : `What is an additive buff?`,
-        answers : `Buffs that are added after all modifiers, making this useful for countering/mitigating debuffs.`,
+        question: `What is an additive buff?`,
+        answer: `Buffs that are added after all modifiers, making this useful for countering/mitigating debuffs.`,
         tags : [dTag.SKILL]
     },
     {
         id : '00419',
-        questions : `How can I obtain the wedding/oath skins for some T-dolls?`,
-        answers : `Oath skins? Watchu smoking? There's no oath skins, only gacha/free/paid skins.`,
+        question: `How can I obtain the wedding/oath skins for some T-dolls?`,
+        answer: `Oath skins? Watchu smoking? There's no oath skins, only gacha/free/paid skins.`,
         tags : [dTag.TDOLL, dTag.SKIN]
     },
     {
         id : '00422',
-        questions : `Is there any damage sim? Or at least a DPS calculator?`,
-        answers : `${figure(Embed.google(["DPS Calculator", "https://docs.google.com/spreadsheets/d/1HgLM886cjnlGeoff7sE5QkTN4KPbT-52"]), "by u/corbsieboy")}`,
+        question: `Is there any damage sim? Or at least a DPS calculator?`,
+        answer: `${figure(Embed.google(["DPS Calculator", "https://docs.google.com/spreadsheets/d/1HgLM886cjnlGeoff7sE5QkTN4KPbT-52"]), "by u/corbsieboy")}`,
         tags : [dTag['3P']]
     },
     {
         id : '00423',
-        questions : `Where can I get Memory Fragments?`,
-        answers : `${List.ordered(
+        question: `Where can I get Memory Fragments?`,
+        answer: `${List.ordered(
             "Combat Simulations - Neural Corridor",
             "Kalina's Shop",
             "Cafe MOD Stories",
@@ -3393,8 +3393,8 @@ export const cardData = [
     },
     {
         id : '00424',
-        questions : `I'm overflowing with units/gears/fairies/PA units. Where can I dump/scrap/recycle/retire them off?`,
-        answers : `${img(IMG_ASSET+"Disassembly.png", "Found in the Factory Tab")}<br>
+        question: `I'm overflowing with units/gears/fairies/PA units. Where can I dump/scrap/recycle/retire them off?`,
+        answer: `${img(IMG_ASSET+"Disassembly.png", "Found in the Factory Tab")}<br>
         ${List.description({
             "T-DOLL": [
                 "The final stage of core farming.",
@@ -3412,46 +3412,46 @@ export const cardData = [
     },
     {
         id : '00425',
-        questions : `Did the battlepass skins have a rerun yet?`,
-        answers : `None yet. But even if they do, they'll mostly likely have the same cost without the bonuses.`,
+        question: `Did the battlepass skins have a rerun yet?`,
+        answer: `None yet. But even if they do, they'll mostly likely have the same cost without the bonuses.`,
         tags : [dTag.BP]
     },
     {
         id : '00426',
-        questions : `What/where can I get Supply Crates?`,
-        answers : `Event-limited items that can only be bought during the its runtime. Gives resources and dolls.`,
+        question: `What/where can I get Supply Crates?`,
+        answer: `Event-limited items that can only be bought during the its runtime. Gives resources and dolls.`,
         tags : [dTag.ITEM, dTag.MAJOR]
     },
     {
         id : '00427',
-        questions : `When do pets in the Rescue Station change?`,
-        answers : `3 days without buying them, arguably the next day if you do.`,
+        question: `When do pets in the Rescue Station change?`,
+        answer: `3 days without buying them, arguably the next day if you do.`,
         tags : [dTag.PET]
     },
     {
         id : '00428',
-        questions : `How do I deal with each enemy?`,
-        answers : `${Embed.google(["Enemy Analytics v0.50 (EN) by GFC", "https://docs.google.com/spreadsheets/d/1TjHC4Vaed8dFqSkagM6teNlmBjFGPiUbTRnTnvxnnu4"])}`,
+        question: `How do I deal with each enemy?`,
+        answer: `${Embed.google(["Enemy Analytics v0.50 (EN) by GFC", "https://docs.google.com/spreadsheets/d/1TjHC4Vaed8dFqSkagM6teNlmBjFGPiUbTRnTnvxnnu4"])}`,
         tags : [dTag.ENEMY]
     },  //slightly outdated
     {
         id : '00429',
-        questions : `When will a zone get a support bonus?`,
-        answers : `When that zone has the lowest total score.<br>
+        question: `When will a zone get a support bonus?`,
+        answer: `When that zone has the lowest total score.<br>
         ${img("https://cdn.discordapp.com/attachments/640157367056728133/1077929307139231754/unknown.png", "Score threshold per stage (From u/Mich997)")}`,
         tags : [dTag.THEATER]
     },
     {
         id : '00430',
-        questions : `Where is Bookshelf of Memories?`,
-        answers : `${img(IMG_ASSET+"GriffinMemories.png", "Bookshelf of Memories found in the Data Room")}<br>
+        question: `Where is Bookshelf of Memories?`,
+        answer: `${img(IMG_ASSET+"GriffinMemories.png", "Bookshelf of Memories found in the Data Room")}<br>
         Sidestories for the featured dolls (Griffin Memories). Rewards ${getID("Friend Gossips", "00060")} or ${getID("Unity Skills", "00442")}.`,
         tags : [dTag.SIDE]
     },
     {
         id : '00060',
-        questions : `What are Friend Gossips?`,
-        answers : `Unique dialogues when two paired dolls are in the double adjutant.<br>
+        question: `What are Friend Gossips?`,
+        answer: `Unique dialogues when two paired dolls are in the double adjutant.<br>
         ${List.description({
             'Becoming a Star' : [
                 'P38 + HK45',
@@ -3465,68 +3465,68 @@ export const cardData = [
     },
     {
         id : '00431',
-        questions : `Which map is the fastest for the killing armored units?`,
-        answers : `8-1N is easy enough and has numerous Tarantulas.`,
+        question: `Which map is the fastest for the killing armored units?`,
+        answer: `8-1N is easy enough and has numerous Tarantulas.`,
         tags : [dTag.ENEMY]
     },
     {
         id : '00432',
-        questions : `"Your session has expired." What does that even mean?`,
-        answers : `Too many user inputs during log-in. Just chill out and let it cook.`,
+        question: `"Your session has expired." What does that even mean?`,
+        answer: `Too many user inputs during log-in. Just chill out and let it cook.`,
         tags : [dTag.TECH]
     },
     {
         id : '00434',
-        questions : `What does the "house, +, wrench" node do?`,
-        answers : `One-time repair and one-time resupply.`,
+        question: `What does the "house, +, wrench" node do?`,
+        answer: `One-time repair and one-time resupply.`,
         tags : [dTag.MAP]
     },  //@Visual
     {
         id : '00435',
-        questions : `What's the distribution for Coalition Unit sizes?`,
-        answers : `${link("u/BigStupidJellyfish_'s findings.", "https://old.reddit.com/r/girlsfrontline/comments/135epds/weekly_commanders_lounge_may_02_2023/jiyruin/")}`,
+        question: `What's the distribution for Coalition Unit sizes?`,
+        answer: `${link("u/BigStupidJellyfish_'s findings.", "https://old.reddit.com/r/girlsfrontline/comments/135epds/weekly_commanders_lounge_may_02_2023/jiyruin/")}`,
         tags : [dTag.PA, dTag.COALITION]
     },
     {
         id : '00436',
-        questions : `Where can I get commander costumes?`,
-        answers : `Shop, Ranking, Special Log-ins, Black Market, Luffberry, Bookshelf of Memories, Shattered Connexions.`,
+        question: `Where can I get commander costumes?`,
+        answer: `Shop, Ranking, Special Log-ins, Black Market, Luffberry, Bookshelf of Memories, Shattered Connexions.`,
         tags : [dTag.CMDR, dTag.SKIN]
     },
     {
         id : '00437',
-        questions : `Where can I get T-doll contracts?`,
-        answers : `Logistics, dailies.`,
+        question: `Where can I get T-doll contracts?`,
+        answer: `Logistics, dailies.`,
         tags : [dTag.ITEM, dTag.GET]
     },
     {
         id : '00438',
-        questions : `I saw giant coalition units in my dorm, and they walk/sit backwards. How did this happen?`,
-        answers : `Friend visit with a coalition unit adjutant`,
+        question: `I saw giant coalition units in my dorm, and they walk/sit backwards. How did this happen?`,
+        answer: `Friend visit with a coalition unit adjutant`,
         tags : [dTag.DORM, dTag.COALITION]
     },
     {
         id : '00439',
-        questions : `Why are my XS units getting auto-locked?`,
-        answers : `Because tutorial said so? Only applies to first XS and XL copy of a particular unit.`,
+        question: `Why are my XS units getting auto-locked?`,
+        answer: `Because tutorial said so? Only applies to first XS and XL copy of a particular unit.`,
         tags : [dTag.PA, dTag.COALITION]
     },  //@Visual
     {
         id : '00440',
-        questions : `How do I run Data Simulations?`,
-        answers : `${link("BigStupidJellyfish's guide.", "https://big-stupid-jellyfish.github.io/GFMath/pages/datasim")}`,
+        question: `How do I run Data Simulations?`,
+        answer: `${link("BigStupidJellyfish's guide.", "https://big-stupid-jellyfish.github.io/GFMath/pages/datasim")}`,
         tags : [dTag.SIMS]
     },
     {
         id : '00441',
-        questions : `What type of faction node do Theater stages have?`,
-        answers : `Non-allied. Occupied or otherwise. Also applicable to all combat sims with no overworld map.`,
+        question: `What type of faction node do Theater stages have?`,
+        answer: `Non-allied. Occupied or otherwise. Also applicable to all combat sims with no overworld map.`,
         tags : [dTag.THEATER, dTag.SIMS]
     },
     {
         id : '00442',
-        questions : `What are Unity Skills?`,
-        answers : `Additional skill when the paired dolls are in the same echelon.<br>
+        question: `What are Unity Skills?`,
+        answer: `Additional skill when the paired dolls are in the same echelon.<br>
         ${List.description({
             'Operation Starchaser' : ['Grizzly + PzB29', 'AK-Alfa + M82'],
             'Her Smile' : ['G36 + Springfield'],
@@ -3536,26 +3536,26 @@ export const cardData = [
     },
     {
         id : '00443',
-        questions : `After winning a combat mission with my Coalition team, I noticed that they have no ammo and rations in them. Where did my resources go?`,
-        answers : `Back to the pool.`,
+        question: `After winning a combat mission with my Coalition team, I noticed that they have no ammo and rations in them. Where did my resources go?`,
+        answer: `Back to the pool.`,
         tags : [dTag.COALITION]
     },
     {
         id : '00445',
-        questions : `What do I do with unused Keycards during the bingo event?`,
-        answers : `${img("../assets/images/query/KeyCardRules.png", "Rule #7: 1 Key Card = 5 Calibration Tickets")}`,
+        question: `What do I do with unused Keycards during the bingo event?`,
+        answer: `${img("../assets/images/query/KeyCardRules.png", "Rule #7: 1 Key Card = 5 Calibration Tickets")}`,
         tags : [dTag.MINI]
     },
     {
         id : '00057',
-        questions : `Where can I see rankings?`,
-        answers : `Tap the bottom-right arrow at the main screen.`,
+        question: `Where can I see rankings?`,
+        answer: `Tap the bottom-right arrow at the main screen.`,
         tags : [dTag.MISC]
     },  //@Visual
     {
         id : '00446',
-        questions : `How do Total Score and Final Battle ranking work?`,
-        answers : `${List.description({
+        question: `How do Total Score and Final Battle ranking work?`,
+        answer: `${List.description({
             "Total Score": [
                 "Cumulative score gained throughout Theater.",
                 "Score includes investigations, battles, and construction."
@@ -3569,8 +3569,8 @@ export const cardData = [
     },
     {
         id : '00447',
-        questions : `What does "No fewer than 4 dolls present at the time of victory" mean?`,
-        answers : `No fewer than 4 dolls present: 4 dolls or more remaining.<br>
+        question: `What does "No fewer than 4 dolls present at the time of victory" mean?`,
+        answer: `No fewer than 4 dolls present: 4 dolls or more remaining.<br>
         At the time of victory: Win the battle.
         <br>
         Win the battle with 4 dolls or more remaining (at the field).`,
@@ -3578,8 +3578,8 @@ export const cardData = [
     },
     {
         id : '00448',
-        questions : `How do I use Construction Fairy effectively?`,
-        answers : `${List.ordered(
+        question: `How do I use Construction Fairy effectively?`,
+        answer: `${List.ordered(
             "Deploy on a node next to an enemy.",
             "Go to that node.",
             "Take a defensive stance."
@@ -3588,14 +3588,14 @@ export const cardData = [
     },
     {
         id : '00449',
-        questions : `Which skills are able to get critical hits?`,
-        answers : `Rule of thumb: Unless otherwise stated, all skillshots, grenades, and molotovs don't get critical hits.`,
+        question: `Which skills are able to get critical hits?`,
+        answer: `Rule of thumb: Unless otherwise stated, all skillshots, grenades, and molotovs don't get critical hits.`,
         tags : [dTag.SKILL, dTag.SYSMECH]
     },
     {
         id : '00450',
-        questions : `My Samsung/Pixel phone can't open up the game. Is there any fix for this?`,
-        answers : `${List.unordered(
+        question: `My Samsung/Pixel phone can't open up the game. Is there any fix for this?`,
+        answer: `${List.unordered(
             link("u/Le_Trudos' Android 12 fix", "https://www.reddit.com/r/girlsfrontline/comments/tsmwen/possible_solution_to_android_12_updates_making/"),
             link("Droidwin Android 12 fix", "https://droidwin.com/games-and-apps-crashing-not-working-on-android-12-how-to-fix/"),
             link("u/tommykuah's Android 12 fix", "https://www.reddit.com/r/girlsfrontline/comments/tdsmjh/regarding_android_12_app_crashfreeze_issue_and/i0mjpop/"),
@@ -3606,20 +3606,20 @@ export const cardData = [
     },  // What if Android 13/14?
     {
         id : '00451',
-        questions : `When a major event gets added to campaign mode, do I still need to do it again from the start?`,
-        answers : `All progress from its original run is kept, special circumstances notwithstanding.`,
+        question: `When a major event gets added to campaign mode, do I still need to do it again from the start?`,
+        answer: `All progress from its original run is kept, special circumstances notwithstanding.`,
         tags : [dTag.MAJOR, dTag.CAMPAIGN]
     },
     {
         id : '00452',
-        questions : `Is there a way to extract images fromt the game?`,
-        answers : `${link("GFAlarm route.", "https://www.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jtafnpx/")}`,
+        question: `Is there a way to extract images fromt the game?`,
+        answer: `${link("GFAlarm route.", "https://www.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jtafnpx/")}`,
         tags : [dTag.MISC]
     },
     {
         id : '00453',
-        questions : `How do I strengthen fairies?`,
-        answers : `${List.unordered(
+        question: `How do I strengthen fairies?`,
+        answer: `${List.unordered(
             "Leveling up, primarily by CRs",
             "Good talents, usually Fervor/Damage 2",
             "Enhancements, by feeding duplicate/extra fairies"
@@ -3628,20 +3628,20 @@ export const cardData = [
     },
     {
         id : '00454',
-        questions : `Which furnitures have associated BGM with them?`,
-        answers : `${link("Comment link.", "https://www.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jsopd26/")}`,
+        question: `Which furnitures have associated BGM with them?`,
+        answer: `${link("Comment link.", "https://www.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jsopd26/")}`,
         tags : [dTag.DORM, dTag.FURN]
     },
     {
         id : '00455',
-        questions : `What are the changes for each client update?`,
-        answers : `${link("3.0", "https://gamepress.gg/girlsfrontline/v301-client-update-new-features-2022")}`,
+        question: `What are the changes for each client update?`,
+        answer: `${link("3.0", "https://gamepress.gg/girlsfrontline/v301-client-update-new-features-2022")}`,
         tags : [dTag.MISC]
     },
     {
         id : '00456',
-        questions : `Where can I get this particular fairy?`,
-        answers : `${table(
+        question: `Where can I get this particular fairy?`,
+        answer: `${table(
             ["Fairies", "Where to get"],
             ["Warrior Fairy", "Fairy Production"],
             ["Fury Fairy", "Fairy Production"],
@@ -3681,14 +3681,14 @@ export const cardData = [
     },
     {
         id : '00457',
-        questions : `Should I save my T-Doll Contracts?`,
-        answers : `Yes, due to the existence of ${getID("rate-ups", "00032")}. But if you're very new, pull some dolls to solidify your armory.`,
+        question: `Should I save my T-Doll Contracts?`,
+        answer: `Yes, due to the existence of ${getID("rate-ups", "00032")}. But if you're very new, pull some dolls to solidify your armory.`,
         tags : [dTag.ITEM, dTag.TDOLL, dTag.PROD]
     },
     {
         id : '00458',
-        questions : `What doew the Frontline Protocol battlepass give?`,
-        answers : `${List.unordered(
+        question: `What doew the Frontline Protocol battlepass give?`,
+        answer: `${List.unordered(
             "Battlepass Skin",
             "Animated Icon Frame",
             "Resources",
@@ -3698,41 +3698,41 @@ export const cardData = [
     },
     {
         id : '00459',
-        questions : `Where can I get special equipments?`,
-        answers : `${link("Linked in the compilations page.", "https://xxx-yyy-xxx.github.io/GFL/docs")}`,
+        question: `Where can I get special equipments?`,
+        answer: `${link("Linked in the compilations page.", "https://xxx-yyy-xxx.github.io/GFL/docs")}`,
         tags : [dTag.EQUIP, dTag.SPEQ, dTag.GET]
     },
     {
         id : '00460',
-        questions : `Should I level up my dolls' skills to 10?`,
-        answers : `Yes? Why would you not?<br>
+        question: `Should I level up my dolls' skills to 10?`,
+        answer: `Yes? Why would you not?<br>
         If you're talking about NEED, depends on where you plan to use said doll. Some of them don't NEED them as much as the others.<br>
         ${link("BigStupidJellyfish analysis.", "https://big-stupid-jellyfish.github.io/GFMath/pages/skill-levels")}`,
         tags : [dTag.TDOLL, dTag.SKILL]
     },
     {
         id : '00461',
-        questions : `Where can I get echoes in Exploration/Expedition/Forward Basecamp?`,
-        answers : `Touch the large monitor where you can see dolls running/moving.`,
+        question: `Where can I get echoes in Exploration/Expedition/Forward Basecamp?`,
+        answer: `Touch the large monitor where you can see dolls running/moving.`,
         tags : [dTag.QUEST, dTag.EXPED]
     },  //@Visual
     {
         id : '00128',
-        questions : `How do I stop my Kord/CMS/Dorothy from cycling through their skills?`,
-        answers : `Go to their Armory status page, tap the Forced Manual at the top-right of their skill to on/orange. Enjoy.<br>
+        question: `How do I stop my Kord/CMS/Dorothy from cycling through their skills?`,
+        answer: `Go to their Armory status page, tap the Forced Manual at the top-right of their skill to on/orange. Enjoy.<br>
         ${link("Other dolls recommended to be put on force manual.", "https://gamepress.gg/girlsfrontline/list-forced-manual-dolls")}`,
         tags : [dTag.TDOLL, dTag.SKILL]
     },  //@Visual
     {
         id : '00462',
-        questions : `How do I unlock Chapter 4 of Continuum Turbulence?`,
-        answers : `By completing all nodes and paths, including bad ends.`,
+        question: `How do I unlock Chapter 4 of Continuum Turbulence?`,
+        answer: `By completing all nodes and paths, including bad ends.`,
         tags : [dTag.CAMPAIGN]
     },
     {
         id : '00463',
-        questions : `Which equipment goes to which slot?`,
-        answers : `${List.description({
+        question: `Which equipment goes to which slot?`,
+        answer: `${List.description({
             "Accessory": [
                 "Sniper Optics",
                 "Red Dot",
@@ -3770,81 +3770,81 @@ export const cardData = [
     },
     {
         id : '00187',
-        questions : `Is there a rerun for special equipments?`,
-        answers : `For login SPEQs, wait for them in the Gray Zone. For ranking SPEQS, wait for ranking reruns/permanent rankings.`,
+        question: `Is there a rerun for special equipments?`,
+        answer: `For login SPEQs, wait for them in the Gray Zone. For ranking SPEQS, wait for ranking reruns/permanent rankings.`,
         tags : [dTag.EQUIP, dTag.SPEQ, dTag.GET]
     },
     {
         id : '00496',
-        questions : `Do Echelon Limits, Doll Storage, and the likes have dicounts?`,
-        answers : `First purchase only.`,
+        question: `Do Echelon Limits, Doll Storage, and the likes have dicounts?`,
+        answer: `First purchase only.`,
         tags : [dTag.SHOP, dTag.GEMS]
     },
     {
         id : '00465',
-        questions : `How to read the story again? It's not available in the story playback in Index.`,
-        answers : `Settings>Game>Story Playback then play the stage again. Or just Youtube it. Or cutscene interpreter. This also applies to nodes with story/cutscene snippets.`,
+        question: `How to read the story again? It's not available in the story playback in Index.`,
+        answer: `Settings>Game>Story Playback then play the stage again. Or just Youtube it. Or cutscene interpreter. This also applies to nodes with story/cutscene snippets.`,
         tags : [dTag.LORE]
     },  //@ Visual
     {
         id : '00466',
-        questions : `Where can I get oath certificates?`,
-        answers : `Newbie career quest (1), battlepass (?), shop.`,
+        question: `Where can I get oath certificates?`,
+        answer: `Newbie career quest (1), battlepass (?), shop.`,
         tags : [dTag.OATH, dTag.ITEM, dTag.GET, dTag.QUEST, dTag.BP, dTag.SHOP]
     },
     {
         id : '00467',
-        questions : `Why can't I read the Griffin Stories/Bookshelf of Memories?`,
-        answers : `2 things. Either you haven't redeemed your points from the STAR tab, or you lack one of the dolls.`,
+        question: `Why can't I read the Griffin Stories/Bookshelf of Memories?`,
+        answer: `2 things. Either you haven't redeemed your points from the STAR tab, or you lack one of the dolls.`,
         tags : [dTag.LORE, dTag.SIDE]
     },
     {
         id : '00468',
-        questions : `What's the blurb for the Listening Post?`,
-        answers : `${link("u/UnironicWeeaboo's reply.", "https://www.reddit.com/r/girlsfrontline/comments/t42t86/weekly_commanders_lounge_march_01_2022/hz2dti3/")}`,
+        question: `What's the blurb for the Listening Post?`,
+        answer: `${link("u/UnironicWeeaboo's reply.", "https://www.reddit.com/r/girlsfrontline/comments/t42t86/weekly_commanders_lounge_march_01_2022/hz2dti3/")}`,
         tags : [dTag.MISC]
     },
     {
         id : '00469',
-        questions : `Can I get the ringleader after the banner changes?`,
-        answers : `By reruns or by PA shop.`,
+        question: `Can I get the ringleader after the banner changes?`,
+        answer: `By reruns or by PA shop.`,
         tags : [dTag.PA, dTag.COALITION]
     },
     {
         id : '00470',
-        questions : `Are units with Flare skill and the like useful?`,
-        answers : `${link("BigStupidJellyfish's write-up.", "https://big-stupid-jellyfish.github.io/GFMath/pages/rf-nvg")}`,
+        question: `Are units with Flare skill and the like useful?`,
+        answer: `${link("BigStupidJellyfish's write-up.", "https://big-stupid-jellyfish.github.io/GFMath/pages/rf-nvg")}`,
         tags : [dTag.TDOLL, dTag.SKILL]
     },
     {
         id : '00471',
-        questions : `How to tank/mech/mobile armor?`,
-        answers : `${link("UnironicWeeaboo response.", "https://www.reddit.com/r/girlsfrontline/comments/17f7kla/weekly_commanders_lounge_october_24_2023/k6e6ja1/")}<br>
+        question: `How to tank/mech/mobile armor?`,
+        answer: `${link("UnironicWeeaboo response.", "https://www.reddit.com/r/girlsfrontline/comments/17f7kla/weekly_commanders_lounge_october_24_2023/k6e6ja1/")}<br>
         Very WIP and will prioritize EN guides once this drops.`,
         tags : [dTag.MISC]
     },
     {
         id : '00472',
-        questions : `How do I reset my dorm message?`,
-        answers : `Type ${TextStyle.style("<>", TextStyle.CODE)}.`, //https://www.reddit.com/r/girlsfrontline/comments/17f7kla/weekly_commanders_lounge_october_24_2023/k6elqov/
+        question: `How do I reset my dorm message?`,
+        answer: `Type ${TextStyle.style("<>", TextStyle.CODE)}.`, //https://www.reddit.com/r/girlsfrontline/comments/17f7kla/weekly_commanders_lounge_october_24_2023/k6elqov/
         tags : [dTag.DORM]
     },
     {
         id : '00473',
-        questions : `How do I use the Landmine Fairy?`,
-        answers : `Stand on a node. Lay it down on an adjacent empty node. It activates the moment an enemy steps on it. Don't retreat the mine layer or you'll lose the mine.`,
+        question: `How do I use the Landmine Fairy?`,
+        answer: `Stand on a node. Lay it down on an adjacent empty node. It activates the moment an enemy steps on it. Don't retreat the mine layer or you'll lose the mine.`,
         tags : [dTag.FAIRY, dTag.SKILL]
     },
     {
         id : '00474',
-        questions : `Why are the guns' names excluding their manufacturer names?`,
-        answers : `${MBD.twitter("GirlsFrontlineE", "1001058278728548354")}`,
+        question: `Why are the guns' names excluding their manufacturer names?`,
+        answer: `${MBD.twitter("GirlsFrontlineE", "1001058278728548354")}`,
         tags : [dTag.MISC]
     },
     {
         id : '00475',
-        questions : `Where can I get the limited drop/equipment in a particular map?`,
-        answers : `${img("../assets/images/query/CombatSummary.png", "Tap on the Combat Summary button")}<br>
+        question: `Where can I get the limited drop/equipment in a particular map?`,
+        answer: `${img("../assets/images/query/CombatSummary.png", "Tap on the Combat Summary button")}<br>
         ${img("../assets/images/query/MapRewards.png", "Rewards tab then tap on your desired drop")}<br>
         ${img("../assets/images/query/RewardLocations.png", "Look for glowing enemies and defeat them")}<br>
         You can also S Rank the map for an additional chance.`,
@@ -3852,8 +3852,8 @@ export const cardData = [
     },
     {
         id : '00476',
-        questions : `What's the best way to farm a map drop doll/equipment?`,
-        answers : `${List.description({
+        question: `What's the best way to farm a map drop doll/equipment?`,
+        answer: `${List.description({
             "Resource efficiency": ["What formation and least amount of dolls that would be able to minimize damage while being able to clear fights."],
             "Time efficiency": ["Routes that take the least amount of turns. If S-ranking the map requires effort, then don't."],
             "Drop efficiency": ["All fights should be able to drop the farmable doll as much as possible. Take as little non-drop fights or as many drop chances per run."]
@@ -3863,96 +3863,96 @@ export const cardData = [
     },
     {
         id : '00478',
-        questions : `I can't hit the enemies in night missions. What do I do?`,
-        answers : `Your accuracy is multiplied by 0.1 so a 100 accuracy which may or may not have a scope equipped will turn to 10. And this is before all skills and buffs are taken into account. Equipe PEQs, or if they can't, use skills with night penalty reduction or flat accuracy boosts.`,
+        question: `I can't hit the enemies in night missions. What do I do?`,
+        answer: `Your accuracy is multiplied by 0.1 so a 100 accuracy which may or may not have a scope equipped will turn to 10. And this is before all skills and buffs are taken into account. Equipe PEQs, or if they can't, use skills with night penalty reduction or flat accuracy boosts.`,
         tags : [dTag.BATTLE]
     },
     {
         id : '00479',
-        questions : `Where can I repair my damaged dolls?`,
-        answers : `Repair button at the main menu. You can also repair them on helipads pre and post-deployment.<br>
+        question: `Where can I repair my damaged dolls?`,
+        answer: `Repair button at the main menu. You can also repair them on helipads pre and post-deployment.<br>
         ${TextStyle.style("Do note though that repairing post-deployment cost twice the resources and locks you out of S rank (gold) medals.", TextStyle.BOLD)}`,
         tags : [dTag.SYSMECH]
     },  //@ Visual
     {
         id : '00480',
-        questions : `How can I get my rewards from participating in community events?`,
-        answers : `On Reddit, once the community manager replied to your entry, reply with your IGN and UID.`,  //https://old.reddit.com/r/girlsfrontline/comments/180bxy6/weekly_commanders_lounge_november_21_2023/kaydjpt/
+        question: `How can I get my rewards from participating in community events?`,
+        answer: `On Reddit, once the community manager replied to your entry, reply with your IGN and UID.`,  //https://old.reddit.com/r/girlsfrontline/comments/180bxy6/weekly_commanders_lounge_november_21_2023/kaydjpt/
         tags : [dTag.MISC]
     },
     {
         id : '00151',
-        questions : `Is there a limit to using Friend Echelons?`,
-        answers : `20.<br>
+        question: `Is there a limit to using Friend Echelons?`,
+        answer: `20.<br>
         ${img("https://i.imgur.com/7VHlmlN.png", "Counter for supports used, courtesy of BSJ")}<br>
         The counter rises whenever you deploy a support echelon, win or lose, griffin or friend.`,
         tags : [dTag.FRIEND, dTag.ECH]
     },
     {
         id : '00481',
-        questions : `Is a doll worth farming?`,
-        answers : `Worth it if they can only be acquired by running the maps, otherwise just do construction. But hey, you do you.`,
+        question: `Is a doll worth farming?`,
+        answer: `Worth it if they can only be acquired by running the maps, otherwise just do construction. But hey, you do you.`,
         tags : [dTag.TDOLL, dTag.GET]
     },
     {
         id : '00482',
-        questions : `My game crashed during Defense Drill and when I try to terminate it after opening the game, it doesn't let me. What do I do?`,
-        answers : `Costumer support or wait for maintenance to forcefully boot you out.`,   //https://old.reddit.com/r/girlsfrontline/comments/180bxy6/weekly_commanders_lounge_november_21_2023/kaydu4y/
+        question: `My game crashed during Defense Drill and when I try to terminate it after opening the game, it doesn't let me. What do I do?`,
+        answer: `Costumer support or wait for maintenance to forcefully boot you out.`,   //https://old.reddit.com/r/girlsfrontline/comments/180bxy6/weekly_commanders_lounge_november_21_2023/kaydu4y/
         tags : [dTag.TECH, dTag.SIMS, dTag.BATTLE]
     },
     {
         id : '00483',
-        questions : `How do I "share" to get my weekly gems?`,
-        answers : `Home screen > commander name at the top left > top right button.<br>
+        question: `How do I "share" to get my weekly gems?`,
+        answer: `Home screen > commander name at the top left > top right button.<br>
         You don't need to actually share it.`,
         tags : [dTag.GEMS]
     },  //@Visual
     {
         id : '00484',
-        questions : `Are the push notifications busted?`,
-        answers : `Yes. Will only work when the app is running. Will work when the first part of the queue finishes.`,   //https://old.reddit.com/r/girlsfrontline/comments/180bxy6/weekly_commanders_lounge_november_21_2023/ka988nh/
+        question: `Are the push notifications busted?`,
+        answer: `Yes. Will only work when the app is running. Will work when the first part of the queue finishes.`,   //https://old.reddit.com/r/girlsfrontline/comments/180bxy6/weekly_commanders_lounge_november_21_2023/ka988nh/
         tags : [dTag.SYSMECH, dTag.ANDROID]
     },
     {
         id : '00485',
-        questions : `How do I successfully occupy a buff node in Gray Zone?`,
-        answers : `After selecting a buff, tap the yellow "Select" button beside it.`,
+        question: `How do I successfully occupy a buff node in Gray Zone?`,
+        answer: `After selecting a buff, tap the yellow "Select" button beside it.`,
         tags : [dTag.GZ]
     },  //@Visual
     {
         id : '00486',
-        questions : `What are Dusty Blueprints for?`,
-        answers : `For Mobile Armors${TM}. `,
+        question: `What are Dusty Blueprints for?`,
+        answer: `For Mobile Armors${TM}. `,
         tags : [dTag.GZ]
     },
     {
         id : '00487',
-        questions : `Can I get limited event dolls during rescue events using autobattles?`,
-        answers : `"These T-Dolls are obtainable through Auto-Battles as well." Hmm... I wonder. Note however that 1 auto-battle is equivalent to 1 roll for the doll.`,
+        question: `Can I get limited event dolls during rescue events using autobattles?`,
+        answer: `"These T-Dolls are obtainable through Auto-Battles as well." Hmm... I wonder. Note however that 1 auto-battle is equivalent to 1 roll for the doll.`,
         tags : [dTag.TDOLL, dTag.AUTO, dTag.GET]
     },  //@Visual
     {
         id : '00488',
-        questions : `How do I see a detailed version of a doll's stat?`,
-        answers : `Formation>Show Equip. The stats are above the equip boxes.`,
+        question: `How do I see a detailed version of a doll's stat?`,
+        answer: `Formation>Show Equip. The stats are above the equip boxes.`,
         tags : [dTag.TDOLL]
     },  //@Visual
     {
         id : '00489',
-        questions : `Will the coalition team I set up as a support echelon (with Night Vision equipped) have 2-node vision range when my friends use it?`,
-        answers : `No.`,    //https://old.reddit.com/r/girlsfrontline/comments/185qw10/weekly_commanders_lounge_november_28_2023/kbozp93/
+        question: `Will the coalition team I set up as a support echelon (with Night Vision equipped) have 2-node vision range when my friends use it?`,
+        answer: `No.`,    //https://old.reddit.com/r/girlsfrontline/comments/185qw10/weekly_commanders_lounge_november_28_2023/kbozp93/
         tags : [dTag.COALITION, dTag.EQUIP, dTag.FRIEND, dTag.ECH]
     },
     {
         id : '00490',
-        questions : `What does total exp in the auto-battle completion mean?`,
-        answers : `${link("Reddit reply.", "https://www.reddit.com/r/girlsfrontline/comments/hzark0/weekly_commanders_lounge_july_28_2020/g082rwn/")}`,
+        question: `What does total exp in the auto-battle completion mean?`,
+        answer: `${link("Reddit reply.", "https://www.reddit.com/r/girlsfrontline/comments/hzark0/weekly_commanders_lounge_july_28_2020/g082rwn/")}`,
         tags : [dTag.LEVEL, dTag.AUTO]
     },
     {
         id : '00491',
-        questions : `Is there a repository of all dolls currently in the game?`,
-        answers : `${List.unordered(
+        question: `Is there a repository of all dolls currently in the game?`,
+        answer: `${List.unordered(
             link("CN Wiki", "http://www.gfwiki.org/w/%E9%A6%96%E9%A1%B5"),
             link("EN Wiki", "https://iopwiki.com/wiki/"),
             link("KR Wiki", "https://gfl.zzzzz.kr/dolls.php?lang=en")
@@ -3961,15 +3961,15 @@ export const cardData = [
     },
     {
         id : '00492',
-        questions : `Are there any event clear guides for this game?`,
-        answers : `${link("Serzha's Youtube", "https://www.youtube.com/@Serzha")}<br>
+        question: `Are there any event clear guides for this game?`,
+        answer: `${link("Serzha's Youtube", "https://www.youtube.com/@Serzha")}<br>
         ${link("Matsuda guide.", "https://gfl.matsuda.tips/blog/")}`,   //https://old.reddit.com/r/girlsfrontline/comments/18b74sm/weekly_commanders_lounge_december_05_2023/kcbkiv9/
         tags : [dTag.MISC]
     },
     {
         id : '00493',
-        questions : `What's the best strategy for Gray Zone?`,
-        answers : `${List.unordered(
+        question: `What's the best strategy for Gray Zone?`,
+        answer: `${List.unordered(
             "Picking the hardest difficulty you can deal.",
             "Beelining to the boss for points per time."
         )}`,
@@ -3977,50 +3977,50 @@ export const cardData = [
     },
     {
         id : '00494',
-        questions : `How do I know if a SPEQ gives additional skills?`,
-        answers : `If the equipment has an "Enhances Skill" as a stat or if it can only be equipped by a Neurally Upgraded doll.`,
+        question: `How do I know if a SPEQ gives additional skills?`,
+        answer: `If the equipment has an "Enhances Skill" as a stat or if it can only be equipped by a Neurally Upgraded doll.`,
         tags : [dTag.EQUIP, dTag.SPEQ, dTag.GZ, dTag.MOD]
     },
     {
         id : '00495',
-        questions : `How do you set L2Ds for adjutants?`,
-        answers : `Does her costume have one? Is she strictly on a single adjutant slot? Is the L2D toggle in settings on? Is the L2D toggle in adjutant postioning on?`,
+        question: `How do you set L2Ds for adjutants?`,
+        answer: `Does her costume have one? Is she strictly on a single adjutant slot? Is the L2D toggle in settings on? Is the L2D toggle in adjutant postioning on?`,
         tags : [dTag.SKIN, dTag.ADJUNCT, dTag.TDOLL]
     },
     {
         id : '00497',
-        questions : `What is corpse dragging?`,
-        answers : `${link("Gamepress guide", "https://gamepress.gg/girlsfrontline/corpse-dragging-how-optimize-leveling")}`,
+        question: `What is corpse dragging?`,
+        answer: `${link("Gamepress guide", "https://gamepress.gg/girlsfrontline/corpse-dragging-how-optimize-leveling")}`,
         tags : [dTag.LEVEL, dTag.IMPT]
     },
     {
         id : '00498',
-        questions : `Do I still need to supply ammo and rations to the echelon with Frugal Mobilization equipped?`,
-        answers : `Yes.`,
+        question: `Do I still need to supply ammo and rations to the echelon with Frugal Mobilization equipped?`,
+        answer: `Yes.`,
         tags : [dTag.BATTLE, dTag.COALITION, dTag.EQUIP]
     },
     {
         id : '00499',
-        questions : `How is the commander evaluation star calculated?`,
-        answers : `${figure(Embed.google(["GFL - Commander Skill Evaluation Calculations", "https://docs.google.com/spreadsheets/d/1HYLAx1NDnXIJqloBL9pD1cvuLLiXBD-8kE3aXwaMol8"]), "by u/UnironicWeeaboo")}`,
+        question: `How is the commander evaluation star calculated?`,
+        answer: `${figure(Embed.google(["GFL - Commander Skill Evaluation Calculations", "https://docs.google.com/spreadsheets/d/1HYLAx1NDnXIJqloBL9pD1cvuLLiXBD-8kE3aXwaMol8"]), "by u/UnironicWeeaboo")}`,
         tags : [dTag.CMDR]
     },
     {
         id : '00500',
-        questions : `Is there a way to inventorize my dolls?`,
-        answers : `${Embed.google(["GFL Armory Manager Advanced", "https://docs.google.com/spreadsheets/d/1X-ZnlXabFQSk6_nTd94pu6Ww3KqWCc1ABt-gTkJy99s"])}`,    //@Owner
+        question: `Is there a way to inventorize my dolls?`,
+        answer: `${Embed.google(["GFL Armory Manager Advanced", "https://docs.google.com/spreadsheets/d/1X-ZnlXabFQSk6_nTd94pu6Ww3KqWCc1ABt-gTkJy99s"])}`,    //@Owner
         tags : [dTag['3P'], dTag.TDOLL]
     },
     {
         id : '00501',
-        questions : `What's the highest commander level?`,
-        answers : `370.`,   // https://old.reddit.com/r/girlsfrontline/comments/18lwouj/weekly_commanders_lounge_december_19_2023/kex2o7k/
+        question: `What's the highest commander level?`,
+        answer: `370.`,   // https://old.reddit.com/r/girlsfrontline/comments/18lwouj/weekly_commanders_lounge_december_19_2023/kex2o7k/
         tags : [dTag.CMDR]
     },
     {
         id : '00502',
-        questions : `Which dolls should I get for the newbie anchored construction?`,
-        answers : `${List.unordered(
+        question: `Which dolls should I get for the newbie anchored construction?`,
+        answer: `${List.unordered(
             "Carcano M19/31 for her disgusting multiplier.",
             "Suomi for her busted Neural Upgrade."  // https://old.reddit.com/r/girlsfrontline/comments/18lwouj/weekly_commanders_lounge_december_19_2023/ke5rt4z/
         )}`,
@@ -4028,8 +4028,8 @@ export const cardData = [
     },
     // {
     //     id : '00000',
-    //     questions : ``,
-    //     answers : ``,
+    //     question: ``,
+    //     answer: ``,
     //     tags : []
     // },
 ];
