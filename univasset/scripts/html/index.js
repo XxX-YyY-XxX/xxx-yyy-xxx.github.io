@@ -40,11 +40,11 @@ export function textStyle(text, ...styles) {
 
 
 
-export class Embed {
-    static google(...namelinkpair) {
+export const Embed = {
+    google(...namelinkpair) {
         const EMBED = "/preview?pli=1";
     
-        const SELECT = document.createElement("select");
+        const SELECT = setattr(document.createElement("select"), {disabled: namelinkpair.length === 1});
         const BUTTON = setattr(document.createElement("button"), {textContent: "Source", type: "button"});
         const IFRAME = setattr(document.createElement("iframe"), {loading: "lazy"});
     
@@ -71,7 +71,7 @@ export class Embed {
             return CLONE.outerHTML;
         }
         return DIV;
-    };
+    }
 }
 
 export const googleDocsCompilation = Embed.google;

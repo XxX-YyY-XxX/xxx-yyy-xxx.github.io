@@ -1,11 +1,16 @@
 @import "./textstyle.css";
 
 /* #region Google Document */
-.embed-google > button {
+div.embed-google > select:disabled {
+    color: initial;
+    opacity: 1;
+}
+
+div.embed-google > button {
     float: right;
 }
 
-.embed-google > iframe {
+div.embed-google > iframe {
     aspect-ratio: 1/1;
     width: 100%;
     border: 0;

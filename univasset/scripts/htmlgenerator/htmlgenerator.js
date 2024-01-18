@@ -281,13 +281,3 @@ export function radioGroup(grouper_elem, radioname, ...buttondata) {
     grouper_elem.classList.add('func_radioGroup');
     grouper_elem.appendChild(fragment);
 }
-
-/** Function for clickable labels unsupported by :has selector.
-*
-* Toggles `checked` class in label.
-*
-* \<label>\<input>\</label>
- * @this {HTMLInputElement} */
-export function checkLabel() {
-    this.parentElement.classList.toggle("checked", this.checked)
-}

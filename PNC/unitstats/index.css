@@ -1,5 +1,5 @@
-@import "/univasset/scripts/externalcss.css";
-@import "../../univasset/scripts/tooltip.css";
+@import "/univasset/scripts/externalcss.css" layer(user);
+@import "/univasset/scripts/tooltip.css";
 
 .func_table {
     height: fit-content;
@@ -15,29 +15,31 @@ tbody > tr > td:first-child, thead > tr > th {
     cursor: pointer;
 }
 
-/* #region Freeze */
-.freeze-row th {
-    background: #1b1b1b !important;
-}
+@layer cell-color {
+    /* #region Freeze */
+    .freeze-row th {
+        background: #1b1b1b /* !important */;
+    }
 
-.freeze-col tr > :first-child {
-    border-right: 1px dashed #b5e853;
-}
-/* #endregion */
+    .freeze-col tr > :first-child {
+        border-right: 1px dashed #b5e853;
+    }
+    /* #endregion */
 
-/* #region Sort */
-.func_table th[data-sort="hi"] {
-    background: linear-gradient(135deg, #1b1b1b, transparent 50%),
-        linear-gradient(-135deg, #1b1b1b, transparent 50%),
-        linear-gradient(blue, gray 50%) !important;
-}
+    /* #region Sort */
+    .func_table th[data-sort="hi"] {
+        background: linear-gradient(135deg, #1b1b1b, transparent 50%),
+            linear-gradient(-135deg, #1b1b1b, transparent 50%),
+            linear-gradient(blue, gray 50%) /* !important */;
+    }
 
-.func_table th[data-sort="lo"] {
-    background: linear-gradient(45deg, #1b1b1b, transparent 50%),
-        linear-gradient(-45deg, #1b1b1b, transparent 50%),
-        linear-gradient(gray 50%, red) !important;
+    .func_table th[data-sort="lo"] {
+        background: linear-gradient(45deg, #1b1b1b, transparent 50%),
+            linear-gradient(-45deg, #1b1b1b, transparent 50%),
+            linear-gradient(gray 50%, red) /* !important */;
+    }
+    /* #endregion */
 }
-/* #endregion */
 
 /* #region Filter */
 tr:not(.hidden):nth-child(even) {

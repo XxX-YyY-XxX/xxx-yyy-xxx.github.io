@@ -90,7 +90,7 @@ details {
 
 details[open] {
     display: block;
-    background-color: #3a3a3a;
+    background-color: #3a3a3a80;
     border-radius: 10px;
     padding: 5px;
 }

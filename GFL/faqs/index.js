@@ -1,7 +1,7 @@
 import {cmp, setattr} from '../../univasset/scripts/basefunctions/index.js';
 import {removeHTMLTag, randInt} from '../../univasset/scripts/externaljavascript.js';
 import {radioGroup} from '../../univasset/scripts/htmlgenerator/htmlgenerator.js';
-import {dTag, cardData} from "./querycards.js";
+import {dTag, cardData} from "./query.js";
 
 //#region Constants
 const TEXT_FIELD = document.querySelector("#search-text");
