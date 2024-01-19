@@ -64,6 +64,8 @@ function default_(include) {
  * @param {number} depth File call depth. Could be used to prevent looping. */
 async function includeDocument(include, file_name, depth = 0) {
     const SOURCE = include.getAttribute("src") ?? "";
+
+    // html file
     const DOCUMENT = await fetch(SOURCE)
         .then(response => response.ok ? response.text() : Promise.reject(`Missing ${SOURCE} in ${file_name}`))
         .then(html => html.replace(/<!--(?!>)[\S\s]*?-->/g, ""))                    //Remove comments
