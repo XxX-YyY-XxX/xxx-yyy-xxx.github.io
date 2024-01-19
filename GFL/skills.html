@@ -2,11 +2,18 @@
 <html>
     <head>
         <script type="module" src="/univasset/scripts/include/index.js"></script>
+        <script>
+            import {Embed} from "/univasset/scripts/html/index.js";
+            document.querySelector("#P90-doc").appendChild(Embed.google(
+                ["In-depth P90 Analysis (By hina#8787)", "https://docs.google.com/document/d/1j5YzAAZ-_Q1bXMUvFKGUWnGgqwacatABv0u-MmY0JLw"]
+            ));
+        </script>
 
         <meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/univasset/scripts/externalcss.css">
+        <link rel="stylesheet" href="/main.css">
+        <link rel="stylesheet" href="/univasset/scripts/html/index.css">
         
         <!-- Setup theme-color -->
 
@@ -28,6 +35,67 @@
 
         <div class="container">
             <section id="main_content">
+                <dl>
+                    <dt>General Liu</dt>
+                    <dd><a href="https://iopwiki.com/wiki/General_Liu#Trivia">Clones can get stat buffs, albeit with restrictions.</a></dd>
+
+                    <dt>C-93</dt>
+                    <dd>Passive can trigger in response to other dolls' self-debuffs.</dd>
+
+                    <dt>Hanyang Type 88</dt>
+                    <dd><a href="https://big-stupid-jellyfish.github.io/GFMath/pages/hanyangle-2">Can still miss on certain positions.</a></dd>
+
+                    <dt>FX05</dt>
+                    <dd><a href="https://old.reddit.com/r/girlsfrontline/comments/vx5s4p/weekly_commanders_lounge_july_12_2022/ig4n5sr/">Does not activate skill on max ROF.</a></dd>
+
+                    <dt>Supernova</dt>
+                    <dd>Additive crit rate.</dd>
+
+                    <dt>K2</dt>
+                    <dd>ROF around 90 to maximize the ICD up to 100 if there's a run-up to auto her skill.</dd>
+
+                    <dt>Sterling</dt>
+                    <dd>M3, PPSh-41 (+MOD), PP-2000, PPS-43, Sten MKII, EVO 3, PP-19 (+MOD), Sterling</dd>
+
+                    <dt>M4 SOPMOD II</dt>
+                    <dd><a href="https://imgur.com/a/7eSGbu6">M4 interaction still borked (by u/UnironicWeeaboo).</a></dd>
+
+                    <dt>Ribeyrolles</dt>
+                    <dd>MOD skill do not count for AS Val's MOD skill, most likely due to buff counting as a "unit".</dd>
+
+                    <dt>LTLX</dt>
+                    <dd>Skill knocks back bosses.</dd>
+
+                    <dt>M4A1</dt>
+                    <dd>Main shot cannot crit. Explosion does.</dd>
+
+                    <dt>KSVK</dt>
+                    <dd>Main shot is normal shot, <a href="https://iopwiki.com/wiki/KSVK">explosion coded as explosion</a>.</dd>
+
+                    <dt>SAA</dt>
+                    <dd>MOD skill can "proc" after the first three.</dd>
+
+                    <dt>Pekola</dt>
+                    <dd><img src="./assets/images/PekolaUse.png" alt="Pekola usage guide." /></dd>
+
+                    <dt>M1897 Mod</dt>
+                    <dd><a href="https://old.reddit.com/r/girlsfrontline/comments/osihvd/weekly_commanders_lounge_july_27_2021/h72czw7/">Flechette Storm!</a></dd>
+
+                    <dt>P90</dt>
+                    <dd id="P90-doc"></dd>
+
+                    <dt>Galil Mod</dt>
+                    <dd><a href="https://old.reddit.com/r/girlsfrontline/comments/qpyw46/weekly_commanders_lounge_november_09_2021/hkj3ce0/">Reddit discussion.</a></dd>
+
+                    <dt>NTW MOD</dt>
+                    <dd>Second skill kicks in as long as the kill check is satisfied.</dd>
+
+                    <dt>Px4</dt>
+                    <dd>Buffs crit damage of surecrits and 100% crit is still 100% crit.</dd>
+
+                    <dt>PPK Mod</dt>
+                    <dd><a href="https://old.reddit.com/r/girlsfrontline/comments/v1l5po/weekly_commanders_lounge_may_31_2022/ib1eu2w/">Reddit breakdown.</a></dd>
+                </dl>
             </section>
         </div>
     </body>

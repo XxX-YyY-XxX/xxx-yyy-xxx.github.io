@@ -28,5 +28,5 @@ export const Embed = {
 type HTMLFigureElement = HTMLElement;
 
 export function image(link: string, alt: string, keys?: {inline?: boolean}): HTMLImageElement;
-
 export function figure(content: HTMLElement, caption: string): HTMLFigureElement;
+export function details(summary: string, content: HTMLElement): HTMLDetailsElement;

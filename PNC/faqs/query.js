@@ -176,7 +176,7 @@ window.cards = [
         answer: `${figure(image(
             "https://media.discordapp.net/attachments/648373344600850434/1183221959643889684/image.png?ex=65878c52&is=65751752&hm=0bdf4e93564225c0dab105e618eab2f4e348b2f8902042da82d3e5b460f442a5&=&format=webp&quality=lossless",
             "Designated Neural Acquisition suggestion guide."
-        ), "By u/Whole-Arm4526")}`,
+        ), "Discord: .selector, by u/Whole-Arm4526")}`,
         tags: [dtag.DOLL]
     },
     {
@@ -210,7 +210,8 @@ window.cards = [
         question: `What things do I need to do to strengthen my dolls?`,
         answer: `${List.unordered(
             "Potential Breakthrough up to Lv. 60 (Lv. 70 optional).",
-            `Neural Upgrade to 5${SC.STAR}.`,
+            `Neural Expansion to 5${SC.STAR} (pure supports to 3.5 at minimum).`,
+            "Skill levels at 10/10/5.",
             "Algorithm Efficiency at 2x.",
             "Algorithms with matching sets, useful mainstats, and at least one useful substat.",
             "Arma Inscripta (stopping point dependent on the doll in question)."
@@ -237,6 +238,7 @@ window.cards = [
 //character event guide
 //l2d upgrade for bp has time limit
 //unit skill ui breakdown
+//apparently one month minimum for returner rewards
 
 // https://old.reddit.com/r/GFLNeuralCloud/comments/18l63g8/weekly_professors_lounge_december_18_2023/kepo2px/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/18l63g8/weekly_professors_lounge_december_18_2023/kerq0qj/
