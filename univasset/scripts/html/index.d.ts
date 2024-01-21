@@ -1,4 +1,5 @@
 //#region Aliases
+/** @deprecated */
 export const googleDocsCompilation = Embed.google;
 //#endregion
 
@@ -21,7 +22,7 @@ export function textStyle(text: string, ...styles: "over"): HTMLSpanElement;
 export const Embed = {
     /** Creates a field for Google Sheets.
      * @param namelinkpair link ends in alphanumeric */
-    google(...namelinkpair: [[title: string], [link: string]][]): HTMLDivElement;
+    google(...namelinkpair: [title: string, link: string][]): HTMLDivElement;
 }
 
 /** Placehoder while no official implementation exists.  */

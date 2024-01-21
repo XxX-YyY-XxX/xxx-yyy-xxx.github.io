@@ -104,7 +104,12 @@ export function details(summary, content) {
 
 
 
-
+/**
+ * 
+ * @param {(string | Node)[]} text 
+ * @param {string} link 
+ * @returns 
+ */
 function anchor(text, link, {target = ""} = {}) {
     const A = document.createElement("a")
     A.href = link

@@ -201,7 +201,7 @@ window.cards = [
         id: 20,
         question: `Which units are good and how should I build them?`,
         answer: `${Embed.google(
-            ["L.U.S.T. 2", "https://docs.google.com/spreadsheets/d/1FMK713okcJNQuCv625Ut0TZuQbm9RlHk7l1yOUF9Qdw"],
+            ["L.U.S.T. 2", "https://docs.google.com/spreadsheets/d/1FMK713okcJNQuCv625Ut0TZuQbm9RlHk7l1yOUF9Qdw"]
         )}`,
         tags: [dtag.DOLL, dtag.TIER]
     },
