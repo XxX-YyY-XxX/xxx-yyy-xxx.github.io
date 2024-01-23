@@ -67,7 +67,7 @@
 	/* #region Table */
 	table {
 		width: 100%;
-		margin: 0 0 20px 0;
+		margin: 0;
 	}
 
 	tr:nth-child(even) {
@@ -77,92 +77,6 @@
 }
 
 @layer special {
-	.highlight {
-		color: #d0d0d0;
-	}
-
-	.highlight table td {
-		padding: 5px;
-	}
-
-	.highlight table pre {
-		margin: 0;
-	}
-
-	.highlight .w {
-		color: #d0d0d0;
-	}
-
-	.highlight .err {
-		color: #151515;
-		background-color: #ac4142;
-	}
-
-	.highlight :is(.c, .cd, .cm, .c1, .cs) {
-		color: #888;
-	}
-
-	.highlight .cp {
-		color: #f4bf75;
-	}
-
-	.highlight :is(.o, .ow) {
-		color: #f4bf75;
-	}
-
-	.highlight :is(.p, .pi) {
-		color: #d0d0d0;
-	}
-
-	.highlight .gi {
-		color: #90a959;
-	}
-
-	.highlight .gd {
-		color: #ac4142;
-	}
-
-	.highlight .gh {
-		color: #6a9fb5;
-		font-weight: bold;
-	}
-
-	.highlight :is(.k, .kn, .kp, .kr, .kv) {
-		color: #aa759f;
-	}
-
-	.highlight :is(.kc, .kt, .kd) {
-		color: #d28445;
-	}
-
-	.highlight :is(.s, .sb, .sc, .sd, .s2, .sh, .sx, .s1 ) {
-		color: #90a959;
-	}
-
-	.highlight .sr {
-		color: #75b5aa;
-	}
-
-	.highlight :is(.si, .se) {
-		color: #8f5536;
-	}
-
-	.highlight :is(.nt, .nn, .nc, .no) {
-		color: #f4bf75;
-	}
-
-	.highlight .na {
-		color: #6a9fb5;
-	}
-
-	.highlight :is(.m, .mf, .mh, .mi, .il, .mo, .mb, .mx) {
-		color: #90a959;
-	}
-
-	.highlight .ss {
-		color: #90a959;
-	}
-		
 	.container {
 		width: 90%;
 		max-width: 1000px;
@@ -273,5 +187,91 @@
 		left: 50%;
 		position: relative;
 		transform: translateX(-50%);
+	}
+}
+
+.highlight {
+	color: #d0d0d0;
+
+	& table td {
+		padding: 5px;
+	}
+
+	& table pre {
+		margin: 0;
+	}
+
+	& .w {
+		color: #d0d0d0;
+	}
+
+	& .err {
+		color: #151515;
+		background-color: #ac4142;
+	}
+
+	& :is(.c, .cd, .cm, .c1, .cs) {
+		color: #888;
+	}
+
+	& .cp {
+		color: #f4bf75;
+	}
+
+	& :is(.o, .ow) {
+		color: #f4bf75;
+	}
+
+	& :is(.p, .pi) {
+		color: #d0d0d0;
+	}
+
+	& .gi {
+		color: #90a959;
+	}
+
+	& .gd {
+		color: #ac4142;
+	}
+
+	& .gh {
+		color: #6a9fb5;
+		font-weight: bold;
+	}
+
+	& :is(.k, .kn, .kp, .kr, .kv) {
+		color: #aa759f;
+	}
+
+	& :is(.kc, .kt, .kd) {
+		color: #d28445;
+	}
+
+	& :is(.s, .sb, .sc, .sd, .s2, .sh, .sx, .s1 ) {
+		color: #90a959;
+	}
+
+	& .sr {
+		color: #75b5aa;
+	}
+
+	& :is(.si, .se) {
+		color: #8f5536;
+	}
+
+	& :is(.nt, .nn, .nc, .no) {
+		color: #f4bf75;
+	}
+
+	& .na {
+		color: #6a9fb5;
+	}
+
+	& :is(.m, .mf, .mh, .mi, .il, .mo, .mb, .mx) {
+		color: #90a959;
+	}
+
+	& .ss {
+		color: #90a959;
 	}
 }

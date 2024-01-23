@@ -2048,6 +2048,37 @@
         "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
         "tags": ["Unowned"]
     },
+    {
+        "id": 1070,
+        "name": "Luna",
+        "class": "Specialist",
+        "reference": {"K5" : "https://iopwiki.com/wiki/K5", "": "LoL Brand"},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
+        "base": {
+            "hp": 14368,
+            "atk": 443,
+            "hash": 646,
+            "pdef": 242,
+            "odef": 242,
+            "aspd": 100,
+            "crate": 3,
+            "ppen": 383,
+            "open": 490,
+            "dodge": 10,
+            "regen": 433
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": [],
+        "tags": ["Unowned", "Unreleased"]
+    },
     
     {
         "name" : "Dupin (X)",
@@ -2068,11 +2099,6 @@
         "reference" : {"" : ""},
         "fragments" : [""],
         "event" : "",
-        "tags": ["Unreleased"]
-    },
-    {
-        "name" : "Luna",
-        "reference" : {"K5" : "", "LoL Brand": ""},
         "tags": ["Unreleased"]
     },
     {

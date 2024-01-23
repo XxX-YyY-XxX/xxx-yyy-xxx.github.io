@@ -12,7 +12,7 @@ timer(
     "./assets/images/timer/8fawb6hfle8c1.webp",
     {onEnd: timer.bind(
         null, document.getElementById("battlepass"),
-        "",
+        "Mar 04, 2024 23:59 UTC-0800",
         "./assets/images/timer/.webp"
     )}
 );
@@ -39,11 +39,11 @@ timer(
     )}
 );
 
-// timer(
-//    document.getElementById('mini-event'),
-//    "",
-//    ""
-// );
+timer(
+   document.getElementById('mini-event'),
+   "Feb 12, 2024 23:59 UTC-0800",
+   "./assets/images/timer/pjuc8kn82xcc1.webp"
+);
 
 //timer(document.getElementById('extra'), "",
 //    "");
