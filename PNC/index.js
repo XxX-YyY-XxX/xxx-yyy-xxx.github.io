@@ -35,6 +35,20 @@ function timer(start_date, end_date, title, imgpath) {
 
 function resetTimer() {
     timer(
+        "Feb 03, 2024 05:00 UTC-0800",
+        "Feb 26, 2024 05:00 UTC-0800",
+        "Springtime Ruckus",
+        "./assets/images/timer/cpt00_e_cg024.png"
+    )
+
+    timer(
+        "Jan 30, 2024 18:30 UTC-0800",
+        "Feb 20, 2024 18:30 UTC-0800",
+        "Moonseeking Resurgence",
+        "./assets/images/timer/cpt00_e_cg039.png"
+    )
+
+    timer(
         "Jan 17, 2024 05:00 UTC-0800",
         "Jan 31, 2024 05:00 UTC-0800",
         "Aberrance's Chain",

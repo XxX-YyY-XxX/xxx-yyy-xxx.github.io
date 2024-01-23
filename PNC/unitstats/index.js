@@ -236,6 +236,7 @@ class Units {
         const TD_NAME = document.createElement("td");
         TD_NAME.addEventListener("click", () => this.#algofield.show());
         if (this.#hasarma) {
+            // change alt to arma name?
             const IMAGE = setattr(document.createElement("img"), {loading: "lazy", alt: `${this.name} arma.`, src: `../assets/images/arma/${this.name.replace(" ", "")}.png`});
             const SPAN = setattr(document.createElement("span"), {append: [this.name, IMAGE], classList: {add: ["arma"]}});
             TD_NAME.appendChild(SPAN);
@@ -310,6 +311,13 @@ class Units {
         
         for (const BUTT of Object.values(BUTTON)) BUTT.addEventListener("change", this.updateStat);
 
+        if (stat_object.tags.includes("Incomplete"))
+            console.warn(
+                this.name, "has incomplete data:",
+                this.#intistats.length !== 3? "Intimacy" : "",
+                stat_object.tags.includes("Arma") && this.#armahp === -1 ? "Arma" : ""
+            )
+
         // const UNIT_ROW = this.row;
         // CLASS_BUTTONS[this.class].addEventListener("change", function(event) {
         //     UNIT_ROW.classList.toggle("hidden", !this.checked);
@@ -344,7 +352,6 @@ function sortMethod(event) {
     }
     updateTable();
     // TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));
-
 }
 //#endregion
 

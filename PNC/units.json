@@ -772,7 +772,7 @@
             "open": 32
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Risk Evasion Aid"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
         "id": 1035,
@@ -2077,7 +2077,7 @@
             "open": -1
         },
         "intimacy": [],
-        "tags": ["Unowned", "Unreleased"]
+        "tags": ["Unowned", "Unreleased", "Arma", "Incomplete"]
     },
     
     {
