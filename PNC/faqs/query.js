@@ -1,5 +1,5 @@
-import {spoilerSummary, table, link, tooltip} from '../../univasset/scripts/htmlfunctions/htmlfunctions.js';
-import {Embed, textStyle, image, figure} from "../../univasset/scripts/html/index.js";
+import {table, link, tooltip} from '../../univasset/scripts/htmlfunctions/htmlfunctions.js';
+import {Embed, textStyle, image, figure, details} from "../../univasset/scripts/html/index.js";
 import List from '../../univasset/scripts/htmlfunctions/lists.js';
 import * as SC from '../../univasset/scripts/specialchars.js';
 

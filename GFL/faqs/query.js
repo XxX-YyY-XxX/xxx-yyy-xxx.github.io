@@ -224,7 +224,7 @@ window.cards = [
         ${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/rng_backstabbing')}<br>
         ${link('Gamepress Guide Part 1.', 'https://gamepress.gg/girlsfrontline/theater-8-overhaul-guide-new-mechanics-new-enemies-same-pain')} The latest theater version.<br>
         ${link('Gamepress Guide Part 2.', 'https://gamepress.gg/girlsfrontline/theater-8-combat-guide')}<br>
-        ${spoilerSummary('Theater for dummies.', img('https://cdn.discordapp.com/attachments/372235987520323596/881427651070410792/theaterguide.png'))}<br>
+        ${spoilerSummary('Theater for dummies.', image('https://cdn.discordapp.com/attachments/372235987520323596/881427651070410792/theaterguide.png', "Simple theater guide."))}<br>
         TLDR is 5-6 Defense Drills in a row, twice per day, with differing battle effects. Do scouting bets where you pick one zone. Dump points on construction for easier battles.<br>
         Echelon formations are now 1 team + backups.<br>
         Between 4:00-5:00AM UTC-8, a ceasefire occurs to tally the scores.`,

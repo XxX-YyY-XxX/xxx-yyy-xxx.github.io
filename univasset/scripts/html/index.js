@@ -2,9 +2,17 @@ import {setattr} from "../basefunctions/index.js";
 
 /** @this {HTMLElement} */
 function htmlString() {
-    return this.outerHTML;
-    // return this.outerHTML.replace(this.innerHTML, [...this.childNodes].map(x => x.toString()).join(""));
+    var output = this.outerHTML;
+
+    for (const ELEMENT of this.children) {
+        if (ELEMENT.toString().startsWith("[")) continue;
+        output = output.replace(ELEMENT.outerHTML, ELEMENT.toString())
+    }
+
+    return output;
 }
+
+
 
 
 
@@ -80,7 +88,7 @@ export const Embed = {
 export const googleDocsCompilation = Embed.google;
 
 export function image(link, alt, {inline = false} = {}) {
-    const IMG = setattr(document.createElement("img"), {src: link, alt: alt, loading: "lazy", toString: function() {return this.outerHTML}});
+    const IMG = setattr(document.createElement("img"), {src: link, alt: alt, loading: "lazy", toString: htmlString});
 
     if (inline)
         IMG.classList.add("inline-img");
@@ -90,20 +98,8 @@ export function image(link, alt, {inline = false} = {}) {
 
 export function figure(content, caption) {
     const FIGCAPTION = setattr(document.createElement("figcaption"), {textContent: caption});
-    const FIGURE = setattr(document.createElement("figure"), {append: [content, FIGCAPTION]});
-
-    FIGURE.toString = function() {
-        var output = this.outerHTML;
-
-        for (const NODE of this.children) {
-            if (NODE.toString().startsWith("[")) continue;
-            output = output.replace(NODE.outerHTML, NODE.toString())
-        }
-
-        return output;
-    }
-
-    return FIGURE;
+    const FIGURE = setattr(document.createElement("figure"), {toString: htmlString});
+    return setattr(FIGURE, {append: [content, FIGCAPTION]});
 }
 
 export function details(summary, content) {
