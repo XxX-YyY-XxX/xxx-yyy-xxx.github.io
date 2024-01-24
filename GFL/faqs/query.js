@@ -629,8 +629,8 @@ window.cards = [
     },  //If there's two simultaneous logins, who gets kicked the first or the second?
     {
         id: '00037',
-        question: `Where to go for tech support?`,
-        answer: `FB and Twitter is said to be responsive enough. Or you can use ${link('this', 'https://forms.gle/bZNnQeh5sJaD3pim8')} for reporting.`,
+        question: `Where to go for tech support/bug report?`,
+        answer: `Aside from the in-game CS, FB and Twitter is said to be responsive enough. Or you can use ${link('this', 'https://forms.gle/bZNnQeh5sJaD3pim8')} for reporting.`,
         tags: [dtag.TECH, dtag["3P"]]
     },
     {
@@ -1289,6 +1289,7 @@ window.cards = [
         id: '00120',
         question: `Is the package in the shop worth it?`,
         answer: `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/energy-packages')}<br>
+        ${link("u/headphone_question's top-up gem math.", "https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/idoig4j/")}
         For the 7 day new account package: Day 4 to jumpstart skill leveling (saves around 80 days of datasims on a normal day), Day 5 is the most efficient oath package so far, and Day 7 is a really good value for tokens.`,
         tags: [dtag.ITEM, dtag.OATH, dtag.GEMS, dtag.SHOP, dtag.NEWB]
     },
@@ -3572,11 +3573,12 @@ window.cards = [
             link("u/Le_Trudos' Android 12 fix", "https://www.reddit.com/r/girlsfrontline/comments/tsmwen/possible_solution_to_android_12_updates_making/"),
             link("Droidwin Android 12 fix", "https://droidwin.com/games-and-apps-crashing-not-working-on-android-12-how-to-fix/"),
             link("u/tommykuah's Android 12 fix", "https://www.reddit.com/r/girlsfrontline/comments/tdsmjh/regarding_android_12_app_crashfreeze_issue_and/i0mjpop/"),
-            "Downgrading Android 12/14 to Android 11.", //https://old.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1y59kl/
-            "Switch battery usage to unrestricted." // https://old.reddit.com/r/girlsfrontline/comments/18ggxcs/weekly_commanders_lounge_december_12_2023/kdz3dxq/
+            link("u/Gawdzilla27's Android 14 fix", "https://old.reddit.com/r/girlsfrontline/comments/18wk6dz/weekly_commanders_lounge_january_02_2024/kgi8p2j/"),
+            "Downgrading Android 12/14 to Android 11/13.", //https://old.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1y59kl/
+            "Switch battery usage to unrestricted.", // https://old.reddit.com/r/girlsfrontline/comments/18ggxcs/weekly_commanders_lounge_december_12_2023/kdz3dxq/
         )}`,
         tags: [dtag.TECH, dtag.ANDROID]
-    },  // What if Android 13/14?
+    },  // What if Android 13/14? https://old.reddit.com/r/girlsfrontline/comments/18r36mw/weekly_commanders_lounge_december_26_2023/kf0884y/
     {
         id: '00451',
         question: `When a major event gets added to campaign mode, do I still need to do it again from the start?`,
@@ -3994,11 +3996,18 @@ window.cards = [
         id: '00502',
         question: `Which dolls should I get for the newbie anchored construction?`,
         answer: `${List.unordered(
-            "Carcano M19/31 for her disgusting multiplier.",
+            "Carcano M91/38 for her disgusting multiplier.",
             "Suomi for her busted Neural Upgrade."  // https://old.reddit.com/r/girlsfrontline/comments/18lwouj/weekly_commanders_lounge_december_19_2023/ke5rt4z/
         )}`,
         tags: [dtag.PROD, dtag.TDOLL, dtag.NEWB]
     },
+    {
+        id: '00265',
+        question: `What's the best comp for ASVAL MOD?`,
+        answer: `For starters, Python for constant damage buff, Nagant Revolver MOD or Fervor Talent for 0th second damage buff, STAR for night self-buff crit, UMP45 for tiles, and whoever else.<br>
+        ${figure(Embed.google(["As Val Mod Skill Coverage", "https://docs.google.com/spreadsheets/d/1N6nSGRSXCWSM_x8tipzg80E327VDIlFLgC1dVrwvLXk"]), "AS-VAL MOD skill uptime")}`,  //@Owner
+        tags: [dtag.TDOLL, dtag.ECH]
+    },  // https://www.gflanalysis.com/w/images/thumb/1/1d/Uptime.jpg/1788px-Uptime.jpg
     // {
     //     id: '00000',
     //     question: ``,
@@ -4019,8 +4028,7 @@ window.cards = [
 //     console.log("Duplicate:", Array.from(DUPLICATES));
 // })()
 
-// https://old.reddit.com/r/girlsfrontline/comments/18r36mw/weekly_commanders_lounge_december_26_2023/
-// https://old.reddit.com/r/girlsfrontline/comments/18wk6dz/weekly_commanders_lounge_january_02_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/
 // https://old.reddit.com/r/girlsfrontline/comments/uc7eet/weekly_commanders_lounge_april_26_2022/i6mqo74/
 // https://old.reddit.com/r/girlsfrontline/comments/1929lxq/weekly_commanders_lounge_january_09_2024/
+// https://old.reddit.com/r/girlsfrontline/comments/197xngt/weekly_commanders_lounge_january_16_2024/

@@ -1,7 +1,10 @@
 import {setattr} from "../basefunctions/index.js";
 
 /** @this {HTMLElement} */
-function htmlString() {return this.outerHTML}
+function htmlString() {
+    // return this.outerHTML
+    return this.outerHTML.replace(this.innerHTML, [...this.childNodes].map(x => x.toString()).join(""));
+}
 
 
 

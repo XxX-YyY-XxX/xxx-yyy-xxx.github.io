@@ -8,9 +8,6 @@
 # [Theater](/GFL/theater)
 - Theater guides, battles, and formations.
 
-# [Tactical Dolls](/GFL/tdolls)*
-- Doll analysis, acquisition, builds and loadouts, and affections.
-
 # [Commander Wardrobe](/GFL/wardrobe)*
 - Costume skills, availability, and gender change.
 
@@ -89,8 +86,6 @@
 > - [Dorm notes.](https://old.reddit.com/r/girlsfrontline/comments/v6pt9o/weekly_commanders_lounge_june_07_2022/ibyvjnm/)
 
 >EarSpeaker
->
-> - [Top up gem month.](https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/idoig4j/)
 >
 > - [Google Pay.](https://old.reddit.com/r/girlsfrontline/comments/15f5xi4/weekly_commanders_lounge_august_01_2023/juk1l3n/)
 
