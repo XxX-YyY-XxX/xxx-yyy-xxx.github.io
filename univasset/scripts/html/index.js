@@ -88,8 +88,8 @@ export function image(link, alt, {inline = false} = {}) {
     return IMG;
 }
 
-export function figure(content, caption) {  // doesnt call children's toString
-    const FIGURE = setattr(document.createElement("figure"), {toString: htmlString});
+export function figure(content, caption) {
+    const FIGURE = setattr(document.createElement("figure"), {toString: function() {return this.outerHTML.replace(this.innerHTML, [...this.childNodes].map(x => x.toString()).join(""))}});
     const FIGCAPTION = setattr(document.createElement("figcaption"), {textContent: caption});
     return setattr(FIGURE, {append: [content, FIGCAPTION]});
 }

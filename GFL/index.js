@@ -13,7 +13,7 @@ timer(
     {onEnd: timer.bind(
         null, document.getElementById("battlepass"),
         "Mar 04, 2024 23:59 UTC-0800",
-        "./assets/images/timer/.webp"
+        "./assets/images/timer/vbkwzn9f4bec1.webp"
     )}
 );
 
