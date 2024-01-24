@@ -80,7 +80,7 @@ export const Embed = {
 export const googleDocsCompilation = Embed.google;
 
 export function image(link, alt, {inline = false} = {}) {
-    const IMG = setattr(document.createElement("img"), {src: link, alt: alt, loading: "lazy", toString: htmlString});
+    const IMG = setattr(document.createElement("img"), {src: link, alt: alt, loading: "lazy", toString: function() {return this.outerHTML}});
 
     if (inline)
         IMG.classList.add("inline-img");
@@ -89,9 +89,21 @@ export function image(link, alt, {inline = false} = {}) {
 }
 
 export function figure(content, caption) {
-    const FIGURE = setattr(document.createElement("figure"), {toString: function() {return this.outerHTML.replace(this.innerHTML, [...this.childNodes].map(x => x.toString()).join(""))}});
     const FIGCAPTION = setattr(document.createElement("figcaption"), {textContent: caption});
-    return setattr(FIGURE, {append: [content, FIGCAPTION]});
+    const FIGURE = setattr(document.createElement("figure"), {append: [content, FIGCAPTION]});
+
+    FIGURE.toString = function() {
+        var output = this.outerHTML;
+
+        for (const NODE of this.children) {
+            if (NODE.toString().startsWith("[")) continue;
+            output = output.replace(NODE.outerHTML, NODE.toString())
+        }
+
+        return output;
+    }
+
+    return FIGURE;
 }
 
 export function details(summary, content) {
