@@ -2,8 +2,8 @@ import {setattr} from "../basefunctions/index.js";
 
 /** @this {HTMLElement} */
 function htmlString() {
-    // return this.outerHTML
-    return this.outerHTML.replace(this.innerHTML, [...this.childNodes].map(x => x.toString()).join(""));
+    return this.outerHTML;
+    // return this.outerHTML.replace(this.innerHTML, [...this.childNodes].map(x => x.toString()).join(""));
 }
 
 
@@ -88,10 +88,10 @@ export function image(link, alt, {inline = false} = {}) {
     return IMG;
 }
 
-export function figure(content, caption) {
+export function figure(content, caption) {  // doesnt call children's toString
     const FIGURE = setattr(document.createElement("figure"), {toString: htmlString});
-    FIGURE.append(content, setattr(document.createElement("figcaption"), {textContent: caption}));
-    return FIGURE;
+    const FIGCAPTION = setattr(document.createElement("figcaption"), {textContent: caption});
+    return setattr(FIGURE, {append: [content, FIGCAPTION]});
 }
 
 export function details(summary, content) {

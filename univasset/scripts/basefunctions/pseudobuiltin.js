@@ -163,6 +163,6 @@ export function cmp(...sort_params) {
 }
 //#endregion
 
-function classtype(params) {
-    // return class name
+function classtype(instance) {
+    return instance.prototype.name;
 }
