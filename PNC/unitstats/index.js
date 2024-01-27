@@ -3,6 +3,7 @@ import {zip, cmp, setattr} from "../../univasset/scripts/basefunctions/index.js"
 import {Async} from "../../univasset/scripts/externaljavascript.js";
 import {AlgoField} from "./algorithms.js";
 import {STAT_KEYS} from "./typing.js";
+import {image} from '../../univasset/scripts/html/index.js';
 
 /** @type {Promise<UnitObject[]>} */ const UNIT_PROMISE = Async.getJSON("../units.json");
 
@@ -32,6 +33,7 @@ class Units {
 
     #hp; #armahp;
     get [STAT_KEYS.HEALTH]() {
+        // var perc = 0, flat = 0;
         var output = this.#hp;
         if (BUTTON.POTB.checked) output += this.#hp * 0.61;
         if (BUTTON.ARMA.checked && this.#hasarma) output += this.#armahp;
@@ -200,6 +202,7 @@ class Units {
 
     row;
     updateStat;
+    alert = () => {};
 
     /** @param {UnitObject} stat_object */
     constructor(stat_object) {
@@ -237,7 +240,7 @@ class Units {
         TD_NAME.addEventListener("click", () => this.#algofield.show());
         if (this.#hasarma) {
             // change alt to arma name?
-            const IMAGE = setattr(document.createElement("img"), {loading: "lazy", alt: `${this.name} arma.`, src: `../assets/images/arma/${this.name.replace(" ", "")}.png`});
+            const IMAGE = image(`../assets/images/arma/${this.name.replace(" ", "")}.png`, `${this.name} arma.`);
             const SPAN = setattr(document.createElement("span"), {append: [this.name, IMAGE], classList: {add: ["arma"]}});
             TD_NAME.appendChild(SPAN);
         } else {
@@ -312,11 +315,7 @@ class Units {
         for (const BUTT of Object.values(BUTTON)) BUTT.addEventListener("change", this.updateStat);
 
         if (stat_object.tags.includes("Incomplete"))
-            console.warn(
-                this.name, "has incomplete data:",
-                this.#intistats.length !== 3? "Intimacy" : "",
-                stat_object.tags.includes("Arma") && this.#armahp === -1 ? "Arma" : ""
-            )
+            this.alert = () => alert(`${this.name} has incomplete data: ${this.#intistats.length !== 3 ? "Intimacy" : ""} ${this.#hasarma && this.#armahp === -1 ? "Arma" : ""}`)
 
         // const UNIT_ROW = this.row;
         // CLASS_BUTTONS[this.class].addEventListener("change", function(event) {
@@ -373,3 +372,5 @@ for (const [NAME, KEY, TYPE] of zip(HEADER_VALUES, ["name", ...Object.values(STA
 }
 
 setattr(document.querySelector("#table"), {classList: {add: ["func_table"]}, appendChild: [TABLE]});
+
+for (const UNIT of UNIT_LIST) UNIT.alert();

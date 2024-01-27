@@ -6,30 +6,32 @@ export function iter(iterable) {
 export function type(any) {
     // var tempvar;
     const TYPE = typeof any;
-    if (TYPE === "object") {
-        if (any === null)
-            return "null";      
-        else if (Array.isArray(any))
-            return "array";
-        else if (Symbol.iterator in any)
-            return "iterable";
-        // else if (any instanceof Set)
-        //     return "set";
-        // else if (any instanceof HTMLElement || any instanceof DocumentFragment)
-        //     return "dom";
-        // else if (typeof (tempvar = any.constructor.name) === "string" && tempvar)  // Custom Classes
-        //     return tempvar;
-        // else if (typeof (tempvar = any[Symbol.toStringTag]) === "string")   // Class Display Name
-        //     return tempvar;
-        else
-            return "object";
-    } else if (TYPE === "function") {
-        if (Function.prototype.toString.call(any).startsWith("class"))
-            return "class";
-        else
-            return "function";
-    } else
-        return TYPE;
+    switch (TYPE) {
+        case "object":
+            if (any === null)
+                return "null";      
+            else if (Array.isArray(any))
+                return "array";
+            else if (Symbol.iterator in any)
+                return "iterable";
+            // else if (any instanceof Set)
+            //     return "set";
+            // else if (any instanceof HTMLElement || any instanceof DocumentFragment)
+            //     return "dom";
+            // else if (typeof (tempvar = any.constructor.name) === "string" && tempvar)  // Custom Classes
+            //     return tempvar;
+            // else if (typeof (tempvar = any[Symbol.toStringTag]) === "string")   // Class Display Name
+            //     return tempvar;
+            else
+                return "object";
+        case "function":
+            if (Function.prototype.toString.call(any).startsWith("class"))
+                return "class";
+            else
+                return "function";
+        default:
+            return TYPE;
+    }
 }
 
 export function subclassof(subclass, superclass) {
@@ -132,32 +134,28 @@ const METHOD = {
         }
         //sort by values
         return 0;
-    }
+    },
 };
 
+// error handling for unknown type
 export function cmp(...sort_params) {
     var method;
 
     if (sort_params.length) {
-        for (const KEYOBJ of sort_params) {
-            KEYOBJ.key ??= x => x;
-            KEYOBJ.reverse ??= false;
-        }
-
         return function(a, b) {
-            method ??= sort_params.map(({key}) => key(a)).map(type);
-            for (const [{key, reverse}, M] of zip(sort_params, method)) {
+            method ??= sort_params.map(({key}) => key(a)).map(type).map(x => METHOD[x]);
+            for (const [{key, reverse = false}, func] of zip(sort_params, method)) {
                 [a, b] = [key(a), key(b)];
                 if (reverse) [a, b] = [b, a];
-                const OUTPUT = METHOD[M](a, b);
+                const OUTPUT = func(a, b);
                 if (OUTPUT) return OUTPUT;
             }
             return 0;
         }
     } else {
         return function(a, b) {
-            method ??= type(a);
-            return METHOD[method](a, b);
+            method ??= METHOD[type(a)];
+            return method(a, b);
         }
     }
 }

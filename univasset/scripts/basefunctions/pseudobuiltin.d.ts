@@ -20,6 +20,7 @@ export function chain<T>(...iterables: Iterable<T>[]): Generator<T, void, unknow
 
 export function enumerate<T>(iterable: Iterable<T>): Generator<[number, T], void, unknown>;
 
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /** parameters[] for function calls.
  * 
@@ -34,9 +35,11 @@ export function zip<T0, T1>(iterable0: Iterable<T0>, iterable1: Iterable<T1>, ex
 /** Iterates items per index in groups. */
 export function zip<T0, T1, T2>(iterable0: Iterable<T0>, iterable1: Iterable<T1>, iterable2: Iterable<T2>, extend?: boolean): Generator<[T0, T1, T2], void, unknown>;
 
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /** Creates a sorter key from the given parameters. */
 export function cmp<T>(...sort_params: {
+    /** Value used for comparison. */
     key: (item: T) => any;
-    reverse: boolean;
+    reverse?: boolean;
 }[]): (item0: T, item1: T) => number;
