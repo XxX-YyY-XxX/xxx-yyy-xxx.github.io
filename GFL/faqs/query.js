@@ -1339,7 +1339,7 @@ const CARDS = [
     {
         id: '00126',
         question: `If I delete my unused speqs, will I be able to recover them?`,
-        answer: `As of 2.09, dismantled/disassembled SPEQs can now be ${spoilerSummary('recovered/retrieved', img(IMG_ASSET+"SPEQRecover.png", 'From u/UnironicWeeaboo'))}. Collab SPEQs can be found under the Limited tab.`,
+        answer: `As of 2.09, dismantled/disassembled SPEQs can now be ${spoilerSummary('recovered/retrieved', figure(image(IMG_ASSET+"SPEQRecover.png", "SPEQ recovery button."), 'From u/UnironicWeeaboo'))}. Collab SPEQs can be found under the Limited tab.`,
         tags: [dtag.EQUIP, dtag.SPEQ, dtag.COLLAB]
     },
     {
@@ -1409,7 +1409,7 @@ const CARDS = [
     {
         id: '00135',
         question: `I can't deploy a friend echelon. What do I do?`,
-        answer: `${img(IMG_ASSET+"InitialDeploySupports.png")}<br>
+        answer: `${image(IMG_ASSET+"InitialDeploySupports.png", "Support Echelon warning window.")}<br>
         Either after operation start, a client restart, or a no due to limit.`,
         tags: [dtag.FRIEND, dtag.ECH, dtag.TECH]
     },
@@ -2003,7 +2003,7 @@ const CARDS = [
         id: '00216',
         question: `Do HP shields stack?`,
         answer: `TLDR: Yes.<br>
-        ${img(IMG_ASSET+"HPShield.png", 'From u/UnironicWeeaboo')}`,
+        ${figure(image(IMG_ASSET+"HPShield.png", "Aqua's HP Shield dissertation."), 'From u/UnironicWeeaboo')}`,
         tags: [dtag.BATTLE, dtag.SKILL]
     },  //@Trim Image
     {

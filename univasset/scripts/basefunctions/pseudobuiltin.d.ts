@@ -41,6 +41,6 @@ export function zip<T0, T1, T2>(iterable0: Iterable<T0>, iterable1: Iterable<T1>
 export function cmp<T>(...sort_params: {
     /** Value used for comparison. */
     key: (item: T) => any;
-    /** Sort order reversed. Default false. */
+    /** Reverses sort order. Default false. */
     reverse?: boolean;
 }[]): (item0: T, item1: T) => number;

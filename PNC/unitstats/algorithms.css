@@ -158,7 +158,7 @@ dialog {
 }
 /* #endregion */
 
-/* #region Algo Select */
+/* Algo Select */
 #algo-select > form {
     display: flex;
     flex-wrap: wrap;
@@ -166,17 +166,43 @@ dialog {
     gap: 5px;
 }
 
+/* #region Algoritm Selection */
 #algo-select button {
     --blank: #00000000;
     --good: #ffcd49;
     --bad: #8acdf3;
     padding: 0;
+
+    display: inline-grid;
+    grid-template-areas: 
+        "name   stat    count"
+        "image  effect  effect";
+    grid-template-columns: 100px 120px 20px;    /* what if screen smaller than width */
+    grid-template-rows: auto 100px;
+}
+
+#algo-select button > [data-grid="name"] {
+    grid-area: name;
+}
+
+#algo-select button > [data-grid="set2"] {
+    grid-area: stat;
+}
+
+#algo-select button > [data-grid="count"] {
+    grid-area: count;
 }
 
 #algo-select button > img {
-    width: 100px;
+    grid-area: image;
 }
 
+#algo-select button > [data-grid="set3"] {
+    grid-area: effect;
+}
+/* #endregion */
+
+/* #region Set Threshold */
 #algo-select button > div.algo-left-good {
     background-image: -webkit-linear-gradient(left, var(--good), var(--blank));
 }
@@ -211,5 +237,22 @@ dialog {
     background-image: revert;
 }
 /* #endregion */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* --gray-algo: #494b4a; */

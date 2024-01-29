@@ -68,11 +68,12 @@ export function* enumerate(iterable) {
 export function setattr(base, attributes) {
     for (const [ATTR, VALUE] of Object.entries(attributes)) {
         switch (type(VALUE)) {
-            // case "string":
-            // case "number":
-            // case "boolean":
-            //     base[attrib] = value;
-            //     break;
+            case "string":
+            case "number":
+            case "boolean":
+            case "function":
+                base[ATTR] = VALUE;
+                break;
             case "array":
                 base[ATTR](...VALUE);
                 break;
@@ -80,10 +81,9 @@ export function setattr(base, attributes) {
                 setattr(base[ATTR], VALUE);
                 break;
             default:
+                console.warn(`Unknown data type of ${ATTR}: ${type(VALUE)}`);
                 base[ATTR] = VALUE;
                 break;
-            // console.warn(`Unknown data type of ${attrib}: ${type(value)}`);
-            //     break;
         }
     }
     return base;
