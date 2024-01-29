@@ -172,8 +172,12 @@ function algoPath(algoname) {
 
     // /** @type {HTMLTemplateElement} */ static algo_button_template = document.querySelector("#algo-select-button");
     static createSelectButton() {
+        // const CLONE = this.algo_button_template.content.cloneNode(true);
+
+        // const OUTPUT = setattr(CLONE.querySelector("button"), {value: this.name});
         const OUTPUT = setattr(document.createElement("button"), {type: "submit", value: this.name});
 
+        // const NAME = setattr(document.createElement("div"), {textContent: this.name, dataset: {grid: "name"}});
         const NAME = setattr(document.createElement("div"), {textContent: this.name, dataset: {grid: "name"}});
         OUTPUT.appendChild(NAME);
 
