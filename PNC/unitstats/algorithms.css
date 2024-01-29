@@ -13,7 +13,7 @@ dialog {
 }
 
 #algo-modal select {
-    max-width: 100%;
+    width: 100%;
 }
 
 /* #region Algorithm Grid */
@@ -175,10 +175,10 @@ dialog {
 
     display: inline-grid;
     grid-template-areas: 
-        "name   stat    count"
-        "image  effect  effect";
-    grid-template-columns: 100px 120px 20px;    /* what if screen smaller than width */
-    grid-template-rows: 20px 100px;
+        "name   stat"
+        "image  effect";
+    grid-template-columns: 100px 120px;    /* what if screen smaller than width */
+    grid-template-rows: 1lh 100px;
 }
 
 #algo-select button > [data-grid="name"] {
@@ -189,9 +189,9 @@ dialog {
     grid-area: stat;
 }
 
-#algo-select button > [data-grid="count"] {
+/* #algo-select button > [data-grid="count"] {
     grid-area: count;
-}
+} */
 
 #algo-select button > img {
     grid-area: image;
@@ -200,6 +200,8 @@ dialog {
 
 #algo-select button > [data-grid="set3"] {
     grid-area: effect;
+    height: 100%;
+    overflow-y: auto;
 }
 /* #endregion */
 

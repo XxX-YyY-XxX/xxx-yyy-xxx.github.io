@@ -209,14 +209,14 @@ function algoPath(algoname) {
         }
         OUTPUT.appendChild(SET2);
 
-        //fix later
-        const COUNT = setattr(document.createElement("div"), {textContent: "??", dataset: {grid: "count"}});
-        OUTPUT.appendChild(COUNT);
+        // not exact
+        // const COUNT = setattr(document.createElement("div"), {textContent: "Used: " + ALGO_SAVE.algoCount(this.name), dataset: {grid: "count"}});
+        // OUTPUT.appendChild(COUNT);
 
         const IMG = setattr(document.createElement("img"), {src: algoPath(subclassof(this, SingleBlock) ? "SingleBlock" : this.name), alt: this.name});
         OUTPUT.appendChild(IMG);
 
-        const SET3 = setattr(document.createElement("div"), {textContent: this.SET3 ?? "No Set Skill.", dataset: {grid: "set3"}});
+        const SET3 = setattr(document.createElement("div"), {textContent: this.SET3 ?? "No Set Skill", dataset: {grid: "set3"}});
         OUTPUT.appendChild(SET3);
     
         return OUTPUT;
@@ -575,6 +575,11 @@ const ALGO_SAVE = new (class {
     /** @param {string} name */
     del(name) {
         delete this.#DATA[name];
+    }
+
+    /** @param {string} algoname */
+    algoCount(algoname) {
+        return Object.values(this.#DATA).filter(x => x).flat().map(x => x[0]).count(algoname);
     }
 })();
 
