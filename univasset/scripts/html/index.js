@@ -37,10 +37,9 @@ export function textStyle(text, ...styles) {
     const SPAN = document.createElement("span");
     SPAN.textContent = text;
     SPAN.classList.add(...styles.map(x => "text-" + TEXTSTYLE_CLASSES[x]));
-    SPAN.toString = function() {return this.outerHTML};
+    SPAN.toString = htmlString;
     return SPAN;
 }
-
 
 
 
@@ -87,11 +86,14 @@ export const Embed = {
 
 export const googleDocsCompilation = Embed.google;
 
-export function image(link, alt, {inline = false} = {}) {
+export function image(link, alt, {type = null} = {}) {
     const IMG = setattr(document.createElement("img"), {src: link, alt: alt, loading: "lazy", toString: htmlString});
 
-    if (inline)
-        IMG.classList.add("inline-img");
+    switch (type) {
+        case "inline":
+            IMG.classList.add("inline-img");
+            break;
+    }
 
     return IMG;
 }

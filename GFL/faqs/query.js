@@ -92,7 +92,7 @@ export const dtag = {
 };
 window.tags = dtag;
 
-window.cards = [
+const CARDS = [
     //#region Topic Primers
     {
         id: '00000',
@@ -325,7 +325,7 @@ window.cards = [
         id: '00016',
         question: `Who should I prioritize to MOD first?`,
         answer: `${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/neural-upgrade-priority-guide')}<br>
-        ${spoilerSummary('CN MOD list.', img(IMG_ASSET+"CNMODTier.png"))}`,
+        ${spoilerSummary('CN MOD list.', image(IMG_ASSET+"CNMODTier.png", "Chinese Neural Upgrade Tierlist."))}`,
         tags: [dtag.MOD, dtag.TIER]
     },
     {
@@ -347,7 +347,7 @@ window.cards = [
     {
         id: '00018',
         question: `Anyone have a nice infographic for equipment priority and recommended/ideal number/amount of equipments?`,
-        answer: `${img('https://cdn.discordapp.com/attachments/951085201658871820/1063837601351610389/eq_prior_notheater.png', 'Discord: $eqpriority')}`,
+        answer: `${figure(image('https://cdn.discordapp.com/attachments/951085201658871820/1063837601351610389/eq_prior_notheater.png', "Equipment quantity recommendations."), 'Discord: $eqpriority')}`,
         tags: [dtag.EQUIP, dtag.TDOLL, dtag.TIER]
     },
     {
@@ -1950,7 +1950,7 @@ window.cards = [
     {
         id: '00208',
         question: `I don't know how to change the AI behaviour of my support/friend echelon, anyone can help me?`,
-        answer: `${img(IMG_ASSET+"FriendEchelonCommand.png", 'Double-tap the Friend Echelon to show options')}`,
+        answer: `${figure(image(IMG_ASSET+"FriendEchelonCommand.png", "Support echelon commands."), 'Double-tap the Friend Echelon to show options')}`,
         tags: [dtag.FRIEND, dtag.ECH, dtag.MAP]
     },
     {
@@ -3127,7 +3127,7 @@ window.cards = [
     {
         id: '00390',
         question: `What happens to the Resupply Exchange Tickets after the banner ends? How do I get Black Cards?`,
-        answer: `${img(IMG_ASSET+"ResupplyMechanics.png")}`,
+        answer: `${image(IMG_ASSET+"ResupplyMechanics.png", "Resupply help window.")}`,
         tags: [dtag.RESUPPLY, dtag.ITEM, dtag.GET]
     },
     {
@@ -3225,7 +3225,7 @@ window.cards = [
     {
         id: '00403',
         question: `Anyone knows what resources and how much do we get for a failed PA capture?`,
-        answer: `${img(IMG_ASSET+"CaptureFail.png", 'Slashes are because probability')}`,
+        answer: `${figure(image(IMG_ASSET+"CaptureFail.png", "Failed PA capture compensations."), 'Slashes for probability')}`,
         tags: [dtag.ITEM, dtag.PA]
     },
     {
@@ -3517,7 +3517,7 @@ window.cards = [
     {
         id: '00445',
         question: `What do I do with unused Keycards during the bingo event?`,
-        answer: `${img("../assets/images/query/KeyCardRules.png", "Rule #7: 1 Key Card = 5 Calibration Tickets")}`,
+        answer: `${figure(image(IMG_ASSET+"KeyCardRules.png", "Keycard bingo rules."), "Rule #7: 1 Key Card = 5 Calibration Tickets")}`,
         tags: [dtag.MINI]
     },
     {
@@ -3859,7 +3859,7 @@ window.cards = [
         id: '00151',
         question: `Is there a limit to using Friend Echelons?`,
         answer: `20.<br>
-        ${img("https://i.imgur.com/7VHlmlN.png", "Counter for supports used, courtesy of BSJ")}<br>
+        ${img("https://i.imgur.com/7VHlmlN.png", "Counter for supports used, courtesy of u/BigStupidJellyfish_")}<br>
         The counter rises whenever you deploy a support echelon, win or lose, griffin or friend.`,
         tags: [dtag.FRIEND, dtag.ECH]
     },
@@ -4015,6 +4015,9 @@ window.cards = [
     //     tags: []
     // },
 ];
+
+for (const CARD of CARDS) CARD.id = Number(CARD.id)
+window.cards = CARDS
 
 // (function() {
 //     const INDICES = Object.keys(cardData).map(Number);

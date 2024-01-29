@@ -28,6 +28,7 @@ export const Embed = {
 /** Placehoder while no official implementation exists.  */
 type HTMLFigureElement = HTMLElement;
 
-export function image(link: string, alt: string, keys?: {inline?: boolean}): HTMLImageElement;
+type ImageType = "inline";
+export function image(link: string, alt: string, keys?: {type?: ImageType}): HTMLImageElement;
 export function figure(content: HTMLElement, caption: string): HTMLFigureElement;
 export function details(summary: string, content: HTMLElement): HTMLDetailsElement;
