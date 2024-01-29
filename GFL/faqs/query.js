@@ -277,12 +277,14 @@ const CARDS = [
         id: '00013',
         question: `What is Luffberry Chess?`,
         answer: `GFL version of 100% Orange Juice, I guess?<br>
-        And it's called "chess" only because boardgame.<br>
-        ${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/springfields-cafe-haven-soothe-weary-souls-and-luffberry-chess")}
-        ${link("u/fortis_99's tips.", 'https://redd.it/rz4uye')}<br>
-        ${spoilerSummary("u/StarBase10's doc guide.", Embed.google(
-            ["The Skill Issue Guide to Luffberry Chess", "https://docs.google.com/document/d/1BHZ36zTKdQ9gd81a-RAHEzbs9OEgJraSRp5LQv8CB_A"]
-        ))}`,
+        And it's called "chess" only because boardgame.
+        ${List.unordered(
+            link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/springfields-cafe-haven-soothe-weary-souls-and-luffberry-chess"),
+            link("u/fortis_99's tips.", 'https://redd.it/rz4uye'),
+            spoilerSummary("u/StarBase10's doc guide.", Embed.google(
+                ["The Skill Issue Guide to Luffberry Chess", "https://docs.google.com/document/d/1BHZ36zTKdQ9gd81a-RAHEzbs9OEgJraSRp5LQv8CB_A"]
+            ))
+        )}`,
         tags: [dtag.OJ, dtag.PRIME]
     },
     //#endregion

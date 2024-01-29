@@ -178,7 +178,7 @@ dialog {
         "name   stat    count"
         "image  effect  effect";
     grid-template-columns: 100px 120px 20px;    /* what if screen smaller than width */
-    grid-template-rows: auto 100px;
+    grid-template-rows: 20px 100px;
 }
 
 #algo-select button > [data-grid="name"] {
@@ -195,6 +195,7 @@ dialog {
 
 #algo-select button > img {
     grid-area: image;
+    width: 100%;
 }
 
 #algo-select button > [data-grid="set3"] {

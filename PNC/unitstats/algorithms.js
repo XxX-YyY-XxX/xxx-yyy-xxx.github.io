@@ -216,7 +216,7 @@ function algoPath(algoname) {
         const IMG = setattr(document.createElement("img"), {src: algoPath(subclassof(this, SingleBlock) ? "SingleBlock" : this.name), alt: this.name});
         OUTPUT.appendChild(IMG);
 
-        const SET3 = setattr(document.createElement("div"), {textContent: this.SET3 ?? "No Set Skill.", dataset: {grid: "count"}});
+        const SET3 = setattr(document.createElement("div"), {textContent: this.SET3 ?? "No Set Skill.", dataset: {grid: "set3"}});
         OUTPUT.appendChild(SET3);
     
         return OUTPUT;
