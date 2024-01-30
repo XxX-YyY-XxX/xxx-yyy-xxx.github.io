@@ -6,6 +6,7 @@
     height: fit-content;
     max-height: 95lvh;
     overflow: scroll;
+    overscroll-behavior: contain;
 }
 
 table {

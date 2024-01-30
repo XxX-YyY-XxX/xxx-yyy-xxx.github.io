@@ -2399,7 +2399,7 @@ const CARDS = [
     {
         id: '00274',
         question: `I'm planning to use a max level oathed MOD doll to farm surplus exp. Is that a good idea?`,
-        answer: `${img("https://cdn.discordapp.com/attachments/410790982116966400/970892903247384576/Surplus-and-fairy-exp-oath-no-oath.gif", "From u/UnironicWeeaboo")}`,
+        answer: `${figure(image("https://cdn.discordapp.com/attachments/410790982116966400/970892903247384576/Surplus-and-fairy-exp-oath-no-oath.gif", "Effect of oathed MODs on surplus and fairy EXP."), "From u/UnironicWeeaboo")}`,
         tags: [dtag.TDOLL, dtag.LEVEL, dtag.MOD, dtag.OATH]
     },
     {
