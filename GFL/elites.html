@@ -5,7 +5,7 @@
         <script type="module">
             import {Async} from '/univasset/scripts/externaljavascript.js';
             import {table} from '/univasset/scripts/htmlgenerator/htmlgenerator.js';
-            import {zip, range} from '/univasset/scripts/basefunctions/index.js';
+            import {zip, range, enumerate} from '/univasset/scripts/basefunctions/index.js';
 
             const jsonObject = Async.getJSON('https://raw.githubusercontent.com/randomqwerty/GFLData/main/en/stc/enemy_character_type.json');
             const matrix = [['No', 'Elites', 'Non-Elites']];

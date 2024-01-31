@@ -47,19 +47,5 @@ function resetTimer() {
         "Moonseeking Resurgence",
         "./assets/images/timer/cpt00_e_cg039.png"
     )
-
-    timer(
-        "Jan 17, 2024 05:00 UTC-0800",
-        "Jan 31, 2024 05:00 UTC-0800",
-        "Aberrance's Chain",
-        "./assets/images/timer/21win_e_cg003.png"
-    )
-
-    timer(
-        "Jan 09, 2024 18:30 UTC-0800",
-        "Jan 30, 2024 18:30 UTC-0800",
-        "Oneiric Odyssey",
-        "./assets/images/timer/cpt00_e_cg036_4.png"
-    )
 };
 resetTimer();

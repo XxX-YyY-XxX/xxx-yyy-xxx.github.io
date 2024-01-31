@@ -2077,7 +2077,7 @@
             "open": -1
         },
         "intimacy": [],
-        "tags": ["Unowned", "Unreleased", "Arma", "Incomplete"]
+        "tags": ["Unowned", "Arma", "Incomplete"]
     },
     
     {
@@ -2144,6 +2144,16 @@
     {
         "name" : "Mayuri",
         "reference" : {"sg" : ""},
+        "tags": ["Unreleased"]
+    },
+    {
+        "name" : "Tony",
+        "reference" : {"" : ""},
+        "tags": ["Unreleased"]
+    },
+    {
+        "name" : "Centaureissi - Unbound Wings",
+        "reference" : {"" : ""},
         "tags": ["Unreleased"]
     }
 ]
