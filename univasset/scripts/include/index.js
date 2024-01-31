@@ -113,21 +113,15 @@ async function includeDocument(include, file_name, depth = 0) {
         // }
 
         if (INCLUDE.hasAttribute("src") || INCLUDE.hasAttribute("param-src")) {
-            console.log(INCLUDE.outerHTML)
-            //untested
             for (const {name, value} of INCLUDE.attributes) {
-                console.log(name, value)
                 const QUALIFIED = name.match(/param-(\w+)/);
-                console.log(QUALIFIED)
-                if (QUALIFIED) {
+                if (QUALIFIED !== null) {
                     const VALUE = PARAM.get(value);
-                    console.log(VALUE)
-                    if (VALUE !== undefined)    INCLUDE.setAttribute(QUALIFIED[0], VALUE);
+                    if (VALUE !== undefined)    INCLUDE.setAttribute(QUALIFIED[1], VALUE);
                     else                        console.warn("Parameter", value, "called by", name, "not found");
                     INCLUDE.removeAttribute(name);
                 }
             }
-            console.log(INCLUDE.outerHTML)
             
             //what if looping to itself/alternate looping/pass looping
             // file relativity
