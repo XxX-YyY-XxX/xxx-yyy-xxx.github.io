@@ -236,9 +236,9 @@ window.cards = [
 //upgrading to l2d
 //algorithm guide - lizzy?
 //character event guide
-//l2d upgrade for bp has time limit
+//l2d upgrade for bp limited to bp availability
 //unit skill ui breakdown
-//apparently one month minimum for returner rewards
+//apparently one month minimum for returner rewards (30 days? 31?)
 
 // https://old.reddit.com/r/GFLNeuralCloud/comments/18l63g8/weekly_professors_lounge_december_18_2023/kepo2px/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/18l63g8/weekly_professors_lounge_december_18_2023/kerq0qj/
@@ -246,3 +246,4 @@ window.cards = [
 // https://old.reddit.com/r/GFLNeuralCloud/comments/191ipmg/weekly_professors_lounge_january_08_2024/khmz92o/
 
 // https://old.reddit.com/r/GFLNeuralCloud/comments/19765rz/weekly_professors_lounge_january_15_2024/
+// https://old.reddit.com/r/GFLNeuralCloud/comments/19ct4yt/weekly_professors_lounge_january_22_2024/
