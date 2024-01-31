@@ -6,10 +6,6 @@
     attr-???: change first child element's ??? attribute value to parameter value, must have a child element
         <include attr-href="s"><a></a></include> or <include attr-href="s"><a href="sample"></a></include>
         => <a href="34"></a>
-
-    param-???: change own qualifiedName to ???, current value is parent parameter, change value to value of parameter
-        <include src="" param-z="a"></include>
-        => <include src="" z="12"></include>
     
     if: execute if parameter is present
         <include if="a" key="s"></include>
@@ -84,6 +80,7 @@ async function includeDocument(include, file_name, depth = 0) {
 
         const KEY = INCLUDE.getAttribute("key");
         if (KEY !== null) {
+            // multiple keys, left to right, next key if current key is unavailable
             const VALUE = PARAM.get(KEY);
             if (VALUE !== undefined)    load(INCLUDE, VALUE);
             else                        default_(INCLUDE);
@@ -124,7 +121,7 @@ async function includeDocument(include, file_name, depth = 0) {
                 }
             }
             
-            //what if looping to itself/alternate looping/pass looping
+            //what if looping to itself/alternate looping/circular looping
             // file relativity
             await includeDocument(INCLUDE, SOURCE, depth + 1);
             continue;

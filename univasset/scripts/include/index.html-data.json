@@ -22,7 +22,8 @@
                 "description": "Parent parameter whose value will replace this element. Defaults if parameter not found.\n\nParent: `<include src='' s='34'></include>`\n\nChild: `<include key='s'></include>`\n\nOutput: `34`"
             },
             {
-                "name": "param-"
+                "name": "param-",
+                "description": "Use extension as qualifiedName. Change value from parent parameter to its equivalent value.\n\nParent: `<include src='' a='12'></include>`\n\nChild: `<include src='' param-z='a'></include>`\n\nOutput: `<include src=' z='12'></include>`"
             }
         ]
     }],
