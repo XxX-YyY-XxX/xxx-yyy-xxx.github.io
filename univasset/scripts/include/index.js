@@ -29,6 +29,7 @@
 
 // #region Setup
 // ChildNode.replaceWith() does not work with open tags.
+// Element.setAttribute() cannot use numbers as qualifiedName.
 
 const REPLACE_EVENT = new Event("replace");
 /** @param {HTMLElement} include @param {boolean} success */
@@ -117,7 +118,7 @@ async function includeDocument(include, file_name, depth = 0) {
                 const QUALIFIED = name.match(/param-(\w+)/);
                 if (QUALIFIED !== null) {
                     const VALUE = PARAM.get(value);
-                    if (VALUE !== undefined)    INCLUDE.setAttribute(QUALIFIED[1], VALUE);
+                    if (VALUE !== undefined)    INCLUDE.setAttribute(String(QUALIFIED[1]), VALUE);  //test String
                     else                        console.warn("Parameter", value, "called by", name, "not found");
                     INCLUDE.removeAttribute(name);
                 }
