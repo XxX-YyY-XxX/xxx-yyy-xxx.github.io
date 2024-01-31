@@ -1,0 +1,42 @@
+<!-- 
+    subheader: page subheader/description
+ -->
+
+<include src="/univasset/scripts/pageheader/header.html" param-0="subheader"></include>
+
+<div class="container">
+    <section id="main_content">
+        <div class="tab-button">
+            <label><input type="radio" name="tabs" value="Keywords" checked /><h2>Keywords</h2></label>
+            <label><input type="radio" name="tabs" value="Tags" /><h2>Tags</h2></label>
+            <label><input type="radio" name="tabs" value="Browse" /><h2>Browse</h2></label>
+        </div>
+        
+        <div id="Keywords" class="tab-body">
+            <form>
+                <input type="text" placeholder="Separate keywords with whitespace" name="search">
+                <input type="submit">
+            </form>
+        </div>
+        
+        <div id="Tags" class="tab-body">
+            <form>
+                <div></div>
+                <input type="text" name="tags">
+                <input type="submit">
+            </form>
+        </div>
+        
+        <div id="Browse" class="tab-body">
+            <button type="button" value="first">First</button>
+            <button type="button" value="previous">Prev</button>
+            <span id="page-no">0</span>/<span id="maxpage"></span>
+            <button type="button" value="next">Next</button>
+            <button type="button" value="last">Last</button>
+        </div>
+        
+        <div id="cards-field"></div>
+    </section>
+</div>
+
+<!-- <include src="/univasset/scripts/faqs/index.html" onreplace="queryFunc(tags, cards)"></include> -->

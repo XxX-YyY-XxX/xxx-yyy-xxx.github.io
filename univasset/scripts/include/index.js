@@ -112,23 +112,24 @@ async function includeDocument(include, file_name, depth = 0) {
         //     INCLUDE.replaceWith(CHILD);
         // }
 
-        //untested
-        // for (const INCLUDE of Array.from(INCLUDE_DOC.querySelectorAll("include"))) {
-        //     for (const {name, value} of Array.from(INCLUDE.attributes)) {
-        //         if (name.startsWith("param-")) {
-        //             const VALUE = PARAM.get(value);
-        //             if (VALUE !== undefined)    INCLUDE.setAttribute(name.replace("param-", ""), VALUE);
-        //             else                        console.warn("Parameter", value, "called by", name, "not found");
-        //             INCLUDE.removeAttribute(name);
-        //         }
-        //     }
-        // }
-        
-        //untested
-        //what if looping to itself/alternate looping/pass looping
-        // for (const INCLUDE of Array.from(INCLUDE_DOC.querySelectorAll("include[src]")))
-        //     await includeDocument(INCLUDE, SOURCE, depth + 1);
-
+        if (INCLUDE.hasAttribute("src") || INCLUDE.hasAttribute("param-src")) {
+            //untested
+            for (const {name, value} of INCLUDE.attributes) {
+                const QUALIFIED = name.match(/param-(\w+)/);
+                if (QUALIFIED) {
+                    const VALUE = PARAM.get(value);
+                    if (VALUE !== undefined)    INCLUDE.setAttribute(QUALIFIED[0], VALUE);
+                    else                        console.warn("Parameter", value, "called by", name, "not found");
+                    INCLUDE.removeAttribute(name);
+                }
+            }
+            
+            //untested
+            //what if looping to itself/alternate looping/pass looping
+            // file relativity
+            await includeDocument(INCLUDE, SOURCE, depth + 1);
+            continue;
+        }
     }
 
     //untested
