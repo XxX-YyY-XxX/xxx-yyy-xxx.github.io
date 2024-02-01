@@ -103,6 +103,10 @@
 		background-color: rgba(85, 107, 47, 0.25);
 	}
 	/* #endregion */
+
+	include {
+		display: none;
+	}
 }
 
 @layer classes {
