@@ -175,9 +175,9 @@ dialog {
 
     display: inline-grid;
     grid-template-areas: 
-        "name   stat"
-        "image  effect";
-    grid-template-columns: 100px 120px;    /* what if screen smaller than width */
+        "name   stat    count"
+        "image  effect  effect";
+    grid-template-columns: 100px 120px 40px;
     grid-template-rows: 1lh 100px;
 }
 
@@ -196,9 +196,9 @@ dialog {
     grid-area: stat;
 }
 
-/* #algo-select button > [data-grid="count"] {
+#algo-select button > [data-grid="count"] {
     grid-area: count;
-} */
+}
 
 #algo-select button > img {
     grid-area: image;

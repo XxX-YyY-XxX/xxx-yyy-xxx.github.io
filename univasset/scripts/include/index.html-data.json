@@ -1,5 +1,5 @@
 {
-    "version": 1.1,
+    "version": 1.2,
     "$schema": "https://raw.githubusercontent.com/microsoft/vscode-html-languageservice/master/docs/customData.schema.json",
     "tags": [{
         "name": "include",
@@ -23,7 +23,7 @@
             },
             {
                 "name": "param-",
-                "description": "Use extension as qualifiedName. Change value from parent parameter to its equivalent value.\n\nParent: `<include src='' a='12'></include>`\n\nChild: `<include src='' param-z='a'></include>`\n\nOutput: `<include src=' z='12'></include>`"
+                "description": "Use extension as qualifiedName. Change value from parent parameter to its equivalent value. Removes self if parameter not found.\n\nParent: `<include src='' a='12'></include>`\n\nChild: `<include src='' param-z='a'></include>`\n\nOutput: `<include src=' z='12'></include>`"
             }
         ]
     }],

@@ -213,9 +213,9 @@ function algoPath(algoname) {
         }
         OUTPUT.appendChild(SET2);
 
-        // not exact
-        // const COUNT = setattr(document.createElement("div"), {textContent: "Used: " + ALGO_SAVE.algoCount(this.name), dataset: {grid: "count"}});
-        // OUTPUT.appendChild(COUNT);
+        const [DOUBLE, TRIPLE] = ALGO_SAVE.algoCount(this.name);
+        const COUNT = setattr(document.createElement("div"), {textContent: `${DOUBLE}/${TRIPLE}`, dataset: {grid: "count"}});
+        OUTPUT.appendChild(COUNT);
 
         const IMG = setattr(document.createElement("img"), {src: algoPath(subclassof(this, SingleBlock) ? "SingleBlock" : this.name), alt: this.name});
         OUTPUT.appendChild(IMG);
@@ -559,7 +559,7 @@ const ALGO_SAVE = new (class {
     /** @type {"algorithms"} */
     #KEY = "algorithms";
     
-    /** @type {{[UnitName: string]: [AlgoInfo[], AlgoInfo[], AlgoInfo[]]?}} */
+    /** @type {{[UnitName: string]: [AlgoInfo[], AlgoInfo[], AlgoInfo[]]}} */
     #DATA = JSON.parse(localStorage.getItem(this.#KEY) ?? "{}");
 
     constructor() {
@@ -581,9 +581,18 @@ const ALGO_SAVE = new (class {
         delete this.#DATA[name];
     }
 
-    /** @param {string} algoname */
+    /** @param {string} algoname @returns 2set, 3set */
     algoCount(algoname) {
-        return Object.values(this.#DATA).filter(x => x).flat().map(x => x[0]).count(algoname);
+        const UNIT = AlgoField.current.name;
+        /** @type {[number, number]} */ const OUTPUT = [0, 0];
+        /** @type {string[][]} */ const INFOS = Object.entries(this.#DATA).filter(([name,]) => name !== UNIT).map(([, algos]) => algos.flat().map(([set,,,]) => set));
+        for (const UNIT_INFO of INFOS) {
+            switch (UNIT_INFO.count(algoname)) {
+                case 2: OUTPUT[0]++; break;
+                case 3: OUTPUT[1]++; break;
+            }
+        }
+        return OUTPUT;
     }
 })();
 
