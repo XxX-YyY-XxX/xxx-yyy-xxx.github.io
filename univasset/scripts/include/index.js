@@ -25,7 +25,6 @@
 
 // #region Setup
 // ChildNode.replaceWith() does not work with open tags.
-// Element.setAttribute() cannot use numbers as qualifiedName.
 
 const REPLACE_EVENT = new Event("replace");
 /** @param {HTMLElement} include @param {boolean} success */
@@ -62,7 +61,7 @@ function default_(include) {
 async function includeDocument(include, file_name, depth = 0) {
     const SOURCE = include.getAttribute("src") ?? "";
 
-    // html file
+    // if (SOURCE.endsWith(".html"))
     const DOCUMENT = await fetch(SOURCE)
         .then(response => response.ok ? response.text() : Promise.reject(`Missing ${SOURCE} in ${file_name}`))
         .then(html => html.replace(/<!--(?!>)[\S\s]*?-->/g, ""))                    //Remove comments
@@ -80,10 +79,15 @@ async function includeDocument(include, file_name, depth = 0) {
 
         const KEY = INCLUDE.getAttribute("key");
         if (KEY !== null) {
-            // multiple keys, left to right, next key if current key is unavailable
-            const VALUE = PARAM.get(KEY);
-            if (VALUE !== undefined)    load(INCLUDE, VALUE);
-            else                        default_(INCLUDE);
+            keyblock: {
+                for (const NAME of KEY.split(" ")) {
+                    const VALUE = PARAM.get(NAME);
+                    if (VALUE === undefined) continue;
+                    load(INCLUDE, VALUE);
+                    break keyblock;
+                }
+                default_(INCLUDE);    
+            }
             continue;
         }
 
@@ -115,8 +119,13 @@ async function includeDocument(include, file_name, depth = 0) {
                 const QUALIFIED = name.match(/param-(\w+)/);
                 if (QUALIFIED !== null) {
                     const VALUE = PARAM.get(value);
-                    if (VALUE !== undefined)    INCLUDE.setAttribute(QUALIFIED[1], VALUE);
-                    else                        console.warn("Parameter", value, "called by", name, "not found");
+                    if (VALUE !== undefined) {
+                        // Element.setAttribute() cannot use numbers as qualifiedName.
+                        try {INCLUDE.setAttribute(QUALIFIED[1], VALUE)}
+                        catch (e) {
+                            console.warn(e)
+                        }
+                    } else console.warn("Parameter", value, "not found");
                     INCLUDE.removeAttribute(name);
                 }
             }
@@ -126,10 +135,10 @@ async function includeDocument(include, file_name, depth = 0) {
             await includeDocument(INCLUDE, SOURCE, depth + 1);
             continue;
         }
-    }
 
-    //untested
-    // for (const {outerHTML} of INCLUDE_DOC.querySelectorAll("include")) console.warn("Unparsed include element found:", outerHTML, "from", SOURCE);
+        //untested
+        // console.warn("Unparsed include element found:", INCLUDE.outerHTML, "from", SOURCE);
+    }
     
     // console.log(file_name)
     load(include, ...DOCUMENT.body.childNodes);

@@ -191,7 +191,7 @@ const CARDS = [
         tags: [dtag.HOC, dtag.PRIME]
     },  //Privated - rsFyXRDAi6I
     {
-        id: '00420',
+        id: 420,
         question: `There's an event going on. What should I do?`,
         answer: `${List.description({
             "Seasonal Events": [
@@ -200,7 +200,7 @@ const CARDS = [
                 "Farming maps are either separate nodes/chapters, or updated story maps."
             ],
             "Major Events": [
-                "Farm maps to get 60 crates/supply boxes daily.",
+                "Farm maps to get crates/supply boxes limited to 60 daily.",
                 "Finish the event. Skip the story if you have to.",
                 "Normal is for new commanders or lazies. Hard/EX is for mid-game players who wants a challenge. Nightmare/UX is for late-gamers."
             ],
@@ -324,12 +324,11 @@ const CARDS = [
         tags: [dtag.PA, dtag.COALITION, dtag.TIER]
     },
     {
-        id: '00016',
+        id: 16,
         question: `Who should I prioritize to MOD first?`,
-        answer: `${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/neural-upgrade-priority-guide')}<br>
-        ${spoilerSummary('CN MOD list.', image(IMG_ASSET+"CNMODTier.png", "Chinese Neural Upgrade Tierlist."))}`,
+        answer: `${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/neural-upgrade-priority-guide')}`,
         tags: [dtag.MOD, dtag.TIER]
-    },
+    },  //${spoilerSummary('CN MOD list.', image(IMG_ASSET+"CNMODTier.png", "Chinese Neural Upgrade Tierlist."))}
     {
         id: '00017',
         question: `Is there a tier list for fairies and equipment?`,
@@ -376,7 +375,7 @@ const CARDS = [
         tags: [dtag.TDOLL, dtag.REF]
     },  //Wait for additional repo.
     {
-        id: '00023',
+        id: 23,
         question: `Where can I read/rewatch the MOD, costume, event stories, and all that?`,
         answer: `${List.description({
             'Compilations' : [
@@ -398,6 +397,7 @@ const CARDS = [
             'Main Story' : [
                 link("u/RhythmLunatic's GFL Cutscene Interpreter (including collabs)", 'https://gfl.amaryllisworks.pw/'),
                 link("Shoul's Story Scenes Playlists", 'https://www.youtube.com/channel/UC_JmwXOfYqOKpGGtc5gcVmw'),
+                link("XtraNinja's GFL events playlists", "https://www.youtube.com/@XtraNinja/playlists"),
                 link("Girls' Frontline Full Story Comprehension Playlist Translated up to Isomer", 'https://youtube.com/playlist?list=PL9y52Flm1yM-tJJoom2zfrWTpaO1mTw8M'),
                 link("u/DoctuhD's Girls' Frontline Summary", 'https://docs.google.com/document/d/1oA07O2HGwvmoBqm-UKTTuSdxjLnSIbRHd5b2FuYOph0'),
                 spoilerSummary("u/Signal_Abroad1427's Hurricane Rescue video", MBD.youtube("oH1st5OxdyY")),
@@ -855,7 +855,7 @@ const CARDS = [
         answer: `${link('Matsuda notes.', 'https://gfl.matsuda.tips/post/worthwhiledupes')}<br>
         ${link("Gamepress suggestions for dolls and coalition units.", "https://gamepress.gg/girlsfrontline/duping-recommendations-and-coalition-mooks")}<br>
         ${spoilerSummary('Discord recommendations.', img('https://cdn.discordapp.com/attachments/640157367056728133/1048531902065287188/dupe_gameing_pt3.png'))}`,
-        tags: [dtag.TDOLL]
+        tags: [dtag.TDOLL, dtag.COALITION]
     },  //Jesse, Varz, etc.
     {
         id: '00068',
@@ -867,10 +867,10 @@ const CARDS = [
         id: '00069',
         question: `What's the drop rate for farmable dolls?`,
         answer: `Limited dolls on Combat Missions aproximately have 0.8% drop rate on normal and 1% on emergency, with 5${STAR} seemingly have rates way below 1%. Their droprates Chapter 10 onwards are reported to have higher rates. If you do plan to farm a 5${STAR} doll, just do Productions. You'll get more chances there.<br>
-        Event farms have around 1%, which also carries over to their respective campaign missions.<br>
+        Event farms have around 1%, which also carries over to their respective campaign missions. Higher difficulties also get higher rates.<br>
         As for SPEQs, probably 1% too.`,
         tags: [dtag.TDOLL, dtag.MAIN, dtag.SPEQ, dtag.MAJOR, dtag.CAMPAIGN, dtag.SEASON, dtag.COLLAB]
-    },
+    },  //https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/kggc294/
     {
         id: '00070',
         question: `Do events get a rerun? And if so, when?`,
@@ -901,9 +901,9 @@ const CARDS = [
         tags: [dtag.PROD]
     },
     {
-        id: '00073',
-        question: `How can I resupply a single doll and not the whole echelon?`,
-        answer: `${img(IMG_ASSET+"OneDollEchelon.png", 'Single-Doll Echelon')}`,
+        id: 73,
+        question: `How can I resupply a single doll for corpse dragging and not the whole echelon?`,
+        answer: `${figure(image(IMG_ASSET+"OneDollEchelon.png", 'Single-Doll Echelon'), 'Single-Doll Echelon')}`,
         tags: [dtag.TDOLL, dtag.MAP, dtag.ECH]
     },
     {
@@ -1629,15 +1629,15 @@ const CARDS = [
         tags: [dtag.PROD, dtag.TDOLL, dtag.TCM]
     },
     {
-        id: '00166',
+        id: 166,
         question: `What does each gun class do?`,
         answer: `${table(['Class', 'Roles', 'Target Priority', 'Caveat'],
-        ['Assualt Rifle (AR)',      'Anti-Swarm<br>Sustained DPS',  'Frontline',    'Weak to armored enemies'],
-        ['Submachine Gun (SMG)',    'Evasion Tank<br>Anti-Swarm',   'Frontline',    'Accuracy is non-existent'],
-        ['Rifle (RF)',              'Big Damage<br>Anti-Armor',     'Backline',     'Weak to swarms<br>Affected by night penalty'],
-        ['Handgun (HG)',            'Buffer<br>Debuffer',           'Random',        'Cannot facetank'],
-        ['Machine Gun (MG)',        'Opening Volley',               'Random',       'Reloads/Stops shooting at around 6s<br>Weak to high evasion'],
-        ['Shotgun (SG)',            'Armor Tank',                   'Frontline',    'Poor evasion'])}`,
+        ['Assualt Rifle (AR)',                                                                                  'Anti-Swarm<br>Sustained DPS',  'Frontline',    'Weak to armored enemies'],
+        ['Submachine Gun (SMG)',                                                                                'Evasion Tank<br>Anti-Swarm',   'Frontline',    'Accuracy is non-existent'],
+        ['Rifle (RF)',                                                                                          'Big Damage<br>Anti-Armor',     'Backline',     'Weak to swarms<br>Affected by night penalty'],
+        ['Handgun (HG)',                                                                                        'Buffer<br>Debuffer',           'Random',        'Cannot facetank'],
+        [link("Machine Gun (MG)", "https://gamepress.gg/girlsfrontline/mgs-sgs-and-teambuilding#topic-270876"), 'Opening Volley',               'Random',       'Reloads/Stops shooting at around 6s<br>Weak to high evasion'],
+        [link("Shotgun (SG)", "https://gamepress.gg/girlsfrontline/mgs-sgs-and-teambuilding#topic-270826"),     'Armor Tank',                   'Frontline',    'Poor evasion'])}`,
         tags: [dtag.TDOLL, dtag.BATTLE, dtag.NEWB]
     },
     {
@@ -2711,9 +2711,9 @@ const CARDS = [
         tags: [dtag.CMDR, dtag.SKIN, dtag.SKILL]
     },
     {
-        id: '00326',
-        question: `Counter says I still have maps to do. How do I know which ones are those?`,
-        answer: `${img(IMG_ASSET+"StoryProgress.png", 'Tap the encircled counter to see the remaining maps')}`,
+        id: 326,
+        question: `Story progress ounter says I still have maps to do. How do I know which ones are those?`,
+        answer: `${figure(image(IMG_ASSET+"StoryProgress.png", "Progress dropdown."), "Tap the encircled counter to see the remaining maps")}`,
         tags: [dtag.MAJOR, dtag.CAMPAIGN, dtag.COLLAB]
     },
     {
@@ -3575,7 +3575,7 @@ const CARDS = [
             link("u/Le_Trudos' Android 12 fix", "https://www.reddit.com/r/girlsfrontline/comments/tsmwen/possible_solution_to_android_12_updates_making/"),
             link("Droidwin Android 12 fix", "https://droidwin.com/games-and-apps-crashing-not-working-on-android-12-how-to-fix/"),
             link("u/tommykuah's Android 12 fix", "https://www.reddit.com/r/girlsfrontline/comments/tdsmjh/regarding_android_12_app_crashfreeze_issue_and/i0mjpop/"),
-            link("u/Gawdzilla27's Android 14 fix", "https://old.reddit.com/r/girlsfrontline/comments/18wk6dz/weekly_commanders_lounge_january_02_2024/kgi8p2j/"),
+            `${link("u/Gawdzilla27's Android 14 fix", "https://old.reddit.com/r/girlsfrontline/comments/18wk6dz/weekly_commanders_lounge_january_02_2024/kgi8p2j/")} ${link(TextStyle.style("0", TextStyle.SUPER), "https://old.reddit.com/r/girlsfrontline/comments/18rdlor/gfl_crash_on_launch/kf2dde4/")}`,
             "Downgrading Android 12/14 to Android 11/13.", //https://old.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1y59kl/
             "Switch battery usage to unrestricted.", // https://old.reddit.com/r/girlsfrontline/comments/18ggxcs/weekly_commanders_lounge_december_12_2023/kdz3dxq/
         )}`,
@@ -4004,21 +4004,49 @@ const CARDS = [
         tags: [dtag.PROD, dtag.TDOLL, dtag.NEWB]
     },
     {
-        id: '00265',
+        id: 265,
         question: `What's the best comp for ASVAL MOD?`,
         answer: `For starters, Python for constant damage buff, Nagant Revolver MOD or Fervor Talent for 0th second damage buff, STAR for night self-buff crit, UMP45 for tiles, and whoever else.<br>
         ${figure(Embed.google(["As Val Mod Skill Coverage", "https://docs.google.com/spreadsheets/d/1N6nSGRSXCWSM_x8tipzg80E327VDIlFLgC1dVrwvLXk"]), "AS-VAL MOD skill uptime")}`,  //@Owner
         tags: [dtag.TDOLL, dtag.ECH]
     },  // https://www.gflanalysis.com/w/images/thumb/1/1d/Uptime.jpg/1788px-Uptime.jpg
+    {
+        id: 503,
+        question: `Why are some of the allid echelons getting a "Depleted Rations/Ammo" warning?`,
+        answer: `There are three types of allied/support echelons:
+        ${List.ordered(
+            "Friend/Support echelons that has three modes.",
+            "Allied echelons with unlimited supplies.",
+            "Allied echelons with limited supplies."
+        )}`,
+        tags: [dtag.ECH, dtag.MAP]
+    },
+    {
+        id: 504,
+        question: `How do I use Google as a payment service?`,
+        answer: `${link("u/headphone_question's write-up.", "https://old.reddit.com/r/girlsfrontline/comments/15f5xi4/weekly_commanders_lounge_august_01_2023/juk1l3n/")}`,
+        tags: [dtag.ANDROID]
+    },
+    {
+        id: 505,
+        question: `How can I make GFL have a taller interface so I can see more dolls on-screen in the armory?`,
+        answer: `By changing screen resolution/aspect ratio.`,
+        tags: [dtag.MISC]
+    },
     // {
-    //     id: '00000',
+    //     id: 0,
     //     question: ``,
     //     answer: ``,
     //     tags: []
     // },
 ];
 
-for (const CARD of CARDS) CARD.id = Number(CARD.id)
+for (const CARD of CARDS) {
+    if (typeof CARD.id === "string") {
+        console.log(CARD.id)
+        CARD.id = Number(CARD.id)
+    }
+}
 window.cards = CARDS
 
 // (function() {
@@ -4033,8 +4061,9 @@ window.cards = CARDS
 //     console.log("Duplicate:", Array.from(DUPLICATES));
 // })()
 
-// https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/
 // https://old.reddit.com/r/girlsfrontline/comments/uc7eet/weekly_commanders_lounge_april_26_2022/i6mqo74/
 // https://old.reddit.com/r/girlsfrontline/comments/1929lxq/weekly_commanders_lounge_january_09_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/197xngt/weekly_commanders_lounge_january_16_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/19djecd/weekly_commanders_lounge_january_23_2024/
+// https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/kgfv3bn/
+// https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/kgpxdz7/

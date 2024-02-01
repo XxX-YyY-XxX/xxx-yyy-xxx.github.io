@@ -19,7 +19,7 @@
             },
             {
                 "name": "key",
-                "description": "Parent parameter whose value will replace this element. Defaults if parameter not found.\n\nParent: `<include src='' s='34'></include>`\n\nChild: `<include key='s'></include>`\n\nOutput: `34`"
+                "description": "Parent parameters separated by spaces, whose value will replace this element. Checks next parameter if current parameter not found. Defaults if none of the parameters are found.\n\nParent: `<include src='' s='34' f='69'></include>`\n\nChild: `<include key='a s d f'></include>`\n\nOutput: `34`"
             },
             {
                 "name": "param-",

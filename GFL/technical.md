@@ -2,10 +2,6 @@
 
 # Technical Help
 
-### How can I make GFL have a taller interface so I can see more dolls on-screen in the armory?
-
-> By changing screen resolution/aspect ratio.
-
 ### Game keeps getting stuck in the title screen. Fetching server, download screen...
 
 > Switch between WiFi/Data. Else use VPN.

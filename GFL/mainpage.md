@@ -85,10 +85,6 @@
 >
 > - [Dorm notes.](https://old.reddit.com/r/girlsfrontline/comments/v6pt9o/weekly_commanders_lounge_june_07_2022/ibyvjnm/)
 
->EarSpeaker
->
-> - [Google Pay.](https://old.reddit.com/r/girlsfrontline/comments/15f5xi4/weekly_commanders_lounge_august_01_2023/juk1l3n/)
-
 >Weeb
 >
 > - [Luffberry Gacha.](https://old.reddit.com/r/girlsfrontline/comments/x74mpx/weekly_commanders_lounge_september_06_2022/ingul31/)
