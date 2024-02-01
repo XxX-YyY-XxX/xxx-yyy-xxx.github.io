@@ -2,8 +2,8 @@ import {STAT_KEYS} from "./typing.js";
 import {cmp, chain, setattr, subclassof, zip} from "../../univasset/scripts/basefunctions/index.js";
 
 //#region Types
-/** @typedef {"hpflat"|"hpperc"|"atkflat"|"atkperc"|"hashflat"|"hashperc"|"pdefflat"|"pdefperc"|"odefflat"|"odefperc"|"crateperc"|"cdmgperc"|"ppenflat"|"ppenperc"|"openflat"|"openperc"|"dodgeperc"|"regenflat"|"hasteperc"|"resflat"|"dboostperc"|"dreducperc"|"hboostperc"|"aspdflat"|"lashperc"} StatAttributes */
-/** @typedef {[string, StatAttributes, StatAttributes, StatAttributes | ""]} AlgoInfo [algoname, main, sub1, sub2] */
+/** @typedef {keyof STATVALUES["NAME"]} StatAttributes */
+/** @typedef {[algoname: string, main: StatAttributes, sub1: StatAttributes, sub2: StatAttributes | ""]} AlgoInfo */
 /** @typedef {Map<StatAttributes, number>} StatDict */
 
 /** @typedef {"Offense"|"Stability"|"Special"} GridFields */
@@ -213,9 +213,10 @@ function algoPath(algoname) {
         }
         OUTPUT.appendChild(SET2);
 
-        const [DOUBLE, TRIPLE] = ALGO_SAVE.algoCount(this.name);
+        const [NONE, SINGLE, DOUBLE, TRIPLE] = ALGO_SAVE.algoCount(this.name);
         const COUNT = setattr(document.createElement("div"), {textContent: `${DOUBLE}/${TRIPLE}`, dataset: {grid: "count"}});
         OUTPUT.appendChild(COUNT);
+        // 1, 2, 3 sets?
 
         const IMG = setattr(document.createElement("img"), {src: algoPath(subclassof(this, SingleBlock) ? "SingleBlock" : this.name), alt: this.name});
         OUTPUT.appendChild(IMG);
@@ -559,8 +560,11 @@ const ALGO_SAVE = new (class {
     /** @type {"algorithms"} */
     #KEY = "algorithms";
     
-    /** @type {{[UnitName: string]: [AlgoInfo[], AlgoInfo[], AlgoInfo[]]}} */
+    /** @type {{[UnitName: string]: [AlgoInfo[], AlgoInfo[], AlgoInfo[]]?}} */
     #DATA = JSON.parse(localStorage.getItem(this.#KEY) ?? "{}");
+
+    // /** @type {{[UnitName: string]: (keyof ALGO_SETS["Offense"] | keyof ALGO_SETS["Stability"] | keyof ALGO_SETS["Special"])[][]}} */
+    // #SETS = (() => {this.#DATA})();
 
     constructor() {
         ALGO_MODAL.addEventListener("close", (event) => localStorage.setItem(this.#KEY, JSON.stringify(this.#DATA)));
@@ -581,17 +585,12 @@ const ALGO_SAVE = new (class {
         delete this.#DATA[name];
     }
 
-    /** @param {string} algoname @returns 2set, 3set */
+    /** @param {string} algoname @returns [0set, 1set, 2set, 3set] */
     algoCount(algoname) {
         const UNIT = AlgoField.current.name;
-        /** @type {[number, number]} */ const OUTPUT = [0, 0];
+        /** @type {[number, number, number, number]} */ const OUTPUT = [0, 0, 0, 0];
         /** @type {string[][]} */ const INFOS = Object.entries(this.#DATA).filter(([name,]) => name !== UNIT).map(([, algos]) => algos.flat().map(([set,,,]) => set));
-        for (const UNIT_INFO of INFOS) {
-            switch (UNIT_INFO.count(algoname)) {
-                case 2: OUTPUT[0]++; break;
-                case 3: OUTPUT[1]++; break;
-            }
-        }
+        for (const UNIT_INFO of INFOS) OUTPUT[UNIT_INFO.count(algoname)]++;
         return OUTPUT;
     }
 })();
