@@ -25,13 +25,13 @@ dialog {
 }
 
 .algo-close {
-    background-image: url("../assets/images/algorithms/Closed.png");
+    background-image: url("../assets/images/algorithms/others/Closed.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .algo-empty {
-    background-image: url("../assets/images/algorithms/Empty.png");
+    background-image: url("../assets/images/algorithms/others/Empty.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -74,7 +74,7 @@ dialog {
     position: absolute;
     right: var(--algo-pad);
     bottom: var(--algo-pad);
-    background-image: url("../assets/images/algorithms/Trash.png");
+    background-image: url("../assets/images/algorithms/others/Trash.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 10px;
@@ -111,15 +111,15 @@ dialog {
     }
 
     #algo-modal .tab-button > label:has([value="Offense"]:checked) {
-        background-image: url("../assets/images/algorithms/tabs/Offense.png");
+        background-image: url("../assets/images/algorithms/others/Offense.png");
     }
 
     #algo-modal .tab-button > label:has([value="Stability"]:checked) {
-        background-image: url("../assets/images/algorithms/tabs/Stability.png");
+        background-image: url("../assets/images/algorithms/others/Stability.png");
     }
 
     #algo-modal .tab-button > label:has([value="Special"]:checked) {
-        background-image: url("../assets/images/algorithms/tabs/Special.png");
+        background-image: url("../assets/images/algorithms/others/Special.png");
     }
 
     #algo-modal .tab-body {

@@ -169,7 +169,7 @@
             try {
                 const TOUCH_CHECK = [
                     ["navigator.userAgentData?.mobile", navigator.userAgentData?.mobile],
-                    ["!!navigator.maxTouchPoints", !!navigator.maxTouchPoints],
+                    ["!!navigator.maxTouchPoints", !!navigator.maxTouchPoints], // checks if screen is touch-capable
                     ["!!navigator.msmaxTouchPoints", !!navigator.msmaxTouchPoints],
                     ["window.DocumentTouch", window.DocumentTouch],
                     ["'ontouchstart' in window", "ontouchstart" in window],
@@ -190,6 +190,8 @@
             } catch(e) {
                 alert(e);
             }
+
+            document.querySelector("h1").setAttribute("0", "asdf")
 
             document.querySelector("#user-agent").textContent = navigator.userAgent;
         </script>
