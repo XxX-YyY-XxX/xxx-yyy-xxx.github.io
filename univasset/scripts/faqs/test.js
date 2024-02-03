@@ -30,7 +30,10 @@ window.queryFunc = function(tags_dict, cards_list) {
     const SEARCH_PARAMS = new URLSearchParams(location.search);
     const CARDFIELD = document.querySelector("#cards-field");
     const HREF = location.origin + location.pathname;
-    /** @type {DocumentFragment} */ const CARD_TEMPLATE = document.querySelector("#faq-card").content;
+    /** @type {function(): DocumentFragment} */ const cloneTemplate = (() => {
+        const FRAGMENT = document.querySelector("#faq-card").content;
+        return FRAGMENT.cloneNode.bind(FRAGMENT, true);
+    })();
 
     //#region Tags Field
     const TAGS_FIELD = document.querySelector("#Tags div");
@@ -93,81 +96,62 @@ window.queryFunc = function(tags_dict, cards_list) {
 
     CARDFIELD.append(
         (() => {
+            const FRAGMENT = new DocumentFragment();
+            var run = false;
+
             switch (true) {
-                case SEARCH_PARAMS.has('search'):   return searchCards();
-                case SEARCH_PARAMS.has('tags'):     return tagsCards();
-                case SEARCH_PARAMS.has('id'):       return idCards();
-                default:                            return randomCards();
+                case SEARCH_PARAMS.has('search'):
+                    const SEARCH = SEARCH_PARAMS.get("search");
+                    if (!SEARCH) return "Empty field.";
+            
+                    const KEYWORDS = SEARCH.replace(/\s+/, " ").toLowerCase().split(" ");
+            
+                    for (const cards of cards_list.filter(({question, answer}) => KEYWORDS.every(str => [question, answer].some(x => removeHTMLTag(x).toLowerCase().includes(str))))) {
+                        FRAGMENT.appendChild(setQuestionBoxes(cards));
+                        run = true;
+                    }
+            
+                    return run ? FRAGMENT : "No matches found.";
+                case SEARCH_PARAMS.has('tags'):
+                    const TAGS = SEARCH_PARAMS.get("tags").split(" ");
+                    if (!TAGS.length) return "Empty field.";
+            
+                    for (const cards of cards_list.filter(({tags}) => TAGS.subsetof(tags.map(x => x.name)))) {
+                        FRAGMENT.appendChild(setQuestionBoxes(cards));
+                        run = true;
+                    }
+                        
+                    return run ? FRAGMENT : "No matches found.";
+                case SEARCH_PARAMS.has('id'):
+                    const IDS = SEARCH_PARAMS.get("id").split(" ").map(Number);
+            
+                    for (const cards of cards_list.filter(({id}) => IDS.includes(id))) {
+                        FRAGMENT.appendChild(setQuestionBoxes(cards));
+                        run = true;
+                    }
+                    
+                    return run ? FRAGMENT : "No matches found.";
+                default:
+                    const LENGTH = cards_list.length;
+                    const INDICES = new Set();
+            
+                    do INDICES.add(randInt(0, LENGTH));
+                    while (INDICES.size < 3)
+            
+                    for (const index of INDICES) FRAGMENT.appendChild(setQuestionBoxes(cards_list[index]));
+            
+                    return FRAGMENT;
             }
         })()
     );
 
     //#region Private Functions
-    function searchCards() {
-        const FRAGMENT = new DocumentFragment();
-
-        const searchText = SEARCH_PARAMS.get("search");
-        if (!searchText) return "Empty field.";
-
-        const KEYWORDS = searchText.replace(/\s+/, " ").toLowerCase().split(" ");
-
-        var run = false;
-        for (const cards of cards_list.filter(({question, answer}) => KEYWORDS.every(str => [question, answer].some(x => removeHTMLTag(x).toLowerCase().includes(str))))) {
-            FRAGMENT.appendChild(setQuestionBoxes(cards));
-            run = true;
-        }
-
-        return run ? FRAGMENT : "No matches found.";        
-    }
-
-    function tagsCards() {
-        const FRAGMENT = new DocumentFragment();
-
-        const cardTags = SEARCH_PARAMS.get("tags").split(" ");
-        if (!cardTags.length) return "Empty field.";
-
-        var run = false;
-        for (const cards of cards_list.filter(({tags}) => cardTags.subsetof(tags.map(x => x.name)))) {
-            FRAGMENT.appendChild(setQuestionBoxes(cards));
-            run = true;
-        }
-            
-        return run ? FRAGMENT : "No matches found.";
-    }
-
-    function idCards() {
-        const FRAGMENT = new DocumentFragment();
-        const IDS = SEARCH_PARAMS.get("id").split(" ").map(Number);
-
-        var run = false;
-        for (const cards of cards_list.filter(({id}) => IDS.includes(id))) {
-            FRAGMENT.appendChild(setQuestionBoxes(cards));
-            run = true;
-        }
-        
-        return run ? FRAGMENT : "No matches found.";
-    }
-
-    function randomCards() {
-        const FRAGMENT = new DocumentFragment();
-
-        const LENGTH = cards_list.length;
-        const indices = new Set();
-
-        do indices.add(randInt(0, LENGTH));
-        while (indices.size < 3)
-
-        for (const index of indices) FRAGMENT.appendChild(setQuestionBoxes(cards_list[index]));
-
-        return FRAGMENT;
-    }
-
     /** @param {string} text @returns {DocumentFragment} */ function stringToHTML(text) {
         return setattr(new DocumentFragment(), {append: [...(new DOMParser()).parseFromString(text, "text/html").body.childNodes]});
     }
 
     /** @param {Card} */ function setQuestionBoxes({id, question, answer, tags}) {
-        /** @type {DocumentFragment} */ const CLONE = CARD_TEMPLATE.cloneNode(true);
+        const CLONE = cloneTemplate();
 
         // might add button for getting card id
         CLONE.querySelector("h3").appendChild(stringToHTML(question));
