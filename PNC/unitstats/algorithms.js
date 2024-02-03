@@ -1,5 +1,6 @@
 import {STAT_KEYS} from "./typing.js";
 import {cmp, chain, setattr, subclassof, zip} from "../../univasset/scripts/basefunctions/index.js";
+import {getTemplateCloner} from "../../univasset/scripts/externaljavascript.js";
 
 //#region Types
 /** @typedef {keyof STATVALUES["NAME"]} StatAttributes */
@@ -170,9 +171,9 @@ function algoPath(algoname) {
         this.#grid = grid;
     }
 
-    // /** @type {HTMLTemplateElement} */ static algo_button_template = document.querySelector("#algo-select-button");
+    // static _algoButtonCloner = getTemplateCloner("#algo-select-button");
     static createSelectButton() {
-        // const CLONE = this.algo_button_template.content.cloneNode(true);
+        // const CLONE = this._algoButtonCloner();
 
         // const OUTPUT = setattr(CLONE.querySelector("button"), {value: this.name});
         const OUTPUT = setattr(document.createElement("button"), {type: "submit", value: this.name});

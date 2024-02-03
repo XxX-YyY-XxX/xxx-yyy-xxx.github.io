@@ -181,13 +181,6 @@ dialog {
     grid-template-rows: 1lh 100px;
 }
 
-/* #algo-select button > img::before {
-    grid-area: name;
-    justify-self: center;
-    content: attr(alt);
-} */
-
-
 #algo-select button > [data-grid="name"] {
     grid-area: name;
 }

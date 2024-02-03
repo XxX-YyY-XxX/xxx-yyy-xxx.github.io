@@ -141,6 +141,11 @@ export function splitTime(milliseconds) {
     var [hr, min] = Math.intdiv(min, 60);
     return [...Math.intdiv(hr, 24), min, sec, milli];
 }
+
+/** @param {string} template_query @returns {function(): DocumentFragment} */
+export function getTemplateCloner(template_query) {
+    return Node.prototype.cloneNode.bind(document.querySelector(template_query).content, true);
+}
 //#endregion
 
 //#region Trial
