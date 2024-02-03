@@ -30,6 +30,7 @@ window.queryFunc = function(tags_dict, cards_list) {
     const SEARCH_PARAMS = new URLSearchParams(location.search);
     const CARDFIELD = document.querySelector("#cards-field");
     const HREF = location.origin + location.pathname;
+    /** @type {DocumentFragment} */ const CARD_TEMPLATE = document.querySelector("#faq-card").content;
 
     //#region Tags Field
     const TAGS_FIELD = document.querySelector("#Tags div");
@@ -161,27 +162,19 @@ window.queryFunc = function(tags_dict, cards_list) {
         return FRAGMENT;
     }
 
-    /** @param {string} text @returns {DocumentFragment} */
-    function stringToHTML(text) {
+    /** @param {string} text @returns {DocumentFragment} */ function stringToHTML(text) {
         return setattr(new DocumentFragment(), {append: [...(new DOMParser()).parseFromString(text, "text/html").body.childNodes]});
     }
 
     /** @param {Card} */ function setQuestionBoxes({id, question, answer, tags}) {
-        const FIELDSET = document.createElement("fieldset");
+        /** @type {DocumentFragment} */ const CLONE = CARD_TEMPLATE.cloneNode(true);
 
         // might add button for getting card id
+        CLONE.querySelector("h3").appendChild(stringToHTML(question));
+        CLONE.querySelector("#answer").replaceWith(stringToHTML(answer));
+        CLONE.querySelector("#tags").replaceWith(...tags.map(({name}) => setattr(document.createElement("a"), {classList: {add: ["tags"]}, textContent: name, href: HREF+"?tags="+name})));
 
-        const [LEGEND, H3] = nestElements("legend", "h3");
-        H3.appendChild(stringToHTML(question));
-        
-        FIELDSET.append(
-            LEGEND,
-            stringToHTML(answer),
-            document.createElement("hr"),
-            "Tags: ",
-            ...tags.map(({name}) => setattr(document.createElement("a"), {classList: {add: ["tags"]}, textContent: name, href: HREF+"?tags="+name}))
-        );
-        return FIELDSET;
+        return CLONE;
     }
     //#endregion
 
