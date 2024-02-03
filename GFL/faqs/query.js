@@ -4041,12 +4041,7 @@ const CARDS = [
     // },
 ];
 
-for (const CARD of CARDS) {
-    if (typeof CARD.id === "string") {
-        console.log(CARD.id)
-        CARD.id = Number(CARD.id)
-    }
-}
+for (const CARD of CARDS.filter(x => typeof x.id === "string")) CARD.id = Number(CARD.id)
 window.cards = CARDS
 
 // (function() {
