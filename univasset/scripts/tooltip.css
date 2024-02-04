@@ -20,6 +20,16 @@
     transition: opacity 0.3s;
 }
 
+/* test */
+@media (hover: none) {
+    .tooltiptext {
+        position: fixed;
+        max-width: 500px;
+        width: 100%;
+        top: 0;
+    }
+}
+
 .tooltip + .tooltiptext {
     bottom: 50%;
 }
@@ -32,3 +42,5 @@
     visibility: visible;
     opacity: 1;
 }
+
+/* @keyframes */
