@@ -7,9 +7,10 @@
     min-width: fit-content;
     width: 30vw;
     max-width: 300px;
-    padding: 3px;
     left: 50%;
     transform: translateX(-50%);
+
+    padding: 3px;
     background-color: #555;
     color: #fff;
     text-align: center;
@@ -20,12 +21,24 @@
     transition: opacity 0.3s;
 }
 
-.tooltip + .tooltiptext {
-    bottom: 50%;
+@media (hover: none) {
+    .tooltiptext {
+        position: fixed;
+        max-width: 500px;
+        width: 100%;
+        height: fit-content;
+        top: 0;
+    }
 }
 
-.tooltip > .tooltiptext {
-    bottom: 100%;
+@media (hover: hover) {
+    .tooltip + .tooltiptext {
+        bottom: 50%;
+    }
+    
+    .tooltip > .tooltiptext {
+        bottom: 100%;
+    }
 }
 
 .tooltip:hover + .tooltiptext , .tooltip:hover > .tooltiptext {
