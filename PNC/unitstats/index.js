@@ -202,10 +202,11 @@ class Units {
 
     row;
     updateStat;
-    alert = () => {};
 
     /** @param {UnitObject} stat_object */
     constructor(stat_object) {
+        const MISSING = [];
+
         this.#algofield = new AlgoField(stat_object);
 
         this.name = stat_object.name;
@@ -235,6 +236,7 @@ class Units {
         this.#hasarma = stat_object.tags.includes("Arma");
 
         this.#intistats = stat_object.intimacy;
+        if (this.#intistats.length !== 3) MISSING.push("Intimacy")
 
         const TD_NAME = document.createElement("td");
         TD_NAME.addEventListener("click", () => this.#algofield.show());
@@ -243,6 +245,7 @@ class Units {
             const IMAGE = image(`../assets/images/arma/${this.name.replace(" ", "")}.png`, `${this.name} arma.`);
             const SPAN = setattr(document.createElement("span"), {append: [this.name, IMAGE], classList: {add: ["arma"]}});
             TD_NAME.appendChild(SPAN);
+            if (Object.values(ARMA).some(x => x === -1)) MISSING.push("Arma")
         } else {
             TD_NAME.textContent = this.name;
         }
@@ -314,8 +317,7 @@ class Units {
         
         for (const BUTT of Object.values(BUTTON)) BUTT.addEventListener("change", this.updateStat);
 
-        if (stat_object.tags.includes("Incomplete"))
-            this.alert = () => alert(`${this.name} has incomplete data: ${this.#intistats.length !== 3 ? "Intimacy" : ""} ${this.#hasarma && this.#armahp === -1 ? "Arma" : ""}`)
+        if (MISSING.length) window.addEventListener("load", () => alert(`${this.name} has incomplete data: ${MISSING.join(" ")}`));
 
         // const UNIT_ROW = this.row;
         // CLASS_BUTTONS[this.class].addEventListener("change", function(event) {
@@ -372,5 +374,3 @@ for (const [NAME, KEY, TYPE] of zip(HEADER_VALUES, ["name", ...Object.values(STA
 }
 
 setattr(document.querySelector("#table"), {classList: {add: ["func_table"]}, appendChild: [TABLE]});
-
-for (const UNIT of UNIT_LIST) UNIT.alert();

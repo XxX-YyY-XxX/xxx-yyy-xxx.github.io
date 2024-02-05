@@ -1,10 +1,10 @@
 import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
-// timer(
-//    document.getElementById("event"),
-//    "",
-//    ""
-// );
+timer(
+   document.getElementById("event"),
+   "Feb 20, 2024 00:00 UTC-0800",
+   "./assets/images/timer/bjnxfw4m5pfc1.png"
+);
 
 timer(
     document.getElementById("battlepass"),
@@ -19,11 +19,11 @@ timer(
 
 timer(
     document.getElementById("coalition"),
-    "Feb 05, 2024 24:00 UTC-0800",
+    "Feb 06, 2024 00:00 UTC-0800",
     "./assets/images/coalition/06Architect.webp", 
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
-        "Mar 05, 2024 24:00 UTC-0800",
+        "Mar 05, 2024 00:00 UTC-0800",
         "./assets/images/coalition/23ScarecrowDemonicAbyss.webp"
     )}
 );
@@ -34,15 +34,15 @@ timer(
     "https://iopwiki.com/images/5/5e/Frost_of_Winter_Dreams_Login_Wallpaper.jpg",
     {onEnd: timer.bind(
         null, document.getElementById('skin-banner'),
-        "",
-        ""
+        "Mar 12, 2024 00:00 UTC-0800",
+        "./assets/images/coalition/Login_CNY_2023.png"
     )}
 );
 
 timer(
    document.getElementById('mini-event'),
-   "Feb 12, 2024 23:59 UTC-0800",
-   "./assets/images/timer/pjuc8kn82xcc1.webp"
+   "Feb 12, 2024 23:59 UTC-0800",   //feb 20 - mar 12
+   "./assets/images/timer/pjuc8kn82xcc1.webp"   //dp28
 );
 
 //timer(document.getElementById('extra'), "",

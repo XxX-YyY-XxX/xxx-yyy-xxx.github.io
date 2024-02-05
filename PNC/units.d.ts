@@ -1,5 +1,5 @@
 type IntimacyStat = "Code Robustness" | "Power Connection" | "Neural Activation" | "Shield of Friendship" | "Coordinated Strike" | "Victorious Inspiration" | "Risk Evasion Aid" | "Mechanical Celerity" | "Coordinated Formation" | "Through Fire and Water" | "Healing Bond";
-type UnitTags = "Unreleased" | "Arma" | "Incomplete";
+type UnitTags = "Unreleased" | "Arma";
 
 interface UnitObject {
     id: number;
