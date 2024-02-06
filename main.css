@@ -127,29 +127,7 @@
 }
 
 @layer classes {
-	.container {
-		width: 90%;
-		max-width: 1000px;
-		margin: 0 auto;
-	}
-
-	.center {
-		display: flex;
-		align-items: center;
-		justify-content: center;	
-	}
-
-	.overflow {
-		overflow: auto;
-		overscroll-behavior: contain;
-	}
-}
-
-@layer special {
-	li {
-		line-height: 1.4;
-	}
-
+	/* #region main_content */
 	#main_content {
 		width: 100%;
 		-webkit-font-smoothing: antialiased;
@@ -183,6 +161,31 @@
 		color: #999;
 		margin: 0 0 5px 0;
 	}
+	/* #endregion */
+
+	.container {
+		width: 90%;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.center {
+		display: flex;
+		align-items: center;
+		justify-content: center;	
+	}
+
+	.overflow {
+		overflow: auto;
+		overscroll-behavior: contain;
+	}
+}
+
+@layer special {
+	li {
+		line-height: 1.4;
+	}
+
 
 	ul li {
 		list-style-image: url("/assets/css/images/bullet.png");
@@ -215,11 +218,11 @@
 		}
 	}
 
-	.center {
+	/* .center {
 		left: 50%;
 		position: relative;
 		transform: translateX(-50%);
-	}
+	} */
 
 	.highlight {
 		color: #d0d0d0;
