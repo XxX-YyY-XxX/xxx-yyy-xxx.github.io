@@ -19,12 +19,12 @@ timer(
 
 timer(
     document.getElementById("coalition"),
-    "Feb 06, 2024 00:00 UTC-0800",
-    "./assets/images/coalition/06Architect.webp", 
+    "Mar 05, 2024 00:00 UTC-0800",
+    "./assets/images/coalition/23ScarecrowDemonicAbyss.webp", 
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
-        "Mar 05, 2024 00:00 UTC-0800",
-        "./assets/images/coalition/23ScarecrowDemonicAbyss.webp"
+        "",
+        "./assets/images/coalition/.webp"
     )}
 );
 

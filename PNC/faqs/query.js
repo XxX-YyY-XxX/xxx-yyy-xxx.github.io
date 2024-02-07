@@ -31,6 +31,7 @@ const dtag = {
     DAILY: {name: "DailyWeeklyMissions", description: 'Missions under the "Permanent" tab.'},
     LEVEL: {name: "Leveling", description: "Ways to strengthen/level up a unit/equipment."},
     TECH: {name: "Troubleshooting", description: "Firstly, have you tried turning it off and on?"},
+    ARMA: {name: "ArmaInscripta", description: "Strengthens dolls to keep up with the current challenges... supposedly."},
 };
 window.tags = dtag;
 
@@ -43,8 +44,12 @@ window.cards = [
     },
     {
         id: 1,
-        question: `Which algorithms should I decompose?`,
-        answer: `Purple algos, blue algos if you're lazy, trash single slot algos.`,
+        question: `Which algorithms should I decompose/fodder/keep?`,
+        answer: `Purple algos, blue algos (aka. Auto-Decompose) if you're lazy, trash single slot algos.
+        ${details("Google Sheets for Algorithm Usefulness.", Embed.google(
+            ["Algorithm Viability List - Gamma", "https://docs.google.com/spreadsheets/d/1_HRAj20Gp7bvP2KjoJOsYhKwd2SyVuYEFZHDRHFKReQ"],
+            ["PNC Algo Mainstat Viability List", "https://docs.google.com/spreadsheets/d/1DSK4d94RdRCV_ji7NXC0Klyf7v_dUkIY9n9qW9y2UeQ"]
+        ))}`,
         tags: [dtag.ALGO]
     },
     {
@@ -200,9 +205,7 @@ window.cards = [
     {
         id: 20,
         question: `Which units are good and how should I build them?`,
-        answer: `${Embed.google(
-            ["L.U.S.T. 2", "https://docs.google.com/spreadsheets/d/1FMK713okcJNQuCv625Ut0TZuQbm9RlHk7l1yOUF9Qdw"]
-        )}`,
+        answer: `${figure(Embed.google(["L.U.S.T. 2", "https://docs.google.com/spreadsheets/d/1FMK713okcJNQuCv625Ut0TZuQbm9RlHk7l1yOUF9Qdw"]), "For those who long for Iana's spreadsheet")}`,
         tags: [dtag.DOLL, dtag.TIER]
     },
     {
@@ -221,7 +224,35 @@ window.cards = [
     {
         id: 22,
         question: `I'm having trouble logging into the game. Any solutions?`,
-        answer: `Might be a service provider issue. Use VPN for now.`,
+        answer: `If it says along the lines of "Network Connection Problem" despite having good internet connection, it might be a service provider issue. Use VPN for now.`,
+        tags: [dtag.TECH]
+    },
+    {
+        id: 23,
+        question: `Is there a guide to teambuilding for this game?`,
+        answer: `${Embed.google(["MMG Entry 1: Team Building", "https://docs.google.com/spreadsheets/d/1KxJgCmfdLt3MbE1IC4T38hOCfauxSGQ6B2to8doXig8"])}`,
+        tags: [dtag.DOLL]
+    },
+    {
+        id: 24,
+        question: `Where can I get more Fashion Vouchers?`,
+        answer: `Enigma Blackhole, In-game Shop, Returner Rewards`,
+        tags: [dtag.SKIN]
+    },
+    {
+        id: 25,
+        question: `Which should I focus on first, Arma Inscripta or Neural Expansion to 5${SC.STAR}`,
+        answer: `${List.ordered(
+            "Arma Inscripta since it expands your unit's skill repertoire (up until the breakpoint, which depends on each unit).",
+            `Expand to 4.5${SC.STAR} to unlock all import algorithm slots.`,
+            "YMMV."
+        )}`,
+        tags: [dtag.DOLL, dtag.LEVEL, dtag.ARMA]
+    },
+    {
+        id: 26,
+        question: `I'm having trouble updating the game. Any fix?`,
+        answer: `Reinstalling might help.`, // https://old.reddit.com/r/GFLNeuralCloud/comments/1adsqjg/weekly_professors_lounge_january_29_2024/kod2xsi/
         tags: [dtag.TECH]
     },
     // {
@@ -244,8 +275,6 @@ window.cards = [
 // https://old.reddit.com/r/GFLNeuralCloud/comments/18l63g8/weekly_professors_lounge_december_18_2023/kerq0qj/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/18qglj9/weekly_professors_lounge_december_25_2023/kfe8yxm/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/191ipmg/weekly_professors_lounge_january_08_2024/khmz92o/
-
-// https://old.reddit.com/r/GFLNeuralCloud/comments/19765rz/weekly_professors_lounge_january_15_2024/
-// https://old.reddit.com/r/GFLNeuralCloud/comments/19ct4yt/weekly_professors_lounge_january_22_2024/
+// https://old.reddit.com/r/GFLNeuralCloud/comments/1adsqjg/weekly_professors_lounge_january_29_2024/kow77hi/
 
 // https://www.reddit.com/r/GFLNeuralCloud/comments/z5446s/algorithm_sets_recommendations_google_doc/
