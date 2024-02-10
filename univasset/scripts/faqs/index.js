@@ -28,7 +28,7 @@ import {cmp, setattr} from "../basefunctions/index.js";
 window.queryFunc = function(tags_dict, cards_list) {
     //#region Tags Field
     const TAGS_FIELD = document.querySelector("#Tags div");
-    const _tagsearchCloner = getTemplateCloner("#query-tags");
+    const _tagsearchCloner = getTemplateCloner("#query-tag");
     /** @type {HTMLInputElement[]} */ const TAG_CHECKBOXES = [];
     /** @type {HTMLInputElement} */ const TAGS_TEXT = document.querySelector('#Tags input[type="text"]');
     for (const {name, description} of Object.values(tags_dict).sort(cmp({key: x => x.name}))) {
@@ -40,7 +40,6 @@ window.queryFunc = function(tags_dict, cards_list) {
         });
         TAG_CHECKBOXES.push(INPUT);
 
-        // CLONE.querySelector("label").append(name);
         CLONE.querySelector("#name").replaceWith(name);
         CLONE.querySelector(".tooltiptext").textContent = description;
 
@@ -91,7 +90,7 @@ window.queryFunc = function(tags_dict, cards_list) {
     });
     //#endregion
 
-    //#region Private Functions
+    //#region Card Creation
     /** @param {string} text @returns {DocumentFragment} */ function stringToHTML(text) {
         return setattr(new DocumentFragment(), {append: [...(new DOMParser()).parseFromString(text, "text/html").body.childNodes]});
     }
@@ -220,4 +219,9 @@ window.queryFunc = function(tags_dict, cards_list) {
     //#endregion
 }
 
-// document.querySelector("include").setAttribute("maxpage", Math.ceil((window.cards.length) / 5));
+try {
+    document.querySelector("include").setAttribute("maxpage", Math.ceil((window.cards.length) / 5));
+    console.log("Setup OK.")
+} catch (e) {
+    console.warn(e)
+}

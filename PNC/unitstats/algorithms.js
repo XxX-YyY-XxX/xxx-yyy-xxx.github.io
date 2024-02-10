@@ -520,6 +520,9 @@ class AlgoGrid {
             AlgoGrid.#SELECT.removeEventListener("close", this.#close);
 
             // what if close not through button 
+            // const DIM = ALGO_MODAL.getBoundingClientRect();
+            // if (event.clientX < DIM.left || event.clientX > DIM.right || event.clientY < DIM.top || event.clientY > DIM.bottom) {
+
             this.#algorithms.push(new ALGO_SETS[fieldtype][AlgoGrid.#SELECT.returnValue](this));
     
             this.#grid.replaceChildren();
@@ -598,8 +601,6 @@ const ALGO_SAVE = new (class {
 })();
 
 export class AlgoField {
-    /** @type {HTMLButtonElement} */ static #CLOSE = document.querySelector("#close-modal");
-
     #name;
     #basestat;
     #layout;
@@ -665,8 +666,7 @@ export class AlgoField {
 
             this.onclose();
     
-            AlgoField.#CLOSE.removeEventListener("click", this.#close);
-            ALGO_MODAL.removeEventListener("click", this.#algoClose);
+            ALGO_MODAL.removeEventListener("click", this.#close);
 
             ALGO_MODAL.close();
             AlgoField.#current = null;
@@ -674,7 +674,7 @@ export class AlgoField {
             console.log("Closed via button.")
         };
 
-        this.#algoClose = /** @param {MouseEvent} event */ event => {
+        this.#close = /** @param {MouseEvent} event */ (event) => {
             const DIM = ALGO_MODAL.getBoundingClientRect();
             if (event.clientX < DIM.left || event.clientX > DIM.right || event.clientY < DIM.top || event.clientY > DIM.bottom) {
                 this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
@@ -684,18 +684,14 @@ export class AlgoField {
     
                 this.onclose();
         
-                AlgoField.#CLOSE.removeEventListener("click", this.#close);
-                ALGO_MODAL.removeEventListener("click", this.#algoClose);
+                ALGO_MODAL.removeEventListener("click", this.#close);
     
                 ALGO_MODAL.close();
                 AlgoField.#current = null;
-
-                console.log("Closed via backdrop.")
             }
         }
     }
 
-    #algoClose;
     #close;
     show() {
         AlgoField.#current = this;
@@ -705,8 +701,7 @@ export class AlgoField {
         ALGO_MODAL.firstElementChild.textContent = this.#name;
         for (const GRID of this.#algogrids) GRID.display();
 
-        AlgoField.#CLOSE.addEventListener("click", this.#close);
-        ALGO_MODAL.addEventListener("click", this.#algoClose);
+        ALGO_MODAL.addEventListener("click", this.#close);
 
         ALGO_MODAL.showModal();
     }

@@ -72,6 +72,10 @@ dl, table, blockquote, figure {
         background: aqua;
         color: black;
     }
+
+    & > .tooltiptext {
+        bottom: 110%;
+    }
 }
 
 fieldset {

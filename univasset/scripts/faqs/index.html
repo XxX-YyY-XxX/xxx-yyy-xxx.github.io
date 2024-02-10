@@ -23,22 +23,37 @@
             <input type="submit" />
         </form>
         
-        <!-- <form id="Browse" class="tab-body"></form> -->
         <div id="Browse" class="tab-body">
             <button type="button" name="page" value="first">First</button>
             <button type="button" name="page" value="previous">Prev</button>
-            <!-- <include key="maxpage"></include> -->
             <span id="page-no">0</span>/<span id="maxpage"></span>
             <button type="button" name="page" value="next">Next</button>
-            <!-- <include attr-value="maxpage"></include> -->
             <button type="button" name="page" value="last">Last</button>
         </div>
+
+        <!-- <form id="Browse" class="tab-body">
+            <button type="submit" name="page" value="1">First</button>
+
+            <button type="submit" name="page" value="previous">Prev</button>
+
+            <span>
+                <input type="number" name="page" value="to">
+                <button type="submit" name="page">Go</button>
+            </span>
+            /<include key="maxpage"></include>
+
+            <button type="submit" name="page" value="next">Next</button>
+
+            <include attr-value="maxpage">
+                <button type="submit" name="page" value="last">Last</button>
+            </include>
+        </form> -->
         
         <div id="cards-field"></div>
     </section>
 </div>
 
-<template id="query-tags">
+<template id="query-tag">
     <label class="tags tooltip">
         <input type="checkbox" />
         <span id="name"></span>
