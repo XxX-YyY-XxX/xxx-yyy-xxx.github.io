@@ -169,7 +169,7 @@
 		margin: 0 auto;
 	}
 
-	.center {
+	.center-text {
 		display: flex;
 		align-items: center;
 		justify-content: center;	
@@ -185,7 +185,6 @@
 	li {
 		line-height: 1.4;
 	}
-
 
 	ul li {
 		list-style-image: url("/assets/css/images/bullet.png");

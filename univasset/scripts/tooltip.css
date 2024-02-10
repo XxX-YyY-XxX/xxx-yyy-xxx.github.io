@@ -5,16 +5,17 @@
     padding: 3px;
     background-color: #555;
     color: #fff;
-    text-align: center;
     z-index: 1;
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s;
     pointer-events: none;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 @media (hover: hover) {
-    :has(> .tooltiptext) {
+    .tooltip {
         position: relative;
     }
 
@@ -25,16 +26,11 @@
         width: 25vw;
         max-width: 300px;
 
-        left: 50%;
-        transform: translateX(-50%);
-
         border-radius: 8px;
+
+        text-align: center;
     }
 
-    .tooltip + .tooltiptext {
-        bottom: 50%;
-    }
-    
     .tooltip > .tooltiptext {
         bottom: 100%;
     }
@@ -56,14 +52,9 @@
 		align-items: center;
 		justify-content: center;	
     }
-
-    .tooltip > .tooltiptext {
-        left: 50%;
-        transform: translateX(-50%);
-    }
 }
 
-.tooltip:hover + .tooltiptext , .tooltip:hover > .tooltiptext {
+.tooltip:hover > .tooltiptext {
     visibility: visible;
     opacity: 1;
 }
