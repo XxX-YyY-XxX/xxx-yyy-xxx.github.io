@@ -10,7 +10,7 @@
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s;
-    /* pointer-events: none; */
+    pointer-events: none;
 }
 
 @media (hover: hover) {
@@ -55,6 +55,11 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;	
+    }
+
+    .tooltip > .tooltiptext {
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 

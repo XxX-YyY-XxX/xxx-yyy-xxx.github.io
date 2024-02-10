@@ -669,8 +669,26 @@ export class AlgoField {
             ALGO_MODAL.close();
             AlgoField.#current = null;
         };
+
+        this.#algoClose = /** @param {MouseEvent} event */ event => {
+            const DIM = ALGO_MODAL.getBoundingClientRect();
+            if (event.clientX < DIM.left || event.clientX > DIM.right || event.clientY < DIM.top || event.clientY > DIM.bottom) {
+                this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
+                const INFO = this.#algogrids.map(x => x.info);
+                if (INFO.flat().length) ALGO_SAVE.set(this.#name, INFO);
+                else                    ALGO_SAVE.del(this.#name);
+    
+                this.onclose();
+        
+                ALGO_MODAL.removeEventListener("click", this.#algoClose);
+    
+                ALGO_MODAL.close();
+                AlgoField.#current = null;    
+            }
+        }
     }
 
+    #algoClose;
     #close;
     show() {
         AlgoField.#current = this;
@@ -680,7 +698,8 @@ export class AlgoField {
         ALGO_MODAL.firstElementChild.textContent = this.#name;
         for (const GRID of this.#algogrids) GRID.display();
 
-        AlgoField.#CLOSE.addEventListener("click", this.#close);
+        // AlgoField.#CLOSE.addEventListener("click", this.#close);
+        ALGO_MODAL.addEventListener("click", this.#algoClose);
 
         ALGO_MODAL.showModal();
     }

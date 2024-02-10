@@ -26,11 +26,6 @@ import {cmp, setattr} from "../basefunctions/index.js";
 
 /** @param {Tag} tags_dict @param {Card[]} cards_list */
 window.queryFunc = function(tags_dict, cards_list) {
-    const SEARCH_PARAMS = new URLSearchParams(location.search);
-    const CARDFIELD = document.querySelector("#cards-field");
-    const HREF = location.origin + location.pathname;
-    const _fieldsetCloner = getTemplateCloner("#faq-card");
-
     //#region Tags Field
     const TAGS_FIELD = document.querySelector("#Tags div");
     const _tagsearchCloner = getTemplateCloner("#query-tags");
@@ -45,7 +40,8 @@ window.queryFunc = function(tags_dict, cards_list) {
         });
         TAG_CHECKBOXES.push(INPUT);
 
-        CLONE.querySelector("label").append(name);
+        // CLONE.querySelector("label").append(name);
+        CLONE.querySelector("#name").replaceWith(name);
         CLONE.querySelector(".tooltiptext").textContent = description;
 
         TAGS_FIELD.appendChild(CLONE);
@@ -95,13 +91,34 @@ window.queryFunc = function(tags_dict, cards_list) {
     });
     //#endregion
 
+    //#region Private Functions
+    /** @param {string} text @returns {DocumentFragment} */ function stringToHTML(text) {
+        return setattr(new DocumentFragment(), {append: [...(new DOMParser()).parseFromString(text, "text/html").body.childNodes]});
+    }
+
+    const HREF = location.origin + location.pathname;
+    const _fieldsetCloner = getTemplateCloner("#faq-card");
+    /** @param {Card} */ function setQuestionBoxes({id, question, answer, tags}) {
+        const CLONE = _fieldsetCloner();
+
+        // might add button for getting card id
+        CLONE.querySelector("h3").appendChild(stringToHTML(question));
+        CLONE.querySelector("#answer").replaceWith(stringToHTML(answer));
+        CLONE.querySelector("#tags").replaceWith(...tags.map(({name}) => setattr(document.createElement("a"), {classList: {add: ["tags"]}, textContent: name, href: HREF+"?tags="+name})));
+
+        return CLONE;
+    }
+    //#endregion
+
+    const SEARCH_PARAMS = new URLSearchParams(location.search);
+    const CARDFIELD = document.querySelector("#cards-field");
     CARDFIELD.append(
         (() => {
             const FRAGMENT = new DocumentFragment();
             var run = false;
 
             switch (true) {
-                case SEARCH_PARAMS.has('search'):
+                case SEARCH_PARAMS.has("search"):
                     const SEARCH = SEARCH_PARAMS.get("search");
                     if (!SEARCH) return "Empty field.";
             
@@ -113,7 +130,7 @@ window.queryFunc = function(tags_dict, cards_list) {
                     }
             
                     return run ? FRAGMENT : "No matches found.";
-                case SEARCH_PARAMS.has('tags'):
+                case SEARCH_PARAMS.has("tags"):
                     const TAGS = SEARCH_PARAMS.get("tags").split(" ");
                     if (!TAGS.length) return "Empty field.";
             
@@ -123,7 +140,9 @@ window.queryFunc = function(tags_dict, cards_list) {
                     }
                         
                     return run ? FRAGMENT : "No matches found.";
-                case SEARCH_PARAMS.has('id'):
+                case SEARCH_PARAMS.has("page"):
+                    return "None";
+                case SEARCH_PARAMS.has("id"):
                     const IDS = SEARCH_PARAMS.get("id").split(" ").map(Number);
             
                     for (const cards of cards_list.filter(({id}) => IDS.includes(id))) {
@@ -145,23 +164,6 @@ window.queryFunc = function(tags_dict, cards_list) {
             }
         })()
     );
-
-    //#region Private Functions
-    /** @param {string} text @returns {DocumentFragment} */ function stringToHTML(text) {
-        return setattr(new DocumentFragment(), {append: [...(new DOMParser()).parseFromString(text, "text/html").body.childNodes]});
-    }
-
-    /** @param {Card} */ function setQuestionBoxes({id, question, answer, tags}) {
-        const CLONE = _fieldsetCloner();
-
-        // might add button for getting card id
-        CLONE.querySelector("h3").appendChild(stringToHTML(question));
-        CLONE.querySelector("#answer").replaceWith(stringToHTML(answer));
-        CLONE.querySelector("#tags").replaceWith(...tags.map(({name}) => setattr(document.createElement("a"), {classList: {add: ["tags"]}, textContent: name, href: HREF+"?tags="+name})));
-
-        return CLONE;
-    }
-    //#endregion
 
     //#region Browse Field
     const MAXPAGE = Math.ceil((cards_list.length) / 5)
