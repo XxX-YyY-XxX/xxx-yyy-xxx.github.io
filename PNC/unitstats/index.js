@@ -212,7 +212,7 @@ class Units {
         this.name = unitobject.name;
         this.class = unitobject.class;
         const CLASS_INPUT = CLASSES[this.class];    //test
-        CLASS_INPUT.addEventListener("change", event => this.row.classList.toggle("hidden", !CLASS_INPUT.checked));
+        CLASS_INPUT.addEventListener("change", event => this.row.classList.toggle("hidden", !CLASS_INPUT.checked), true);
 
         const BASE = unitobject.base;
         this.#hp = BASE.hp;
@@ -328,11 +328,12 @@ class Units {
 
 //#region Function Declarations
 /** Needs `UNIT_LIST` loaded. */
-// function updateTable() {
-//     const SHOWN_CLASS = Object.values(CLASSES).filter(x => x.checked).map(x => x.value);
-//     TBODY.replaceChildren(...UNIT_LIST.filter(x => SHOWN_CLASS.includes(x.class)).map(x => x.row));
-// }
-// for (const INPUT of Object.values(CLASSES)) INPUT.addEventListener("change", updateTable);
+function updateTable() {
+    // const SHOWN_CLASS = Object.values(CLASSES).filter(x => x.checked).map(x => x.value);
+    // TBODY.replaceChildren(...UNIT_LIST.filter(x => SHOWN_CLASS.includes(x.class)).map(x => x.row));
+    TBODY.replaceChildren(...UNIT_LIST.filter(x => !x.row.classList.contains("hidden")).map(x => x.row));
+}
+for (const INPUT of Object.values(CLASSES)) INPUT.addEventListener("change", updateTable, false);
 
 /** @this {HTMLTableCellElement} @param {MouseEvent} event */
 function sortMethod(event) {
@@ -348,8 +349,8 @@ function sortMethod(event) {
             UNIT_LIST.sort(cmp({key: x => x[DATA.key], reverse: DATA.type === "string"}));
             break;
     }
-    // updateTable();
-    TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));    //test
+    updateTable();
+    // TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));    //test
 }
 //#endregion
 
@@ -358,8 +359,7 @@ const UNIT_LIST = (await UNIT_PROMISE).filter(({tags}) => !tags.includes("Unrele
 const [THEAD, HEADER_TR] = nestElements("thead", "tr");
 
 const TBODY = document.createElement("tbody");
-// updateTable()
-TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));    // test
+TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));
 
 const TABLE = setattr(document.createElement("table"), {classList: {add: ["freeze-col", "freeze-row"]}, append: [THEAD, TBODY]})
 
