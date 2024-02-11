@@ -217,11 +217,11 @@
 		}
 	}
 
-	/* .center {
+	.center {
 		left: 50%;
 		position: relative;
 		transform: translateX(-50%);
-	} */
+	}
 
 	.highlight {
 		color: #d0d0d0;

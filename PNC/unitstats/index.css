@@ -1,16 +1,12 @@
-@import "/main.css";
-@import "/univasset/scripts/tooltip.css";
-@import "/univasset/scripts/table.css";
+@import "/main.css" layer(user);
+@import "/univasset/scripts/tooltip.css" layer(tooltip);
+@import "/univasset/scripts/table.css" layer(table);
 
 .func_table {
     height: fit-content;
     max-height: 95lvh;
     overflow: scroll;
     overscroll-behavior: contain;
-}
-
-table {
-    margin: 0;
 }
 
 input[type="checkbox"], input[type="radio"] {
@@ -31,11 +27,13 @@ tbody > tr > td:first-child, thead > tr > th {
     border-right: 1px dashed #b5e853;
 }
 
-.freeze-col tbody > tr:nth-child(odd) > td:first-child {
+/* .freeze-col tbody > tr:nth-child(odd) > td:first-child { */
+.freeze-col tbody > tr:nth-child(odd of :not(.hidden)) > td:first-child {
     background: #1b1b1b;
 }
 
-.freeze-col tbody > tr:nth-child(even) > td:first-child {
+/* .freeze-col tbody > tr:nth-child(even) > td:first-child { */
+.freeze-col tbody > tr:nth-child(even of :not(.hidden)) > td:first-child {
     background: #292f20;
 }
 /* #endregion */
@@ -51,6 +49,20 @@ tbody > tr > td:first-child, thead > tr > th {
     background: linear-gradient(45deg, #1b1b1b, transparent 50%),
         linear-gradient(-45deg, #1b1b1b, transparent 50%),
         linear-gradient(gray 50%, red);
+}
+/* #endregion */
+
+/* #region Filter */
+.hidden {
+    display: none;
+}
+
+.func_table tr {
+    background-color: unset;
+}
+
+.func_table tbody > tr:nth-child(even of :not(.hidden)) {
+    background-color: rgba(85, 107, 47, 0.25);
 }
 /* #endregion */
 
@@ -164,5 +176,5 @@ tbody > tr > td:first-child, thead > tr > th {
 
 #bonus .tooltiptext {
     bottom: 150%;
-}
+}    
 /* #endregion */

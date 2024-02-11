@@ -658,22 +658,6 @@ export class AlgoField {
             return combine(SET_DICT, MAINSUB);
         })();
 
-        this.#close = () => {
-            this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
-            const INFO = this.#algogrids.map(x => x.info);
-            if (INFO.flat().length) ALGO_SAVE.set(this.#name, INFO);
-            else                    ALGO_SAVE.del(this.#name);
-
-            this.onclose();
-    
-            ALGO_MODAL.removeEventListener("click", this.#close);
-
-            ALGO_MODAL.close();
-            AlgoField.#current = null;
-
-            console.log("Closed via button.")
-        };
-
         this.#close = /** @param {MouseEvent} event */ (event) => {
             const DIM = ALGO_MODAL.getBoundingClientRect();
             if (event.clientX < DIM.left || event.clientX > DIM.right || event.clientY < DIM.top || event.clientY > DIM.bottom) {

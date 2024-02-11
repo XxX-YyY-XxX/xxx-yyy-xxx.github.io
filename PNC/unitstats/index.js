@@ -203,16 +203,18 @@ class Units {
     row;
     updateStat;
 
-    /** @param {UnitObject} stat_object */
-    constructor(stat_object) {
+    /** @param {UnitObject} unitobject */
+    constructor(unitobject) {
         const MISSING = [];
 
-        this.#algofield = new AlgoField(stat_object);
+        this.#algofield = new AlgoField(unitobject);
 
-        this.name = stat_object.name;
-        this.class = stat_object.class;
+        this.name = unitobject.name;
+        this.class = unitobject.class;
+        const CLASS_INPUT = CLASSES[this.class];    //test
+        CLASS_INPUT.addEventListener("change", event => this.row.classList.toggle("hidden", !CLASS_INPUT.checked));
 
-        const BASE = stat_object.base;
+        const BASE = unitobject.base;
         this.#hp = BASE.hp;
         this.#atk = BASE.atk;
         this.#hash = BASE.hash;
@@ -225,7 +227,7 @@ class Units {
         this.#dodge = BASE.dodge;
         this.#regen = BASE.regen;
 
-        const ARMA = stat_object.arma;
+        const ARMA = unitobject.arma;
         this.#armahp = ARMA.hp;
         this.#armaatk = ARMA.atk;
         this.#armahash = ARMA.hash;
@@ -233,9 +235,9 @@ class Units {
         this.#armaodef = ARMA.odef;
         this.#armappen = ARMA.ppen;
         this.#armaopen = ARMA.open;
-        this.#hasarma = stat_object.tags.includes("Arma");
+        this.#hasarma = unitobject.tags.includes("Arma");
 
-        this.#intistats = stat_object.intimacy;
+        this.#intistats = unitobject.intimacy;
         if (this.#intistats.length !== 3) MISSING.push("Intimacy")
 
         const TD_NAME = document.createElement("td");
@@ -319,11 +321,6 @@ class Units {
 
         if (MISSING.length) window.addEventListener("load", () => alert(`${this.name} has incomplete data: ${MISSING.join(" ")}`));
 
-        // const UNIT_ROW = this.row;
-        // CLASS_BUTTONS[this.class].addEventListener("change", function(event) {
-        //     UNIT_ROW.classList.toggle("hidden", !this.checked);
-        // });
-
         //#privatefield cannot be called dynamically, use exec/eval instead
     }
 }
@@ -331,11 +328,11 @@ class Units {
 
 //#region Function Declarations
 /** Needs `UNIT_LIST` loaded. */
-function updateTable() {
-    const SHOWN_CLASS = Object.values(CLASSES).filter(x => x.checked).map(x => x.value);
-    TBODY.replaceChildren(...UNIT_LIST.filter(x => SHOWN_CLASS.includes(x.class)).map(x => x.row));
-}
-for (const INPUT of Object.values(CLASSES)) INPUT.addEventListener("change", updateTable);
+// function updateTable() {
+//     const SHOWN_CLASS = Object.values(CLASSES).filter(x => x.checked).map(x => x.value);
+//     TBODY.replaceChildren(...UNIT_LIST.filter(x => SHOWN_CLASS.includes(x.class)).map(x => x.row));
+// }
+// for (const INPUT of Object.values(CLASSES)) INPUT.addEventListener("change", updateTable);
 
 /** @this {HTMLTableCellElement} @param {MouseEvent} event */
 function sortMethod(event) {
@@ -351,8 +348,8 @@ function sortMethod(event) {
             UNIT_LIST.sort(cmp({key: x => x[DATA.key], reverse: DATA.type === "string"}));
             break;
     }
-    updateTable();
-    // TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));
+    // updateTable();
+    TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));    //test
 }
 //#endregion
 
@@ -361,8 +358,8 @@ const UNIT_LIST = (await UNIT_PROMISE).filter(({tags}) => !tags.includes("Unrele
 const [THEAD, HEADER_TR] = nestElements("thead", "tr");
 
 const TBODY = document.createElement("tbody");
-updateTable()
-// TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));
+// updateTable()
+TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));    // test
 
 const TABLE = setattr(document.createElement("table"), {classList: {add: ["freeze-col", "freeze-row"]}, append: [THEAD, TBODY]})
 
