@@ -329,8 +329,6 @@ class Units {
 //#region Function Declarations
 /** Needs `UNIT_LIST` loaded. */
 function updateTable() {
-    // const SHOWN_CLASS = Object.values(CLASSES).filter(x => x.checked).map(x => x.value);
-    // TBODY.replaceChildren(...UNIT_LIST.filter(x => SHOWN_CLASS.includes(x.class)).map(x => x.row));
     TBODY.replaceChildren(...UNIT_LIST.filter(x => !x.row.classList.contains("hidden")).map(x => x.row));
 }
 for (const INPUT of Object.values(CLASSES)) INPUT.addEventListener("change", updateTable, false);
