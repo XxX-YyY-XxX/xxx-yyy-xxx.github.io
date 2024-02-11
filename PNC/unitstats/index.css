@@ -28,12 +28,12 @@ tbody > tr > td:first-child, thead > tr > th {
 }
 
 /* .freeze-col tbody > tr:nth-child(odd) > td:first-child { */
-.freeze-col tbody > tr:nth-child(odd of :not(.hidden)) > td:first-child {
+.freeze-col tbody > tr:not(.hidden):nth-child(odd) > td:first-child {
     background: #1b1b1b;
 }
 
 /* .freeze-col tbody > tr:nth-child(even) > td:first-child { */
-.freeze-col tbody > tr:nth-child(even of :not(.hidden)) > td:first-child {
+.freeze-col tbody > tr:not(.hidden):nth-child(even) > td:first-child {
     background: #292f20;
 }
 /* #endregion */
@@ -61,7 +61,7 @@ tbody > tr > td:first-child, thead > tr > th {
     background-color: unset;
 }
 
-.func_table tbody > tr:nth-child(even of :not(.hidden)) {
+.func_table tbody > tr:not(.hidden):nth-child(even) {
     background-color: rgba(85, 107, 47, 0.25);
 }
 /* #endregion */
