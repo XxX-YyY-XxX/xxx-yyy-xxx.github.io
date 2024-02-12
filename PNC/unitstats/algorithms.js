@@ -1,5 +1,5 @@
 import {STAT_KEYS} from "./typing.js";
-import {cmp, chain, setattr, subclassof, zip} from "../../univasset/scripts/basefunctions/index.js";
+import {cmp, setattr, subclassof, zip} from "../../univasset/scripts/basefunctions/index.js";
 import {getTemplateCloner} from "../../univasset/scripts/externaljavascript.js";
 
 //#region Types
@@ -117,7 +117,7 @@ const STATVALUES = Object.freeze({
 /** @param {StatDict} object1 @param {StatDict} object2 @returns {StatDict} */
 function combine(object1, object2) {
     const OUTPUT = new Map();
-    for (const attribute of new Set(chain(object1.keys(), object2.keys())))
+    for (const attribute of new Set([...object1.keys(), ...object2.keys()]))
         OUTPUT.set(attribute, (object1.get(attribute) ?? 0) + (object2.get(attribute) ?? 0));
     return OUTPUT;
 }
@@ -488,6 +488,11 @@ class AlgoGrid {
 
     static {
         this.#SELECT.addEventListener("close", function(event) {this.firstElementChild.replaceChildren()});  // Empties algo buttons selection.
+        this.#SELECT.addEventListener("click", function(event) {
+            const DIM = this.getBoundingClientRect();
+            if (event.clientX < DIM.left || event.clientX > DIM.right || event.clientY < DIM.top || event.clientY > DIM.bottom)
+                this.close("");
+        });
     }
 
     #fieldtype;
@@ -515,24 +520,9 @@ class AlgoGrid {
 
         this.#grid = GRIDS[fieldtype];
         this.#algorithms = init_array.map(([set, ...attr]) => new ALGO_SETS[fieldtype][set](this, attr));
-
-        this.#close = () => {
-            AlgoGrid.#SELECT.removeEventListener("close", this.#close);
-
-            // what if close not through button 
-            // const DIM = ALGO_MODAL.getBoundingClientRect();
-            // if (event.clientX < DIM.left || event.clientX > DIM.right || event.clientY < DIM.top || event.clientY > DIM.bottom) {
-
-            this.#algorithms.push(new ALGO_SETS[fieldtype][AlgoGrid.#SELECT.returnValue](this));
-    
-            this.#grid.replaceChildren();
-            this.display();
-        }
     }
 
-    /** Only gets closed upon selecting an algorithm. */
-    #close;     // Function object required instead of class method for listener attachment and removal.
-    #open() {
+    #open = () => {
         if (this.#emptycell === 1)
             AlgoGrid.#SELECT.firstElementChild.appendChild(ALGO_SETS[this.#fieldtype][this.#fieldtype+"Block"].createSelectButton());
         else
@@ -543,11 +533,24 @@ class AlgoGrid {
         AlgoGrid.#SELECT.showModal();
     }
 
+    // Function object required instead of class method for listener attachment and removal.
+    /** Only gets closed upon selecting an algorithm. */
+    #close = () => {
+        AlgoGrid.#SELECT.removeEventListener("close", this.#close);
+
+        if (!AlgoGrid.#SELECT.returnValue) return;
+
+        this.#algorithms.push(new ALGO_SETS[fieldtype][AlgoGrid.#SELECT.returnValue](this));
+
+        this.#grid.replaceChildren();
+        this.display();
+    };
+
     display() {
         this.#grid.append(...this.#algorithms.sort(cmp({key: x => x.SIZE, reverse: true})).map(x => x.html));
 
         for (let index = 0; index < this.#emptycell; index++)
-            this.#grid.appendChild(setattr(document.createElement("button"), {type: "button", classList: {add: ["algo-empty"]}, addEventListener: ["click", this.#open.bind(this)]}));
+            this.#grid.appendChild(setattr(document.createElement("button"), {type: "button", classList: {add: ["algo-empty"]}, addEventListener: ["click", this.#open]}));
 
         for (let index = 0; index < this.#closedcell; index++)
             this.#grid.appendChild(setattr(document.createElement("div"), {classList: {add: ["algo-close"]}}))
@@ -659,7 +662,7 @@ export class AlgoField {
         })();
     }
 
-    show() {
+    show = () => {
         AlgoField.#current = this;
 
         this.#algogrids ??= Array.from(zip(["Offense", "Stability", "Special"], this.#layout, ALGO_SAVE.get(this.#name))).map(([type, size, info]) => new AlgoGrid(type, Number(size), info));

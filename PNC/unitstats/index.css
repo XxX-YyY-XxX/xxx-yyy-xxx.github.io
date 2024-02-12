@@ -180,5 +180,6 @@ tbody > tr > td:first-child, thead > tr > th {
 
 #bonus .tooltiptext {
     bottom: 150%;
+    white-space: normal;
 }    
 /* #endregion */
