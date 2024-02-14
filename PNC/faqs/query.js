@@ -278,3 +278,6 @@ window.cards = [
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1adsqjg/weekly_professors_lounge_january_29_2024/kow77hi/
 
 // https://www.reddit.com/r/GFLNeuralCloud/comments/z5446s/algorithm_sets_recommendations_google_doc/
+// https://nalu.wiki/neuralcloud
+
+// https://old.reddit.com/r/GFLNeuralCloud/comments/1ajdx5e/weekly_professors_lounge_february_05_2024/
