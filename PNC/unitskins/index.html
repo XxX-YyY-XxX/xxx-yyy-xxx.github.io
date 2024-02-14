@@ -31,12 +31,37 @@
             <section id="main_content">
                 <!-- text filter -->
                 <!-- tags (radio) -->
-                <!-- table -->
-                <!-- name, count, status, skins -->
+                <div id="table" class="func_table">
+                    <table class="freeze-col freeze-row">
+                        <thead>
+                            <tr></tr>
+                        </thead>
+                        <tbody></tbody>
+                        <!-- name, count, status, skins -->
+                    </table>
+                </div>
                 <h6>Previous databases:</h6>
                 <a href="https://neuralen.modoo.at/" class="tooltip" target="_blank">NC Skin info<span class="tooltiptext">Managed by Pineapple</span></a>
+                <br>
                 <a href="https://docs.google.com/spreadsheets/d/1pUMySKTl-rp1PGwUENAHN7PxEcL8rTVTGjZ6MLxMBtU">PNC Neural Cloud Projections</a>
             </section>
         </div>
+
+        <!-- might change to anchor css instead -->
+        <dialog id="skin-info">
+            <!-- skin image -->
+            <!-- name -->
+            <!-- cost -->
+            <!-- tags -->
+            <button type="button"></button>
+        </dialog>
+
+        <template id="empty-cell">
+            <td class="hidden"></td>
+        </template>
+
+        <template id="skin-cell">
+            <td></td>
+        </template>
     </body>
 </html>
