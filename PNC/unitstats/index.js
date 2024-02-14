@@ -211,7 +211,7 @@ class Units {
 
         this.name = unitobject.name;
         this.class = unitobject.class;
-        const CLASS_INPUT = CLASSES[this.class];    //test
+        const CLASS_INPUT = CLASSES[this.class];
         CLASS_INPUT.addEventListener("change", event => this.row.classList.toggle("hidden", !CLASS_INPUT.checked), true);
 
         const BASE = unitobject.base;
@@ -319,7 +319,7 @@ class Units {
         
         for (const BUTT of Object.values(BUTTON)) BUTT.addEventListener("change", this.updateStat);
 
-        if (MISSING.length) window.addEventListener("load", () => alert(`${this.name} has incomplete data: ${MISSING.join(" ")}`));
+        if (MISSING.length) window.addEventListener("DOMContentLoaded", () => alert(`${this.name} has incomplete data: ${MISSING.join(" ")}`));
 
         //#privatefield cannot be called dynamically, use exec/eval instead
     }
@@ -369,3 +369,5 @@ for (const [NAME, KEY, TYPE] of zip(HEADER_VALUES, ["name", ...Object.values(STA
 }
 
 setattr(document.querySelector("#table"), {classList: {add: ["func_table"]}, appendChild: [TABLE]});
+
+// document.dispatchEvent(new Event("custom"));
