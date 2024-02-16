@@ -23,17 +23,21 @@
 
 // const REPLACEALL_EVENT = new Event("replaceall");
 
-// #region Setup
 // ChildNode.replaceWith() does not work with open tags.
-
 const REPLACE_EVENT = new Event("replace");
 /** @param {HTMLElement} include @param {...(string|Node)} values */
 function replace(include, ...values) {
-    if (values.length)  include.replaceWith(...values);
-    else                include.replaceWith(...include.childNodes);
+    const SUCCESS = Boolean(values.length);
+
+    //----------------------------------------------------------------------
+
+    if (SUCCESS)    include.replaceWith(...values);
+    else            include.replaceWith(...include.childNodes);
+
+    //----------------------------------------------------------------------
 
     Object.defineProperty(include, "success", {
-        value: Boolean(values.length),
+        value: SUCCESS,
         enumerable: true
     });
 
@@ -41,9 +45,8 @@ function replace(include, ...values) {
 
     //----------------------------------------------------------------------
 
-    eval?.(include.getAttribute(success ? "onreplace" : "ondefault") ?? "");
+    eval?.(include.getAttribute(SUCCESS ? "onreplace" : "ondefault") ?? "");
 }
-// #endregion
 
 /**
  * @param {HTMLElement} include

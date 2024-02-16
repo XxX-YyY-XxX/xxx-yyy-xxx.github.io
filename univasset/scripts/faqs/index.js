@@ -160,29 +160,6 @@ window.queryFunc = function(tags_dict, cards_list) {
                         FRAGMENT.appendChild(setQuestionBoxes(cards_list[INDEX]));
                     
                     return FRAGMENT;
-
-                    // const MAXPAGE = Math.ceil((cards_list.length) / 5);
-                
-                    // const PAGENO = document.getElementById('page-no');
-                    // for (const BUTTON of document.querySelectorAll("#Browse button")) {
-                    //     /** @type {function(): number} */ const getPage = {
-                    //         first: () => 1,
-                    //         previous: () => Math.max(1, Number(PAGENO.textContent) - 1),
-                    //         next: () => Math.min(MAXPAGE, Number(PAGENO.textContent) + 1),
-                    //         last: () => MAXPAGE
-                    //     }[BUTTON.value];
-                
-                    //     BUTTON.addEventListener("click", function(event) {
-                    //         const FRAGMENT = new DocumentFragment();
-                    //         const PAGE = getPage();
-                    //         PAGENO.textContent = PAGE;
-                    //         for (var i = (PAGE * 5) - 5; i < Math.min(PAGE * 5, cards_list.length); i++)
-                    //             FRAGMENT.appendChild(setQuestionBoxes(cards_list[i]));
-                    //         CARDFIELD.replaceChildren(FRAGMENT);
-                    //     })
-                    // }
-                
-                    // return "None";
                 case SEARCH_PARAMS.has("id"):
                     const IDS = SEARCH_PARAMS.get("id").split(" ").map(Number);
             
