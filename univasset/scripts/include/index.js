@@ -2,11 +2,6 @@
     HTMLIncludeElement-specific events:
         replace: Executed when the `include` element has been replaced.
     ------------------------------------------------------------------------------------------------------------
-    
-    attr-???: change first child element's ??? attribute value to parameter value, must have a child element
-        <include attr-href="s"><a></a></include> or <include attr-href="s"><a href="sample"></a></include>
-        => <a href="34"></a>
-    
     if: execute if parameter is present
         <include if="a" key="s"></include>
         => 34
@@ -31,8 +26,7 @@ function replace(include, ...values) {
 
     //----------------------------------------------------------------------
 
-    if (SUCCESS)    include.replaceWith(...values);
-    else            include.replaceWith(...include.childNodes);
+    include.replaceWith(...(SUCCESS ? values : include.childNodes))
 
     //----------------------------------------------------------------------
 
@@ -85,8 +79,8 @@ async function includeDocument(include, file_name, depth = 0) {
             continue;
         }
 
-        if (Array.from(INCLUDE.attributes).map(x => x.name).some(x => x.startsWith("attr-")) && INCLUDE.hasChildNodes()) {
-            const CHILD = INCLUDE.firstElementChild;
+        const CHILD = INCLUDE.firstElementChild;
+        if (Array.from(INCLUDE.attributes).some(x => x.name.startsWith("attr-")) && CHILD) {
             for (const {name, value} of INCLUDE.attributes) {
                 const QUALIFIED = name.match(/attr-(\w+)/);
                 if (!QUALIFIED) continue;
@@ -121,9 +115,6 @@ async function includeDocument(include, file_name, depth = 0) {
             await includeDocument(INCLUDE, SOURCE, depth + 1);
             continue;
         }
-
-        //untested
-        // console.warn("Unparsed include element found:", INCLUDE.outerHTML, "from", SOURCE);
     }
     
     // console.log(file_name)

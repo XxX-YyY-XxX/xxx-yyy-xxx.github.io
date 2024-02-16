@@ -22,8 +22,12 @@
                 "description": "Space-separated parent parameters, whose value will replace this element. Uses the first available parameter and defaults if none are available.\n\nParent: `<include src='' s='34' f='69'></include>`\n\nChild: `<include key='a s d f'></include>`\n\nOutput: `34`"
             },
             {
+                "name": "attr-",
+                "description": "Use extension as child's target attribute, assign value from parent parameter to child's said attribute, and replace self with child. Requires a child element.\n\nParent: `<include src='' a='para'></include>`\n\nChild: `<include attr-id='a'><p></p></include>`\n\nOutput: `<p id='para'></p>`"
+            },
+            {
                 "name": "param-",
-                "description": "Use extension as qualifiedName. Change value from parent parameter to its equivalent value. Removes self if parameter not found.\n\nParent: `<include src='' a='12'></include>`\n\nChild: `<include src='' param-z='a'></include>`\n\nOutput: `<include src=' z='12'></include>`"
+                "description": "Use extension as qualifiedName and change value from parent parameter to its equivalent value. Removes self if parameter not found.\n\nParent: `<include src='' a='12'></include>`\n\nChild: `<include src='' param-z='a'></include>`\n\nOutput: `<include src=' z='12'></include>`"
             }
         ]
     }],

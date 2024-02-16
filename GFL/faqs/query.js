@@ -4043,7 +4043,7 @@ const CARDS = [
     {
         id: 506,
         question: `What's the data for the Luffberry gacha?`,
-        answer: `${"u/UnironicWeeaboo's report.", "https://old.reddit.com/r/girlsfrontline/comments/x74mpx/weekly_commanders_lounge_september_06_2022/ingul31/"}`,
+        answer: `${link("u/UnironicWeeaboo's report.", "https://old.reddit.com/r/girlsfrontline/comments/x74mpx/weekly_commanders_lounge_september_06_2022/ingul31/")}`,
         tags: [dtag.OJ]
     },
     // {

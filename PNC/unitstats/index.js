@@ -319,7 +319,7 @@ class Units {
         
         for (const BUTT of Object.values(BUTTON)) BUTT.addEventListener("change", this.updateStat);
 
-        if (MISSING.length) window.addEventListener("custom", () => alert(`${this.name} has incomplete data: ${MISSING.join(" ")}`));
+        if (MISSING.length) document.addEventListener("custom", () => alert(`${this.name} has incomplete data: ${MISSING.join(" ")}`));
 
         //#privatefield cannot be called dynamically, use exec/eval instead
     }

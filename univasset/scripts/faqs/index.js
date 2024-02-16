@@ -115,70 +115,45 @@ window.queryFunc = function(tags_dict, cards_list) {
         (() => {
             const FRAGMENT = new DocumentFragment();
             var run = false;
+            var key;
 
-            switch (true) {
-                case SEARCH_PARAMS.has("search"):
-                    const SEARCH = SEARCH_PARAMS.get("search");
-                    if (!SEARCH) return "Empty field.";
-            
-                    const KEYWORDS = SEARCH.replace(/\s+/, " ").toLowerCase().split(" ");
-            
-                    for (const cards of cards_list.filter(({question, answer}) => KEYWORDS.every(str => [question, answer].some(x => removeHTMLTag(x).toLowerCase().includes(str))))) {
-                        FRAGMENT.appendChild(setQuestionBoxes(cards));
-                        run = true;
-                    }
-            
-                    return run ? FRAGMENT : "No matches found.";
-                case SEARCH_PARAMS.has("tags"):
-                    const TAGS = SEARCH_PARAMS.get("tags").split(" ");
-                    if (!TAGS.length) return "Empty field.";
-            
-                    for (const cards of cards_list.filter(({tags}) => TAGS.subsetof(tags.map(x => x.name)))) {
-                        FRAGMENT.appendChild(setQuestionBoxes(cards));
-                        run = true;
-                    }
-                    
-                    return run ? FRAGMENT : "No matches found.";
-                case SEARCH_PARAMS.has("page"):
-                    const PAGE = Number(SEARCH_PARAMS.get("page"));
-
-                    if (PAGE > 1) {
-                        /** @type {HTMLButtonElement} */ const PREV = document.querySelector('#Browse [value="prev"]');
-                        PREV.disabled = false;
-                        PREV.value = PAGE - 1;
-                    }
-                    if (PAGE < Number(document.querySelector("#Browse button:last-child").value)) {
-                        /** @type {HTMLButtonElement} */ const NEXT = document.querySelector('#Browse [value="next"]');
-                        NEXT.disabled = false;
-                        NEXT.value = PAGE + 1;
-                    }
-                    /** @type {HTMLInputElement} */ const INT_FIELD = document.querySelector("#Browse input");
-                    INT_FIELD.value = PAGE;
-
-                    const LIMIT = Math.min(PAGE * 5, cards_list.length);
-                    for (let INDEX = (PAGE * 5) - 5; INDEX < LIMIT; INDEX++)
-                        FRAGMENT.appendChild(setQuestionBoxes(cards_list[INDEX]));
-                    
-                    return FRAGMENT;
-                case SEARCH_PARAMS.has("id"):
-                    const IDS = SEARCH_PARAMS.get("id").split(" ").map(Number);
-            
-                    for (const cards of cards_list.filter(({id}) => IDS.includes(id))) {
-                        FRAGMENT.appendChild(setQuestionBoxes(cards));
-                        run = true;
-                    }
-                    
-                    return run ? FRAGMENT : "No matches found.";
-                default:
-                    const LENGTH = cards_list.length;
-                    const INDICES = new Set();
-            
-                    do INDICES.add(randInt(0, LENGTH));
-                    while (INDICES.size < 3)
-            
-                    for (const index of INDICES) FRAGMENT.appendChild(setQuestionBoxes(cards_list[index]));
-            
-                    return FRAGMENT;
+            if (key = SEARCH_PARAMS.get("search")) {
+                const KEYWORDS = key.replace(/\s+/, " ").toLowerCase().split(" ");
+                for (const cards of cards_list.filter(({question, answer}) => KEYWORDS.every(str => [question, answer].some(x => removeHTMLTag(x).toLowerCase().includes(str))))) {
+                    FRAGMENT.appendChild(setQuestionBoxes(cards));
+                    run = true;
+                }
+                return run ? FRAGMENT : "No matches found.";
+            } else if (key = SEARCH_PARAMS.get("tags")) {
+                const TAGS = key.split(" ");
+                for (const cards of cards_list.filter(({tags}) => TAGS.subsetof(tags.map(x => x.name)))) {
+                    FRAGMENT.appendChild(setQuestionBoxes(cards));
+                    run = true;
+                }
+                return run ? FRAGMENT : "No matches found.";
+            } else if (key = SEARCH_PARAMS.get("page")) {
+                const PAGE = Number(key);
+                document.querySelector('#Browse input[type="number"]').value = PAGE;
+                const LIMIT = Math.min(PAGE * 5, cards_list.length);
+                for (let INDEX = (PAGE * 5) - 5; INDEX < LIMIT; INDEX++)
+                    FRAGMENT.appendChild(setQuestionBoxes(cards_list[INDEX]));
+                return FRAGMENT;
+            } else if (key = SEARCH_PARAMS.get("id")) {
+                const IDS = key.split(" ").map(Number);
+                for (const cards of cards_list.filter(({id}) => IDS.includes(id))) {
+                    FRAGMENT.appendChild(setQuestionBoxes(cards));
+                    run = true;
+                }
+                return run ? FRAGMENT : "No matches found.";
+            } else if (key === "") {
+                return "Empty field."
+            } else {
+                const LENGTH = cards_list.length;
+                const INDICES = new Set();
+                do INDICES.add(randInt(0, LENGTH));
+                while (INDICES.size < 3)
+                for (const index of INDICES) FRAGMENT.appendChild(setQuestionBoxes(cards_list[index]));
+                return FRAGMENT;
             }
         })()
     );

@@ -10,6 +10,10 @@ input[type="checkbox"], input[type="radio"] {
     margin: 0px;
 }
 
+input[type="number"] {
+    width: 40px;
+}
+
 dl, table, blockquote, figure {
     margin: 0px;
 }
