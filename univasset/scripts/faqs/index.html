@@ -14,7 +14,7 @@
         </div>
         
         <form id="Keywords" class="tab-body">
-            <input type="text" placeholder="Separate keywords with whitespace" name="search" />
+            <input type="text" name="search" placeholder="Separate keywords with whitespace" />
             <input type="submit" />
         </form>
         
@@ -23,15 +23,13 @@
             <input type="text" name="tags" />
             <input type="submit" />
         </form>
-        
-        <div id="Browse" class="tab-body">
-            <button type="button" name="page" value="first">First</button>
-            <button type="button" name="page" value="previous">Prev</button>
-            <span id="page-no">0</span>/<include key="maxpage"></include>
-            <button type="button" name="page" value="next">Next</button>
-            <button type="button" name="page" value="last">Last</button>
-        </div>
-        
+
+        <form id="Browse" class="tab-body">
+            <include attr-max="maxpage"><input type="number" name="page" value="0" min="1" max="" /></include>
+            /<include key="maxpage"></include>
+            <input type="submit" />
+        </form>
+
         <div id="cards-field"></div>
     </section>
 </div>
