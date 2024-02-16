@@ -137,19 +137,31 @@ window.queryFunc = function(tags_dict, cards_list) {
                         FRAGMENT.appendChild(setQuestionBoxes(cards));
                         run = true;
                     }
-                        
+                    
                     return run ? FRAGMENT : "No matches found.";
                 case SEARCH_PARAMS.has("page"):
                     const PAGE = Number(SEARCH_PARAMS.get("page"));
-                    const LIMIT = Math.min(PAGE * 5, cards_list.length);
 
+                    if (PAGE > 1) {
+                        /** @type {HTMLButtonElement} */ const PREV = document.querySelector('#Browse [value="prev"]');
+                        PREV.disabled = false;
+                        PREV.value = PAGE - 1;
+                    }
+                    if (PAGE < Number(document.querySelector("#Browse button:last-child").value)) {
+                        /** @type {HTMLButtonElement} */ const NEXT = document.querySelector('#Browse [value="next"]');
+                        NEXT.disabled = false;
+                        NEXT.value = PAGE + 1;
+                    }
+                    /** @type {HTMLInputElement} */ const INT_FIELD = document.querySelector("#Browse input");
+                    INT_FIELD.value = PAGE;
+
+                    const LIMIT = Math.min(PAGE * 5, cards_list.length);
                     for (let INDEX = (PAGE * 5) - 5; INDEX < LIMIT; INDEX++)
                         FRAGMENT.appendChild(setQuestionBoxes(cards_list[INDEX]));
                     
                     return FRAGMENT;
 
                     // const MAXPAGE = Math.ceil((cards_list.length) / 5);
-                    // document.getElementById('maxpage').textContent = MAXPAGE;
                 
                     // const PAGENO = document.getElementById('page-no');
                     // for (const BUTTON of document.querySelectorAll("#Browse button")) {
@@ -195,10 +207,8 @@ window.queryFunc = function(tags_dict, cards_list) {
     );
 
     //#region Browse Field
-    const MAXPAGE = Math.ceil((cards_list.length) / 5)
-    document.getElementById('maxpage').textContent = MAXPAGE;
-
     const PAGENO = document.getElementById('page-no');
+    const MAXPAGE = Math.ceil((cards_list.length) / 5);
     for (const BUTT of Array.from(document.querySelectorAll("#Browse button"))) {
         /** @type {function(): number} */ const getPage = {
             first: () => 1,
@@ -219,9 +229,4 @@ window.queryFunc = function(tags_dict, cards_list) {
     //#endregion
 }
 
-try {
-    document.querySelector("include").setAttribute("maxpage", Math.ceil((window.cards.length) / 5));
-    console.log("Setup OK.")
-} catch (e) {
-    console.warn(e)
-}
+document.querySelector("include").setAttribute("maxpage", Math.ceil((window.cards.length) / 5));

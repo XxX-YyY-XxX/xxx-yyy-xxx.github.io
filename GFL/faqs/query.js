@@ -630,9 +630,14 @@ const CARDS = [
         tags: [dtag.ACCT]
     },  //If there's two simultaneous logins, who gets kicked the first or the second?
     {
-        id: '00037',
+        id: 37,
         question: `Where to go for tech support/bug report?`,
-        answer: `Aside from the in-game CS, FB and Twitter is said to be responsive enough. Or you can use ${link('this', 'https://forms.gle/bZNnQeh5sJaD3pim8')} for reporting.`,
+        answer: `${List.unordered(
+            "In-game customer support",
+            "Support address: mailto:support@sunborngame.com",
+            "Facebook/Twitter",
+            link("Google Form", 'https://forms.gle/bZNnQeh5sJaD3pim8')
+        )}`,
         tags: [dtag.TECH, dtag["3P"]]
     },
     {
@@ -850,13 +855,15 @@ const CARDS = [
         tags: [dtag.ITEM, dtag.PA, dtag.SIMS, dtag.SHOP, dtag.GET]
     },
     {
-        id: '00067',
+        id: 67,
         question: `Which dolls should I dupe/duplicate?`,
-        answer: `${link('Matsuda notes.', 'https://gfl.matsuda.tips/post/worthwhiledupes')}<br>
-        ${link("Gamepress suggestions for dolls and coalition units.", "https://gamepress.gg/girlsfrontline/duping-recommendations-and-coalition-mooks")}<br>
-        ${spoilerSummary('Discord recommendations.', img('https://cdn.discordapp.com/attachments/640157367056728133/1048531902065287188/dupe_gameing_pt3.png'))}`,
+        answer: `${List.unordered(
+            link("Gamepress suggestions for dolls and coalition units.", "https://gamepress.gg/girlsfrontline/duping-recommendations-and-coalition-mooks"),
+            link('Matsuda notes.', 'https://gfl.matsuda.tips/post/worthwhiledupes'),
+            spoilerSummary('Discord recommendations.', img('https://cdn.discordapp.com/attachments/640157367056728133/1048531902065287188/dupe_gameing_pt3.png'))   //Jesse, Varz, etc.
+        )}`,
         tags: [dtag.TDOLL, dtag.COALITION]
-    },  //Jesse, Varz, etc.
+    },  
     {
         id: '00068',
         question: `How high is fairy rate up?`,
@@ -3944,7 +3951,7 @@ const CARDS = [
         tags: [dtag.MISC]
     },
     {
-        id: '00493',
+        id: 493,
         question: `What's the best strategy for Gray Zone?`,
         answer: `${List.unordered(
             "Picking the hardest difficulty you can deal.",
@@ -4033,6 +4040,12 @@ const CARDS = [
         answer: `By changing screen resolution/aspect ratio.`,
         tags: [dtag.MISC]
     },
+    {
+        id: 506,
+        question: `What's the data for the Luffberry gacha?`,
+        answer: `${"u/UnironicWeeaboo's report.", "https://old.reddit.com/r/girlsfrontline/comments/x74mpx/weekly_commanders_lounge_september_06_2022/ingul31/"}`,
+        tags: [dtag.OJ]
+    },
     // {
     //     id: 0,
     //     question: ``,
@@ -4057,9 +4070,11 @@ window.cards = CARDS
 // })()
 
 // https://old.reddit.com/r/girlsfrontline/comments/uc7eet/weekly_commanders_lounge_april_26_2022/i6mqo74/
-// https://old.reddit.com/r/girlsfrontline/comments/1929lxq/weekly_commanders_lounge_january_09_2024/
-// https://old.reddit.com/r/girlsfrontline/comments/197xngt/weekly_commanders_lounge_january_16_2024/
+// https://old.reddit.com/r/girlsfrontline/comments/1929lxq/weekly_commanders_lounge_january_09_2024/khy62ha/
+// https://old.reddit.com/r/girlsfrontline/comments/1929lxq/weekly_commanders_lounge_january_09_2024/khmieoe/
+
 // https://old.reddit.com/r/girlsfrontline/comments/19djecd/weekly_commanders_lounge_january_23_2024/
+
 // https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/kgfv3bn/
 // https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/kgpxdz7/
 // https://old.reddit.com/r/girlsfrontline/comments/1aej9zz/weekly_commanders_lounge_january_30_2024/

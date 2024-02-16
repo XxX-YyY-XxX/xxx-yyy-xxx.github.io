@@ -5,7 +5,6 @@ import {Async, getTemplateCloner} from "../../univasset/scripts/externaljavascri
 /** @type {Promise<SkinData[]>} */ const SKINS_PROMISE = Async.getJSON("./skins.json");
 /** @type {Promise<UnitObject[]>} */ const UNITS_PROMISE = Async.getJSON("../units.json");
 /** @type {DocumentFragment} */ const EMPTY_CELL = document.querySelector("#empty-cell").content;
-const SKIN_TEMPLATE = getTemplateCloner("#skin-cell")
 
 
 
@@ -110,7 +109,7 @@ class Matrix {
             const X = ROW.indexOf(value);
             if (X !== -1) return [X, Y];
         }
-        return [null, null];
+        return [-1, -1];
     }
 };
 
@@ -130,6 +129,7 @@ for (const COLUMN_NAME of ["Agent", "Status", ...BANNERS]) {
     HEADER_TR.appendChild(TH)
 }
 
+const SKIN_TEMPLATE = getTemplateCloner("#skin-cell");
 const MATRIX = new Matrix(BANNERS, (await UNITS_PROMISE).filter(x => !x.tags.includes("Unreleased")).sort(cmp({key: x => x.id})).map(x => x.name));
 for (const SKIN of await SKINS_PROMISE) {
     const [X, Y] = MATRIX.cell(SKIN.name, SKIN.banner);

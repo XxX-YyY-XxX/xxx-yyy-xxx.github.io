@@ -27,10 +27,13 @@
 // ChildNode.replaceWith() does not work with open tags.
 
 const REPLACE_EVENT = new Event("replace");
-/** @param {HTMLElement} include @param {boolean} success */
-function onReplace(include, success) {
+/** @param {HTMLElement} include @param {...(string|Node)} values */
+function replace(include, ...values) {
+    if (values.length)  include.replaceWith(...values);
+    else                include.replaceWith(...include.childNodes);
+
     Object.defineProperty(include, "success", {
-        value: success,
+        value: Boolean(values.length),
         enumerable: true
     });
 
@@ -39,18 +42,6 @@ function onReplace(include, success) {
     //----------------------------------------------------------------------
 
     eval?.(include.getAttribute(success ? "onreplace" : "ondefault") ?? "");
-}
-
-/** @param {HTMLElement} include @param  {...(string|Node)} values */
-function load(include, ...values) {
-    include.replaceWith(...values);
-    onReplace(include, true);
-}
-
-/** @param {HTMLElement} include */
-function default_(include) {
-    include.replaceWith(...include.childNodes);
-    onReplace(include, false);
 }
 // #endregion
 
@@ -68,7 +59,7 @@ async function includeDocument(include, file_name, depth = 0) {
         .then(cleantext => new DOMParser().parseFromString(cleantext, "text/html"))
         .catch(error => {console.error(error); return null});
     if (!DOCUMENT) {
-        default_(include);
+        replace(include);
         return;
     }
 
@@ -83,51 +74,43 @@ async function includeDocument(include, file_name, depth = 0) {
                 for (const NAME of KEY.split(" ")) {
                     const VALUE = PARAM.get(NAME);
                     if (VALUE === undefined) continue;
-                    load(INCLUDE, VALUE);
+                    replace(INCLUDE, VALUE);
                     break keyblock;
                 }
-                default_(INCLUDE);    
+                replace(INCLUDE);    
             }
             continue;
         }
 
-        // https://stackoverflow.com/questions/41623353/queryselector-get-elements-where-attribute-starts-with-xxx
-        // document.evaluate()
+        if (Array.from(INCLUDE.attributes).map(x => x.name).some(x => x.startsWith("attr-")) && INCLUDE.hasChildNodes()) {
+            const CHILD = INCLUDE.firstElementChild;
+            for (const {name, value} of INCLUDE.attributes) {
+                const QUALIFIED = name.match(/attr-(\w+)/);
+                if (!QUALIFIED) continue;
+                const [, ATTRIBUTE] = QUALIFIED, VALUE = PARAM.get(value);
+                if (VALUE !== undefined)    CHILD.setAttribute(ATTRIBUTE, VALUE);
+                else                        console.warn("Parameter", value, "not found");
+                INCLUDE.removeAttribute(name);
+            }
+            replace(INCLUDE, CHILD);
+            continue;
 
-        // const ATTRIBUTES = Array.from(INCLUDE.attributes).map(x => x.name);
-
-        // ATTRIBUTES.some(x => x.startsWith("attr-"))
-
-        //untested
-        // for (const INCLUDE of Array.from(INCLUDE_DOC.querySelectorAll("include")).filter(({attributes}) => Array.from(attributes).some(({name}) => name.startsWith("attr-")))) {
-        //     const CHILD = INCLUDE.firstElementChild;
-        //     if (!CHILD) continue;
-
-        //     for (const {name, value} of Array.from(INCLUDE.attributes)) {
-        //         if (name.startsWith("attr-")) {
-        //             const VALUE = PARAM.get(value);
-        //             if (VALUE !== undefined)    CHILD.setAttribute(name.replace("attr-", ""), VALUE);
-        //             else                        console.warn("Parameter", value, "called by", name, "not found");
-        //         }
-        //     }
-
-        //     INCLUDE.replaceWith(CHILD);
-        // }
+            // https://stackoverflow.com/questions/41623353/queryselector-get-elements-where-attribute-starts-with-xxx
+            // document.evaluate()
+        }
 
         if (INCLUDE.hasAttribute("src") || INCLUDE.hasAttribute("param-src")) {
             for (const {name, value} of INCLUDE.attributes) {
                 const QUALIFIED = name.match(/param-(\w+)/);
-                if (QUALIFIED !== null) {
-                    const VALUE = PARAM.get(value);
-                    if (VALUE !== undefined) {
-                        // Element.setAttribute() cannot use numbers as qualifiedName.
-                        try {INCLUDE.setAttribute(QUALIFIED[1], VALUE)}
-                        catch (e) {
-                            console.warn(e)
-                        }
-                    } else console.warn("Parameter", value, "not found");
-                    INCLUDE.removeAttribute(name);
-                }
+                if (!QUALIFIED) continue;
+                const [, PARAMETER] = QUALIFIED;
+                const VALUE = PARAM.get(value);
+                if (VALUE !== undefined) {
+                    // Element.setAttribute() cannot use numbers as qualifiedName.
+                    try {INCLUDE.setAttribute(PARAMETER, VALUE)}
+                    catch (e) {console.warn(e)}
+                } else console.warn("Parameter", value, "not found");
+                INCLUDE.removeAttribute(name);
             }
             
             //what if looping to itself/alternate looping/circular looping
@@ -141,7 +124,7 @@ async function includeDocument(include, file_name, depth = 0) {
     }
     
     // console.log(file_name)
-    load(include, ...DOCUMENT.body.childNodes);
+    replace(include, ...DOCUMENT.body.childNodes);
 }
 
 for (const INCLUDE of document.querySelectorAll("include[src]")) await includeDocument(INCLUDE, location.origin+location.pathname);

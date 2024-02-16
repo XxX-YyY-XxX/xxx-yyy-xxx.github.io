@@ -2,10 +2,6 @@
 
 # Technical Help
 
-### Game keeps getting stuck in the title screen. Fetching server, download screen...
-
-> Switch between WiFi/Data. Else use VPN.
-
 ### Game is not available in my Play Store. How can I play this game?
 
 > QooApp or Apkpure.

@@ -87,10 +87,7 @@
 
 >Weeb
 >
-> - [Luffberry Gacha.](https://old.reddit.com/r/girlsfrontline/comments/x74mpx/weekly_commanders_lounge_september_06_2022/ingul31/)
->
 > - [In-game text.](https://github.com/randomqwerty/GFLData/find/main)
-
 
 # Random Info
 
