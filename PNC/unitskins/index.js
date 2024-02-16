@@ -1,4 +1,4 @@
-import {cmp} from "../../univasset/scripts/basefunctions/index.js";
+import {cmp, enumerate} from "../../univasset/scripts/basefunctions/index.js";
 import {Async, getTemplateCloner} from "../../univasset/scripts/externaljavascript.js";
 
 /** @type {Promise<string[]>} */ const BANNERS_PROMISE = Async.getJSON("./banners.json");
@@ -66,23 +66,6 @@ class Unit {
 //     }
 // }
 
-function matrix(title, header, leader, data, key, headkey = x => x, leadkey = x => x) {
-    const base_array = [[title, ...header]];
-
-    const x_len = header.length;
-    for (const item of leader) base_array.push([item, ...Array(x_len).fill('')]);
-
-    const head_copy = header.map(headkey);
-    const lead_copy = leader.map(leadkey);
-    for (const item of data) {
-        const [x_axis, y_axis] = key(item);
-        base_array[lead_copy.indexOf(y_axis) + 1][head_copy.indexOf(x_axis) + 1] = item;
-    }
-
-    return base_array;
-}
-
-
 
 
 
@@ -90,50 +73,46 @@ function matrix(title, header, leader, data, key, headkey = x => x, leadkey = x 
 
 
 const BANNERS = await BANNERS_PROMISE;
-const UNITS = (await UNITS_PROMISE).filter(x => !x.tags.includes("Unreleased")).sort(cmp({key: x => x.id})).map(x => x.name);
-const MATRIX = new (class {
-    #MATRIX = [].fill(
-        [].fill(EMPTY_CELL, 0, BANNERS.length - 1),
-        0,
-        UNITS.length - 1
-    );
-    #HEADER = BANNERS;
-    #LEADER = UNITS;
 
-    get(x, y) {
+/** @template T */
+class Matrix {
+    /** @type {T[][]} */ #MATRIX;
+    #HEADER;
+    #LEADER;
 
+    /** @param {string[]} headers @param {string[]} leaders */
+    constructor(headers, leaders) {
+        this.#MATRIX = [];
+        this.#HEADER = headers;
+        this.#LEADER = leaders;
     }
 
-    /**
-     * 
-     * @param {number} x 
-     * @param {number} y 
-     * @param {HTMLTableCellElement} value 
-     */
+    /** @param {number} x @param {number} y @returns {T | undefined} */
+    get(x, y) {
+        const ROW = this.#MATRIX[y];
+        if (ROW === undefined) return undefined;
+        return ROW[x];
+    }
+
+    /** @param {number} x @param {number} y @param {T} value */
     set(x, y, value) {
         (this.#MATRIX[y] ??= [])[x] = value;
     }
 
-    /** @param {string} row_value @param {string} column_value @returns {[x: number, y: number]} */
-    index(row_value, column_value) {
+    /** @param {string} row_value @param {string} column_value @returns {[x: number, y: number] | [null, null]} */
+    cell(row_value, column_value) {
+        
         return [this.#HEADER.indexOf(column_value), this.#LEADER.indexOf(row_value)];
     }
-})();
 
-
-
-
-
-
-
-
-
-for (const iterator of ["Agent", "Amount", "Status", ...BANNERS.map(x => x.name)]) {
-    
-}
-
-
-
+    index(value) {
+        for (const [Y, ROW] of enumerate(this.#MATRIX)) {
+            const X = ROW.indexOf(value);
+            if (X !== -1) return [X, Y];
+        }
+        return [null, null];
+    }
+};
 
 
 
@@ -144,6 +123,26 @@ for (const iterator of ["Agent", "Amount", "Status", ...BANNERS.map(x => x.name)
 
 
 const HEADER_TR = document.querySelector("thead > tr")
+for (const COLUMN_NAME of ["Agent", "Status", ...BANNERS]) {
+    const TH = document.createElement("th");
+    // clickable
+    TH.textContent = COLUMN_NAME;
+    HEADER_TR.appendChild(TH)
+}
+
+const MATRIX = new Matrix(BANNERS, (await UNITS_PROMISE).filter(x => !x.tags.includes("Unreleased")).sort(cmp({key: x => x.id})).map(x => x.name));
+for (const SKIN of await SKINS_PROMISE) {
+    const [X, Y] = MATRIX.cell(SKIN.name, SKIN.banner);
+}
+
+
+
+
+
+
+
+
+
 
 const TBODY = document.querySelector("tbody");
 TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));

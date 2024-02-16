@@ -41,8 +41,8 @@ timer(
 
 // timer(
 //    document.getElementById('mini-event'),
-//    "Feb 12, 2024 23:59 UTC-0800",   //feb 20 - mar 12
-//    "./assets/images/timer/pjuc8kn82xcc1.webp"   //dp28
+//    "Mar 12, 2024 00:00 UTC-0800",
+//    "./assets/images/timer/da8gefr6dqgc1.webp"
 // );
 
 //timer(document.getElementById('extra'), "",
