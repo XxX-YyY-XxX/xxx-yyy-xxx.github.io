@@ -25,8 +25,9 @@
         </form>
 
         <form id="Browse" class="tab-body">
-            <include attr-max="maxpage"><input type="number" name="page" value="0" min="1" max="" /></include>
-            /<include key="maxpage"></include>
+            <include attr-max="maxpage">
+                <input type="number" name="page" value="0" min="1" max="" />
+            </include>/<include key="maxpage"></include>
             <input type="submit" />
         </form>
 
@@ -45,6 +46,7 @@
 <template id="faq-card">
     <fieldset>
         <legend>
+            <!-- id button -->
             <h3></h3>
         </legend>
         <span id="answer"></span>

@@ -1,5 +1,5 @@
 import {removeHTMLTag, randInt, getTemplateCloner} from "../externaljavascript.js";
-import {cmp, setattr} from "../basefunctions/index.js";
+import {cmp, setattr, type} from "../basefunctions/index.js";
 
 // /** Checks if the element is interacted by the user. 
 //  * @param {Event} event 
@@ -24,14 +24,14 @@ import {cmp, setattr} from "../basefunctions/index.js";
  * @property {Tag[keyof Tag][]} Card.tags
  */
 
-/** @param {Tag} tags_dict @param {Card[]} cards_list */
-window.queryFunc = function(tags_dict, cards_list) {
+window.queryFunc = function() {
     //#region Tags Field
+    /** @type {Tag} */ const TAG_DICT = window.tags;
     const TAGS_FIELD = document.querySelector("#Tags div");
     const _tagsearchCloner = getTemplateCloner("#query-tag");
     /** @type {HTMLInputElement[]} */ const TAG_CHECKBOXES = [];
     /** @type {HTMLInputElement} */ const TAGS_TEXT = document.querySelector('#Tags input[type="text"]');
-    for (const {name, description} of Object.values(tags_dict).sort(cmp({key: x => x.name}))) {
+    for (const {name, description} of Object.values(TAG_DICT).sort(cmp({key: x => x.name}))) {
         const CLONE = _tagsearchCloner();
 
         const INPUT = setattr(CLONE.querySelector("input"), {value: name});
@@ -111,22 +111,22 @@ window.queryFunc = function(tags_dict, cards_list) {
 
     const SEARCH_PARAMS = new URLSearchParams(location.search);
     const CARDFIELD = document.querySelector("#cards-field");
+    /** @type {Card[]} */ const CARD_ARRAY = window.cards;
     CARDFIELD.append(
         (() => {
             const FRAGMENT = new DocumentFragment();
-            var run = false;
-            var key;
+            var run = false, key;
 
             if (key = SEARCH_PARAMS.get("search")) {
                 const KEYWORDS = key.replace(/\s+/, " ").toLowerCase().split(" ");
-                for (const cards of cards_list.filter(({question, answer}) => KEYWORDS.every(str => [question, answer].some(x => removeHTMLTag(x).toLowerCase().includes(str))))) {
+                for (const cards of CARD_ARRAY.filter(({question, answer}) => KEYWORDS.every(str => [question, answer].some(x => removeHTMLTag(x).toLowerCase().includes(str))))) {
                     FRAGMENT.appendChild(setQuestionBoxes(cards));
                     run = true;
                 }
                 return run ? FRAGMENT : "No matches found.";
             } else if (key = SEARCH_PARAMS.get("tags")) {
                 const TAGS = key.split(" ");
-                for (const cards of cards_list.filter(({tags}) => TAGS.subsetof(tags.map(x => x.name)))) {
+                for (const cards of CARD_ARRAY.filter(({tags}) => TAGS.subsetof(tags.map(x => x.name)))) {
                     FRAGMENT.appendChild(setQuestionBoxes(cards));
                     run = true;
                 }
@@ -134,25 +134,26 @@ window.queryFunc = function(tags_dict, cards_list) {
             } else if (key = SEARCH_PARAMS.get("page")) {
                 const PAGE = Number(key);
                 document.querySelector('#Browse input[type="number"]').value = PAGE;
-                const LIMIT = Math.min(PAGE * 5, cards_list.length);
+                const LIMIT = Math.min(PAGE * 5, CARD_ARRAY.length);
                 for (let INDEX = (PAGE * 5) - 5; INDEX < LIMIT; INDEX++)
-                    FRAGMENT.appendChild(setQuestionBoxes(cards_list[INDEX]));
+                    FRAGMENT.appendChild(setQuestionBoxes(CARD_ARRAY[INDEX]));
                 return FRAGMENT;
             } else if (key = SEARCH_PARAMS.get("id")) {
                 const IDS = key.split(" ").map(Number);
-                for (const cards of cards_list.filter(({id}) => IDS.includes(id))) {
+                for (const cards of CARD_ARRAY.filter(({id}) => IDS.includes(id))) {
                     FRAGMENT.appendChild(setQuestionBoxes(cards));
                     run = true;
                 }
                 return run ? FRAGMENT : "No matches found.";
-            } else if (key === "") {
+            } else if (typeof key === "string") {
+                console.log(key)
                 return "Empty field."
             } else {
-                const LENGTH = cards_list.length;
+                const LENGTH = CARD_ARRAY.length;
                 const INDICES = new Set();
                 do INDICES.add(randInt(0, LENGTH));
                 while (INDICES.size < 3)
-                for (const index of INDICES) FRAGMENT.appendChild(setQuestionBoxes(cards_list[index]));
+                for (const index of INDICES) FRAGMENT.appendChild(setQuestionBoxes(CARD_ARRAY[index]));
                 return FRAGMENT;
             }
         })()

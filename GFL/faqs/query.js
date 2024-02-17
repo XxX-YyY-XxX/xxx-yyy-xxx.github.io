@@ -352,9 +352,9 @@ const CARDS = [
         tags: [dtag.EQUIP, dtag.TDOLL, dtag.TIER]
     },
     {
-        id: '00019',
+        id: 19,
         question: `Which HOC FSTs should I raise first?`,
-        answer: `${img('https://cdn.discordapp.com/attachments/444348972035866634/971135326150090842/HOC_Priority.png', 'Discord: $hocpriority')}`,
+        answer: `${figure(image("https://cdn.discordapp.com/attachments/444348972035866634/971135326150090842/HOC_Priority.png", "HOC Enhancement Priority"), "Discord: $hocpriority")}`,
         tags: [dtag.HOC, dtag.FST, dtag.TIER]
     },
     {
