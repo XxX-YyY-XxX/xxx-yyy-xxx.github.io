@@ -2068,16 +2068,16 @@
             "regen": 433
         },
         "arma": {
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
+            "hp": 2874,
+            "atk": 89,
+            "hash": 129,
+            "pdef": 48,
+            "odef": 48,
+            "ppen": 77,
+            "open": 98
         },
-        "intimacy": [],
-        "tags": ["Unowned", "Arma"]
+        "intimacy": ["Neural Activation", "Code Robustness"],
+        "tags": ["Unowned", "Arma", "Intimacy, Arma from https://old.reddit.com/r/GFLNeuralCloud/comments/1aoxhii/weekly_professors_lounge_february_12_2024/kqso9wg/"]
     },
     
     {
