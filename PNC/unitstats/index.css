@@ -24,7 +24,7 @@ tbody > tr > td:first-child, thead > tr > th {
 
 /* #region Freeze */
 .freeze-row th {
-    background: var(--bkg-color);
+    background: #151515 url("/assets/images/bkg.png") 0 0;
 }
 
 .freeze-col tr > :first-child {
@@ -32,12 +32,10 @@ tbody > tr > td:first-child, thead > tr > th {
 }
 
 .freeze-col tbody > tr:nth-child(odd) > td:first-child {
-/* .freeze-col tbody > tr:not(.hidden):nth-child(odd) > td:first-child { */
-    background: var(--bkg-color);
+    background: #151515 url("/assets/images/bkg.png") 0 0;
 }
 
 .freeze-col tbody > tr:nth-child(even) > td:first-child {
-/* .freeze-col tbody > tr:not(.hidden):nth-child(even) > td:first-child { */
     background: #292f20;
 }
 /* #endregion */

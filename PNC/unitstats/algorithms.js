@@ -540,7 +540,7 @@ class AlgoGrid {
 
         if (!AlgoGrid.#SELECT.returnValue) return;
 
-        this.#algorithms.push(new ALGO_SETS[fieldtype][AlgoGrid.#SELECT.returnValue](this));
+        this.#algorithms.push(new ALGO_SETS[this.#fieldtype][AlgoGrid.#SELECT.returnValue](this));
 
         this.#grid.replaceChildren();
         this.display();

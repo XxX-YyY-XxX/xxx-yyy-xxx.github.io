@@ -136,7 +136,7 @@
 }
 
 @layer classes {
-	/* #region main_content */
+	/* #region General */
 	#main_content {
 		width: 100%;
 		-webkit-font-smoothing: antialiased;
@@ -170,13 +170,14 @@
 		color: #999;
 		margin: 0 0 5px 0;
 	}
-	/* #endregion */
 
 	.container {
 		width: 90%;
 		max-width: 1000px;
 		margin: 0 auto;
 	}
+	/* #endregion */
+
 
 	.center-text {
 		display: flex;
