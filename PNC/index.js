@@ -35,6 +35,13 @@ function timer(start_date, end_date, title, imgpath) {
 
 function resetTimer() {
     timer(
+        "Feb 20, 2024 18:30 UTC-0800",
+        "Mar 05, 2024 18:30 UTC-0800",
+        "Heartfelt House of Cocoa",
+        "./assets/images/timer/6b34bdee545c5608eec9af608a8b9757f4134d42.jpg"
+    )
+
+    timer(
         "Feb 03, 2024 05:00 UTC-0800",
         "Feb 26, 2024 05:00 UTC-0800",
         "Springtime Ruckus",

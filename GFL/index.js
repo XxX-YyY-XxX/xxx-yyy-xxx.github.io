@@ -39,11 +39,11 @@ timer(
     )}
 );
 
-// timer(
-//    document.getElementById('mini-event'),
-//    "Mar 12, 2024 00:00 UTC-0800",
-//    "./assets/images/timer/da8gefr6dqgc1.webp"
-// );
+timer(
+   document.getElementById('mini-event'),
+   "Mar 12, 2024 00:00 UTC-0800",
+   "./assets/images/timer/da8gefr6dqgc1.webp"
+);
 
 //timer(document.getElementById('extra'), "",
 //    "");
