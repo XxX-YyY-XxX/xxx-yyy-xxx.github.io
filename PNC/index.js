@@ -47,12 +47,5 @@ function resetTimer() {
         "Springtime Ruckus",
         "./assets/images/timer/cpt00_e_cg024.png"
     )
-
-    timer(
-        "Jan 30, 2024 18:30 UTC-0800",
-        "Feb 20, 2024 18:30 UTC-0800",
-        "Moonseeking Resurgence",
-        "./assets/images/timer/cpt00_e_cg039.png"
-    )
 };
 resetTimer();

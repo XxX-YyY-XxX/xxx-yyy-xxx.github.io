@@ -1,10 +1,10 @@
 import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
-timer(
-   document.getElementById("event"),
-   "Feb 20, 2024 00:00 UTC-0800",
-   "./assets/images/timer/bjnxfw4m5pfc1.png"
-);
+// timer(
+//    document.getElementById("event"),
+//    "Feb 20, 2024 00:00 UTC-0800",
+//    "./assets/images/timer/bjnxfw4m5pfc1.png"
+// );
 
 timer(
     document.getElementById("battlepass"),

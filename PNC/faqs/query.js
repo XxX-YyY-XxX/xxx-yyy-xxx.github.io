@@ -281,3 +281,4 @@ window.cards = [
 // https://nalu.wiki/neuralcloud
 
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1ajdx5e/weekly_professors_lounge_february_05_2024/
+// https://old.reddit.com/r/GFLNeuralCloud/comments/1aoxhii/weekly_professors_lounge_february_12_2024/

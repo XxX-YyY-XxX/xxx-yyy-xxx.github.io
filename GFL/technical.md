@@ -2,10 +2,6 @@
 
 # Technical Help
 
-### Game is not available in my Play Store. How can I play this game?
-
-> QooApp or Apkpure.
-
 ### Enemy mortar keeps shooting me and I don't know who the target is.
 
 > Battle Simplification in Settings is set to on probably.

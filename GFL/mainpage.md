@@ -85,10 +85,6 @@
 >
 > - [Dorm notes.](https://old.reddit.com/r/girlsfrontline/comments/v6pt9o/weekly_commanders_lounge_june_07_2022/ibyvjnm/)
 
->Weeb
->
-> - [In-game text.](https://github.com/randomqwerty/GFLData/find/main)
-
 # Random Info
 
 Red node enemy units count towards the SF enemies mission.

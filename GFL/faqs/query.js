@@ -11,6 +11,7 @@ export const dtag = {
     //#region Combat Tabs
         LORE : {name: 'Story/Lore', description: 'Main meat of the series.'},
             MAJOR : {name: 'MajorEvents', description: 'Main story. Added to Campaign after a while.'},
+                RANK : {name: 'RankingMaps', description: 'Endgame for the megasweats.'},
             SEASON : {name: 'SeasonalEvents', description: 'Happens every New Year, X-mas, Halloween, etc.'},
             COLLAB : {name: 'Collaboration', description: 'Reason: "He liked it."'},
         MAIN : {name: 'CombatMissions', description: 'Main missions aka Chapters 0-13.'},
@@ -2960,7 +2961,7 @@ const CARDS = [
         id: '00362',
         question: `Will the *insert ranking reward here* be available in the future?`,
         answer: `Only if they rerun ranking maps. AW and DD maps are slated to be reworked.`,
-        tags: [dtag.GET, dtag.FAIRY, dtag.SPEQ, dtag.MAJOR]
+        tags: [dtag.GET, dtag.FAIRY, dtag.SPEQ, dtag.MAJOR, dtag.RANK]
     },
     {
         id: '00363',
@@ -3756,7 +3757,7 @@ const CARDS = [
         id: '00187',
         question: `Is there a rerun for special equipments?`,
         answer: `For login SPEQs, wait for them in the Gray Zone. For ranking SPEQS, wait for ranking reruns/permanent rankings.`,
-        tags: [dtag.EQUIP, dtag.SPEQ, dtag.GET]
+        tags: [dtag.EQUIP, dtag.SPEQ, dtag.GET, dtag.RANK]
     },
     {
         id: '00496',
@@ -4046,6 +4047,24 @@ const CARDS = [
         answer: `${link("u/UnironicWeeaboo's report.", "https://old.reddit.com/r/girlsfrontline/comments/x74mpx/weekly_commanders_lounge_september_06_2022/ingul31/")}`,
         tags: [dtag.OJ]
     },
+    {
+        id: 507,
+        question: `What happens to the SPEQs from the previous Gray Zone season?`,
+        answer: `Retained.`,
+        tags: [dtag.SPEQ, dtag.GZ]
+    },
+    {
+        id: 508,
+        question: `Where can I see the items' descriptions/blurbs?`,
+        answer: `${link("randomqwerty's github repository.", "https://github.com/randomqwerty/GFLData/find/main")}`,
+        tags: [dtag.MISC]
+    },
+    {
+        id: 509,
+        question: `Game is not available in my Play Store. How can I play this game?`,
+        answer: `QooApp or Apkpure.`,
+        tags: [dtag.MISC]
+    },
     // {
     //     id: 0,
     //     question: ``,
@@ -4072,10 +4091,8 @@ window.cards = CARDS
 // https://old.reddit.com/r/girlsfrontline/comments/uc7eet/weekly_commanders_lounge_april_26_2022/i6mqo74/
 // https://old.reddit.com/r/girlsfrontline/comments/1929lxq/weekly_commanders_lounge_january_09_2024/khy62ha/
 // https://old.reddit.com/r/girlsfrontline/comments/1929lxq/weekly_commanders_lounge_january_09_2024/khmieoe/
-
-// https://old.reddit.com/r/girlsfrontline/comments/19djecd/weekly_commanders_lounge_january_23_2024/
-
 // https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/kgfv3bn/
 // https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/kgpxdz7/
-// https://old.reddit.com/r/girlsfrontline/comments/1aej9zz/weekly_commanders_lounge_january_30_2024/
+
 // https://old.reddit.com/r/girlsfrontline/comments/1ak4q03/weekly_commanders_lounge_february_06_2024/
+// https://old.reddit.com/r/girlsfrontline/comments/1apobjn/weekly_commanders_lounge_february_13_2024/
