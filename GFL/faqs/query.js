@@ -410,11 +410,11 @@ const CARDS = [
     //#endregion
     //#region Important Details
     {
-        id: '00024',
+        id: 24,
         question: `Where and how can I get my favorite gun/doll/unit/character?`,
         answer: `${List.description({
             'Factory Production': [
-                spoilerSummary('Infographic for resource efficient recipes.', img("https://media.discordapp.net/attachments/951085201658871820/1061272490309066762/recipes_2.png")),
+                // spoilerSummary('Infographic for resource efficient recipes.', image("https://media.discordapp.net/attachments/951085201658871820/1061272490309066762/recipes_2.png", "Factory prooduction recipes.")),
                 link("GFDB Github Database.", 'https://gf-db.github.io/')
             ],
             'Rescue Drops': [

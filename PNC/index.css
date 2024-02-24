@@ -24,17 +24,17 @@
     left: 0;
     width: 100%;
     white-space: nowrap;
-    font-size: min(8cqw, 50px);
-    -webkit-text-stroke: 1px white;
-    color: black;
+    -webkit-text-stroke: 2px black;
+    color: white;
     text-align: center;
 }
 
 .func_timer > span:first-of-type {
     top: 0;
-    font-size: min(7cqw, 8rem);
+    font-size: min(5cqw, 8rem);
 }
 
 .func_timer > span:last-of-type {
     bottom: 0;
+    font-size: min(8cqw, 50px);
 }
