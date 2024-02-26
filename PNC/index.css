@@ -19,22 +19,21 @@
     aspect-ratio: 2/1;
 }
 
-.func_timer > span {
+.func_timer > :is(span, div) {
     position: absolute;
     left: 0;
     width: 100%;
     white-space: nowrap;
     -webkit-text-stroke: 2px black;
     color: white;
+    font-size: 7rem;
     text-align: center;
 }
 
-.func_timer > span:first-of-type {
+.func_timer > span {
     top: 0;
-    font-size: min(5cqw, 8rem);
 }
 
-.func_timer > span:last-of-type {
+.func_timer > div {
     bottom: 0;
-    font-size: min(8cqw, 50px);
 }

@@ -6,6 +6,16 @@ import {setattr} from "../univasset/scripts/basefunctions/pseudobuiltin.js";
 const TIMER_FIELD = document.querySelector("#timer-field");
 const _timerTemplate = getTemplateCloner("#timer-block");
 
+/** Mostly used for  sizes greater than 1 rem.
+ * @this {HTMLSpanElement}
+ * @param {Event} event */
+function textResize(event) {
+    const PARENT = this.parentElement, STYLE = this.style;
+    var remsize = 10;
+    while (this.offsetWidth > PARENT.clientWidth)
+        STYLE.fontSize = `${remsize--}rem`;
+}
+
 /** Creates a timer for events.
  * @param {string} start_date Mon dy, year hr:mn (UTC|GMT)±offs
  * @param {string} end_date Mon dy, year hr:mn (UTC|GMT)±offs
@@ -21,11 +31,14 @@ function timer(start_date, end_date, title, imgpath) {
 
     const FRAGMENT = _timerTemplate();
 
-    FRAGMENT.querySelector("#title").textContent = title;
+    const TITLE_SPAN = FRAGMENT.querySelector("span");
+    TITLE_SPAN.textContent = title;
+    // TITLE_SPAN.addEventListener("load", textResize);
+
     setattr(FRAGMENT.querySelector("img"), {src: imgpath, alt: title})
 
-    const TIMER_SPAN = FRAGMENT.querySelector("#countdown");
-    const TIMER_DIV = document.createElement(".func_timer");
+    const TIMER = FRAGMENT.querySelector(".func_timer > div");
+    const TIMER_DIV = document.querySelector(".func_timer");
 
     // const TIMER_SPAN = document.createElement("span");
     // const TITLE_SPAN = setattr(document.createElement("span"), {textContent: title});
@@ -35,7 +48,7 @@ function timer(start_date, end_date, title, imgpath) {
     // ---------------------------------------------------------------------------------------------------------------------
 
     const COUNTDOWN = setInterval(function() {
-        TIMER_SPAN.textContent = splitTime(TIME.remaining).slice(0, -1).map(num => String(num).padStart(2, "0")).join(" : ");
+        TIMER.textContent = splitTime(TIME.remaining).slice(0, -1).map(num => String(num).padStart(2, "0")).join(" : ");
         if (TIME.done) {
             clearInterval(COUNTDOWN);
             TIMER_DIV.remove();
