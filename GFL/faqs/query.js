@@ -359,10 +359,10 @@ const CARDS = [
         tags: [dtag.HOC, dtag.FST, dtag.TIER]
     },
     {
-        id: '00020',
-        question: `Which doll should I get with True Core Masks?`,
-        answer: `${img(IMG_ASSET+"VeryReliableTCMGuide.png")}<br>
-        ${img(IMG_ASSET+"SeriousTCMGuide.png")}`,
+        id: 20,
+        question: `Which doll should I get using True Core Masks?`,
+        answer: `${image(IMG_ASSET+"VeryReliableTCMGuide.png", "Memey guide.")}<br>
+        ${image(IMG_ASSET+"SeriousTCMGuide.png", "Serious guide.")}`,   // add discord bot call
         tags: [dtag.TCM, dtag.TIER]
     },
     //#endregion

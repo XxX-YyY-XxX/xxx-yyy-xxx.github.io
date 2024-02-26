@@ -990,7 +990,7 @@
             "open": 49
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
         "id": 1039,
@@ -2079,7 +2079,38 @@
         "intimacy": ["Neural Activation", "Code Robustness"],
         "tags": ["Unowned", "Arma", "Intimacy, Arma from https://old.reddit.com/r/GFLNeuralCloud/comments/1aoxhii/weekly_professors_lounge_february_12_2024/kqso9wg/"]
     },
-    
+    {
+        "id": 1068,
+        "name": "Eos",
+        "class": "Sniper",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy"],
+        "base": {
+            "hp": 10712,
+            "atk": 649,
+            "hash": 649,
+            "pdef": 181,
+            "odef": 181,
+            "aspd": 120,
+            "crate": 2.5,
+            "ppen": 413,
+            "open": 413,
+            "dodge": 8,
+            "regen": 322
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": ["Neural Activation", "Code Robustness"],
+        "tags": ["Unowned", "Unreleased"]
+    },
+
     {
         "name" : "Dupin (X)",
         "reference" : {"C. Auguste Dupin" : "https://en.wikipedia.org/wiki/C._Auguste_Dupin"},
@@ -2091,13 +2122,6 @@
         "name" : "Cascadia",
         "reference" : {"" : ""},
         "fragments" : ["Fragment Search"],
-        "event" : "",
-        "tags": ["Unreleased"]
-    },
-    {
-        "name" : "Eos",
-        "reference" : {"" : ""},
-        "fragments" : [""],
         "event" : "",
         "tags": ["Unreleased"]
     },
