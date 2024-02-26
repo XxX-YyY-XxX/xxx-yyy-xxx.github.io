@@ -38,7 +38,7 @@ function timer(start_date, end_date, title, imgpath) {
     setattr(FRAGMENT.querySelector("img"), {src: imgpath, alt: title})
 
     const TIMER = FRAGMENT.querySelector(".func_timer > div");
-    const TIMER_DIV = document.querySelector(".func_timer");
+    const TIMER_DIV = FRAGMENT.querySelector(".func_timer");
 
     // const TIMER_SPAN = document.createElement("span");
     // const TITLE_SPAN = setattr(document.createElement("span"), {textContent: title});
@@ -56,7 +56,7 @@ function timer(start_date, end_date, title, imgpath) {
         }
     }, 1000);
 
-    TIMER_FIELD.appendChild(TIMER_DIV);
+    TIMER_FIELD.appendChild(FRAGMENT);
 }
 
 function resetTimer() {
