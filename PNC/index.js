@@ -12,6 +12,7 @@ const _timerTemplate = getTemplateCloner("#timer-block");
 function textResize(event) {
     const PARENT = this.parentElement, STYLE = this.style;
     var remsize = 10;
+    STYLE.removeProperty("font-size");
     while (this.offsetWidth > PARENT.clientWidth)
         STYLE.fontSize = `${remsize--}rem`;
 }
@@ -31,7 +32,9 @@ function timer(start_date, end_date, title, imgpath) {
 
     const TITLE_SPAN = FRAGMENT.querySelector("span");
     TITLE_SPAN.textContent = title;
-    // TITLE_SPAN.addEventListener("load", textResize);
+    TITLE_SPAN.addEventListener("load", textResize);
+    TITLE_SPAN.addEventListener("resize", textResize);
+    TITLE_SPAN.addEventListener("deviceorientation", textResize);
 
     setattr(FRAGMENT.querySelector("img"), {src: imgpath, alt: title})
 
@@ -55,7 +58,7 @@ function resetTimer() {
         "Mar 05, 2024 18:30 UTC-0800",
         "",
         "Entropic Dichotomy",
-        "./assets/images/timer/.jpg"
+        "./assets/images/timer/cpt08_e_cg001.png"
     )
 
     timer(
