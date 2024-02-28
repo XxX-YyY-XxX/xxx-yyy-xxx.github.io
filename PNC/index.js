@@ -32,9 +32,9 @@ function timer(start_date, end_date, title, imgpath) {
 
     const TITLE_SPAN = FRAGMENT.querySelector("span");
     TITLE_SPAN.textContent = title;
-    TITLE_SPAN.addEventListener("load", textResize);
-    TITLE_SPAN.addEventListener("resize", textResize);
-    TITLE_SPAN.addEventListener("deviceorientation", textResize);
+    window.addEventListener("load", textResize.bind(TITLE_SPAN));
+    window.addEventListener("resize", textResize.bind(TITLE_SPAN));
+    window.addEventListener("deviceorientation", textResize.bind(TITLE_SPAN));
 
     setattr(FRAGMENT.querySelector("img"), {src: imgpath, alt: title})
 
