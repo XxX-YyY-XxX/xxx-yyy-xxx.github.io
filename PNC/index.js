@@ -27,8 +27,6 @@ function timer(start_date, end_date, title, imgpath) {
     const TIME = new Timer(end_date);
     if (TIME.done) return;
 
-    // ---------------------------------------------------------------------------------------------------------------------
-
     const FRAGMENT = _timerTemplate();
 
     const TITLE_SPAN = FRAGMENT.querySelector("span");
@@ -39,13 +37,6 @@ function timer(start_date, end_date, title, imgpath) {
 
     const TIMER = FRAGMENT.querySelector(".func_timer > div");
     const TIMER_DIV = FRAGMENT.querySelector(".func_timer");
-
-    // const TIMER_SPAN = document.createElement("span");
-    // const TITLE_SPAN = setattr(document.createElement("span"), {textContent: title});
-    // const IMG = setattr(document.createElement("img"), {src: imgpath, alt: title, loading: "lazy"});
-    // const TIMER_DIV = setattr(document.createElement("div"), {classList: {add: ["func_timer"]}, append: [TITLE_SPAN, IMG, TIMER_SPAN]});
-
-    // ---------------------------------------------------------------------------------------------------------------------
 
     const COUNTDOWN = setInterval(function() {
         TIMER.textContent = splitTime(TIME.remaining).slice(0, -1).map(num => String(num).padStart(2, "0")).join(" : ");
@@ -61,17 +52,17 @@ function timer(start_date, end_date, title, imgpath) {
 
 function resetTimer() {
     timer(
+        "Mar 05, 2024 18:30 UTC-0800",
+        "",
+        "Entropic Dichotomy",
+        "./assets/images/timer/.jpg"
+    )
+
+    timer(
         "Feb 20, 2024 18:30 UTC-0800",
         "Mar 05, 2024 18:30 UTC-0800",
         "Heartfelt House of Cocoa",
         "./assets/images/timer/6b34bdee545c5608eec9af608a8b9757f4134d42.jpg"
-    )
-
-    timer(
-        "Feb 03, 2024 05:00 UTC-0800",
-        "Feb 26, 2024 05:00 UTC-0800",
-        "Springtime Ruckus",
-        "./assets/images/timer/cpt00_e_cg024.png"
     )
 };
 resetTimer();

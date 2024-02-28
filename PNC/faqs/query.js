@@ -21,6 +21,7 @@ const dtag = {
     ALGO: {name: "Algorithms", description: "Equipments in this game."},
     TIER: {name: "TierList", description: "Power ratings of doll units. Approach with caution."},
     DOLL: {name: "Dolls", description: "Collectible units of this game."},
+        ARMA: {name: "ArmaInscripta", description: "Strengthens dolls to keep up with the current challenges... supposedly."},
     MISC: {name: "Miscellaneous", description: "Queries with no specific tag as of yet."},
     PRIME: {name: "TopicPrimer", description: "Write-ups that should answer majority of the questions."},
     SKIN: {name: "NeuralProjections", description: "The money-bait, so to speak."},
@@ -31,7 +32,8 @@ const dtag = {
     DAILY: {name: "DailyWeeklyMissions", description: 'Missions under the "Permanent" tab.'},
     LEVEL: {name: "Leveling", description: "Ways to strengthen/level up a unit/equipment."},
     TECH: {name: "Troubleshooting", description: "Firstly, have you tried turning it off and on?"},
-    ARMA: {name: "ArmaInscripta", description: "Strengthens dolls to keep up with the current challenges... supposedly."},
+    DORM: {name: "Dormitories", description: "Doll rest rooms."},
+    TEAM: {name: "TeamComposition", description: "Doll combinations for funny stuffs."},
 };
 window.tags = dtag;
 
@@ -241,7 +243,7 @@ window.cards = [
     },
     {
         id: 25,
-        question: `Which should I focus on first, Arma Inscripta or Neural Expansion to 5${SC.STAR}`,
+        question: `Which should I focus on first, Arma Inscripta or Neural Expansion to 5${SC.STAR}?`,
         answer: `${List.ordered(
             "Arma Inscripta since it expands your unit's skill repertoire (up until the breakpoint, which depends on each unit).",
             `Expand to 4.5${SC.STAR} to unlock all import algorithm slots.`,
@@ -255,6 +257,30 @@ window.cards = [
         answer: `Reinstalling might help.`, // https://old.reddit.com/r/GFLNeuralCloud/comments/1adsqjg/weekly_professors_lounge_january_29_2024/kod2xsi/
         tags: [dtag.TECH]
     },
+    {
+        id: 27,
+        question: `How do I add more dolls in a room?`,
+        answer: `Beds and sofas.`,
+        tags: [dtag.DOLL, dtag.DORM]
+    },
+    {
+        id: 28,
+        question: `How much Neural Fragments do I need for Arma Inscriptas?`,
+        answer: `${link(image("https://pbs.twimg.com/media/FuCwlWlaIAAmSg9?format=jpg&name=4096x4096", "Cleista's Arma Inscripta guide."), "https://twitter.com/CleistaCeleste/status/1648512012216041472")}`,
+        tags: [dtag.FRAGS, dtag.ARMA]
+    },
+    {
+        id: 29,
+        question: `Can I get a unit through fragments?`,
+        answer: `Apart from limiteds, yes.`,
+        tags: [dtag.DOLL, dtag.FRAGS]
+    },
+    {
+        id: 30,
+        question: `Are there team presets for this game?`,
+        answer: `${figure(image("https://i.postimg.cc/tJSmx85q/Screenshot-2024-02-05-22-08-59-65-08f8a97de7bd41bb2394ebe61dcb8f9f.jpg", "Team preset screen."), "Team preset before fights, from u/WhistleOfDeath")}`,
+        tags: [dtag.TEAM]
+    },
     // {
     //     id: 0,
     //     question: ``,
@@ -263,7 +289,6 @@ window.cards = [
     // },
 ];
 
-//what is arma - cleista?
 //upgrading to l2d
 //algorithm guide - lizzy?
 //character event guide
@@ -279,6 +304,3 @@ window.cards = [
 
 // https://www.reddit.com/r/GFLNeuralCloud/comments/z5446s/algorithm_sets_recommendations_google_doc/
 // https://nalu.wiki/neuralcloud
-
-// https://old.reddit.com/r/GFLNeuralCloud/comments/1ajdx5e/weekly_professors_lounge_february_05_2024/
-// https://old.reddit.com/r/GFLNeuralCloud/comments/1aoxhii/weekly_professors_lounge_february_12_2024/
