@@ -45,3 +45,5 @@ window.cards = [
     //     tags: []
     // },
 ];
+
+// https://docs.google.com/document/d/1IalPz5JPc8-we4MiOsYhrMrOINifxW9d9Q6mTAqGoq8/edit#heading=h.hpu5yzfh9kd6

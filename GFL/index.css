@@ -29,6 +29,12 @@
     text-align: center;
 }
 
+@media screen and (resolution > 1x) {
+    .func_timer > :is(span, div) {
+        -webkit-text-stroke: 1px black;
+    }
+}
+
 .func_timer > img {
     width: 100%;
 }
