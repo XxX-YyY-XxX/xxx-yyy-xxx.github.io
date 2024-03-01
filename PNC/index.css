@@ -21,8 +21,6 @@
 
 .func_timer > :is(span, div) {
     position: absolute;
-    left: 0;
-    width: 100%;
     white-space: nowrap;
     -webkit-text-stroke: 2px black;
     color: white;
@@ -38,8 +36,12 @@
 
 .func_timer > span {
     top: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .func_timer > div {
     bottom: 0;
+    left: 0;
+    width: 100%;
 }
