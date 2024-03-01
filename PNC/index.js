@@ -32,20 +32,19 @@ function timer(start_date, end_date, title, imgpath) {
 
     const TITLE_SPAN = FRAGMENT.querySelector("span");
     TITLE_SPAN.textContent = title;
-    window.addEventListener("load", textResize.bind(TITLE_SPAN));
-    window.addEventListener("resize", textResize.bind(TITLE_SPAN));
-    window.addEventListener("deviceorientation", textResize.bind(TITLE_SPAN));
+    for (const TYPE of ["load", "resize", "deviceorientation"])
+        window.addEventListener(TYPE, textResize.bind(TITLE_SPAN));
 
     setattr(FRAGMENT.querySelector("img"), {src: imgpath, alt: title})
 
-    const TIMER = FRAGMENT.querySelector(".func_timer > div");
-    const TIMER_DIV = FRAGMENT.querySelector(".func_timer");
+    const TIMER_DIV = FRAGMENT.querySelector(".func_timer > div");
+    const TIMER_BLOCK = FRAGMENT.querySelector(".func_timer");
 
     const COUNTDOWN = setInterval(function() {
-        TIMER.textContent = splitTime(TIME.remaining).slice(0, -1).map(num => String(num).padStart(2, "0")).join(" : ");
+        TIMER_DIV.textContent = splitTime(TIME.remaining).slice(0, -1).map(num => String(num).padStart(2, "0")).join(":");
         if (TIME.done) {
             clearInterval(COUNTDOWN);
-            TIMER_DIV.remove();
+            TIMER_BLOCK.remove();
             resetTimer();
         }
     }, 1000);
@@ -55,9 +54,16 @@ function timer(start_date, end_date, title, imgpath) {
 
 function resetTimer() {
     timer(
-        "Mar 05, 2024 18:30 UTC-0800",
-        "",
+        "Mar 12, 2024 18:30 UTC-0800",
+        "Apr 03, 2024 18:30 UTC-0800",
         "Entropic Dichotomy",
+        "./assets/images/timer/cpt08_e_cg001.png"
+    )
+
+    timer(
+        "Mar 05, 2024 18:30 UTC-0800",
+        "Mar 12, 2024 18:30 UTC-0800",
+        "Entropic Dichotomy - Part 1",
         "./assets/images/timer/cpt08_e_cg001.png"
     )
 
