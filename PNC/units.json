@@ -1519,7 +1519,7 @@
             "open": -1
         },
         "intimacy": ["Power Connection", "Code Robustness", "Shield of Friendship"],
-        "tags": ["Unowned"]
+        "tags": []
     },
     {
         "id": 1047,
@@ -2107,8 +2107,8 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": ["Neural Activation", "Code Robustness"],
-        "tags": ["Unowned", "Unreleased"]
+        "intimacy": [],
+        "tags": ["Unowned"]
     },
 
     {
@@ -2177,6 +2177,11 @@
     },
     {
         "name" : "Centaureissi - Unbound Wings",
+        "reference" : {"" : ""},
+        "tags": ["Unreleased"]
+    },
+    {
+        "name" : "Bonneville",
         "reference" : {"" : ""},
         "tags": ["Unreleased"]
     }
