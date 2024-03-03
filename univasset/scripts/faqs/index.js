@@ -1,5 +1,5 @@
 import {removeHTMLTag, randInt, getTemplateCloner} from "../externaljavascript.js";
-import {cmp, setattr} from "../basefunctions/index.js";
+import {cmp, range, setattr} from "../basefunctions/index.js";
 
 // /** Checks if the element is interacted by the user. 
 //  * @param {Event} event 
@@ -107,13 +107,19 @@ window.queryFunc = function() {
 
         return CLONE;
     }
+
+    /** @param {Card[]} card_array */
+    function boxFrag(card_array) {
+        if (!card_array.length) return "No matches found.";
+        const FRAGMENT = new DocumentFragment();
+        for (const CARD of card_array) FRAGMENT.appendChild(setQuestionBoxes(CARD))
+        return FRAGMENT;
+    }
     //#endregion
 
-    /** @type {Card[]} */ const CARD_ARRAY = window.cards;
     document.querySelector("#cards-field").append(
         (() => {
-            const FRAGMENT = new DocumentFragment();
-            var run = false;
+            /** @type {Card[]} */ const CARD_ARRAY = window.cards;
 
             for (const [KEY, VALUE] of new URLSearchParams(location.search)) {
                 if (!VALUE) return "Empty field.";
@@ -121,42 +127,26 @@ window.queryFunc = function() {
                 switch (KEY) {
                     case "search":
                         const KEYWORDS = VALUE.replace(/\s+/, " ").toLowerCase().split(" ");
-                        for (const cards of CARD_ARRAY.filter(({question, answer}) => KEYWORDS.every(str => [question, answer].some(x => removeHTMLTag(x).toLowerCase().includes(str))))) {
-                            FRAGMENT.appendChild(setQuestionBoxes(cards));
-                            run = true;
-                        }
-                        return run ? FRAGMENT : "No matches found.";
+                        return boxFrag(CARD_ARRAY.filter(x => KEYWORDS.every(str => [x.question, x.answer].some(y => removeHTMLTag(y).toLowerCase().includes(str)))));
                     case "tags":
                         const TAGS = VALUE.split(" ");
-                        for (const cards of CARD_ARRAY.filter(({tags}) => TAGS.subsetof(tags.map(x => x.name)))) {
-                            FRAGMENT.appendChild(setQuestionBoxes(cards));
-                            run = true;
-                        }
-                        return run ? FRAGMENT : "No matches found.";
+                        return boxFrag(CARD_ARRAY.filter(x => TAGS.subsetof(x.tags.map(y => y.name))));
                     case "page":
                         const PAGE = Number(VALUE);
                         document.querySelector('#Browse input[type="number"]').value = PAGE;
-                        const LIMIT = Math.min(PAGE * 5, CARD_ARRAY.length);
-                        for (let INDEX = (PAGE * 5) - 5; INDEX < LIMIT; INDEX++)
-                            FRAGMENT.appendChild(setQuestionBoxes(CARD_ARRAY[INDEX]));
-                        return FRAGMENT;
+                        return boxFrag(Array.from(range({start: (PAGE * 5) - 5, stop: Math.min(PAGE * 5, CARD_ARRAY.length)})).map(x => CARD_ARRAY[x]));
                     case "id":
                         const IDS = VALUE.split(" ").map(Number);
-                        for (const cards of CARD_ARRAY.filter(({id}) => IDS.includes(id))) {
-                            FRAGMENT.appendChild(setQuestionBoxes(cards));
-                            run = true;
-                        }
-                        return run ? FRAGMENT : "No matches found.";
+                        return boxFrag(CARD_ARRAY.filter(x => IDS.includes(x.id)));
                 }
             }
 
             {
                 const LENGTH = CARD_ARRAY.length;
-                const INDICES = new Set();
+                /** @type {Set<number>} */ const INDICES = new Set();
                 do INDICES.add(randInt(0, LENGTH));
-                while (INDICES.size < 3)
-                for (const index of INDICES) FRAGMENT.appendChild(setQuestionBoxes(CARD_ARRAY[index]));
-                return FRAGMENT;
+                while (INDICES.size < 5);
+                return boxFrag(Array.from(INDICES).map(x => CARD_ARRAY[x]));
             }
         })()
     );
