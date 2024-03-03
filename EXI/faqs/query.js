@@ -46,4 +46,5 @@ window.cards = [
     // },
 ];
 
-// https://docs.google.com/document/d/1IalPz5JPc8-we4MiOsYhrMrOINifxW9d9Q6mTAqGoq8/edit#heading=h.hpu5yzfh9kd6
+// https://docs.google.com/document/d/1IalPz5JPc8-we4MiOsYhrMrOINifxW9d9Q6mTAqGoq8
+// https://docs.google.com/spreadsheets/d/1DogyU3K7ZXw2qbhP1EhRXIAw5nCyIV5G5e-QWviBZME
