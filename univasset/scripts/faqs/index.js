@@ -1,5 +1,5 @@
 import {removeHTMLTag, randInt, getTemplateCloner} from "../externaljavascript.js";
-import {cmp, setattr, type} from "../basefunctions/index.js";
+import {cmp, setattr} from "../basefunctions/index.js";
 
 // /** Checks if the element is interacted by the user. 
 //  * @param {Event} event 
@@ -109,46 +109,48 @@ window.queryFunc = function() {
     }
     //#endregion
 
-    const SEARCH_PARAMS = new URLSearchParams(location.search);
-    const CARDFIELD = document.querySelector("#cards-field");
     /** @type {Card[]} */ const CARD_ARRAY = window.cards;
-    CARDFIELD.append(
+    document.querySelector("#cards-field").append(
         (() => {
             const FRAGMENT = new DocumentFragment();
-            var run = false, key;
+            var run = false;
 
-            if (key = SEARCH_PARAMS.get("search")) {
-                const KEYWORDS = key.replace(/\s+/, " ").toLowerCase().split(" ");
-                for (const cards of CARD_ARRAY.filter(({question, answer}) => KEYWORDS.every(str => [question, answer].some(x => removeHTMLTag(x).toLowerCase().includes(str))))) {
-                    FRAGMENT.appendChild(setQuestionBoxes(cards));
-                    run = true;
+            for (const [KEY, VALUE] of new URLSearchParams(location.search)) {
+                if (!VALUE) return "Empty field.";
+
+                switch (KEY) {
+                    case "search":
+                        const KEYWORDS = VALUE.replace(/\s+/, " ").toLowerCase().split(" ");
+                        for (const cards of CARD_ARRAY.filter(({question, answer}) => KEYWORDS.every(str => [question, answer].some(x => removeHTMLTag(x).toLowerCase().includes(str))))) {
+                            FRAGMENT.appendChild(setQuestionBoxes(cards));
+                            run = true;
+                        }
+                        return run ? FRAGMENT : "No matches found.";
+                    case "tags":
+                        const TAGS = VALUE.split(" ");
+                        for (const cards of CARD_ARRAY.filter(({tags}) => TAGS.subsetof(tags.map(x => x.name)))) {
+                            FRAGMENT.appendChild(setQuestionBoxes(cards));
+                            run = true;
+                        }
+                        return run ? FRAGMENT : "No matches found.";
+                    case "page":
+                        const PAGE = Number(VALUE);
+                        document.querySelector('#Browse input[type="number"]').value = PAGE;
+                        const LIMIT = Math.min(PAGE * 5, CARD_ARRAY.length);
+                        for (let INDEX = (PAGE * 5) - 5; INDEX < LIMIT; INDEX++)
+                            FRAGMENT.appendChild(setQuestionBoxes(CARD_ARRAY[INDEX]));
+                        return FRAGMENT;
+                    case "id":
+                        const IDS = VALUE.split(" ").map(Number);
+                        for (const cards of CARD_ARRAY.filter(({id}) => IDS.includes(id))) {
+                            FRAGMENT.appendChild(setQuestionBoxes(cards));
+                            run = true;
+                        }
+                        return run ? FRAGMENT : "No matches found.";
                 }
-                return run ? FRAGMENT : "No matches found.";
-            } else if (key = SEARCH_PARAMS.get("tags")) {
-                const TAGS = key.split(" ");
-                for (const cards of CARD_ARRAY.filter(({tags}) => TAGS.subsetof(tags.map(x => x.name)))) {
-                    FRAGMENT.appendChild(setQuestionBoxes(cards));
-                    run = true;
-                }
-                return run ? FRAGMENT : "No matches found.";
-            } else if (key = SEARCH_PARAMS.get("page")) {
-                const PAGE = Number(key);
-                document.querySelector('#Browse input[type="number"]').value = PAGE;
-                const LIMIT = Math.min(PAGE * 5, CARD_ARRAY.length);
-                for (let INDEX = (PAGE * 5) - 5; INDEX < LIMIT; INDEX++)
-                    FRAGMENT.appendChild(setQuestionBoxes(CARD_ARRAY[INDEX]));
-                return FRAGMENT;
-            } else if (key = SEARCH_PARAMS.get("id")) {
-                const IDS = key.split(" ").map(Number);
-                for (const cards of CARD_ARRAY.filter(({id}) => IDS.includes(id))) {
-                    FRAGMENT.appendChild(setQuestionBoxes(cards));
-                    run = true;
-                }
-                return run ? FRAGMENT : "No matches found.";
-            } else if (typeof key === "string") {
-                console.log(key)
-                return "Empty field."
-            } else {
+            }
+
+            {
                 const LENGTH = CARD_ARRAY.length;
                 const INDICES = new Set();
                 do INDICES.add(randInt(0, LENGTH));
