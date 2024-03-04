@@ -3821,8 +3821,8 @@ const CARDS = [
         tags: [dtag.FAIRY, dtag.SKILL]
     },
     {
-        id: '00474',
-        question: `Why are the guns' names excluding their manufacturer names?`,
+        id: 474,
+        question: `Why are the guns' names excluding their manufacturer names? Does it infringe copyright?`,
         answer: `${MBD.twitter("GirlsFrontlineE", "1001058278728548354")}`,
         tags: [dtag.MISC]
     },
