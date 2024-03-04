@@ -31,6 +31,7 @@
 @media screen and (resolution > 1dppx) {
     .func_timer > :is(span, div) {
         -webkit-text-stroke: 1px black;
+        font-size: 5rem;
     }
 }
 
