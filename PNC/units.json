@@ -1052,7 +1052,7 @@
             "open": 47
         },
         "intimacy": ["Power Connection", "Neural Activation", "Coordinated Formation"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
         "id": 1025,
@@ -2083,7 +2083,7 @@
         "id": 1068,
         "name": "Eos",
         "class": "Sniper",
-        "reference": {},
+        "reference": {"": "https://en.wikipedia.org/wiki/Eos"},
         "fragments": ["Neural Kits", "Intimacy"],
         "base": {
             "hp": 10712,

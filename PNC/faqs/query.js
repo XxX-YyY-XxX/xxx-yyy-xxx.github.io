@@ -304,3 +304,5 @@ window.cards = [
 
 // https://www.reddit.com/r/GFLNeuralCloud/comments/z5446s/algorithm_sets_recommendations_google_doc/
 // https://nalu.wiki/neuralcloud
+
+// https://old.reddit.com/r/GFLNeuralCloud/comments/1b0evdy/weekly_professors_lounge_february_26_2024/

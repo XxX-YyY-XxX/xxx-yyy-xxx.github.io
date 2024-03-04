@@ -1,19 +1,19 @@
 import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
-// timer(
-//    document.getElementById("event"),
-//    "Feb 20, 2024 00:00 UTC-0800",
-//    "./assets/images/timer/bjnxfw4m5pfc1.png"
-// );
+timer(
+   document.getElementById("event"),
+   "Mar 19, 2024 00:00 UTC-0800",
+   "./assets/images/timer/missionselect_2022WhiteValentine_base.png"
+);
 
 timer(
     document.getElementById("battlepass"),
-    "Mar 04, 2024 00:00 UTC-0800",
-    "./assets/images/timer/vbkwzn9f4bec1.webp",
+    "Apr 09, 2024 00:00 UTC-0800",
+    "./assets/images/timer/rlmow78yk9mc1.webp",
     {onEnd: timer.bind(
         null, document.getElementById("battlepass"),
-        "Apr 08, 2024 00:00 UTC-0800",
-        "./assets/images/timer/.webp"   //hk433
+        "",
+        "./assets/images/timer/.webp"
     )}
 );
 
@@ -23,8 +23,8 @@ timer(
     "./assets/images/coalition/23ScarecrowDemonicAbyss.webp", 
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
-        "",
-        "./assets/images/coalition/.webp"
+        "Apr 02, 2024 00:00 UTC-0800",
+        "./assets/images/coalition/08Alchemist.webp"
     )}
 );
 

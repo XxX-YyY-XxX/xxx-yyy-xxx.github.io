@@ -529,11 +529,11 @@ const CARDS = [
         tags: [dtag.FAIRY, dtag.PROD, dtag.IMPT]
     },
     {
-        id: '00028',
+        id: 28,
         question: `Is there a guide on how to build echelons/team compositions?`,
         answer: `Basic tip in this game is counterplay is more important than fixed synergy.<br>
         ${List.description({
-            'Mixed' : [spoilerSummary("CheneyQWER's infographic.", img(IMG_ASSET+"EchelonComps.png"))],
+            'Mixed' : [spoilerSummary("CheneyQWER's infographic.", image(IMG_ASSET+"EchelonComps.png", "CheneyQWER's infographic."))],
             'Coalition Echelons' : [
                 link('Reddit flowchart post.', 'https://redd.it/rkvisq'),
                 link('Gamepress list of units and build suggestions.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units'),
@@ -4097,3 +4097,4 @@ window.cards = CARDS
 // https://old.reddit.com/r/girlsfrontline/comments/1ak4q03/weekly_commanders_lounge_february_06_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1apobjn/weekly_commanders_lounge_february_13_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1avcdge/weekly_commanders_lounge_february_20_2024/
+// https://old.reddit.com/r/girlsfrontline/comments/1b16kmw/weekly_commanders_lounge_february_27_2024/
