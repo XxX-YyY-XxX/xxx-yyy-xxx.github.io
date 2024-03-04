@@ -101,6 +101,7 @@ window.queryFunc = function() {
         const CLONE = _fieldsetCloner();
 
         // might add button for getting card id
+        CLONE.querySelector("fieldset").id = id;
         CLONE.querySelector("h3").appendChild(stringToHTML(question));
         CLONE.querySelector("#answer").replaceWith(stringToHTML(answer));
         CLONE.querySelector("#tags").replaceWith(...tags.map(({name}) => setattr(document.createElement("a"), {classList: {add: ["tags"]}, textContent: name, href: HREF+"?tags="+name})));
