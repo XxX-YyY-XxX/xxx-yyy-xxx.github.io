@@ -133,9 +133,9 @@ window.queryFunc = function() {
                         const TAGS = VALUE.split(" ");
                         return boxFrag(CARD_ARRAY.filter(x => TAGS.subsetof(x.tags.map(y => y.name))));
                     case "page":
-                        const PAGE = Number(VALUE);
+                        const PAGE = Number(VALUE), COUNT = PAGE * 5;
                         document.querySelector('#Browse input[type="number"]').value = PAGE;
-                        return boxFrag(Array.from(range({start: (PAGE * 5) - 5, stop: Math.min(PAGE * 5, CARD_ARRAY.length)})).map(x => CARD_ARRAY[x]));
+                        return boxFrag(Array.from(range({start: COUNT - 5, stop: Math.min(COUNT, CARD_ARRAY.length)})).map(x => CARD_ARRAY[x]));
                     case "id":
                         const IDS = VALUE.split(" ").map(Number);
                         return boxFrag(CARD_ARRAY.filter(x => IDS.includes(x.id)));
@@ -143,8 +143,7 @@ window.queryFunc = function() {
             }
 
             {
-                const LENGTH = CARD_ARRAY.length;
-                /** @type {Set<number>} */ const INDICES = new Set();
+                const LENGTH = CARD_ARRAY.length, /** @type {Set<number>} */ INDICES = new Set();
                 do INDICES.add(randInt(0, LENGTH));
                 while (INDICES.size < 5);
                 return boxFrag(Array.from(INDICES).map(x => CARD_ARRAY[x]));
