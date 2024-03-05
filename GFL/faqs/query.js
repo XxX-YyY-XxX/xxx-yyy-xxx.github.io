@@ -619,9 +619,9 @@ const CARDS = [
     },
     //#endregion
     {
-        id: '00035',
+        id: 35,
         question: `Which SF units are considered dolls/machines/armored/unarmored?`,
-        answer: `${img(IMG_ASSET+"SFEnemy.png", 'Jupiter Cannons count as unarmored machine type')}`,
+        answer: `${figure(image(IMG_ASSET+"SFEnemy.png", "Sangvis Ferri enemy types."), "Jupiter Cannons count as unarmored machine type")}`,
         tags: [dtag.ENEMY]
     },
     {
