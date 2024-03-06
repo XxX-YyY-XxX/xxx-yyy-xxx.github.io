@@ -24,7 +24,7 @@
     white-space: nowrap;
     -webkit-text-stroke: 2px black;
     color: white;
-    font-size: min(8cqw, 8rem);
+    font-size: 10cqw;
     text-align: center;
 }
 

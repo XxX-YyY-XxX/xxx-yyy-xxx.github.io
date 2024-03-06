@@ -2,10 +2,6 @@
 
 # Technical Help
 
-### Enemy mortar keeps shooting me and I don't know who the target is.
-
-> Battle Simplification in Settings is set to on probably.
-
 ### My game freezes upon winning a battle. What happened?
 
 > Popular answer: Memory Leaks. Restart client is always the default option.

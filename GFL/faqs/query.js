@@ -155,7 +155,7 @@ const CARDS = [
         ${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
         ${spoilerSummary("Cleista's basic Twitter guide.", MBD.twitter('CleistaCeleste', '1409824210571214849'))}`,
-        tags: [dtag.PA, dtag.PRIME]
+        tags: [dtag.PA, dtag.COALITION, dtag.PRIME]
     },
     {
         id: '00005',
@@ -743,14 +743,14 @@ const CARDS = [
         tags: [dtag["3P"]]
     },
     {
-        id: '00053',
+        id: 53,
         question: `Is there any way to reset my battles so I can get a win?`,
         answer: `${List.description({
-            "Method 1: In-game restart": [img(IMG_ASSET+"BattleRestart.png", "Restart Battle button in Pause menu. Beware the Withdraw button.")],
+            "Method 1: In-game restart": [figure(image(IMG_ASSET+"BattleRestart.png", "Restart Battle button."), "Restart Battle button in Pause menu")],
             "Method 2: Client restart": [
                 "Turn off WiFi during battle. You can still finish the fight with no connection. Though be wary of connection timeouts so do it near the end.",
                 "If you don't like the result or you lost, exit client, turn on WiFi, re-enter client, take the fight again.",
-                "If satisfied ${TextStyle.style('or saving your sanity', TextStyle.STRIKE)}, turn on WiFi after the battle finished."
+                `If satisfied ${TextStyle.style('or saving your sanity', TextStyle.STRIKE)}, turn on WiFi after the battle finished.`
             ]
         })}`,
         tags: [dtag.BATTLE]
@@ -2513,9 +2513,9 @@ const CARDS = [
         tags: [dtag.MISC]
     },
     {
-        id: '00291',
+        id: 291,
         question: `Can I change the censored sprites to uncensored/rejected ones?`,
-        answer: `Apparently no since it'll revert back to its default file., And you might get in trouble.`,
+        answer: `Apparently no since it'll revert back to its default file. And you might get in trouble.`,
         tags: [dtag.TDOLL, dtag.SKIN]
     },
     {
@@ -4065,6 +4065,18 @@ const CARDS = [
         answer: `QooApp or Apkpure.`,
         tags: [dtag.MISC]
     },
+    {
+        id: 510,
+        question: `How many costumes does each doll have?`,
+        answer: `${figure(Embed.google(["GFL Dolls by Skin Count", "https://docs.google.com/spreadsheets/d/1Wkj2sinSG247Ff3I2okBahSzIgxsgL8KG8EnnCU9rTI"]), "By u/UnironicWeeaboo")}`,  // https://old.reddit.com/r/girlsfrontline/comments/1ak4q03/weekly_commanders_lounge_february_06_2024/kpfhac8/
+        tags: [dtag.SKIN, dtag.TDOLL]
+    },
+    {
+        id: 511,
+        question: `Enemy mortar keeps shooting me and I don't know who the target is.`,
+        answer: `Battle Simplification in Settings is set to on probably.`,
+        tags: [dtag.BATTLE]
+    },  //@Visual
     // {
     //     id: 0,
     //     question: ``,
@@ -4093,8 +4105,8 @@ window.cards = CARDS
 // https://old.reddit.com/r/girlsfrontline/comments/1929lxq/weekly_commanders_lounge_january_09_2024/khmieoe/
 // https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/kgfv3bn/
 // https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/kgpxdz7/
+// Quick Formations - https://old.reddit.com/r/girlsfrontline/comments/qg1inu/weekly_commanders_lounge_october_26_2021/hiu3wrw/
 
-// https://old.reddit.com/r/girlsfrontline/comments/1ak4q03/weekly_commanders_lounge_february_06_2024/
-// https://old.reddit.com/r/girlsfrontline/comments/1apobjn/weekly_commanders_lounge_february_13_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1avcdge/weekly_commanders_lounge_february_20_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1b16kmw/weekly_commanders_lounge_february_27_2024/
+// https://old.reddit.com/r/girlsfrontline/comments/1b6zzvd/weekly_commanders_lounge_march_05_2024/
