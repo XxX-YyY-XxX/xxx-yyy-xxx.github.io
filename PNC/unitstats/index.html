@@ -31,19 +31,37 @@
 
         <div class="container">
             <section id="main_content">
-                <div id="table"></div>  <!-- setup table here instead -->
-
-                <!-- filter -->
-                <div id="classes">
-                    <div>Class</div>
-                    <label><input type="checkbox" value="Guard" checked /></label>
-                    <label><input type="checkbox" value="Sniper" checked /></label>
-                    <label><input type="checkbox" value="Warrior" checked /></label>
-                    <label><input type="checkbox" value="Specialist" checked /></label>
-                    <label><input type="checkbox" value="Medic" checked /></label>
+                <div id="table" class="func_table">
+                    <table class="freeze-col freeze-row">
+                        <thead>
+                            <tr></tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
                 </div>
-                <!-- algorithm piece -->
-                <!-- has arma - yes, no, unselected -->
+
+                <details id="filter">
+                    <summary>Filter</summary>
+                    <div id="classes">
+                        <div>Class</div>
+                        <label><input type="checkbox" value="Guard" checked /></label>
+                        <label><input type="checkbox" value="Sniper" checked /></label>
+                        <label><input type="checkbox" value="Warrior" checked /></label>
+                        <label><input type="checkbox" value="Specialist" checked /></label>
+                        <label><input type="checkbox" value="Medic" checked /></label>
+                    </div>
+                    <div id="algorithms">
+                        <button type="button">
+                            <img src="../assets/images/algorithms/others/Empty.png" alt="Remove" />
+                        </button>
+                        <div>
+                            <select id="main" class="mainstat"></select>
+                            <select id="sub1" class="substat"></select>
+                            <select id="sub2" class="substat"></select>    
+                        </div>
+                    </div>
+                    <!-- has arma - yes, no, unselected -->        
+                </div>
 
                 <div id="bonus">
                     <div>Pre-Battle Bonus</div>

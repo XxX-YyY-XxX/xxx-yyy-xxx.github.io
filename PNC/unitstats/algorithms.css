@@ -12,10 +12,6 @@ dialog {
     width: 650px;
 }
 
-#algo-modal select {
-    width: 100%;
-}
-
 /* #region Algorithm Grid */
 #algo-modal .tab-body {
     --gridsize: 100px;
@@ -42,6 +38,10 @@ dialog {
     background-color: #eaeaea;
     position: relative;
     padding: var(--algo-pad);
+}
+
+.algo-block select {
+    width: 100%;
 }
 
 .double-block {

@@ -1,7 +1,6 @@
-import {nestElements} from '../../univasset/scripts/htmlgenerator/htmlgenerator.js';
 import {zip, cmp, setattr} from "../../univasset/scripts/basefunctions/index.js";
 import {Async} from "../../univasset/scripts/externaljavascript.js";
-import {AlgoField} from "./algorithms.js";
+import {AlgoField, AlgoFilter, algoFilter} from "./algorithms.js";
 import {STAT_KEYS} from "./typing.js";
 import {image} from '../../univasset/scripts/html/index.js';
 
@@ -208,11 +207,22 @@ class Units {
         const MISSING = [];
 
         this.#algofield = new AlgoField(unitobject);
+        algoFilter((set, main, sub1, sub2) => {
+            const {set: set_array, main: main_array, sub: sub_array} = this.#algofield.info;
+            const CHECK = [
+                {Remove: () => true, SingleBlock: () => ["OffenseBlock", "StabilityBlock", "SpecialBlock"].some(x => set_array.includes(x))}[set]?.() ?? set_array.includes(set),
+                !main || main_array.includes(main),
+                !sub1 || sub_array.includes(sub1),
+                set === "SingleBlock" || !sub2 || sub_array.includes(sub2)
+            ]
+            this.row.classList.toggle("hidden-algo", !CHECK.every(x => x));
+            updateTable();
+        });
 
         this.name = unitobject.name;
         this.class = unitobject.class;
         const CLASS_INPUT = CLASSES[this.class];
-        CLASS_INPUT.addEventListener("change", event => this.row.classList.toggle("hidden", !CLASS_INPUT.checked), true);
+        CLASS_INPUT.addEventListener("change", event => this.row.classList.toggle("hidden-class", !CLASS_INPUT.checked), true);
 
         const BASE = unitobject.base;
         this.#hp = BASE.hp;
@@ -329,9 +339,9 @@ class Units {
 //#region Function Declarations
 /** Needs `UNIT_LIST` loaded. */
 function updateTable() {
-    TBODY.replaceChildren(...UNIT_LIST.filter(x => !x.row.classList.contains("hidden")).map(x => x.row));
+    TBODY.replaceChildren(...UNIT_LIST.filter(x => !x.row.className.includes("hidden-")).map(x => x.row));
 }
-for (const INPUT of Object.values(CLASSES)) INPUT.addEventListener("change", updateTable, false);
+for (const INPUT of Object.values(CLASSES)) INPUT.addEventListener("change", updateTable);
 
 /** @this {HTMLTableCellElement} @param {MouseEvent} event */
 function sortMethod(event) {
@@ -354,20 +364,15 @@ function sortMethod(event) {
 
 const UNIT_LIST = (await UNIT_PROMISE).filter(({tags}) => !tags.includes("Unreleased")).map(x => new Units(x));
 
-const [THEAD, HEADER_TR] = nestElements("thead", "tr");
-
-const TBODY = document.createElement("tbody");
+const TBODY = document.querySelector("tbody");
 TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));
 
-const TABLE = setattr(document.createElement("table"), {classList: {add: ["freeze-col", "freeze-row"]}, append: [THEAD, TBODY]})
-
+const HEADER_TR = document.querySelector("thead > tr");
 const HEADER_VALUES = ["Doll Name", "Max HP", "Attack", "Hashrate", "Physical Def", "Operand Def", "Attack Speed", "Crit Rate", "Crit Damage", "Physical Pen", "Operand Pen", "Dodge Rate", "Post-battle Regen", "Skill Haste", "Debuff Resist", "Backlash", "Damage Boost", "Injury Mitigation", "Healing Effect"];
 for (const [NAME, KEY, TYPE] of zip(HEADER_VALUES, ["name", ...Object.values(STAT_KEYS)], (function*() {yield "string"; while (true) yield "number"})())) {
     const TH = setattr(document.createElement("th"), {textContent: NAME, addEventListener: ["click", sortMethod, true]});
     setattr(TH.dataset, {sort: "no", key: KEY, type: TYPE});
     HEADER_TR.appendChild(TH);
 }
-
-setattr(document.querySelector("#table"), {classList: {add: ["func_table"]}, appendChild: [TABLE]});
 
 document.dispatchEvent(new Event("custom"));

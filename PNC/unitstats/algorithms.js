@@ -3,8 +3,13 @@ import {cmp, setattr, subclassof, zip} from "../../univasset/scripts/basefunctio
 import {getTemplateCloner} from "../../univasset/scripts/externaljavascript.js";
 
 //#region Types
+/** @typedef {keyof ALGO_SETS["Offense"] | keyof ALGO_SETS["Stability"] | keyof ALGO_SETS["Special"]} AlgoSet*/
 /** @typedef {keyof STATVALUES["NAME"]} StatAttributes */
-/** @typedef {[algoname: string, main: StatAttributes, sub1: StatAttributes, sub2: StatAttributes | ""]} AlgoInfo */
+/** @typedef {keyof STATVALUES["SET"]} SetAttributes */
+/** @typedef {keyof STATVALUES["MAIN"]} MainAttributes */
+/** @typedef {keyof STATVALUES["SUB"]} SubAttributes */
+
+/** @typedef {[algoname: AlgoSet, main: MainAttributes, sub1: SubAttributes, sub2: SubAttributes | ""]} AlgoInfo */
 /** @typedef {Map<StatAttributes, number>} StatDict */
 
 /** @typedef {"Offense"|"Stability"|"Special"} GridFields */
@@ -130,7 +135,7 @@ function algoPath(algoname) {
 
 //#region Algorithm Classes
 /** @abstract */ class Algorithm {
-    /** @abstract @static @type {[StatAttributes, number][] | string} */ static SET2;
+    /** @abstract @static @type {STATVALUES["SET"][SetAttributes]} */ static SET2;
     /** @abstract @static @type {string?} */ static SET3;
     /** @abstract @type {number} */ SIZE;
 
@@ -258,7 +263,7 @@ function createSelect(obj, name) {
             }
         })();
 
-        /** @param {StatAttributes} attr */ function output(attr) {
+        /** @param {MainAttributes | SubAttributes} attr */ function output(attr) {
             /** @type {[, STAT_KEYS[keyof STAT_KEYS], "flat"|"perc"]} */
             const [, STAT, VALTYPE] = attr.match(/(.+)(flat|perc)/);
             if (!VIABLE.includes(STAT)) return null;
@@ -482,17 +487,20 @@ ALGO_MODAL.addEventListener("close", function(event) {
     for (const DIV of Object.values(GRIDS)) DIV.replaceChildren();
 });
 
+/** @type {HTMLDialogElement} */ const ALGO_SELECT = document.querySelector("#algo-select");
+ALGO_SELECT.addEventListener("close", function(event) {this.firstElementChild.replaceChildren()});  // Empties algo buttons selection.
+
+
 class AlgoGrid {
     static #MAX_SIZE = 6;
-    /** @type {HTMLDialogElement} */ static #SELECT = document.querySelector("#algo-select");
+    /** @type {HTMLDialogElement} */ static #SELECT = ALGO_SELECT;
 
     static {
-        this.#SELECT.addEventListener("close", function(event) {this.firstElementChild.replaceChildren()});  // Empties algo buttons selection.
-        this.#SELECT.addEventListener("click", function(event) {
-            const DIM = this.getBoundingClientRect();
-            if (event.clientX < DIM.left || event.clientX > DIM.right || event.clientY < DIM.top || event.clientY > DIM.bottom)
-                this.close("");
-        });
+        // this.#SELECT.addEventListener("click", function(event) {
+        //     const DIM = this.getBoundingClientRect();
+        //     if (event.clientX < DIM.left || event.clientX > DIM.right || event.clientY < DIM.top || event.clientY > DIM.bottom)
+        //         this.close("null");
+        // });
     }
 
     #fieldtype;
@@ -538,7 +546,7 @@ class AlgoGrid {
     #close = () => {
         AlgoGrid.#SELECT.removeEventListener("close", this.#close);
 
-        if (!AlgoGrid.#SELECT.returnValue) return;
+        if (!AlgoGrid.#SELECT.returnValue === "null") return;
 
         this.#algorithms.push(new ALGO_SETS[this.#fieldtype][AlgoGrid.#SELECT.returnValue](this));
 
@@ -630,6 +638,21 @@ export class AlgoField {
     get [STAT_KEYS.DMGREDUCE]()     {return this.#stats.get("dreducperc") ?? 0}
     get [STAT_KEYS.HEALBOOST]()     {return this.#stats.get("hboostperc") ?? 0}
 
+    get info() {
+        const OUTPUT = {
+            /** @type {AlgoSet[]} */ set: [],
+            /** @type {MainAttributes[]} */ main: [],
+            /** @type {SubAttributes[]} */ sub: []
+        }
+        for (const [SET, MAIN, SUB1, SUB2] of this.#algogrids.map(x => x.info).flat()) {
+            OUTPUT.set.push(SET);
+            OUTPUT.main.push(MAIN);
+            OUTPUT.sub.push(SUB1);
+            if (SUB2) OUTPUT.sub.push(SUB2);
+        }
+        return OUTPUT;
+    }
+
     onclose = function() {};
 
     /** @param {UnitObject} unit */
@@ -698,5 +721,63 @@ export class AlgoField {
             basestat: AlgoField.#current.#basestat
         }
     }
+}
+//#endregion
+
+// #region Filter
+/** @type {HTMLButtonElement} */ const ALGO_BUTTON = document.querySelector("#algorithms button");
+/** @type {HTMLImageElement} */ const ALGO_IMAGE = ALGO_BUTTON.firstElementChild;
+
+/** @type {HTMLSelectElement} */ const MAIN = document.querySelector("#algorithms #main");
+MAIN.append(
+    setattr(document.createElement("option"), {value: "", textContent: "---"}),
+    ...Object.keys(STATVALUES.MAIN).map(x => setattr(document.createElement("option"), {value: x, textContent: STATVALUES.NAME[x]}))
+)
+
+/** @type {HTMLSelectElement} */ const SUB1 = document.querySelector("#algorithms #sub1");
+SUB1.append(
+    setattr(document.createElement("option"), {value: "", textContent: "---"}),
+    ...Object.keys(STATVALUES.SUB).map(x => setattr(document.createElement("option"), {value: x, textContent: STATVALUES.NAME[x]}))
+)
+SUB1.addEventListener("change", function(event) {for (const OPTION of SUB2.options) OPTION.disabled = this.value === OPTION.value});
+
+/** @type {HTMLSelectElement} */ const SUB2 = document.querySelector("#algorithms #sub2");
+SUB2.append(
+    setattr(document.createElement("option"), {value: "", textContent: "---"}),
+    ...Object.keys(STATVALUES.SUB).map(x => setattr(document.createElement("option"), {value: x, textContent: STATVALUES.NAME[x]}))
+)
+SUB2.addEventListener("change", function(event) {for (const OPTION of SUB1.options) OPTION.disabled = this.value === OPTION.value});
+
+/** @param {"Remove" | "SingleBlock" | AlgoSet} algoname */
+function createButton(algoname) {
+    const IMG = setattr(document.createElement("img"), {src: algoname === "Remove" ? "../assets/images/algorithms/others/Empty.png" : algoPath(algoname), alt: algoname});
+    const DIV = setattr(document.createElement("div"), {textContent: algoname});
+    return setattr(document.createElement("button"), {type: "submit", value: algoname, append: [IMG, DIV]});
+}
+
+const BUTTONS = [createButton("Remove"), createButton("SingleBlock"), ...Object.entries(ALGO_SETS.classdict).filter(([, cls]) => subclassof(cls, DoubleBlock)).map(([str,]) => createButton(str))];
+
+/** @param {function("Remove" | "SingleBlock" | AlgoSet, "" | MainAttributes, "" | SubAttributes, "" | SubAttributes): void} table_update */
+export function algoFilter(table_update) {
+    function update() {
+        table_update(ALGO_SELECT.returnValue, MAIN.value, SUB1.value, SUB2.value);
+    }
+
+    //---------------------------------------------------------------------------------------------------------------------------------
+
+    function close() {
+        console.log("Algo filter closed.")
+        ALGO_IMAGE.src = ALGO_SELECT.returnValue;
+        ALGO_IMAGE.alt = ALGO_SELECT.returnValue;
+        update();
+    }
+
+    ALGO_BUTTON.addEventListener("click", function(event) {
+        ALGO_SELECT.firstElementChild.append(...BUTTONS.filter(x => x.value !== ALGO_IMAGE.alt));
+        ALGO_SELECT.addEventListener("close", close, {once: true, capture: true});
+        ALGO_SELECT.showModal();
+    });
+
+    for (const SELECT of [MAIN, SUB1, SUB2]) SELECT.addEventListener("change", update);
 }
 //#endregion

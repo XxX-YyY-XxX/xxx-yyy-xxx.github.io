@@ -146,6 +146,29 @@ tbody > tr > td:first-child, thead > tr > th {
 }
 /* #endregion */
 
+/* #region Algorithm */
+#algorithms {
+    --gridsize: 100px;
+    grid-template-columns: repeat(2, var(--gridsize));
+    grid-auto-rows: var(--gridsize);
+    gap: 5px;
+}
+
+#algorithms > * {
+    height: 100%;
+    aspect-ratio: 1;
+}
+
+#algorithms > button {
+    padding: 0;
+    border-width: 1px;
+}
+
+#algorithms > * > * {
+    width: 100%;
+}
+/* #endregion */
+
 /* #region Pre Bonus */
 #bonus label:has(input[disabled]) {
     display: none;
