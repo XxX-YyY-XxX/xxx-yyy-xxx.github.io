@@ -82,13 +82,16 @@ tbody > tr > td:first-child, thead > tr > th {
 }
 /* #endregion */
 
-/* #region Class */
-#classes {
-    width: fit-content;
+#filter > div {
+    display: inline-block;
     background: #343434;
     border-radius: 20px;
     padding: 0 10px;
-    display: inline-block;
+}
+
+/* #region Class */
+#classes {
+    width: fit-content;
     text-align: center;
     margin-top: 10px;
 }

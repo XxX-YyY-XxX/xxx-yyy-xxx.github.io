@@ -1,6 +1,6 @@
 import {zip, cmp, setattr} from "../../univasset/scripts/basefunctions/index.js";
 import {Async} from "../../univasset/scripts/externaljavascript.js";
-import {AlgoField, AlgoFilter, algoFilter} from "./algorithms.js";
+import {AlgoField, algoFilter} from "./algorithms.js";
 import {STAT_KEYS} from "./typing.js";
 import {image} from '../../univasset/scripts/html/index.js';
 
