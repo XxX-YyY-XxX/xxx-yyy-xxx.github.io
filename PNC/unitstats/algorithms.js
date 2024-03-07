@@ -769,6 +769,7 @@ export function algoFilter(table_update) {
         console.log("Algo filter closed.")
         ALGO_IMAGE.src = ALGO_SELECT.returnValue;
         ALGO_IMAGE.alt = ALGO_SELECT.returnValue;
+        SUB2.disabled = ALGO_SELECT.returnValue === "SingleBlock";
         update();
     }
 
