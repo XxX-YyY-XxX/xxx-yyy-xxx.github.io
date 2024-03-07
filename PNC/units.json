@@ -2107,8 +2107,8 @@
             "ppen": -1,
             "open": -1
         },
-        "intimacy": [],
-        "tags": ["Unowned"]
+        "intimacy": ["Code Robustness", "Coordinated Formation", "Coordinated Strike"],
+        "tags": []
     },
 
     {
