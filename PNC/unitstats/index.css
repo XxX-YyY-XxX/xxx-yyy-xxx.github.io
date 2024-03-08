@@ -93,13 +93,13 @@ tbody > tr > td:first-child, thead > tr > th {
         background: #343434;
         border-radius: 20px;
         padding: 0 var(--filter-pad);
+        text-align: center;
     }    
 }
 
 /* #region Class */
 #classes {
     width: fit-content;
-    text-align: center;
 }
 
 #classes > label {
@@ -160,7 +160,7 @@ tbody > tr > td:first-child, thead > tr > th {
     --gridsize: 100px;
     --gold-algo: #ffa418;
     display: inline-grid;
-    padding: var(--filter-pad);
+    padding-bottom: var(--filter-pad);
     grid-template-areas: 
         "title  title"
         "set    stats";
@@ -168,11 +168,6 @@ tbody > tr > td:first-child, thead > tr > th {
     grid-template-rows: 1lh var(--gridsize);
     gap: 5px;
 }
-
-/* #algorithms > * {
-    height: 100%;
-    aspect-ratio: 1;
-} */
 
 #algorithms > div:first-of-type {
     grid-area: title;
@@ -185,7 +180,7 @@ tbody > tr > td:first-child, thead > tr > th {
     border-width: 1px;
 }
 
-#algorithms > div:first-of-type {
+#algorithms > div:last-of-type {
     grid-area: stats;
 }
 

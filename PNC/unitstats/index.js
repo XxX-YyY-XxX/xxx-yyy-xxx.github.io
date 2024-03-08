@@ -216,7 +216,8 @@ class Units {
                 !sub1 || sub_array.includes(sub1),
                 set === "SingleBlock" || !sub2 || sub_array.includes(sub2)
             ]
-            console.log(this.name, CHECK)
+            console.log(this.name, [set, main, sub1, sub2], CHECK)
+            console.log(set_array, main_array, sub_array)
             this.row.classList.toggle("hidden-algo", !CHECK.every(x => x));
             updateTable();
         });
