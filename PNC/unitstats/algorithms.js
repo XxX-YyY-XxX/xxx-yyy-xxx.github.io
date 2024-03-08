@@ -777,7 +777,7 @@ export class AlgoFilter {
 
         ALGO_SELECT.addEventListener("close", function(event) {
             if (!this.classList.contains("filtering")) return;
-            console.log("Algo filter closed.")  // called multiple times, must be once
+            console.log("Change values")
             AlgoFilter.#IMAGE.src = AlgoFilter.#algoImage(this.returnValue);
             AlgoFilter.#IMAGE.alt = this.returnValue;
             AlgoFilter.#SUB2.disabled = ["OffenseBlock", "StabilityBlock", "SpecialBlock"].includes(this.returnValue);
@@ -788,23 +788,11 @@ export class AlgoFilter {
     /** @param {function("Remove" | AlgoSet, "" | MainAttributes, "" | SubAttributes, "" | SubAttributes): void} table_update */
     constructor(table_update) {
         function update() {
+            console.log("Send values")
             table_update(AlgoFilter.#IMAGE.alt, AlgoFilter.#MAIN.value, AlgoFilter.#SUB1.value, AlgoFilter.#SUB2.value);
         }
 
-        /** @this {HTMLDialogElement} @param {Event} event  */
-        function close(event) {
-            // console.log("Algo filter closed.")  // called multiple times, must be once
-            // AlgoFilter.#IMAGE.src = AlgoFilter.#algoImage(this.returnValue);
-            // AlgoFilter.#IMAGE.alt = this.returnValue;
-            // AlgoFilter.#SUB2.disabled = ["OffenseBlock", "StabilityBlock", "SpecialBlock"].includes(this.returnValue);
-            // ALGO_SELECT.classList.remove("filtering");
-            update();
-        }
-
-        AlgoFilter.#BUTTON.addEventListener("click", function(event) {
-            ALGO_SELECT.addEventListener("close", close, {once: true, capture: true});
-        });
-
+        AlgoFilter.#BUTTON.addEventListener("click", event => ALGO_SELECT.addEventListener("close", update, {once: true, capture: true}));
         for (const SELECT of [AlgoFilter.#MAIN, AlgoFilter.#SUB1, AlgoFilter.#SUB2]) SELECT.addEventListener("change", update);
     }
 }
