@@ -82,11 +82,16 @@ tbody > tr > td:first-child, thead > tr > th {
 }
 /* #endregion */
 
+#filter {
+    margin-top: 10px;
+}
+
 #filter > div {
+    --filter-pad: 10px;
     display: inline-block;
     background: #343434;
     border-radius: 20px;
-    padding: 0 10px;
+    padding: 0 var(--filter-pad);
 }
 
 /* #region Class */
@@ -152,6 +157,9 @@ tbody > tr > td:first-child, thead > tr > th {
 /* #region Algorithm */
 #algorithms {
     --gridsize: 100px;
+    --gold-algo: #ffa418;
+    display: inline-grid;
+    padding: var(--filter-pad);
     grid-template-columns: repeat(2, var(--gridsize));
     grid-auto-rows: var(--gridsize);
     gap: 5px;

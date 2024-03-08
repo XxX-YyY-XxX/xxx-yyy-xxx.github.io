@@ -725,6 +725,16 @@ export class AlgoField {
 //#endregion
 
 // #region Filter
+class AlgoFilter {
+    static {
+
+    }
+
+    constructor() {
+
+    }
+}
+
 /** @type {HTMLButtonElement} */ const ALGO_BUTTON = document.querySelector("#algorithms button");
 /** @type {HTMLImageElement} */ const ALGO_IMAGE = ALGO_BUTTON.firstElementChild;
 
@@ -774,11 +784,16 @@ export function algoFilter(table_update) {
     }
 
     ALGO_BUTTON.addEventListener("click", function(event) {
-        ALGO_SELECT.firstElementChild.append(...BUTTONS.filter(x => x.value !== ALGO_IMAGE.alt));
+        // ALGO_SELECT.firstElementChild.append(...BUTTONS.filter(x => x.value !== ALGO_IMAGE.alt));
         ALGO_SELECT.addEventListener("close", close, {once: true, capture: true});
-        ALGO_SELECT.showModal();
+        // ALGO_SELECT.showModal();
     });
 
     for (const SELECT of [MAIN, SUB1, SUB2]) SELECT.addEventListener("change", update);
 }
+
+ALGO_BUTTON.addEventListener("click", function(event) {
+    ALGO_SELECT.firstElementChild.append(...BUTTONS.filter(x => x.value !== ALGO_IMAGE.alt));
+    ALGO_SELECT.showModal();
+});
 //#endregion
