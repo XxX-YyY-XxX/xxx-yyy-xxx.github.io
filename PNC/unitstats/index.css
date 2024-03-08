@@ -82,23 +82,24 @@ tbody > tr > td:first-child, thead > tr > th {
 }
 /* #endregion */
 
-#filter {
-    margin-top: 10px;
-}
-
-#filter > div {
-    --filter-pad: 10px;
-    display: inline-block;
-    background: #343434;
-    border-radius: 20px;
-    padding: 0 var(--filter-pad);
+@layer filter {
+    #filter {
+        margin-top: 10px;
+    }
+    
+    #filter > div {
+        --filter-pad: 10px;
+        display: inline-block;
+        background: #343434;
+        border-radius: 20px;
+        padding: 0 var(--filter-pad);
+    }    
 }
 
 /* #region Class */
 #classes {
     width: fit-content;
     text-align: center;
-    margin-top: 10px;
 }
 
 #classes > label {

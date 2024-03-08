@@ -644,12 +644,15 @@ export class AlgoField {
             /** @type {MainAttributes[]} */ main: [],
             /** @type {SubAttributes[]} */ sub: []
         }
+
+        this.#algogrids ??= Array.from(zip(["Offense", "Stability", "Special"], this.#layout, ALGO_SAVE.get(this.#name))).map(([type, size, info]) => new AlgoGrid(type, Number(size), info));
         for (const [SET, MAIN, SUB1, SUB2] of this.#algogrids.map(x => x.info).flat()) {
             OUTPUT.set.push(SET);
             OUTPUT.main.push(MAIN);
             OUTPUT.sub.push(SUB1);
             if (SUB2) OUTPUT.sub.push(SUB2);
         }
+
         return OUTPUT;
     }
 
