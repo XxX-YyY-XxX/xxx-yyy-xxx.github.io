@@ -94,6 +94,7 @@ tbody > tr > td:first-child, thead > tr > th {
         border-radius: 20px;
         padding: 0 var(--filter-pad);
         text-align: center;
+        margin-top: 5px;
     }    
 }
 
