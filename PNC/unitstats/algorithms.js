@@ -781,7 +781,7 @@ export class AlgoFilter {
     /** @param {function("Remove" | "SingleBlock" | AlgoSet, "" | MainAttributes, "" | SubAttributes, "" | SubAttributes): void} table_update */
     constructor(table_update) {
         function update() {
-            table_update(ALGO_SELECT.returnValue, AlgoFilter.#MAIN.value, AlgoFilter.#SUB1.value, AlgoFilter.#SUB2.value);
+            table_update(ALGO_SELECT.returnValue || "Remove", AlgoFilter.#MAIN.value, AlgoFilter.#SUB1.value, AlgoFilter.#SUB2.value);
         }
 
         /** @this {HTMLDialogElement} @param {Event} event  */
