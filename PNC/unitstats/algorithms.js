@@ -328,11 +328,9 @@ class SingleBlock extends Algorithm {
 
     /** @type {HTMLSelectElement} */ #mainstat;
     /** @returns {StatDict} */ get mainstat() {
-        // console.log(
-        //     Array.from(this.#mainstat.selectedOptions)[0].value,
-        //     this.#mainstat.value,
-        //     this.#mainstat.options[this.#mainstat.selectedIndex].value
-        // )
+        // Array.from(this.#mainstat.selectedOptions)[0].value,
+        // this.#mainstat.value,
+        // this.#mainstat.options[this.#mainstat.selectedIndex].value
         return new Map([[this.#mainstat.value, STATVALUES.MAIN[this.#mainstat.value]]]);
     }
 
@@ -494,7 +492,6 @@ ALGO_SELECT.addEventListener("close", function(event) {this.firstElementChild.re
 
 class AlgoGrid {
     static #MAX_SIZE = 6;
-    /** @type {HTMLDialogElement} */ static #SELECT = ALGO_SELECT;
 
     static {
         // this.#SELECT.addEventListener("click", function(event) {
@@ -533,23 +530,23 @@ class AlgoGrid {
 
     #open = () => {
         if (this.#emptycell === 1)
-            AlgoGrid.#SELECT.firstElementChild.appendChild(ALGO_SETS[this.#fieldtype][this.#fieldtype+"Block"].createSelectButton());
+            ALGO_SELECT.firstElementChild.appendChild(ALGO_SETS[this.#fieldtype][this.#fieldtype+"Block"].createSelectButton());
         else
-            AlgoGrid.#SELECT.firstElementChild.append(...Object.values(ALGO_SETS[this.#fieldtype]).map(x => x.createSelectButton()));
+            ALGO_SELECT.firstElementChild.append(...Object.values(ALGO_SETS[this.#fieldtype]).map(x => x.createSelectButton()));
 
-        AlgoGrid.#SELECT.addEventListener("close", this.#close);
+        ALGO_SELECT.addEventListener("close", this.#close);
 
-        AlgoGrid.#SELECT.showModal();
+        ALGO_SELECT.showModal();
     }
 
     // Function object required instead of class method for listener attachment and removal.
     /** Only gets closed upon selecting an algorithm. */
     #close = () => {
-        AlgoGrid.#SELECT.removeEventListener("close", this.#close);
+        ALGO_SELECT.removeEventListener("close", this.#close);
 
-        if (!AlgoGrid.#SELECT.returnValue === "null") return;
+        // if (!ALGO_SELECT.returnValue === "null") return;
 
-        this.#algorithms.push(new ALGO_SETS[this.#fieldtype][AlgoGrid.#SELECT.returnValue](this));
+        this.#algorithms.push(new ALGO_SETS[this.#fieldtype][ALGO_SELECT.returnValue](this));
 
         this.#grid.replaceChildren();
         this.display();
@@ -584,7 +581,7 @@ const ALGO_SAVE = new (class {
     // #SETS = (() => {this.#DATA})();
 
     constructor() {
-        ALGO_MODAL.addEventListener("close", (event) => localStorage.setItem(this.#KEY, JSON.stringify(this.#DATA)));
+        ALGO_MODAL.addEventListener("close", event => localStorage.setItem(this.#KEY, JSON.stringify(this.#DATA)));
     }
 
     /** @param {string} name */
@@ -646,8 +643,6 @@ export class AlgoField {
             /** @type {Set<SubAttributes>} */ sub: new Set()
         }
 
-        // this.#algogrids ??= Array.from(zip(["Offense", "Stability", "Special"], this.#layout, ALGO_SAVE.get(this.#name))).map(([type, size, info]) => new AlgoGrid(type, Number(size), info));
-        // this.#algogrids.map(x => x.info).flat()
         for (const [SET, MAIN, SUB1, SUB2] of ALGO_SAVE.get(this.#name).flat()) {
             OUTPUT.set.add(SET);
             OUTPUT.main.add(MAIN);
@@ -673,7 +668,8 @@ export class AlgoField {
             Medic: this.#name === "Imhotep" ? "546" : "456"
         }[unit.class];
 
-        this.#stats = (() => {  // For when algorithm button is checked without opening modal
+        // For when algorithm button is checked without opening modal        
+        this.#stats = (() => {
             const INFOS = ALGO_SAVE.get(this.#name).flat();
             if (!INFOS.length) return new Map();
 
@@ -778,6 +774,15 @@ export class AlgoFilter {
             ALGO_SELECT.classList.add("filtering");
             ALGO_SELECT.showModal();
         });
+
+        ALGO_SELECT.addEventListener("close", function(event) {
+            if (!this.classList.contains("filtering")) return;
+            console.log("Algo filter closed.")  // called multiple times, must be once
+            AlgoFilter.#IMAGE.src = AlgoFilter.#algoImage(this.returnValue);
+            AlgoFilter.#IMAGE.alt = this.returnValue;
+            AlgoFilter.#SUB2.disabled = ["OffenseBlock", "StabilityBlock", "SpecialBlock"].includes(this.returnValue);
+            ALGO_SELECT.classList.remove("filtering");
+        }, true);
     }
 
     /** @param {function("Remove" | AlgoSet, "" | MainAttributes, "" | SubAttributes, "" | SubAttributes): void} table_update */
@@ -788,10 +793,11 @@ export class AlgoFilter {
 
         /** @this {HTMLDialogElement} @param {Event} event  */
         function close(event) {
-            console.log("Algo filter closed.")  // called multiple times, must be once
-            AlgoFilter.#IMAGE.src = AlgoFilter.#algoImage(this.returnValue);
-            AlgoFilter.#IMAGE.alt = this.returnValue;
-            AlgoFilter.#SUB2.disabled = ["OffenseBlock", "StabilityBlock", "SpecialBlock"].includes(this.returnValue);
+            // console.log("Algo filter closed.")  // called multiple times, must be once
+            // AlgoFilter.#IMAGE.src = AlgoFilter.#algoImage(this.returnValue);
+            // AlgoFilter.#IMAGE.alt = this.returnValue;
+            // AlgoFilter.#SUB2.disabled = ["OffenseBlock", "StabilityBlock", "SpecialBlock"].includes(this.returnValue);
+            // ALGO_SELECT.classList.remove("filtering");
             update();
         }
 

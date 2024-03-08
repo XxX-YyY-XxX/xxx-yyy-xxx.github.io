@@ -216,8 +216,6 @@ class Units {
                 !sub1 || sub_array.has(sub1),
                 ["OffenseBlock", "StabilityBlock", "SpecialBlock"].includes(set) || !sub2 || sub_array.has(sub2)
             ]
-            // console.log(this.name, [set, main, sub1, sub2], CHECK)
-            // console.log(set_array, main_array, sub_array)
             this.row.classList.toggle("hidden-algo", !CHECK.every(x => x));
             updateTable();
         });
