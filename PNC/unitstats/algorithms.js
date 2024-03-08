@@ -127,7 +127,7 @@ function combine(object1, object2) {
     return OUTPUT;
 }
 
-/** @param {string} algoname @returns {string} */
+/** @param {AlgoSet | "SingleBlock"} algoname @returns {string} */
 function algoPath(algoname) {
     return `../assets/images/algorithms/sets/${algoname}.png`;
 }
@@ -728,75 +728,76 @@ export class AlgoField {
 //#endregion
 
 // #region Filter
-class AlgoFilter {
+export class AlgoFilter {
+    /** @type {HTMLButtonElement} */ static #BUTTON = document.querySelector("#algorithms button");
+    /** @type {HTMLImageElement} */ static #IMAGE = this.#BUTTON.firstElementChild;
+
+    /** @type {HTMLSelectElement} */ static #MAIN = document.querySelector("#algorithms #main");
+    /** @type {HTMLSelectElement} */ static #SUB1 = document.querySelector("#algorithms #sub1");
+    /** @type {HTMLSelectElement} */ static #SUB2 = document.querySelector("#algorithms #sub2");
+
+    /** @param {AlgoSet | "SingleBlock" | "Remove"} algoname */
+    static #algoImage(algoname) {
+        return algoname === "Remove" ? "../assets/images/algorithms/others/Empty.png" : algoPath(algoname)
+    }
+
+    /** @param {"Remove" | "SingleBlock" | AlgoSet} algoname */
+    static #createButton(algoname) {
+        const IMG = setattr(document.createElement("img"), {src: this.#algoImage(algoname), alt: algoname});
+        const DIV = setattr(document.createElement("div"), {textContent: algoname});
+        return setattr(document.createElement("button"), {type: "submit", value: algoname, append: [IMG, DIV]});
+    }
+
+    static #BUTTONS = [this.#createButton("Remove"), this.#createButton("SingleBlock"), ...Object.entries(ALGO_SETS.classdict).filter(([, cls]) => subclassof(cls, DoubleBlock)).map(([str,]) => this.#createButton(str))];
+    
     static {
+        this.#MAIN.append(
+            setattr(document.createElement("option"), {value: "", textContent: "---"}),
+            ...Object.keys(STATVALUES.MAIN).map(x => setattr(document.createElement("option"), {value: x, textContent: STATVALUES.NAME[x]}))
+        )
+        this.#SUB1.append(
+            setattr(document.createElement("option"), {value: "", textContent: "---"}),
+            ...Object.keys(STATVALUES.SUB).map(x => setattr(document.createElement("option"), {value: x, textContent: STATVALUES.NAME[x]}))
+        )
+        this.#SUB2.append(
+            setattr(document.createElement("option"), {value: "", textContent: "---"}),
+            ...Object.keys(STATVALUES.SUB).map(x => setattr(document.createElement("option"), {value: x, textContent: STATVALUES.NAME[x]}))
+        )
 
+        this.#SUB1.addEventListener("change", function(event) {
+            for (const OPTION of Array.from(AlgoFilter.#SUB2.options).slice(1)) OPTION.disabled = this.value === OPTION.value;
+        });
+        this.#SUB2.addEventListener("change", function(event) {
+            for (const OPTION of Array.from(AlgoFilter.#SUB1.options).slice(1)) OPTION.disabled = this.value === OPTION.value;
+        });
+
+        this.#BUTTON.addEventListener("click", event => {
+            ALGO_SELECT.firstElementChild.append(...this.#BUTTONS.filter(x => x.value !== AlgoFilter.#IMAGE.alt));
+            ALGO_SELECT.classList.add("filtering");
+            ALGO_SELECT.showModal();
+        });
     }
 
-    constructor() {
+    /** @param {function("Remove" | "SingleBlock" | AlgoSet, "" | MainAttributes, "" | SubAttributes, "" | SubAttributes): void} table_update */
+    constructor(table_update) {
+        function update() {
+            table_update(ALGO_SELECT.returnValue, AlgoFilter.#MAIN.value, AlgoFilter.#SUB1.value, AlgoFilter.#SUB2.value);
+        }
 
+        /** @this {HTMLDialogElement} @param {Event} event  */
+        function close(event) {
+            console.log("Algo filter closed.")  // called multiple times, must be once
+            AlgoFilter.#IMAGE.src = AlgoFilter.#algoImage(this.returnValue);
+            AlgoFilter.#IMAGE.alt = this.returnValue;
+            AlgoFilter.#SUB2.disabled = this.returnValue === "SingleBlock";
+            update();
+        }
+
+        AlgoFilter.#BUTTON.addEventListener("click", function(event) {
+            ALGO_SELECT.addEventListener("close", close, {once: true, capture: true});
+        });
+
+        for (const SELECT of [AlgoFilter.#MAIN, AlgoFilter.#SUB1, AlgoFilter.#SUB2]) SELECT.addEventListener("change", update);
     }
 }
-
-/** @type {HTMLButtonElement} */ const ALGO_BUTTON = document.querySelector("#algorithms button");
-/** @type {HTMLImageElement} */ const ALGO_IMAGE = ALGO_BUTTON.firstElementChild;
-
-/** @type {HTMLSelectElement} */ const MAIN = document.querySelector("#algorithms #main");
-MAIN.append(
-    setattr(document.createElement("option"), {value: "", textContent: "---"}),
-    ...Object.keys(STATVALUES.MAIN).map(x => setattr(document.createElement("option"), {value: x, textContent: STATVALUES.NAME[x]}))
-)
-
-/** @type {HTMLSelectElement} */ const SUB1 = document.querySelector("#algorithms #sub1");
-SUB1.append(
-    setattr(document.createElement("option"), {value: "", textContent: "---"}),
-    ...Object.keys(STATVALUES.SUB).map(x => setattr(document.createElement("option"), {value: x, textContent: STATVALUES.NAME[x]}))
-)
-SUB1.addEventListener("change", function(event) {for (const OPTION of SUB2.options) OPTION.disabled = this.value === OPTION.value});
-
-/** @type {HTMLSelectElement} */ const SUB2 = document.querySelector("#algorithms #sub2");
-SUB2.append(
-    setattr(document.createElement("option"), {value: "", textContent: "---"}),
-    ...Object.keys(STATVALUES.SUB).map(x => setattr(document.createElement("option"), {value: x, textContent: STATVALUES.NAME[x]}))
-)
-SUB2.addEventListener("change", function(event) {for (const OPTION of SUB1.options) OPTION.disabled = this.value === OPTION.value});
-
-/** @param {"Remove" | "SingleBlock" | AlgoSet} algoname */
-function createButton(algoname) {
-    const IMG = setattr(document.createElement("img"), {src: algoname === "Remove" ? "../assets/images/algorithms/others/Empty.png" : algoPath(algoname), alt: algoname});
-    const DIV = setattr(document.createElement("div"), {textContent: algoname});
-    return setattr(document.createElement("button"), {type: "submit", value: algoname, append: [IMG, DIV]});
-}
-
-const BUTTONS = [createButton("Remove"), createButton("SingleBlock"), ...Object.entries(ALGO_SETS.classdict).filter(([, cls]) => subclassof(cls, DoubleBlock)).map(([str,]) => createButton(str))];
-
-/** @param {function("Remove" | "SingleBlock" | AlgoSet, "" | MainAttributes, "" | SubAttributes, "" | SubAttributes): void} table_update */
-export function algoFilter(table_update) {
-    function update() {
-        table_update(ALGO_SELECT.returnValue, MAIN.value, SUB1.value, SUB2.value);
-    }
-
-    //---------------------------------------------------------------------------------------------------------------------------------
-
-    function close() {
-        console.log("Algo filter closed.")
-        ALGO_IMAGE.src = ALGO_SELECT.returnValue;
-        ALGO_IMAGE.alt = ALGO_SELECT.returnValue;
-        SUB2.disabled = ALGO_SELECT.returnValue === "SingleBlock";
-        update();
-    }
-
-    ALGO_BUTTON.addEventListener("click", function(event) {
-        // ALGO_SELECT.firstElementChild.append(...BUTTONS.filter(x => x.value !== ALGO_IMAGE.alt));
-        ALGO_SELECT.addEventListener("close", close, {once: true, capture: true});
-        // ALGO_SELECT.showModal();
-    });
-
-    for (const SELECT of [MAIN, SUB1, SUB2]) SELECT.addEventListener("change", update);
-}
-
-ALGO_BUTTON.addEventListener("click", function(event) {
-    ALGO_SELECT.firstElementChild.append(...BUTTONS.filter(x => x.value !== ALGO_IMAGE.alt));
-    ALGO_SELECT.showModal();
-});
 //#endregion

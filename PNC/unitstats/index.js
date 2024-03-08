@@ -1,6 +1,6 @@
 import {zip, cmp, setattr} from "../../univasset/scripts/basefunctions/index.js";
 import {Async} from "../../univasset/scripts/externaljavascript.js";
-import {AlgoField, algoFilter} from "./algorithms.js";
+import {AlgoField, AlgoFilter} from "./algorithms.js";
 import {STAT_KEYS} from "./typing.js";
 import {image} from '../../univasset/scripts/html/index.js';
 
@@ -198,6 +198,7 @@ class Units {
     #hasarma;
     #intistats;
     #algofield;
+    #algofilter;
 
     row;
     updateStat;
@@ -207,14 +208,15 @@ class Units {
         const MISSING = [];
 
         this.#algofield = new AlgoField(unitobject);
-        algoFilter((set, main, sub1, sub2) => {
+        this.#algofilter = new AlgoFilter((set, main, sub1, sub2) => {
             const {set: set_array, main: main_array, sub: sub_array} = this.#algofield.info;
             const CHECK = [
-                {Remove: () => true, SingleBlock: () => ["OffenseBlock", "StabilityBlock", "SpecialBlock"].some(x => set_array.includes(x))}[set]?.() ?? set_array.includes(set),
+                {Remove: true, SingleBlock: ["OffenseBlock", "StabilityBlock", "SpecialBlock"].some(x => set_array.includes(x))}[set] ?? set_array.includes(set),
                 !main || main_array.includes(main),
                 !sub1 || sub_array.includes(sub1),
                 set === "SingleBlock" || !sub2 || sub_array.includes(sub2)
             ]
+            console.log(this.name, CHECK)
             this.row.classList.toggle("hidden-algo", !CHECK.every(x => x));
             updateTable();
         });

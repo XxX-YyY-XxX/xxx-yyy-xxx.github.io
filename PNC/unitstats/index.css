@@ -161,23 +161,41 @@ tbody > tr > td:first-child, thead > tr > th {
     --gold-algo: #ffa418;
     display: inline-grid;
     padding: var(--filter-pad);
-    grid-template-columns: repeat(2, var(--gridsize));
-    grid-auto-rows: var(--gridsize);
+    grid-template-areas: 
+        "title  title"
+        "set    stats";
+    grid-template-columns: var(--gridsize) var(--gridsize);
+    grid-template-rows: 1lh var(--gridsize);
     gap: 5px;
 }
 
-#algorithms > * {
+/* #algorithms > * {
     height: 100%;
     aspect-ratio: 1;
+} */
+
+#algorithms > div:first-of-type {
+    grid-area: title;
+    aspect-ratio: unset;
 }
 
 #algorithms > button {
+    grid-area: set;
     padding: 0;
     border-width: 1px;
 }
 
+#algorithms > div:first-of-type {
+    grid-area: stats;
+}
+
 #algorithms > * > * {
     width: 100%;
+}
+
+#algo-select.filtering button {
+    display: inline-block;
+    width: 100px;
 }
 /* #endregion */
 
