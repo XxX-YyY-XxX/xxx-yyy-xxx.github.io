@@ -127,8 +127,9 @@ function combine(object1, object2) {
     return OUTPUT;
 }
 
-/** @param {AlgoSet | "SingleBlock"} algoname @returns {string} */
+/** @param {AlgoSet | "SingleBlock"} algoname */
 function algoPath(algoname) {
+    if (["OffenseBlock", "StabilityBlock", "SpecialBlock"].includes(algoname)) algoname = "SingleBlock";
     return `../assets/images/algorithms/sets/${algoname}.png`;
 }
 //#endregion
@@ -224,7 +225,7 @@ function algoPath(algoname) {
         OUTPUT.appendChild(COUNT);
         // 1, 2, 3 sets?
 
-        const IMG = setattr(document.createElement("img"), {src: algoPath(subclassof(this, SingleBlock) ? "SingleBlock" : this.name), alt: this.name});
+        const IMG = setattr(document.createElement("img"), {src: algoPath(this.name), alt: this.name});
         OUTPUT.appendChild(IMG);
 
         const SET3 = setattr(document.createElement("div"), {textContent: this.SET3 ?? "No Set Skill", dataset: {grid: "set3"}});
@@ -640,17 +641,18 @@ export class AlgoField {
 
     get info() {
         const OUTPUT = {
-            /** @type {AlgoSet[]} */ set: [],
-            /** @type {MainAttributes[]} */ main: [],
-            /** @type {SubAttributes[]} */ sub: []
+            /** @type {Set<AlgoSet>} */ set: new Set(),
+            /** @type {Set<MainAttributes>} */ main: new Set(),
+            /** @type {Set<SubAttributes>} */ sub: new Set()
         }
 
-        this.#algogrids ??= Array.from(zip(["Offense", "Stability", "Special"], this.#layout, ALGO_SAVE.get(this.#name))).map(([type, size, info]) => new AlgoGrid(type, Number(size), info));
-        for (const [SET, MAIN, SUB1, SUB2] of this.#algogrids.map(x => x.info).flat()) {
-            OUTPUT.set.push(SET);
-            OUTPUT.main.push(MAIN);
-            OUTPUT.sub.push(SUB1);
-            if (SUB2) OUTPUT.sub.push(SUB2);
+        // this.#algogrids ??= Array.from(zip(["Offense", "Stability", "Special"], this.#layout, ALGO_SAVE.get(this.#name))).map(([type, size, info]) => new AlgoGrid(type, Number(size), info));
+        // this.#algogrids.map(x => x.info).flat()
+        for (const [SET, MAIN, SUB1, SUB2] of ALGO_SAVE.get(this.#name).flat()) {
+            OUTPUT.set.add(SET);
+            OUTPUT.main.add(MAIN);
+            OUTPUT.sub.add(SUB1);
+            if (SUB2) OUTPUT.sub.add(SUB2);
         }
 
         return OUTPUT;
@@ -736,19 +738,19 @@ export class AlgoFilter {
     /** @type {HTMLSelectElement} */ static #SUB1 = document.querySelector("#algorithms #sub1");
     /** @type {HTMLSelectElement} */ static #SUB2 = document.querySelector("#algorithms #sub2");
 
-    /** @param {AlgoSet | "SingleBlock" | "Remove"} algoname */
+    /** @param {AlgoSet | "Remove"} algoname */
     static #algoImage(algoname) {
-        return algoname === "Remove" ? "../assets/images/algorithms/others/Empty.png" : algoPath(algoname)
+        return algoname === "Remove" ? "../assets/images/algorithms/others/Empty.png" : algoPath(algoname);
     }
 
-    /** @param {"Remove" | "SingleBlock" | AlgoSet} algoname */
+    /** @param {"Remove" | AlgoSet} algoname */
     static #createButton(algoname) {
         const IMG = setattr(document.createElement("img"), {src: this.#algoImage(algoname), alt: algoname});
         const DIV = setattr(document.createElement("div"), {textContent: algoname});
         return setattr(document.createElement("button"), {type: "submit", value: algoname, append: [IMG, DIV]});
     }
 
-    static #BUTTONS = [this.#createButton("Remove"), this.#createButton("SingleBlock"), ...Object.entries(ALGO_SETS.classdict).filter(([, cls]) => subclassof(cls, DoubleBlock)).map(([str,]) => this.#createButton(str))];
+    static #BUTTONS = [this.#createButton("Remove"), ...Object.keys(ALGO_SETS.classdict).map(x => this.#createButton(x))];
     
     static {
         this.#MAIN.append(
@@ -778,10 +780,10 @@ export class AlgoFilter {
         });
     }
 
-    /** @param {function("Remove" | "SingleBlock" | AlgoSet, "" | MainAttributes, "" | SubAttributes, "" | SubAttributes): void} table_update */
+    /** @param {function("Remove" | AlgoSet, "" | MainAttributes, "" | SubAttributes, "" | SubAttributes): void} table_update */
     constructor(table_update) {
         function update() {
-            table_update(ALGO_SELECT.returnValue || "Remove", AlgoFilter.#MAIN.value, AlgoFilter.#SUB1.value, AlgoFilter.#SUB2.value);
+            table_update(AlgoFilter.#IMAGE.alt, AlgoFilter.#MAIN.value, AlgoFilter.#SUB1.value, AlgoFilter.#SUB2.value);
         }
 
         /** @this {HTMLDialogElement} @param {Event} event  */
@@ -789,7 +791,7 @@ export class AlgoFilter {
             console.log("Algo filter closed.")  // called multiple times, must be once
             AlgoFilter.#IMAGE.src = AlgoFilter.#algoImage(this.returnValue);
             AlgoFilter.#IMAGE.alt = this.returnValue;
-            AlgoFilter.#SUB2.disabled = this.returnValue === "SingleBlock";
+            AlgoFilter.#SUB2.disabled = ["OffenseBlock", "StabilityBlock", "SpecialBlock"].includes(this.returnValue);
             update();
         }
 

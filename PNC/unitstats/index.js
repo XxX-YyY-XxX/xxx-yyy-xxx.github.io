@@ -211,13 +211,13 @@ class Units {
         this.#algofilter = new AlgoFilter((set, main, sub1, sub2) => {
             const {set: set_array, main: main_array, sub: sub_array} = this.#algofield.info;
             const CHECK = [
-                {Remove: true, SingleBlock: ["OffenseBlock", "StabilityBlock", "SpecialBlock"].some(x => set_array.includes(x))}[set] ?? set_array.includes(set),
-                !main || main_array.includes(main),
-                !sub1 || sub_array.includes(sub1),
-                set === "SingleBlock" || !sub2 || sub_array.includes(sub2)
+                set === "Remove" || set_array.has(set),
+                !main || main_array.has(main),
+                !sub1 || sub_array.has(sub1),
+                ["OffenseBlock", "StabilityBlock", "SpecialBlock"].includes(set) || !sub2 || sub_array.has(sub2)
             ]
-            console.log(this.name, [set, main, sub1, sub2], CHECK)
-            console.log(set_array, main_array, sub_array)
+            // console.log(this.name, [set, main, sub1, sub2], CHECK)
+            // console.log(set_array, main_array, sub_array)
             this.row.classList.toggle("hidden-algo", !CHECK.every(x => x));
             updateTable();
         });
