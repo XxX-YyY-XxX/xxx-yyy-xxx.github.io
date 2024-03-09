@@ -234,15 +234,17 @@ class Units {
                 // set === "Remove" ? (d ? !sub1 || c === sub1 || d === sub1 : !(sub1 && sub2) && (!sub1 || c === sub1)) : !sub1 || c === sub1 || d === sub1;
                 // set === "Remove" ? (d ? !sub2 || d === sub2 || c === sub2 : !(sub1 && sub2) && (!sub2 || c === sub2)) : !sub2 || d === sub2 || c === sub2;
 
+                // set === "Remove" && !d ? !(sub1 && sub2) && (!sub1 || c === sub1) : !sub1 || c === sub1 || d === sub1,
+                // set === "Remove" && !d ? !(sub1 && sub2) && (!sub2 || c === sub2) : !sub2 || d === sub2 || c === sub2
+
                 return [
                     IS_REMOVE || a === set,
                     !main || b === main,
-                    IS_REMOVE && !d ? !(sub1 && sub2) && (!sub1 || c === sub1) : !sub1 || c === sub1 || d === sub1,
-                    IS_REMOVE && !d ? !(sub1 && sub2) && (!sub2 || c === sub2) : !sub2 || d === sub2 || c === sub2
+                    (IS_REMOVE && !d) ? (!(sub1 && sub2) && (!sub1 || c === sub1)) : (!sub1 || c === sub1 || d === sub1),
+                    (IS_REMOVE && !d) ? (!(sub1 && sub2) && (!sub2 || c === sub2)) : (!sub2 || d === sub2 || c === sub2)
                 ].every(x => x);
-            }) || [set, main, sub1, sub2] === ["Remove", "", "", ""];
+            }) || (IS_REMOVE && !main && !sub1 && !sub2);
             this.row.classList.toggle("hidden-algo", !VISIBLE);
-            // updateTable();  // runs multiple times, should run once
         });
 
         this.name = unitobject.name;
