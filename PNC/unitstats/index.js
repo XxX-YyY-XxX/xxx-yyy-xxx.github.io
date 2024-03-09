@@ -210,38 +210,31 @@ class Units {
         this.#algofield = new AlgoField(unitobject);
         this.#algofilter = new AlgoFilter((set, main, sub1, sub2) => {
             const IS_REMOVE = set === "Remove";
+            const HAS_BLANK_SUB = !(sub1 && sub2);
             const VISIBLE = this.#algofield.info.some(([a, b, c, d]) => {
-                // if (set === "Remove") {
-                //     if (d) {
-                //         s1 = !sub1 || c === sub1 || d === sub1
-                //         s2 = !sub2 || d === sub2 || c === sub2
-                //     } else {
-                //         s1 = !(sub1 && sub2) && (!sub1 || c === sub1)
-                //         s2 = !(sub1 && sub2) && (!sub2 || c === sub2)
-                //     }
+                // if (set === "Remove" && !d) {
+                //     s1b1 = !(sub1 && sub2) && (!sub1 || c === sub1)
+                //     s2b1 = !(sub1 && sub2) && (!sub2 || c === sub2)
                 // } else {
                 //     s1b2 = !sub1 || c === sub1 || d === sub1
                 //                                  "" === sub1
                 //            !sub1 || c === sub1 || false
                 //     s1b1 = !sub1 || c === sub1
-                //
-                //     s2b2 = !sub2 || d === sub2 || c === sub2
+                // 
+                //     s2b2 = !sub2 || c === sub2 || d === sub2
                 //            !""
-                //            true  || d === sub2 || c === sub2
+                //            true  || c === sub2 || d === sub2
                 //     s2b1 = true
                 // }
 
-                // set === "Remove" ? (d ? !sub1 || c === sub1 || d === sub1 : !(sub1 && sub2) && (!sub1 || c === sub1)) : !sub1 || c === sub1 || d === sub1;
-                // set === "Remove" ? (d ? !sub2 || d === sub2 || c === sub2 : !(sub1 && sub2) && (!sub2 || c === sub2)) : !sub2 || d === sub2 || c === sub2;
-
-                // set === "Remove" && !d ? !(sub1 && sub2) && (!sub1 || c === sub1) : !sub1 || c === sub1 || d === sub1,
-                // set === "Remove" && !d ? !(sub1 && sub2) && (!sub2 || c === sub2) : !sub2 || d === sub2 || c === sub2
+                // set === "Remove" && !d ? !(sub1 && sub2) && (!sub1 || c === sub1) : !sub1 || c === sub1 || d === sub1;
+                // set === "Remove" && !d ? !(sub1 && sub2) && (!sub2 || c === sub2) : !sub2 || c === sub2 || d === sub2;
 
                 return [
                     IS_REMOVE || a === set,
                     !main || b === main,
-                    (IS_REMOVE && !d) ? (!(sub1 && sub2) && (!sub1 || c === sub1)) : (!sub1 || c === sub1 || d === sub1),
-                    (IS_REMOVE && !d) ? (!(sub1 && sub2) && (!sub2 || c === sub2)) : (!sub2 || d === sub2 || c === sub2)
+                    (IS_REMOVE && !d) ? (HAS_BLANK_SUB && (!sub1 || c === sub1)) : (!sub1 || c === sub1 || d === sub1),
+                    (IS_REMOVE && !d) ? (HAS_BLANK_SUB && (!sub2 || c === sub2)) : (!sub2 || d === sub2 || c === sub2)
                 ].every(x => x);
             }) || [IS_REMOVE, !main, !sub1, !sub2].every(x => x);
             this.row.classList.toggle("hidden-algo", !VISIBLE);
