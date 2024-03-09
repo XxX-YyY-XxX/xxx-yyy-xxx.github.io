@@ -380,7 +380,6 @@ function sortMethod(event) {
             break;
     }
     updateTable();
-    // TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));    //test
 }
 //#endregion
 
@@ -392,7 +391,7 @@ TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));
 const HEADER_TR = document.querySelector("thead > tr");
 const HEADER_VALUES = ["Doll Name", "Max HP", "Attack", "Hashrate", "Physical Def", "Operand Def", "Attack Speed", "Crit Rate", "Crit Damage", "Physical Pen", "Operand Pen", "Dodge Rate", "Post-battle Regen", "Skill Haste", "Debuff Resist", "Backlash", "Damage Boost", "Injury Mitigation", "Healing Effect"];
 for (const [NAME, KEY, TYPE] of zip(HEADER_VALUES, ["name", ...Object.values(STAT_KEYS)], (function*() {yield "string"; while (true) yield "number"})())) {
-    const TH = setattr(document.createElement("th"), {textContent: NAME, addEventListener: ["click", sortMethod, true]});
+    const TH = setattr(document.createElement("th"), {textContent: NAME, addEventListener: ["click", sortMethod]});
     setattr(TH.dataset, {sort: "no", key: KEY, type: TYPE});
     HEADER_TR.appendChild(TH);
 }
