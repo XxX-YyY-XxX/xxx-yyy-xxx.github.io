@@ -234,7 +234,7 @@ class Units {
                     IS_REMOVE || a === set,
                     !main || b === main,
                     (IS_REMOVE && !d) ? (HAS_BLANK_SUB && (!sub1 || c === sub1)) : (!sub1 || c === sub1 || d === sub1),
-                    (IS_REMOVE && !d) ? (HAS_BLANK_SUB && (!sub2 || c === sub2)) : (!sub2 || d === sub2 || c === sub2)
+                    (IS_REMOVE && !d) ? (HAS_BLANK_SUB && (!sub2 || c === sub2)) : (!sub2 || c === sub2 || d === sub2)
                 ].every(x => x);
             }) || [IS_REMOVE, !main, !sub1, !sub2].every(x => x);
             this.row.classList.toggle("hidden-algo", !VISIBLE);
