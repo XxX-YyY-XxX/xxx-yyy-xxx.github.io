@@ -758,7 +758,7 @@ export class AlgoFilter {
             ALGO_SELECT.firstElementChild.append(...this.#BUTTONS.filter(x => x.value !== AlgoFilter.#IMAGE.alt));
             ALGO_SELECT.classList.add("filtering");
             ALGO_SELECT.showModal();
-        });
+        }, true);
 
         ALGO_SELECT.addEventListener("close", function(event) {
             if (!this.classList.contains("filtering")) return;
@@ -777,16 +777,45 @@ export class AlgoFilter {
 
             ALGO_SELECT.classList.remove("filtering");
         }, true);
+
+        document.querySelector("#algorithms #reset").addEventListener("click", () => {
+            this.#IMAGE.src = this.#algoImage("Remove");
+            this.#IMAGE.alt = "Remove";
+
+            this.#MAIN.selectedIndex = 0;
+
+            this.#SUB1.selectedIndex = 0;
+            for (const OPTION of this.#SUB1.options) OPTION.disabled = false;
+
+            this.#SUB2.selectedIndex = 0;
+            this.#SUB2.disabled = false;
+            for (const OPTION of this.#SUB2.options) OPTION.disabled = false;
+
+            this.#table_update();
+        });
     }
 
-    /** @param {function("Remove" | AlgoSet, "" | MainAttributes, "" | SubAttributes, "" | SubAttributes): void} table_update */
-    constructor(table_update) {
+    /** @param {function("Remove" | AlgoSet, "" | MainAttributes, "" | SubAttributes, "" | SubAttributes): void} status_update */
+    constructor(status_update) {
         function update() {
-            table_update(AlgoFilter.#IMAGE.alt, AlgoFilter.#MAIN.value, AlgoFilter.#SUB1.value, AlgoFilter.#SUB2.value);
+            console.log("Capture")
+            status_update(AlgoFilter.#IMAGE.alt, AlgoFilter.#MAIN.value, AlgoFilter.#SUB1.value, AlgoFilter.#SUB2.value);
         }
 
-        AlgoFilter.#BUTTON.addEventListener("click", event => ALGO_SELECT.addEventListener("close", update, {once: true, capture: true}));
-        for (const SELECT of [AlgoFilter.#MAIN, AlgoFilter.#SUB1, AlgoFilter.#SUB2]) SELECT.addEventListener("change", update);
+        AlgoFilter.#BUTTON.addEventListener("click", event => ALGO_SELECT.addEventListener("close", update, {once: true, capture: true}), true);
+        for (const SELECT of [AlgoFilter.#MAIN, AlgoFilter.#SUB1, AlgoFilter.#SUB2]) SELECT.addEventListener("change", update, true);
+    }
+
+    static #table_update = () => {};
+    /** @param {function(): void} func  */
+    static setTableUpdate(func) {
+        this.#table_update = func;
+        function a() {
+            console.log("Bubble")
+            func()
+        }
+        ALGO_SELECT.addEventListener("close", a)    // test - capture then bubble
+        for (const SELECT of [this.#MAIN, this.#SUB1, this.#SUB2]) SELECT.addEventListener("change", a);
     }
 }
 //#endregion

@@ -190,6 +190,11 @@ tbody > tr > td:first-child, thead > tr > th {
     width: 100%;
 }
 
+#algorithms > div > button {
+    bottom: 0;
+    /* right: 0; */
+}
+
 #algo-select.filtering button {
     display: inline-block;
     width: 100px;

@@ -209,7 +209,8 @@ class Units {
 
         this.#algofield = new AlgoField(unitobject);
         this.#algofilter = new AlgoFilter((set, main, sub1, sub2) => {
-            const CHECK = this.#algofield.info.some(([a, b, c, d]) => {
+            const IS_REMOVE = set === "Remove";
+            const VISIBLE = this.#algofield.info.some(([a, b, c, d]) => {
                 // if (set === "Remove") {
                 //     if (d) {
                 //         s1 = !sub1 || c === sub1 || d === sub1
@@ -221,26 +222,27 @@ class Units {
                 // } else {
                 //     s1b2 = !sub1 || c === sub1 || d === sub1
                 //                                  "" === sub1
-                //     s1b1 = !sub1 || c === sub1 || false
+                //            !sub1 || c === sub1 || false
+                //     s1b1 = !sub1 || c === sub1
                 //
                 //     s2b2 = !sub2 || d === sub2 || c === sub2
                 //            !""
-                //     s2b1 = true  || d === sub2 || c === sub2
+                //            true  || d === sub2 || c === sub2
+                //     s2b1 = true
                 // }
 
                 // set === "Remove" ? (d ? !sub1 || c === sub1 || d === sub1 : !(sub1 && sub2) && (!sub1 || c === sub1)) : !sub1 || c === sub1 || d === sub1;
                 // set === "Remove" ? (d ? !sub2 || d === sub2 || c === sub2 : !(sub1 && sub2) && (!sub2 || c === sub2)) : !sub2 || d === sub2 || c === sub2;
 
-                const IS_REMOVE = set === "Remove";
                 return [
                     IS_REMOVE || a === set,
                     !main || b === main,
                     IS_REMOVE && !d ? !(sub1 && sub2) && (!sub1 || c === sub1) : !sub1 || c === sub1 || d === sub1,
                     IS_REMOVE && !d ? !(sub1 && sub2) && (!sub2 || c === sub2) : !sub2 || d === sub2 || c === sub2
-                    ].every(x => x);
-            });
-            this.row.classList.toggle("hidden-algo", !CHECK);
-            updateTable();
+                ].every(x => x);
+            }) || [set, main, sub1, sub2] === ["Remove", "", "", ""];
+            this.row.classList.toggle("hidden-algo", !VISIBLE);
+            // updateTable();  // runs multiple times, should run once
         });
 
         this.name = unitobject.name;
@@ -366,6 +368,7 @@ function updateTable() {
     TBODY.replaceChildren(...UNIT_LIST.filter(x => !x.row.className.includes("hidden-")).map(x => x.row));
 }
 for (const INPUT of Object.values(CLASSES)) INPUT.addEventListener("change", updateTable);
+AlgoFilter.setTableUpdate(updateTable);
 
 /** @this {HTMLTableCellElement} @param {MouseEvent} event */
 function sortMethod(event) {
