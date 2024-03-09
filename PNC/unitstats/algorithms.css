@@ -101,6 +101,7 @@ dialog {
 
 #algo-modal .tab-body {
     display: inline-grid;
+    vertical-align: top;
 }
 
 @container (width < 650px) {

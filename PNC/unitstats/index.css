@@ -82,7 +82,7 @@ tbody > tr > td:first-child, thead > tr > th {
 }
 /* #endregion */
 
-@layer filter {
+@layer {
     #filter {
         margin-top: 10px;
     }
@@ -95,6 +95,7 @@ tbody > tr > td:first-child, thead > tr > th {
         padding: 0 var(--filter-pad);
         text-align: center;
         margin-top: 5px;
+        vertical-align: middle;
     }    
 }
 

@@ -636,22 +636,7 @@ export class AlgoField {
     get [STAT_KEYS.DMGREDUCE]()     {return this.#stats.get("dreducperc") ?? 0}
     get [STAT_KEYS.HEALBOOST]()     {return this.#stats.get("hboostperc") ?? 0}
 
-    get info() {
-        const OUTPUT = {
-            /** @type {Set<AlgoSet>} */ set: new Set(),
-            /** @type {Set<MainAttributes>} */ main: new Set(),
-            /** @type {Set<SubAttributes>} */ sub: new Set()
-        }
-
-        for (const [SET, MAIN, SUB1, SUB2] of ALGO_SAVE.get(this.#name).flat()) {
-            OUTPUT.set.add(SET);
-            OUTPUT.main.add(MAIN);
-            OUTPUT.sub.add(SUB1);
-            if (SUB2) OUTPUT.sub.add(SUB2);
-        }
-
-        return OUTPUT;
-    }
+    get info() {return ALGO_SAVE.get(this.#name).flat()}
 
     onclose = function() {};
 
@@ -780,7 +765,15 @@ export class AlgoFilter {
             console.log("Change values")
             AlgoFilter.#IMAGE.src = AlgoFilter.#algoImage(this.returnValue);
             AlgoFilter.#IMAGE.alt = this.returnValue;
-            AlgoFilter.#SUB2.disabled = ["OffenseBlock", "StabilityBlock", "SpecialBlock"].includes(this.returnValue);
+
+            if (["OffenseBlock", "StabilityBlock", "SpecialBlock"].includes(this.returnValue)) {
+                AlgoFilter.#SUB2.disabled = true;
+                AlgoFilter.#SUB2.selectedIndex = 0;
+                for (const OPTION of AlgoFilter.#SUB1.options) OPTION.disabled = false;
+            } else {
+                AlgoFilter.#SUB2.disabled = false;
+            }
+
             ALGO_SELECT.classList.remove("filtering");
         }, true);
     }
