@@ -191,6 +191,7 @@ tbody > tr > td:first-child, thead > tr > th {
 }
 
 #algorithms > div > button {
+    position: relative;
     bottom: 0;
     /* right: 0; */
 }

@@ -243,7 +243,7 @@ class Units {
                     (IS_REMOVE && !d) ? (!(sub1 && sub2) && (!sub1 || c === sub1)) : (!sub1 || c === sub1 || d === sub1),
                     (IS_REMOVE && !d) ? (!(sub1 && sub2) && (!sub2 || c === sub2)) : (!sub2 || d === sub2 || c === sub2)
                 ].every(x => x);
-            }) || (IS_REMOVE && !main && !sub1 && !sub2);
+            }) || [IS_REMOVE, !main, !sub1, !sub2].every(x => x);
             this.row.classList.toggle("hidden-algo", !VISIBLE);
         });
 
