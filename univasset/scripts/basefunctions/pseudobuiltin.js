@@ -90,7 +90,7 @@ export function setattr(base, attributes) {
 }
 
 export function* zip(...iterables) {
-    const EXT = (function() {
+    const EXT = (() => {
         switch (iterables[iterables.length - 1]) {
             case true:
                 iterables.pop();
@@ -100,7 +100,7 @@ export function* zip(...iterables) {
             default:
                 return "every";
         }
-    })()
+    })();
 
     const OUTPUT = Array();
     const ITER_ARRAY = iterables.map(iter);
