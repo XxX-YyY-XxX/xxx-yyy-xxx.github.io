@@ -810,7 +810,7 @@ export class AlgoFilter {
     static setTableUpdate(func) {
         ALGO_SELECT.addEventListener("close", func)    // Capture (FIFO) -> Bubble (FILO)
         for (const SELECT of [this.#MAIN, this.#SUB1, this.#SUB2]) SELECT.addEventListener("change", func);
-        AlgoFilter.#RESET.addEventListener("click", func);
+        this.#RESET.addEventListener("click", func);
     }
 }
 //#endregion
