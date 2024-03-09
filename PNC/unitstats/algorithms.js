@@ -237,16 +237,16 @@ function algoPath(algoname) {
 
 const ATTRIBUTES = {
     Offense: {
-        /** @type {StatAttributes[]} */ MAIN: ["atkflat", "atkperc", "hashflat", "hashperc", "ppenflat", "ppenperc", "openflat", "openperc"],
-        /** @type {StatAttributes[]} */ SUB: ["hpflat", "atkflat", "atkperc", "hashflat", "hashperc", "pdefflat", "odefflat", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dboostperc"]
+        /** @type {MainAttributes[]} */ MAIN: ["atkflat", "atkperc", "hashflat", "hashperc", "ppenflat", "ppenperc", "openflat", "openperc"],
+        /** @type {SubAttributes[]} */ SUB: ["hpflat", "atkflat", "atkperc", "hashflat", "hashperc", "pdefflat", "odefflat", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dboostperc"]
     },
     Stability: {
-        /** @type {StatAttributes[]} */ MAIN: ["hpflat", "hpperc", "pdefflat", "pdefperc", "odefflat", "odefperc", "regenflat"],
-        /** @type {StatAttributes[]} */ SUB: ["hpflat", "hpperc", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dreducperc"]
+        /** @type {MainAttributes[]} */ MAIN: ["hpflat", "hpperc", "pdefflat", "pdefperc", "odefflat", "odefperc", "regenflat"],
+        /** @type {SubAttributes[]} */ SUB: ["hpflat", "hpperc", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "regenflat", "resflat", "dreducperc"]
     },
     Special: {
-        /** @type {StatAttributes[]} */ MAIN: ["pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "hasteperc", "hboostperc"],
-        /** @type {StatAttributes[]} */ SUB: ["hpflat", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "dodgeperc", "regenflat", "hasteperc", "resflat", "hboostperc"]
+        /** @type {MainAttributes[]} */ MAIN: ["pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "hasteperc", "hboostperc"],
+        /** @type {SubAttributes[]} */ SUB: ["hpflat", "atkflat", "hashflat", "pdefflat", "pdefperc", "odefflat", "odefperc", "crateperc", "cdmgperc", "ppenflat", "openflat", "dodgeperc", "regenflat", "hasteperc", "resflat", "hboostperc"]
     }
 }
 
@@ -762,7 +762,6 @@ export class AlgoFilter {
 
         ALGO_SELECT.addEventListener("close", function(event) {
             if (!this.classList.contains("filtering")) return;
-            console.log("Change values")
             AlgoFilter.#IMAGE.src = AlgoFilter.#algoImage(this.returnValue);
             AlgoFilter.#IMAGE.alt = this.returnValue;
 
@@ -774,6 +773,8 @@ export class AlgoFilter {
                 AlgoFilter.#SUB2.disabled = false;
             }
 
+            // change options depending on algo set
+
             ALGO_SELECT.classList.remove("filtering");
         }, true);
     }
@@ -781,7 +782,6 @@ export class AlgoFilter {
     /** @param {function("Remove" | AlgoSet, "" | MainAttributes, "" | SubAttributes, "" | SubAttributes): void} table_update */
     constructor(table_update) {
         function update() {
-            console.log("Send values")
             table_update(AlgoFilter.#IMAGE.alt, AlgoFilter.#MAIN.value, AlgoFilter.#SUB1.value, AlgoFilter.#SUB2.value);
         }
 
