@@ -201,7 +201,6 @@ class Units {
     #algofilter;
 
     row;
-    updateStat;
 
     /** @param {UnitObject} unitobject */
     constructor(unitobject) {
@@ -211,7 +210,8 @@ class Units {
         this.#algofilter = new AlgoFilter((set, main, sub1, sub2) => {
             const IS_REMOVE = set === "Remove";
             const HAS_BLANK_SUB = !(sub1 && sub2);
-            const VISIBLE = this.#algofield.info.some(([a, b, c, d]) => {
+            
+            const VISIBLE = (IS_REMOVE && !main && !sub1 && !sub2) || this.#algofield.info.some(([a, b, c, d]) => {
                 // if (set === "Remove" && !d) {
                 //     s1b1 = !(sub1 && sub2) && (!sub1 || c === sub1)
                 //     s2b1 = !(sub1 && sub2) && (!sub2 || c === sub2)
@@ -227,16 +227,13 @@ class Units {
                 //     s2b1 = true
                 // }
 
-                // set === "Remove" && !d ? !(sub1 && sub2) && (!sub1 || c === sub1) : !sub1 || c === sub1 || d === sub1;
-                // set === "Remove" && !d ? !(sub1 && sub2) && (!sub2 || c === sub2) : !sub2 || c === sub2 || d === sub2;
-
                 return [
                     IS_REMOVE || a === set,
                     !main || b === main,
                     (IS_REMOVE && !d) ? (HAS_BLANK_SUB && (!sub1 || c === sub1)) : (!sub1 || c === sub1 || d === sub1),
                     (IS_REMOVE && !d) ? (HAS_BLANK_SUB && (!sub2 || c === sub2)) : (!sub2 || c === sub2 || d === sub2)
                 ].every(x => x);
-            }) || [IS_REMOVE, !main, !sub1, !sub2].every(x => x);
+            });
             this.row.classList.toggle("hidden-algo", !VISIBLE);
         });
 
@@ -302,7 +299,7 @@ class Units {
         const TD_DREDUC = document.createElement("td");
         const TD_HBOOST = document.createElement("td");
 
-        this.updateStat = () => {
+        const _updateStat = () => {
             TD_HP.textContent = this[STAT_KEYS.HEALTH];
             TD_ATK.textContent = this[STAT_KEYS.ATTACK];
             TD_HASH.textContent = this[STAT_KEYS.HASHRATE];
@@ -322,8 +319,9 @@ class Units {
             TD_DREDUC.textContent = `${this[STAT_KEYS.DMGREDUCE]}%`;
             TD_HBOOST.textContent = `${this[STAT_KEYS.HEALBOOST]}%`;
         }
-        this.#algofield.onclose = this.updateStat;
-        this.updateStat()
+        for (const BUTT of Object.values(BUTTON)) BUTT.addEventListener("change", _updateStat);
+        this.#algofield.onclose = _updateStat;
+        _updateStat()
 
         this.row = document.createElement("tr");
         this.row.append(
@@ -347,8 +345,6 @@ class Units {
             TD_DREDUC,
             TD_HBOOST
         )
-        
-        for (const BUTT of Object.values(BUTTON)) BUTT.addEventListener("change", this.updateStat);
 
         if (MISSING.length) document.addEventListener("custom", () => alert(`${this.name} has incomplete data: ${MISSING.join(" ")}`), {once: true});
 
@@ -359,9 +355,7 @@ class Units {
 
 //#region Function Declarations
 /** Needs `UNIT_LIST` loaded. */
-function updateTable() {
-    TBODY.replaceChildren(...UNIT_LIST.filter(x => !x.row.className.includes("hidden-")).map(x => x.row));
-}
+function updateTable() {TBODY.replaceChildren(...UNIT_LIST.filter(x => !x.row.className.includes("hidden-")).map(x => x.row))}
 for (const INPUT of Object.values(CLASSES)) INPUT.addEventListener("change", updateTable);
 AlgoFilter.setTableUpdate(updateTable);
 
