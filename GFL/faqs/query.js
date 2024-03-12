@@ -762,7 +762,7 @@ const CARDS = [
         tags: [dtag["3P"], dtag.MAP, dtag.ENEMY]
     },
     {
-        id: '00055',
+        id: 55,
         question: `How can I save the enemy composition for later practice?`,
         answer: `${List.description({
             'Add Target' : [
@@ -773,9 +773,10 @@ const CARDS = [
             'GFAlarm' : [
                 'Use GFLMaps to take the enemy IDs you want to fight and enter them in the Custom Target Train under Packet Forger, with IDs separated by commas.',
                 `Works for comps that has been loaded into the client and is ${link('very', 'https://www.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i312oo2/')} ${link("safe", "https://www.reddit.com/r/girlsfrontline/comments/11e0hpg/weekly_commanders_lounge_february_28_2023/jan16s5/")}.`,
-                img(IMG_ASSET+"GFAlarmCTT.png", 'From u/UnironicWeeaboo')
+                figure(image(IMG_ASSET+"GFAlarmCTT.png", "GFAlarm Packet Forger option."), "From u/UnironicWeeaboo")
             ],
-            '<a href="https://gfl.matsuda.tips/post/everything-sucks-forever">Matsuda recommendations</a>' : []
+            // '<a href="https://gfl.matsuda.tips/post/everything-sucks-forever">Matsuda recommendations</a>' : [],
+            [link("Matsuda recommendations", "https://gfl.matsuda.tips/post/everything-sucks-forever")]: []
         })}`,
         tags: [dtag.ENEMY, dtag.BATTLE, dtag.MAP, dtag["3P"]]
     },  //@Visual

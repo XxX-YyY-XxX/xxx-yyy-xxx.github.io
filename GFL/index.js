@@ -19,12 +19,12 @@ timer(
 
 timer(
     document.getElementById("coalition"),
-    "Mar 05, 2024 00:00 UTC-0800",
-    "./assets/images/coalition/23ScarecrowDemonicAbyss.webp", 
+    "Apr 02, 2024 00:00 UTC-0800",
+    "./assets/images/coalition/08Alchemist.webp", 
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
-        "Apr 02, 2024 00:00 UTC-0800",
-        "./assets/images/coalition/08Alchemist.webp"
+        "",
+        "./assets/images/coalition/.webp"
     )}
 );
 
@@ -34,15 +34,20 @@ timer(
     "./assets/images/timer/Login_CNY_2023.png",
     {onEnd: timer.bind(
         null, document.getElementById('skin-banner'),
-        "",
-        ""
+        "Apr 09, 2024 00:00 UTC-0800",
+        "https://iopwiki.com/images/d/d8/Doll_Garden_Login_Wallpaper.png"
     )}
 );
 
 timer(
    document.getElementById('mini-event'),
    "Mar 12, 2024 00:00 UTC-0800",
-   "./assets/images/timer/da8gefr6dqgc1.webp"
+   "./assets/images/timer/da8gefr6dqgc1.webp",
+   {onEnd: timer.bind(
+        null, document.getElementById('mini-event'),
+        "Apr 02, 2024 00:00 UTC-0800",
+        "./assets/images/timer/4ftc6rssqnnc1.webp"
+   )}
 );
 
 //timer(document.getElementById('extra'), "",
