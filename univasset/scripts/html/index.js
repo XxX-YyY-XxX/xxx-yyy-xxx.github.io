@@ -5,6 +5,7 @@ function htmlString() {
     var output = this.outerHTML;
 
     for (const ELEMENT of this.children) {
+        console.log("htmlString:", ELEMENT.toString === htmlString, ELEMENT.toString().startsWith("["))
         if (ELEMENT.toString().startsWith("[")) continue;
         output = output.replace(ELEMENT.outerHTML, ELEMENT.toString())
     }
@@ -86,8 +87,8 @@ export const Embed = {
 
 export const googleDocsCompilation = Embed.google;
 
-export function image(link, alt, {type = null} = {}) {
-    const IMG = setattr(document.createElement("img"), {src: link, alt: alt, loading: "lazy", toString: htmlString});
+export function image(src, alt, {type = null} = {}) {
+    const IMG = setattr(document.createElement("img"), {src: src, alt: alt, loading: "lazy", toString: htmlString});
 
     switch (type) {
         case "inline":

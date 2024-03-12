@@ -775,7 +775,6 @@ const CARDS = [
                 `Works for comps that has been loaded into the client and is ${link('very', 'https://www.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i312oo2/')} ${link("safe", "https://www.reddit.com/r/girlsfrontline/comments/11e0hpg/weekly_commanders_lounge_february_28_2023/jan16s5/")}.`,
                 figure(image(IMG_ASSET+"GFAlarmCTT.png", "GFAlarm Packet Forger option."), "From u/UnironicWeeaboo")
             ],
-            // '<a href="https://gfl.matsuda.tips/post/everything-sucks-forever">Matsuda recommendations</a>' : [],
             [link("Matsuda recommendations", "https://gfl.matsuda.tips/post/everything-sucks-forever")]: []
         })}`,
         tags: [dtag.ENEMY, dtag.BATTLE, dtag.MAP, dtag["3P"]]
