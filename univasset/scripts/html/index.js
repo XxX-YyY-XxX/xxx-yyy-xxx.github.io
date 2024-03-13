@@ -5,7 +5,7 @@ function htmlString() {
     var output = this.outerHTML;
 
     for (const ELEMENT of this.children) {
-        console.log("htmlString:", ELEMENT.toString === htmlString, ELEMENT.toString().startsWith("["))
+        console.log("htmlString:", ELEMENT.toString === htmlString, ", custom toString:", !ELEMENT.toString().startsWith("["))
         if (ELEMENT.toString().startsWith("[")) continue;
         output = output.replace(ELEMENT.outerHTML, ELEMENT.toString())
     }
@@ -49,9 +49,8 @@ export function textStyle(text, ...styles) {
 
 
 
-
-
 export const Embed = {
+
     google(...namelinkpair) {
         const EMBED = "/preview?pli=1";
     
