@@ -3,7 +3,7 @@ import TextStyle from '../../univasset/scripts/htmlfunctions/textstyle.js';
 import MBD from '../../univasset/scripts/htmlfunctions/linkembed.js';
 import List from '../../univasset/scripts/htmlfunctions/lists.js';
 import {LESSEQUAL, STAR, TM} from "../../univasset/scripts/specialchars.js";
-import {Embed, image, figure} from "../../univasset/scripts/html/index.js";
+import {Embed, image, figure, details} from "../../univasset/scripts/html/index.js";
 
 const IMG_ASSET = "../assets/images/query/";
 
@@ -1639,7 +1639,7 @@ const CARDS = [
     {
         id: 166,
         question: `What does each gun class do?`,
-        answer: `${table(['Class', 'Roles', 'Target Priority', 'Caveat'],
+        answer: `${table(['Class', 'General Role', 'Target Priority', 'Caveat'],
         ['Assualt Rifle (AR)',                                                                                  'Anti-Swarm<br>Sustained DPS',  'Frontline',    'Weak to armored enemies'],
         ['Submachine Gun (SMG)',                                                                                'Evasion Tank<br>Anti-Swarm',   'Frontline',    'Accuracy is non-existent'],
         ['Rifle (RF)',                                                                                          'Big Damage<br>Anti-Armor',     'Backline',     'Weak to swarms<br>Affected by night penalty'],
@@ -1702,7 +1702,7 @@ const CARDS = [
     },
     {
         id: '00174',
-        question: `I can't enter the game (stuck downloading/loading). What should I do?`,
+        question: `I can't enter the game (stuck downloading/loading/getting black screen). What should I do?`,
         answer: `${List.unordered(
             "Wait and trudge through",
             "Download the bare minimum files first",
@@ -1711,10 +1711,12 @@ const CARDS = [
             "Switch to mobile data",
             "Use VPN",
             "Delete cache",
-            link('Do a manual patch', 'https://github.com/lloyddunamis/gfl_manualpatch/blob/main/FullResource_readme'),
+            link('Do a manual patch', 'https://github.com/lloyddunamis/gfl_manualpatch/blob/main/FullResource_readme'), // or https://old.reddit.com/r/girlsfrontline/comments/lvwwtv/weekly_commanders_lounge_march_02_2021/gpugenl/
             spoilerSummary("Delete some files", MBD.twitter("Synexcu", "1310117595094216709")),
             "Reinstall (with minimum data first)",
             "Phone restart",
+            // downgrade android version
+            // disable webview updates
             "Any of the above coupled with sheer determination to do it for days on end"
         )}`,
         tags: [dtag.TECH]
@@ -2284,9 +2286,9 @@ const CARDS = [
         tags: [dtag.SPEQ]
     },
     {
-        id: '00254',
+        id: 254,
         question: `What are Dream Astralites and where do I get it?`,
-        answer: `Milestone currency for Bookshelf of Memories.`,
+        answer: `Milestone currency for Bookshelf of Memories. Obtainable by ${details("completing certain objectives", image(IMG_ASSET+"DreamAstralite.png", "Dream Astralite location."))}.`,
         tags: [dtag.ITEM, dtag.SIDE, dtag.GET]
     },
     {
@@ -4077,6 +4079,68 @@ const CARDS = [
         answer: `Battle Simplification in Settings is set to on probably.`,
         tags: [dtag.BATTLE]
     },  //@Visual
+    {
+        id: 512,
+        question: `How does the banner rotation for Protocol Assimilation work?`,
+        answer: `<p>There are three sets of banner rotations, the rerun banner, the new unit/sesonal rerun banner, and the special banner.</p>
+        <p>Rerun banners rotate through the normal banner sequentially.</p>
+        <p>New unit/seasonal rerun banners give priority to new units, while seasonal reruns take this place on their respective seasons.</p>
+        <p>Special banners are banners used for anniversaries and half-annies, giving free pulls.</p>
+        Normal Banners
+        ${List.ordered(
+            "Scarecrow",
+            "Executioner",
+            "Hunter",
+            "Intruder",
+            "Destroyer",
+            "Architect",
+            "Ouroboros",
+            "Alchemist",
+            "Dreamer",
+            "Gager",
+            "Judge",
+            "Agent",
+            "Adeline (Black Nyto)",
+            "Alina (White Nyto)",
+            "Tareus"
+        )}
+        Sesonal Banners
+        ${List.unordered(
+            "Summer) Architect - NVW Model",
+            "Halloween) Intruder - Sorceress Of The End",
+            "Christmas) Destroyer - Dashing Reindeer",
+            "Valentine) Hunter - Nightfall Moth",
+            "Anniversary) Cerberus",
+            "Summer) Alina - Mosasaur Rider",
+            "Halloween) Executioner - Blood Fiend Huntress",
+            "New Year) Scarecrow - Demonic Abyss"
+        )}`,
+        tags: [dtag.PA]
+    },  //@Will tweak later
+    {
+        id: 513,
+        question: `How do I deal with certain enemy units?`,
+        answer: `${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/enemy-introduction-index")}`,
+        tags: [dtag.ENEMY, dtag.BATTLE]
+    },
+    {
+        id: 514,
+        question: `What are these random things I keep getting from Gray Zone?`,
+        answer: `Reskins of reports and pills, or Mobile Armor${TM} equipments.`,   //https://old.reddit.com/r/girlsfrontline/comments/1b16kmw/weekly_commanders_lounge_february_27_2024/kss9tn7/
+        tags: [dtag.GZ, dtag.ITEM]
+    },  //@List all items
+    {
+        id: 515,
+        question: `Does the Equipment Special Order Ticket refresh?`,
+        answer: `Every Monday.`,
+        tags: [dtag.PROD, dtag.ITEM, dtag.EQUIP, dtag.TDOLL]
+    },
+    {
+        id: 516,
+        question: `My game freezes upon winning a battle. What happened?`,
+        answer: `Popular answer: Memory Leaks. Restart client is always the default option.`,
+        tags: [dtag.TECH]
+    },
     // {
     //     id: 0,
     //     question: ``,
@@ -4107,6 +4171,5 @@ window.cards = CARDS
 // https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/kgpxdz7/
 // Quick Formations - https://old.reddit.com/r/girlsfrontline/comments/qg1inu/weekly_commanders_lounge_october_26_2021/hiu3wrw/
 
-// https://old.reddit.com/r/girlsfrontline/comments/1avcdge/weekly_commanders_lounge_february_20_2024/
-// https://old.reddit.com/r/girlsfrontline/comments/1b16kmw/weekly_commanders_lounge_february_27_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1b6zzvd/weekly_commanders_lounge_march_05_2024/
+// https://old.reddit.com/r/girlsfrontline/comments/1bcrti4/weekly_commanders_lounge_march_12_2024/

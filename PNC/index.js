@@ -62,13 +62,5 @@ function timer(start_date, end_date, title, imgpath, {onend = null} = {}) {
         "./assets/images/timer/cpt08_e_cg001.png",
         {onend: resetTimer}
     )
-
-    timer(
-        "Mar 05, 2024 18:30 UTC-0800",
-        "Mar 12, 2024 18:30 UTC-0800",
-        "Entropic Dichotomy - Part 1",
-        "./assets/images/timer/cpt08_e_cg001.png",
-        {onend: resetTimer}
-    )
 })();
 // resetTimer();

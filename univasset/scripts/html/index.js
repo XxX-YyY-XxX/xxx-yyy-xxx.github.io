@@ -120,13 +120,13 @@ export function details(summary, content) {
 
 /**
  * 
- * @param {(string | Node)[]} text 
- * @param {string} link 
+ * @param {(string | Node)[]} content 
+ * @param {string} href 
  * @returns 
  */
-function anchor(text, link, {target = ""} = {}) {
+function anchor(content, href) {
     const A = document.createElement("a")
-    A.href = link
-    A.append(text)
+    A.href = href
+    A.append(content)
     return A
 }

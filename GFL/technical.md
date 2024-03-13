@@ -2,10 +2,6 @@
 
 # Technical Help
 
-### My game freezes upon winning a battle. What happened?
-
-> Popular answer: Memory Leaks. Restart client is always the default option.
-
 ### My game is lagging. Is there a way to make this playable?
 
 > [Gamepress guide to fixing client lag.](https://gamepress.gg/girlsfrontline/fixing-gfl-client-lag-possible-workarounds)
