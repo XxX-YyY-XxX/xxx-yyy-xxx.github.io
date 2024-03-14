@@ -198,9 +198,8 @@ dialog {
     grid-area: effect;
     height: 100%;
     overflow-y: auto;
-    /* overscroll-behavior: contain; */
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
 }
 /* #endregion */
