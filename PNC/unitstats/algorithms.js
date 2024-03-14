@@ -259,9 +259,9 @@ function createSelect(obj, name) {
     const [ATTR_LIST, _threshCheck] = (function() {
         /** @type {[GridFields, STAT_KEYS[keyof STAT_KEYS][]]} */ const [ALGO_TYPE, VIABLE] = (function() {
             switch (true) {
-                case obj instanceof Offense   || obj instanceof OffenseBlock:   return ["Offense", name === "MAIN" ? ["atk", "hash", "ppen", "open"] : ["atk", "hash"]];
-                case obj instanceof Stability || obj instanceof StabilityBlock: return ["Stability", ["hp", "pdef", "odef"]];
-                case obj instanceof Special   || obj instanceof SpecialBlock:   return ["Special", ["pdef", "odef"]];
+                case Object.values(ALGO_SETS.Offense).some(x => obj instanceof x):      return ["Offense", name === "MAIN" ? ["atk", "hash", "ppen", "open"] : ["atk", "hash"]];
+                case Object.values(ALGO_SETS.Stability).some(x => obj instanceof x):    return ["Stability", ["hp", "pdef", "odef"]];
+                case Object.values(ALGO_SETS.Special).some(x => obj instanceof x):      return ["Special", ["pdef", "odef"]];
             }
         })();
 
@@ -550,11 +550,7 @@ class AlgoGrid {
     };
 
     display() {
-        try {
-            this.#grid.append(...this.#algorithms.sort(cmp({key: x => x.SIZE, reverse: true})).map(x => x.html));
-        } catch (e) {
-            alert(e)
-        }
+        this.#grid.append(...this.#algorithms.sort(cmp({key: x => x.SIZE, reverse: true})).map(x => x.html));
 
         for (let index = 0; index < this.#emptycell; index++)
             this.#grid.appendChild(setattr(document.createElement("button"), {type: "button", classList: {add: ["algo-empty"]}, addEventListener: ["click", this.#open]}));
