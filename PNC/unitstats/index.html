@@ -91,40 +91,27 @@
                 <p>Data taken from <a href="http://wiki.42lab.cloud/w/%E5%BF%83%E6%99%BA%E4%BA%BA%E5%BD%A2%E5%9B%BE%E9%89%B4">42 wiki</a>.</p>
             </section>
         </div>
-
-        <dialog id="algo-modal">
-            <div id="name"></div>
-
-            <div id="algo-field">
-                <div class="tab-button">
-                    <label><input type="radio" name="algorithm" value="Offense" checked/><h2>Offense</h2></label>
-                    <label><input type="radio" name="algorithm" value="Stability" /><h2>Stability</h2></label>
-                    <label><input type="radio" name="algorithm" value="Special" /><h2>Special</h2></label>
-                </div>
-
-                <div id="Offense" class="tab-body"></div>
-                <div id="Stability" class="tab-body"></div>
-                <div id="Special" class="tab-body"></div>
-            </div>
-        </dialog>
-
-        <dialog id="algo-select">
-            <form method="dialog"></form>
-        </dialog>
-
-        <template id="algo-select-button">
-            <button type="submit">
-                <div data-grid="name"></div>
-                <div data-grid="set2"></div>
-                <div data-grid="count"></div>
-                <img />
-                <div data-grid="set3"></div>
-                <!-- mainstat usage count -->
-                <!-- substat usage count -->
-            </button>
-        </template>
-
     </body>
+
+    <dialog id="algo-modal">
+        <div id="name"></div>
+
+        <div id="algo-field">
+            <div class="tab-button">
+                <label><input type="radio" name="algorithm" value="Offense" checked/><h2>Offense</h2></label>
+                <label><input type="radio" name="algorithm" value="Stability" /><h2>Stability</h2></label>
+                <label><input type="radio" name="algorithm" value="Special" /><h2>Special</h2></label>
+            </div>
+
+            <div id="Offense" class="tab-body"></div>
+            <div id="Stability" class="tab-body"></div>
+            <div id="Special" class="tab-body"></div>
+        </div>
+    </dialog>
+
+    <dialog id="algo-select">
+        <form method="dialog"></form>
+    </dialog>
 </html>
 
 <!-- this page uses cookies for saving personal settings -->

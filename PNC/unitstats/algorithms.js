@@ -220,12 +220,6 @@ function algoPath(algoname) {
         }
         OUTPUT.appendChild(SET2);
 
-        // might remove
-        const [NONE, SINGLE, DOUBLE, TRIPLE] = ALGO_SAVE.algoCount(this.name);
-        const COUNT = setattr(document.createElement("div"), {textContent: `${DOUBLE}/${TRIPLE}`, dataset: {grid: "count"}});
-        OUTPUT.appendChild(COUNT);
-        // 1, 2, 3 sets?
-
         const IMG = setattr(document.createElement("img"), {src: algoPath(this.name), alt: this.name});
         OUTPUT.appendChild(IMG);
 
@@ -353,16 +347,16 @@ class DoubleBlock extends Algorithm {
             const [MAIN, SUB1, SUB2] = attributes;
 
             this.#mainstat = createSelect(this, "MAIN");
-            for (const OPTION of Array.from(this.#mainstat.options)) OPTION.selected = OPTION.value === MAIN;
+            for (const OPTION of this.#mainstat.options) OPTION.selected = OPTION.value === MAIN;
 
             this.#substat1 = createSelect(this, "SUB");
-            for (const OPTION of Array.from(this.#substat1.options)) {
+            for (const OPTION of this.#substat1.options) {
                 OPTION.selected = OPTION.value === SUB1;
                 OPTION.disabled = OPTION.value === SUB2;
             }
 
             this.#substat2 = createSelect(this, "SUB");
-            for (const OPTION of Array.from(this.#substat2.options)) {
+            for (const OPTION of this.#substat2.options) {
                 OPTION.selected = OPTION.value === SUB2;
                 OPTION.disabled = OPTION.value === SUB1;
             }
@@ -595,15 +589,6 @@ const ALGO_SAVE = new (class {
     /** @param {string} name */
     del(name) {
         delete this.#DATA[name];
-    }
-
-    /** @param {string} algoname @returns [0set, 1set, 2set, 3set] */
-    algoCount(algoname) {
-        const UNIT = AlgoField.current.name;
-        /** @type {[number, number, number, number]} */ const OUTPUT = [0, 0, 0, 0];
-        /** @type {string[][]} */ const INFOS = Object.entries(this.#DATA).filter(([name,]) => name !== UNIT).map(([, algos]) => algos.flat().map(([set,,,]) => set));
-        for (const UNIT_INFO of INFOS) OUTPUT[UNIT_INFO.count(algoname)]++;
-        return OUTPUT;
     }
 })();
 
