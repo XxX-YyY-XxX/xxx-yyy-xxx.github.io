@@ -550,7 +550,11 @@ class AlgoGrid {
     };
 
     display() {
-        this.#grid.append(...this.#algorithms.sort(cmp({key: x => x.SIZE, reverse: true})).map(x => x.html));
+        try {
+            this.#grid.append(...this.#algorithms.sort(cmp({key: x => x.SIZE, reverse: true})).map(x => x.html));
+        } catch (e) {
+            alert(e)
+        }
 
         for (let index = 0; index < this.#emptycell; index++)
             this.#grid.appendChild(setattr(document.createElement("button"), {type: "button", classList: {add: ["algo-empty"]}, addEventListener: ["click", this.#open]}));
