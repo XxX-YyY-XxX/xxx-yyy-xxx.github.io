@@ -184,9 +184,9 @@ dialog {
 
     display: inline-grid;
     grid-template-areas: 
-        "name   stat    count"
+        "name   stat    type"
         "image  effect  effect";
-    grid-template-columns: 100px 120px 40px;
+    grid-template-columns: 100px 120px 30px;
     grid-template-rows: 1lh 100px;
 }
 
@@ -198,8 +198,8 @@ dialog {
     grid-area: stat;
 }
 
-#algo-select button > [data-grid="count"] {
-    grid-area: count;
+#algo-select button > [data-grid="type"] {
+    grid-area: type;
 }
 
 #algo-select button > img {

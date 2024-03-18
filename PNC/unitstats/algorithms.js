@@ -139,6 +139,7 @@ function algoPath(algoname) {
     /** @abstract @static @type {STATVALUES["SET"][SetAttributes]} */ static SET2;
     /** @abstract @static @type {string?} */ static SET3;
     /** @abstract @type {number} */ SIZE;
+    /** @abstract @static @type {"α" | "β" | "γ" | "1"} */ static TYPE;
 
     /** @abstract @returns {HTMLDivElement} */
     get html() {
@@ -220,6 +221,9 @@ function algoPath(algoname) {
         }
         OUTPUT.appendChild(SET2);
 
+        const SET_TYPE = setattr(document.createElement("div"), {textContent: this.TYPE, dataset: {grid: "type"}});
+        OUTPUT.appendChild(SET_TYPE);
+
         const IMG = setattr(document.createElement("img"), {src: algoPath(this.name), alt: this.name});
         OUTPUT.appendChild(IMG);
 
@@ -297,6 +301,7 @@ class SingleBlock extends Algorithm {
     static SET2 = "No Bonus";
     static SET3 = null;
     SIZE = 1;
+    static TYPE = "1";
 
     /** @param {AlgoGrid} grid @param {[StatAttributes, StatAttributes, ""]?} attributes */
     constructor(grid, attributes) {
@@ -411,55 +416,56 @@ class Offense   extends DoubleBlock {};
 class Stability extends DoubleBlock {};
 class Special   extends DoubleBlock {};
 
+// Lasts for the entire battle
 const ALGO_SETS = {
     Offense: {
         OffenseBlock:   class extends SingleBlock {},
-        Feedforward:    class extends Offense {static SET2 = STATVALUES.SET.atkperc;        static SET3 = null;},
-        Progression:    class extends Offense {static SET2 = STATVALUES.SET.hashperc;       static SET3 = null;},
-        Stack:          class extends Offense {static SET2 = STATVALUES.SET.hashperc;       static SET3 = "Every 3 normal attacks will create a stack of [Pursuit Ordnance], max 4 stacks. Every stacks deals an additional 10% of Doll's Hashrate in [Derivative] Operand damage.";},
-        Deduction:      class extends Offense {static SET2 = STATVALUES.SET.aspdflat;       static SET3 = null;},
-        DataRepair:     class extends Offense {static SET2 = STATVALUES.SET.resflat;        static SET3 = "Convert 10% of all damage dealt into HP.";},
-        Surplus:        class extends Offense {static SET2 = STATVALUES.SET.dboostperc;     static SET3 = null;},
-        MLRMatrix:      class extends Offense {static SET2 = STATVALUES.SET.dboostperc;     static SET3 = "Unit steals 12% of killed enemy unit's ATK, Hashrate, and Max HP. (When triggered on more than one enemy unit, only the highest stats take effect), and recover HP by the same amount. This effect lasts until the end of battle.";},
-        LimitValue:     class extends Offense {static SET2 = STATVALUES.SET.dboostperc;     static SET3 = "When dealing damage to an enemy with higher Max HP, additionally deal [Derivative] damage equal to (6% + Enemy Max HP/Self Max HP x 3%), of the same damage type as the original attack, with a maximum of 20%.";},
-        Hyperpulse:     class extends Offense {static SET2 = STATVALUES.SET.dboostperc;     static SET3 = "At the start of battle, +10% ATK and Hashrate; gain additional 3% ATK and Hashrate every second after that, stacks up to 10 times. All stacks are cleared 3 seconds after using a skill.";},
-        LowerLimit:     class extends Offense {static SET2 = STATVALUES.SET.lifesteal;      static SET3 = "When HP drops below 15%, gain Attack Speed +50, ATK +10%, and Damage Reduction +30% for 10 seconds. Triggers once only every battle.";},
-        Puncture:       class extends Offense {static SET2 = STATVALUES.SET.dpenflat;       static SET3 = null;},
-        Permeate:       class extends Offense {static SET2 = STATVALUES.SET.dpenperc;       static SET3 = null;},
-        Polybore:       class extends Offense {static SET2 = STATVALUES.SET.dpenperc;       static SET3 = "At the start of the battle, the character's Skill Haste is halved. Every 1% reduction of Skill Haste increases character's damage by 1.2%. Lasts until the end of battle.";}
+        Feedforward:    class extends Offense {static SET2 = STATVALUES.SET.atkperc;        static TYPE = "α";  static SET3 = null;},
+        Progression:    class extends Offense {static SET2 = STATVALUES.SET.hashperc;       static TYPE = "α";  static SET3 = null;},
+        Stack:          class extends Offense {static SET2 = STATVALUES.SET.hashperc;       static TYPE = "β";  static SET3 = "Every 3 normal attacks will create a stack of [Pursuit Ordnance], max 4 stacks. Every stacks deals an additional 10% of Doll's Hashrate in [Derivative] Operand damage.";},
+        Deduction:      class extends Offense {static SET2 = STATVALUES.SET.aspdflat;       static TYPE = "α";  static SET3 = null;},
+        DataRepair:     class extends Offense {static SET2 = STATVALUES.SET.resflat;        static TYPE = "α";  static SET3 = "Convert 10% of all damage dealt into HP.";},
+        Surplus:        class extends Offense {static SET2 = STATVALUES.SET.dboostperc;     static TYPE = "γ";  static SET3 = null;},
+        MLRMatrix:      class extends Offense {static SET2 = STATVALUES.SET.dboostperc;     static TYPE = "α";  static SET3 = "Unit steals 12% of killed enemy unit's ATK, Hashrate, and Max HP. (When triggered on more than one enemy unit, only the highest stats take effect), and recover HP by the same amount. Lasts for the entire battle.";},
+        LimitValue:     class extends Offense {static SET2 = STATVALUES.SET.dboostperc;     static TYPE = "β";  static SET3 = "When dealing damage to an enemy with higher Max HP, additionally deal [Derivative] damage equal to (6% + Enemy Max HP/Self Max HP x 3%), of the same damage type as the original attack, with a maximum of 20%.";},
+        Hyperpulse:     class extends Offense {static SET2 = STATVALUES.SET.dboostperc;     static TYPE = "γ";  static SET3 = "At the start of battle, +10% ATK and Hashrate; gain additional 3% ATK and Hashrate every second after that, stacks up to 10 times. All stacks are cleared 3 seconds after using a skill.";},
+        LowerLimit:     class extends Offense {static SET2 = STATVALUES.SET.lifesteal;      static TYPE = "α";  static SET3 = "When HP drops below 15%, gain Attack Speed +50, ATK +10%, and Damage Reduction +30% for 10 seconds. Triggers once only every battle.";},
+        Puncture:       class extends Offense {static SET2 = STATVALUES.SET.dpenflat;       static TYPE = "γ";  static SET3 = null;},
+        Permeate:       class extends Offense {static SET2 = STATVALUES.SET.dpenperc;       static TYPE = "γ";  static SET3 = null;},
+        Polybore:       class extends Offense {static SET2 = STATVALUES.SET.dpenperc;       static TYPE = "γ";  static SET3 = "At the start of the battle, the character's Skill Haste is halved. Every 1% reduction of Skill Haste increases character's damage by 1.2%. Lasts for the entire battle.";}
     },
     Stability: {
         StabilityBlock: class extends SingleBlock {},
-        Threshold:      class extends Stability {static SET2 = STATVALUES.SET.hpflat;       static SET3 = null;},
-        Perception:     class extends Stability {static SET2 = STATVALUES.SET.hpperc;       static SET3 = null;},
-        Acclimate:      class extends Stability {static SET2 = STATVALUES.SET.hpperc;       static SET3 = "When ally Doll's HP decreases below 30%, grant said Doll a shield of 35% of their Max HP and 5 seconds of Stealth (can only trigger once per battle).";},
-        Rationality:    class extends Stability {static SET2 = STATVALUES.SET.pdefperc;     static SET3 = null;},
-        Lattice:        class extends Stability {static SET2 = STATVALUES.SET.odefperc;     static SET3 = null;},
-        Twinform:       class extends Stability {static SET2 = STATVALUES.SET.ddefperc;     static SET3 = null;},
-        Buildup:        class extends Stability {static SET2 = STATVALUES.SET.ddefperc;     static SET3 = "At the start of the battle, +35% Physical and Operand DEF; For 5 seconds after using a skill, further increase Physical/Operand DEF by +35%.";},
-        Connection:     class extends Stability {static SET2 = STATVALUES.SET.resflat;      static SET3 = null;},
-        Iteration:      class extends Stability {static SET2 = STATVALUES.SET.lashperc;     static SET3 = "If not fallen at the end of battle, character is healed by 15% of their Max HP.";},
-        Reflection:     class extends Stability {static SET2 = STATVALUES.SET.lashperc;     static SET3 = "When dealing backlash damage, deal additional true damage equal to 1.2% of own Max HP; when activating skill, Taunt enemies within a 2 tile range for 3s. While this Taunt is active, backlash damage value is raised by 10%.";},
-        Encapsulate:    class extends Stability {static SET2 = STATVALUES.SET.dreducperc;   static SET3 = "Obtain supportive ability and take 30% of all damage for the ally unit with lowest current HP.";},   //taken damage type seems like same damage type as original
-        Resolve:        class extends Stability {static SET2 = STATVALUES.SET.dreducperc;   static SET3 = "When HP is lower than 50%, gain 10% damage reduction. From then onwards, for every 10% of HP lost, gain 5% damage reduction. Every change in HP will refresh the value of this damage reduction.";},
-        Overflow:       class extends Stability {static SET2 = STATVALUES.SET.hpregen;      static SET3 = "Gain a Shield equal to 500% Physical DEF at the beginning of battle.";}
+        Threshold:      class extends Stability {static SET2 = STATVALUES.SET.hpflat;       static TYPE = "γ";  static SET3 = null;},
+        Perception:     class extends Stability {static SET2 = STATVALUES.SET.hpperc;       static TYPE = "α";  static SET3 = null;},
+        Acclimate:      class extends Stability {static SET2 = STATVALUES.SET.hpperc;       static TYPE = "γ";  static SET3 = "When ally Doll's HP decreases below 30%, grant said Doll a shield of 35% of their Max HP and 5 seconds of Stealth (can only trigger once per battle).";},
+        Rationality:    class extends Stability {static SET2 = STATVALUES.SET.pdefperc;     static TYPE = "α";  static SET3 = null;},
+        Lattice:        class extends Stability {static SET2 = STATVALUES.SET.odefperc;     static TYPE = "γ";  static SET3 = null;},
+        Twinform:       class extends Stability {static SET2 = STATVALUES.SET.ddefperc;     static TYPE = "γ";  static SET3 = null;},
+        Buildup:        class extends Stability {static SET2 = STATVALUES.SET.ddefperc;     static TYPE = "γ";  static SET3 = "At the start of the battle, +35% Physical and Operand DEF; For 5 seconds after using a skill, further increase Physical/Operand DEF by +35%.";},
+        Connection:     class extends Stability {static SET2 = STATVALUES.SET.resflat;      static TYPE = "α";  static SET3 = null;},
+        Iteration:      class extends Stability {static SET2 = STATVALUES.SET.lashperc;     static TYPE = "α";  static SET3 = "If not fallen at the end of battle, character is healed by 15% of their Max HP.";},
+        Reflection:     class extends Stability {static SET2 = STATVALUES.SET.lashperc;     static TYPE = "β";  static SET3 = "When dealing backlash damage, deal additional true damage equal to 1.2% of own Max HP; when activating skill, Taunt enemies within a 2 tile range for 3s. While this Taunt is active, backlash damage value is raised by 10%.";},
+        Encapsulate:    class extends Stability {static SET2 = STATVALUES.SET.dreducperc;   static TYPE = "α";  static SET3 = "Obtain supportive ability and take 30% of all damage for the ally unit with lowest current HP.";},   //taken damage type seems like same damage type as original
+        Resolve:        class extends Stability {static SET2 = STATVALUES.SET.dreducperc;   static TYPE = "β";  static SET3 = "When HP is lower than 50%, gain 10% damage reduction. From then onwards, for every 10% of HP lost, gain 5% damage reduction. Every change in HP will refresh the value of this damage reduction.";},
+        Overflow:       class extends Stability {static SET2 = STATVALUES.SET.hpregen;      static TYPE = "α";  static SET3 = "Gain a Shield equal to 500% Physical DEF at the beginning of battle.";}
     },
     Special: {
         SpecialBlock:   class extends SingleBlock {},
-        Rapidity:       class extends Special {static SET2 = STATVALUES.SET.aspdflat;       static SET3 = null;},
-        Paradigm:       class extends Special {static SET2 = STATVALUES.SET.aspdflat;       static SET3 = "Every 4th Critical Hit deals True Damage of 8% target's current HP, up to twice the current character's Hashrate.";},
-        Cluster:        class extends Special {static SET2 = STATVALUES.SET.crateperc;      static SET3 = null;},
-        Convolution:    class extends Special {static SET2 = STATVALUES.SET.cdmgperc;       static SET3 = null;},
-        Stratagem:      class extends Special {static SET2 = STATVALUES.SET.dodgeperc;      static SET3 = null;},
-        FastLoad:       class extends Special {static SET2 = STATVALUES.SET.hasteperc;      static SET3 = null;},
-        DeltaV:         class extends Special {static SET2 = STATVALUES.SET.hasteperc;      static SET3 = "For every 3 Normal Attacks, character's skill recharge is sped up by 1 second.";},
-        Exploit:        class extends Special {static SET2 = STATVALUES.SET.hasteperc;      static SET3 = "Deal 10% additional damage to enemies with an active debuff. For every active debuff, deal 2% more damage to that target, up to a maximum of 3 stacks.";},
-        Delivery:       class extends Special {static SET2 = STATVALUES.SET.hasteperc;      static SET3 = "After using a skill, all Dolls' ATK and Hashrate are increased by +20% for 7 seconds. Does not stack.";},
-        Flush:          class extends Special {static SET2 = STATVALUES.SET.hasteperc;      static SET3 = "When the carrier applies a debuff, said unit takes 16% more damage. Lasts for 6 seconds and cannot stack.";},
-        Increment:      class extends Special {static SET2 = STATVALUES.SET.hboostperc;     static SET3 = null;},
-        LoopGain:       class extends Special {static SET2 = STATVALUES.SET.hboostperc;     static SET3 = "When healing ally units, boost their Healing Recieved by 20% for 4 seconds.";},
-        SVM:            class extends Special {static SET2 = STATVALUES.SET.hboostperc;     static SET3 = "Boost Healing Effect by 10%. Healing Effect increased to 30% when target's HP is below 45%.";},
-        Inspiration:    class extends Special {static SET2 = STATVALUES.SET.hpregen;        static SET3 = null;},
+        Rapidity:       class extends Special {static SET2 = STATVALUES.SET.aspdflat;       static TYPE = "γ";  static SET3 = null;},
+        Paradigm:       class extends Special {static SET2 = STATVALUES.SET.aspdflat;       static TYPE = "α";  static SET3 = "Every 4th Critical Hit deals True Damage of 8% target's current HP, up to twice the current character's Hashrate.";},
+        Cluster:        class extends Special {static SET2 = STATVALUES.SET.crateperc;      static TYPE = "α";  static SET3 = null;},
+        Convolution:    class extends Special {static SET2 = STATVALUES.SET.cdmgperc;       static TYPE = "α";  static SET3 = null;},
+        Stratagem:      class extends Special {static SET2 = STATVALUES.SET.dodgeperc;      static TYPE = "α";  static SET3 = null;},
+        FastLoad:       class extends Special {static SET2 = STATVALUES.SET.hasteperc;      static TYPE = "γ";  static SET3 = null;},
+        DeltaV:         class extends Special {static SET2 = STATVALUES.SET.hasteperc;      static TYPE = "α";  static SET3 = "For every 3 Normal Attacks, character's skill recharge is sped up by 1 second.";},
+        Exploit:        class extends Special {static SET2 = STATVALUES.SET.hasteperc;      static TYPE = "β";  static SET3 = "Deal 10% additional damage to enemies with an active debuff. For every active debuff, deal 2% more damage to that target, up to a maximum of 3 stacks.";},
+        Delivery:       class extends Special {static SET2 = STATVALUES.SET.hasteperc;      static TYPE = "γ";  static SET3 = "After using a skill, all Dolls' ATK and Hashrate are increased by +20% for 7 seconds. Does not stack.";},
+        Flush:          class extends Special {static SET2 = STATVALUES.SET.hasteperc;      static TYPE = "γ";  static SET3 = "When the carrier applies a debuff, said unit takes 16% more damage. Lasts for 6 seconds and cannot stack.";},
+        Increment:      class extends Special {static SET2 = STATVALUES.SET.hboostperc;     static TYPE = "γ";  static SET3 = null;},
+        LoopGain:       class extends Special {static SET2 = STATVALUES.SET.hboostperc;     static TYPE = "α";  static SET3 = "When healing ally units, boost their Healing Recieved by 20% for 4 seconds.";},
+        SVM:            class extends Special {static SET2 = STATVALUES.SET.hboostperc;     static TYPE = "α";  static SET3 = "Boost Healing Effect by 10%. Healing Effect increased to 30% when target's HP is below 45%.";},
+        Inspiration:    class extends Special {static SET2 = STATVALUES.SET.hpregen;        static TYPE = "α";  static SET3 = null;},
     },
     get classdict() {return {...this.Offense, ...this.Stability, ...this.Special}}
 };
