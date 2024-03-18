@@ -1,8 +1,9 @@
 @import "/univasset/scripts/tabs.css";
 
 dialog {
+    --dialog-pad: 5px;
     border-radius: 10px;
-    padding: 5px;
+    padding: var(--dialog-pad);
     background-color: slategrey;
 }
 
@@ -152,6 +153,18 @@ dialog {
 #algo-modal .algo-stat-bad {
     background-image: url("../assets/images/algorithms/down1.png");
 } */
+
+#algo-modal #help {
+    background-image: url("../assets/images/Info.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    aspect-ratio: 1;
+    width: 15px;
+    position: absolute;
+    top: var(--dialog-pad);
+    right: var(--dialog-pad);
+}
 /* #endregion */
 
 /* Algo Select */
@@ -258,3 +271,49 @@ dialog {
 
 
 /* --gray-algo: #494b4a; */
+
+
+/* https://dev.to/michaelburrows/setup-a-html-tooltip-on-hover-using-css-23b3 */
+/* Test */
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+    background: black;
+    color: white;
+    font-size: 12px;
+    border-radius: 1em;
+    padding: 0 0.5em;
+}
+
+[data-tooltip]:before {
+    content: attr(data-tooltip);
+    position: absolute;
+    opacity: 0; 
+    width: 150px;
+    transform:translateX(-50%);
+    bottom: 25px;
+    padding: 0.5em;
+    background-color: black;
+    border-radius: 0.25em;
+    color: white;
+    text-align: center;
+    transition:0.2s;
+}
+
+[data-tooltip]:after {
+    content: "";
+    position: absolute;
+    opacity: 0; 
+    bottom: 15px;  
+    margin-left: -5px; 
+    border: 5px solid black;
+    border-color: black transparent transparent transparent;
+    transition:0.2s;
+}
+/* Code language: CSS (css)
+Finally we need to set the opacity to be visible when the tooltip element is hovered: */
+  
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+    opacity: 1; 
+}

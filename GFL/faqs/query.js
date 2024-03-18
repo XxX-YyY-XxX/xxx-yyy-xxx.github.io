@@ -861,7 +861,7 @@ const CARDS = [
         answer: `${List.unordered(
             link("Gamepress suggestions for dolls and coalition units.", "https://gamepress.gg/girlsfrontline/duping-recommendations-and-coalition-mooks"),
             link('Matsuda notes.', 'https://gfl.matsuda.tips/post/worthwhiledupes'),
-            spoilerSummary('Discord recommendations.', img('https://cdn.discordapp.com/attachments/640157367056728133/1048531902065287188/dupe_gameing_pt3.png'))   //Jesse, Varz, etc.
+            // spoilerSummary('Discord recommendations.', img('https://cdn.discordapp.com/attachments/640157367056728133/1048531902065287188/dupe_gameing_pt3.png'))   //Jesse, Varz, etc.
         )}`,
         tags: [dtag.TDOLL, dtag.COALITION]
     },  
@@ -961,10 +961,9 @@ const CARDS = [
         tags: [dtag.TDOLL, dtag.PROD]
     },
     {
-        id: '00080',
+        id: 80,
         question: `What are the resources I can get from Kalina's Daily Gift?`,
-        answer: `${img(IMG_ASSET+"DailyGift.png")}<br>
-        Gift amount apparently scales with her affection.`,
+        answer: `${figure(image(IMG_ASSET+"DailyGift.png", "Kalina's Daily Gift table."), "Gift amount apparently scales with her affection")}`,
         tags: [dtag.MARP, dtag.ITEM, dtag.KALINA]
     },
     {
