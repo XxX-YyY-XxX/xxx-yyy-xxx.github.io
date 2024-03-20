@@ -81,7 +81,7 @@ window.cards = [
         question: `What's the use of High Fashion Voucher?`,
         answer: `Upgrading certain skins to L2D.`,
         tags: [dtag.SKIN]
-    },
+    },  //@List of upgradeable skins
     {
         id: 6,
         question: `What's the difference between Neural Search - Kits and Neural Search - Fragments when pulling for limiteds?`,
@@ -181,7 +181,7 @@ window.cards = [
         id: 16,
         question: `Who should I get in Designated Neural Acquisition?`,
         answer: `${figure(image(
-            "https://media.discordapp.net/attachments/648373344600850434/1183221959643889684/image.png?ex=65878c52&is=65751752&hm=0bdf4e93564225c0dab105e618eab2f4e348b2f8902042da82d3e5b460f442a5&=&format=webp&quality=lossless",
+            "https://cdn.discordapp.com/attachments/648373344600850434/1183221959643889684/image.png?ex=6608bf52&is=65f64a52&hm=09d1c5f3872da11d7e06097d368ce88c0f4af5030e95e2aaa8961f8f40886710&",
             "Designated Neural Acquisition suggestion guide."
         ), "Discord: .selector, by u/Whole-Arm4526")}`,
         tags: [dtag.DOLL]
@@ -195,9 +195,12 @@ window.cards = [
     {
         id: 18,
         question: `Where can I read the events I've missed?`,
-        answer: `In-game file room or ${link("Shoul's playlist", "https://youtube.com/playlist?list=PLTpD-lAtY-jDF5A945-HEjqzdVjJ57XJJ&si=K0GaXy1NpDH9aQbt")}.`,
+        answer: `${List.unordered(
+            details("Permanent Events", figure(image(IMG_ASSET+"Static Iteration.png", "Static Iteration page of Main Story."), "Requires Recopy Core Chip")),
+            link("Shoul's playlist", "https://youtube.com/playlist?list=PLTpD-lAtY-jDF5A945-HEjqzdVjJ57XJJ&si=K0GaXy1NpDH9aQbt")
+        )}`,
         tags: [dtag.STORY, dtag.MAJOR]
-    },  //@Visual
+    },
     {
         id: 19,
         question: `What stages do I need to do to complete the weekly mission "Complete 20 battles with a Support Doll"?`,
@@ -267,7 +270,7 @@ window.cards = [
         id: 28,
         question: `How much Neural Fragments do I need for Arma Inscriptas?`,
         answer: `${link(image("https://pbs.twimg.com/media/FuCwlWlaIAAmSg9?format=jpg&name=4096x4096", "Cleista's Arma Inscripta guide."), "https://twitter.com/CleistaCeleste/status/1648512012216041472")}`,
-        tags: [dtag.FRAGS, dtag.ARMA]
+        tags: [dtag.FRAGS, dtag.ARMA, dtag.PRIME]
     },
     {
         id: 29,
@@ -281,6 +284,24 @@ window.cards = [
         answer: `${figure(image("https://i.postimg.cc/tJSmx85q/Screenshot-2024-02-05-22-08-59-65-08f8a97de7bd41bb2394ebe61dcb8f9f.jpg", "Team preset screen."), "Team preset before fights, from u/WhistleOfDeath")}`,
         tags: [dtag.TEAM]
     },
+    {
+        id: 31,
+        question: `What's the use of Precious Memory Tickets`,
+        answer: `Used for buying Polaroid Projections (skins with no chibi change).`,
+        tags: [dtag.SKIN]
+    },
+    {
+        id: 32,
+        question: `What is Recopy Core Chip for?`,
+        answer: `Rereading permanent events.`,
+        tags: [dtag.STORY]
+    },
+    {
+        id: 33,
+        question: `How many kits do I need to 5${SC.STAR} a limited unit?`,
+        answer: `5625`, // https://old.reddit.com/r/GFLNeuralCloud/comments/1b688sg/weekly_professors_lounge_march_04_2024/ktrfl2e/
+        tags: [dtag.DOLL, dtag.LEVEL]
+    },  //@Change to all sources
     // {
     //     id: 0,
     //     question: ``,
@@ -301,10 +322,11 @@ window.cards = [
 // https://old.reddit.com/r/GFLNeuralCloud/comments/18qglj9/weekly_professors_lounge_december_25_2023/kfe8yxm/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/191ipmg/weekly_professors_lounge_january_08_2024/khmz92o/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1adsqjg/weekly_professors_lounge_january_29_2024/kow77hi/
+// https://old.reddit.com/r/GFLNeuralCloud/comments/1b0evdy/weekly_professors_lounge_february_26_2024/ksmuvzx/
+// https://old.reddit.com/r/GFLNeuralCloud/comments/1b688sg/weekly_professors_lounge_march_04_2024/ktwh9ev/ - Exception Protocol Guide
 
 // https://www.reddit.com/r/GFLNeuralCloud/comments/z5446s/algorithm_sets_recommendations_google_doc/
 // https://nalu.wiki/neuralcloud
+// https://old.reddit.com/r/GFLNeuralCloud/comments/1b0evdy/weekly_professors_lounge_february_26_2024/ksdzfoe/
 
-// https://old.reddit.com/r/GFLNeuralCloud/comments/1b0evdy/weekly_professors_lounge_february_26_2024/
-// https://old.reddit.com/r/GFLNeuralCloud/comments/1b688sg/weekly_professors_lounge_march_04_2024/
-// https://old.reddit.com/r/GFLNeuralCloud/comments/1bc0jdn/weekly_professors_lounge_march_11_2024/
+// https://old.reddit.com/r/GFLNeuralCloud/comments/1bhnzp5/weekly_professors_lounge_march_18_2024/
