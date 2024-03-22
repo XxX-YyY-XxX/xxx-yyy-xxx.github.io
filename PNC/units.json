@@ -2083,7 +2083,7 @@
         "id": 1068,
         "name": "Eos",
         "class": "Sniper",
-        "reference": {"": "https://en.wikipedia.org/wiki/Eos"},
+        "reference": {"Eos": "https://en.wikipedia.org/wiki/Eos"},
         "fragments": ["Neural Kits", "Intimacy"],
         "base": {
             "hp": 10712,
@@ -2110,17 +2110,41 @@
         "intimacy": ["Code Robustness", "Coordinated Formation", "Coordinated Strike"],
         "tags": []
     },
+    {
+        "id": 1067,
+        "name": "Cascadia",
+        "class": "Warrior",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
+        "base": {
+            "hp": 20520,
+            "atk": 681,
+            "hash": 525,
+            "pdef": 423,
+            "odef": 423,
+            "aspd": 100,
+            "crate": 5,
+            "ppen": 383,
+            "open": 315,
+            "dodge": 5,
+            "regen": 656
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": [],
+        "tags": ["Unreleased"]
+    },
 
     {
         "name" : "Dupin (X)",
         "reference" : {"C. Auguste Dupin" : "https://en.wikipedia.org/wiki/C._Auguste_Dupin"},
-        "fragments" : ["Fragment Search"],
-        "event" : "",
-        "tags": ["Unreleased"]
-    },
-    {
-        "name" : "Cascadia",
-        "reference" : {"" : ""},
         "fragments" : ["Fragment Search"],
         "event" : "",
         "tags": ["Unreleased"]

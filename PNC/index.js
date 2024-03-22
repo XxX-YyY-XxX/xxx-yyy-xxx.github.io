@@ -56,8 +56,16 @@ function timer(start_date, end_date, title, imgpath, {onend = null} = {}) {
 
 (function resetTimer() {
     timer(
+        "Apr 02, 2024 18:30 UTC-0800",
+        "Apr 23, 2024 18:30 UTC-0800",
+        "Crisis Rescue",
+        "./assets/images/timer/cpt00_e_cg034.png",
+        {onend: resetTimer}
+    )
+
+    timer(
         "Mar 12, 2024 18:30 UTC-0800",
-        "Apr 03, 2024 18:30 UTC-0800",
+        "Apr 02, 2024 18:30 UTC-0800",
         "Entropic Dichotomy",
         "./assets/images/timer/cpt08_e_cg001.png",
         {onend: resetTimer}
