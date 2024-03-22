@@ -186,7 +186,7 @@ dialog {
     grid-template-areas: 
         "name   stat    type"
         "image  effect  effect";
-    grid-template-columns: 100px 120px 30px;
+    grid-template-columns: 100px 120px 20px;
     grid-template-rows: 1lh 100px;
 }
 
@@ -277,43 +277,40 @@ dialog {
 /* Test */
 [data-tooltip] {
     position: relative;
-    cursor: pointer;
+    cursor: help;
     background: black;
     color: white;
-    font-size: 12px;
-    border-radius: 1em;
-    padding: 0 0.5em;
 }
 
 [data-tooltip]:before {
     content: attr(data-tooltip);
-    position: absolute;
-    opacity: 0; 
     width: 150px;
-    transform:translateX(-50%);
+    transform: translateX(-50%);
     bottom: 25px;
     padding: 0.5em;
     background-color: black;
     border-radius: 0.25em;
     color: white;
     text-align: center;
-    transition:0.2s;
 }
 
 [data-tooltip]:after {
     content: "";
-    position: absolute;
-    opacity: 0; 
     bottom: 15px;  
     margin-left: -5px; 
     border: 5px solid black;
     border-color: black transparent transparent transparent;
-    transition:0.2s;
 }
 /* Code language: CSS (css)
 Finally we need to set the opacity to be visible when the tooltip element is hovered: */
-  
+[data-tooltip]:before,
+[data-tooltip]:after {
+    position: absolute;
+    opacity: 0;
+    transition: 0.2s;
+}
+
 [data-tooltip]:hover:before,
 [data-tooltip]:hover:after {
-    opacity: 1; 
+    opacity: 1;
 }

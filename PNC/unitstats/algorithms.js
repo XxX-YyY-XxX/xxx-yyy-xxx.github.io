@@ -478,12 +478,6 @@ const GRIDS = {
     /** @type {HTMLDivElement} */ Special: document.querySelector("#algo-modal #Special")
 }
 
-/** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
-ALGO_MODAL.addEventListener("close", function(event) {
-    this.firstElementChild.textContent = "";
-    for (const DIV of Object.values(GRIDS)) DIV.replaceChildren();
-});
-
 /** @type {HTMLDialogElement} */ const ALGO_SELECT = document.querySelector("#algo-select");
 ALGO_SELECT.addEventListener("close", function(event) {this.firstElementChild.replaceChildren()});  // Empties algo buttons selection.
 
@@ -566,7 +560,20 @@ class AlgoGrid {
         this.#grid.replaceChildren();
         this.display();
     }
+
+    clear() {
+        this.#algorithms.splice(0);
+        this.#grid.replaceChildren();
+        this.display();
+    }
 }
+
+/** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
+/** @type {HTMLDivElement} */ const ALGO_MODAL_NAME = ALGO_MODAL.querySelector("#name");
+ALGO_MODAL.addEventListener("close", function(event) {
+    ALGO_MODAL_NAME.textContent = "";
+    for (const DIV of Object.values(GRIDS)) DIV.replaceChildren();
+});
 
 const ALGO_SAVE = new (class {
     /** @type {"algorithms"} */
@@ -642,7 +649,8 @@ export class AlgoField {
             Medic: this.#name === "Imhotep" ? "546" : "456"
         }[unit.class];
 
-        // For when algorithm button is checked without opening modal        
+        // For when algorithm button is checked without opening modal
+        // Might run only when algo button first checked, remove when run or respective modal opened
         this.#stats = (() => {
             const INFOS = ALGO_SAVE.get(this.#name).flat();
             if (!INFOS.length) return new Map();
@@ -665,7 +673,7 @@ export class AlgoField {
 
         this.#algogrids ??= Array.from(zip(["Offense", "Stability", "Special"], this.#layout, ALGO_SAVE.get(this.#name))).map(([type, size, info]) => new AlgoGrid(type, Number(size), info));
 
-        ALGO_MODAL.firstElementChild.textContent = this.#name;
+        ALGO_MODAL_NAME.textContent = this.#name;
         for (const GRID of this.#algogrids) GRID.display();
 
         ALGO_MODAL.addEventListener("click", this.#close);
