@@ -23,8 +23,8 @@ timer(
     "./assets/images/coalition/08Alchemist.webp", 
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
-        "",
-        "./assets/images/coalition/.webp"
+        "Apr 30, 2024 00:00 UTC-0800",
+        "./assets/images/coalition/09Dreamer.webp"
     )}
 );
 
