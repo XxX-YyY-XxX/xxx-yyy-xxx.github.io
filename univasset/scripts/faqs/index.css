@@ -23,7 +23,6 @@ dl, table, blockquote, figure {
     & > label {
         background-color: transparent;
         line-height: 10px;
-        /* flex: calc(100% / 3); */
     }
 
     & > label:has(input:checked) {

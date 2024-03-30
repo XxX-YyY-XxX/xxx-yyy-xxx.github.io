@@ -4167,6 +4167,8 @@ window.cards = CARDS
 //     console.log("Duplicate:", Array.from(DUPLICATES));
 // })()
 
+// cdn.discordapp cleanup
+
 // https://old.reddit.com/r/girlsfrontline/comments/uc7eet/weekly_commanders_lounge_april_26_2022/i6mqo74/
 // https://old.reddit.com/r/girlsfrontline/comments/1929lxq/weekly_commanders_lounge_january_09_2024/khy62ha/
 // https://old.reddit.com/r/girlsfrontline/comments/1929lxq/weekly_commanders_lounge_january_09_2024/khmieoe/

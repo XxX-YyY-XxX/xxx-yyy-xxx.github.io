@@ -97,7 +97,6 @@ dialog {
 #algo-modal .tab-button > label{
     background-color: transparent;
     line-height: 10px;
-    /* flex: calc(100% / 3); */
 }
 
 #algo-modal .tab-button h2 {
