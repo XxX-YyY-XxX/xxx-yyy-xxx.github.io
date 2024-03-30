@@ -90,14 +90,18 @@ dialog {
     margin-bottom: 5px;
 }
 
+#algo-modal .tab-button {
+    margin-bottom: 5px;
+}
+
 #algo-modal .tab-button > label{
     background-color: transparent;
     line-height: 10px;
-    flex: calc(100% / 3);
+    /* flex: calc(100% / 3); */
 }
 
-#algo-modal .tab-button {
-    margin-bottom: 5px;
+#algo-modal .tab-button h2 {
+    margin-bottom: 10px;
 }
 
 #algo-modal .tab-body {

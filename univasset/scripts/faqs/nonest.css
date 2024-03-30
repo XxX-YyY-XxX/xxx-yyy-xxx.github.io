@@ -2,7 +2,7 @@
 .tab-button > label {
     background-color: transparent;
     line-height: 10px;
-    flex: calc(100% / 3);
+    /* flex: calc(100% / 3); */
 }
 
 .tab-button > label:has(input:checked) {
