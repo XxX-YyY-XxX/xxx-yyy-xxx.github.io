@@ -50,7 +50,6 @@ export function textStyle(text, ...styles) {
 
 
 export const Embed = {
-
     google(...namelinkpair) {
         const EMBED = "/preview?pli=1";
     
@@ -99,7 +98,7 @@ export function image(src, alt, {type = null} = {}) {
 }
 
 export function figure(content, caption) {
-    const FIGCAPTION = setattr(document.createElement("figcaption"), {textContent: caption});
+    const FIGCAPTION = setattr(document.createElement("figcaption"), {append: [caption]});
     const FIGURE = setattr(document.createElement("figure"), {toString: htmlString});
     return setattr(FIGURE, {append: [content, FIGCAPTION]});
 }
@@ -110,6 +109,11 @@ export function details(summary, content) {
     return setattr(DETAILS, {append: [SUMMARY, content]});
 }
 
+export function fragment(...nodes) {
+    const O = setattr(new DocumentFragment(), {append: nodes});
+    console.log(O)
+    return O;
+}
 
 
 

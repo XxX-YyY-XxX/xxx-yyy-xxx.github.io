@@ -30,5 +30,6 @@ type HTMLFigureElement = HTMLElement;
 
 type ImageType = "inline";
 export function image(src: string, alt: string, keys?: {type?: ImageType}): HTMLImageElement;
-export function figure(content: HTMLElement, caption: string): HTMLFigureElement;
+export function figure(content: HTMLElement, caption: string | DocumentFragment): HTMLFigureElement;
 export function details(summary: string, content: HTMLElement): HTMLDetailsElement;
+export function fragment(...nodes: (string | Node)[]): DocumentFragment;

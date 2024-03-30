@@ -3,7 +3,7 @@ import TextStyle from '../../univasset/scripts/htmlfunctions/textstyle.js';
 import MBD from '../../univasset/scripts/htmlfunctions/linkembed.js';
 import List from '../../univasset/scripts/htmlfunctions/lists.js';
 import {LESSEQUAL, STAR, TM} from "../../univasset/scripts/specialchars.js";
-import {Embed, image, figure, details} from "../../univasset/scripts/html/index.js";
+import {Embed, image, figure, details, fragment} from "../../univasset/scripts/html/index.js";
 
 const IMG_ASSET = "../assets/images/query/";
 
@@ -3714,7 +3714,7 @@ const CARDS = [
         question: `How do I stop my Kord/CMS/Dorothy from cycling through their skills?`,
         answer: `${figure(
             image(IMG_ASSET+"ForcedManual.png", "Forced Manual Toggle"),
-            `Off: ${image(IMG_ASSET+"FMOff.png", "Forced Manual Off", {type: "inline"})}, On: ${image(IMG_ASSET+"FMOn.png", "Forced Manual On", {type: "inline"})}`
+            fragment("Off: ", image(IMG_ASSET+"FMOff.png", "Forced Manual Off", {type: "inline"}), ", On: ", image(IMG_ASSET+"FMOn.png", "Forced Manual On", {type: "inline"}))
         )}
         ${link("Other dolls recommended to be put on forced manual.", "https://gamepress.gg/girlsfrontline/list-forced-manual-dolls")}`,
         tags: [dtag.TDOLL, dtag.SKILL]
