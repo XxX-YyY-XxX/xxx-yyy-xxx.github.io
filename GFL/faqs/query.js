@@ -1083,10 +1083,9 @@ const CARDS = [
         tags: [dtag.BM]
     },
     {
-        id: '00095',
+        id: 95,
         question: `Which dolls should I use for expedition?`,
-        answer: `${img('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/inline-images/expedition-advantaged-dolls_0.jpg', 'Taken from Gamepress')}<br>
-        Dummy links and skill levels are not taken into account.`,
+        answer: `${figure(image('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/inline-images/expedition-advantaged-dolls_0.jpg', "Expedition infograph."), "Dummy links and skill levels are not taken into account (Taken from Gamepress)")}`,
         tags: [dtag.EXPED, dtag.TDOLL]
     },
     {
