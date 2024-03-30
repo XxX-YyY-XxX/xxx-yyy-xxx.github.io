@@ -6,22 +6,22 @@
 }
 
 /* #region Tab Width */
-.tab-button > label:first-child,
+.tab-button > label:first-child:nth-last-child(2),
 .tab-button > label:first-child:nth-last-child(2) ~ label {
     flex: calc(100% / 2);
 }
 
-.tab-button > label:first-child,
+.tab-button > label:first-child:nth-last-child(3),
 .tab-button > label:first-child:nth-last-child(3) ~ label {
     flex: calc(100% / 3);
 }
 
-.tab-button > label:first-child,
+.tab-button > label:first-child:nth-last-child(4),
 .tab-button > label:first-child:nth-last-child(4) ~ label {
     flex: calc(100% / 4);
 }
 
-.tab-button > label:first-child,
+.tab-button > label:first-child:nth-last-child(5),
 .tab-button > label:first-child:nth-last-child(5) ~ label {
     flex: calc(100% / 5);
 }

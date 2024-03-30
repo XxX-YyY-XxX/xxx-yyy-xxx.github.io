@@ -110,7 +110,7 @@ export function details(summary, content) {
 
 export function fragment(...nodes) {
     const O = setattr(new DocumentFragment(), {append: nodes});
-    // console.log(O)
+    console.log(O?.toString())
     return O;
 }
 
