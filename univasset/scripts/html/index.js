@@ -5,7 +5,6 @@ function htmlString() {
     var output = this.outerHTML;
 
     for (const ELEMENT of this.children) {
-        console.log("htmlString:", ELEMENT.toString === htmlString, ", custom toString:", !ELEMENT.toString().startsWith("["))
         if (ELEMENT.toString().startsWith("[")) continue;
         output = output.replace(ELEMENT.outerHTML, ELEMENT.toString())
     }
@@ -111,7 +110,7 @@ export function details(summary, content) {
 
 export function fragment(...nodes) {
     const O = setattr(new DocumentFragment(), {append: nodes});
-    console.log(O)
+    // console.log(O)
     return O;
 }
 
