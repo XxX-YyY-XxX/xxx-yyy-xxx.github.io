@@ -2,10 +2,6 @@
 
 # Technical Help
 
-### My game is lagging. Is there a way to make this playable?
-
-> [Gamepress guide to fixing client lag.](https://gamepress.gg/girlsfrontline/fixing-gfl-client-lag-possible-workarounds)
-
 ### I lost my account. How do I get it back?
 
 > Costumer support. It might be easier to locate it if you did a purchase with that account.

@@ -28,10 +28,6 @@ export function table(headerArray, ...arrayOfArrays) {
     </table>`;
 }
 
-export function spoilerSummary(summaryName, details) {
-    return `<details><summary>${summaryName}</summary>${details}</details>`;
-}
-
 /** @param {string} hoverable @param {string | HTMLElement} tooltip */
 export function tooltip(hoverable, tooltip) {
     return `<span class="tooltip">${hoverable}<span class="tooltiptext">${tooltip}</span></span>`

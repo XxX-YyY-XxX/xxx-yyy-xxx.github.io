@@ -16,8 +16,6 @@
 > BSJ
 > - [Shield Fairy rework, DR ranking...](https://old.reddit.com/r/girlsfrontline/comments/t42t86/weekly_commanders_lounge_march_01_2022/hz9p3te/)
 >
-> - [Sniper Exodia.](https://old.reddit.com/r/girlsfrontline/comments/t9bw95/weekly_commanders_lounge_march_08_2022/i0fnsvx/)
->
 > - [No such thing as too much EVA, he says...](https://old.reddit.com/r/girlsfrontline/comments/r08976/weekly_commanders_lounge_november_23_2021/hm1ah4r/)
 >
 > - [Links dump 1.](https://old.reddit.com/r/girlsfrontline/comments/s17rwt/weekly_commanders_lounge_january_11_2022/ht46bxl/)
