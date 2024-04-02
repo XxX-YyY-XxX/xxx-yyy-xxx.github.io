@@ -1,10 +1,10 @@
 import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
-timer(
-   document.getElementById("event"),
-   "Mar 19, 2024 00:00 UTC-0800",
-   "./assets/images/timer/missionselect_2022WhiteValentine_base.png"
-);
+// timer(
+//    document.getElementById("event"),
+//    "Mar 19, 2024 00:00 UTC-0800",
+//    "./assets/images/timer/missionselect_2022WhiteValentine_base.png"
+// );
 
 timer(
     document.getElementById("battlepass"),
@@ -12,19 +12,19 @@ timer(
     "./assets/images/timer/rlmow78yk9mc1.webp",
     {onEnd: timer.bind(
         null, document.getElementById("battlepass"),
-        "",
-        "./assets/images/timer/.webp"
+        "May 13, 2024 00:00 UTC-0800",
+        "./assets/images/timer/.webp"   //calico
     )}
 );
 
 timer(
     document.getElementById("coalition"),
-    "Apr 02, 2024 00:00 UTC-0800",
-    "./assets/images/coalition/08Alchemist.webp", 
+    "Apr 30, 2024 00:00 UTC-0800",
+    "./assets/images/coalition/09Dreamer.webp", 
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
-        "Apr 30, 2024 00:00 UTC-0800",
-        "./assets/images/coalition/09Dreamer.webp"
+        "",
+        "./assets/images/coalition/.webp"
     )}
 );
 
@@ -39,16 +39,16 @@ timer(
     )}
 );
 
-timer(
-   document.getElementById('mini-event'),
-   "Apr 02, 2024 00:00 UTC-0800",
-   "./assets/images/timer/4ftc6rssqnnc1.webp",
-   {onEnd: timer.bind(
-        null, document.getElementById('mini-event'),
-        "",
-        "./assets/images/timer/.webp"
-   )}
-);
+// timer(
+//    document.getElementById('mini-event'),
+//    "Apr 02, 2024 00:00 UTC-0800",
+//    "./assets/images/timer/4ftc6rssqnnc1.webp",
+//    {onEnd: timer.bind(
+//         null, document.getElementById('mini-event'),
+//         "",
+//         "./assets/images/timer/.webp"
+//    )}
+// );
 
 //timer(document.getElementById('extra'), "",
 //    "");

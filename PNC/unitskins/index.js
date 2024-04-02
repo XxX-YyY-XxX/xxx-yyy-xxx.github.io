@@ -1,10 +1,12 @@
-import {cmp, enumerate} from "../../univasset/scripts/basefunctions/index.js";
+import {cmp, enumerate, setattr} from "../../univasset/scripts/basefunctions/index.js";
 import {Async, getTemplateCloner} from "../../univasset/scripts/externaljavascript.js";
 
 /** @type {Promise<string[]>} */ const BANNERS_PROMISE = Async.getJSON("./banners.json");
 /** @type {Promise<SkinData[]>} */ const SKINS_PROMISE = Async.getJSON("./skins.json");
 /** @type {Promise<UnitObject[]>} */ const UNITS_PROMISE = Async.getJSON("../units.json");
-/** @type {DocumentFragment} */ const EMPTY_CELL = document.querySelector("#empty-cell").content;
+/** @type {DocumentFragment} */ const EMPTY_CELL = setattr(document.createElement("td"), {classList: {add: ["hidden"]}});
+
+
 
 
 
@@ -111,6 +113,11 @@ class Matrix {
         }
         return [-1, -1];
     }
+
+
+    [Symbol.iterator]() {
+        
+    }
 };
 
 
@@ -121,11 +128,16 @@ class Matrix {
 
 
 
-const HEADER_TR = document.querySelector("thead > tr")
-for (const COLUMN_NAME of ["Agent", "Status", ...BANNERS]) {
+const HEADER_TR = document.querySelector("thead > tr");
+for (const [INDEX, COLUMN_NAME] of [[-1, "Agent"], [-1, "Status"], ...enumerate(BANNERS)]) {
     const TH = document.createElement("th");
-    // clickable
     TH.textContent = COLUMN_NAME;
+    if (INDEX !== -1) {
+        TH.dataset.index = INDEX;
+        TH.addEventListener("click", function(event) {
+        
+        })
+    }
     HEADER_TR.appendChild(TH)
 }
 
@@ -133,6 +145,7 @@ const SKIN_TEMPLATE = getTemplateCloner("#skin-cell");
 const MATRIX = new Matrix(BANNERS, (await UNITS_PROMISE).filter(x => !x.tags.includes("Unreleased")).sort(cmp({key: x => x.id})).map(x => x.name));
 for (const SKIN of await SKINS_PROMISE) {
     const [X, Y] = MATRIX.cell(SKIN.name, SKIN.banner);
+    new Skin(SKIN)
 }
 
 

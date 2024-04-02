@@ -1,3 +1,10 @@
 @import "/main.css";
 @import "/univasset/scripts/tooltip.css";
 @import "/univasset/scripts/table.css";
+
+#table {
+    height: fit-content;
+    max-height: 95lvh;
+    overflow: scroll;
+    overscroll-behavior: contain;
+}
