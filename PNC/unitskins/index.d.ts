@@ -5,5 +5,6 @@ interface SkinData {
     unit: string,
     banner: string,
     cost: string,
-    tags: SkinTag[]
+    tags: SkinTag[],
+    notes: string[]
 }

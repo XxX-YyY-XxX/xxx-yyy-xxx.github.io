@@ -4,11 +4,8 @@ import {Async, getTemplateCloner} from "../../univasset/scripts/externaljavascri
 /** @type {Promise<string[]>} */ const BANNERS_PROMISE = Async.getJSON("./banners.json");
 /** @type {Promise<SkinData[]>} */ const SKINS_PROMISE = Async.getJSON("./skins.json");
 /** @type {Promise<UnitObject[]>} */ const UNITS_PROMISE = Async.getJSON("../units.json");
-/** @type {DocumentFragment} */ const EMPTY_CELL = setattr(document.createElement("td"), {classList: {add: ["hidden"]}});
 
-
-
-
+const MARKER_SAVE = new (class {})()
 
 
 
@@ -37,7 +34,7 @@ import {Async, getTemplateCloner} from "../../univasset/scripts/externaljavascri
 
 
 class Unit {
-    #SKINS;
+    /** @type {Skin[]} */ #SKINS;
 
     /** @param {string} name */
     constructor(name) {
@@ -47,25 +44,64 @@ class Unit {
         this.row = document.createElement("tr");
     }
 
-    /** @param {SkinData} skin */
+    /** @param {Skin} skin */
     addSkin(skin) {
         const INDEX = BANNERS.indexOf(skin.banner);
-        this.#SKINS[INDEX] = null;
+        this.#SKINS[INDEX] = skin.html;
     }
 }
 
-// class Skin {
-//     /** @param {SkinData} skin_object */
-//     constructor(skin_object) {
-//         this.name = skin_object.name;
-//         this.unit = skin_object.unit;
-//         this.banner = skin_object.banner;
-//         this.cost = skin_object.cost;
-//         this.tags = skin_object.tags;
+const SKIN_WINDOW = document.querySelector("dialog");
+const SKIN_IMAGE = SKIN_WINDOW.querySelector("img");
+/** @type {HTMLDivElement} */ const SKIN_NAME = SKIN_WINDOW.querySelector("#name")
+/** @type {HTMLDivElement} */ const SKIN_COST = SKIN_WINDOW.querySelector("#name")
+const SKIN_TAGS = SKIN_WINDOW.querySelector("ul")
+const SKIN_NOTE = SKIN_WINDOW.querySelector("ol")
 
-//         this.html = null;
-//     }
-// }
+SKIN_WINDOW.addEventListener("close", function(event) {
+    SKIN_IMAGE.src = "";
+    SKIN_IMAGE.alt = "";
+    SKIN_NAME.textContent = "";
+    SKIN_COST.textContent = "";
+    SKIN_TAGS.replaceChildren();
+    SKIN_NOTE.replaceChildren();
+})
+
+class Skin {
+    static {
+
+    }
+
+    /** @param {SkinData} skin_object */
+    constructor(skin_object) {
+        this.name = skin_object.name;
+        this.unit = skin_object.unit;
+        this.banner = skin_object.banner;
+        this.cost = skin_object.cost;
+        this.tags = skin_object.tags;
+
+        // background change depending on acquisition status
+        this.html = document.createElement("td");
+        this.html.textContent = skin_object.name;
+        this.html.addEventListener("click", function(event) {
+            SKIN_IMAGE.src = skin_object.name.replace(" ", "") + ".png";
+            SKIN_IMAGE.alt = skin_object.name;
+            SKIN_NAME.textContent = skin_object.name;
+            SKIN_COST.textContent = skin_object.cost;
+            for (const TAG of skin_object.tags) {
+                const LI = document.createElement("li")
+                LI.textContent = TAG
+                SKIN_TAGS.appendChild(LI)
+            }
+            for (const NOTE of skin_object.notes) {
+                const LI = document.createElement("li")
+                LI.textContent = NOTE
+                SKIN_NOTE.appendChild(LI)                
+            }
+            SKIN_WINDOW.showModal()
+        })
+    }
+}
 
 
 
@@ -141,6 +177,7 @@ for (const [INDEX, COLUMN_NAME] of [[-1, "Agent"], [-1, "Status"], ...enumerate(
     HEADER_TR.appendChild(TH)
 }
 
+const _emptyCell = {get html() {return document.createElement("td")}};
 const SKIN_TEMPLATE = getTemplateCloner("#skin-cell");
 const MATRIX = new Matrix(BANNERS, (await UNITS_PROMISE).filter(x => !x.tags.includes("Unreleased")).sort(cmp({key: x => x.id})).map(x => x.name));
 for (const SKIN of await SKINS_PROMISE) {
