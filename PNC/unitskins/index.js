@@ -22,28 +22,6 @@ const MATRIX = new (class {
 })();
 
 
-/** @template T */
-class Matrix {
-    /** @type {((T | undefined)[] | undefined)[]} */ #ARRAYS = [];
-
-    /** @param {typeof T} type */
-    constructor(type) {}
-
-    /** @param {number} x @param {number} y @param {T} value */
-    set(x, y, value) {
-        (this.#ARRAYS[y] ??= [])[x] = value;
-    }
-
-    *[Symbol.iterator]() {
-        for (const ARRAY of this.#ARRAYS)
-            yield iter(ARRAY ?? []);
-    }
-}
-
-
-
-
-
 
 
 
@@ -75,7 +53,6 @@ class Leader {
     /** @param {string} name */
     constructor(name) {
         this.name = name;
-        console.log(name)
 
         this.html = document.createElement("td");
         this.html.textContent = name;
@@ -95,7 +72,8 @@ class Skin {
     /** @type {HTMLDivElement} */ static #NAME = this.#WINDOW.querySelector("#name")
     /** @type {HTMLDivElement} */ static #COST = this.#WINDOW.querySelector("#cost")
     /** @type {HTMLUListElement} */ static #TAGS = this.#WINDOW.querySelector("#tags")
-    /** @type {HTMLUListElement} */ static #NOTE = this.#WINDOW.querySelector("ul")
+    /** @type {HTMLUListElement} */ static #NOTE = this.#WINDOW.querySelector("#note")
+    static #SELECT = this.#WINDOW.querySelector("select");
 
     static {
         this.#WINDOW.addEventListener("close", event => {
@@ -104,7 +82,7 @@ class Skin {
             this.#COST.textContent = "";
             this.#TAGS.replaceChildren();
             this.#NOTE.replaceChildren();
-            // select
+            this.#SELECT.selectedIndex = 0;
         });
     }
 
@@ -150,50 +128,6 @@ class Skin {
 
 
 
-// /** @template T */
-// class Matrix {
-//     /** @type {T[][]} */ #MATRIX;
-//     #HEADER;
-//     #LEADER;
-
-//     /** @param {string[]} headers @param {string[]} leaders */
-//     constructor(headers, leaders) {
-//         this.#MATRIX = [];
-//         this.#HEADER = headers;
-//         this.#LEADER = leaders;
-//     }
-
-//     /** @param {number} x @param {number} y @returns {T | undefined} */
-//     get(x, y) {
-//         const ROW = this.#MATRIX[y];
-//         if (ROW === undefined) return undefined;
-//         return ROW[x];
-//     }
-
-//     /** @param {number} x @param {number} y @param {T} value */
-//     set(x, y, value) {
-//         (this.#MATRIX[y] ??= [])[x] = value;
-//     }
-
-//     /** @param {string} row_value @param {string} column_value @returns {[x: number, y: number] | [null, null]} */
-//     cell(row_value, column_value) {
-        
-//         return [this.#HEADER.indexOf(column_value), this.#LEADER.indexOf(row_value)];
-//     }
-
-//     index(value) {
-//         for (const [Y, ROW] of enumerate(this.#MATRIX)) {
-//             const X = ROW.indexOf(value);
-//             if (X !== -1) return [X, Y];
-//         }
-//         return [-1, -1];
-//     }
-
-
-//     [Symbol.iterator]() {
-        
-//     }
-// };
 
 
 
@@ -215,7 +149,7 @@ for (const SKIN of (await SKINS_PROMISE).map(x => new Skin(x))) {
 }
 
 const TBODY = document.querySelector("tbody");
-for (const [LEAD, ARR] of zip(LEADERS, MATRIX, true)) {
+for (const [LEAD, ARR = []] of zip(LEADERS, MATRIX, true)) {
     const TR = document.createElement("tr");
     TR.appendChild(LEAD.html);
     for (const [, SKIN] of zip(HEADERS, ARR, true))
