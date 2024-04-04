@@ -1,10 +1,92 @@
 [
     {
-        "name": "",
-        "unit": "",
-        "banner": "",
-        "cost": "",
-        "tags": [],
+        "name": "Afternoon Nap",
+        "image": "",
+        "unit": "Persicaria",
+        "banner": "Once upon a Time in Magrasea",
+        "cost": "Free",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "Mysterious Warrior S",
+        "image": "",
+        "unit": "Sol",
+        "banner": "Once upon a Time in Magrasea",
+        "cost": "Free",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "Queen of Flowers",
+        "image": "",
+        "unit": "Angela",
+        "banner": "Windborne Bouquet",
+        "cost": "58 Fashion Vouchers",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "Queen of Flowers",
+        "image": "",
+        "unit": "Angela",
+        "banner": "Windborne Bouquet",
+        "cost": "58 Fashion Vouchers",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "???",
+        "image": "",
+        "unit": "Betty",
+        "banner": "Windborne Bouquet",
+        "cost": "???",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "Graceful Melody",
+        "image": "",
+        "unit": "Nanaka",
+        "banner": "Windborne Bouquet",
+        "cost": "78 Fashion Vouchers",
+        "tags": ["Chibi", "Live2D"],
+        "notes": []
+    },
+    {
+        "name": "Blazing Skyrocket",
+        "image": "",
+        "unit": "Octogen",
+        "banner": "Windborne Bouquet",
+        "cost": "58 Fashion Vouchers",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "Fragrant Cinnabar",
+        "image": "",
+        "unit": "Daiyan",
+        "banner": "Windborne Bouquet",
+        "cost": "78 Fashion Vouchers",
+        "tags": ["Chibi", "Live2D"],
+        "notes": []
+    },
+    {
+        "name": "???",
+        "image": "",
+        "unit": "Clotho",
+        "banner": "Windborne Bouquet",
+        "cost": "???",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "???",
+        "image": "",
+        "unit": "Eos",
+        "banner": "Windborne Bouquet",
+        "cost": "???",
+        "tags": ["Chibi"],
         "notes": []
     }
 ]

@@ -36,12 +36,15 @@
                     <table class="freeze-col freeze-row">
                         <!-- name, status, skins -->
                         <thead>
-                            <tr></tr>
+                            <tr>
+                                <th>Agent</th>
+                            </tr>
                         </thead>
                         <tbody></tbody>
                     </table>
                 </div>
-                <h5>Previous databases:</h5>
+                <br>
+                <h3>Previous databases:</h3>
                 <a href="https://neuralen.modoo.at/" class="tooltip" target="_blank">NC Skin info<span class="tooltiptext">Managed by Pineapple</span></a>
                 <br>
                 <a href="https://docs.google.com/spreadsheets/d/1pUMySKTl-rp1PGwUENAHN7PxEcL8rTVTGjZ6MLxMBtU">PNC Neural Cloud Projections</a>
@@ -49,16 +52,16 @@
         </div>
     </body>
 
-    <dialog>
+    <dialog id="skin-dialog">
         <img src="" alt="">
         <div id="name"></div>
         <div id="cost"></div>
-        <ul></ul>
+        <ul id="tags"></ul>
         <select>
             <option value="available">Available</option>
             <option value="wishlist">Wishlist</option>
             <option value="obtained">Obtained</option>
         </select>
-        <ol></ol>
+        <ul id="note"></ul>
     </dialog>
 </html>

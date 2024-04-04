@@ -53,41 +53,48 @@ window.queryFunc = function() {
         /** @type {HTMLInputElement} */ TAG: document.querySelector('.tab-button [value="Tags"]'),
         /** @type {HTMLInputElement} */ BWS: document.querySelector('.tab-button [value="Browse"]')
     }
-    const CHANGE = new Event("change");
-    var current_checked = BUTTON.KEY;
 
-    /** @type {HTMLInputElement} */ const TEXT_FIELD = document.querySelector(`#Keywords [type="text"]`);
-    BUTTON.KEY.addEventListener("change", function(event) {
-        if (event.isTrusted) {
-            if (current_checked === this) return;
-            current_checked.dispatchEvent(CHANGE);
-            current_checked = this;
+    class RadioSwitch {
+        #EVENT = new Event("change");
+        #CURRENT;
+
+        /** @param {HTMLInputElement} current_checked */
+        constructor(current_checked) {
+            this.#CURRENT = current_checked;
         }
 
+        /**
+         * @param {HTMLInputElement} input
+         * @param {function(this: HTMLInputElement, Event): void} func */
+        apply = (input, func = () => {}) => {
+            input.addEventListener("change", event => {
+                if (event.isTrusted) {  // To check if user input or programmatic
+                    if (this.#CURRENT === input) return;
+                    this.#CURRENT.dispatchEvent(this.#EVENT);
+                    this.#CURRENT = input;
+                }
+        
+                func.call(input, event);
+            })
+        }
+    }
+
+    const CHANGE = new RadioSwitch(BUTTON.KEY);
+
+    /** @type {HTMLInputElement} */ const TEXT_FIELD = document.querySelector(`#Keywords [type="text"]`);
+    CHANGE.apply(BUTTON.KEY, function(event) {
         if (!this.checked) TEXT_FIELD.value = "";
     });
 
-    BUTTON.TAG.addEventListener("change", function(event) {
-        if (event.isTrusted) {
-            if (current_checked === this) return;
-            current_checked.dispatchEvent(CHANGE);
-            current_checked = this;
-        }
-
+    CHANGE.apply(BUTTON.TAG, function(event) {
         if (!this.checked) {
             TAGS_TEXT.value = "";
-            for (const INPUT_TRUE of TAG_CHECKBOXES.filter(input => input.checked))
+            for (const INPUT_TRUE of TAG_CHECKBOXES.filter(x => x.checked))
                 INPUT_TRUE.checked = false;
         }
     });
 
-    BUTTON.BWS.addEventListener("change", function(event) {
-        if (event.isTrusted) {
-            if (current_checked === this) return;
-            current_checked.dispatchEvent(CHANGE);
-            current_checked = this;
-        }
-    });
+    CHANGE.apply(BUTTON.BWS);
     //#endregion
 
     //#region Card Creation

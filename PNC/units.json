@@ -965,7 +965,7 @@
         "id": 1008,
         "name": "Gin",
         "class": "Medic",
-        "reference": {},
+        "reference": {"Gin": "https://en.wikipedia.org/wiki/Gin"},
         "fragments": ["Neural Kits", "Intimacy", "Fragment Search", "Basic Search", "Exception Protocol", "Pierides Sector"],
         "base": {
             "hp": 10693,
@@ -2143,6 +2143,7 @@
     },
 
     {
+        "id": 1060,
         "name" : "Dupin (X)",
         "reference" : {"C. Auguste Dupin" : "https://en.wikipedia.org/wiki/C._Auguste_Dupin"},
         "fragments" : ["Fragment Search"],
@@ -2150,62 +2151,80 @@
         "tags": ["Unreleased"]
     },
     {
+        "id": 1072,
         "name" : "Xinghuan",
         "reference" : {"" : ""},
         "tags": ["Unreleased"]
     },
     {
+        "id": 1073,
         "name" : "Yuwang",
         "reference" : {"" : ""},
         "tags": ["Unreleased"]
     },
     {
+        "id": 1071,
         "name" : "Persicaria - Shining Edge",
         "reference" : {"" : ""},
         "tags": ["Unreleased"]
     },
     {
+        "id": 1074,
         "name" : "Hubble - Death Star",
         "reference" : {"" : ""},
         "tags": ["Unreleased"]
     },
     {
+        "id": 1075,
         "name" : "Kimie",
         "reference" : {"" : ""},
         "tags": ["Unreleased"]
     },
     {
+        "id": 1079,
         "name" : "Penumbra",
         "reference" : {"" : ""},
         "tags": ["Unreleased"]
     },
     {
+        "id": 1076,
         "name" : "Okabe",
         "reference" : {"sg" : ""},
         "tags": ["Unreleased"]
     },
     {
+        "id": 1078,
         "name" : "Kurisu",
         "reference" : {"sg" : ""},
         "tags": ["Unreleased"]
     },
     {
+        "id": 1077,
         "name" : "Mayuri",
         "reference" : {"sg" : ""},
         "tags": ["Unreleased"]
     },
     {
+        "id": 1081,
         "name" : "Tony",
         "reference" : {"" : ""},
         "tags": ["Unreleased"]
     },
     {
+        "id": 1080,
         "name" : "Centaureissi - Unbound Wings",
         "reference" : {"" : ""},
         "tags": ["Unreleased"]
     },
     {
+        "id": 1082,
         "name" : "Bonneville",
+        "reference" : {"" : ""},
+        "tags": ["Unreleased"]
+    },
+    {
+        "id": 0,
+        "name" : "Shale",
         "reference" : {"" : ""},
         "tags": ["Unreleased"]
     }

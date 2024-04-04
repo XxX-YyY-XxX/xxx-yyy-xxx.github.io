@@ -8,12 +8,12 @@ import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
 timer(
     document.getElementById("battlepass"),
-    "Apr 09, 2024 00:00 UTC-0800",
+    "Apr 08, 2024 00:00 UTC-0800",
     "./assets/images/timer/rlmow78yk9mc1.webp",
     {onEnd: timer.bind(
         null, document.getElementById("battlepass"),
         "May 13, 2024 00:00 UTC-0800",
-        "./assets/images/timer/.webp"   //calico
+        "./assets/images/timer/y3whg0yup7sc1.webp"   //calico
     )}
 );
 
