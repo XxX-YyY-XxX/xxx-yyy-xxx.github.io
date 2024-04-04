@@ -15,7 +15,7 @@
         "banner": "Once upon a Time in Magrasea",
         "cost": "Free",
         "tags": ["Chibi"],
-        "notes": []
+        "notes": ["Inverted Mordent Resonance"]
     },
     {
         "name": "Queen of Flowers",
@@ -86,6 +86,195 @@
         "unit": "Eos",
         "banner": "Windborne Bouquet",
         "cost": "???",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "First Command",
+        "image": "",
+        "unit": "Antonina",
+        "banner": "Awakening",
+        "cost": "68 Gestalt Aspects",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "Initium Mechanica",
+        "image": "",
+        "unit": "Croque",
+        "banner": "Awakening",
+        "cost": "68 Gestalt Aspects",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "Warm Breeze",
+        "image": "",
+        "unit": "Mai",
+        "banner": "Awakening",
+        "cost": "Free",
+        "tags": ["Chibi"],
+        "notes": ["Balmy Splendor"]
+    },
+    {
+        "name": "???",
+        "image": "",
+        "unit": "Evelyn",
+        "banner": "Awakening",
+        "cost": "",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "Low Frequency Induction α",
+        "image": "",
+        "unit": "Max",
+        "banner": "Awakening",
+        "cost": "68 Gestalt Aspects",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "???",
+        "image": "",
+        "unit": "Panakeia",
+        "banner": "Awakening",
+        "cost": "",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "???",
+        "image": "",
+        "unit": "Angela",
+        "banner": "Awakening",
+        "cost": "",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "Eclosion Glow",
+        "image": "",
+        "unit": "Florence",
+        "banner": "Awakening",
+        "cost": "68 Gestalt Aspects",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "Unsheathed Edge",
+        "image": "",
+        "unit": "Aki",
+        "banner": "Awakening",
+        "cost": "68 Gestalt Aspects",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "Sparkling ♪ Prelude",
+        "image": "",
+        "unit": "Nanaka",
+        "banner": "Awakening",
+        "cost": "68 Gestalt Aspects",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "Day of Reincarnation",
+        "image": "",
+        "unit": "Imhotep",
+        "banner": "Awakening",
+        "cost": "68 Gestalt Aspects",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "Unnatural Awakening",
+        "image": "",
+        "unit": "Rise",
+        "banner": "Awakening",
+        "cost": "68 Gestalt Aspects",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "Birth of Logos",
+        "image": "",
+        "unit": "Lam",
+        "banner": "Awakening",
+        "cost": "Free",
+        "tags": ["Chibi"],
+        "notes": ["Entropic Dichotomy"]
+    },
+    {
+        "name": "Astral Brilliance",
+        "image": "",
+        "unit": "Hubble",
+        "banner": "Awakening",
+        "cost": "68 Gestalt Aspects",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "First Glimpse of Sky",
+        "image": "",
+        "unit": "Centaureissi",
+        "banner": "Awakening",
+        "cost": "68 Gestalt Aspects",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "Vernal Chords",
+        "image": "",
+        "unit": "Daiyan",
+        "banner": "Awakening",
+        "cost": "68 Gestalt Aspects",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "Flame-Baptised Steel",
+        "image": "",
+        "unit": "Magnhilda",
+        "banner": "Awakening",
+        "cost": "68 Gestalt Aspects",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "Newborn Fledgling",
+        "image": "",
+        "unit": "Helix",
+        "banner": "Awakening",
+        "cost": "68 Gestalt Aspects",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "Dreamy Aroma",
+        "image": "",
+        "unit": "Millau",
+        "banner": "Awakening",
+        "cost": "68 Gestalt Aspects",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "Waking Moonlight",
+        "image": "",
+        "unit": "Yelena",
+        "banner": "Awakening",
+        "cost": "68 Gestalt Aspects",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "",
+        "image": "",
+        "unit": "",
+        "banner": "",
+        "cost": "",
         "tags": ["Chibi"],
         "notes": []
     }

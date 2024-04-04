@@ -6,4 +6,27 @@
     max-height: 95lvh;
     overflow: scroll;
     overscroll-behavior: contain;
+    white-space: nowrap;
 }
+
+tr > :first-child ~ * {
+    text-align: center;
+}
+
+/* #region Freeze */
+.freeze-row th {
+    background: #151515 url("/assets/images/bkg.png") 0 0;
+}
+
+.freeze-col tr > :first-child {
+    border-right: 1px dashed #b5e853;
+}
+
+.freeze-col tbody > tr:nth-child(odd) > td:first-child {
+    background: #151515 url("/assets/images/bkg.png") 0 0;
+}
+
+.freeze-col tbody > tr:nth-child(even) > td:first-child {
+    background: #292f20;
+}
+/* #endregion */

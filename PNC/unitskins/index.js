@@ -75,6 +75,7 @@ class Leader {
     /** @param {string} name */
     constructor(name) {
         this.name = name;
+        console.log(name)
 
         this.html = document.createElement("td");
         this.html.textContent = name;
