@@ -1,4 +1,6 @@
 export {cmp as compare, setattr as setAttr} from "./basefunctions/index.js";
+import {Random} from "./basefunctions/index.js";
+export const randInt = Random.integer;
 
 //#region Constants
 /** Close to zero value. */
@@ -116,12 +118,6 @@ export function removeHTMLTag(htmlString) {
     return htmlString.replace(/<[^>]+>/ig, "");
 }
 
-/** @param {number} min Inclusive @param {number} max Exclusive */
-export function randInt(min, max) {
-    //Math.random() = [0...1)
-    return Math.floor(Math.random() * (max - min)) + min;
-}
-
 /** @param {string} path @returns {[string, string]} basename, extension */
 export function splitExt(path) {
     //remove base url to prevent false positive
@@ -149,30 +145,6 @@ export function getTemplateCloner(template_query) {
 //#endregion
 
 //#region Trial
-/** Creates a two-dimensional array.
- * @param {Object} title Occupies index (0, 0) of the table.
- * @param {Array} header Ordered from left to right.
- * @param {Array} leader Ordered from top to bottom.
- * @param {Array} data Objects to populate the matrix.
- * @param {function(Object): [Object, Object]} key Return [x_key(same as in headers), y_key(same as in leaders)].
- * @param {function(Object): Object} headkey Return object that would be used for population reference.
- * @param {function(Object): Object} leadkey Return object that would be used for population reference. */
-function matrix(title, header, leader, data, key, headkey = x => x, leadkey = x => x) {
-    const base_array = [[title, ...header]];
-
-    const x_len = header.length;
-    for (const item of leader) base_array.push([item, ...Array(x_len).fill('')]);
-
-    const head_copy = header.map(headkey);
-    const lead_copy = leader.map(leadkey);
-    for (const item of data) {
-        const [x_axis, y_axis] = key(item);
-        base_array[lead_copy.indexOf(y_axis) + 1][head_copy.indexOf(x_axis) + 1] = item;
-    }
-
-    return base_array;
-}
-
 /** Adds memoization to function.
  * @template {function} T
  * @param {T} func

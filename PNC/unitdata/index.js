@@ -53,9 +53,7 @@ class Units {
 
 const UNIT_LIST = (await UNIT_PROMISE).filter(({tags}) => !tags.includes("Unreleased")).sort(cmp({key: x => x.id})).map(x => new Units(x));
 
-const [THEAD, HEADER_TR] = nestElements("thead", "tr");
+/** @type {HTMLTableRowElement} */ const HEADER_TR = document.querySelector("thead > tr")
 HEADER_TR.append(...Units.HEADERS.map(x => setattr(document.createElement("th"), {textContent: x})));
 
-const TBODY = setattr(document.createElement("tbody"), {append: UNIT_LIST.map(x => x.ROW)});
-const TABLE = setattr(document.createElement("table"), {classList: {add: ["freeze-col", "freeze-row"]}, append: [THEAD, TBODY]});
-setattr(document.querySelector("#table"), {classList: {add: ["func_table"]}, appendChild: [TABLE]});
+const TBODY = setattr(document.querySelector("tbody"), {append: UNIT_LIST.map(x => x.ROW)});

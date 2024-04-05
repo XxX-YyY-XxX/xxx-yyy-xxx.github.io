@@ -4,13 +4,7 @@
 
 #table {
     --bkg-color: #151515;
-}
-
-.func_table {
-    height: fit-content;
     max-height: 95lvh;
-    overflow: scroll;
-    overscroll-behavior: contain;
 }
 
 input[type="checkbox"], input[type="radio"] {

@@ -1,7 +1,8 @@
 /* @import "/assets/css/style.css?v=2d3b5126dd9bdaf552f3aef918356c51b10c15a9"; */
-@layer pseudo-agent, classes, special, link-header;
+@layer pseudo-agent, include, classes, special, link-header;
 
 @import "/univasset/scripts/pageheader/header.css" layer(link-header);
+@import "/univasset/scripts/include/index.css" layer(include);
 
 @layer pseudo-agent {
 	/* #region Body */
@@ -122,24 +123,25 @@
 		margin: 0;
 	}
 
+	:has(> table:only-child) {
+		height: fit-content;	/* might remove */
+		overflow: auto;
+		overscroll-behavior: contain;
+	}
+
 	th {
 		text-align: left;
 		border-bottom: 1px dashed #b5e853;
-		padding: 5px 10px;
 	}
 
 	tr:nth-child(even) {
 		background-color: rgba(85, 107, 47, 0.25);
 	}
 
-	td {
+	th, td {
 		padding: 5px 10px;
 	}
 	/* #endregion */
-
-	include {
-		display: none;
-	}
 }
 
 @layer classes {

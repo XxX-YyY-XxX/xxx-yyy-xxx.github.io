@@ -1,5 +1,5 @@
-import {removeHTMLTag, randInt, getTemplateCloner} from "../externaljavascript.js";
-import {cmp, range, setattr} from "../basefunctions/index.js";
+import {removeHTMLTag, getTemplateCloner} from "../externaljavascript.js";
+import {Random, cmp, range, setattr} from "../basefunctions/index.js";
 
 // /** Checks if the element is interacted by the user. 
 //  * @param {Event} event 
@@ -144,7 +144,7 @@ window.queryFunc = function() {
 
             {
                 const LENGTH = CARD_ARRAY.length, /** @type {Set<number>} */ INDICES = new Set();
-                do INDICES.add(randInt(0, LENGTH));
+                do INDICES.add(Random.integer(0, LENGTH));
                 while (INDICES.size < 5);
                 return boxFrag(Array.from(INDICES).map(x => CARD_ARRAY[x]));
             }

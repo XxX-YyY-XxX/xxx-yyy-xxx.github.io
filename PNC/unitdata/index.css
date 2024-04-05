@@ -1,11 +1,8 @@
 @import "/main.css";
 @import "/univasset/scripts/table.css";
 
-.func_table {
-    height: fit-content;
+#table {
     max-height: 95lvh;
-    overflow: scroll;
-    overscroll-behavior: contain;
 }
 
 table {

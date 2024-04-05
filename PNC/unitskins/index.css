@@ -3,10 +3,7 @@
 @import "/univasset/scripts/table.css";
 
 #table {
-    height: fit-content;
     max-height: 95lvh;
-    overflow: scroll;
-    overscroll-behavior: contain;
     white-space: nowrap;
 }
 
