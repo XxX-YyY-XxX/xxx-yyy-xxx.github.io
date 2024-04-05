@@ -86,17 +86,17 @@ class Skin {
         });
     }
 
-    /** @param {SkinData} skin_object */
-    constructor(skin_object) {
-        this.name = skin_object.name;
-        this.unit = skin_object.unit;
-        this.banner = skin_object.banner;
-        this.cost = skin_object.cost;
-        this.tags = skin_object.tags;
+    /** @param {SkinData} skinobj */
+    constructor(skinobj) {
+        this.name = skinobj.name;
+        this.unit = skinobj.unit;
+        this.banner = skinobj.banner;
+        this.cost = skinobj.cost;
+        this.tags = skinobj.tags;
 
         // background change depending on acquisition status
         this.html = document.createElement("td");
-        this.html.textContent = skin_object.name;
+        this.html.textContent = skinobj.name;
         // this.html.addEventListener("click", function(event) {
         //     SKIN_IMAGE.src = skin_object.name.replace(" ", "") + ".png";
         //     SKIN_IMAGE.alt = skin_object.name;

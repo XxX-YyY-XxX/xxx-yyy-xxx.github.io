@@ -269,7 +269,10 @@ class Units {
         if (this.#intistats.length !== 3) MISSING.push("Intimacy")
 
         const TD_NAME = document.createElement("td");
-        TD_NAME.addEventListener("click", this.#algofield.show);
+        TD_NAME.addEventListener("click", event => {
+            this.#algofield.show();
+            this.#algofilter.show();
+        });
         if (this.#hasarma) {
             // change alt to arma name?
             const IMAGE = image(`../assets/images/arma/${this.name.replace(" ", "")}.png`, `${this.name} arma.`);
@@ -320,7 +323,7 @@ class Units {
             TD_HBOOST.textContent = `${this[STAT_KEYS.HEALBOOST]}%`;
         }
         for (const BUTT of Object.values(BUTTON)) BUTT.addEventListener("change", _updateStat);
-        this.#algofield.onclose = _updateStat;
+        this.#algofield.stat_update = _updateStat;
         _updateStat()
 
         this.row = document.createElement("tr");

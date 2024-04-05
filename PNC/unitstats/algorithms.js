@@ -634,7 +634,7 @@ export class AlgoField {
 
     get info() {return ALGO_SAVE.get(this.#name).flat()}
 
-    onclose = function() {};
+    stat_update = function() {};
 
     /** @param {UnitObject} unit */
     constructor(unit) {
@@ -668,7 +668,7 @@ export class AlgoField {
         })();
     }
 
-    show = () => {
+    show() {
         AlgoField.#current = this;
 
         this.#algogrids ??= Array.from(zip(["Offense", "Stability", "Special"], this.#layout, ALGO_SAVE.get(this.#name))).map(([type, size, info]) => new AlgoGrid(type, Number(size), info));
@@ -691,7 +691,7 @@ export class AlgoField {
 
             ALGO_MODAL.removeEventListener("click", this.#close);
 
-            this.onclose();
+            this.stat_update();
             ALGO_MODAL.close();
             AlgoField.#current = null;
         }
@@ -757,7 +757,7 @@ export class AlgoFilter {
             ALGO_SELECT.firstElementChild.append(...this.#BUTTONS.filter(x => x.value !== AlgoFilter.#IMAGE.alt));
             ALGO_SELECT.classList.add("filtering");
             ALGO_SELECT.showModal();
-        }, true);
+        });
 
         ALGO_SELECT.addEventListener("close", function(event) {
             if (!this.classList.contains("filtering")) return;
@@ -773,8 +773,6 @@ export class AlgoFilter {
             }
 
             // change options depending on algo set
-
-            ALGO_SELECT.classList.remove("filtering");
         }, true);
 
         this.#RESET.addEventListener("click", () => {
@@ -792,20 +790,35 @@ export class AlgoFilter {
         }, true);
     }
 
+    #algo_update;
     /** @param {function("Remove" | AlgoSet, "" | MainAttributes, "" | SubAttributes, "" | SubAttributes): void} status_update */
     constructor(status_update) {
-        function update() {
+        this.#algo_update = function() {
             status_update(AlgoFilter.#IMAGE.alt, AlgoFilter.#MAIN.value, AlgoFilter.#SUB1.value, AlgoFilter.#SUB2.value);
         }
 
-        AlgoFilter.#BUTTON.addEventListener("click", event => ALGO_SELECT.addEventListener("close", update, {once: true, capture: true}), true);
-        for (const SELECT of [AlgoFilter.#MAIN, AlgoFilter.#SUB1, AlgoFilter.#SUB2]) SELECT.addEventListener("change", update, true);
-        AlgoFilter.#RESET.addEventListener("click", update, true);
+        AlgoFilter.#BUTTON.addEventListener("click", event => ALGO_SELECT.addEventListener("close", this.#algo_update, {once: true, capture: true}));
+        for (const SELECT of [AlgoFilter.#MAIN, AlgoFilter.#SUB1, AlgoFilter.#SUB2]) SELECT.addEventListener("change", this.#algo_update, true);
+        AlgoFilter.#RESET.addEventListener("click", this.#algo_update, true);
     }
 
-    /** @param {function(): void} func  */
+    show() {
+        ALGO_MODAL.addEventListener("close", event => {
+            this.#algo_update();
+            AlgoFilter.#table_update();
+        }, {once: true});
+    }
+
+    /** @type {function(): void} */ static #table_update;
+    /** @param {function(): void} func */
     static setTableUpdate(func) {
-        ALGO_SELECT.addEventListener("close", func)    // Capture (FIFO) -> Bubble (FILO)
+        this.#table_update = func;
+        // Filter - Algorithm
+        ALGO_SELECT.addEventListener("close", function(event) { // Capture (FIFO) -> Bubble (FILO)
+            if (!this.classList.contains("filtering")) return;
+            func();
+            ALGO_SELECT.classList.remove("filtering");
+        });
         for (const SELECT of [this.#MAIN, this.#SUB1, this.#SUB2]) SELECT.addEventListener("change", func);
         this.#RESET.addEventListener("click", func);
     }
