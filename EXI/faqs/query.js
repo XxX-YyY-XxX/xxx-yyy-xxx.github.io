@@ -38,6 +38,18 @@ window.cards = [
         answer: ``,
         tags: [dtag.MISC]
     },
+    {
+        id: 3,
+        question: `dummy 4`,
+        answer: ``,
+        tags: [dtag.MISC]
+    },
+    {
+        id: 4,
+        question: `dummy 5`,
+        answer: ``,
+        tags: [dtag.MISC]
+    },
     // {
     //     id: 0,
     //     question: ``,

@@ -124,7 +124,6 @@
 	}
 
 	:has(> table:only-child) {
-		height: fit-content;	/* might remove */
 		overflow: auto;
 		overscroll-behavior: contain;
 	}

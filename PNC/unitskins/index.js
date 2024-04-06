@@ -140,12 +140,10 @@ const LEADERS = (await UNITS_PROMISE).filter(x => x.id).sort(cmp({key: x => x.id
 
 document.querySelector("thead > tr").append(...HEADERS.map(x => x.html));
 
-for (const SKIN of (await SKINS_PROMISE).map(x => new Skin(x))) {
-    MATRIX.set(
-        HEADERS.map(x => x.name).indexOf(SKIN.banner),
-        LEADERS.map(x => x.name).indexOf(SKIN.unit),
-        SKIN
-    )
+{
+    const H = HEADERS.map(x => x.name), L = LEADERS.map(x => x.name);
+    for (const SKIN of (await SKINS_PROMISE).map(x => new Skin(x)))
+        MATRIX.set(H.indexOf(SKIN.banner), L.indexOf(SKIN.unit), SKIN)
 }
 
 const TBODY = document.querySelector("tbody");
