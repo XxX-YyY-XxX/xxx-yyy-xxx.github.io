@@ -1,0 +1,37 @@
+.tab-button {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    border-style: initial;
+}
+
+/* #region Tab Width */
+.tab-button > label:first-child:nth-last-child(2),
+.tab-button > label:first-child:nth-last-child(2) ~ label {
+    flex: calc(100% / 2);
+}
+
+.tab-button > label:first-child:nth-last-child(3),
+.tab-button > label:first-child:nth-last-child(3) ~ label {
+    flex: calc(100% / 3);
+}
+
+.tab-button > label:first-child:nth-last-child(4),
+.tab-button > label:first-child:nth-last-child(4) ~ label {
+    flex: calc(100% / 4);
+}
+
+.tab-button > label:first-child:nth-last-child(5),
+.tab-button > label:first-child:nth-last-child(5) ~ label {
+    flex: calc(100% / 5);
+}
+/* #endregion */
+
+.tab-button input {
+    appearance: none;
+    margin: 0;
+}
+
+.tab-body {
+    display: none;
+}

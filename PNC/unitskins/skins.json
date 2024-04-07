@@ -423,6 +423,42 @@
         "notes": []
     },
     {
+        "name": "Aquatic Fragrance",
+        "image": "",
+        "unit": "Souchun",
+        "banner": "Ocean Dance",
+        "cost": "58 Fashion Vouchers",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "Aquamarine Star",
+        "image": "",
+        "unit": "Panakeia",
+        "banner": "Ocean Dance",
+        "cost": "58 Fashion Vouchers",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "Bejeweled Coral",
+        "image": "",
+        "unit": "Chanzhi",
+        "banner": "Ocean Dance",
+        "cost": "78 Fashion Vouchers",
+        "tags": ["Chibi", "Live2D"],
+        "notes": []
+    },
+    {
+        "name": "Holiday Angler",
+        "image": "",
+        "unit": "Lam",
+        "banner": "Ocean Dance",
+        "cost": "58 Fashion Vouchers",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
         "name": "",
         "image": "",
         "unit": "",
