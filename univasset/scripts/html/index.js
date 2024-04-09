@@ -132,3 +132,11 @@ function anchor(content, href) {
     A.append(content)
     return A
 }
+
+function slider(params) {
+    const DIV = document.createElement("div");
+    const MINUS = document.createElement("button");
+    const PLUS = document.createElement("button");
+    const RANGE = document.createElement("input");
+    RANGE.type = "range";
+}

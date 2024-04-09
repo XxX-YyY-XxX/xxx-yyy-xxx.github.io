@@ -26,9 +26,14 @@
             </form>
     
             <form id="Browse" class="tab-body">
-                <include attr-max="maxpage">
-                    <input type="number" name="page" value="0" min="1" max="" />
-                </include>/<include key="maxpage"></include>
+                <div>
+                    <button type="button" onclick="page.value -= 1"></button>
+                    <include attr-max="maxpage">
+                        <!-- show :before on hover -->
+                        <input type="range" name="page" min="1" max="" value="0" />
+                    </include>
+                    <button type="button" onclick="page.value += 1"></button>
+                </div>
                 <input type="submit" />
             </form>
     
