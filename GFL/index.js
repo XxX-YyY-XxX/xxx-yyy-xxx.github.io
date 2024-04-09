@@ -8,12 +8,12 @@ import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
 timer(
     document.getElementById("battlepass"),
-    "Apr 08, 2024 00:00 UTC-0800",
-    "./assets/images/timer/rlmow78yk9mc1.webp",
+    "May 13, 2024 00:00 UTC-0800",
+    "./assets/images/timer/y3whg0yup7sc1.webp",
     {onEnd: timer.bind(
         null, document.getElementById("battlepass"),
-        "May 13, 2024 00:00 UTC-0800",
-        "./assets/images/timer/y3whg0yup7sc1.webp"   //calico
+        "",
+        "./assets/images/timer/.webp"
     )}
 );
 
@@ -34,8 +34,8 @@ timer(
     "https://iopwiki.com/images/d/d8/Doll_Garden_Login_Wallpaper.png",
     {onEnd: timer.bind(
         null, document.getElementById('skin-banner'),
-        "",
-        ""
+        "May 07, 2024 00:00 UTC-0800",
+        "https://iopwiki.com/images/thumb/0/0c/Maiden%27s_Afternoon_Prelude_Login_Wallpaper.jpg/800px-Maiden%27s_Afternoon_Prelude_Login_Wallpaper.jpg"
     )}
 );
 

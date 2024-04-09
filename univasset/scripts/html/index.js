@@ -109,9 +109,7 @@ export function details(summary, content) {
 }
 
 export function fragment(...nodes) {
-    const O = setattr(new DocumentFragment(), {append: nodes});
-    // console.log(O?.toString())
-    return O;
+    return setattr(new DocumentFragment(), {append: nodes});
 }
 
 
@@ -135,11 +133,20 @@ function anchor(content, href) {
 
 function slider(value, min, max) {
     const DIV = document.createElement("div");
-    const MINUS = document.createElement("button");
-    const PLUS = document.createElement("button");
+
     const RANGE = document.createElement("input");
     RANGE.type = "range";
 
+    const MINUS = document.createElement("button");
+    MINUS.addEventListener("click", function(event) {
+        RANGE.value -= 1;
+    })
+    const PLUS = document.createElement("button");
+    PLUS.addEventListener("click", function(event) {
+        RANGE.value += 1;
+    })
+
     DIV.append(MINUS, RANGE, PLUS)
+    DIV.classList.add("slider")
     return DIV
 }
