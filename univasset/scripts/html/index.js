@@ -133,10 +133,13 @@ function anchor(content, href) {
     return A
 }
 
-function slider(params) {
+function slider(value, min, max) {
     const DIV = document.createElement("div");
     const MINUS = document.createElement("button");
     const PLUS = document.createElement("button");
     const RANGE = document.createElement("input");
     RANGE.type = "range";
+
+    DIV.append(MINUS, RANGE, PLUS)
+    return DIV
 }
