@@ -459,6 +459,33 @@
         "notes": []
     },
     {
+        "name": "Fossilbusters",
+        "image": "",
+        "unit": "Fern",
+        "banner": "Theater Retro",
+        "cost": "68 Fashion Vouchers",
+        "tags": ["Chibi", "Animated"],
+        "notes": []
+    },
+    {
+        "name": "Phantom Music",
+        "image": "",
+        "unit": "Nanaka",
+        "banner": "Theater Retro",
+        "cost": "78 Fashion Vouchers",
+        "tags": ["Chibi", "Live2D"],
+        "notes": []
+    },
+    {
+        "name": "Warming Nocturnal",
+        "image": "",
+        "unit": "Sakuya",
+        "banner": "Theater Retro",
+        "cost": "78 Fashion Vouchers",
+        "tags": ["Chibi", "Live2D"],
+        "notes": []
+    },
+    {
         "name": "",
         "image": "",
         "unit": "",
