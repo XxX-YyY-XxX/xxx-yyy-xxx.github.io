@@ -148,13 +148,6 @@ window.queryFunc = function() {
                 }
             }
 
-            // {
-            //     const LENGTH = CARD_ARRAY.length, /** @type {Set<number>} */ INDICES = new Set();
-            //     do INDICES.add(Random.integer(0, LENGTH));
-            //     while (INDICES.size < 5);
-            //     return boxFrag(Array.from(INDICES).map(x => CARD_ARRAY[x]));
-            // }
-
             return boxFrag(Array.from(Random.iterpop(CARD_ARRAY, 5)));            
         })()
     );

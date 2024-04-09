@@ -26,13 +26,12 @@
             </form>
     
             <form id="Browse" class="tab-body">
-                <div>
-                    <button type="button" onclick="page.value -= 1"></button>
+                <div class="slider">
+                    <button type="button" onclick="page.value -= 1">-</button>
                     <include attr-max="maxpage">
-                        <!-- show :before on hover -->
                         <input type="range" name="page" min="1" max="" value="0" />
                     </include>
-                    <button type="button" onclick="page.value += 1"></button>
+                    <button type="button" onclick="page.value += 1">+</button>
                 </div>
                 <input type="submit" />
             </form>
