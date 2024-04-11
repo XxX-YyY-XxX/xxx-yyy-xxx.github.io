@@ -164,12 +164,20 @@ iframe[src*="www.youtube.com"], iframe[src*="streamable.com"] {
     gap: 1px;
 }
 
+.slider > button {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .slider::before {
     content: attr(value);
     opacity: 0;
     position: absolute;
     transition: 0.2s;
     width: 150px;
+    left: 50%;
     transform: translateX(-50%);
     bottom: 25px;
     padding: 0.5em;

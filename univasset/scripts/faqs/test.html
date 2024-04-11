@@ -26,12 +26,12 @@
             </form>
     
             <form id="Browse" class="tab-body">
-                <div class="slider">
-                    <button type="button" onclick="page.value -= 1">-</button>
+                <div class="slider" oninput="this.dataset.value = page.value">
+                    <button type="button" onclick="page.value = Number(page.value) - 1">-</button>
                     <include attr-max="maxpage">
-                        <input type="range" name="page" min="1" max="" value="0" />
+                        <input type="range" name="page" min="1" max="" value="0"/>
                     </include>
-                    <button type="button" onclick="page.value += 1">+</button>
+                    <button type="button" onclick="page.value = Number(page.value) + 1">+</button>
                 </div>
                 <input type="submit" />
             </form>

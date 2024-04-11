@@ -67,12 +67,12 @@ export const Embed = {
             /** @type {HTMLDivElement} */ const CLONE = this.cloneNode(true);
     
             CLONE.querySelector("select").setAttribute("onchange", "embedGoogleSelect(this)");
-            window.embedGoogleSelect ??= /** @param {HTMLSelectElement} select */ function(select) {
+            window.embedGoogleSelect ??= function(/**@type {HTMLSelectElement}*/select) {
                 select.parentElement.querySelector("iframe").src = select.value + EMBED;
             }
     
             CLONE.querySelector("button").setAttribute("onclick", "embedGoogleButton(this)");
-            window.embedGoogleButton ??= /** @param {HTMLButtonElement} button */ function(button) {
+            window.embedGoogleButton ??= function(/**@type {HTMLButtonElement}*/button) {
                 window.open(button.previousElementSibling.value);
             }
     
@@ -118,6 +118,28 @@ export function fragment(...nodes) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * 
  * @param {(string | Node)[]} content 
@@ -132,10 +154,14 @@ function anchor(content, href) {
 }
 
 function slider(value, min, max) {
-    const DIV = document.createElement("div");
-
     const RANGE = document.createElement("input");
     RANGE.type = "range";
+    RANGE.min = min;
+    RANGE.max = max;
+    RANGE.value = value;
+    RANGE.addEventListener("change", function(event) {
+        DIV.dataset.value = this.value;
+    })
 
     const MINUS = document.createElement("button");
     MINUS.addEventListener("click", function(event) {
@@ -146,7 +172,9 @@ function slider(value, min, max) {
         RANGE.value += 1;
     })
 
+    const DIV = document.createElement("div");
     DIV.append(MINUS, RANGE, PLUS)
     DIV.classList.add("slider")
+    DIV.dataset.value = value;
     return DIV
 }
