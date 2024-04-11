@@ -164,7 +164,7 @@ iframe[src*="www.youtube.com"], iframe[src*="streamable.com"] {
     gap: 1px;
 }
 
-.hori-slider > button {
+.slider > button {
     padding: 0;
     display: flex;
     justify-content: center;
