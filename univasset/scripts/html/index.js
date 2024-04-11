@@ -154,19 +154,26 @@ function anchor(content, href) {
 }
 
 function slider(value, min, max, {vertical = false} = {}) {
+    const CHANGE = new Event("change");
+
     const RANGE = document.createElement("input");
     RANGE.type = "range";
     RANGE.min = min;
     RANGE.max = max;
     RANGE.value = value;
+    RANGE.addEventListener("change", function(event) {
+        this.setAttribute("value", this.value);
+    })
 
     const MINUS = document.createElement("button");
     MINUS.addEventListener("click", function(event) {
         RANGE.value = Number(RANGE.value) - 1;
+        RANGE.dispatchEvent(CHANGE);
     })
     const PLUS = document.createElement("button");
     PLUS.addEventListener("click", function(event) {
         RANGE.value = Number(RANGE.value) + 1;
+        RANGE.dispatchEvent(CHANGE);
     })
 
     const DIV = document.createElement("div");

@@ -26,9 +26,13 @@
             </form>
     
             <form id="Browse" class="tab-body">
-                <include attr-max="maxpage">
-                    <input type="number" name="page" value="0" min="1" max="" />
-                </include>/<include key="maxpage"></include>
+                <div class="slider">
+                    <button type="button" onclick="page.value = Number(page.value) - 1; page.onchange()">-</button>
+                    <include attr-max="maxpage">
+                        <input type="range" name="page" min="1" max="" value="0" onchange="this.setAttribute('value', this.value)"/>
+                    </include>
+                    <button type="button" onclick="page.value = Number(page.value) + 1; page.onchange()">+</button>
+                </div>
                 <input type="submit" />
             </form>
     
