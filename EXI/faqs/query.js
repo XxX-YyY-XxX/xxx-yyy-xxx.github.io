@@ -50,6 +50,66 @@ window.cards = [
         answer: ``,
         tags: [dtag.MISC]
     },
+    {
+        id: 0,
+        question: `dummy 1`,
+        answer: ``,
+        tags: [dtag.MISC]
+    },
+    {
+        id: 1,
+        question: `dummy 2`,
+        answer: ``,
+        tags: [dtag.MISC]
+    },
+    {
+        id: 2,
+        question: `dummy 3`,
+        answer: ``,
+        tags: [dtag.MISC]
+    },
+    {
+        id: 3,
+        question: `dummy 4`,
+        answer: ``,
+        tags: [dtag.MISC]
+    },
+    {
+        id: 4,
+        question: `dummy 5`,
+        answer: ``,
+        tags: [dtag.MISC]
+    },
+    {
+        id: 0,
+        question: `dummy 1`,
+        answer: ``,
+        tags: [dtag.MISC]
+    },
+    {
+        id: 1,
+        question: `dummy 2`,
+        answer: ``,
+        tags: [dtag.MISC]
+    },
+    {
+        id: 2,
+        question: `dummy 3`,
+        answer: ``,
+        tags: [dtag.MISC]
+    },
+    {
+        id: 3,
+        question: `dummy 4`,
+        answer: ``,
+        tags: [dtag.MISC]
+    },
+    {
+        id: 4,
+        question: `dummy 5`,
+        answer: ``,
+        tags: [dtag.MISC]
+    },
     // {
     //     id: 0,
     //     question: ``,
