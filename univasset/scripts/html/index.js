@@ -153,24 +153,22 @@ function anchor(content, href) {
     return A
 }
 
-function slider(value, min, max, {vertical = false} = {}) {
+function slider(value, min, max, {vertical = false, name = ""} = {}) {
     const CHANGE = new Event("change");
 
-    const RANGE = document.createElement("input");
-    RANGE.type = "range";
-    RANGE.min = min;
-    RANGE.max = max;
-    RANGE.value = value;
-    RANGE.addEventListener("change", function(event) {
-        this.setAttribute("value", this.value);
-    })
+    const RANGE = setattr(document.createElement("input"), {type: "range", min: min, max: max, value: value});
+    RANGE.setAttribute("value", RANGE.value);
+    RANGE.addEventListener("change", function(event) {this.setAttribute("value", this.value)});
 
     const MINUS = document.createElement("button");
+    MINUS.textContent = "-";
     MINUS.addEventListener("click", function(event) {
         RANGE.value = Number(RANGE.value) - 1;
         RANGE.dispatchEvent(CHANGE);
     })
+
     const PLUS = document.createElement("button");
+    PLUS.textContent = "+";
     PLUS.addEventListener("click", function(event) {
         RANGE.value = Number(RANGE.value) + 1;
         RANGE.dispatchEvent(CHANGE);
@@ -179,5 +177,27 @@ function slider(value, min, max, {vertical = false} = {}) {
     const DIV = document.createElement("div");
     DIV.append(MINUS, RANGE, PLUS)
     DIV.classList.add("slider")
-    return DIV
+    DIV.toString = function() {
+        /** @type {HTMLDivElement} */ const CLONE = this.cloneNode(true);
+        
+        CLONE.querySelector("button:first-child").setAttribute("onclick", "sliderMinus(this)");
+        window.sliderMinus ??= function(/**@type {HTMLButtonElement}*/button) {
+            const SLIDER = button.nextElementSibling;
+            SLIDER.value = Number(SLIDER.value) - 1;
+            SLIDER.onchange();
+        }
+
+        CLONE.querySelector("input").setAttribute("onchange", "sliderSlide(this)");
+        window.sliderSlide ??= function(/**@type {HTMLInputElement}*/input) {
+            input.setAttribute("value", input.value);
+        }
+
+        CLONE.querySelector("button:last-child").setAttribute("onclick", "sliderPlus(this)");
+        window.sliderPlus ??= function(/**@type {HTMLButtonElement}*/button) {
+            const SLIDER = button.previousElementSibling;
+            SLIDER.value = Number(SLIDER.value) + 1;
+            SLIDER.onchange();
+        }
+    }
+    return DIV;
 }

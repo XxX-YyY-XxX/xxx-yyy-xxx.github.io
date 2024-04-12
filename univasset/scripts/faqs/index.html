@@ -1,6 +1,5 @@
 <!-- 
     subheader: page subheader/description
-    maxpage: number of items divided by 5
 -->
 
 <body>
@@ -28,9 +27,7 @@
             <form id="Browse" class="tab-body">
                 <div class="slider">
                     <button type="button" onclick="page.value = Number(page.value) - 1; page.onchange()">-</button>
-                    <include attr-max="maxpage">
-                        <input type="range" name="page" min="1" max="" value="0" onchange="this.setAttribute('value', this.value)"/>
-                    </include>
+                    <input type="range" name="page" min="1" max="" value="0" onchange="this.setAttribute('value', this.value)"/>
                     <button type="button" onclick="page.value = Number(page.value) + 1; page.onchange()">+</button>
                 </div>
                 <input type="submit" />

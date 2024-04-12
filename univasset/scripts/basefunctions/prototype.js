@@ -42,10 +42,11 @@ Object.defineProperty(Array.prototype, "subsetof", {
     /** @param {Array} main_array */
     value: function(main_array) {
         const COPY = main_array.slice();
-        for (const ITEM of this)
-            if (!COPY.remove(ITEM))
-                return false;
-        return true;
+        return this.every(x => COPY.remove(x));
+        // for (const ITEM of this)
+        //     if (!COPY.remove(ITEM))
+        //         return false;
+        // return true;
     }, writable: true, configurable: true, enumerable: true
 })
 //#endregion

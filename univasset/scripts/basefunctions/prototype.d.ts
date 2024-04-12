@@ -14,7 +14,7 @@ interface Array<T> {
     /** Removes the first occurence of the element from the array in-place. Returns true if value is removed, else returns false. */
     remove(value: T): boolean;
 
-    /** Checks if current array's elements are present in the given array. */
+    /** Checks if all elements in this array are present in the main array. */
     subsetof(main_array: T[]): boolean;
 
     /** Returns an object wherein its index is the instances present in the original array, stored in subarrays.*/

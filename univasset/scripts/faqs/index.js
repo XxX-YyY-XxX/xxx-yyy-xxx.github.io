@@ -124,9 +124,11 @@ window.queryFunc = function() {
     }
     //#endregion
 
+    /** @type {HTMLInputElement} */ const RANGE = document.querySelector('#Browse input[type="range"]');
+    RANGE.setAttribute("max", Math.ceil((window.cards.length) / 5));
     document.querySelector("#cards-field").append(
         (() => {
-            /** @type {Card[]} */ const CARD_ARRAY = window.cards;
+            /** @type {Card[]} */ const CARDS = window.cards;
 
             for (const [KEY, VALUE] of new URLSearchParams(location.search)) {
                 if (!VALUE) return "Empty field.";
@@ -134,23 +136,21 @@ window.queryFunc = function() {
                 switch (KEY) {
                     case "search":
                         const KEYWORDS = VALUE.replace(/\s+/, " ").toLowerCase().split(" ");
-                        return boxFrag(CARD_ARRAY.filter(x => KEYWORDS.every(str => [x.question, x.answer].some(y => removeHTMLTag(y).toLowerCase().includes(str)))));
+                        return boxFrag(CARDS.filter(x => KEYWORDS.every(str => [x.question, x.answer].some(y => removeHTMLTag(y).toLowerCase().includes(str)))));
                     case "tags":
                         const TAGS = VALUE.split(" ");
-                        return boxFrag(CARD_ARRAY.filter(x => TAGS.subsetof(x.tags.map(y => y.name))));
+                        return boxFrag(CARDS.filter(x => TAGS.subsetof(x.tags.map(y => y.name))));
                     case "page":
                         const PAGE = Number(VALUE), COUNT = PAGE * 5;
-                        setattr(document.querySelector('#Browse input[type="range"]'), {value: PAGE, onchange: []});
-                        return boxFrag(Array.from(range({start: COUNT - 5, stop: Math.min(COUNT, CARD_ARRAY.length)})).map(x => CARD_ARRAY[x]));
+                        setattr(RANGE, {value: PAGE, onchange: []});
+                        return boxFrag(CARDS.slice(COUNT - 5, Math.min(COUNT, CARDS.length)));
                     case "id":
                         const IDS = VALUE.split(" ").map(Number);
-                        return boxFrag(CARD_ARRAY.filter(x => IDS.includes(x.id)));
+                        return boxFrag(CARDS.filter(x => IDS.includes(x.id)));
                 }
             }
 
-            return boxFrag(Array.from(Random.iterpop(CARD_ARRAY, 5)));            
+            return boxFrag(Array.from(Random.iterpop(CARDS, 5)));            
         })()
     );
 }
-
-document.querySelector("include").setAttribute("maxpage", Math.ceil((window.cards.length) / 5));

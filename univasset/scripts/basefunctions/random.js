@@ -1,10 +1,10 @@
 export const unit = Math.random;
 
 export function integer(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
+    return Math.floor(unit() * (max - min)) + min;
 }
 
-function zeroMin(/**@type {number}*/max) {return Math.floor(Math.random() * max)}
+function zeroMin(/**@type {number}*/max) {return Math.floor(unit() * max)}
 
 export function* iterable(iterable, count = 1) {
     const ARRAY = Array.from(iterable);
