@@ -185,6 +185,7 @@ iframe[src*="www.youtube.com"], iframe[src*="streamable.com"] {
     border-radius: 0.25em;
     color: white;
     text-align: center;
+    pointer-events: none;
 }
 
 .slider:hover > input::before {
