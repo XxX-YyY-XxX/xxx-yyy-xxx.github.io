@@ -245,7 +245,7 @@
             "open": 69
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Risk Evasion Aid"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
         "id": 1011,
@@ -896,7 +896,7 @@
             "open": 47
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
-        "tags": []
+        "tags": ["Arma"]
     },
 
     {
@@ -2141,6 +2141,37 @@
         "intimacy": [],
         "tags": ["Unowned"]
     },
+    {
+        "id": 1075,
+        "name": "Kimie",
+        "class": "Medic",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
+        "base": {
+            "hp": 11652,
+            "atk": 438,
+            "hash": 643,
+            "pdef": 296,
+            "odef": 296,
+            "aspd": 110,
+            "crate": 10,
+            "ppen": 143,
+            "open": 143,
+            "dodge": 3,
+            "regen": 364
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": [],
+        "tags": ["Unowned", "Unreleased"]
+    },
 
     {
         "id": 1060,
@@ -2171,12 +2202,6 @@
     {
         "id": 1074,
         "name" : "Hubble - Death Star",
-        "reference" : {"" : ""},
-        "tags": ["Unreleased"]
-    },
-    {
-        "id": 1075,
-        "name" : "Kimie",
         "reference" : {"" : ""},
         "tags": ["Unreleased"]
     },
@@ -2223,7 +2248,7 @@
         "tags": ["Unreleased"]
     },
     {
-        "id": 0,
+        "id": 1083,
         "name" : "Shale",
         "reference" : {"" : ""},
         "tags": ["Unreleased"]

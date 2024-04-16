@@ -22,7 +22,7 @@
         "image": "",
         "unit": "Angela",
         "banner": "Windborne Bouquet",
-        "cost": "58 Fashion Vouchers",
+        "cost": "58 Projection Vouchers",
         "tags": ["Chibi"],
         "notes": []
     },
@@ -31,7 +31,7 @@
         "image": "",
         "unit": "Angela",
         "banner": "Windborne Bouquet",
-        "cost": "58 Fashion Vouchers",
+        "cost": "58 Projection Vouchers",
         "tags": ["Chibi"],
         "notes": []
     },
@@ -49,7 +49,7 @@
         "image": "",
         "unit": "Nanaka",
         "banner": "Windborne Bouquet",
-        "cost": "78 Fashion Vouchers",
+        "cost": "78 Projection Vouchers",
         "tags": ["Chibi", "Live2D"],
         "notes": []
     },
@@ -58,7 +58,7 @@
         "image": "",
         "unit": "Octogen",
         "banner": "Windborne Bouquet",
-        "cost": "58 Fashion Vouchers",
+        "cost": "58 Projection Vouchers",
         "tags": ["Chibi"],
         "notes": []
     },
@@ -67,7 +67,7 @@
         "image": "",
         "unit": "Daiyan",
         "banner": "Windborne Bouquet",
-        "cost": "78 Fashion Vouchers",
+        "cost": "78 Projection Vouchers",
         "tags": ["Chibi", "Live2D"],
         "notes": []
     },
@@ -391,7 +391,7 @@
         "image": "",
         "unit": "Banxsy",
         "banner": "Call of Study",
-        "cost": "58 Fashion Vouchers",
+        "cost": "58 Projection Vouchers",
         "tags": ["Chibi"],
         "notes": []
     },
@@ -400,7 +400,7 @@
         "image": "",
         "unit": "Bonee",
         "banner": "Call of Study",
-        "cost": "58 Fashion Vouchers",
+        "cost": "58 Projection Vouchers",
         "tags": ["Chibi"],
         "notes": []
     },
@@ -409,7 +409,7 @@
         "image": "",
         "unit": "Imhotep",
         "banner": "Call of Study",
-        "cost": "58 Fashion Vouchers",
+        "cost": "58 Projection Vouchers",
         "tags": ["Chibi"],
         "notes": []
     },
@@ -418,7 +418,7 @@
         "image": "",
         "unit": "Rise",
         "banner": "Call of Study",
-        "cost": "58 Fashion Vouchers",
+        "cost": "58 Projection Vouchers",
         "tags": ["Chibi"],
         "notes": []
     },
@@ -427,7 +427,7 @@
         "image": "",
         "unit": "Souchun",
         "banner": "Ocean Dance",
-        "cost": "58 Fashion Vouchers",
+        "cost": "58 Projection Vouchers",
         "tags": ["Chibi"],
         "notes": []
     },
@@ -436,7 +436,7 @@
         "image": "",
         "unit": "Panakeia",
         "banner": "Ocean Dance",
-        "cost": "58 Fashion Vouchers",
+        "cost": "58 Projection Vouchers",
         "tags": ["Chibi"],
         "notes": []
     },
@@ -445,7 +445,7 @@
         "image": "",
         "unit": "Chanzhi",
         "banner": "Ocean Dance",
-        "cost": "78 Fashion Vouchers",
+        "cost": "78 Projection Vouchers",
         "tags": ["Chibi", "Live2D"],
         "notes": []
     },
@@ -454,7 +454,7 @@
         "image": "",
         "unit": "Lam",
         "banner": "Ocean Dance",
-        "cost": "58 Fashion Vouchers",
+        "cost": "58 Projection Vouchers",
         "tags": ["Chibi"],
         "notes": []
     },
@@ -463,7 +463,7 @@
         "image": "",
         "unit": "Fern",
         "banner": "Theater Retro",
-        "cost": "68 Fashion Vouchers",
+        "cost": "68 Projection Vouchers",
         "tags": ["Chibi", "Animated"],
         "notes": []
     },
@@ -472,7 +472,7 @@
         "image": "",
         "unit": "Nanaka",
         "banner": "Theater Retro",
-        "cost": "78 Fashion Vouchers",
+        "cost": "78 Projection Vouchers",
         "tags": ["Chibi", "Live2D"],
         "notes": []
     },
@@ -481,7 +481,34 @@
         "image": "",
         "unit": "Sakuya",
         "banner": "Theater Retro",
-        "cost": "78 Fashion Vouchers",
+        "cost": "78 Projection Vouchers",
+        "tags": ["Chibi", "Live2D"],
+        "notes": []
+    },
+    {
+        "name": "Peaceful Gift",
+        "image": "",
+        "unit": "Persicaria",
+        "banner": "Christmas Eve Invitation",
+        "cost": "58 Projection Vouchers",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "Snowy Evening",
+        "image": "",
+        "unit": "Antonina",
+        "banner": "Christmas Eve Invitation",
+        "cost": "58 Projection Vouchers",
+        "tags": ["Chibi"],
+        "notes": []
+    },
+    {
+        "name": "Winternight Sun",
+        "image": "",
+        "unit": "Sol",
+        "banner": "Christmas Eve Invitation",
+        "cost": "78 Projection Vouchers",
         "tags": ["Chibi", "Live2D"],
         "notes": []
     },
