@@ -55,13 +55,11 @@ async function includeDocument(include, file_name, depth = 0) {
         .then(html => html.replace(/<!--(?!>)[\S\s]*?-->/g, ""))                    //Remove comments
         .then(cleantext => new DOMParser().parseFromString(cleantext, "text/html"))
         .catch(error => {console.error(error); return null});
-    if (!DOCUMENT) {
-        replace(include);
-        return;
-    }
+    if (!DOCUMENT) return replace(include);
 
     const PARAM = new Map(Array.from(include.attributes).map(({name, value}) => [name, value]));
-    
+    const AWAITING = [];
+
     for (const INCLUDE of DOCUMENT.querySelectorAll("include")) {
         // check if element satisfies "if", "ifnot"
 
@@ -112,14 +110,15 @@ async function includeDocument(include, file_name, depth = 0) {
             
             //what if looping to itself/alternate looping/circular looping
             // file relativity
-            await includeDocument(INCLUDE, SOURCE, depth + 1);
+            AWAITING.push(includeDocument(INCLUDE, SOURCE, depth + 1))
             continue;
         }
     }
-    
+
     // console.log(file_name)
+    for (const PROMISE of AWAITING) await PROMISE;
     replace(include, ...DOCUMENT.body.childNodes);
 }
 
-for (const INCLUDE of document.querySelectorAll("include[src]")) await includeDocument(INCLUDE, location.origin+location.pathname);
+for (const INCLUDE of document.querySelectorAll("include[src]")) includeDocument(INCLUDE, location.origin+location.pathname);
 // document.dispatchEvent(REPLACEALL_EVENT);

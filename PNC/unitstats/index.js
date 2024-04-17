@@ -4,7 +4,6 @@ import {AlgoField, AlgoFilter} from "./algorithms.js";
 import {STAT_KEYS, UNITFILTER} from "./typing.js";
 import {image} from '../../univasset/scripts/html/index.js';
 
-
 /** @type {Promise<UnitObject[]>} */ const UNIT_PROMISE = Async.getJSON("../units.json");
 
 //#region Constant Declarations
@@ -24,6 +23,7 @@ const CLASSES = {
     /** @type {HTMLInputElement} */ Specialist: document.querySelector('#classes [value="Specialist"]'),
     /** @type {HTMLInputElement} */ Medic: document.querySelector('#classes [value="Medic"]')
 }
+for (const INPUT of Object.values(CLASSES)) INPUT.addEventListener("change", event => document.dispatchEvent(UNITFILTER));
 //#endregion
 
 //#region Class Declarations
@@ -202,12 +202,21 @@ class Units {
     #algofilter;
 
     row;
-
+    
     #visibility_changed = false;
     get visibility_changed() {
         const OUTPUT = this.#visibility_changed;
-        this.visibility_changed = false;
+        this.#visibility_changed = false;
         return OUTPUT;
+    }
+
+    /**
+     * @param {string} token
+     * @param {boolean} is_visible */
+    changeVisibilityStatus(token, is_visible) {
+        const PREVIOUS = this.row.classList.contains(token);
+        this.row.classList.toggle(token, !is_visible);
+        this.#visibility_changed = PREVIOUS !== this.row.classList.contains(token);
     }
 
     /** @param {UnitObject} unitobject */
@@ -242,15 +251,13 @@ class Units {
                     (IS_REMOVE && !d) ? (HAS_BLANK_SUB && (!sub2 || c === sub2)) : (!sub2 || c === sub2 || d === sub2)
                 ].every(x => x);
             });
-            const PREVIOUS = this.row.classList.contains("hidden-algo");
-            this.row.classList.toggle("hidden-algo", !VISIBLE);
-            this.#visibility_changed = PREVIOUS !== this.row.classList.contains("hidden-algo");
+            this.changeVisibilityStatus("hidden-algo", VISIBLE);
         });
 
         this.name = unitobject.name;
         this.class = unitobject.class;
         const CLASS_INPUT = CLASSES[this.class];
-        CLASS_INPUT.addEventListener("change", event => this.row.classList.toggle("hidden-class", !CLASS_INPUT.checked), true);
+        CLASS_INPUT.addEventListener("change", event => this.changeVisibilityStatus("hidden-class", CLASS_INPUT.checked), true);
 
         const BASE = unitobject.base;
         this.#hp = BASE.hp;
@@ -367,13 +374,6 @@ class Units {
 //#endregion
 
 //#region Function Declarations
-/** Needs `UNIT_LIST` loaded. */
-function updateTable(event) {TBODY.replaceChildren(...UNIT_LIST.filter(x => !x.row.className.includes("hidden-")).map(x => x.row))}
-document.addEventListener("c_filter", updateTable);
-// for (const INPUT of Object.values(CLASSES)) INPUT.addEventListener("change", updateTable);
-for (const INPUT of Object.values(CLASSES)) INPUT.addEventListener("change", event => document.dispatchEvent(UNITFILTER));
-AlgoFilter.setTableUpdate(updateTable);
-
 /** @this {HTMLTableCellElement} @param {MouseEvent} event */
 function sortMethod(event) {
     const DATA = this.dataset;
@@ -388,13 +388,15 @@ function sortMethod(event) {
             UNIT_LIST.sort(cmp({key: x => x[DATA.key], reverse: DATA.type === "string"}));
             break;
     }
-    // updateTable();
     document.dispatchEvent(UNITFILTER);
 }
 //#endregion
 
 const UNIT_LIST = (await UNIT_PROMISE).filter(({tags}) => !tags.includes("Unreleased")).map(x => new Units(x));
-AlgoFilter.filtered_changed = () => UNIT_LIST.map(x => x.visibility_changed).some(x => x);
+document.addEventListener("c_filter", function(event) {
+    TBODY.replaceChildren(...UNIT_LIST.filter(x => !x.row.className.includes("hidden-")).map(x => x.row));
+});
+AlgoFilter.filtered_changed = () => UNIT_LIST.some(x => x.visibility_changed);
 
 const TBODY = document.querySelector("tbody");
 TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));
