@@ -802,10 +802,11 @@ export class AlgoFilter {
         AlgoFilter.#RESET.addEventListener("click", this.#algo_update, true);
     }
 
+    static filtered_changed = () => true;
     show() {
         ALGO_MODAL.addEventListener("close", event => {
             this.#algo_update();
-            AlgoFilter.#table_update();
+            if (AlgoFilter.filtered_changed()) AlgoFilter.#table_update();
         }, {once: true});
     }
 

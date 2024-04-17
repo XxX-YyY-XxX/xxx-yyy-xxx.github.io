@@ -202,6 +202,13 @@ class Units {
 
     row;
 
+    #visibility_changed = false;
+    get visibility_changed() {
+        const OUTPUT = this.#visibility_changed;
+        this.visibility_changed = false;
+        return OUTPUT;
+    }
+
     /** @param {UnitObject} unitobject */
     constructor(unitobject) {
         const MISSING = [];
@@ -234,7 +241,9 @@ class Units {
                     (IS_REMOVE && !d) ? (HAS_BLANK_SUB && (!sub2 || c === sub2)) : (!sub2 || c === sub2 || d === sub2)
                 ].every(x => x);
             });
+            const PREVIOUS = this.row.classList.contains("hidden-algo");
             this.row.classList.toggle("hidden-algo", !VISIBLE);
+            this.#visibility_changed = PREVIOUS !== this.row.classList.contains("hidden-algo");
         });
 
         this.name = unitobject.name;
@@ -381,6 +390,7 @@ function sortMethod(event) {
 //#endregion
 
 const UNIT_LIST = (await UNIT_PROMISE).filter(({tags}) => !tags.includes("Unreleased")).map(x => new Units(x));
+AlgoFilter.filtered_changed = () => UNIT_LIST.map(x => x.visibility_changed).some(x => x);
 
 const TBODY = document.querySelector("tbody");
 TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));
@@ -394,3 +404,5 @@ for (const [NAME, KEY, TYPE] of zip(HEADER_VALUES, ["name", ...Object.values(STA
 }
 
 document.dispatchEvent(new Event("custom"));
+
+// use document.filter
