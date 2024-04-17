@@ -1,8 +1,9 @@
 import {zip, cmp, setattr} from "../../univasset/scripts/basefunctions/index.js";
 import {Async} from "../../univasset/scripts/externaljavascript.js";
 import {AlgoField, AlgoFilter} from "./algorithms.js";
-import {STAT_KEYS} from "./typing.js";
+import {STAT_KEYS, UNITFILTER} from "./typing.js";
 import {image} from '../../univasset/scripts/html/index.js';
+
 
 /** @type {Promise<UnitObject[]>} */ const UNIT_PROMISE = Async.getJSON("../units.json");
 
@@ -358,7 +359,7 @@ class Units {
             TD_HBOOST
         )
 
-        if (MISSING.length) document.addEventListener("custom", () => alert(`${this.name} has incomplete data: ${MISSING.join(" ")}`), {once: true});
+        if (MISSING.length) document.addEventListener("c_alert", () => alert(`${this.name} has incomplete data: ${MISSING.join(" ")}`), {once: true});
 
         //#privatefield cannot be called dynamically, use exec/eval instead
     }
@@ -367,7 +368,8 @@ class Units {
 
 //#region Function Declarations
 /** Needs `UNIT_LIST` loaded. */
-function updateTable() {TBODY.replaceChildren(...UNIT_LIST.filter(x => !x.row.className.includes("hidden-")).map(x => x.row))}
+function updateTable(event) {TBODY.replaceChildren(...UNIT_LIST.filter(x => !x.row.className.includes("hidden-")).map(x => x.row))}
+document.addEventListener("c_filter", updateTable);
 for (const INPUT of Object.values(CLASSES)) INPUT.addEventListener("change", updateTable);
 AlgoFilter.setTableUpdate(updateTable);
 
@@ -385,7 +387,8 @@ function sortMethod(event) {
             UNIT_LIST.sort(cmp({key: x => x[DATA.key], reverse: DATA.type === "string"}));
             break;
     }
-    updateTable();
+    // updateTable();
+    document.dispatchEvent(UNITFILTER);
 }
 //#endregion
 
@@ -403,6 +406,4 @@ for (const [NAME, KEY, TYPE] of zip(HEADER_VALUES, ["name", ...Object.values(STA
     HEADER_TR.appendChild(TH);
 }
 
-document.dispatchEvent(new Event("custom"));
-
-// use document.filter
+document.dispatchEvent(new Event("c_alert"));

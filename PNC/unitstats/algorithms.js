@@ -1,6 +1,7 @@
 import {STAT_KEYS} from "./typing.js";
 import {cmp, setattr, subclassof, zip} from "../../univasset/scripts/basefunctions/index.js";
 import {getTemplateCloner} from "../../univasset/scripts/externaljavascript.js";
+import {UNITFILTER} from "./typing.js";
 
 //#region Types
 /** @typedef {keyof ALGO_SETS["Offense"] | keyof ALGO_SETS["Stability"] | keyof ALGO_SETS["Special"]} AlgoSet*/
@@ -806,6 +807,7 @@ export class AlgoFilter {
     show() {
         ALGO_MODAL.addEventListener("close", event => {
             this.#algo_update();
+            // if (AlgoFilter.filtered_changed()) document.dispatchEvent(UNITFILTER);
             if (AlgoFilter.filtered_changed()) AlgoFilter.#table_update();
         }, {once: true});
     }

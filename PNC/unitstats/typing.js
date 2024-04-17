@@ -18,5 +18,6 @@ export const STAT_KEYS = Object.freeze({
     DMGREDUCE:  "dreduc",
     HEALBOOST:  "hboost",
 });
-
 export const STATS = STAT_KEYS;
+
+export const UNITFILTER = new Event("c_filter");
