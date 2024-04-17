@@ -370,7 +370,8 @@ class Units {
 /** Needs `UNIT_LIST` loaded. */
 function updateTable(event) {TBODY.replaceChildren(...UNIT_LIST.filter(x => !x.row.className.includes("hidden-")).map(x => x.row))}
 document.addEventListener("c_filter", updateTable);
-for (const INPUT of Object.values(CLASSES)) INPUT.addEventListener("change", updateTable);
+// for (const INPUT of Object.values(CLASSES)) INPUT.addEventListener("change", updateTable);
+for (const INPUT of Object.values(CLASSES)) INPUT.addEventListener("change", event => document.dispatchEvent(UNITFILTER));
 AlgoFilter.setTableUpdate(updateTable);
 
 /** @this {HTMLTableCellElement} @param {MouseEvent} event */
