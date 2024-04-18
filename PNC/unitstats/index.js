@@ -203,22 +203,6 @@ class Units {
 
     row;
     
-    #visibility_changed = false;
-    get visibility_changed() {
-        const OUTPUT = this.#visibility_changed;
-        this.#visibility_changed = false;
-        return OUTPUT;
-    }
-
-    /**
-     * @param {string} token
-     * @param {boolean} is_visible */
-    changeVisibilityStatus(token, is_visible) {
-        const PREVIOUS = this.row.classList.contains(token);
-        this.row.classList.toggle(token, !is_visible);
-        this.#visibility_changed = PREVIOUS !== this.row.classList.contains(token);
-    }
-
     /** @param {UnitObject} unitobject */
     constructor(unitobject) {
         const MISSING = [];
@@ -251,13 +235,16 @@ class Units {
                     (IS_REMOVE && !d) ? (HAS_BLANK_SUB && (!sub2 || c === sub2)) : (!sub2 || c === sub2 || d === sub2)
                 ].every(x => x);
             });
-            this.changeVisibilityStatus("hidden-algo", VISIBLE);
+
+            const WAS_VISIBLE = !this.row.classList.contains(token);
+            this.row.classList.toggle("hidden-algo", !VISIBLE);
+            UNITFILTER.detail.algo ||= WAS_VISIBLE !== VISIBLE;
         });
 
         this.name = unitobject.name;
         this.class = unitobject.class;
         const CLASS_INPUT = CLASSES[this.class];
-        CLASS_INPUT.addEventListener("change", event => this.changeVisibilityStatus("hidden-class", CLASS_INPUT.checked), true);
+        CLASS_INPUT.addEventListener("change", event => this.row.classList.toggle("hidden-class", !CLASS_INPUT.checked), true);
 
         const BASE = unitobject.base;
         this.#hp = BASE.hp;
@@ -366,7 +353,7 @@ class Units {
             TD_HBOOST
         )
 
-        if (MISSING.length) document.addEventListener("c_alert", () => alert(`${this.name} has incomplete data: ${MISSING.join(" ")}`), {once: true});
+        if (MISSING.length) document.addEventListener("c_alert", event => alert(`${this.name} has incomplete data: ${MISSING.join(" ")}`), {once: true});
 
         //#privatefield cannot be called dynamically, use exec/eval instead
     }
@@ -396,7 +383,6 @@ const UNIT_LIST = (await UNIT_PROMISE).filter(({tags}) => !tags.includes("Unrele
 document.addEventListener("c_filter", function(event) {
     TBODY.replaceChildren(...UNIT_LIST.filter(x => !x.row.className.includes("hidden-")).map(x => x.row));
 });
-AlgoFilter.filtered_changed = () => UNIT_LIST.some(x => x.visibility_changed);
 
 const TBODY = document.querySelector("tbody");
 TBODY.replaceChildren(...UNIT_LIST.map(x => x.row));
@@ -409,4 +395,4 @@ for (const [NAME, KEY, TYPE] of zip(HEADER_VALUES, ["name", ...Object.values(STA
     HEADER_TR.appendChild(TH);
 }
 
-document.dispatchEvent(new Event("c_alert"));
+document.dispatchEvent(new CustomEvent("c_alert"));
