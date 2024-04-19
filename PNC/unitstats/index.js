@@ -31,6 +31,9 @@ class Units {
     name;
     class;
 
+    #base;
+    #arma;
+
     #hp; #armahp;
     get [STAT_KEYS.HEALTH]() {
         // var perc = 0, flat = 0;
@@ -206,6 +209,9 @@ class Units {
     /** @param {UnitObject} unitobject */
     constructor(unitobject) {
         const MISSING = [];
+        const VISIBILITY_CHANGED = {
+            algo: false
+        }
 
         this.#algofield = new AlgoField(unitobject);
         this.#algofilter = new AlgoFilter((set, main, sub1, sub2) => {
@@ -236,15 +242,16 @@ class Units {
                 ].every(x => x);
             });
 
-            const WAS_VISIBLE = !this.row.classList.contains(token);
+            VISIBILITY_CHANGED.algo = this.row.classList.contains("hidden-algo") === VISIBLE;
             this.row.classList.toggle("hidden-algo", !VISIBLE);
-            UNITFILTER.detail.algo ||= WAS_VISIBLE !== VISIBLE;
         });
 
         this.name = unitobject.name;
         this.class = unitobject.class;
         const CLASS_INPUT = CLASSES[this.class];
         CLASS_INPUT.addEventListener("change", event => this.row.classList.toggle("hidden-class", !CLASS_INPUT.checked), true);
+
+        this.#base = unitobject.base;
 
         const BASE = unitobject.base;
         this.#hp = BASE.hp;
@@ -258,6 +265,8 @@ class Units {
         this.#open = BASE.open;
         this.#dodge = BASE.dodge;
         this.#regen = BASE.regen;
+
+        this.#arma = unitobject.arma;
 
         const ARMA = unitobject.arma;
         this.#armahp = ARMA.hp;
@@ -275,14 +284,14 @@ class Units {
         const TD_NAME = document.createElement("td");
         TD_NAME.addEventListener("click", event => {
             this.#algofield.show();
-            this.#algofilter.show();
+            this.#algofilter.show(VISIBILITY_CHANGED);
         });
         if (this.#hasarma) {
             // change alt to arma name?
             const IMAGE = image(`../assets/images/arma/${this.name.replace(" ", "")}.png`, `${this.name} arma.`);
             const SPAN = setattr(document.createElement("span"), {append: [this.name, IMAGE], classList: {add: ["arma"]}});
             TD_NAME.appendChild(SPAN);
-            if (Object.values(ARMA).some(x => x === -1)) MISSING.push("Arma")
+            if (Object.values(this.#arma).some(x => x === -1)) MISSING.push("Arma")
         } else {
             TD_NAME.textContent = this.name;
         }
@@ -354,7 +363,7 @@ class Units {
         )
 
         if (MISSING.length) document.addEventListener("c_alert", event => alert(`${this.name} has incomplete data: ${MISSING.join(" ")}`), {once: true});
-
+        
         //#privatefield cannot be called dynamically, use exec/eval instead
     }
 }
@@ -375,7 +384,7 @@ function sortMethod(event) {
             UNIT_LIST.sort(cmp({key: x => x[DATA.key], reverse: DATA.type === "string"}));
             break;
     }
-    document.dispatchEvent(UNITFILTER);
+    document.dispatchEvent(UNITFILTER); // Not for filtering, but to keep the filter
 }
 //#endregion
 

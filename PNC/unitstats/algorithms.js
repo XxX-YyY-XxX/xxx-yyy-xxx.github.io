@@ -815,13 +815,13 @@ export class AlgoFilter {
         AlgoFilter.#RESET.addEventListener("click", this.#algo_update, true);
     }
 
-    show() {
+    /**
+     * @param {object} changed
+     * @param {boolean} changed.algo */
+    show(changed) {
         ALGO_MODAL.addEventListener("close", event => {
             this.#algo_update();
-            if (UNITFILTER.detail.algo) {
-                UNITFILTER.detail.algo = false;
-                document.dispatchEvent(UNITFILTER);
-            }
+            if (changed.algo) document.dispatchEvent(UNITFILTER);
         }, {once: true});
     }
 }
