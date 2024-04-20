@@ -242,8 +242,7 @@ class Units {
                 ].every(x => x);
             });
 
-            VISIBILITY_CHANGED.algo = this.row.classList.contains("hidden-algo") === VISIBLE;
-            this.row.classList.toggle("hidden-algo", !VISIBLE);
+            VISIBILITY_CHANGED.algo = this.row.classList.contains("hidden-algo") !== this.row.classList.toggle("hidden-algo", !VISIBLE);
         });
 
         this.name = unitobject.name;
@@ -253,29 +252,27 @@ class Units {
 
         this.#base = unitobject.base;
 
-        const BASE = unitobject.base;
-        this.#hp = BASE.hp;
-        this.#atk = BASE.atk;
-        this.#hash = BASE.hash;
-        this.#pdef = BASE.pdef;
-        this.#odef = BASE.odef;
-        this.#aspd = BASE.aspd;
-        this.#crate = BASE.crate;
-        this.#ppen = BASE.ppen;
-        this.#open = BASE.open;
-        this.#dodge = BASE.dodge;
-        this.#regen = BASE.regen;
+        this.#hp = this.#base.hp;
+        this.#atk = this.#base.atk;
+        this.#hash = this.#base.hash;
+        this.#pdef = this.#base.pdef;
+        this.#odef = this.#base.odef;
+        this.#aspd = this.#base.aspd;
+        this.#crate = this.#base.crate;
+        this.#ppen = this.#base.ppen;
+        this.#open = this.#base.open;
+        this.#dodge = this.#base.dodge;
+        this.#regen = this.#base.regen;
 
         this.#arma = unitobject.arma;
 
-        const ARMA = unitobject.arma;
-        this.#armahp = ARMA.hp;
-        this.#armaatk = ARMA.atk;
-        this.#armahash = ARMA.hash;
-        this.#armapdef = ARMA.pdef;
-        this.#armaodef = ARMA.odef;
-        this.#armappen = ARMA.ppen;
-        this.#armaopen = ARMA.open;
+        this.#armahp = this.#arma.hp;
+        this.#armaatk = this.#arma.atk;
+        this.#armahash = this.#arma.hash;
+        this.#armapdef = this.#arma.pdef;
+        this.#armaodef = this.#arma.odef;
+        this.#armappen = this.#arma.ppen;
+        this.#armaopen = this.#arma.open;
         this.#hasarma = unitobject.tags.includes("Arma");
 
         this.#intistats = unitobject.intimacy;
@@ -389,7 +386,7 @@ function sortMethod(event) {
 //#endregion
 
 const UNIT_LIST = (await UNIT_PROMISE).filter(({tags}) => !tags.includes("Unreleased")).map(x => new Units(x));
-document.addEventListener("c_filter", function(event) {
+document.addEventListener(UNITFILTER.type, function(event) {
     TBODY.replaceChildren(...UNIT_LIST.filter(x => !x.row.className.includes("hidden-")).map(x => x.row));
 });
 
