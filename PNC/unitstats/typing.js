@@ -20,9 +20,4 @@ export const STAT_KEYS = Object.freeze({
 });
 export const STATS = STAT_KEYS;
 
-export const UNITFILTER = new CustomEvent("c_filter", {
-    detail: {
-        algo: false
-    }
-});
-console.log(UNITFILTER.type)
+export const UNITFILTER = new CustomEvent("c_filter");
