@@ -784,7 +784,10 @@ export class AlgoFilter {
             ALGO_SELECT.classList.remove("filtering");
         });
 
-        this.#RESET.addEventListener("click", () => {
+        this.#RESET.addEventListener("click", event => {
+            if (this.#IMAGE.alt === "Remove" && !this.#MAIN.value && !this.#SUB1.value && !this.#SUB2.value)
+                return event.stopImmediatePropagation()
+
             this.#IMAGE.src = this.#algoImage("Remove");
             this.#IMAGE.alt = "Remove";
 
@@ -796,23 +799,21 @@ export class AlgoFilter {
             this.#SUB2.selectedIndex = 0;
             this.#SUB2.disabled = false;
             for (const OPTION of this.#SUB2.options) OPTION.disabled = false;
-
-            document.dispatchEvent(UNITFILTER);
         }, true);
 
         this.#RESET.addEventListener("click", event => document.dispatchEvent(UNITFILTER));
     }
 
-    #algo_update;
+    #_algoUpdate;
     /** @param {function("Remove" | AlgoSet, "" | MainAttributes, "" | SubAttributes, "" | SubAttributes): void} status_update */
     constructor(status_update) {
-        this.#algo_update = function() {
+        this.#_algoUpdate = function() {
             status_update(AlgoFilter.#IMAGE.alt, AlgoFilter.#MAIN.value, AlgoFilter.#SUB1.value, AlgoFilter.#SUB2.value);
         }
 
-        AlgoFilter.#BUTTON.addEventListener("click", event => ALGO_SELECT.addEventListener("close", this.#algo_update, {once: true, capture: true}));
-        for (const SELECT of [AlgoFilter.#MAIN, AlgoFilter.#SUB1, AlgoFilter.#SUB2]) SELECT.addEventListener("change", this.#algo_update, true);
-        AlgoFilter.#RESET.addEventListener("click", this.#algo_update, true);
+        AlgoFilter.#BUTTON.addEventListener("click", event => ALGO_SELECT.addEventListener("close", this.#_algoUpdate, {once: true, capture: true}));
+        for (const SELECT of [AlgoFilter.#MAIN, AlgoFilter.#SUB1, AlgoFilter.#SUB2]) SELECT.addEventListener("change", this.#_algoUpdate, true);
+        AlgoFilter.#RESET.addEventListener("click", this.#_algoUpdate, {capture: true});
     }
 
     /**
@@ -820,7 +821,7 @@ export class AlgoFilter {
      * @param {boolean} changed.algo */
     show(changed) {
         ALGO_MODAL.addEventListener("close", event => {
-            this.#algo_update();
+            this.#_algoUpdate();
             if (changed.algo) document.dispatchEvent(UNITFILTER);
         }, {once: true});
     }

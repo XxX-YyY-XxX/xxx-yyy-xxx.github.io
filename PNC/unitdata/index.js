@@ -1,4 +1,4 @@
-import {brJoin, nestElements} from '../../univasset/scripts/htmlgenerator/htmlgenerator.js';
+import {brJoin} from '../../univasset/scripts/htmlgenerator/htmlgenerator.js';
 import {cmp, setattr} from "../../univasset/scripts/basefunctions/index.js";
 import {Async} from "../../univasset/scripts/externaljavascript.js";
 
@@ -17,11 +17,7 @@ TEXT.addEventListener("input", function(event) {
 });
 
 class Units {
-    static HEADERS = [
-        "Doll Name",
-        "References",
-        "Fragment Locations"
-    ];
+    static HEADERS = ["Doll Name", "References", "Fragment Locations"];
 
     #SEARCH_VALUES;
 
@@ -31,11 +27,7 @@ class Units {
     constructor(unit) {
         const REF = Object.keys(unit.reference).filter(x => x);
 
-        this.#SEARCH_VALUES = [
-            unit.name,
-            ...REF,
-            ...unit.fragments
-        ].map(x => x.toLowerCase());
+        this.#SEARCH_VALUES = [unit.name, ...REF, ...unit.fragments].map(x => x.toLowerCase());
 
         this.ROW = document.createElement("tr");
         this.ROW.append(
@@ -52,8 +44,5 @@ class Units {
 }
 
 const UNIT_LIST = (await UNIT_PROMISE).filter(({tags}) => !tags.includes("Unreleased")).sort(cmp({key: x => x.id})).map(x => new Units(x));
-
-/** @type {HTMLTableRowElement} */ const HEADER_TR = document.querySelector("thead > tr")
-HEADER_TR.append(...Units.HEADERS.map(x => setattr(document.createElement("th"), {textContent: x})));
-
+document.querySelector("thead > tr").append(...Units.HEADERS.map(x => setattr(document.createElement("th"), {textContent: x})));
 const TBODY = setattr(document.querySelector("tbody"), {append: UNIT_LIST.map(x => x.ROW)});
