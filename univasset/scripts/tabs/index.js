@@ -18,5 +18,3 @@ export class RadioSwitch {
         }, options)
     }
 }
-
-// /** @type {AddEventListenerOptions} */
