@@ -1,4 +1,4 @@
-@import "/univasset/scripts/tabs.css" layer(tabs);
+@import "/univasset/scripts/tabs.css" layer;
 
 dialog {
     --dialog-pad: 5px;
@@ -16,6 +16,7 @@ dialog {
 /* #region Algorithm Grid */
 #algo-modal .tab-body {
     --gridsize: 100px;
+    vertical-align: top;
     grid-template-columns: repeat(2, var(--gridsize));
     grid-auto-rows: var(--gridsize);
     gap: 5px;
@@ -103,18 +104,13 @@ dialog {
     margin-bottom: 10px;
 }
 
-@container (width >= 650px) {
-    @layer tab-bodies {
-        #algo-modal .tab-body {
-            display: inline-grid;
-            vertical-align: top;
-        }
+@layer {
+    #algo-modal .tab-body {
+        display: inline-grid;
     }
 }
 
 @container (width < 650px) {
-    @layer tab-bodies, tabs;
-
     #algo-modal .tab-button > label:has(input:checked) {
         background-repeat: no-repeat;
         background-position: center;
@@ -133,10 +129,8 @@ dialog {
         background-image: url("../assets/images/algorithms/others/Special.png");
     }
 
-    @layer tab-bodies {
-        #algo-modal .tab-body {
-            display: inline-grid;
-        }
+    :where(#algo-modal) .tab-body {
+        display: inline-grid;
     }
 }
 /* #endregion */
@@ -159,7 +153,7 @@ dialog {
     background-image: url("../assets/images/algorithms/down1.png");
 } */
 
-#algo-modal #help {
+/* #algo-modal #help {
     background-image: url("../assets/images/Info.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -169,7 +163,7 @@ dialog {
     position: absolute;
     top: var(--dialog-pad);
     right: var(--dialog-pad);
-}
+} */
 /* #endregion */
 
 /* Algo Select */
@@ -221,6 +215,8 @@ dialog {
     justify-content: center;
 }
 /* #endregion */
+
+/* #algo-filter */
 
 /* #region Set Threshold */
 #algo-select button > div.algo-left-good {
