@@ -1,5 +1,5 @@
 import {removeHTMLTag, getTemplateCloner} from "../externaljavascript.js";
-import {Random, cmp, range, setattr} from "../basefunctions/index.js";
+import {Random, cmp, setattr} from "../basefunctions/index.js";
 
 // /** Checks if the element is interacted by the user. 
 //  * @param {Event} event */
@@ -43,57 +43,6 @@ window.queryFunc = function() {
 
         TAGS_FIELD.appendChild(CLONE);
     }
-    //#endregion
-
-    //#region Tag Buttons
-    const BUTTON = {
-        /** @type {HTMLInputElement} */ KEY: document.querySelector('.tab-button [value="Keywords"]'),
-        /** @type {HTMLInputElement} */ TAG: document.querySelector('.tab-button [value="Tags"]'),
-        /** @type {HTMLInputElement} */ BWS: document.querySelector('.tab-button [value="Browse"]')
-    }
-
-    /** Uses "change" event. */
-    class RadioSwitch {
-        static #EVENT = new Event("change");
-        #CURRENT;
-
-        /** @param {HTMLInputElement} current_checked */
-        constructor(current_checked) {
-            this.#CURRENT = current_checked;
-        }
-
-        /**
-         * @param {HTMLInputElement} input
-         * @param {function(this: HTMLInputElement, Event): void} func */
-        apply(input, func = () => {}) {
-            input.addEventListener("change", event => {
-                if (event.isTrusted) {  // To check if user input or programmatic
-                    if (this.#CURRENT === input) return;
-                    this.#CURRENT.dispatchEvent(RadioSwitch.#EVENT);
-                    this.#CURRENT = input;
-                }
-        
-                func.call(input, event);
-            })
-        }
-    }
-
-    const CHANGE = new RadioSwitch(BUTTON.KEY);
-
-    /** @type {HTMLInputElement} */ const TEXT_FIELD = document.querySelector(`#Keywords [type="text"]`);
-    CHANGE.apply(BUTTON.KEY, function(event) {
-        if (!this.checked) TEXT_FIELD.value = "";
-    });
-
-    CHANGE.apply(BUTTON.TAG, function(event) {
-        if (!this.checked) {
-            TAGS_TEXT.value = "";
-            for (const INPUT_TRUE of TAG_CHECKBOXES.filter(x => x.checked))
-                INPUT_TRUE.checked = false;
-        }
-    });
-
-    CHANGE.apply(BUTTON.BWS);
     //#endregion
 
     //#region Card Creation

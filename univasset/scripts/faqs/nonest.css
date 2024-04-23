@@ -11,13 +11,6 @@
 .tab-button h2 {
     margin: 0px 0px 10px;
 }
-
-/* remove :not(body.test) later */
-:not(body.test) .tab-button:has([value="Keywords"]:checked) ~ #Keywords,
-:not(body.test) .tab-button:has([value="Tags"]:checked) ~ #Tags,
-:not(body.test) .tab-button:has([value="Browse"]:checked) ~ #Browse {
-    display: block;
-}
 /* #endregion */
 
 #Tags .tags:has(input:checked) {

@@ -1,4 +1,4 @@
-@import "/univasset/scripts/tabs.css";
+@import "/univasset/scripts/tabs.css" layer(tabs);
 
 dialog {
     --dialog-pad: 5px;
@@ -103,12 +103,18 @@ dialog {
     margin-bottom: 10px;
 }
 
-#algo-modal .tab-body {
-    display: inline-grid;
-    vertical-align: top;
+@container (width >= 650px) {
+    @layer tab-bodies {
+        #algo-modal .tab-body {
+            display: inline-grid;
+            vertical-align: top;
+        }
+    }
 }
 
 @container (width < 650px) {
+    @layer tab-bodies, tabs;
+
     #algo-modal .tab-button > label:has(input:checked) {
         background-repeat: no-repeat;
         background-position: center;
@@ -127,14 +133,10 @@ dialog {
         background-image: url("../assets/images/algorithms/others/Special.png");
     }
 
-    #algo-modal .tab-body {
-        display: none;
-    }    
-
-    #algo-modal .tab-button:has([value="Offense"]:checked) ~ #Offense,
-    #algo-modal .tab-button:has([value="Stability"]:checked) ~ #Stability,
-    #algo-modal .tab-button:has([value="Special"]:checked) ~ #Special {
-        display: inline-grid;
+    @layer tab-bodies {
+        #algo-modal .tab-body {
+            display: inline-grid;
+        }
     }
 }
 /* #endregion */
@@ -278,7 +280,7 @@ dialog {
 
 /* https://dev.to/michaelburrows/setup-a-html-tooltip-on-hover-using-css-23b3 */
 /* Test */
-[data-tooltip] {
+/* [data-tooltip] {
     position: relative;
     cursor: help;
     background: black;
@@ -306,7 +308,7 @@ dialog {
 }
 /* Code language: CSS (css)
 Finally we need to set the opacity to be visible when the tooltip element is hovered: */
-[data-tooltip]:before,
+/* [data-tooltip]:before,
 [data-tooltip]:after {
     position: absolute;
     opacity: 0;
@@ -316,4 +318,4 @@ Finally we need to set the opacity to be visible when the tooltip element is hov
 [data-tooltip]:hover:before,
 [data-tooltip]:hover:after {
     opacity: 1;
-}
+} */

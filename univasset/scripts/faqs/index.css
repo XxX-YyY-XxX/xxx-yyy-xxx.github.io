@@ -32,12 +32,10 @@ dl, table, blockquote, figure {
     & h2 {
         margin: 0px 0px 10px;
     }
+}
 
-    &:has([value="Keywords"]:checked) ~ #Keywords,
-    &:has([value="Tags"]:checked) ~ #Tags,
-    &:has([value="Browse"]:checked) ~ #Browse {
-        display: block;
-    }
+.tab-body {
+    display: block;
 }
 
 #Keywords input[type="text"] {
