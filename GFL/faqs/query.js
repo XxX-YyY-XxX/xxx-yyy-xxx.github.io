@@ -4180,3 +4180,4 @@ window.cards = CARDS
 // https://old.reddit.com/r/girlsfrontline/comments/1btt4kx/weekly_commanders_lounge_april_02_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1bzmnr3/weekly_commanders_lounge_april_09_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1c5aljd/weekly_commanders_lounge_april_16_2024/
+// https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/
