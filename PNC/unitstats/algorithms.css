@@ -1,4 +1,4 @@
-@import "/univasset/scripts/tabs.css" layer;
+@import "/univasset/scripts/tabs.css";
 
 dialog {
     --dialog-pad: 5px;
@@ -104,7 +104,7 @@ dialog {
     margin-bottom: 10px;
 }
 
-@layer {
+@container (width >= 650px) {
     #algo-modal .tab-body {
         display: inline-grid;
     }
@@ -131,7 +131,7 @@ dialog {
 
     :where(#algo-modal) .tab-body {
         display: inline-grid;
-    }
+    }    
 }
 /* #endregion */
 
