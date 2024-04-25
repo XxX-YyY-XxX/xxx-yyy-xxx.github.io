@@ -1,11 +1,17 @@
-import {image as img, table, link, tooltip, getID} from '../../univasset/scripts/htmlfunctions/htmlfunctions.js';
+import {image as img, table, link, tooltip} from '../../univasset/scripts/htmlfunctions/htmlfunctions.js';
 import TextStyle from '../../univasset/scripts/htmlfunctions/textstyle.js';
 import MBD from '../../univasset/scripts/htmlfunctions/linkembed.js';
-import List from '../../univasset/scripts/htmlfunctions/lists.js';
+import Li from '../../univasset/scripts/htmlfunctions/lists.js';
 import {LESSEQUAL, STAR, TM} from "../../univasset/scripts/specialchars.js";
-import {Embed, image, figure, details, fragment} from "../../univasset/scripts/html/index.js";
+import {Embed, image, figure, details, fragment, List} from "../../univasset/scripts/html/index.js";
 
 const IMG_ASSET = "../assets/images/query/";
+
+/** @param {string} text @param {number[]} ID */
+function getID(text, ...ID) {
+    // get current path
+    return `<a href="https://xxx-yyy-xxx.github.io/GFL/faqs?id=${ID.join('+')}">${text}</a>`
+}
 
 export const dtag = {
     //#region Combat Tabs
@@ -26,15 +32,16 @@ export const dtag = {
         TDOLL : {name: 'TacticalDolls', description: 'Anything T-Doll related. Use as secondary tag.'},
             LEDOLL : {name: 'CycleDropDolls', description: 'Reward dolls that now wander the rerun hell.'},
         COALITION : {name: 'CoalitionUnits', description: 'PA counterpart of Tactical Dolls.'},
-        EQUIP : {name: 'Equipments', description: 'Gun attachments, FST chips, PA chips.'},
+        FAIRY : {name: 'Fairies', description: 'Sixth man of the team.'},
+        FST : {name: 'FireSupportTeam', description: 'Rockets and mortars, the first of the HOC.'},
+        MA : {name: 'MobileArmor', description: 'Warthunder/Armored Core in my gun waifu game? No way.'},        
+        EQUIP : {name: 'Equipments', description: 'Gun attachments, FST chips, PA chips, MA parts.'},
             SPEQ : {name: 'SpecialEquipments', description: 'Equipments specific to a doll.'},
         ITEM : {name: 'ConsumableItems', description: 'Tickets, cores, shop items...'},
             TCM : {name: 'TrueCoreMask', description: `Used to redeem 5${STAR} prod dolls.`},
             GEMS : {name: 'Gems', description: 'Kalina demands you spend these on her.'},
             BATTERY : {name: 'Battery', description: 'Currency for upgrading facilities.'},
             CORE : {name: 'DummyCore', description: 'Used for dummy-linking, neural upgrades, and fairy/SG crafts.'},
-        FAIRY : {name: 'Fairies', description: 'Sixth man of the team.'},
-        FST : {name: 'FireSupportTeam', description: 'Rockets and mortars, the first of the HOC.'},
     //#endregion
     //#region Facilities
         ECH : {name: 'EchelonFormation', description: 'Deployable teams.'},
@@ -96,19 +103,19 @@ window.tags = dtag;
 const CARDS = [
     //#region Topic Primers
     {
-        id: '00000',
+        id: 0,
         question: `I can't access/press/see things, what do I do?`,
         answer: `Have you tried restarting your application/phone? This should be the default response to everything.`,
         tags: [dtag.TECH, dtag.PRIME, dtag.IMPT]
     },
     {
-        id: '00001',
+        id: 1,
         question: `How do I level my girls?`,
-        answer: `${List.description({
+        answer: `${Li.description({
             "Leveling Maps": [
                 `Done mainly through ${details('corpse dragging', "Also called Poor Run or Beggar Run, it is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.")}.`,
-                getID('Draggable stages.', '00026'),
-                getID("Supplying the dragger.", "00073")
+                getID('Draggable stages.', 26),
+                getID("Supplying the dragger.", 73)
             ],
             "Combat Reports (CR)": [
                 'Acquired through Forward Basecamp, Data Room, the shop during events, EXP Sim, or as a reward.',
@@ -116,61 +123,65 @@ const CARDS = [
                 'Gives 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.',
                 'Gives 6000 fixed EXP per report only when used on oathed+modded dolls.'
             ],
-            "Auto-Battles": []
+            "Auto-Battles": [
+                getID("EXP spreadsheet.", 89)
+            ]
         })}`,
-        tags: [dtag.TDOLL, dtag.LEVEL, dtag.PRIME, dtag.NEWB, dtag.OATH, dtag.MOD]
+        tags: [dtag.TDOLL, dtag.LEVEL, dtag.PRIME, dtag.NEWB, dtag.OATH, dtag.MOD, dtag.AUTO]
     },
     {
-        id: '00421',
+        id: 421,
         question: `Is there a guide on how to use the equipments/attachments for Tactical Dolls?`,
         answer: `${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/equipment-basics-how-juggernaut-t-dolls")}`,
         tags: [dtag.TDOLL, dtag.EQUIP, dtag.PRIME]
     },
     {
-        id: '00002',
+        id: 2,
         question: `What is Combat Effectiveness?`,
         answer: `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ce')}<br>
         ${link("u/elgatoroid's CE calculation.", 'https://old.reddit.com/r/girlsfrontline/comments/kqtpcv/weekly_commanders_lounge_january_05_2021/gifxq8v/')}`,
         tags: [dtag.CE, dtag.PRIME]
-    },
+    },  // CE calc might be outdated.
     {
-        id: '00444',
-        question: `What are batteries (battery) and where do I get them?`,
-        answer: `Used to upgrade facilities, and more. You can get them from the Black Market, your dorm, and your friends' dorms.`,
+        id: 444,
+        question: `What are batteries and where do I get them?`,
+        answer: `Used to upgrade facilities, and more. You can get them from the Black Market, your dorm, your friends' dorms, or as a reward.`,
         tags: [dtag.BATTERY, dtag.PRIME, dtag.GET]
     },
     {
-        id: '00003',
+        id: 3,
         question: `What is Expedition/Forward Basecamp?`,
-        answer: `${link('Gamepress Detailed Guide.', 'https://gamepress.gg/girlsfrontline/gfl-explained-basecamp-and-exploration')}<br>
-        ${link('GFC Primer.', 'https://www.gflcorner.com/expedition-system-mini-guide/')}<br>
-        ${link('ATM Guide.', 'https://gfl.matsuda.tips/post/weareabsolutenotlostiswear')}<br>
-        Important note is that FB unlocks at Commander Lv. 20.`,
+        answer: `${Li.unordered(
+            link('GFC Primer.', 'https://www.gflcorner.com/expedition-system-mini-guide/'),
+            link('ATM Guide.', 'https://gfl.matsuda.tips/post/weareabsolutenotlostiswear'),
+            "Unlocks at Commander Lv. 20."
+        )}`,
         tags: [dtag.EXPED, dtag.PRIME, dtag.NEWB]
     },
     {
-        id: '00004',
+        id: 4,
         question: `Are there any general guides for Protocol Assimilation/Coalition Units/SF Capture Operation?`,
         answer: `${link('Gamepress guide.', "https://gamepress.gg/girlsfrontline/protocol-assimilation-coalition-basics-and-teambuilding")}<br>
         ${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
         ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
-        ${details("Cleista's basic Twitter guide.", MBD.twitter('CleistaCeleste', '1409824210571214849'))}`,
+        ${details("Cleista's basic Twitter guide.", Embed.twitter('CleistaCeleste', "1409824210571214849"))}`,
         tags: [dtag.PA, dtag.COALITION, dtag.PRIME]
     },
     {
-        id: '00005',
+        id: 5,
         question: `How do Neural Upgrades/MODs work?`,
-        answer: `The only way to raise dolls beyond Lv. 100.<br>
-        ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/gfl-explained-neural-upgrade')}<br>
-        ${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/modding')}<br>
-        ${link('GFC guide.', 'https://www.gflcorner.com/neural')}`,
+        answer: `${Li.unordered(
+            "The only way to raise dolls beyond Lv. 100.",
+            link('Matsuda guide.', 'https://gfl.matsuda.tips/post/modding'),
+            link('GFC guide.', 'https://www.gflcorner.com/neural')
+        )}`,
         tags: [dtag.MOD, dtag.PRIME]
     },
     {
-        id: '00006',
+        id: 6,
         question: `What are Fairies?`,
-        answer: `${List.unordered(
-            link('Matsuda guide.', 'https://gfl.matsuda.tips/post/fairies'),
+        answer: `${Li.unordered(
+            link('Matsuda guide.', 'https://gfl.matsuda.tips/post/fairies') + " Mostly still applies.",
             link('IOPWiki guide.', 'https://iopwiki.com/wiki/Technical_Fairies') + " Unupdated rework skills.",
             link('GFC guide.', 'https://www.gflcorner.com/fairy/') + " Fairies up to CT only.",
             link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/fairies-where-they-live-and-how-craft-them"),
@@ -182,21 +193,25 @@ const CARDS = [
         tags: [dtag.FAIRY, dtag.PRIME]
     },
     {
-        id: '00007',
-        question: `How to HOC?`,
-        answer: `${link('Gamepress Guide.', 'https://gamepress.gg/girlsfrontline/gfl-explained-hoc-combat-basics')}<br>
-        ${link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Heavy_Ordnance_Corps')}<br>
-        ${link('Matsuda Guide.', 'https://gfl.matsuda.tips/post/hocs')}<br>
-        ${link('GFC Guide.', 'https://www.gflcorner.com/hoc-guide-by-gfc/')}<br>
-        ${link("u/Xealiouth's Guide.", 'https://redd.it/95nrou')}`,
-        tags: [dtag.HOC, dtag.PRIME]
-    },  //Privated - rsFyXRDAi6I
+        id: 7,
+        question: `How to ${TextStyle.style("HOC", TextStyle.STRIKE)} FST?`,
+        answer: `${Li.description({
+            "Pending": ["Facilities", "Leveling", "Acquisition"],
+            "Usage": [
+                link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Heavy_Ordnance_Corps'),
+                link('Matsuda Guide.', 'https://gfl.matsuda.tips/post/hocs'),
+                link('GFC Guide.', 'https://www.gflcorner.com/hoc-guide-by-gfc/'),
+                link("u/Xealiouth's Guide.", 'https://redd.it/95nrou')
+            ]
+        })}`,
+        tags: [dtag.HOC, dtag.FST, dtag.PRIME]
+    },
     {
         id: 420,
         question: `There's an event going on. What should I do?`,
-        answer: `${List.description({
+        answer: `${Li.description({
             "Seasonal Events": [
-                "Farm maps to get 60 (80/120 if rerun) event specific tokens daily. You can miss a day of farming and still get all items in the shop.",
+                "Farm maps to get 60 (80/120 if rerun) event specific tokens/currencies daily. You can miss a day of farming and still get all items in the shop.",
                 "Complete the story to unlock farming maps. Story maps are largely balanced around a one-week player.",
                 "Farming maps are either separate nodes/chapters, or updated story maps."
             ],
@@ -206,54 +221,56 @@ const CARDS = [
                 "Normal is for new commanders or lazies. Hard/EX is for mid-game players who wants a challenge. Nightmare/UX is for late-gamers."
             ],
             "All of the above": [
-                `Grind the farming maps to obtain ${getID("event-reward dolls", "00024")}. You can pity/guarantee them with ${getID("Platinum and Nova medals", "00104")}.`
+                `Grind the farming maps to obtain ${getID("event-reward dolls", 24)}. You can pity/guarantee them with ${getID("Platinum and Nova medals", 104)}.`
             ]
         })}`,
         tags: [dtag.SEASON, dtag.MAJOR, dtag.PRIME, dtag.NEWB]
     },
     {
-        id: '00477',
+        id: 477,
         question: `What is Gray Zone Exploration?`,
         answer: `${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/gray-zone-introduction")}`,
         tags: [dtag.GZ, dtag.PRIME]
-    },
+    },  // No GZ4 for now.
     {
-        id: '00008',
+        id: 8,
         question: `How to do Theater/Theatre?`,
-        answer: `${link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Theater_Mode')}<br>
-        ${link('GFC Guide.', 'https://www.gflcorner.com/theater-system-introduction-by-gfc/')}<br>
-        ${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/rng_backstabbing')}<br>
-        ${link('Gamepress Guide Part 1.', 'https://gamepress.gg/girlsfrontline/theater-8-overhaul-guide-new-mechanics-new-enemies-same-pain')} The latest theater version.<br>
-        ${link('Gamepress Guide Part 2.', 'https://gamepress.gg/girlsfrontline/theater-8-combat-guide')}<br>
-        ${details('Theater for dummies.', image('https://cdn.discordapp.com/attachments/372235987520323596/881427651070410792/theaterguide.png', "Simple theater guide."))}<br>
-        TLDR is 5-6 Defense Drills in a row, twice per day, with differing battle effects. Do scouting bets where you pick one zone. Dump points on construction for easier battles.<br>
-        Echelon formations are now 1 team + backups.<br>
-        Between 4:00-5:00AM UTC-8, a ceasefire occurs to tally the scores.`,
+        answer: `${Li.unordered(
+            link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Theater_Mode'),
+            link('GFC Guide.', 'https://www.gflcorner.com/theater-system-introduction-by-gfc/'),
+            link('Matsuda guide.', 'https://gfl.matsuda.tips/post/rng_backstabbing'),
+            link('Gamepress Guide Part 1.', 'https://gamepress.gg/girlsfrontline/theater-8-overhaul-guide-new-mechanics-new-enemies-same-pain') + " The latest theater version. Should be applicable to future ones.",
+            link('Gamepress Guide Part 2.', 'https://gamepress.gg/girlsfrontline/theater-8-combat-guide'),
+            // details('Theater for dummies.', image('https://cdn.discordapp.com/attachments/372235987520323596/881427651070410792/theaterguide.png', "Simple theater guide."))
+            "TLDR; 5-6 Defense Drills in a row, twice per day, with differing battle effects. Do scouting bets where you pick one zone. Dump points on construction for easier battles.",
+            "Echelon formations are now 1 team + backups.",
+            "Between 4:00-5:00AM UTC-8, a ceasefire occurs to tally the scores."
+        )}`,
         tags: [dtag.THEATER, dtag.PRIME]
     },
     {
-        id: '00009',
+        id: 9,
         question: `What's a True Core Mask, where do I get them, and how do I use it?`,
         answer: `One TCM is given out every major event and anniversary.<br>
         ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/true-core-mask-revamped-who-get')}`,
         tags: [dtag.TCM, dtag.PRIME, dtag.MAJOR, dtag.ANNIV, dtag.GET]
     },
     {
-        id: '00010',
+        id: 10,
         question: `Are there any sort of guides on how and when to roll for skins?`,
         answer: `${link('BigStupidJellyfish guide.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/gacha')}`,
         tags: [dtag.RESUPPLY, dtag.TDOLL, dtag.SKIN, dtag.PRIME]
     },
     {
-        id: '00011',
+        id: 11,
         question: `What are auto-battles for?`,
         answer: `Saves your sanity from painful-AF-to-grind-for-drops maps for starters. Useful for getting the map limited dolls you want.`,
         tags: [dtag.AUTO, dtag.PRIME]
     },
     {
-        id: '00012',
+        id: 12,
         question: `What does Affection do?`,
-        answer: `${List.description({
+        answer: `${Li.description({
             'Tactical Dolls' : [
                 'At 90 and above, gives stat bonuses indicated by pink numbers.',
                 'At 10 below, gives stat penalties indicated by blue numbers.',
@@ -269,32 +286,31 @@ const CARDS = [
         tags: [dtag.LOVE, dtag.PRIME, dtag.OATH, dtag.TDOLL, dtag.COALITION, dtag.KALINA]
     },  //@Clarify - https://old.reddit.com/r/girlsfrontline/comments/w2n556/weekly_commanders_lounge_july_19_2022/igti9c1/
     {
-        id: '00098',
+        id: 98,
         question: `How does the Rescue Station work?`,
-        answer: `${link('DMesse guide.', 'http://dmesse.egloos.com/m/3588696')}`,
+        answer: `Get pet. Profit.<br>
+        For special pets, they are available through events and costume stories.`,
         tags: [dtag.PET, dtag.PRIME]
-    },
+    },  //Unreachable - http://dmesse.egloos.com/m/3588696
     {
-        id: '00013',
+        id: 13,
         question: `What is Luffberry Chess?`,
         answer: `GFL version of 100% Orange Juice, I guess?<br>
         And it's called "chess" only because boardgame.
-        ${List.unordered(
+        ${Li.unordered(
             link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/springfields-cafe-haven-soothe-weary-souls-and-luffberry-chess"),
             link("u/fortis_99's tips.", 'https://redd.it/rz4uye'),
-            details("u/StarBase10's doc guide.", Embed.google(
-                ["The Skill Issue Guide to Luffberry Chess", "https://docs.google.com/document/d/1BHZ36zTKdQ9gd81a-RAHEzbs9OEgJraSRp5LQv8CB_A"]
-            ))
+            details("u/StarBase10's doc guide.", Embed.google(["The Skill Issue Guide to Luffberry Chess", "https://docs.google.com/document/d/1BHZ36zTKdQ9gd81a-RAHEzbs9OEgJraSRp5LQv8CB_A"]))
         )}`,
         tags: [dtag.OJ, dtag.PRIME]
     },
     //#endregion
     //#region Tier Lists
     {
-        id: '00464',
+        id: 464,
         question: `Is there a tier list for this game?`,
         answer: `${link("CN spreadsheet.", "https://shimo.im/sheets/47kgJne6BeIpR4qV")}<br>
-        Take them more as a suggestion rather than a rule. Tier lists are usually for those generally ok in majority of content or very good at highly recurring niche.<br>
+        Take them more as a suggestion rather than a rule. Tier list placements are usually for those generally ok in majority of content or very good at highly recurring niches.<br>
         It's better to know which units are good based on countering enemies and their formations.`,
         tags: [dtag.TIER]
     },
@@ -302,10 +318,10 @@ const CARDS = [
         id: '00014',
         question: `Is XXX doll good and is it safe to retire them?`,
         answer: `Tier lists in general are a matter of countering enemies. And since the meta of this game varies wildly from event to event, most people would point to analysis links instead.
-        ${List.unordered(
+        ${Li.unordered(
             link('Gamepress Overview.', 'https://gamepress.gg/girlsfrontline/t-dolls-list'),
             details("u/LuckyTenth's spreadsheet.", Embed.google(["T-doll relevance", "https://docs.google.com/spreadsheets/d/1w2qEbnNluSc6C4U73yyAnYE_zmXdARvDu3GZmMO7hl4"])),
-            link('Matsuda Quips.', 'https://gfl.matsuda.tips/dolls/'),
+            link('Matsuda Quips.', 'https://gfl.matsuda.tips/dolls/') + " Updated up to Fixed Point dolls.",
             link('KR Wiki.', 'https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0/%EC%9D%B8%ED%98%95%EB%8F%84%EA%B0%90'),
             link("Fatalchapter's bilibili guide.", 'https://www.bilibili.com/read/readlist/rl100361') + " Updated up to Jashin dolls.",
             link("Sijun's list.", 'https://www.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1rph1l/') + " Translated by u/ConductorBichir.",
@@ -333,13 +349,13 @@ const CARDS = [
     {
         id: '00017',
         question: `Is there a tier list for fairies and equipment?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             details("Sijun's infographic", `${image("https://i.imgur.com/2nh8xHs.jpeg", "Fairy and equipment tier list")}<br>
             For the equipments, top number is the recommended quantity, bottom number is the reserve quantity.`),
             details("u/UnironicWeeaboo's fairy stat calculator", Embed.google(
                 ["GFL - Fairy Stat Calculator", "https://docs.google.com/spreadsheets/d/1RORciafqtspkxy3fqBrFdKIxVfanV2-fLl9FlvY3QtM"]
             )),
-            details("u/BigStupidJellyfish_ reviews", List.unordered(
+            details("u/BigStupidJellyfish_ reviews", Li.unordered(
                 link('General reviews', 'https://big-stupid-jellyfish.github.io/GFMath/pages/fairy-reviews'),
                 link('Sniper review', 'https://big-stupid-jellyfish.github.io/GFMath/pages/sniper-rework')
             ))
@@ -378,7 +394,7 @@ const CARDS = [
     {
         id: 23,
         question: `Where can I read/rewatch the MOD, costume, event stories, and all that?`,
-        answer: `${List.description({
+        answer: `${Li.description({
             'Compilations' : [
                 link('GF Translated Story Material (+ other stuff)', 'https://drive.google.com/drive/folders/14sNze_lnv5EwL1bl_g3IOVQIo6GGYUJp'),
                 link('GF Translations', 'https://drive.google.com/drive/folders/14bAuWaGbagJwucmlit3EkXFqMRV9NHZO'),
@@ -412,7 +428,7 @@ const CARDS = [
     {
         id: 24,
         question: `Where and how can I get my favorite gun/doll/unit/character?`,
-        answer: `${List.description({
+        answer: `${Li.description({
             'Factory Production': [
                 // spoilerSummary('Infographic for resource efficient recipes.', image("https://media.discordapp.net/attachments/951085201658871820/1061272490309066762/recipes_2.png", "Factory prooduction recipes.")),
                 link("GFDB Github Database.", 'https://gf-db.github.io/')
@@ -461,7 +477,7 @@ const CARDS = [
     {
         id: '00025',
         question: `How do I strengthen T-Dolls?`,
-        answer: `${List.description({
+        answer: `${Li.description({
             'As an individual unit' : ['Leveling up',
                 'Stat enhancements',
                 'Equipments',
@@ -488,7 +504,7 @@ const CARDS = [
     {
         id: '00026',
         question: `What are the leveling stages I can corpse drag and how do I run them?`,
-        answer: `${List.description({
+        answer: `${Li.description({
             'General': [
                 link('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide'),
                 link('Gamepress guide.', "https://gamepress.gg/girlsfrontline/optimized-levelling-corpse-dragging-maps"),
@@ -530,7 +546,7 @@ const CARDS = [
         id: 28,
         question: `Is there a guide on how to build echelons/team compositions?`,
         answer: `Basic tip in this game is counterplay is more important than fixed synergy.<br>
-        ${List.description({
+        ${Li.description({
             'Mixed' : [details("CheneyQWER's infographic.", image(IMG_ASSET+"EchelonComps.png", "CheneyQWER's infographic."))],
             'Coalition Echelons' : [
                 link('Reddit flowchart post.', 'https://redd.it/rkvisq'),
@@ -572,7 +588,7 @@ const CARDS = [
     {
         id: '00030',
         question: `What are Main Tanks and Off Tanks?`,
-        answer: `${List.description({'Main Tanks' : ['Guns that have survivability skills (i.e. smoke, eva boost, stun etc.).', 'Generally situated at the middle of the pack.'],
+        answer: `${Li.description({'Main Tanks' : ['Guns that have survivability skills (i.e. smoke, eva boost, stun etc.).', 'Generally situated at the middle of the pack.'],
         'Off Tanks' : ['Guns that generally have damage skills (i.e. molotov, grenade, damage boost etc.) and/or a secondary damage soaker in some instances.', 'Situated at either middle-top or middle-bottom.']})}<br>
         All of these usually refer to SMGs.`,
         tags: [dtag.ECH, dtag.IMPT]
@@ -587,7 +603,7 @@ const CARDS = [
         id: '00032',
         question: `Is there a rate up in this game? If so, how do they work?`,
         answer: `When a rate-up is in progress, an "EVENT" marker will be plastered on top of the Factory Production button.<br>
-        ${List.description({
+        ${Li.description({
             'Anchored Construction' : [
                 link(`Available for new players ${TextStyle.style('and for veterans not bothering with it', TextStyle.STRIKE)}.`, 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681'),
                 link('Available on Tuesdays whenever a new batch of production dolls are released.', 'https://redd.it/szdua2') + ` Recommended anchors are usually 4${STAR} due to ${getID("TCM", "00009")} existing, especially for shotguns.`, 
@@ -612,7 +628,7 @@ const CARDS = [
     {
         id: '00034',
         question: `How do I strengthen FSTs?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             'Leveling up mostly by SCR',
             `Raising ${STAR}s using their central data or general data`,
             'Iterations by data patches (only available at LV100 and 5★)',
@@ -637,7 +653,7 @@ const CARDS = [
     {
         id: 37,
         question: `Where to go for tech support/bug report?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             "In-game customer support",
             "Support address: mailto:support@sunborngame.com",
             "Facebook/Twitter",
@@ -667,7 +683,7 @@ const CARDS = [
     {
         id: '00041',
         question: `Which emulators are good for GFL?`,
-        answer: `${List.ordered('Mumu.', 'Memu.', 'LDPlayer.', 'Nox.', 'Bluestacks.')}`,
+        answer: `${Li.ordered('Mumu.', 'Memu.', 'LDPlayer.', 'Nox.', 'Bluestacks.')}`,
         tags: [dtag.EMU, dtag.NEWB]
     },
     {
@@ -710,7 +726,7 @@ const CARDS = [
     {
         id: '00048',
         question: `For limited-time bonuses (i.e. auto-battles, logistics), when are the rewards calculated?`,
-        answer: `${List.description({
+        answer: `${Li.description({
            'If the runs can be cancelled without penalty, rewards are calculated at the end.' : [
                 'The "Use Battery" bingo mission when exp-training HOCs.',
                 'Auto-Battles.'],
@@ -749,7 +765,7 @@ const CARDS = [
     {
         id: 53,
         question: `Is there any way to reset my battles so I can get a win?`,
-        answer: `${List.description({
+        answer: `${Li.description({
             "Method 1: In-game restart": [figure(image(IMG_ASSET+"BattleRestart.png", "Restart Battle button."), "Restart Battle button in Pause menu")],
             "Method 2: Client restart": [
                 "Turn off WiFi during battle. You can still finish the fight with no connection. Though be wary of connection timeouts so do it near the end.",
@@ -768,7 +784,7 @@ const CARDS = [
     {
         id: 55,
         question: `How can I save the enemy composition for later practice?`,
-        answer: `${List.description({
+        answer: `${Li.description({
             'Add Target' : [
                 "Long press the enemy on the map and you'll see the button on the top-left.",
                 'Pause while in battle to see the button on the bottom-left.',
@@ -793,7 +809,7 @@ const CARDS = [
     {
         id: 58,
         question: `Is there a way for my game to feel smoother/lass laggy?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             link('Gamepress article', 'https://gamepress.gg/girlsfrontline/fixing-gfl-client-lag-possible-workarounds'),
             link('Decompressed .obb', "https://drive.google.com/drive/folders/1QoWsDyh4rlh0DtpxomSGOKkaAzXPfvBG"),  // https://old.reddit.com/r/girlsfrontline/comments/180bxy6/weekly_commanders_lounge_november_21_2023/kae6x8k/
             link('DIY decompression', 'https://www.reddit.com/r/girlsfrontline/comments/lvwwtv/weekly_commanders_lounge_march_02_2021/gpugenl/')
@@ -829,9 +845,9 @@ const CARDS = [
     {
         id: '00064',
         question: `What best-in-slot (BiS) equipments should I use on my dolls?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             details('General equipments.', figure(image("https://cdn.discordapp.com/attachments/951085201658871820/1059432568321224704/eq_suggestions.png", "Standard equipment setup."), "Taken from Discord")),
-            details('#2 Chip equipment.', List.unordered(
+            details('#2 Chip equipment.', Li.unordered(
                 details('BigStupidJellyfish_ infograph.', link(image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png', "#2 Chip flowchart."), 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')),
                 details("Google spreadsheets.", Embed.google(
                     ["2021 MAR, GFL New ARSMG Chip Analysis (by mis)", "https://docs.google.com/spreadsheets/d/1c0JhaSX9WyL3EB-7RCDE4NrfzR1YuWdYWidQ_06-PrQ"],
@@ -847,7 +863,7 @@ const CARDS = [
     {
         id: '00065',
         question: `How do I maximize the efficiency of my echelon's ROF?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             link("u/BigStupidJellyfish_'s ROF calc.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/rof-calc'),
             details("GFC Spreadsheet.", Embed.google(
                 ["RoF chart by GF Corner (Credits: 25thNight-, Aria, Dabby, Omega)", "https://docs.google.com/spreadsheets/d/1k74SCGGMHtwbl8gmTaETLsa8t12A7dWdj0V1tjdMD4Y"]
@@ -864,7 +880,7 @@ const CARDS = [
     {
         id: 67,
         question: `Which dolls should I dupe/duplicate?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             link("Gamepress suggestions for dolls and coalition units.", "https://gamepress.gg/girlsfrontline/duping-recommendations-and-coalition-mooks"),
             link('Matsuda notes.', 'https://gfl.matsuda.tips/post/worthwhiledupes'),
             // spoilerSummary('Discord recommendations.', img('https://cdn.discordapp.com/attachments/640157367056728133/1048531902065287188/dupe_gameing_pt3.png'))   //Jesse, Varz, etc.
@@ -888,7 +904,7 @@ const CARDS = [
     {
         id: '00070',
         question: `Do events get a rerun? And if so, when?`,
-        answer: `${List.description({
+        answer: `${Li.description({
             "Major Events": [
                 "Gets a permanent rerun called Campaign Missions 6-12 months or more after their initial release.",
                 "You can read past major events in their entirety."
@@ -907,7 +923,7 @@ const CARDS = [
     {
         id: '00072',
         question: `How can I save my own voodoo recipe?`,
-        answer: `${List.ordered(
+        answer: `${Li.ordered(
             'Craft from production using your own recipe.',
             'Take the item.',
             'Wait for 10 minutes for the voodoo list to refresh.',
@@ -941,7 +957,7 @@ const CARDS = [
     {
         id: '00077',
         question: `Does anyone know how to CE stack using GFAlarm?`,
-        answer: `${List.ordered(
+        answer: `${Li.ordered(
             'GFAlarm.',
             'File Save under Settings tab.',
             'Check "Save Theater Optimize Team".',
@@ -1029,7 +1045,7 @@ const CARDS = [
         tags: [dtag.FRIEND, dtag.ECH]
     },
     {
-        id: '00089',
+        id: 89,
         question: `Which map is best for auto-battles, or just leveling in general?`,
         answer: `${figure(Embed.google(["GFL EN Autobattle Comparison", "https://docs.google.com/spreadsheets/d/1e_1oAa9Qm_tmWqbgFQca8ohzo29qcjctIwyIU9Mc1H0"]), "Includes EXP per fight and level threshold to EXP penalty/drop-off")}`,
         tags: [dtag.AUTO, dtag.TDOLL, dtag.LEVEL]
@@ -1062,11 +1078,11 @@ const CARDS = [
     {
         id: '00093',
         question: `Which facilities/base upgrades should I prioritize for battery expenditures?`,
-        answer: `${List.ordered(
-            details('Forward Basecamp', List.ordered(
+        answer: `${Li.ordered(
+            details('Forward Basecamp', Li.ordered(
                 'Gate Console',
                 'Loot Rack')),
-            details('Protocol Control Centre', List.ordered(
+            details('Protocol Control Centre', Li.ordered(
                 'Impulse Reactor',
                 'Tactical Chip Research Station')),
             'Intelligence Room',
@@ -1092,7 +1108,7 @@ const CARDS = [
         id: '00096',
         question: `What's the priority to spend gems?`,
         answer: `${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/kalinas-shop-and-gems")}<br>
-        ${List.description({
+        ${Li.description({
             "Echelon Slots": [
                 "Costs 880, not 380.",
                 "Up to 6 minimum, 8 for actually constant (ranking not included) logistics. Preferably maximum (14)."
@@ -1115,7 +1131,7 @@ const CARDS = [
     {
         id: '00097',
         question: `Which HOC chips should I use?`,
-        answer: `${List.description({
+        answer: `${Li.description({
             "Guides": [
                 link('Reddit guide for desktop chip calculator.', 'https://redd.it/fnh1ey'),
                 // spoilerSummary('Google Docs guide.', .google(MBD.G_WORD, '1pR6g-mgsy22_MhRPASL9c1wDoCuxfUwr-DCCMYmb7Ss')),
@@ -1151,7 +1167,7 @@ const CARDS = [
     {
         id: '00101',
         question: `I wasn't able to clear the event during it's initial runtime. Will I still get the clear rewards when they get added to Campaign?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             'Gutted rewards compared to original.',
             'No True Core Masks (TCM).',
             link('Reward and crate dolls get shuffled to farming lottery.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls')
@@ -1230,7 +1246,7 @@ const CARDS = [
         id: '00112',
         question: `What does equipment calibration and enhancement do?`,
         answer: `${img(IMG_ASSET+"EquipCalibEnhance.png", 'Calibration and enhancement are independent of each other')}
-        ${List.description({
+        ${Li.description({
             'Equipment Calibration' : [
                 "Raises the equipment's base stat.",
                 'RNG dictates how many calibration tickets are wasted before maxing.',
@@ -1261,7 +1277,7 @@ const CARDS = [
     {
         id: '00115',
         question: `How do friend batteries work?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             `Friend batteries recharge at 3am and 3pm UTC-8, or whenever ${link("Netlify", "https://gftimers.netlify.app/")} says the time is.`,
             'The amount of charges/batteries depend on the number of dorms your friend has.',   //Tentative
             'A set number of people can claim one once per cycle.',
@@ -1293,7 +1309,7 @@ const CARDS = [
     {
         id: '00119',
         question: `How does Symmetric Infusion work exactly?`,
-        answer: `${List.description({
+        answer: `${Li.description({
             'Cognitive Infusion' : ['Basically, swaps sizes. Technically, swaps all stats aside from size. If both sides are upgraded, say Lv. 31 and Lv. 23, they become 23 and 31, not 1 and 31+.'], 
             'Golden Infusion' : ['Swaps the golden status between the two units, nothing more, nothing less.']
         })}`,
@@ -1318,7 +1334,7 @@ const CARDS = [
     {
         id: '00122',
         question: `How do I unlock special effects on commanders like flame auras etc.?`,
-        answer: `${List.ordered(
+        answer: `${Li.ordered(
             "Get a complete 5-slot from a costume set. Doesn't matter if male only or female only.",
             'Get their rare color variants.',
             '???',
@@ -1329,7 +1345,7 @@ const CARDS = [
     {
         id: '00123',
         question: `Is there a list of doll farming routes for each map?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             details('Compilation of all farm routes for limited dolls and equipments on both campaign and main story.', Embed.google(["Compilation of farming guides for limited dolls", "https://docs.google.com/document/d/1GUcA1ZHYVKBhTspdRYPIkECVZRoLFvqDnLrgrFb6VcU"])),   // by u/rcpz93 most likely
             link('Farming routes by RevenantXIII (with Pilfer strats), focusing on events and ranking-relevant campaign dolls.', 'https://rosedrake.github.io/GFL.html'),
             details('416 SPEQ Pilfer route.', MBD.youtube('5v6gEqydGm4'))
@@ -1359,13 +1375,13 @@ const CARDS = [
     {
         id: '00127',
         question: `Is there a way to expand the armory, or am I stuck with 100 doll slots forever?`,
-        answer: `${List.unordered( 'Shop>Items>Infrastructure>T-Doll slots +10.', 'Tap the locked echelon button.')}`,
+        answer: `${Li.unordered( 'Shop>Items>Infrastructure>T-Doll slots +10.', 'Tap the locked echelon button.')}`,
         tags: [dtag.SHOP]
     },
     {
         id: '00129',
         question: `I want to F2PBTW. How do I do that?`,
-        answer: `${List.description({
+        answer: `${Li.description({
             'Gems' : ['Daily log-ins (300 monthly).', 
                 'Sharing in FB/Twitter (30 weekly). You can cancel it at the last minute.',
                 'S-Ranking Normal (10) and Emergency (30) Chapters.',
@@ -1479,7 +1495,7 @@ const CARDS = [
     {
         id: '00144',
         question: `What does "Event" mean on the left side of the mission select screen?`,
-        answer: `${List.description({
+        answer: `${Li.description({
             'Combat Missions' : ['SPEQ Rate Up for X-4N',
                 'Special Rescue Event for X-6'],
             'Campaign Missions' : ['Newly added campaign'],
@@ -1675,7 +1691,7 @@ const CARDS = [
     {
         id: '00170',
         question: `Is there an efficient way of raising a Parachute Fairy?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             link("markhydroxyl's github notes.", 'https://github.com/markhydroxyl/GFL-notes/blob/main/tls/nga_raising_paras.md'),
             link('Logistics for HEC crafting.', 'https://github.com/markhydroxyl/GFL-notes/blob/main/tls/nga_hec_logis.md'),
             details('Fairy Development Calculator.', Embed.google(["Girls' Frontline: Fairy Development Calculator", "https://docs.google.com/spreadsheets/d/1Zcz6Yp3sduhUXY9jo2HCX4pOdiIQioZcS8v6xMK01Pk"]))
@@ -1698,7 +1714,7 @@ const CARDS = [
     {
         id: '00173',
         question: `What should I do during a collab?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             "Farm event specific currencies (NOT Platinum or Nova medals) (60 daily).",
             "Get all collab characters (Clear Reward, Farming, Shop), their Special Equipments, and the fairy.",
             "Combat reports and affection boosters are low on the shop priority list (costing 2 per item)."
@@ -1708,7 +1724,7 @@ const CARDS = [
     {
         id: '00174',
         question: `I can't enter the game (stuck downloading/loading/getting black screen). What should I do?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             "Wait and trudge through",
             "Download the bare minimum files first",
             "Restart client",
@@ -1731,7 +1747,7 @@ const CARDS = [
         question: `What are these General Data I keep getting?`,
         answer: `Used for FSTs that are not yet 5${STAR}.<br>
         ${TextStyle.style('Limitations:', TextStyle.BOLD)}<br>
-        ${List.unordered(
+        ${Li.unordered(
             'Only usable to FSTs in the gacha pool (added after a Theater for a new FST is ran).',
             "Cannot be used for iteration, or anythimg else for that matter."
         )}
@@ -1822,7 +1838,7 @@ const CARDS = [
     {
         id: '00189',
         question: `Where can I see the costumes I have acquired?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             'Commander Stat Card > Adjutants > Filter > Unlocked. Works for doll you have in inventory.',
             'Index > Furniture > Posters. Works for costumes that have been gifted/given.')}`,
         tags: [dtag.TDOLL, dtag.SKIN]
@@ -1837,7 +1853,7 @@ const CARDS = [
         id: '00191',
         question: `General tips on defeating deathstacks?`,
         answer: `For the most part, you don't. But if you really want to, this is the epitome of "CE is useless", "what dolls, formation, fairy to use depend on what you're going against", and "learn kiting". Just don't expect to come out of it unscathed.<br>
-        ${List.description({
+        ${Li.description({
             'Swarm deathstacks' : ['Usually AoE attacks such as Kord, Type 88, M4 exodia, KSVK with HOC support, and tank/delay fairies.',
                 'Kill them all before they kill you.'],
             'Golyat+ deathstacks' : ['Either stun+smoke or forceshields.']
@@ -1895,10 +1911,10 @@ const CARDS = [
     {
         id: '00200',
         question: `Is there a compilation of anniversary adjutant lines?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             details("3rd Anniversary", MBD.youtube("PL4Z0akElhimzHHiVMCozfUn1B6tYKjwPR")),   //u/paperrabbit
             details("4th Anniversary", MBD.youtube("PLoDB_FcnOA5zXkZ9XmQMTog1F7uIRZ_Qa")),   //u/ConductorBichir
-            details("5th Anniversary", List.unordered(                                       //plants zaza
+            details("5th Anniversary", Li.unordered(                                       //plants zaza
                 details("Handguns", MBD.youtube("N-B_icnlDwg")),
                 details("Submachine Guns", MBD.youtube("lQQ7aBEOFlc")),
                 details("Rifles", MBD.youtube("gG8UUqZGzu4")),
@@ -1915,7 +1931,7 @@ const CARDS = [
     {
         id: '00201',
         question: `My team says Ammo/Ration depleted. How do I fill it up?`,
-        answer: `${List.ordered(
+        answer: `${Li.ordered(
             'Stand on a captured Command Center, captured open Heliport, captured open Heavy Heliport, or Cache Box.',
             'Double-tap the echelon standing on it.',
             'Yellow Resupply button on the bottom-right.')}<br>
@@ -1952,7 +1968,7 @@ const CARDS = [
     {
         id: '00206',
         question: `Why is this game downloading game files when I open it?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             "You're just booting it up at the most opportune of times (maintenance/hotfix).",
             "You closed the Bluestacks emulator directly before closing the GFL app."
         )}`,
@@ -2026,7 +2042,7 @@ const CARDS = [
     {
         id: '00217',
         question: `What should I prioritize buying from the black market?`,
-        answer: `${List.ordered(
+        answer: `${Li.ordered(
             'Fire Control Cores',
             'Dummy Cores',
             'Standard Combat Reports',
@@ -2064,14 +2080,14 @@ const CARDS = [
     {
         id: '00222',
         question: `What are the best deals for RL money?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             'Monthly gems card')}`,
         tags: [dtag.MISC]
     },
     {
         id: '00223',
         question: `What's the release order for PA banners?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             details('Google Doc.', Embed.google(["GFL Protocol Assimilation Banner Order", "https://docs.google.com/spreadsheets/d/1nwlyZxoYaC44idP8SnAjk1OgQX4ND0lIzG3_Fs1We_0"])),
             details('Image.', image('https://cdn.discordapp.com/attachments/564028599682727937/1003511535387283556/Proass_order.png', "Protocol Assimilation banner order."))
         )}`,
@@ -2100,7 +2116,7 @@ const CARDS = [
     {
         id: '00227',
         question: `How many ways can I terminate the current mission?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             'Terminate mission button on the top-left of the field map.',
             "Combat Missions/Campaign/Event Map > the mission you're currently doing > Terminate.")}`,
         tags: [dtag.MAIN, dtag.CAMPAIGN, dtag.MAJOR, dtag.SEASON, dtag.COLLAB]
@@ -2246,7 +2262,7 @@ const CARDS = [
     {
         id: '00249',
         question: `How can I get T-Doll skins?`,
-        answer: `${List.description({
+        answer: `${Li.description({
             'Shop' : [
                 'Dedicated gem-bought shop.',
                 'Event shop during seasonal events.'
@@ -2348,7 +2364,7 @@ const CARDS = [
     {
         id: '00263',
         question: `How do I get the gold medals in maps?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             'Read the Gold Medal description in the combat summary.',
             'Never retreat your team from the field map either by losing skirmishes (losses) or manual retreating (withdrawing).',
             "Never repair fielded teams (red warning at the bottom left tells you this, don't miss it).",
@@ -2445,7 +2461,7 @@ const CARDS = [
     {
         id: '00279',
         question: `Is there an easy way to get Luffberry tickets?`,
-        answer: `${List.ordered(
+        answer: `${Li.ordered(
             'Create private lobby.',
             'Start match with bots.',
             'Recover game every 5 minutes or buy cards during shop phase. Important or else you get no tickets.',
@@ -2618,7 +2634,7 @@ const CARDS = [
     {
         id: '00309',
         question: `What are the other battery sinks besides facilities?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             'Slaving Kalina (CR/SCR)',
             'Making an animal kingdom (3 of each purchasable pets in Rescue Station)',
             'Raising FSTs',
@@ -2809,7 +2825,7 @@ const CARDS = [
     {
         id: '00339',
         question: `What's the difference between L2D and Simplified L2D?`,
-        answer: `${List.description({
+        answer: `${Li.description({
             'Live2D' : [
                 'Sometimes called Reactive Live2Ds.',
                 'Can follow your touch with their eyes/head.',
@@ -2928,7 +2944,7 @@ const CARDS = [
     {
         id: '00356',
         question: `What are the fonts used in the game?`,
-        answer: `${List.description({
+        answer: `${Li.description({
             'Noto sans' : ['Story dialogue', 'Unit/Skill descriptions']
         })}`,
         tags: [dtag.MISC]
@@ -3012,7 +3028,7 @@ const CARDS = [
     {
         id: '00369',
         question: `How many Parachute Fairies would I need?`,
-        answer: `${List.description({
+        answer: `${Li.description({
             'Casual' : ['1 - 2'],
             'Competetive' : ['3 - 5'],
             'Top Ranker' : ['6 - 10'],
@@ -3047,7 +3063,7 @@ const CARDS = [
     {
         id: '00374',
         question: `I want a specific unit. How will I be able to pull for them in this banner?`,
-        answer: `${List.description({
+        answer: `${Li.description({
             'Pulses' : [
                 'Only works for the three units on the field at that time.',
                 'Once an attempt is made, captured or not, they will be replaced with another unit from the pool.'
@@ -3297,7 +3313,7 @@ const CARDS = [
     {
         id: '00021',
         question: `What is the priority for each currency?`,
-        answer: `${List.description({
+        answer: `${Li.description({
             "Toy Block": ["Furnitures", "Batteries if really strapped"],
             "Buttstock": ["Fire Control Cores", "CR/SCR if needed"],
             "Acorns": ["SPEQs"],
@@ -3308,7 +3324,7 @@ const CARDS = [
     {
         id: '00412',
         question: `What is a deathstack?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             "Strong enemies that can cover each others weaknesses.",
             "Large amount of enemies in a single formation.",
             "Even with superior kiting and armory, taking critical damage is inevitable."
@@ -3372,7 +3388,7 @@ const CARDS = [
     {
         id: '00423',
         question: `Where can I get Memory Fragments?`,
-        answer: `${List.ordered(
+        answer: `${Li.ordered(
             "Combat Simulations - Neural Corridor",
             "Kalina's Shop",
             "Cafe MOD Stories",
@@ -3386,7 +3402,7 @@ const CARDS = [
         id: '00424',
         question: `I'm overflowing with units/gears/fairies/PA units. Where can I dump/scrap/recycle/retire them off?`,
         answer: `${img(IMG_ASSET+"Disassembly.png", "Found in the Factory Tab")}<br>
-        ${List.description({
+        ${Li.description({
             "T-DOLL": [
                 "The final stage of core farming.",
                 `Cores received is equal to each scrapped doll's rarity, all other stats be damned. Collab dolls count as 5${STAR}.`
@@ -3443,7 +3459,7 @@ const CARDS = [
         id: '00060',
         question: `What are Friend Gossips?`,
         answer: `Unique dialogues when two paired dolls are in the double adjutant.<br>
-        ${List.description({
+        ${Li.description({
             'Becoming a Star' : [
                 'P38 + HK45',
                 'P38 + SpectreM4',
@@ -3518,7 +3534,7 @@ const CARDS = [
         id: '00442',
         question: `What are Unity Skills?`,
         answer: `Additional skill when the paired dolls are in the same echelon.<br>
-        ${List.description({
+        ${Li.description({
             'Operation Starchaser' : ['Grizzly + PzB29', 'AK-Alfa + M82'],
             'Her Smile' : ['G36 + Springfield'],
             'Default' : ['MPK + MPL', "SCAR-H + SCAR-L"]
@@ -3546,7 +3562,7 @@ const CARDS = [
     {
         id: '00446',
         question: `How do Total Score and Final Battle ranking work?`,
-        answer: `${List.description({
+        answer: `${Li.description({
             "Total Score": [
                 "Cumulative score gained throughout Theater.",
                 "Score includes investigations, battles, and construction."
@@ -3570,7 +3586,7 @@ const CARDS = [
     {
         id: '00448',
         question: `How do I use Construction Fairy effectively?`,
-        answer: `${List.ordered(
+        answer: `${Li.ordered(
             "Deploy on a node next to an enemy.",
             "Go to that node.",
             "Take a defensive stance."
@@ -3586,7 +3602,7 @@ const CARDS = [
     {
         id: '00450',
         question: `My Samsung/Pixel phone can't open up the game. Is there any fix for this?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             link("u/Le_Trudos' Android 12 fix", "https://www.reddit.com/r/girlsfrontline/comments/tsmwen/possible_solution_to_android_12_updates_making/"),
             link("Droidwin Android 12 fix", "https://droidwin.com/games-and-apps-crashing-not-working-on-android-12-how-to-fix/"),
             link("u/tommykuah's Android 12 fix", "https://www.reddit.com/r/girlsfrontline/comments/tdsmjh/regarding_android_12_app_crashfreeze_issue_and/i0mjpop/"),
@@ -3611,7 +3627,7 @@ const CARDS = [
     {
         id: '00453',
         question: `How do I strengthen fairies?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             "Leveling up, primarily by CRs",
             "Good talents, usually Fervor/Damage 2",
             "Enhancements, by feeding duplicate/extra fairies"
@@ -3680,7 +3696,7 @@ const CARDS = [
     {
         id: '00458',
         question: `What doew the Frontline Protocol battlepass give?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             "Battlepass Skin",
             "Animated Icon Frame",
             "Resources",
@@ -3727,7 +3743,7 @@ const CARDS = [
     {
         id: '00463',
         question: `Which equipment goes to which slot?`,
-        answer: `${List.description({
+        answer: `${Li.description({
             "Accessory": [
                 "Sniper Optics",
                 "Red Dot",
@@ -3848,7 +3864,7 @@ const CARDS = [
     {
         id: '00476',
         question: `What's the best way to farm a map drop doll/equipment?`,
-        answer: `${List.description({
+        answer: `${Li.description({
             "Resource efficiency": ["What formation and least amount of dolls that would be able to minimize damage while being able to clear fights."],
             "Time efficiency": ["Routes that take the least amount of turns. If S-ranking the map requires effort, then don't."],
             "Drop efficiency": ["All fights should be able to drop the farmable doll as much as possible. Take as little non-drop fights or as many drop chances per run."]
@@ -3947,7 +3963,7 @@ const CARDS = [
     {
         id: '00491',
         question: `Is there a repository of all dolls currently in the game?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             link("CN Wiki", "http://www.gfwiki.org/w/%E9%A6%96%E9%A1%B5"),
             link("EN Wiki", "https://iopwiki.com/wiki/"),
             link("KR Wiki", "https://gfl.zzzzz.kr/dolls.php?lang=en")
@@ -3964,7 +3980,7 @@ const CARDS = [
     {
         id: 493,
         question: `What's the best strategy for Gray Zone?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             "Picking the hardest difficulty you can deal.",
             "Beelining to the boss for points per time."
         )}`,
@@ -4015,7 +4031,7 @@ const CARDS = [
     {
         id: '00502',
         question: `Which dolls should I get for the newbie anchored construction?`,
-        answer: `${List.unordered(
+        answer: `${Li.unordered(
             "Carcano M91/38 for her disgusting multiplier.",
             "Suomi for her busted Neural Upgrade."  // https://old.reddit.com/r/girlsfrontline/comments/18lwouj/weekly_commanders_lounge_december_19_2023/ke5rt4z/
         )}`,
@@ -4032,7 +4048,7 @@ const CARDS = [
         id: 503,
         question: `Why are some of the allid echelons getting a "Depleted Rations/Ammo" warning?`,
         answer: `There are three types of allied/support echelons:
-        ${List.ordered(
+        ${Li.ordered(
             "Friend/Support echelons that has three modes.",
             "Allied echelons with unlimited supplies.",
             "Allied echelons with limited supplies."
@@ -4095,7 +4111,7 @@ const CARDS = [
         <p>New unit/seasonal rerun banners give priority to new units, while seasonal reruns take this place on their respective seasons.</p>
         <p>Special banners are banners used for anniversaries and half-annies, giving free pulls.</p>
         Normal Banners
-        ${List.ordered(
+        ${Li.ordered(
             "Scarecrow",
             "Executioner",
             "Hunter",
@@ -4113,7 +4129,7 @@ const CARDS = [
             "Tareus"
         )}
         Sesonal Banners
-        ${List.unordered(
+        ${Li.unordered(
             "Summer) Architect - NVW Model",
             "Halloween) Intruder - Sorceress Of The End",
             "Christmas) Destroyer - Dashing Reindeer",

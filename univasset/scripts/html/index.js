@@ -79,6 +79,11 @@ export const Embed = {
             return CLONE.outerHTML;
         }
         return DIV;
+    },
+
+    twitter(handle, ID) {
+        const A = setattr(document.createElement("a"), {href: `https://twitter.com/${handle}/status/${ID}?ref_src=twsrc%5Etfw`, textContent: `${handle}'s Tweet`});
+        return setattr(document.createElement("blockquote"), {toString: htmlString, appendChild: [A], classList: {add: ["twitter-tweet"]}});
     }
 }
 
@@ -124,10 +129,12 @@ export function fragment(...nodes) {
 
 
 
-
-
-
-
+const List = {
+    unordered(...items) {
+        const LI_ARRAY = items.map(x => setattr(document.createElement("li"), {append: [x]}));
+        return setattr(document.createElement("ul"), {toString: htmlString, append: LI_ARRAY});
+    }
+}
 
 
 

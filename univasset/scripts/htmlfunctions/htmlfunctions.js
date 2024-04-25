@@ -32,8 +32,3 @@ export function table(headerArray, ...arrayOfArrays) {
 export function tooltip(hoverable, tooltip) {
     return `<span class="tooltip">${hoverable}<span class="tooltiptext">${tooltip}</span></span>`
 }
-
-/** @param {string} text @param {string[]} ID */
-export function getID(text, ...ID) {
-    return `<a href="https://xxx-yyy-xxx.github.io/GFL/faqs?id=${ID.join('+')}">${text}</a>`
-}

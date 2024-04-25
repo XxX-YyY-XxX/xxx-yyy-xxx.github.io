@@ -17,19 +17,22 @@ export function textStyle(text: string, ...styles: "over"): HTMLSpanElement;
 
 
 
-
+type AppendableElement = string | Node;
 
 export const Embed = {
-    /** Creates a field for Google Sheets.
-     * @param namelinkpair link ends in alphanumeric */
-    google(...namelinkpair: [title: string, link: string][]): HTMLDivElement;
+    /** Creates a field for Google Sheets. */
+    google(/** link ends in alphanumeric */...namelinkpair: [title: string, link: string][]): HTMLDivElement;,
+    twitter(handle: string, ID: string): HTMLQuoteElement;
+}
+
+export const List = {
+    unordered(...items: AppendableElement[]): HTMLUListElement;
 }
 
 /** Placehoder while no official implementation exists.  */
 type HTMLFigureElement = HTMLElement;
-
 type ImageType = "inline";
 export function image(src: string, alt: string, keys?: {type?: ImageType}): HTMLImageElement;
 export function figure(content: HTMLElement, caption: string | DocumentFragment): HTMLFigureElement;
-export function details(summary: string, content: HTMLElement): HTMLDetailsElement;
-export function fragment(...nodes: (string | Node)[]): DocumentFragment;
+export function details(summary: string, content: AppendableElement): HTMLDetailsElement;
+export function fragment(...nodes: AppendableElement[]): DocumentFragment;

@@ -62,13 +62,5 @@ function timer(start_date, end_date, title, imgpath, {onend = null} = {}) {
         "./assets/images/timer/cpt00_e_cg044.png",
         {onend: resetTimer}
     )
-
-    timer(
-        "Apr 02, 2024 18:30 UTC-0800",
-        "Apr 23, 2024 18:30 UTC-0800",
-        "Crisis Rescue",
-        "./assets/images/timer/cpt00_e_cg034.png",
-        {onend: resetTimer}
-    )
 })();
 // resetTimer();
