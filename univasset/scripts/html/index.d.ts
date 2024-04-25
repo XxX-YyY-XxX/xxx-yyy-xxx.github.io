@@ -27,7 +27,8 @@ export const Embed = {
 }
 
 export const List = {
-    unordered(...items: AppendableElement[]): HTMLUListElement;
+    unordered(...items: AppendableElement[]): HTMLUListElement;,
+    description(arraydict: {[DescriptionTitle: string]: AppendableElement[]}): HTMLDListElement;
 }
 
 /** Placehoder while no official implementation exists.  */

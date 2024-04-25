@@ -13,11 +13,6 @@ export function image(link, caption = null) {
     }
 }
 
-/** @param {string} linkText Text or image. @param {string} link */
-export function link(linkText, link) {
-    return `<a href="${link}">${linkText}</a>`;
-}
-
 /** @param {Array} headerArray Nullable value @param {Array[]} arrayOfArrays */
 export function table(headerArray, ...arrayOfArrays) {
     return `<table>

@@ -80,8 +80,11 @@ export const Embed = {
         return DIV;
     },
     twitter(handle, ID) {
-        const A = setattr(document.createElement("a"), {href: `https://twitter.com/${handle}/status/${ID}?ref_src=twsrc%5Etfw`, textContent: `${handle}'s Tweet`});
-        return setattr(document.createElement("blockquote"), {toString: htmlString, appendChild: [A], classList: {add: ["twitter-tweet"]}});
+        return setattr(document.createElement("blockquote"), {
+            toString: htmlString,
+            appendChild: [anchor(`${handle}'s Tweet`, `https://twitter.com/${handle}/status/${ID}?ref_src=twsrc%5Etfw`)],
+            classList: {add: ["twitter-tweet"]}
+        });
     },
     youtube(ID) {
         const TEMP = {11: ID, 34: `videoseries?list=${ID}`}[ID.length];
@@ -92,9 +95,21 @@ export const Embed = {
 export const googleDocsCompilation = Embed.google;
 
 export const List = {
+    ordered() {},
     unordered(...items) {
         const LI_ARRAY = items.map(x => setattr(document.createElement("li"), {append: [x]}));
         return setattr(document.createElement("ul"), {toString: htmlString, append: LI_ARRAY});
+    },
+    menu() {},
+    description(arraydict) {
+        const DL = setattr(document.createElement("dl"), {toString: htmlString});
+        for (const [TITLE, DESCS] of Object.entries(arraydict)) {
+            DL.append(
+                setattr(document.createElement("dt"), {textContent: TITLE}),
+                DESCS.map(x => setattr(document.createElement("dd"), {append: [x]}))
+            );
+        }
+        return DL;
     }
 }
 
@@ -118,7 +133,7 @@ export function figure(content, caption) {
 
 export function details(summary, content) {
     const DETAILS = setattr(document.createElement("details"), {toString: htmlString});
-    const SUMMARY = setattr(document.createElement("summary"), {textContent: summary});
+    const SUMMARY = setattr(document.createElement("summary"), {append: [summary]});
     return setattr(DETAILS, {append: [SUMMARY, content]});
 }
 
@@ -130,25 +145,42 @@ export function anchor(content, href) {
     return setattr(document.createElement("a"), {href: href, append: [content], toString: htmlString});
 }
 
-
-
-
-
-
-
 export function table(headers, ...arrays) {
-    const HEADERS = headers.map(x => setattr(document.createElement("th"), {append: [x], toString: htmlString}));
-    const HEADER_TR = setattr(document.createElement("tr"), {toString: htmlString, append: HEADERS});
-    const THEAD = setattr(document.createElement("thead"), {toString: htmlString, appendChild: [HEADER_TR]});
+    const HEADERS = headers.map(x => setattr(document.createElement("th"), {append: [x]}));
+    const HEADER_TR = setattr(document.createElement("tr"), {append: HEADERS});
+    const THEAD = setattr(document.createElement("thead"), {appendChild: [HEADER_TR]});
 
     const TR_ARRAY = arrays.map(array => setattr(document.createElement("tr"), {
         toString: htmlString,
-        append: array.map(item => setattr(document.createElement("td"), {toString: htmlString, append: [item]}))
+        append: array.map(item => setattr(document.createElement("td"), {append: [item]}))
     }));
-    const TBODY = setattr(document.createElement("tbody"), {toString: htmlString, append: TR_ARRAY});
+    const TBODY = setattr(document.createElement("tbody"), {append: TR_ARRAY});
     
     return setattr(document.createElement("table"), {toString: htmlString, append: [THEAD, TBODY]});
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

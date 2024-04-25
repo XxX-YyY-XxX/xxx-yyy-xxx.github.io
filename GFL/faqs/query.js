@@ -4,6 +4,8 @@ import MBD from '../../univasset/scripts/htmlfunctions/linkembed.js';
 import {LESSEQUAL, STAR, TM} from "../../univasset/scripts/specialchars.js";
 import {Embed, image, figure, details, fragment, List, table, anchor} from "../../univasset/scripts/html/index.js";
 
+// Start on Page 7
+
 const IMG_ASSET = "../assets/images/query/";
 
 /** @param {string} text @param {number[]} ID */
@@ -433,21 +435,21 @@ const CARDS = [
             ],
             'Rescue Drops': [
                 details('"Limited" drops in Combat Missions.', 'Limited to that particular map. Not limited by time, but by place. Until Rescue Event happens.' +
-                    table(['Chapter', 'Doll', 'SPEQ'],
-                        ['00', 'N/A',       'N/A'],
-                        ['01', 'G17',       'Springfield AP'],
-                        ['02', 'FMG-9',     'BAR Ammo Box'],
-                        ['03', 'CZ-805',    'AR-15 HV'],
-                        ['04', 'M21',       'MP5 Exo'],
-                        ['05', 'M249SAW',   'Mosin Cape'],
-                        ['06', 'M1A1',      'M16 Armor/Exo'],
-                        ['07', 'PSM',       'MG3 Ammo Box'],
-                        ['08', 'SCW',       'FAMAS Optics'],
-                        ['09', 'Ak 5',      'Stechkin Silencer'],
-                        ['10', 'XM3',       'TAR21 Chip'],
-                        ['11', 'Mk46',      'N/A'],
-                        ['12', 'MAT-49',    'N/A'],
-                        ['13', 'Defender',  'N/A'])),
+                    table(['Chapter',   'Doll',     'SPEQ'],
+                        ['00',          'N/A',      'N/A'],
+                        ['01',          'G17',      'Springfield AP'],
+                        ['02',          'FMG-9',    'BAR Ammo Box'],
+                        ['03',          'CZ-805',   'AR-15 HV'],
+                        ['04',          'M21',      'MP5 Exo'],
+                        ['05',          'M249SAW',  'Mosin Cape'],
+                        ['06',          'M1A1',     'M16 Armor/Exo'],
+                        ['07',          'PSM',      'MG3 Ammo Box'],
+                        ['08',          'SCW',      'FAMAS Optics'],
+                        ['09',          'Ak 5',     'Stechkin Silencer'],
+                        ['10',          'XM3',      'TAR21 Chip'],
+                        ['11',          'Mk46',     'N/A'],
+                        ['12',          'MAT-49',   'N/A'],
+                        ['13',          'Defender', 'N/A'])),
                 anchor(`Farmable dolls in campaign maps, both 3${STAR} monthly reward dolls and 4-5${STAR} dolls that debuted on their corresponding event.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
                 `During collabs, major events, side events, and ${details('Rescue Events', `Also known as Boss Bully, where you get to farm for 4-5${STAR} event reward dolls in the story chapters 1-6.`)}, event rewards become temporarily available for farming.`,
                 `Gray Zone cycles event reward dolls every season. Obtainable on grayzone node/field map S-rank.`,  // https://old.reddit.com/r/girlsfrontline/comments/17uxhw7/weekly_commanders_lounge_november_14_2023/k9edfcy/
