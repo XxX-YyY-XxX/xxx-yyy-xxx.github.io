@@ -3,12 +3,11 @@ import {setattr} from "../basefunctions/index.js";
 /** @this {HTMLElement} */
 function htmlString() {
     var output = this.outerHTML;
-
     for (const ELEMENT of this.children) {
-        if (ELEMENT.toString().startsWith("[")) continue;
-        output = output.replace(ELEMENT.outerHTML, ELEMENT.toString())
+        const STRVAR = ELEMENT.toString();
+        if (STRVAR.startsWith("[")) continue;
+        output = output.replace(ELEMENT.outerHTML, STRVAR)
     }
-
     return output;
 }
 
@@ -80,14 +79,24 @@ export const Embed = {
         }
         return DIV;
     },
-
     twitter(handle, ID) {
         const A = setattr(document.createElement("a"), {href: `https://twitter.com/${handle}/status/${ID}?ref_src=twsrc%5Etfw`, textContent: `${handle}'s Tweet`});
         return setattr(document.createElement("blockquote"), {toString: htmlString, appendChild: [A], classList: {add: ["twitter-tweet"]}});
+    },
+    youtube(ID) {
+        const TEMP = {11: ID, 34: `videoseries?list=${ID}`}[ID.length];
+        return setattr(document.createElement("iframe"), {src: `https://www.youtube.com/embed/${TEMP}`, loading: "lazy", allowFullscreen: true, toString: htmlString});
     }
 }
 
 export const googleDocsCompilation = Embed.google;
+
+export const List = {
+    unordered(...items) {
+        const LI_ARRAY = items.map(x => setattr(document.createElement("li"), {append: [x]}));
+        return setattr(document.createElement("ul"), {toString: htmlString, append: LI_ARRAY});
+    }
+}
 
 export function image(src, alt, {type = null} = {}) {
     const IMG = setattr(document.createElement("img"), {src: src, alt: alt, loading: "lazy", toString: htmlString});
@@ -117,6 +126,9 @@ export function fragment(...nodes) {
     return setattr(new DocumentFragment(), {append: nodes});
 }
 
+export function anchor(content, href) {
+    return setattr(document.createElement("a"), {href: href, append: [content], toString: htmlString});
+}
 
 
 
@@ -124,16 +136,20 @@ export function fragment(...nodes) {
 
 
 
+/** @param {Array} headerArray Nullable value @param {Array[]} arrayOfArrays */
+export function table(headerArray, ...arrayOfArrays) {
 
+    const THEAD = document.createElement("thead")
+    const HEADER_TR = document.createElement("tr")
+    HEADER_TR.append(...headerArray.map(x => setattr(document.createElement("th"), {append: [x]})))
+    THEAD.appendChild(HEADER_TR)
 
-
-
-
-const List = {
-    unordered(...items) {
-        const LI_ARRAY = items.map(x => setattr(document.createElement("li"), {append: [x]}));
-        return setattr(document.createElement("ul"), {toString: htmlString, append: LI_ARRAY});
-    }
+    const TBODY = document.createElement("tbody")
+    TBODY.append(...arrayOfArrays.map(array => setattr(document.createElement("tr"), {append: array.map(item => setattr(document.createElement("td"), {append: [item]}))})))
+    
+    
+    
+    return setattr(document.createElement("table"), {toString: htmlString, append: [THEAD, TBODY]});
 }
 
 
@@ -147,18 +163,10 @@ const List = {
 
 
 
-/**
- * 
- * @param {(string | Node)[]} content 
- * @param {string} href 
- * @returns 
- */
-function anchor(content, href) {
-    const A = document.createElement("a")
-    A.href = href
-    A.append(content)
-    return A
-}
+
+
+
+
 
 function slider(value, min, max, {vertical = false, name = ""} = {}) {
     const CHANGE = new Event("change");

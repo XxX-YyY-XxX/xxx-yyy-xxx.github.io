@@ -360,11 +360,11 @@ const CARDS = [
         tags: [dtag.FAIRY, dtag.EQUIP, dtag.TDOLL, dtag.TIER]
     },
     {
-        id: '00018',
+        id: 18,
         question: `Anyone have a nice infographic for equipment priority and recommended/ideal number/amount of equipments?`,
         answer: `${figure(image('https://cdn.discordapp.com/attachments/951085201658871820/1063837601351610389/eq_prior_notheater.png', "Equipment quantity recommendations."), 'Discord: $eqpriority')}`,
         tags: [dtag.EQUIP, dtag.TDOLL, dtag.TIER]
-    },
+    },  //@Fix
     {
         id: 19,
         question: `Which HOC FSTs should I raise first?`,
@@ -374,20 +374,22 @@ const CARDS = [
     {
         id: 20,
         question: `Which doll should I get using True Core Masks?`,
-        answer: `${image(IMG_ASSET+"VeryReliableTCMGuide.png", "Memey guide.")}<br>
-        ${image(IMG_ASSET+"SeriousTCMGuide.png", "Serious guide.")}`,   // add discord bot call
+        answer: `${details("Easy guide.", image(IMG_ASSET+"VeryReliableTCMGuide.png", "Memey guide."))}
+        ${details("Hard guide.", image(IMG_ASSET+"SeriousTCMGuide.png", "Serious guide."))}`,   // add discord bot call
         tags: [dtag.TCM, dtag.TIER]
     },
     //#endregion
     //#region Compilations
     {
-        id: '00297',
+        id: 297,
         question: `Is there a good place where I can find a spreadsheet on detailed doll stats?`,
-        answer: `${link("u/UnironicWeeaboo's repository.", 'https://randomqwerty.github.io/?server=ch&file=gun')}<br>
-        ${link('GFLDB.', 'https://gfl.zzzzz.kr/dolls.php?lang=en')}<br>
-        ${link('GFWiki CN.', 'https://gfwiki.org/w/%E6%88%98%E6%9C%AF%E4%BA%BA%E5%BD%A2%E5%9B%BE%E9%89%B4')}`,
+        answer: `${List.unordered(
+            link("u/UnironicWeeaboo's repository.", 'https://randomqwerty.github.io/?server=ch&file=gun'),
+            link('GFLDB.', 'https://gfl.zzzzz.kr/dolls.php?lang=en') + " Up to Jashin dolls.",
+            link('GFWiki CN.', 'https://gfwiki.org/w/%E6%88%98%E6%9C%AF%E4%BA%BA%E5%BD%A2%E5%9B%BE%E9%89%B4')
+        )}`,
         tags: [dtag.TDOLL, dtag.REF]
-    },  //Wait for additional repo.
+    },
     {
         id: 23,
         question: `Where can I read/rewatch the MOD, costume, event stories, and all that?`,
@@ -396,8 +398,8 @@ const CARDS = [
                 link('GF Translated Story Material (+ other stuff)', 'https://drive.google.com/drive/folders/14sNze_lnv5EwL1bl_g3IOVQIo6GGYUJp'),
                 link('GF Translations', 'https://drive.google.com/drive/folders/14bAuWaGbagJwucmlit3EkXFqMRV9NHZO'),
                 link('The Official #gf-loreroom Information Index', 'https://docs.google.com/spreadsheets/d/1LYV05D7kGTKp_FS7cJrNrJlVxeRAnFVnr6vCTo5F-YM'),
-                link('Campaign Stuff', 'https://drive.google.com/drive/folders/15EjxktNclESJ6e6rb5udNxOaczNTPZVZ'),
-                link('Costume Stories', 'https://drive.google.com/drive/folders/13AiWn_jgIxWUTK2T7EVjFV8Rkk6jptEs'),
+                // link('Campaign Stuff', 'https://drive.google.com/drive/folders/15EjxktNclESJ6e6rb5udNxOaczNTPZVZ'),
+                // link('Costume Stories', 'https://drive.google.com/drive/folders/13AiWn_jgIxWUTK2T7EVjFV8Rkk6jptEs'),
                 link('GFL Manga', 'https://drive.google.com/drive/folders/1fEYYxtXAFTfyovwW-WRvNOpbXTu1_hlk'),
                 link("u/TheGreyGhost00's Reddit Outline", "https://redd.it/z1g738")
             ],
@@ -414,7 +416,7 @@ const CARDS = [
                 link("XtraNinja's GFL events playlists", "https://www.youtube.com/@XtraNinja/playlists"),
                 link("Girls' Frontline Full Story Comprehension Playlist Translated up to Isomer", 'https://youtube.com/playlist?list=PL9y52Flm1yM-tJJoom2zfrWTpaO1mTw8M'),
                 link("u/DoctuhD's Girls' Frontline Summary", 'https://docs.google.com/document/d/1oA07O2HGwvmoBqm-UKTTuSdxjLnSIbRHd5b2FuYOph0'),
-                details("u/Signal_Abroad1427's Hurricane Rescue video", MBD.youtube("oH1st5OxdyY")),
+                details("u/Signal_Abroad1427's Hurricane Rescue video", Embed.youtube("oH1st5OxdyY")),
                 link("u/pointblanksniper collection", "https://old.reddit.com/r/girlsfrontline/comments/13phxi5/weekly_commanders_lounge_may_23_2023/jlv5bns/")
             ]
         })}`,

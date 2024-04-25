@@ -22,7 +22,8 @@ type AppendableElement = string | Node;
 export const Embed = {
     /** Creates a field for Google Sheets. */
     google(/** link ends in alphanumeric */...namelinkpair: [title: string, link: string][]): HTMLDivElement;,
-    twitter(handle: string, ID: string): HTMLQuoteElement;
+    twitter(handle: string, ID: string): HTMLQuoteElement;,
+    youtube(/** 11/34 long alphanumeric Youtube video ID string. */ID: string): HTMLIFrameElement;
 }
 
 export const List = {
@@ -36,3 +37,5 @@ export function image(src: string, alt: string, keys?: {type?: ImageType}): HTML
 export function figure(content: HTMLElement, caption: string | DocumentFragment): HTMLFigureElement;
 export function details(summary: string, content: AppendableElement): HTMLDetailsElement;
 export function fragment(...nodes: AppendableElement[]): DocumentFragment;
+export function anchor(content: AppendableElement[], href: string): HTMLAnchorElement;
+export function table(headerArray: AppendableElement[], ...arrays: AppendableElement[][]): HTMLTableElement;

@@ -1,3 +1,5 @@
+
+
 export default class Embed {
     /** Create an innerHTML text for Youtube embeds.
      * @param {string} videoID Youtube video or playlist ID*/
