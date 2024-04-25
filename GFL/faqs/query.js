@@ -1,9 +1,8 @@
-import {image as img, table, link, tooltip} from '../../univasset/scripts/htmlfunctions/htmlfunctions.js';
+import {image as img, table as tb, tooltip} from '../../univasset/scripts/htmlfunctions/htmlfunctions.js';
 import TextStyle from '../../univasset/scripts/htmlfunctions/textstyle.js';
 import MBD from '../../univasset/scripts/htmlfunctions/linkembed.js';
-// import List from '../../univasset/scripts/htmlfunctions/lists.js';
 import {LESSEQUAL, STAR, TM} from "../../univasset/scripts/specialchars.js";
-import {Embed, image, figure, details, fragment, List} from "../../univasset/scripts/html/index.js";
+import {Embed, image, figure, details, fragment, List, table, anchor} from "../../univasset/scripts/html/index.js";
 
 const IMG_ASSET = "../assets/images/query/";
 
@@ -132,14 +131,14 @@ const CARDS = [
     {
         id: 421,
         question: `Is there a guide on how to use the equipments/attachments for Tactical Dolls?`,
-        answer: `${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/equipment-basics-how-juggernaut-t-dolls")}`,
+        answer: `${anchor("Gamepress guide.", "https://gamepress.gg/girlsfrontline/equipment-basics-how-juggernaut-t-dolls")}`,
         tags: [dtag.TDOLL, dtag.EQUIP, dtag.PRIME]
     },
     {
         id: 2,
         question: `What is Combat Effectiveness?`,
-        answer: `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ce')}<br>
-        ${link("u/elgatoroid's CE calculation.", 'https://old.reddit.com/r/girlsfrontline/comments/kqtpcv/weekly_commanders_lounge_january_05_2021/gifxq8v/')}`,
+        answer: `${anchor('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ce')}<br>
+        ${anchor("u/elgatoroid's CE calculation.", 'https://old.reddit.com/r/girlsfrontline/comments/kqtpcv/weekly_commanders_lounge_january_05_2021/gifxq8v/')}`,
         tags: [dtag.CE, dtag.PRIME]
     },  // CE calc might be outdated.
     {
@@ -152,8 +151,8 @@ const CARDS = [
         id: 3,
         question: `What is Expedition/Forward Basecamp?`,
         answer: `${List.unordered(
-            link('GFC Primer.', 'https://www.gflcorner.com/expedition-system-mini-guide/'),
-            link('ATM Guide.', 'https://gfl.matsuda.tips/post/weareabsolutenotlostiswear'),
+            anchor('GFC Primer.', 'https://www.gflcorner.com/expedition-system-mini-guide/'),
+            anchor('ATM Guide.', 'https://gfl.matsuda.tips/post/weareabsolutenotlostiswear'),
             "Unlocks at Commander Lv. 20."
         )}`,
         tags: [dtag.EXPED, dtag.PRIME, dtag.NEWB]
@@ -161,9 +160,9 @@ const CARDS = [
     {
         id: 4,
         question: `Are there any general guides for Protocol Assimilation/Coalition Units/SF Capture Operation?`,
-        answer: `${link('Gamepress guide.', "https://gamepress.gg/girlsfrontline/protocol-assimilation-coalition-basics-and-teambuilding")}<br>
-        ${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
-        ${link('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
+        answer: `${anchor('Gamepress guide.', "https://gamepress.gg/girlsfrontline/protocol-assimilation-coalition-basics-and-teambuilding")}<br>
+        ${anchor('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
+        ${anchor('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
         ${details("Cleista's basic Twitter guide.", Embed.twitter('CleistaCeleste', "1409824210571214849"))}`,
         tags: [dtag.PA, dtag.COALITION, dtag.PRIME]
     },
@@ -172,8 +171,8 @@ const CARDS = [
         question: `How do Neural Upgrades/MODs work?`,
         answer: `${List.unordered(
             "The only way to raise dolls beyond Lv. 100.",
-            link('Matsuda guide.', 'https://gfl.matsuda.tips/post/modding'),
-            link('GFC guide.', 'https://www.gflcorner.com/neural')
+            anchor('Matsuda guide.', 'https://gfl.matsuda.tips/post/modding'),
+            anchor('GFC guide.', 'https://www.gflcorner.com/neural')
         )}`,
         tags: [dtag.MOD, dtag.PRIME]
     },
@@ -181,10 +180,10 @@ const CARDS = [
         id: 6,
         question: `What are Fairies?`,
         answer: `${List.unordered(
-            link('Matsuda guide.', 'https://gfl.matsuda.tips/post/fairies') + " Mostly still applies.",
-            link('IOPWiki guide.', 'https://iopwiki.com/wiki/Technical_Fairies') + " Unupdated rework skills.",
-            link('GFC guide.', 'https://www.gflcorner.com/fairy/') + " Fairies up to CT only.",
-            link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/fairies-where-they-live-and-how-craft-them"),
+            anchor('Matsuda guide.', 'https://gfl.matsuda.tips/post/fairies') + " Mostly still applies.",
+            anchor('IOPWiki guide.', 'https://iopwiki.com/wiki/Technical_Fairies') + " Unupdated rework skills.",
+            anchor('GFC guide.', 'https://www.gflcorner.com/fairy/') + " Fairies up to CT only.",
+            anchor("Gamepress guide.", "https://gamepress.gg/girlsfrontline/fairies-where-they-live-and-how-craft-them"),
             details("GDoc guides.", Embed.google(
                 ["Fairy Analytic(EN) v0.60 by 25thNight- and Emperoripmg (GFC) (Unupdated)", "https://docs.google.com/spreadsheets/d/1x6_YysDi0h89jKE9vEW2_fbxi7gG7XV5jjJqX8O41rw"],
                 ["Fairy Crash Course (by Jesse #6406)", "https://docs.google.com/document/d/1dXZkOmAR0SWqL7UKCxmTP2hUPjpoRhskbJHn1ZlpNWc"]
@@ -198,10 +197,10 @@ const CARDS = [
         answer: `${List.description({
             "Pending": ["Facilities", "Leveling", "Acquisition"],
             "Usage": [
-                link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Heavy_Ordnance_Corps'),
-                link('Matsuda Guide.', 'https://gfl.matsuda.tips/post/hocs'),
-                link('GFC Guide.', 'https://www.gflcorner.com/hoc-guide-by-gfc/'),
-                link("u/Xealiouth's Guide.", 'https://redd.it/95nrou')
+                anchor('IOPWiki Guide.', 'https://iopwiki.com/wiki/Heavy_Ordnance_Corps'),
+                anchor('Matsuda Guide.', 'https://gfl.matsuda.tips/post/hocs'),
+                anchor('GFC Guide.', 'https://www.gflcorner.com/hoc-guide-by-gfc/'),
+                anchor("u/Xealiouth's Guide.", 'https://redd.it/95nrou')
             ]
         })}`,
         tags: [dtag.HOC, dtag.FST, dtag.PRIME]
@@ -229,18 +228,18 @@ const CARDS = [
     {
         id: 477,
         question: `What is Gray Zone Exploration?`,
-        answer: `${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/gray-zone-introduction")}`,
+        answer: `${anchor("Gamepress guide.", "https://gamepress.gg/girlsfrontline/gray-zone-introduction")}`,
         tags: [dtag.GZ, dtag.PRIME]
     },  // No GZ4 for now.
     {
         id: 8,
         question: `How to do Theater/Theatre?`,
         answer: `${List.unordered(
-            link('IOPWiki Guide.', 'https://iopwiki.com/wiki/Theater_Mode'),
-            link('GFC Guide.', 'https://www.gflcorner.com/theater-system-introduction-by-gfc/'),
-            link('Matsuda guide.', 'https://gfl.matsuda.tips/post/rng_backstabbing'),
-            link('Gamepress Guide Part 1.', 'https://gamepress.gg/girlsfrontline/theater-8-overhaul-guide-new-mechanics-new-enemies-same-pain') + " The latest theater version. Should be applicable to future ones.",
-            link('Gamepress Guide Part 2.', 'https://gamepress.gg/girlsfrontline/theater-8-combat-guide'),
+            anchor('IOPWiki Guide.', 'https://iopwiki.com/wiki/Theater_Mode'),
+            anchor('GFC Guide.', 'https://www.gflcorner.com/theater-system-introduction-by-gfc/'),
+            anchor('Matsuda guide.', 'https://gfl.matsuda.tips/post/rng_backstabbing'),
+            anchor('Gamepress Guide Part 1.', 'https://gamepress.gg/girlsfrontline/theater-8-overhaul-guide-new-mechanics-new-enemies-same-pain') + " The latest theater version. Should be applicable to future ones.",
+            anchor('Gamepress Guide Part 2.', 'https://gamepress.gg/girlsfrontline/theater-8-combat-guide'),
             // details('Theater for dummies.', image('https://cdn.discordapp.com/attachments/372235987520323596/881427651070410792/theaterguide.png', "Simple theater guide."))
             "TLDR; 5-6 Defense Drills in a row, twice per day, with differing battle effects. Do scouting bets where you pick one zone. Dump points on construction for easier battles.",
             "Echelon formations are now 1 team + backups.",
@@ -252,13 +251,13 @@ const CARDS = [
         id: 9,
         question: `What's a True Core Mask, where do I get them, and how do I use it?`,
         answer: `One TCM is given out every major event and anniversary.<br>
-        ${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/true-core-mask-revamped-who-get')}`,
+        ${anchor('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/true-core-mask-revamped-who-get')}`,
         tags: [dtag.TCM, dtag.PRIME, dtag.MAJOR, dtag.ANNIV, dtag.GET]
     },
     {
         id: 10,
         question: `Are there any sort of guides on how and when to roll for skins?`,
-        answer: `${link('BigStupidJellyfish guide.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/gacha')}`,
+        answer: `${anchor('BigStupidJellyfish guide.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/gacha')}`,
         tags: [dtag.RESUPPLY, dtag.TDOLL, dtag.SKIN, dtag.PRIME]
     },
     {
@@ -298,8 +297,8 @@ const CARDS = [
         answer: `GFL version of 100% Orange Juice, I guess?<br>
         And it's called "chess" only because boardgame.
         ${List.unordered(
-            link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/springfields-cafe-haven-soothe-weary-souls-and-luffberry-chess"),
-            link("u/fortis_99's tips.", 'https://redd.it/rz4uye'),
+            anchor("Gamepress guide.", "https://gamepress.gg/girlsfrontline/springfields-cafe-haven-soothe-weary-souls-and-luffberry-chess"),
+            anchor("u/fortis_99's tips.", 'https://redd.it/rz4uye'),
             details("u/StarBase10's doc guide.", Embed.google(["The Skill Issue Guide to Luffberry Chess", "https://docs.google.com/document/d/1BHZ36zTKdQ9gd81a-RAHEzbs9OEgJraSRp5LQv8CB_A"]))
         )}`,
         tags: [dtag.OJ, dtag.PRIME]
@@ -317,15 +316,15 @@ const CARDS = [
         question: `Is XXX doll good and is it safe to retire them?`,
         answer: `Tier lists in general are a matter of countering enemies. And since the meta of this game varies wildly from event to event, most people would point to analysis links instead.
         ${List.unordered(
-            link('Gamepress Overview.', 'https://gamepress.gg/girlsfrontline/t-dolls-list'),
+            anchor('Gamepress Overview.', 'https://gamepress.gg/girlsfrontline/t-dolls-list'),
             details("u/LuckyTenth's spreadsheet.", Embed.google(["T-doll relevance", "https://docs.google.com/spreadsheets/d/1w2qEbnNluSc6C4U73yyAnYE_zmXdARvDu3GZmMO7hl4"])),
-            link('Matsuda Quips.', 'https://gfl.matsuda.tips/dolls/') + " Updated up to Fixed Point dolls.",
-            link('KR Wiki.', 'https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0/%EC%9D%B8%ED%98%95%EB%8F%84%EA%B0%90'),
-            link("Fatalchapter's bilibili guide.", 'https://www.bilibili.com/read/readlist/rl100361') + " Updated up to Jashin dolls.",
-            link("Sijun's list.", 'https://www.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1rph1l/') + " Translated by u/ConductorBichir.",
+            anchor('Matsuda Quips.', 'https://gfl.matsuda.tips/dolls/') + " Updated up to Fixed Point dolls.",
+            anchor('KR Wiki.', 'https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0/%EC%9D%B8%ED%98%95%EB%8F%84%EA%B0%90'),
+            anchor("Fatalchapter's bilibili guide.", 'https://www.bilibili.com/read/readlist/rl100361') + " Updated up to Jashin dolls.",
+            anchor("Sijun's list.", 'https://www.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1rph1l/') + " Translated by u/ConductorBichir.",
             details('BigStupidJellyfish analyses.', List.unordered(
-                link('Vallhalla girls.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/valhalla'),
-                link('AK-15.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ak15')
+                anchor('Vallhalla girls.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/valhalla'),
+                anchor('AK-15.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ak15')
             ))
         )}`,
         tags: [dtag.TDOLL, dtag.TIER]
@@ -334,16 +333,16 @@ const CARDS = [
         id: 15,
         question: `Is there a tier list for good PA units?`,
         answer: `${List.unordered(
-            link('Gamepress units guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units') + " Use the search bar if a certain PA unit is unavailable in the page.",
-            link("u/CheneyQWER's tier list.", 'https://redd.it/uirvxz'),
-            link("Matsuda tips.", "https://gfl.matsuda.tips/captures/")
+            anchor('Gamepress units guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units') + " Use the search bar if a certain PA unit is unavailable in the page.",
+            anchor("u/CheneyQWER's tier list.", 'https://redd.it/uirvxz'),
+            anchor("Matsuda tips.", "https://gfl.matsuda.tips/captures/")
         )}`,
         tags: [dtag.PA, dtag.COALITION, dtag.TIER]
     },
     {
         id: 16,
         question: `Who should I prioritize to MOD first?`,
-        answer: `${link('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/neural-upgrade-priority-guide')}`,
+        answer: `${anchor('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/neural-upgrade-priority-guide')}`,
         tags: [dtag.MOD, dtag.TIER]
     },  //${spoilerSummary('CN MOD list.', image(IMG_ASSET+"CNMODTier.png", "Chinese Neural Upgrade Tierlist."))}
     {
@@ -353,8 +352,8 @@ const CARDS = [
             details("Sijun's infographic", figure(image("https://i.imgur.com/2nh8xHs.jpeg", "Fairy and equipment tier list"), "For the equipments, top number is the recommended quantity, bottom number is the reserve quantity")),
             details("u/UnironicWeeaboo's fairy stat calculator", Embed.google(["GFL - Fairy Stat Calculator", "https://docs.google.com/spreadsheets/d/1RORciafqtspkxy3fqBrFdKIxVfanV2-fLl9FlvY3QtM"])),
             details("u/BigStupidJellyfish_ reviews", List.unordered(
-                link('General reviews', 'https://big-stupid-jellyfish.github.io/GFMath/pages/fairy-reviews'),
-                link('Sniper review', 'https://big-stupid-jellyfish.github.io/GFMath/pages/sniper-rework')
+                anchor('General reviews', 'https://big-stupid-jellyfish.github.io/GFMath/pages/fairy-reviews'),
+                anchor('Sniper review', 'https://big-stupid-jellyfish.github.io/GFMath/pages/sniper-rework')
             ))
         )}`,
         tags: [dtag.FAIRY, dtag.EQUIP, dtag.TDOLL, dtag.TIER]
@@ -384,9 +383,9 @@ const CARDS = [
         id: 297,
         question: `Is there a good place where I can find a spreadsheet on detailed doll stats?`,
         answer: `${List.unordered(
-            link("u/UnironicWeeaboo's repository.", 'https://randomqwerty.github.io/?server=ch&file=gun'),
-            link('GFLDB.', 'https://gfl.zzzzz.kr/dolls.php?lang=en') + " Up to Jashin dolls.",
-            link('GFWiki CN.', 'https://gfwiki.org/w/%E6%88%98%E6%9C%AF%E4%BA%BA%E5%BD%A2%E5%9B%BE%E9%89%B4')
+            anchor("u/UnironicWeeaboo's repository.", 'https://randomqwerty.github.io/?server=ch&file=gun'),
+            anchor('GFLDB.', 'https://gfl.zzzzz.kr/dolls.php?lang=en') + " Up to Jashin dolls.",
+            anchor('GFWiki CN.', 'https://gfwiki.org/w/%E6%88%98%E6%9C%AF%E4%BA%BA%E5%BD%A2%E5%9B%BE%E9%89%B4')
         )}`,
         tags: [dtag.TDOLL, dtag.REF]
     },
@@ -395,29 +394,29 @@ const CARDS = [
         question: `Where can I read/rewatch the MOD, costume, event stories, and all that?`,
         answer: `${List.description({
             'Compilations' : [
-                link('GF Translated Story Material (+ other stuff)', 'https://drive.google.com/drive/folders/14sNze_lnv5EwL1bl_g3IOVQIo6GGYUJp'),
-                link('GF Translations', 'https://drive.google.com/drive/folders/14bAuWaGbagJwucmlit3EkXFqMRV9NHZO'),
-                link('The Official #gf-loreroom Information Index', 'https://docs.google.com/spreadsheets/d/1LYV05D7kGTKp_FS7cJrNrJlVxeRAnFVnr6vCTo5F-YM'),
+                anchor('GF Translated Story Material (+ other stuff)', 'https://drive.google.com/drive/folders/14sNze_lnv5EwL1bl_g3IOVQIo6GGYUJp'),
+                anchor('GF Translations', 'https://drive.google.com/drive/folders/14bAuWaGbagJwucmlit3EkXFqMRV9NHZO'),
+                anchor('The Official #gf-loreroom Information Index', 'https://docs.google.com/spreadsheets/d/1LYV05D7kGTKp_FS7cJrNrJlVxeRAnFVnr6vCTo5F-YM'),
                 // link('Campaign Stuff', 'https://drive.google.com/drive/folders/15EjxktNclESJ6e6rb5udNxOaczNTPZVZ'),
                 // link('Costume Stories', 'https://drive.google.com/drive/folders/13AiWn_jgIxWUTK2T7EVjFV8Rkk6jptEs'),
-                link('GFL Manga', 'https://drive.google.com/drive/folders/1fEYYxtXAFTfyovwW-WRvNOpbXTu1_hlk'),
-                link("u/TheGreyGhost00's Reddit Outline", "https://redd.it/z1g738")
+                anchor('GFL Manga', 'https://drive.google.com/drive/folders/1fEYYxtXAFTfyovwW-WRvNOpbXTu1_hlk'),
+                anchor("u/TheGreyGhost00's Reddit Outline", "https://redd.it/z1g738")
             ],
             'Lore' : [
-                link('Confidential Files', 'https://docs.google.com/document/d/1JyJ-o9gHCeCdN2h8PhhRdFczejLs6Wve8dziQZUSEGk'),
-                link('Confidential Files 2: New and Emerging Forms of Threat', 'https://drive.google.com/drive/folders/17_9Tu-90ZWrvlHPzgWbVwSQebJ4nHiR7'),
-                link("The Background History of Girls' Frontline", 'https://twitter.com/YZsFerrari/status/1379877420732448777'),
-                link('IOPWiki Lore', 'https://iopwiki.com/wiki/Lore'),
-                link('Gamepress Lore Directory', 'https://gamepress.gg/girlsfrontline/lore-directory')
+                anchor('Confidential Files', 'https://docs.google.com/document/d/1JyJ-o9gHCeCdN2h8PhhRdFczejLs6Wve8dziQZUSEGk'),
+                anchor('Confidential Files 2: New and Emerging Forms of Threat', 'https://drive.google.com/drive/folders/17_9Tu-90ZWrvlHPzgWbVwSQebJ4nHiR7'),
+                anchor("The Background History of Girls' Frontline", 'https://twitter.com/YZsFerrari/status/1379877420732448777'),
+                anchor('IOPWiki Lore', 'https://iopwiki.com/wiki/Lore'),
+                anchor('Gamepress Lore Directory', 'https://gamepress.gg/girlsfrontline/lore-directory')
             ],
             'Main Story' : [
-                link("u/RhythmLunatic's GFL Cutscene Interpreter (including collabs)", 'https://gfl.amaryllisworks.pw/'),
-                link("Shoul's Story Scenes Playlists", 'https://www.youtube.com/channel/UC_JmwXOfYqOKpGGtc5gcVmw'),
-                link("XtraNinja's GFL events playlists", "https://www.youtube.com/@XtraNinja/playlists"),
-                link("Girls' Frontline Full Story Comprehension Playlist Translated up to Isomer", 'https://youtube.com/playlist?list=PL9y52Flm1yM-tJJoom2zfrWTpaO1mTw8M'),
-                link("u/DoctuhD's Girls' Frontline Summary", 'https://docs.google.com/document/d/1oA07O2HGwvmoBqm-UKTTuSdxjLnSIbRHd5b2FuYOph0'),
+                anchor("u/RhythmLunatic's GFL Cutscene Interpreter (including collabs)", 'https://gfl.amaryllisworks.pw/'),
+                anchor("Shoul's Story Scenes Playlists", 'https://www.youtube.com/channel/UC_JmwXOfYqOKpGGtc5gcVmw'),
+                anchor("XtraNinja's GFL events playlists", "https://www.youtube.com/@XtraNinja/playlists"),
+                anchor("Girls' Frontline Full Story Comprehension Playlist Translated up to Isomer", 'https://youtube.com/playlist?list=PL9y52Flm1yM-tJJoom2zfrWTpaO1mTw8M'),
+                anchor("u/DoctuhD's Girls' Frontline Summary", 'https://docs.google.com/document/d/1oA07O2HGwvmoBqm-UKTTuSdxjLnSIbRHd5b2FuYOph0'),
                 details("u/Signal_Abroad1427's Hurricane Rescue video", Embed.youtube("oH1st5OxdyY")),
-                link("u/pointblanksniper collection", "https://old.reddit.com/r/girlsfrontline/comments/13phxi5/weekly_commanders_lounge_may_23_2023/jlv5bns/")
+                anchor("u/pointblanksniper collection", "https://old.reddit.com/r/girlsfrontline/comments/13phxi5/weekly_commanders_lounge_may_23_2023/jlv5bns/")
             ]
         })}`,
         tags: [dtag.LORE, dtag.MAJOR, dtag.COLLAB, dtag.REF]
@@ -430,7 +429,7 @@ const CARDS = [
         answer: `${List.description({
             'Factory Production': [
                 // spoilerSummary('Infographic for resource efficient recipes.', image("https://media.discordapp.net/attachments/951085201658871820/1061272490309066762/recipes_2.png", "Factory prooduction recipes.")),
-                link("GFDB Github Database.", 'https://gf-db.github.io/')
+                anchor("GFDB Github Database.", 'https://gf-db.github.io/')
             ],
             'Rescue Drops': [
                 details('"Limited" drops in Combat Missions.', 'Limited to that particular map. Not limited by time, but by place. Until Rescue Event happens.' +
@@ -449,22 +448,22 @@ const CARDS = [
                         ['11', 'Mk46',      'N/A'],
                         ['12', 'MAT-49',    'N/A'],
                         ['13', 'Defender',  'N/A'])),
-                link(`Farmable dolls in campaign maps, both 3${STAR} monthly reward dolls and 4-5${STAR} dolls that debuted on their corresponding event.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
+                anchor(`Farmable dolls in campaign maps, both 3${STAR} monthly reward dolls and 4-5${STAR} dolls that debuted on their corresponding event.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
                 `During collabs, major events, side events, and ${details('Rescue Events', `Also known as Boss Bully, where you get to farm for 4-5${STAR} event reward dolls in the story chapters 1-6.`)}, event rewards become temporarily available for farming.`,
                 `Gray Zone cycles event reward dolls every season. Obtainable on grayzone node/field map S-rank.`,  // https://old.reddit.com/r/girlsfrontline/comments/17uxhw7/weekly_commanders_lounge_november_14_2023/k9edfcy/
                 'Obtainable from random nodes, however unlikely.',
                 `For 5${STAR} units that can also be crafted, their drop rates are less than 1%.`,
                 "Whatever doll you recieved, whether you win, lose, or quit the stage, you keep it.",
-                getID("Farming maps and routing.", "00123")
+                getID("Farming maps and routing.", 123)
             ],
             'Event Rewards': [
-                link("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls'),
+                anchor("BigStupidJellyfish's Event/Clear Reward dolls list.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls'),
                 'These dolls will become unavailable from campaign clear rewards.'
             ],  // https://gfl.matsuda.tips/post/limitedeventdolls
             'Shop': [
                 'Applicable to collab dolls using event currency.',
                 `5${STAR} dolls available in Factory Production are the only ones elegible for True Core Masks, bar spaghetti.`,
-                `Paid ${link("Transfer Letters", "https://redd.it/zqfkzw")} for any 4 or 5${STAR} units. Very useful for 4${STAR} SGs. Rare occurence.`
+                `Paid ${anchor("Transfer Letters", "https://redd.it/zqfkzw")} for any 4 or 5${STAR} units. Very useful for 4${STAR} SGs. Rare occurence.`
             ],
             'Achievements': [
                 "Type 97s and the AR Team, which are the only ones that can't be bought.",
@@ -472,7 +471,7 @@ const CARDS = [
             ]
         })}`,
         tags: [dtag.TDOLL, dtag.IMPT, dtag.GET, dtag.SPEQ, dtag.PROD, dtag.MAP, dtag.TCM, dtag.GZ]
-    },  //${spoilerSummary('Dolls EN are missing.', image('https://cdn.discordapp.com/attachments/951085201658871820/1033732620384751636/en_missing_dolls_varz_asked_edition.png'))}
+    },  //@Fix
     {
         id: '00025',
         question: `How do I strengthen T-Dolls?`,
@@ -505,10 +504,10 @@ const CARDS = [
         question: `What are the leveling stages I can corpse drag and how do I run them?`,
         answer: `${List.description({
             'General': [
-                link('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide'),
-                link('Gamepress guide.', "https://gamepress.gg/girlsfrontline/optimized-levelling-corpse-dragging-maps"),
-                link('GFLCorner guide.', 'https://www.gflcorner.com/efficient-leveling-guide/'),
-                link('DMesse guide.', 'http://dmesse.egloos.com/m/3567918')
+                anchor('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide'),
+                anchor('Gamepress guide.', "https://gamepress.gg/girlsfrontline/optimized-levelling-corpse-dragging-maps"),
+                anchor('GFLCorner guide.', 'https://www.gflcorner.com/efficient-leveling-guide/'),
+                anchor('DMesse guide.', 'http://dmesse.egloos.com/m/3567918')
             ],
             '0-2': [
                 details("Ceia's 0-2 drag guide.", Embed.google(["The Art of 0-2 Dragging", "https://docs.google.com/document/d/1PkxJ7ObdGW_cS_qbzAxQ_hoC1SFse3HNYWlnywZfPuo"]))
@@ -522,8 +521,8 @@ const CARDS = [
                 ))
             ],
             '13-4': [
-                link('tempkaridc calculator for Vector.', 'https://tempkaridc.github.io/gf/vec'),
-                link('xVarz spreadsheet for different draggers.', 'https://docs.google.com/spreadsheets/d/1cuZPF-r1e6TyE4Rj2DNkSEova7Tc-Cczs7RaoAK2vII'),
+                anchor('tempkaridc calculator for Vector.', 'https://tempkaridc.github.io/gf/vec'),
+                anchor('xVarz spreadsheet for different draggers.', 'https://docs.google.com/spreadsheets/d/1cuZPF-r1e6TyE4Rj2DNkSEova7Tc-Cczs7RaoAK2vII'),
                 details('Infographic.', image('https://cdn.discordapp.com/attachments/564028599682727937/929724568258629642/134.png', "Jesse infographic."))
             ],
             'SC 3-1 EX': [
@@ -548,28 +547,28 @@ const CARDS = [
         ${List.description({
             'Mixed' : [details("CheneyQWER's infographic.", image(IMG_ASSET+"EchelonComps.png", "CheneyQWER's infographic."))],
             'Coalition Echelons' : [
-                link('Reddit flowchart post.', 'https://redd.it/rkvisq'),
-                link('Gamepress list of units and build suggestions.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units'),
-                link('BigStupidJellyfish guide.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ringleader-echelon')
+                anchor('Reddit flowchart post.', 'https://redd.it/rkvisq'),
+                anchor('Gamepress list of units and build suggestions.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units'),
+                anchor('BigStupidJellyfish guide.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ringleader-echelon')
             ],
             'Tactical Doll Echelons' : [
-                link("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv'),
-                link("ARSMG by warorpeace#7149.", "https://docs.google.com/document/d/e/2PACX-1vR4OYslSVaE5mv6xyu7rIun24Ltu0SWsEzwOrER2MiWseDt5Fy5LjFFEZZzTDvl9C2Xb7g3pcWObSC4/pub"),
-                link("RFHG by warorpeace#7149.", "https://docs.google.com/document/d/e/2PACX-1vTR8LNVuBX4FiaAxLus5zZO6M4hQCu_4Fec0S0rqMmhPMXQXMcnU4uPhwwYAHOQDB5I9nq0VqSJd4-p/pub"),
+                anchor("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv'),
+                anchor("ARSMG by warorpeace#7149.", "https://docs.google.com/document/d/e/2PACX-1vR4OYslSVaE5mv6xyu7rIun24Ltu0SWsEzwOrER2MiWseDt5Fy5LjFFEZZzTDvl9C2Xb7g3pcWObSC4/pub"),
+                anchor("RFHG by warorpeace#7149.", "https://docs.google.com/document/d/e/2PACX-1vTR8LNVuBX4FiaAxLus5zZO6M4hQCu_4Fec0S0rqMmhPMXQXMcnU4uPhwwYAHOQDB5I9nq0VqSJd4-p/pub"),
                 details("MGSG by canoxin#2789.", Embed.google(
                     ["An introduction to MGs and SGs", "https://docs.google.com/document/d/1-O7398S5sHcowCI8lp5Ktu_AiUBydJuvVHV-dX7g-l8"]
                 )),
-                link("Gamepress MGSG guide.", "https://gamepress.gg/girlsfrontline/mgs-sgs-and-teambuilding")
+                anchor("Gamepress MGSG guide.", "https://gamepress.gg/girlsfrontline/mgs-sgs-and-teambuilding")
             ]
         })}<br>
         Shouldn't be a gospel but a good starting point nonetheless.<br>
-        ${link('u/UnironicWeeaboo tips.', 'https://old.reddit.com/r/girlsfrontline/comments/vmhs0x/weekly_commanders_lounge_june_28_2022/ie3bw95/')}`,
+        ${anchor('u/UnironicWeeaboo tips.', 'https://old.reddit.com/r/girlsfrontline/comments/vmhs0x/weekly_commanders_lounge_june_28_2022/ie3bw95/')}`,
         tags: [dtag.ECH, dtag.PA, dtag.COALITION, dtag.TDOLL, dtag.IMPT, dtag.NEWB]
     },
     {
         id: 513,
         question: `How do I deal with certain enemy units?`,
-        answer: `${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/enemy-introduction-index")}`,
+        answer: `${anchor("Gamepress guide.", "https://gamepress.gg/girlsfrontline/enemy-introduction-index")}`,
         tags: [dtag.ENEMY, dtag.BATTLE, dtag.IMPT]
     },
     {
@@ -578,10 +577,10 @@ const CARDS = [
         answer: `Kiting, in general, is the method of moving your tanks rightwards to make the enemy aim at them then moving leftwards to make the enemy walk towards you, while your DPS constantly shoots them. This is effective because most enemies have aim time where they do nothing, and range where you have to be in their sights to start aiming. Therefore, lengthening the lifespans of your dolls, especially the tanks.<br>
         This is the reason why putting your whole team at the back of the grid is preferable.<br>
         Sometimes called wiggling which in this context means moving your DPS to retarget.<br>
-        ${link('GFC guide','https://www.gflcorner.com/battle-controls/')}<br>
+        ${anchor('GFC guide','https://www.gflcorner.com/battle-controls/')}<br>
         ${details('Mitsu video guide', MBD.youtube('ITUtRuF4TLY'))}<br>
-        ${link("u/Reikyu09's reddit post", 'https://redd.it/8o18an')}<br>
-        ${link("Gamepress guide", "https://gamepress.gg/girlsfrontline/treatise-gfl-combat-kiting-basics")}`,
+        ${anchor("u/Reikyu09's reddit post", 'https://redd.it/8o18an')}<br>
+        ${anchor("Gamepress guide", "https://gamepress.gg/girlsfrontline/treatise-gfl-combat-kiting-basics")}`,
         tags: [dtag.BATTLE, dtag.IMPT]
     },
     {
@@ -604,8 +603,8 @@ const CARDS = [
         answer: `When a rate-up is in progress, an "EVENT" marker will be plastered on top of the Factory Production button.<br>
         ${List.description({
             'Anchored Construction' : [
-                link(`Available for new players ${TextStyle.style('and for veterans not bothering with it', TextStyle.STRIKE)}.`, 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681'),
-                link('Available on Tuesdays whenever a new batch of production dolls are released.', 'https://redd.it/szdua2') + ` Recommended anchors are usually 4${STAR} due to ${getID("TCM", "00009")} existing, especially for shotguns.`, 
+                anchor(`Available for new players ${TextStyle.style('and for veterans not bothering with it', TextStyle.STRIKE)}.`, 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681'),
+                anchor('Available on Tuesdays whenever a new batch of production dolls are released.', 'https://redd.it/szdua2') + ` Recommended anchors are usually 4${STAR} due to ${getID("TCM", "00009")} existing, especially for shotguns.`, 
                 "Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate up."
             ],
             'Targeted Rate Up' : [
@@ -656,7 +655,7 @@ const CARDS = [
             "In-game customer support",
             "Support address: mailto:support@sunborngame.com",
             "Facebook/Twitter",
-            link("Google Form", 'https://forms.gle/bZNnQeh5sJaD3pim8')
+            anchor("Google Form", 'https://forms.gle/bZNnQeh5sJaD3pim8')
         )}`,
         tags: [dtag.TECH, dtag["3P"]]
     },
@@ -706,11 +705,11 @@ const CARDS = [
     {
         id: '00046',
         question: `Is there a list of which logistics to do if I want to prioritize certain resources?`,
-        answer: `${link('GFC GDoc.', 'https://docs.google.com/spreadsheets/d/1ah2JO6ggWuVaBho9yxgDMC-ucEKA8C42SBkjIlnIcWk')} Up to Chapter 11.<br>
-        ${link("u/elgatoroid's calculator.", 'https://gfl-logistics.neko.gg/')} Up to Chapter 11.<br>
-        ${link('GFGFork site.', 'https://gfgfork.github.io/gf/main')} Up to Chapter 12.<br>
-        ${link('Tempkaridc calculator.', 'https://tempkaridc.github.io/gf/')} Up to Chapter 13.<br>
-        ${link("u/tehcavy's spreadsheet.", 'https://docs.google.com/spreadsheets/d/1N-PvxbrZJqg-upImk5uwEmB9GcCrNqjmVgdY00cdvS8')} Up to Chapter 13.`,
+        answer: `${anchor('GFC GDoc.', 'https://docs.google.com/spreadsheets/d/1ah2JO6ggWuVaBho9yxgDMC-ucEKA8C42SBkjIlnIcWk')} Up to Chapter 11.<br>
+        ${anchor("u/elgatoroid's calculator.", 'https://gfl-logistics.neko.gg/')} Up to Chapter 11.<br>
+        ${anchor('GFGFork site.', 'https://gfgfork.github.io/gf/main')} Up to Chapter 12.<br>
+        ${anchor('Tempkaridc calculator.', 'https://tempkaridc.github.io/gf/')} Up to Chapter 13.<br>
+        ${anchor("u/tehcavy's spreadsheet.", 'https://docs.google.com/spreadsheets/d/1N-PvxbrZJqg-upImk5uwEmB9GcCrNqjmVgdY00cdvS8')} Up to Chapter 13.`,
         tags: [dtag.LOGI, dtag.MARP, dtag.ITEM]
     },
     {
@@ -738,7 +737,7 @@ const CARDS = [
     {
         id: '00049',
         question: `How does Armor Penetration work?`,
-        answer: `${link('Matsuda explanation.', 'https://gfl.matsuda.tips/post/armour')}`,
+        answer: `${anchor('Matsuda explanation.', 'https://gfl.matsuda.tips/post/armour')}`,
         tags: [dtag.BATTLE, dtag.SYSMECH]
     },
     {
@@ -757,8 +756,8 @@ const CARDS = [
     {
         id: '00052',
         question: `I've heard of GFAlarm. Is it safe to use?`,
-        answer: `${link("Gamepress breakdown", 'https://gamepress.gg/girlsfrontline/how-use-gfalarm-girls-frontline-alarm')}. Also useful for getting data of HOC Chips.<br>
-        ${link("Other usefulness.", "https://www.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jqn0nvu/")}`,
+        answer: `${anchor("Gamepress breakdown", 'https://gamepress.gg/girlsfrontline/how-use-gfalarm-girls-frontline-alarm')}. Also useful for getting data of HOC Chips.<br>
+        ${anchor("Other usefulness.", "https://www.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jqn0nvu/")}`,
         tags: [dtag["3P"]]
     },
     {
@@ -777,7 +776,7 @@ const CARDS = [
     {
         id: '00054',
         question: `Is there a way to know the map layout and its spawnable enemy units?`,
-        answer: `${link('Pengu GFLMaps site.', 'https://pengupengupengu.github.io/gflmaps/')}`,
+        answer: `${anchor('Pengu GFLMaps site.', 'https://pengupengupengu.github.io/gflmaps/')}`,
         tags: [dtag["3P"], dtag.MAP, dtag.ENEMY]
     },
     {
@@ -791,10 +790,10 @@ const CARDS = [
                 'Adds the current enemy formation to the Target Practice in the Combat Sims.'],
             'GFAlarm' : [
                 'Use GFLMaps to take the enemy IDs you want to fight and enter them in the Custom Target Train under Packet Forger, with IDs separated by commas.',
-                `Works for comps that has been loaded into the client and is ${link('very', 'https://www.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i312oo2/')} ${link("safe", "https://www.reddit.com/r/girlsfrontline/comments/11e0hpg/weekly_commanders_lounge_february_28_2023/jan16s5/")}.`,
+                `Works for comps that has been loaded into the client and is ${anchor('very', 'https://www.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i312oo2/')} ${anchor("safe", "https://www.reddit.com/r/girlsfrontline/comments/11e0hpg/weekly_commanders_lounge_february_28_2023/jan16s5/")}.`,
                 figure(image(IMG_ASSET+"GFAlarmCTT.png", "GFAlarm Packet Forger option."), "From u/UnironicWeeaboo")
             ],
-            [link("Matsuda recommendations", "https://gfl.matsuda.tips/post/everything-sucks-forever")]: []
+            [anchor("Matsuda recommendations", "https://gfl.matsuda.tips/post/everything-sucks-forever")]: []
         })}`,
         tags: [dtag.ENEMY, dtag.BATTLE, dtag.MAP, dtag["3P"]]
     },  //@Visual
@@ -802,16 +801,16 @@ const CARDS = [
         id: '00056',
         question: `How do I connect to GFAlarm with an emulator?`,
         answer: `Enter the GFAlarm proxy address to ProxyDroid or Drony.<br>
-        ${link("u/Signal_Abroad1427's google-fu for Bluestacks.", 'https://www.reddit.com/r/girlsfrontline/comments/umdikk/weekly_commanders_lounge_may_10_2022/i8hj47h/')}`,
+        ${anchor("u/Signal_Abroad1427's google-fu for Bluestacks.", 'https://www.reddit.com/r/girlsfrontline/comments/umdikk/weekly_commanders_lounge_may_10_2022/i8hj47h/')}`,
         tags: [dtag["3P"], dtag.EMU]
     },
     {
         id: 58,
         question: `Is there a way for my game to feel smoother/lass laggy?`,
         answer: `${List.unordered(
-            link('Gamepress article', 'https://gamepress.gg/girlsfrontline/fixing-gfl-client-lag-possible-workarounds'),
-            link('Decompressed .obb', "https://drive.google.com/drive/folders/1QoWsDyh4rlh0DtpxomSGOKkaAzXPfvBG"),  // https://old.reddit.com/r/girlsfrontline/comments/180bxy6/weekly_commanders_lounge_november_21_2023/kae6x8k/
-            link('DIY decompression', 'https://www.reddit.com/r/girlsfrontline/comments/lvwwtv/weekly_commanders_lounge_march_02_2021/gpugenl/')
+            anchor('Gamepress article', 'https://gamepress.gg/girlsfrontline/fixing-gfl-client-lag-possible-workarounds'),
+            anchor('Decompressed .obb', "https://drive.google.com/drive/folders/1QoWsDyh4rlh0DtpxomSGOKkaAzXPfvBG"),  // https://old.reddit.com/r/girlsfrontline/comments/180bxy6/weekly_commanders_lounge_november_21_2023/kae6x8k/
+            anchor('DIY decompression', 'https://www.reddit.com/r/girlsfrontline/comments/lvwwtv/weekly_commanders_lounge_march_02_2021/gpugenl/')
         )}`,
         tags: [dtag.MISC]
     },
@@ -847,15 +846,15 @@ const CARDS = [
         answer: `${List.unordered(
             details('General equipments.', figure(image("https://cdn.discordapp.com/attachments/951085201658871820/1059432568321224704/eq_suggestions.png", "Standard equipment setup."), "Taken from Discord")),
             details('#2 Chip equipment.', List.unordered(
-                details('BigStupidJellyfish_ infograph.', link(image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png', "#2 Chip flowchart."), 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')),
+                details('BigStupidJellyfish_ infograph.', anchor(image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png', "#2 Chip flowchart."), 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')),
                 details("Google spreadsheets.", Embed.google(
                     ["2021 MAR, GFL New ARSMG Chip Analysis (by mis)", "https://docs.google.com/spreadsheets/d/1c0JhaSX9WyL3EB-7RCDE4NrfzR1YuWdYWidQ_06-PrQ"],
                     ["GFL #2 Processor Chip Calculator", "https://docs.google.com/spreadsheets/d/14xV50MSMBFGgN75E-Gy10WtzACb_KZdpxRKCYQ6FDQA"]
                 ))
             )),
             details("AP thresholds.", image("https://big-stupid-jellyfish.github.io/GFMath/pages/images/newquip/armor-reference.png", "Effective AP ammo per enemy.")),
-            link("2.09 equips.", "https://big-stupid-jellyfish.github.io/GFMath/pages/newquip"),
-            link('3.0 equips.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/newerquip')
+            anchor("2.09 equips.", "https://big-stupid-jellyfish.github.io/GFMath/pages/newquip"),
+            anchor('3.0 equips.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/newerquip')
         )}`,
         tags: [dtag.TDOLL, dtag.EQUIP, dtag.ENEMY]
     },
@@ -863,7 +862,7 @@ const CARDS = [
         id: '00065',
         question: `How do I maximize the efficiency of my echelon's ROF?`,
         answer: `${List.unordered(
-            link("u/BigStupidJellyfish_'s ROF calc.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/rof-calc'),
+            anchor("u/BigStupidJellyfish_'s ROF calc.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/rof-calc'),
             details("GFC Spreadsheet.", Embed.google(
                 ["RoF chart by GF Corner (Credits: 25thNight-, Aria, Dabby, Omega)", "https://docs.google.com/spreadsheets/d/1k74SCGGMHtwbl8gmTaETLsa8t12A7dWdj0V1tjdMD4Y"]
             ))
@@ -880,8 +879,8 @@ const CARDS = [
         id: 67,
         question: `Which dolls should I dupe/duplicate?`,
         answer: `${List.unordered(
-            link("Gamepress suggestions for dolls and coalition units.", "https://gamepress.gg/girlsfrontline/duping-recommendations-and-coalition-mooks"),
-            link('Matsuda notes.', 'https://gfl.matsuda.tips/post/worthwhiledupes'),
+            anchor("Gamepress suggestions for dolls and coalition units.", "https://gamepress.gg/girlsfrontline/duping-recommendations-and-coalition-mooks"),
+            anchor('Matsuda notes.', 'https://gfl.matsuda.tips/post/worthwhiledupes'),
             // spoilerSummary('Discord recommendations.', img('https://cdn.discordapp.com/attachments/640157367056728133/1048531902065287188/dupe_gameing_pt3.png'))   //Jesse, Varz, etc.
         )}`,
         tags: [dtag.TDOLL, dtag.COALITION]
@@ -996,8 +995,8 @@ const CARDS = [
     {
         id: '00082',
         question: `What's the gacha rate for costumes?`,
-        answer: `${table(['Item',                                                             'Rate'],
-        [link('Costumes', 'https://big-stupid-jellyfish.github.io/GFMath/pages/gacha-rates'),   '02.00%'],
+        answer: `${tb(['Item',                                                             'Rate'],
+        [anchor('Costumes', 'https://big-stupid-jellyfish.github.io/GFMath/pages/gacha-rates'),   '02.00%'],
         [`5${STAR} furniture`,                                                                  '08.00%'],
         [`4${STAR} furniture`,                                                                  '34.20%'],
         [`4${STAR} gifts/cakes`,                                                                '01.80%'],
@@ -1059,7 +1058,7 @@ const CARDS = [
         id: '00091',
         question: `For T-Doll Heavy Construction, how much worth is Tier 1 to Tier 2 or 3?`,
         answer: `Individual SG rate as of Feb 28-Mar 8, 2022 (Normal)<br>
-        ${table(['Tiers', `3${STAR}`, `4${STAR}`, `5${STAR}`],
+        ${tb(['Tiers', `3${STAR}`, `4${STAR}`, `5${STAR}`],
         ['Tier 1', '2.5-2.7%', '1.6/2.5-3.3%', '0.5/1-1.5%'],
         ['Tier 2', '1.2-1.5%', '1.9/2.7-4%', '0.8/1-2%'],
         ['Tier 3', '0%', '3-5.5%', '1-1.9%'],
@@ -1106,7 +1105,7 @@ const CARDS = [
     {
         id: '00096',
         question: `What's the priority to spend gems?`,
-        answer: `${link("Gamepress guide.", "https://gamepress.gg/girlsfrontline/kalinas-shop-and-gems")}<br>
+        answer: `${anchor("Gamepress guide.", "https://gamepress.gg/girlsfrontline/kalinas-shop-and-gems")}<br>
         ${List.description({
             "Echelon Slots": [
                 "Costs 880, not 380.",
@@ -1132,20 +1131,20 @@ const CARDS = [
         question: `Which HOC chips should I use?`,
         answer: `${List.description({
             "Guides": [
-                link('Reddit guide for desktop chip calculator.', 'https://redd.it/fnh1ey'),
+                anchor('Reddit guide for desktop chip calculator.', 'https://redd.it/fnh1ey'),
                 // spoilerSummary('Google Docs guide.', .google(MBD.G_WORD, '1pR6g-mgsy22_MhRPASL9c1wDoCuxfUwr-DCCMYmb7Ss')),
                 details('5-block chips that can be disassembled.', img('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/2020-01/hoc-chip-shape-minmax-example.jpg', 'Taken from Gamepress'))
             ],
             "PC Downloads": [
-                link('GFChipCalc Github page (Outdated).', 'https://github.com/Bunnyspa/GFChipCalc/releases'),
-                link("GFChipCalc .jar file (Updated).", "https://gall.dcinside.com/mgallery/board/view/?id=micateam&no=1785059")
+                anchor('GFChipCalc Github page (Outdated).', 'https://github.com/Bunnyspa/GFChipCalc/releases'),
+                anchor("GFChipCalc .jar file (Updated).", "https://gall.dcinside.com/mgallery/board/view/?id=micateam&no=1785059")
             ],
             "Android Downloads": [
-                link('Android Chip Calc download page.', 'https://bunnyspa.github.io/gfl/chipcalc'),
-                link('Alternate link for Android Chip Calc.', 'https://apkpure.com/girls-frontline-chip-calculator/bunnyspa.gfl.chipcalc/versions')
+                anchor('Android Chip Calc download page.', 'https://bunnyspa.github.io/gfl/chipcalc'),
+                anchor('Alternate link for Android Chip Calc.', 'https://apkpure.com/girls-frontline-chip-calculator/bunnyspa.gfl.chipcalc/versions')
             ],
             "Browser": [
-                link('Browser Chip Calc by FatalChapter.', 'https://hycdes.com/pages/GFT_ChipCal-EN')
+                anchor('Browser Chip Calc by FatalChapter.', 'https://hycdes.com/pages/GFT_ChipCal-EN')
             ]
         })}`,
         tags: [dtag["3P"], dtag.HOC, dtag.FST, dtag.EQUIP, dtag.IMPT]
@@ -1169,7 +1168,7 @@ const CARDS = [
         answer: `${List.unordered(
             'Gutted rewards compared to original.',
             'No True Core Masks (TCM).',
-            link('Reward and crate dolls get shuffled to farming lottery.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls')
+            anchor('Reward and crate dolls get shuffled to farming lottery.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/limited-dolls')
         )}<br>
         Free shit is free shit though. So skip the current major event's story if you have to and reap the rewards.`,
         tags: [dtag.MARP, dtag.ITEM, dtag.CAMPAIGN, dtag.MAJOR, dtag.LEDOLL, dtag.TCM]
@@ -1210,7 +1209,7 @@ const CARDS = [
         id: '00107',
         question: `What are the resources that has a defined max capacity and how much can they store?`,
         answer: `Resource limit for each currency.<br>
-        ${img('https://cdn.discordapp.com/attachments/410790982116966400/905090370675830884/image0.jpg', 'Train Coin = Training Data | Furniture Coin = Tokens | Memory Pieces = Neural Fragments<br>' + link('Source', 'https://randomqwerty.github.io/?server=en&file=item'))}<br>
+        ${img('https://cdn.discordapp.com/attachments/410790982116966400/905090370675830884/image0.jpg', 'Train Coin = Training Data | Furniture Coin = Tokens | Memory Pieces = Neural Fragments<br>' + anchor('Source', 'https://randomqwerty.github.io/?server=en&file=item'))}<br>
         Even then, all resources can be obtained without regards to max capacity through daily gifts, mission rewards, and whaling.<br>
         And no, the four resources will stay at 300k.`,
         tags: [dtag.MARP, dtag.ITEM]
@@ -1238,7 +1237,7 @@ const CARDS = [
     {
         id: '00111',
         question: `Recipe for Parachute/Paradrop Fairy?`,
-        answer: `${link('The official recipe.', 'https://gf-db.github.io/gfdb/gfdb.html?type=fairy&id=11&epoch.fairy=29.0')}`,
+        answer: `${anchor('The official recipe.', 'https://gf-db.github.io/gfdb/gfdb.html?type=fairy&id=11&epoch.fairy=29.0')}`,
         tags: [dtag.FAIRY, dtag.PROD]
     },
     {
@@ -1262,7 +1261,7 @@ const CARDS = [
     {
         id: '00113',
         question: `How viable is 2AR2SMG1HG?`,
-        answer: `${link('BigStupidJellyfish analysis vs. 3AR2SMG.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/2v3ar')}<br>
+        answer: `${anchor('BigStupidJellyfish analysis vs. 3AR2SMG.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/2v3ar')}<br>
         Depends on if there is no good AR-buffing AR for position 4. If there is one, 3AR1SMG1HG is a thing, specially for night maps.`,
         tags: [dtag.TDOLL, dtag.ECH]
     },
@@ -1277,7 +1276,7 @@ const CARDS = [
         id: '00115',
         question: `How do friend batteries work?`,
         answer: `${List.unordered(
-            `Friend batteries recharge at 3am and 3pm UTC-8, or whenever ${link("Netlify", "https://gftimers.netlify.app/")} says the time is.`,
+            `Friend batteries recharge at 3am and 3pm UTC-8, or whenever ${anchor("Netlify", "https://gftimers.netlify.app/")} says the time is.`,
             'The amount of charges/batteries depend on the number of dorms your friend has.',   //Tentative
             'A set number of people can claim one once per cycle.',
             "As the name suggests, it only appears on your friend's dorms, not on any strangers (especially on a Random Visit)."
@@ -1287,7 +1286,7 @@ const CARDS = [
     {
         id: '00116',
         question: `Is there an optimal recipe guide I could use for my production?`,
-        answer: `${link('Applicable Reddit Post.', 'https://redd.it/gfmelo')}<br>
+        answer: `${anchor('Applicable Reddit Post.', 'https://redd.it/gfmelo')}<br>
         For the new equips, 150/151/50/50 (with armor), 150/151/10/50 (without armor).`,
         tags: [dtag.PROD]
     },
@@ -1295,8 +1294,8 @@ const CARDS = [
         id: '00117',
         question: `Whats the best way of farming affection?`,
         answer: `Being in the leader slot in a battle echelon, being the MVP of a battle echelon, collecting daily hearts in dorms, cakes/lollipops/icecreams, passive regen by being in a dorm, gifting skins.<br>
-        ${link('Write-up on what affects affection.', 'https://www.reddit.com/r/girlsfrontline/comments/cgpt7y/weekly_commanders_lounge_july_23_2019/ev0gw64/')}<br>
-        ${link('Additional info on dorm affection.', 'https://www.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i29h382/')}`,
+        ${anchor('Write-up on what affects affection.', 'https://www.reddit.com/r/girlsfrontline/comments/cgpt7y/weekly_commanders_lounge_july_23_2019/ev0gw64/')}<br>
+        ${anchor('Additional info on dorm affection.', 'https://www.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i29h382/')}`,
         tags: [dtag.LOVE]
     },
     {
@@ -1317,8 +1316,8 @@ const CARDS = [
     {
         id: '00120',
         question: `Is the package in the shop worth it?`,
-        answer: `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/energy-packages')}<br>
-        ${link("u/headphone_question's top-up gem math.", "https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/idoig4j/")}
+        answer: `${anchor('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/energy-packages')}<br>
+        ${anchor("u/headphone_question's top-up gem math.", "https://old.reddit.com/r/girlsfrontline/comments/vh81jl/weekly_commanders_lounge_june_21_2022/idoig4j/")}
         For the 7 day new account package: Day 4 to jumpstart skill leveling (saves around 80 days of datasims on a normal day), Day 5 is the most efficient oath package so far, and Day 7 is a really good value for tokens.`,
         tags: [dtag.ITEM, dtag.OATH, dtag.GEMS, dtag.SHOP, dtag.NEWB]
     },
@@ -1346,7 +1345,7 @@ const CARDS = [
         question: `Is there a list of doll farming routes for each map?`,
         answer: `${List.unordered(
             details('Compilation of all farm routes for limited dolls and equipments on both campaign and main story.', Embed.google(["Compilation of farming guides for limited dolls", "https://docs.google.com/document/d/1GUcA1ZHYVKBhTspdRYPIkECVZRoLFvqDnLrgrFb6VcU"])),   // by u/rcpz93 most likely
-            link('Farming routes by RevenantXIII (with Pilfer strats), focusing on events and ranking-relevant campaign dolls.', 'https://rosedrake.github.io/GFL.html'),
+            anchor('Farming routes by RevenantXIII (with Pilfer strats), focusing on events and ranking-relevant campaign dolls.', 'https://rosedrake.github.io/GFL.html'),
             details('416 SPEQ Pilfer route.', MBD.youtube('5v6gEqydGm4'))
         )}`,
         tags: [dtag.TDOLL, dtag.GET, dtag.MAIN, dtag.CAMPAIGN, dtag.SPEQ]
@@ -1355,8 +1354,8 @@ const CARDS = [
         id: '00124',
         question: `What's the chronological order for the story?`,
         answer: `u/pointblanksniper's observations.<br>
-        ${link('Overall.', 'https://www.reddit.com/r/girlsfrontline/comments/sm75vk/where_can_i_see_mirror_stage_story_line/hvvpppk/')}<br>
-        ${link('Night Chapters.', 'https://www.reddit.com/r/girlsfrontline/comments/scouvz/questions_regarding_404/hu995o6/')}`,
+        ${anchor('Overall.', 'https://www.reddit.com/r/girlsfrontline/comments/sm75vk/where_can_i_see_mirror_stage_story_line/hvvpppk/')}<br>
+        ${anchor('Night Chapters.', 'https://www.reddit.com/r/girlsfrontline/comments/scouvz/questions_regarding_404/hu995o6/')}`,
         tags: [dtag.LORE]
     },  //@Fix, https://www.reddit.com/r/girlsfrontline/comments/sc8jed/weekly_commanders_lounge_january_25_2022/hupfxsr/
     {
@@ -1422,11 +1421,11 @@ const CARDS = [
     {
         id: '00133',
         question: `What's the rate up increment for Anchored Construction?`,
-        answer: `${table(['Target', 'Estimated Increment'],
+        answer: `${tb(['Target', 'Estimated Increment'],
         ['4' + STAR,  '0.396%'],
         ['5' + STAR,  '0.083%'],
         ['Starter',   '0.19%'])}
-        ${link('Base rate shown per doll is more or less their true rates.','https://www.reddit.com/r/girlsfrontline/comments/s6s9xj/weekly_commanders_lounge_january_18_2022/htmbjuc/')}`,
+        ${anchor('Base rate shown per doll is more or less their true rates.','https://www.reddit.com/r/girlsfrontline/comments/s6s9xj/weekly_commanders_lounge_january_18_2022/htmbjuc/')}`,
         tags: [dtag.PROD]
     },
     {
@@ -1445,7 +1444,7 @@ const CARDS = [
     {
         id: '00136',
         question: `How do I find Ouroburos in Operation Cube 1-4?`,
-        answer: `${link('Oreo Finder.', 'https://kyouko.moe/urouro/#')}`,
+        answer: `${anchor('Oreo Finder.', 'https://kyouko.moe/urouro/#')}`,
         tags: [dtag.CAMPAIGN, dtag.ENEMY, dtag["3P"]]
     },
     {
@@ -1482,7 +1481,7 @@ const CARDS = [
     {
         id: '00142',
         question: `Where can I get doll/fairy costume art?`,
-        answer: `${link('36base Github Repository.', 'https://github.com/36base/girlsfrontline-resources')}`,
+        answer: `${anchor('36base Github Repository.', 'https://github.com/36base/girlsfrontline-resources')}`,
         tags: [dtag.MISC]
     },
     {
@@ -1541,8 +1540,8 @@ const CARDS = [
         JP - Japan<br>
         KR - Korea<br>
         EN - Everywhere else<br>
-        As for how to download it, check the sidebar of ${link('this', 'https://www.reddit.com/r/girlsfrontline/')} link under Downloads.<br>
-        Try downloading from Qooapp or ${link("APKpure", "https://apkpure.com/")}`,
+        As for how to download it, check the sidebar of ${anchor('this', 'https://www.reddit.com/r/girlsfrontline/')} link under Downloads.<br>
+        Try downloading from Qooapp or ${anchor("APKpure", "https://apkpure.com/")}`,
         tags: [dtag.MISC]
     },  //@Totally gonna fix
     {
@@ -1601,9 +1600,9 @@ const CARDS = [
     {
         id: '00159',
         question: `I'm in dummy core hell. How do I get some more?`,
-        answer: `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/its_still_not_enough_fuck')}<br>
-        ${link('BigStupidJellyfish write-up.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/core-rates')}<br>
-        ${link("u/UnironicWeeaboo's easier 11-6.", 'https://www.reddit.com/r/girlsfrontline/comments/u1tr33/weekly_commanders_lounge_april_12_2022/i5178cy/')}<br>
+        answer: `${anchor('Matsuda guide.', 'https://gfl.matsuda.tips/post/its_still_not_enough_fuck')}<br>
+        ${anchor('BigStupidJellyfish write-up.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/core-rates')}<br>
+        ${anchor("u/UnironicWeeaboo's easier 11-6.", 'https://www.reddit.com/r/girlsfrontline/comments/u1tr33/weekly_commanders_lounge_april_12_2022/i5178cy/')}<br>
         Run any daytime leveling maps for combined core and exp farming.<br>
         You can also farm during core rate up by using the handgun recipe.<br>
         Or buy from the Black Market every first day of the month.`,
@@ -1631,7 +1630,7 @@ const CARDS = [
         id: 163,
         question: `What're the rewards for the Defense Drill?`,
         answer: `Unlocks after clearing 2-4N.<br>
-        ${link('Matsuda Guide and Line-up, circa 2.08.', 'https://gfl.matsuda.tips/post/defdrill')}<br>
+        ${anchor('Matsuda Guide and Line-up, circa 2.08.', 'https://gfl.matsuda.tips/post/defdrill')}<br>
         ${TextStyle.style('2.09 waves', TextStyle.BOLD)}:<br>
         ${details('Discord Leaderboard Comps.', `${img('https://cdn.discordapp.com/attachments/453784246515925003/988812408929804328/unknown.png')}<br>
             ${img(IMG_ASSET+"DiscordDefenseDrill.png")}`)}<br>
@@ -1659,13 +1658,13 @@ const CARDS = [
     {
         id: 166,
         question: `What does each gun class do?`,
-        answer: `${table(['Class', 'General Role', 'Target Priority', 'Caveat'],
+        answer: `${tb(['Class', 'General Role', 'Target Priority', 'Caveat'],
         ['Assualt Rifle (AR)',                                                                                  'Anti-Swarm<br>Sustained DPS',  'Frontline',    'Weak to armored enemies'],
         ['Submachine Gun (SMG)',                                                                                'Evasion Tank<br>Anti-Swarm',   'Frontline',    'Accuracy is non-existent'],
         ['Rifle (RF)',                                                                                          'Big Damage<br>Anti-Armor',     'Backline',     'Weak to swarms<br>Affected by night penalty'],
         ['Handgun (HG)',                                                                                        'Buffer<br>Debuffer',           'Random',        'Cannot facetank'],
-        [link("Machine Gun (MG)", "https://gamepress.gg/girlsfrontline/mgs-sgs-and-teambuilding#topic-270876"), 'Opening Volley',               'Random',       'Reloads/Stops shooting at around 6s<br>Weak to high evasion'],
-        [link("Shotgun (SG)", "https://gamepress.gg/girlsfrontline/mgs-sgs-and-teambuilding#topic-270826"),     'Armor Tank',                   'Frontline',    'Poor evasion'])}`,
+        [anchor("Machine Gun (MG)", "https://gamepress.gg/girlsfrontline/mgs-sgs-and-teambuilding#topic-270876"), 'Opening Volley',               'Random',       'Reloads/Stops shooting at around 6s<br>Weak to high evasion'],
+        [anchor("Shotgun (SG)", "https://gamepress.gg/girlsfrontline/mgs-sgs-and-teambuilding#topic-270826"),     'Armor Tank',                   'Frontline',    'Poor evasion'])}`,
         tags: [dtag.TDOLL, dtag.BATTLE, dtag.NEWB]
     },
     {
@@ -1691,8 +1690,8 @@ const CARDS = [
         id: '00170',
         question: `Is there an efficient way of raising a Parachute Fairy?`,
         answer: `${List.unordered(
-            link("markhydroxyl's github notes.", 'https://github.com/markhydroxyl/GFL-notes/blob/main/tls/nga_raising_paras.md'),
-            link('Logistics for HEC crafting.', 'https://github.com/markhydroxyl/GFL-notes/blob/main/tls/nga_hec_logis.md'),
+            anchor("markhydroxyl's github notes.", 'https://github.com/markhydroxyl/GFL-notes/blob/main/tls/nga_raising_paras.md'),
+            anchor('Logistics for HEC crafting.', 'https://github.com/markhydroxyl/GFL-notes/blob/main/tls/nga_hec_logis.md'),
             details('Fairy Development Calculator.', Embed.google(["Girls' Frontline: Fairy Development Calculator", "https://docs.google.com/spreadsheets/d/1Zcz6Yp3sduhUXY9jo2HCX4pOdiIQioZcS8v6xMK01Pk"]))
         )}`,
         tags: [dtag.FAIRY, dtag.LEVEL]
@@ -1731,7 +1730,7 @@ const CARDS = [
             "Switch to mobile data",
             "Use VPN",
             "Delete cache",
-            link('Do a manual patch', 'https://github.com/lloyddunamis/gfl_manualpatch/blob/main/FullResource_readme'), // or https://old.reddit.com/r/girlsfrontline/comments/lvwwtv/weekly_commanders_lounge_march_02_2021/gpugenl/
+            anchor('Do a manual patch', 'https://github.com/lloyddunamis/gfl_manualpatch/blob/main/FullResource_readme'), // or https://old.reddit.com/r/girlsfrontline/comments/lvwwtv/weekly_commanders_lounge_march_02_2021/gpugenl/
             details("Delete some files", MBD.twitter("Synexcu", "1310117595094216709")),
             "Reinstall (with minimum data first)",
             "Phone restart",
@@ -1845,7 +1844,7 @@ const CARDS = [
     {
         id: '00190',
         question: `Does Luffberry Chess have any exclusive rewards?`,
-        answer: `${link('Icons, furnitures, and as of 2.09, skins.', 'https://www.reddit.com/r/girlsfrontline/comments/uhb3jo/weekly_commanders_lounge_may_03_2022/i7kg6bu/')}`,
+        answer: `${anchor('Icons, furnitures, and as of 2.09, skins.', 'https://www.reddit.com/r/girlsfrontline/comments/uhb3jo/weekly_commanders_lounge_may_03_2022/i7kg6bu/')}`,
         tags: [dtag.OJ, dtag.FURN, dtag.TDOLL, dtag.SKIN]
     },
     {
@@ -1922,7 +1921,7 @@ const CARDS = [
                 details("Shotguns", MBD.youtube("oQn1CT6WvPM")),
                 details("Ringleaders", MBD.youtube("-erW_9CBkjQ")),
                 details("NPCs", MBD.youtube("20kEk-lrxqY")),
-                link("Cutscene interpreter", "https://gfl.amaryllisworks.pw/#side-12-0")
+                anchor("Cutscene interpreter", "https://gfl.amaryllisworks.pw/#side-12-0")
             ))
         )}`,
         tags: [dtag.LORE, dtag.ANNIV, dtag.ADJUNCT]
@@ -1940,7 +1939,7 @@ const CARDS = [
     },  //@Visual
     {
         id: '00202',
-        question: `What does the ${link('glitter/sparkle', IMG_ASSET+"ShinyIndicator.png")} in my coalition unit's portrait mean? Their sprites also has a golden aura/glow around it.`,
+        question: `What does the ${anchor('glitter/sparkle', IMG_ASSET+"ShinyIndicator.png")} in my coalition unit's portrait mean? Their sprites also has a golden aura/glow around it.`,
         answer: `A shiny ${TextStyle.style('pokemon', TextStyle.STRIKE)} coalition unit. And the very reason Golden Infusion is a thing.<br>
         If put on a Lv.100, XL unit, something special may happen.`,
         tags: [dtag.COALITION]
@@ -1961,7 +1960,7 @@ const CARDS = [
         id: '00205',
         question: `When should I start doing night chapters?`,
         answer: `Anytime. Unlock them by completing the next chapter's last emergency map (i.e. 11-4e unlocks 10-1n). Remember to equip PEQs to negate the accuracy penalty and bring HGs for map vision. ARSMG should be fine for the first few night maps.<br>
-        ${link("BigStupidJellyfish_ requirements breakdown.", 'https://www.reddit.com/r/girlsfrontline/comments/pf1dsb/weekly_commanders_lounge_august_31_2021/hb4b257/')}`,
+        ${anchor("BigStupidJellyfish_ requirements breakdown.", 'https://www.reddit.com/r/girlsfrontline/comments/pf1dsb/weekly_commanders_lounge_august_31_2021/hb4b257/')}`,
         tags: [dtag.MAIN]
     },
     {
@@ -1988,7 +1987,7 @@ const CARDS = [
     {
         id: '00209',
         question: `When will dorm battery, daily gift, friend battery reset?`,
-        answer: `${link('Netlify timer.', 'https://gftimers.netlify.app')} Note that ranking updates one hour after Kalina's Daily Gift.`,
+        answer: `${anchor('Netlify timer.', 'https://gftimers.netlify.app')} Note that ranking updates one hour after Kalina's Daily Gift.`,
         tags: [dtag.DORM, dtag.FRIEND, dtag["3P"]]
     },
     {
@@ -2008,7 +2007,7 @@ const CARDS = [
     {
         id: '00212',
         question: `What are the chances on getting a specific fairy talent?`,
-        answer: `${link('u/BigStupidJellyfish_ analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/talent-data')}`,
+        answer: `${anchor('u/BigStupidJellyfish_ analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/talent-data')}`,
         tags: [dtag.FAIRY]
     },
     {
@@ -2020,9 +2019,9 @@ const CARDS = [
     {
         id: '00214',
         question: `Is there a list of game terms and their abbreviations? And is there any for dolls' nicknames?`,
-        answer: `${link('u/BigStupidJellyfish_.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/terms')} Includes in-game and community terms.<br>
-        ${link('u/Kipdid.', 'https://www.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge_may_17_2022/i9fmiwm/')}<br>
-        ${link('u/totestemp.', 'https://www.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge_may_17_2022/i972mqd/')}`,
+        answer: `${anchor('u/BigStupidJellyfish_.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/terms')} Includes in-game and community terms.<br>
+        ${anchor('u/Kipdid.', 'https://www.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge_may_17_2022/i9fmiwm/')}<br>
+        ${anchor('u/totestemp.', 'https://www.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge_may_17_2022/i972mqd/')}`,
         tags: [dtag.MISC]
     },
     {
@@ -2066,8 +2065,8 @@ const CARDS = [
     {
         id: '00220',
         question: `Are keybinds bannable?`,
-        answer: `${link('Highly recommended against using keybinds.', 'https://www.reddit.com/r/girlsfrontline/comments/grht76/monthly_qa/fs239z8/')}<br>
-        A lot of emulator players still use them, especially for ${link('kiting', 'https://www.reddit.com/r/girlsfrontline/comments/hmqhw8/weekly_commanders_lounge_july_07_2020/fxgu8g8/')}, so if you're willing to take the risk, go for it. Macros ARE a bannable offense, full stop.`,
+        answer: `${anchor('Highly recommended against using keybinds.', 'https://www.reddit.com/r/girlsfrontline/comments/grht76/monthly_qa/fs239z8/')}<br>
+        A lot of emulator players still use them, especially for ${anchor('kiting', 'https://www.reddit.com/r/girlsfrontline/comments/hmqhw8/weekly_commanders_lounge_july_07_2020/fxgu8g8/')}, so if you're willing to take the risk, go for it. Macros ARE a bannable offense, full stop.`,
         tags: [dtag.EMU]
     },
     {
@@ -2095,7 +2094,7 @@ const CARDS = [
     {
         id: '00224',
         question: `Should I keep equipping capes to RFs?`,
-        answer: `${link('Yes.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/myths#capes')}`,
+        answer: `${anchor('Yes.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/myths#capes')}`,
         tags: [dtag.TDOLL, dtag.EQUIP]
     },
     {
@@ -2147,20 +2146,20 @@ const CARDS = [
     {
         id: '00232',
         question: `Is there any Live2D viewer for GFL?`,
-        answer: `${link('Pengu.', 'https://pengupengupengu.github.io/live2d-viewer-web/')} Don't know how this works.<br>
+        answer: `${anchor('Pengu.', 'https://pengupengupengu.github.io/live2d-viewer-web/')} Don't know how this works.<br>
         Or try IOPWiki.`,
         tags: [dtag['3P']]
     },
     {
         id: '00233',
         question: `How long would visitors stay in my dormitory?`,
-        answer: `${link('u/BigStupidJellyfish_ says 8 hours.', 'https://old.reddit.com/r/girlsfrontline/comments/v6pt9o/weekly_commanders_lounge_june_07_2022/ibyvjnm/')}`,
+        answer: `${anchor('u/BigStupidJellyfish_ says 8 hours.', 'https://old.reddit.com/r/girlsfrontline/comments/v6pt9o/weekly_commanders_lounge_june_07_2022/ibyvjnm/')}`,
         tags: [dtag.DORM]
     },
     {
         id: '00234',
         question: `Which exped location gives which resources and which pet is best for each?`,
-        answer: `${table(
+        answer: `${tb(
             ['Pets', 'Location', 'Currency', 'Ration'],
             ['Cat', 'City', 'Toy Brick', '???'],
             ['Dog', 'Snowfield', 'Buttstock', '???'],
@@ -2178,7 +2177,7 @@ const CARDS = [
     {
         id: '00236',
         question: `What is "ranking" that people are talking about?`,
-        answer: `${link("u/pointblanksniper's essay.", 'https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/id4n4dr/')}`,
+        answer: `${anchor("u/pointblanksniper's essay.", 'https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/id4n4dr/')}`,
         tags: [dtag.MAJOR]
     },
     {
@@ -2295,14 +2294,14 @@ const CARDS = [
     {
         id: '00252',
         question: `How do I know the final value of the doll stats? And what are the caps for each stat?`,
-        answer: `${link('Matsuda Formula.', 'https://gfl.matsuda.tips/post/basicformula')}<br>
+        answer: `${anchor('Matsuda Formula.', 'https://gfl.matsuda.tips/post/basicformula')}<br>
         99999 for final damage. FOR ROF, it's listed on the formation screen, but in reality, it's by 5, so max for 120 is 116, i.e. 116-120 ROF has no difference. Crit Rate is 100% as per common sense.`,
         tags: [dtag.SYSMECH, dtag.TDOLL]
     },
     {
         id: '00253',
         question: `How good are AR-15 and SOP's SPEQs?`,
-        answer: `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/star-buffs')}`,
+        answer: `${anchor('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/star-buffs')}`,
         tags: [dtag.SPEQ]
     },
     {
@@ -2320,8 +2319,8 @@ const CARDS = [
     {
         id: '00256',
         question: `Is there a chibi viewer for each doll?`,
-        answer: `${link('IOPWiki', 'https://iopwiki.com/wiki/Category:T-Dolls')}<br>
-        ${link('GFWiki', 'http://www.gfwiki.org/w/%E6%88%98%E6%9C%AF%E4%BA%BA%E5%BD%A2%E5%9B%BE%E9%89%B4')}`,
+        answer: `${anchor('IOPWiki', 'https://iopwiki.com/wiki/Category:T-Dolls')}<br>
+        ${anchor('GFWiki', 'http://www.gfwiki.org/w/%E6%88%98%E6%9C%AF%E4%BA%BA%E5%BD%A2%E5%9B%BE%E9%89%B4')}`,
         tags: [dtag.TDOLL, dtag.MISC]
     },
     {
@@ -2398,7 +2397,7 @@ const CARDS = [
     {
         id: '00269',
         question: `How do I bind my account?`,
-        answer: `${link('Settings>Manage Account>Bind to your preferred account.', 'https://old.reddit.com/r/girlsfrontline/comments/h9zoat/weekly_commanders_lounge_june_16_2020/fvpm1q8/')} To see your account password, check the spam section of your bound email address.<br>
+        answer: `${anchor('Settings>Manage Account>Bind to your preferred account.', 'https://old.reddit.com/r/girlsfrontline/comments/h9zoat/weekly_commanders_lounge_june_16_2020/fvpm1q8/')} To see your account password, check the spam section of your bound email address.<br>
         You can then change devices provided that you use the same account.`,
         tags: [dtag.ACCT]
     },  //@Visual
@@ -2454,7 +2453,7 @@ const CARDS = [
     {
         id: '00278',
         question: `Is there a way to change the skill icon order in battle?`,
-        answer: `${link('Explanation and manipulation.', 'https://old.reddit.com/r/girlsfrontline/comments/oeqgwt/weekly_commanders_lounge_july_06_2021/h48qu1v/')}`,
+        answer: `${anchor('Explanation and manipulation.', 'https://old.reddit.com/r/girlsfrontline/comments/oeqgwt/weekly_commanders_lounge_july_06_2021/h48qu1v/')}`,
         tags: [dtag.BATTLE, dtag.SKILL]
     },
     {
@@ -2483,7 +2482,7 @@ const CARDS = [
     {
         id: '00283',
         question: `How do I bypass enemy defenses?`,
-        answer: `${table(['Defense', 'Counter'],
+        answer: `${tb(['Defense', 'Counter'],
             ['Health Bar', 'Just shoot them'],
             ['Evasion', 'High accuracy<br>Evasion debuff<br>Surehits like skillshots or explosives'],
             ['Armor', 'High firepower<br>AP bullets<br>Explosives<br>Armor-ignoring attacks'],
@@ -2495,7 +2494,7 @@ const CARDS = [
     {
         id: '00284',
         question: `How do I know when my registration date was?`,
-        answer: `user_info.json from GFAlarm > reg_time value > convert to gregorian ("reg_time" unix time) with ${link('this', 'https://www.wolframalpha.com/')}.`,
+        answer: `user_info.json from GFAlarm > reg_time value > convert to gregorian ("reg_time" unix time) with ${anchor('this', 'https://www.wolframalpha.com/')}.`,
         tags: [dtag.ACCT]
     },
     {
@@ -2555,7 +2554,7 @@ const CARDS = [
     {
         id: '00294',
         question: `Which fairy talent should I get?`,
-        answer: `${link('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/fairy-talents')}`,
+        answer: `${anchor('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/fairy-talents')}`,
         tags: [dtag.FAIRY]
     },
     {
@@ -2585,7 +2584,7 @@ const CARDS = [
     {
         id: '00300',
         question: `Is there something like an account/inventory/roster spreadsheet for this game?`,
-        answer: `${link('Make a copy for personal use.', 'https://old.reddit.com/r/girlsfrontline/comments/wpoce9/weekly_commanders_lounge_august_16_2022/ikyqyb1/')}`,
+        answer: `${anchor('Make a copy for personal use.', 'https://old.reddit.com/r/girlsfrontline/comments/wpoce9/weekly_commanders_lounge_august_16_2022/ikyqyb1/')}`,
         tags: [dtag.MISC]
     },
     {
@@ -2644,7 +2643,7 @@ const CARDS = [
     {
         id: '00310',
         question: `What does the Download Data button in the settings do?`,
-        answer: `${link('Basically fairy and equipment texture, and dorm-related stuff.', 'https://old.reddit.com/r/girlsfrontline/comments/gziv26/weekly_commanders_lounge_june_09_2020/fut4man/')}`,
+        answer: `${anchor('Basically fairy and equipment texture, and dorm-related stuff.', 'https://old.reddit.com/r/girlsfrontline/comments/gziv26/weekly_commanders_lounge_june_09_2020/fut4man/')}`,
         tags: [dtag.MISC]
     },
     {
@@ -2847,7 +2846,7 @@ const CARDS = [
     {
         id: '00341',
         question: `Is there any checklist for the base bonus?`,
-        answer: `${link("u/headphone_question's doll index checklist.", 'https://redd.it/xqtpd9')}`,
+        answer: `${anchor("u/headphone_question's doll index checklist.", 'https://redd.it/xqtpd9')}`,
         tags: [dtag.TDOLL]
     },
     {
@@ -3000,7 +2999,7 @@ const CARDS = [
     {
         id: '00365',
         question: `What do the numbers mean when talking about tile positioning?`,
-        answer: `${table(null,
+        answer: `${tb(null,
             [7, 8, 9],
             [4, 5, 6],
             [1, 2, 3])}`,
@@ -3021,7 +3020,7 @@ const CARDS = [
     {
         id: '00368',
         question: `I've been getting dupes about 3 days when the Key Card Event started. What gives?`,
-        answer: `First, "Coupon Collector's Problem". Second, ${link('it actually kinda seems rigged to some extent', 'https://www.reddit.com/r/girlsfrontline/comments/o5hpk4/weekly_commanders_lounge_june_22_2021/h2pa27f/')}.`,
+        answer: `First, "Coupon Collector's Problem". Second, ${anchor('it actually kinda seems rigged to some extent', 'https://www.reddit.com/r/girlsfrontline/comments/o5hpk4/weekly_commanders_lounge_june_22_2021/h2pa27f/')}.`,
         tags: [dtag.MINI]
     },
     {
@@ -3038,7 +3037,7 @@ const CARDS = [
     {
         id: '00370',
         question: `Can Support Fairy Skills (i.e. Construction) work on Coalition units?`,
-        answer: `${link('Yes.', 'https://old.reddit.com/r/girlsfrontline/comments/q1rscp/weekly_commanders_lounge_october_05_2021/hg4vntx/')}`,
+        answer: `${anchor('Yes.', 'https://old.reddit.com/r/girlsfrontline/comments/q1rscp/weekly_commanders_lounge_october_05_2021/hg4vntx/')}`,
         tags: [dtag.FAIRY, dtag.COALITION, dtag.BATTLE]
     },
     {
@@ -3123,7 +3122,7 @@ const CARDS = [
     {
         id: '00384',
         question: `How are the Striker's ROF calculated?`,
-        answer: `${link('u/UnironicWeeaboo testing.', 'https://www.reddit.com/r/girlsfrontline/comments/qkzc9s/comment/hjecs3p/')}`,
+        answer: `${anchor('u/UnironicWeeaboo testing.', 'https://www.reddit.com/r/girlsfrontline/comments/qkzc9s/comment/hjecs3p/')}`,
         tags: [dtag.ENEMY, dtag.COALITION]
     },
     {
@@ -3171,7 +3170,7 @@ const CARDS = [
     {
         id: '00392',
         question: `Can I change which dolls get targeted by the enemy?`,
-        answer: `${link('By echelon positioning.', 'https://www.reddit.com/r/girlsfrontline/comments/g11mag/weekly_commanders_lounge_april_14_2020/fny91zz/')}<br>
+        answer: `${anchor('By echelon positioning.', 'https://www.reddit.com/r/girlsfrontline/comments/g11mag/weekly_commanders_lounge_april_14_2020/fny91zz/')}<br>
         ${details('In-depth study on positioning, targeting, and some peculiar requirements involving acquire dates.', Embed.google(["Enemy Targeting Guide", "https://docs.google.com/document/d/1LPqpSCNWiu1HJOnK1FOB1o30FSwTQRQvcK-tAjO4SSI"]))}`,
         tags: [dtag.BATTLE]
     },  //acquire dates to echelon formation position
@@ -3269,14 +3268,14 @@ const CARDS = [
     {
         id: '00405',
         question: `Why are the gem package names incorrect/confusing?`,
-        answer: `${link('Explanation 1.', 'https://www.reddit.com/r/girlsfrontline/comments/q1rscp/weekly_commanders_lounge_october_05_2021/hg3xpyr/')}<br>
-        ${link('Explanation 2.', 'https://www.reddit.com/r/girlsfrontline/comments/mzjdl5/weekly_commanders_lounge_april_27_2021/gwrie7y/')}`,
+        answer: `${anchor('Explanation 1.', 'https://www.reddit.com/r/girlsfrontline/comments/q1rscp/weekly_commanders_lounge_october_05_2021/hg3xpyr/')}<br>
+        ${anchor('Explanation 2.', 'https://www.reddit.com/r/girlsfrontline/comments/mzjdl5/weekly_commanders_lounge_april_27_2021/gwrie7y/')}`,
         tags: [dtag.GEMS, dtag.SHOP]
     },
     {
         id: '00406',
         question: `How do dorms work?`,
-        answer: `${link('Matsuda guide.', 'https://gfl.matsuda.tips/post/what-happens-in-the-dorms-stays-in-the-dorms')}`,
+        answer: `${anchor('Matsuda guide.', 'https://gfl.matsuda.tips/post/what-happens-in-the-dorms-stays-in-the-dorms')}`,
         tags: [dtag.DORM]
     },
     {
@@ -3490,7 +3489,7 @@ const CARDS = [
     {
         id: '00435',
         question: `What's the distribution for Coalition Unit sizes?`,
-        answer: `${link("u/BigStupidJellyfish_'s findings.", "https://old.reddit.com/r/girlsfrontline/comments/135epds/weekly_commanders_lounge_may_02_2023/jiyruin/")}`,
+        answer: `${anchor("u/BigStupidJellyfish_'s findings.", "https://old.reddit.com/r/girlsfrontline/comments/135epds/weekly_commanders_lounge_may_02_2023/jiyruin/")}`,
         tags: [dtag.PA, dtag.COALITION]
     },
     {
@@ -3520,7 +3519,7 @@ const CARDS = [
     {
         id: '00440',
         question: `How do I run Data Simulations?`,
-        answer: `${link("BigStupidJellyfish's guide.", "https://big-stupid-jellyfish.github.io/GFMath/pages/datasim")}`,
+        answer: `${anchor("BigStupidJellyfish's guide.", "https://big-stupid-jellyfish.github.io/GFMath/pages/datasim")}`,
         tags: [dtag.SIMS]
     },
     {
@@ -3602,10 +3601,10 @@ const CARDS = [
         id: '00450',
         question: `My Samsung/Pixel phone can't open up the game. Is there any fix for this?`,
         answer: `${List.unordered(
-            link("u/Le_Trudos' Android 12 fix", "https://www.reddit.com/r/girlsfrontline/comments/tsmwen/possible_solution_to_android_12_updates_making/"),
-            link("Droidwin Android 12 fix", "https://droidwin.com/games-and-apps-crashing-not-working-on-android-12-how-to-fix/"),
-            link("u/tommykuah's Android 12 fix", "https://www.reddit.com/r/girlsfrontline/comments/tdsmjh/regarding_android_12_app_crashfreeze_issue_and/i0mjpop/"),
-            `${link("u/Gawdzilla27's Android 14 fix", "https://old.reddit.com/r/girlsfrontline/comments/18wk6dz/weekly_commanders_lounge_january_02_2024/kgi8p2j/")} ${link(TextStyle.style("0", TextStyle.SUPER), "https://old.reddit.com/r/girlsfrontline/comments/18rdlor/gfl_crash_on_launch/kf2dde4/")}`,
+            anchor("u/Le_Trudos' Android 12 fix", "https://www.reddit.com/r/girlsfrontline/comments/tsmwen/possible_solution_to_android_12_updates_making/"),
+            anchor("Droidwin Android 12 fix", "https://droidwin.com/games-and-apps-crashing-not-working-on-android-12-how-to-fix/"),
+            anchor("u/tommykuah's Android 12 fix", "https://www.reddit.com/r/girlsfrontline/comments/tdsmjh/regarding_android_12_app_crashfreeze_issue_and/i0mjpop/"),
+            `${anchor("u/Gawdzilla27's Android 14 fix", "https://old.reddit.com/r/girlsfrontline/comments/18wk6dz/weekly_commanders_lounge_january_02_2024/kgi8p2j/")} ${anchor(TextStyle.style("0", TextStyle.SUPER), "https://old.reddit.com/r/girlsfrontline/comments/18rdlor/gfl_crash_on_launch/kf2dde4/")}`,
             "Downgrading Android 12/14 to Android 11/13.", //https://old.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1y59kl/
             "Switch battery usage to unrestricted.", // https://old.reddit.com/r/girlsfrontline/comments/18ggxcs/weekly_commanders_lounge_december_12_2023/kdz3dxq/
         )}`,
@@ -3620,7 +3619,7 @@ const CARDS = [
     {
         id: '00452',
         question: `Is there a way to extract images fromt the game?`,
-        answer: `${link("GFAlarm route.", "https://www.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jtafnpx/")}`,
+        answer: `${anchor("GFAlarm route.", "https://www.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jtafnpx/")}`,
         tags: [dtag.MISC]
     },
     {
@@ -3636,19 +3635,19 @@ const CARDS = [
     {
         id: '00454',
         question: `Which furnitures have associated BGM with them?`,
-        answer: `${link("Comment link.", "https://www.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jsopd26/")}`,
+        answer: `${anchor("Comment link.", "https://www.reddit.com/r/girlsfrontline/comments/152s1st/weekly_commanders_lounge_july_18_2023/jsopd26/")}`,
         tags: [dtag.DORM, dtag.FURN]
     },
     {
         id: '00455',
         question: `What are the changes for each client update?`,
-        answer: `${link("3.0", "https://gamepress.gg/girlsfrontline/v301-client-update-new-features-2022")}`,
+        answer: `${anchor("3.0", "https://gamepress.gg/girlsfrontline/v301-client-update-new-features-2022")}`,
         tags: [dtag.MISC]
     },
     {
         id: '00456',
         question: `Where can I get this particular fairy?`,
-        answer: `${table(
+        answer: `${tb(
             ["Fairies", "Where to get"],
             ["Warrior Fairy", "Fairy Production"],
             ["Fury Fairy", "Fairy Production"],
@@ -3706,7 +3705,7 @@ const CARDS = [
     {
         id: '00459',
         question: `Where can I get special equipments?`,
-        answer: `${link("Linked in the compilations page.", "https://xxx-yyy-xxx.github.io/GFL/docs")}`,
+        answer: `${anchor("Linked in the compilations page.", "https://xxx-yyy-xxx.github.io/GFL/docs")}`,
         tags: [dtag.EQUIP, dtag.SPEQ, dtag.GET]
     },
     {
@@ -3714,7 +3713,7 @@ const CARDS = [
         question: `Should I level up my dolls' skills to 10?`,
         answer: `Yes? Why would you not?<br>
         If you're talking about NEED, depends on where you plan to use said doll. Some of them don't NEED them as much as the others.<br>
-        ${link("BigStupidJellyfish analysis.", "https://big-stupid-jellyfish.github.io/GFMath/pages/skill-levels")}`,
+        ${anchor("BigStupidJellyfish analysis.", "https://big-stupid-jellyfish.github.io/GFMath/pages/skill-levels")}`,
         tags: [dtag.TDOLL, dtag.SKILL]
     },
     {
@@ -3730,7 +3729,7 @@ const CARDS = [
             image(IMG_ASSET+"ForcedManual.png", "Forced Manual Toggle"),
             fragment("Off: ", image(IMG_ASSET+"FMOff.png", "Forced Manual Off", {type: "inline"}), ", On: ", image(IMG_ASSET+"FMOn.png", "Forced Manual On", {type: "inline"}))
         )}
-        ${link("Other dolls recommended to be put on forced manual.", "https://gamepress.gg/girlsfrontline/list-forced-manual-dolls")}`,
+        ${anchor("Other dolls recommended to be put on forced manual.", "https://gamepress.gg/girlsfrontline/list-forced-manual-dolls")}`,
         tags: [dtag.TDOLL, dtag.SKILL]
     },
     {
@@ -3811,7 +3810,7 @@ const CARDS = [
     {
         id: '00468',
         question: `What's the blurb for the Listening Post?`,
-        answer: `${link("u/UnironicWeeaboo's reply.", "https://www.reddit.com/r/girlsfrontline/comments/t42t86/weekly_commanders_lounge_march_01_2022/hz2dti3/")}`,
+        answer: `${anchor("u/UnironicWeeaboo's reply.", "https://www.reddit.com/r/girlsfrontline/comments/t42t86/weekly_commanders_lounge_march_01_2022/hz2dti3/")}`,
         tags: [dtag.MISC]
     },
     {
@@ -3823,13 +3822,13 @@ const CARDS = [
     {
         id: '00470',
         question: `Are units with Flare skill and the like useful?`,
-        answer: `${link("BigStupidJellyfish's write-up.", "https://big-stupid-jellyfish.github.io/GFMath/pages/rf-nvg")}`,
+        answer: `${anchor("BigStupidJellyfish's write-up.", "https://big-stupid-jellyfish.github.io/GFMath/pages/rf-nvg")}`,
         tags: [dtag.TDOLL, dtag.SKILL]
     },
     {
         id: '00471',
         question: `How to tank/mech/mobile armor?`,
-        answer: `${link("UnironicWeeaboo response.", "https://www.reddit.com/r/girlsfrontline/comments/17f7kla/weekly_commanders_lounge_october_24_2023/k6e6ja1/")}<br>
+        answer: `${anchor("UnironicWeeaboo response.", "https://www.reddit.com/r/girlsfrontline/comments/17f7kla/weekly_commanders_lounge_october_24_2023/k6e6ja1/")}<br>
         Very WIP and will prioritize EN guides once this drops.`,
         tags: [dtag.MISC]
     },
@@ -3956,24 +3955,24 @@ const CARDS = [
     {
         id: '00490',
         question: `What does total exp in the auto-battle completion mean?`,
-        answer: `${link("Reddit reply.", "https://www.reddit.com/r/girlsfrontline/comments/hzark0/weekly_commanders_lounge_july_28_2020/g082rwn/")}`,
+        answer: `${anchor("Reddit reply.", "https://www.reddit.com/r/girlsfrontline/comments/hzark0/weekly_commanders_lounge_july_28_2020/g082rwn/")}`,
         tags: [dtag.LEVEL, dtag.AUTO]
     },
     {
         id: '00491',
         question: `Is there a repository of all dolls currently in the game?`,
         answer: `${List.unordered(
-            link("CN Wiki", "http://www.gfwiki.org/w/%E9%A6%96%E9%A1%B5"),
-            link("EN Wiki", "https://iopwiki.com/wiki/"),
-            link("KR Wiki", "https://gfl.zzzzz.kr/dolls.php?lang=en")
+            anchor("CN Wiki", "http://www.gfwiki.org/w/%E9%A6%96%E9%A1%B5"),
+            anchor("EN Wiki", "https://iopwiki.com/wiki/"),
+            anchor("KR Wiki", "https://gfl.zzzzz.kr/dolls.php?lang=en")
         )}`,
         tags: [dtag.TDOLL]
     },
     {
         id: '00492',
         question: `Are there any event clear guides for this game?`,
-        answer: `${link("Serzha's Youtube", "https://www.youtube.com/@Serzha")}<br>
-        ${link("Matsuda guide.", "https://gfl.matsuda.tips/blog/")}`,   //https://old.reddit.com/r/girlsfrontline/comments/18b74sm/weekly_commanders_lounge_december_05_2023/kcbkiv9/
+        answer: `${anchor("Serzha's Youtube", "https://www.youtube.com/@Serzha")}<br>
+        ${anchor("Matsuda guide.", "https://gfl.matsuda.tips/blog/")}`,   //https://old.reddit.com/r/girlsfrontline/comments/18b74sm/weekly_commanders_lounge_december_05_2023/kcbkiv9/
         tags: [dtag.MISC]
     },
     {
@@ -4000,7 +3999,7 @@ const CARDS = [
     {
         id: '00497',
         question: `What is corpse dragging?`,
-        answer: `${link("Gamepress guide", "https://gamepress.gg/girlsfrontline/corpse-dragging-how-optimize-leveling")}`,
+        answer: `${anchor("Gamepress guide", "https://gamepress.gg/girlsfrontline/corpse-dragging-how-optimize-leveling")}`,
         tags: [dtag.LEVEL, dtag.IMPT]
     },
     {
@@ -4057,7 +4056,7 @@ const CARDS = [
     {
         id: 504,
         question: `How do I use Google as a payment service?`,
-        answer: `${link("u/headphone_question's write-up.", "https://old.reddit.com/r/girlsfrontline/comments/15f5xi4/weekly_commanders_lounge_august_01_2023/juk1l3n/")}`,
+        answer: `${anchor("u/headphone_question's write-up.", "https://old.reddit.com/r/girlsfrontline/comments/15f5xi4/weekly_commanders_lounge_august_01_2023/juk1l3n/")}`,
         tags: [dtag.ANDROID]
     },
     {
@@ -4069,7 +4068,7 @@ const CARDS = [
     {
         id: 506,
         question: `What's the data for the Luffberry gacha?`,
-        answer: `${link("u/UnironicWeeaboo's report.", "https://old.reddit.com/r/girlsfrontline/comments/x74mpx/weekly_commanders_lounge_september_06_2022/ingul31/")}`,
+        answer: `${anchor("u/UnironicWeeaboo's report.", "https://old.reddit.com/r/girlsfrontline/comments/x74mpx/weekly_commanders_lounge_september_06_2022/ingul31/")}`,
         tags: [dtag.OJ]
     },
     {
@@ -4081,7 +4080,7 @@ const CARDS = [
     {
         id: 508,
         question: `Where can I see the items' descriptions/blurbs?`,
-        answer: `${link("randomqwerty's github repository.", "https://github.com/randomqwerty/GFLData/find/main")}`,
+        answer: `${anchor("randomqwerty's github repository.", "https://github.com/randomqwerty/GFLData/find/main")}`,
         tags: [dtag.MISC]
     },
     {

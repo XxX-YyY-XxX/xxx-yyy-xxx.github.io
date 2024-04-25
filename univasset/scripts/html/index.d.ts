@@ -37,5 +37,5 @@ export function image(src: string, alt: string, keys?: {type?: ImageType}): HTML
 export function figure(content: HTMLElement, caption: string | DocumentFragment): HTMLFigureElement;
 export function details(summary: string, content: AppendableElement): HTMLDetailsElement;
 export function fragment(...nodes: AppendableElement[]): DocumentFragment;
-export function anchor(content: AppendableElement[], href: string): HTMLAnchorElement;
-export function table(headerArray: AppendableElement[], ...arrays: AppendableElement[][]): HTMLTableElement;
+export function anchor(content: AppendableElement, href: string): HTMLAnchorElement;
+export function table(headers: AppendableElement[], ...arrays: AppendableElement[][]): HTMLTableElement;

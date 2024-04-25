@@ -136,30 +136,19 @@ export function anchor(content, href) {
 
 
 
-/** @param {Array} headerArray Nullable value @param {Array[]} arrayOfArrays */
-export function table(headerArray, ...arrayOfArrays) {
+export function table(headers, ...arrays) {
+    const HEADERS = headers.map(x => setattr(document.createElement("th"), {append: [x], toString: htmlString}));
+    const HEADER_TR = setattr(document.createElement("tr"), {toString: htmlString, append: HEADERS});
+    const THEAD = setattr(document.createElement("thead"), {toString: htmlString, appendChild: [HEADER_TR]});
 
-    const THEAD = document.createElement("thead")
-    const HEADER_TR = document.createElement("tr")
-    HEADER_TR.append(...headerArray.map(x => setattr(document.createElement("th"), {append: [x]})))
-    THEAD.appendChild(HEADER_TR)
-
-    const TBODY = document.createElement("tbody")
-    TBODY.append(...arrayOfArrays.map(array => setattr(document.createElement("tr"), {append: array.map(item => setattr(document.createElement("td"), {append: [item]}))})))
-    
-    
+    const TR_ARRAY = arrays.map(array => setattr(document.createElement("tr"), {
+        toString: htmlString,
+        append: array.map(item => setattr(document.createElement("td"), {toString: htmlString, append: [item]}))
+    }));
+    const TBODY = setattr(document.createElement("tbody"), {toString: htmlString, append: TR_ARRAY});
     
     return setattr(document.createElement("table"), {toString: htmlString, append: [THEAD, TBODY]});
 }
-
-
-
-
-
-
-
-
-
 
 
 
