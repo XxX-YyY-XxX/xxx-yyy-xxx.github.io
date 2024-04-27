@@ -89,13 +89,21 @@ export const Embed = {
     youtube(ID) {
         const TEMP = {11: ID, 34: `videoseries?list=${ID}`}[ID.length];
         return setattr(document.createElement("iframe"), {src: `https://www.youtube.com/embed/${TEMP}`, loading: "lazy", allowFullscreen: true, toString: htmlString});
+    },
+        /** Create an innerHTML text for Streamable embeds.
+     * @param {string} ID */
+    streamable(ID) {
+        return setattr(document.createElement("iframe"), {src: `https://streamable.com/e/${ID}`, loading: "lazy", allowFullscreen: true, toString: htmlString});
     }
 }
 
 export const googleDocsCompilation = Embed.google;
 
 export const List = {
-    ordered() {},
+    ordered(...items) {
+        const LI_ARRAY = items.map(x => setattr(document.createElement("li"), {append: [x]}));
+        return setattr(document.createElement("ol"), {toString: htmlString, append: LI_ARRAY});
+    },
     unordered(...items) {
         const LI_ARRAY = items.map(x => setattr(document.createElement("li"), {append: [x]}));
         return setattr(document.createElement("ul"), {toString: htmlString, append: LI_ARRAY});

@@ -4,7 +4,7 @@ import MBD from '../../univasset/scripts/htmlfunctions/linkembed.js';
 import {LESSEQUAL, STAR, TM} from "../../univasset/scripts/specialchars.js";
 import {Embed, image, figure, details, fragment, List, table, anchor} from "../../univasset/scripts/html/index.js";
 
-// Start on Page 7
+// Start on Page 21
 
 const IMG_ASSET = "../assets/images/query/";
 
@@ -475,41 +475,45 @@ const CARDS = [
         tags: [dtag.TDOLL, dtag.IMPT, dtag.GET, dtag.SPEQ, dtag.PROD, dtag.MAP, dtag.TCM, dtag.GZ]
     },  //@Fix
     {
-        id: '00025',
+        id: 25,
         question: `How do I strengthen T-Dolls?`,
         answer: `${List.description({
-            'As an individual unit' : ['Leveling up',
+            'As an individual unit' : [
+                'Leveling up',
                 'Stat enhancements',
                 'Equipments',
                 'Skill levels',
                 'Dummy-linking',
-                'MODs'],
-            'As a team' : ['Tile synergy',
+                'MODs'
+            ],
+            'As a team' : [
+                'Tile synergy',
                 'Skill synergy',
-                'Fairies']
+                'Fairies'
+            ]
         })}`,
         tags: [dtag.TDOLL, dtag.ECH, dtag.LEVEL, dtag.IMPT]
     },
     {
-        id: '00433',
+        id: 433,
         question: `What is Dummy-linking and how do I do it?`,
         answer: `A game mechanic to increase the total damage dealt and the health pool of a doll, and tile bonuses for HGs.<br>
         Each newly-acquired doll starts at dummy link x1.<br>
-        The level thresholds of dolls to enable linking are levels 10(x2), 30(x3), 70(x4), 90(x5).<br>
-        Which is why the general consensus on leveling is to stop at Lv.90, and why RFHGs are often regarded as mid-late game builds.<br>
-        Each additional link also gives an additional 0.5x multiplier, up to x3 EXP. Affects auto-battle EXP gain.<br>
+        The level thresholds of dolls to enable linking are 10(x2), 30(x3), 70(x4), 90(x5).<br>
+        Which is why the general consensus on leveling is to stop at Lv.90, and why RFHGs are often regarded as mid-late game builds (glass cannon).<br>
+        Each additional link also gives an additional 0.5x EXP multiplier, up to x3 EXP. Affects auto-battle EXP gain.<br>
         This can be done by going to Factory>Dummy-Link and using duplicate dolls or dummy cores.`,
         tags: [dtag.SYSMECH, dtag.TDOLL, dtag.IMPT, dtag.LEVEL, dtag.AUTO]
     },
     {
-        id: '00026',
+        id: 26,
         question: `What are the leveling stages I can corpse drag and how do I run them?`,
         answer: `${List.description({
             'General': [
                 anchor('Matsuda guide per leveling map.', 'https://gfl.matsuda.tips/post/leveling_guide'),
                 anchor('Gamepress guide.', "https://gamepress.gg/girlsfrontline/optimized-levelling-corpse-dragging-maps"),
                 anchor('GFLCorner guide.', 'https://www.gflcorner.com/efficient-leveling-guide/'),
-                anchor('DMesse guide.', 'http://dmesse.egloos.com/m/3567918')
+                // anchor('DMesse guide.', 'http://dmesse.egloos.com/m/3567918')
             ],
             '0-2': [
                 details("Ceia's 0-2 drag guide.", Embed.google(["The Art of 0-2 Dragging", "https://docs.google.com/document/d/1PkxJ7ObdGW_cS_qbzAxQ_hoC1SFse3HNYWlnywZfPuo"]))
@@ -524,47 +528,46 @@ const CARDS = [
             ],
             '13-4': [
                 anchor('tempkaridc calculator for Vector.', 'https://tempkaridc.github.io/gf/vec'),
-                anchor('xVarz spreadsheet for different draggers.', 'https://docs.google.com/spreadsheets/d/1cuZPF-r1e6TyE4Rj2DNkSEova7Tc-Cczs7RaoAK2vII'),
+                details("xVarz spreadsheet for different draggers.", Embed.google(["13-4 SMG Grenadier Dragging Calculator (v1.3)", "https://docs.google.com/spreadsheets/d/1cuZPF-r1e6TyE4Rj2DNkSEova7Tc-Cczs7RaoAK2vII"])),
                 details('Infographic.', image('https://cdn.discordapp.com/attachments/564028599682727937/929724568258629642/134.png', "Jesse infographic."))
             ],
             'SC 3-1 EX': [
                 'Good for dragging coalition units.',
-                details("Ceia's SC 3-1Ex guide.", MBD.youtube('UdmOZqypu_c')),
-                details("Aqua's SC 3-1Ex.", MBD.streamable('0dpjje')),
+                details("Ceia's SC 3-1Ex guide.", Embed.youtube('UdmOZqypu_c')),
+                details("Aqua's SC 3-1Ex.", Embed.streamable('0dpjje')),
                 details("BigStupidJellyfish's SC 3-1Ex auto-pathing.", image(IMG_ASSET+"SCAuto-path.png", "Turn 1 auto-path."))
             ],
         })}`,
         tags: [dtag.TDOLL, dtag.COALITION, dtag.LEVEL, dtag.IMPT]
     },
     {
-        id: '00027',
-        question: `When should I begin trying to produce fairies/do Heavy Equipment Constructions (HEC)?`,
+        id: 27,
+        question: `When should I begin trying to produce fairies?`,
         answer: `When you have sufficient income for 4 resources and cores. Ideally ASAP since raising one to 5${STAR} takes a considerable amount of time.`,
         tags: [dtag.FAIRY, dtag.PROD, dtag.IMPT]
     },
     {
         id: 28,
         question: `Is there a guide on how to build echelons/team compositions?`,
-        answer: `Basic tip in this game is counterplay is more important than fixed synergy.<br>
+        answer: `Basic tip in this game is counterplay is more important than fixed synergy. These guides shouldn't be a gospel but is a good starting point nonetheless.<br>
         ${List.description({
-            'Mixed' : [details("CheneyQWER's infographic.", image(IMG_ASSET+"EchelonComps.png", "CheneyQWER's infographic."))],
-            'Coalition Echelons' : [
-                anchor('Reddit flowchart post.', 'https://redd.it/rkvisq'),
-                anchor('Gamepress list of units and build suggestions.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units'),
-                anchor('BigStupidJellyfish guide.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ringleader-echelon')
+            "General" : [
+                details("CheneyQWER's infographic.", image(IMG_ASSET+"EchelonComps.png", "CheneyQWER's infographic.")),
+                anchor('u/UnironicWeeaboo tips.', 'https://old.reddit.com/r/girlsfrontline/comments/vmhs0x/weekly_commanders_lounge_june_28_2022/ie3bw95/')
             ],
             'Tactical Doll Echelons' : [
                 anchor("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv'),
                 anchor("ARSMG by warorpeace#7149.", "https://docs.google.com/document/d/e/2PACX-1vR4OYslSVaE5mv6xyu7rIun24Ltu0SWsEzwOrER2MiWseDt5Fy5LjFFEZZzTDvl9C2Xb7g3pcWObSC4/pub"),
                 anchor("RFHG by warorpeace#7149.", "https://docs.google.com/document/d/e/2PACX-1vTR8LNVuBX4FiaAxLus5zZO6M4hQCu_4Fec0S0rqMmhPMXQXMcnU4uPhwwYAHOQDB5I9nq0VqSJd4-p/pub"),
-                details("MGSG by canoxin#2789.", Embed.google(
-                    ["An introduction to MGs and SGs", "https://docs.google.com/document/d/1-O7398S5sHcowCI8lp5Ktu_AiUBydJuvVHV-dX7g-l8"]
-                )),
+                // details("MGSG by canoxin#2789.", Embed.google(["An introduction to MGs and SGs", "https://docs.google.com/document/d/1-O7398S5sHcowCI8lp5Ktu_AiUBydJuvVHV-dX7g-l8"])),
                 anchor("Gamepress MGSG guide.", "https://gamepress.gg/girlsfrontline/mgs-sgs-and-teambuilding")
+            ],
+            'Coalition Echelons' : [
+                anchor('BigStupidJellyfish guide.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ringleader-echelon'),
+                anchor('Gamepress list of units and build suggestions.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units'),
+                anchor('Reddit flowchart post.', 'https://redd.it/rkvisq')
             ]
-        })}<br>
-        Shouldn't be a gospel but a good starting point nonetheless.<br>
-        ${anchor('u/UnironicWeeaboo tips.', 'https://old.reddit.com/r/girlsfrontline/comments/vmhs0x/weekly_commanders_lounge_june_28_2022/ie3bw95/')}`,
+        })}`,
         tags: [dtag.ECH, dtag.PA, dtag.COALITION, dtag.TDOLL, dtag.IMPT, dtag.NEWB]
     },
     {
@@ -574,29 +577,30 @@ const CARDS = [
         tags: [dtag.ENEMY, dtag.BATTLE, dtag.IMPT]
     },
     {
-        id: '00029',
+        id: 29,
         question: `What is kiting?`,
-        answer: `Kiting, in general, is the method of moving your tanks rightwards to make the enemy aim at them then moving leftwards to make the enemy walk towards you, while your DPS constantly shoots them. This is effective because most enemies have aim time where they do nothing, and range where you have to be in their sights to start aiming. Therefore, lengthening the lifespans of your dolls, especially the tanks.<br>
+        answer: `<p>Kiting, in general, is the method of moving your tanks rightwards to make the enemy aim at them then moving leftwards to make the enemy walk towards you, while your DPS constantly shoots them. This is effective because most enemies have aim time where they do nothing, and range where you have to be in their sights to start aiming. Therefore, lengthening the lifespans of your dolls, especially the tanks.</p>
         This is the reason why putting your whole team at the back of the grid is preferable.<br>
         Sometimes called wiggling which in this context means moving your DPS to retarget.<br>
         ${anchor('GFC guide','https://www.gflcorner.com/battle-controls/')}<br>
-        ${details('Mitsu video guide', MBD.youtube('ITUtRuF4TLY'))}<br>
+        ${details('Mitsu video guide', Embed.youtube('ITUtRuF4TLY'))}<br>
         ${anchor("u/Reikyu09's reddit post", 'https://redd.it/8o18an')}<br>
         ${anchor("Gamepress guide", "https://gamepress.gg/girlsfrontline/treatise-gfl-combat-kiting-basics")}`,
         tags: [dtag.BATTLE, dtag.IMPT]
     },
     {
-        id: '00030',
+        id: 30,
         question: `What are Main Tanks and Off Tanks?`,
-        answer: `${List.description({'Main Tanks' : ['Guns that have survivability skills (i.e. smoke, eva boost, stun etc.).', 'Generally situated at the middle of the pack.'],
-        'Off Tanks' : ['Guns that generally have damage skills (i.e. molotov, grenade, damage boost etc.) and/or a secondary damage soaker in some instances.', 'Situated at either middle-top or middle-bottom.']})}<br>
-        All of these usually refer to SMGs.`,
+        answer: `${List.description({
+            'Main Tanks' : ['Guns that have survivability skills (i.e. smoke, eva boost, stun etc.).', 'Generally situated at the middle of the pack.'],
+            'Off Tanks' : ['Guns that generally have damage skills (i.e. molotov, grenade, damage boost etc.) and/or a secondary damage soaker in some instances.', 'Situated at either middle-top or middle-bottom.']
+        })}`,
         tags: [dtag.ECH, dtag.IMPT]
     },
     {
-        id: '00031',
+        id: 31,
         question: `Is fairy leveling for increasing rarity only?`,
-        answer: `Mainly yes, but there is a gradual aura boost where a Lv.20 is better than Lv.1 even at 1${STAR}. And increasing rarity is very important, from increasing the aura stat cap, to making the talent proc more consistently. Not to mention that you can cap them to Lv.100 even as a 1${STAR} so there's no hurry to raise their rarity.`,
+        answer: `Mainly yes, but there is a gradual aura boost where a Lv.20 is better than Lv.1 even at 1${STAR}. And increasing rarity is very important, from increasing the aura stat cap, to making the talent boost higher. Not to mention that you can cap them to Lv.100 even as a 1${STAR} so there's no hurry to raise their rarity.`,
         tags: [dtag.FAIRY, dtag.LEVEL, dtag.IMPT]
     },
     {
@@ -606,7 +610,7 @@ const CARDS = [
         ${List.description({
             'Anchored Construction' : [
                 anchor(`Available for new players ${TextStyle.style('and for veterans not bothering with it', TextStyle.STRIKE)}.`, 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681'),
-                anchor('Available on Tuesdays whenever a new batch of production dolls are released.', 'https://redd.it/szdua2') + ` Recommended anchors are usually 4${STAR} due to ${getID("TCM", "00009")} existing, especially for shotguns.`, 
+                `${anchor('Available on Tuesdays whenever a new batch of production dolls are released.', 'https://redd.it/szdua2')} Recommended anchors are usually 4${STAR} due to ${getID("TCM", 9)} existing, especially for shotguns.`, 
                 "Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate up."
             ],
             'Targeted Rate Up' : [
@@ -618,25 +622,25 @@ const CARDS = [
         tags: [dtag.PROD, dtag.IMPT, dtag.TECH]
     },  //@Visual
     {
-        id: '00033',
+        id: 33,
         question: `Why are the doll skills not activating?`,
         answer: `Is the auto skill button on? Is it on forced manual? Is it a flare skill?<br>
         Active skills cannot activate when they cannot shoot, i.e. reloading, dolls moving, no enemy in range, no ammo/ration<!--, in-between shot cooldowns-->.<br>
-        Passive skills on the other hand will not activate only if they have no ammo or ration. This includes Slug's 3x damage and Flash's -3 damage. Though that there are a handful of exceptions.`,
+        Passive skills on the other hand will not activate only if they have no ammo or ration. This includes Slug's 3x damage and Flash's -3 damage. Though note that there are a handful of exceptions.`,
         tags: [dtag.TDOLL, dtag.SKILL, dtag.IMPT]
     },  //@Visual
     {
-        id: '00034',
+        id: 34,
         question: `How do I strengthen FSTs?`,
         answer: `${List.unordered(
             'Leveling up mostly by SCR',
-            `Raising ${STAR}s using their central data or general data`,
-            'Iterations by data patches (only available at LV100 and 5★)',
-            'Enhancements using pills',
+            `Raising ${STAR}s using their central data or general data`,    // ???
+            'Iterations by data patches (only available at LV100 and 5★)', // ???
+            'Enhancements using pills', // ???
             'Skill levels',
-            'Tetrimino chips')}`,
+            'Equipping and leveling chips')}`,
         tags: [dtag.FST, dtag.LEVEL, dtag.IMPT]
-    },
+    },  //@Overhaul
     //#endregion
     {
         id: 35,
@@ -645,7 +649,7 @@ const CARDS = [
         tags: [dtag.ENEMY]
     },
     {
-        id: '00036',
+        id: 36,
         question: `Will there be problems with switching between multiple devices regularly?`,
         answer: `Only if you think that manually logging in every switch is a problem.`,
         tags: [dtag.ACCT]
@@ -662,50 +666,50 @@ const CARDS = [
         tags: [dtag.TECH, dtag["3P"]]
     },
     {
-        id: '00038',
+        id: 38,
         question: `Which combat sim is better to focus on?`,
         answer: `Data. Always data.`,
         tags: [dtag.SIMS, dtag.ITEM, dtag.NEWB]
     },
     {
-        id: '00039',
+        id: 39,
         question: `How do I get more Quick Training Contracts?`,
         answer: `End of daily log-ins, battlepass, Keycard Event, gem shop.<br>
-        This contract/ticket is doesn't come in droves so use carefully.`,
+        This contract/ticket is sparse during early game so use carefully.`,
         tags: [dtag.ITEM, dtag.MINI, dtag.SHOP, dtag.GET]
     },
     {
-        id: '00040',
+        id: 40,
         question: `How do I unlock the next chapter?`,
         answer: `Beat X-6 Normal of the last unlocked chapter again. If it still doesn't appear after that, restart client.`,
         tags: [dtag.MAIN, dtag.TECH]
     },
     {
-        id: '00041',
+        id: 41,
         question: `Which emulators are good for GFL?`,
-        answer: `${List.ordered('Mumu.', 'Memu.', 'LDPlayer.', 'Nox.', 'Bluestacks.')}`,
+        answer: `${List.ordered('Mumu', 'Memu', 'LDPlayer', 'Nox', 'Bluestacks')}`,
         tags: [dtag.EMU, dtag.NEWB]
     },
     {
-        id: '00042',
+        id: 42,
         question: `How can I play GFL if Apple Store doesn't have it?`,
         answer: `Use Android, use emulator, use VPN, use jailbreak.`,
         tags: [dtag.APPLE]
     },
     {
-        id: '00043',
+        id: 43,
         question: `When is the anniversary?`,
         answer: `May 8 for EN server.`,
         tags: [dtag.ANNIV]
     },
     {
-        id: '00044',
+        id: 44,
         question: `How do I unlock Chapter 0?`,
         answer: `Beat Chapter 4 Emergency Map 4.`,
         tags: [dtag.MAIN]
     },
     {
-        id: '00046',
+        id: 46,
         question: `Is there a list of which logistics to do if I want to prioritize certain resources?`,
         answer: `${anchor('GFC GDoc.', 'https://docs.google.com/spreadsheets/d/1ah2JO6ggWuVaBho9yxgDMC-ucEKA8C42SBkjIlnIcWk')} Up to Chapter 11.<br>
         ${anchor("u/elgatoroid's calculator.", 'https://gfl-logistics.neko.gg/')} Up to Chapter 11.<br>
@@ -715,7 +719,7 @@ const CARDS = [
         tags: [dtag.LOGI, dtag.MARP, dtag.ITEM]
     },
     {
-        id: '00047',
+        id: 47,
         question: `Do I still need to use advantaged dolls for Theater?`,
         answer: `Not as much as before. They no longer make or break the CE, though they do get stat boosts, even outside strongholds.<br>
         HG = 20% CDR, SMG/SG = 15% Arm, 50% EVA, AR/RF/MG = 20% FP, 20% ACC.<br>
@@ -724,11 +728,11 @@ const CARDS = [
         tags: [dtag.TDOLL, dtag.THEATER]
     },
     {
-        id: '00048',
+        id: 48,
         question: `For limited-time bonuses (i.e. auto-battles, logistics), when are the rewards calculated?`,
         answer: `${List.description({
            'If the runs can be cancelled without penalty, rewards are calculated at the end.' : [
-                'The "Use Battery" bingo mission when exp-training HOCs.',
+                'The "Use Battery" bingo mission when exp-training FSTs.',
                 'Auto-Battles.'],
            "If they can't be cancelled, or is cancellable with a penalty or cost (ie quick tickets), calculated at the start." : [
                 'Expedition rewards.',
@@ -737,29 +741,29 @@ const CARDS = [
         tags: [dtag.SYSMECH, dtag.MINI, dtag.EXPED, dtag.PROD, dtag.AUTO]
     },
     {
-        id: '00049',
+        id: 49,
         question: `How does Armor Penetration work?`,
         answer: `${anchor('Matsuda explanation.', 'https://gfl.matsuda.tips/post/armour')}`,
         tags: [dtag.BATTLE, dtag.SYSMECH]
     },
     {
-        id: '00050',
+        id: 50,
         question: `Is there a penalty for using HOC charges and Fairy points in Theater battles?`,
         answer: `Nope. Joins boss battle regardless of charges and has no bearing on final score. Go ham.<br>
         Except if you used them and lost that battle, they won't be refunded, even in Electronic Warfare.`,
         tags: [dtag.THEATER, dtag.HOC, dtag.FAIRY]
     },
     {
-        id: '00051',
+        id: 51,
         question: `Will the current event token/currency carry over to the next event?`,
         answer: `No can do. Dissolves into nothingness one week after its corresponding event is finished.`,
         tags: [dtag.ITEM, dtag.SEASON, dtag.COLLAB]
     },
     {
-        id: '00052',
+        id: 52,
         question: `I've heard of GFAlarm. Is it safe to use?`,
-        answer: `${anchor("Gamepress breakdown", 'https://gamepress.gg/girlsfrontline/how-use-gfalarm-girls-frontline-alarm')}. Also useful for getting data of HOC Chips.<br>
-        ${anchor("Other usefulness.", "https://www.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jqn0nvu/")}`,
+        answer: `${anchor("Gamepress breakdown", 'https://gamepress.gg/girlsfrontline/how-use-gfalarm-girls-frontline-alarm')}.<br>
+        ${anchor("Other usefulness", "https://www.reddit.com/r/girlsfrontline/comments/14k79ub/weekly_commanders_lounge_june_27_2023/jqn0nvu/")}.`,
         tags: [dtag["3P"]]
     },
     {
@@ -776,7 +780,7 @@ const CARDS = [
         tags: [dtag.BATTLE]
     },
     {
-        id: '00054',
+        id: 54,
         question: `Is there a way to know the map layout and its spawnable enemy units?`,
         answer: `${anchor('Pengu GFLMaps site.', 'https://pengupengupengu.github.io/gflmaps/')}`,
         tags: [dtag["3P"], dtag.MAP, dtag.ENEMY]
@@ -800,7 +804,7 @@ const CARDS = [
         tags: [dtag.ENEMY, dtag.BATTLE, dtag.MAP, dtag["3P"]]
     },  //@Visual
     {
-        id: '00056',
+        id: 56,
         question: `How do I connect to GFAlarm with an emulator?`,
         answer: `Enter the GFAlarm proxy address to ProxyDroid or Drony.<br>
         ${anchor("u/Signal_Abroad1427's google-fu for Bluestacks.", 'https://www.reddit.com/r/girlsfrontline/comments/umdikk/weekly_commanders_lounge_may_10_2022/i8hj47h/')}`,
@@ -817,33 +821,33 @@ const CARDS = [
         tags: [dtag.MISC]
     },
     {
-        id: '00059',
+        id: 59,
         question: `What's the Fire Control Component (FCC) used for and where can I get them?`,
         answer: `Upgrading 5${STAR} dolls to 6${STAR} through modding.<br>
-        Obtainable through Black Market (2 monthly), major events/campaigns, special log-ins, shop packages, battlepass`,
+        Obtainable through Black Market (2 monthly), major events/campaigns, special log-ins, shop packages, battlepass.`,
         tags: [dtag.ITEM, dtag.MOD, dtag.GET, dtag.BM, dtag.MAJOR, dtag.CAMPAIGN, dtag.BP]
     },
     {
-        id: '00061',
+        id: 61,
         question: `What is Central Data for?`,
         answer: `Unlocking their respective FST, promoting said FST, and converted to Data Patch if the FST is already 5${STAR}.<br>
-        Obtainable in Theater and Intelligence Analysis.`,
+        Obtainable in Theater.`,
         tags: [dtag.ITEM, dtag.HOC, dtag.FST, dtag.GET]
-    },
+    },  //@Data patch convertable still?     and Intelligence Analysis
     {
-        id: '00062',
+        id: 62,
         question: `When should I do T-Doll Heavy Production/craft shotguns?`,
-        answer: `Preferably during rate ups due to its high costs. Low priority otherwise since it's use at this stage of the game is for getting non-5${STAR} SGs and them not being widely used. Recommended to use the high-cost shotgun recipe for better chances.`,
+        answer: `Preferably during rate ups due to its resource high cost. Low priority otherwise since it's use at this stage of the game is for getting non-5${STAR} SGs and them not being widely used. Recommended to use the high-cost shotgun recipe for better chances.`,
         tags: [dtag.TDOLL, dtag.PROD]
     },
     {
-        id: '00063',
+        id: 63,
         question: `How do I fill up/unlock enemies in the Enemy Index?`,
         answer: `Just fight them. Win or lose, we get them.`,
         tags: [dtag.ENEMY]
     },
     {
-        id: '00064',
+        id: 64,
         question: `What best-in-slot (BiS) equipments should I use on my dolls?`,
         answer: `${List.unordered(
             details('General equipments.', figure(image("https://cdn.discordapp.com/attachments/951085201658871820/1059432568321224704/eq_suggestions.png", "Standard equipment setup."), "Taken from Discord")),
@@ -861,7 +865,7 @@ const CARDS = [
         tags: [dtag.TDOLL, dtag.EQUIP, dtag.ENEMY]
     },
     {
-        id: '00065',
+        id: 65,
         question: `How do I maximize the efficiency of my echelon's ROF?`,
         answer: `${List.unordered(
             anchor("u/BigStupidJellyfish_'s ROF calc.", 'https://big-stupid-jellyfish.github.io/GFMath/pages/rof-calc'),
@@ -872,7 +876,7 @@ const CARDS = [
         tags: [dtag.TDOLL, dtag.BATTLE, dtag.SYSMECH]
     },
     {
-        id: '00066',
+        id: 66,
         question: `How do I get some Extra Potential Energy for Coalition Drills?`,
         answer: `Shop.`,
         tags: [dtag.ITEM, dtag.PA, dtag.SIMS, dtag.SHOP, dtag.GET]
@@ -888,21 +892,21 @@ const CARDS = [
         tags: [dtag.TDOLL, dtag.COALITION]
     },  
     {
-        id: '00068',
+        id: 68,
         question: `How high is fairy rate up?`,
         answer: `${Embed.google(["Fairy enhancement rateup strategy", "https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI"])}`,  // u/ConductorBichir's list IIRC
         tags: [dtag.FAIRY, dtag.PROD]
     },
     {
-        id: '00069',
+        id: 69,
         question: `What's the drop rate for farmable dolls?`,
-        answer: `Limited dolls on Combat Missions aproximately have 0.8% drop rate on normal and 1% on emergency, with 5${STAR} seemingly have rates way below 1%. Their droprates Chapter 10 onwards are reported to have higher rates. If you do plan to farm a 5${STAR} doll, just do Productions. You'll get more chances there.<br>
-        Event farms have around 1%, which also carries over to their respective campaign missions. Higher difficulties also get higher rates.<br>
+        answer: `Limited dolls on Combat Missions reportdely known to have 0.8% drop rate on normal and 1% on emergency, with 5${STAR} seemingly have rates way below 1%. Their droprates Chapter 10 onwards are reported to have higher rates. If you do plan to farm a 5${STAR} doll, just do Productions. You'll get more chances there.<br>
+        Event farms have maybe around 1%, which also carries over to their respective campaign missions. Higher difficulties also get higher rates.<br>
         As for SPEQs, probably 1% too.`,
         tags: [dtag.TDOLL, dtag.MAIN, dtag.SPEQ, dtag.MAJOR, dtag.CAMPAIGN, dtag.SEASON, dtag.COLLAB]
     },  //https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/kggc294/
     {
-        id: '00070',
+        id: 70,
         question: `Do events get a rerun? And if so, when?`,
         answer: `${List.description({
             "Major Events": [
@@ -915,13 +919,13 @@ const CARDS = [
         tags: [dtag.MAJOR, dtag.CAMPAIGN, dtag.SEASON, dtag.COLLAB]
     },
     {
-        id: '00071',
+        id: 71,
         question: `How do I remove HOCs from Target Practice?`,
         answer: `Unselect them like how you selected them.`,
         tags: [dtag.SIMS, dtag.HOC]
     },
     {
-        id: '00072',
+        id: 72,
         question: `How can I save my own voodoo recipe?`,
         answer: `${List.ordered(
             'Craft from production using your own recipe.',
@@ -937,25 +941,25 @@ const CARDS = [
         tags: [dtag.TDOLL, dtag.MAP, dtag.ECH]
     },
     {
-        id: '00074',
+        id: 74,
         question: `If I MOD my T-Doll, is Level 100 still considered max level?`,
         answer: `Thankfully, this is where common sense wins. In short, ${TextStyle.style('NO', TextStyle.BOLD)}.`,
         tags: [dtag.MOD, dtag.LEVEL]
     },
     {
-        id: '00075',
+        id: 75,
         question: `I can't get the gold (S Rank) and silver medals in maps because the enemies keep running all over me. How do I get them?`,
         answer: `Not now. Blaze through chapters until 7-6 first to get your account running, then come back to it later when you have at least 2 strong (Lv. 90, 5 links) echelons.`,
         tags: [dtag.NEWB, dtag.MAIN]
     },  // You can get this quickly through Newbie Career Quests. And you can complete the quests faster if you use friend/support echelons.
     {
-        id: '00076',
+        id: 76,
         question: `Can I transfer my Google Account to a Sunborn one?`,
-        answer: `It's a one-way street from there.`,
+        answer: `It's a one-way street from there. But yes, yes you can.`,
         tags: [dtag.ACCT]
     },
     {
-        id: '00077',
+        id: 77,
         question: `Does anyone know how to CE stack using GFAlarm?`,
         answer: `${List.ordered(
             'GFAlarm.',
@@ -965,21 +969,21 @@ const CARDS = [
             'Go to the GFAlarm folder.',
             'Info folder.',
             '{Username}_{UID}__theater_optimize_team.csv for current armory.',
-            'Use predicted damage instead of combat effectiveness.')}<br>
+            'Use predicted damage instead of combat effectiveness.')}
         This sheet already takes into account advantaged doll bonuses.`,
         tags: [dtag["3P"], dtag.THEATER, dtag.CE]
     },  //https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i0ttpc0/
     {
-        id: '00078',
+        id: 78,
         question: `How are people just rolling in 5${STAR} fairies?`,
         answer: `<p>${TextStyle.style('Even dust, when piled up, can become a mountain.', TextStyle.ITALIC)}</p>
-        Good logistics upkeep and rolling Fairy Construction everyday. Just think of crafting them a side thing that doesn't take a lot of attention.`,
+        Protip: they don't. Good logistics upkeep and rolling Fairy Construction everyday. Just think of crafting them a side thing that doesn't take a lot of attention.`,
         tags: [dtag.FAIRY, dtag.PROD]
     },
     {
-        id: '00079',
+        id: 79,
         question: `How high is a certain doll's pull rate during rate ups?`,
-        answer: `Something like Anchored > Targeted > General >>> Normal.`,
+        answer: `Something like Anchored > Targeted > General >>> Normal. Empirical-wise? ¯\\_(ツ)_/¯`,
         tags: [dtag.TDOLL, dtag.PROD]
     },
     {
@@ -989,16 +993,16 @@ const CARDS = [
         tags: [dtag.MARP, dtag.ITEM, dtag.KALINA]
     },
     {
-        id: '00081',
+        id: 81,
         question: `What is Corpse Whipping?`,
         answer: `The act of overkilling a dummy link by a huge amount. Especially egregious if 2 RFs hit an enemy on its deathbed. This is generally the reason why ROF-based guns are favored against low link-HP enemies.`,
         tags: [dtag.BATTLE]
     },
     {
-        id: '00082',
+        id: 82,
         question: `What's the gacha rate for costumes?`,
-        answer: `${tb(['Item',                                                             'Rate'],
-        [anchor('Costumes', 'https://big-stupid-jellyfish.github.io/GFMath/pages/gacha-rates'),   '02.00%'],
+        answer: `${table(['Item',                                                               'Rate'],
+        [anchor('Costumes', 'https://big-stupid-jellyfish.github.io/GFMath/pages/gacha-rates'), '02.00%'],
         [`5${STAR} furniture`,                                                                  '08.00%'],
         [`4${STAR} furniture`,                                                                  '34.20%'],
         [`4${STAR} gifts/cakes`,                                                                '01.80%'],
@@ -1006,40 +1010,46 @@ const CARDS = [
         tags: [dtag.RESUPPLY, dtag.TDOLL, dtag.SKIN, dtag.FURN]
     },
     {
-        id: '00083',
+        id: 83,
         question: `Why is the PA notification in the home screen always lit up?`,
         answer: `There are available pulls left to burn, particularly Svarog EMPs it seems.`,
         tags: [dtag.PA]
     },
     {
-        id: '00084',
+        id: 84,
         question: `What are Black Beans/Red Beans?`,
         answer: `Golyat and Golyat+, respectively.`,
         tags: [dtag.ENEMY]
-    },
+    },  //@Visual
     {
-        id: '00085',
+        id: 85,
         question: `What is Combat Effectiveness Stacking?`,
         answer: `The process of stacking the useless number as high as possible, battle performance be damned.<br>
         ARSMG = 80k+, RFHG = 40-90k, MGSG = 100k+ average max CE, including maxed dolls, maxed fairies, equips, mods, oaths, and formation bonuses.<br>
-        It's main purpose is for Theater Bosses and being on top of the Friend List.`,
+        It's main purpose is for ${getID("Theater Bosses", 77)} and being on top of the Friend List.`,
         tags: [dtag.CE]
     },
     {
         id: 86,
         question: `What does the PA chip Pilfer do?`,
-        answer: `Allows players to have a ${details('chance', figure(image(IMG_ASSET+"PIlferRNG.png", "Pilfer failed."), "Pilfer subject to RNG"))} of getting ${details('S-Rank drops', MBD.youtube('t6Vu72cajO0') + TextStyle.style('Context: Coalition Medals require S-Rank battles.', TextStyle.QUOTE))} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
+        answer: `Allows players to have a ${details('chance', figure(image(IMG_ASSET+"PIlferRNG.png", "Pilfer failed."), "Pilfer subject to RNG"))} of getting ${details('S-Rank drops', figure(Embed.youtube('t6Vu72cajO0'), "Coalition Medals require S-Rank battles"))} from adjacent enemies without fighting. This uses one bar of ration and ammo.<br> 
         Combine this with the ability to fight on one ammo bar to get two chances on one enemy.`,
         tags: [dtag.COALITION, dtag.EQUIP]
     },
     {
-        id: '00087',
+        id: 87,
         question: `What does oathing a doll do?`,
-        answer: `Additional adjutant line after oath, higher affection cap, double EXP gain (map EXP, auto-battles, CRs) on MODs, complete repair and resupply (one-time only), stat bonuses for damage/evasion/accuracy (because higher affection cap).`,
+        answer: `${List.unordered(
+            "Additional adjutant line after oath.",
+            "Higher affection cap.",
+            "Double EXP gain (map EXP, auto-battles, CRs) on MODs.",
+            "Complete repair and resupply (one-time only).",
+            "Higher stat bonuses for damage/evasion/accuracy (because higher affection cap)."
+        )}`,
         tags: [dtag.TDOLL, dtag.OATH, dtag.MOD, dtag.LEVEL, dtag.LOVE]
     },
     {
-        id: '00088',
+        id: 88,
         question: `How do I get more support echelons?`,
         answer: `Add friends. Post your UID on a GFL community board and someone would ${TextStyle.style('surely', TextStyle.STRIKE)}probably add you.`,
         tags: [dtag.FRIEND, dtag.ECH]
@@ -1051,32 +1061,33 @@ const CARDS = [
         tags: [dtag.AUTO, dtag.TDOLL, dtag.LEVEL]
     },
     {
-        id: '00090',
+        id: 90,
         question: `Where can I fight Goliath Factories?`,
         answer: `In your dreams. Or maybe a custom enemy ID. Thing is, it's for PA purposes only.`,
         tags: [dtag.ENEMY]
-    },
+    },  //@One map where you can fight them?
     {
-        id: '00091',
+        id: 91,
         question: `For T-Doll Heavy Construction, how much worth is Tier 1 to Tier 2 or 3?`,
         answer: `Individual SG rate as of Feb 28-Mar 8, 2022 (Normal)<br>
-        ${tb(['Tiers', `3${STAR}`, `4${STAR}`, `5${STAR}`],
-        ['Tier 1', '2.5-2.7%', '1.6/2.5-3.3%', '0.5/1-1.5%'],
-        ['Tier 2', '1.2-1.5%', '1.9/2.7-4%', '0.8/1-2%'],
-        ['Tier 3', '0%', '3-5.5%', '1-1.9%'],
-        ['Special Rate', '', 'Super-Shorty', 'FP-6'])}<br>
+        ${table(['Tiers',           `3${STAR}`, `4${STAR}`,     `5${STAR}`],
+                ['Tier 1',          '2.5-2.7%', '1.6/2.5-3.3%', '0.5/1-1.5%'],
+                ['Tier 2',          '1.2-1.5%', '1.9/2.7-4%',   '0.8/1-2%'],
+                ['Tier 3',          '0%',       '3-5.5%',       '1-1.9%'],
+                ['Special Rate',    '',         'Super-Shorty', 'FP-6']
+        )}<br>
         Overall SG rate is 50% every tier.`,
         tags: [dtag.PROD, dtag.TDOLL]
     },
     {
-        id: '00092',
+        id: 92,
         question: `I can't beat the current stage. Is this it for me?`,
         answer: `For the triple stages, just fall back to the last boss node you can handle. These nodes can mitigate the "Cleared Stage" penalty so it's worth more than non-boss higher node.<br>
         For Core stage, highest node clearable.`,
         tags: [dtag.THEATER]
     },
     {
-        id: '00093',
+        id: 93,
         question: `Which facilities/base upgrades should I prioritize for battery expenditures?`,
         answer: `${List.ordered(
             details('Forward Basecamp', List.ordered(
@@ -1086,17 +1097,17 @@ const CARDS = [
                 'Impulse Reactor',
                 'Tactical Chip Research Station')),
             'Intelligence Room',
-            'Firing Range (Garage)',
+            // 'Firing Range (Garage)',
             'Fairy Chamber',
             'Data Room',
             'Rescue Station')}`,
-        tags: [dtag.NEWB, dtag.EXPED, dtag.PA, dtag.HOC, dtag.FAIRY, dtag.PET, dtag.BATTERY]
+        tags: [dtag.NEWB, dtag.EXPED, dtag.PA, dtag.HOC, dtag.FST, dtag.FAIRY, dtag.PET, dtag.BATTERY]
     },  //@Upgrade priority per facility
     {
-        id: '00094',
+        id: 94,
         question: `Do the purchaseable items in the Expedition Black Market ever change?`,
         answer: `No.`,
-        tags: [dtag.BM]
+        tags: [dtag.BM, dtag.ITEM]
     },
     {
         id: 95,

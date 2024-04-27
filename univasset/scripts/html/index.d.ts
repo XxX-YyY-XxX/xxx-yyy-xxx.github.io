@@ -22,11 +22,13 @@ type AppendableElement = string | Node;
 export const Embed = {
     /** Creates a field for Google Sheets. */
     google(/** link ends in alphanumeric */...namelinkpair: [title: string, link: string][]): HTMLDivElement;,
-    twitter(handle: string, ID: string): HTMLQuoteElement;,
-    youtube(/** 11/34 long alphanumeric Youtube video ID string. */ID: string): HTMLIFrameElement;
+    twitter(/** \@{handle} */handle: string, ID: string): HTMLQuoteElement;,
+    youtube(/** 11/34 long alphanumeric Youtube video ID string. */ID: string): HTMLIFrameElement;,
+    streamable(ID: string): HTMLIFrameElement;
 }
 
 export const List = {
+    ordered(...items: AppendableElement[]): HTMLOListElement;,
     unordered(...items: AppendableElement[]): HTMLUListElement;,
     description(arraydict: {[DescriptionTitle: string]: AppendableElement[]}): HTMLDListElement;
 }

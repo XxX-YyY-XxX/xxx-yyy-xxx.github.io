@@ -406,3 +406,10 @@ https://old.reddit.com/r/girlsfrontline/comments/174fpb1/weekly_commanders_loung
 https://old.reddit.com/r/girlsfrontline/comments/174fpb1/weekly_commanders_lounge_october_10_2023/k4wzvx1/
 
 [Small update could corrupt game file?](https://old.reddit.com/r/girlsfrontline/comments/17kfw5l/weekly_commanders_lounge_october_31_2023/k7co6po/)
+
+
+
+
+
+https://gamepress.gg/girlsfrontline/introduction-vehicles-mobile-armor
+https://gamepress.gg/girlsfrontline/client-update-v304-and-v303
