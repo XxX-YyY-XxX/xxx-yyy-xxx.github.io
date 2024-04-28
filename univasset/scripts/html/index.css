@@ -4,6 +4,7 @@
 div.embed-google > select {
     max-width: calc(100% - 60px);
 }
+
 div.embed-google > select:disabled {
     opacity: 1;
     color: initial;
@@ -26,5 +27,5 @@ div.embed-google > iframe {
 img.inline-img {
     vertical-align: middle;
     display: inline;
-    height: 1rem;
+    height: 0.9lh;
 }

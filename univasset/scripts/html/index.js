@@ -28,9 +28,10 @@ function htmlString() {
 //     super: text => textStyleGenerator(text, "sup"),
 // }
 
-const TEXTSTYLE_CLASSES = {
-    over: "overline"
-}
+const TEXTSTYLE_CLASSES = Object.freeze({
+    over: "overline",
+    strike: "strikethrough"
+})
 
 export function textStyle(text, ...styles) {
     const SPAN = document.createElement("span");

@@ -2,15 +2,18 @@
     text-decoration-line: overline;
 }
 
+.text-strikethrough {
+    text-decoration-line: line-through;
+}
+
+.text-overline.text-strikethrough {
+    text-decoration-line: overline line-through;
+}
+
 /* .text-bold {
     font-weight: bold;
 }
 
 .text-italic {
     font-style: italic;
-}
-
-.text-strikethrough {
-    text-decoration-line: line-through;
-}
- */
+}*/

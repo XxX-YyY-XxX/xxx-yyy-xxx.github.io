@@ -413,3 +413,25 @@ https://old.reddit.com/r/girlsfrontline/comments/174fpb1/weekly_commanders_loung
 
 https://gamepress.gg/girlsfrontline/introduction-vehicles-mobile-armor
 https://gamepress.gg/girlsfrontline/client-update-v304-and-v303
+
+
+
+
+<!-- ${List.description({
+            "Guides": [
+                anchor('Reddit guide for desktop chip calculator.', 'https://redd.it/fnh1ey'),
+                // spoilerSummary('Google Docs guide.', .google(MBD.G_WORD, '1pR6g-mgsy22_MhRPASL9c1wDoCuxfUwr-DCCMYmb7Ss')),
+                details('5-block chips that can be disassembled.', img('https://gamepress.gg/girlsfrontline/sites/girlsfrontline/files/2020-01/hoc-chip-shape-minmax-example.jpg', 'Taken from Gamepress'))
+            ],
+            "PC Downloads": [
+                anchor('GFChipCalc Github page (Outdated).', 'https://github.com/Bunnyspa/GFChipCalc/releases'),
+                anchor("GFChipCalc .jar file (Updated).", "https://gall.dcinside.com/mgallery/board/view/?id=micateam&no=1785059")
+            ],
+            "Android Downloads": [
+                anchor('Android Chip Calc download page.', 'https://bunnyspa.github.io/gfl/chipcalc'),
+                anchor('Alternate link for Android Chip Calc.', 'https://apkpure.com/girls-frontline-chip-calculator/bunnyspa.gfl.chipcalc/versions')
+            ],
+            "Browser": [
+                anchor('Browser Chip Calc by FatalChapter.', 'https://hycdes.com/pages/GFT_ChipCal-EN')
+            ]
+        })} -->

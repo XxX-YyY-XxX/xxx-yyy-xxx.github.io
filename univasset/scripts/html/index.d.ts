@@ -3,11 +3,12 @@
 export const googleDocsCompilation = Embed.google;
 //#endregion
 
-/** Array of standard html tags. Mostly useful for checking. */
+// /** Array of standard html tags. Mostly useful for checking. */
 // export const STDHTMLELEMS: (keyof HTMLElementTagNameMap)[];
 
+type TextStyleKey = "over" | "strike";
 /** Creates stylized text. */
-export function textStyle(text: string, ...styles: "over"): HTMLSpanElement;
+export function textStyle(text: string, ...styles: TextStyleKey): HTMLSpanElement;
 
 
 
