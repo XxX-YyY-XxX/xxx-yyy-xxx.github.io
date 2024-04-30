@@ -8,7 +8,7 @@ export const googleDocsCompilation = Embed.google;
 
 type TextStyleKey = "over" | "strike";
 /** Creates stylized text. */
-export function textStyle(text: string, ...styles: TextStyleKey): HTMLSpanElement;
+export function textStyle(text: string, ...styles: TextStyleKey[]): HTMLSpanElement;
 
 
 

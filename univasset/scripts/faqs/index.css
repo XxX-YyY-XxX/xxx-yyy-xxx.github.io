@@ -39,7 +39,7 @@ dl, table, blockquote, figure {
 }
 
 #Keywords input[type="text"] {
-    width: calc(100% - 9rem);
+    width: calc(100% - 75px);
 }
 
 #Tags input[type="text"] {

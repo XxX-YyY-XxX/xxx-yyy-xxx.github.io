@@ -115,7 +115,7 @@ export const List = {
         for (const [TITLE, DESCS] of Object.entries(arraydict)) {
             DL.append(
                 setattr(document.createElement("dt"), {textContent: TITLE}),
-                DESCS.map(x => setattr(document.createElement("dd"), {append: [x]}))
+                ...DESCS.map(x => setattr(document.createElement("dd"), {append: [x]}))
             );
         }
         return DL;
