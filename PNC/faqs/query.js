@@ -1,5 +1,4 @@
-import {table, link, tooltip} from '../../univasset/scripts/htmlfunctions/htmlfunctions.js';
-import {Embed, textStyle, image, figure, details} from "../../univasset/scripts/html/index.js";
+import {Embed, textStyle, image, figure, details, anchor} from "../../univasset/scripts/html/index.js";
 import List from '../../univasset/scripts/htmlfunctions/lists.js';
 import * as SC from '../../univasset/scripts/specialchars.js';
 
@@ -103,7 +102,7 @@ window.cards = [
         question: `Where do I enter the redemption code?`,
         answer: `${List.description({
             "Android": [figure(image(IMG_ASSET+"RedeemGift.png", "Redeem gift tab."), "Under Settings")],
-            "iOS": [link("Redemption page.", "https://42lab-us.sunborngame.com/redeem")]
+            "iOS": [anchor("Redemption page.", "https://42lab-us.sunborngame.com/redeem")]
         })}`,
         tags: [dtag.MISC]
     },
@@ -197,7 +196,7 @@ window.cards = [
         question: `Where can I read the events I've missed?`,
         answer: `${List.unordered(
             details("Permanent Events", figure(image(IMG_ASSET+"Static Iteration.png", "Static Iteration page of Main Story."), "Requires Recopy Core Chip")),
-            link("Shoul's playlist", "https://youtube.com/playlist?list=PLTpD-lAtY-jDF5A945-HEjqzdVjJ57XJJ&si=K0GaXy1NpDH9aQbt")
+            anchor("Shoul's playlist", "https://youtube.com/playlist?list=PLTpD-lAtY-jDF5A945-HEjqzdVjJ57XJJ&si=K0GaXy1NpDH9aQbt")
         )}`,
         tags: [dtag.STORY, dtag.MAJOR]
     },
@@ -269,7 +268,7 @@ window.cards = [
     {
         id: 28,
         question: `How much Neural Fragments do I need for Arma Inscriptas?`,
-        answer: `${link(image("https://pbs.twimg.com/media/FuCwlWlaIAAmSg9?format=jpg&name=4096x4096", "Cleista's Arma Inscripta guide."), "https://twitter.com/CleistaCeleste/status/1648512012216041472")}`,
+        answer: `${anchor(image("https://pbs.twimg.com/media/FuCwlWlaIAAmSg9?format=jpg&name=4096x4096", "Cleista's Arma Inscripta guide."), "https://twitter.com/CleistaCeleste/status/1648512012216041472")}`,
         tags: [dtag.FRAGS, dtag.ARMA, dtag.PRIME]
     },
     {
@@ -335,3 +334,4 @@ window.cards = [
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1byv1s5/weekly_professors_lounge_april_08_2024/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1c4jd5v/weekly_professors_lounge_april_15_2024/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1ca7t9t/weekly_professors_lounge_april_22_2024/
+// https://old.reddit.com/r/GFLNeuralCloud/comments/1cfw9d4/weekly_professors_lounge_april_29_2024/
