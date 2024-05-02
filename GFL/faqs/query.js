@@ -4216,7 +4216,7 @@ const CARDS = [
     // },
 ];
 
-window.cards = CARDS
+window.cards = CARDS;
 
 (function() {
     const INDICES = Object.keys(CARDS).map(Number);
