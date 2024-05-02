@@ -1,5 +1,5 @@
-import {Embed, textStyle, image, figure, details, anchor} from "../../univasset/scripts/html/index.js";
-import List from '../../univasset/scripts/htmlfunctions/lists.js';
+import {Embed, List, textStyle, image, figure, details, anchor, fragment} from "../../univasset/scripts/html/index.js";
+// import List from '../../univasset/scripts/htmlfunctions/lists.js';
 import * as SC from '../../univasset/scripts/specialchars.js';
 
 //#region Constants
@@ -87,7 +87,7 @@ window.cards = [
         answer: `Spark counter is separate, while pity counter is shared (as usual).<br>
         ${List.description({
             "Search Mode - Kits": [
-                `3.6% chance for a 3${SC.STAR}, essentially making the banner unit 27.${textStyle("77", "over")}%.`,
+                fragment(`3.6% chance for a 3${SC.STAR}, essentially making the banner unit 27.`, textStyle("77", "over"), "%."),
                 "Gives neural kits on duplicates."
             ],
             "Search Mode - Fragments": [
