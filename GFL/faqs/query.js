@@ -123,7 +123,7 @@ const CARDS = [
         question: `How do I level my girls?`,
         answer: `${List.description({
             "Leveling Maps": [
-                fragment("Done mainly through ", details('corpse dragging', "Also called Poor Run or Beggar Run, it is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.")),
+                fragment("Done mainly through ", getID("corpse dragging", 497), "."),
                 getID('Draggable stages.', 26),
                 getID("Supplying the dragger.", 73)
             ],
@@ -133,10 +133,10 @@ const CARDS = [
                     "Can be gifted by going to the ",
                     details('Dorm Gifts screen', figure(image(IMG_ASSET+"SkinLocation.png", "Skin cards loacation."), "Dorms > Warehouse > Gifts")),
                     " or your ",
-                    details("Doll's Profile", figure(image(IMG_ASSET+"DollEXP.png", "Doll page exp up"), "+ button by the EXP bar"))
+                    details("Doll's Profile", figure(image(IMG_ASSET+"DollEXP.png", "Doll page exp up"), "+ button by the EXP bar")),
+                    "."
                 ),
-                'Gives 3000 fixed EXP per report, unaffected by dummy link EXP multiplier.',
-                'Gives 6000 fixed EXP per report only when used on oathed+modded dolls.'
+                'Gives 3000 fixed EXP per report, unaffected by dummy link EXP multiplier. Double for oathed+modded dolls'
             ],
             "Auto-Battles": [
                 getID("EXP spreadsheet.", 89)
@@ -321,12 +321,6 @@ const CARDS = [
     },
     //#endregion
     //#region Tier Lists
-    // {
-    //     id: 464,
-    //     question: ``,
-    //     answer: ``,
-    //     tags: []
-    // },
     {
         id: 14,
         question: `Is XXX doll good and is it safe to retire them?`,
@@ -400,7 +394,7 @@ const CARDS = [
         question: `Is there a good place where I can find a spreadsheet on detailed doll stats?`,
         answer: `${List.unordered(
             anchor("u/UnironicWeeaboo's repository.", 'https://randomqwerty.github.io/?server=ch&file=gun'),
-            anchor('GFLDB.', 'https://gfl.zzzzz.kr/dolls.php?lang=en') + " Up to Jashin dolls.",
+            fragment(anchor('GFLDB.', 'https://gfl.zzzzz.kr/dolls.php?lang=en'), " Up to Jashin dolls."),
             anchor('GFWiki CN.', 'https://gfwiki.org/w/%E6%88%98%E6%9C%AF%E4%BA%BA%E5%BD%A2%E5%9B%BE%E9%89%B4')
         )}`,
         tags: [dtag.TDOLL, dtag.REF]
@@ -507,6 +501,13 @@ const CARDS = [
             ]
         })}`,
         tags: [dtag.TDOLL, dtag.ECH, dtag.LEVEL, dtag.IMPT]
+    },
+    {
+        id: 497,
+        question: `What is corpse dragging?`,
+        answer: `Also called Poor Run or Beggar Run, it is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.<br>
+        ${anchor("Gamepress guide", "https://gamepress.gg/girlsfrontline/corpse-dragging-how-optimize-leveling")}.`,
+        tags: [dtag.LEVEL, dtag.IMPT]
     },
     {
         id: 433,
@@ -1153,12 +1154,6 @@ const CARDS = [
         })}`,
         tags: [dtag.NEWB, dtag.GEMS]
     },
-    // {
-    //     id: 97,
-    //     question: ``,
-    //     answer: ``,
-    //     tags: []
-    // },
     {
         id: 99,
         question: `Do autobattles give affection?`,
@@ -2223,12 +2218,6 @@ const CARDS = [
         answer: `Extra IOP Special Orders. Gets used when Equipment Production Special Order's 20 free charges are used up.`,
         tags: [dtag.ITEM, dtag.EQUIP, dtag.PROD]
     },  //@Visual
-    // {
-    //     id: 238,
-    //     question: ``,
-    //     answer: ``,
-    //     tags: []
-    // },
     {
         id: 239,
         question: `How do I change my assistant/adjutant/lobby character?`,
@@ -2371,12 +2360,6 @@ const CARDS = [
         answer: `Each client is tied to their specific server.`,
         tags: [dtag.ACCT]
     },
-    // {
-    //     id: 258,
-    //     question: ``,
-    //     answer: ``,
-    //     tags: []
-    // },
     {
         id: 259,
         question: `Why does the current event not have auto-battles?`,
@@ -2949,12 +2932,6 @@ const CARDS = [
         answer: `Good? Yes. Necessary? For RLs, not really, since they would be powerful enough already. For mooks though, they'd need it.`,
         tags: [dtag.PA, dtag.COALITION]
     },
-    // {
-    //     id: 301,
-    //     question: ``,
-    //     answer: ``,
-    //     tags: []
-    // },
     {
         id: 351,
         question: `How do FST HOC skills work?`,
@@ -2967,12 +2944,6 @@ const CARDS = [
         answer: `No. Armor is a stat, not a gauge. Unless it's part of their skill.`,
         tags: [dtag.HOC, dtag.FST]
     },
-    // {
-    //     id: 353,
-    //     question: ``,
-    //     answer: ``,
-    //     tags: []
-    // },
     {
         id: 354,
         question: `After a banner ends, would the extra impulses and aid commissions expire?`,
@@ -4048,12 +4019,6 @@ const CARDS = [
         tags: [dtag.SKIN, dtag.ADJUNCT, dtag.TDOLL]
     },
     {
-        id: 497,
-        question: `What is corpse dragging?`,
-        answer: `${anchor("Gamepress guide", "https://gamepress.gg/girlsfrontline/corpse-dragging-how-optimize-leveling")}`,
-        tags: [dtag.LEVEL, dtag.IMPT]
-    },
-    {
         id: 498,
         question: `Do I still need to supply ammo and rations to the echelon with Frugal Mobilization equipped?`,
         answer: `Yes.`,
@@ -4215,21 +4180,15 @@ const CARDS = [
     //     tags: []
     // },
 ];
-
 window.cards = CARDS;
-
-(function() {
+// 97 238 258 301 353 464
+{
     const INDICES = Object.keys(CARDS).map(Number);
     /** @type {Set<number>} */ const DUPLICATES = new Set();
-
-    for (const {id} of CARDS) {
-        if (!INDICES.remove(id))
-            DUPLICATES.add(id)
-    }
-
+    for (const ID of CARDS.map(x => x.id).filter(x => !INDICES.remove(x))) DUPLICATES.add(ID);
     console.log("Skipped:", ...INDICES);
     console.log("Duplicate:", ...DUPLICATES);
-})();
+}
 
 // cdn.discordapp cleanup
 
