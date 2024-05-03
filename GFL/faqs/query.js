@@ -12,15 +12,13 @@ const IMG_ASSET = "../assets/images/query/";
 function getID(text, ...ID) {
     // get current path
 
-    const A = document.createElement("a");
-    A.textContent = text;
-    A.href = `https://xxx-yyy-xxx.github.io/GFL/faqs?id=${ID.join('+')}`;
-    A.toString = function() {return this.outerHTML};
-    return A;
+    // const A = document.createElement("a");
+    // A.textContent = text;
+    // A.href = `https://xxx-yyy-xxx.github.io/GFL/faqs?id=${ID.join('+')}`;
+    // A.toString = function() {return this.outerHTML};
+    // return A;
 
-    // return anchor(text, `https://xxx-yyy-xxx.github.io/GFL/faqs?id=${ID.join('+')}`)
-
-    // return `<a href="https://xxx-yyy-xxx.github.io/GFL/faqs?id=${ID.join('+')}">${text}</a>`
+    return anchor(text, `https://xxx-yyy-xxx.github.io/GFL/faqs?id=${ID.join('+')}`)
 }
 
 export const dtag = {
@@ -236,7 +234,7 @@ const CARDS = [
                 "Normal is for new commanders or lazies. Hard/EX is for mid-game players who wants a challenge. Nightmare/UX is for late-gamers."
             ],
             "All of the above": [
-                `Grind the farming maps to obtain ${getID("event-reward dolls", 24)}. You can pity/guarantee them with ${getID("Platinum and Nova medals", 104)}.`
+                fragment("Grind the farming maps to obtain ", getID("event-reward dolls", 24), ". You can pity/guarantee them with ", getID("Platinum and Nova medals", 104), ".")
             ]
         })}`,
         tags: [dtag.SEASON, dtag.MAJOR, dtag.PRIME, dtag.NEWB]
@@ -328,10 +326,10 @@ const CARDS = [
         ${List.unordered(
             anchor('Gamepress Overview.', 'https://gamepress.gg/girlsfrontline/t-dolls-list'),
             details("u/LuckyTenth's spreadsheet.", Embed.google(["T-doll relevance", "https://docs.google.com/spreadsheets/d/1w2qEbnNluSc6C4U73yyAnYE_zmXdARvDu3GZmMO7hl4"])),
-            anchor('Matsuda Quips.', 'https://gfl.matsuda.tips/dolls/') + " Updated up to Fixed Point dolls.",
+            fragment(anchor('Matsuda Quips.', 'https://gfl.matsuda.tips/dolls/'), " Updated up to Fixed Point dolls."),
             anchor('KR Wiki.', 'https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0/%EC%9D%B8%ED%98%95%EB%8F%84%EA%B0%90'),
-            anchor("Fatalchapter's bilibili guide.", 'https://www.bilibili.com/read/readlist/rl100361') + " Updated up to Jashin dolls.",
-            anchor("Sijun's list.", 'https://www.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1rph1l/') + " Translated by u/ConductorBichir.",
+            fragment(anchor("Fatalchapter's bilibili guide.", 'https://www.bilibili.com/read/readlist/rl100361'), " Updated up to Jashin dolls."),
+            fragment(anchor("Sijun's list.", 'https://www.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1rph1l/'), " Translated by u/ConductorBichir."),
             details('BigStupidJellyfish analyses.', List.unordered(
                 anchor('Vallhalla girls.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/valhalla'),
                 anchor('AK-15.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ak15')
@@ -343,7 +341,7 @@ const CARDS = [
         id: 15,
         question: `Is there a tier list for good PA units?`,
         answer: `${List.unordered(
-            anchor('Gamepress units guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units') + " Use the search bar if a certain PA unit is unavailable in the page.",
+            fragment(anchor('Gamepress units guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units'), " Use the search bar if a certain PA unit is unavailable in the page."),
             anchor("u/CheneyQWER's tier list.", 'https://redd.it/uirvxz'),
             anchor("Matsuda tips.", "https://gfl.matsuda.tips/captures/")
         )}`,
@@ -371,9 +369,9 @@ const CARDS = [
     {
         id: 18,
         question: `Anyone have a nice infographic for equipment priority and recommended/ideal number/amount of equipments?`,
-        answer: `${figure(image('https://cdn.discordapp.com/attachments/951085201658871820/1063837601351610389/eq_prior_notheater.png', "Equipment quantity recommendations."), 'Discord: $eqpriority')}`,
+        answer: `${figure(image(IMG_ASSET+"EquipCount.png", "Equipment Quantity Recommendations as of May 03, 2024."), 'Discord: $eqpriority')}`,
         tags: [dtag.EQUIP, dtag.TDOLL, dtag.TIER]
-    },  //@Fix
+    },
     {
         id: 19,
         question: `Which HOC FSTs should I raise first?`,
@@ -442,24 +440,24 @@ const CARDS = [
                 anchor("GFDB Github Database.", 'https://gf-db.github.io/')
             ],
             'Rescue Drops': [
-                details('"Limited" drops in Combat Missions.', 'Limited to that particular map. Not limited by time, but by place. Until Rescue Event happens.' +
-                    table(['Chapter',   'Doll',     'SPEQ'],
-                        ['00',          'N/A',      'N/A'],
-                        ['01',          'G17',      'Springfield AP'],
-                        ['02',          'FMG-9',    'BAR Ammo Box'],
-                        ['03',          'CZ-805',   'AR-15 HV'],
-                        ['04',          'M21',      'MP5 Exo'],
-                        ['05',          'M249SAW',  'Mosin Cape'],
-                        ['06',          'M1A1',     'M16 Armor/Exo'],
-                        ['07',          'PSM',      'MG3 Ammo Box'],
-                        ['08',          'SCW',      'FAMAS Optics'],
-                        ['09',          'Ak 5',     'Stechkin Silencer'],
-                        ['10',          'XM3',      'TAR21 Chip'],
-                        ['11',          'Mk46',     'N/A'],
-                        ['12',          'MAT-49',   'N/A'],
-                        ['13',          'Defender', 'N/A'])),
+                details('"Limited" drops in Combat Missions.', fragment('Limited to that particular map. Not limited by time, but by place. Until Rescue Event happens.', table(
+                        ['Chapter', 'Doll',     'SPEQ'],
+                        ['00',      'N/A',      'N/A'],
+                        ['01',      'G17',      'Springfield AP'],
+                        ['02',      'FMG-9',    'BAR Ammo Box'],
+                        ['03',      'CZ-805',   'AR-15 HV'],
+                        ['04',      'M21',      'MP5 Exo'],
+                        ['05',      'M249SAW',  'Mosin Cape'],
+                        ['06',      'M1A1',     'M16 Armor/Exo'],
+                        ['07',      'PSM',      'MG3 Ammo Box'],
+                        ['08',      'SCW',      'FAMAS Optics'],
+                        ['09',      'Ak 5',     'Stechkin Silencer'],
+                        ['10',      'XM3',      'TAR21 Chip'],
+                        ['11',      'Mk46',     'N/A'],
+                        ['12',      'MAT-49',   'N/A'],
+                        ['13',      'Defender', 'N/A']))),
                 anchor(`Farmable dolls in campaign maps, both 3${STAR} monthly reward dolls and 4-5${STAR} dolls that debuted on their corresponding event.`, 'https://big-stupid-jellyfish.github.io/GFMath/pages/campaign-rewards'),
-                `During collabs, major events, side events, and ${details('Rescue Events', `Also known as Boss Bully, where you get to farm for 4-5${STAR} event reward dolls in the story chapters 1-6.`)}, event rewards become temporarily available for farming.`,
+                fragment("During collabs, major events, side events, and ", details('Rescue Events', `Also known as Boss Bully, where you get to farm for 4-5${STAR} event reward dolls in the story chapters 1-6.`), ", event rewards become temporarily available for farming."),
                 `Gray Zone cycles event reward dolls every season. Obtainable on grayzone node/field map S-rank.`,  // https://old.reddit.com/r/girlsfrontline/comments/17uxhw7/weekly_commanders_lounge_november_14_2023/k9edfcy/
                 'Obtainable from random nodes, however unlikely.',
                 `For 5${STAR} units that can also be crafted, their drop rates are less than 1%.`,
@@ -473,7 +471,7 @@ const CARDS = [
             'Shop': [
                 'Applicable to collab dolls using event currency.',
                 `5${STAR} dolls available in Factory Production are the only ones elegible for True Core Masks, bar spaghetti.`,
-                `Paid ${anchor("Transfer Letters", "https://redd.it/zqfkzw")} for any 4 or 5${STAR} units. Very useful for 4${STAR} SGs. Rare occurence.`
+                fragment("Paid ", anchor("Transfer Letters", "https://redd.it/zqfkzw"), ` for any 4 or 5${STAR} units. Very useful for 4${STAR} SGs. Rare occurence.`)
             ],
             'Achievements': [
                 "Type 97s and the AR Team, which are the only ones that can't be bought.",
