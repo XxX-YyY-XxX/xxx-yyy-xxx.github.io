@@ -6,7 +6,7 @@ export const googleDocsCompilation = Embed.google;
 // /** Array of standard html tags. Mostly useful for checking. */
 // export const STDHTMLELEMS: (keyof HTMLElementTagNameMap)[];
 
-type TextStyleKey = "over" | "strike";
+type TextStyleKey = "over" | "strike" | "super";
 /** Creates stylized text. */
 export function textStyle(text: string, ...styles: TextStyleKey[]): HTMLSpanElement;
 

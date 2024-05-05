@@ -18,26 +18,15 @@ function htmlString() {
 // /** @type {(keyof HTMLElementTagNameMap)[]} */
 // export const STDHTMLELEMS = [];
 
-
-// const TextStyle = {
-//     strike: text => textStyleGenerator(text, "del"),
-//     italic: text => textStyleGenerator(text, "em"),
-//     bold: text => textStyleGenerator(text, "strong"),
-//     code: text => textStyleGenerator(text, "code"),
-//     quote: text => textStyleGenerator(text, "blockquote"),
-//     super: text => textStyleGenerator(text, "sup"),
-// }
-
 const TEXTSTYLE_CLASSES = Object.freeze({
     over: "overline",
-    strike: "strikethrough"
+    strike: "strikethrough",
+    super: "superscript"
 })
 
 export function textStyle(text, ...styles) {
-    const SPAN = document.createElement("span");
-    SPAN.textContent = text;
+    const SPAN = setattr(document.createElement("span"), {textContent: text, toString: htmlString});
     SPAN.classList.add(...styles.map(x => "text-" + TEXTSTYLE_CLASSES[x]));
-    SPAN.toString = htmlString;
     return SPAN;
 }
 

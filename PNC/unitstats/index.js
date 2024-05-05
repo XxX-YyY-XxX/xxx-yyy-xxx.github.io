@@ -4,7 +4,16 @@ import {AlgoField, AlgoFilter} from "./algorithms.js";
 import {STAT_KEYS, UNITFILTER} from "./typing.js";
 import {image} from '../../univasset/scripts/html/index.js';
 
-/** @type {Promise<UnitObject[]>} */ const UNIT_PROMISE = Async.getJSON("../units.json");
+// /** @type {Promise<UnitObject[]>} */ const UNIT_PROMISE = Async.getJSON("../units.json");
+const UNIT_PROMISE = Async.getJSON("../units.json")
+    .then((/** @type {UnitObject[]} */x) => {
+        try {
+            return x.filter(y => !y.tags.includes("Unreleased")).map(y => new Units(y));
+        } catch (e) {
+            console.warn(e)
+            return x;
+        }
+    });
 
 //#region Constant Declarations
 const BUTTON = {
@@ -385,7 +394,14 @@ function sortMethod(event) {
 }
 //#endregion
 
-const UNIT_LIST = (await UNIT_PROMISE).filter(({tags}) => !tags.includes("Unreleased")).map(x => new Units(x));
+const UNIT_LIST = await (async function() {
+    const OUTPUT = await UNIT_PROMISE;
+    if (OUTPUT[0] instanceof Units)
+        return OUTPUT;
+    else
+        return OUTPUT.filter(x => !x.tags.includes("Unreleased")).map(x => new Units(x));
+})();
+
 document.addEventListener(UNITFILTER.type, function(event) {
     TBODY.replaceChildren(...UNIT_LIST.filter(x => !x.row.className.includes("hidden-")).map(x => x.row));
 });

@@ -1,10 +1,6 @@
-import {image as img, table as tb, tooltip} from '../../univasset/scripts/htmlfunctions/htmlfunctions.js';
 import TextStyle from '../../univasset/scripts/htmlfunctions/textstyle.js';
-import MBD from '../../univasset/scripts/htmlfunctions/linkembed.js';
 import {LESSEQUAL, STAR, TM} from "../../univasset/scripts/specialchars.js";
 import {Embed, List, image, figure, details, fragment, table, anchor, textStyle} from "../../univasset/scripts/html/index.js";
-
-// Start on Page 81
 
 const IMG_ASSET = "../assets/images/query/";
 
@@ -787,7 +783,7 @@ const CARDS = [
             "Method 2: Client restart": [
                 "Turn off WiFi during battle. You can still finish the fight with no connection. Though be wary of connection timeouts so do it near the end.",
                 "If you don't like the result or you lost, exit client, turn on WiFi, re-enter client, take the fight again.",
-                `If satisfied ${TextStyle.style('or saving your sanity', TextStyle.STRIKE)}, turn on WiFi after the battle finished.`
+                fragment("If satisfied ", textStyle("or saving your sanity", "strike"), ", turn on WiFi after the battle finished.")
             ]
         })}`,
         tags: [dtag.BATTLE]
@@ -809,10 +805,12 @@ const CARDS = [
                 'Adds the current enemy formation to the Target Practice in the Combat Sims.'],
             'GFAlarm' : [
                 'Use GFLMaps to take the enemy IDs you want to fight and enter them in the Custom Target Train under Packet Forger, with IDs separated by commas.',
-                `Works for comps that has been loaded into the client and is ${anchor('very', 'https://www.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i312oo2/')} ${anchor("safe", "https://www.reddit.com/r/girlsfrontline/comments/11e0hpg/weekly_commanders_lounge_february_28_2023/jan16s5/")}.`,
+                fragment("Works for comps that has been loaded into the client and is ", anchor('very', 'https://www.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i312oo2/'), " ", anchor("safe", "https://www.reddit.com/r/girlsfrontline/comments/11e0hpg/weekly_commanders_lounge_february_28_2023/jan16s5/"), "."),
                 figure(image(IMG_ASSET+"GFAlarmCTT.png", "GFAlarm Packet Forger option."), "From u/UnironicWeeaboo")
             ],
-            [anchor("Matsuda recommendations", "https://gfl.matsuda.tips/post/everything-sucks-forever")]: []
+            "Matsuda recommendations": [
+                anchor("Link.", "https://gfl.matsuda.tips/post/everything-sucks-forever")
+            ]
         })}`,
         tags: [dtag.ENEMY, dtag.BATTLE, dtag.MAP, dtag["3P"]]
     },  //@Visual
@@ -1143,7 +1141,7 @@ const CARDS = [
             ],
             "T-Doll Storage Slots": [
                 "Especially if you're a collector. Or whenever you're getting annoyed with the pop-up.",
-                `This can be mitigated somewhat by scrapping easily acquirable dolls, and the ${getID("Recovery", "00185")} system.`
+                fragment("This can be mitigated somewhat by scrapping easily acquirable dolls, and the ", getID("Recovery", 185), " system.")
             ],
             "T-Doll Production Slots": [
                 "Practically worthless due to the abundance of Quick Production Tickets."
@@ -1251,7 +1249,7 @@ const CARDS = [
             'Equipment Calibration' : [
                 "Raises the equipment's base stat.",
                 'RNG dictates how many calibration tickets are wasted before maxing.',
-                `When it's on its highest calibration, ${image(IMG_ASSET+"BlueMAXBox.png", "Maximum Calibration Indicator.", {type: "inline"})} appears on said equipment.`
+                fragment("When it's on its highest calibration, ", image(IMG_ASSET+"BlueMAXBox.png", "Maximum Calibration Indicator.", {type: "inline"}), " appears on said equipment.")
             ],
             'Equipment Enhancement' : [
                 'Multiplies the base stat up to Lv. 10.',
@@ -1279,7 +1277,7 @@ const CARDS = [
         id: 115,
         question: `How do friend batteries work?`,
         answer: `${List.unordered(
-            `Friend batteries recharge at 3am and 3pm UTC-8, or whenever ${anchor("Netlify", "https://gftimers.netlify.app/")} says the time is.`,
+            fragment("Friend batteries recharge at 3am and 3pm UTC-8, or whenever ", anchor("Netlify", "https://gftimers.netlify.app/"), " says the time is."),
             'The amount of charges/batteries depend on the number of dorms your friend has.',   //Tentative
             'A set number of people can claim one once per cycle.',
             "As the name suggests, it only appears on your friend's dorms, not on any strangers (especially on a Random Visit)."
@@ -1680,13 +1678,13 @@ const CARDS = [
         id: 166,
         question: `What does each gun class do?`,
         answer: `${table(
-            ['Class',                                                                                                   'General Role',                 'Target Priority',  'Caveat'],
-            ['Assualt Rifle (AR)',                                                                                      'Anti-Swarm<br>Sustained DPS',  'Frontline',        'Weak to armored enemies'],
-            ['Submachine Gun (SMG)',                                                                                    'Evasion Tank<br>Anti-Swarm',   'Frontline',        'Accuracy is non-existent'],
-            ['Rifle (RF)',                                                                                              'Big Damage<br>Anti-Armor',     'Backline',         'Weak to swarms<br>Affected by night penalty'],
-            ['Handgun (HG)',                                                                                            'Buffer<br>Debuffer',           'Random',           'Cannot facetank'],
-            [anchor("Machine Gun (MG)", "https://gamepress.gg/girlsfrontline/mgs-sgs-and-teambuilding#topic-270876"),   'Opening Volley',               'Random',           'Reloads/Stops shooting at around 6s<br>Weak to high evasion'],
-            [anchor("Shotgun (SG)", "https://gamepress.gg/girlsfrontline/mgs-sgs-and-teambuilding#topic-270826"),       'Armor Tank',                   'Frontline',        'Poor evasion']
+            ['Class',                                                                                                   'General Role',                                                         'Target Priority',  'Caveat'],
+            ['Assualt Rifle (AR)',                                                                                      fragment("Anti-Swarm", document.createElement("br"), "Sustained DPS"),  'Frontline',        'Weak to armored enemies'],
+            ['Submachine Gun (SMG)',                                                                                    fragment("Evasion Tank", document.createElement("br"), "Anti-Swarm"),   'Frontline',        'Accuracy is non-existent'],
+            ['Rifle (RF)',                                                                                              fragment("Big Damage", document.createElement("br"), "Anti-Armor"),     'Backline',         'Weak to swarms<br>Affected by night penalty'],
+            ['Handgun (HG)',                                                                                            fragment("Buffer", document.createElement("br"), "Debuffer"),           'Random',           'Cannot facetank'],
+            [anchor("Machine Gun (MG)", "https://gamepress.gg/girlsfrontline/mgs-sgs-and-teambuilding#topic-270876"),   'Opening Volley',                                                       'Random',           fragment("Reloads/Stops shooting at around 6s", document.createElement("br"), "Weak to high evasion")],
+            [anchor("Shotgun (SG)", "https://gamepress.gg/girlsfrontline/mgs-sgs-and-teambuilding#topic-270826"),       'Armor Tank',                                                           'Frontline',        'Poor evasion']
         )}`,
         tags: [dtag.TDOLL, dtag.BATTLE, dtag.NEWB]
     },
@@ -2506,15 +2504,35 @@ const CARDS = [
     {
         id: 283,
         question: `How do I bypass enemy defenses?`,
-        answer: `${table(
-            ['Defense',                                 'Counter'],
-            ['Health Bar',                              'Just shoot them'],
-            ['Evasion',                                 'High accuracy<br>Evasion debuff<br>Surehits like skillshots or explosives'],
-            ['Armor',                                   'High firepower<br>AP bullets<br>Explosives<br>Armor-ignoring attacks'],
-            ['HP Shields',                              'Basic shooting<br>Strippers like LTLX or De Lisle<br>Shield bypass like DEagle or NTW'],
-            ['Force Shields<br>Distortion Barriers',    'HOCs (specifically FSTs)<br>Base Architect support'],
-            ['Damage Reduction',                        'Shoot harder<br>Buff strippers']
-        )}`,
+        answer: `${List.description({
+            "Health Bar": [
+                "Just shoot them."
+            ],
+            "Evasion": [
+                "High accuracy.",
+                "Evasion debuff.",
+                "Surehits like skillshots or explosives."
+            ],
+            "Armor": [
+                "High firepower.",
+                "AP bullets.",
+                "Explosives.",
+                "Armor-ignoring attacks."
+            ],
+            "HP Shields": [
+                "Basic shooting",
+                "Strippers like LTLX or De Lisle.",
+                "Shield bypass like DEagle or NTW."
+            ],
+            "Force Shields/Distortion Barriers": [
+                "FSTs.",
+                "Base Architect support."
+            ],
+            "Damage Reduction": [
+                "Shoot harder.",
+                "Buff strippers."
+            ]
+        })}`,
         tags: [dtag.BATTLE, dtag.NEWB]
     },
     {
@@ -3623,7 +3641,7 @@ const CARDS = [
             anchor("u/Le_Trudos' Android 12 fix", "https://www.reddit.com/r/girlsfrontline/comments/tsmwen/possible_solution_to_android_12_updates_making/"),
             anchor("Droidwin Android 12 fix", "https://droidwin.com/games-and-apps-crashing-not-working-on-android-12-how-to-fix/"),
             anchor("u/tommykuah's Android 12 fix", "https://www.reddit.com/r/girlsfrontline/comments/tdsmjh/regarding_android_12_app_crashfreeze_issue_and/i0mjpop/"),
-            fragment(anchor("u/Gawdzilla27's Android 14 fix", "https://old.reddit.com/r/girlsfrontline/comments/18wk6dz/weekly_commanders_lounge_january_02_2024/kgi8p2j/"), anchor(TextStyle.style("0", TextStyle.SUPER), "https://old.reddit.com/r/girlsfrontline/comments/18rdlor/gfl_crash_on_launch/kf2dde4/")),
+            fragment(anchor("u/Gawdzilla27's Android 14 fix", "https://old.reddit.com/r/girlsfrontline/comments/18wk6dz/weekly_commanders_lounge_january_02_2024/kgi8p2j/"), anchor(textStyle("0", "super"), "https://old.reddit.com/r/girlsfrontline/comments/18rdlor/gfl_crash_on_launch/kf2dde4/")),
             "Downgrading Android 12/14 to Android 11/13.", //https://old.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1y59kl/
             "Switch battery usage to unrestricted.", // https://old.reddit.com/r/girlsfrontline/comments/18ggxcs/weekly_commanders_lounge_december_12_2023/kdz3dxq/
         )}`,
