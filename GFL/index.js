@@ -12,43 +12,43 @@ timer(
     "./assets/images/timer/y3whg0yup7sc1.webp",
     {onEnd: timer.bind(
         null, document.getElementById("battlepass"),
-        "",
+        "Jun 17, 2024 00:00 UTC-0800",
         "./assets/images/timer/.webp"
     )}
 );
 
 timer(
     document.getElementById("coalition"),
-    "Apr 30, 2024 00:00 UTC-0800",
-    "./assets/images/coalition/09Dreamer.webp", 
+    "May 28, 2024 00:00 UTC-0800",
+    "./assets/images/coalition/10Gager.webp", 
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
-        "May 28, 2024 00:00 UTC-0800",
-        "./assets/images/coalition/10Gager.webp"
+        "",
+        ""
     )}
 );
 
 timer(
     document.getElementById('skin-banner'),
-    "Apr 09, 2024 00:00 UTC-0800",
-    "https://iopwiki.com/images/d/d8/Doll_Garden_Login_Wallpaper.png",
+    "May 07, 2024 00:00 UTC-0800",
+    "https://iopwiki.com/images/thumb/0/0c/Maiden%27s_Afternoon_Prelude_Login_Wallpaper.jpg/800px-Maiden%27s_Afternoon_Prelude_Login_Wallpaper.jpg",
     {onEnd: timer.bind(
         null, document.getElementById('skin-banner'),
-        "May 07, 2024 00:00 UTC-0800",
-        "https://iopwiki.com/images/thumb/0/0c/Maiden%27s_Afternoon_Prelude_Login_Wallpaper.jpg/800px-Maiden%27s_Afternoon_Prelude_Login_Wallpaper.jpg"
+        "Jun 11, 2024 00:00 UTC-0800",
+        "./assets/images/timer/Login_2023_7th_Anniversary_Login_Art.png"
     )}
 );
 
-// timer(
-//    document.getElementById('mini-event'),
-//    "Apr 02, 2024 00:00 UTC-0800",
-//    "./assets/images/timer/4ftc6rssqnnc1.webp",
-//    {onEnd: timer.bind(
-//         null, document.getElementById('mini-event'),
-//         "",
-//         "./assets/images/timer/.webp"
-//    )}
-// );
+timer(
+   document.getElementById('mini-event'),
+   "May 28, 2024 00:00 UTC-0800",
+   "./assets/images/timer/ri0ajrc2nexc1.webp",
+   {onEnd: timer.bind(
+        null, document.getElementById('mini-event'),
+        "",
+        "./assets/images/timer/.webp"
+   )}
+);
 
 //timer(document.getElementById('extra'), "",
 //    "");

@@ -377,8 +377,8 @@ const CARDS = [
     {
         id: 20,
         question: `Which doll should I get using True Core Masks?`,
-        answer: `${details("Easy guide.", image(IMG_ASSET+"VeryReliableTCMGuide.png", "Memey guide."))}
-        ${details("Hard guide.", image(IMG_ASSET+"SeriousTCMGuide.png", "Serious guide."))}`,   // add discord bot call
+        answer: `${details("Easy guide.", image(IMG_ASSET+"VeryReliableTCMGuide.png", "Memey guide."))}<br>
+        ${details("Hard guide.", image(IMG_ASSET+"SeriousTCMGuide.png", "Serious guide."))}`,
         tags: [dtag.TCM, dtag.TIER]
     },
     //#endregion
