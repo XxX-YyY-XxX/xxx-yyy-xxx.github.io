@@ -4,16 +4,11 @@ import {AlgoField, AlgoFilter} from "./algorithms.js";
 import {STAT_KEYS, UNITFILTER} from "./typing.js";
 import {image} from '../../univasset/scripts/html/index.js';
 
-// /** @type {Promise<UnitObject[]>} */ const UNIT_PROMISE = Async.getJSON("../units.json");
 const UNIT_PROMISE = Async.getJSON("../units.json")
-    .then((/** @type {UnitObject[]} */x) => {
-        try {
-            return x.filter(y => !y.tags.includes("Unreleased")).map(y => new Units(y));
-        } catch (e) {
-            console.warn(e)
-            return x;
-        }
-    });
+    .then((/** @type {UnitObject[]} */x) => x.filter(y => !y.tags.includes("Unreleased")).map(y => new Units(y)));
+document.addEventListener(UNITFILTER.type, function(event) {
+    TBODY.replaceChildren(...UNIT_LIST.filter(x => !x.row.className.includes("hidden-")).map(x => x.row));
+});
 
 //#region Constant Declarations
 const BUTTON = {
@@ -394,19 +389,7 @@ function sortMethod(event) {
 }
 //#endregion
 
-const UNIT_LIST = await (async function() {
-    const OUTPUT = await UNIT_PROMISE;
-    if (OUTPUT[0] instanceof Units)
-        return OUTPUT;
-    else
-        return OUTPUT.filter(x => !x.tags.includes("Unreleased")).map(x => new Units(x));
-})();
-
-document.addEventListener(UNITFILTER.type, function(event) {
-    TBODY.replaceChildren(...UNIT_LIST.filter(x => !x.row.className.includes("hidden-")).map(x => x.row));
-});
-
-const TBODY = document.querySelector("tbody");
+const TBODY = document.querySelector("tbody"), UNIT_LIST = await UNIT_PROMISE;
 TBODY.append(...UNIT_LIST.map(x => x.row));
 
 const HEADER_TR = document.querySelector("thead > tr");
