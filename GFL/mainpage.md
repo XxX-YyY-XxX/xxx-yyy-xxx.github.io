@@ -411,7 +411,7 @@ https://old.reddit.com/r/girlsfrontline/comments/174fpb1/weekly_commanders_loung
 
 
 
-https://gamepress.gg/girlsfrontline/introduction-vehicles-mobile-armor
+
 https://gamepress.gg/girlsfrontline/client-update-v304-and-v303
 
 

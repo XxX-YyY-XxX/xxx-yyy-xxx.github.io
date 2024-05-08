@@ -203,7 +203,7 @@ const CARDS = [
     },
     {
         id: 7,
-        question: `How to ${TextStyle.style("HOC", TextStyle.STRIKE)} FST?`,
+        question: `How to ${textStyle("HOC", "strike")} FST?`,
         answer: `${List.description({
             "Pending": ["Facilities", "Leveling", "Acquisition"],
             "Usage": [
@@ -214,6 +214,12 @@ const CARDS = [
             ]
         })}`,
         tags: [dtag.HOC, dtag.FST, dtag.PRIME]
+    },
+    {
+        id: 97,
+        question: `How do I use the Mobile Armor tank and mech?`,
+        answer: `${anchor("Gamepress Guide.", "https://gamepress.gg/girlsfrontline/introduction-vehicles-mobile-armor")}`,
+        tags: [dtag.MA, dtag.HOC, dtag.PRIME]
     },
     {
         id: 420,
@@ -371,7 +377,7 @@ const CARDS = [
     {
         id: 19,
         question: `Which HOC FSTs should I raise first?`,
-        answer: `${figure(image("https://cdn.discordapp.com/attachments/444348972035866634/971135326150090842/HOC_Priority.png", "HOC Enhancement Priority"), "Discord: $hocpriority")}`,
+        answer: `${anchor("Gamepress Guide.", "https://gamepress.gg/girlsfrontline/hoc-priority-guide")}`,
         tags: [dtag.HOC, dtag.FST, dtag.TIER]
     },
     {
@@ -538,7 +544,7 @@ const CARDS = [
             '13-4': [
                 anchor('tempkaridc calculator for Vector.', 'https://tempkaridc.github.io/gf/vec'),
                 details("xVarz spreadsheet for different draggers.", Embed.google(["13-4 SMG Grenadier Dragging Calculator (v1.3)", "https://docs.google.com/spreadsheets/d/1cuZPF-r1e6TyE4Rj2DNkSEova7Tc-Cczs7RaoAK2vII"])),
-                details('Infographic.', image('https://cdn.discordapp.com/attachments/564028599682727937/929724568258629642/134.png', "Jesse infographic."))
+                // details('Infographic.', image('https://cdn.discordapp.com/attachments/564028599682727937/929724568258629642/134.png', "Jesse infographic."))
             ],
             'SC 3-1 EX': [
                 'Good for dragging coalition units.',
@@ -861,7 +867,7 @@ const CARDS = [
         id: 64,
         question: `What best-in-slot (BiS) equipments should I use on my dolls?`,
         answer: `${List.unordered(
-            details('General equipments.', figure(image("https://cdn.discordapp.com/attachments/951085201658871820/1059432568321224704/eq_suggestions.png", "Standard equipment setup."), "Taken from Discord")),
+            details('General equipments.', figure(image(IMG_ASSET+"GeneralEquip.png", "Standard equipment setup as of May 08, 2024."), "Discord: $equip")),
             details('#2 Chip equipment.', List.unordered(
                 details('BigStupidJellyfish_ infograph.', anchor(image('https://big-stupid-jellyfish.github.io/GFMath/pages/images/chips/infographic.png', "#2 Chip flowchart."), 'https://big-stupid-jellyfish.github.io/GFMath/pages/chips')),
                 details("Google spreadsheets.", Embed.google(
@@ -4197,11 +4203,14 @@ const CARDS = [
     // },
 ];
 window.cards = CARDS;
-// 97 238 258 301 353 464
+//  238 258 301 353 464
 {
     const INDICES = Object.keys(CARDS).map(Number);
     /** @type {Set<number>} */ const DUPLICATES = new Set();
-    for (const ID of CARDS.map(x => x.id).filter(x => !INDICES.remove(x))) DUPLICATES.add(ID);
+
+    for (const ID of CARDS.map(x => x.id))
+        if (!INDICES.remove(ID))
+            DUPLICATES.add(ID);
     console.log("Skipped:", ...INDICES);
     console.log("Duplicate:", ...DUPLICATES);
 }
@@ -4222,3 +4231,4 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/1c5aljd/weekly_commanders_lounge_april_16_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1cgndrn/weekly_commanders_lounge_april_30_2024/
+// https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/
