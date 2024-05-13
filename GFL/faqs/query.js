@@ -960,7 +960,7 @@ const CARDS = [
     {
         id: 74,
         question: `If I MOD my T-Doll, is Level 100 still considered max level?`,
-        answer: `Thankfully, this is where common sense wins. In short, ${TextStyle.style('NO', TextStyle.BOLD)}.`,
+        answer: `Thankfully, this is where common sense wins. In short, ${textStyle("NO", "bold")}.`,
         tags: [dtag.MOD, dtag.LEVEL]
     },
     {
@@ -986,14 +986,15 @@ const CARDS = [
             'Go to the GFAlarm folder.',
             'Info folder.',
             '{Username}_{UID}__theater_optimize_team.csv for current armory.',
-            'Use predicted damage instead of combat effectiveness.')}
+            'Use predicted damage instead of combat effectiveness.'
+        )}
         This sheet already takes into account advantaged doll bonuses.`,
         tags: [dtag["3P"], dtag.THEATER, dtag.CE]
     },  //https://old.reddit.com/r/girlsfrontline/comments/tejuwb/weekly_commanders_lounge_march_15_2022/i0ttpc0/
     {
         id: 78,
         question: `How are people just rolling in 5${STAR} fairies?`,
-        answer: `<p>${TextStyle.style('Even dust, when piled up, can become a mountain.', TextStyle.ITALIC)}</p>
+        answer: `<p>${textStyle("Even dust, when piled up, can become a mountain.", "italic")}</p>
         Protip: they don't. Good logistics upkeep and rolling Fairy Construction everyday. Just think of crafting them a side thing that doesn't take a lot of attention.`,
         tags: [dtag.FAIRY, dtag.PROD]
     },
@@ -1068,7 +1069,7 @@ const CARDS = [
     {
         id: 88,
         question: `How do I get more support echelons?`,
-        answer: `Add friends. Post your UID on a GFL community board and someone would ${TextStyle.style('surely', TextStyle.STRIKE)}probably add you.`,
+        answer: `Add friends. Post your UID on a GFL community board and someone would ${textStyle("surely", "strike")}probably add you.`,
         tags: [dtag.FRIEND, dtag.ECH]
     },
     {

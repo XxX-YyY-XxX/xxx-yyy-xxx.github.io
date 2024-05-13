@@ -21,7 +21,9 @@ function htmlString() {
 const TEXTSTYLE_CLASSES = Object.freeze({
     over: "overline",
     strike: "strikethrough",
-    super: "superscript"
+    super: "superscript",
+    bold: "bold",
+    italic: "italic"
 })
 
 export function textStyle(text, ...styles) {
