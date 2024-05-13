@@ -30,12 +30,12 @@ timer(
 
 timer(
     document.getElementById('skin-banner'),
-    "May 07, 2024 00:00 UTC-0800",
-    "https://iopwiki.com/images/thumb/0/0c/Maiden%27s_Afternoon_Prelude_Login_Wallpaper.jpg/800px-Maiden%27s_Afternoon_Prelude_Login_Wallpaper.jpg",
+    "Jun 11, 2024 00:00 UTC-0800",
+    "./assets/images/timer/Login_2023_7th_Anniversary_Login_Art.png",
     {onEnd: timer.bind(
         null, document.getElementById('skin-banner'),
-        "Jun 11, 2024 00:00 UTC-0800",
-        "./assets/images/timer/Login_2023_7th_Anniversary_Login_Art.png"
+        "",
+        ""
     )}
 );
 

@@ -24,6 +24,10 @@
 .btn-gfl span {
     background-image: url("./gnk.png");
 }
+
+/* .btn-gfl {
+    background-image: url("./GirlsFrontline.png");
+} */
 /* #endregion */
 
 /* #region PNC Button */
@@ -38,6 +42,10 @@
 .btn-pnc span {
     background-image: url("./exiles.png");
 }
+
+/* .btn-pnc {
+    background-image: url("./NeuralCloud.png");
+} */
 /* #endregion */
 
 /* #region EXI Button */

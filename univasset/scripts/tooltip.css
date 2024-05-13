@@ -6,12 +6,15 @@
     background-color: #555;
     color: #fff;
     z-index: 99;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s;
     pointer-events: none;
     left: 50%;
     transform: translateX(-50%);
+
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s;
+    /* animation: tooltip-out 300ms; */
+    /* animation-fill-mode: both; */
 }
 
 @media (hover: hover) {
@@ -53,9 +56,32 @@
 }
 
 .tooltip:hover > .tooltiptext {
+    /* animation: tooltip-in 300ms; */
+    /* animation-fill-mode: both; */
     visibility: visible;
     opacity: 1;
 }
 
-/* @keyframes {
+/* @keyframes tooltip-in {
+    from {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    to {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@keyframes tooltip-out {
+    from {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    to {
+        visibility: hidden;
+        opacity: 0;
+    }
 } */

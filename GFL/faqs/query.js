@@ -130,7 +130,7 @@ const CARDS = [
                     details("Doll's Profile", figure(image(IMG_ASSET+"DollEXP.png", "Doll page exp up"), "+ button by the EXP bar")),
                     "."
                 ),
-                'Gives 3000 fixed EXP per report, unaffected by dummy link EXP multiplier. Double for oathed+modded dolls'
+                'Gives 3000 fixed EXP per report, unaffected by dummy link EXP multiplier. Double for oathed+modded dolls.'
             ],
             "Auto-Battles": [
                 getID("EXP spreadsheet.", 89)
@@ -1190,7 +1190,7 @@ const CARDS = [
     {
         id: 103,
         question: `My resources (Manpower, Ammunitions/Ammo, Rations, Parts) are uncomfortably low? Where can I get some?`,
-        answer: `${TextStyle.style("Most efficient and consistent is logistics.", TextStyle.BOLD)}<br>
+        answer: `${textStyle("Most efficient and consistent is logistics.", "bold")}<br>
         Though you can get them through the shop, quest and event/crate rewards, campaign/major story node clears, and random nodes.`,
         tags: [dtag.MARP, dtag.LOGI, dtag.NEWB, dtag.GET]
     },
