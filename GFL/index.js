@@ -2,8 +2,8 @@ import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
 // timer(
 //    document.getElementById("event"),
-//    "Mar 19, 2024 00:00 UTC-0800",
-//    "./assets/images/timer/missionselect_2022WhiteValentine_base.png"
+//    "Jun 04, 2024 00:00 UTC-0800",
+//    "./assets/images/timer/assets__resources__dabao__avgtexture__2023sac_jailphoto.png"
 // );
 
 timer(

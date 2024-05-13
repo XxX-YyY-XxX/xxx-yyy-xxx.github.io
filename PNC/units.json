@@ -2172,6 +2172,37 @@
         "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
         "tags": ["Unowned", "Intimacy from https://www.reddit.com/r/GFLNeuralCloud/comments/1cfw9d4/weekly_professors_lounge_april_29_2024/l2jn3in/"]
     },
+    {
+        "id": 1071,
+        "name": "Persicaria S.E.",
+        "class": "Warrior",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy", "Divergent Neural Cloud"],
+        "base": {
+            "hp": 15180,
+            "atk": 436,
+            "hash": 669,
+            "pdef": 334,
+            "odef": 325,
+            "aspd": 110,
+            "crate": 10,
+            "ppen": 295,
+            "open": 470,
+            "dodge": 5,
+            "regen": 455
+        },
+        "arma": {
+            "hp": 3036,
+            "atk": 87,
+            "hash": 136,
+            "pdef": 67,
+            "odef": 65,
+            "ppen": 59,
+            "open": 95
+        },
+        "intimacy": ["Neural Activation", "Coordinated Strike", "Victorious Inspiration"],
+        "tags": ["Unreleased", "Unowned"]
+    },
 
     {
         "id": 1060,
@@ -2190,12 +2221,6 @@
     {
         "id": 1073,
         "name" : "Yuwang",
-        "reference" : {"" : ""},
-        "tags": ["Unreleased"]
-    },
-    {
-        "id": 1071,
-        "name" : "Persicaria - Shining Edge",
         "reference" : {"" : ""},
         "tags": ["Unreleased"]
     },
@@ -2250,6 +2275,12 @@
     {
         "id": 1083,
         "name" : "Shale",
+        "reference" : {"" : ""},
+        "tags": ["Unreleased"]
+    },
+    {
+        "id": 0,
+        "name" : "Sanger?",
         "reference" : {"" : ""},
         "tags": ["Unreleased"]
     }

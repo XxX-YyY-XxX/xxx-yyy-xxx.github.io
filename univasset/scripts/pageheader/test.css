@@ -40,11 +40,14 @@
 	#a-title > h1 {
 		display: inline;
 	}
-	
-	/* enlarge image on hover */
+
+	#downloads {
+		margin: unset;
+	}
+
 	#downloads a {
-		margin: 5px;
-		padding: 20px 70px;
+		display: inline-block;
+		padding: 18px 45px;
 
 		border-radius: 50px;
 		border: 2px solid rgba(0, 0, 0, 0.7);
@@ -52,6 +55,10 @@
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
+	}
+
+	#downloads a:hover {
+		transform: scale(1.5);
 	}
 }
 
@@ -63,7 +70,6 @@
 
 	.btn-gfl:hover {
 		background-color: rgba(100, 100, 100, 60%);
-		transform: scale(1.5);
 	}
 
 	.btn-pnc {
@@ -73,6 +79,5 @@
 
 	.btn-pnc:hover {
 		background-color: rgba(0, 255, 255, 60%);
-		transform: scale(1.5);
 	}
 }
