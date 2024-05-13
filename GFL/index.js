@@ -13,7 +13,7 @@ timer(
     {onEnd: timer.bind(
         null, document.getElementById("battlepass"),
         "Jun 17, 2024 00:00 UTC-0800",
-        "./assets/images/timer/.webp"   //type95
+        "./assets/images/timer/95type_30015__pic__pic_95type_30015_d__cn.png"   //type95
     )}
 );
 

@@ -63,6 +63,7 @@
 
 	.btn-gfl:hover {
 		background-color: rgba(100, 100, 100, 60%);
+		transform: scale(1.5);
 	}
 
 	.btn-pnc {
@@ -72,5 +73,6 @@
 
 	.btn-pnc:hover {
 		background-color: rgba(0, 255, 255, 60%);
+		transform: scale(1.5);
 	}
 }
