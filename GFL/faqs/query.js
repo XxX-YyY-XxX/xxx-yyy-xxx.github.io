@@ -4163,7 +4163,8 @@ const CARDS = [
             "Agent",
             "Adeline (Black Nyto)",
             "Alina (White Nyto)",
-            "Tareus"
+            "Tareus",
+            "Sana"
         )}
         Sesonal Banners
         ${List.unordered(
@@ -4174,7 +4175,8 @@ const CARDS = [
             "Anniversary) Cerberus",
             "Summer) Alina - Mosasaur Rider",
             "Halloween) Executioner - Blood Fiend Huntress",
-            "New Year) Scarecrow - Demonic Abyss"
+            "New Year) Scarecrow - Demonic Abyss",
+            // "Anniversary) Sana",
         )}`,
         tags: [dtag.PA]
     },  //@Will tweak later

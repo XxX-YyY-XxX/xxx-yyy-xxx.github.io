@@ -13,25 +13,26 @@ timer(
     {onEnd: timer.bind(
         null, document.getElementById("battlepass"),
         "Jun 17, 2024 00:00 UTC-0800",
-        "./assets/images/timer/.webp"
+        "./assets/images/timer/.webp"   //type95
     )}
 );
 
 timer(
     document.getElementById("coalition"),
     "May 28, 2024 00:00 UTC-0800",
-    "./assets/images/coalition/10Gager.webp", 
+    "./assets/images/coalition/10Gager.webp",
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
-        "",
-        ""
+        // from may 14
+        "Jun 11, 2024 00:00 UTC-0800",
+        "./assets/images/coalition/24Sana.webp"
     )}
 );
 
 timer(
     document.getElementById('skin-banner'),
     "Jun 11, 2024 00:00 UTC-0800",
-    "./assets/images/timer/Login_2023_7th_Anniversary_Login_Art.png",
+    "./assets/images/timer/2pje90ny00zc1.webp",
     {onEnd: timer.bind(
         null, document.getElementById('skin-banner'),
         "",
