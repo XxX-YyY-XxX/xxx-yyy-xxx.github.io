@@ -41,35 +41,36 @@
 		display: inline;
 	}
 	
-	/* background is title */
 	/* enlarge image on hover */
 	#downloads a {
-		margin: 0;
-		padding: 8px 18px;
+		margin: 5px;
+		padding: 20px 70px;
 
 		border-radius: 50px;
 		border: 2px solid rgba(0, 0, 0, 0.7);
-		border-bottom: 2px solid rgba(0, 0, 0, 0.7);
-		border-top: 2px solid #000;
-
-		color: rgba(255, 255, 255, 0.8);
-		text-decoration: none;
-		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
-		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 
 		background-size: contain;
 		background-repeat: no-repeat;
+		background-position: center;
 	}
 }
 
 @layer icons {
 	.btn-gfl {
-		aspect-ratio: 87/39;
 		background-image: url("./GirlsFrontline.png");
+		background-color: rgba(100, 100, 100, 30%);
+	}
+
+	.btn-gfl:hover {
+		background-color: rgba(100, 100, 100, 60%);
 	}
 
 	.btn-pnc {
-		aspect-ratio: 874/133;
 		background-image: url("./NeuralCloud.png");
+		background-color: rgba(0, 255, 255, 30%);
+	}
+
+	.btn-pnc:hover {
+		background-color: rgba(0, 255, 255, 60%);
 	}
 }
