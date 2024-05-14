@@ -336,3 +336,4 @@ window.cards = [
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1ca7t9t/weekly_professors_lounge_april_22_2024/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1cfw9d4/weekly_professors_lounge_april_29_2024/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1clg91d/weekly_professors_lounge_may_06_2024/
+// https://old.reddit.com/r/GFLNeuralCloud/comments/1cqwig3/weekly_professors_lounge_may_13_2024/

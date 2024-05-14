@@ -5,6 +5,7 @@
     border-style: initial;
 }
 
+/* #region Accessibility */
 /* https://css-tricks.com/the-focus-visible-trick/ */
 .tab-button:has(input:focus-visible) {
     animation: tabbed-blink 1s infinite;
@@ -16,15 +17,14 @@
 
 @keyframes tabbed-blink {
     33% {
-        /* outline: 1px solid rgba(0, 0, 0, 50%); */
-        background-color: rgba(0, 0, 0, 50%);
+        outline: 1px solid rgba(0, 0, 0, 50%);
     }
 
     66% {
-        /* outline: 1px solid rgba(255, 255, 255, 50%); */
-        background-color: rgba(255, 255, 255, 50%);
+        outline: 1px solid rgba(255, 255, 255, 50%);
     }
 }
+/* #endregion */
 
 /* #region Tab Width */
 .tab-button > label:first-child:nth-last-child(2),

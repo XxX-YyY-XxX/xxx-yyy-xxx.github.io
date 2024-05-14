@@ -3,7 +3,7 @@ import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 timer(
    document.getElementById("event"),
    "Jun 04, 2024 00:00 UTC-0800",
-   "./assets/images/timer/assets__resources__dabao__avgtexture__2023sac_jailphoto.png"
+   "./assets/images/timer/9g3up2qgjd0d1.webp"
 );
 
 timer(
