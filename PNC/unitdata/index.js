@@ -2,7 +2,8 @@ import {brJoin} from '../../univasset/scripts/htmlgenerator/htmlgenerator.js';
 import {cmp, setattr} from "../../univasset/scripts/basefunctions/index.js";
 import {Async} from "../../univasset/scripts/externaljavascript.js";
 
-/** @type {Promise<UnitObject[]} */ const UNIT_PROMISE = Async.getJSON("../units.json");
+const UNIT_PROMISE = Async.getJSON("../units.json")
+    .then((/** @type {UnitObject[]} */obj) => obj.filter(x => !x.tags.includes("Unreleased")).sort(cmp({key: x => x.id})).map(x => new Units(x)));
 
 /** @type {HTMLInputElement} */ const NOT = document.querySelector('input[type="checkbox"]');
 NOT.addEventListener("change", function(event) {
@@ -43,6 +44,6 @@ class Units {
     }
 }
 
-const UNIT_LIST = (await UNIT_PROMISE).filter(({tags}) => !tags.includes("Unreleased")).sort(cmp({key: x => x.id})).map(x => new Units(x));
+const UNIT_LIST = await UNIT_PROMISE;
 document.querySelector("thead > tr").append(...Units.HEADERS.map(x => setattr(document.createElement("th"), {textContent: x})));
 const TBODY = setattr(document.querySelector("tbody"), {append: UNIT_LIST.map(x => x.ROW)});
