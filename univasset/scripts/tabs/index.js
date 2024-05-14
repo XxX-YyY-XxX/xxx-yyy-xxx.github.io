@@ -18,3 +18,18 @@ export class RadioSwitch {
         }, options)
     }
 }
+
+// const TOUCHSCREEN = "ontouchstart" in window;
+// for (const GROUP of document.querySelectorAll(".tab-button")) {
+//     if (TOUCHSCREEN) {
+//         GROUP.classList.add("prevent-focus");
+//     } else {
+//         GROUP.addEventListener("mousedown", function(event) {
+//             this.classList.add("prevent-focus");
+//         });
+    
+//         GROUP.addEventListener("mouseup", function(event) {
+//             this.classList.remove("prevent-focus");
+//         });
+//     }
+// }

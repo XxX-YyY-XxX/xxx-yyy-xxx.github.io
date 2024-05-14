@@ -5,16 +5,23 @@
     border-style: initial;
 }
 
-.tab-button:focus-within {
+/* https://css-tricks.com/the-focus-visible-trick/ */
+.tab-button:has(input:focus-visible) {
     animation: tabbed-blink 1s infinite;
+}
+
+.tab-button:has(input:focus:not(:focus-visible)) {
+    animation: none;
 }
 
 @keyframes tabbed-blink {
     33% {
+        /* outline: 1px solid rgba(0, 0, 0, 50%); */
         background-color: rgba(0, 0, 0, 50%);
     }
 
     66% {
+        /* outline: 1px solid rgba(255, 255, 255, 50%); */
         background-color: rgba(255, 255, 255, 50%);
     }
 }
@@ -48,11 +55,12 @@
 
 /* Assumes order of buttons is the same as order of bodies. */
 /* Overrides "default" display when the corresponding button is unchecked. */
-/* Temporary CSS */
-.tab-button:has(> label:nth-child(1) > input:not(:checked)) + .tab-body,
-.tab-button:has(> label:nth-child(2) > input:not(:checked)) + .tab-body + .tab-body,
-.tab-button:has(> label:nth-child(3) > input:not(:checked)) + .tab-body + .tab-body + .tab-body,
-.tab-button:has(> label:nth-child(4) > input:not(:checked)) + .tab-body + .tab-body + .tab-body + .tab-body,
-.tab-button:has(> label:nth-child(5) > input:not(:checked)) + .tab-body + .tab-body + .tab-body + .tab-body + .tab-body {
+:is(
+    .tab-button:has(> label:nth-child(1) > input:not(:checked)) + .tab-body,
+    .tab-button:has(> label:nth-child(2) > input:not(:checked)) + .tab-body + .tab-body,
+    .tab-button:has(> label:nth-child(3) > input:not(:checked)) + .tab-body + .tab-body + .tab-body,
+    .tab-button:has(> label:nth-child(4) > input:not(:checked)) + .tab-body + .tab-body + .tab-body + .tab-body,
+    .tab-button:has(> label:nth-child(5) > input:not(:checked)) + .tab-body + .tab-body + .tab-body + .tab-body + .tab-body
+) {
     display: none;
 }
