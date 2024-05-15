@@ -422,6 +422,7 @@ const CARDS = [
             'Main Story' : [
                 anchor("u/RhythmLunatic's GFL Cutscene Interpreter (including collabs)", 'https://gfl.amaryllisworks.pw/'),
                 anchor("Shoul's Story Scenes Playlists", 'https://www.youtube.com/channel/UC_JmwXOfYqOKpGGtc5gcVmw'),
+                anchor("Bjorkit's Channel", "https://www.youtube.com/@Bjorkit1"),
                 anchor("XtraNinja's GFL events playlists", "https://www.youtube.com/@XtraNinja/playlists"),
                 anchor("Girls' Frontline Full Story Comprehension Playlist Translated up to Isomer", 'https://youtube.com/playlist?list=PL9y52Flm1yM-tJJoom2zfrWTpaO1mTw8M'),
                 anchor("u/DoctuhD's Girls' Frontline Summary", 'https://docs.google.com/document/d/1oA07O2HGwvmoBqm-UKTTuSdxjLnSIbRHd5b2FuYOph0'),
