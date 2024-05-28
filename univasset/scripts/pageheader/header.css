@@ -59,8 +59,10 @@ header h2 {
 	transition: transform 0.3s, background-color 0.3s;
 }
 
-#downloads a:hover {
-	transform: scale(1.5);
+@media (hover: hover) {
+	#downloads a:hover {
+		transform: scale(1.5);
+	}
 }
 
 .btn-gfl {

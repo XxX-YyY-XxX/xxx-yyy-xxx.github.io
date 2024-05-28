@@ -39,16 +39,16 @@ timer(
     )}
 );
 
-timer(
-   document.getElementById('mini-event'),
-   "May 28, 2024 00:00 UTC-0800",
-   "./assets/images/timer/ri0ajrc2nexc1.webp",
-   {onEnd: timer.bind(
-        null, document.getElementById('mini-event'),
-        "",
-        "./assets/images/timer/.webp"
-   )}
-);
+// timer(
+//    document.getElementById('mini-event'),
+//    "",
+//    "./assets/images/timer/.webp",
+//    {onEnd: timer.bind(
+//         null, document.getElementById('mini-event'),
+//         "",
+//         "./assets/images/timer/.webp"
+//    )}
+// );
 
 //timer(document.getElementById('extra'), "",
 //    "");

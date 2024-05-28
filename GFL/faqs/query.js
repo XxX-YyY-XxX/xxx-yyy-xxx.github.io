@@ -4208,16 +4208,16 @@ const CARDS = [
 ];
 window.cards = CARDS;
 //  238 258 301 353 464
-{
-    const INDICES = Object.keys(CARDS).map(Number);
-    /** @type {Set<number>} */ const DUPLICATES = new Set();
+// {
+//     const INDICES = Object.keys(CARDS).map(Number);
+//     /** @type {Set<number>} */ const DUPLICATES = new Set();
 
-    for (const ID of CARDS.map(x => x.id))
-        if (!INDICES.remove(ID))
-            DUPLICATES.add(ID);
-    console.log("Skipped:", ...INDICES);
-    console.log("Duplicate:", ...DUPLICATES);
-}
+//     for (const ID of CARDS.map(x => x.id))
+//         if (!INDICES.remove(ID))
+//             DUPLICATES.add(ID);
+//     console.log("Skipped:", ...INDICES);
+//     console.log("Duplicate:", ...DUPLICATES);
+// }
 
 // cdn.discordapp cleanup
 
@@ -4237,3 +4237,5 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/1cgndrn/weekly_commanders_lounge_april_30_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1crmrcn/weekly_commanders_lounge_may_14_2024/
+// https://old.reddit.com/r/girlsfrontline/comments/1cx2khg/weekly_commanders_lounge_may_21_2024/
+// https://old.reddit.com/r/girlsfrontline/comments/1d2e66k/weekly_commanders_lounge_may_28_2024/
