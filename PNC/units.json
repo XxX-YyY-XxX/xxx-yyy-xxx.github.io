@@ -2231,8 +2231,8 @@
             "ppen": 72,
             "open": 80
         },
-        "intimacy": [],
-        "tags": ["Unreleased", "Unowned", "Arma"]
+        "intimacy": ["Neural Activation", "Code Robustness", "Risk Evasion Aid"],
+        "tags": ["Unowned", "Arma"]
     },
 
     {
