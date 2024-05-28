@@ -289,7 +289,7 @@ class Units {
         });
         if (this.#hasarma) {
             // change alt to arma name?
-            const IMAGE = image(`../assets/images/arma/${this.name.replace(/[\s\.]/, "")}.png`, `${this.name} arma.`);
+            const IMAGE = image(`../assets/images/arma/${this.name.replace(/[\s.]/g, "")}.png`, `${this.name} arma.`);
             const SPAN = setattr(document.createElement("span"), {append: [this.name, IMAGE], classList: {add: ["arma"]}});
             TD_NAME.appendChild(SPAN);
             if (Object.values(this.#arma).some(x => x === -1)) MISSING.push("Arma")
