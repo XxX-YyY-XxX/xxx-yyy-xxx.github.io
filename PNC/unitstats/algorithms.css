@@ -166,8 +166,9 @@ dialog {
 } */
 /* #endregion */
 
-/* Algo Select */
-#algo-select > form {
+/* Algorithm Equip/Filter */
+#algo-select > form,
+#algo-filter > form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -216,8 +217,6 @@ dialog {
 }
 /* #endregion */
 
-/* #algo-filter */
-
 /* #region Set Threshold */
 #algo-select button > div.algo-left-good {
     background-image: -webkit-linear-gradient(left, var(--good), var(--blank));
@@ -254,6 +253,17 @@ dialog {
 }
 /* #endregion */
 
+/* #region Algorithm Filtering */
+#algo-filter button {
+    display: inline-block;
+    width: 100px;
+    padding: 0;
+}
+
+#algo-filter img {
+    width: 100%;
+}
+/* #endregion */
 
 
 

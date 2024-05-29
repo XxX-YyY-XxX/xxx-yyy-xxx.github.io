@@ -3,8 +3,17 @@
 @import "/univasset/scripts/table.css" layer(table);
 
 #table {
+    --table-height: 95lvh;
     --bkg-color: #151515;
-    max-height: 95lvh;
+    max-height: var(--table-height)
+}
+
+#table:has(tbody:empty) {
+    height: var(--table-height);
+}
+
+.hidden {
+    display: none;
 }
 
 input[type="checkbox"], input[type="radio"] {
@@ -49,11 +58,8 @@ tbody > tr > td:first-child, thead > tr > th {
 /* #endregion */
 
 /* #region Filter */
-/* .hidden {
-    display: none;
-}
 
-.func_table tr {
+/*.func_table tr {
     background-color: unset;
 }
 

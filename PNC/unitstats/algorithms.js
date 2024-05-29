@@ -569,9 +569,9 @@ class AlgoGrid {
     }
 }
 
-/** @type {HTMLDialogElement} */ const ALGO_MODAL = document.querySelector("#algo-modal");
-/** @type {HTMLDivElement} */ const ALGO_MODAL_NAME = ALGO_MODAL.querySelector("#name");
-ALGO_MODAL.addEventListener("close", function(event) {
+/** @type {HTMLDialogElement} */ const ALGO_SETUP = document.querySelector("#algo-modal");
+/** @type {HTMLDivElement} */ const ALGO_MODAL_NAME = ALGO_SETUP.querySelector("#name");
+ALGO_SETUP.addEventListener("close", function(event) {
     ALGO_MODAL_NAME.textContent = "";
     for (const DIV of Object.values(GRIDS)) DIV.replaceChildren();
 });
@@ -587,7 +587,7 @@ const ALGO_SAVE = new (class {
     // #SETS = (() => {this.#DATA})();
 
     constructor() {
-        ALGO_MODAL.addEventListener("close", event => localStorage.setItem(this.#KEY, JSON.stringify(this.#DATA)));
+        ALGO_SETUP.addEventListener("close", event => localStorage.setItem(this.#KEY, JSON.stringify(this.#DATA)));
     }
 
     /** @param {string} name */
@@ -677,23 +677,23 @@ export class AlgoField {
         ALGO_MODAL_NAME.textContent = this.#name;
         for (const GRID of this.#algogrids) GRID.display();
 
-        ALGO_MODAL.addEventListener("click", this.#close);
+        ALGO_SETUP.addEventListener("click", this.#close);
 
-        ALGO_MODAL.showModal();
+        ALGO_SETUP.showModal();
     }
 
     #close = /** @param {MouseEvent} event */ (event) => {
-        const DIM = ALGO_MODAL.getBoundingClientRect();
+        const DIM = ALGO_SETUP.getBoundingClientRect();
         if (event.clientX < DIM.left || event.clientX > DIM.right || event.clientY < DIM.top || event.clientY > DIM.bottom) {
             this.#stats = this.#algogrids.map(x => x.stats).reduce(combine);
             const INFO = this.#algogrids.map(x => x.info);
             if (INFO.flat().length) ALGO_SAVE.set(this.#name, INFO);
             else                    ALGO_SAVE.del(this.#name);
 
-            ALGO_MODAL.removeEventListener("click", this.#close);
+            ALGO_SETUP.removeEventListener("click", this.#close);
 
             this.stat_update();
-            ALGO_MODAL.close();
+            ALGO_SETUP.close();
             AlgoField.#current = null;
         }
     };
@@ -719,6 +719,8 @@ export class AlgoFilter {
 
     /** @type {HTMLButtonElement} */ static #RESET = document.querySelector("#algorithms #reset");
 
+    /** @type {HTMLDialogElement} */ static #ALGO_FILTER = document.querySelector("#algo-filter");
+
     /** @param {AlgoSet | "Remove"} algoname */
     static #algoImage(algoname) {
         return algoname === "Remove" ? "../assets/images/algorithms/others/Empty.png" : algoPath(algoname);
@@ -734,6 +736,7 @@ export class AlgoFilter {
     static #BUTTONS = [this.#createButton("Remove"), ...Object.keys(ALGO_SETS.classdict).map(x => this.#createButton(x))];
     
     static {
+        //#region Filter Main Interface Setup
         this.#MAIN.append(
             setattr(document.createElement("option"), {value: "", textContent: "---"}),
             ...Object.keys(STATVALUES.MAIN).map(x => setattr(document.createElement("option"), {value: x, textContent: STATVALUES.NAME[x]}))
@@ -757,31 +760,12 @@ export class AlgoFilter {
         for (const SELECT of [this.#MAIN, this.#SUB1, this.#SUB2]) SELECT.addEventListener("change", event => document.dispatchEvent(UNITFILTER));
 
         this.#BUTTON.addEventListener("click", event => {
-            ALGO_SELECT.firstElementChild.append(...this.#BUTTONS.filter(x => x.value !== AlgoFilter.#IMAGE.alt));
-            ALGO_SELECT.classList.add("filtering");
-            ALGO_SELECT.showModal();
-        });
+            // ALGO_SELECT.firstElementChild.append(...this.#BUTTONS.filter(x => x.value !== AlgoFilter.#IMAGE.alt));
+            // ALGO_SELECT.classList.add("filtering");
+            // ALGO_SELECT.showModal();
 
-        ALGO_SELECT.addEventListener("close", function(event) {
-            if (!this.classList.contains("filtering")) return;
-            AlgoFilter.#IMAGE.src = AlgoFilter.#algoImage(this.returnValue);
-            AlgoFilter.#IMAGE.alt = this.returnValue;
-
-            if (["OffenseBlock", "StabilityBlock", "SpecialBlock"].includes(this.returnValue)) {
-                AlgoFilter.#SUB2.disabled = true;
-                AlgoFilter.#SUB2.selectedIndex = 0;
-                for (const OPTION of AlgoFilter.#SUB1.options) OPTION.disabled = false;
-            } else {
-                AlgoFilter.#SUB2.disabled = false;
-            }
-
-            // change options depending on algo set
-        }, true);
-
-        ALGO_SELECT.addEventListener("close", function(event) { // Capture (FIFO) -> Bubble (FILO)
-            if (!this.classList.contains("filtering")) return;
-            document.dispatchEvent(UNITFILTER);
-            ALGO_SELECT.classList.remove("filtering");
+            this.#ALGO_FILTER.querySelector(`[value="${this.#IMAGE.alt}"]`).classList.add("hidden");
+            this.#ALGO_FILTER.showModal();
         });
 
         this.#RESET.addEventListener("click", event => {
@@ -802,25 +786,77 @@ export class AlgoFilter {
         }, true);
 
         this.#RESET.addEventListener("click", event => document.dispatchEvent(UNITFILTER));
+        //#endregion
+
+        // ALGO_SELECT.addEventListener("close", function(event) {
+        //     if (!this.classList.contains("filtering")) return;
+        //     AlgoFilter.#IMAGE.src = AlgoFilter.#algoImage(this.returnValue);
+        //     AlgoFilter.#IMAGE.alt = this.returnValue;
+
+        //     if (["OffenseBlock", "StabilityBlock", "SpecialBlock"].includes(this.returnValue)) {
+        //         AlgoFilter.#SUB2.disabled = true;
+        //         AlgoFilter.#SUB2.selectedIndex = 0;
+        //         for (const OPTION of AlgoFilter.#SUB1.options) OPTION.disabled = false;
+        //     } else {
+        //         AlgoFilter.#SUB2.disabled = false;
+        //     }
+
+        //     // change options depending on algo set
+        // }, true);
+
+        // ALGO_SELECT.addEventListener("close", function(event) { // Capture (FIFO) -> Bubble (FILO)
+        //     if (!this.classList.contains("filtering")) return;
+        //     document.dispatchEvent(UNITFILTER);
+        //     ALGO_SELECT.classList.remove("filtering");
+        // });
+
+        this.#ALGO_FILTER.firstElementChild.append(this.#createButton("Remove"), ...Object.keys(ALGO_SETS.classdict).map(x => this.#createButton(x)));
+
+        this.#ALGO_FILTER.addEventListener("close", function(event) {
+            this.querySelector(".hidden").classList.remove("hidden");
+
+            AlgoFilter.#IMAGE.src = AlgoFilter.#algoImage(this.returnValue);
+            AlgoFilter.#IMAGE.alt = this.returnValue;
+
+            if (["OffenseBlock", "StabilityBlock", "SpecialBlock"].includes(this.returnValue)) {
+                AlgoFilter.#SUB2.disabled = true;
+                AlgoFilter.#SUB2.selectedIndex = 0;
+                for (const OPTION of AlgoFilter.#SUB1.options) OPTION.disabled = false;
+            } else {
+                AlgoFilter.#SUB2.disabled = false;
+            }
+
+            // change options depending on algo set or partner sub or main stat
+        }, true);
+
+        this.#ALGO_FILTER.addEventListener("close", function(event) { // Capture (FIFO) -> Bubble (FILO)
+            document.dispatchEvent(UNITFILTER);
+        });
     }
 
     #_algoUpdate;
-    /** @param {function("Remove" | AlgoSet, "" | MainAttributes, "" | SubAttributes, "" | SubAttributes): void} status_update */
-    constructor(status_update) {
+    /** 
+     * @param {function("Remove" | AlgoSet, "" | MainAttributes, "" | SubAttributes, "" | SubAttributes): void} status_update
+     * @param {function(): void} visibility_reset Remove hidden-algo class directly. */
+    constructor(status_update, visibility_reset) {
         this.#_algoUpdate = function() {
+            // reset shortcut
             status_update(AlgoFilter.#IMAGE.alt, AlgoFilter.#MAIN.value, AlgoFilter.#SUB1.value, AlgoFilter.#SUB2.value);
         }
 
-        AlgoFilter.#BUTTON.addEventListener("click", event => ALGO_SELECT.addEventListener("close", this.#_algoUpdate, {once: true, capture: true}));
+        // AlgoFilter.#BUTTON.addEventListener("click", event => ALGO_SELECT.addEventListener("close", this.#_algoUpdate, {once: true, capture: true}));
+        AlgoFilter.#BUTTON.addEventListener("click", event => AlgoFilter.#ALGO_FILTER.addEventListener("close", this.#_algoUpdate, {once: true, capture: true}));
         for (const SELECT of [AlgoFilter.#MAIN, AlgoFilter.#SUB1, AlgoFilter.#SUB2]) SELECT.addEventListener("change", this.#_algoUpdate, true);
+        // make everything show instead without calculations
         AlgoFilter.#RESET.addEventListener("click", this.#_algoUpdate, {capture: true});
+        // AlgoFilter.#RESET.addEventListener("click", visibility_reset, {capture: true});
     }
 
     /**
      * @param {object} changed
      * @param {boolean} changed.algo */
     show(changed) {
-        ALGO_MODAL.addEventListener("close", event => {
+        ALGO_SETUP.addEventListener("close", event => {
             this.#_algoUpdate();
             if (changed.algo) document.dispatchEvent(UNITFILTER);
         }, {once: true});

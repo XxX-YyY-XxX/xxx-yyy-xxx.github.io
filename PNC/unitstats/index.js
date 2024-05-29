@@ -38,12 +38,12 @@ class Units {
     #base;
     #arma;
 
-    #hp; #armahp;
+    #hp;
     get [STAT_KEYS.HEALTH]() {
         // var perc = 0, flat = 0;
         var output = this.#hp;
         if (BUTTON.POTB.checked) output += this.#hp * 0.61;
-        if (BUTTON.ARMA.checked && this.#hasarma) output += this.#armahp;
+        if (BUTTON.ARMA.checked && this.#hasarma) output += this.#arma.hp;
         if (BUTTON.BOND.checked && this.#intistats.includes("Code Robustness")) output += 1320;
         if (BUTTON.SPEC.checked && ["Guard", "Warrior", "Specialist"].includes(this.class)) output += this.#hp * 0.21 + 1200;
         if (BUTTON.ALGO.checked) output += this.#algofield.hp;
@@ -51,44 +51,44 @@ class Units {
         return Math.trunc(output);
     }
 
-    #atk; #armaatk;
+    #atk;
     get [STAT_KEYS.ATTACK]() {
         var output = this.#atk;
         if (BUTTON.POTB.checked) output += this.#atk * 0.61;
-        if (BUTTON.ARMA.checked && this.#hasarma) output += this.#armaatk;
+        if (BUTTON.ARMA.checked && this.#hasarma) output += this.#arma.atk;
         if (BUTTON.BOND.checked && this.#intistats.includes("Power Connection")) output += 55;
         if (BUTTON.SPEC.checked && ["Sniper", "Warrior", "Specialist"].includes(this.class)) output += this.#atk * 0.22 + 38;
         if (BUTTON.ALGO.checked) output += this.#algofield.atk;
         return Math.trunc(output);
     }
 
-    #hash; #armahash;
+    #hash;
     get [STAT_KEYS.HASHRATE]() {
         var output = this.#hash;
         if (BUTTON.POTB.checked) output += this.#hash * 0.61;
-        if (BUTTON.ARMA.checked && this.#hasarma) output += this.#armahash;
+        if (BUTTON.ARMA.checked && this.#hasarma) output += this.#arma.hash;
         if (BUTTON.BOND.checked && this.#intistats.includes("Neural Activation")) output += 55;
         if (BUTTON.SPEC.checked && ["Sniper", "Warrior", "Specialist", "Medic"].includes(this.class)) output += this.#hash * 0.22 + 38;
         if (BUTTON.ALGO.checked) output += this.#algofield.hash;
         return Math.trunc(output);
     }
 
-    #pdef; #armapdef;
+    #pdef;
     get [STAT_KEYS.PDEFENSE]() {
         var output = this.#pdef;
         if (BUTTON.POTB.checked) output += this.#pdef * 0.61;
-        if (BUTTON.ARMA.checked && this.#hasarma) output += this.#armapdef;
+        if (BUTTON.ARMA.checked && this.#hasarma) output += this.#arma.pdef;
         if (BUTTON.BOND.checked && this.#intistats.includes("Shield of Friendship")) output += 55;
         if (BUTTON.SPEC.checked && ["Guard", "Medic"].includes(this.class)) output += this.#pdef * 0.21 + 31;
         if (BUTTON.ALGO.checked) output += this.#algofield.pdef;
         return Math.trunc(output);
     }
 
-    #odef; #armaodef;
+    #odef;
     get [STAT_KEYS.ODEFENSE]() {
         var output = this.#odef;
         if (BUTTON.POTB.checked) output += this.#odef * 0.61;
-        if (BUTTON.ARMA.checked && this.#hasarma) output += this.#armaodef;
+        if (BUTTON.ARMA.checked && this.#hasarma) output += this.#arma.odef;
         if (BUTTON.SPEC.checked && ["Guard", "Medic"].includes(this.class)) output += this.#odef * 0.21 + 31;
         if (BUTTON.ALGO.checked) output += this.#algofield.odef;
         return Math.trunc(output);
@@ -119,21 +119,21 @@ class Units {
         return Math.round(output, 1);
     }
 
-    #ppen; #armappen;
+    #ppen;
     get [STAT_KEYS.PPENETRATE]() {
         var output = this.#ppen;
         if (BUTTON.POTB.checked) output += this.#ppen * 0.61;
-        if (BUTTON.ARMA.checked && this.#hasarma) output += this.#armappen;
+        if (BUTTON.ARMA.checked && this.#hasarma) output += this.#arma.ppen;
         if (BUTTON.SPEC.checked && ["Sniper"].includes(this.class)) output += this.#ppen * 0.07 + 65;
         if (BUTTON.ALGO.checked) output += this.#algofield.ppen;
         return Math.trunc(output);
     }
 
-    #open; #armaopen;
+    #open;
     get [STAT_KEYS.OPENETRATE]() {
         var output = this.#open;
         if (BUTTON.POTB.checked) output += this.#open * 0.61;
-        if (BUTTON.ARMA.checked && this.#hasarma) output += this.#armaopen;
+        if (BUTTON.ARMA.checked && this.#hasarma) output += this.#arma.open;
         if (BUTTON.ALGO.checked) output += this.#algofield.open;
         return Math.trunc(output);
     }
@@ -218,36 +218,39 @@ class Units {
         }
 
         this.#algofield = new AlgoField(unitobject);
-        this.#algofilter = new AlgoFilter((set, main, sub1, sub2) => {
-            const IS_REMOVE = set === "Remove";
-            const HAS_BLANK_SUB = !(sub1 && sub2);
-            
-            const VISIBLE = (IS_REMOVE && !main && !sub1 && !sub2) || this.#algofield.info.some(([a, b, c, d]) => {
-                // if (set === "Remove" && !d) {
-                //     s1b1 = !(sub1 && sub2) && (!sub1 || c === sub1)
-                //     s2b1 = !(sub1 && sub2) && (!sub2 || c === sub2)
-                // } else {
-                //     s1b2 = !sub1 || c === sub1 || d === sub1
-                //                                  "" === sub1
-                //            !sub1 || c === sub1 || false
-                //     s1b1 = !sub1 || c === sub1
-                // 
-                //     s2b2 = !sub2 || c === sub2 || d === sub2
-                //            !""
-                //            true  || c === sub2 || d === sub2
-                //     s2b1 = true
-                // }
+        this.#algofilter = new AlgoFilter(
+            (set, main, sub1, sub2) => {
+                const IS_REMOVE = set === "Remove";
+                const HAS_BLANK_SUB = !(sub1 && sub2);
+                
+                const VISIBLE = (IS_REMOVE && !main && !sub1 && !sub2) || this.#algofield.info.some(([a, b, c, d]) => {
+                    // if (set === "Remove" && !d) {
+                    //     s1b1 = !(sub1 && sub2) && (!sub1 || c === sub1)
+                    //     s2b1 = !(sub1 && sub2) && (!sub2 || c === sub2)
+                    // } else {
+                    //     s1b2 = !sub1 || c === sub1 || d === sub1
+                    //                                  "" === sub1
+                    //            !sub1 || c === sub1 || false
+                    //     s1b1 = !sub1 || c === sub1
+                    // 
+                    //     s2b2 = !sub2 || c === sub2 || d === sub2
+                    //            !""
+                    //            true  || c === sub2 || d === sub2
+                    //     s2b1 = true
+                    // }
 
-                return [
-                    IS_REMOVE || a === set,
-                    !main || b === main,
-                    (IS_REMOVE && !d) ? (HAS_BLANK_SUB && (!sub1 || c === sub1)) : (!sub1 || c === sub1 || d === sub1),
-                    (IS_REMOVE && !d) ? (HAS_BLANK_SUB && (!sub2 || c === sub2)) : (!sub2 || c === sub2 || d === sub2)
-                ].every(x => x);
-            });
+                    return [
+                        IS_REMOVE || a === set,
+                        !main || b === main,
+                        (IS_REMOVE && !d) ? (HAS_BLANK_SUB && (!sub1 || c === sub1)) : (!sub1 || c === sub1 || d === sub1),
+                        (IS_REMOVE && !d) ? (HAS_BLANK_SUB && (!sub2 || c === sub2)) : (!sub2 || c === sub2 || d === sub2)
+                    ].every(x => x);
+                });
 
-            VISIBILITY_CHANGED.algo = this.row.classList.contains("hidden-algo") !== this.row.classList.toggle("hidden-algo", !VISIBLE);
-        });
+                VISIBILITY_CHANGED.algo = this.row.classList.contains("hidden-algo") !== this.row.classList.toggle("hidden-algo", !VISIBLE);
+            },
+            () => {this.row.classList.remove("hidden-algo")}
+        );
 
         this.name = unitobject.name;
         this.class = unitobject.class;
@@ -269,14 +272,6 @@ class Units {
         this.#regen = this.#base.regen;
 
         this.#arma = unitobject.arma;
-
-        this.#armahp = this.#arma.hp;
-        this.#armaatk = this.#arma.atk;
-        this.#armahash = this.#arma.hash;
-        this.#armapdef = this.#arma.pdef;
-        this.#armaodef = this.#arma.odef;
-        this.#armappen = this.#arma.ppen;
-        this.#armaopen = this.#arma.open;
         this.#hasarma = unitobject.tags.includes("Arma");
 
         this.#intistats = unitobject.intimacy;
