@@ -2213,8 +2213,9 @@ const CARDS = [
     {
         id: 236,
         question: `What is "ranking" that people are talking about?`,
-        answer: `${anchor("u/pointblanksniper's essay.", 'https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/id4n4dr/')}`,
-        tags: [dtag.MAJOR]
+        answer: `${anchor("Essay 1", 'https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/id4n4dr/')}<br>
+        ${anchor("Essay 2", "https://old.reddit.com/r/girlsfrontline/comments/1bif017/weekly_commanders_lounge_march_19_2024/kvxb1xk/")}`,
+        tags: [dtag.MAJOR, dtag.RANK]
     },
     {
         id: 237,
@@ -3022,7 +3023,7 @@ const CARDS = [
     {
         id: 362,
         question: `Will the *insert ranking reward here* be available in the future?`,
-        answer: `Only if they rerun ranking maps, or pu it in Campaign.`,
+        answer: `Only if they rerun ranking maps, or added it in Campaign.`,
         tags: [dtag.GET, dtag.FAIRY, dtag.SPEQ, dtag.MAJOR, dtag.RANK, dtag.CAMPAIGN]
     },
     {
@@ -4199,6 +4200,18 @@ const CARDS = [
         answer: `Popular answer: Memory Leaks. Restart client is always the default option.`,
         tags: [dtag.TECH]
     },
+    {
+        id: 238,
+        question: `Can I not use fairy points while using proxy in Gray Zone?`,
+        answer: `Yes, by unchecking the "Use Skill" under the fairy portrait.`,
+        tags: [dtag.GZ, dtag.FAIRY]
+    },  //@Visual
+    {
+        id: 258,
+        question: `What is this "Returning Commanders Special Anchored Production"?`,
+        answer: `One guaranteed doll from the production pool after 50 crafts for returners.`,
+        tags: [dtag.PROD, dtag.TDOLL]
+    },  // https://old.reddit.com/r/girlsfrontline/comments/1bif017/weekly_commanders_lounge_march_19_2024/kw6xd9v/
     // {
     //     id: 0,
     //     question: ``,
@@ -4207,7 +4220,7 @@ const CARDS = [
     // },
 ];
 window.cards = CARDS;
-//  238 258 301 353 464
+//    301 353 464
 // {
 //     const INDICES = Object.keys(CARDS).map(Number);
 //     /** @type {Set<number>} */ const DUPLICATES = new Set();
@@ -4220,6 +4233,7 @@ window.cards = CARDS;
 // }
 
 // cdn.discordapp cleanup
+// gray zone proxy settings
 
 // https://old.reddit.com/r/girlsfrontline/comments/uc7eet/weekly_commanders_lounge_april_26_2022/i6mqo74/
 // https://old.reddit.com/r/girlsfrontline/comments/1929lxq/weekly_commanders_lounge_january_09_2024/khy62ha/
@@ -4228,7 +4242,6 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/kgpxdz7/
 // Quick Formations - https://old.reddit.com/r/girlsfrontline/comments/qg1inu/weekly_commanders_lounge_october_26_2021/hiu3wrw/
 
-// https://old.reddit.com/r/girlsfrontline/comments/1bif017/weekly_commanders_lounge_march_19_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1bo2czw/weekly_commanders_lounge_march_26_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1btt4kx/weekly_commanders_lounge_april_02_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1bzmnr3/weekly_commanders_lounge_april_09_2024/
