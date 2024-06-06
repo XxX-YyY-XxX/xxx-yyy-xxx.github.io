@@ -6,9 +6,6 @@ import {image} from '../../univasset/scripts/html/index.js';
 
 const UNIT_PROMISE = Async.getJSON("../units.json")
     .then((/** @type {UnitObject[]} */x) => x.filter(y => !y.tags.includes("Unreleased")).map(y => new Units(y)));
-document.addEventListener(UNITFILTER.type, function(event) {
-    TBODY.replaceChildren(...UNIT_LIST.filter(x => !x.row.className.includes("hidden-")).map(x => x.row));
-});
 
 //#region Constant Declarations
 const BUTTON = {
@@ -21,11 +18,11 @@ const BUTTON = {
 }
 
 const CLASSES = {
-    /** @type {HTMLInputElement} */ Guard: document.querySelector('#classes [value="Guard"]'),
-    /** @type {HTMLInputElement} */ Sniper: document.querySelector('#classes [value="Sniper"]'),
-    /** @type {HTMLInputElement} */ Warrior: document.querySelector('#classes [value="Warrior"]'),
+    /** @type {HTMLInputElement} */ Guard:      document.querySelector('#classes [value="Guard"]'),
+    /** @type {HTMLInputElement} */ Sniper:     document.querySelector('#classes [value="Sniper"]'),
+    /** @type {HTMLInputElement} */ Warrior:    document.querySelector('#classes [value="Warrior"]'),
     /** @type {HTMLInputElement} */ Specialist: document.querySelector('#classes [value="Specialist"]'),
-    /** @type {HTMLInputElement} */ Medic: document.querySelector('#classes [value="Medic"]')
+    /** @type {HTMLInputElement} */ Medic:      document.querySelector('#classes [value="Medic"]')
 }
 for (const INPUT of Object.values(CLASSES)) INPUT.addEventListener("change", event => document.dispatchEvent(UNITFILTER));
 //#endregion
@@ -218,39 +215,36 @@ class Units {
         }
 
         this.#algofield = new AlgoField(unitobject);
-        this.#algofilter = new AlgoFilter(
-            (set, main, sub1, sub2) => {
-                const IS_REMOVE = set === "Remove";
-                const HAS_BLANK_SUB = !(sub1 && sub2);
+        this.#algofilter = new AlgoFilter((set, main, sub1, sub2) => {
+            const IS_REMOVE = set === "Remove";
+            const HAS_BLANK_SUB = !(sub1 && sub2);
+            
+            const VISIBLE = (IS_REMOVE && !main && !sub1 && !sub2) || this.#algofield.info.some(([a, b, c, d]) => {
+                // if (set === "Remove" && !d) {
+                //     s1b1 = !(sub1 && sub2) && (!sub1 || c === sub1)
+                //     s2b1 = !(sub1 && sub2) && (!sub2 || c === sub2)
+                // } else {
+                //     s1b2 = !sub1 || c === sub1 || d === sub1
+                //                                  "" === sub1
+                //            !sub1 || c === sub1 || false
+                //     s1b1 = !sub1 || c === sub1
+                // 
+                //     s2b2 = !sub2 || c === sub2 || d === sub2
+                //            !""
+                //            true  || c === sub2 || d === sub2
+                //     s2b1 = true
+                // }
                 
-                const VISIBLE = (IS_REMOVE && !main && !sub1 && !sub2) || this.#algofield.info.some(([a, b, c, d]) => {
-                    // if (set === "Remove" && !d) {
-                    //     s1b1 = !(sub1 && sub2) && (!sub1 || c === sub1)
-                    //     s2b1 = !(sub1 && sub2) && (!sub2 || c === sub2)
-                    // } else {
-                    //     s1b2 = !sub1 || c === sub1 || d === sub1
-                    //                                  "" === sub1
-                    //            !sub1 || c === sub1 || false
-                    //     s1b1 = !sub1 || c === sub1
-                    // 
-                    //     s2b2 = !sub2 || c === sub2 || d === sub2
-                    //            !""
-                    //            true  || c === sub2 || d === sub2
-                    //     s2b1 = true
-                    // }
+                return [
+                    IS_REMOVE || a === set,
+                    !main || b === main,
+                    (IS_REMOVE && !d) ? (HAS_BLANK_SUB && emptyOrC(sub1, c)) : (emptyOrC(sub1, c) || d === sub1),
+                    (IS_REMOVE && !d) ? (HAS_BLANK_SUB && emptyOrC(sub2, c)) : (emptyOrC(sub2, c) || d === sub2)
+                ].every(x => x);
+            });
 
-                    return [
-                        IS_REMOVE || a === set,
-                        !main || b === main,
-                        (IS_REMOVE && !d) ? (HAS_BLANK_SUB && (!sub1 || c === sub1)) : (!sub1 || c === sub1 || d === sub1),
-                        (IS_REMOVE && !d) ? (HAS_BLANK_SUB && (!sub2 || c === sub2)) : (!sub2 || c === sub2 || d === sub2)
-                    ].every(x => x);
-                });
-
-                VISIBILITY_CHANGED.algo = this.row.classList.contains("hidden-algo") !== this.row.classList.toggle("hidden-algo", !VISIBLE);
-            },
-            () => {this.row.classList.remove("hidden-algo")}
-        );
+            VISIBILITY_CHANGED.algo = this.row.classList.contains("hidden-algo") !== this.row.classList.toggle("hidden-algo", !VISIBLE);
+        });
 
         this.name = unitobject.name;
         this.class = unitobject.class;
@@ -366,6 +360,9 @@ class Units {
 //#endregion
 
 //#region Function Declarations
+/** @param {string} sub @param {string} c */
+function emptyOrC(sub, c) {return !sub || c === sub}
+
 /** @this {HTMLTableCellElement} @param {MouseEvent} event */
 function sortMethod(event) {
     const DATA = this.dataset;
@@ -384,9 +381,6 @@ function sortMethod(event) {
 }
 //#endregion
 
-const TBODY = document.querySelector("tbody"), UNIT_LIST = await UNIT_PROMISE;
-TBODY.append(...UNIT_LIST.map(x => x.row));
-
 const HEADER_TR = document.querySelector("thead > tr");
 const HEADER_VALUES = ["Doll Name", "Max HP", "Attack", "Hashrate", "Physical Def", "Operand Def", "Attack Speed", "Crit Rate", "Crit Damage", "Physical Pen", "Operand Pen", "Dodge Rate", "Post-battle Regen", "Skill Haste", "Debuff Resist", "Backlash", "Damage Boost", "Injury Mitigation", "Healing Effect"];
 for (const [NAME, KEY, TYPE] of zip(HEADER_VALUES, ["name", ...Object.values(STAT_KEYS)], (function*() {yield "string"; while (true) yield "number"})())) {
@@ -394,5 +388,11 @@ for (const [NAME, KEY, TYPE] of zip(HEADER_VALUES, ["name", ...Object.values(STA
     setattr(TH.dataset, {sort: "no", key: KEY, type: TYPE});
     HEADER_TR.appendChild(TH);
 }
+
+document.addEventListener(UNITFILTER.type, function(event) {
+    TBODY.replaceChildren(...UNIT_LIST.filter(x => !x.row.className.includes("hidden-")).map(x => x.row));
+});
+const TBODY = document.querySelector("tbody"), UNIT_LIST = await UNIT_PROMISE;
+TBODY.append(...UNIT_LIST.map(x => x.row));
 
 document.dispatchEvent(new CustomEvent("c_alert"));

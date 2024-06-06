@@ -159,7 +159,7 @@
         "name": "Fresnel",
         "class": "Sniper",
         "reference": {"Augustin-Jean Fresnel": "https://en.wikipedia.org/wiki/Augustin-Jean_Fresnel"},
-        "fragments": ["Neural Kits", "Intimacy", "Fragment Search", "Basic Search"],
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search", "Basic Search", "Enigma Sector - Entropic Dichotomy"],
         "base": {
             "hp": 11424,
             "atk": 609,
@@ -2304,6 +2304,12 @@
     {
         "id": 1084,
         "name" : "Sangoma",
+        "reference" : {"" : ""},
+        "tags": ["Unreleased"]
+    },
+    {
+        "id": 0,
+        "name" : "Belladonna",
         "reference" : {"" : ""},
         "tags": ["Unreleased"]
     }
