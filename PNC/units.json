@@ -1417,16 +1417,16 @@
             "regen": 546
         },
         "arma": {
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
+            "hp": 2633,
+            "atk": 192,
+            "hash": 80,
+            "pdef": 69,
+            "odef": 72,
+            "ppen": 67,
+            "open": 54
         },
         "intimacy": ["Power Connection", "Code Robustness", "Coordinated Formation"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
         "id": 1050,
