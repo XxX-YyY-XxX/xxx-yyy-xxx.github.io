@@ -42,10 +42,17 @@
                     </table>
                 </div>
 
-                <!-- fairies -->
+                <!-- <button type="button"> -->
+                    <!-- <span>Open Spirit Window</span>  Change to Close Fairy Window on open -->
+                    <!-- <dialog></dialog>               Null + All Fairies -->
+                <!-- </button> -->
+                <!-- base attributes at max level -->
+                <!-- fairy skills later -->
 
                 <details id="filter">
                     <summary>Filter</summary>
+
+                    <!-- slideshow on narrower screens -->
 
                     <div id="classes">
                         <div>Class</div>
@@ -80,8 +87,7 @@
                     <label class="tooltip"><input type="checkbox" value="Arma" />Arma Inscripta<span class="tooltiptext">Arma stats at Lv.30.</span></label>
                     <label class="tooltip"><input type="checkbox" value="Algo" />Algorithm<span class="tooltiptext">Algorithms and substats at Gold rarity. Efficiency at 2x.</span></label>
                     <label class="tooltip"><input type="checkbox" value="Spec" />Specialty Training<span class="tooltiptext">Specialty at Lv.543.</span></label>
-
-                    <!-- Fairies -->
+                    <label class="tooltip"><input type="checkbox" value="Sprt" disabled />Holy Spirits<span class="tooltiptext"></span></label>
                 </div>
 
                 <!-- battle bonus -->
@@ -111,13 +117,25 @@
                 <label><input type="radio" name="algorithm" value="Special" /><h2>Special</h2></label>
             </div>
 
-            <div id="Offense" class="tab-body"></div>
-            <div id="Stability" class="tab-body"></div>
-            <div id="Special" class="tab-body"></div>
+            <div class="tab-body" id="Offense"></div>
+            <div class="tab-body" id="Stability"></div>
+            <div class="tab-body" id="Special"></div>
         </div>
     </dialog>
 
     <dialog id="algo-select">
+        <form method="dialog"></form>
+    </dialog>
+
+    <dialog class="algo-select offense">
+        <form method="dialog"></form>
+    </dialog>
+
+    <dialog class="algo-select stability">
+        <form method="dialog"></form>
+    </dialog>
+
+    <dialog class="algo-select special">
         <form method="dialog"></form>
     </dialog>
 

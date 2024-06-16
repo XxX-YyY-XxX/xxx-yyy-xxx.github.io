@@ -56,6 +56,14 @@ function timer(start_date, end_date, title, imgpath, {onend = null} = {}) {
 
 (function resetTimer() {
     timer(
+        "Jun 11, 2024 18:30 UTC-0800",
+        "Jul 02, 2024 18:30 UTC-0800",
+        "Critical Cascade Rerun",
+        "./assets/images/timer/LoginBg_ZH_CN_Critical_Cascade.png",
+        {onend: resetTimer}
+    )
+    
+    timer(
         "May 28, 2024 18:30 UTC-0800",
         "Jun 18, 2024 18:30 UTC-0800",
         "L.A.D. Riddle",
