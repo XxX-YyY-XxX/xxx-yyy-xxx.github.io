@@ -1,0 +1,16 @@
+#spirits form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+#spirits button {
+    display: inline-block;
+    width: 100px;
+    padding: 0;
+}
+
+#spirits img {
+    width: 100%;
+}

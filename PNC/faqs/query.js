@@ -341,5 +341,7 @@ window.cards = [
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1cwct1n/weekly_professors_lounge_may_20_2024/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1d1oy3m/weekly_professors_lounge_may_27_2024/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1d71oio/weekly_professors_lounge_june_03_2024/
+// https://old.reddit.com/r/GFLNeuralCloud/comments/1dcisas/weekly_professors_lounge_june_10_2024/
+// https://old.reddit.com/r/GFLNeuralCloud/comments/1dhvcm4/weekly_professors_lounge_june_17_2024/
 
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1dee3bd/cant_rebind_my_account_getting_game_center/

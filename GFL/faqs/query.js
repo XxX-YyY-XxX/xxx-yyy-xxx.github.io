@@ -4253,3 +4253,5 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/1cx2khg/weekly_commanders_lounge_may_21_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1d2e66k/weekly_commanders_lounge_may_28_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1d7rtqh/weekly_commanders_lounge_june_04_2024/
+// https://old.reddit.com/r/girlsfrontline/comments/1dd8rka/weekly_commanders_lounge_june_11_2024/
+// https://old.reddit.com/r/girlsfrontline/comments/1dilac7/weekly_commanders_lounge_june_18_2024/

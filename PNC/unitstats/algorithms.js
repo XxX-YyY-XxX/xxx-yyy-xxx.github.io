@@ -1,4 +1,4 @@
-import {STAT_KEYS} from "./typing.js";
+import {STAT_KEYS, STAT_KEYS_TYPE} from "./typing.js";
 import {cmp, setattr, subclassof, zip} from "../../univasset/scripts/basefunctions/index.js";
 import {getTemplateCloner} from "../../univasset/scripts/externaljavascript.js";
 import {UNITFILTER} from "./typing.js";
@@ -614,28 +614,32 @@ export class AlgoField {
     /** @type {[AlgoGrid, AlgoGrid, AlgoGrid]} */ #algogrids;
     /** @type {StatDict} */ #stats;
 
-    get [STAT_KEYS.HEALTH]()        {return this.#basestat.hp * (this.#stats.get("hpperc") ?? 0) / 100 + (this.#stats.get("hpflat") ?? 0)}
-    get [STAT_KEYS.ATTACK]()        {return this.#basestat.atk * (this.#stats.get("atkperc") ?? 0) / 100 + (this.#stats.get("atkflat") ?? 0)}
-    get [STAT_KEYS.HASHRATE]()      {return this.#basestat.hash * (this.#stats.get("hashperc") ?? 0) / 100 + (this.#stats.get("hashflat") ?? 0)}
-    get [STAT_KEYS.PDEFENSE]()      {return this.#basestat.pdef * (this.#stats.get("pdefperc") ?? 0) / 100 + (this.#stats.get("pdefflat") ?? 0)}
-    get [STAT_KEYS.ODEFENSE]()      {return this.#basestat.odef * (this.#stats.get("odefperc") ?? 0) / 100 + (this.#stats.get("odefflat") ?? 0)}
-    get [STAT_KEYS.ATKSPD]()        {return this.#stats.get("aspdflat") ?? 0}
-    get [STAT_KEYS.CRITRATE]()      {return this.#stats.get("crateperc") ?? 0}
-    get [STAT_KEYS.CRITDMG]()       {return this.#stats.get("cdmgperc") ?? 0}
-    get [STAT_KEYS.PPENETRATE]()    {return this.#basestat.ppen * (this.#stats.get("ppenperc") ?? 0) / 100 + (this.#stats.get("ppenflat") ?? 0)}
-    get [STAT_KEYS.OPENETRATE]()    {return this.#basestat.open * (this.#stats.get("openperc") ?? 0) / 100 + (this.#stats.get("openflat") ?? 0)}
-    get [STAT_KEYS.DODGE]()         {return this.#stats.get("dodgeperc") ?? 0}
-    get [STAT_KEYS.POSTHEAL]()      {return this.#stats.get("regenflat") ?? 0}
-    get [STAT_KEYS.HASTE]()         {return this.#stats.get("hasteperc") ?? 0}
-    get [STAT_KEYS.DEBUFFRES]()     {return this.#stats.get("resflat") ?? 0}
-    get [STAT_KEYS.BACKLASH]()      {return this.#stats.get("lashperc") ?? 0}
-    get [STAT_KEYS.DMGBOOST]()      {return this.#stats.get("dboostperc") ?? 0}
-    get [STAT_KEYS.DMGREDUCE]()     {return this.#stats.get("dreducperc") ?? 0}
-    get [STAT_KEYS.HEALBOOST]()     {return this.#stats.get("hboostperc") ?? 0}
+    /** @returns {[number, number]} */ get [STAT_KEYS.HEALTH]()     {return [this.#stats.get("hpflat") ?? 0, this.#stats.get("hpperc") ?? 0]}
+    /** @returns {[number, number]} */ get [STAT_KEYS.ATTACK]()     {return [this.#stats.get("atkflat") ?? 0, this.#stats.get("atkperc") ?? 0]}
+    /** @returns {[number, number]} */ get [STAT_KEYS.HASHRATE]()   {return [this.#stats.get("hashflat") ?? 0, this.#stats.get("hashperc") ?? 0]}
+    /** @returns {[number, number]} */ get [STAT_KEYS.PDEFENSE]()   {return [this.#stats.get("pdefflat") ?? 0, this.#stats.get("pdefperc") ?? 0]}
+    /** @returns {[number, number]} */ get [STAT_KEYS.ODEFENSE]()   {return [this.#stats.get("odefflat") ?? 0, this.#stats.get("odefperc") ?? 0]}
+    /** @returns {[number, number]} */ get [STAT_KEYS.ATKSPD]()     {return [this.#stats.get("aspdflat") ?? 0, 0]}
+    /** @returns {[number, number]} */ get [STAT_KEYS.CRITRATE]()   {return [0, this.#stats.get("crateperc") ?? 0]}
+    /** @returns {[number, number]} */ get [STAT_KEYS.CRITDMG]()    {return [0, this.#stats.get("cdmgperc") ?? 0]}
+    /** @returns {[number, number]} */ get [STAT_KEYS.PPENETRATE]() {return [this.#stats.get("ppenflat") ?? 0, this.#stats.get("ppenperc") ?? 0]}
+    /** @returns {[number, number]} */ get [STAT_KEYS.OPENETRATE]() {return [this.#stats.get("openflat") ?? 0, this.#stats.get("openperc") ?? 0]}
+    /** @returns {[number, number]} */ get [STAT_KEYS.DODGE]()      {return [0, this.#stats.get("dodgeperc") ?? 0]}
+    /** @returns {[number, number]} */ get [STAT_KEYS.POSTHEAL]()   {return [this.#stats.get("regenflat") ?? 0, 0]}
+    /** @returns {[number, number]} */ get [STAT_KEYS.HASTE]()      {return [0, this.#stats.get("hasteperc") ?? 0]}
+    /** @returns {[number, number]} */ get [STAT_KEYS.DEBUFFRES]()  {return [this.#stats.get("resflat") ?? 0, 0]}
+    /** @returns {[number, number]} */ get [STAT_KEYS.BACKLASH]()   {return [0, this.#stats.get("lashperc") ?? 0]}
+    /** @returns {[number, number]} */ get [STAT_KEYS.DMGBOOST]()   {return [0, this.#stats.get("dboostperc") ?? 0]}
+    /** @returns {[number, number]} */ get [STAT_KEYS.DMGREDUCE]()  {return [0, this.#stats.get("dreducperc") ?? 0]}
+    /** @returns {[number, number]} */ get [STAT_KEYS.HEALBOOST]()  {return [0, this.#stats.get("hboostperc") ?? 0]}
 
     get info() {return ALGO_SAVE.get(this.#name).flat()}
 
-    stat_update = function() {};
+    #stat_update = function() {};
+    /** @param {function(): void} func */
+    setStatUpdate(func) {
+        this.#stat_update = func;
+    }
 
     /** @param {UnitObject} unit */
     constructor(unit) {
@@ -692,7 +696,7 @@ export class AlgoField {
 
             ALGO_SETUP.removeEventListener("click", this.#close);
 
-            this.stat_update();
+            this.#stat_update();
             ALGO_SETUP.close();
             AlgoField.#current = null;
         }
