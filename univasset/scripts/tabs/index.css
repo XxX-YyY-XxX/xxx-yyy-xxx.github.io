@@ -48,7 +48,7 @@
 }
 /* #endregion */
 
-.tab-button input {
+.tab-button label > input {
     appearance: none;
     margin: 0;
 }
