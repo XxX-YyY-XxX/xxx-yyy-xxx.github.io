@@ -8,12 +8,12 @@ timer(
 
 timer(
     document.getElementById("battlepass"),
-    "Jun 17, 2024 00:00 UTC-0800",
-    "./assets/images/timer/95type_30015__pic__pic_95type_30015_d__cn.png",
+    "Jul 21, 2024 00:00 UTC-0800",
+    "./assets/images/timer/p85gqwtp826d1.webp",
     {onEnd: timer.bind(
         null, document.getElementById("battlepass"),
-        "Jul 21, 2024 00:00 UTC-0800",
-        "./assets/images/timer/p85gqwtp826d1.webp"
+        "",
+        ""
     )}
 );
 
