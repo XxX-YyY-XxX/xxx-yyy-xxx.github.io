@@ -1,4 +1,4 @@
-import {STAT_KEYS, STAT_KEYS_TYPE} from "./typing.js";
+import {STAT_KEYS, STAT_KEYS_TYPE, STAT_KEYS_TYPENAME} from "./typing.js";
 import {cmp, setattr, subclassof, zip} from "../../univasset/scripts/basefunctions/index.js";
 import {getTemplateCloner} from "../../univasset/scripts/externaljavascript.js";
 import {UNITFILTER} from "./typing.js";
@@ -18,29 +18,7 @@ import {UNITFILTER} from "./typing.js";
 
 //#region Generic Constants
 const STATVALUES = Object.freeze({
-    NAME: Object.freeze({
-        hpflat: "Health+",      hpperc: "Health%",
-        atkflat: "Attack+",     atkperc: "Attack%",
-        hashflat: "Hashrate+",  hashperc: "Hashrate%",
-        pdefflat: "PhysDef+",   pdefperc: "PhysDef%",
-        odefflat: "OpDef+",     odefperc: "OpDef%",
-    
-        crateperc: "CritRate",
-        cdmgperc: "CritDmg",
-        ppenflat: "PhysPen+",   ppenperc: "PhysPen%",
-        openflat: "OpPen+",     openperc: "OpPen%",
-    
-        dodgeperc: "Dodge",
-        regenflat: "PostRegen",
-        hasteperc: "SkillHaste",
-        resflat: "DebuffRes",
-        dboostperc: "DmgBoost",
-        dreducperc: "InjuryMtg",
-        hboostperc: "HealEffect",
-    
-        aspdflat: "AtkSpd",
-        lashperc: "Backlash"
-    }),
+    NAME: STAT_KEYS_TYPENAME,
     SET: Object.freeze({
         /** @type {[["atkperc", 15]]} */ atkperc: [["atkperc", 15]],
         /** @type {[["hashperc", 15]]} */ hashperc: [["hashperc", 15]],

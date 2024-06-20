@@ -43,6 +43,8 @@
                     </table>
                 </div>
 
+                <!-- tabs: team bonus, filter, toggle bonus -->
+
                 <details id="team">
                     <summary>Team Bonus</summary>
 
@@ -52,22 +54,6 @@
                         </button>
                         <dialog>
                             <form method="dialog">
-                                <button type="submit" value="Faith">
-                                    <img src="../assets/images/spirits/Faith.png" alt="Faith">
-                                    <div>Faith</div>
-                                </button>
-                                <button type="submit" value="Hope">
-                                    <img src="../assets/images/spirits/Hope.png" alt="Hope">
-                                    <div>Hope</div>
-                                </button>
-                                <button type="submit" value="Love">
-                                    <img src="../assets/images/spirits/Love.png" alt="Love">
-                                    <div>Love</div>
-                                </button>
-                                <button type="submit" value="Reverence">
-                                    <img src="../assets/images/spirits/Reverence.png" alt="Reverence">
-                                    <div>Reverence</div>
-                                </button>
                             </form>
                         </dialog>
                     </div>
@@ -111,7 +97,7 @@
                     <label class="tooltip"><input type="checkbox" value="Arma" />Arma Inscripta<span class="tooltiptext">Arma stats at Lv.30.</span></label>
                     <label class="tooltip"><input type="checkbox" value="Algo" />Algorithm<span class="tooltiptext">Algorithms and substats at Gold rarity. Efficiency at 2x.</span></label>
                     <label class="tooltip"><input type="checkbox" value="Spec" />Specialty Training<span class="tooltiptext">Specialty at Lv.543.</span></label>
-                    <label class="tooltip"><input type="checkbox" value="Sprt" />Holy Spirits<span class="tooltiptext"></span>Spirits at Lv.50.</label>
+                    <label class="tooltip"><input type="checkbox" value="Sprt" />Holy Spirits<span class="tooltiptext">Spirits at Lv.50.</span></label>
                 </div>
 
                 <!-- battle bonus -->
@@ -168,4 +154,12 @@
     <dialog id="algo-filter">
         <form method="dialog"></form>
     </dialog>
+
+    <template id="spirits-template">
+        <button type="submit" value="">
+            <img src="" alt="">
+            <span></span>
+            <div></div>
+        </button>
+    </template>
 </html>

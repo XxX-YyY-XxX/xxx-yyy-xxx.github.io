@@ -1,11 +1,4 @@
-#spirits form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 5px;
-}
-
-#spirits button {
+#spirits > button {
     display: inline-block;
     width: 100px;
     padding: 0;
@@ -13,4 +6,33 @@
 
 #spirits img {
     width: 100%;
+}
+#spirits form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}    
+
+#spirits form button {
+    display: inline-grid;
+    grid-template-areas:
+        "image name"
+        "image stat";
+    grid-template-columns: 100px 100px;
+    /* grid-template-rows: 1lh auto; */
+    padding: 0;
+    gap: 5px;
+}
+
+#spirits form img {
+    grid-area: image;
+}
+
+#spirits form span {
+    grid-area: name;
+}
+
+#spirits form div {
+    grid-area: stat;
 }

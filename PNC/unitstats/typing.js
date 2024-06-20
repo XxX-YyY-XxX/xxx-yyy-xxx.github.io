@@ -42,6 +42,31 @@ export const STAT_KEYS_TYPE = Object.freeze({
     HEALBOOST_P: "hboostperc"
 });
 
+export const STAT_KEYS_TYPENAME = Object.freeze({
+    hpflat: "Health+",      hpperc: "Health%",
+    atkflat: "Attack+",     atkperc: "Attack%",
+    hashflat: "Hashrate+",  hashperc: "Hashrate%",
+    pdefflat: "PhysDef+",   pdefperc: "PhysDef%",
+    odefflat: "OpDef+",     odefperc: "OpDef%",
+
+    crateperc: "CritRate",
+    cdmgperc: "CritDmg",
+    ppenflat: "PhysPen+",   ppenperc: "PhysPen%",
+    openflat: "OpPen+",     openperc: "OpPen%",
+
+    dodgeperc: "Dodge",
+    regenflat: "PostRegen",
+    hasteperc: "SkillHaste",
+    resflat: "DebuffRes",
+    dboostperc: "DmgBoost",
+    dreducperc: "InjuryMtg",
+    hboostperc: "HealEffect",
+
+    aspdflat: "AtkSpd",
+    lashperc: "Backlash"
+})
+
+
 export const UNITFILTER = new CustomEvent("c_filter");
 /** Calls all `_updateStat`. */
 export const UNITSTATUPDATE = new CustomEvent("c_update");
