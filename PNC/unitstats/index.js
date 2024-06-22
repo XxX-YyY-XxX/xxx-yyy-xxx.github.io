@@ -11,13 +11,13 @@ const UNIT_PROMISE = Async.getJSON("../units.json")
 
 //#region Constant Declarations
 const BUTTON = {
-    /** @type {HTMLInputElement} */ ARMA: document.querySelector(`#bonus [value="Arma"]`),
-    /** @type {HTMLInputElement} */ BOND: document.querySelector(`#bonus [value="Bond"]`),
-    /** @type {HTMLInputElement} */ SPEC: document.querySelector(`#bonus [value="Spec"]`),
-    /** @type {HTMLInputElement} */ POTB: document.querySelector(`#bonus [value="PotB"]`),
-    /** @type {HTMLInputElement} */ ALGO: document.querySelector(`#bonus [value="Algo"]`),
-    /** @type {HTMLInputElement} */ OATH: document.querySelector(`#bonus [value="Oath"]`),
-    /** @type {HTMLInputElement} */ SPRT: document.querySelector(`#bonus [value="Sprt"]`),
+    /** @type {HTMLInputElement} */ ARMA: document.querySelector(`#pre-battle [value="Arma"]`),
+    /** @type {HTMLInputElement} */ BOND: document.querySelector(`#pre-battle [value="Bond"]`),
+    /** @type {HTMLInputElement} */ SPEC: document.querySelector(`#pre-battle [value="Spec"]`),
+    /** @type {HTMLInputElement} */ POTB: document.querySelector(`#pre-battle [value="PotB"]`),
+    /** @type {HTMLInputElement} */ ALGO: document.querySelector(`#pre-battle [value="Algo"]`),
+    /** @type {HTMLInputElement} */ OATH: document.querySelector(`#pre-battle [value="Oath"]`),
+    /** @type {HTMLInputElement} */ SPRT: document.querySelector(`#pre-battle [value="Sprt"]`),
 }
 
 const CLASSES = {

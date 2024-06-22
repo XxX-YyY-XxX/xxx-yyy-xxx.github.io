@@ -8,15 +8,7 @@
     max-height: var(--table-height)
 }
 
-/* #table:has(tbody:empty) {
-    height: var(--table-height);
-} */
-
-/* .hidden {
-    display: none;
-} */
-
-input[type="checkbox"], input[type="radio"] {
+input[type="checkbox"] {
     appearance: none;
     margin: 0;
 }
@@ -57,17 +49,6 @@ tbody > tr > td:first-child, thead > tr > th {
 }
 /* #endregion */
 
-/* #region Filter */
-
-/*.func_table tr {
-    background-color: unset;
-}
-
-.func_table tbody > tr:not(.hidden):nth-child(even) {
-    background-color: rgba(85, 107, 47, 0.25);
-} */
-/* #endregion */
-
 /* #region Arma */
 .arma {
     display: flex;
@@ -82,28 +63,43 @@ tbody > tr > td:first-child, thead > tr > th {
 }
 /* #endregion */
 
-@layer {
-    #filter {
-        margin-top: 10px;
-    }
-    
-    #filter > div {
-        --filter-pad: 10px;
-        display: inline-block;
-        background: #343434;
-        border-radius: 20px;
-        padding: 0 var(--filter-pad);
-        text-align: center;
-        margin-top: 5px;
-        vertical-align: middle;
-    }    
+/* #region Extras */
+#extras {
+    --bgc: #00b570;
 }
+
+#extras > .tab-button > label {
+    background-color: transparent;
+    color: crimson;
+}
+
+#extras > .tab-button > label:has(input:checked) {
+    background-color: var(--bgc);
+    /* use inverted border radius */
+}
+
+:where(#extras) > .tab-body {
+    display: block;
+    background-color: var(--bgc);
+}
+
+#extras > .tab-body > div {
+    width: fit-content;
+    background-color: #343434;
+    border-radius: 20px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0 10px;
+}
+
+#spirits > button {
+    width: 100px;
+    padding: 0;
+}
+/* #endregion */
 
 /* #region Class */
-#classes {
-    width: fit-content;
-}
-
 #classes > label {
     height: 30px;
     background-size: auto 100%;
@@ -160,9 +156,8 @@ tbody > tr > td:first-child, thead > tr > th {
 /* #region Algorithm */
 #algorithms {
     --gridsize: 100px;
-    --gold-algo: #ffa418;
+    --gold-algo: #ffa418;   /* For .mainstat, .substat classes */
     display: inline-grid;
-    padding-bottom: var(--filter-pad);
     grid-template-areas: 
         "title  title"
         "set    stats";
@@ -184,6 +179,7 @@ tbody > tr > td:first-child, thead > tr > th {
 
 #algorithms > div:last-of-type {
     grid-area: stats;
+    position: relative;
 }
 
 #algorithms > * > * {
@@ -191,33 +187,14 @@ tbody > tr > td:first-child, thead > tr > th {
 }
 
 #algorithms > div > button {
-    position: relative;
-    bottom: 0;
-    /* right: 0; */
-}
-
-#algo-select.filtering button {
-    display: inline-block;
-    width: 100px;
+    position: absolute;
+    bottom: 1px;
+    right: 0;
 }
 /* #endregion */
 
 /* #region Pre Bonus */
-#bonus label:has(input[disabled]) {
-    display: none;
-}
-
-#bonus {
-    width: fit-content;
-    background: #343434;
-    border-radius: 20px;
-    padding: 0 10px;
-    display: inline-block;
-    text-align: center;
-    margin-top: 10px;
-}
-
-#bonus label {
+#pre-battle label {
     --color: limegreen;
     outline: 2px solid var(--color);
     border-radius: 10rem;
@@ -227,13 +204,47 @@ tbody > tr > td:first-child, thead > tr > th {
     white-space: nowrap;
 }
 
-#bonus label:has(input:checked) {
+#pre-battle label:has(input[disabled]) {
+    display: none;
+}
+
+#pre-battle label:has(input:checked) {
     background: var(--color);
     color: black;
 }
 
-#bonus .tooltiptext {
+#pre-battle .tooltiptext {
     bottom: 150%;
     white-space: normal;
 }    
 /* #endregion */
+
+
+
+
+
+
+
+/* https://itnext.io/how-to-make-a-fancy-inverted-border-radius-in-css-5db048a53f95 */
+ 
+.inverted-border-radius {
+    --ibr-color: #F66969;
+    --ibr-radius: 25px;
+    position: relative;
+    height: 100px;
+    width: 325px;
+    background-color: var(--ibr-color);
+    border-radius: var(--ibr-radius) var(--ibr-radius) var(--ibr-radius) 0;
+}
+
+.inverted-border-radius::before {
+    content: "";
+    position: absolute;
+
+    background-color: transparent;
+    bottom: -50px;
+    height: 50px;
+    width: var(--ibr-radius);
+    border-top-left-radius: var(--ibr-radius);
+    box-shadow: 0 calc(var(--ibr-radius) * -1) 0 0 var(--ibr-color);
+}

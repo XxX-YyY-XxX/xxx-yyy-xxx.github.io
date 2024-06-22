@@ -96,10 +96,10 @@ const SPIRITS = {
 }
 
 export const SPIRIT_STAT = new (class {
-    /** @type {HTMLInputElement} */ #CHECKBOX = document.querySelector(`#bonus [value="Sprt"]`);
-    /** @type {HTMLButtonElement} */ #BUTTON = document.querySelector("#team #spirits > button");
+    /** @type {HTMLInputElement} */ #CHECKBOX = document.querySelector(`#pre-battle [value="Sprt"]`);
+    /** @type {HTMLButtonElement} */ #BUTTON = document.querySelector("#spirits > button");
     /** @type {HTMLImageElement} */ #IMAGE = this.#BUTTON.querySelector("img");
-    /** @type {HTMLDialogElement} */ #DIALOG = document.querySelector("#team #spirits dialog");
+    /** @type {HTMLDialogElement} */ #DIALOG = document.querySelector("#spirits dialog");
 
     /** @type {Spirit} */ #current_spirit = SPIRITS.Faith;
     /** @param {string} spirit_name */

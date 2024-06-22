@@ -43,69 +43,70 @@
                     </table>
                 </div>
 
-                <!-- tabs: team bonus, filter, toggle bonus -->
-
-                <details id="team">
-                    <summary>Team Bonus</summary>
-
-                    <div id="spirits">
-                        <button type="button">
-                            <img src="../assets/images/spirits/Faith.png" alt="Faith">
-                        </button>
-                        <dialog>
-                            <form method="dialog">
-                            </form>
-                        </dialog>
+                <div id="extras" class="tab-group">
+                    <div class="tab-button">
+                        <label><input type="radio" name="extra" value="Team" checked>Team Bonus</label>
+                        <label><input type="radio" name="extra" value="Filter">Filter</label>
+                        <label><input type="radio" name="extra" value="Toggle">Stat Toggles</label>
                     </div>
-                </details>
-
-                <details id="filter">
-                    <summary>Filter</summary>
-
-                    <!-- slideshow on narrower screens -->
-
-                    <div id="classes">
-                        <div>Class</div>
-                        <label><input type="checkbox" value="Guard" checked /></label>
-                        <label><input type="checkbox" value="Sniper" checked /></label>
-                        <label><input type="checkbox" value="Warrior" checked /></label>
-                        <label><input type="checkbox" value="Specialist" checked /></label>
-                        <label><input type="checkbox" value="Medic" checked /></label>
-                    </div>
-
-                    <div id="algorithms">
-                        <div>Algorithm</div>
-                        <button type="button">
-                            <img src="../assets/images/algorithms/others/Empty.png" alt="Remove" />
-                        </button>
-                        <div>
-                            <select id="main" class="mainstat"></select>
-                            <select id="sub1" class="substat"></select>
-                            <select id="sub2" class="substat"></select>
-                            <button type="button" id="reset">Reset</button>
+    
+                    <div id="Team" class="tab-body">
+                        <div id="spirits">
+                            <div>Spirits</div>
+                            <button type="button">
+                                <img src="../assets/images/spirits/Faith.png" alt="Faith">
+                            </button>
+                            <dialog>
+                                <form method="dialog"></form>
+                            </dialog>
                         </div>
                     </div>
 
+                    <!-- slideshow on narrower screens -->
                     <!-- has arma - yes, no, unselected -->        
-                </details>
+                    <div id="Filter" class="tab-body">
+                        <div id="classes">
+                            <div>Class</div>
+                            <label><input type="checkbox" value="Guard" checked /></label>
+                            <label><input type="checkbox" value="Sniper" checked /></label>
+                            <label><input type="checkbox" value="Warrior" checked /></label>
+                            <label><input type="checkbox" value="Specialist" checked /></label>
+                            <label><input type="checkbox" value="Medic" checked /></label>
+                        </div>
+    
+                        <div id="algorithms">
+                            <div>Algorithm</div>
+                            <button type="button">
+                                <img src="../assets/images/algorithms/others/Empty.png" alt="Remove" />
+                            </button>
+                            <div>
+                                <select id="main" class="mainstat"></select>
+                                <select id="sub1" class="substat"></select>
+                                <select id="sub2" class="substat"></select>
+                                <button type="button" id="reset">Reset</button>
+                            </div>
+                        </div>
+                    </div>
 
-                <div id="bonus">
-                    <div>Pre-Battle Bonus</div>
-                    <label class="tooltip"><input type="checkbox" value="PotB" />Potential Breakthrough<span class="tooltiptext">Units at Lv.70 and 5★.</span></label>
-                    <label class="tooltip"><input type="checkbox" value="Bond" />Intimacy<span class="tooltiptext">Intimacy at Lv.15.</span></label>
-                    <label class="tooltip"><input type="checkbox" value="Oath" />Hearts As One<span class="tooltiptext">Available after Oath.</span></label>
-                    <label class="tooltip"><input type="checkbox" value="Arma" />Arma Inscripta<span class="tooltiptext">Arma stats at Lv.30.</span></label>
-                    <label class="tooltip"><input type="checkbox" value="Algo" />Algorithm<span class="tooltiptext">Algorithms and substats at Gold rarity. Efficiency at 2x.</span></label>
-                    <label class="tooltip"><input type="checkbox" value="Spec" />Specialty Training<span class="tooltiptext">Specialty at Lv.543.</span></label>
-                    <label class="tooltip"><input type="checkbox" value="Sprt" />Holy Spirits<span class="tooltiptext">Spirits at Lv.50.</span></label>
+                    <!-- battle bonus -->
+                    <!-- unit skills -->
+                    <!-- Functions -->
+                    <!-- Protocols -->
+                    <!-- algo 3set -->
+                    <!-- fairy skills -->
+                    <div id="Toggle" class="tab-body">
+                        <div id="pre-battle">
+                            <div>Pre-Battle Bonus</div>
+                            <label class="tooltip"><input type="checkbox" value="PotB" />Potential Breakthrough<span class="tooltiptext">Units at Lv.70 and 5★.</span></label>
+                            <label class="tooltip"><input type="checkbox" value="Bond" />Intimacy<span class="tooltiptext">Intimacy at Lv.15.</span></label>
+                            <label class="tooltip"><input type="checkbox" value="Oath" />Hearts As One<span class="tooltiptext">Available after Oath.</span></label>
+                            <label class="tooltip"><input type="checkbox" value="Arma" />Arma Inscripta<span class="tooltiptext">Arma stats at Lv.30.</span></label>
+                            <label class="tooltip"><input type="checkbox" value="Algo" />Algorithm<span class="tooltiptext">Algorithms and substats at Gold rarity. Efficiency at 2x.</span></label>
+                            <label class="tooltip"><input type="checkbox" value="Spec" />Specialty Training<span class="tooltiptext">Specialty at Lv.543.</span></label>
+                            <label class="tooltip"><input type="checkbox" value="Sprt" />Holy Spirits<span class="tooltiptext">Spirits at Lv.50.</span></label>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- battle bonus -->
-                <!-- unit skills -->
-                <!-- Functions -->
-                <!-- Protocols -->
-                <!-- algo 3set -->
-                <!-- fairy skills -->
 
                 <p>Click on the stat names to sort the units.</p>
                 <p>Click on the unit's name to open the algorithm window.</p>
@@ -123,7 +124,8 @@
 
         <!-- <div id="help" data-tooltip="Click outside to close the dialog window."></div> -->
 
-        <div id="algo-field">
+        <div id="algo-field" class="tab-group">
+            <!-- change label styling (h2) to something more fitting -->
             <div class="tab-button">
                 <label><input type="radio" name="algorithm" value="Offense" checked/><h2>Offense</h2></label>
                 <label><input type="radio" name="algorithm" value="Stability" /><h2>Stability</h2></label>
@@ -155,12 +157,12 @@
     <dialog id="algo-filter">
         <form method="dialog"></form>
     </dialog>
-
-    <template id="spirits-template">
-        <button type="submit" value="">
-            <img src="" alt="">
-            <span></span>
-            <div></div>
-        </button>
-    </template>
 </html>
+
+<template id="spirits-template">    <!-- test: check if template is readable outside html tag -->
+    <button type="submit" value="">
+        <img src="" alt="">
+        <span></span>
+        <div></div>
+    </button>
+</template>
