@@ -1211,7 +1211,7 @@ const CARDS = [
     {
         id: 106,
         question: `What do they mean by bamboo?`,
-        answer: `Bamboos are, in general, rifles with skills like Locked Shot, Steady Shot, Interdiction Shot, and the likes, wherein off cooldown, they have a charge gauge that dictates how powerful the skillshot is on activation. They're usually used to deal massive damage to a target, especially if coupled with FP buffers.`,
+        answer: `Bamboos (sometimes called nuke rifles) are, in general, rifles with skills like Locked Shot, Steady Shot, Interdiction Shot, and the likes, wherein off cooldown, they have a charge gauge that dictates how powerful the skillshot is on activation. They're usually used to deal massive damage to a target, especially if coupled with FP buffers.`,
         tags: [dtag.TDOLL, dtag.SKILL, dtag.IMPT]
     },
     {
@@ -1261,7 +1261,7 @@ const CARDS = [
             ],
             'Equipment Enhancement' : [
                 'Multiplies the base stat up to Lv. 10.',
-                "Doesn't matter if Equip Enhancement Pills or fodder equips are used, it's merely a matter of resource cost per point raised.",
+                "Doesn't matter if Equip Enhancement Pills or fodder equips (from crafting or 8-1N) are used, it's merely a matter of resource cost per point raised.", // https://old.reddit.com/r/girlsfrontline/comments/1bo2czw/weekly_commanders_lounge_march_26_2024/kwq48hb/
                 'As of 3.0, gets more enhancement points from enhanced fodders.'
             ]
         })}`,
@@ -3731,7 +3731,7 @@ const CARDS = [
         )}
         For ranking reward fairies, they will only be available again once their corresponding ranking map reruns.`,
         tags: [dtag.FAIRY, dtag.GET]
-    },
+    },  //@Add fairy construction costs
     {
         id: 457,
         question: `Should I save my T-Doll Contracts?`,
@@ -3782,8 +3782,8 @@ const CARDS = [
     {
         id: 462,
         question: `How do I unlock Chapter 4 of Continuum Turbulence?`,
-        answer: `By completing all nodes and paths, including bad ends.`,
-        tags: [dtag.CAMPAIGN]
+        answer: `By completing all nodes and paths, including bad ends, and completing "White Doll" 3 times.`,  // https://old.reddit.com/r/girlsfrontline/comments/1bo2czw/weekly_commanders_lounge_march_26_2024/kx9ivg6/
+        tags: [dtag.CAMPAIGN, dtag.LORE]
     },
     {
         id: 463,
@@ -4036,7 +4036,7 @@ const CARDS = [
         question: `How do I know if a SPEQ gives additional skills?`,
         answer: `If the equipment has an "Enhances Skill" as a stat or if it can only be equipped by a Neurally Upgraded doll.`,
         tags: [dtag.EQUIP, dtag.SPEQ, dtag.GZ, dtag.MOD]
-    },  //@Visual
+    },  //@Visual, Update = Enhances Skill to image
     {
         id: 495,
         question: `How do you set L2Ds for adjutants?`,
@@ -4212,6 +4212,18 @@ const CARDS = [
         answer: `One guaranteed doll from the production pool after 50 crafts for returners.`,
         tags: [dtag.PROD, dtag.TDOLL]
     },  // https://old.reddit.com/r/girlsfrontline/comments/1bif017/weekly_commanders_lounge_march_19_2024/kw6xd9v/
+    {
+        id: 301,
+        question: `What items can I get from the Gray Zone?`,
+        answer: `${figure(image("https://i.imgur.com/tsBaNv9.png", "List of Gray Zone drops."), "From u/UnironicWeeaboo")}`,    // https://old.reddit.com/r/girlsfrontline/comments/1bo2czw/weekly_commanders_lounge_march_26_2024/kx4ccj4/
+        tags: [dtag.GZ, dtag.ITEM]
+    },
+    {
+        id: 353,
+        question: `I lost my account. How do I get it back?`,
+        answer: `${getID("Costumer support", 37)}. It might be easier to locate it if you know your UID, or did a purchase with that account.`,
+        tags: [dtag.TECH, dtag.ACCT]
+    },
     // {
     //     id: 0,
     //     question: ``,
@@ -4220,7 +4232,7 @@ const CARDS = [
     // },
 ];
 window.cards = CARDS;
-//    301 353 464
+//      464
 // {
 //     const INDICES = Object.keys(CARDS).map(Number);
 //     /** @type {Set<number>} */ const DUPLICATES = new Set();
@@ -4232,6 +4244,9 @@ window.cards = CARDS;
 //     console.log("Duplicate:", ...DUPLICATES);
 // }
 
+
+
+
 // cdn.discordapp cleanup
 // gray zone proxy settings
 
@@ -4242,7 +4257,6 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/kgpxdz7/
 // Quick Formations - https://old.reddit.com/r/girlsfrontline/comments/qg1inu/weekly_commanders_lounge_october_26_2021/hiu3wrw/
 
-// https://old.reddit.com/r/girlsfrontline/comments/1bo2czw/weekly_commanders_lounge_march_26_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1btt4kx/weekly_commanders_lounge_april_02_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1bzmnr3/weekly_commanders_lounge_april_09_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1c5aljd/weekly_commanders_lounge_april_16_2024/

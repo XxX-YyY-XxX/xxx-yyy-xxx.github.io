@@ -88,7 +88,6 @@ dialog {
 /* #region Tabs */
 #algo-field {
     container-type: inline-size;
-    margin-bottom: 5px;
 }
 
 #algo-modal .tab-button {
@@ -97,7 +96,8 @@ dialog {
 
 #algo-modal .tab-button > label{
     background-color: transparent;
-    line-height: 10px;
+    font-size: 3rem; /* or 1.5em */
+    color: white;
 }
 
 #algo-modal .tab-button h2 {
@@ -115,6 +115,7 @@ dialog {
         background-repeat: no-repeat;
         background-position: center;
         background-size: 100%;
+        color: black;
     }
 
     #algo-modal .tab-button > label:has([value="Offense"]:checked) {

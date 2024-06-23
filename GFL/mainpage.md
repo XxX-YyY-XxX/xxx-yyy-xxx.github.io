@@ -435,3 +435,5 @@ https://gamepress.gg/girlsfrontline/client-update-v304-and-v303
                 anchor('Browser Chip Calc by FatalChapter.', 'https://hycdes.com/pages/GFT_ChipCal-EN')
             ]
         })} -->
+
+https://old.reddit.com/r/girlsfrontline/comments/1bo2czw/weekly_commanders_lounge_march_26_2024/kxctpsq/

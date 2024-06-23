@@ -324,6 +324,8 @@ window.cards = [
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1b0evdy/weekly_professors_lounge_february_26_2024/ksmuvzx/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1b688sg/weekly_professors_lounge_march_04_2024/ktwh9ev/ - Exception Protocol Guide
 
+// GFAnon Fairy Guide - https://rentry.org/2gfwqgvf
+
 // https://www.reddit.com/r/GFLNeuralCloud/comments/z5446s/algorithm_sets_recommendations_google_doc/
 // https://nalu.wiki/neuralcloud
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1b0evdy/weekly_professors_lounge_february_26_2024/ksdzfoe/
