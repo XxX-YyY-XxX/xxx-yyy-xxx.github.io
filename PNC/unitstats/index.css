@@ -66,8 +66,9 @@ tbody > tr > td:first-child, thead > tr > th {
 
 /* #region Extras */
 #extras {
+    --background-color: #00b570;
+    --border-radius: 20px;
     margin-top: 5px;
-    --bgc: #00b570;
 }
 
 #extras > .tab-button > label {
@@ -77,21 +78,22 @@ tbody > tr > td:first-child, thead > tr > th {
 }
 
 #extras > .tab-button > label:has(input:checked) {
-    background-color: var(--bgc);
+    background-color: var(--background-color);
     /* use inverted border radius */
 }
 
 :where(#extras) > .tab-body {
     display: block;
-    background-color: var(--bgc);
+    background-color: var(--background-color);
     padding: 5px;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 
 @layer {
     #extras > .tab-body > div {
         width: fit-content;
         background-color: #343434;
-        border-radius: 20px;
+        border-radius: var(--border-radius);
         display: inline-block;
         text-align: center;
         vertical-align: middle;
@@ -112,6 +114,10 @@ input[type="checkbox"] {
 /* #endregion */
 
 /* #region Class */
+#classed {
+    width: 70px;
+}
+
 #classes > label {
     height: 30px;
     background-size: auto 100%;
