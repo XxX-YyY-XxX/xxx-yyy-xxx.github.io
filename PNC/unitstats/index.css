@@ -2,15 +2,11 @@
 @import "/univasset/scripts/tooltip.css" layer(tooltip);
 @import "/univasset/scripts/table.css" layer(table);
 
+/* #region Table */
 #table {
     --table-height: 95lvh;
     --bkg-color: #151515;
     max-height: var(--table-height)
-}
-
-input[type="checkbox"] {
-    appearance: none;
-    margin: 0;
 }
 
 tbody > tr > td:first-child, thead > tr > th {
@@ -62,15 +58,22 @@ tbody > tr > td:first-child, thead > tr > th {
     margin-left: 5px;
 }
 /* #endregion */
+/* #endregion */
+
+
+
+
 
 /* #region Extras */
 #extras {
+    margin-top: 5px;
     --bgc: #00b570;
 }
 
 #extras > .tab-button > label {
     background-color: transparent;
     color: crimson;
+    font-size: 1.5em;
 }
 
 #extras > .tab-button > label:has(input:checked) {
@@ -81,18 +84,27 @@ tbody > tr > td:first-child, thead > tr > th {
 :where(#extras) > .tab-body {
     display: block;
     background-color: var(--bgc);
+    padding: 5px;
 }
 
-#extras > .tab-body > div {
-    width: fit-content;
-    background-color: #343434;
-    border-radius: 20px;
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    padding: 0 10px;
+@layer {
+    #extras > .tab-body > div {
+        width: fit-content;
+        background-color: #343434;
+        border-radius: 20px;
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        padding: 0 10px 10px;
+    }
 }
 
+input[type="checkbox"] {
+    appearance: none;
+    margin: 0;
+}
+
+/* #region Spirits */
 #spirits > button {
     width: 100px;
     padding: 0;
@@ -105,6 +117,7 @@ tbody > tr > td:first-child, thead > tr > th {
     background-size: auto 100%;
     background-repeat: no-repeat;
     display: inline-flex;
+    padding-bottom: 0;
 }
 
 #classes > label:has([value="Guard"]) {
@@ -218,6 +231,7 @@ tbody > tr > td:first-child, thead > tr > th {
     white-space: normal;
 }    
 /* #endregion */
+/* #endregion */
 
 
 
@@ -227,7 +241,7 @@ tbody > tr > td:first-child, thead > tr > th {
 
 /* https://itnext.io/how-to-make-a-fancy-inverted-border-radius-in-css-5db048a53f95 */
  
-.inverted-border-radius {
+/* .inverted-border-radius {
     --ibr-color: #F66969;
     --ibr-radius: 25px;
     position: relative;
@@ -247,4 +261,4 @@ tbody > tr > td:first-child, thead > tr > th {
     width: var(--ibr-radius);
     border-top-left-radius: var(--ibr-radius);
     box-shadow: 0 calc(var(--ibr-radius) * -1) 0 0 var(--ibr-color);
-}
+} */

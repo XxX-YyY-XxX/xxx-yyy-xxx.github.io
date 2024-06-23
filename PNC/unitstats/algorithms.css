@@ -96,7 +96,7 @@ dialog {
 
 #algo-modal .tab-button > label{
     background-color: transparent;
-    font-size: 3rem; /* or 1.5em */
+    font-size: 1.5em;
     color: white;
 }
 
