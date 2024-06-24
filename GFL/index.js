@@ -23,9 +23,9 @@ timer(
     "./assets/images/coalition/11Judge.webp",
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
-        "",
-        ""
-    )}
+        "Jul 23, 2024 00:00 UTC-0800",
+        "./assets/images/coalition/15ArchitectNVWModel.webp",
+        )}
 );
 
 timer(
@@ -43,11 +43,11 @@ timer(
    document.getElementById('mini-event'),
    "Jun 25, 2024 00:00 UTC-0800",
    "./assets/images/timer/zo607mrrno3d1.webp",
-   {onEnd: timer.bind(
-        null, document.getElementById('mini-event'),
-        "",
-        "./assets/images/timer/.webp"
-   )}
+//    {onEnd: timer.bind(
+//         null, document.getElementById('mini-event'),
+//         "",
+//         "./assets/images/timer/.webp"
+//    )}
 );
 
 //timer(document.getElementById('extra'), "",

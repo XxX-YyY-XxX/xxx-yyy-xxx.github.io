@@ -1,7 +1,7 @@
 // event timers only too lazy to do others
 
 import {Timer, getTemplateCloner, splitTime} from "../univasset/scripts/externaljavascript.js";
-import {setattr} from "../univasset/scripts/basefunctions/pseudobuiltin.js";
+import {setattr} from "../univasset/scripts/basefunctions/index.js";
 
 const TIMER_FIELD = document.querySelector("#timer-field");
 const _timerTemplate = getTemplateCloner("#timer-block");
@@ -56,8 +56,16 @@ function timer(start_date, end_date, title, imgpath, {onend = null} = {}) {
 
 (function resetTimer() {
     timer(
+        "Jun 25, 2024 18:30 UTC-0800",
+        "",
+        "",
+        "./assets/images/timer/.png",   // steins gate collab
+        {onend: resetTimer}
+    )
+
+    timer(
         "Jun 11, 2024 18:30 UTC-0800",
-        "Jun 26, 2024 18:30 UTC-0800",
+        "Jun 25, 2024 18:30 UTC-0800",
         "Critical Cascade Rerun",
         "./assets/images/timer/LoginBg_ZH_CN_Critical_Cascade.png",
         {onend: resetTimer}

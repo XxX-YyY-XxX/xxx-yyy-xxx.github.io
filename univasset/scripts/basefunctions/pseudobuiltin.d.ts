@@ -6,7 +6,7 @@ export function type(any: any): "string" | "number" | "bigint" | "boolean" | "sy
 
 export function subclassof<T>(subclass: typeof Object, superclass: T): subclass is T;
 
-export function range(params: {
+export function range({start, stop, step}: {
     /** Start of the count. Default 0. */
     start: number;
     /** End of count. Exclusive. Default infinite. */
@@ -27,8 +27,8 @@ export function enumerate<T>(iterable: Iterable<T>): Generator<[number, T], void
  * {attribute: ???} for deeper calls.
  * 
  * Everything else for attribute assigment. */
-export function setattr<T>(base: T, attributes: {[ObjectAttribute: string]: any;}): T;
-// keyof T
+export function setattr<T extends Object>(base: T, attributes: {[ObjectAttributes: string]: any}): T;
+// in keyof T
 
 /** Iterates items per index in groups. */
 export function zip<T0, T1>(iter0: Iterable<T0>, iter1: Iterable<T1>, extend?: boolean): Generator<[T0, T1], void, unknown>;
