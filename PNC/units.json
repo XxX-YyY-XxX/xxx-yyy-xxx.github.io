@@ -2232,6 +2232,99 @@
             "open": 80
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Risk Evasion Aid"],
+        "tags": ["Unowned", "Arma"]
+    },
+    {
+        "id": 1076,
+        "name": "Okabe",
+        "class": "Medic",
+        "reference": {"Rintaro Okabe" : "https://steins-gate.fandom.com/wiki/Rintaro_Okabe"},
+        "fragments": ["Neural Kits", "Intimacy"],
+        "base": {
+            "hp": 14029,
+            "atk": 483,
+            "hash": 621,
+            "pdef": 344,
+            "odef": 345,
+            "aspd": 110,
+            "crate": 3,
+            "ppen": 200,
+            "open": 196,
+            "dodge": 7,
+            "regen": 455
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
+        "tags": ["Unowned"]
+    },
+    {
+        "id": 1078,
+        "name": "Kurisu",
+        "class": "Sniper",
+        "reference": {"Kurisu Makise" : "https://steins-gate.fandom.com/wiki/Kurisu_Makise"},
+        "fragments": ["Neural Kits", "Intimacy"],
+        "base": {
+            "hp": 11671,
+            "atk": 662,
+            "hash": 460,
+            "pdef": 209,
+            "odef": 209,
+            "aspd": 110,
+            "crate": 10,
+            "ppen": 661,
+            "open": 326,
+            "dodge": 0,
+            "regen": 364
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": ["Power Connection", "Coordinated Strike", "Victorious Inspiration"],
+        "tags": ["Unowned"]
+    },
+    {
+        "id": 1077,
+        "name": "Mayuri",
+        "class": "Specialist",
+        "reference": {"Mayuri Shiina" : "https://steins-gate.fandom.com/wiki/Mayuri_Shiina"},
+        "fragments": ["Neural Kits", "Intimacy"],
+        "base": {
+            "hp": 16626,
+            "atk": 635,
+            "hash": 496,
+            "pdef": 367,
+            "odef": 367,
+            "aspd": 100,
+            "crate": 5,
+            "ppen": 408,
+            "open": 343,
+            "dodge": 0,
+            "regen": 519
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"],
         "tags": ["Unowned"]
     },
 
@@ -2257,24 +2350,6 @@
         "id": 1079,
         "name" : "Penumbra",
         "reference" : {"" : ""},
-        "tags": ["Unreleased"]
-    },
-    {
-        "id": 1076,
-        "name" : "Okabe",
-        "reference" : {"sg" : ""},
-        "tags": ["Unreleased"]
-    },
-    {
-        "id": 1078,
-        "name" : "Kurisu",
-        "reference" : {"sg" : ""},
-        "tags": ["Unreleased"]
-    },
-    {
-        "id": 1077,
-        "name" : "Mayuri",
-        "reference" : {"sg" : ""},
         "tags": ["Unreleased"]
     },
     {
@@ -2311,6 +2386,12 @@
         "id": 0,
         "name" : "Belladonna",
         "reference" : {"" : ""},
+        "tags": ["Unreleased"]
+    },
+    {
+        "id": 0,
+        "name" : "Lewis",
+        "reference" : {"Lewis" : "https://iopwiki.com/wiki/Lewis"},
         "tags": ["Unreleased"]
     }
 ]

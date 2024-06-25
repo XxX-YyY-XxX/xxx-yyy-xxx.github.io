@@ -57,15 +57,15 @@ function timer(start_date, end_date, title, imgpath, {onend = null} = {}) {
 (function resetTimer() {
     timer(
         "Jun 25, 2024 18:30 UTC-0800",
-        "",
-        "",
-        "./assets/images/timer/.png",   // steins gate collab
+        "Jul 30, 2024 18:30 UTC-0800",
+        "Retrocausal Trie Interference",
+        "./assets/images/timer/LoginBg_ZH_CN_Steins_Gate_December_2023.png",
         {onend: resetTimer}
     )
 
     timer(
         "Jun 11, 2024 18:30 UTC-0800",
-        "Jun 25, 2024 18:30 UTC-0800",
+        "Jul 02, 2024 18:30 UTC-0800",
         "Critical Cascade Rerun",
         "./assets/images/timer/LoginBg_ZH_CN_Critical_Cascade.png",
         {onend: resetTimer}
