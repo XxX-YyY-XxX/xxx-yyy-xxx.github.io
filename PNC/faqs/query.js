@@ -345,5 +345,6 @@ window.cards = [
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1d71oio/weekly_professors_lounge_june_03_2024/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1dcisas/weekly_professors_lounge_june_10_2024/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1dhvcm4/weekly_professors_lounge_june_17_2024/
+// https://old.reddit.com/r/GFLNeuralCloud/comments/1dnarda/weekly_professors_lounge_june_24_2024/
 
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1dee3bd/cant_rebind_my_account_getting_game_center/

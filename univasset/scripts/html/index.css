@@ -24,6 +24,12 @@ div.embed-google > iframe {
 }
 /* #endregion */
 
+iframe#reddit-embed {
+    aspect-ratio: 1/1;
+    border: none;
+    width: 100%;
+}
+
 img.inline-img {
     vertical-align: middle;
     display: inline;

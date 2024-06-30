@@ -25,7 +25,8 @@ export const Embed = {
     google(/** link ends in alphanumeric */...namelinkpair: [title: string, link: string][]): HTMLDivElement;,
     twitter(/** \@{handle} */handle: string, ID: string): HTMLQuoteElement;,
     youtube(/** 11/34 long alphanumeric Youtube video ID string. */ID: string): HTMLIFrameElement;,
-    streamable(ID: string): HTMLIFrameElement;
+    streamable(ID: string): HTMLIFrameElement;,
+    reddit(/** End-to-end alphanumeric for comments. */ ID: string): HTMLIFrameElement;
 }
 
 export const List = {

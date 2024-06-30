@@ -335,7 +335,8 @@ const CARDS = [
             details('BigStupidJellyfish analyses.', List.unordered(
                 anchor('Vallhalla girls.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/valhalla'),
                 anchor('AK-15.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ak15')
-            ))
+            )),
+            details("GFC Analytics", Embed.google(["Doll Analytics v0.92 (EN) by GFC", "https://docs.google.com/spreadsheets/d/10LJdksnM3zipOb72IneJD7WVp3765JYJEGg0LnodzDI"]))
         )}`,
         tags: [dtag.TDOLL, dtag.TIER]
     },  //https://shimo.im/sheets/47kgJne6BeIpR4qV
@@ -2216,7 +2217,7 @@ const CARDS = [
         answer: `${anchor("Essay 1", 'https://old.reddit.com/r/girlsfrontline/comments/vbydlq/weekly_commanders_lounge_june_14_2022/id4n4dr/')}<br>
         ${anchor("Essay 2", "https://old.reddit.com/r/girlsfrontline/comments/1bif017/weekly_commanders_lounge_march_19_2024/kvxb1xk/")}`,
         tags: [dtag.MAJOR, dtag.RANK]
-    },
+    },  //@Rephrase
     {
         id: 237,
         question: `What are Specified Equipment Contracts for and how do I use them?`,
@@ -3653,6 +3654,9 @@ const CARDS = [
             fragment(anchor("u/Gawdzilla27's Android 14 fix", "https://old.reddit.com/r/girlsfrontline/comments/18wk6dz/weekly_commanders_lounge_january_02_2024/kgi8p2j/"), anchor(textStyle("0", "super"), "https://old.reddit.com/r/girlsfrontline/comments/18rdlor/gfl_crash_on_launch/kf2dde4/")),
             "Downgrading Android 12/14 to Android 11/13.", //https://old.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1y59kl/
             "Switch battery usage to unrestricted.", // https://old.reddit.com/r/girlsfrontline/comments/18ggxcs/weekly_commanders_lounge_december_12_2023/kdz3dxq/
+            details("u/Angelic_Force's tests", Embed.reddit("tejuwb/weekly_commanders_lounge_march_15_2022/i0wr7x1")),
+            details("u/Iwakaze's tests", Embed.reddit("vh81jl/weekly_commanders_lounge_june_21_2022/idn5z54")),
+
         )}`,
         tags: [dtag.TECH, dtag.ANDROID]
     },  // What if Android 13/14? https://old.reddit.com/r/girlsfrontline/comments/18r36mw/weekly_commanders_lounge_december_26_2023/kf0884y/
@@ -4257,7 +4261,6 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/kgpxdz7/
 // Quick Formations - https://old.reddit.com/r/girlsfrontline/comments/qg1inu/weekly_commanders_lounge_october_26_2021/hiu3wrw/
 
-// https://old.reddit.com/r/girlsfrontline/comments/1btt4kx/weekly_commanders_lounge_april_02_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1bzmnr3/weekly_commanders_lounge_april_09_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1c5aljd/weekly_commanders_lounge_april_16_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/
@@ -4269,3 +4272,4 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/1d7rtqh/weekly_commanders_lounge_june_04_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1dd8rka/weekly_commanders_lounge_june_11_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1dilac7/weekly_commanders_lounge_june_18_2024/
+// https://old.reddit.com/r/girlsfrontline/comments/1do0n1y/weekly_commanders_lounge_june_25_2024/

@@ -82,10 +82,23 @@ export const Embed = {
         const TEMP = {11: ID, 34: `videoseries?list=${ID}`}[ID.length];
         return setattr(document.createElement("iframe"), {src: `https://www.youtube.com/embed/${TEMP}`, loading: "lazy", allowFullscreen: true, toString: htmlString});
     },
-        /** Create an innerHTML text for Streamable embeds.
-     * @param {string} ID */
     streamable(ID) {
         return setattr(document.createElement("iframe"), {src: `https://streamable.com/e/${ID}`, loading: "lazy", allowFullscreen: true, toString: htmlString});
+    },
+    reddit(ID) {
+        if (false) {
+
+        } else {
+            const IFRAME = document.createElement("iframe");
+            IFRAME.id = "reddit-embed";
+            // showmore=false
+            // tejuwb/weekly_commanders_lounge_march_15_2022/i0wr7x1
+            IFRAME.src = `https://www.redditmedia.com/r/girlsfrontline/comments/${ID}/?depth=1&embed=true&showmedia=true&theme=dark`;
+            IFRAME.sandbox.add("allow-scripts", "allow-same-origin", "allow-popups");
+            IFRAME.toString = htmlString;
+            IFRAME.loading = "lazy";
+            return IFRAME;
+        }
     }
 }
 
