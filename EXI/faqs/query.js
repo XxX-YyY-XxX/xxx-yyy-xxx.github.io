@@ -10,7 +10,7 @@ const IMG_ASSET = "../assets/images/faqs/";
 //#region Functions
 /** @param {string} text @param {...number} ids */
 function getID(text, ...ids) {
-    return anchor(text, `https://xxx-yyy-xxx.github.io/EXI/faqs?id=${ID.join('+')}`, {type: "history"});
+    return anchor(text, `https://xxx-yyy-xxx.github.io/EXI/faqs?id=${ids.join('+')}`, {type: "history"});
 }
 //#endregion
 
