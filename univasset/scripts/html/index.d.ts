@@ -29,14 +29,20 @@ export const List = {
 
 /** Placehoder while no official implementation exists.  */
 type HTMLFigureElement = HTMLElement;
+
 type ImageType = "inline";
 export function image(src: string, alt: string, keys?: {type?: ImageType}): HTMLImageElement;
+
 export function figure(content: HTMLElement, caption: string | DocumentFragment): HTMLFigureElement;
+
 export function details(summary: string, content: AppendableElement): HTMLDetailsElement;
+
 export function fragment(...nodes: AppendableElement[]): DocumentFragment;
+
 type AnchorType = "history";
 export function anchor(content: AppendableElement, href: string, extra?: {
     type: AnchorType,
     data: any
 }): HTMLAnchorElement;
+
 export function table(headers: AppendableElement[], ...arrays: AppendableElement[][]): HTMLTableElement;

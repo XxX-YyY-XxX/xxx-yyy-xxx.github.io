@@ -4281,6 +4281,8 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/kgpxdz7/
 // Quick Formations - https://old.reddit.com/r/girlsfrontline/comments/qg1inu/weekly_commanders_lounge_october_26_2021/hiu3wrw/
 // https://old.reddit.com/r/girlsfrontline/comments/1bzmnr3/weekly_commanders_lounge_april_09_2024/kzsxfd8/
+// https://docs.google.com/spreadsheets/d/1ty239kyJbBs1sLhTo1JvSWuN0mIJsK1nwVdI6OLLtXo/edit?gid=143584538#gid=143584538
+// https://docs.google.com/document/d/1mRl1srQB96SCsehTtBeiJ-ZjuxLAoSE1bSHfKhIMcNE/edit
 
 // https://old.reddit.com/r/girlsfrontline/comments/1c5aljd/weekly_commanders_lounge_april_16_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/

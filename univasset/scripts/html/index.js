@@ -142,7 +142,7 @@ export function fragment(...nodes) {
     return setattr(new DocumentFragment(), {append: nodes});
 }
 
-export function anchor(content, href, {type = null, data = null} = {}) {
+export function anchor(content, href, {type = null, data = ""} = {}) {
     const ANCHOR = document.createElement("a");
     ANCHOR.append(content);
 
@@ -150,6 +150,7 @@ export function anchor(content, href, {type = null, data = null} = {}) {
         case "history":
             ANCHOR.addEventListener("click", event => {
                 history.pushState(data, "", href);
+                window.dispatchEvent(new PopStateEvent("popstate", {state: data}));
                 event.preventDefault(); //???
             });
             ANCHOR.toString = function() {
@@ -163,9 +164,11 @@ export function anchor(content, href, {type = null, data = null} = {}) {
             
                 /** @type {HTMLAnchorElement} */ const CLONE = this.cloneNode(true);
 
-                CLONE.setAttribute("onclick", "anchorHistoryClick(this)");
-                window.anchorHistoryClick ??= function() {
+                CLONE.setAttribute("onclick", "return anchorHistoryClick(this)");
+                window.anchorHistoryClick ??= function(a) {
+                    console.log("History anchor:", a)
                     history.pushState(data, "", href);
+                    window.dispatchEvent(new PopStateEvent("popstate", {state: data}));
                     return false;   // needed to prevent refresh?
                 }
 
@@ -174,7 +177,7 @@ export function anchor(content, href, {type = null, data = null} = {}) {
             // what if on drag
             // requires cancelling goto link, replaced with history on click
             // "javascript:void(0)"
-            return setattr(ANCHOR, {href: "javascript:void(0)"});
+            return setattr(ANCHOR, {href: href});
         default:
             return setattr(ANCHOR, {href: href, toString: htmlString});
     }

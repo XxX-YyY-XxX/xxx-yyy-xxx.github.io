@@ -1,5 +1,6 @@
 import {removeHTMLTag, getTemplateCloner} from "../externaljavascript.js";
 import {Random, cmp, setattr} from "../basefunctions/index.js";
+import {anchor} from "../html/index.js";
 
 // /** Checks if the element is interacted by the user. 
 //  * @param {Event} event */
@@ -24,7 +25,9 @@ import {Random, cmp, setattr} from "../basefunctions/index.js";
 
 
 /** @type {function(): DocumentFragment} */ var _fieldsetCloner;
+/** @type {HTMLInputElement} */ var RANGE;
 const HISTORY_DATA = {
+    /** Mostly used for twitter embeds. */
     reload: false
 }
 window.queryFunc = function() {
@@ -52,17 +55,16 @@ window.queryFunc = function() {
         TAGS_FIELD.appendChild(CLONE);
     }
 
-    /** @type {HTMLInputElement} */ const RANGE = document.querySelector('#Browse input[type="range"]');
+    RANGE = document.querySelector('#Browse input[type="range"]');
     RANGE.setAttribute("max", Math.ceil((window.cards.length) / 5));
 
     if ("history" in window) {  // Fallback if history does not exist.
         for (const FORM of document.forms) {
             FORM.addEventListener("submit", function(event) {
                 const PARAMS = new URLSearchParams(new FormData(this))
-                console.log(this.id, "submitted:", `${PARAMS}`)
 
                 // initialize history data first by searching values
-                history.pushState(HISTORY_DATA, null, `?${PARAMS}`);
+                history.pushState(HISTORY_DATA, "", `?${PARAMS}`);
                 window.dispatchEvent(new PopStateEvent("popstate", {state: HISTORY_DATA}));
 
                 event.preventDefault();
@@ -70,21 +72,26 @@ window.queryFunc = function() {
         }
 
         window.addEventListener("popstate", function(event) {
-            console.log("popstate run")
+            console.log("Popstate run.")
         
-            /** @type {HISTORY_DATA} */ const STATE = event.state;
-            if (STATE.reload) {
-                history.go();
-                return
-            }
+            // /** @type {HISTORY_DATA} */ const STATE = event.state;
+            // if (STATE.reload) {
+            //     history.go();
+            //     return
+            // }
         
+            // Inputs reset.
             document.querySelector(`#Keywords [name="search"]`).value = "";
+            TAGS_TEXT.value = "";
             for (const INPUT of document.querySelectorAll(`#Tags :checked`)) {
-                INPUT.dispatchEvent(new Event("change"));
+                INPUT.checked = false;
             }
         
             applyBoxes();
         })
+
+        history.replaceState(HISTORY_DATA, "", location.search);
+        window.dispatchEvent(new PopStateEvent("popstate", {state: HISTORY_DATA}));
     } else {
         applyBoxes();
     }
@@ -112,7 +119,7 @@ function getBoxes() {
                 const PAGE = Number(VALUE), COUNT = PAGE * 5;
                 setattr(RANGE, {value: PAGE, onchange: []});
                 return boxFrag(CARDS.slice(COUNT - 5, Math.min(COUNT, CARDS.length)));
-            case "id":  // change getid to pushstate
+            case "id":
                 const IDS = VALUE.split(" ").map(Number);
                 return boxFrag(CARDS.filter(x => IDS.includes(x.id)));
         }
@@ -134,8 +141,7 @@ const HREF = location.origin + location.pathname;
     CLONE.querySelector("fieldset").id = id;
     CLONE.querySelector("h3").appendChild(stringToHTML(question));
     CLONE.querySelector("#answer").replaceWith(stringToHTML(answer));
-    // change to history anchor
-    CLONE.querySelector("#tags").replaceWith(...tags.map(({name}) => setattr(document.createElement("a"), {classList: {add: ["tags"]}, textContent: name, href: HREF+"?tags="+name})));
+    CLONE.querySelector("#tags").replaceWith(...tags.map(x => setattr(anchor(x.name, `${HREF}?tags=${x.name}`, {type: "history"}), {classList: {add: ["tags"]}})));
 
     return CLONE;
 }
