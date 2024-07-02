@@ -2,8 +2,8 @@ import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
 timer(
    document.getElementById("event"),
-   "Jun 25, 2024 00:00 UTC-0800",
-   "./assets/images/timer/Theater.png"
+   "Jul 23, 2024 00:00 UTC-0800",
+   "./assets/images/timer/ga1j03n5wg8d1.webp"
 );
 
 timer(

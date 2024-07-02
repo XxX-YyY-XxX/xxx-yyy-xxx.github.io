@@ -2,9 +2,6 @@
 
 # Girls' Frontline Reddit Lounge FAQs
 
-# [Technical Help](/GFL/technical)
-- Troubleshooting, bug reports, and customer support.
-
 # [Theater](/GFL/theater)
 - Theater guides, battles, and formations.
 
@@ -413,7 +410,7 @@ https://old.reddit.com/r/girlsfrontline/comments/174fpb1/weekly_commanders_loung
 
 
 https://gamepress.gg/girlsfrontline/client-update-v304-and-v303
-
+https://old.reddit.com/r/girlsfrontline/comments/1bn4ish/april_roadmap/kwg0qmq/
 
 
 

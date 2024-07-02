@@ -276,7 +276,7 @@
             "open": 54
         },
         "intimacy": ["Shield of Friendship", "Neural Activation", "Risk Evasion Aid"],
-        "tags": ["Arma"]
+        "tags": ["Arma", "Fully Built"]
     },
     {
         "id": 1012,
@@ -2239,7 +2239,7 @@
         "name": "Okabe",
         "class": "Medic",
         "reference": {"Rintaro Okabe" : "https://steins-gate.fandom.com/wiki/Rintaro_Okabe"},
-        "fragments": ["Neural Kits", "Intimacy"],
+        "fragments": ["Neural Kits", "Intimacy", "Retrocausal Trie Interference"],
         "base": {
             "hp": 14029,
             "atk": 483,
@@ -2263,7 +2263,7 @@
             "open": -1
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
-        "tags": ["Unowned"]
+        "tags": []
     },
     {
         "id": 1078,
@@ -2294,7 +2294,7 @@
             "open": -1
         },
         "intimacy": ["Power Connection", "Coordinated Strike", "Victorious Inspiration"],
-        "tags": ["Unowned"]
+        "tags": []
     },
     {
         "id": 1077,
@@ -2325,7 +2325,7 @@
             "open": -1
         },
         "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"],
-        "tags": ["Unowned"]
+        "tags": []
     },
 
     {

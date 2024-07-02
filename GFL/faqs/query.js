@@ -1262,7 +1262,7 @@ const CARDS = [
             ],
             'Equipment Enhancement' : [
                 'Multiplies the base stat up to Lv. 10.',
-                "Doesn't matter if Equip Enhancement Pills or fodder equips (from crafting or 8-1N) are used, it's merely a matter of resource cost per point raised.", // https://old.reddit.com/r/girlsfrontline/comments/1bo2czw/weekly_commanders_lounge_march_26_2024/kwq48hb/
+                `Doesn't matter if ${getID("Equip Enhancement Pills or fodder equips", 517)} are used, it's merely a matter of resource cost per point raised.`, // https://old.reddit.com/r/girlsfrontline/comments/1bo2czw/weekly_commanders_lounge_march_26_2024/kwq48hb/
                 'As of 3.0, gets more enhancement points from enhanced fodders.'
             ]
         })}`,
@@ -4228,6 +4228,29 @@ const CARDS = [
         answer: `${getID("Costumer support", 37)}. It might be easier to locate it if you know your UID, or did a purchase with that account.`,
         tags: [dtag.TECH, dtag.ACCT]
     },
+    {
+        id: 464,
+        question: `Is there a walkthrough on clearing stages?`,
+        answer: `${List.description({
+            "13-4": [details("Greez Doc", Embed.google(["13-4 Silver guide", "https://docs.google.com/document/d/1UoOpElhpPFwLq5BJjynSfpGaTI1DloowiC_CQmsgyVY"]))]  // https://old.reddit.com/r/girlsfrontline/comments/1bzmnr3/weekly_commanders_lounge_april_09_2024/kzbpxm7/
+        })}`,
+        tags: [dtag.MAIN]
+    },  //@get serzha vids
+    {
+        id: 517,
+        question: `Where can I get fodders for equipment enhancement?`,
+        answer: `${List.description({
+            "Equipment Enhancement Pills": ["Black Market.", "Gem Shop."],
+            "Equipment Fodder": ["Equipment Factory Production.", "Night Battles, usually 8-1N."]
+        })}`,
+        tags: [dtag.EQUIP, dtag.TDOLL, dtag.GET]
+    },
+    {
+        id: 518,
+        question: `What does "Settle Reward" do? Seems ominous.`,
+        answer: `More like "Settlement Reward". Just shows you things you'll get once Theater ends.`,
+        tags: [dtag.THEATER]
+    },
     // {
     //     id: 0,
     //     question: ``,
@@ -4236,7 +4259,7 @@ const CARDS = [
     // },
 ];
 window.cards = CARDS;
-//      464
+//      
 // {
 //     const INDICES = Object.keys(CARDS).map(Number);
 //     /** @type {Set<number>} */ const DUPLICATES = new Set();
@@ -4248,9 +4271,6 @@ window.cards = CARDS;
 //     console.log("Duplicate:", ...DUPLICATES);
 // }
 
-
-
-
 // cdn.discordapp cleanup
 // gray zone proxy settings
 
@@ -4260,8 +4280,8 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/kgfv3bn/
 // https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/kgpxdz7/
 // Quick Formations - https://old.reddit.com/r/girlsfrontline/comments/qg1inu/weekly_commanders_lounge_october_26_2021/hiu3wrw/
+// https://old.reddit.com/r/girlsfrontline/comments/1bzmnr3/weekly_commanders_lounge_april_09_2024/kzsxfd8/
 
-// https://old.reddit.com/r/girlsfrontline/comments/1bzmnr3/weekly_commanders_lounge_april_09_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1c5aljd/weekly_commanders_lounge_april_16_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1cgndrn/weekly_commanders_lounge_april_30_2024/

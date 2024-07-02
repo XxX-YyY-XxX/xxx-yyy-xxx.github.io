@@ -2,17 +2,13 @@
 
 # Theater
 
-### What does "Settle Reward" do? It sounds ominous.
-
-> More like "Settlement Reward". Just shows you things you'll get once Theater ends.
-
 ### How much CE do I need for a good score?
 
-> For dolls, MODs and oaths take the forefrnt with advantaged dolls having +20% CE than usual.
+> For dolls, MODs and oaths take the forefront with advantaged dolls having +20% CE than usual.
 >
 > For fairies, they only need to be 5★ and Lv. 100.
 >
-> For HOCs, maxed out PA is better in stack but worse in battle.
+> For HOCs/FSTs, maxed out PA is better in stack but worse in battle.
 
 ### I wasn't able to place high enough to 5★ the reward HOC. Is there another way to get their central data?
 

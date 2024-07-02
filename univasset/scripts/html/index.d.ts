@@ -10,14 +10,6 @@ type TextStyleKey = "over" | "strike" | "super" | "bold" | "italic";
 /** Creates stylized text. */
 export function textStyle(text: string, ...styles: TextStyleKey[]): HTMLSpanElement;
 
-
-
-
-
-
-
-
-
 type AppendableElement = string | Node;
 
 export const Embed = {
@@ -42,5 +34,9 @@ export function image(src: string, alt: string, keys?: {type?: ImageType}): HTML
 export function figure(content: HTMLElement, caption: string | DocumentFragment): HTMLFigureElement;
 export function details(summary: string, content: AppendableElement): HTMLDetailsElement;
 export function fragment(...nodes: AppendableElement[]): DocumentFragment;
-export function anchor(content: AppendableElement, href: string): HTMLAnchorElement;
+type AnchorType = "history";
+export function anchor(content: AppendableElement, href: string, extra?: {
+    type: AnchorType,
+    data: any
+}): HTMLAnchorElement;
 export function table(headers: AppendableElement[], ...arrays: AppendableElement[][]): HTMLTableElement;

@@ -1,5 +1,5 @@
 // import {table, link, tooltip} from '../../univasset/scripts/htmlfunctions/htmlfunctions.js';
-// import {Embed, textStyle, image, figure, details} from "../../univasset/scripts/html/index.js";
+import {Embed, textStyle, image, figure, details, anchor} from "../../univasset/scripts/html/index.js";
 // import List from '../../univasset/scripts/htmlfunctions/lists.js';
 // import {STAR, TM, LESSEQUAL} from '../../univasset/scripts/specialchars.js';
 
@@ -10,12 +10,13 @@ const IMG_ASSET = "../assets/images/faqs/";
 //#region Functions
 /** @param {string} text @param {...number} ids */
 function getID(text, ...ids) {
-    return `<a href="https://xxx-yyy-xxx.github.io/EXI/faqs/?id=${ids.join("+")}">${text}</a>`
+    return anchor(text, `https://xxx-yyy-xxx.github.io/EXI/faqs?id=${ID.join('+')}`, {type: "history"});
 }
 //#endregion
 
 const dtag = {
-    MISC: {name: "Miscellaneous", description: "Cards with undecided tags."}
+    MISC: {name: "Miscellaneous", description: "Cards with undecided tags."},
+    RAND: {name: "to be deleted", description: "ggwp"}
 };
 window.tags = dtag;
 
@@ -24,12 +25,12 @@ window.cards = [
         id: 0,
         question: `dummy 1`,
         answer: ``,
-        tags: [dtag.MISC]
+        tags: [dtag.MISC, dtag.RAND]
     },
     {
         id: 1,
         question: `dummy 2`,
-        answer: ``,
+        answer: `${getID("getid test", 10)}`,
         tags: [dtag.MISC]
     },
     {
@@ -51,61 +52,61 @@ window.cards = [
         tags: [dtag.MISC]
     },
     {
-        id: 0,
+        id: 5,
         question: `dummy 1`,
         answer: ``,
         tags: [dtag.MISC]
     },
     {
-        id: 1,
+        id: 6,
         question: `dummy 2`,
         answer: ``,
-        tags: [dtag.MISC]
+        tags: [dtag.MISC, dtag.RAND]
     },
     {
-        id: 2,
+        id: 7,
         question: `dummy 3`,
         answer: ``,
         tags: [dtag.MISC]
     },
     {
-        id: 3,
+        id: 8,
         question: `dummy 4`,
         answer: ``,
         tags: [dtag.MISC]
     },
     {
-        id: 4,
+        id: 9,
         question: `dummy 5`,
         answer: ``,
         tags: [dtag.MISC]
     },
     {
-        id: 0,
+        id: 10,
         question: `dummy 1`,
         answer: ``,
         tags: [dtag.MISC]
     },
     {
-        id: 1,
+        id: 11,
         question: `dummy 2`,
         answer: ``,
         tags: [dtag.MISC]
     },
     {
-        id: 2,
+        id: 12,
         question: `dummy 3`,
         answer: ``,
         tags: [dtag.MISC]
     },
     {
-        id: 3,
+        id: 13,
         question: `dummy 4`,
         answer: ``,
         tags: [dtag.MISC]
     },
     {
-        id: 4,
+        id: 14,
         question: `dummy 5`,
         answer: ``,
         tags: [dtag.MISC]

@@ -54,93 +54,69 @@ window.queryFunc = function() {
     /** @type {HTMLInputElement} */ const RANGE = document.querySelector('#Browse input[type="range"]');
     RANGE.setAttribute("max", Math.ceil((window.cards.length) / 5));
 
-    if ("history" in window) {
-        console.log("history" in window)
-        for (const FORM of document.forms) {
-            switch (FORM.id) {
-                case "Keywords":
-                    // const TEXT = FORM.elements.namedItem("search")
-                    FORM.addEventListener("submit", function(event) {
-                        console.log(FORM.action)
-                        const DATA = new FormData(FORM)
-                        console.log(DATA.toString())
-                        console.log(Array.from(DATA.entries()))
-                        const QUERY = new URLSearchParams(DATA)
-                        console.log(QUERY.toString())
-                        console.log(Array.from(QUERY.entries()))
-                        event.preventDefault()
+    if ("history" in window) {  // Fallback if history does not exist.
+        console.log("History length:", history.length)
 
-                        // new URL(FORM.action)
-                        // history.pushState({twitter: has_twitter_embed}, null, "")
-                        // applyBoxes();
-                    })
-                    break;
-                case "Tags":
-                    FORM.addEventListener("submit", function(event) {
-                        console.log(FORM.action)
-                        const DATA = new FormData(FORM)
-                        console.log(DATA.toString())
-                        console.log(Array.from(DATA.entries()))
-                        const QUERY = new URLSearchParams(DATA)
-                        console.log(QUERY.toString())
-                        console.log(Array.from(QUERY.entries()))
-                        event.preventDefault()
-                    })
-                    break;
-                case "Browse":
-                    FORM.addEventListener("submit", function(event) {
-                        console.log(FORM.action)
-                        const DATA = new FormData(FORM)
-                        console.log(DATA.toString())
-                        console.log(Array.from(DATA.entries()))
-                        const QUERY = new URLSearchParams(DATA)
-                        console.log(QUERY.toString())
-                        console.log(Array.from(QUERY.entries()))
-                        event.preventDefault()
-                    })
-                    break;
-            }
+        for (const FORM of document.forms) {
+            const FORMDATA = new FormData(FORM);
+            FORM.addEventListener("submit", function(event) {
+                history.pushState(HISTORY_DATA, null, `?${new URLSearchParams(FORMDATA)}`);
+                event.preventDefault();
+            })
         }
+
+        window.addEventListener("popstate", event => {
+            console.log("popstate run")
+        
+            /** @type {HISTORY_DATA} */ const STATE = event.state;
+            if (STATE.reload) {
+                history.go();
+                return
+            }
+        
+            document.querySelector(`#Keywords [name="search"]`).value = "";
+            for (const INPUT of document.querySelectorAll(`#Tags :checked`)) {
+                INPUT.dispatchEvent(new Event("change"));
+            }
+        
+            applyBoxes();
+        })
     }
     //#endregion
 
+    // pushstate? replacestate?
     applyBoxes();
 }
 
-// window.addEventListener("popstate", function(event) {
-//     if (event.state.reload) {
-
-//     }
-//     applyBoxes()
-// })
-
 function applyBoxes() {
-    document.querySelector("#cards-field").append((() => {
-        /** @type {Card[]} */ const CARDS = window.cards;
-        HISTORY_DATA.reload = false;
+    document.querySelector("#cards-field").replaceChildren(getBoxes());
+}
 
-        for (const [KEY, VALUE] of new URLSearchParams(location.search)) {
-            if (!VALUE) return "Empty field.";
+function getBoxes() {
+    /** @type {Card[]} */ const CARDS = window.cards;
+    HISTORY_DATA.reload = false;
 
-            switch (KEY) {
-                case "search":
-                    const KEYWORDS = VALUE.replace(/\s+/, " ").toLowerCase().split(" ");
-                    return boxFrag(CARDS.filter(x => KEYWORDS.every(str => [x.question, x.answer].some(y => removeHTMLTag(y).toLowerCase().includes(str)))));
-                case "tags":
-                    const TAGS = VALUE.split(" ");
-                    return boxFrag(CARDS.filter(x => TAGS.subsetof(x.tags.map(y => y.name))));
-                case "page":
-                    const PAGE = Number(VALUE), COUNT = PAGE * 5;
-                    setattr(RANGE, {value: PAGE, onchange: []});
-                    return boxFrag(CARDS.slice(COUNT - 5, Math.min(COUNT, CARDS.length)));
-                case "id":
-                    const IDS = VALUE.split(" ").map(Number);
-                    return boxFrag(CARDS.filter(x => IDS.includes(x.id)));
-            }
+    for (const [KEY, VALUE] of new URLSearchParams(location.search)) {
+        if (!VALUE) return "Empty field.";
+
+        switch (KEY) {
+            case "search":
+                const KEYWORDS = VALUE.replace(/\s+/, " ").toLowerCase().split(" ");
+                return boxFrag(CARDS.filter(x => KEYWORDS.every(str => [x.question, x.answer].some(y => removeHTMLTag(y).toLowerCase().includes(str)))));
+            case "tags":
+                const TAGS = VALUE.split(" ");
+                return boxFrag(CARDS.filter(x => TAGS.subsetof(x.tags.map(y => y.name))));
+            case "page":
+                const PAGE = Number(VALUE), COUNT = PAGE * 5;
+                setattr(RANGE, {value: PAGE, onchange: []});
+                return boxFrag(CARDS.slice(COUNT - 5, Math.min(COUNT, CARDS.length)));
+            case "id":  // change getid to pushstate
+                const IDS = VALUE.split(" ").map(Number);
+                return boxFrag(CARDS.filter(x => IDS.includes(x.id)));
         }
+    }
 
-        return boxFrag(Array.from(Random.iterpop(CARDS, 5)));
-    })());
+    return boxFrag(Array.from(Random.iterpop(CARDS, 5)));    
 }
 
 //#region Card Creation
@@ -166,8 +142,8 @@ function boxFrag(card_array) {
     if (!card_array.length) return "No matches found.";
     const FRAGMENT = new DocumentFragment();
     for (const CARD of card_array.map(setQuestionBoxes)) {
-        if (CARD.querySelector(".twitter-tweet"))
-            HISTORY_DATA.reload = true
+        // if (CARD.querySelector(".twitter-tweet"))
+        //     HISTORY_DATA.reload = true
         FRAGMENT.appendChild(CARD)
     }
     return FRAGMENT;

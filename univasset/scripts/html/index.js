@@ -11,10 +11,6 @@ function htmlString() {
     return output;
 }
 
-
-
-
-
 // /** @type {(keyof HTMLElementTagNameMap)[]} */
 // export const STDHTMLELEMS = [];
 
@@ -31,13 +27,6 @@ export function textStyle(text, ...styles) {
     SPAN.classList.add(...styles.map(x => "text-" + TEXTSTYLE_CLASSES[x]));
     return SPAN;
 }
-
-
-
-
-
-
-
 
 export const Embed = {
     google(...namelinkpair) {
@@ -92,7 +81,6 @@ export const Embed = {
             const IFRAME = document.createElement("iframe");
             IFRAME.id = "reddit-embed";
             // showmore=false
-            // tejuwb/weekly_commanders_lounge_march_15_2022/i0wr7x1
             IFRAME.src = `https://www.redditmedia.com/r/girlsfrontline/comments/${ID}/?depth=1&embed=true&showmedia=true&theme=dark`;
             IFRAME.sandbox.add("allow-scripts", "allow-same-origin", "allow-popups");
             IFRAME.toString = htmlString;
@@ -154,8 +142,42 @@ export function fragment(...nodes) {
     return setattr(new DocumentFragment(), {append: nodes});
 }
 
-export function anchor(content, href) {
-    return setattr(document.createElement("a"), {href: href, append: [content], toString: htmlString});
+export function anchor(content, href, {type = null, data = null} = {}) {
+    const ANCHOR = document.createElement("a");
+    ANCHOR.append(content);
+
+    switch (type) {
+        case "history":
+            ANCHOR.addEventListener("click", event => {
+                history.pushState(data, "", href);
+                event.preventDefault(); //???
+            });
+            ANCHOR.toString = function() {
+                // var output = this.outerHTML;
+                // for (const ELEMENT of this.children) {
+                //     const STRVAR = ELEMENT.toString();
+                //     if (STRVAR.startsWith("[")) continue;
+                //     output = output.replace(ELEMENT.outerHTML, STRVAR)
+                // }
+                // return output;
+            
+                /** @type {HTMLAnchorElement} */ const CLONE = this.cloneNode(true);
+
+                CLONE.setAttribute("onclick", "anchorHistoryClick(this)");
+                window.anchorHistoryClick ??= function() {
+                    history.pushState(data, "", href);
+                    return false;   // needed to prevent refresh?
+                }
+
+                return CLONE.outerHTML;
+            }
+            // what if on drag
+            // requires cancelling goto link, replaced with history on click
+            // "javascript:void(0)"
+            return setattr(ANCHOR, {href: href});
+        default:
+            return setattr(ANCHOR, {href: href, toString: htmlString});
+    }
 }
 
 export function table(headers, ...arrays) {
