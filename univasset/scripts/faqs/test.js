@@ -31,49 +31,52 @@ const HISTORY_DATA = {
     reload: false
 }
 window.queryFunc = function() {
-    console.log("Page reloaded.")
-
     _fieldsetCloner = getTemplateCloner("#faq-card");
 
     /** @type {Tag} */ const TAG_DICT = window.tags;
     const TAGS_FIELD = document.querySelector("#Tags div");
     const _tagsearchCloner = getTemplateCloner("#query-tag");
-    /** @type {HTMLInputElement[]} */ const TAG_CHECKBOXES = [];
-    /** @type {HTMLInputElement} */ const TAGS_TEXT = document.querySelector('#Tags input[type="text"]');
     for (const {name, description} of Object.values(TAG_DICT).sort(cmp({key: x => x.name}))) {
-        const CLONE = _tagsearchCloner();
+        const FRAGMENT = _tagsearchCloner();
 
-        const INPUT = setattr(CLONE.querySelector("input"), {value: name});
-        INPUT.addEventListener("change", function(event) {
-            TAGS_TEXT.value = (this.checked ? TAGS_TEXT.value + " " + this.value : TAGS_TEXT.value.replace(this.value, "")).replace("  ", " ").trim();
-        });
-        TAG_CHECKBOXES.push(INPUT);
+        FRAGMENT.querySelector("input").value = name;
+        FRAGMENT.querySelector("#name").replaceWith(name);
+        FRAGMENT.querySelector(".tooltiptext").textContent = description;
 
-        CLONE.querySelector("#name").replaceWith(name);
-        CLONE.querySelector(".tooltiptext").textContent = description;
-
-        TAGS_FIELD.appendChild(CLONE);
+        TAGS_FIELD.appendChild(FRAGMENT);
     }
 
     RANGE = document.querySelector('#Browse input[type="range"]');
     RANGE.setAttribute("max", Math.ceil((window.cards.length) / 5));
 
-    if ("history" in window) {  // Fallback if history does not exist.
+    if ("history" in window) {
         for (const FORM of document.forms) {
-            FORM.addEventListener("submit", function(event) {
-                const PARAMS = new URLSearchParams(new FormData(this))
-
-                // initialize history data first by searching values
-                history.pushState(HISTORY_DATA, "", `?${PARAMS}`);
-                window.dispatchEvent(new PopStateEvent("popstate", {state: HISTORY_DATA}));
-
-                event.preventDefault();
-            })
+            switch (FORM.id) {
+                case "Tags":
+                    FORM.addEventListener("submit", function(event) {
+                        const PARAMS = new URLSearchParams(new FormData(this))
+                        history.pushState(HISTORY_DATA, "", `?tags=${[...PARAMS.values()].sort().join("+")}`);
+                        window.dispatchEvent(new PopStateEvent("popstate", {state: HISTORY_DATA}));
+                        event.preventDefault();
+                    })
+                    break;
+                case "cards-field":
+                    break;
+                default:
+                    FORM.addEventListener("submit", function(event) {
+                        const PARAMS = new URLSearchParams(new FormData(this))
+        
+                        // initialize history data first by searching values
+                        history.pushState(HISTORY_DATA, "", `?${PARAMS}`);
+                        window.dispatchEvent(new PopStateEvent("popstate", {state: HISTORY_DATA}));
+        
+                        event.preventDefault();
+                    })
+                    break;
+            }
         }
 
         window.addEventListener("popstate", function(event) {
-            console.log("Popstate run.")
-        
             // /** @type {HISTORY_DATA} */ const STATE = event.state;
             // if (STATE.reload) {
             //     history.go();
@@ -82,7 +85,6 @@ window.queryFunc = function() {
         
             // Inputs reset.
             document.querySelector(`#Keywords [name="search"]`).value = "";
-            TAGS_TEXT.value = "";
             for (const INPUT of document.querySelectorAll(`#Tags :checked`)) {
                 INPUT.checked = false;
             }
@@ -93,12 +95,43 @@ window.queryFunc = function() {
         history.replaceState(HISTORY_DATA, "", location.search);
         window.dispatchEvent(new PopStateEvent("popstate", {state: HISTORY_DATA}));
     } else {
+        // Fallback if history does not exist.
         applyBoxes();
     }
 }
 
 function applyBoxes() {
     document.querySelector("#cards-field").replaceChildren(getBoxes());
+}
+
+//#region Card Creation
+/** @param {string} text @returns {DocumentFragment} */ function stringToHTML(text) {
+    return setattr(new DocumentFragment(), {append: [...(new DOMParser()).parseFromString(text, "text/html").body.childNodes]});
+}
+
+const HREF = location.origin + location.pathname;
+/** @param {Card} */ function setQuestionBoxes({id, question, answer, tags}) {
+    const CLONE = _fieldsetCloner();
+
+    CLONE.querySelector("fieldset").id = id;
+    // CLONE.querySelector("label").append(id);
+    CLONE.querySelector("h3").appendChild(stringToHTML(question));
+    CLONE.querySelector("#answer").replaceWith(stringToHTML(answer));
+    CLONE.querySelector("#tags").replaceWith(...tags.map(x => setattr(anchor(x.name, `${HREF}?tags=${x.name}`, {type: "history"}), {classList: {add: ["tags"]}})));
+
+    return CLONE;
+}
+
+/** @param {Card[]} card_array */
+function boxFrag(card_array) {
+    if (!card_array.length) return "No matches found.";
+    const FRAGMENT = new DocumentFragment();
+    for (const CARD of card_array.map(setQuestionBoxes)) {
+        // if (CARD.querySelector(".twitter-tweet"))
+        //     HISTORY_DATA.reload = true
+        FRAGMENT.appendChild(CARD)
+    }
+    return FRAGMENT;
 }
 
 function getBoxes() {
@@ -126,35 +159,5 @@ function getBoxes() {
     }
 
     return boxFrag(Array.from(Random.iterpop(CARDS, 5)));    
-}
-
-//#region Card Creation
-/** @param {string} text @returns {DocumentFragment} */ function stringToHTML(text) {
-    return setattr(new DocumentFragment(), {append: [...(new DOMParser()).parseFromString(text, "text/html").body.childNodes]});
-}
-
-const HREF = location.origin + location.pathname;
-/** @param {Card} */ function setQuestionBoxes({id, question, answer, tags}) {
-    const CLONE = _fieldsetCloner();
-
-    // might add button for getting card id
-    CLONE.querySelector("fieldset").id = id;
-    CLONE.querySelector("h3").appendChild(stringToHTML(question));
-    CLONE.querySelector("#answer").replaceWith(stringToHTML(answer));
-    CLONE.querySelector("#tags").replaceWith(...tags.map(x => setattr(anchor(x.name, `${HREF}?tags=${x.name}`, {type: "history"}), {classList: {add: ["tags"]}})));
-
-    return CLONE;
-}
-
-/** @param {Card[]} card_array */
-function boxFrag(card_array) {
-    if (!card_array.length) return "No matches found.";
-    const FRAGMENT = new DocumentFragment();
-    for (const CARD of card_array.map(setQuestionBoxes)) {
-        // if (CARD.querySelector(".twitter-tweet"))
-        //     HISTORY_DATA.reload = true
-        FRAGMENT.appendChild(CARD)
-    }
-    return FRAGMENT;
 }
 //#endregion

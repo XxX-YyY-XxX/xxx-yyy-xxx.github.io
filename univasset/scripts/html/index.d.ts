@@ -41,8 +41,8 @@ export function fragment(...nodes: AppendableElement[]): DocumentFragment;
 
 type AnchorType = "history";
 export function anchor(content: AppendableElement, href: string, extra?: {
-    type: AnchorType,
-    data: any
+    type?: AnchorType,
+    data?: any
 }): HTMLAnchorElement;
 
 export function table(headers: AppendableElement[], ...arrays: AppendableElement[][]): HTMLTableElement;

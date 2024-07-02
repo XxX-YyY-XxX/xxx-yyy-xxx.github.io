@@ -142,7 +142,7 @@ export function fragment(...nodes) {
     return setattr(new DocumentFragment(), {append: nodes});
 }
 
-export function anchor(content, href, {type = null, data = ""} = {}) {
+export function anchor(content, href, {type = null, data = {}} = {}) {
     const ANCHOR = document.createElement("a");
     ANCHOR.append(content);
 
@@ -153,30 +153,18 @@ export function anchor(content, href, {type = null, data = ""} = {}) {
                 window.dispatchEvent(new PopStateEvent("popstate", {state: data}));
                 event.preventDefault(); //???
             });
-            ANCHOR.toString = function() {
-                // var output = this.outerHTML;
-                // for (const ELEMENT of this.children) {
-                //     const STRVAR = ELEMENT.toString();
-                //     if (STRVAR.startsWith("[")) continue;
-                //     output = output.replace(ELEMENT.outerHTML, STRVAR)
-                // }
-                // return output;
-            
+            ANCHOR.toString = function() {            
                 /** @type {HTMLAnchorElement} */ const CLONE = this.cloneNode(true);
 
                 CLONE.setAttribute("onclick", "return anchorHistoryClick(this)");
-                window.anchorHistoryClick ??= function(a) {
-                    console.log("History anchor:", a)
+                window.anchorHistoryClick ??= function(/** @type {HTMLAnchorElement} */a) {
                     history.pushState(data, "", href);
                     window.dispatchEvent(new PopStateEvent("popstate", {state: data}));
-                    return false;   // needed to prevent refresh?
+                    return false;   // Needed to prevent refresh.
                 }
 
-                return CLONE.outerHTML;
+                return htmlString.call(CLONE);
             }
-            // what if on drag
-            // requires cancelling goto link, replaced with history on click
-            // "javascript:void(0)"
             return setattr(ANCHOR, {href: href});
         default:
             return setattr(ANCHOR, {href: href, toString: htmlString});

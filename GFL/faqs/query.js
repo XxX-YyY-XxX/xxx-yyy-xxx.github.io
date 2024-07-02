@@ -6,14 +6,6 @@ const IMG_ASSET = "../assets/images/query/";
 
 /** @param {string} text @param {number[]} ID */
 function getID(text, ...ID) {
-    // get current path
-
-    // const A = document.createElement("a");
-    // A.textContent = text;
-    // A.href = `https://xxx-yyy-xxx.github.io/GFL/faqs?id=${ID.join('+')}`;
-    // A.toString = function() {return this.outerHTML};
-    // return A;
-
     return anchor(text, `https://xxx-yyy-xxx.github.io/GFL/faqs?id=${ID.join('+')}`)
 }
 
