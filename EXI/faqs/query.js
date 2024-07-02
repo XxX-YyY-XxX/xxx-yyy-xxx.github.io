@@ -16,7 +16,7 @@ function getID(text, ...ids) {
 
 const dtag = {
     MISC: {name: "Miscellaneous", description: "Cards with undecided tags."},
-    RAND: {name: "to be deleted", description: "ggwp"}
+    RAND: {name: "tbd", description: "ggwp"}
 };
 window.tags = dtag;
 

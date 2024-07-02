@@ -30,7 +30,6 @@ const HISTORY_DATA = {
 window.queryFunc = function() {
     console.log("Page reloaded.")
 
-    //#region Setup
     _fieldsetCloner = getTemplateCloner("#faq-card");
 
     /** @type {Tag} */ const TAG_DICT = window.tags;
@@ -59,15 +58,18 @@ window.queryFunc = function() {
     if ("history" in window) {  // Fallback if history does not exist.
         for (const FORM of document.forms) {
             FORM.addEventListener("submit", function(event) {
-                // tags form gives blank
                 const PARAMS = new URLSearchParams(new FormData(this))
-                console.log(this.id, "submitted:", PARAMS)
+                console.log(this.id, "submitted:", `${PARAMS}`)
+
+                // initialize history data first by searching values
                 history.pushState(HISTORY_DATA, null, `?${PARAMS}`);
+                window.dispatchEvent(new PopStateEvent("popstate", {state: HISTORY_DATA}));
+
                 event.preventDefault();
             })
         }
 
-        window.addEventListener("popstate", event => {
+        window.addEventListener("popstate", function(event) {
             console.log("popstate run")
         
             /** @type {HISTORY_DATA} */ const STATE = event.state;
@@ -83,11 +85,9 @@ window.queryFunc = function() {
         
             applyBoxes();
         })
+    } else {
+        applyBoxes();
     }
-    //#endregion
-
-    // pushstate? replacestate?
-    applyBoxes();
 }
 
 function applyBoxes() {
