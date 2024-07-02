@@ -28,6 +28,8 @@ const HISTORY_DATA = {
     reload: false
 }
 window.queryFunc = function() {
+    console.log("Page reloaded.")
+
     //#region Setup
     _fieldsetCloner = getTemplateCloner("#faq-card");
 
@@ -55,12 +57,12 @@ window.queryFunc = function() {
     RANGE.setAttribute("max", Math.ceil((window.cards.length) / 5));
 
     if ("history" in window) {  // Fallback if history does not exist.
-        console.log("History length:", history.length)
-
         for (const FORM of document.forms) {
-            const FORMDATA = new FormData(FORM);
             FORM.addEventListener("submit", function(event) {
-                history.pushState(HISTORY_DATA, null, `?${new URLSearchParams(FORMDATA)}`);
+                // tags form gives blank
+                const PARAMS = new URLSearchParams(new FormData(this))
+                console.log(this.id, "submitted:", PARAMS)
+                history.pushState(HISTORY_DATA, null, `?${PARAMS}`);
                 event.preventDefault();
             })
         }
@@ -132,6 +134,7 @@ const HREF = location.origin + location.pathname;
     CLONE.querySelector("fieldset").id = id;
     CLONE.querySelector("h3").appendChild(stringToHTML(question));
     CLONE.querySelector("#answer").replaceWith(stringToHTML(answer));
+    // change to history anchor
     CLONE.querySelector("#tags").replaceWith(...tags.map(({name}) => setattr(document.createElement("a"), {classList: {add: ["tags"]}, textContent: name, href: HREF+"?tags="+name})));
 
     return CLONE;

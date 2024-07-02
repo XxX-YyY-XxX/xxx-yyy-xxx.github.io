@@ -174,7 +174,7 @@ export function anchor(content, href, {type = null, data = null} = {}) {
             // what if on drag
             // requires cancelling goto link, replaced with history on click
             // "javascript:void(0)"
-            return setattr(ANCHOR, {href: href});
+            return setattr(ANCHOR, {href: "javascript:void(0)"});
         default:
             return setattr(ANCHOR, {href: href, toString: htmlString});
     }
