@@ -9,7 +9,7 @@ const IMG_ASSET = "../assets/images/faqs/"
 //#region Functions
 /** @param {string} text @param {...number} ids */
 function getID(text, ...ids) {
-    return anchor(text, `https://xxx-yyy-xxx.github.io/PNC/faqs/?id=${ids.join("+")}`);
+    return anchor(text, `./?id=${ids.join("+")}`);
 }
 //#endregion
 
@@ -346,5 +346,6 @@ window.cards = [
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1dcisas/weekly_professors_lounge_june_10_2024/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1dhvcm4/weekly_professors_lounge_june_17_2024/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1dnarda/weekly_professors_lounge_june_24_2024/
+// https://old.reddit.com/r/GFLNeuralCloud/comments/1dsq7tg/weekly_professors_lounge_july_01_2024/
 
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1dee3bd/cant_rebind_my_account_getting_game_center/

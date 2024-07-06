@@ -31,7 +31,7 @@ export const List = {
 type HTMLFigureElement = HTMLElement;
 
 type ImageType = "inline";
-export function image(src: string, alt: string, keys?: {type?: ImageType}): HTMLImageElement;
+export function image(src: string, alt: string, {mode}?: {mode: ImageType}): HTMLImageElement;
 
 export function figure(content: HTMLElement, caption: string | DocumentFragment): HTMLFigureElement;
 
@@ -39,9 +39,9 @@ export function details(summary: string, content: AppendableElement): HTMLDetail
 
 export function fragment(...nodes: AppendableElement[]): DocumentFragment;
 
-type AnchorType = "history";
-export function anchor(content: AppendableElement, href: string, extra?: {
-    type?: AnchorType,
+export function anchor(content: AppendableElement, href: string): HTMLAnchorElement;
+export function anchor(content: AppendableElement, href: string, extra: {
+    mode: "history",
     data?: any
 }): HTMLAnchorElement;
 

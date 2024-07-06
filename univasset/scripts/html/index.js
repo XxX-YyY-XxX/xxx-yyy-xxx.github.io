@@ -114,10 +114,10 @@ export const List = {
     }
 }
 
-export function image(src, alt, {type = null} = {}) {
+export function image(src, alt, {mode = null} = {}) {
     const IMG = setattr(document.createElement("img"), {src: src, alt: alt, loading: "lazy", toString: htmlString});
 
-    switch (type) {
+    switch (mode) {
         case "inline":
             IMG.classList.add("inline-img");
             break;
@@ -142,16 +142,15 @@ export function fragment(...nodes) {
     return setattr(new DocumentFragment(), {append: nodes});
 }
 
-export function anchor(content, href, {type = null, data = {}} = {}) {
-    const ANCHOR = document.createElement("a");
-    ANCHOR.append(content);
+export function anchor(content, href, {mode = null, data = {}} = {}) {
+    const ANCHOR = setattr(document.createElement("a"), {append: [content], href: href});
 
-    switch (type) {
+    switch (mode) {
         case "history":
             ANCHOR.addEventListener("click", event => {
                 history.pushState(data, "", href);
                 window.dispatchEvent(new PopStateEvent("popstate", {state: data}));
-                event.preventDefault(); //???
+                event.preventDefault(); // Needed to prevent refresh.
             });
             ANCHOR.toString = function() {            
                 /** @type {HTMLAnchorElement} */ const CLONE = this.cloneNode(true);
@@ -165,9 +164,9 @@ export function anchor(content, href, {type = null, data = {}} = {}) {
 
                 return htmlString.call(CLONE);
             }
-            return setattr(ANCHOR, {href: href});
+            return ANCHOR;
         default:
-            return setattr(ANCHOR, {href: href, toString: htmlString});
+            return setattr(ANCHOR, {toString: htmlString});
     }
 }
 

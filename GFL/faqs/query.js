@@ -6,7 +6,7 @@ const IMG_ASSET = "../assets/images/query/";
 
 /** @param {string} text @param {number[]} ID */
 function getID(text, ...ID) {
-    return anchor(text, `https://xxx-yyy-xxx.github.io/GFL/faqs?id=${ID.join('+')}`)
+    return anchor(text, `./?id=${ID.join("+")}`)
 }
 
 export const dtag = {
@@ -1250,7 +1250,7 @@ const CARDS = [
             'Equipment Calibration' : [
                 "Raises the equipment's base stat.",
                 'RNG dictates how many calibration tickets are wasted before maxing.',
-                fragment("When it's on its highest calibration, ", image(IMG_ASSET+"BlueMAXBox.png", "Maximum Calibration Indicator.", {type: "inline"}), " appears on said equipment.")
+                fragment("When it's on its highest calibration, ", image(IMG_ASSET+"BlueMAXBox.png", "Maximum Calibration Indicator.", {mode: "inline"}), " appears on said equipment.")
             ],
             'Equipment Enhancement' : [
                 'Multiplies the base stat up to Lv. 10.',
@@ -4287,3 +4287,4 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/1dd8rka/weekly_commanders_lounge_june_11_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1dilac7/weekly_commanders_lounge_june_18_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1do0n1y/weekly_commanders_lounge_june_25_2024/
+// https://old.reddit.com/r/girlsfrontline/comments/1dtgfxs/weekly_commanders_lounge_july_02_2024/
