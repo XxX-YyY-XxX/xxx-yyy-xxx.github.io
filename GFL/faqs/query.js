@@ -4,9 +4,9 @@ import {Embed, List, image, figure, details, fragment, table, anchor, textStyle}
 
 const IMG_ASSET = "../assets/images/query/";
 
-/** @param {string} text @param {number[]} ID */
-function getID(text, ...ID) {
-    return anchor(text, `./?id=${ID.join("+")}`)
+/** @param {string} text @param {number[]} ids */
+function getID(text, ...ids) {
+    return anchor(text, `./?id=${ids.join("+")}`, {mode: "history"})
 }
 
 export const dtag = {
