@@ -11,9 +11,6 @@ function htmlString() {
     return output;
 }
 
-// /** @type {(keyof HTMLElementTagNameMap)[]} */
-// export const STDHTMLELEMS = [];
-
 const TEXTSTYLE_CLASSES = Object.freeze({
     over: "overline",
     strike: "strikethrough",
@@ -21,7 +18,6 @@ const TEXTSTYLE_CLASSES = Object.freeze({
     bold: "bold",
     italic: "italic"
 })
-
 export function textStyle(text, ...styles) {
     const SPAN = setattr(document.createElement("span"), {textContent: text, toString: htmlString});
     SPAN.classList.add(...styles.map(x => "text-" + TEXTSTYLE_CLASSES[x]));
@@ -34,13 +30,12 @@ export const Embed = {
     
         const SELECT = setattr(document.createElement("select"), {disabled: namelinkpair.length === 1});
         const BUTTON = setattr(document.createElement("button"), {textContent: "Source", type: "button"});
-        const IFRAME = setattr(document.createElement("iframe"), {loading: "lazy"});
-    
+        const IFRAME = frame(namelinkpair[0][1] + EMBED);
+
         SELECT.addEventListener("change", function(event) {IFRAME.src = SELECT.value + EMBED});
         BUTTON.addEventListener("click", function(event) {window.open(SELECT.value)});
     
         SELECT.append(...namelinkpair.map(([name, link]) => setattr(document.createElement("option"), {textContent: name, value: link})));
-        IFRAME.src = namelinkpair[0][1] + EMBED;
     
         const DIV = setattr(document.createElement("div"), {classList: {add: ["embed-google"]}, append: [SELECT, BUTTON, document.createElement("br"), IFRAME]});
         DIV.toString = function() {
@@ -62,30 +57,28 @@ export const Embed = {
     },
     twitter(handle, ID) {
         return setattr(document.createElement("blockquote"), {
-            toString: htmlString,
-            appendChild: [anchor(`${handle}'s Tweet`, `https://twitter.com/${handle}/status/${ID}?ref_src=twsrc%5Etfw`)],
-            classList: {add: ["twitter-tweet"]}
+            // ?ref_src=twsrc%5Etfw
+            appendChild: [anchor(`${handle}'s Tweet`, `https://twitter.com/${handle}/status/${ID}`)],
+            classList: {add: ["twitter-tweet"]},
+            toString: htmlString
         });
     },
     youtube(ID) {
         const TEMP = {11: ID, 34: `videoseries?list=${ID}`}[ID.length];
-        return setattr(document.createElement("iframe"), {src: `https://www.youtube.com/embed/${TEMP}`, loading: "lazy", allowFullscreen: true, toString: htmlString});
+        return setattr(frame(`https://www.youtube.com/embed/${TEMP}`), {allow: "fullscreen", toString: htmlString});
     },
     streamable(ID) {
-        return setattr(document.createElement("iframe"), {src: `https://streamable.com/e/${ID}`, loading: "lazy", allowFullscreen: true, toString: htmlString});
+        return setattr(frame(`https://streamable.com/e/${ID}`), {allow: "fullscreen", toString: htmlString});
     },
     reddit(ID) {
         if (false) {
 
         } else {
-            const IFRAME = document.createElement("iframe");
-            IFRAME.id = "reddit-embed";
-            // showmore=false
-            IFRAME.src = `https://www.redditmedia.com/r/girlsfrontline/comments/${ID}/?depth=1&embed=true&showmedia=true&theme=dark`;
-            IFRAME.sandbox.add("allow-scripts", "allow-same-origin", "allow-popups");
-            IFRAME.toString = htmlString;
-            IFRAME.loading = "lazy";
-            return IFRAME;
+            return setattr(frame(`https://www.redditmedia.com/r/girlsfrontline/comments/${ID}/?depth=1&embed=true&showmedia=true&theme=dark`), {
+                sandbox: {add: ["allow-scripts", "allow-same-origin", "allow-popups"]},
+                toString: htmlString,
+                id: "reddit-embed"
+            })
         }
     }
 }
@@ -147,9 +140,10 @@ export function anchor(content, href, {mode = null, data = {}} = {}) {
 
     switch (mode) {
         case "history":
+            const EVENT = new PopStateEvent("popstate", {state: data});
             ANCHOR.addEventListener("click", event => {
                 history.pushState(data, "", href);
-                window.dispatchEvent(new PopStateEvent("popstate", {state: data}));
+                window.dispatchEvent(EVENT);
                 event.preventDefault(); // Needed to prevent refresh.
             });
             ANCHOR.toString = function() {            
@@ -159,7 +153,7 @@ export function anchor(content, href, {mode = null, data = {}} = {}) {
                 CLONE.setAttribute("onclick", "return anchorHistoryClick(this)");
                 window.anchorHistoryClick ??= function(/** @type {HTMLAnchorElement} */a) {
                     history.pushState(data, "", href);
-                    window.dispatchEvent(new PopStateEvent("popstate", {state: data}));
+                    window.dispatchEvent(EVENT);
                     return false;   // Needed to prevent refresh.
                 }
 
@@ -185,38 +179,8 @@ export function table(headers, ...arrays) {
     return setattr(document.createElement("table"), {toString: htmlString, append: [THEAD, TBODY]});
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const CHANGE = new Event("change");
-export function slider(initial_value, min, max, {vertical = false, name = ""} = {}) {
+export function slider(initial_value, min, max, {vertical = false} = {}) {
     const RANGE = setattr(document.createElement("input"), {type: "range", min: min, max: max, value: initial_value});
     RANGE.setAttribute("value", RANGE.value);
     RANGE.addEventListener("change", function(event) {this.setAttribute("value", this.value)});
@@ -236,21 +200,21 @@ export function slider(initial_value, min, max, {vertical = false, name = ""} = 
     })
 
     const DIV = document.createElement("div");
-    DIV.append(MINUS, RANGE, PLUS)
-    DIV.classList.add("slider")
+    DIV.append(MINUS, RANGE, PLUS);
+    DIV.classList.add("slider", vertical ? "vertical" : "horizontal");
     DIV.toString = function() {
         /** @type {HTMLDivElement} */ const CLONE = this.cloneNode(true);
         
+        CLONE.querySelector("input").setAttribute("onchange", "sliderRangeInput(this)");
+        window.sliderRangeInput ??= function(/**@type {HTMLInputElement}*/input) {
+            input.setAttribute("value", input.value);
+        }
+
         CLONE.querySelector("button:first-child").setAttribute("onclick", "sliderMinusButton(this)");
         window.sliderMinusButton ??= function(/**@type {HTMLButtonElement}*/button) {
             const SLIDER = button.nextElementSibling;
             SLIDER.value = Number(SLIDER.value) - 1;
             SLIDER.onchange();
-        }
-
-        CLONE.querySelector("input").setAttribute("onchange", "sliderRangeInput(this)");
-        window.sliderRangeInput ??= function(/**@type {HTMLInputElement}*/input) {
-            input.setAttribute("value", input.value);
         }
 
         CLONE.querySelector("button:last-child").setAttribute("onclick", "sliderPlusButton(this)");
@@ -259,6 +223,12 @@ export function slider(initial_value, min, max, {vertical = false, name = ""} = 
             SLIDER.value = Number(SLIDER.value) + 1;
             SLIDER.onchange();
         }
+
+        return CLONE.outerHTML;
     }
     return DIV;
+}
+
+function frame(src) {
+    return setattr(document.createElement("iframe"), {src: src, loading: "lazy"});
 }

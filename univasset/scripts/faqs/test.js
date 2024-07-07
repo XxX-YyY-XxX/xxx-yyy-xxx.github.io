@@ -2,8 +2,7 @@
 
 import {removeHTMLTag, getTemplateCloner} from "../externaljavascript.js";
 import {Random, cmp, setattr} from "../basefunctions/index.js";
-import {anchor, fragment} from "../html/index.js";
-import "https://platform.twitter.com/widgets.js";
+import {anchor, fragment, slider} from "../html/index.js";
 
 // /** Checks if the element is interacted by the user. 
 //  * @param {Event} event */
@@ -26,10 +25,18 @@ import "https://platform.twitter.com/widgets.js";
  * @property {Tag[keyof Tag][]} Card.tags
  */
 
+/** 
+ * @interface Window
+ * @property {Card[]} cards
+ */
+
 /** @type {function(): DocumentFragment} */ var _fieldsetCloner;
-/** @type {HTMLInputElement} */ var RANGE;
 window.queryFunc = function() {
     _fieldsetCloner = getTemplateCloner("#faq-card");
+
+    const SLIDER = slider(1, 1, Math.ceil(window.cards.length / 5));
+    document.querySelector("#Browse span").replaceWith(SLIDER);
+    SLIDER.querySelector("input").name = "page";
 
     /** @type {Tag} */ const TAG_DICT = window.tags;
     const TAGS_FIELD = document.querySelector("#Tags div");
@@ -43,9 +50,6 @@ window.queryFunc = function() {
 
         TAGS_FIELD.appendChild(FRAGMENT);
     }
-
-    RANGE = document.querySelector('#Browse input[type="range"]');
-    RANGE.setAttribute("max", Math.ceil((window.cards.length) / 5));
 
     // HTMLFormElement.action = value is previous URL
     for (const FORM of document.forms) {
@@ -117,7 +121,6 @@ function getBoxes() {
                 return boxFrag(CARDS.filter(x => TAGS.subsetof(x.tags.map(y => y.name))));
             case "page":
                 const PAGE = Number(VALUE), COUNT = PAGE * 5;
-                setattr(RANGE, {value: PAGE, onchange: []});
                 return boxFrag(CARDS.slice(COUNT - 5, Math.min(COUNT, CARDS.length)));
             case "id":
                 const IDS = VALUE.split(" ").map(Number);

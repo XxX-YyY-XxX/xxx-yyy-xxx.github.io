@@ -1,0 +1,62 @@
+<!-- 
+    subheader: page subheader/description
+    uses history
+-->
+
+<body>
+    <include src="/univasset/scripts/pageheader/header.html" param-description="subheader"></include>
+
+    <div class="container">
+        <section id="main_content">
+            <div class="tab-group">
+                <div class="tab-button">
+                    <label><input type="radio" name="tabs" value="Keywords" checked /><h2>Keywords</h2></label>
+                    <label><input type="radio" name="tabs" value="Tags" /><h2>Tags</h2></label>
+                    <label><input type="radio" name="tabs" value="Browse" /><h2>Browse</h2></label>
+                </div>
+                
+                <form id="Keywords" class="tab-body">
+                    <input type="text" name="search" placeholder="Separate keywords with whitespace" />
+                    <input type="submit" />
+                </form>
+                
+                <form id="Tags" class="tab-body">
+                    <div></div>
+                    <input type="submit" />
+                </form>
+        
+                <form id="Browse" class="tab-body">
+                    <span></span>
+                    <input type="submit" />
+                </form>
+            </div>
+    
+            <form id="Cards">
+                <div></div>
+                <input type="submit" />
+            </form>
+        </section>
+    </div>
+</body>
+
+<template id="query-tag">
+    <label class="tags tooltip">
+        <input type="checkbox" name="tag" />
+        <span id="name"></span>
+        <span class="tooltiptext"></span>
+    </label>
+</template>
+
+<template id="faq-card">
+    <fieldset>
+        <legend>
+            <h3>
+                <label><input type="checkbox" name="id"></label>&#41;&#32;
+            </h3>
+        </legend>
+        <span id="answer"></span>
+        <hr>
+        Tags:
+        <span id="tags"></span>
+    </fieldset>
+</template>

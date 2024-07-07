@@ -1,0 +1,155 @@
+/* uses history */
+
+@import "/main.css";
+@import "../tooltip.css";
+@import "../tabs.css";
+@import "../html/index.css";
+
+@import "./nonest.css";
+
+input[type="checkbox"] {
+    appearance: none;
+    margin: 0px;
+}
+
+dl, table, blockquote, figure {
+    margin: 0px;
+}
+
+body {
+    --fixed-right: 20px;
+}
+
+/* #region Tabs */
+.tab-button {
+    & > label {
+        background-color: transparent;
+        line-height: 10px;
+    }
+
+    & > label:has(input:checked) {
+        background-color: darkgreen;
+    }
+
+    & h2 {
+        margin: 0px 0px 10px;
+    }
+}
+
+#Keywords input[type="text"] {
+    width: calc(100% - 75px);
+}
+
+#Tags input[type="submit"] {
+    margin-top: 5px;
+    position: relative;
+    /* why not right? */
+    left: calc(100% - 60px);
+}
+
+#Tags div {
+    text-align: center;
+}
+
+#Browse .slider {
+    width: calc(100% - 67px);
+}
+/* #endregion */
+
+.tags {
+    outline: 2px solid aqua;
+    border-radius: 10rem;
+    padding: 0px 3px;
+    background: transparent;
+    color: aqua;
+    display: inline-grid;                       /* For making the tag buttons stay together on wrap. */
+
+    #Tags &:has(input:checked) {
+        background: aqua;
+        color: black;
+    }
+
+    & > .tooltiptext {
+        bottom: 110%;
+    }
+}
+
+fieldset {
+    /* Staples */
+    margin-top: 5px;
+
+    & > legend > h3 {
+        margin: 0px;
+    }
+
+    & > hr {
+        border-top: 1px dashed;
+    }
+
+    & > .tags {
+        line-height: 20px;
+        margin: 0 5px;
+        text-shadow: none;
+    }
+
+    /* Contents */
+    & :is(ol, ul) {
+        margin: 0px;
+        padding-inline-start: 20px;
+    }
+
+    & a {
+        text-decoration: none;
+    }
+
+    & img:not(.inline-img) {
+        margin: 0 auto;
+        display: block;
+    }    
+}
+
+/* #region Details and Summary */
+details, details > summary {
+    display: inline;
+}
+
+details[open] {
+    display: block;
+    background-color: #3a3a3a80;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+details[open] > summary {
+    text-align: center;
+    display: block;
+}
+/* #endregion */
+
+/* #region Cards form */
+fieldset legend label {
+    cursor: pointer;
+}
+
+fieldset:has(legend input:checked) {
+    border-color: crimson;
+}
+
+#Cards input[type="submit"] {
+    --position-multiplier: 1;
+    display: none;
+    position: fixed;
+    right: calc(var(--fixed-right) * var(--position-multiplier));
+    bottom: calc(20px * var(--position-multiplier));
+}
+
+@media screen and (resolution > 1dppx) {
+    #Cards input[type="submit"] {
+        --position-multiplier: 1.5;
+    }
+}
+
+#Cards:has(legend input:checked) input[type="submit"] {
+    display: block;
+}
+/* #endregion */
