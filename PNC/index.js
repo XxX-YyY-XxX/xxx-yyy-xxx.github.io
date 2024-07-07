@@ -11,10 +11,9 @@ const _timerTemplate = getTemplateCloner("#timer-block");
  * @param {Event} event */
 function textResize(event) {
     const PARENT = this.parentElement, STYLE = this.style;
-    var remsize = 10;
     STYLE.removeProperty("font-size");
-    while (this.offsetWidth > PARENT.clientWidth)
-        STYLE.fontSize = `${remsize--}rem`;
+    for (let fontsize = 15; this.offsetWidth > PARENT.clientWidth; fontsize--)
+        STYLE.fontSize = `${fontsize}em`;
 }
 
 /** Creates a timer for events.

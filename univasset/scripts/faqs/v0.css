@@ -10,12 +10,12 @@ input[type="checkbox"], input[type="radio"] {
     margin: 0px;
 }
 
-dl, table, blockquote, figure {
-    margin: 0px;
+input[type="number"] {
+    width: 40px;
 }
 
-body {
-    --fixed-right: 20px;
+dl, table, blockquote, figure {
+    margin: 0px;
 }
 
 /* #region Tabs */
@@ -42,14 +42,17 @@ body {
     width: calc(100% - 75px);
 }
 
+#Tags input[type="text"] {
+    display: none;
+}
+
 #Tags input[type="submit"] {
     margin-top: 5px;
     position: relative;
-    /* why not right? */
     left: calc(100% - 60px);
 }
 
-#Tags div {
+#Tags div, #Browse {
     text-align: center;
 }
 /* #endregion */
@@ -148,21 +151,4 @@ iframe[src*="www.youtube.com"], iframe[src*="streamable.com"] {
 
 
 
-fieldset legend label {
-    cursor: pointer;
-}
 
-fieldset:has(legend input:checked) {
-    border-color: crimson;
-}
-
-#Cards input[type="submit"] {
-    display: none;
-    position: fixed;
-    right: var(--fixed-right);
-    bottom: 20px;
-}
-
-#Cards:has(legend input:checked) input[type="submit"] {
-    display: block;
-}

@@ -1,5 +1,6 @@
 <!-- 
     subheader: page subheader/description
+    uses history
 -->
 
 <body>
@@ -20,7 +21,6 @@
             
             <form id="Tags" class="tab-body">
                 <div></div>
-                <input type="text" name="tags" />
                 <input type="submit" />
             </form>
     
@@ -33,14 +33,17 @@
                 <input type="submit" />
             </form>
     
-            <div id="cards-field"></div>
+            <form id="Cards">
+                <div></div>
+                <input type="submit" />
+            </form>
         </section>
     </div>
 </body>
 
 <template id="query-tag">
     <label class="tags tooltip">
-        <input type="checkbox" />
+        <input type="checkbox" name="tag" />
         <span id="name"></span>
         <span class="tooltiptext"></span>
     </label>
@@ -49,8 +52,9 @@
 <template id="faq-card">
     <fieldset>
         <legend>
-            <!-- id button -->
-            <h3></h3>
+            <h3>
+                <label><input type="checkbox" name="id"></label>&#41;&#32;
+            </h3>
         </legend>
         <span id="answer"></span>
         <hr>

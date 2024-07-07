@@ -1,3 +1,5 @@
+/* uses history */
+
 @import "/main.css";
 @import "../tooltip.css";
 @import "../tabs.css";
@@ -10,12 +12,12 @@ input[type="checkbox"], input[type="radio"] {
     margin: 0px;
 }
 
-input[type="number"] {
-    width: 40px;
-}
-
 dl, table, blockquote, figure {
     margin: 0px;
+}
+
+body {
+    --fixed-right: 20px;
 }
 
 /* #region Tabs */
@@ -34,25 +36,18 @@ dl, table, blockquote, figure {
     }
 }
 
-.tab-body {
-    display: block;
-}
-
 #Keywords input[type="text"] {
     width: calc(100% - 75px);
-}
-
-#Tags input[type="text"] {
-    display: none;
 }
 
 #Tags input[type="submit"] {
     margin-top: 5px;
     position: relative;
+    /* why not right? */
     left: calc(100% - 60px);
 }
 
-#Tags div, #Browse {
+#Tags div {
     text-align: center;
 }
 /* #endregion */
@@ -140,15 +135,30 @@ iframe[src*="www.youtube.com"], iframe[src*="streamable.com"] {
 }
 /* #endregion */
 
+/* #region Cards form */
+fieldset legend label {
+    cursor: pointer;
+}
 
+fieldset:has(legend input:checked) {
+    border-color: crimson;
+}
 
+#Cards input[type="submit"] {
+    --position-multiplier: 1;
+    display: none;
+    position: fixed;
+    right: calc(var(--fixed-right) * var(--position-multiplier));
+    bottom: calc(20px * var(--position-multiplier));
+}
 
+@media screen and (resolution > 1dppx) {
+    #Cards input[type="submit"] {
+        --position-multiplier: 1.5;
+    }
+}
 
-
-
-
-
-
-
-
-
+#Cards:has(legend input:checked) input[type="submit"] {
+    display: block;
+}
+/* #endregion */
