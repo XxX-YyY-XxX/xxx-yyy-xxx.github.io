@@ -50,34 +50,20 @@ window.queryFunc = function() {
 
     // HTMLFormElement.action = value is previous element
     for (const FORM of document.forms) {
-        switch (FORM.id) {
-            case "Tags":
-                FORM.addEventListener("submit", function(event) {
-                    const PARAMS = new URLSearchParams(new FormData(this));
-                    console.log("Params:", PARAMS)
-                    history.pushState(HISTORY_DATA, "", `?tags=${[...PARAMS.values()].sort().join("+")}`);
-                    window.dispatchEvent(new PopStateEvent("popstate", {state: HISTORY_DATA}));
-                    event.preventDefault();
-                })
-                break;
-            case "Cards":
-                FORM.addEventListener("submit", function(event) {
-                    const PARAMS = new URLSearchParams(new FormData(this));
-                    console.log("Params:", PARAMS)
-                    history.pushState(HISTORY_DATA, "", `?id=${[...PARAMS.values()].sort().join("+")}`);
-                    window.dispatchEvent(new PopStateEvent("popstate", {state: HISTORY_DATA}));
-                    event.preventDefault();
-                })
-                break;
-            default:
-                FORM.addEventListener("submit", function(event) {
-                    const PARAMS = new URLSearchParams(new FormData(this));
-                    history.pushState(HISTORY_DATA, "", `?${PARAMS}`);
-                    window.dispatchEvent(new PopStateEvent("popstate", {state: HISTORY_DATA}));    
-                    event.preventDefault();
-                })
-                break;
-        }
+        /** @type {function(URLSearchParams): string} */
+        const _queryMaker = (() => {
+            switch (FORM.id) {
+                case "Tags":    return x => `./?tags=${[...x.values()].sort(cmp()).join("+")}`;
+                case "Cards":   return x => `./?id=${[...x.values()].map(Number).sort(cmp()).join("+")}`;
+                default:        return x => `./?${x}`;
+            }    
+        })();
+        FORM.addEventListener("submit", function(event) {
+            const PARAMS = new URLSearchParams(new FormData(this));
+            history.pushState(HISTORY_DATA, "", _queryMaker(PARAMS));
+            window.dispatchEvent(new PopStateEvent("popstate", {state: HISTORY_DATA}));    
+            event.preventDefault();
+        });
     }
 
     history.replaceState(HISTORY_DATA, "", location.search);
@@ -97,7 +83,7 @@ window.addEventListener("popstate", function(event) {
     for (const INPUT of document.querySelectorAll(`#Tags :checked`))
         INPUT.checked = false;
 
-    document.querySelector("#Cards").replaceChildren(OUTPUT);
+    document.querySelector("#Cards > div").replaceChildren(OUTPUT);
 })
 
 //#region Card Creation
