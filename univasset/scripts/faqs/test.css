@@ -14,6 +14,10 @@ dl, table, blockquote, figure {
     margin: 0px;
 }
 
+body {
+    --fixed-right: -100px;
+}
+
 /* #region Tabs */
 .tab-button {
     & > label {
@@ -144,11 +148,21 @@ iframe[src*="www.youtube.com"], iframe[src*="streamable.com"] {
 
 
 
+fieldset legend label {
+    cursor: pointer;
+}
 
-fieldset:has(> legend input:checked) {
+fieldset:has(legend input:checked) {
     border-color: crimson;
 }
 
-.container:has(#cards-field legend input:checked) ~ button {
+#Cards input[type="submit"] {
+    display: none;
+    position: fixed;
+    right: var(--fixed-right);
+    bottom: -100px;
+}
+
+#Cards:has(legend input:checked) input[type="submit"] {
     display: block;
 }

@@ -420,7 +420,8 @@ const CARDS = [
                 anchor("Girls' Frontline Full Story Comprehension Playlist Translated up to Isomer", 'https://youtube.com/playlist?list=PL9y52Flm1yM-tJJoom2zfrWTpaO1mTw8M'),
                 anchor("u/DoctuhD's Girls' Frontline Summary", 'https://docs.google.com/document/d/1oA07O2HGwvmoBqm-UKTTuSdxjLnSIbRHd5b2FuYOph0'),
                 details("u/Signal_Abroad1427's Hurricane Rescue video", Embed.youtube("oH1st5OxdyY")),
-                anchor("u/pointblanksniper collection", "https://old.reddit.com/r/girlsfrontline/comments/13phxi5/weekly_commanders_lounge_may_23_2023/jlv5bns/")
+                anchor("u/pointblanksniper collection", "https://old.reddit.com/r/girlsfrontline/comments/13phxi5/weekly_commanders_lounge_may_23_2023/jlv5bns/"),
+                details("u/CuriousCanidae's Timeline Spreadsheet", Embed.google(["GFL Storyline", "https://docs.google.com/spreadsheets/d/1Gm5kl_ep0MY29WPxBd-CqQrtAmDtzxSO"]))
             ]
         })}`,
         tags: [dtag.LORE, dtag.MAJOR, dtag.COLLAB, dtag.REF]
@@ -1949,6 +1950,7 @@ const CARDS = [
                 details("NPCs", Embed.youtube("20kEk-lrxqY")),
                 anchor("Cutscene interpreter", "https://gfl.amaryllisworks.pw/#side-12-0")
             ))
+            // 6th anniv
         )}`,
         tags: [dtag.LORE, dtag.ANNIV, dtag.ADJUNCT]
     },
@@ -2439,9 +2441,9 @@ const CARDS = [
     {
         id: 272,
         question: `What's a T-Doll Memoir?`,
-        answer: `MOD stories.`,
+        answer: `MOD stories, by the coffee machine.`,
         tags: [dtag.SIDE, dtag.MOD]
-    },  //@Clarify
+    },  //@Clarify, @Visual
     {
         id: 273,
         question: `Will I lose the tile buffs if my dolls retreated/moved/lose link/die?`,
@@ -4275,8 +4277,9 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/1bzmnr3/weekly_commanders_lounge_april_09_2024/kzsxfd8/
 // https://docs.google.com/spreadsheets/d/1ty239kyJbBs1sLhTo1JvSWuN0mIJsK1nwVdI6OLLtXo/edit?gid=143584538#gid=143584538
 // https://docs.google.com/document/d/1mRl1srQB96SCsehTtBeiJ-ZjuxLAoSE1bSHfKhIMcNE/edit
+// Mobile Armor - https://old.reddit.com/r/girlsfrontline/comments/1c5aljd/weekly_commanders_lounge_april_16_2024/l0s6bry/
+// Fragmented Visual Data - https://old.reddit.com/r/girlsfrontline/comments/1c5aljd/weekly_commanders_lounge_april_16_2024/kzxok6e/
 
-// https://old.reddit.com/r/girlsfrontline/comments/1c5aljd/weekly_commanders_lounge_april_16_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1cgndrn/weekly_commanders_lounge_april_30_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/

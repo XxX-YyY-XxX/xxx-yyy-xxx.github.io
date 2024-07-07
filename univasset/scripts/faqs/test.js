@@ -48,11 +48,11 @@ window.queryFunc = function() {
     RANGE = document.querySelector('#Browse input[type="range"]');
     RANGE.setAttribute("max", Math.ceil((window.cards.length) / 5));
 
+    // HTMLFormElement.action = value is previous element
     for (const FORM of document.forms) {
         switch (FORM.id) {
             case "Tags":
                 FORM.addEventListener("submit", function(event) {
-                    console.log("Action:", this.action)
                     const PARAMS = new URLSearchParams(new FormData(this));
                     console.log("Params:", PARAMS)
                     history.pushState(HISTORY_DATA, "", `?tags=${[...PARAMS.values()].sort().join("+")}`);
@@ -60,25 +60,20 @@ window.queryFunc = function() {
                     event.preventDefault();
                 })
                 break;
-            case "cards-field":
+            case "Cards":
                 FORM.addEventListener("submit", function(event) {
-                    console.log("Action:", this.action)
                     const PARAMS = new URLSearchParams(new FormData(this));
                     console.log("Params:", PARAMS)
-                    // history.pushState(HISTORY_DATA, "", `?tags=${[...PARAMS.values()].sort().join("+")}`);
-                    // window.dispatchEvent(new PopStateEvent("popstate", {state: HISTORY_DATA}));
+                    history.pushState(HISTORY_DATA, "", `?id=${[...PARAMS.values()].sort().join("+")}`);
+                    window.dispatchEvent(new PopStateEvent("popstate", {state: HISTORY_DATA}));
                     event.preventDefault();
                 })
                 break;
             default:
                 FORM.addEventListener("submit", function(event) {
-                    console.log("Action:", this.action)
                     const PARAMS = new URLSearchParams(new FormData(this));
-    
-                    // initialize history data first by searching values
                     history.pushState(HISTORY_DATA, "", `?${PARAMS}`);
-                    window.dispatchEvent(new PopStateEvent("popstate", {state: HISTORY_DATA}));
-    
+                    window.dispatchEvent(new PopStateEvent("popstate", {state: HISTORY_DATA}));    
                     event.preventDefault();
                 })
                 break;
@@ -102,19 +97,17 @@ window.addEventListener("popstate", function(event) {
     for (const INPUT of document.querySelectorAll(`#Tags :checked`))
         INPUT.checked = false;
 
-    document.querySelector("#cards-field").replaceChildren(OUTPUT);
+    document.querySelector("#Cards").replaceChildren(OUTPUT);
 })
 
 //#region Card Creation
 /** @param {string} text */ function stringToHTML(text) {
-    return setattr(new DocumentFragment(), {append: [...(new DOMParser()).parseFromString(text, "text/html").body.childNodes]});
+    return fragment(...(new DOMParser()).parseFromString(text, "text/html").body.childNodes);
 }
 
-// const HREF = location.origin + location.pathname;
 /** @param {Card} */ function setQuestionBoxes({id, question, answer, tags}) {
     const CLONE = _fieldsetCloner();
 
-    // CLONE.querySelector("fieldset").id = id;
     CLONE.querySelector("label").append(id);
     CLONE.querySelector("input").value = id;
     CLONE.querySelector("h3").appendChild(stringToHTML(question));
@@ -127,8 +120,6 @@ window.addEventListener("popstate", function(event) {
 /** @param {Card[]} card_array */
 function boxFrag(card_array) {
     return card_array.length ? fragment(...card_array.map(setQuestionBoxes)) : "No matches found.";
-    // if (!card_array.length) return "No matches found.";
-    // return fragment(...card_array.map(setQuestionBoxes));
 }
 
 function getBoxes() {

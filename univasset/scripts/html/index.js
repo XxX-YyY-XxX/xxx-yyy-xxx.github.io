@@ -148,6 +148,8 @@ export function anchor(content, href, {mode = null, data = {}} = {}) {
     switch (mode) {
         case "history":
             ANCHOR.addEventListener("click", event => {
+                console.log("Listener run.")
+
                 history.pushState(data, "", href);
                 window.dispatchEvent(new PopStateEvent("popstate", {state: data}));
                 event.preventDefault(); // Needed to prevent refresh.
@@ -157,6 +159,8 @@ export function anchor(content, href, {mode = null, data = {}} = {}) {
 
                 CLONE.setAttribute("onclick", "return anchorHistoryClick(this)");
                 window.anchorHistoryClick ??= function(/** @type {HTMLAnchorElement} */a) {
+                    console.log("Inline run.")
+
                     history.pushState(data, "", href);
                     window.dispatchEvent(new PopStateEvent("popstate", {state: data}));
                     return false;   // Needed to prevent refresh.

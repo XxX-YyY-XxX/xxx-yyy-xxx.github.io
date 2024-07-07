@@ -18,7 +18,7 @@ export const Embed = {
     twitter(/** \@{handle} */handle: string, ID: string): HTMLQuoteElement;,
     youtube(/** 11/34 long alphanumeric Youtube video ID string. */ID: string): HTMLIFrameElement;,
     streamable(ID: string): HTMLIFrameElement;,
-    reddit(/** End-to-end alphanumeric for comments. */ ID: string): HTMLIFrameElement;
+    reddit(/** End-to-end alphanumeric for comments. */ID: string): HTMLIFrameElement;
 }
 
 export const List = {
@@ -41,6 +41,7 @@ export function fragment(...nodes: AppendableElement[]): DocumentFragment;
 
 export function anchor(content: AppendableElement, href: string): HTMLAnchorElement;
 export function anchor(content: AppendableElement, href: string, extra: {
+    /** Uses History API for SPA. */
     mode: "history",
     data?: any
 }): HTMLAnchorElement;
