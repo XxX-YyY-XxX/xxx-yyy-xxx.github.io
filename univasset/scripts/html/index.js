@@ -215,10 +215,9 @@ export function table(headers, ...arrays) {
 
 
 
-function slider(value, min, max, {vertical = false, name = ""} = {}) {
-    const CHANGE = new Event("change");
-
-    const RANGE = setattr(document.createElement("input"), {type: "range", min: min, max: max, value: value});
+const CHANGE = new Event("change");
+export function slider(initial_value, min, max, {vertical = false, name = ""} = {}) {
+    const RANGE = setattr(document.createElement("input"), {type: "range", min: min, max: max, value: initial_value});
     RANGE.setAttribute("value", RANGE.value);
     RANGE.addEventListener("change", function(event) {this.setAttribute("value", this.value)});
 
@@ -242,20 +241,20 @@ function slider(value, min, max, {vertical = false, name = ""} = {}) {
     DIV.toString = function() {
         /** @type {HTMLDivElement} */ const CLONE = this.cloneNode(true);
         
-        CLONE.querySelector("button:first-child").setAttribute("onclick", "sliderMinus(this)");
-        window.sliderMinus ??= function(/**@type {HTMLButtonElement}*/button) {
+        CLONE.querySelector("button:first-child").setAttribute("onclick", "sliderMinusButton(this)");
+        window.sliderMinusButton ??= function(/**@type {HTMLButtonElement}*/button) {
             const SLIDER = button.nextElementSibling;
             SLIDER.value = Number(SLIDER.value) - 1;
             SLIDER.onchange();
         }
 
-        CLONE.querySelector("input").setAttribute("onchange", "sliderSlide(this)");
-        window.sliderSlide ??= function(/**@type {HTMLInputElement}*/input) {
+        CLONE.querySelector("input").setAttribute("onchange", "sliderRangeInput(this)");
+        window.sliderRangeInput ??= function(/**@type {HTMLInputElement}*/input) {
             input.setAttribute("value", input.value);
         }
 
-        CLONE.querySelector("button:last-child").setAttribute("onclick", "sliderPlus(this)");
-        window.sliderPlus ??= function(/**@type {HTMLButtonElement}*/button) {
+        CLONE.querySelector("button:last-child").setAttribute("onclick", "sliderPlusButton(this)");
+        window.sliderPlusButton ??= function(/**@type {HTMLButtonElement}*/button) {
             const SLIDER = button.previousElementSibling;
             SLIDER.value = Number(SLIDER.value) + 1;
             SLIDER.onchange();

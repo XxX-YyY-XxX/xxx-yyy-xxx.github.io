@@ -3,7 +3,7 @@
 @import "../tabs.css";
 @import "../html/index.css";
 
-@import "./nonest.css";
+@import "../nonest.css";
 
 input[type="checkbox"], input[type="radio"] {
     appearance: none;
@@ -78,6 +78,7 @@ dl, table, blockquote, figure {
 fieldset {
     /* Staples */
     margin-top: 5px;
+    max-width: 100%;
 
     & > legend > h3 {
         margin: 0px;

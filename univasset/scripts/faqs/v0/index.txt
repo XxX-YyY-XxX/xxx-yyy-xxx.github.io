@@ -1,0 +1,2 @@
+Page reloads instead of History API.
+Uses :has.
