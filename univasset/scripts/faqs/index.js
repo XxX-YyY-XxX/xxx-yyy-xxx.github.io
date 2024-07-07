@@ -3,7 +3,7 @@
 import {removeHTMLTag, getTemplateCloner} from "../externaljavascript.js";
 import {Random, cmp, setattr} from "../basefunctions/index.js";
 import {anchor, fragment} from "../html/index.js";
-import "https://platform.twitter.com/widgets.js";
+// import "https://platform.twitter.com/widgets.js";
 
 // /** Checks if the element is interacted by the user. 
 //  * @param {Event} event */
