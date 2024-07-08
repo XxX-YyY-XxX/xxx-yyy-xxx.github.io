@@ -2,8 +2,7 @@
 
 import {removeHTMLTag, getTemplateCloner} from "../externaljavascript.js";
 import {Random, cmp, setattr} from "../basefunctions/index.js";
-import {anchor, fragment} from "../html/index.js";
-// import "https://platform.twitter.com/widgets.js";
+import {anchor, fragment, slider} from "../html/index.js";
 
 // /** Checks if the element is interacted by the user. 
 //  * @param {Event} event */
@@ -26,10 +25,10 @@ import {anchor, fragment} from "../html/index.js";
  * @property {Tag[keyof Tag][]} Card.tags
  */
 
-/** @type {function(): DocumentFragment} */ var _fieldsetCloner;
-/** @type {HTMLInputElement} */ var RANGE;
 window.queryFunc = function() {
-    _fieldsetCloner = getTemplateCloner("#faq-card");
+    const SLIDER = slider(1, 1, Math.ceil(window.cards.length / 5));
+    document.querySelector("#Browse span").replaceWith(SLIDER);
+    SLIDER.querySelector("input").name = "page";
 
     /** @type {Tag} */ const TAG_DICT = window.tags;
     const TAGS_FIELD = document.querySelector("#Tags div");
@@ -44,35 +43,37 @@ window.queryFunc = function() {
         TAGS_FIELD.appendChild(FRAGMENT);
     }
 
-    RANGE = document.querySelector('#Browse input[type="range"]');
-    RANGE.setAttribute("max", Math.ceil((window.cards.length) / 5));
-
     // HTMLFormElement.action = value is previous URL
-    for (const FORM of document.forms) {
-        /** @type {function(URLSearchParams): string} */
-        const _queryMaker = (() => {
-            switch (FORM.id) {
-                case "Tags":    return x => `./?tags=${[...x.values()].sort(cmp()).join("+")}`;
-                case "Cards":   return x => `./?id=${[...x.values()].map(Number).sort(cmp()).join("+")}`;
-                default:        return x => `./?${x}`;
-            }    
-        })();
-        FORM.addEventListener("submit", function(event) {
-            const PARAMS = new URLSearchParams(new FormData(this));
-            history.pushState({}, "", _queryMaker(PARAMS));
-            window.dispatchEvent(new PopStateEvent("popstate", {state: {}}));
-            event.preventDefault();
-        });
-    }
+    document.forms["Keywords"].addEventListener("submit", /** @this {HTMLFormElement} */ function(event) {
+        const PARAMS = new URLSearchParams(new FormData(this));
+        pushPopstate(`./?${PARAMS}`, {});
+        event.preventDefault();    
+    })
+    document.forms["Tags"].addEventListener("submit", /** @this {HTMLFormElement} */ function(event) {
+        const PARAMS = new URLSearchParams(new FormData(this));
+        pushPopstate(`./?tags=${[...PARAMS.values()].sort(cmp()).join("+")}`, {});
+        event.preventDefault();    
+    })
+    document.forms["Browse"].addEventListener("submit", /** @this {HTMLFormElement} */ function(event) {
+        const PARAMS = new URLSearchParams(new FormData(this));
+        const QUERY = PARAMS.toString()
+        pushPopstate(`./?${QUERY}`, {});
+        event.preventDefault();
+    })
+    document.forms["Cards"].addEventListener("submit", /** @this {HTMLFormElement} */ function(event) {
+        const PARAMS = new URLSearchParams(new FormData(this));
+        pushPopstate(`./?id=${[...PARAMS.values()].map(Number).sort(cmp()).join("+")}`, {})
+        event.preventDefault();    
+    })
 
     history.replaceState({}, "", location.search);
     window.dispatchEvent(new PopStateEvent("popstate", {state: {}}));
 }
 
-window.addEventListener("popstate", function(event) {
+window.addEventListener("popstate", event => {
     // Inputs reset.
-    document.querySelector(`#Keywords [name="search"]`).value = "";
-    for (const INPUT of document.querySelectorAll(`#Tags :checked`))
+    document.querySelector("#Keywords [name]").value = "";
+    for (const INPUT of document.querySelectorAll("#Tags :checked"))
         INPUT.checked = false;
 
     const CARDFIELD = document.querySelector("#Cards > div");
@@ -80,13 +81,20 @@ window.addEventListener("popstate", function(event) {
     (async () => twttr.widgets.load(CARDFIELD))();
 })
 
+/** @param {string} url @param {{}} state */
+function pushPopstate(url, state) {
+    history.pushState(state, "", url);
+    window.dispatchEvent(new PopStateEvent("popstate", {state: state}));
+}
+
 //#region Card Creation
 /** @param {string} text */ function stringToHTML(text) {
     return fragment(...(new DOMParser()).parseFromString(text, "text/html").body.childNodes);
 }
 
+/** @type {function(): DocumentFragment} */ var _fieldsetCloner;
 /** @param {Card} */ function setQuestionBoxes({id, question, answer, tags}) {
-    const CLONE = _fieldsetCloner();
+    const CLONE = (_fieldsetCloner ??= getTemplateCloner("#faq-card"))();
 
     CLONE.querySelector("label").append(id);
     CLONE.querySelector("input").value = id;
@@ -117,7 +125,6 @@ function getBoxes() {
                 return boxFrag(CARDS.filter(x => TAGS.subsetof(x.tags.map(y => y.name))));
             case "page":
                 const PAGE = Number(VALUE), COUNT = PAGE * 5;
-                setattr(RANGE, {value: PAGE, onchange: []});
                 return boxFrag(CARDS.slice(COUNT - 5, Math.min(COUNT, CARDS.length)));
             case "id":
                 const IDS = VALUE.split(" ").map(Number);

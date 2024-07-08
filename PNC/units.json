@@ -2270,7 +2270,7 @@
         "name": "Kurisu",
         "class": "Sniper",
         "reference": {"Kurisu Makise": "https://steins-gate.fandom.com/wiki/Kurisu_Makise"},
-        "fragments": ["Neural Kits", "Intimacy"],
+        "fragments": ["Neural Kits", "Intimacy", "Retrocausal Trie Interference", "Exercise Handbook Convergence"],
         "base": {
             "hp": 11671,
             "atk": 662,
@@ -2301,7 +2301,7 @@
         "name": "Mayuri",
         "class": "Specialist",
         "reference": {"Mayuri Shiina": "https://steins-gate.fandom.com/wiki/Mayuri_Shiina"},
-        "fragments": ["Neural Kits", "Intimacy"],
+        "fragments": ["Neural Kits", "Intimacy", "Retrocausal Trie Interference", "Exercise Handbook Convergence"],
         "base": {
             "hp": 16626,
             "atk": 635,

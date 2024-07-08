@@ -8,30 +8,28 @@
 
     <div class="container">
         <section id="main_content">
-            <div class="tab-button">
-                <label><input type="radio" name="tabs" value="Keywords" checked /><h2>Keywords</h2></label>
-                <label><input type="radio" name="tabs" value="Tags" /><h2>Tags</h2></label>
-                <label><input type="radio" name="tabs" value="Browse" /><h2>Browse</h2></label>
-            </div>
-            
-            <form id="Keywords" class="tab-body">
-                <input type="text" name="search" placeholder="Separate keywords with whitespace" />
-                <input type="submit" />
-            </form>
-            
-            <form id="Tags" class="tab-body">
-                <div></div>
-                <input type="submit" />
-            </form>
-    
-            <form id="Browse" class="tab-body">
-                <div class="slider">
-                    <button type="button" onclick="page.value = Number(page.value) - 1; page.onchange()">-</button>
-                    <input type="range" name="page" min="1" max="" value="0" onchange="this.setAttribute('value', this.value)"/>
-                    <button type="button" onclick="page.value = Number(page.value) + 1; page.onchange()">+</button>
+            <div class="tab-group">
+                <div class="tab-button">
+                    <label><input type="radio" name="tabs" value="Keywords" checked /><h2>Keywords</h2></label>
+                    <label><input type="radio" name="tabs" value="Tags" /><h2>Tags</h2></label>
+                    <label><input type="radio" name="tabs" value="Browse" /><h2>Browse</h2></label>
                 </div>
-                <input type="submit" />
-            </form>
+                
+                <form id="Keywords" class="tab-body">
+                    <input type="text" name="search" placeholder="Separate keywords with whitespace" />
+                    <input type="submit" />
+                </form>
+                
+                <form id="Tags" class="tab-body">
+                    <div></div>
+                    <input type="submit" />
+                </form>
+        
+                <form id="Browse" class="tab-body">
+                    <span></span>
+                    <input type="submit" />
+                </form>
+            </div>
     
             <form id="Cards">
                 <div></div>
@@ -39,6 +37,8 @@
             </form>
         </section>
     </div>
+
+    <!-- <div id="corner-buttons"></div> -->
 </body>
 
 <template id="query-tag">

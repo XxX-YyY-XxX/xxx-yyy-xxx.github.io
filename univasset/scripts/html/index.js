@@ -57,7 +57,6 @@ export const Embed = {
     },
     twitter(handle, ID) {
         return setattr(document.createElement("blockquote"), {
-            // ?ref_src=twsrc%5Etfw
             appendChild: [anchor(`${handle}'s Tweet`, `https://twitter.com/${handle}/status/${ID}`)],
             classList: {add: ["twitter-tweet"]},
             toString: htmlString
@@ -100,7 +99,7 @@ export const List = {
         for (const [TITLE, DESCS] of Object.entries(arraydict)) {
             DL.append(
                 setattr(document.createElement("dt"), {textContent: TITLE}),
-                ...DESCS.map(x => setattr(document.createElement("dd"), {append: [x]}))
+                ...DESCS.map(x => setattr(document.createElement("dd"), {append: [x], toString: htmlString}))
             );
         }
         return DL;
@@ -150,10 +149,13 @@ export function anchor(content, href, {mode = null, data = {}} = {}) {
                 /** @type {HTMLAnchorElement} */ const CLONE = this.cloneNode(true);
 
                 // Important when changed to string HTML. Event listener not carried over.
+                if (Object.keys(data).length)
+                    CLONE.dataset.data = JSON.stringify(data);
                 CLONE.setAttribute("onclick", "return anchorHistoryClick(this)");
                 window.anchorHistoryClick ??= function(/** @type {HTMLAnchorElement} */a) {
-                    history.pushState(data, "", href);
-                    window.dispatchEvent(EVENT);
+                    const DATA = JSON.parse(a.dataset.data ?? "{}");
+                    history.pushState(DATA, "", a.href);
+                    window.dispatchEvent(new PopStateEvent("popstate", {state: DATA}));
                     return false;   // Needed to prevent refresh.
                 }
 
@@ -172,7 +174,7 @@ export function table(headers, ...arrays) {
 
     const TR_ARRAY = arrays.map(array => setattr(document.createElement("tr"), {
         toString: htmlString,
-        append: array.map(item => setattr(document.createElement("td"), {append: [item]}))
+        append: array.map(item => setattr(document.createElement("td"), {append: [item], toString: htmlString}))
     }));
     const TBODY = setattr(document.createElement("tbody"), {append: TR_ARRAY});
     
@@ -185,23 +187,19 @@ export function slider(initial_value, min, max, {vertical = false} = {}) {
     RANGE.setAttribute("value", RANGE.value);
     RANGE.addEventListener("change", function(event) {this.setAttribute("value", this.value)});
 
-    const MINUS = document.createElement("button");
-    MINUS.textContent = "-";
+    const MINUS = setattr(document.createElement("button"), {type: "button", textContent: "-"});
     MINUS.addEventListener("click", function(event) {
         RANGE.value = Number(RANGE.value) - 1;
         RANGE.dispatchEvent(CHANGE);
     })
 
-    const PLUS = document.createElement("button");
-    PLUS.textContent = "+";
+    const PLUS = setattr(document.createElement("button"), {type: "button", textContent: "+"});
     PLUS.addEventListener("click", function(event) {
         RANGE.value = Number(RANGE.value) + 1;
         RANGE.dispatchEvent(CHANGE);
     })
 
-    const DIV = document.createElement("div");
-    DIV.append(MINUS, RANGE, PLUS);
-    DIV.classList.add("slider", vertical ? "vertical" : "horizontal");
+    const DIV = setattr(document.createElement("div"), {append: [MINUS, RANGE, PLUS], classList: {add: ["slider", vertical ? "vertical" : "horizontal"]}});
     DIV.toString = function() {
         /** @type {HTMLDivElement} */ const CLONE = this.cloneNode(true);
         
