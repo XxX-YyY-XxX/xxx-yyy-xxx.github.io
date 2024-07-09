@@ -4,6 +4,17 @@ import {removeHTMLTag, getTemplateCloner} from "../externaljavascript.js";
 import {Random, cmp, setattr} from "../basefunctions/index.js";
 import {anchor, fragment, slider} from "../html/index.js";
 
+window.addEventListener("popstate", event => {
+    // Inputs reset.
+    document.querySelector("#Keywords [name]").value = "";
+    for (const INPUT of document.querySelectorAll("#Tags :checked"))
+        INPUT.checked = false;
+
+    const CARDFIELD = document.querySelector("#Cards > div");
+    CARDFIELD.replaceChildren(getBoxes());
+    (async () => twttr.widgets.load(CARDFIELD))();
+})
+
 // /** Checks if the element is interacted by the user. 
 //  * @param {Event} event */
 // function isUserInput(event) {
@@ -25,7 +36,12 @@ import {anchor, fragment, slider} from "../html/index.js";
  * @property {Tag[keyof Tag][]} Card.tags
  */
 
-window.queryFunc = function() {
+/** @param {string} text @param {number[]} ids */
+export function getID(text, ...ids) {
+    return anchor(text, `./?id=${ids.join("+")}`, {mode: "history"})
+}
+
+export function queryFunc() {
     const SLIDER = slider(1, 1, Math.ceil(window.cards.length / 5));
     document.querySelector("#Browse span").replaceWith(SLIDER);
     SLIDER.querySelector("input").name = "page";
@@ -69,17 +85,7 @@ window.queryFunc = function() {
     history.replaceState({}, "", location.search);
     window.dispatchEvent(new PopStateEvent("popstate", {state: {}}));
 }
-
-window.addEventListener("popstate", event => {
-    // Inputs reset.
-    document.querySelector("#Keywords [name]").value = "";
-    for (const INPUT of document.querySelectorAll("#Tags :checked"))
-        INPUT.checked = false;
-
-    const CARDFIELD = document.querySelector("#Cards > div");
-    CARDFIELD.replaceChildren(getBoxes());
-    (async () => twttr.widgets.load(CARDFIELD))();
-})
+window.queryFunc = queryFunc;
 
 /** @param {string} url @param {{}} state */
 function pushPopstate(url, state) {

@@ -1,13 +1,14 @@
 import TextStyle from '../../univasset/scripts/htmlfunctions/textstyle.js';
 import {LESSEQUAL, STAR, TM} from "../../univasset/scripts/specialchars.js";
 import {Embed, List, image, figure, details, fragment, table, anchor, textStyle} from "../../univasset/scripts/html/index.js";
+import {getID} from "../../univasset/scripts/faqs/index.js";
 
 const IMG_ASSET = "../assets/images/query/";
 
-/** @param {string} text @param {number[]} ids */
-function getID(text, ...ids) {
-    return anchor(text, `./?id=${ids.join("+")}`, {mode: "history"})
-}
+// /** @param {string} text @param {number[]} ids */
+// function getID(text, ...ids) {
+//     return anchor(text, `./?id=${ids.join("+")}`, {mode: "history"})
+// }
 
 export const dtag = {
     //#region Combat Tabs

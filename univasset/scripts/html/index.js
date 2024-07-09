@@ -84,14 +84,16 @@ export const Embed = {
 
 export const googleDocsCompilation = Embed.google;
 
+function listItem(x) {
+    return setattr(document.createElement("li"), {append: [x], toString: htmlString});
+}
+
 export const List = {
     ordered(...items) {
-        const LI_ARRAY = items.map(x => setattr(document.createElement("li"), {append: [x]}));
-        return setattr(document.createElement("ol"), {toString: htmlString, append: LI_ARRAY});
+        return setattr(document.createElement("ol"), {append: items.map(listItem), toString: htmlString});
     },
     unordered(...items) {
-        const LI_ARRAY = items.map(x => setattr(document.createElement("li"), {append: [x]}));
-        return setattr(document.createElement("ul"), {toString: htmlString, append: LI_ARRAY});
+        return setattr(document.createElement("ul"), {append: items.map(listItem), toString: htmlString});
     },
     menu() {},
     description(arraydict) {
@@ -141,6 +143,7 @@ export function anchor(content, href, {mode = null, data = {}} = {}) {
         case "history":
             const EVENT = new PopStateEvent("popstate", {state: data});
             ANCHOR.addEventListener("click", event => {
+                // encode htref to uri?
                 history.pushState(data, "", href);
                 window.dispatchEvent(EVENT);
                 event.preventDefault(); // Needed to prevent refresh.
