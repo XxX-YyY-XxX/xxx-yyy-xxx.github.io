@@ -12,7 +12,7 @@ const _timerTemplate = getTemplateCloner("#timer-block");
 function textResize(event) {
     const PARENT = this.parentElement, STYLE = this.style;
     STYLE.removeProperty("font-size");
-    for (let fontsize = 15; this.offsetWidth > PARENT.clientWidth; fontsize--)
+    for (let fontsize = 50; this.offsetWidth > PARENT.clientWidth; fontsize--)
         STYLE.fontSize = `${fontsize}em`;
 }
 

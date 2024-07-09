@@ -19,13 +19,14 @@ timer(
 
 timer(
     document.getElementById("coalition"),
-    "Jun 25, 2024 00:00 UTC-0800",
+    "Jul 23, 2024 00:00 UTC-0800",
+    "./assets/images/coalition/15ArchitectNVWModel.webp",
     "./assets/images/coalition/11Judge.webp",
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
-        "Jul 23, 2024 00:00 UTC-0800",
-        "./assets/images/coalition/15ArchitectNVWModel.webp",
-        )}
+        "",
+        ""
+    )}
 );
 
 timer(
@@ -34,21 +35,13 @@ timer(
     "https://iopwiki.com/images/thumb/2/21/G11_costume10_D.png/600px-G11_costume10_D.png",
     {onEnd: timer.bind(
         null, document.getElementById('skin-banner'),
-        "",
-        ""
+        "Aug 06, 2024 00:00 UTC-0800",
+        "https://iopwiki.com/images/thumb/3/31/HK433_costume1_D.png/600px-HK433_costume1_D.png"
     )}
 );
 
 timer(
    document.getElementById('mini-event'),
-   "Jun 25, 2024 00:00 UTC-0800",
-   "./assets/images/timer/zo607mrrno3d1.webp",
-//    {onEnd: timer.bind(
-//         null, document.getElementById('mini-event'),
-//         "",
-//         "./assets/images/timer/.webp"
-//    )}
+   "Jul 30, 2024 00:00 UTC-0800",
+   "./assets/images/timer/aisex5vcc9ad1.webp"
 );
-
-//timer(document.getElementById('extra'), "",
-//    "");

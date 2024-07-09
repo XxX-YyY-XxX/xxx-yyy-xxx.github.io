@@ -2,14 +2,6 @@
 
 # Theater
 
-### How much CE do I need for a good score?
-
-> For dolls, MODs and oaths take the forefront with advantaged dolls having +20% CE than usual.
->
-> For fairies, they only need to be 5★ and Lv. 100.
->
-> For HOCs/FSTs, maxed out PA is better in stack but worse in battle.
-
 ### I wasn't able to place high enough to 5★ the reward HOC. Is there another way to get their central data?
 
 > Odd numbered theater? Even the Top 1 can't anyway.

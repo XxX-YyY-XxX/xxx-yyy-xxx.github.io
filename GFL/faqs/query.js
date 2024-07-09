@@ -140,9 +140,9 @@ const CARDS = [
         id: 2,
         question: `What is Combat Effectiveness?`,
         answer: `${anchor('BigStupidJellyfish analysis.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ce')}<br>
-        ${anchor("u/elgatoroid's CE calculation.", 'https://old.reddit.com/r/girlsfrontline/comments/kqtpcv/weekly_commanders_lounge_january_05_2021/gifxq8v/')}`,
+        ${details("u/elgatoroid's CE calculation (may be outdated).", Embed.reddit("kqtpcv/weekly_commanders_lounge_january_05_2021/gifxq8v"))}`,
         tags: [dtag.CE, dtag.PRIME]
-    },  // CE calc might be outdated.
+    },
     {
         id: 444,
         question: `What are batteries and where do I get them?`,
@@ -414,6 +414,7 @@ const CARDS = [
             ],
             'Main Story' : [
                 anchor("u/RhythmLunatic's GFL Cutscene Interpreter (including collabs)", 'https://gfl.amaryllisworks.pw/'),
+                fragment(anchor("randomqwerty's Github repository", "https://github.com/randomqwerty/GFLData/find/main"), ". Use this in conjuction with the cutscene interpreter to read future events."), // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1i45w4/
                 anchor("Shoul's Story Scenes Playlists", 'https://www.youtube.com/channel/UC_JmwXOfYqOKpGGtc5gcVmw'),
                 anchor("Bjorkit's Channel", "https://www.youtube.com/@Bjorkit1"),
                 anchor("XtraNinja's GFL events playlists", "https://www.youtube.com/@XtraNinja/playlists"),
@@ -1255,7 +1256,7 @@ const CARDS = [
             ],
             'Equipment Enhancement' : [
                 'Multiplies the base stat up to Lv. 10.',
-                `Doesn't matter if ${getID("Equip Enhancement Pills or fodder equips", 517)} are used, it's merely a matter of resource cost per point raised.`, // https://old.reddit.com/r/girlsfrontline/comments/1bo2czw/weekly_commanders_lounge_march_26_2024/kwq48hb/
+                fragment("Doesn't matter if ", getID("Equip Enhancement Pills or fodder equips", 517), " are used, it's merely a matter of resource cost per point raised."),   // https://old.reddit.com/r/girlsfrontline/comments/1bo2czw/weekly_commanders_lounge_march_26_2024/kwq48hb/
                 'As of 3.0, gets more enhancement points from enhanced fodders.'
             ]
         })}`,
@@ -1748,6 +1749,7 @@ const CARDS = [
         answer: `${List.unordered(
             "Wait and trudge through",
             "Download the bare minimum files first",
+            "Allot enough (i.e. around 1.5x) space for downloaded files",   // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l0zvdnx/
             "Restart client",
             "Change/Reset WiFi connection",
             "Switch to mobile data",
@@ -2009,8 +2011,9 @@ const CARDS = [
     {
         id: 208,
         question: `I don't know how to change the AI behaviour of my support/friend echelon, anyone can help me?`,
-        answer: `${figure(image(IMG_ASSET+"FriendEchelonCommand.png", "Support echelon commands."), 'Double-tap the Friend Echelon to show options')}`,
-        tags: [dtag.FRIEND, dtag.ECH, dtag.MAP]
+        answer: `${figure(image(IMG_ASSET+"FriendEchelonCommand.png", "Support echelon commands."), 'Double-tap the Friend Echelon to show options')}<br>
+        May be bugged on iOS devices.`, // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1wllhz/
+        tags: [dtag.FRIEND, dtag.ECH, dtag.MAP, dtag.APPLE, dtag.TECH]
     },
     {
         id: 209,
@@ -2240,9 +2243,9 @@ const CARDS = [
     {
         id: 242,
         question: `Where can I get a dyeable and free commander costume?`,
-        answer: `Shattered Connexions.`,
+        answer: `Shattered Connexions.`,    // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l17l5lz/
         tags: [dtag.CMDR, dtag.SKIN, dtag.GET]
-    },
+    },  //@Specifics
     {
         id: 243,
         question: `Why does the iOS version crash a lot?`,
@@ -3976,7 +3979,7 @@ const CARDS = [
     {
         id: 486,
         question: `What are Dusty Blueprints for?`,
-        answer: `For Mobile Armors.`,
+        answer: `Enhancement material for Mobile Armor components.`,    // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l18ujoj/
         tags: [dtag.GZ, dtag.MA]
     },
     {
@@ -4023,8 +4026,8 @@ const CARDS = [
     {
         id: 493,
         question: `What's the best strategy for Gray Zone?`,
-        answer: `${List.unordered(
-            "Picking the hardest difficulty you can deal.",
+        answer: `${List.ordered(
+            "Picking the hardest difficulty you can do.",
             "Beelining to the boss for points per time."
         )}`,
         tags: [dtag.GZ]
@@ -4245,6 +4248,59 @@ const CARDS = [
         answer: `More like "Settlement Reward". Just shows you things you'll get once Theater ends.`,
         tags: [dtag.THEATER]
     },
+    {
+        id: 519,
+        question: `I'm stuck (read: softlocked) in *whatever thing I'm doing*. How do I get out of here?`,
+        answer: `${getID("Contact support", 37)}. Prepare your UID if needed.`,    // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1i4uoz/
+        tags: [dtag.TECH]
+    },
+    {
+        id: 520,
+        question: `Is there a guide on how to clear the stages?`,
+        answer: `${List.description({
+            "Arctic Warfare": [
+                anchor("u/UnironicWeeaboo's ranking video.", "https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1jmfnj/")
+            ],
+            "Gray Zone": [
+                anchor("u/UnironicWeeaboo's MA tank notes.", "https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l17nwjq/")
+            ]
+        })}`,
+        tags: [dtag.BATTLE, dtag.MAP, dtag.RANK]
+    },
+    {
+        id: 521,
+        question: `How do I get more Fairy Points?`,
+        answer: `Wait every 6 hours, or geet some from Achivements.`,
+        tags: [dtag.FAIRY]
+    },
+    {
+        id: 522,
+        question: `Which Mobile Armor equipments are safe to keep/discard?`,
+        answer: `${image("https://i.imgur.com/KH0IGF0.png", "Discord screenshot of MA equip priority.")}`,  // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l166lrh/
+        tags: [dtag.MA, dtag.EQUIP]
+    },
+    {
+        id: 523,
+        question: `What are Battlefield Information and Battlefield Simplification?`,
+        answer: `${Embed.reddit("1caz0vj/weekly_commanders_lounge_april_23_2024/l1123cf")}`,
+        tags: [dtag.SYSMECH]
+    },
+    {
+        id: 524,
+        question: `What stat do I need for the Mobile Armor crew?`,
+        answer: `Levels.`,  // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l0wc4zh/
+        tags: [dtag.HOC, dtag.MA, dtag.TDOLL, dtag.COALITION, dtag.FST]
+    },
+    {
+        id: 525,
+        question: `How much CE do I need for a good score?`,
+        answer: `${List.description({
+            "Tactical Dolls": ["MODs and oaths take the forefront with advantaged dolls having +20% CE than usual."],
+            "Fairies": ["They only need to be 5★ and Lv. 100."],
+            "HOCs/FSTs": ["Maxed out Coalition units are better in stack but worse in battle."]
+        })}`,
+        tags: [dtag.THEATER, dtag.TDOLL, dtag.FAIRY, dtag.FST, dtag.COALITION]
+    },
     // {
     //     id: 0,
     //     question: ``,
@@ -4279,8 +4335,18 @@ window.cards = CARDS;
 // https://docs.google.com/document/d/1mRl1srQB96SCsehTtBeiJ-ZjuxLAoSE1bSHfKhIMcNE/edit
 // Mobile Armor - https://old.reddit.com/r/girlsfrontline/comments/1c5aljd/weekly_commanders_lounge_april_16_2024/l0s6bry/
 // Fragmented Visual Data - https://old.reddit.com/r/girlsfrontline/comments/1c5aljd/weekly_commanders_lounge_april_16_2024/kzxok6e/
+// https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1usr9k/
+// https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l182w55/
+// https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l14i21y/
 
-// https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/
+// FST rework
+// https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1tymg1/
+// https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l11jvz1/
+
+// Newbie starting up
+// https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1lbfze/
+// https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1738g5/
+
 // https://old.reddit.com/r/girlsfrontline/comments/1cgndrn/weekly_commanders_lounge_april_30_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1crmrcn/weekly_commanders_lounge_may_14_2024/
