@@ -200,7 +200,7 @@ class Units {
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
-        return Math.round(this.#base[STAT] + PERC, 1);
+        return this.#base[STAT] + PERC;
     }
 
     #cdmg = 50;
@@ -219,7 +219,7 @@ class Units {
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
-        return Math.round(50 + PERC, 1);
+        return 50 + PERC;
     }
 
     #ppen;
@@ -282,7 +282,7 @@ class Units {
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
-        return Math.round(this.#base[STAT] + PERC);
+        return this.#base[STAT] + PERC;
     }
 
     #regen;
@@ -316,7 +316,7 @@ class Units {
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
-        return Math.round(PERC, 1);
+        return PERC;
     }
 
     #res = 0;
@@ -359,7 +359,7 @@ class Units {
         if (BUTTON.BOND.checked && this.#intistats.includes("Coordinated Formation")) FLAT_PERC.push([0, 5]);
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
-        return Math.round(PERC, 1);
+        return PERC;
     }
 
     #dreduc = 0;
@@ -374,7 +374,7 @@ class Units {
         if (BUTTON.BOND.checked && this.#intistats.includes("Through Fire and Water")) FLAT_PERC.push([0, 5]);
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
-        return Math.round(PERC, 1);
+        return PERC;
     }
 
     #hboost = 0;
@@ -391,7 +391,7 @@ class Units {
         if (BUTTON.SPEC.checked && ["Medic"].includes(this.class)) FLAT_PERC.push([0, 9]);
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
-        return Math.round(PERC, 1);
+        return PERC;
     }
 
     #hasarma;
