@@ -71,8 +71,16 @@ export const Embed = {
     },
     reddit(ID) {
         if (false) {
-
+            // <blockquote class="reddit-embed-bq" style="height:316px" data-embed-showmedia="false" data-embed-theme="dark" data-embed-height="240">
+            //     <a href="https://www.reddit.com/r/girlsfrontline/comments/w2n556/weekly_commanders_lounge_july_19_2022/">Weekly Commanders Lounge - July 19, 2022</a><br> by<a href="https://www.reddit.com/user/AutoModerator/">u/AutoModerator</a> in<a href="https://www.reddit.com/r/girlsfrontline/">girlsfrontline</a>
+            // </blockquote>
+            // <script async="" src="https://embed.reddit.com/widgets.js" charset="UTF-8"></script>
         } else {
+            // <blockquote class="reddit-embed-bq" data-embed-theme="dark" data-embed-height="240">
+            //     <a href="https://www.reddit.com/r/girlsfrontline/comments/w2n556/comment/igti9c1/">Comment</a><br> by<a href="https://www.reddit.com/user/AutoModerator/">u/AutoModerator</a> from discussion<a href="https://www.reddit.com/r/girlsfrontline/comments/w2n556/weekly_commanders_lounge_july_19_2022/"><no value=""></no></a><br> in<a href="https://www.reddit.com/r/girlsfrontline/">girlsfrontline</a>
+            // </blockquote>
+            // <script async="" src="https://embed.reddit.com/widgets.js" charset="UTF-8"></script>
+
             return setattr(frame(`https://www.redditmedia.com/r/girlsfrontline/comments/${ID}/?depth=1&embed=true&showmedia=true&theme=dark`), {
                 sandbox: {add: ["allow-scripts", "allow-same-origin", "allow-popups"]},
                 toString: htmlString,

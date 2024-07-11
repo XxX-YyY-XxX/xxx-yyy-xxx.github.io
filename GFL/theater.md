@@ -8,10 +8,6 @@
 >
 > Even numbered theater? Wait for the next theater and they'll join the HOC gacha.
 
-### I'm thinking of using Landmine Fairy. Will they work?
-
-> Well yes... as a stat stick. Can't use a Strategy Fairy skill in theater ~~mostly because you can't tap a node to activate it in the first place~~. Stick to Combat Fairies if you want to use skills.
-
 ### Is Core/Critical Zone harder than Advanced?
 
 > Core 8 yes. To be clear, Core 1-3 is like Easy, Core 4-6 are Intermediate, and Core 7-8 are Advanced.

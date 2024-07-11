@@ -5,11 +5,6 @@ import {getID} from "../../univasset/scripts/faqs/index.js";
 
 const IMG_ASSET = "../assets/images/query/";
 
-// /** @param {string} text @param {number[]} ids */
-// function getID(text, ...ids) {
-//     return anchor(text, `./?id=${ids.join("+")}`, {mode: "history"})
-// }
-
 export const dtag = {
     //#region Combat Tabs
         LORE : {name: 'Story/Lore', description: 'Main meat of the series.'},
@@ -324,7 +319,7 @@ const CARDS = [
             fragment(anchor('Matsuda Quips.', 'https://gfl.matsuda.tips/dolls/'), " Updated up to Fixed Point dolls."),
             anchor('KR Wiki.', 'https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0/%EC%9D%B8%ED%98%95%EB%8F%84%EA%B0%90'),
             fragment(anchor("Fatalchapter's bilibili guide.", 'https://www.bilibili.com/read/readlist/rl100361'), " Updated up to Jashin dolls."),
-            fragment(anchor("Sijun's list.", 'https://www.reddit.com/r/girlsfrontline/comments/tjxvpw/weekly_commanders_lounge_march_22_2022/i1rph1l/'), " Translated by u/ConductorBichir."),
+            details("Sijun's list translated by u/ConductorBichir (may be outdated).", Embed.reddit("tjxvpw/weekly_commanders_lounge_march_22_2022/i1rph1l")),
             details('BigStupidJellyfish analyses.', List.unordered(
                 anchor('Vallhalla girls.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/valhalla'),
                 anchor('AK-15.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ak15')
@@ -422,7 +417,7 @@ const CARDS = [
                 anchor("Girls' Frontline Full Story Comprehension Playlist Translated up to Isomer", 'https://youtube.com/playlist?list=PL9y52Flm1yM-tJJoom2zfrWTpaO1mTw8M'),
                 anchor("u/DoctuhD's Girls' Frontline Summary", 'https://docs.google.com/document/d/1oA07O2HGwvmoBqm-UKTTuSdxjLnSIbRHd5b2FuYOph0'),
                 details("u/Signal_Abroad1427's Hurricane Rescue video", Embed.youtube("oH1st5OxdyY")),
-                anchor("u/pointblanksniper collection", "https://old.reddit.com/r/girlsfrontline/comments/13phxi5/weekly_commanders_lounge_may_23_2023/jlv5bns/"),
+                details("u/pointblanksniper collection", Embed.reddit("13phxi5/weekly_commanders_lounge_may_23_2023/jlv5bns")),
                 details("u/CuriousCanidae's Timeline Spreadsheet", Embed.google(["GFL Storyline", "https://docs.google.com/spreadsheets/d/1Gm5kl_ep0MY29WPxBd-CqQrtAmDtzxSO"]))
             ]
         })}`,
@@ -827,13 +822,12 @@ const CARDS = [
     {
         id: 58,
         question: `Is there a way for my game to feel smoother/lass laggy?`,
-        answer: `${List.unordered(
-            anchor('Gamepress article', 'https://gamepress.gg/girlsfrontline/fixing-gfl-client-lag-possible-workarounds'),
-            anchor('Decompressed .obb', "https://drive.google.com/drive/folders/1QoWsDyh4rlh0DtpxomSGOKkaAzXPfvBG"),  // https://old.reddit.com/r/girlsfrontline/comments/180bxy6/weekly_commanders_lounge_november_21_2023/kae6x8k/
-            anchor('DIY decompression', 'https://www.reddit.com/r/girlsfrontline/comments/lvwwtv/weekly_commanders_lounge_march_02_2021/gpugenl/')
-        )}`,
+        answer: `Than it currently is right now? No idea at the moment. obb decompression is a thing of the past now.`,
         tags: [dtag.MISC]
-    },
+    },  // ${List.unordered(
+    //     anchor('Gamepress article', 'https://gamepress.gg/girlsfrontline/fixing-gfl-client-lag-possible-workarounds'),
+    //     anchor('Decompressed .obb', "https://drive.google.com/drive/folders/1QoWsDyh4rlh0DtpxomSGOKkaAzXPfvBG"),  // https://old.reddit.com/r/girlsfrontline/comments/180bxy6/weekly_commanders_lounge_november_21_2023/kae6x8k/
+    //     anchor('DIY decompression', 'https://www.reddit.com/r/girlsfrontline/comments/lvwwtv/weekly_commanders_lounge_march_02_2021/gpugenl/'))}
     {
         id: 59,
         question: `What's the Fire Control Component (FCC) used for and where can I get them?`,
@@ -1316,7 +1310,7 @@ const CARDS = [
             'Cognitive Infusion' : ['Basically, swaps sizes. Technically, swaps all stats aside from size. If both sides are upgraded, say Lv. 31 and Lv. 23, they become 23 and 31, not 1 and 31+.'], 
             'Golden Infusion' : ['Swaps the golden status between the two units, nothing more, nothing less.']
         })}`,
-        tags: [dtag.PA]
+        tags: [dtag.PA, dtag.COALITION]
     },  //@Visual
     {
         id: 120,
@@ -1971,9 +1965,9 @@ const CARDS = [
     {
         id: 202,
         question: `What does the ${anchor('glitter/sparkle', IMG_ASSET+"ShinyIndicator.png")} in my coalition unit's portrait mean? Their sprites also has a golden aura/glow around it.`,
-        answer: `A shiny ${TextStyle.style('pokemon', TextStyle.STRIKE)} coalition unit. And the very reason Golden Infusion is a thing.<br>
-        If put it on a Lv.100 XL unit, something special may happen.`,
-        tags: [dtag.COALITION]
+        answer: `A shiny ${textStyle('Pokemon', "strike")} coalition unit aka just aesthetics. And the very reason ${getID("Golden Infusion", 119)} is a thing.<br>
+        If you put it on a Lv.100 XL unit, something special might happen.`,
+        tags: [dtag.PA, dtag.COALITION]
     },
     {
         id: 203,
@@ -3313,10 +3307,9 @@ const CARDS = [
     {
         id: 405,
         question: `Why are the gem package names incorrect/confusing?`,
-        answer: `${anchor('Explanation 1.', 'https://www.reddit.com/r/girlsfrontline/comments/q1rscp/weekly_commanders_lounge_october_05_2021/hg3xpyr/')}<br>
-        ${anchor('Explanation 2.', 'https://www.reddit.com/r/girlsfrontline/comments/mzjdl5/weekly_commanders_lounge_april_27_2021/gwrie7y/')}`,
+        answer: `For the 600/330 gem pack, 300 is the base while another 300 is the first purchase bonus. After buying it, next purchases will have a 30 gem bonus.`,
         tags: [dtag.GEMS, dtag.SHOP]
-    },
+    },  // https://www.reddit.com/r/girlsfrontline/comments/q1rscp/weekly_commanders_lounge_october_05_2021/hg3xpyr/, https://www.reddit.com/r/girlsfrontline/comments/mzjdl5/weekly_commanders_lounge_april_27_2021/gwrie7y/, https://old.reddit.com/r/girlsfrontline/comments/1cgndrn/weekly_commanders_lounge_april_30_2024/l2t1zkd/
     {
         id: 406,
         question: `How do dorms work?`,
@@ -3455,9 +3448,10 @@ const CARDS = [
             ],
             "FAIRY": [],
             "COALITION FORCES": [
-                "The only way to get Supernova and Dark Nova Crystals."
+                "The \"only\" way to get Supernova and Dark Nova Crystals."
             ]
-        })}`,
+        })}<br>
+        Completes the Resource Recovery daily mission.`,
         tags: [dtag.SYSMECH, dtag.TDOLL, dtag.EQUIP, dtag.FAIRY, dtag.COALITION, dtag.ITEM]
     },  //@Update for MA Comps?
     {
@@ -4302,6 +4296,18 @@ const CARDS = [
         })}`,
         tags: [dtag.THEATER, dtag.TDOLL, dtag.FAIRY, dtag.FST, dtag.COALITION]
     },
+    {
+        id: 526,
+        question: `Is there a list of possible talents for each component?`,
+        answer: `${figure(Embed.google(["GFL - Vehicle Component Details", "https://docs.google.com/spreadsheets/d/1U-VF3LX_aptvj1m9wrx5-tCZGus-l70V-uGhsM-uDHk"]), "Google Sheet by u/UnironicWeeaboo")}`, // https://old.reddit.com/r/girlsfrontline/comments/1cgndrn/weekly_commanders_lounge_april_30_2024/l20z7pu/
+        tags: [dtag.MA]
+    },
+    {
+        id: 527,
+        question: `I'm thinking of using Landmine Fairy. Will they work?`,
+        answer: `Well yes... as a stat stick. Can't use a Strategy Fairy skill in theater ${textStyle("mostly because you can't tap a node to activate it in the first place", "strike")}. Stick to Combat Fairies if you want to use skills.`,
+        tags: [dtag.FAIRY, dtag.THEATER]
+    },
     // {
     //     id: 0,
     //     question: ``,
@@ -4334,7 +4340,6 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/1bzmnr3/weekly_commanders_lounge_april_09_2024/kzsxfd8/
 // https://docs.google.com/spreadsheets/d/1ty239kyJbBs1sLhTo1JvSWuN0mIJsK1nwVdI6OLLtXo/edit?gid=143584538#gid=143584538
 // https://docs.google.com/document/d/1mRl1srQB96SCsehTtBeiJ-ZjuxLAoSE1bSHfKhIMcNE/edit
-// Mobile Armor - https://old.reddit.com/r/girlsfrontline/comments/1c5aljd/weekly_commanders_lounge_april_16_2024/l0s6bry/
 // Fragmented Visual Data - https://old.reddit.com/r/girlsfrontline/comments/1c5aljd/weekly_commanders_lounge_april_16_2024/kzxok6e/
 // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1usr9k/
 // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l182w55/
@@ -4348,7 +4353,11 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1lbfze/
 // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1738g5/
 
-// https://old.reddit.com/r/girlsfrontline/comments/1cgndrn/weekly_commanders_lounge_april_30_2024/
+// Mobile Armor
+// https://old.reddit.com/r/girlsfrontline/comments/1cgndrn/weekly_commanders_lounge_april_30_2024/l24gpzk/
+// https://old.reddit.com/r/girlsfrontline/comments/1c5aljd/weekly_commanders_lounge_april_16_2024/l0s6bry/
+// https://old.reddit.com/r/girlsfrontline/comments/1cgndrn/weekly_commanders_lounge_april_30_2024/l22shex/
+
 // https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1crmrcn/weekly_commanders_lounge_may_14_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1cx2khg/weekly_commanders_lounge_may_21_2024/
@@ -4358,3 +4367,4 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/1dilac7/weekly_commanders_lounge_june_18_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1do0n1y/weekly_commanders_lounge_june_25_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1dtgfxs/weekly_commanders_lounge_july_02_2024/
+// https://old.reddit.com/r/girlsfrontline/comments/1dywvub/weekly_commanders_lounge_july_09_2024/

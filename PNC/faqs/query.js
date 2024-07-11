@@ -1,16 +1,9 @@
 import {Embed, List, textStyle, image, figure, details, anchor, fragment} from "../../univasset/scripts/html/index.js";
-// import List from '../../univasset/scripts/htmlfunctions/lists.js';
 import * as SC from '../../univasset/scripts/specialchars.js';
+import {getID} from "../../univasset/scripts/faqs/index.js";
 
 //#region Constants
 const IMG_ASSET = "../assets/images/faqs/"
-//#endregion
-
-//#region Functions
-/** @param {string} text @param {...number} ids */
-function getID(text, ...ids) {
-    return anchor(text, `./?id=${ids.join("+")}`, {mode: "history"});
-}
 //#endregion
 
 const dtag = {
@@ -330,6 +323,7 @@ window.cards = [
 // https://nalu.wiki/neuralcloud
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1b0evdy/weekly_professors_lounge_february_26_2024/ksdzfoe/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1d9avll/new_system_spirit_system_on_june_11th/
+// https://old.reddit.com/r/GFLNeuralCloud/comments/1dee3bd/cant_rebind_my_account_getting_game_center/
 
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1bhnzp5/weekly_professors_lounge_march_18_2024/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1bnaug0/weekly_professors_lounge_march_25_2024/
@@ -347,5 +341,5 @@ window.cards = [
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1dhvcm4/weekly_professors_lounge_june_17_2024/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1dnarda/weekly_professors_lounge_june_24_2024/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1dsq7tg/weekly_professors_lounge_july_01_2024/
+// https://old.reddit.com/r/GFLNeuralCloud/comments/1dy62ab/weekly_professors_lounge_july_08_2024/
 
-// https://old.reddit.com/r/GFLNeuralCloud/comments/1dee3bd/cant_rebind_my_account_getting_game_center/

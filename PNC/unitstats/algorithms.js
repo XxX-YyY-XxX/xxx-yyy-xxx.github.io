@@ -584,6 +584,7 @@ const ALGO_SAVE = new (class {
     }
 })();
 
+/** One class per unit. */
 export class AlgoField {
     #name;
     #basestat;
