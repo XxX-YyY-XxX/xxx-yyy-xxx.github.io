@@ -1,3 +1,4 @@
+/* #region text-decoration-line */
 .text-overline {
     text-decoration-line: overline;
 }
@@ -9,6 +10,7 @@
 .text-overline.text-strikethrough {
     text-decoration-line: overline line-through;
 }
+/* #endregion */
 
 .text-superscript {
     vertical-align: super;

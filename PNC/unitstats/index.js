@@ -17,7 +17,7 @@ const BUTTON = {
     /** @type {HTMLInputElement} */ POTB: document.querySelector(`#pre-battle [value="PotB"]`),
     /** @type {HTMLInputElement} */ ALGO: document.querySelector(`#pre-battle [value="Algo"]`),
     /** @type {HTMLInputElement} */ OATH: document.querySelector(`#pre-battle [value="Oath"]`),
-    /** @type {HTMLInputElement} */ SPRT: document.querySelector(`#pre-battle [value="Sprt"]`),
+    /** @type {HTMLInputElement} */ SPRT: document.querySelector(`#pre-battle [value="Sprt"]`)
 }
 for (const BUTT of Object.values(BUTTON)) BUTT.addEventListener("change", event => document.dispatchEvent(UNITSTATUPDATE));
 
@@ -29,6 +29,10 @@ const CLASSES = {
     /** @type {HTMLInputElement} */ Medic:      document.querySelector('#classes [value="Medic"]')
 }
 for (const INPUT of Object.values(CLASSES)) INPUT.addEventListener("change", event => document.dispatchEvent(UNITFILTER));
+
+/* const INTIMACY_STATS = {
+
+} */
 //#endregion
 
 //#region Class Declarations
@@ -39,7 +43,6 @@ class Units {
     #base;
     #arma;
 
-    #hp;
     get [STAT_KEYS.HEALTH]() {
         // var output = this.#hp;
         // if (BUTTON.POTB.checked) output += this.#hp * 0.61;
@@ -59,15 +62,15 @@ class Units {
         if (BUTTON.POTB.checked) FLAT_PERC.push([0, 61]);
         if (BUTTON.ARMA.checked && this.#hasarma) FLAT_PERC.push([this.#arma[STAT], 0]);
         if (BUTTON.BOND.checked && this.#intistats.includes("Code Robustness")) FLAT_PERC.push([1320, 0]);
+        if (BUTTON.OATH.checked) FLAT_PERC.push([0, 8]);
         if (BUTTON.SPEC.checked && ["Guard", "Warrior", "Specialist"].includes(this.class)) FLAT_PERC.push([1200, 21]);
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
-        if (BUTTON.OATH.checked) FLAT_PERC.push([0, 8]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
+        console.log("HP:", 1 + PERC/100)
         return Math.trunc(this.#base[STAT] * (1 + PERC/100) + FLAT);
     }
 
-    #atk;
     get [STAT_KEYS.ATTACK]() {
         // var output = this.#atk;
         // if (BUTTON.POTB.checked) output += this.#atk * 0.61;
@@ -90,10 +93,10 @@ class Units {
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
+        console.log("ATK:", 1 + PERC/100)
         return Math.trunc(this.#base[STAT] * (1 + PERC/100) + FLAT);
     }
 
-    #hash;
     get [STAT_KEYS.HASHRATE]() {
         // var output = this.#hash;
         // if (BUTTON.POTB.checked) output += this.#hash * 0.61;
@@ -116,10 +119,10 @@ class Units {
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
+        console.log("HASH:", 1 + PERC/100)
         return Math.trunc(this.#base[STAT] * (1 + PERC/100) + FLAT);
     }
 
-    #pdef;
     get [STAT_KEYS.PDEFENSE]() {
         // var output = this.#pdef;
         // if (BUTTON.POTB.checked) output += this.#pdef * 0.61;
@@ -142,10 +145,10 @@ class Units {
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
+        console.log("PDEF:", 1 + PERC/100)
         return Math.trunc(this.#base[STAT] * (1 + PERC/100) + FLAT);
     }
 
-    #odef;
     get [STAT_KEYS.ODEFENSE]() {
         // var output = this.#odef;
         // if (BUTTON.POTB.checked) output += this.#odef * 0.61;
@@ -166,10 +169,10 @@ class Units {
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
+        console.log("ODEF:", 1 + PERC/100)
         return Math.trunc(this.#base[STAT] * (1 + PERC/100) + FLAT);
     }
 
-    #aspd;
     get [STAT_KEYS.ATKSPD]() {
         // var output = this.#aspd;
         // if (BUTTON.ALGO.checked) output += this.#algofield.aspd[0];
@@ -184,7 +187,6 @@ class Units {
         return this.#base[STAT] + FLAT;
     }
 
-    #crate;
     get [STAT_KEYS.CRITRATE]() {
         // var output = this.#crate;
         // if (BUTTON.BOND.checked && this.#intistats.includes("Coordinated Strike")) output += 8;
@@ -200,10 +202,9 @@ class Units {
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
-        return this.#base[STAT] + PERC;
+        return Math.round(this.#base[STAT] + PERC, 1);
     }
 
-    #cdmg = 50;
     get [STAT_KEYS.CRITDMG]() {
         // var output = this.#cdmg;
         // if (BUTTON.BOND.checked && this.#intistats.includes("Victorious Inspiration")) output += 12;
@@ -219,10 +220,9 @@ class Units {
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
-        return 50 + PERC;
+        return Math.round(50 + PERC, 1);
     }
 
-    #ppen;
     get [STAT_KEYS.PPENETRATE]() {
         // var output = this.#ppen;
         // if (BUTTON.POTB.checked) output += this.#ppen * 0.61;
@@ -243,10 +243,10 @@ class Units {
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
+        console.log("PPEN:", 1 + PERC/100)
         return Math.trunc(this.#base[STAT] * (1 + PERC/100) + FLAT);
     }
 
-    #open;
     get [STAT_KEYS.OPENETRATE]() {
         // var output = this.#open;
         // if (BUTTON.POTB.checked) output += this.#open * 0.61;
@@ -265,10 +265,10 @@ class Units {
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
+        console.log("OPEN:", 1 + PERC/100)
         return Math.trunc(this.#base[STAT] * (1 + PERC/100) + FLAT);
     }
 
-    #dodge;
     get [STAT_KEYS.DODGE]() {
         // var output = this.#dodge;
         // if (BUTTON.BOND.checked && this.#intistats.includes("Risk Evasion Aid")) output += 8;
@@ -285,7 +285,6 @@ class Units {
         return this.#base[STAT] + PERC;
     }
 
-    #regen;
     get [STAT_KEYS.POSTHEAL]() {
         // var output = this.#regen;
         // if (BUTTON.POTB.checked) output += {"Guard": 3584, "Sniper": 1084, "Warrior": 3301, "Specialist": 1485, "Medic": 1075}[this.class];
@@ -300,7 +299,6 @@ class Units {
         return this.#base[STAT] + FLAT;
     }
 
-    #haste = 0;
     get [STAT_KEYS.HASTE]() {
         // var output = this.#haste;
         // if (BUTTON.BOND.checked && this.#intistats.includes("Mechanical Celerity")) output += 8;
@@ -316,10 +314,9 @@ class Units {
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
-        return PERC;
+        return Math.round(PERC, 1);
     }
 
-    #res = 0;
     get [STAT_KEYS.DEBUFFRES]() {
         // var output = this.#res;
         // if (BUTTON.SPEC.checked && ["Guard", "Warrior"].includes(this.class)) output += 150;
@@ -334,7 +331,6 @@ class Units {
         return FLAT;
     }
 
-    #lash = 0;
     get [STAT_KEYS.BACKLASH]() {
         // var output = this.#lash;
         // if (BUTTON.ALGO.checked) output += this.#algofield.lash[1];
@@ -347,7 +343,6 @@ class Units {
         return PERC;
     }
 
-    #dboost = 0;
     get [STAT_KEYS.DMGBOOST]() {
         // var output = this.#dboost;
         // if (BUTTON.BOND.checked && this.#intistats.includes("Coordinated Formation")) output += 5;
@@ -362,7 +357,6 @@ class Units {
         return PERC;
     }
 
-    #dreduc = 0;
     get [STAT_KEYS.DMGREDUCE]() {
         // var output = this.#dreduc;
         // if (BUTTON.BOND.checked && this.#intistats.includes("Through Fire and Water")) output += 5;
@@ -377,7 +371,6 @@ class Units {
         return PERC;
     }
 
-    #hboost = 0;
     get [STAT_KEYS.HEALBOOST]() {
         // var output = this.#hboost;
         // if (BUTTON.BOND.checked && this.#intistats.includes("Healing Bond")) output += 5;
@@ -391,7 +384,7 @@ class Units {
         if (BUTTON.SPEC.checked && ["Medic"].includes(this.class)) FLAT_PERC.push([0, 9]);
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
-        return PERC;
+        return Math.round(PERC, 1);
     }
 
     #hasarma;
@@ -428,7 +421,6 @@ class Units {
                 //            true  || c === sub2 || d === sub2
                 //     s2b1 = true
                 // }
-                
                 return [
                     IS_REMOVE || a === set,
                     !main || b === main,
@@ -446,18 +438,6 @@ class Units {
         CLASS_INPUT.addEventListener("change", event => this.row.classList.toggle("hidden-class", !CLASS_INPUT.checked), true);
 
         this.#base = unitobject.base;
-
-        this.#hp = this.#base.hp;
-        this.#atk = this.#base.atk;
-        this.#hash = this.#base.hash;
-        this.#pdef = this.#base.pdef;
-        this.#odef = this.#base.odef;
-        this.#aspd = this.#base.aspd;
-        this.#crate = this.#base.crate;
-        this.#ppen = this.#base.ppen;
-        this.#open = this.#base.open;
-        this.#dodge = this.#base.dodge;
-        this.#regen = this.#base.regen;
 
         this.#arma = unitobject.arma;
         this.#hasarma = unitobject.tags.includes("Arma");

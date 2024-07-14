@@ -1725,7 +1725,7 @@ const CARDS = [
         id: 172,
         question: `Where are the skins? I can't find them.`,
         answer: `${figure(image(IMG_ASSET+"SkinLocation.png", "Gifts Tab."), 'Dorms > Warehouse > Gifts')}<br>
-        You get Black Cards here by gifting it.`,
+        You get Black Cards here by ${getID("gifting the extra skins", 390)}.`,
         tags: [dtag.TDOLL, dtag.SKIN]
     },
     {
@@ -3021,7 +3021,7 @@ const CARDS = [
     },
     {
         id: 363,
-        question: `How valueable are Black Cards?`,
+        question: `How valueable are the Black Cards?`,
         answer: `Very.`,
         tags: [dtag.TDOLL, dtag.SKIN, dtag.ITEM]
     },
@@ -4308,6 +4308,47 @@ const CARDS = [
         answer: `Well yes... as a stat stick. Can't use a Strategy Fairy skill in theater ${textStyle("mostly because you can't tap a node to activate it in the first place", "strike")}. Stick to Combat Fairies if you want to use skills.`,
         tags: [dtag.FAIRY, dtag.THEATER]
     },
+    {
+        id: 528,
+        question: `What's the star that says "Collected" for?`,
+        answer: `Funny name for "Favorites".`,
+        tags: [dtag.SYSMECH]
+    },
+    {
+        id: 529,
+        question: `How do I get gold tier equipments?`,
+        answer: `${List.unordered(
+            "Equipment Factory Production",
+            "Forward Basecamp Loots",
+            "Frontline Protocol (cycles through slots)",    // https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/l3cfmzc/
+            "Gray Zone Exploration"
+        )}`,
+        tags: [dtag.GET, dtag.EQUIP, dtag.TDOLL, dtag.PROD, dtag.EXPED, dtag.BP, dtag.GZ]
+    },
+    {
+        id: 530,
+        question: `Can Mobile Armor Component Talents stack?`,
+        answer: `The skill types, no.`, // https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/l354skm/
+        tags: [dtag.MA, dtag.EQUIP, dtag.SKILL]
+    },
+    {
+        id: 531,
+        question: `Are the Gray Zone debuffs for me or for the enemy?`,
+        answer: `The enemy.`,
+        tags: [dtag.GZ, dtag.SYSMECH]
+    },
+    {
+        id: 532,
+        question: `Is there a tier list for MA components and talents?`,
+        answer: `${Embed.google(["Axis MA Component Tierlist (tl by varz)", "https://docs.google.com/spreadsheets/d/1Do1TO96GmO2vkPlPRIeybivnHi9C1CDt"])}`, // https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/l31suqy/
+        tags: [dtag.MA, dtag.EQUIP, dtag.SKILL, dtag.TIER]
+    },
+    {
+        id: 533,
+        question: `Is Core/Critical Zone harder than Advanced?`,
+        answer: `Core 8 yes. To be clear, Core 1-3 is like Easy, Core 4-6 are Intermediate, and Core 7-8 are Advanced.`,
+        tags: [dtag.THEATER]
+    },
     // {
     //     id: 0,
     //     question: ``,
@@ -4344,6 +4385,8 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1usr9k/
 // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l182w55/
 // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l14i21y/
+// https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/l3vdsq3/
+// https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/l3ewqvt/
 
 // FST rework
 // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1tymg1/
@@ -4357,8 +4400,9 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/1cgndrn/weekly_commanders_lounge_april_30_2024/l24gpzk/
 // https://old.reddit.com/r/girlsfrontline/comments/1c5aljd/weekly_commanders_lounge_april_16_2024/l0s6bry/
 // https://old.reddit.com/r/girlsfrontline/comments/1cgndrn/weekly_commanders_lounge_april_30_2024/l22shex/
+// https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/l3ostxm/
 
-// https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/
+
 // https://old.reddit.com/r/girlsfrontline/comments/1crmrcn/weekly_commanders_lounge_may_14_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1cx2khg/weekly_commanders_lounge_may_21_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1d2e66k/weekly_commanders_lounge_may_28_2024/

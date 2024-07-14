@@ -159,7 +159,7 @@ export function anchor(content, href, {mode = null, data = {}} = {}) {
             ANCHOR.toString = function() {            
                 /** @type {HTMLAnchorElement} */ const CLONE = this.cloneNode(true);
 
-                // Important when changed to string HTML. Event listener not carried over.
+                // Important when changed to string HTML. Event listener and closures not carried over.
                 if (Object.keys(data).length)
                     CLONE.dataset.data = JSON.stringify(data);
                 CLONE.setAttribute("onclick", "return anchorHistoryClick(this)");
