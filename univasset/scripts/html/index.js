@@ -89,7 +89,6 @@ export const Embed = {
         }
     }
 }
-
 export const googleDocsCompilation = Embed.google;
 
 function listItem(x) {

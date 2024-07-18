@@ -44,19 +44,6 @@ class Units {
     #arma;
 
     get [STAT_KEYS.HEALTH]() {
-        // var output = this.#hp;
-        // if (BUTTON.POTB.checked) output += this.#hp * 0.61;
-        // if (BUTTON.ARMA.checked && this.#hasarma) output += this.#arma.hp;
-        // if (BUTTON.BOND.checked && this.#intistats.includes("Code Robustness")) output += 1320;
-        // if (BUTTON.SPEC.checked && ["Guard", "Warrior", "Specialist"].includes(this.class)) output += this.#hp * 0.21 + 1200;
-        // if (BUTTON.ALGO.checked) {
-        //     const [FLAT, PERC] = this.#algofield.hp;
-        //     output += (this.#base.hp * PERC / 100) + FLAT;
-        // }
-        // if (BUTTON.OATH.checked) output += this.#hp * 0.08;
-        // if (BUTTON.SPRT.checked) output += SPIRIT_STAT.hp[0];
-        // return Math.trunc(output);
-
         const STAT = STAT_KEYS.HEALTH;
         /** @type {[number, number][]} */ const FLAT_PERC = [];
         if (BUTTON.POTB.checked) FLAT_PERC.push([0, 61]);
@@ -67,23 +54,11 @@ class Units {
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
-        console.log("HP:", 1 + PERC/100)
+        console.log("HP:", (100 + PERC)/100)
         return Math.trunc(this.#base[STAT] * (1 + PERC/100) + FLAT);
     }
 
     get [STAT_KEYS.ATTACK]() {
-        // var output = this.#atk;
-        // if (BUTTON.POTB.checked) output += this.#atk * 0.61;
-        // if (BUTTON.ARMA.checked && this.#hasarma) output += this.#arma.atk;
-        // if (BUTTON.BOND.checked && this.#intistats.includes("Power Connection")) output += 55;
-        // if (BUTTON.SPEC.checked && ["Sniper", "Warrior", "Specialist"].includes(this.class)) output += this.#atk * 0.22 + 38;
-        // if (BUTTON.ALGO.checked) {
-        //     const [FLAT, PERC] = this.#algofield.atk;
-        //     output += (this.#base.atk * PERC / 100) + FLAT;
-        // }
-        // if (BUTTON.SPRT.checked) output += SPIRIT_STAT.atk[0];
-        // return Math.trunc(output);
-
         const STAT = STAT_KEYS.ATTACK;
         /** @type {[number, number][]} */ const FLAT_PERC = [];
         if (BUTTON.POTB.checked) FLAT_PERC.push([0, 61]);
@@ -93,23 +68,11 @@ class Units {
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
-        console.log("ATK:", 1 + PERC/100)
+        console.log("ATK:", (100 + PERC)/100)
         return Math.trunc(this.#base[STAT] * (1 + PERC/100) + FLAT);
     }
 
     get [STAT_KEYS.HASHRATE]() {
-        // var output = this.#hash;
-        // if (BUTTON.POTB.checked) output += this.#hash * 0.61;
-        // if (BUTTON.ARMA.checked && this.#hasarma) output += this.#arma.hash;
-        // if (BUTTON.BOND.checked && this.#intistats.includes("Neural Activation")) output += 55;
-        // if (BUTTON.SPEC.checked && ["Sniper", "Warrior", "Specialist", "Medic"].includes(this.class)) output += this.#hash * 0.22 + 38;
-        // if (BUTTON.ALGO.checked) {
-        //     const [FLAT, PERC] = this.#algofield.hash;
-        //     output += (this.#base.hash * PERC / 100) + FLAT;
-        // }
-        // if (BUTTON.SPRT.checked) output += SPIRIT_STAT.hash[0];
-        // return Math.trunc(output);
-
         const STAT = STAT_KEYS.HASHRATE;
         /** @type {[number, number][]} */ const FLAT_PERC = [];
         if (BUTTON.POTB.checked) FLAT_PERC.push([0, 61]);
@@ -119,7 +82,7 @@ class Units {
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
-        console.log("HASH:", 1 + PERC/100)
+        console.log("HASH:", (100 + PERC)/100)
         return Math.trunc(this.#base[STAT] * (1 + PERC/100) + FLAT);
     }
 
@@ -145,7 +108,7 @@ class Units {
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
-        console.log("PDEF:", 1 + PERC/100)
+        console.log("PDEF:", (100 + PERC)/100)
         return Math.trunc(this.#base[STAT] * (1 + PERC/100) + FLAT);
     }
 
@@ -169,7 +132,7 @@ class Units {
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
-        console.log("ODEF:", 1 + PERC/100)
+        console.log("ODEF:", (100 + PERC)/100)
         return Math.trunc(this.#base[STAT] * (1 + PERC/100) + FLAT);
     }
 
@@ -243,7 +206,7 @@ class Units {
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
-        console.log("PPEN:", 1 + PERC/100)
+        console.log("PPEN:", (100 + PERC)/100)
         return Math.trunc(this.#base[STAT] * (1 + PERC/100) + FLAT);
     }
 
@@ -265,7 +228,7 @@ class Units {
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
-        console.log("OPEN:", 1 + PERC/100)
+        console.log("OPEN:", (100 + PERC)/100)
         return Math.trunc(this.#base[STAT] * (1 + PERC/100) + FLAT);
     }
 

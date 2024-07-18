@@ -12,8 +12,8 @@ timer(
     "./assets/images/timer/p85gqwtp826d1.webp",
     {onEnd: timer.bind(
         null, document.getElementById("battlepass"),
-        "",
-        ""
+        "Aug 26, 2024 00:00 UTC-0800",
+        "./assets/images/timer/j1kat1xvnlcd1.webp",
     )}
 );
 
@@ -21,7 +21,6 @@ timer(
     document.getElementById("coalition"),
     "Jul 23, 2024 00:00 UTC-0800",
     "./assets/images/coalition/15ArchitectNVWModel.webp",
-    "./assets/images/coalition/11Judge.webp",
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
         "",
@@ -31,12 +30,12 @@ timer(
 
 timer(
     document.getElementById('skin-banner'),
-    "Jul 09, 2024 00:00 UTC-0800",
-    "https://iopwiki.com/images/thumb/2/21/G11_costume10_D.png/600px-G11_costume10_D.png",
+    "Aug 06, 2024 00:00 UTC-0800",
+    "https://iopwiki.com/images/thumb/3/31/HK433_costume1_D.png/600px-HK433_costume1_D.png"
     {onEnd: timer.bind(
         null, document.getElementById('skin-banner'),
-        "Aug 06, 2024 00:00 UTC-0800",
-        "https://iopwiki.com/images/thumb/3/31/HK433_costume1_D.png/600px-HK433_costume1_D.png"
+        "",
+        ""
     )}
 );
 

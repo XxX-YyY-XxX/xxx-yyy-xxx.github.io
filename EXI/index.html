@@ -63,13 +63,17 @@
                 </iframe>
 
                 <blockquote class="reddit-embed-bq" data-embed-theme="dark" data-embed-height="240">
-                    <!-- /weekly_commanders_lounge_january_05_2021/ -->
                     <a href="https://www.reddit.com/r/girlsfrontline/comments/kqtpcv/comment/gifxq8v/">Comment</a><br> by from discussion<a href="https://www.reddit.com/r/girlsfrontline/comments/kqtpcv"><no value=""></no></a><br> in<a href="https://www.reddit.com/r/girlsfrontline/">girlsfrontline</a>
+                </blockquote>
+
+                <blockquote class="reddit-embed-bq" data-embed-theme="dark" data-embed-height="240">
+                    <!-- /weekly_commanders_lounge_january_05_2021/ -->
+                    <a href="https://www.reddit.com/r/girlsfrontline/comments/kqtpcv/comment/gifxq8v/">Reddit comment</a>
                 </blockquote>
 
                 <script>
                     // https://stackoverflow.com/questions/1452871/how-can-i-access-iframe-elements-with-javascript
-                    for (const FRAME in document.querySelectorAll("iframe")) {
+                    for (const FRAME of document.querySelectorAll("iframe")) {
                         const DOC = FRAME.contentDocument ?? FRAME.contentWindow?.document
                         console.log(FRAME)
                         console.log(DOC)

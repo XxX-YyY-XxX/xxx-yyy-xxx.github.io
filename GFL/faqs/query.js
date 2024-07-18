@@ -224,7 +224,7 @@ const CARDS = [
                 "Normal is for new commanders or lazies. Hard/EX is for mid-game players who wants a challenge. Nightmare/UX is for late-gamers."
             ],
             "All of the above": [
-                fragment("Grind the farming maps to obtain ", getID("event-reward dolls", 24), ". You can pity/guarantee them with ", getID("Platinum and Nova medals", 104), ".")
+                fragment("Grind the (deliberately created) farming maps to obtain ", getID("event-reward dolls", 24), ". You can pity/guarantee them with ", getID("Platinum and Nova medals", 104), ".")
             ]
         })}`,
         tags: [dtag.SEASON, dtag.MAJOR, dtag.PRIME, dtag.NEWB]
@@ -640,13 +640,13 @@ const CARDS = [
         id: 34,
         question: `How do I strengthen FSTs?`,
         answer: `${List.unordered(
-            'Leveling up mostly by SCR',
+            'Leveling up mostly by SCR through their individual unit page', //@Visual
             `Raising ${STAR}s using their central data or general data`,    // ???
             'Iterations by data patches (only available at LV100 and 5★)', // ???
             'Enhancements using pills', // ???
             'Skill levels',
             'Equipping and leveling chips')}`,
-        tags: [dtag.FST, dtag.LEVEL, dtag.IMPT]
+        tags: [dtag.HOC, dtag.FST, dtag.LEVEL, dtag.IMPT]
     },  //@Overhaul
     //#endregion
     {
@@ -1411,7 +1411,7 @@ const CARDS = [
         id: 131,
         question: `What are Extra Impulses and where can I get them?`,
         answer: `Stockable versions of Electronic Impulses.<br>
-        You can get them through daily log-ins, weekly quests, achievements, and events.`,
+        You can get them through daily log-ins, weekly quests, achievements, friend store, paid battlepass, and events.`,    // https://old.reddit.com/r/girlsfrontline/comments/1crmrcn/weekly_commanders_lounge_may_14_2024/l4jxhtv/
         tags: [dtag.PA, dtag.ITEM, dtag.GET]
     },
     {
@@ -4349,6 +4349,25 @@ const CARDS = [
         answer: `Core 8 yes. To be clear, Core 1-3 is like Easy, Core 4-6 are Intermediate, and Core 7-8 are Advanced.`,
         tags: [dtag.THEATER]
     },
+    {
+        id: 534,
+        question: `How do I get intel points in Isomer Campaign?`,
+        answer: `Clear the first map to get enough for the whole chapter.`, // https://old.reddit.com/r/girlsfrontline/comments/1crmrcn/weekly_commanders_lounge_may_14_2024/l4y1rab/
+        tags: [dtag.CAMPAIGN]
+    },
+    {
+        id: 535,
+        question: `How do I get more entries for the Mobile Armor tower?`,
+        answer: `Beat another Gray Zone boss.`,
+        tags: [dtag.MA, dtag.GZ]
+    },
+    {
+        id: 536,
+        question: `I wasn't able to place high enough to 5★ the reward HOC. Is there another way to get their central data?`,
+        answer: `First theater of the FST? Even the Top 1 can't anyway.<br>
+        Second theater of the FST? Wait for the next theater and they'll join the HOC gacha.`,
+        tags: [dtag.HOC, dtag.FST, dtag.GET]
+    },
     // {
     //     id: 0,
     //     question: ``,
@@ -4387,6 +4406,9 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l14i21y/
 // https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/l3vdsq3/
 // https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/l3ewqvt/
+// https://old.reddit.com/r/girlsfrontline/comments/1crmrcn/weekly_commanders_lounge_may_14_2024/l4vuvoz/
+// https://old.reddit.com/r/girlsfrontline/comments/1crmrcn/weekly_commanders_lounge_may_14_2024/l4lsbv0/
+// https://old.reddit.com/r/girlsfrontline/comments/1crmrcn/weekly_commanders_lounge_may_14_2024/l4270q5/
 
 // FST rework
 // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1tymg1/
@@ -4403,7 +4425,6 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/l3ostxm/
 
 
-// https://old.reddit.com/r/girlsfrontline/comments/1crmrcn/weekly_commanders_lounge_may_14_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1cx2khg/weekly_commanders_lounge_may_21_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1d2e66k/weekly_commanders_lounge_may_28_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1d7rtqh/weekly_commanders_lounge_june_04_2024/
@@ -4412,3 +4433,4 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/1do0n1y/weekly_commanders_lounge_june_25_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1dtgfxs/weekly_commanders_lounge_july_02_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1dywvub/weekly_commanders_lounge_july_09_2024/
+// https://old.reddit.com/r/girlsfrontline/comments/1e4j1nr/weekly_commanders_lounge_july_16_2024/
