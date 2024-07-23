@@ -2,17 +2,12 @@
 
 # Girls' Frontline Reddit Lounge FAQs
 
-# [Theater](/GFL/theater)
-- Theater guides, battles, and formations.
-
 # [Commander Wardrobe](/GFL/wardrobe)*
 - Costume skills, availability, and gender change.
 
 # Redditor Musings
 
 > BSJ
-> - [Shield Fairy rework, DR ranking...](https://old.reddit.com/r/girlsfrontline/comments/t42t86/weekly_commanders_lounge_march_01_2022/hz9p3te/)
->
 > - [No such thing as too much EVA, he says...](https://old.reddit.com/r/girlsfrontline/comments/r08976/weekly_commanders_lounge_november_23_2021/hm1ah4r/)
 >
 > - [Links dump 1.](https://old.reddit.com/r/girlsfrontline/comments/s17rwt/weekly_commanders_lounge_january_11_2022/ht46bxl/)

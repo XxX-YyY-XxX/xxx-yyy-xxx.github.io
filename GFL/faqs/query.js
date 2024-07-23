@@ -4368,6 +4368,18 @@ const CARDS = [
         Second theater of the FST? Wait for the next theater and they'll join the HOC gacha.`,
         tags: [dtag.HOC, dtag.FST, dtag.GET]
     },
+    {
+        id: 537,
+        question: `What is the "Final Battle" tab in Theater Ranking?`,
+        answer: `Highest score you obtained in Core 8 stage.`,
+        tags: [dtag.THEATER]
+    },
+    {
+        id: 538,
+        question: `What's the rate for coaltion unit sizes?`,
+        answer: `${Embed.reddit("t42t86/weekly_commanders_lounge_march_01_2022/hz9p3te")}`,
+        tags: [dtag.PA, dtag.COALITION]
+    },
     // {
     //     id: 0,
     //     question: ``,
@@ -4391,7 +4403,6 @@ window.cards = CARDS;
 // cdn.discordapp cleanup
 // gray zone proxy settings
 
-// https://old.reddit.com/r/girlsfrontline/comments/uc7eet/weekly_commanders_lounge_april_26_2022/i6mqo74/
 // https://old.reddit.com/r/girlsfrontline/comments/1929lxq/weekly_commanders_lounge_january_09_2024/khy62ha/
 // https://old.reddit.com/r/girlsfrontline/comments/1929lxq/weekly_commanders_lounge_january_09_2024/khmieoe/
 // https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/kgfv3bn/

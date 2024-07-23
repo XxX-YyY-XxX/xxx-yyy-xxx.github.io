@@ -118,13 +118,6 @@ class Units {
     }
 
     get [STAT_KEYS.CRITRATE]() {
-        // var output = this.#crate;
-        // if (BUTTON.BOND.checked && this.#intistats.includes("Coordinated Strike")) output += 8;
-        // if (BUTTON.SPEC.checked && ["Sniper", "Warrior"].includes(this.class)) output += 9;
-        // if (BUTTON.ALGO.checked) output += this.#algofield.crate[1];
-        // if (BUTTON.SPRT.checked) output += SPIRIT_STAT.crate[1];
-        // return Math.round(output, 1);
-
         const STAT = STAT_KEYS.CRITRATE;
         /** @type {[number, number][]} */ const FLAT_PERC = [];
         if (BUTTON.BOND.checked && this.#intistats.includes("Coordinated Strike")) FLAT_PERC.push([0, 8]);
