@@ -1,7 +1,7 @@
 // event timers only too lazy to do others
 
 import {Timer, getTemplateCloner, splitTime} from "../univasset/scripts/externaljavascript.js";
-import {setattr} from "../univasset/scripts/basefunctions/index.js";
+import {Random, setattr} from "../univasset/scripts/basefunctions/index.js";
 
 const TIMER_FIELD = document.querySelector("#timer-field");
 const _timerTemplate = getTemplateCloner("#timer-block");
@@ -55,18 +55,26 @@ function timer(start_date, end_date, title, imgpath, {onend = null} = {}) {
 
 (function resetTimer() {
     timer(
-        "Jun 25, 2024 18:30 UTC-0800",
-        "Jul 30, 2024 18:30 UTC-0800",
-        "Retrocausal Trie Interference",
-        "./assets/images/timer/LoginBg_ZH_CN_Steins_Gate_December_2023.png",
+        "Jul 23, 2024 18:30 UTC-0800",
+        "Aug 13, 2024 18:30 UTC-0800",
+        "Phantasmagoric Sojourn",
+        `./assets/images/timer/${Random.iterable(["cpt00_e_cg048", "cpt00_e_cg048_2"]).next().value}.png`,
         {onend: resetTimer}
     )
 
     timer(
-        "Jun 11, 2024 18:30 UTC-0800",
-        "Jul 02, 2024 18:30 UTC-0800",
-        "Critical Cascade Rerun",
-        "./assets/images/timer/LoginBg_ZH_CN_Critical_Cascade.png",
+        "Jul 23, 2024 18:30 UTC-0800",
+        "Aug 13, 2024 18:30 UTC-0800",
+        "Melodious Macrocosm",
+        `./assets/images/timer/${Random.iterable(["cpt00_e_cg035", "cpt00_e_cg038"]).next().value}.png`,
+        {onend: resetTimer}
+    )
+
+    timer(
+        "Jun 25, 2024 18:30 UTC-0800",
+        "Jul 30, 2024 18:30 UTC-0800",
+        "Retrocausal Trie Interference",
+        "./assets/images/timer/LoginBg_ZH_CN_Steins_Gate_December_2023.png",
         {onend: resetTimer}
     )
 })();

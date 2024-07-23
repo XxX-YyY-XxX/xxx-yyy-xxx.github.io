@@ -109,11 +109,6 @@ class Units {
     }
 
     get [STAT_KEYS.ATKSPD]() {
-        // var output = this.#aspd;
-        // if (BUTTON.ALGO.checked) output += this.#algofield.aspd[0];
-        // if (BUTTON.SPRT.checked) output += SPIRIT_STAT.aspd[0];
-        // return output;
-
         const STAT = STAT_KEYS.ATKSPD;
         /** @type {[number, number][]} */ const FLAT_PERC = [];
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);

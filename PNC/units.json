@@ -1199,16 +1199,16 @@
             "regen": 595
         },
         "arma": {
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
+            "hp": 4661,
+            "atk": 140,
+            "hash": 142,
+            "pdef": 89,
+            "odef": 92,
+            "ppen": 85,
+            "open": 85
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
-        "tags": []
+        "tags": ["Arma"]
     },
 
     {
@@ -1324,16 +1324,16 @@
             "regen": 588
         },
         "arma": {
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
+            "hp": 3748,
+            "atk": 201,
+            "hash": 107,
+            "pdef": 90,
+            "odef": 65,
+            "ppen": 95,
+            "open": 59
         },
         "intimacy": ["Power Connection", "Mechanical Celerity", "Coordinated Formation"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
         "id": 1046,
@@ -2327,6 +2327,37 @@
         "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"],
         "tags": []
     },
+    {
+        "id": 1082,
+        "name": "Bonneville",
+        "class": "Warrior",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
+        "base": {
+            "hp": 21707,
+            "atk": 650,
+            "hash": 525,
+            "pdef": 423,
+            "odef": 423,
+            "aspd": 100,
+            "crate": 10,
+            "ppen": 318,
+            "open": 295,
+            "dodge": 5,
+            "regen": 702
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": ["Power Connection", "Code Robustness", "Coordinated Formation"],
+        "tags": []
+    },
 
     {
         "id": 1072,
@@ -2365,12 +2396,6 @@
         "tags": ["Unreleased"]
     },
     {
-        "id": 1082,
-        "name" : "Bonneville",
-        "reference" : {"" : ""},
-        "tags": ["Unreleased"]
-    },
-    {
         "id": 1083,
         "name" : "Shale",
         "reference" : {"" : ""},
@@ -2390,8 +2415,8 @@
     },
     {
         "id": 1086,
-        "name" : "Lewis",
-        "reference" : {"Lewis" : "https://iopwiki.com/wiki/Lewis"},
+        "name": "Lewis",
+        "reference": {"Lewis": "https://iopwiki.com/wiki/Lewis"},
         "tags": ["Unreleased"]
     }
 ]
