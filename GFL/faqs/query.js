@@ -560,7 +560,7 @@ const CARDS = [
         ${List.description({
             "General" : [
                 details("CheneyQWER's infographic.", image(IMG_ASSET+"EchelonComps.png", "CheneyQWER's infographic.")),
-                anchor('u/UnironicWeeaboo tips.', 'https://old.reddit.com/r/girlsfrontline/comments/vmhs0x/weekly_commanders_lounge_june_28_2022/ie3bw95/')
+                details("u/UnironicWeeaboo tips.", Embed.reddit("vmhs0x/weekly_commanders_lounge_june_28_2022/ie3bw95"))
             ],
             'Tactical Doll Echelons' : [
                 anchor("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv'),
@@ -1522,9 +1522,9 @@ const CARDS = [
     {
         id: 145,
         question: `Can someone tell me what the difference is between Charge, Destroy, and Defend commands for coalition units?`,
-        answer: `Lets melee units ${TextStyle.style('Charge', TextStyle.BOLD)} down the lane.<br>
-        Lets melee units approach and ${TextStyle.style('Destroy', TextStyle.BOLD)} the nearest enemy.<br>
-        Return and ${TextStyle.style('Defend', TextStyle.BOLD)} their grid position.`,
+        answer: `Lets melee units ${textStyle("Charge", "bold")} down the lane.<br>
+        Lets melee units approach and ${textStyle("Destroy", "bold")} the nearest enemy.<br>
+        Return and ${textStyle("Defend", "bold")} their grid position.`,
         tags: [dtag.COALITION, dtag.BATTLE]
     },
     {

@@ -24,6 +24,10 @@ export function textStyle(text, ...styles) {
     return SPAN;
 }
 
+// export function code(x) {
+//     return setattr(document.createElement("code"), {append: [x]})
+// }
+
 export const Embed = {
     google(...namelinkpair) {
         const EMBED = "/preview?pli=1";
