@@ -404,7 +404,7 @@ const CARDS = [
             'Lore' : [
                 anchor('Confidential Files', 'https://docs.google.com/document/d/1JyJ-o9gHCeCdN2h8PhhRdFczejLs6Wve8dziQZUSEGk'),
                 anchor('Confidential Files 2: New and Emerging Forms of Threat', 'https://drive.google.com/drive/folders/17_9Tu-90ZWrvlHPzgWbVwSQebJ4nHiR7'),
-                anchor("The Background History of Girls' Frontline", 'https://twitter.com/YZsFerrari/status/1379877420732448777'),
+                details("The Background History of Girls' Frontline", Embed.twitter("YZsFerrari", "1379877420732448777")),
                 anchor('IOPWiki Lore', 'https://iopwiki.com/wiki/Lore'),
                 anchor('Gamepress Lore Directory', 'https://gamepress.gg/girlsfrontline/lore-directory')
             ],
@@ -471,7 +471,8 @@ const CARDS = [
                 "Type 97s and the AR Team, which are the only ones that can't be bought.",
                 'All dolls come preleveled.'
             ]
-        })}`,
+        })}<br>
+        You can also go to their index page to see their drop locations.`,
         tags: [dtag.TDOLL, dtag.IMPT, dtag.GET, dtag.SPEQ, dtag.PROD, dtag.MAP, dtag.TCM, dtag.GZ]
     },  //@Fix
     {
@@ -2899,7 +2900,7 @@ const CARDS = [
     {
         id: 342,
         question: `Can I get SPEQs/Limited dolls from auto-battles?`,
-        answer: `Yes we can.`,
+        answer: `Yes, but it trades chances per time for being hands-off.`,
         tags: [dtag.AUTO, dtag.GET, dtag.SPEQ, dtag.TDOLL]
     },
     {
@@ -4145,7 +4146,7 @@ const CARDS = [
         <p>Rerun banners rotate through the normal banner sequentially.</p>
         <p>New unit/seasonal rerun banners give priority to new units, while seasonal reruns take this place on their respective seasons.</p>
         <p>Special banners are banners used for anniversaries and half-annies, giving free pulls.</p>
-        Normal Banners
+        ${textStyle("Normal Banners", "bold")}
         ${List.ordered(
             "Scarecrow",
             "Executioner",
@@ -4164,20 +4165,21 @@ const CARDS = [
             "Tareus",
             "Sana"
         )}
-        Sesonal Banners
+        <br>
+        ${textStyle("Sesonal Banners", "bold")}
         ${List.unordered(
             "Summer) Architect - NVW Model",
             "Halloween) Intruder - Sorceress Of The End",
             "Christmas) Destroyer - Dashing Reindeer",
             "Valentine) Hunter - Nightfall Moth",
-            "Anniversary) Cerberus",
+            `"Anniversary") Cerberus`,
             "Summer) Alina - Mosasaur Rider",
             "Halloween) Executioner - Blood Fiend Huntress",
             "New Year) Scarecrow - Demonic Abyss",
             // "Anniversary) Sana",
         )}`,
         tags: [dtag.PA]
-    },  //@Will tweak later
+    },
     {
         id: 514,
         question: `What are these random things I keep getting from Gray Zone?`,
@@ -4380,12 +4382,18 @@ const CARDS = [
         answer: `${Embed.reddit("t42t86/weekly_commanders_lounge_march_01_2022/hz9p3te")}`,
         tags: [dtag.PA, dtag.COALITION]
     },
-    // {
-    //     id: 0,
-    //     question: ``,
-    //     answer: ``,
-    //     tags: []
-    // },
+    {
+        id: 539,
+        question: `Do I need to buy all items in a costume set to get the skill?`,
+        answer: `No need. Just get 1 item from the set for each slot to get the skill. And just owning them is enough to get it.`,
+        tags: [dtag.CMDR, dtag.SKIN]
+    },
+    //{
+    //    id: 0,
+    //    question: ``,
+    //    answer: ``,
+    //    tags: []
+    //},
 ];
 window.cards = CARDS;
 //      
@@ -4424,6 +4432,7 @@ window.cards = CARDS;
 // FST rework
 // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1tymg1/
 // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l11jvz1/
+//https://old.reddit.com/r/girlsfrontline/comments/1cx2khg/weekly_commanders_lounge_may_21_2024/l529l9q/
 
 // Newbie starting up
 // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1lbfze/
@@ -4434,9 +4443,8 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/1c5aljd/weekly_commanders_lounge_april_16_2024/l0s6bry/
 // https://old.reddit.com/r/girlsfrontline/comments/1cgndrn/weekly_commanders_lounge_april_30_2024/l22shex/
 // https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/l3ostxm/
+//https://old.reddit.com/r/girlsfrontline/comments/1cx2khg/weekly_commanders_lounge_may_21_2024/l5exhaz/
 
-
-// https://old.reddit.com/r/girlsfrontline/comments/1cx2khg/weekly_commanders_lounge_may_21_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1d2e66k/weekly_commanders_lounge_may_28_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1d7rtqh/weekly_commanders_lounge_june_04_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1dd8rka/weekly_commanders_lounge_june_11_2024/
@@ -4445,3 +4453,4 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/1dtgfxs/weekly_commanders_lounge_july_02_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1dywvub/weekly_commanders_lounge_july_09_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1e4j1nr/weekly_commanders_lounge_july_16_2024/
+//https://old.reddit.com/r/girlsfrontline/comments/1ea289r/weekly_commanders_lounge_july_23_2024/

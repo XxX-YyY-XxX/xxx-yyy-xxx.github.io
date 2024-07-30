@@ -19,7 +19,3 @@
 > For what it's worth, they're more of QOL than gamechanging so low prio. Combat Summary, Deep Learning, and Search Theory have noticeable effects in the long run so maybe those first.
 
 @ Clarify
-
-### Do I need to buy all items in a costume set to get the skill?
-
-> No need. Just get 1 item from the set for each slot to get the skill. And just owning them is enough to get it.
