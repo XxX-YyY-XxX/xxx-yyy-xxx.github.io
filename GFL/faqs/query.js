@@ -1764,15 +1764,16 @@ const CARDS = [
     {
         id: 175,
         question: `What are these General Data I keep getting?`,
-        answer: `Used for FSTs that are not yet 5${STAR}.<br>
-        ${TextStyle.style('Limitations:', TextStyle.BOLD)}<br>
-        ${List.unordered(
-            'Only usable to FSTs in the gacha pool (added after a Theater for a new FST is ran).',
-            "Cannot be used for iteration, or anythimg else for that matter."
-        )}
-        If you plan to big brain with this, churn your FST-specific central data to patches first, because they're the priority data to use before general data.`,
+        answer: `With the FST upgrading rework, practically useless.`,  //https://old.reddit.com/r/girlsfrontline/comments/1d2e66k/weekly_commanders_lounge_may_28_2024/l705rph/
         tags: [dtag.HOC, dtag.FST, dtag.ITEM]
-    },  //@Visual (5 yellow stars)
+    },  //@General Data image
+    //Used for FSTs that are not yet 5${STAR}.<br>
+    //    ${TextStyle.style('Limitations:', TextStyle.BOLD)}<br>
+    //    ${List.unordered(
+    //        'Only usable to FSTs in the gacha pool (added after a Theater for a new FST is ran).',
+    //        "Cannot be used for iteration, or anythimg else for that matter."
+    //    )}
+    //    If you plan to big brain with this, churn your FST-specific central data to patches first, because they're the priority data to use before general data.
     {
         id: 176,
         question: `Just noticed that the Black Market Shop in the Forward Basecamp has a Costumes tab. Anyone know what that's about?`,
@@ -1947,8 +1948,12 @@ const CARDS = [
                 details("Ringleaders", Embed.youtube("-erW_9CBkjQ")),
                 details("NPCs", Embed.youtube("20kEk-lrxqY")),
                 anchor("Cutscene interpreter", "https://gfl.amaryllisworks.pw/#side-12-0")
+            )),
+            details("6th Anniversary", List.unordered(
+                anchor("Cutscene Interpreter", "https://gfl.amaryllisworks.pw/#side-12-1"),
+                fragment(anchor("RandomQwerty's github repository", "https://github.com/randomqwerty/GFLData/tree/main/en/text/avgtxt/anniversary"), " (number corresponds to doll index)")
+                //video later
             ))
-            // 6th anniv
         )}`,
         tags: [dtag.LORE, dtag.ANNIV, dtag.ADJUNCT]
     },
@@ -2999,7 +3004,8 @@ const CARDS = [
         id: 359,
         question: `Is the Rescue Fairy's skill actually good?`,
         answer: `For core farming purposes, ${details('very noticeable', Embed.google(["GFL 10-4E Rescue Core Rate Stats", "https://docs.google.com/spreadsheets/d/1DSYyTdC3Yk7JV4YGuj8zFMZqbPcH2zpNShtAFpR2Qmw"]))}.<br>
-        Note that it only works on dolls, not equipments.`,
+        Note that it only works on dolls, not equipments.<br>
+        For farming purposes, collab units are considered 5${STAR}s`,   //Inference
         tags: [dtag.FAIRY, dtag.SKILL]
     },
     {
@@ -3125,8 +3131,15 @@ const CARDS = [
     {
         id: 377,
         question: `What are Original and Pure Samples?`,
-        answer: `Used in the Intelligence Center to install and upgrade FST chips.`,
-        tags: [dtag.HOC, dtag.ITEM]
+        answer: `${List.description({
+            "Pure Samples": [
+                "Unlocking and promoting FSTs."
+            ],
+            "Original Samples": [
+                "Installing and upgrading chips."
+            ]
+        })}`,
+        tags: [dtag.HOC, dtag.FST, dtag.ITEM]
     },
     {
         id: 378,
@@ -4226,7 +4239,8 @@ const CARDS = [
         id: 464,
         question: `Is there a walkthrough on clearing stages?`,
         answer: `${List.description({
-            "13-4": [details("Greez Doc", Embed.google(["13-4 Silver guide", "https://docs.google.com/document/d/1UoOpElhpPFwLq5BJjynSfpGaTI1DloowiC_CQmsgyVY"]))]  // https://old.reddit.com/r/girlsfrontline/comments/1bzmnr3/weekly_commanders_lounge_april_09_2024/kzbpxm7/
+            "General": [anchor("Serzha's channel", "https://www.youtube.com/@Serzha")],
+            "13-4": [details("Greez Doc", Embed.google(["13-4 Silver guide", "https://docs.google.com/document/d/1UoOpElhpPFwLq5BJjynSfpGaTI1DloowiC_CQmsgyVY"]))],  // https://old.reddit.com/r/girlsfrontline/comments/1bzmnr3/weekly_commanders_lounge_april_09_2024/kzbpxm7/
         })}`,
         tags: [dtag.MAIN]
     },  //@get serzha vids
@@ -4388,6 +4402,18 @@ const CARDS = [
         answer: `No need. Just get 1 item from the set for each slot to get the skill. And just owning them is enough to get it.`,
         tags: [dtag.CMDR, dtag.SKIN]
     },
+    {
+        id: 540,
+        question: `Are the costume set skills worthwhile?`,
+        answer: `For what it's worth, they're more of QOL than gamechanging so low prio. Combat Summary, Deep Learning, and Search Theory have noticeable effects in the long run so maybe those first.`,
+        tags: [dtag.CMDR, dtag.SKIN, dtag.SKILL]
+    },  //@Clarify
+    {
+        id: 541,
+        question: `How much accuracy/evasion do I need?`,
+        answer: `${anchor("BigStupidJellyfish article.", "https://big-stupid-jellyfish.github.io/GFMath/pages/evasion")}`,
+        tags: [dtag.SYSMECH]
+    },
     //{
     //    id: 0,
     //    question: ``,
@@ -4407,7 +4433,6 @@ window.cards = CARDS;
 //     console.log("Skipped:", ...INDICES);
 //     console.log("Duplicate:", ...DUPLICATES);
 // }
-
 // cdn.discordapp cleanup
 // gray zone proxy settings
 
@@ -4445,7 +4470,6 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/l3ostxm/
 //https://old.reddit.com/r/girlsfrontline/comments/1cx2khg/weekly_commanders_lounge_may_21_2024/l5exhaz/
 
-// https://old.reddit.com/r/girlsfrontline/comments/1d2e66k/weekly_commanders_lounge_may_28_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1d7rtqh/weekly_commanders_lounge_june_04_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1dd8rka/weekly_commanders_lounge_june_11_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1dilac7/weekly_commanders_lounge_june_18_2024/
@@ -4454,3 +4478,4 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/1dywvub/weekly_commanders_lounge_july_09_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1e4j1nr/weekly_commanders_lounge_july_16_2024/
 //https://old.reddit.com/r/girlsfrontline/comments/1ea289r/weekly_commanders_lounge_july_23_2024/
+//https://old.reddit.com/r/girlsfrontline/comments/1efnr6m/weekly_commanders_lounge_july_30_2024/

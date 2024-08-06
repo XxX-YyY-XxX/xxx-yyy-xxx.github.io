@@ -107,9 +107,31 @@ input[type="checkbox"] {
 }
 
 /* #region Spirits */
+#spirits {
+    grid-template-areas:
+        "name   name"
+        "fairy  sets";
+    grid-template-columns: 100px 25px;
+    grid-template-rows: 1lh 100px;
+}
+
+#spirits > div:first-of-type {
+    grid-area: name;
+}
+
 #spirits > button {
-    width: 100px;
+    grid-area: fairy;
     padding: 0;
+}
+
+#spirits > #sets {
+    grid-area: sets;
+    display: flex;
+    justify-content: space-around;
+}
+
+#spirits > #sets > button {
+    width: 100%;
 }
 /* #endregion */
 

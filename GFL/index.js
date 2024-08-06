@@ -6,8 +6,8 @@ timer(
    "./assets/images/timer/rpg29.webp",
    {onEnd: timer.bind(
         null, document.getElementById("event"),
-        "",
-        ""
+        "Aug 27, 2024 00:00 UTC-0800",
+        "./assets/images/timer/maxresdefault.jpg"
     )}
 );
 
@@ -38,13 +38,13 @@ timer(
     "https://iopwiki.com/images/thumb/3/31/HK433_costume1_D.png/600px-HK433_costume1_D.png",
     {onEnd: timer.bind(
         null, document.getElementById('skin-banner'),
-        "",
-        ""
+        "Sep 03, 2024 00:00 UTC-0800",
+        "https://iopwiki.com/images/thumb/e/ed/Colt_Walker_costume2_D.png/600px-Colt_Walker_costume2_D.png"
     )}
 );
 
 timer(
    document.getElementById('mini-event'),
-   "Jul 30, 2024 00:00 UTC-0800",
-   "./assets/images/timer/aisex5vcc9ad1.webp"
+   "Aug 27, 2024 00:00 UTC-0800",
+   "./assets/images/timer/e1o0sy2tk7gd1.webp"
 );

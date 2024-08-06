@@ -159,7 +159,7 @@ export function anchor(content, href, {mode = null, data = {}} = {}) {
                 window.dispatchEvent(EVENT);
                 event.preventDefault(); // Needed to prevent refresh.
             });
-            ANCHOR.toString = function() {            
+            ANCHOR.toString = function() {
                 /** @type {HTMLAnchorElement} */ const CLONE = this.cloneNode(true);
 
                 // Important when changed to string HTML. Event listener and closures not carried over.
@@ -243,4 +243,12 @@ export function slider(initial_value, min, max, {vertical = false} = {}) {
 
 function frame(src) {
     return setattr(document.createElement("iframe"), {src: src, loading: "lazy"});
+}
+
+export function template(query) {
+    const ELEMENT = document.querySelector(query)
+    if (!(ELEMENT instanceof HTMLTemplateElement))
+        return () => null;
+    //ELEMENT.content.cloneNode(true);
+    return () => document.importNode(ELEMENT.content, true);
 }

@@ -42,6 +42,17 @@
 </body>
 
 <template id="query-tag">
+    <style>
+        label:has(input:checked) {
+            background: aqua;
+            color: black;
+        }
+
+        .tooltiptext {
+            bottom: 110%;
+        }
+    </style>
+
     <label class="tags tooltip">
         <input type="checkbox" name="tag" />
         <span id="name"></span>

@@ -56,6 +56,11 @@
                             <button type="button">
                                 <img src="../assets/images/spirits/Faith.png" alt="Faith">
                             </button>
+                            <div id="sets">
+                                <button type="button" disabled>Set 1</button>
+                                <button type="button" disabled>Set 2</button>
+                                <button type="button" disabled>Set 3</button>
+                            </div>
                             <dialog>
                                 <form method="dialog"></form>
                             </dialog>
@@ -88,12 +93,6 @@
                         </div>
                     </div>
 
-                    <!-- battle bonus -->
-                    <!-- unit skills -->
-                    <!-- Functions -->
-                    <!-- Protocols -->
-                    <!-- algo 3set -->
-                    <!-- fairy skills -->
                     <div id="Toggle" class="tab-body">
                         <div id="pre-battle">
                             <div>Pre-Battle Bonus</div>
@@ -105,6 +104,13 @@
                             <label class="tooltip"><input type="checkbox" value="Spec" />Specialty Training<span class="tooltiptext">Specialty at Lv.543.</span></label>
                             <label class="tooltip"><input type="checkbox" value="Sprt" />Holy Spirits<span class="tooltiptext">Spirits at Lv.50.</span></label>
                         </div>
+
+                        <!-- battle bonus -->
+                        <!-- unit skills -->
+                        <!-- Functions -->
+                        <!-- Protocols -->
+                        <!-- algo 3set -->
+                        <!-- fairy skills -->
                     </div>
                 </div>
 
@@ -156,9 +162,34 @@
     <dialog id="algo-filter">
         <form method="dialog"></form>
     </dialog>
+
+    <!-- #region Fairies -->
+    <dialog id="spirit-select">
+        <form method="dialog"></form>
+    </dialog>
+
+    <!--<dialog id="fairy-skills">
+        <div id="name"></div>
+
+        <div id="help" data-tooltip="Click outside to close the dialog window."></div>
+
+        <div id="algo-field" class="tab-group">
+            <div class="tab-button">
+                <label><input type="radio" name="algorithm" value="Offense" checked/>Offense</label>
+                <label><input type="radio" name="algorithm" value="Stability" />Stability</label>
+                <label><input type="radio" name="algorithm" value="Special" />Special</label>
+            </div>
+
+            <div class="tab-body" id="Offense"></div>
+            <div class="tab-body" id="Stability"></div>
+            <div class="tab-body" id="Special"></div>
+        </div>
+    </dialog>-->
+    <!-- #endregion -->
 </html>
 
-<template id="spirits-template">    <!-- test: check if template is readable outside html tag ~ ok -->
+<!-- Template readable outside of html tag -->
+<template id="spirits-template">
     <button type="submit" value="">
         <img src="" alt="">
         <span></span>

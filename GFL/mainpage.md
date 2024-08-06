@@ -8,8 +8,6 @@
 # Redditor Musings
 
 > BSJ
-> - [No such thing as too much EVA, he says...](https://old.reddit.com/r/girlsfrontline/comments/r08976/weekly_commanders_lounge_november_23_2021/hm1ah4r/)
->
 > - [Links dump 1.](https://old.reddit.com/r/girlsfrontline/comments/s17rwt/weekly_commanders_lounge_january_11_2022/ht46bxl/)
 >
 > - [PA data.](https://old.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i39exkd/)

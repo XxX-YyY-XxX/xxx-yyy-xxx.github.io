@@ -93,6 +93,16 @@ function pushPopstate(url, state) {
     window.dispatchEvent(new PopStateEvent("popstate", {state: state}));
 }
 
+/** @param {string} value */
+function searchFilter(value) {
+    const KEYWORDS = value.replace(/\s+/, " ").toLowerCase().split(" ");
+    /** @param {Card} param0 */
+    return function({question, answer}) {
+        //add levenshtein
+        return KEYWORDS.every(key => [question, answer].some(y => removeHTMLTag(y).toLowerCase().includes(key)))
+    }
+}
+
 //#region Card Creation
 /** @param {string} text */ function stringToHTML(text) {
     return fragment(...(new DOMParser()).parseFromString(text, "text/html").body.childNodes);
@@ -124,13 +134,15 @@ function getBoxes() {
 
         switch (KEY) {
             case "search":
-                const KEYWORDS = VALUE.replace(/\s+/, " ").toLowerCase().split(" ");
-                return boxFrag(CARDS.filter(x => KEYWORDS.every(str => [x.question, x.answer].some(y => removeHTMLTag(y).toLowerCase().includes(str)))));
+                const _filter = searchFilter(VALUE);
+                //const KEYWORDS = VALUE.replace(/\s+/, " ").toLowerCase().split(" ");
+                return boxFrag(CARDS.filter(_filter));
+                //return boxFrag(CARDS.filter(x => KEYWORDS.every(str => [x.question, x.answer].some(y => removeHTMLTag(y).toLowerCase().includes(str)))));
             case "tags":
                 const TAGS = VALUE.split(" ");
                 return boxFrag(CARDS.filter(x => TAGS.subsetof(x.tags.map(y => y.name))));
             case "page":
-                const PAGE = Number(VALUE), COUNT = PAGE * 5;
+                const COUNT = Number(VALUE) * 5;
                 return boxFrag(CARDS.slice(COUNT - 5, Math.min(COUNT, CARDS.length)));
             case "id":
                 const IDS = VALUE.split(" ").map(Number);

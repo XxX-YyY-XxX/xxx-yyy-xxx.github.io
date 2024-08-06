@@ -2,5 +2,8 @@
     // https://stackoverflow.com/questions/76125833/container-type-property-and-container-rule-are-not-recognized-by-vs-code
     "css.customData": [".vscode/custom-css.json"],
     // https://github.com/microsoft/vscode-html-languageservice/blob/main/docs/customData.md
-    "html.customData": ["univasset/scripts/include/index.html-data.json"]
+    "html.customData": [
+        "univasset/scripts/include/index.html-data.json",
+        "univasset/scripts/include/anchorhistory.html-data.json"
+    ]
 }

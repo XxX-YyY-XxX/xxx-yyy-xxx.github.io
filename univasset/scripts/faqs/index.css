@@ -64,14 +64,14 @@ body {
     color: aqua;
     display: inline-grid;                       /* For making the tag buttons stay together on wrap. */
 
-    #Tags &:has(input:checked) {
+    /*#Tags &:has(input:checked) {
         background: aqua;
         color: black;
     }
 
     & > .tooltiptext {
         bottom: 110%;
-    }
+    }*/
 }
 
 fieldset {

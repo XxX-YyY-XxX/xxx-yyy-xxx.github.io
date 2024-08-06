@@ -51,3 +51,5 @@ export const Embed = {
 /** @deprecated */
 export const googleDocsCompilation = Embed.google;
 //#endregion
+
+export function template(query: string): () => (DocumentFragment | null);

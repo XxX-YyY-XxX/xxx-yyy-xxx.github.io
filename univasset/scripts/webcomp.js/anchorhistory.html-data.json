@@ -1,0 +1,10 @@
+{
+    "version": 1.1,
+    "$schema": "https://raw.githubusercontent.com/microsoft/vscode-html-languageservice/master/docs/customData.schema.json",
+    "globalAttributes": [
+        {
+            "name": "history",
+            "description": "Uses this element in History API. Value can be skipped or is a JSON object string."
+        }
+    ]
+}
