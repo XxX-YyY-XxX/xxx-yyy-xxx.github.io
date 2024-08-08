@@ -460,17 +460,17 @@ function specialty(unit_class) {
 ///** @param {[IntimacyStat, IntimacyStat, IntimacyStat]} inti_name */
 //function intimacy(inti_name) {
 //    const STAT = {
-//        /** @type {[string, number]} */ "Code Robustness":          [STAT_KEYS.HEALTH,      [1320, 0]],
-//        /** @type {[string, number]} */ "Power Connection":         [STAT_KEYS.ATTACK,      [55, 0]],
-//        /** @type {[string, number]} */ "Neural Activation":        [STAT_KEYS.HASHRATE,    [55, 0]],
-//        /** @type {[string, number]} */ "Shield of Friendship":     [STAT_KEYS.PDEFENSE,    [55, 0]],
-//        /** @type {[string, number]} */ "Coordinated Strike":       [STAT_KEYS.CRITRATE,    [0, 8]],
-//        /** @type {[string, number]} */ "Victorious Inspiration":   [STAT_KEYS.CRITDMG,     [0, 12]],
-//        /** @type {[string, number]} */ "Risk Evasion Aid":         [STAT_KEYS.DODGE,       [0, 8]],
-//        /** @type {[string, number]} */ "Mechanical Celerity":      [STAT_KEYS.HASTE,       [0, 8]],
-//        /** @type {[string, number]} */ "Coordinated Formation":    [STAT_KEYS.DMGBOOST,    [0, 5]],
-//        /** @type {[string, number]} */ "Through Fire and Water":   [STAT_KEYS.DMGREDUCE,   [0, 5]],
-//        /** @type {[string, number]} */ "Healing Bond":             [STAT_KEYS.HEALBOOST,   [0, 5]],
+//        /** @type {[string, [number, number]]} */ "Code Robustness":          [STAT_KEYS.HEALTH,      [1320,  0]],
+//        /** @type {[string, [number, number]]} */ "Power Connection":         [STAT_KEYS.ATTACK,      [55,    0]],
+//        /** @type {[string, [number, number]]} */ "Neural Activation":        [STAT_KEYS.HASHRATE,    [55,    0]],
+//        /** @type {[string, [number, number]]} */ "Shield of Friendship":     [STAT_KEYS.PDEFENSE,    [55,    0]],
+//        /** @type {[string, [number, number]]} */ "Coordinated Strike":       [STAT_KEYS.CRITRATE,    [0,     8]],
+//        /** @type {[string, [number, number]]} */ "Victorious Inspiration":   [STAT_KEYS.CRITDMG,     [0,     12]],
+//        /** @type {[string, [number, number]]} */ "Risk Evasion Aid":         [STAT_KEYS.DODGE,       [0,     8]],
+//        /** @type {[string, [number, number]]} */ "Mechanical Celerity":      [STAT_KEYS.HASTE,       [0,     8]],
+//        /** @type {[string, [number, number]]} */ "Coordinated Formation":    [STAT_KEYS.DMGBOOST,    [0,     5]],
+//        /** @type {[string, [number, number]]} */ "Through Fire and Water":   [STAT_KEYS.DMGREDUCE,   [0,     5]],
+//        /** @type {[string, [number, number]]} */ "Healing Bond":             [STAT_KEYS.HEALBOOST,   [0,     5]],
 //    }
 
 //    const OUTPUT = {};

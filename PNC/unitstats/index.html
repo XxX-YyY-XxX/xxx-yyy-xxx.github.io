@@ -57,9 +57,9 @@
                                 <img src="../assets/images/spirits/Faith.png" alt="Faith">
                             </button>
                             <div id="sets">
-                                <button type="button" disabled>Set 1</button>
-                                <button type="button" disabled>Set 2</button>
-                                <button type="button" disabled>Set 3</button>
+                                <button type="button" disabled>1</button>
+                                <button type="button" disabled>2</button>
+                                <button type="button" disabled>3</button>
                             </div>
                             <dialog>
                                 <form method="dialog"></form>
@@ -190,6 +190,30 @@
 
 <!-- Template readable outside of html tag -->
 <template id="spirits-template">
+    <style>
+        button {
+            display: inline-grid;
+            grid-template-areas:
+                "image name"
+                "image stat";
+            grid-template-columns: 100px 100px;
+            padding: 0;
+            gap: 5px;
+        }
+
+        img {
+            grid-area: image;
+        }
+
+        span {
+            grid-area: name;
+        }
+
+        div {
+            grid-area: stat;
+        }
+    </style>
+
     <button type="submit" value="">
         <img src="" alt="">
         <span></span>

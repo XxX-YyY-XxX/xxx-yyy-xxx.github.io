@@ -2287,7 +2287,7 @@ const CARDS = [
     },
     {
         id: 249,
-        question: `How can I get T-Doll skins?`,
+        question: `How can I get T-Doll costumes/skins?`,
         answer: `${List.description({
             'Shop' : [
                 'Dedicated gem-bought shop.',
@@ -2312,7 +2312,7 @@ const CARDS = [
                 "UMP45's Valentine's Skin, which is also available as gacha."
             ]
         })}`,
-        tags: [dtag.TDOLL, dtag.SKIN, dtag.GET, dtag.BP]
+        tags: [dtag.TDOLL, dtag.SKIN, dtag.GET, dtag.BP, dtag.RESUPPLY]
     },
     {
         id: 250,
@@ -4414,6 +4414,18 @@ const CARDS = [
         answer: `${anchor("BigStupidJellyfish article.", "https://big-stupid-jellyfish.github.io/GFMath/pages/evasion")}`,
         tags: [dtag.SYSMECH]
     },
+    {
+        id: 542,
+        question: `What does Infinite Surprise Dyes do?`,
+        answer: `Changes the appearance of your commander's clothes, **IF** they can be changed, that is.`,
+        tags: [dtag.CMDR, dtag.SKIN, dtag.ITEM]
+    },  //@Visual
+    {
+        id: 543,
+        question: `How do I increase the max capacity of my dorm battery?`,
+        answer: `By outfitting the dorms with more furnitures. `,
+        tags: [dtag.DORM, dtag.BATTERY, dtag.FURN]
+    },
     //{
     //    id: 0,
     //    question: ``,
@@ -4470,8 +4482,6 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/l3ostxm/
 //https://old.reddit.com/r/girlsfrontline/comments/1cx2khg/weekly_commanders_lounge_may_21_2024/l5exhaz/
 
-// https://old.reddit.com/r/girlsfrontline/comments/1d7rtqh/weekly_commanders_lounge_june_04_2024/
-// https://old.reddit.com/r/girlsfrontline/comments/1dd8rka/weekly_commanders_lounge_june_11_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1dilac7/weekly_commanders_lounge_june_18_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1do0n1y/weekly_commanders_lounge_june_25_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1dtgfxs/weekly_commanders_lounge_july_02_2024/
@@ -4479,3 +4489,4 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/1e4j1nr/weekly_commanders_lounge_july_16_2024/
 //https://old.reddit.com/r/girlsfrontline/comments/1ea289r/weekly_commanders_lounge_july_23_2024/
 //https://old.reddit.com/r/girlsfrontline/comments/1efnr6m/weekly_commanders_lounge_july_30_2024/
+//https://old.reddit.com/r/girlsfrontline/comments/1elc2eo/weekly_commanders_lounge_august_06_2024/

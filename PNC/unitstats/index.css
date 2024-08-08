@@ -108,11 +108,13 @@ input[type="checkbox"] {
 
 /* #region Spirits */
 #spirits {
+    display: inline-grid;
     grid-template-areas:
         "name   name"
         "fairy  sets";
     grid-template-columns: 100px 25px;
     grid-template-rows: 1lh 100px;
+    column-gap: 5px;
 }
 
 #spirits > div:first-of-type {
@@ -128,6 +130,7 @@ input[type="checkbox"] {
     grid-area: sets;
     display: flex;
     justify-content: space-around;
+    flex-flow: column;
 }
 
 #spirits > #sets > button {

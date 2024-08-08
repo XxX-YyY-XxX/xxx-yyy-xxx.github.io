@@ -2,6 +2,7 @@ import {STAT_KEYS, STAT_KEYS_TYPE, UNITSTATUPDATE, STAT_KEYS_TYPENAME} from "./t
 import {getTemplateCloner} from "../../univasset/scripts/externaljavascript.js"
 import {setattr} from "../../univasset/scripts/basefunctions/pseudobuiltin.js";
 import {brJoin} from "../../univasset/scripts/htmlgenerator/htmlgenerator.js"
+import { template } from "../../univasset/scripts/html/index.js";
 
 
 // all skills assumed S rank
@@ -105,7 +106,8 @@ const GENERIC_SKILLS = {
     }
 }
 
-const _dialogButtons = getTemplateCloner("#spirits-template");
+//const _dialogButtons = getTemplateCloner("#spirits-template");
+const _dialogButtons = template("#spirits-template");
 class Spirit {
     // https://www.typescriptlang.org/docs/handbook/2/mapped-types.html
     /** @type {{[x in STAT_KEYS_TYPE[keyof STAT_KEYS_TYPE]]: number?}} */ ATTRIBUTES;
@@ -206,9 +208,9 @@ export const SPIRIT_STAT = new (class {
     }
 
     constructor() {
-        document.querySelector("#fairy-select form").append(...Object.values(SPIRITS).map(x => x.spirit_select))
-
         /** @type {HTMLDialogElement} */ const SPIRIT_DIALOG = document.querySelector("#spirit-select");
+        SPIRIT_DIALOG.querySelector("form").append(...Object.values(SPIRITS).map(x => x.spirit_select))
+
         SPIRIT_DIALOG.addEventListener("close", event => {
             // what if closed by main button
             const OUTPUT = SPIRIT_DIALOG.returnValue || "Faith";
