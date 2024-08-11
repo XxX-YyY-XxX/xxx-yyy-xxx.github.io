@@ -43,6 +43,15 @@ body {
     text-align: center;
 }
 
+#Tags label:has(input:checked) {
+    background: aqua;
+    color: black;
+}
+
+#Tags .tooltiptext {
+    bottom: 110%;
+}
+
 #Browse .slider {
     width: calc(100% - 67px);
 }
@@ -74,5 +83,72 @@ body {
 
 #Cards:has(legend input:checked) input[type="submit"] {
     display: block;
+}
+/* #endregion */
+
+/* #region Fieldset */
+/* Staples */
+fieldset {
+    margin-top: 5px;
+}
+
+fieldset legend > h3 {
+    margin: 0px;
+}
+
+fieldset hr {
+    border-top: 1px dashed;
+}
+
+fieldset .tags {
+    line-height: 20px;
+    margin: 0 5px;
+    text-shadow: none;
+}
+
+/* Contents */
+fieldset :is(dl, table, blockquote, figure) {
+    margin: 0px;
+}
+
+fieldset :is(ol, ul) {
+    margin: 0px;
+    padding-inline-start: 20px;
+}
+
+fieldset a {
+    text-decoration: none;
+}
+
+fieldset img:not(.inline-img) {
+    margin: 0 auto;
+    display: block;
+}
+
+/* #region Details and Summary */
+fieldset :is(details, details > summary) {
+    display: inline;
+}
+
+fieldset details[open] {
+    display: block;
+    background-color: #3a3a3a80;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+fieldset details[open] > summary {
+    text-align: center;
+    display: block;
+}
+/* #endregion */
+
+/* Selection */
+fieldset legend label {
+    cursor: pointer;
+}
+
+fieldset:has(legend input:checked) {
+    border-color: crimson;
 }
 /* #endregion */

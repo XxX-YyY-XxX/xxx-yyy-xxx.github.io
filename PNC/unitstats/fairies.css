@@ -1,10 +1,29 @@
-#spirits img {
-    width: 100%;
-}
-
-#spirits form {
+#spirit-select form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 5px;
+}
+
+#spirit-select button {
+    display: inline-grid;
+    grid-template-areas:
+        "image name"
+        "image stat";
+    grid-template-columns: 100px 100px;
+    padding: 0;
+    gap: 5px;
+}
+
+#spirit-select img {
+    grid-area: image;
+    width: 100%
+}
+
+#spirit-select span {
+    grid-area: name;
+}
+
+#spirit-select div {
+    grid-area: stat;
 }

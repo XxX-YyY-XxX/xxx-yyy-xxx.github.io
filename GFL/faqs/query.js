@@ -341,7 +341,8 @@ const CARDS = [
     {
         id: 16,
         question: `Who should I prioritize to MOD first?`,
-        answer: `${anchor('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/neural-upgrade-priority-guide')}`,
+        answer: `${anchor('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/neural-upgrade-priority-guide')}<br>
+        ${details("Temporary listing.", Embed.reddit("1dilac7/weekly_commanders_lounge_june_18_2024/la5mo80"))}`,
         tags: [dtag.MOD, dtag.TIER]
     },  //${spoilerSummary('CN MOD list.', image(IMG_ASSET+"CNMODTier.png", "Chinese Neural Upgrade Tierlist."))}
     {
@@ -567,6 +568,7 @@ const CARDS = [
                 anchor("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv'),
                 anchor("ARSMG by warorpeace#7149.", "https://docs.google.com/document/d/e/2PACX-1vR4OYslSVaE5mv6xyu7rIun24Ltu0SWsEzwOrER2MiWseDt5Fy5LjFFEZZzTDvl9C2Xb7g3pcWObSC4/pub"),
                 anchor("RFHG by warorpeace#7149.", "https://docs.google.com/document/d/e/2PACX-1vTR8LNVuBX4FiaAxLus5zZO6M4hQCu_4Fec0S0rqMmhPMXQXMcnU4uPhwwYAHOQDB5I9nq0VqSJd4-p/pub"),
+                anchor(`RFHG "Gamepress" guide.`, "http://web.archive.org/web/20230927053059/https://gamepress.gg/girlsfrontline/rfhg-teambuilding"),   //update when gfl "gamperess" is up
                 // details("MGSG by canoxin#2789.", Embed.google(["An introduction to MGs and SGs", "https://docs.google.com/document/d/1-O7398S5sHcowCI8lp5Ktu_AiUBydJuvVHV-dX7g-l8"])),
                 anchor("Gamepress MGSG guide.", "https://gamepress.gg/girlsfrontline/mgs-sgs-and-teambuilding")
             ],
@@ -1262,7 +1264,8 @@ const CARDS = [
         id: 113,
         question: `How viable is 2AR2SMG1HG?`,
         answer: `${anchor('BigStupidJellyfish analysis on 3AR2SMG.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/2v3ar')}<br>
-        Depends on if there is no good AR-buffing AR for position 4. If there is one, 3AR1SMG1HG is a thing, specially for night maps.`,
+        Depends on if there is no good AR-buffing AR for position 4. If there is one, 3AR1SMG1HG is a thing, specially for night maps.<br>
+        Also talks about 2RFHG vs 3RFHG`,
         tags: [dtag.TDOLL, dtag.ECH]
     },
     {
@@ -4482,7 +4485,9 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/l3ostxm/
 //https://old.reddit.com/r/girlsfrontline/comments/1cx2khg/weekly_commanders_lounge_may_21_2024/l5exhaz/
 
-// https://old.reddit.com/r/girlsfrontline/comments/1dilac7/weekly_commanders_lounge_june_18_2024/
+//Column vs Row
+//https://old.reddit.com/r/girlsfrontline/comments/1dilac7/weekly_commanders_lounge_june_18_2024/l95hiim/
+
 // https://old.reddit.com/r/girlsfrontline/comments/1do0n1y/weekly_commanders_lounge_june_25_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1dtgfxs/weekly_commanders_lounge_july_02_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1dywvub/weekly_commanders_lounge_july_09_2024/

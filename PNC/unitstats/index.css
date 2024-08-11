@@ -126,6 +126,10 @@ input[type="checkbox"] {
     padding: 0;
 }
 
+#spirits img {
+    width: 100%;
+}
+
 #spirits > #sets {
     grid-area: sets;
     display: flex;

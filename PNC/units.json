@@ -152,7 +152,7 @@
             "open": 45
         },
         "intimacy": ["Code Robustness", "Shield of Friendship", "Through Fire and Water"],
-        "tags": ["Arma"]
+        "tags": ["Arma", "Fully Built"]
     },
     {
         "id": 1006,
@@ -2417,6 +2417,18 @@
         "id": 1086,
         "name": "Lewis",
         "reference": {"Lewis": "https://iopwiki.com/wiki/Lewis"},
+        "tags": ["Unreleased"]
+    },
+    {
+        "id": 0,
+        "name": "Olivia",
+        "reference": {},
+        "tags": ["Unreleased"]
+    },
+    {
+        "id": 0,
+        "name": "Angelus",
+        "reference": {},
         "tags": ["Unreleased"]
     }
 ]

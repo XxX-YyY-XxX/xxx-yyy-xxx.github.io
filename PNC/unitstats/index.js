@@ -58,13 +58,15 @@ class Units {
         open: 0
     };
     #specialty;
+    #intistats;
 
     get [STAT_KEYS.HEALTH]() {
         const STAT = STAT_KEYS.HEALTH;
         /** @type {[number, number][]} */ const FLAT_PERC = [];
         if (BUTTON.POTB.checked) FLAT_PERC.push(POTENTIAL.PERC);
         if (BUTTON.ARMA.checked) FLAT_PERC.push([this.#arma[STAT], 0]);
-        if (BUTTON.BOND.checked && this.#intistats.includes("Code Robustness")) FLAT_PERC.push([1320, 0]);
+        //if (BUTTON.BOND.checked && this.#intistats.includes("Code Robustness")) FLAT_PERC.push([1320, 0]);
+        if (BUTTON.BOND.checked) FLAT_PERC.push(this.#intistats[STAT]);
         if (BUTTON.OATH.checked) FLAT_PERC.push([0, 8]);
         if (BUTTON.SPEC.checked) FLAT_PERC.push(this.#specialty[STAT]);
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
@@ -78,7 +80,8 @@ class Units {
         /** @type {[number, number][]} */ const FLAT_PERC = [];
         if (BUTTON.POTB.checked) FLAT_PERC.push(POTENTIAL.PERC);
         if (BUTTON.ARMA.checked) FLAT_PERC.push([this.#arma[STAT], 0]);
-        if (BUTTON.BOND.checked && this.#intistats.includes("Power Connection")) FLAT_PERC.push([55, 0]);
+        //if (BUTTON.BOND.checked && this.#intistats.includes("Power Connection")) FLAT_PERC.push([55, 0]);
+        if (BUTTON.BOND.checked) FLAT_PERC.push(this.#intistats[STAT]);
         if (BUTTON.SPEC.checked) FLAT_PERC.push(this.#specialty[STAT]);
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
@@ -91,7 +94,8 @@ class Units {
         /** @type {[number, number][]} */ const FLAT_PERC = [];
         if (BUTTON.POTB.checked) FLAT_PERC.push(POTENTIAL.PERC);
         if (BUTTON.ARMA.checked) FLAT_PERC.push([this.#arma[STAT], 0]);
-        if (BUTTON.BOND.checked && this.#intistats.includes("Neural Activation")) FLAT_PERC.push([55, 0]);
+        if (BUTTON.BOND.checked) FLAT_PERC.push(this.#intistats[STAT]);
+        //if (BUTTON.BOND.checked && this.#intistats.includes("Neural Activation")) FLAT_PERC.push([55, 0]);
         if (BUTTON.SPEC.checked) FLAT_PERC.push(this.#specialty[STAT]);
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
@@ -104,7 +108,8 @@ class Units {
         /** @type {[number, number][]} */ const FLAT_PERC = [];
         if (BUTTON.POTB.checked) FLAT_PERC.push(POTENTIAL.PERC);
         if (BUTTON.ARMA.checked) FLAT_PERC.push([this.#arma[STAT], 0]);
-        if (BUTTON.BOND.checked && this.#intistats.includes("Shield of Friendship")) FLAT_PERC.push([55, 0]);
+        if (BUTTON.BOND.checked) FLAT_PERC.push(this.#intistats[STAT]);
+        //if (BUTTON.BOND.checked && this.#intistats.includes("Shield of Friendship")) FLAT_PERC.push([55, 0]);
         if (BUTTON.SPEC.checked) FLAT_PERC.push(this.#specialty[STAT]);
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
@@ -136,7 +141,8 @@ class Units {
     get [STAT_KEYS.CRITRATE]() {
         const STAT = STAT_KEYS.CRITRATE;
         /** @type {[number, number][]} */ const FLAT_PERC = [];
-        if (BUTTON.BOND.checked && this.#intistats.includes("Coordinated Strike")) FLAT_PERC.push([0, 8]);
+        if (BUTTON.BOND.checked) FLAT_PERC.push(this.#intistats[STAT]);
+        //if (BUTTON.BOND.checked && this.#intistats.includes("Coordinated Strike")) FLAT_PERC.push([0, 8]);
         if (BUTTON.SPEC.checked) FLAT_PERC.push(this.#specialty[STAT]);
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
@@ -147,7 +153,8 @@ class Units {
     get [STAT_KEYS.CRITDMG]() {
         const STAT = STAT_KEYS.CRITDMG;
         /** @type {[number, number][]} */ const FLAT_PERC = [];
-        if (BUTTON.BOND.checked && this.#intistats.includes("Victorious Inspiration")) FLAT_PERC.push([0, 12]);
+        if (BUTTON.BOND.checked) FLAT_PERC.push(this.#intistats[STAT]);
+        //if (BUTTON.BOND.checked && this.#intistats.includes("Victorious Inspiration")) FLAT_PERC.push([0, 12]);
         if (BUTTON.SPEC.checked) FLAT_PERC.push(this.#specialty[STAT]);
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
@@ -181,7 +188,8 @@ class Units {
     get [STAT_KEYS.DODGE]() {
         const STAT = STAT_KEYS.DODGE;
         /** @type {[number, number][]} */ const FLAT_PERC = [];
-        if (BUTTON.BOND.checked && this.#intistats.includes("Risk Evasion Aid")) FLAT_PERC.push([0, 8]);
+        if (BUTTON.BOND.checked) FLAT_PERC.push(this.#intistats[STAT]);
+        //if (BUTTON.BOND.checked && this.#intistats.includes("Risk Evasion Aid")) FLAT_PERC.push([0, 8]);
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
@@ -201,7 +209,8 @@ class Units {
     get [STAT_KEYS.HASTE]() {
         const STAT = STAT_KEYS.HASTE;
         /** @type {[number, number][]} */ const FLAT_PERC = [];
-        if (BUTTON.BOND.checked && this.#intistats.includes("Mechanical Celerity")) FLAT_PERC.push([0, 8]);
+        if (BUTTON.BOND.checked) FLAT_PERC.push(this.#intistats[STAT]);
+        //if (BUTTON.BOND.checked && this.#intistats.includes("Mechanical Celerity")) FLAT_PERC.push([0, 8]);
         if (BUTTON.SPEC.checked) FLAT_PERC.push(this.#specialty[STAT]);
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         if (BUTTON.SPRT.checked) FLAT_PERC.push(SPIRIT_STAT[STAT]);
@@ -229,7 +238,8 @@ class Units {
     get [STAT_KEYS.DMGBOOST]() {
         const STAT = STAT_KEYS.DMGBOOST;
         /** @type {[number, number][]} */ const FLAT_PERC = [];
-        if (BUTTON.BOND.checked && this.#intistats.includes("Coordinated Formation")) FLAT_PERC.push([0, 5]);
+        if (BUTTON.BOND.checked) FLAT_PERC.push(this.#intistats[STAT]);
+        //if (BUTTON.BOND.checked && this.#intistats.includes("Coordinated Formation")) FLAT_PERC.push([0, 5]);
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
         return PERC;
@@ -238,7 +248,8 @@ class Units {
     get [STAT_KEYS.DMGREDUCE]() {
         const STAT = STAT_KEYS.DMGREDUCE;
         /** @type {[number, number][]} */ const FLAT_PERC = [];
-        if (BUTTON.BOND.checked && this.#intistats.includes("Through Fire and Water")) FLAT_PERC.push([0, 5]);
+        if (BUTTON.BOND.checked) FLAT_PERC.push(this.#intistats[STAT]);
+        //if (BUTTON.BOND.checked && this.#intistats.includes("Through Fire and Water")) FLAT_PERC.push([0, 5]);
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
         return PERC;
@@ -247,14 +258,14 @@ class Units {
     get [STAT_KEYS.HEALBOOST]() {
         const STAT = STAT_KEYS.HEALBOOST;
         /** @type {[number, number][]} */ const FLAT_PERC = [];
-        if (BUTTON.BOND.checked && this.#intistats.includes("Healing Bond")) FLAT_PERC.push([0, 5]);
+        if (BUTTON.BOND.checked) FLAT_PERC.push(this.#intistats[STAT]);
+        //if (BUTTON.BOND.checked && this.#intistats.includes("Healing Bond")) FLAT_PERC.push([0, 5]);
         if (BUTTON.SPEC.checked) FLAT_PERC.push(this.#specialty[STAT]);
         if (BUTTON.ALGO.checked) FLAT_PERC.push(this.#algofield[STAT]);
         const [FLAT, PERC] = FLAT_PERC.reduce(([pf, pp], [cf, cp]) => [pf + cf, pp + cp], [0, 0]);
         return Math.round(PERC, 1);
     }
 
-    #intistats;
     #algofield;
     #algofilter;
 
@@ -325,8 +336,9 @@ class Units {
             TD_NAME.textContent = this.name;
         }
 
-        this.#intistats = unitobject.intimacy;
-        if (this.#intistats.length !== 3) MISSING.push("Intimacy");
+        //this.#intistats = unitobject.intimacy;
+        this.#intistats = intimacy(unitobject.intimacy);
+        if (unitobject.intimacy.length !== 3) MISSING.push("Intimacy");
 
         const TD_HP = document.createElement("td");
         const TD_ATK = document.createElement("td");
@@ -457,43 +469,43 @@ function specialty(unit_class) {
     }
 }
 
-///** @param {[IntimacyStat, IntimacyStat, IntimacyStat]} inti_name */
-//function intimacy(inti_name) {
-//    const STAT = {
-//        /** @type {[string, [number, number]]} */ "Code Robustness":          [STAT_KEYS.HEALTH,      [1320,  0]],
-//        /** @type {[string, [number, number]]} */ "Power Connection":         [STAT_KEYS.ATTACK,      [55,    0]],
-//        /** @type {[string, [number, number]]} */ "Neural Activation":        [STAT_KEYS.HASHRATE,    [55,    0]],
-//        /** @type {[string, [number, number]]} */ "Shield of Friendship":     [STAT_KEYS.PDEFENSE,    [55,    0]],
-//        /** @type {[string, [number, number]]} */ "Coordinated Strike":       [STAT_KEYS.CRITRATE,    [0,     8]],
-//        /** @type {[string, [number, number]]} */ "Victorious Inspiration":   [STAT_KEYS.CRITDMG,     [0,     12]],
-//        /** @type {[string, [number, number]]} */ "Risk Evasion Aid":         [STAT_KEYS.DODGE,       [0,     8]],
-//        /** @type {[string, [number, number]]} */ "Mechanical Celerity":      [STAT_KEYS.HASTE,       [0,     8]],
-//        /** @type {[string, [number, number]]} */ "Coordinated Formation":    [STAT_KEYS.DMGBOOST,    [0,     5]],
-//        /** @type {[string, [number, number]]} */ "Through Fire and Water":   [STAT_KEYS.DMGREDUCE,   [0,     5]],
-//        /** @type {[string, [number, number]]} */ "Healing Bond":             [STAT_KEYS.HEALBOOST,   [0,     5]],
-//    }
+/** @param {[IntimacyStat, IntimacyStat, IntimacyStat]} inti_name */
+function intimacy(inti_name) {
+    const STAT = {
+        /** @type {[string, [number, number]]} */ "Code Robustness":          [STAT_KEYS.HEALTH,      [1320,  0]],
+        /** @type {[string, [number, number]]} */ "Power Connection":         [STAT_KEYS.ATTACK,      [55,    0]],
+        /** @type {[string, [number, number]]} */ "Neural Activation":        [STAT_KEYS.HASHRATE,    [55,    0]],
+        /** @type {[string, [number, number]]} */ "Shield of Friendship":     [STAT_KEYS.PDEFENSE,    [55,    0]],
+        /** @type {[string, [number, number]]} */ "Coordinated Strike":       [STAT_KEYS.CRITRATE,    [0,     8]],
+        /** @type {[string, [number, number]]} */ "Victorious Inspiration":   [STAT_KEYS.CRITDMG,     [0,     12]],
+        /** @type {[string, [number, number]]} */ "Risk Evasion Aid":         [STAT_KEYS.DODGE,       [0,     8]],
+        /** @type {[string, [number, number]]} */ "Mechanical Celerity":      [STAT_KEYS.HASTE,       [0,     8]],
+        /** @type {[string, [number, number]]} */ "Coordinated Formation":    [STAT_KEYS.DMGBOOST,    [0,     5]],
+        /** @type {[string, [number, number]]} */ "Through Fire and Water":   [STAT_KEYS.DMGREDUCE,   [0,     5]],
+        /** @type {[string, [number, number]]} */ "Healing Bond":             [STAT_KEYS.HEALBOOST,   [0,     5]],
+    }
 
-//    const OUTPUT = {};
-//    for (const NAME of inti_name) {
-//        const [K, V] = STAT[NAME];
-//        OUTPUT[K] = V;
-//    }
+    const OUTPUT = {};
+    for (const NAME of inti_name) {
+        const [K, V] = STAT[NAME];
+        OUTPUT[K] = V;
+    }
 
-//    return {
-//        [STAT_KEYS.HEALTH]:     [0, 0],
-//        [STAT_KEYS.ATTACK]:     [0, 0],
-//        [STAT_KEYS.HASHRATE]:   [0, 0],
-//        [STAT_KEYS.PDEFENSE]:   [0, 0],
-//        [STAT_KEYS.CRITRATE]:   [0, 0],
-//        [STAT_KEYS.CRITDMG]:    [0, 0],
-//        [STAT_KEYS.DODGE]:      [0, 0],
-//        [STAT_KEYS.HASTE]:      [0, 0],
-//        [STAT_KEYS.DMGBOOST]:   [0, 0],
-//        [STAT_KEYS.DMGREDUCE]:  [0, 0],
-//        [STAT_KEYS.HEALBOOST]:  [0, 0],
-//        ...OUTPUT
-//    }
-//}
+    return {
+        [STAT_KEYS.HEALTH]:     [0, 0],
+        [STAT_KEYS.ATTACK]:     [0, 0],
+        [STAT_KEYS.HASHRATE]:   [0, 0],
+        [STAT_KEYS.PDEFENSE]:   [0, 0],
+        [STAT_KEYS.CRITRATE]:   [0, 0],
+        [STAT_KEYS.CRITDMG]:    [0, 0],
+        [STAT_KEYS.DODGE]:      [0, 0],
+        [STAT_KEYS.HASTE]:      [0, 0],
+        [STAT_KEYS.DMGBOOST]:   [0, 0],
+        [STAT_KEYS.DMGREDUCE]:  [0, 0],
+        [STAT_KEYS.HEALBOOST]:  [0, 0],
+        ...OUTPUT
+    }
+}
 
 /** @param {string} sub @param {string} c */
 function emptyOrC(sub, c) {return !sub || c === sub}
