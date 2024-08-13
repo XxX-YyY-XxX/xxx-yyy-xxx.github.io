@@ -206,7 +206,8 @@ const CARDS = [
     {
         id: 97,
         question: `How do I use the Mobile Armor tank and mech?`,
-        answer: `${anchor("Gamepress Guide.", "https://gamepress.gg/girlsfrontline/introduction-vehicles-mobile-armor")}`,
+        answer: `${anchor("Gamepress Guide.", "https://gamepress.gg/girlsfrontline/introduction-vehicles-mobile-armor")}<br>
+        ${details("Temporary guide.", Embed.google(["Vehicles/Mobile Armor (temp ver)", "https://docs.google.com/document/d/1WIjslSkOO6ri-q0MrmOePJYk2olISK1LC_yoh_v_cxE"]))}`,
         tags: [dtag.MA, dtag.HOC, dtag.PRIME]
     },
     {
@@ -342,9 +343,9 @@ const CARDS = [
         id: 16,
         question: `Who should I prioritize to MOD first?`,
         answer: `${anchor('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/neural-upgrade-priority-guide')}<br>
-        ${details("Temporary listing.", Embed.reddit("1dilac7/weekly_commanders_lounge_june_18_2024/la5mo80"))}`,
+        ${details("Google Sheets Guide.", Embed.google(["Red's Neural Upgrade Priority Guide", "https://docs.google.com/spreadsheets/d/1ty239kyJbBs1sLhTo1JvSWuN0mIJsK1nwVdI6OLLtXo"]))}`,
         tags: [dtag.MOD, dtag.TIER]
-    },  //${spoilerSummary('CN MOD list.', image(IMG_ASSET+"CNMODTier.png", "Chinese Neural Upgrade Tierlist."))}
+    },
     {
         id: 17,
         question: `Is there a tier list for fairies and equipment?`,
@@ -4429,6 +4430,12 @@ const CARDS = [
         answer: `By outfitting the dorms with more furnitures. `,
         tags: [dtag.DORM, dtag.BATTERY, dtag.FURN]
     },
+    {
+        id: 544,
+        question: `What commander costume sets do the older servers have right now?`,
+        answer: `${anchor("CN GFWiki.", "http://gfwiki.org/w/%E6%8C%87%E6%8C%A5%E5%AE%98%E8%A1%A3%E6%9F%9C/%E8%A3%85%E6%89%AE%E4%B8%80%E8%A7%88")}`,
+        tags: [dtag.SKIN, dtag.CMDR]
+    },  //@Update
     //{
     //    id: 0,
     //    question: ``,
@@ -4468,6 +4475,8 @@ window.cards = CARDS;
 // https://old.reddit.com/r/girlsfrontline/comments/1crmrcn/weekly_commanders_lounge_may_14_2024/l4vuvoz/
 // https://old.reddit.com/r/girlsfrontline/comments/1crmrcn/weekly_commanders_lounge_may_14_2024/l4lsbv0/
 // https://old.reddit.com/r/girlsfrontline/comments/1crmrcn/weekly_commanders_lounge_may_14_2024/l4270q5/
+//https://old.reddit.com/r/girlsfrontline/comments/1do0n1y/weekly_commanders_lounge_june_25_2024/lb3ldec/
+//https://old.reddit.com/r/girlsfrontline/comments/s17rwt/weekly_commanders_lounge_january_11_2022/ht46bxl/
 
 // FST rework
 // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1tymg1/
@@ -4488,7 +4497,6 @@ window.cards = CARDS;
 //Column vs Row
 //https://old.reddit.com/r/girlsfrontline/comments/1dilac7/weekly_commanders_lounge_june_18_2024/l95hiim/
 
-// https://old.reddit.com/r/girlsfrontline/comments/1do0n1y/weekly_commanders_lounge_june_25_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1dtgfxs/weekly_commanders_lounge_july_02_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1dywvub/weekly_commanders_lounge_july_09_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1e4j1nr/weekly_commanders_lounge_july_16_2024/

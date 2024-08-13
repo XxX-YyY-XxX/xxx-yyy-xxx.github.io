@@ -1,7 +1,7 @@
 import {STAT_KEYS, STAT_KEYS_TYPE, STAT_KEYS_TYPENAME} from "./typing.js";
 import {cmp, setattr, subclassof, zip} from "../../univasset/scripts/basefunctions/index.js";
-import {getTemplateCloner} from "../../univasset/scripts/externaljavascript.js";
 import {UNITFILTER} from "./typing.js";
+import {template} from "../../univasset/scripts/html/index.js";
 
 //#region Types
 /** @typedef {keyof ALGO_SETS["Offense"] | keyof ALGO_SETS["Stability"] | keyof ALGO_SETS["Special"]} AlgoSet*/
@@ -157,59 +157,63 @@ function algoPath(algoname) {
         this.#grid = grid;
     }
 
-    // static _algoButtonCloner = getTemplateCloner("#algo-select-button");
+    static _algoButton = template("#algo-equip-template");
     static createSelectButton() {
-        // const CLONE = this._algoButtonCloner();
+        const FRAGMENT = this._algoButton();
 
-        // const OUTPUT = setattr(CLONE.querySelector("button"), {value: this.name});
-        const OUTPUT = setattr(document.createElement("button"), {type: "submit", value: this.name});
+        FRAGMENT.querySelector("button").value = this.name;
+        FRAGMENT.querySelector(`[data-grid="name"]`).textContent = this.name;
 
-        // const NAME = setattr(document.createElement("div"), {textContent: this.name, dataset: {grid: "name"}});
-        const NAME = setattr(document.createElement("div"), {textContent: this.name, dataset: {grid: "name"}});
-        OUTPUT.appendChild(NAME);
-
-        const SET2 = setattr(document.createElement("div"), {dataset: {grid: "set2"}});
-        if (Array.isArray(this.SET2)) {
+        const SET2 = FRAGMENT.querySelector(`[data-grid="set2"]`);
+        SET2.textContent = Array.isArray(this.SET2) ? this.SET2.map(([attr,]) => STATVALUES.NAME[attr]).join("|") : this.SET2;
+        SET2.classList.add(...(() => {
             switch (this.SET2) {
                 case STATVALUES.SET.hpflat:                                                 // Stability
-                    if (AlgoField.current.basestat.hp < STATVALUES.SET_THRESH.hp)   SET2.classList.add("algo-left-good", "algo-right-good");
-                    else                                                            SET2.classList.add("algo-left-bad", "algo-right-bad");
-                    break;
+                    if (AlgoField.current.basestat.hp < STATVALUES.SET_THRESH.hp)
+                        return ["algo-left-good", "algo-right-good"];
+                    else
+                        return ["algo-left-bad", "algo-right-bad"];
                 case STATVALUES.SET.hpperc:
-                    if (AlgoField.current.basestat.hp > STATVALUES.SET_THRESH.hp)   SET2.classList.add("algo-left-good", "algo-right-good");
-                    else                                                            SET2.classList.add("algo-left-bad", "algo-right-bad");
-                    break;
+                    if (AlgoField.current.basestat.hp > STATVALUES.SET_THRESH.hp)
+                        return ["algo-left-good", "algo-right-good"];
+                    else
+                        return ["algo-left-bad", "algo-right-bad"];
                 case STATVALUES.SET.dpenflat:                                                // Offense
-                    if (AlgoField.current.basestat.ppen < STATVALUES.SET_THRESH.dpen)       SET2.classList.add("algo-left-good");
-                    else if (AlgoField.current.basestat.ppen > STATVALUES.SET_THRESH.dpen)  SET2.classList.add("algo-left-bad");
-
-                    if (AlgoField.current.basestat.open < STATVALUES.SET_THRESH.dpen)       SET2.classList.add("algo-right-good");
-                    else if (AlgoField.current.basestat.open > STATVALUES.SET_THRESH.dpen)  SET2.classList.add("algo-right-bad");
-                    break;
+                    /** @type {string[]} */ var OUTPUT = [];
+                    if (AlgoField.current.basestat.ppen < STATVALUES.SET_THRESH.dpen)
+                        OUTPUT.push("algo-left-good");
+                    else if (AlgoField.current.basestat.ppen > STATVALUES.SET_THRESH.dpen)
+                        OUTPUT.push("algo-left-bad");
+                    if (AlgoField.current.basestat.open < STATVALUES.SET_THRESH.dpen)
+                        OUTPUT.push("algo-right-good");
+                    else if (AlgoField.current.basestat.open > STATVALUES.SET_THRESH.dpen)
+                        OUTPUT.push("algo-right-bad");
+                    return OUTPUT;
                 case STATVALUES.SET.dpenperc:
-                    if (AlgoField.current.basestat.ppen > STATVALUES.SET_THRESH.dpen)       SET2.classList.add("algo-left-good");
-                    else if (AlgoField.current.basestat.ppen < STATVALUES.SET_THRESH.dpen)  SET2.classList.add("algo-left-bad");
-
-                    if (AlgoField.current.basestat.open > STATVALUES.SET_THRESH.dpen)       SET2.classList.add("algo-right-good");
-                    else if (AlgoField.current.basestat.open < STATVALUES.SET_THRESH.dpen)  SET2.classList.add("algo-right-bad");
-                    break;
+                    /** @type {string[]} */ var OUTPUT = [];
+                    if (AlgoField.current.basestat.ppen > STATVALUES.SET_THRESH.dpen)
+                        OUTPUT.push("algo-left-good");
+                    else if (AlgoField.current.basestat.ppen < STATVALUES.SET_THRESH.dpen)
+                        OUTPUT.push("algo-left-bad");
+                    if (AlgoField.current.basestat.open > STATVALUES.SET_THRESH.dpen)
+                        OUTPUT.push("algo-right-good");
+                    else if (AlgoField.current.basestat.open < STATVALUES.SET_THRESH.dpen)
+                        OUTPUT.push("algo-right-bad");
+                    return OUTPUT;
+                default:
+                    return [];
             }
-            SET2.textContent = this.SET2.map(([attr,]) => STATVALUES.NAME[attr]).join("|");
-        } else {
-            SET2.textContent = this.SET2;
-        }
-        OUTPUT.appendChild(SET2);
+        })());
 
-        const SET_TYPE = setattr(document.createElement("div"), {textContent: this.TYPE, dataset: {grid: "type"}});
-        OUTPUT.appendChild(SET_TYPE);
+        FRAGMENT.querySelector(`[data-grid="type"]`).textContent = this.TYPE;
 
-        const IMG = setattr(document.createElement("img"), {src: algoPath(this.name), alt: this.name});
-        OUTPUT.appendChild(IMG);
+        const IMG = FRAGMENT.querySelector("img");
+        IMG.src = algoPath(this.name);
+        IMG.alt = this.name;
 
-        const SET3 = setattr(document.createElement("div"), {textContent: this.SET3 ?? "No Set Skill", dataset: {grid: "set3"}});
-        OUTPUT.appendChild(SET3);
+        FRAGMENT.querySelector(`[data-grid="set3"]`).textContent = this.SET3 ?? "No Set Skill";
     
-        return OUTPUT;
+        return FRAGMENT;
     }
 }
 

@@ -12,6 +12,8 @@ export function anchor(content: AppendableElement, href: string, extra: {
     mode: "history",
     data?: any
 }): HTMLAnchorElement;
+
+export function template(query: string): () => (DocumentFragment | null);
 //#endregion
 
 //#region Group Element
@@ -51,5 +53,3 @@ export const Embed = {
 /** @deprecated */
 export const googleDocsCompilation = Embed.google;
 //#endregion
-
-export function template(query: string): () => (DocumentFragment | null);

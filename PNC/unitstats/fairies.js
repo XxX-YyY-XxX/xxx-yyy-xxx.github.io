@@ -1,7 +1,6 @@
 import {STAT_KEYS, STAT_KEYS_TYPE, UNITSTATUPDATE, STAT_KEYS_TYPENAME} from "./typing.js";
-import {getTemplateCloner} from "../../univasset/scripts/externaljavascript.js"
 import {setattr} from "../../univasset/scripts/basefunctions/pseudobuiltin.js";
-import {brJoin} from "../../univasset/scripts/htmlgenerator/htmlgenerator.js"
+import {brJoin} from "../../univasset/scripts/htmlgenerator/htmlgenerator.js";
 import { template } from "../../univasset/scripts/html/index.js";
 
 
@@ -106,7 +105,6 @@ const GENERIC_SKILLS = {
     }
 }
 
-//const _dialogButtons = getTemplateCloner("#spirits-template");
 const _dialogButtons = template("#spirits-template");
 class Spirit {
     // https://www.typescriptlang.org/docs/handbook/2/mapped-types.html
@@ -196,6 +194,7 @@ export const SPIRIT_STAT = new (class {
     /** @type {HTMLInputElement} */ #CHECKBOX = document.querySelector(`#pre-battle [value="Sprt"]`);
     /** @type {HTMLButtonElement} */ #BUTTON = document.querySelector("#spirits > button");
     /** @type {HTMLImageElement} */ #IMAGE = this.#BUTTON.querySelector("img");
+    /** @type {HTMLDialogElement} */ #SPIRIT_SKILLS = document.querySelector("#spirit-skills");
 
     /** @type {Spirit} */ #current_spirit = SPIRITS.Faith;
     /** @param {string} spirit_name */
@@ -210,19 +209,12 @@ export const SPIRIT_STAT = new (class {
     constructor() {
         /** @type {HTMLDialogElement} */ const SPIRIT_DIALOG = document.querySelector("#spirit-select");
         SPIRIT_DIALOG.querySelector("form").append(...Object.values(SPIRITS).map(x => x.spirit_select))
+        SPIRIT_DIALOG.addEventListener("close", event => this.#changeSpirit(SPIRIT_DIALOG.returnValue))
+        this.#BUTTON.addEventListener("click", event => SPIRIT_DIALOG.showModal());
 
-        SPIRIT_DIALOG.addEventListener("close", event => {
-            // what if closed by main button
-            const OUTPUT = SPIRIT_DIALOG.returnValue || "Faith";
-            this.#changeSpirit(OUTPUT);
-        })
-
-        this.#BUTTON.addEventListener("click", event => {
-            if (SPIRIT_DIALOG.open)
-                SPIRIT_DIALOG.close();
-            else
-                SPIRIT_DIALOG.showModal();
-        })
+        for (const BUTTON of document.querySelectorAll("#spirits > #sets > button")) {
+            BUTTON.addEventListener("click", event => this.#SPIRIT_SKILLS.showModal())
+        }
     }
 
     /** @returns {[number, number]} */

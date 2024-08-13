@@ -1,15 +1,8 @@
 [<- Back](./)
 
-# Girls' Frontline Reddit Lounge FAQs
-
-# [Commander Wardrobe](/GFL/wardrobe)*
-- Costume skills, availability, and gender change.
-
 # Redditor Musings
 
 > BSJ
-> - [Links dump 1.](https://old.reddit.com/r/girlsfrontline/comments/s17rwt/weekly_commanders_lounge_january_11_2022/ht46bxl/)
->
 > - [PA data.](https://old.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i39exkd/)
 >
 > - [Bingo spacing.](https://old.reddit.com/r/girlsfrontline/comments/twps7w/weekly_commanders_lounge_april_05_2022/i4czmyf/)
