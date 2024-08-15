@@ -3,8 +3,6 @@
 # Redditor Musings
 
 > BSJ
-> - [PA data.](https://old.reddit.com/r/girlsfrontline/comments/tqur46/weekly_commanders_lounge_march_29_2022/i39exkd/)
->
 > - [Bingo spacing.](https://old.reddit.com/r/girlsfrontline/comments/twps7w/weekly_commanders_lounge_april_05_2022/i4czmyf/)
 >
 > - [Fairy and AK-15.](https://old.reddit.com/r/girlsfrontline/comments/sneu7n/weekly_commanders_lounge_february_08_2022/hwpgdcv/)
@@ -420,4 +418,5 @@ https://old.reddit.com/r/girlsfrontline/comments/1bn4ish/april_roadmap/kwg0qmq/
         })} -->
 
 https://old.reddit.com/r/girlsfrontline/comments/1bo2czw/weekly_commanders_lounge_march_26_2024/kxctpsq/
-<!--https://old.reddit.com/r/girlsfrontline/comments/1cx2khg/weekly_commanders_lounge_may_21_2024/l5gtssz/-->
+https://old.reddit.com/r/girlsfrontline/comments/1cx2khg/weekly_commanders_lounge_may_21_2024/l5gtssz/
+https://old.reddit.com/r/girlsfrontline/comments/1dtgfxs/weekly_commanders_lounge_july_02_2024/lb9rsxj/

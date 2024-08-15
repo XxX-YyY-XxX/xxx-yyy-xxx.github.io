@@ -649,7 +649,8 @@ const CARDS = [
             'Iterations by data patches (only available at LV100 and 5★)', // ???
             'Enhancements using pills', // ???
             'Skill levels',
-            'Equipping and leveling chips')}`,
+            'Equipping and leveling chips')}
+        This WILL take a while due to the slow nature of generating ${getID("samples", 377)}.`,
         tags: [dtag.HOC, dtag.FST, dtag.LEVEL, dtag.IMPT]
     },  //@Overhaul
     //#endregion
@@ -1212,11 +1213,14 @@ const CARDS = [
         id: 107,
         question: `What are the resources that has a defined max capacity and how much can they store?`,
         answer: `Resource limit for each currency.<br>
-        ${figure(image("https://cdn.discordapp.com/attachments/410790982116966400/905090370675830884/image0.jpg", "")), fragment("Train Coin = Training Data | Furniture Coin = Tokens | Memory Pieces = Neural Fragments", document.createElement("br"), anchor('Source', 'https://randomqwerty.github.io/?server=en&file=item'))}
+        ${figure(
+            image("https://cdn.discordapp.com/attachments/410790982116966400/905090370675830884/image0.jpg", "Resource Maximum Capacity."),
+            fragment("Train Coin = Training Data | Furniture Coin = Tokens | Memory Pieces = Neural Fragments", document.createElement("br"), anchor('Source', 'https://randomqwerty.github.io/?server=en&file=item'))
+        )}
         Even then, all resources can be obtained without regards to max capacity through daily gifts, mission rewards, and whaling.<br>
         And no, the four resources will stay at 300k.`,
         tags: [dtag.MARP, dtag.ITEM]
-    },  //@Give alt
+    },
     {
         id: 108,
         question: `Is there a way to buy a missed day for daily log-ins?`,
@@ -1697,17 +1701,17 @@ const CARDS = [
         answer: `From their release until EOS.`,
         tags: [dtag.MOD]
     },
-    {
-        id: 168,
-        question: `Will I get the rewards after adding a returning commander as friend for the callback event?`,
-        answer: `${image(IMG_ASSET+"CallbackSupporter.png", "Daily Loggers.")}<br>
-        ${image(IMG_ASSET+"CallbackReturner.png", "Returners.")}`,
-        tags: [dtag.FRIEND, dtag.ITEM, dtag.MARP]
-    },
+    //{
+    //    id: 168,
+    //    question: `Will I get the rewards after adding a returning commander as friend for the callback event?`,
+    //    answer: `${image(IMG_ASSET+"CallbackSupporter.png", "Daily Loggers.")}<br>
+    //    ${image(IMG_ASSET+"CallbackReturner.png", "Returners.")}`,
+    //    tags: [dtag.FRIEND, dtag.ITEM, dtag.MARP]
+    //},
     {
         id: 169,
         question: `Are the previous monthly Special Equipments obtainable in some way/getting a rerun?`,
-        answer: `Yes. 4 returning SPEQs are added every season.`,
+        answer: `Yes. 2 returning and 2 set-activating SPEQs are added every season, which are retained when a new season rolls in.`,
         tags: [dtag.SPEQ, dtag.GZ]
     },
     {
@@ -3313,7 +3317,8 @@ const CARDS = [
     {
         id: 403,
         question: `Anyone knows what resources and how much do we get for a failed PA capture?`,
-        answer: `${figure(image(IMG_ASSET+"CaptureFail.png", "Failed PA capture compensations."), 'Slashes for probability')}`,
+        answer: `${figure(image(IMG_ASSET+"CaptureFail.png", "Failed PA capture compensations."), 'Slashes for probability (From u/UnironicWeeaboo)')}<br>
+        ${Embed.reddit("tqur46/weekly_commanders_lounge_march_29_2022/i39exkd")}`,
         tags: [dtag.ITEM, dtag.PA]
     },
     {
@@ -4126,12 +4131,12 @@ const CARDS = [
         answer: `${anchor("u/UnironicWeeaboo's report.", "https://www.reddit.com/r/girlsfrontline/comments/x74mpx/weekly_commanders_lounge_september_06_2022/ingul31/")}`,
         tags: [dtag.OJ]
     },
-    {
-        id: 507,
-        question: `What happens to the SPEQs from the previous Gray Zone season?`,
-        answer: `Retained.`,
-        tags: [dtag.SPEQ, dtag.GZ]
-    },
+    //{
+    //    id: 507,
+    //    question: `What happens to the SPEQs from the previous Gray Zone season?`,
+    //    answer: `Retained.`,
+    //    tags: [dtag.SPEQ, dtag.GZ]
+    //},
     {
         id: 508,
         question: `Where can I see the items' descriptions/blurbs?`,
@@ -4320,7 +4325,7 @@ const CARDS = [
         id: 526,
         question: `Is there a list of possible talents for each component?`,
         answer: `${figure(Embed.google(["GFL - Vehicle Component Details", "https://docs.google.com/spreadsheets/d/1U-VF3LX_aptvj1m9wrx5-tCZGus-l70V-uGhsM-uDHk"]), "Google Sheet by u/UnironicWeeaboo")}`, // https://old.reddit.com/r/girlsfrontline/comments/1cgndrn/weekly_commanders_lounge_april_30_2024/l20z7pu/
-        tags: [dtag.MA]
+        tags: [dtag.MA, dtag.EQUIP, dtag.SKILL]
     },
     {
         id: 527,
@@ -4436,6 +4441,18 @@ const CARDS = [
         answer: `${anchor("CN GFWiki.", "http://gfwiki.org/w/%E6%8C%87%E6%8C%A5%E5%AE%98%E8%A1%A3%E6%9F%9C/%E8%A3%85%E6%89%AE%E4%B8%80%E8%A7%88")}`,
         tags: [dtag.SKIN, dtag.CMDR]
     },  //@Update
+    {
+        id: 545,
+        question: `What are Platinum and Nova Medals?`,
+        answer: `Spark/Pity currency if your doll farming/grinding did't give you your desired doll. You can use them to exchange dolls in the shop. And they don't carry over to other events (deleted when the event is over).`,
+        tags: [dtag.ITEM, dtag.TDOLL, dtag.GET]
+    },
+    {
+        id: 546,
+        question: `Is there a quick to use a specific amount items?`,
+        answer: `Tap the numbers to bring up the text entry screen.`,
+        tags: [dtag.ITEM]
+    },
     //{
     //    id: 0,
     //    question: ``,
@@ -4497,9 +4514,9 @@ window.cards = CARDS;
 //Column vs Row
 //https://old.reddit.com/r/girlsfrontline/comments/1dilac7/weekly_commanders_lounge_june_18_2024/l95hiim/
 
-// https://old.reddit.com/r/girlsfrontline/comments/1dtgfxs/weekly_commanders_lounge_july_02_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1dywvub/weekly_commanders_lounge_july_09_2024/
 // https://old.reddit.com/r/girlsfrontline/comments/1e4j1nr/weekly_commanders_lounge_july_16_2024/
 //https://old.reddit.com/r/girlsfrontline/comments/1ea289r/weekly_commanders_lounge_july_23_2024/
 //https://old.reddit.com/r/girlsfrontline/comments/1efnr6m/weekly_commanders_lounge_july_30_2024/
 //https://old.reddit.com/r/girlsfrontline/comments/1elc2eo/weekly_commanders_lounge_august_06_2024/
+//https://old.reddit.com/r/girlsfrontline/comments/1er27qn/weekly_commanders_lounge_august_13_2024/

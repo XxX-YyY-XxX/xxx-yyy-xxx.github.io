@@ -163,57 +163,42 @@ function algoPath(algoname) {
 
         FRAGMENT.querySelector("button").value = this.name;
         FRAGMENT.querySelector(`[data-grid="name"]`).textContent = this.name;
+        FRAGMENT.querySelector(`[data-grid="type"]`).textContent = this.TYPE;
+        FRAGMENT.querySelector(`[data-grid="set3"]`).textContent = this.SET3 ?? "No Set Skill";
+        setattr(FRAGMENT.querySelector("img"), {src: algoPath(this.name), alt: this.name})
 
         const SET2 = FRAGMENT.querySelector(`[data-grid="set2"]`);
         SET2.textContent = Array.isArray(this.SET2) ? this.SET2.map(([attr,]) => STATVALUES.NAME[attr]).join("|") : this.SET2;
-        SET2.classList.add(...(() => {
-            switch (this.SET2) {
-                case STATVALUES.SET.hpflat:                                                 // Stability
-                    if (AlgoField.current.basestat.hp < STATVALUES.SET_THRESH.hp)
-                        return ["algo-left-good", "algo-right-good"];
-                    else
-                        return ["algo-left-bad", "algo-right-bad"];
-                case STATVALUES.SET.hpperc:
-                    if (AlgoField.current.basestat.hp > STATVALUES.SET_THRESH.hp)
-                        return ["algo-left-good", "algo-right-good"];
-                    else
-                        return ["algo-left-bad", "algo-right-bad"];
-                case STATVALUES.SET.dpenflat:                                                // Offense
-                    /** @type {string[]} */ var OUTPUT = [];
-                    if (AlgoField.current.basestat.ppen < STATVALUES.SET_THRESH.dpen)
-                        OUTPUT.push("algo-left-good");
-                    else if (AlgoField.current.basestat.ppen > STATVALUES.SET_THRESH.dpen)
-                        OUTPUT.push("algo-left-bad");
-                    if (AlgoField.current.basestat.open < STATVALUES.SET_THRESH.dpen)
-                        OUTPUT.push("algo-right-good");
-                    else if (AlgoField.current.basestat.open > STATVALUES.SET_THRESH.dpen)
-                        OUTPUT.push("algo-right-bad");
-                    return OUTPUT;
-                case STATVALUES.SET.dpenperc:
-                    /** @type {string[]} */ var OUTPUT = [];
-                    if (AlgoField.current.basestat.ppen > STATVALUES.SET_THRESH.dpen)
-                        OUTPUT.push("algo-left-good");
-                    else if (AlgoField.current.basestat.ppen < STATVALUES.SET_THRESH.dpen)
-                        OUTPUT.push("algo-left-bad");
-                    if (AlgoField.current.basestat.open > STATVALUES.SET_THRESH.dpen)
-                        OUTPUT.push("algo-right-good");
-                    else if (AlgoField.current.basestat.open < STATVALUES.SET_THRESH.dpen)
-                        OUTPUT.push("algo-right-bad");
-                    return OUTPUT;
-                default:
-                    return [];
-            }
-        })());
-
-        FRAGMENT.querySelector(`[data-grid="type"]`).textContent = this.TYPE;
-
-        const IMG = FRAGMENT.querySelector("img");
-        IMG.src = algoPath(this.name);
-        IMG.alt = this.name;
-
-        FRAGMENT.querySelector(`[data-grid="set3"]`).textContent = this.SET3 ?? "No Set Skill";
+        SET2.classList.add(...algoStatComparison(this.SET2));
     
         return FRAGMENT;
+    }
+}
+
+/** @param {STATVALUES["SET"][SetAttributes]} set2 */
+function algoStatComparison(set2) {
+    const BASESTAT = AlgoField.current.basestat, THRESHOLD = STATVALUES.SET_THRESH;
+    switch (set2) {
+        case STATVALUES.SET.hpflat:     //Stability
+            return BASESTAT.hp < THRESHOLD.hp ? ["algo-left-good", "algo-right-good"] : ["algo-left-bad", "algo-right-bad"];
+        case STATVALUES.SET.hpperc:
+            return BASESTAT.hp > THRESHOLD.hp ? ["algo-left-good", "algo-right-good"] : ["algo-left-bad", "algo-right-bad"];
+        case STATVALUES.SET.dpenflat:   //Offense
+            /** @type {string[]} */ var OUTPUT = [];
+            if (BASESTAT.ppen < THRESHOLD.dpen)         OUTPUT.push("algo-left-good");
+            else if (BASESTAT.ppen > THRESHOLD.dpen)    OUTPUT.push("algo-left-bad");
+            if (BASESTAT.open < THRESHOLD.dpen)         OUTPUT.push("algo-right-good");
+            else if (BASESTAT.open > THRESHOLD.dpen)    OUTPUT.push("algo-right-bad");
+            return OUTPUT;
+        case STATVALUES.SET.dpenperc:
+            /** @type {string[]} */ var OUTPUT = [];
+            if (BASESTAT.ppen > THRESHOLD.dpen)         OUTPUT.push("algo-left-good");
+            else if (BASESTAT.ppen < THRESHOLD.dpen)    OUTPUT.push("algo-left-bad");
+            if (BASESTAT.open > THRESHOLD.dpen)         OUTPUT.push("algo-right-good");
+            else if (BASESTAT.open < THRESHOLD.dpen)    OUTPUT.push("algo-right-bad");
+            return OUTPUT;
+        default:
+            return [];
     }
 }
 

@@ -132,7 +132,7 @@ export function image(src, alt, {mode = null} = {}) {
 }
 
 export function figure(content, caption) {
-    const FIGCAPTION = setattr(document.createElement("figcaption"), {append: [caption]});
+    const FIGCAPTION = setattr(document.createElement("figcaption"), {append: [caption], toString: htmlString});
     const FIGURE = setattr(document.createElement("figure"), {toString: htmlString});
     return setattr(FIGURE, {append: [content, FIGCAPTION]});
 }
