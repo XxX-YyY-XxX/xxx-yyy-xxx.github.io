@@ -181,7 +181,7 @@ const CARDS = [
             fragment(anchor('Matsuda guide.', 'https://gfl.matsuda.tips/post/fairies'), " Mostly still applies."),
             fragment(anchor('IOPWiki guide.', 'https://iopwiki.com/wiki/Technical_Fairies'), " Unupdated rework skills."),
             fragment(anchor('GFC guide.', 'https://www.gflcorner.com/fairy/'), " Fairies up to CT only."),
-            anchor("Gamepress guide.", "https://gamepress.gg/girlsfrontline/fairies-where-they-live-and-how-craft-them"),
+            anchor("Gamepress guide.", "https://web.archive.org/web/20230501045733/https://gamepress.gg/girlsfrontline/fairies-where-they-live-and-how-craft-them"), //https://gamepress.gg/girlsfrontline/fairies-where-they-live-and-how-craft-them
             details("GDoc guides.", Embed.google(
                 ["Fairy Analytic(EN) v0.60 by 25thNight- and Emperoripmg (GFC) (Unupdated)", "https://docs.google.com/spreadsheets/d/1x6_YysDi0h89jKE9vEW2_fbxi7gG7XV5jjJqX8O41rw"],
                 ["Fairy Crash Course (by Jesse #6406)", "https://docs.google.com/document/d/1dXZkOmAR0SWqL7UKCxmTP2hUPjpoRhskbJHn1ZlpNWc"]
@@ -255,7 +255,7 @@ const CARDS = [
     {
         id: 9,
         question: `What's a True Core Mask, where do I get them, and how do I use it?`,
-        answer: `One TCM is given out every major event and anniversary.<br>
+        answer: `One TCM is given out every currently running major event and anniversary.<br>
         ${anchor('Gamepress guide.', 'https://gamepress.gg/girlsfrontline/true-core-mask-revamped-who-get')}`,
         tags: [dtag.TCM, dtag.PRIME, dtag.MAJOR, dtag.ANNIV, dtag.GET]
     },
@@ -571,7 +571,7 @@ const CARDS = [
                 anchor("RFHG by warorpeace#7149.", "https://docs.google.com/document/d/e/2PACX-1vTR8LNVuBX4FiaAxLus5zZO6M4hQCu_4Fec0S0rqMmhPMXQXMcnU4uPhwwYAHOQDB5I9nq0VqSJd4-p/pub"),
                 anchor(`RFHG "Gamepress" guide.`, "http://web.archive.org/web/20230927053059/https://gamepress.gg/girlsfrontline/rfhg-teambuilding"),   //update when gfl "gamperess" is up
                 // details("MGSG by canoxin#2789.", Embed.google(["An introduction to MGs and SGs", "https://docs.google.com/document/d/1-O7398S5sHcowCI8lp5Ktu_AiUBydJuvVHV-dX7g-l8"])),
-                anchor("Gamepress MGSG guide.", "https://gamepress.gg/girlsfrontline/mgs-sgs-and-teambuilding")
+                anchor("Gamepress MGSG guide.", "http://web.archive.org/web/20240105210608/https://gamepress.gg/girlsfrontline/mgs-sgs-and-teambuilding") //https://gamepress.gg/girlsfrontline/mgs-sgs-and-teambuilding
             ],
             'Coalition Echelons' : [
                 anchor('BigStupidJellyfish guide.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ringleader-echelon'),
@@ -1701,13 +1701,12 @@ const CARDS = [
         answer: `From their release until EOS.`,
         tags: [dtag.MOD]
     },
-    //{
-    //    id: 168,
-    //    question: `Will I get the rewards after adding a returning commander as friend for the callback event?`,
-    //    answer: `${image(IMG_ASSET+"CallbackSupporter.png", "Daily Loggers.")}<br>
-    //    ${image(IMG_ASSET+"CallbackReturner.png", "Returners.")}`,
-    //    tags: [dtag.FRIEND, dtag.ITEM, dtag.MARP]
-    //},
+    {
+        id: 168,
+        question: `Is the Keycard Mission actually rigged?`,
+        answer: `${Embed.reddit("twps7w/weekly_commanders_lounge_april_05_2022/i4czmyf")}`,
+        tags: [dtag.MINI]
+    },
     {
         id: 169,
         question: `Are the previous monthly Special Equipments obtainable in some way/getting a rerun?`,
@@ -2514,7 +2513,7 @@ const CARDS = [
     {
         id: 282,
         question: `I bought the L2D background but I saw nothing move. Is this really L2D?`,
-        answer: `If you won't move then it wouldn't. Yes, panoramic${TextStyle.style('sorta L2D', TextStyle.SUPER)}.`,
+        answer: `If you won't move then it wouldn't. Yes, panoramic${textStyle("sorta L2D", "super")}.`,
         tags: [dtag.MISC]
     },
     {
@@ -4453,6 +4452,12 @@ const CARDS = [
         answer: `Tap the numbers to bring up the text entry screen.`,
         tags: [dtag.ITEM]
     },
+    {
+        id: 547,
+        question: `How do I use NPC costumes?`,
+        answer: `The same way you put adjutant skins in the main screen.`,
+        tags: [dtag.ADJUNCT, dtag.SKIN]
+    },  //@Visual
     //{
     //    id: 0,
     //    question: ``,
@@ -4461,62 +4466,3 @@ const CARDS = [
     //},
 ];
 window.cards = CARDS;
-//      
-// {
-//     const INDICES = Object.keys(CARDS).map(Number);
-//     /** @type {Set<number>} */ const DUPLICATES = new Set();
-
-//     for (const ID of CARDS.map(x => x.id))
-//         if (!INDICES.remove(ID))
-//             DUPLICATES.add(ID);
-//     console.log("Skipped:", ...INDICES);
-//     console.log("Duplicate:", ...DUPLICATES);
-// }
-// cdn.discordapp cleanup
-// gray zone proxy settings
-
-// https://old.reddit.com/r/girlsfrontline/comments/1929lxq/weekly_commanders_lounge_january_09_2024/khy62ha/
-// https://old.reddit.com/r/girlsfrontline/comments/1929lxq/weekly_commanders_lounge_january_09_2024/khmieoe/
-// https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/kgfv3bn/
-// https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/kgpxdz7/
-// Quick Formations - https://old.reddit.com/r/girlsfrontline/comments/qg1inu/weekly_commanders_lounge_october_26_2021/hiu3wrw/
-// https://old.reddit.com/r/girlsfrontline/comments/1bzmnr3/weekly_commanders_lounge_april_09_2024/kzsxfd8/
-// https://docs.google.com/spreadsheets/d/1ty239kyJbBs1sLhTo1JvSWuN0mIJsK1nwVdI6OLLtXo/edit?gid=143584538#gid=143584538
-// https://docs.google.com/document/d/1mRl1srQB96SCsehTtBeiJ-ZjuxLAoSE1bSHfKhIMcNE/edit
-// Fragmented Visual Data - https://old.reddit.com/r/girlsfrontline/comments/1c5aljd/weekly_commanders_lounge_april_16_2024/kzxok6e/
-// https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1usr9k/
-// https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l182w55/
-// https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l14i21y/
-// https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/l3vdsq3/
-// https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/l3ewqvt/
-// https://old.reddit.com/r/girlsfrontline/comments/1crmrcn/weekly_commanders_lounge_may_14_2024/l4vuvoz/
-// https://old.reddit.com/r/girlsfrontline/comments/1crmrcn/weekly_commanders_lounge_may_14_2024/l4lsbv0/
-// https://old.reddit.com/r/girlsfrontline/comments/1crmrcn/weekly_commanders_lounge_may_14_2024/l4270q5/
-//https://old.reddit.com/r/girlsfrontline/comments/1do0n1y/weekly_commanders_lounge_june_25_2024/lb3ldec/
-//https://old.reddit.com/r/girlsfrontline/comments/s17rwt/weekly_commanders_lounge_january_11_2022/ht46bxl/
-
-// FST rework
-// https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1tymg1/
-// https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l11jvz1/
-//https://old.reddit.com/r/girlsfrontline/comments/1cx2khg/weekly_commanders_lounge_may_21_2024/l529l9q/
-
-// Newbie starting up
-// https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1lbfze/
-// https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1738g5/
-
-// Mobile Armor
-// https://old.reddit.com/r/girlsfrontline/comments/1cgndrn/weekly_commanders_lounge_april_30_2024/l24gpzk/
-// https://old.reddit.com/r/girlsfrontline/comments/1c5aljd/weekly_commanders_lounge_april_16_2024/l0s6bry/
-// https://old.reddit.com/r/girlsfrontline/comments/1cgndrn/weekly_commanders_lounge_april_30_2024/l22shex/
-// https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/l3ostxm/
-//https://old.reddit.com/r/girlsfrontline/comments/1cx2khg/weekly_commanders_lounge_may_21_2024/l5exhaz/
-
-//Column vs Row
-//https://old.reddit.com/r/girlsfrontline/comments/1dilac7/weekly_commanders_lounge_june_18_2024/l95hiim/
-
-// https://old.reddit.com/r/girlsfrontline/comments/1dywvub/weekly_commanders_lounge_july_09_2024/
-// https://old.reddit.com/r/girlsfrontline/comments/1e4j1nr/weekly_commanders_lounge_july_16_2024/
-//https://old.reddit.com/r/girlsfrontline/comments/1ea289r/weekly_commanders_lounge_july_23_2024/
-//https://old.reddit.com/r/girlsfrontline/comments/1efnr6m/weekly_commanders_lounge_july_30_2024/
-//https://old.reddit.com/r/girlsfrontline/comments/1elc2eo/weekly_commanders_lounge_august_06_2024/
-//https://old.reddit.com/r/girlsfrontline/comments/1er27qn/weekly_commanders_lounge_august_13_2024/

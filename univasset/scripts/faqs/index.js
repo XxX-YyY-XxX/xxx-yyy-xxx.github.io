@@ -1,7 +1,7 @@
 // uses history
 
 import {removeHTMLTag, getTemplateCloner} from "../externaljavascript.js";
-import {Random, cmp, setattr} from "../basefunctions/index.js";
+import {Random, cmp, groupby, setattr} from "../basefunctions/index.js";
 import {anchor, fragment, slider} from "../html/index.js";
 
 window.addEventListener("popstate", event => {
@@ -47,6 +47,7 @@ export function queryFunc() {
     SLIDER.querySelector("input").name = "page";
 
     /** @type {Tag} */ const TAG_DICT = window.tags;
+    //let a = groupby(Object.values(TAG_DICT), x => x.name[0])
     const TAGS_FIELD = document.querySelector("#Tags div");
     const _tagsearchCloner = getTemplateCloner("#query-tag");
     for (const {name, description} of Object.values(TAG_DICT).sort(cmp({key: x => x.name}))) {

@@ -3,8 +3,6 @@
 # Redditor Musings
 
 > BSJ
-> - [Bingo spacing.](https://old.reddit.com/r/girlsfrontline/comments/twps7w/weekly_commanders_lounge_april_05_2022/i4czmyf/)
->
 > - [Fairy and AK-15.](https://old.reddit.com/r/girlsfrontline/comments/sneu7n/weekly_commanders_lounge_february_08_2022/hwpgdcv/)
 >
 > - [CE marks.](https://old.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge_may_17_2022/i997401/)
@@ -420,3 +418,50 @@ https://old.reddit.com/r/girlsfrontline/comments/1bn4ish/april_roadmap/kwg0qmq/
 https://old.reddit.com/r/girlsfrontline/comments/1bo2czw/weekly_commanders_lounge_march_26_2024/kxctpsq/
 https://old.reddit.com/r/girlsfrontline/comments/1cx2khg/weekly_commanders_lounge_may_21_2024/l5gtssz/
 https://old.reddit.com/r/girlsfrontline/comments/1dtgfxs/weekly_commanders_lounge_july_02_2024/lb9rsxj/
+
+// cdn.discordapp cleanup
+// gray zone proxy settings
+
+// https://old.reddit.com/r/girlsfrontline/comments/1929lxq/weekly_commanders_lounge_january_09_2024/khy62ha/
+// https://old.reddit.com/r/girlsfrontline/comments/1929lxq/weekly_commanders_lounge_january_09_2024/khmieoe/
+// https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/kgfv3bn/
+// https://old.reddit.com/r/girlsfrontline/comments/18r4oht/slow_shock_event_megathread/kgpxdz7/
+// Quick Formations - https://old.reddit.com/r/girlsfrontline/comments/qg1inu/weekly_commanders_lounge_october_26_2021/hiu3wrw/
+// https://old.reddit.com/r/girlsfrontline/comments/1bzmnr3/weekly_commanders_lounge_april_09_2024/kzsxfd8/
+// https://docs.google.com/spreadsheets/d/1ty239kyJbBs1sLhTo1JvSWuN0mIJsK1nwVdI6OLLtXo/edit?gid=143584538#gid=143584538
+// https://docs.google.com/document/d/1mRl1srQB96SCsehTtBeiJ-ZjuxLAoSE1bSHfKhIMcNE/edit
+// Fragmented Visual Data - https://old.reddit.com/r/girlsfrontline/comments/1c5aljd/weekly_commanders_lounge_april_16_2024/kzxok6e/
+// https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1usr9k/
+// https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l182w55/
+// https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l14i21y/
+// https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/l3vdsq3/
+// https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/l3ewqvt/
+// https://old.reddit.com/r/girlsfrontline/comments/1crmrcn/weekly_commanders_lounge_may_14_2024/l4vuvoz/
+// https://old.reddit.com/r/girlsfrontline/comments/1crmrcn/weekly_commanders_lounge_may_14_2024/l4lsbv0/
+// https://old.reddit.com/r/girlsfrontline/comments/1crmrcn/weekly_commanders_lounge_may_14_2024/l4270q5/
+//https://old.reddit.com/r/girlsfrontline/comments/1do0n1y/weekly_commanders_lounge_june_25_2024/lb3ldec/
+//https://old.reddit.com/r/girlsfrontline/comments/s17rwt/weekly_commanders_lounge_january_11_2022/ht46bxl/
+
+// FST rework
+// https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1tymg1/
+// https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l11jvz1/
+//https://old.reddit.com/r/girlsfrontline/comments/1cx2khg/weekly_commanders_lounge_may_21_2024/l529l9q/
+
+// Newbie starting up
+// https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1lbfze/
+// https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1738g5/
+
+// Mobile Armor
+// https://old.reddit.com/r/girlsfrontline/comments/1cgndrn/weekly_commanders_lounge_april_30_2024/l24gpzk/
+// https://old.reddit.com/r/girlsfrontline/comments/1c5aljd/weekly_commanders_lounge_april_16_2024/l0s6bry/
+// https://old.reddit.com/r/girlsfrontline/comments/1cgndrn/weekly_commanders_lounge_april_30_2024/l22shex/
+// https://old.reddit.com/r/girlsfrontline/comments/1cm6jd6/weekly_commanders_lounge_may_07_2024/l3ostxm/
+//https://old.reddit.com/r/girlsfrontline/comments/1cx2khg/weekly_commanders_lounge_may_21_2024/l5exhaz/
+
+//Column vs Row
+//https://old.reddit.com/r/girlsfrontline/comments/1dilac7/weekly_commanders_lounge_june_18_2024/l95hiim/
+
+//https://old.reddit.com/r/girlsfrontline/comments/1ea289r/weekly_commanders_lounge_july_23_2024/
+//https://old.reddit.com/r/girlsfrontline/comments/1efnr6m/weekly_commanders_lounge_july_30_2024/
+//https://old.reddit.com/r/girlsfrontline/comments/1elc2eo/weekly_commanders_lounge_august_06_2024/
+//https://old.reddit.com/r/girlsfrontline/comments/1er27qn/weekly_commanders_lounge_august_13_2024/

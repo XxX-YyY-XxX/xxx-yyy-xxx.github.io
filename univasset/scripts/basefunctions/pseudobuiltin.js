@@ -25,7 +25,8 @@ export function type(any) {
             else
                 return "object";
         case "function":
-            if (Function.prototype.toString.call(any).startsWith("class"))
+            if (any.toString().startsWith("class"))
+                //if input is typeof Class
                 return "class";
             else
                 return "function";
@@ -61,6 +62,23 @@ export function* chain(...iterables) {
 export function* enumerate(iterable) {
     var index = 0;
     for (const ITEM of iterable) yield [index++, ITEM];
+}
+
+export function groupby(iterable, key) {
+    const MAP = new Map();
+    for (const ITEM of iterable) {
+        const KEY = key(ITEM);
+        if (MAP.has(KEY))
+            MAP.get(KEY).push(ITEM)
+        else
+            MAP.set(KEY, [ITEM])
+    }
+    return MAP;
+}
+
+export function classtype(instance) {
+    const [,,OUTPUT] = instance.constructor.toString().match(/(class|function) (\w+)/)
+    return OUTPUT;
 }
 //#endregion
 
@@ -160,7 +178,3 @@ export function cmp(...sort_params) {
     }
 }
 //#endregion
-
-function classtype(instance) {
-    return instance.prototype.name;
-}

@@ -22,6 +22,8 @@ import { template } from "../../univasset/scripts/html/index.js";
  * @property {string} GenericSkill.description
  */
 
+/** @typedef {[string, string, string, string]} SpiritSkillSet*/
+
 const GENERIC_SKILLS = {
     /** @type {GenericSkill} */ Macrocosms: {
         type: "Passive",
@@ -122,10 +124,9 @@ class Spirit {
         return FRAGMENT;
     }
 
-    /** @type {{[skillname: string]: SpiritSkill}} */ SPECIFIC_SKILLS;
+    /** @type {{[skillname: string]: SpecificSkill}} */ SPECIFIC_SKILLS;
 
-    /** @type {[string, string, string]} */ SETS = [];
-    // /** @type {[string, string, string]} */ skills = []
+    /** @type {[SpiritSkillSet, SpiritSkillSet, SpiritSkillSet]} */ SKILLS = [["Set 1", "", "", ""], ["Set 2", "", "", ""], ["Set 3", "", "", ""]];
 }
 
 const SPIRITS = {
@@ -168,6 +169,29 @@ const SPIRITS = {
             [STAT_KEYS_TYPE.HASHRATE_F]: 120,
             [STAT_KEYS_TYPE.CRITDMG_P]: 15,
             [STAT_KEYS_TYPE.HASTE_P]: 7.5
+        }
+
+        SPECIFIC_SKILLS = {
+            "Prayerful Summons - Abundance": {
+                type: "Passive",
+                value: [],
+                description: "Summons gain 8% Attack, Hashrate, and HP."
+            },
+            "Prayerful Summons - Martyrdom": {
+                type: "Passive",
+                value: [],
+                description: "For every 1 dead summon on the field, the Doll with the greatest Attack/Hashrate gains 3% Crit Rate and 6% Crit Damage for 4 seconds. This effect can stack, but activating it again does not refresh the duration."
+            },
+            "Prayerful Summons - Finality": {
+                type: "Passive",
+                value: [],
+                description: "After 4 allied summons are created, deal Operand Damage equal to 300% of highest allied Hashrate."
+            },
+            "Cyclonic Gust - Phantasm": {
+                type: "Auto",
+                value: [],
+                description: "The selected target is interrupted and sent airborne for 3 seconds. They cannot be targeted during this period. If this target is an enemy unit, they are stunned for 2 seconds after landing. Summoons 2 Spirits next to the target to assist in battle. Their Max HP is equal to 30% of the HP of the Doll with the greatest Hashrate, and inherits 15% of that unit's Attack and Hashrate."
+            },
         }
     })(),
     Reverence: new (class Reverence extends Spirit {
@@ -214,6 +238,9 @@ export const SPIRIT_STAT = new (class {
 
         for (const BUTTON of document.querySelectorAll("#spirits > #sets > button")) {
             BUTTON.addEventListener("click", event => this.#SPIRIT_SKILLS.showModal())
+
+            this.#SPIRIT_SKILLS.querySelector("#name").textContent = this.#IMAGE.alt;
+            //set up skills
         }
     }
 
@@ -277,3 +304,5 @@ export const SPIRIT_STAT = new (class {
         return [0, this.#current_spirit.ATTRIBUTES.hasteperc ?? 0];
     }
 })();
+
+//save spirit skills
