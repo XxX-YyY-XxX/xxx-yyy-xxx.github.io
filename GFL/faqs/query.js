@@ -4184,7 +4184,8 @@ const CARDS = [
             "Adeline (Black Nyto)",
             "Alina (White Nyto)",
             "Tareus",
-            "Sana"
+            "Sana",
+            "Narciss"
         )}
         <br>
         ${textStyle("Sesonal Banners", "bold")}

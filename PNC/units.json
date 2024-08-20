@@ -174,16 +174,16 @@
             "regen": 349
         },
         "arma": {
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
+            "hp": 2056,
+            "atk": 108,
+            "hash": 135,
+            "pdef": 40,
+            "odef": 41,
+            "ppen": 77,
+            "open": 233
         },
         "intimacy": ["Power Connection", "Neural Activation", "Coordinated Formation"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
         "id": 1007,
@@ -1851,16 +1851,16 @@
             "regen": 679
         },
         "arma": {
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
+            "hp": 8210,
+            "atk": 59,
+            "hash": 87,
+            "pdef": 106,
+            "odef": 126,
+            "ppen": 39,
+            "open": 39
         },
         "intimacy": ["Neural Activation", "Risk Evasion Aid", "Through Fire and Water"],
-        "tags": ["Unowned"]
+        "tags": ["Unowned", "Arma"]
     },
     {
         "id": 1063,
@@ -2358,28 +2358,103 @@
         "intimacy": ["Power Connection", "Code Robustness", "Coordinated Formation"],
         "tags": []
     },
-
-    {
-        "id": 1072,
-        "name" : "Xinghuan",
-        "reference" : {"" : ""},
-        "tags": ["Unreleased"]
-    },
     {
         "id": 1073,
-        "name" : "Yuwang",
-        "reference" : {"" : ""},
-        "tags": ["Unreleased"]
+        "name": "Yuwang",
+        "class": "Specialist",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
+        "base": {
+            "hp": 17225,
+            "atk": 548,
+            "hash": 579,
+            "pdef": 342,
+            "odef": 366,
+            "aspd": 100,
+            "crate": 6,
+            "ppen": 348,
+            "open": 363,
+            "dodge": 3,
+            "regen": 546
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
     },
     {
-        "id": 1074,
-        "name" : "Hubble - Death Star",
-        "reference" : {"" : ""},
-        "tags": ["Unreleased"]
+        "id": 1072,
+        "name": "Xinghuan",
+        "class": "Warrior",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
+        "base": {
+            "hp": 16362,
+            "atk": 452,
+            "hash": 664,
+            "pdef": 422,
+            "odef": 415,
+            "aspd": 120,
+            "crate": 5,
+            "ppen": 360,
+            "open": 447,
+            "dodge": 10,
+            "regen": 497
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": ["Neural Activation", "Code Robustness", "Coordinated Strike"],
+        "tags": []
     },
     {
         "id": 1079,
-        "name" : "Penumbra",
+        "name": "Penumbra",
+        "class": "Warrior",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
+        "base": {
+            "hp": 18738,
+            "atk": 686,
+            "hash": 513,
+            "pdef": 451,
+            "odef": 451,
+            "aspd": 120,
+            "crate": 5,
+            "ppen": 320,
+            "open": 315,
+            "dodge": 10,
+            "regen": 588
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": ["Power Connection", "Code Robustness", "Coordinated Strike"],
+        "tags": []
+    },
+
+    {
+        "id": 1074,
+        "name" : "Hubble - Death Star",
         "reference" : {"" : ""},
         "tags": ["Unreleased"]
     },
@@ -2420,7 +2495,7 @@
         "tags": ["Unreleased"]
     },
     {
-        "id": 0,
+        "id": 1087,
         "name": "Olivia",
         "reference": {},
         "tags": ["Unreleased"]
@@ -2428,6 +2503,12 @@
     {
         "id": 0,
         "name": "Angelus",
+        "reference": {},
+        "tags": ["Unreleased"]
+    },
+    {
+        "id": 0,
+        "name": "Salmon",
         "reference": {},
         "tags": ["Unreleased"]
     }

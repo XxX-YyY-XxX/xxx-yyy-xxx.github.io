@@ -1,10 +1,11 @@
 // event timers only too lazy to do others
 
-import {Timer, getTemplateCloner, splitTime} from "../univasset/scripts/externaljavascript.js";
-import {Random, setattr} from "../univasset/scripts/basefunctions/index.js";
+import {Timer, splitTime} from "../univasset/scripts/externaljavascript.js";
+import {setattr} from "../univasset/scripts/basefunctions/index.js";
+import {template} from "../univasset/scripts/html/index.js";
 
 const TIMER_FIELD = document.querySelector("#timer-field");
-const _timerTemplate = getTemplateCloner("#timer-block");
+const _timerTemplate = template("#timer-block");
 
 /** Mostly used for sizes greater than 1 rem.
  * @this {HTMLSpanElement}
@@ -53,29 +54,21 @@ function timer(start_date, end_date, title, imgpath, {onend = null} = {}) {
     TIMER_FIELD.appendChild(FRAGMENT);
 }
 
+// reload into loading timers
 (function resetTimer() {
     timer(
-        "Jul 23, 2024 18:30 UTC-0800",
-        "Aug 13, 2024 18:30 UTC-0800",
-        "Phantasmagoric Sojourn",
-        `./assets/images/timer/${Random.iterable(["cpt00_e_cg048", "cpt00_e_cg048_2"]).next().value}.png`,
+        "Aug 20, 2024 18:30 UTC-0800",
+        "Sep 17, 2024 18:30 UTC-0800",
+        "Singularity Immemorial",
+        `./assets/images/timer/LoginBg_ZH_CN_2023_Singularity_Immemorial.png`,
         {onend: resetTimer}
     )
 
     timer(
-        "Jul 23, 2024 18:30 UTC-0800",
-        "Aug 13, 2024 18:30 UTC-0800",
-        "Melodious Macrocosm",
-        `./assets/images/timer/${Random.iterable(["cpt00_e_cg035", "cpt00_e_cg038"]).next().value}.png`,
-        {onend: resetTimer}
-    )
-
-    timer(
-        "Jun 25, 2024 18:30 UTC-0800",
-        "Jul 30, 2024 18:30 UTC-0800",
-        "Retrocausal Trie Interference",
-        "./assets/images/timer/LoginBg_ZH_CN_Steins_Gate_December_2023.png",
+        "Sep 10, 2024 18:30 UTC-0800",
+        "Oct 01, 2024 18:30 UTC-0800",
+        "Netherblade Gleam",
+        `./assets/images/timer/cpt00_e_cg045.png`,
         {onend: resetTimer}
     )
 })();
-// resetTimer();

@@ -2,12 +2,12 @@ import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
 timer(
    document.getElementById("event"),
-   "Aug 06, 2024 00:00 UTC-0800",
-   "./assets/images/timer/rpg29.webp",
+   "Aug 27, 2024 00:00 UTC-0800",
+   "./assets/images/timer/maxresdefault.jpg",
    {onEnd: timer.bind(
         null, document.getElementById("event"),
-        "Aug 27, 2024 00:00 UTC-0800",
-        "./assets/images/timer/maxresdefault.jpg"
+        "",
+        ""
     )}
 );
 
@@ -17,14 +17,15 @@ timer(
     "./assets/images/timer/j1kat1xvnlcd1.webp",
     {onEnd: timer.bind(
         null, document.getElementById("battlepass"),
-        "", ""
+        "Sep 30, 2024 00:00 UTC-0800",
+        "./assets/images/timer/rtsz1c3rmqjd1.webp"
     )}
 );
 
 timer(
     document.getElementById("coalition"),
-    "Aug 20, 2024 00:00 UTC-0800",
-    "./assets/images/coalition/19Cerberus.webp",
+    "Sep 17, 2024 00:00 UTC-0800",
+    "./assets/images/coalition/25Narciss.webp",
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
         "",
@@ -34,12 +35,12 @@ timer(
 
 timer(
     document.getElementById('skin-banner'),
-    "Aug 06, 2024 00:00 UTC-0800",
-    "https://iopwiki.com/images/thumb/3/31/HK433_costume1_D.png/600px-HK433_costume1_D.png",
+    "Sep 03, 2024 00:00 UTC-0800",
+    "https://iopwiki.com/images/thumb/e/ed/Colt_Walker_costume2_D.png/600px-Colt_Walker_costume2_D.png",
     {onEnd: timer.bind(
         null, document.getElementById('skin-banner'),
-        "Sep 03, 2024 00:00 UTC-0800",
-        "https://iopwiki.com/images/thumb/e/ed/Colt_Walker_costume2_D.png/600px-Colt_Walker_costume2_D.png"
+        "",
+        ""
     )}
 );
 

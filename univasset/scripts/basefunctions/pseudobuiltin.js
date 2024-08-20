@@ -64,7 +64,7 @@ export function* enumerate(iterable) {
     for (const ITEM of iterable) yield [index++, ITEM];
 }
 
-export function groupby(iterable, key) {
+export function groupby(iterable, key = x => x) {
     const MAP = new Map();
     for (const ITEM of iterable) {
         const KEY = key(ITEM);

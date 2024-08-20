@@ -20,7 +20,8 @@ export function chain<T>(...iterables: Iterable<T>[]): Generator<T, void, unknow
 
 export function enumerate<T>(iterable: Iterable<T>): Generator<[number, T], void, unknown>;
 
-export function groupby<TVal, TKey>(iterable: Iterable<TVal>, key: (item: TVal) => TKey): Map<TKey, TVal[]>;
+export function groupby<T>(iterable: Iterable<T>): Map<T, T[]>;
+export function groupby<TKey, TVal>(iterable: Iterable<TVal>, key: (item: TVal) => TKey): Map<TKey, TVal[]>;
 
 /** Check an instance's class type. */
 export function classtype(instance: object): string;
