@@ -3,8 +3,6 @@
 # Redditor Musings
 
 > BSJ
-> - [Fairy and AK-15.](https://old.reddit.com/r/girlsfrontline/comments/sneu7n/weekly_commanders_lounge_february_08_2022/hwpgdcv/)
->
 > - [CE marks.](https://old.reddit.com/r/girlsfrontline/comments/urhg1y/weekly_commanders_lounge_may_17_2022/i997401/)
 >
 > - [Skins performance differences.](https://old.reddit.com/r/girlsfrontline/comments/u6ztfo/weekly_commanders_lounge_april_19_2022/i5wvfsh/)
@@ -461,7 +459,6 @@ https://old.reddit.com/r/girlsfrontline/comments/1dtgfxs/weekly_commanders_loung
 //Column vs Row
 //https://old.reddit.com/r/girlsfrontline/comments/1dilac7/weekly_commanders_lounge_june_18_2024/l95hiim/
 
-//https://old.reddit.com/r/girlsfrontline/comments/1ea289r/weekly_commanders_lounge_july_23_2024/
 //https://old.reddit.com/r/girlsfrontline/comments/1efnr6m/weekly_commanders_lounge_july_30_2024/
 //https://old.reddit.com/r/girlsfrontline/comments/1elc2eo/weekly_commanders_lounge_august_06_2024/
 //https://old.reddit.com/r/girlsfrontline/comments/1er27qn/weekly_commanders_lounge_august_13_2024/

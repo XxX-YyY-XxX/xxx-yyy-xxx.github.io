@@ -325,7 +325,8 @@ const CARDS = [
                 anchor('Vallhalla girls.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/valhalla'),
                 anchor('AK-15.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ak15')
             )),
-            details("GFC Analytics", Embed.google(["Doll Analytics v0.92 (EN) by GFC", "https://docs.google.com/spreadsheets/d/10LJdksnM3zipOb72IneJD7WVp3765JYJEGg0LnodzDI"]))
+            details("GFC Analytics", Embed.google(["Doll Analytics v0.92 (EN) by GFC", "https://docs.google.com/spreadsheets/d/10LJdksnM3zipOb72IneJD7WVp3765JYJEGg0LnodzDI"])),
+            details("Stevens batch.", figure(Embed.google(["Stevens Batch", "https://docs.google.com/document/d/1KS72B3jP_qj0y_pmrb2jb3nefq8qhy6XG6yQLYpx84g"]), "From u/UnironicWeeaboo (?)"))
         )}`,
         tags: [dtag.TDOLL, dtag.TIER]
     },  //https://shimo.im/sheets/47kgJne6BeIpR4qV
@@ -563,7 +564,8 @@ const CARDS = [
         ${List.description({
             "General" : [
                 details("CheneyQWER's infographic.", image(IMG_ASSET+"EchelonComps.png", "CheneyQWER's infographic.")),
-                details("u/UnironicWeeaboo tips.", Embed.reddit("vmhs0x/weekly_commanders_lounge_june_28_2022/ie3bw95"))
+                details("u/UnironicWeeaboo tips.", Embed.reddit("vmhs0x/weekly_commanders_lounge_june_28_2022/ie3bw95")),
+                anchor(`"Gamepress" guide.`, "https://web.archive.org/web/20231025032840/https://gamepress.gg/girlsfrontline/formation-and-teambuilding-basics-how-not-build-pepega-echelon#tier-lists-fucking-suck-rant-by-varz")
             ],
             'Tactical Doll Echelons' : [
                 anchor("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv'),
@@ -898,7 +900,8 @@ const CARDS = [
         id: 67,
         question: `Which dolls should I dupe/duplicate?`,
         answer: `${List.unordered(
-            anchor("Gamepress suggestions for dolls and coalition units.", "https://gamepress.gg/girlsfrontline/duping-recommendations-and-coalition-mooks"),
+            //anchor("Gamepress suggestions for dolls and coalition units.", "https://gamepress.gg/girlsfrontline/duping-recommendations-and-coalition-mooks"),
+            anchor(`"Gamepress" suggestions for dolls and coalition units.`, "https://web.archive.org/web/20231119083151/https://gamepress.gg/girlsfrontline/duping-recommendations-and-coalition-mooks"),
             anchor('Matsuda notes.', 'https://gfl.matsuda.tips/post/worthwhiledupes'),
             // spoilerSummary('Discord recommendations.', img('https://cdn.discordapp.com/attachments/640157367056728133/1048531902065287188/dupe_gameing_pt3.png'))   //Jesse, Varz, etc.
         )}`,
@@ -4130,12 +4133,12 @@ const CARDS = [
         answer: `${anchor("u/UnironicWeeaboo's report.", "https://www.reddit.com/r/girlsfrontline/comments/x74mpx/weekly_commanders_lounge_september_06_2022/ingul31/")}`,
         tags: [dtag.OJ]
     },
-    //{
-    //    id: 507,
-    //    question: `What happens to the SPEQs from the previous Gray Zone season?`,
-    //    answer: `Retained.`,
-    //    tags: [dtag.SPEQ, dtag.GZ]
-    //},
+    {
+        id: 507,
+        question: `How much damage do fairies contribute?`,
+        answer: `${Embed.google(["GFL Fairy effective DPS boost table", "https://docs.google.com/spreadsheets/d/1NqGWi8WF-sh-Eb6x-dCi3KvkYHRIkG5WCch2tuQahgc"])}`,
+        tags: [dtag.FAIRY, dtag.BATTLE]
+    },
     {
         id: 508,
         question: `Where can I see the items' descriptions/blurbs?`,
@@ -4317,7 +4320,7 @@ const CARDS = [
         answer: `${List.description({
             "Tactical Dolls": ["MODs and oaths take the forefront with advantaged dolls having +20% CE than usual."],
             "Fairies": ["They only need to be 5★ and Lv. 100."],
-            "HOCs/FSTs": ["Maxed out Coalition units are better in stack but worse in battle."]
+            "HOCs/FSTs": [anchor("Maxed out Coalition units are better in stack but worse in battle.", "https://www.reddit.com/r/girlsfrontline/comments/1ea289r/weekly_commanders_lounge_july_23_2024/lfqixvc/")]
         })}`,
         tags: [dtag.THEATER, dtag.TDOLL, dtag.FAIRY, dtag.FST, dtag.COALITION]
     },
@@ -4459,6 +4462,12 @@ const CARDS = [
         answer: `The same way you put adjutant skins in the main screen.`,
         tags: [dtag.ADJUNCT, dtag.SKIN]
     },  //@Visual
+    {
+        id: 548,
+        question: `Are the Special Equipments for a doll's equipment set skill limited?`,
+        answer: `No.`,
+        tags: [dtag.SPEQ, dtag.GZ, dtag.RANK, dtag.BM, dtag.MOD]
+    },
     //{
     //    id: 0,
     //    question: ``,

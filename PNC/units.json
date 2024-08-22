@@ -2363,7 +2363,7 @@
         "name": "Yuwang",
         "class": "Specialist",
         "reference": {},
-        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
+        "fragments": ["Neural Kits", "Intimacy", "Singularity Immemorial"],
         "base": {
             "hp": 17225,
             "atk": 548,
