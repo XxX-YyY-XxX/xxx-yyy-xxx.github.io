@@ -2177,7 +2177,7 @@
         "name": "Persicaria S.E.",
         "class": "Warrior",
         "reference": {},
-        "fragments": ["Neural Kits", "Intimacy", "Divergent Neural Cloud"],
+        "fragments": ["Neural Kits", "Intimacy", "Divergent Neural Cloud", "Singularity Immemorial"],
         "base": {
             "hp": 15180,
             "atk": 436,
@@ -2356,7 +2356,7 @@
             "open": -1
         },
         "intimacy": ["Power Connection", "Code Robustness", "Coordinated Formation"],
-        "tags": []
+        "tags": ["Unowned"]
     },
     {
         "id": 1073,
@@ -2418,7 +2418,7 @@
             "open": -1
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Coordinated Strike"],
-        "tags": []
+        "tags": ["Unowned"]
     },
     {
         "id": 1079,
@@ -2449,7 +2449,7 @@
             "open": -1
         },
         "intimacy": ["Power Connection", "Code Robustness", "Coordinated Strike"],
-        "tags": []
+        "tags": ["Unowned"]
     },
 
     {
@@ -2511,5 +2511,18 @@
         "name": "Salmon",
         "reference": {},
         "tags": ["Unreleased"]
+    },
+    {
+        "id": 0,
+        "name": "Havok",
+        "reference": {},
+        "tags": ["Unreleased"]
+    },
+    {
+        "id": 0,
+        "name": "Sol - Infernal",
+        "reference": {},
+        "tags": ["Unreleased"]
     }
+
 ]

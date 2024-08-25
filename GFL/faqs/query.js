@@ -421,6 +421,7 @@ const CARDS = [
                 anchor("u/DoctuhD's Girls' Frontline Summary", 'https://docs.google.com/document/d/1oA07O2HGwvmoBqm-UKTTuSdxjLnSIbRHd5b2FuYOph0'),
                 details("u/Signal_Abroad1427's Hurricane Rescue video", Embed.youtube("oH1st5OxdyY")),
                 details("u/pointblanksniper collection", Embed.reddit("13phxi5/weekly_commanders_lounge_may_23_2023/jlv5bns")),
+                detials("u/pointblanksniper collab canonicity", Embed.reddit("1efnr6m/weekly_commanders_lounge_july_30_2024/lg4gi3v")),
                 details("u/CuriousCanidae's Timeline Spreadsheet", Embed.google(["GFL Storyline", "https://docs.google.com/spreadsheets/d/1Gm5kl_ep0MY29WPxBd-CqQrtAmDtzxSO"]))
             ]
         })}`,
@@ -565,7 +566,7 @@ const CARDS = [
             "General" : [
                 details("CheneyQWER's infographic.", image(IMG_ASSET+"EchelonComps.png", "CheneyQWER's infographic.")),
                 details("u/UnironicWeeaboo tips.", Embed.reddit("vmhs0x/weekly_commanders_lounge_june_28_2022/ie3bw95")),
-                anchor(`"Gamepress" guide.`, "https://web.archive.org/web/20231025032840/https://gamepress.gg/girlsfrontline/formation-and-teambuilding-basics-how-not-build-pepega-echelon#tier-lists-fucking-suck-rant-by-varz")
+                anchor(`"Gamepress" guide.`, "https://web.archive.org/web/20231025032840/https://gamepress.gg/girlsfrontline/formation-and-teambuilding-basics-how-not-build-pepega-echelon")
             ],
             'Tactical Doll Echelons' : [
                 anchor("u/BigStupidJellyfish_'s Imgur compilation of basic comps.", 'https://imgur.com/a/SHhVaBv'),
@@ -2682,8 +2683,8 @@ const CARDS = [
     {
         id: 307,
         question: `Can I change my name?`,
-        answer: `Using a Name Change Card, which only appears during certain packages.`,
-        tags: [dtag.MISC]
+        answer: `Using a Name Change Card, which only appears during certain packages or with Mobile Armor Career Quests.`, //https://old.reddit.com/r/girlsfrontline/comments/1efnr6m/weekly_commanders_lounge_july_30_2024/lg39ewb/
+        tags: [dtag.MISC, dtag.SHOP, dtag.MA, dtag.QUEST]
     },  //@Visual
     {
         id: 308,
@@ -4467,6 +4468,18 @@ const CARDS = [
         question: `Are the Special Equipments for a doll's equipment set skill limited?`,
         answer: `No.`,
         tags: [dtag.SPEQ, dtag.GZ, dtag.RANK, dtag.BM, dtag.MOD]
+    },
+    {
+        id: 549,
+        question: `What does the orange marker in some special equipments mean`,
+        answer: `Equipping the equipment grants additional skills. You can read the skills in the characters index.`,
+        tags: [dtag.EQUIP, dtag.SPEQ, dtag.SKILL]
+    },  //@Visual
+    {
+        id: 550,
+        question: `What do the enemies' colored CE mean?`,
+        answer: `${Embed.reddit("urhg1y/weekly_commanders_lounge_may_17_2022/i997401")}`,
+        tags: [dtag.CE, dtag.ENEMY, dtag.MAP]
     },
     //{
     //    id: 0,
