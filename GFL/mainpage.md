@@ -3,8 +3,6 @@
 # Redditor Musings
 
 > BSJ
-> - [Skins performance differences.](https://old.reddit.com/r/girlsfrontline/comments/u6ztfo/weekly_commanders_lounge_april_19_2022/i5wvfsh/)
->
 > - [AK-47 with 2 SPEQs.](https://old.reddit.com/r/girlsfrontline/comments/uwlnur/weekly_commanders_lounge_may_24_2022/iagxp7f/)
 >
 > - [Coalition tanks.](https://old.reddit.com/r/girlsfrontline/comments/uhb3jo/weekly_commanders_lounge_may_03_2022/i7crl87/)
@@ -414,6 +412,10 @@ https://old.reddit.com/r/girlsfrontline/comments/1bn4ish/april_roadmap/kwg0qmq/
 https://old.reddit.com/r/girlsfrontline/comments/1bo2czw/weekly_commanders_lounge_march_26_2024/kxctpsq/
 https://old.reddit.com/r/girlsfrontline/comments/1cx2khg/weekly_commanders_lounge_may_21_2024/l5gtssz/
 https://old.reddit.com/r/girlsfrontline/comments/1dtgfxs/weekly_commanders_lounge_july_02_2024/lb9rsxj/
+https://old.reddit.com/r/girlsfrontline/comments/1elc2eo/weekly_commanders_lounge_august_06_2024/lhq6avh/
+https://old.reddit.com/r/girlsfrontline/comments/1elc2eo/weekly_commanders_lounge_august_06_2024/lhmxe2h/
+https://old.reddit.com/r/girlsfrontline/comments/1elc2eo/weekly_commanders_lounge_august_06_2024/lhkomym/
+https://old.reddit.com/r/girlsfrontline/comments/1elc2eo/weekly_commanders_lounge_august_06_2024/lhe2t9n/
 
 // cdn.discordapp cleanup
 // gray zone proxy settings

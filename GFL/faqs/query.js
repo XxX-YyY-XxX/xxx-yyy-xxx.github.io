@@ -1199,7 +1199,7 @@ const CARDS = [
         question: `How do I get Platinum and Nova Medals?`,
         answer: `From whatever Major/Seasonal/Collab Event running right now. Platinum are for 5${STAR} dolls and Nova are for dolls 4${STAR} and below.`,
         tags: [dtag.ITEM, dtag.TDOLL, dtag.MAJOR, dtag.SEASON, dtag.COLLAB, dtag.GET]
-    },
+    },  //@Visual
     {
         id: 105,
         question: `How do I get a higher success rate for logistics?`,
@@ -4342,7 +4342,7 @@ const CARDS = [
         question: `What's the star that says "Collected" for?`,
         answer: `Funny name for "Favorites".`,
         tags: [dtag.SYSMECH]
-    },
+    },  //@Visual
     {
         id: 529,
         question: `How do I get gold tier equipments?`,
@@ -4480,6 +4480,12 @@ const CARDS = [
         question: `What do the enemies' colored CE mean?`,
         answer: `${Embed.reddit("urhg1y/weekly_commanders_lounge_may_17_2022/i997401")}`,
         tags: [dtag.CE, dtag.ENEMY, dtag.MAP]
+    },
+    {
+        id: 551,
+        question: `Should I use Dummy Cores on lower rarity units?`,
+        answer: `Yes. In early game, you'd nees all the firepower you can get. By mid-game onwards, you'll be swimmin in them.`,
+        tags: [dtag.TDOLL, dtag.LEVEL, dtag.ITEM, dtag.NEWB]
     },
     //{
     //    id: 0,
