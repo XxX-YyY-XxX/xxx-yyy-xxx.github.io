@@ -421,7 +421,7 @@ const CARDS = [
                 anchor("u/DoctuhD's Girls' Frontline Summary", 'https://docs.google.com/document/d/1oA07O2HGwvmoBqm-UKTTuSdxjLnSIbRHd5b2FuYOph0'),
                 details("u/Signal_Abroad1427's Hurricane Rescue video", Embed.youtube("oH1st5OxdyY")),
                 details("u/pointblanksniper collection", Embed.reddit("13phxi5/weekly_commanders_lounge_may_23_2023/jlv5bns")),
-                detials("u/pointblanksniper collab canonicity", Embed.reddit("1efnr6m/weekly_commanders_lounge_july_30_2024/lg4gi3v")),
+                details("u/pointblanksniper collab canonicity", Embed.reddit("1efnr6m/weekly_commanders_lounge_july_30_2024/lg4gi3v")),
                 details("u/CuriousCanidae's Timeline Spreadsheet", Embed.google(["GFL Storyline", "https://docs.google.com/spreadsheets/d/1Gm5kl_ep0MY29WPxBd-CqQrtAmDtzxSO"]))
             ]
         })}`,

@@ -1,24 +1,19 @@
 import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
-timer(
-   document.getElementById("event"),
-   "Aug 27, 2024 00:00 UTC-0800",
-   "./assets/images/timer/maxresdefault.jpg",
-   {onEnd: timer.bind(
-        null, document.getElementById("event"),
-        "",
-        ""
-    )}
-);
+//timer(
+//   document.getElementById("event"),
+//   "Aug 27, 2024 00:00 UTC-0800",
+//   "./assets/images/timer/maxresdefault.jpg"
+//);
 
 timer(
     document.getElementById("battlepass"),
-    "Aug 26, 2024 00:00 UTC-0800",
-    "./assets/images/timer/j1kat1xvnlcd1.webp",
+    "Sep 30, 2024 00:00 UTC-0800",
+    "./assets/images/timer/rtsz1c3rmqjd1.webp",
     {onEnd: timer.bind(
         null, document.getElementById("battlepass"),
-        "Sep 30, 2024 00:00 UTC-0800",
-        "./assets/images/timer/rtsz1c3rmqjd1.webp"
+        "",
+        ""
     )}
 );
 
