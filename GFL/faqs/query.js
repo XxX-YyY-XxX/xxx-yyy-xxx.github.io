@@ -323,7 +323,8 @@ const CARDS = [
             details("Sijun's list translated by u/ConductorBichir (may be outdated).", Embed.reddit("tjxvpw/weekly_commanders_lounge_march_22_2022/i1rph1l")),
             details('BigStupidJellyfish analyses.', List.unordered(
                 anchor('Vallhalla girls.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/valhalla'),
-                anchor('AK-15.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ak15')
+                anchor('AK-15.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ak15'),
+                anchor("AK-47.", "https://big-stupid-jellyfish.github.io/GFMath/pages/474m")
             )),
             details("GFC Analytics", Embed.google(["Doll Analytics v0.92 (EN) by GFC", "https://docs.google.com/spreadsheets/d/10LJdksnM3zipOb72IneJD7WVp3765JYJEGg0LnodzDI"])),
             details("Stevens batch.", figure(Embed.google(["Stevens Batch", "https://docs.google.com/document/d/1KS72B3jP_qj0y_pmrb2jb3nefq8qhy6XG6yQLYpx84g"]), "From u/UnironicWeeaboo (?)"))
@@ -4486,6 +4487,13 @@ const CARDS = [
         question: `Should I use Dummy Cores on lower rarity units?`,
         answer: `Yes. In early game, you'd nees all the firepower you can get. By mid-game onwards, you'll be swimmin in them.`,
         tags: [dtag.TDOLL, dtag.LEVEL, dtag.ITEM, dtag.NEWB]
+    },
+    {
+        id: 552,
+        question: `Is duplicating units worth it?`,
+        answer: `For dolls, not really. Since the only time you would use dupes is when you're competing for the highest score in the ranking maps, which is also very few and far between.<br>
+        For coalition units, it's somewhat expected, but not strictly necessary.`,
+        tags: [dtag.TDOLL, dtag.RANK, dtag.COALITION]
     },
     //{
     //    id: 0,

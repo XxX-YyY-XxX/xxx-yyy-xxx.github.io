@@ -459,6 +459,5 @@ https://old.reddit.com/r/girlsfrontline/comments/1elc2eo/weekly_commanders_loung
 //Column vs Row
 //https://old.reddit.com/r/girlsfrontline/comments/1dilac7/weekly_commanders_lounge_june_18_2024/l95hiim/
 
-//https://old.reddit.com/r/girlsfrontline/comments/1er27qn/weekly_commanders_lounge_august_13_2024/
 <!--https://old.reddit.com/r/girlsfrontline/comments/1ewpy7e/weekly_commanders_lounge_august_20_2024/-->
 <!--https://old.reddit.com/r/girlsfrontline/comments/1f2blqe/weekly_commanders_lounge_august_27_2024/-->
