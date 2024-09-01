@@ -3,10 +3,6 @@
 # Redditor Musings
 
 > BSJ
-> - [AK-47 with 2 SPEQs.](https://old.reddit.com/r/girlsfrontline/comments/uwlnur/weekly_commanders_lounge_may_24_2022/iagxp7f/)
->
-> - [Coalition tanks.](https://old.reddit.com/r/girlsfrontline/comments/uhb3jo/weekly_commanders_lounge_may_03_2022/i7crl87/)
->
 > - [G41 vs R5.](https://old.reddit.com/r/girlsfrontline/comments/uhb3jo/weekly_commanders_lounge_may_03_2022/i7lfmjp/)
 >
 > - [SPEQs and Webley.](https://old.reddit.com/r/girlsfrontline/comments/rl9oul/weekly_commanders_lounge_december_21_2021/hq64qh3/)
@@ -439,6 +435,7 @@ https://old.reddit.com/r/girlsfrontline/comments/1elc2eo/weekly_commanders_loung
 // https://old.reddit.com/r/girlsfrontline/comments/1crmrcn/weekly_commanders_lounge_may_14_2024/l4270q5/
 //https://old.reddit.com/r/girlsfrontline/comments/1do0n1y/weekly_commanders_lounge_june_25_2024/lb3ldec/
 //https://old.reddit.com/r/girlsfrontline/comments/s17rwt/weekly_commanders_lounge_january_11_2022/ht46bxl/
+<!-- https://old.reddit.com/r/girlsfrontline/comments/1ewpy7e/weekly_commanders_lounge_august_20_2024/ljksx8k/ -->
 
 // FST rework
 // https://old.reddit.com/r/girlsfrontline/comments/1caz0vj/weekly_commanders_lounge_april_23_2024/l1tymg1/
@@ -459,5 +456,4 @@ https://old.reddit.com/r/girlsfrontline/comments/1elc2eo/weekly_commanders_loung
 //Column vs Row
 //https://old.reddit.com/r/girlsfrontline/comments/1dilac7/weekly_commanders_lounge_june_18_2024/l95hiim/
 
-<!--https://old.reddit.com/r/girlsfrontline/comments/1ewpy7e/weekly_commanders_lounge_august_20_2024/-->
 <!--https://old.reddit.com/r/girlsfrontline/comments/1f2blqe/weekly_commanders_lounge_august_27_2024/-->

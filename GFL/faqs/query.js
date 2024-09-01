@@ -4495,6 +4495,24 @@ const CARDS = [
         For coalition units, it's somewhat expected, but not strictly necessary.`,
         tags: [dtag.TDOLL, dtag.RANK, dtag.COALITION]
     },
+    {
+        id: 553,
+        question: `How do I retire/scrap my first copies?`,
+        answer: `Just like the other collection games, unlock them first.`,
+        tags: [dtag.MISC]
+    },
+    {
+        id: 554,
+        question: `How can I get the event exclusive ID Medal?`,
+        answer: `Try clearing all story and combat nodes.`,
+        tags: [dtag.LORE]
+    },
+    {
+        id: 555,
+        question: `How well do coalition tanks survive?`,
+        answer: `${Embed.reddit("uhb3jo/weekly_commanders_lounge_may_03_2022/i7crl87")}`,
+        tags: [dtag.COALITION, dtag.BATTLE]
+    },
     //{
     //    id: 0,
     //    question: ``,
