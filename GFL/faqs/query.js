@@ -4472,10 +4472,11 @@ const CARDS = [
     },
     {
         id: 549,
-        question: `What does the orange marker in some special equipments mean`,
-        answer: `Equipping the equipment grants additional skills. You can read the skills in the characters index.`,
-        tags: [dtag.EQUIP, dtag.SPEQ, dtag.SKILL]
-    },  //@Visual
+        question: `What does the orange marker in some special equipments mean?`,
+        answer: `${image(IMG_ASSET+"SPEQSkill.png", "Special Equipment with skill.")}<br>
+        Equipping the equipment grants additional skills. You can read the skills in the character's index.`,
+        tags: [dtag.EQUIP, dtag.SPEQ, dtag.SKILL, dtag.TDOLL]
+    },
     {
         id: 550,
         question: `What do the enemies' colored CE mean?`,

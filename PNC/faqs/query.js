@@ -26,6 +26,7 @@ const dtag = {
     TECH: {name: "Troubleshooting", description: "Firstly, have you tried turning it off and on?"},
     DORM: {name: "Dormitories", description: "Doll rest rooms."},
     TEAM: {name: "TeamComposition", description: "Doll combinations for funny stuffs."},
+    VC: {name: "VulnerabilityCheck", description: "Game mode for getting specific doll fragments and spirit currencies."},
 };
 window.tags = dtag;
 
@@ -294,12 +295,24 @@ window.cards = [
         answer: `5625`, // https://old.reddit.com/r/GFLNeuralCloud/comments/1b688sg/weekly_professors_lounge_march_04_2024/ktrfl2e/
         tags: [dtag.DOLL, dtag.LEVEL]
     },  //@Change to all sources
-    // {
-    //     id: 0,
-    //     question: ``,
-    //     answer: ``,
-    //     tags: []
-    // },
+    {
+        id: 34,
+        question: `Would projection skins rerun?`,
+        answer: `After their debut release, yes. After that, it becomes permanently available.`,
+        tags: [dtag.SKIN]
+    },
+    {
+        id: 35,
+        question: `Will Vulnerability Check add new doll fragments?`,
+        answer: `As of now, no.`,
+        tags: [dtag.FRAGS, dtag.DOLL, dtag.VC]
+    },
+    //{
+    //    id: 0,
+    //    question: ``,
+    //    answer: ``,
+    //    tags: []
+    //},
 ];
 
 // upgrading to l2d
@@ -325,7 +338,6 @@ window.cards = [
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1d9avll/new_system_spirit_system_on_june_11th/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1dee3bd/cant_rebind_my_account_getting_game_center/
 
-// https://old.reddit.com/r/GFLNeuralCloud/comments/1bhnzp5/weekly_professors_lounge_march_18_2024/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1bnaug0/weekly_professors_lounge_march_25_2024/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1bt0r9e/weekly_professors_lounge_april_01_2024/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1byv1s5/weekly_professors_lounge_april_08_2024/

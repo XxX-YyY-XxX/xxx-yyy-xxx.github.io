@@ -34,13 +34,13 @@ timer(
     "https://iopwiki.com/images/thumb/e/ed/Colt_Walker_costume2_D.png/600px-Colt_Walker_costume2_D.png",
     {onEnd: timer.bind(
         null, document.getElementById('skin-banner'),
-        "",
-        ""
+        "Oct 01, 2024 00:00 UTC-0800",
+        "https://iopwiki.com/images/thumb/4/4f/Dancing_Heartstrings_Login_Wallpaper.jpg/600px-Dancing_Heartstrings_Login_Wallpaper.jpg"
     )}
 );
 
 timer(
    document.getElementById('mini-event'),
-   "Aug 27, 2024 00:00 UTC-0800",
-   "./assets/images/timer/e1o0sy2tk7gd1.webp"
+   "Sep 24, 2024 00:00 UTC-0800",
+   "./assets/images/timer/b1csdrxo2dld1.webp"
 );
