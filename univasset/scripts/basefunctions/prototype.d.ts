@@ -1,7 +1,7 @@
 /** Object whose numeric indices represent the number of instances present in the array. Returns an array of those instances, or undefined. */
 type Collator<T> = {
     [count: number]: T[] | undefined;
-    /** The highest number of instances of a given value. */
+    /** The highest number of instances of any given value. */
     highest: number;
     /** Returns an array of items with the given count size. */
     get(...counts: number[]): T[];

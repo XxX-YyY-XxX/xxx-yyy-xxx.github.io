@@ -3,8 +3,6 @@
 # Redditor Musings
 
 > BSJ
-> - [G41 vs R5.](https://old.reddit.com/r/girlsfrontline/comments/uhb3jo/weekly_commanders_lounge_may_03_2022/i7lfmjp/)
->
 > - [SPEQs and Webley.](https://old.reddit.com/r/girlsfrontline/comments/rl9oul/weekly_commanders_lounge_december_21_2021/hq64qh3/)
 >
 > - [Message clearing.](https://old.reddit.com/r/girlsfrontline/comments/rqajmv/weekly_commanders_lounge_december_28_2021/hqf9uf6/)
@@ -456,4 +454,4 @@ https://old.reddit.com/r/girlsfrontline/comments/1elc2eo/weekly_commanders_loung
 //Column vs Row
 //https://old.reddit.com/r/girlsfrontline/comments/1dilac7/weekly_commanders_lounge_june_18_2024/l95hiim/
 
-<!--https://old.reddit.com/r/girlsfrontline/comments/1f2blqe/weekly_commanders_lounge_august_27_2024/-->
+<!--https://old.reddit.com/r/girlsfrontline/comments/1f7uee1/weekly_commanders_lounge_september_03_2024/-->

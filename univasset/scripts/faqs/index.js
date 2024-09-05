@@ -94,13 +94,16 @@ function pushPopstate(url, state) {
     window.dispatchEvent(new PopStateEvent("popstate", {state: state}));
 }
 
+//remove filler words
 /** @param {string} value */
 function searchFilter(value) {
     const KEYWORDS = value.replace(/\s+/, " ").toLowerCase().split(" ");
     /** @param {Card} param0 */
     return function({question, answer}) {
         //add levenshtein
-        return KEYWORDS.every(key => [question, answer].some(y => removeHTMLTag(y).toLowerCase().includes(key)))
+        
+        //return KEYWORDS.every(key => [question, answer].some(y => removeHTMLTag(y).toLowerCase().includes(key)));
+        return KEYWORDS.every(key => removeHTMLTag(`${question} ${answer}`).toLowerCase().includes(key));
     }
 }
 

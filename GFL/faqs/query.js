@@ -158,12 +158,12 @@ const CARDS = [
     {
         id: 4,
         question: `Are there any general guides for Protocol Assimilation/Coalition Units/SF Capture Operation?`,
-        answer: `${anchor('Gamepress guide.', "https://gamepress.gg/girlsfrontline/protocol-assimilation-coalition-basics-and-teambuilding")}<br>
+        answer: `${anchor(`"Gamepress" guide.`, "https://web.archive.org/web/20240105015638/https://gamepress.gg/girlsfrontline/protocol-assimilation-coalition-basics-and-teambuilding")}<br>
         ${anchor('Matsuda guide.', 'https://gfl.matsuda.tips/post/ironbloodedairconditioning')}<br>
         ${anchor('IOPWiki guide.', 'https://iopwiki.com/wiki/Protocol_Assimilation')}<br>
         ${details("Cleista's basic Twitter guide.", Embed.twitter('CleistaCeleste', "1409824210571214849"))}`,
         tags: [dtag.PA, dtag.COALITION, dtag.PRIME]
-    },
+    },  //https://gamepress.gg/girlsfrontline/protocol-assimilation-coalition-basics-and-teambuilding
     {
         id: 5,
         question: `How do Neural Upgrades/MODs work?`,
@@ -324,10 +324,14 @@ const CARDS = [
             details('BigStupidJellyfish analyses.', List.unordered(
                 anchor('Vallhalla girls.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/valhalla'),
                 anchor('AK-15.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/ak15'),
-                anchor("AK-47.", "https://big-stupid-jellyfish.github.io/GFMath/pages/474m")
+                anchor("AK-47.", "https://big-stupid-jellyfish.github.io/GFMath/pages/474m"),
+                anchor("R5 vs SPEQ G41", "https://old.reddit.com/r/girlsfrontline/comments/uhb3jo/weekly_commanders_lounge_may_03_2022/i7lfmjp/")
             )),
             details("GFC Analytics", Embed.google(["Doll Analytics v0.92 (EN) by GFC", "https://docs.google.com/spreadsheets/d/10LJdksnM3zipOb72IneJD7WVp3765JYJEGg0LnodzDI"])),
-            details("Stevens batch.", figure(Embed.google(["Stevens Batch", "https://docs.google.com/document/d/1KS72B3jP_qj0y_pmrb2jb3nefq8qhy6XG6yQLYpx84g"]), "From u/UnironicWeeaboo (?)"))
+            details("Batch Analyses.", figure(Embed.google(
+                ["Stevens Batch", "https://docs.google.com/document/d/1KS72B3jP_qj0y_pmrb2jb3nefq8qhy6XG6yQLYpx84g"],
+                ["Beowulf Batch", "https://docs.google.com/document/d/1c29tJ2XdPVdacRb27Ai56o7N9sQztxmW_4svErZQ2D4"]
+            ), "From u/UnironicWeeaboo (?)"))
         )}`,
         tags: [dtag.TDOLL, dtag.TIER]
     },  //https://shimo.im/sheets/47kgJne6BeIpR4qV
@@ -419,6 +423,10 @@ const CARDS = [
                 anchor("Bjorkit's Channel", "https://www.youtube.com/@Bjorkit1"),
                 anchor("XtraNinja's GFL events playlists", "https://www.youtube.com/@XtraNinja/playlists"),
                 anchor("Girls' Frontline Full Story Comprehension Playlist Translated up to Isomer", 'https://youtube.com/playlist?list=PL9y52Flm1yM-tJJoom2zfrWTpaO1mTw8M'),
+                details("u/DoctuhD's Girls' Frontline Summaries", Embed.google(
+                    [`A "Brief" Summary of Girls' Frontline`, "https://docs.google.com/document/d/1IalPz5JPc8-we4MiOsYhrMrOINifxW9d9Q6mTAqGoq8"],
+                    ["Girls Frontline Comprehensive Summary: Chapter 0-13.8", "https://docs.google.com/document/d/1oA07O2HGwvmoBqm-UKTTuSdxjLnSIbRHd5b2FuYOph0"]
+                )),
                 anchor("u/DoctuhD's Girls' Frontline Summary", 'https://docs.google.com/document/d/1oA07O2HGwvmoBqm-UKTTuSdxjLnSIbRHd5b2FuYOph0'),
                 details("u/Signal_Abroad1427's Hurricane Rescue video", Embed.youtube("oH1st5OxdyY")),
                 details("u/pointblanksniper collection", Embed.reddit("13phxi5/weekly_commanders_lounge_may_23_2023/jlv5bns")),
@@ -504,9 +512,9 @@ const CARDS = [
         id: 497,
         question: `What is corpse dragging?`,
         answer: `Also called Poor Run or Beggar Run, it is a method of leveling dolls (and fairy) using minimal resources. This is done by only supplying a single doll echelon then placing them in a non-supplied echelon composed of dolls you want to level.<br>
-        ${anchor("Gamepress guide", "https://gamepress.gg/girlsfrontline/corpse-dragging-how-optimize-leveling")}.`,
+        ${anchor(`"Gamepress" guide`, "https://web.archive.org/web/20240304092522/https://gamepress.gg/girlsfrontline/corpse-dragging-how-optimize-leveling")}`,
         tags: [dtag.LEVEL, dtag.IMPT]
-    },
+    },  //https://gamepress.gg/girlsfrontline/corpse-dragging-how-optimize-leveling
     {
         id: 433,
         question: `What is Dummy-linking and how do I do it?`,
@@ -596,13 +604,15 @@ const CARDS = [
         question: `What is kiting?`,
         answer: `<p>Kiting, in general, is the method of moving your tanks rightwards to make the enemy aim at them then moving leftwards to make the enemy walk towards you, while your DPS constantly shoots them. This is effective because most enemies have aim time where they do nothing, and range where you have to be in their sights to start aiming. Therefore, lengthening the lifespans of your dolls, especially the tanks.</p>
         This is the reason why putting your whole team at the back of the grid is preferable.<br>
-        Sometimes called wiggling which in this context means moving your DPS to retarget.<br>
-        ${anchor('GFC guide','https://www.gflcorner.com/battle-controls/')}<br>
-        ${details('Mitsu video guide', Embed.youtube('ITUtRuF4TLY'))}<br>
-        ${anchor("u/Reikyu09's reddit post", 'https://redd.it/8o18an')}<br>
-        ${anchor("Gamepress guide", "https://gamepress.gg/girlsfrontline/treatise-gfl-combat-kiting-basics")}`,
+        Sometimes called wiggling which in this context means moving your DPS to retarget.
+        ${List.unordered(
+            anchor('GFC guide','https://www.gflcorner.com/battle-controls/'),
+            details('Mitsu video guide', Embed.youtube('ITUtRuF4TLY')),
+            anchor("u/Reikyu09's reddit post", 'https://redd.it/8o18an'),
+            anchor(`"Gamepress" guide`, "https://web.archive.org/web/20240227035206/https://gamepress.gg/girlsfrontline/treatise-gfl-combat-kiting-basics")
+        )}`,
         tags: [dtag.BATTLE, dtag.IMPT]
-    },
+    },  //https://gamepress.gg/girlsfrontline/treatise-gfl-combat-kiting-basics
     {
         id: 30,
         question: `What are Main Tanks and Off Tanks?`,
@@ -4514,6 +4524,12 @@ const CARDS = [
         answer: `${Embed.reddit("uhb3jo/weekly_commanders_lounge_may_03_2022/i7crl87")}`,
         tags: [dtag.COALITION, dtag.BATTLE]
     },
+    {
+        id: 556,
+        question: `What's the best formation for the fastest time in Advanced Data Simulation?`,   //https://old.reddit.com/r/girlsfrontline/comments/1f2blqe/weekly_commanders_lounge_august_27_2024/lkypnwq/
+        answer: `${anchor("Bilibili video", "https://www.bilibili.com/video/BV1pZ421z71v/")}`,
+        tags: [dtag.ECH, dtag.SIMS]
+    },
     //{
     //    id: 0,
     //    question: ``,
@@ -4522,3 +4538,8 @@ const CARDS = [
     //},
 ];
 window.cards = CARDS;
+
+for (const {question, answer} of CARDS) {
+    const COLLATED = `${question} ${answer}`.split(" ").collate();
+    console.log(COLLATED.get(COLLATED.highest));
+}
