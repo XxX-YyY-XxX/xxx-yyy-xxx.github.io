@@ -116,7 +116,8 @@ function pushPopstate(url, state) {
     window.dispatchEvent(new PopStateEvent("popstate", {state: state}));
 }
 
-//const AUXILLIARY = / (?:) /g;
+const AUXILLIARY = ["the"];
+const AUX_REGEX = new RegExp(`(?<!\\w)(${[AUXILLIARY].join("|")})(?!\\w)`, "ig");
 //const SHORT_LONG = {
 
 //}
@@ -130,12 +131,8 @@ function pushPopstate(url, state) {
 /** @param {string} s */
 function cleanString(s) {
     const NO_PUNC = s.toLowerCase().replace(/[,.?"\/<>()]|(?:'s)|(?:s')|(?:u\/)/g, " ");
-    //let previous, current = NO_PUNC;
-    //do {
-    //    previous = current;
-    //    current = current.replace(AUXILLIARY, " ");
-    //} while (previous != current)
-    return NO_PUNC.replace(/\s+/g, " ");
+    const NO_AUX = NO_PUNC.replace(AUX_REGEX, "");
+    return NO_AUX.replace(/\s+/g, " ");
 }
 
 /** @param {string} value */
@@ -145,8 +142,8 @@ function searchFilter(value) {
     /** @param {Card} param0 */
     return function({question, answer}) {
         //add levenshtein
-        const _includes = cleanString(removeHTMLTag(`${question} ${answer}`)).includes;
-        return KEYWORDS.every(key => _includes(key));
+        const CLEAN = cleanString(removeHTMLTag(`${question} ${answer}`))
+        return KEYWORDS.every(key => CLEAN.includes(key));
     }
 }
 
