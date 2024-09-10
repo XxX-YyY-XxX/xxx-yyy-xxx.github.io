@@ -135,7 +135,7 @@ function cleanString(s) {
     //    previous = current;
     //    current = current.replace(AUXILLIARY, " ");
     //} while (previous != current)
-    return NO_PUNC.replace(/\s+/g), " ";
+    return NO_PUNC.replace(/\s+/g, " ");
 }
 
 /** @param {string} value */
