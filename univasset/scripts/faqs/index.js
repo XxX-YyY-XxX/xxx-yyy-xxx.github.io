@@ -101,7 +101,7 @@ export function queryFunc() {
     const COLLATED = Array.from((function* _() {
         for (const {question, answer} of window.cards) {
             const CLEAN = cleanString(removeHTMLTag(`${question} ${answer}`));
-            yield* CLEAN.split(" ");
+            yield* CLEAN.split(" ").filter(x => x);
         }
     })()).collate();
     
@@ -137,12 +137,15 @@ function cleanString(s) {
 
 /** @param {string} value */
 function searchFilter(value) {
-    //const KEYWORDS = value.replace(/\s+/, " ").toLowerCase().split(" ");
-    const KEYWORDS = cleanString(value).split(" ");
+    const KEYWORDS = cleanString(value).split(" ").filter(x => x);
+    console.log(KEYWORDS)
     /** @param {Card} param0 */
     return function({question, answer}) {
         //add levenshtein
+        
         const CLEAN = cleanString(removeHTMLTag(`${question} ${answer}`))
+        //const CLEAN = new Set(cleanString(removeHTMLTag(`${question} ${answer}`)).split(" "))
+        console.log(CLEAN)
         return KEYWORDS.every(key => CLEAN.includes(key));
     }
 }
