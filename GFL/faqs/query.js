@@ -630,13 +630,13 @@ const CARDS = [
     },
     {
         id: 32,
-        question: `Is there a rate up in this game? If so, how do they work?`,
+        question: `Is there a rate-up in this game? If so, how do they work?`,
         answer: `When a rate-up is in progress, an "EVENT" marker will be plastered on top of the Factory Production button.<br>
         ${List.description({
             'Anchored Construction' : [
                 anchor(fragment("Available for new players ", textStyle("and for veterans not bothering with it", "strike"), "."), 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681'),
                 fragment(anchor('Available on Tuesdays whenever a new batch of production dolls are released.', 'https://redd.it/szdua2'), ` Recommended anchors are usually 4${STAR} due to `, getID("TCM", 9), " existing, especially for shotguns."), 
-                "Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate up."
+                "Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate-up."
             ],
             'Targeted Rate Up' : [
                 'Available when a new skin banner is released. Rate up dolls are those who are present in the banner.',
@@ -864,7 +864,7 @@ const CARDS = [
     {
         id: 62,
         question: `When should I do T-Doll Heavy Production/craft shotguns?`,
-        answer: `Preferably during rate ups due to its resource high cost. Low priority otherwise since it's use at this stage of the game is for getting non-5${STAR} SGs and them not being widely used. Recommended to use the high-cost shotgun recipe for better chances.`,
+        answer: `Preferably during rate-ups due to its resource high cost. Low priority otherwise since it's use at this stage of the game is for getting non-5${STAR} SGs and them not being widely used. Recommended to use the high-cost shotgun recipe for better chances.`,
         tags: [dtag.TDOLL, dtag.PROD]
     },
     {
@@ -921,7 +921,7 @@ const CARDS = [
     },  
     {
         id: 68,
-        question: `How high is fairy rate up?`,
+        question: `How high is fairy rate-up?`,
         answer: `${Embed.google(["Fairy enhancement rateup strategy", "https://docs.google.com/spreadsheets/d/1CSC17pKJ8BDDm9YYNB8pFqT8k0Np_jWDeu_1X-qJ7yI"])}`,  // u/ConductorBichir's list IIRC
         tags: [dtag.FAIRY, dtag.PROD]
     },
@@ -1011,7 +1011,7 @@ const CARDS = [
     },
     {
         id: 79,
-        question: `How high is a certain doll's pull rate during rate ups?`,
+        question: `How high is a certain doll's pull rate during rate-ups?`,
         answer: `Something like Anchored > Targeted > General >>> Normal. Empirical-wise? ¯\\_(ツ)_/¯`,
         tags: [dtag.TDOLL, dtag.PROD]
     },
@@ -1215,7 +1215,7 @@ const CARDS = [
         id: 105,
         question: `How do I get a higher success rate for logistics?`,
         answer: `${TextStyle.style('floor(mean of doll levels in echelon) * 0.45 + 15', TextStyle.CODE)} for normal logistics and<br>
-        ${TextStyle.style('floor(mean of doll levels in echelon) * 0.60 + 30', TextStyle.CODE)} for rate up logistics.`,
+        ${TextStyle.style('floor(mean of doll levels in echelon) * 0.60 + 30', TextStyle.CODE)} for rate-up logistics.`,
         tags: [dtag.LOGI]
     },
     {
@@ -1446,7 +1446,7 @@ const CARDS = [
     },
     {
         id: 133,
-        question: `What's the rate up increment for Anchored Construction?`,
+        question: `What's the rate-up increment for Anchored Construction?`,
         answer: `${table(
             ['Target',      'Estimated Increment'],
             ['4' + STAR,    '0.396%'],
@@ -1583,10 +1583,10 @@ const CARDS = [
     },  //@Totally gonna fix
     {
         id: 150,
-        question: `How do general rate ups work?`,
-        answer: `There are 2 sets of rate ups per general rate up.<br>
-        First is the HOC rate up, where every 2 days is a specific FST's day for rate up. Note that only that FST's rate is increased within the Central Data pool. The core data rate remains the same.<br>
-        Second is the tried amd tested Production rate up. Goes from Normal Doll, Normal Equip, Heavy Doll. Pulling chance for all 4${STAR} and 5${STAR} are increased. IOP equipment crafts are also affected.`,
+        question: `How do general rate-ups work?`,
+        answer: `There are 2 sets of rate-ups per general rate-up.<br>
+        First is the HOC rate-up, where every 2 days is a specific FST's day for rate-up. Note that only that FST's rate is increased within the Central Data pool. The core data rate remains the same.<br>
+        Second is the tried amd tested Production rate-up. Goes from Normal Doll, Normal Equip, Heavy Doll. Pulling chance for all 4${STAR} and 5${STAR} are increased. IOP equipment crafts are also affected.`,
         tags: [dtag.PROD, dtag.HOC, dtag.FST, dtag.TDOLL, dtag.EQUIP]
     },  //@Check for errors, HOC part may be outdated
     {
@@ -1641,7 +1641,7 @@ const CARDS = [
         ${anchor('BigStupidJellyfish write-up.', 'https://big-stupid-jellyfish.github.io/GFMath/pages/core-rates')}<br>
         ${anchor("u/UnironicWeeaboo's easier 11-6.", 'https://www.reddit.com/r/girlsfrontline/comments/u1tr33/weekly_commanders_lounge_april_12_2022/i5178cy/')}<br>
         Run any daytime leveling maps for combined core and exp farming.<br>
-        You can also farm during core rate up by using the handgun recipe.<br>
+        You can also farm during core rate-up by using the handgun recipe.<br>
         Or buy from the Black Market every first day of the month.`,
         tags: [dtag.ITEM, dtag.CORE, dtag.GET]
     },
@@ -1692,7 +1692,7 @@ const CARDS = [
     },
     {
         id: 165,
-        question: `Which T-Doll would be better to anchor for the rate up?`,
+        question: `Which T-Doll would be better to anchor for the rate-up?`,
         answer: `On one hand, 4${STAR} can't be TCM'd. On the other hand, 5${STAR} have low construction rates. And it also depends on the skills of said dolls.`,
         tags: [dtag.PROD, dtag.TDOLL, dtag.TCM]
     },
@@ -2338,7 +2338,7 @@ const CARDS = [
     },
     {
         id: 250,
-        question: `How do I know which dolls are in the Targeted rate up?`,
+        question: `How do I know which dolls are in the Targeted rate-up?`,
         answer: `Scrolling banner at the bottom-left of the home screen.`,
         tags: [dtag.PROD, dtag.TDOLL]
     },
@@ -4538,8 +4538,3 @@ const CARDS = [
     //},
 ];
 window.cards = CARDS;
-
-for (const {question, answer} of CARDS) {
-    const COLLATED = `${question} ${answer}`.split(" ").collate();
-    console.log(COLLATED.get(COLLATED.highest));
-}

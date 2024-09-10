@@ -11,8 +11,18 @@ window.addEventListener("popstate", event => {
         INPUT.checked = false;
 
     const CARDFIELD = document.querySelector("#Cards > div");
-    CARDFIELD.replaceChildren(getBoxes());
-    (async () => twttr.widgets.load(CARDFIELD))();
+    const FIELD_VALUE = getBoxes();
+    //CARDFIELD.replaceChildren(FIELD_VALUE);
+    if (typeof FIELD_VALUE == "string")
+        CARDFIELD.replaceChildren(FIELD_VALUE);
+    else {
+        (async () => {
+            CARDFIELD.replaceChildren();
+            for (const FIELDSET of FIELD_VALUE.children)
+                CARDFIELD.appendChild(FIELDSET);                
+        })().then(() => twttr.widgets.load(CARDFIELD));
+    }
+    //(async () => twttr.widgets.load(CARDFIELD))();
 })
 
 // /** Checks if the element is interacted by the user. 
@@ -35,6 +45,7 @@ window.addEventListener("popstate", event => {
  * @property {string} Card.answer
  * @property {Tag[keyof Tag][]} Card.tags
  */
+
 
 /** @param {string} text @param {number[]} ids */
 export function getID(text, ...ids) {
@@ -85,6 +96,17 @@ export function queryFunc() {
 
     history.replaceState({}, "", location.search);
     window.dispatchEvent(new PopStateEvent("popstate", {state: {}}));
+
+    //#region Testing
+    const COLLATED = Array.from((function* _() {
+        for (const {question, answer} of window.cards) {
+            const CLEAN = cleanString(removeHTMLTag(`${question} ${answer}`));
+            yield* CLEAN.split(" ");
+        }
+    })()).collate();
+    
+    console.log(COLLATED.get(COLLATED.highest), "at", COLLATED.highest)
+    //#endregion
 }
 window.queryFunc = queryFunc;
 
@@ -94,16 +116,37 @@ function pushPopstate(url, state) {
     window.dispatchEvent(new PopStateEvent("popstate", {state: state}));
 }
 
-//remove filler words
+//const AUXILLIARY = / (?:) /g;
+//const SHORT_LONG = {
+
+//}
+//const PLURAL_SINGULAR = {
+
+//}
+//const SYNONYMS = {
+
+//};
+
+/** @param {string} s */
+function cleanString(s) {
+    const NO_PUNC = s.toLowerCase().replace(/[,.?"\/<>()]|(?:'s)|(?:s')|(?:u\/)/g, " ");
+    //let previous, current = NO_PUNC;
+    //do {
+    //    previous = current;
+    //    current = current.replace(AUXILLIARY, " ");
+    //} while (previous != current)
+    return NO_PUNC.replace(/\s+/g), " ";
+}
+
 /** @param {string} value */
 function searchFilter(value) {
-    const KEYWORDS = value.replace(/\s+/, " ").toLowerCase().split(" ");
+    //const KEYWORDS = value.replace(/\s+/, " ").toLowerCase().split(" ");
+    const KEYWORDS = cleanString(value).split(" ");
     /** @param {Card} param0 */
     return function({question, answer}) {
         //add levenshtein
-        
-        //return KEYWORDS.every(key => [question, answer].some(y => removeHTMLTag(y).toLowerCase().includes(key)));
-        return KEYWORDS.every(key => removeHTMLTag(`${question} ${answer}`).toLowerCase().includes(key));
+        const _includes = cleanString(removeHTMLTag(`${question} ${answer}`)).includes;
+        return KEYWORDS.every(key => _includes(key));
     }
 }
 
@@ -139,9 +182,7 @@ function getBoxes() {
         switch (KEY) {
             case "search":
                 const _filter = searchFilter(VALUE);
-                //const KEYWORDS = VALUE.replace(/\s+/, " ").toLowerCase().split(" ");
                 return boxFrag(CARDS.filter(_filter));
-                //return boxFrag(CARDS.filter(x => KEYWORDS.every(str => [x.question, x.answer].some(y => removeHTMLTag(y).toLowerCase().includes(str)))));
             case "tags":
                 const TAGS = VALUE.split(" ");
                 return boxFrag(CARDS.filter(x => TAGS.subsetof(x.tags.map(y => y.name))));

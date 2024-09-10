@@ -27,6 +27,7 @@ const dtag = {
     DORM: {name: "Dormitories", description: "Doll rest rooms."},
     TEAM: {name: "TeamComposition", description: "Doll combinations for funny stuffs."},
     VC: {name: "VulnerabilityCheck", description: "Game mode for getting specific doll fragments and spirit currencies."},
+    SHOP: {name: "Shop", description: "Buy every ware if you have the means."},
 };
 window.tags = dtag;
 
@@ -286,7 +287,8 @@ window.cards = [
     {
         id: 32,
         question: `What is Recopy Core Chip for?`,
-        answer: `Rereading permanent events.`,
+        answer: `Rereading permanent events.<br>
+        You can use it on the ${getID("Main Storyline's second story page", 18)}.`,
         tags: [dtag.STORY]
     },
     {
@@ -307,6 +309,18 @@ window.cards = [
         answer: `As of now, no.`,
         tags: [dtag.FRAGS, dtag.DOLL, dtag.VC]
     },
+    {
+        id: 36,
+        question: `Should I farm for event currency to use on the last shop tab?`,
+        answer: `Practically speaking, no. It's an excess currency dump.`,
+        tags: [dtag.MAJOR, dtag.SHOP]
+    },
+    {
+        id: 37,
+        question: `Do I need to buy Gestalt Aspect coins in advance?`,
+        answer: `For now, no need. Each pack is enough to buy one rerun battlepass skin.`,
+        tags: [dtag.BP, dtag.SKIN]
+    },
     //{
     //    id: 0,
     //    question: ``,
@@ -322,7 +336,6 @@ window.cards = [
 // unit skill ui breakdown
 // apparently one month minimum for returner rewards (30 days? 31?)
 
-// https://old.reddit.com/r/GFLNeuralCloud/comments/18l63g8/weekly_professors_lounge_december_18_2023/kepo2px/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/18l63g8/weekly_professors_lounge_december_18_2023/kerq0qj/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/18qglj9/weekly_professors_lounge_december_25_2023/kfe8yxm/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/191ipmg/weekly_professors_lounge_january_08_2024/khmz92o/
@@ -338,7 +351,6 @@ window.cards = [
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1d9avll/new_system_spirit_system_on_june_11th/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1dee3bd/cant_rebind_my_account_getting_game_center/
 
-// https://old.reddit.com/r/GFLNeuralCloud/comments/1bnaug0/weekly_professors_lounge_march_25_2024/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1bt0r9e/weekly_professors_lounge_april_01_2024/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1byv1s5/weekly_professors_lounge_april_08_2024/
 // https://old.reddit.com/r/GFLNeuralCloud/comments/1c4jd5v/weekly_professors_lounge_april_15_2024/
