@@ -3,8 +3,6 @@
 # Redditor Musings
 
 > BSJ
-> - [SPEQs and Webley.](https://old.reddit.com/r/girlsfrontline/comments/rl9oul/weekly_commanders_lounge_december_21_2021/hq64qh3/)
->
 > - [Message clearing.](https://old.reddit.com/r/girlsfrontline/comments/rqajmv/weekly_commanders_lounge_december_28_2021/hqf9uf6/)
 >
 > - [M200 breakpoints.](https://old.reddit.com/r/girlsfrontline/comments/v1l5po/weekly_commanders_lounge_may_31_2022/ibbyfvn/)
@@ -454,4 +452,4 @@ https://old.reddit.com/r/girlsfrontline/comments/1elc2eo/weekly_commanders_loung
 //Column vs Row
 //https://old.reddit.com/r/girlsfrontline/comments/1dilac7/weekly_commanders_lounge_june_18_2024/l95hiim/
 
-<!--https://old.reddit.com/r/girlsfrontline/comments/1f7uee1/weekly_commanders_lounge_september_03_2024/-->
+<!--https://old.reddit.com/r/girlsfrontline/comments/1fdcl0r/weekly_commanders_lounge_september_10_2024/-->

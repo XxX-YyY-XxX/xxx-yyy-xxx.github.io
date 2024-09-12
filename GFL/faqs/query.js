@@ -635,7 +635,7 @@ const CARDS = [
         ${List.description({
             'Anchored Construction' : [
                 anchor(fragment("Available for new players ", textStyle("and for veterans not bothering with it", "strike"), "."), 'https://gamepress.gg/girlsfrontline/209-client-update-new-features#topic-230681'),
-                fragment(anchor('Available on Tuesdays whenever a new batch of production dolls are released.', 'https://redd.it/szdua2'), ` Recommended anchors are usually 4${STAR} due to `, getID("TCM", 9), " existing, especially for shotguns."), 
+                fragment(anchor('Available on Tuesdays whenever a new batch of production dolls are released.', 'https://redd.it/szdua2'), ` Anchor 4${STAR}s due to `, getID("TCM", 9), ` existing, especially for shotguns, or 5${STAR}s because they have lower rates. Your call.`), 
                 "Access it through the doll production screen. If it doesn't appear, try restarting app. It happens when you log-in earlier than the rate-up."
             ],
             'Targeted Rate Up' : [
@@ -4529,6 +4529,12 @@ const CARDS = [
         question: `What's the best formation for the fastest time in Advanced Data Simulation?`,   //https://old.reddit.com/r/girlsfrontline/comments/1f2blqe/weekly_commanders_lounge_august_27_2024/lkypnwq/
         answer: `${anchor("Bilibili video", "https://www.bilibili.com/video/BV1pZ421z71v/")}`,
         tags: [dtag.ECH, dtag.SIMS]
+    },
+    {
+        id: 557,
+        question: `What are the things I should know regarding skill activations?`,
+        answer: `${Embed.reddit("rl9oul/weekly_commanders_lounge_december_21_2021/hq64qh3")}`,
+        tags: [dtag.SKILL, dtag.BATTLE]
     },
     //{
     //    id: 0,

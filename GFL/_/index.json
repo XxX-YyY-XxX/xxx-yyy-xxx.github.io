@@ -1,0 +1,30 @@
+[
+    {
+        "date": "March 20, 2023",
+        "added": 3,
+        "updated": 2,
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "March 28, 2023",
+        "added": 2,
+        "updated": 8,
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "April 05, 2023",
+        "added": [424],
+        "updated": [279, 24, 260],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "April 19, 2023",
+        "added": [425, 426, 427],
+        "updated": [15, 53, 28],
+        "deleted": [],
+        "others": ["Battlepass tag changed to FrontlineProtocol."]
+    }
+]
