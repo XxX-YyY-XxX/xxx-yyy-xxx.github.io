@@ -19,8 +19,8 @@ timer(
 
 timer(
     document.getElementById("coalition"),
-    "Sep 17, 2024 00:00 UTC-0800",
-    "./assets/images/coalition/25Narciss.webp",
+    "Oct 15, 2024 00:00 UTC-0800",
+    "./assets/images/coalition/14Alina.webp",
     {onEnd: timer.bind(
         null, document.getElementById("coalition"),
         "",

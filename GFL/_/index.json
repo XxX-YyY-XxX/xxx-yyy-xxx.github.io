@@ -26,5 +26,27 @@
         "updated": [15, 53, 28],
         "deleted": [],
         "others": ["Battlepass tag changed to FrontlineProtocol."]
+    },
+    {
+        "date": "April 25, 2023",
+        "added": [428, 429],
+        "updated": [],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "April 26, 2023",
+        "added": [430],
+        "updated": [28, 166],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "May 03, 2023",
+        "added": [431, 432, 433],
+        "updated": [70, 4, 265],
+        "deleted": [],
+        "others": ["DummyCore tag added."]
     }
+
 ]
