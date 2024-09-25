@@ -2,8 +2,8 @@ import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
 timer(
    document.getElementById("event"),
-   "Sep 24, 2024 00:00 UTC-0800",
-   "./assets/images/timer/znx9lpmys0dd1.webp"
+   "Oct 15, 2024 00:00 UTC-0800",
+   "./assets/images/timer/hf2hkoxq0dod1.webp"
 );
 
 timer(
@@ -30,12 +30,12 @@ timer(
 
 timer(
     document.getElementById('skin-banner'),
-    "Sep 03, 2024 00:00 UTC-0800",
-    "https://iopwiki.com/images/thumb/e/ed/Colt_Walker_costume2_D.png/600px-Colt_Walker_costume2_D.png",
+    "Oct 01, 2024 00:00 UTC-0800",
+    "https://iopwiki.com/images/thumb/4/4f/Dancing_Heartstrings_Login_Wallpaper.jpg/600px-Dancing_Heartstrings_Login_Wallpaper.jpg",
     {onEnd: timer.bind(
         null, document.getElementById('skin-banner'),
-        "Oct 01, 2024 00:00 UTC-0800",
-        "https://iopwiki.com/images/thumb/4/4f/Dancing_Heartstrings_Login_Wallpaper.jpg/600px-Dancing_Heartstrings_Login_Wallpaper.jpg"
+        "",
+        ""
     )}
 );
 

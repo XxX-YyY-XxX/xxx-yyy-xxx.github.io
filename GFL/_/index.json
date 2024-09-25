@@ -47,6 +47,27 @@
         "updated": [70, 4, 265],
         "deleted": [],
         "others": ["DummyCore tag added."]
+    },
+    {
+        "date": "May 10, 2023",
+        "added": [433],
+        "updated": [96, 433],
+        "deleted": [128],
+        "others": []
+    },
+    {
+        "date": "May 12, 2023",
+        "added": [],
+        "updated": [339, 96, 166],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "May 17, 2023",
+        "added": [434, 436],
+        "updated": [433],
+        "deleted": [],
+        "others": ["Added the #difficulty section in the starter page."]
     }
 
 ]

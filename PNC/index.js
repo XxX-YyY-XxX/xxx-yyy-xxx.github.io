@@ -57,10 +57,10 @@ function timer(start_date, end_date, title, imgpath, {onend = null} = {}) {
 // reload into loading timers
 (function resetTimer() {
     timer(
-        "Aug 20, 2024 18:30 UTC-0800",
-        "Sep 17, 2024 18:30 UTC-0800",
-        "Singularity Immemorial",
-        `./assets/images/timer/LoginBg_ZH_CN_2023_Singularity_Immemorial.png`,
+        "Sep 24, 2024 18:30 UTC-0800",
+        "Oct 22, 2024 18:30 UTC-0800",
+        "Irradiant Awakening",
+        `./assets/images/timer/LoginBg_ZH_CN_September_2023_Irradiant_Awakening.png`,
         {onend: resetTimer}
     )
 
