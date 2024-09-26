@@ -1581,7 +1581,7 @@
             "open": -1
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Coordinated Formation"],
-        "tags": ["Unowned"]
+        "tags": []
     },
     {
         "id": 1058,
@@ -1798,7 +1798,7 @@
             "open": -1
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Coordinated Strike"],
-        "tags": ["Unowned"]
+        "tags": []
     },
     {
         "id": 1062,
@@ -2449,15 +2449,40 @@
             "open": -1
         },
         "intimacy": ["Power Connection", "Code Robustness", "Coordinated Strike"],
-        "tags": ["Unowned"]
+        "tags": []
     },
-
     {
         "id": 1074,
-        "name" : "Hubble - Death Star",
-        "reference" : {"" : ""},
-        "tags": ["Unreleased"]
+        "name": "Darkstar Hubble",
+        "class": "Specialist",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy"],
+        "base": {
+            "hp": 16386,
+            "atk": 438,
+            "hash": 652,
+            "pdef": 538,
+            "odef": 538,
+            "aspd": 100,
+            "crate": 10,
+            "ppen": 249,
+            "open": 399,
+            "dodge": 0,
+            "regen": 509
+        },
+        "arma": {
+            "hp": 4097,
+            "atk": 110,
+            "hash": 163,
+            "pdef": 135,
+            "odef": 135,
+            "ppen": 62,
+            "open": 100
+        },
+        "intimacy": ["Neural Activation", "Coordinated Strike", "Victorious Inspiration"],
+        "tags": ["Arma"]
     },
+
     {
         "id": 1081,
         "name" : "Tony",
@@ -2501,13 +2526,13 @@
         "tags": ["Unreleased"]
     },
     {
-        "id": 0,
+        "id": 1088,
         "name": "Angelus",
         "reference": {},
         "tags": ["Unreleased"]
     },
     {
-        "id": 0,
+        "id": 1089,
         "name": "Salmon",
         "reference": {},
         "tags": ["Unreleased"]
@@ -2519,7 +2544,7 @@
         "tags": ["Unreleased"]
     },
     {
-        "id": 0,
+        "id": 1090,
         "name": "Sol - Infernal",
         "reference": {},
         "tags": ["Unreleased"]

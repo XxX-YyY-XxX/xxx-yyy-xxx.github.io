@@ -116,7 +116,7 @@ function pushPopstate(url, state) {
     window.dispatchEvent(new PopStateEvent("popstate", {state: state}));
 }
 
-const AUXILLIARY = ["the", "to", "i"];
+const AUXILLIARY = ["the", "to", "i", "a", "for"];
 const AUX_REGEX = new RegExp(`(?<!\\w)(${AUXILLIARY.join("|")})(?!\\w)`, "ig");
 //const SHORT_LONG = {
 
