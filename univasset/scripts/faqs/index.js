@@ -13,12 +13,13 @@ window.addEventListener("popstate", event => {
     const CARDFIELD = document.querySelector("#Cards > div");
     const FIELD_VALUE = getBoxes();
     //CARDFIELD.replaceChildren(FIELD_VALUE);
+    //some cards skipped
     if (typeof FIELD_VALUE == "string")
         CARDFIELD.replaceChildren(FIELD_VALUE);
     else {
         (async () => {
             CARDFIELD.replaceChildren();
-            for (const FIELDSET of FIELD_VALUE.children)
+            for (const FIELDSET of Array.from(FIELD_VALUE.children))
                 CARDFIELD.appendChild(FIELDSET);                
         })().then(() => twttr.widgets.load(CARDFIELD));
     }
@@ -116,7 +117,7 @@ function pushPopstate(url, state) {
     window.dispatchEvent(new PopStateEvent("popstate", {state: state}));
 }
 
-const AUXILLIARY = ["the", "to", "i", "a", "for"];
+const AUXILLIARY = ["the", "to", "i", "a", "for", "is", "do"];
 const AUX_REGEX = new RegExp(`(?<!\\w)(${AUXILLIARY.join("|")})(?!\\w)`, "ig");
 //const SHORT_LONG = {
 

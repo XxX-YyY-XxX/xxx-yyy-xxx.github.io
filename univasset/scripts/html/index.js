@@ -154,7 +154,7 @@ export function anchor(content, href, {mode = null, data = {}} = {}) {
         case "history":
             const EVENT = new PopStateEvent("popstate", {state: data});
             ANCHOR.addEventListener("click", event => {
-                // encode htref to uri?
+                // encode href to uri?
                 history.pushState(data, "", href);
                 window.dispatchEvent(EVENT);
                 event.preventDefault(); // Needed to prevent refresh.
@@ -163,8 +163,7 @@ export function anchor(content, href, {mode = null, data = {}} = {}) {
                 /** @type {HTMLAnchorElement} */ const CLONE = this.cloneNode(true);
 
                 // Important when changed to string HTML. Event listener and closures not carried over.
-                if (Object.keys(data).length)
-                    CLONE.dataset.data = JSON.stringify(data);
+                if (Object.keys(data).length) CLONE.dataset.data = JSON.stringify(data);
                 CLONE.setAttribute("onclick", "return anchorHistoryClick(this)");
                 window.anchorHistoryClick ??= function(/** @type {HTMLAnchorElement} */a) {
                     const DATA = JSON.parse(a.dataset.data ?? "{}");
