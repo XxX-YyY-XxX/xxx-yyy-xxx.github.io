@@ -89,6 +89,47 @@
         "updated": [70, 265],
         "deleted": [],
         "others": []
+    },
+    {
+        "date": "June 15, 2023",
+        "added": [441, 442],
+        "updated": [430],
+        "deleted": [],
+        "others": ["Changed ID 60."]
+    },
+    {
+        "date": "June 21, 2023",
+        "added": [443],
+        "updated": [],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "June 28, 2023",
+        "added": [444, 445],
+        "updated": [265],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "July 05, 2023",
+        "added": [],
+        "updated": [52, 97, 24, 265],
+        "deleted": [],
+        "others": ["Changed IDs 420, 57."]
+    },
+    {
+        "date": "July 12, 2023",
+        "added": [446, 447, 448, 449],
+        "updated": [174, 61, 398],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "July 18, 2023",
+        "added": [],
+        "updated": [200, 206],
+        "deleted": [],
+        "others": []
     }
-
 ]

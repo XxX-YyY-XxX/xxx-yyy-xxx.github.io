@@ -8,39 +8,24 @@ timer(
 
 timer(
     document.getElementById("battlepass"),
-    "Sep 30, 2024 00:00 UTC-0800",
-    "./assets/images/timer/rtsz1c3rmqjd1.webp",
-    {onEnd: timer.bind(
-        null, document.getElementById("battlepass"),
-        "",
-        ""
-    )}
+    "Nov 04, 2024 00:00 UTC-0800",
+    "./assets/images/timer/bzvsm96a0xqd1.webp"
 );
 
 timer(
     document.getElementById("coalition"),
     "Oct 15, 2024 00:00 UTC-0800",
-    "./assets/images/coalition/14Alina.webp",
-    {onEnd: timer.bind(
-        null, document.getElementById("coalition"),
-        "",
-        ""
-    )}
+    "./assets/images/coalition/14Alina.webp"
 );
 
 timer(
     document.getElementById('skin-banner'),
-    "Oct 01, 2024 00:00 UTC-0800",
-    "https://iopwiki.com/images/thumb/4/4f/Dancing_Heartstrings_Login_Wallpaper.jpg/600px-Dancing_Heartstrings_Login_Wallpaper.jpg",
-    {onEnd: timer.bind(
-        null, document.getElementById('skin-banner'),
-        "",
-        ""
-    )}
+    "Oct 29, 2024 00:00 UTC-0800",
+    "https://iopwiki.com/images/thumb/2/2f/ZB-26_costume4_D.png/600px-ZB-26_costume4_D.png"
 );
 
 timer(
    document.getElementById('mini-event'),
-   "Sep 24, 2024 00:00 UTC-0800",
-   "./assets/images/timer/b1csdrxo2dld1.webp"
+   "Oct 22, 2024 00:00 UTC-0800",
+   "./assets/images/timer/55mdd8mc14rd1.webp"
 );
