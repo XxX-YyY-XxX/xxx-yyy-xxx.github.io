@@ -2,8 +2,8 @@ import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
 timer(
    document.getElementById("event"),
-   "Oct 15, 2024 00:00 UTC-0800",
-   "./assets/images/timer/hf2hkoxq0dod1.webp"
+   "Oct 29, 2024 00:00 UTC-0800",
+   "./assets/images/timer/qhtkje6kt1ud1.jpg"
 );
 
 timer(
@@ -14,8 +14,8 @@ timer(
 
 timer(
     document.getElementById("coalition"),
-    "Oct 15, 2024 00:00 UTC-0800",
-    "./assets/images/coalition/14Alina.webp"
+    "Nov 12, 2024 00:00 UTC-0800",
+    "./assets/images/coalition/21ExecutionerBloodFiendHuntress.webp"
 );
 
 timer(

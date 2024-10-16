@@ -131,5 +131,26 @@
         "updated": [200, 206],
         "deleted": [],
         "others": []
+    },
+    {
+        "date": "July 19, 2023",
+        "added": [450],
+        "updated": [424],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "July 28, 2023",
+        "added": [451, 452, 453, 454],
+        "updated": [420, 78, 366, 450],
+        "deleted": [],
+        "others": ["Returning Player Guide page added."]
+    },
+    {
+        "date": "August 02, 2023",
+        "added": [455],
+        "updated": [24, 265],
+        "deleted": [],
+        "others": []
     }
 ]
