@@ -1603,16 +1603,16 @@
             "regen": 364
         },
         "arma": {
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
+            "hp": 1751,
+            "atk": 78,
+            "hash": 102,
+            "pdef": 32,
+            "odef": 32,
+            "ppen": 147,
+            "open": 64
         },
         "intimacy": ["Neural Activation", "Coordinated Strike", "Victorious Inspiration"],
-        "tags": ["Lv70"]
+        "tags": ["Lv70", "Arma"]
     },
     {
         "id": 1054,
@@ -1665,16 +1665,16 @@
             "regen": 554
         },
         "arma": {
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
+            "hp": 3515,
+            "atk": 115,
+            "hash": 110,
+            "pdef": 48,
+            "odef": 48,
+            "ppen": 190,
+            "open": 77
         },
         "intimacy": ["Power Connection", "Risk Evasion Aid", "Mechanical Celerity"],
-        "tags": ["Unowned"]
+        "tags": ["Unowned", "Arma"]
     },
     {
         "id": 1056,
@@ -2482,6 +2482,37 @@
         "intimacy": ["Neural Activation", "Coordinated Strike", "Victorious Inspiration"],
         "tags": ["Arma"]
     },
+    {
+        "id": 1083,
+        "name": "Shale",
+        "class": "Warrior",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
+        "base": {
+            "hp": 21114,
+            "atk": 532,
+            "hash": 619,
+            "pdef": 305,
+            "odef": 530,
+            "aspd": 100,
+            "crate": 5,
+            "ppen": 325,
+            "open": 464,
+            "dodge": 6,
+            "regen": 679
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": ["Neural Activation", "Code Robustness", "Coordinated Strike"],
+        "tags": ["Unowned"]
+    },
 
     {
         "id": 1081,
@@ -2492,12 +2523,6 @@
     {
         "id": 1080,
         "name" : "Centaureissi - Unbound Wings",
-        "reference" : {"" : ""},
-        "tags": ["Unreleased"]
-    },
-    {
-        "id": 1083,
-        "name" : "Shale",
         "reference" : {"" : ""},
         "tags": ["Unreleased"]
     },
@@ -2546,6 +2571,12 @@
     {
         "id": 1090,
         "name": "Sol - Infernal",
+        "reference": {},
+        "tags": ["Unreleased"]
+    },
+    {
+        "id": 0,
+        "name": "Inola",
         "reference": {},
         "tags": ["Unreleased"]
     }

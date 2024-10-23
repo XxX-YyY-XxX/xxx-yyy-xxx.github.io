@@ -152,5 +152,40 @@
         "updated": [24, 265],
         "deleted": [],
         "others": []
+    },
+    {
+        "date": "August 10, 2023",
+        "added": [456, 457, 458, 459],
+        "updated": [420, 24, 265],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "August 16, 2023",
+        "added": [],
+        "updated": [327, 265],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "August 24, 2023",
+        "added": [],
+        "updated": [174, 265],
+        "deleted": [],
+        "others": ["BlackMarket tag added.", "Changed some instances of ForwardBasecamp and Shop combinations to BlackMarket."]
+    },
+    {
+        "date": "September 06, 2023",
+        "added": [460, 461, 128],
+        "updated": [62],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "September 13, 2023",
+        "added": [462, 463, 464],
+        "updated": [129, 67, 460, 445, 265],
+        "deleted": [],
+        "others": []
     }
 ]
