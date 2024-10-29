@@ -187,5 +187,40 @@
         "updated": [129, 67, 460, 445, 265],
         "deleted": [],
         "others": []
+    },
+    {
+        "date": "September 20, 2023",
+        "added": [],
+        "updated": [249, 9, 265],
+        "deleted": [],
+        "others": ["Changed ID 00187."]
+    },
+    {
+        "date": "September 28, 2023",
+        "added": [464],
+        "updated": [463],
+        "deleted": [],
+        "others": ["Updated the starter page.", "Moved GFL-RC verse collection to the Compilation page."]
+    },
+    {
+        "date": "October 04, 2023",
+        "added": [465],
+        "updated": [29, 128],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "October 10, 2023",
+        "added": [466, 467],
+        "updated": [450],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "October 18, 2023",
+        "added": [468],
+        "updated": [],
+        "deleted": [],
+        "others": []
     }
 ]

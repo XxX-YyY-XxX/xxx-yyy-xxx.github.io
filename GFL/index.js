@@ -2,14 +2,14 @@ import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
 timer(
    document.getElementById("event"),
-   "Oct 29, 2024 00:00 UTC-0800",
-   "./assets/images/timer/qhtkje6kt1ud1.jpg"
+   "Nov 19, 2024 00:00 UTC-0800",
+   "./assets/images/timer/oqs5e95gpfvd1.jpg"
 );
 
 timer(
     document.getElementById("battlepass"),
-    "Nov 04, 2024 00:00 UTC-0800",
-    "./assets/images/timer/bzvsm96a0xqd1.webp"
+    "Nov 04, 2024 00:00 UTC-0800",  //dec 9
+    "./assets/images/timer/bzvsm96a0xqd1.webp"  //lwmmg
 );
 
 timer(
@@ -20,12 +20,12 @@ timer(
 
 timer(
     document.getElementById('skin-banner'),
-    "Oct 29, 2024 00:00 UTC-0800",
-    "https://iopwiki.com/images/thumb/2/2f/ZB-26_costume4_D.png/600px-ZB-26_costume4_D.png"
+    "Nov 27, 2024 00:00 UTC-0800",
+    "https://iopwiki.com/images/thumb/3/32/Python_costume2_D.png/600px-Python_costume2_D.png"
 );
 
 timer(
    document.getElementById('mini-event'),
-   "Oct 22, 2024 00:00 UTC-0800",
-   "./assets/images/timer/55mdd8mc14rd1.webp"
+   "Nov 19, 2024 00:00 UTC-0800",
+   "./assets/images/timer/nzvyhoax6fxd1.webp"
 );
