@@ -772,7 +772,7 @@
             "open": 32
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Risk Evasion Aid"],
-        "tags": ["Arma"]
+        "tags": ["Arma", "Fully Built"]
     },
     {
         "id": 1035,
@@ -2577,6 +2577,12 @@
     {
         "id": 0,
         "name": "Inola",
+        "reference": {},
+        "tags": ["Unreleased"]
+    },
+    {
+        "id": 0,
+        "name": "Eniac",
         "reference": {},
         "tags": ["Unreleased"]
     }

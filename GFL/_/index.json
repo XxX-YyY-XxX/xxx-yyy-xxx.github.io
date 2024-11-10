@@ -222,5 +222,110 @@
         "updated": [],
         "deleted": [],
         "others": []
+    },
+    {
+        "date": "October 25, 2023",
+        "added": [469, 470],
+        "updated": [185],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "November 01, 2023",
+        "added": [471, 472, 473, 474],
+        "updated": [],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "November 08, 2023",
+        "added": [475, 476],
+        "updated": [96],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "November 14, 2023",
+        "added": [],
+        "updated": [],
+        "deleted": [],
+        "others": ["Added Gray Zone tag"]
+    },
+    {
+        "date": "November 15, 2023",
+        "added": [477, 478, 479],
+        "updated": [24],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "November 22, 2023",
+        "added": [480, 481],
+        "updated": [149, 286],
+        "deleted": [],
+        "others": ["Changed ID 151."]
+    },
+    {
+        "date": "November 30, 2023",
+        "added": [482, 483, 484, 486, 487, 488],
+        "updated": [169, 58],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "December 06, 2023",
+        "added": [489, 490, 491],
+        "updated": [32],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "December 13, 2023",
+        "added": [492, 493, 494, 495],
+        "updated": [24, 265],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "December 20, 2023",
+        "added": [497, 498, 499, 500],
+        "updated": [],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "December 28, 2023",
+        "added": [501, 502],
+        "updated": [28, 450],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "January 19, 2024",
+        "added": [],
+        "updated": [],
+        "deleted": [265],
+        "others": ["Unit skills page added."]
+    },
+    {
+        "date": "January 24, 2024",
+        "added": [265],
+        "updated": [450, 120],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "February 01, 2024",
+        "added": [503, 504, 505],
+        "updated": [16, 166, 23],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "February 16, 2024",
+        "added": [506],
+        "updated": [37],
+        "deleted": [],
+        "others": []
     }
 ]

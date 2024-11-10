@@ -3,19 +3,24 @@ import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 timer(
    document.getElementById("event"),
    "Nov 19, 2024 00:00 UTC-0800",
-   "./assets/images/timer/oqs5e95gpfvd1.jpg"
+   "./assets/images/timer/oqs5e95gpfvd1.webp"
 );
 
 timer(
     document.getElementById("battlepass"),
-    "Nov 04, 2024 00:00 UTC-0800",  //dec 9
-    "./assets/images/timer/bzvsm96a0xqd1.webp"  //lwmmg
+    "Dec 09, 2024 00:00 UTC-0800",
+    "./assets/images/timer/sootj367o7yd1.webp"
 );
 
 timer(
     document.getElementById("coalition"),
     "Nov 12, 2024 00:00 UTC-0800",
-    "./assets/images/coalition/21ExecutionerBloodFiendHuntress.webp"
+    "./assets/images/coalition/21ExecutionerBloodFiendHuntress.webp",
+    {onEnd: timer.bind(null,
+        document.getElementById("coalition"),
+        "Dec 10, 2024 00:00 UTC-0800",
+        "./assets/images/coalition/26DreamerMoonlitSentinel.webp",
+    )}
 );
 
 timer(
