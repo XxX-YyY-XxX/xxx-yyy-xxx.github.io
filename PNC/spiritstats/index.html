@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="module" src="/univasset/scripts/include/index.js"></script>
+        <script type="module" src="./index.js"></script>
+        <!-- Typescript files unusable in github. -->
+
+        <meta charset='utf-8'>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="./algorithms.css">
+        <link rel="stylesheet" href="./fairies.css">
+        
+        <!-- Setup theme-color -->
+
+        <!-- start theme color meta headers -->
+            <meta name="theme-color" content="#151515">
+            <meta name="msapplication-navbutton-color" content="#151515">
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <!-- end theme color meta headers -->
+
+        <!-- Cloudflare Web Analytics -->
+        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "20de2f0b325f45c89012eb57982e3e29"}'></script>
+        <!-- End Cloudflare Web Analytics -->
+
+        <link rel="icon" type="image/png" href="/univasset/images/favicon.png" />
+
+        <title>PNC Units Stats | Random Scraps</title>
+    </head>
+
+    <body>
+        <include src="/univasset/scripts/pageheader/header.html" description="Stats comparison and algo builder"></include>
+
+        <div class="container">
+            <section id="main_content">
+                <!-- fairy menu -->
+                <!-- skillset menu -->
+
+                <div id="table" class="func_table">
+                    <table class="freeze-col freeze-row">
+                        <thead>
+                            <tr></tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div id="extras" class="tab-group">
+                    <div class="tab-button">
+                        <label><input type="radio" name="extra" value="Team" checked>Team Bonus</label>
+                        <label><input type="radio" name="extra" value="Filter">Filter</label>
+                        <label><input type="radio" name="extra" value="Toggle">Stat Toggles</label>
+                    </div>
+    
+                    <div id="Team" class="tab-body">
+                        <div id="spirits">
+                            <div>Spirits</div>
+                            <button type="button">
+                                <img src="../assets/images/spirits/Faith.png" alt="Faith">
+                            </button>
+                            <div id="sets">
+                                <button type="button" disabled>1</button>
+                                <button type="button" disabled>2</button>
+                                <button type="button" disabled>3</button>
+                            </div>
+                            <dialog>
+                                <form method="dialog"></form>
+                            </dialog>
+                        </div>
+                    </div>
+
+                    <!-- slideshow on narrower screens -->
+                    <!-- has arma - yes, no, unselected -->        
+                    <div id="Filter" class="tab-body">
+                        <div id="classes">
+                            <div>Class</div>
+                            <label><input type="checkbox" value="Guard" checked /></label>
+                            <label><input type="checkbox" value="Sniper" checked /></label>
+                            <label><input type="checkbox" value="Warrior" checked /></label>
+                            <label><input type="checkbox" value="Specialist" checked /></label>
+                            <label><input type="checkbox" value="Medic" checked /></label>
+                        </div>
+    
+                        <div id="algorithms">
+                            <div>Algorithm</div>
+                            <button type="button">
+                                <img src="../assets/images/algorithms/others/Empty.png" alt="Remove" />
+                            </button>
+                            <div>
+                                <select id="main" class="mainstat"></select>
+                                <select id="sub1" class="substat"></select>
+                                <select id="sub2" class="substat"></select>
+                                <button type="button" id="reset">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="Toggle" class="tab-body">
+                        <div id="pre-battle">
+                            <div>Pre-Battle Bonus</div>
+                            <label class="tooltip"><input type="checkbox" value="PotB" />Potential Breakthrough<span class="tooltiptext">Units at Lv.70 and 5★.</span></label>
+                            <label class="tooltip"><input type="checkbox" value="Bond" />Intimacy<span class="tooltiptext">Intimacy at Lv.15.</span></label>
+                            <label class="tooltip"><input type="checkbox" value="Oath" />Hearts As One<span class="tooltiptext">Available after Oath.</span></label>
+                            <label class="tooltip"><input type="checkbox" value="Arma" />Arma Inscripta<span class="tooltiptext">Arma stats at Lv.30.</span></label>
+                            <label class="tooltip"><input type="checkbox" value="Algo" />Algorithm<span class="tooltiptext">Algorithms and substats at Gold rarity. Efficiency at 2x.</span></label>
+                            <label class="tooltip"><input type="checkbox" value="Spec" />Specialty Training<span class="tooltiptext">Specialty at Lv.543.</span></label>
+                            <label class="tooltip"><input type="checkbox" value="Sprt" />Holy Spirits<span class="tooltiptext">Spirits at Lv.50.</span></label>
+                        </div>
+
+                        <!-- battle bonus -->
+                        <!-- unit skills -->
+                        <!-- Functions -->
+                        <!-- Protocols -->
+                        <!-- algo 3set -->
+                        <!-- fairy skills -->
+                    </div>
+                </div>
+
+                <p>Click on the stat names to sort the units.</p>
+                <p>Click on the unit's name to open the algorithm window.</p>
+                <p>This page uses cookies to save algorithm settings.</p>   <!-- change to floating dialog -->
+                <p>Unit stats data taken from <a href="http://wiki.42lab.cloud/w/%E5%BF%83%E6%99%BA%E4%BA%BA%E5%BD%A2%E5%9B%BE%E9%89%B4">42 wiki</a>.</p>
+                <p>Arma, class, algorithm, and spirit sprites taken from <a href="https://drive.google.com/drive/folders/1P9T2eJVCG3X5ctaiyBK61T0rNS6uXJJR">Ferrari's compilation</a>.</p>
+                
+                <!-- fairy stats from takeshi doc -->
+            </section>
+        </div>
+    </body>
+
+    <dialog id="algo-modal">
+        <div id="name"></div>
+
+        <!-- <div id="help" data-tooltip="Click outside to close the dialog window."></div> -->
+
+        <div id="algo-field" class="tab-group">
+            <div class="tab-button">
+                <label><input type="radio" name="algorithm" value="Offense" checked/>Offense</label>
+                <label><input type="radio" name="algorithm" value="Stability" />Stability</label>
+                <label><input type="radio" name="algorithm" value="Special" />Special</label>
+            </div>
+
+            <div class="tab-body" id="Offense"></div>
+            <div class="tab-body" id="Stability"></div>
+            <div class="tab-body" id="Special"></div>
+        </div>
+    </dialog>
+
+    <dialog id="algo-select">
+        <form method="dialog"></form>
+    </dialog>
+
+    <dialog class="algo-select offense">
+        <form method="dialog"></form>
+    </dialog>
+
+    <dialog class="algo-select stability">
+        <form method="dialog"></form>
+    </dialog>
+
+    <dialog class="algo-select special">
+        <form method="dialog"></form>
+    </dialog>
+
+    <dialog id="algo-filter">
+        <form method="dialog"></form>
+    </dialog>
+
+    <!-- #region Fairies -->
+    <dialog id="spirit-select">
+        <form method="dialog"></form>
+    </dialog>
+
+    <dialog id="spirit-skills">
+        <div id="name"></div>
+        <!-- skill 1 -->
+        <!-- skill 2 -->
+        <!-- skill 3 -->
+
+        <!-- image -->
+        <!-- name -->
+        <!-- description -->
+    </dialog>
+    <!-- #endregion -->
+</html>
+
+<!-- Template readable outside of html tag -->
+<template id="spirits-template">
+    <button type="submit" value="">
+        <img src="" alt="">
+        <span></span>
+        <div></div>
+    </button>
+</template>
+
+<template id="algo-equip-template">
+    <button type="submit" value="">
+        <div data-grid="name"></div>
+        <div data-grid="set2"></div>
+        <div data-grid="type"></div>
+        <img src="" alt="" />
+        <div data-grid="set3"></div>        
+    </button>
+</template>
+
+<!-- https://dev.to/phuocng/check-if-an-element-is-visible-in-the-viewport-3c8j -->
+<!-- https://stackoverflow.com/questions/30943662/check-if-element-is-partially-in-viewport -->
+<!-- https://gomakethings.com/how-to-check-if-any-part-of-an-element-is-out-of-the-viewport-with-vanilla-js/ -->
+<!-- https://stackoverflow.com/questions/21688590/how-to-detect-if-dom-element-is-partially-out-of-the-viewport -->
+<!-- https://stackoverflow.com/questions/123999/how-can-i-tell-if-a-dom-element-is-visible-in-the-current-viewport -->

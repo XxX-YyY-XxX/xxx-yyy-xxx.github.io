@@ -2,18 +2,16 @@ import { brJoin } from '../../univasset/scripts/htmlgenerator/htmlgenerator.js';
 import { details } from "../../univasset/scripts/html";
 
 /**
- * @typedef Logs
- * @property {string} date
+ * @typedef Log
+ * @property {string} date Change to array?
  * @property {number[] | number} added
  * @property {number[] | number} updated
  * @property {number[]} deleted
  * @property {string[]} others
  */
+/** @type {Promise<Log[]>} */ const LOG_PROMISE = fetch("./index.json").then(x => x.json());
 
-/** @type {Promise<Logs[]>} */ const LOG_PROMISE = fetch("./index.json").then(x => x.json());
-
-const SECTION = document.querySelector("section");
-for (const {date, added, updated, deleted, others} of (await LOG_PROMISE).reverse()) {
+document.querySelector("section").append(...(await LOG_PROMISE).reverse().map(({date, added, updated, deleted, others}) => {
     const LOG_ARRAY = []
 
     if (typeof added == "number")
@@ -31,5 +29,5 @@ for (const {date, added, updated, deleted, others} of (await LOG_PROMISE).revers
     
     LOG_ARRAY.push(...others);
 
-    SECTION.appendChild(details(date, brJoin(LOG_ARRAY)));
-}
+    return details(date, brJoin(LOG_ARRAY));
+}));

@@ -245,7 +245,7 @@
             "open": 69
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Risk Evasion Aid"],
-        "tags": ["Arma"]
+        "tags": ["Arma", "Fully Built"]
     },
     {
         "id": 1011,
@@ -825,16 +825,16 @@
             "regen": 364
         },
         "arma": {
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
+            "hp": 1751,
+            "atk": 94,
+            "hash": 78,
+            "pdef": 41,
+            "odef": 41,
+            "ppen": 184,
+            "open": 75
         },
         "intimacy": ["Power Connection", "Coordinated Strike", "Victorious Inspiration"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
         "id": 1038,
@@ -1262,16 +1262,16 @@
             "regen": 364
         },
         "arma": {
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
+            "hp": 1751,
+            "atk": 77,
+            "hash": 503,
+            "pdef": 29,
+            "odef": 29,
+            "ppen": 18,
+            "open": 361
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Coordinated Formation"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
         "id": 1041,
@@ -1588,7 +1588,7 @@
         "name": "Clukay",
         "class": "Sniper",
         "reference": {"HK416" : "https://iopwiki.com/wiki/HK416"},
-        "fragments": ["Neural Kits", "Intimacy"],
+        "fragments": ["Neural Kits", "Intimacy", "Exercise Handbook - Shadow"],
         "base": {
             "hp": 11671,
             "atk": 521,
@@ -2513,19 +2513,69 @@
         "intimacy": ["Neural Activation", "Code Robustness", "Coordinated Strike"],
         "tags": ["Unowned"]
     },
-
-    {
-        "id": 1081,
-        "name" : "Tony",
-        "reference" : {"" : ""},
-        "tags": ["Unreleased"]
-    },
     {
         "id": 1080,
-        "name" : "Centaureissi - Unbound Wings",
-        "reference" : {"" : ""},
-        "tags": ["Unreleased"]
+        "name": "Centaureissi U.W.",
+        "class": "Sniper",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
+        "base": {
+            "hp": 11671,
+            "atk": 649,
+            "hash": 482,
+            "pdef": 181,
+            "odef": 181,
+            "aspd": 120,
+            "crate": 5,
+            "ppen": 667,
+            "open": 359,
+            "dodge": 5,
+            "regen": 364
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": ["Power Connection", "Risk Evasion Aid", "Coordinated Strike"],
+        "tags": ["Unowned"]
     },
+    {
+        "id": 1081,
+        "name": "Tony",
+        "class": "Warrior",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy"],
+        "base": {
+            "hp": 18143,
+            "atk": 681,
+            "hash": 525,
+            "pdef": 479,
+            "odef": 479,
+            "aspd": 110,
+            "crate": 5,
+            "ppen": 320,
+            "open": 315,
+            "dodge": 5,
+            "regen": 565
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"],
+        "tags": ["Unowned"]
+    },
+
     {
         "id": 1084,
         "name" : "Sangoma",

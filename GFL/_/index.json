@@ -327,5 +327,110 @@
         "updated": [37],
         "deleted": [],
         "others": []
+    },
+    {
+        "date": "February 21, 2024",
+        "added": [507, 508, 509],
+        "updated": [],
+        "deleted": [],
+        "others": ["RankingMaps tag added."]
+    },
+    {
+        "date": "February 28, 2024",
+        "added": [],
+        "updated": [24],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "March 04, 2024",
+        "added": [],
+        "updated": [],
+        "deleted": [],
+        "others": ["GFL Assets master folder moved to main page."]
+    },
+    {
+        "date": "March 06, 2024",
+        "added": [510, 511],
+        "updated": [],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "March 13, 2024",
+        "added": [512, 513, 514, 515, 516],
+        "updated": [254],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "March 30, 2024",
+        "added": [],
+        "updated": [425],
+        "deleted": [],
+        "others": ["Added ST AR-15 section in Unit Skills.", "Updated Colt Walker section in Unit Skills."]
+    },
+    {
+        "date": "April 29, 2024",
+        "added": [],
+        "updated": [1, 3, 5, 7, 98, 26, 28, 31, 147, 150],
+        "deleted": [464, 97],
+        "others": ["Added tag MobileArmor."]
+    },
+    {
+        "date": "April 30, 2024",
+        "added": [],
+        "updated": [207, 223, 292],
+        "deleted": [238, 258],
+        "others": []
+    },
+    {
+        "date": "May 02, 2024",
+        "added": [],
+        "updated": [362, 392, 379, 415, 456, 476],
+        "deleted": [301, 353],
+        "others": []
+    },
+    {
+        "date": "May 06, 2024",
+        "added": [],
+        "updated": [18],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "May 15, 2024",
+        "added": [97],
+        "updated": [19, 23, 64, 512],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "June 06, 2024",
+        "added": [238, 258],
+        "updated": [236],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "June 23, 2024",
+        "added": [301, 353],
+        "updated": [462],
+        "deleted": [],
+        "others": ["Updated \"starter guide\"."]
+    },
+    {
+        "date": "June 30, 2024",
+        "added": [],
+        "updated": [14, 450],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "July 02, 2024",
+        "added": [464, 517, 518],
+        "updated": [],
+        "deleted": [],
+        "others": []
     }
 ]
