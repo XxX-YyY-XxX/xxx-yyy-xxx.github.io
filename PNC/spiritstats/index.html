@@ -3,14 +3,11 @@
     <head>
         <script type="module" src="/univasset/scripts/include/index.js"></script>
         <script type="module" src="./index.js"></script>
-        <!-- Typescript files unusable in github. -->
 
         <meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./index.css">
-        <link rel="stylesheet" href="./algorithms.css">
-        <link rel="stylesheet" href="./fairies.css">
         
         <!-- Setup theme-color -->
 
@@ -34,42 +31,23 @@
 
         <div class="container">
             <section id="main_content">
-                <!-- fairy menu -->
-                <!-- skillset menu -->
-
-                <div id="table" class="func_table">
-                    <table class="freeze-col freeze-row">
-                        <thead>
-                            <tr></tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
+                <!-- colored background on checked -->
+                <div id="spirits">
+                    <label><input type="radio" name="spirit" value="Reverence" checked><img src="../assets/images/spirits/Reverence.png" alt="Reverence" /></label>
+                    <label><input type="radio" name="spirit" value="Hope"><img src="../assets/images/spirits/Hope.png" alt="Hope" /></label>
+                    <label><input type="radio" name="spirit" value="Faith"><img src="../assets/images/spirits/Faith.png" alt="Faith" /></label>
+                    <label><input type="radio" name="spirit" value="Love"><img src="../assets/images/spirits/Love.png" alt="Love" /></label>
                 </div>
+                <!-- set 1,2,3 button (sidetabs?)-->
+                <!-- skillset menu (checkboxes)-->
+
 
                 <div id="extras" class="tab-group">
                     <div class="tab-button">
-                        <label><input type="radio" name="extra" value="Team" checked>Team Bonus</label>
-                        <label><input type="radio" name="extra" value="Filter">Filter</label>
+                        <label><input type="radio" name="extra" value="Filter" checked>Filter</label>
                         <label><input type="radio" name="extra" value="Toggle">Stat Toggles</label>
                     </div>
     
-                    <div id="Team" class="tab-body">
-                        <div id="spirits">
-                            <div>Spirits</div>
-                            <button type="button">
-                                <img src="../assets/images/spirits/Faith.png" alt="Faith">
-                            </button>
-                            <div id="sets">
-                                <button type="button" disabled>1</button>
-                                <button type="button" disabled>2</button>
-                                <button type="button" disabled>3</button>
-                            </div>
-                            <dialog>
-                                <form method="dialog"></form>
-                            </dialog>
-                        </div>
-                    </div>
-
                     <!-- slideshow on narrower screens -->
                     <!-- has arma - yes, no, unselected -->        
                     <div id="Filter" class="tab-body">
@@ -128,24 +106,6 @@
         </div>
     </body>
 
-    <dialog id="algo-modal">
-        <div id="name"></div>
-
-        <!-- <div id="help" data-tooltip="Click outside to close the dialog window."></div> -->
-
-        <div id="algo-field" class="tab-group">
-            <div class="tab-button">
-                <label><input type="radio" name="algorithm" value="Offense" checked/>Offense</label>
-                <label><input type="radio" name="algorithm" value="Stability" />Stability</label>
-                <label><input type="radio" name="algorithm" value="Special" />Special</label>
-            </div>
-
-            <div class="tab-body" id="Offense"></div>
-            <div class="tab-body" id="Stability"></div>
-            <div class="tab-body" id="Special"></div>
-        </div>
-    </dialog>
-
     <dialog id="algo-select">
         <form method="dialog"></form>
     </dialog>
@@ -192,19 +152,3 @@
         <div></div>
     </button>
 </template>
-
-<template id="algo-equip-template">
-    <button type="submit" value="">
-        <div data-grid="name"></div>
-        <div data-grid="set2"></div>
-        <div data-grid="type"></div>
-        <img src="" alt="" />
-        <div data-grid="set3"></div>        
-    </button>
-</template>
-
-<!-- https://dev.to/phuocng/check-if-an-element-is-visible-in-the-viewport-3c8j -->
-<!-- https://stackoverflow.com/questions/30943662/check-if-element-is-partially-in-viewport -->
-<!-- https://gomakethings.com/how-to-check-if-any-part-of-an-element-is-out-of-the-viewport-with-vanilla-js/ -->
-<!-- https://stackoverflow.com/questions/21688590/how-to-detect-if-dom-element-is-partially-out-of-the-viewport -->
-<!-- https://stackoverflow.com/questions/123999/how-can-i-tell-if-a-dom-element-is-visible-in-the-current-viewport -->

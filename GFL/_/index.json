@@ -432,5 +432,75 @@
         "updated": [],
         "deleted": [],
         "others": []
+    },
+    {
+        "date": "July 09, 2024",
+        "added": [519, 520, 521, 522, 523, 524, 525],
+        "updated": [208, 486, 174],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "July 11, 2024",
+        "added": [526, 527],
+        "updated": [405],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "July 14, 2024",
+        "added": [528, 529, 530, 531, 532, 533],
+        "updated": [],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "July 18, 2024",
+        "added": [534, 535, 536],
+        "updated": [],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "July 23, 2024",
+        "added": [537, 538],
+        "updated": [],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "July 30, 2024",
+        "added": [539],
+        "updated": [],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "August 06, 2024",
+        "added": [540, 541],
+        "updated": [175, 464, 200, 377],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "August 08, 2024",
+        "added": [542, 543],
+        "updated": [],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "August 13, 2024",
+        "added": [544],
+        "updated": [16],
+        "deleted": [],
+        "others": []
+    },
+    {
+        "date": "August 15, 2024",
+        "added": [545, 546],
+        "updated": [169, 403],
+        "deleted": [168, 507],
+        "others": []
     }
 ]

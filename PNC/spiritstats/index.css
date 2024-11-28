@@ -1,0 +1,9 @@
+@import "../../main.css";
+
+#spirits {
+    display: flex;
+}
+
+#spirits img {
+    width: 100px;
+}

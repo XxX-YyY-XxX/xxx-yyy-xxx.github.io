@@ -14,19 +14,19 @@ timer(
 
 timer(
     document.getElementById("coalition"),
-    "Nov 12, 2024 00:00 UTC-0800",
-    "./assets/images/coalition/21ExecutionerBloodFiendHuntress.webp",
+    "Dec 10, 2024 00:00 UTC-0800",
+    "./assets/images/coalition/26DreamerMoonlitSentinel.webp",
     {onEnd: timer.bind(null,
         document.getElementById("coalition"),
-        "Dec 10, 2024 00:00 UTC-0800",
-        "./assets/images/coalition/26DreamerMoonlitSentinel.webp",
+        "",
+        "",
     )}
 );
 
 timer(
     document.getElementById('skin-banner'),
-    "Nov 27, 2024 00:00 UTC-0800",
-    "https://iopwiki.com/images/thumb/3/32/Python_costume2_D.png/600px-Python_costume2_D.png"
+    "Dec 24, 2024 00:00 UTC-0800",
+    "./assets/images/timer/p7g40hvaa83e1.webp"
 );
 
 timer(
