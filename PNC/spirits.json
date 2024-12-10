@@ -1,0 +1,107 @@
+[
+    {
+        "name": "Love",
+        "attributes": {
+            "hpflat": 4000,
+            "atkflat": 120,
+            "hashflat": 120,
+            "aspdflat": 50,
+            "dodgeperc": 12.5
+        },
+        "skills": [
+            {
+                "name": "Love's Blessing - Affection",
+                "type": "Passive",
+                "value": [],
+                "description": "For every 5% Dodge Rate a Doll has, they gain 1% Attack and Hashrate, max 10%."
+            },    
+            {
+                "name": "Love's Blessing - Benison",
+                "type": "Passive",
+                "value": [],
+                "description": "Dodging 5 cumulative times deals 1 instance of Physical and Operand Damage equal to 150% to the enemy with the current lowest HP."
+            },
+            {
+                "name": "Love's Blessing - Avoidance",
+                "type": "Passive",
+                "value": [],
+                "description": "When dolls take damage greater than 30% of their Max HP, reduce that damage to 1 at a 1% chance, which can be increased with Dodge Rate, max 60%. Each doll can activate this effect a max of 4 times per battle."
+            },
+            {
+                "name": "Rapid Charge - Reversal",
+                "type": "Active",
+                "value": [],
+                "description": "Reduces enemy skill charge by 60%, and allows their next ability to be dodged using character's own Dodge Rate. Does not apply to duration-based skills."
+            }
+        ]
+    },
+    {
+        "name": "",
+        "attributes": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0
+        },
+        "skills": [
+            {
+                "name": "",
+                "type": "",
+                "value": [],
+                "description": ""
+            }
+        ]
+    }
+]
+
+Hope: new (class Hope extends Spirit {
+    ATTRIBUTES = {
+        [STAT_KEYS_TYPE.HEALTH_F]: 4000,
+        [STAT_KEYS_TYPE.ATTACK_F]: 120,
+        [STAT_KEYS_TYPE.HASHRATE_F]: 120,
+        [STAT_KEYS_TYPE.CRITDMG_P]: 15,
+        [STAT_KEYS_TYPE.HASTE_P]: 7.5
+    }
+
+    SPECIFIC_SKILLS = {
+        "Prayerful Summons - Abundance": {
+            type: "Passive",
+            value: [],
+            description: "Summons gain 8% Attack, Hashrate, and HP."
+        },
+        "Prayerful Summons - Martyrdom": {
+            type: "Passive",
+            value: [],
+            description: "For every 1 dead summon on the field, the Doll with the greatest Attack/Hashrate gains 3% Crit Rate and 6% Crit Damage for 4 seconds. This effect can stack, but activating it again does not refresh the duration."
+        },
+        "Prayerful Summons - Finality": {
+            type: "Passive",
+            value: [],
+            description: "After 4 allied summons are created, deal Operand Damage equal to 300% of highest allied Hashrate."
+        },
+        "Cyclonic Gust - Phantasm": {
+            type: "Auto",
+            value: [],
+            description: "The selected target is interrupted and sent airborne for 3 seconds. They cannot be targeted during this period. If this target is an enemy unit, they are stunned for 2 seconds after landing. Summoons 2 Spirits next to the target to assist in battle. Their Max HP is equal to 30% of the HP of the Doll with the greatest Hashrate, and inherits 15% of that unit's Attack and Hashrate."
+        },
+    }
+})(),
+Reverence: new (class Reverence extends Spirit {
+    ATTRIBUTES = {
+        [STAT_KEYS_TYPE.ATTACK_F]: 120,
+        [STAT_KEYS_TYPE.HASHRATE_F]: 120,
+        [STAT_KEYS_TYPE.CRITRATE_P]: 10,
+        [STAT_KEYS_TYPE.PPENETRATE_F]: 50,
+        [STAT_KEYS_TYPE.OPENETRATE_F]: 50
+    }
+})(),
+Faith: new (class Faith extends Spirit {
+    ATTRIBUTES = {
+        [STAT_KEYS_TYPE.ATTACK_F]: 120,
+        [STAT_KEYS_TYPE.HASHRATE_F]: 120,
+        [STAT_KEYS_TYPE.PDEFENSE_F]: 125,
+        [STAT_KEYS_TYPE.ODEFENSE_F]: 125,
+        [STAT_KEYS_TYPE.HASTE_P]: 10
+    }
+})()

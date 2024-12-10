@@ -8,8 +8,8 @@ timer(
 
 timer(
     document.getElementById("battlepass"),
-    "Dec 09, 2024 00:00 UTC-0800",
-    "./assets/images/timer/sootj367o7yd1.webp"
+    "Jan 06, 2025 00:00 UTC-0800",
+    "./assets/images/timer/npocbwze3r4e1.webp"
 );
 
 timer(
@@ -18,8 +18,8 @@ timer(
     "./assets/images/coalition/26DreamerMoonlitSentinel.webp",
     {onEnd: timer.bind(null,
         document.getElementById("coalition"),
-        "",
-        "",
+        "Jan 07, 2025 00:00 UTC-0800",
+        "./assets/images/coalition/17DestroyerDashingReindeer.webp",
     )}
 );
 

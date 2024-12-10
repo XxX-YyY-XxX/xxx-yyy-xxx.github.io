@@ -1,5 +1,5 @@
 import { brJoin } from '../../univasset/scripts/htmlgenerator/htmlgenerator.js';
-import { details } from "../../univasset/scripts/html";
+import { details } from "../../univasset/scripts/html/index.js";
 
 /**
  * @typedef Log

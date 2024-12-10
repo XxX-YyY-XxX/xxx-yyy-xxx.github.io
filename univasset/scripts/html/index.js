@@ -245,9 +245,10 @@ function frame(src) {
 }
 
 export function template(query) {
-    const ELEMENT = document.querySelector(query)
-    if (!(ELEMENT instanceof HTMLTemplateElement))
+    const ELEMENT = document.querySelector(query);
+    if (ELEMENT instanceof HTMLTemplateElement)
+        //ELEMENT.content.cloneNode(true);
+        return () => document.importNode(ELEMENT.content, true);
+    else
         return () => null;
-    //ELEMENT.content.cloneNode(true);
-    return () => document.importNode(ELEMENT.content, true);
 }

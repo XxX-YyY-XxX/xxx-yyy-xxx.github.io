@@ -2177,7 +2177,7 @@
         "name": "Persicaria S.E.",
         "class": "Warrior",
         "reference": {},
-        "fragments": ["Neural Kits", "Intimacy", "Divergent Neural Cloud", "Singularity Immemorial"],
+        "fragments": ["Neural Kits", "Intimacy", "Divergent Neural Cloud", "Singularity Immemorial", "Lunar Conviviality"],
         "base": {
             "hp": 15180,
             "atk": 436,
@@ -2201,7 +2201,7 @@
             "open": 95
         },
         "intimacy": ["Neural Activation", "Coordinated Strike", "Victorious Inspiration"],
-        "tags": ["Unowned", "Arma"]
+        "tags": ["Arma"]
     },
     {
         "id": 1060,
@@ -2573,7 +2573,7 @@
             "open": -1
         },
         "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"],
-        "tags": ["Unowned"]
+        "tags": []
     },
 
     {

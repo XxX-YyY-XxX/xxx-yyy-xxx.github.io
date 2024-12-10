@@ -23,7 +23,7 @@
 
         <link rel="icon" type="image/png" href="/univasset/images/favicon.png" />
 
-        <title>PNC Units Stats | Random Scraps</title>
+        <title>PNC Spirit Stats | Random Scraps</title>
     </head>
 
     <body>
@@ -31,15 +31,15 @@
 
         <div class="container">
             <section id="main_content">
-                <!-- colored background on checked -->
-                <div id="spirits">
-                    <label><input type="radio" name="spirit" value="Reverence" checked><img src="../assets/images/spirits/Reverence.png" alt="Reverence" /></label>
-                    <label><input type="radio" name="spirit" value="Hope"><img src="../assets/images/spirits/Hope.png" alt="Hope" /></label>
-                    <label><input type="radio" name="spirit" value="Faith"><img src="../assets/images/spirits/Faith.png" alt="Faith" /></label>
-                    <label><input type="radio" name="spirit" value="Love"><img src="../assets/images/spirits/Love.png" alt="Love" /></label>
+                <div id="spirits"></div>
+                <div id="skill-sets">
+                    <div id="sets">
+                        <label><input type="radio" name="set" value="1">1</label>
+                        <label><input type="radio" name="set" value="2">2</label>
+                        <label><input type="radio" name="set" value="3">3</label>
+                    </div>
+                    <div id="skills"></div>
                 </div>
-                <!-- set 1,2,3 button (sidetabs?)-->
-                <!-- skillset menu (checkboxes)-->
 
 
                 <div id="extras" class="tab-group">
@@ -105,50 +105,23 @@
             </section>
         </div>
     </body>
-
-    <dialog id="algo-select">
-        <form method="dialog"></form>
-    </dialog>
-
-    <dialog class="algo-select offense">
-        <form method="dialog"></form>
-    </dialog>
-
-    <dialog class="algo-select stability">
-        <form method="dialog"></form>
-    </dialog>
-
-    <dialog class="algo-select special">
-        <form method="dialog"></form>
-    </dialog>
-
-    <dialog id="algo-filter">
-        <form method="dialog"></form>
-    </dialog>
-
-    <!-- #region Fairies -->
-    <dialog id="spirit-select">
-        <form method="dialog"></form>
-    </dialog>
-
-    <dialog id="spirit-skills">
-        <div id="name"></div>
-        <!-- skill 1 -->
-        <!-- skill 2 -->
-        <!-- skill 3 -->
-
-        <!-- image -->
-        <!-- name -->
-        <!-- description -->
-    </dialog>
-    <!-- #endregion -->
 </html>
 
 <!-- Template readable outside of html tag -->
-<template id="spirits-template">
-    <button type="submit" value="">
+<template id="spirit-button">
+    <label>
+        <input type="radio" name="spirit" value="">
+        <img src="" alt="" />
+        <span></span>  <!-- name -->
+        <div></div> <!-- stat bonuses -->
+    </label>
+</template>
+
+<template id="skill-block">
+    <label>
+        <input type="checkbox" name="skill" value="" />
         <img src="" alt="">
-        <span></span>
-        <div></div>
-    </button>
+        <span></span>   <!-- name -->
+        <div></div> <!-- description -->
+    </label>
 </template>

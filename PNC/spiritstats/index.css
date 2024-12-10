@@ -1,9 +1,53 @@
 @import "../../main.css";
 
+input {
+    appearance: none;
+    margin: 0;
+}
+
 #spirits {
     display: flex;
 }
 
+#spirits label {
+    --gridsize: 100px;
+    display: inline-grid;
+    grid-template-areas: 
+    "image  name"
+    "image  stats";
+    grid-template-columns: var(--gridsize) var(--gridsize);
+    grid-template-rows: 1lh var(--gridsize);
+}
+
+#spirits label:has(:checked) {
+    background-color: white;
+}
+
+#spirits input {
+    grid-area: input;
+}
+
 #spirits img {
+    grid-area: image;
     width: 100px;
+}
+
+#spirits span {
+    grid-area: name;
+}
+
+#spirits div {
+    grid-area: stats;
+}
+
+#skill-sets {
+    display: flex;
+}
+
+#sets {
+    display: inline-block;
+}
+
+#skills {
+    display: inline-block;
 }
