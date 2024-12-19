@@ -31,6 +31,6 @@ timer(
 
 timer(
    document.getElementById('mini-event'),
-   "Nov 19, 2024 00:00 UTC-0800",
-   "./assets/images/timer/nzvyhoax6fxd1.webp"
+   "Jan 07, 2025 00:00 UTC-0800",
+   "./assets/images/timer/gz50aj5bvx5e1.webp"
 );
