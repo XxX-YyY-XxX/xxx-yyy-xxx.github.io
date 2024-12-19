@@ -465,3 +465,5 @@ https://old.reddit.com/r/girlsfrontline/comments/1elc2eo/weekly_commanders_loung
 <!--https://old.reddit.com/r/girlsfrontline/comments/1gus7pc/weekly_commanders_lounge_november_19_2024/-->
 <!--https://old.reddit.com/r/girlsfrontline/comments/1h06siz/weekly_commanders_lounge_november_26_2024/-->
 <!--https://old.reddit.com/r/girlsfrontline/comments/1h5ii8b/weekly_commanders_lounge_december_03_2024/-->
+<!--https://old.reddit.com/r/girlsfrontline/comments/1hawwse/weekly_commanders_lounge_december_10_2024/-->
+<!--https://old.reddit.com/r/girlsfrontline/comments/1hg5w90/weekly_commanders_lounge_december_17_2024/-->

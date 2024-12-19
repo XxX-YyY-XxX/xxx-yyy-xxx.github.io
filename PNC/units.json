@@ -1727,16 +1727,16 @@
             "regen": 577
         },
         "arma": {
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
+            "hp": 1751,
+            "atk": 78,
+            "hash": 102,
+            "pdef": 32,
+            "odef": 32,
+            "ppen": 147,
+            "open": 64
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
         "id": 1057,
@@ -2542,14 +2542,14 @@
             "open": -1
         },
         "intimacy": ["Power Connection", "Risk Evasion Aid", "Coordinated Strike"],
-        "tags": ["Unowned"]
+        "tags": []
     },
     {
         "id": 1081,
         "name": "Tony",
         "class": "Warrior",
         "reference": {},
-        "fragments": ["Neural Kits", "Intimacy"],
+        "fragments": ["Neural Kits", "Intimacy", "Scars of Pigeons and Daisies"],
         "base": {
             "hp": 18143,
             "atk": 681,
@@ -2575,13 +2575,38 @@
         "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"],
         "tags": []
     },
-
     {
         "id": 1084,
-        "name" : "Sangoma",
-        "reference" : {"" : ""},
-        "tags": ["Unreleased"]
+        "name": "Sangoma",
+        "class": "Warrior",
+        "reference": {"Sangoma": "https://en.wikipedia.org/wiki/Traditional_healers_of_Southern_Africa"},
+        "fragments": ["Neural Kits", "Intimacy"],
+        "base": {
+            "hp": 18738,
+            "atk": 688,
+            "hash": 441,
+            "pdef": 507,
+            "odef": 446,
+            "aspd": 180,
+            "crate": 5,
+            "ppen": 380,
+            "open": 402,
+            "dodge": 0,
+            "regen": 588
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": ["Power Connection", "Code Robustness", "Coordinated Formation"],
+        "tags": []
     },
+
     {
         "id": 1085,
         "name" : "Belladonna",

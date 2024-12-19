@@ -57,10 +57,10 @@ function timer(start_date, end_date, title, imgpath, {onend = null} = {}) {
 // reload into loading timers
 (function resetTimer() {
     timer(
-        "Nov 19, 2024 18:30 UTC-0800",
         "Dec 17, 2024 18:30 UTC-0800",
-        "Scars Among Pigeons & Daisies",
-        `./assets/images/timer/LoginBg_ZH_CN 2024 Chinese New Year Scars Among Event Login Artwork February 2024.png`,
+        "Jan 14, 2025 18:30 UTC-0800",
+        "Penumbra trace orz",
+        `./assets/images/timer/Login 2024 May Engrammatic Eclipse Login Artwork.png`,
         {onend: resetTimer}
     )
 })();
