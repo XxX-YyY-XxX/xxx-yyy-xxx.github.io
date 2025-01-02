@@ -2,8 +2,8 @@ import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
 timer(
    document.getElementById("event"),
-   "Nov 19, 2024 00:00 UTC-0800",
-   "./assets/images/timer/oqs5e95gpfvd1.webp"
+   "Jan 14, 2025 00:00 UTC-0800",
+   "./assets/images/timer/81tle0fx5r8e1.webp"
 );
 
 timer(
@@ -14,19 +14,19 @@ timer(
 
 timer(
     document.getElementById("coalition"),
-    "Dec 10, 2024 00:00 UTC-0800",
-    "./assets/images/coalition/26DreamerMoonlitSentinel.webp",
+    "Jan 07, 2025 00:00 UTC-0800",
+    "./assets/images/coalition/17DestroyerDashingReindeer.webp",
     {onEnd: timer.bind(null,
         document.getElementById("coalition"),
-        "Jan 07, 2025 00:00 UTC-0800",
-        "./assets/images/coalition/17DestroyerDashingReindeer.webp",
+        "",
+        "",
     )}
 );
 
 timer(
     document.getElementById('skin-banner'),
-    "Dec 24, 2024 00:00 UTC-0800",
-    "./assets/images/timer/p7g40hvaa83e1.webp"
+    "Jan 21, 2025 00:00 UTC-0800",
+    "https://iopwiki.com/images/thumb/b/be/M26-MASS_costume1_D.png/600px-M26-MASS_costume1_D.png"
 );
 
 timer(
