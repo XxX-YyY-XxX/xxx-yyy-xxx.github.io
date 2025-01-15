@@ -65,3 +65,7 @@ input {
     "name"
     "desc";
 }
+
+#skills label:checked {
+    background-color: red;
+}

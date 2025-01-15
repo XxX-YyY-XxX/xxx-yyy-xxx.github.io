@@ -58,7 +58,7 @@ function timer(start_date, end_date, title, imgpath, {onend = null} = {}) {
 (function resetTimer() {
     timer(
         "Jan 14, 2025 18:30 UTC-0800",
-        "Feb 04, 2024 18:30 UTC-0800",
+        "Feb 04, 2025 18:30 UTC-0800",
         "Photoluminescence",
         `./assets/images/timer/Login 2024 August Photo Luminescence Major.png`,
         {onend: resetTimer}
