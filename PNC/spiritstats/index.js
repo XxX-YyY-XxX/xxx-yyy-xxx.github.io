@@ -15,7 +15,7 @@ for (const {name, attributes} of SPIRIT_DATA) {
     CLONE.querySelector("input").value = name;
     setattr(CLONE.querySelector("img"), {src: `../assets/images/spirits/${name}.png`, alt: name});
     CLONE.querySelector("span").innerText = name;
-    CLONE.querySelector("div").append(...brJoin(Object.keys(attributes).map(x => STAT_KEYS_TYPENAME[x])))
+    CLONE.querySelector("div").appendChild(brJoin(Object.keys(attributes).map(x => STAT_KEYS_TYPENAME[x])))
 
     SPIRITS_DIV.appendChild(CLONE);
 }
