@@ -19,7 +19,7 @@ timer(
 
 timer(
     document.getElementById("coalition"),
-    "Jan 14, 2025 00:00 UTC-0800",
+    "Feb 04, 2025 00:00 UTC-0800",
     "./assets/images/coalition/02Executioner.webp"
 );
 

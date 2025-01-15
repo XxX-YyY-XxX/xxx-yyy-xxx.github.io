@@ -11,97 +11,104 @@
         "skills": [
             {
                 "name": "Love's Blessing - Affection",
-                "type": "Passive",
-                "value": [],
                 "description": "For every 5% Dodge Rate a Doll has, they gain 1% Attack and Hashrate, max 10%."
             },    
             {
                 "name": "Love's Blessing - Benison",
-                "type": "Passive",
-                "value": [],
                 "description": "Dodging 5 cumulative times deals 1 instance of Physical and Operand Damage equal to 150% to the enemy with the current lowest HP."
             },
             {
                 "name": "Love's Blessing - Avoidance",
-                "type": "Passive",
-                "value": [],
                 "description": "When dolls take damage greater than 30% of their Max HP, reduce that damage to 1 at a 1% chance, which can be increased with Dodge Rate, max 60%. Each doll can activate this effect a max of 4 times per battle."
             },
             {
                 "name": "Rapid Charge - Reversal",
-                "type": "Active",
-                "value": [],
                 "description": "Reduces enemy skill charge by 60%, and allows their next ability to be dodged using character's own Dodge Rate. Does not apply to duration-based skills."
             }
         ]
     },
     {
-        "name": "",
+        "name": "Hope",
         "attributes": {
-            "1": 0,
-            "2": 0,
-            "3": 0,
-            "4": 0,
-            "5": 0
+            "hpflat": 4000,
+            "atkflat": 120,
+            "hashflat": 120,
+            "cdmgperc": 15,
+            "hasteperc": 7.5
         },
         "skills": [
             {
-                "name": "",
-                "type": "",
-                "value": [],
-                "description": ""
+                "name": "Prayerful Summons - Abundance",
+                "description": "Summons gain 8% Attack, Hashrate, and HP."
+            },
+            {
+                "name": "Prayerful Summons - Martyrdom",
+                "description": "For every 1 dead summon on the field, the Doll with the greatest Attack/Hashrate gains 3% Crit Rate and 6% Crit Damage for 4 seconds. This effect can stack, but activating it again does not refresh the duration."
+            },
+            {
+                "name": "Prayerful Summons - Finality",
+                "description": "After 4 allied summons are created, deal Operand Damage equal to 300% of highest allied Hashrate."
+            },
+            {
+                "name": "Cyclonic Gust - Phantasm",
+                "description": "The selected target is interrupted and sent airborne for 3 seconds. They cannot be targeted during this period. If this target is an enemy unit, they are stunned for 2 seconds after landing. Summoons 2 Spirits next to the target to assist in battle. Their Max HP is equal to 30% of the HP of the Doll with the greatest Hashrate, and inherits 15% of that unit's Attack and Hashrate."
+            }
+        ]
+    },
+    {
+        "name": "Reverence",
+        "attributes": {
+            "atkflat": 120,
+            "hashflat": 120,
+            "crateperc": 10,
+            "ppenflat": 50,
+            "openflat": 50
+        },
+        "skills": [
+            {
+                "name": "Divine Inferno - Sentence",
+                "description": "Enemies affected by Pyrolysis take 10% more damage."
+            },
+            {
+                "name": "Divine Inferno - Penitence",
+                "description": "When an ally applies Pyrolysis, apply 1 additional stack at a 15% chance."
+            },
+            {
+                "name": "Divine Inferno - Retribution",
+                "description": "Enemies affected by Pyrolysis self-detonate after dying, dealing Operand damage equal to 150% of highest ally Hashrate to units in a 1 tile radius."
+            },
+            {
+                "name": "Coordinated Fire - Spiral",
+                "description": "Deal Operand Damage equal to 240% of highest allied Hashrate to enemies within range, stunning them for 1 second and applies 5 stack of Pyrolysis."
+            }
+        ]
+    },
+    {
+        "name": "Faith",
+        "attributes": {
+            "atkflat": 120,
+            "hashflat": 120,
+            "pdefflat": 125,
+            "odefflat": 125,
+            "hasteperc": 10
+        },
+        "skills": [
+            {
+                "name": "Zealot's Faith - Confirmation",
+                "description": "Dolls gain 10% Attack and Hashrate for 3 swconds after using an Ultimate."
+            },
+            {
+                "name": "Zealot's Faith - Spirit",
+                "description": "After using an Ultimate, immediately regain 5% Ultimate Energy."
+            },
+            {
+                "name": "Zealot's Faith - Fervor",
+                "description": "After using an Ultimate, the cooldown of all Ultimates are reduced by 2 seconds."
+            },
+            {
+                "name": "Orbital Strike - Judgment",
+                "description": "Deal damage equal to 150% to the target with the lowest HP. that target then takes 30% increased damge from Ultimates for 3.5 seconds."
             }
         ]
     }
 ]
-
-Hope: new (class Hope extends Spirit {
-    ATTRIBUTES = {
-        [STAT_KEYS_TYPE.HEALTH_F]: 4000,
-        [STAT_KEYS_TYPE.ATTACK_F]: 120,
-        [STAT_KEYS_TYPE.HASHRATE_F]: 120,
-        [STAT_KEYS_TYPE.CRITDMG_P]: 15,
-        [STAT_KEYS_TYPE.HASTE_P]: 7.5
-    }
-
-    SPECIFIC_SKILLS = {
-        "Prayerful Summons - Abundance": {
-            type: "Passive",
-            value: [],
-            description: "Summons gain 8% Attack, Hashrate, and HP."
-        },
-        "Prayerful Summons - Martyrdom": {
-            type: "Passive",
-            value: [],
-            description: "For every 1 dead summon on the field, the Doll with the greatest Attack/Hashrate gains 3% Crit Rate and 6% Crit Damage for 4 seconds. This effect can stack, but activating it again does not refresh the duration."
-        },
-        "Prayerful Summons - Finality": {
-            type: "Passive",
-            value: [],
-            description: "After 4 allied summons are created, deal Operand Damage equal to 300% of highest allied Hashrate."
-        },
-        "Cyclonic Gust - Phantasm": {
-            type: "Auto",
-            value: [],
-            description: "The selected target is interrupted and sent airborne for 3 seconds. They cannot be targeted during this period. If this target is an enemy unit, they are stunned for 2 seconds after landing. Summoons 2 Spirits next to the target to assist in battle. Their Max HP is equal to 30% of the HP of the Doll with the greatest Hashrate, and inherits 15% of that unit's Attack and Hashrate."
-        },
-    }
-})(),
-Reverence: new (class Reverence extends Spirit {
-    ATTRIBUTES = {
-        [STAT_KEYS_TYPE.ATTACK_F]: 120,
-        [STAT_KEYS_TYPE.HASHRATE_F]: 120,
-        [STAT_KEYS_TYPE.CRITRATE_P]: 10,
-        [STAT_KEYS_TYPE.PPENETRATE_F]: 50,
-        [STAT_KEYS_TYPE.OPENETRATE_F]: 50
-    }
-})(),
-Faith: new (class Faith extends Spirit {
-    ATTRIBUTES = {
-        [STAT_KEYS_TYPE.ATTACK_F]: 120,
-        [STAT_KEYS_TYPE.HASHRATE_F]: 120,
-        [STAT_KEYS_TYPE.PDEFENSE_F]: 125,
-        [STAT_KEYS_TYPE.ODEFENSE_F]: 125,
-        [STAT_KEYS_TYPE.HASTE_P]: 10
-    }
-})()

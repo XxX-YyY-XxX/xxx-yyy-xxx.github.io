@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Macrocosms",
+        "description": "All Dolls gain 6% HP.",
+        "value": [["hpperc", 6]]
+    },
+    {
+        "name": "Castigation",
+        "description": "All Dolls gain 6% Attack and Hashrate.",
+        "value": [["atkperc", 6], ["hashperc", 6]]
+    },
+    {
+        "name": "Shelter",
+        "description": "All Dolls gain 6% Physical and Operand Defense.",
+        "value": [["pdefperc", 6], ["odefperc", 6]]
+    },
+    {
+        "name": "Alacrity",
+        "description": "All Dolls gain 15 Attack Speed.",
+        "value": [["aspdflat", 15]]
+    },
+    {
+        "name": "Carnage",
+        "description": "All Dolls gain 6% Crit Rate.",
+        "value": [["crateperc", 6]]
+    },
+    {
+        "name": "Exorcise",
+        "description": "All Dolls gain 12% Crit Damage.",
+        "value": [["cdmgperc", 12]]
+    },
+    {
+        "name": "Breakthrough",
+        "description": "All Dolls gain 10% Physical and Operand Penetration.",
+        "value": [["ppenperc", 10], ["openperc", 10]]
+    },
+    {
+        "name": "Umbrage",
+        "description": "All Dolls gain 12% Dodge Rate.",
+        "value": [["dodgeperc", 12]]
+    },
+    {
+        "name": "Insight",
+        "description": "All Dolls gain 10% Skill Haste.",
+        "value": [["hasteperc", 10]]
+    },
+    {
+        "name": "Might",
+        "description": "All Dolls deal 5% more damage.",
+        "value": [["dboostperc", 5]]
+    },
+    {
+        "name": "Sanctification",
+        "description": "All Dolls receive 5% less damage.",
+        "value": [["dreducperc", 5]]
+    },
+    {
+        "name": "Rejuvenation",
+        "description": "All Dolls heal 12% more.",
+        "value": [["hboostperc", 12]]
+    },
+    {
+        "name": "Substinence",
+        "description": "All Dolls gain 10% Normal Attack Life Steal.",
+        "value": []
+    },
+    {
+        "name": "Judgement",
+        "description": "Normal Attacks deal 3.6% more damage.",
+        "value": []
+    },
+    {
+        "name": "Sunchaser",
+        "description": "Auto Skills deal 3.6% more damage.",
+        "value": [["", 0]]
+    },
+    {
+        "name": "Fury",
+        "description": "Ultimates deal 3.6% more damage.",
+        "value": []
+    }
+]

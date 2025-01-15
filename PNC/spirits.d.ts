@@ -1,42 +1,31 @@
+type StatKeysType = "hpflat" | "atkflat" | "hashflat" | "aspdflat" | "dodgeperc" | "cdmgperc" | "hasteperc" | "crateperc" | "ppenflat" | "openflat" | "pdefflat" | "odefflat";
+
+//export const STAT_KEYS_TYPE = Object.freeze({
+//    PDEFENSE_F: "pdefflat",     PDEFENSE_P: "pdefperc",
+//    ODEFENSE_F: "odefflat",     ODEFENSE_P: "odefperc",
+//    POSTHEAL_F: "regenflat",
+//    DEBUFFRES_F: "resflat",
+//    BACKLASH_P: "lashperc",
+//    DMGBOOST_P: "dboostperc",
+//    DMGREDUCE_P: "dreducperc",
+//    HEALBOOST_P: "hboostperc"
+//});
+
+
 interface SpiritSkill {
     name: string;
-    type: "Active" | "Passive";
-    value: [string, number][];
     description: string;
 }
 
-interface SpecificSkill extends SpiritSkill {
-    /** Only one Active per spirit. */
-    type: "Active" | "Passive";
-    value: [];
+interface GenericSkill extends SpiritSkill {
+    value: [string, number][];
 }
+
+interface SpecificSkill extends SpiritSkill {}
 
 interface Spirit {
     name: string;
-    attributes: [[string, number], [string, number], [string, number], [string, number], [string, number]];
-    skills: [SpecificSkill, SpecificSkill, SpecificSkill, SpecificSkill]
+    /** {[statnames: StatKeysType]: number} */
+    attributes: object;
+    skills: [Passive1: SpecificSkill, Passive2: SpecificSkill, Passive3: SpecificSkill, Active: SpecificSkill];
 }
-
-//{
-//        "attributes": [
-//            {
-//                "stat": "",
-//                "value": 0
-//            }
-//        ],
-//    }
-//]
-
-///**
-// * @typedef {object} SpecificSkill
-// * @property {"Passive" | "Auto"} SpecificSkill.type
-// * @property {[string, number][]} SpecificSkill.value
-// * @property {string} SpecificSkill.description
-// */
-
-///**
-// * @typedef {object} GenericSkill
-// * @property {"Passive"} GenericSkill.type
-// * @property {[STAT_KEYS_TYPE[keyof STAT_KEYS_TYPE], number][]} GenericSkill.value
-// * @property {string} GenericSkill.description
-// */

@@ -5,6 +5,7 @@ input {
     margin: 0;
 }
 
+
 #spirits {
     display: flex;
 }
@@ -16,7 +17,7 @@ input {
     "image  name"
     "image  stats";
     grid-template-columns: var(--gridsize) var(--gridsize);
-    grid-template-rows: 1lh var(--gridsize);
+    grid-template-rows: 1lh 100%;
 }
 
 #spirits label:has(:checked) {
@@ -30,6 +31,7 @@ input {
 #spirits img {
     grid-area: image;
     width: 100px;
+    aspect-ratio: 1;
 }
 
 #spirits span {
@@ -40,14 +42,26 @@ input {
     grid-area: stats;
 }
 
+
 #skill-sets {
     display: flex;
 }
 
+
 #sets {
     display: inline-block;
+    width: fit-content;
 }
+
 
 #skills {
     display: inline-block;
+    width: 100%;
+}
+
+#skills label {
+    display: inline-grid;
+    grid-template-areas: 
+    "name"
+    "desc";
 }
