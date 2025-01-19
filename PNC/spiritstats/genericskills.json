@@ -72,7 +72,7 @@
     {
         "name": "Sunchaser",
         "description": "Auto Skills deal 3.6% more damage.",
-        "value": [["", 0]]
+        "value": []
     },
     {
         "name": "Fury",

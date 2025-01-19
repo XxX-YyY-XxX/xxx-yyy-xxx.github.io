@@ -44,68 +44,6 @@
                         <div class="tab-body set3"></div>    <!-- skill 3 -->
                     </div>
                 </div>
-
-
-                <div id="extras" >
-                    <div >
-                        <label><input type="radio" name="extra" value="Filter" checked>Filter</label>
-                        <label><input type="radio" name="extra" value="Toggle">Stat Toggles</label>
-                    </div>
-    
-                    <!-- slideshow on narrower screens -->
-                    <!-- has arma - yes, no, unselected -->        
-                    <div id="Filter" >
-                        <div id="classes">
-                            <div>Class</div>
-                            <label><input type="checkbox" value="Guard" checked /></label>
-                            <label><input type="checkbox" value="Sniper" checked /></label>
-                            <label><input type="checkbox" value="Warrior" checked /></label>
-                            <label><input type="checkbox" value="Specialist" checked /></label>
-                            <label><input type="checkbox" value="Medic" checked /></label>
-                        </div>
-    
-                        <div id="algorithms">
-                            <div>Algorithm</div>
-                            <button type="button">
-                                <img src="../assets/images/algorithms/others/Empty.png" alt="Remove" />
-                            </button>
-                            <div>
-                                <select id="main" class="mainstat"></select>
-                                <select id="sub1" class="substat"></select>
-                                <select id="sub2" class="substat"></select>
-                                <button type="button" id="reset">Reset</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="Toggle" class="tab-body">
-                        <div id="pre-battle">
-                            <div>Pre-Battle Bonus</div>
-                            <label class="tooltip"><input type="checkbox" value="PotB" />Potential Breakthrough<span class="tooltiptext">Units at Lv.70 and 5★.</span></label>
-                            <label class="tooltip"><input type="checkbox" value="Bond" />Intimacy<span class="tooltiptext">Intimacy at Lv.15.</span></label>
-                            <label class="tooltip"><input type="checkbox" value="Oath" />Hearts As One<span class="tooltiptext">Available after Oath.</span></label>
-                            <label class="tooltip"><input type="checkbox" value="Arma" />Arma Inscripta<span class="tooltiptext">Arma stats at Lv.30.</span></label>
-                            <label class="tooltip"><input type="checkbox" value="Algo" />Algorithm<span class="tooltiptext">Algorithms and substats at Gold rarity. Efficiency at 2x.</span></label>
-                            <label class="tooltip"><input type="checkbox" value="Spec" />Specialty Training<span class="tooltiptext">Specialty at Lv.543.</span></label>
-                            <label class="tooltip"><input type="checkbox" value="Sprt" />Holy Spirits<span class="tooltiptext">Spirits at Lv.50.</span></label>
-                        </div>
-
-                        <!-- battle bonus -->
-                        <!-- unit skills -->
-                        <!-- Functions -->
-                        <!-- Protocols -->
-                        <!-- algo 3set -->
-                        <!-- fairy skills -->
-                    </div>
-                </div>
-
-                <p>Click on the stat names to sort the units.</p>
-                <p>Click on the unit's name to open the algorithm window.</p>
-                <p>This page uses cookies to save algorithm settings.</p>   <!-- change to floating dialog -->
-                <p>Unit stats data taken from <a href="http://wiki.42lab.cloud/w/%E5%BF%83%E6%99%BA%E4%BA%BA%E5%BD%A2%E5%9B%BE%E9%89%B4">42 wiki</a>.</p>
-                <p>Arma, class, algorithm, and spirit sprites taken from <a href="https://drive.google.com/drive/folders/1P9T2eJVCG3X5ctaiyBK61T0rNS6uXJJR">Ferrari's compilation</a>.</p>
-                
-                <!-- fairy stats from takeshi doc -->
             </section>
         </div>
     </body>
@@ -124,7 +62,7 @@
 <template id="skill-block">
     <label>
         <input type="checkbox" name="skill" value="" />
-        <img src="" alt="">
+        <!--<img src="" alt="">-->
         <span></span>   <!-- name -->
         <div></div> <!-- description -->
     </label>

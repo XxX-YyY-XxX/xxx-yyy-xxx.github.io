@@ -1820,16 +1820,16 @@
             "regen": 610
         },
         "arma": {
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
+            "hp": 2025,
+            "atk": 169,
+            "hash": 56,
+            "pdef": 50,
+            "odef": 50,
+            "ppen": 43,
+            "open": 33
         },
         "intimacy": ["Power Connection", "Code Robustness", "Coordinated Strike"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
         "id": 1059,
@@ -2606,6 +2606,68 @@
         "intimacy": ["Power Connection", "Code Robustness", "Coordinated Formation"],
         "tags": []
     },
+    {
+        "id": 1088,
+        "name": "Angelus",
+        "class": "Sniper",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search", "Photoluminescence"],
+        "base": {
+            "hp": 10898,
+            "atk": 555,
+            "hash": 671,
+            "pdef": 226,
+            "odef": 242,
+            "aspd": 120,
+            "crate": 5,
+            "ppen": 427,
+            "open": 461,
+            "dodge": 1,
+            "regen": 333
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": ["Neural Activation", "Risk Evasion Aid", "Coordinated Formation"],
+        "tags": ["Unowned"]
+    },
+    {
+        "id": 1089,
+        "name": "Salmon",
+        "class": "Warrior",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search", "Photoluminescence"],
+        "base": {
+            "hp": 19932,
+            "atk": 596,
+            "hash": 474,
+            "pdef": 479,
+            "odef": 530,
+            "aspd": 110,
+            "crate": 0,
+            "ppen": 370,
+            "open": 336,
+            "dodge": 6,
+            "regen": 637
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"],
+        "tags": []
+    },
 
     {
         "id": 1085,
@@ -2622,18 +2684,6 @@
     {
         "id": 1087,
         "name": "Olivia",
-        "reference": {},
-        "tags": ["Unreleased"]
-    },
-    {
-        "id": 1088,
-        "name": "Angelus",
-        "reference": {},
-        "tags": ["Unreleased"]
-    },
-    {
-        "id": 1089,
-        "name": "Salmon",
         "reference": {},
         "tags": ["Unreleased"]
     },

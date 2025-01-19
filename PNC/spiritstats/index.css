@@ -8,6 +8,7 @@ input {
 
 #spirits {
     display: flex;
+    width: 100%;
 }
 
 #spirits label {
@@ -18,6 +19,7 @@ input {
     "image  stats";
     grid-template-columns: var(--gridsize) var(--gridsize);
     grid-template-rows: 1lh 100%;
+    gap: 5;
 }
 
 #spirits label:has(:checked) {
