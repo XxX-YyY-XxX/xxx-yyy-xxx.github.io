@@ -31,32 +31,31 @@
 
         <div class="container">
             <section id="main_content">
-                <div id="spirits"></div>
-                <div id="skill-sets" class="tab-group">
-                    <div id="sets" class="tab-button">
+                <span id="spirit-a"></span>
+                <div id="skill-sets">
+                    <div id="sets">
                         <label><input type="radio" name="set" value="1">1</label>
                         <label><input type="radio" name="set" value="2">2</label>
                         <label><input type="radio" name="set" value="3">3</label>
                     </div>
-                    <div id="skills">
-                        <div class="tab-body set1"></div>    <!-- skill 1 -->
-                        <div class="tab-body set2"></div>    <!-- skill 2 -->
-                        <div class="tab-body set3"></div>    <!-- skill 3 -->
-                    </div>
+                    <div id="skills"></div>
                 </div>
             </section>
         </div>
     </body>
+
+    <dialog id="spirit-option">
+        <form method="dialog"></form>
+    </dialog>
 </html>
 
 <!-- Template readable outside of html tag -->
 <template id="spirit-button">
-    <label>
-        <input type="radio" name="spirit" value="">
+    <button type="submit" value="">
         <img src="" alt="" />
-        <span></span>  <!-- name -->
-        <div></div> <!-- stat bonuses -->
-    </label>
+        <span></span>   <!-- name -->
+        <div></div>     <!-- stat bonuses -->
+    </button>
 </template>
 
 <template id="skill-block">

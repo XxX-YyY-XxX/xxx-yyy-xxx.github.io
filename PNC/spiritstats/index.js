@@ -3,24 +3,80 @@ import {template} from "../../univasset/scripts/html/index.js";
 import {STAT_KEYS_TYPENAME} from "../unitstats/typing.js";
 import {brJoin} from "../../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
+//#region Promises
 /** @type {Promise<Spirit[]>} */ const SPIRIT_PROMISE = fetch("../spirits.json").then(response => response.json());
 /** @type {Promise<GenericSkill[]>} */ const SKILLS_PROMISE = fetch("genericskills.json").then(response => response.json());
+//#endregion
 
-/** @type {HTMLDivElement} */ const SPIRITS_DIV = document.querySelector("#spirits");
+//#region Initialize
+/** @type {HTMLDialogElement} */ const SPIRIT_OPTION = document.querySelector("#spirit-option");
+/** @param {string} name */
+function getSpirit(name) {
+    for (const SPIRIT of SPIRIT_DATA)
+        if (SPIRIT.name === name)
+            return SPIRIT;
+}
+/**
+ * @param {HTMLElement} element 
+ * @param {MouseEvent} event */
+function clickedOutside(element, event) {
+    const DIM = element.getBoundingClientRect();
+    return event.clientX < DIM.left || event.clientX > DIM.right || event.clientY < DIM.top || event.clientY > DIM.bottom;
+}
+SPIRIT_OPTION.addEventListener("click", function(event) {
+    if (clickedOutside(this, event)) this.close();
+})
+SPIRIT_OPTION.addEventListener("close", function(event) {
+    const SPIRIT = getSpirit(this.returnValue);
+    if (SPIRIT_BUTTON.value === SPIRIT.name) return;
+    SPIRIT_BUTTON.value = SPIRIT.name;
+    setattr(SPIRIT_BUTTON.querySelector("img"), {src: `../assets/images/spirits/${SPIRIT.name}.png`, alt: SPIRIT.name});
+    SPIRIT_BUTTON.querySelector("span").innerText = SPIRIT.name;
+    SPIRIT_BUTTON.querySelector("div").appendChild(brJoin(Object.keys(SPIRIT.attributes).map(x => STAT_KEYS_TYPENAME[x])));
+});
+
 const spiritButton = template("#spirit-button");
 const SPIRIT_DATA = await SPIRIT_PROMISE;
-for (const {name, attributes} of SPIRIT_DATA) {
+const SPIRIT_BUTTON = (() => {
+    const {name, attributes} = SPIRIT_DATA[0];
     const CLONE = spiritButton();
 
-    CLONE.querySelector("input").value = name;
+    /** @this {HTMLButtonElement} @param {MouseEvent} event*/
+    function spiritOptionModal(event) {
+        console.log("spiritOptionModal first load.")
+
+        for (const {name, attributes} of SPIRIT_DATA) {
+            const CLONE = spiritButton();
+
+            CLONE.querySelector("button").value = name;
+            setattr(CLONE.querySelector("img"), {src: `../assets/images/spirits/${name}.png`, alt: name});
+            CLONE.querySelector("span").innerText = name;
+            CLONE.querySelector("div").appendChild(brJoin(Object.keys(attributes).map(x => STAT_KEYS_TYPENAME[x])));
+
+            SPIRIT_OPTION.firstElementChild.appendChild(CLONE);
+        }
+
+        SPIRIT_OPTION.showModal();
+        spiritOptionModal = function(event) {
+            SPIRIT_OPTION.showModal();
+        }
+    }
+
+    const BUTTON = CLONE.querySelector("button");
+    BUTTON.value = name;
+    BUTTON.type = "button";
+    BUTTON.addEventListener("click", spiritOptionModal)
+
     setattr(CLONE.querySelector("img"), {src: `../assets/images/spirits/${name}.png`, alt: name});
     CLONE.querySelector("span").innerText = name;
     CLONE.querySelector("div").appendChild(brJoin(Object.keys(attributes).map(x => STAT_KEYS_TYPENAME[x])));
 
-    SPIRITS_DIV.appendChild(CLONE);
-}
-SPIRITS_DIV.querySelector(":first-child input").checked = true;
+    document.querySelector("#spirit-a").replaceWith(CLONE);
+    return BUTTON;
+})();
+//#endregion
 
+//#region Skills
 /** @type {HTMLDivElement} */ const SKILLS_DIV = document.querySelector("#skills");
 const skillButton = template("#skill-block");
 const GENERICSKILLS = await SKILLS_PROMISE;
@@ -31,7 +87,9 @@ function loadSkills(event) {
     //load viable skills - remove first 4 -> add first 4
     SKILLS_DIV.replaceChildren();
 
-    for (const [SKILL, ALT] of zip(SPIRIT_DATA.filter(x => x.name == SPIRITS_DIV.querySelector("input:checked").value)[0].skills, ["P1", "P2", "P3", "A"])) {
+    document.querySelector("#main_content > button")
+    
+    for (const [SKILL, ALT] of zip(getSpirit(SPIRIT_BUTTON.value).skills, ["P1", "P2", "P3", "A"])) {
         const CLONE = skillButton();
     
         CLONE.querySelector("input").value = ALT;
@@ -61,3 +119,5 @@ function loadSkills(event) {
 const SKILLSETSWITCH = new CustomEvent("c_switch");
 document.addEventListener(SKILLSETSWITCH.type, loadSkills, true);
 loadSkills();
+//#endregion
+

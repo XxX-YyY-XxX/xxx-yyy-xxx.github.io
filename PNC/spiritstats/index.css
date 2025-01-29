@@ -6,7 +6,7 @@ input {
 }
 
 
-#spirits {
+/*#spirits {
     display: flex;
     width: 100%;
 }
@@ -42,7 +42,7 @@ input {
 
 #spirits div {
     grid-area: stats;
-}
+}*/
 
 
 #skill-sets {

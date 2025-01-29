@@ -1426,7 +1426,7 @@
             "open": 54
         },
         "intimacy": ["Power Connection", "Code Robustness", "Coordinated Formation"],
-        "tags": ["Arma"]
+        "tags": ["Arma", "Fully Built"]
     },
     {
         "id": 1050,
@@ -2046,7 +2046,7 @@
             "open": -1
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
-        "tags": ["Unowned"]
+        "tags": []
     },
     {
         "id": 1070,
@@ -2686,7 +2686,7 @@
         "name": "Olivia",
         "reference": {},
         "tags": ["Unreleased"]
-    },
+    }, 
     {
         "id": 0,
         "name": "Havok",
