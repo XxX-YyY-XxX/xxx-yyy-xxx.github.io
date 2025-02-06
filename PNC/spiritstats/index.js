@@ -33,6 +33,8 @@ SPIRIT_OPTION.addEventListener("close", function(event) {
     setattr(SPIRIT_BUTTON.querySelector("img"), {src: `../assets/images/spirits/${SPIRIT.name}.png`, alt: SPIRIT.name});
     SPIRIT_BUTTON.querySelector("span").innerText = SPIRIT.name;
     SPIRIT_BUTTON.querySelector("div").appendChild(brJoin(Object.keys(SPIRIT.attributes).map(x => STAT_KEYS_TYPENAME[x])));
+
+    //update set skills
 });
 
 const spiritButton = template("#spirit-button");
@@ -42,7 +44,7 @@ const SPIRIT_BUTTON = (() => {
     const CLONE = spiritButton();
 
     /** @this {HTMLButtonElement} @param {MouseEvent} event*/
-    function spiritOptionModal(event) {
+    let spiritOptionModal = function(event) {
         console.log("spiritOptionModal first load.")
 
         for (const {name, attributes} of SPIRIT_DATA) {
