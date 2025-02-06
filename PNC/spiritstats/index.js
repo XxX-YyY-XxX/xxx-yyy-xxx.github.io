@@ -65,6 +65,7 @@ const SPIRIT_BUTTON = (() => {
     const BUTTON = CLONE.querySelector("button");
     BUTTON.value = name;
     BUTTON.type = "button";
+    BUTTON.id = "select-spirit";
     BUTTON.addEventListener("click", spiritOptionModal)
 
     setattr(CLONE.querySelector("img"), {src: `../assets/images/spirits/${name}.png`, alt: name});

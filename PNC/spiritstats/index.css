@@ -6,12 +6,7 @@ input {
 }
 
 
-/*#spirits {
-    display: flex;
-    width: 100%;
-}
-
-#spirits label {
+#select-spirit {
     --gridsize: 100px;
     display: inline-grid;
     grid-template-areas: 
@@ -22,27 +17,19 @@ input {
     gap: 5;
 }
 
-#spirits label:has(:checked) {
-    background-color: white;
-}
-
-#spirits input {
-    grid-area: input;
-}
-
-#spirits img {
+#select-spirit img {
     grid-area: image;
     width: 100px;
     aspect-ratio: 1;
 }
 
-#spirits span {
+#select-spirit span {
     grid-area: name;
 }
 
-#spirits div {
+#select-spirit div {
     grid-area: stats;
-}*/
+}
 
 
 #skill-sets {
