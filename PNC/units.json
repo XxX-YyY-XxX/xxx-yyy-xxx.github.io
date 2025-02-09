@@ -2668,17 +2668,42 @@
         "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"],
         "tags": []
     },
+    {
+        "id": 1086,
+        "name": "Lewis",
+        "class": "Specialist",
+        "reference": {"Lewis": "https://iopwiki.com/wiki/Lewis"},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search", "Photoluminescence"],
+        "base": {
+            "hp": 20190,
+            "atk": 465,
+            "hash": 613,
+            "pdef": 571,
+            "odef": 599,
+            "aspd": 100,
+            "crate": 0,
+            "ppen": 383,
+            "open": 490,
+            "dodge": 3,
+            "regen": 656
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": ["Neural Activation", "Through Fire and Water", "Risk Evasion Aid"],
+        "tags": ["Unowned"]
+    },
 
     {
         "id": 1085,
         "name" : "Belladonna",
         "reference" : {"" : ""},
-        "tags": ["Unreleased"]
-    },
-    {
-        "id": 1086,
-        "name": "Lewis",
-        "reference": {"Lewis": "https://iopwiki.com/wiki/Lewis"},
         "tags": ["Unreleased"]
     },
     {
@@ -2688,7 +2713,7 @@
         "tags": ["Unreleased"]
     }, 
     {
-        "id": 0,
+        "id": 1091,
         "name": "Havok",
         "reference": {},
         "tags": ["Unreleased"]
@@ -2700,13 +2725,13 @@
         "tags": ["Unreleased"]
     },
     {
-        "id": 0,
+        "id": 1092,
         "name": "Inola",
         "reference": {},
         "tags": ["Unreleased"]
     },
     {
-        "id": 0,
+        "id": 1093,
         "name": "Eniac",
         "reference": {},
         "tags": ["Unreleased"]

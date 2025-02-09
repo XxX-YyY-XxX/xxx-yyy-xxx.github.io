@@ -37,7 +37,7 @@ SPIRIT_OPTION.addEventListener("close", function(event) {
     //update set skills
 });
 
-const spiritButton = template("#spirit-button");
+const spiritButton = template("#spirit-button-template");
 const SPIRIT_DATA = await SPIRIT_PROMISE;
 const SPIRIT_BUTTON = (() => {
     const {name, attributes} = SPIRIT_DATA[0];
