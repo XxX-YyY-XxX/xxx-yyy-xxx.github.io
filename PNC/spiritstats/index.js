@@ -60,7 +60,7 @@ function getSpirit(name) {
             return SPIRIT;
 }
 SPIRIT_OPTION.addEventListener("click", function(event) {
-    if (clickedOutside(this.firstElementChild, event)) this.close();
+    if (clickedOutside(this.firstElementChild, event)) this.close(SPIRIT_BUTTON.value);
 })
 SPIRIT_OPTION.addEventListener("close", function(event) {
     if (SPIRIT_BUTTON.value === this.returnValue) return;
@@ -103,7 +103,6 @@ const SPIRIT_BUTTON = (() => {
     const BUTTON = CLONE.querySelector("button");
     BUTTON.value = name;
     BUTTON.type = "button";
-    BUTTON.id = "select-spirit";
     BUTTON.addEventListener("click", spiritOptionModal);
 
     setattr(CLONE.querySelector("img"), {src: `../assets/images/spirits/${name}.png`, alt: name});
@@ -128,6 +127,10 @@ const skillButton = template("#skill-block");
 const GENERICSKILLS = await SKILLS_PROMISE;
 const SKILLS_OBJECT = new (class {
     /** @type {HTMLDivElement} */ DIV = document.querySelector("#skills");
+
+    constructor() {
+        this.load({spirit: SPIRIT_BUTTON.value, set: 0});
+    }
 
     #genericSkills = function*() {
         SKILLS_OBJECT.#genericSkills = function*() {

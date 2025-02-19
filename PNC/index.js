@@ -57,18 +57,18 @@ function timer(start_date, end_date, title, imgpath, {onend = null} = {}) {
 // reload into loading timers
 (function resetTimer() {
     timer(
-        "Feb 05, 2025 18:30 UTC-0800",
-        "Feb 19, 2025 18:30 UTC-0800",
-        "Toy Rescue",
-        `./assets/images/timer/lewis.png`,
+        "Feb 18, 2025 18:30 UTC-0800",
+        "Mar 25, 2025 18:30 UTC-0800",
+        "Gloaming Finale",
+        `./assets/images/timer/Login 2024 September Gloaming Finale Artwork.png`,
         {onend: resetTimer}
     )
 
     timer(
-        "Jan 14, 2025 18:30 UTC-0800",
-        "Feb 12, 2025 18:30 UTC-0800",
-        "Photoluminescence",
-        `./assets/images/timer/Login 2024 August Photo Luminescence Major.png`,
+        "Feb 18, 2025 18:30 UTC-0800",
+        "Mar 04, 2025 18:30 UTC-0800",
+        "Lost Thorn",
+        `./assets/images/timer/bella.png`,
         {onend: resetTimer}
     )
 })();

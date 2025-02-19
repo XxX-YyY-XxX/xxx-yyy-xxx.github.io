@@ -6,12 +6,12 @@ input {
 }
 
 
-#spirit-option :first-child {
+#spirit-option form {
     display: flex;
     flex-wrap: wrap;
 }
 
-#select-spirit, #spirit-option button {
+.spirit-button {
     --gridsize: 100px;
     display: inline-grid;
     grid-template-areas: 
@@ -22,17 +22,17 @@ input {
     gap: 5;
 }
 
-#select-spirit img, #spirit-option img {
+.spirit-button img {
     grid-area: image;
     width: 100px;
     aspect-ratio: 1;
 }
 
-#select-spirit span, #spirit-option span {
+.spirit-button span {
     grid-area: name;
 }
 
-#select-spirit div, #spirit-option div {
+.spirit-button div {
     grid-area: stats;
 }
 
@@ -62,6 +62,6 @@ input {
     "desc";
 }
 
-#skills label:checked {
+#skills label:has(input:checked) {
     background-color: red;
 }
