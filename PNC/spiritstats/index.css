@@ -8,6 +8,7 @@ input {
 
 #spirit-option :first-child {
     display: flex;
+    flex-wrap: wrap;
 }
 
 #select-spirit, #spirit-option button {
@@ -38,6 +39,8 @@ input {
 
 #skill-sets {
     display: flex;
+    flex-wrap: wrap;
+
 }
 
 
