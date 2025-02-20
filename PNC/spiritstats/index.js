@@ -79,8 +79,6 @@ const SPIRIT_BUTTON = (() => {
 
     /** @this {HTMLButtonElement} @param {MouseEvent} event*/
     function spiritOptionModal(event) {
-        console.log("spiritOptionModal first load.")
-
         for (const {name, attributes} of SPIRIT_DATA) {
             const CLONE = spiritButton();
 
@@ -122,40 +120,72 @@ for (const RADIO of document.querySelectorAll(`[name="set"]`)) {
 }
 //#endregion
 
-//#region Skills
-const skillButton = template("#skill-block");
-const GENERICSKILLS = await SKILLS_PROMISE;
 const SKILLS_OBJECT = new (class {
     /** @type {HTMLDivElement} */ DIV = document.querySelector("#skills");
+    #skillButton = template("#skill-block");
+    #GENERIC;
 
-    constructor() {
+    /**
+     * @param {GenericSkill[]} generic */
+    constructor(generic) {
+        this.#GENERIC = generic;
         this.load({spirit: SPIRIT_BUTTON.value, set: 0});
     }
 
+    /** @type {{[SpiritNames: string]: HTMLLabelElement[]}} */ #SPECIFIC_SKILLS = {}
+    /** @this {this} */
+    #specificSkills = function*() {
+        if (spirit in this.#SPECIFIC_SKILLS) {
+            yield* this.#SPECIFIC_SKILLS[this.#spirit];
+        } else {
+            this.#SPECIFIC_SKILLS[this.#spirit] = new Array(4);
+            for (const [SKILL, CODE] of zip(getSpirit(this.#spirit).skills, ["P1", "P2", "P3", "A"])) {
+                const CLONE = this.#skillButton();
+                const INPUT = CLONE.querySelector("input");
+                INPUT.value = CODE;
+                INPUT.addEventListener("change", function(event) {
+                    if (this.checked)
+                        if (SKILLS_OBJECT.DIV.querySelectorAll("input:checked").length === 3)
+                            for (const SKILL of SKILLS_OBJECT.DIV.querySelectorAll("input:not(:checked)"))
+                                SKILL.disabled = true;
+                    else
+                        for (const SKILL of SKILLS_OBJECT.DIV.querySelectorAll("input:disabled"))
+                            SKILL.disabled = false;
+                });
+                CLONE.querySelector("span").innerText = SKILL.name;
+                CLONE.querySelector("div").innerText = SKILL.description;
+
+                this.#SPECIFIC_SKILLS[this.#spirit].push(CLONE.querySelector("label"));
+                yield CLONE;
+            }
+        }
+    }
+
+    /** @this {this} */
     #genericSkills = function*() {
-        SKILLS_OBJECT.#genericSkills = function*() {
-            yield* Array.from(SKILLS_OBJECT.DIV.children).slice(4);
+        this.#genericSkills = function*() {
+            yield* Array.from(this.DIV.children).slice(4);
         }
 
-        for (const SKILL of GENERICSKILLS) {
-            const CLONE = skillButton();
+        for (const {name, description} of this.#GENERIC) {
+            const CLONE = this.#skillButton();
             const INPUT = CLONE.querySelector("input");
-            INPUT.value = SKILL.name;
-            INPUT.addEventListener("change", function(event) {
-                if (this.checked) {
-                    const CHECK_COUNT = SKILLS_OBJECT.DIV.querySelectorAll("input:checked").length;
+            INPUT.value = name;
+            INPUT.addEventListener("change", (event) => {
+                if (INPUT.checked) {
+                    const CHECK_COUNT = this.DIV.querySelectorAll("input:checked").length;
                     //if (CHECK_COUNT < 3) {}
                     if (CHECK_COUNT === 3)
-                        for (const SKILL of SKILLS_OBJECT.DIV.querySelectorAll("input:not(:checked)"))
+                        for (const SKILL of this.DIV.querySelectorAll("input:not(:checked)"))
                             SKILL.disabled = true;
                     //else console.error("Too many checked skills.");
                 }
                 else
-                    for (const SKILL of SKILLS_OBJECT.DIV.querySelectorAll("input:disabled"))
+                    for (const SKILL of this.DIV.querySelectorAll("input:disabled"))
                         SKILL.disabled = false;
             });
-            CLONE.querySelector("span").innerText = SKILL.name;
-            CLONE.querySelector("div").innerText = SKILL.description;
+            CLONE.querySelector("span").innerText = name;
+            CLONE.querySelector("div").innerText = description;
             yield CLONE.querySelector("label");
         }
     }
@@ -170,7 +200,7 @@ const SKILLS_OBJECT = new (class {
         if (spirit !== null) this.#spirit = spirit;
         if (set !== null) this.#set = set;
 
-        const SKILLS = [...specificSkills(this.#spirit), ...this.#genericSkills()];
+        const SKILLS = [...this.#specificSkills(), ...this.#genericSkills()];
 
         //check if 3 or less
         //what if 4?
@@ -190,35 +220,4 @@ const SKILLS_OBJECT = new (class {
 
 
     }
-})();
-
-/** @type {{[SpiritNames: string]: HTMLLabelElement[]}} */ const SPECIFIC_SKILLS = {}
-/** @param {string} spirit */
-function* specificSkills(spirit) {
-    //if (spirit in SPECIFIC_SKILLS) {
-    yield* SPECIFIC_SKILLS[spirit] ??= (() => {
-        const SKILLS = new Array(4);
-        for (const [SKILL, CODE] of zip(getSpirit(spirit).skills, ["P1", "P2", "P3", "A"])) {
-            const CLONE = skillButton();
-            const INPUT = CLONE.querySelector("input");
-            INPUT.value = CODE;
-            INPUT.addEventListener("change", function(event) {
-                if (this.checked)
-                    if (SKILLS_OBJECT.DIV.querySelectorAll("input:checked").length === 3)
-                        for (const SKILL of SKILLS_OBJECT.DIV.querySelectorAll("input:not(:checked)"))
-                            SKILL.disabled = true;
-                else
-                    for (const SKILL of SKILLS_OBJECT.DIV.querySelectorAll("input:disabled"))
-                        SKILL.disabled = false;
-            });
-            CLONE.querySelector("span").innerText = SKILL.name;
-            CLONE.querySelector("div").innerText = SKILL.description;
-            SKILLS.push(CLONE.querySelector("label"));
-            //yield CLONE;
-        }
-        return SKILLS;
-    })();
-}
-
-//#endregion
-
+})(await SKILLS_PROMISE);

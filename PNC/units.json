@@ -1944,16 +1944,16 @@
             "regen": 610
         },
         "arma": {
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
+            "hp": 2700,
+            "atk": 92,
+            "hash": 74,
+            "pdef": 66,
+            "odef": 66,
+            "ppen": 57,
+            "open": 44
         },
         "intimacy": ["Power Connection", "Code Robustness", "Mechanical Celerity"],
-        "tags": []
+        "tags": ["Arma"]
     },
     {
         "id": 1066,
@@ -2409,16 +2409,16 @@
             "regen": 497
         },
         "arma": {
-            "hp": -1,
-            "atk": -1,
-            "hash": -1,
-            "pdef": -1,
-            "odef": -1,
-            "ppen": -1,
-            "open": -1
+            "hp": 1650,
+            "atk": 47,
+            "hash": 174,
+            "pdef": 42,
+            "odef": 41,
+            "ppen": 38,
+            "open": 50
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Coordinated Strike"],
-        "tags": ["Unowned"]
+        "tags": ["Unowned", "Arma"]
     },
     {
         "id": 1079,
@@ -2673,7 +2673,7 @@
         "name": "Lewis",
         "class": "Specialist",
         "reference": {"Lewis": "https://iopwiki.com/wiki/Lewis"},
-        "fragments": ["Neural Kits", "Intimacy", "Fragment Search", "Photoluminescence"],
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
         "base": {
             "hp": 20190,
             "atk": 465,
@@ -2699,13 +2699,69 @@
         "intimacy": ["Neural Activation", "Through Fire and Water", "Risk Evasion Aid"],
         "tags": ["Unowned"]
     },
-
     {
         "id": 1085,
-        "name" : "Belladonna",
-        "reference" : {"" : ""},
-        "tags": ["Unreleased"]
+        "name": "Belladonna",
+        "class": "Medic",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy", "Fragment Search"],
+        "base": {
+            "hp": 12835,
+            "atk": 455,
+            "hash": 640,
+            "pdef": 315,
+            "odef": 355,
+            "aspd": 100,
+            "crate": 3,
+            "ppen": 203,
+            "open": 216,
+            "dodge": 3,
+            "regen": 406
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
+        "tags": ["Unowned"]
     },
+    {
+        "id": 1090,
+        "name": "Inferno Sol",
+        "class": "Warrior",
+        "reference": {},
+        "fragments": ["Neural Kits", "Intimacy"],
+        "base": {
+            "hp": 21114,
+            "atk": 457,
+            "hash": 681,
+            "pdef": 450,
+            "odef": 447,
+            "aspd": 100,
+            "crate": 10,
+            "ppen": 311,
+            "open": 430,
+            "dodge": 5,
+            "regen": 679
+        },
+        "arma": {
+            "hp": -1,
+            "atk": -1,
+            "hash": -1,
+            "pdef": -1,
+            "odef": -1,
+            "ppen": -1,
+            "open": -1
+        },
+        "intimacy": ["Neural Activation", "Coordinated Strike", "Victorious Inspiration"],
+        "tags": ["Unowned"]
+    },
+
     {
         "id": 1087,
         "name": "Olivia",
@@ -2715,12 +2771,6 @@
     {
         "id": 1091,
         "name": "Havok",
-        "reference": {},
-        "tags": ["Unreleased"]
-    },
-    {
-        "id": 1090,
-        "name": "Sol - Infernal",
         "reference": {},
         "tags": ["Unreleased"]
     },
