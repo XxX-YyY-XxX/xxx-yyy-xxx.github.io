@@ -20,9 +20,7 @@ const SPIRIT_SAVE = new (class {
     }
     
     /** @returns {[[string, string, string], [string, string, string], [string, string, string]]} */
-    get #emptyarray() {
-        return [["", "", ""], ["", "", ""], ["", "", ""]];
-    }
+    get #emptyarray() {return [["", "", ""], ["", "", ""], ["", "", ""]]}
 
     /** @param {string} name @param {number} set */
     get(name, set) {
@@ -38,11 +36,6 @@ const SPIRIT_SAVE = new (class {
         DATA[name][set] = skills;
         //localStorage.setItem(this.#KEY, JSON.stringify(DATA))
         this.#TEST = DATA
-    }
-
-    /** @param {string} name */
-    del(name) {
-        delete this.#DATA[name];
     }
 })();
 
