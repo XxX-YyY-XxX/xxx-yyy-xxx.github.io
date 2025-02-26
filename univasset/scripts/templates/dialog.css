@@ -1,0 +1,6 @@
+dialog {
+    --dialog-pad: 5px;
+    border-radius: 10px;
+    padding: var(--dialog-pad);
+    background-color: slategrey;
+}

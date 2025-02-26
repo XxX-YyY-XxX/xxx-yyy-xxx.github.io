@@ -1,15 +1,13 @@
-@import "../../main.css";
-
 input {
     appearance: none;
     margin: 0;
 }
 
 
-#spirit-option form {
+/*#spirit-option form {
     display: flex;
     flex-wrap: wrap;
-}
+}*/
 
 .spirit-button {
     --gridsize: 100px;
@@ -37,17 +35,19 @@ input {
 }
 
 
-#skill-sets {
+/*#skill-sets {
     display: flex;
     flex-wrap: wrap;
 
-}
+}*/
 
 
 #sets {
-    display: inline-block;
-    width: fit-content;
+    display: flex;
+    /*display: inline-block;*/
+    /*width: fit-content;*/
 }
+
 
 
 #skills {

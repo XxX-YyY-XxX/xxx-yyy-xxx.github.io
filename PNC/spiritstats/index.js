@@ -10,42 +10,39 @@ import {STAT_KEYS_TYPENAME} from "../unitstats/typing.js";
 
 const SPIRIT_SAVE = new (class {
     #KEY = "spirit";
+
+    #TEST = {}
+
+    /** @returns {{[SpiritName: string]: [[string, string, string], [string, string, string], [string, string, string]] | undefined}} */
+    get #savedata() {
+        //return JSON.parse(localStorage.getItem(this.#KEY) ?? "{}");
+        return this.#TEST
+    }
     
-    /** @type {{[SpiritName: string]: [[string, string, string], [string, string, string], [string, string, string]]?}} */
-    #DATA = JSON.parse(localStorage.getItem(this.#KEY) ?? "{}");
-
-    // /** @type {{[UnitName: string]: (keyof ALGO_SETS["Offense"] | keyof ALGO_SETS["Stability"] | keyof ALGO_SETS["Special"])[][]}} */
-    // #SETS = (() => {this.#DATA})();
-
-    constructor() {}
-
-    init() {
-
+    /** @returns {[[string, string, string], [string, string, string], [string, string, string]]} */
+    get #emptyarray() {
+        return [["", "", ""], ["", "", ""], ["", "", ""]];
     }
 
-    /** @param {string} name */
-    get(name) {
-        return this.#DATA[name] ?? [[], [], []];
+    /** @param {string} name @param {number} set */
+    get(name, set) {
+        return (this.#savedata[name] ?? this.#emptyarray)[set];
     }
 
     /** @param {string} name @param {0 | 1 | 2} set @param {[string, string, string]} skills */
     set(name, set, skills) {
-        if (this.#DATA[name])
-            this.#DATA[name][set] = skills;
-        else {
-            const NEW = [["", "", ""], ["", "", ""], ["", "", ""]];
-            NEW[set] = skills;
-            this.#DATA[name] = NEW;
-        }
+        if (skills.length > 3) throw new Error("Too many skills");
+
+        const DATA = this.#savedata;
+        DATA[name] ??= this.#emptyarray;
+        DATA[name][set] = skills;
+        //localStorage.setItem(this.#KEY, JSON.stringify(DATA))
+        this.#TEST = DATA
     }
 
     /** @param {string} name */
     del(name) {
         delete this.#DATA[name];
-    }
-
-    save() {
-        localStorage.setItem(this.#KEY, JSON.stringify(this.#DATA))
     }
 })();
 
@@ -64,7 +61,7 @@ SPIRIT_OPTION.addEventListener("click", function(event) {
 })
 SPIRIT_OPTION.addEventListener("close", function(event) {
     if (SPIRIT_BUTTON.value === this.returnValue) return;
-    const SPIRIT = getSpirit(this.returnValue);
+    const {SPIRIT} = getSpirit(this.returnValue);
     SPIRIT_BUTTON.value = SPIRIT.name;
     setattr(SPIRIT_BUTTON.querySelector("img"), {src: `../assets/images/spirits/${SPIRIT.name}.png`, alt: SPIRIT.name});
     SPIRIT_BUTTON.querySelector("span").innerText = SPIRIT.name;
@@ -132,29 +129,35 @@ const SKILLS_OBJECT = new (class {
         this.load({spirit: SPIRIT_BUTTON.value, set: 0});
     }
 
-    /** @type {{[SpiritNames: string]: HTMLLabelElement[]}} */ #SPECIFIC_SKILLS = {}
+    /** @this {HTMLInputElement} @param {MouseEvent} event */
+    #handleCheckbox(event) {
+        if (this.checked)
+            if (SKILLS_OBJECT.DIV.querySelectorAll("input:checked").length === 3)
+                for (const SKILL of SKILLS_OBJECT.DIV.querySelectorAll("input:not(:checked)"))
+                    SKILL.disabled = true;
+            //else console.error("Too many checked skills.");
+        else
+            for (const SKILL of SKILLS_OBJECT.DIV.querySelectorAll("input:disabled"))
+                SKILL.disabled = false;
+        const CHECKED = Array.from(document.querySelectorAll("input:checked")).map(x => x.value);
+        SPIRIT_SAVE.set(SKILLS_OBJECT.#spirit, SKILLS_OBJECT.#set, CHECKED.fill("", CHECKED.length, 2))
+    }
+
+    /** @type {{[SpiritNames: string]: [HTMLLabelElement, HTMLLabelElement, HTMLLabelElement, HTMLLabelElement]?}} */ #SPECIFIC_SKILLS = {}
     /** @this {this} */
     #specificSkills = function*() {
-        if (spirit in this.#SPECIFIC_SKILLS) {
-            yield* this.#SPECIFIC_SKILLS[this.#spirit];
-        } else {
+        const SKILLS = this.#SPECIFIC_SKILLS[this.#spirit];
+        if (SKILLS) yield* SKILLS;
+        else {
             this.#SPECIFIC_SKILLS[this.#spirit] = new Array(4);
-            for (const [SKILL, CODE] of zip(getSpirit(this.#spirit).skills, ["P1", "P2", "P3", "A"])) {
+            for (const [{name, description}, CODE] of zip(getSpirit(this.#spirit).skills, ["P1", "P2", "P3", "A"])) {
                 const CLONE = this.#skillButton();
                 const INPUT = CLONE.querySelector("input");
                 INPUT.value = CODE;
-                INPUT.addEventListener("change", function(event) {
-                    if (this.checked)
-                        if (SKILLS_OBJECT.DIV.querySelectorAll("input:checked").length === 3)
-                            for (const SKILL of SKILLS_OBJECT.DIV.querySelectorAll("input:not(:checked)"))
-                                SKILL.disabled = true;
-                    else
-                        for (const SKILL of SKILLS_OBJECT.DIV.querySelectorAll("input:disabled"))
-                            SKILL.disabled = false;
-                });
-                CLONE.querySelector("span").innerText = SKILL.name;
-                CLONE.querySelector("div").innerText = SKILL.description;
-
+                INPUT.addEventListener("change", this.#handleCheckbox);
+                CLONE.querySelector("span").innerText = name;
+                CLONE.querySelector("div").innerText = description;
+    
                 this.#SPECIFIC_SKILLS[this.#spirit].push(CLONE.querySelector("label"));
                 yield CLONE;
             }
@@ -171,19 +174,7 @@ const SKILLS_OBJECT = new (class {
             const CLONE = this.#skillButton();
             const INPUT = CLONE.querySelector("input");
             INPUT.value = name;
-            INPUT.addEventListener("change", (event) => {
-                if (INPUT.checked) {
-                    const CHECK_COUNT = this.DIV.querySelectorAll("input:checked").length;
-                    //if (CHECK_COUNT < 3) {}
-                    if (CHECK_COUNT === 3)
-                        for (const SKILL of this.DIV.querySelectorAll("input:not(:checked)"))
-                            SKILL.disabled = true;
-                    //else console.error("Too many checked skills.");
-                }
-                else
-                    for (const SKILL of this.DIV.querySelectorAll("input:disabled"))
-                        SKILL.disabled = false;
-            });
+            INPUT.addEventListener("change", this.#handleCheckbox);
             CLONE.querySelector("span").innerText = name;
             CLONE.querySelector("div").innerText = description;
             yield CLONE.querySelector("label");
@@ -201,23 +192,18 @@ const SKILLS_OBJECT = new (class {
         if (set !== null) this.#set = set;
 
         const SKILLS = [...this.#specificSkills(), ...this.#genericSkills()];
-
-        //check if 3 or less
-        //what if 4?
+        for (const SKILL of SKILLS) {   //Reset
+            const INPUT = SKILL.querySelector("input");
+            INPUT.checked = false;
+            INPUT.disabled = false;
+        }
+        const SAVED_SKILLS = SPIRIT_SAVE.get(this.#spirit, this.#set);
+        const DISABLE = SAVED_SKILLS.every(x => x);
         for (const SKILL of SKILLS) {
-            if ([].includes(SKILL.querySelector("input").value)) {
-
-            } else {
-
-            }
-            
-            //localstorage saved checked skills
+            const INPUT = SKILL.querySelector("input");
+            if (SAVED_SKILLS.includes(INPUT.value)) INPUT.checked = true;
+            else INPUT.disabled = DISABLE;
         }
         SKILLS_OBJECT.DIV.replaceChildren(...SKILLS);
-
-        //load checked skills
-        //disable other checkboxes if 3 boxes are checked
-
-
     }
 })(await SKILLS_PROMISE);
