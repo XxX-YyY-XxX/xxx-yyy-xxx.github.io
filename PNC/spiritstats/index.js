@@ -8,18 +8,25 @@ import {STAT_KEYS_TYPENAME} from "../unitstats/typing.js";
 /** @type {Promise<GenericSkill[]>} */ const SKILLS_PROMISE = fetch("genericskills.json").then(response => response.json());
 //#endregion
 
+/** @typedef {[[string, string, string], [string, string, string], [string, string, string]]} SpiritSets */
+
 const SPIRIT_SAVE = new (class {
     #KEY = "spirit";
 
     #TEST = {}
 
-    /** @returns {{[SpiritName: string]: [[string, string, string], [string, string, string], [string, string, string]] | undefined}} */
+    /** @returns {{[SpiritName: string]: SpiritSets | undefined}} */
     get #savedata() {
         //return JSON.parse(localStorage.getItem(this.#KEY) ?? "{}");
         return this.#TEST
     }
+
+    set #savedata(value) {
+        //localStorage.setItem(this.#KEY, JSON.stringify(value))
+        this.#TEST = value
+    }
     
-    /** @returns {[[string, string, string], [string, string, string], [string, string, string]]} */
+    /** @returns {SpiritSets} */
     get #emptyarray() {return [["", "", ""], ["", "", ""], ["", "", ""]]}
 
     /** @param {string} name @param {number} set */
@@ -34,8 +41,7 @@ const SPIRIT_SAVE = new (class {
         const DATA = this.#savedata;
         DATA[name] ??= this.#emptyarray;
         DATA[name][set] = skills;
-        //localStorage.setItem(this.#KEY, JSON.stringify(DATA))
-        this.#TEST = DATA
+        this.#savedata = DATA;
     }
 })();
 

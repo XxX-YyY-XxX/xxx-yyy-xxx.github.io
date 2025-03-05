@@ -19,8 +19,8 @@ timer(
 
 timer(
     document.getElementById("coalition"),
-    "Mar 04, 2025 00:00 UTC-0800",
-    "./assets/images/coalition/01Scarecrow.webp"
+    "Apr 01, 2025 00:00 UTC-0800",
+    "./assets/images/coalition/18HunterNightfallMoth.webp"
     //{onEnd: timer.bind(null,
     //    document.getElementById("coalition"),
     //    "Mar 04, 2025 00:00 UTC-0800",
@@ -30,13 +30,13 @@ timer(
 
 timer(
     document.getElementById('skin-banner'),
-    "Feb 25, 2025 00:00 UTC-0800",
-    "https://iopwiki.com/images/thumb/1/17/QBZ-191_costume4_D.png/600px-QBZ-191_costume4_D.png",
-    {onEnd: timer.bind(null,
-        document.getElementById('skin-banner'),
-        "Mar 11, 2025 00:00 UTC-0800",
-        "https://iopwiki.com/images/thumb/0/0a/Thompson_costume3_D.png/600px-Thompson_costume3_D.png"
-    )}
+    "Mar 11, 2025 00:00 UTC-0800",
+    "https://iopwiki.com/images/thumb/0/0a/Thompson_costume3_D.png/600px-Thompson_costume3_D.png",
+    //{onEnd: timer.bind(null,
+    //    document.getElementById('skin-banner'),
+    //    "",
+    //    ""
+    //)}
 );
 
 //timer(
