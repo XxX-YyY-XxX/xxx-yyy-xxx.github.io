@@ -1208,7 +1208,7 @@
             "open": 85
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
-        "tags": ["Arma"]
+        "tags": ["Arma", "Fully Built"]
     },
 
     {
@@ -1736,7 +1736,7 @@
             "open": 64
         },
         "intimacy": ["Neural Activation", "Code Robustness", "Mechanical Celerity"],
-        "tags": ["Arma"]
+        "tags": ["Arma", "Fully Built"]
     },
     {
         "id": 1057,
@@ -2642,7 +2642,7 @@
         "name": "Salmon",
         "class": "Warrior",
         "reference": {},
-        "fragments": ["Neural Kits", "Intimacy", "Fragment Search", "Photoluminescence"],
+        "fragments": ["Neural Kits", "Intimacy", "Photoluminescence"],
         "base": {
             "hp": 19932,
             "atk": 596,
@@ -2759,7 +2759,7 @@
             "open": -1
         },
         "intimacy": ["Neural Activation", "Coordinated Strike", "Victorious Inspiration"],
-        "tags": ["Unowned"]
+        "tags": []
     },
 
     {
@@ -2770,7 +2770,7 @@
     }, 
     {
         "id": 1091,
-        "name": "Havok",
+        "name": "Havoc",
         "reference": {},
         "tags": ["Unreleased"]
     },

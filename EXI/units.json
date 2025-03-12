@@ -1,0 +1,29 @@
+[
+    {
+        "name": "",
+        "class": "",
+        "weapon": "",
+        "skills": {
+            "basic": {
+                "name": "",
+                "description": ""
+            },
+            "first": {
+                "name": "",
+                "description": ""
+            },
+            "second": {
+                "name": "",
+                "description": ""
+            },
+            "ultimate": {
+                "name": "",
+                "description": ""
+            },
+            "passive": {
+                "name": "",
+                "description": ""
+            }
+        }
+    }
+]

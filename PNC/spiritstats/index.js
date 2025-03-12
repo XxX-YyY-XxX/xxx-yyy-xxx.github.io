@@ -2,6 +2,7 @@ import {setattr, zip} from "../../univasset/scripts/basefunctions/index.js";
 import {brJoin, clickedOutside} from "../../univasset/scripts/html/helper.js";
 import {template} from "../../univasset/scripts/html/index.js";
 import {STAT_KEYS_TYPENAME} from "../unitstats/typing.js";
+import {KEY} from "../general.js";
 
 //#region Promises
 /** @type {Promise<Spirit[]>} */ const SPIRIT_PROMISE = fetch("../spirits.json").then(response => response.json());
@@ -11,7 +12,7 @@ import {STAT_KEYS_TYPENAME} from "../unitstats/typing.js";
 /** @typedef {[[string, string, string], [string, string, string], [string, string, string]]} SpiritSets */
 
 const SPIRIT_SAVE = new (class {
-    #KEY = "spirit";
+    #KEY = KEY.spirit;
 
     #TEST = {}
 
@@ -29,11 +30,11 @@ const SPIRIT_SAVE = new (class {
     /** @returns {SpiritSets} */
     get #emptyarray() {return [["", "", ""], ["", "", ""], ["", "", ""]]}
 
-    /** @param {string} name @param {number} set */
+    /** @param {string} name @param {0 | 1 | 2} set */
     get(name, set) {
         return (this.#savedata[name] ?? this.#emptyarray)[set];
     }
-
+    
     /** @param {string} name @param {0 | 1 | 2} set @param {[string, string, string]} skills */
     set(name, set, skills) {
         if (skills.length > 3) throw new Error("Too many skills");
@@ -47,26 +48,31 @@ const SPIRIT_SAVE = new (class {
 
 //#region Spirits
 const SPIRIT_DATA = await SPIRIT_PROMISE;
+const SPIRIT_DIALOG = (() => {
+    /** @type {HTMLDialogElement} */ const DIALOG = document.querySelector("#spirit-option");
 
-/** @type {HTMLDialogElement} */ const SPIRIT_OPTION = document.querySelector("#spirit-option");
-/** @param {string} name */
-function getSpirit(name) {
-    for (const SPIRIT of SPIRIT_DATA)
-        if (SPIRIT.name === name)
-            return SPIRIT;
-}
-SPIRIT_OPTION.addEventListener("click", function(event) {
-    if (clickedOutside(this.firstElementChild, event)) this.close(SPIRIT_BUTTON.value);
-})
-SPIRIT_OPTION.addEventListener("close", function(event) {
-    if (SPIRIT_BUTTON.value === this.returnValue) return;
-    const {SPIRIT} = getSpirit(this.returnValue);
-    SPIRIT_BUTTON.value = SPIRIT.name;
-    setattr(SPIRIT_BUTTON.querySelector("img"), {src: `../assets/images/spirits/${SPIRIT.name}.png`, alt: SPIRIT.name});
-    SPIRIT_BUTTON.querySelector("span").innerText = SPIRIT.name;
-    SPIRIT_BUTTON.querySelector("div").replaceChildren(brJoin(Object.keys(SPIRIT.attributes).map(x => STAT_KEYS_TYPENAME[x])));
-    SKILLS_OBJECT.load({spirit: SPIRIT.name});
-});
+    DIALOG.addEventListener("click", function(event) {
+        if (clickedOutside(this.firstElementChild, event)) this.close(SPIRIT_BUTTON.value);
+    })
+
+    /** @param {string} name */
+    function getSpirit(name) {
+        for (const SPIRIT of SPIRIT_DATA)
+            if (SPIRIT.name === name)
+                return SPIRIT;
+    }    
+    DIALOG.addEventListener("close", function(event) {
+        if (SPIRIT_BUTTON.value === this.returnValue) return;
+        const SPIRIT = getSpirit(this.returnValue);
+        SPIRIT_BUTTON.value = SPIRIT.name;
+        setattr(SPIRIT_BUTTON.querySelector("img"), {src: `../assets/images/spirits/${SPIRIT.name}.png`, alt: SPIRIT.name});
+        SPIRIT_BUTTON.querySelector("span").innerText = SPIRIT.name;
+        SPIRIT_BUTTON.querySelector("div").replaceChildren(brJoin(Object.keys(SPIRIT.attributes).map(x => STAT_KEYS_TYPENAME[x])));
+        SKILLS_OBJECT.load({spirit: SPIRIT.name});
+    });
+
+    return DIALOG;
+})();
 
 const spiritButton = template("#spirit-button-template");
 const SPIRIT_BUTTON = (() => {
@@ -83,14 +89,14 @@ const SPIRIT_BUTTON = (() => {
             CLONE.querySelector("span").innerText = name;
             CLONE.querySelector("div").appendChild(brJoin(Object.keys(attributes).map(x => STAT_KEYS_TYPENAME[x])));
 
-            SPIRIT_OPTION.firstElementChild.appendChild(CLONE);
+            SPIRIT_DIALOG.firstElementChild.appendChild(CLONE);
         }
 
-        SPIRIT_OPTION.showModal();
+        SPIRIT_DIALOG.showModal();
 
         BUTTON.removeEventListener("click", spiritOptionModal);
         BUTTON.addEventListener("click", function(event) {
-            SPIRIT_OPTION.showModal();
+            SPIRIT_DIALOG.showModal();
         });
     }
 
@@ -203,6 +209,6 @@ const SKILLS_OBJECT = new (class {
             if (SAVED_SKILLS.includes(INPUT.value)) INPUT.checked = true;
             else INPUT.disabled = DISABLE;
         }
-        SKILLS_OBJECT.DIV.replaceChildren(...SKILLS);
+        this.DIV.replaceChildren(...SKILLS);
     }
 })(await SKILLS_PROMISE);

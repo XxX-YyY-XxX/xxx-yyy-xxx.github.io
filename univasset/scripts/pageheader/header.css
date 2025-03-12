@@ -82,4 +82,13 @@ header h2 {
 .btn-pnc:hover {
 	background-color: rgba(0, 255, 255, 60%);
 }
+
+.btn-exi {
+	background-image: url("./Exilium.png");
+	background-color: rgba(0, 255, 255, 30%);
+}
+
+.btn-exi:hover {
+	background-color: rgba(0, 255, 255, 60%);
+}
 /* #endregion */
