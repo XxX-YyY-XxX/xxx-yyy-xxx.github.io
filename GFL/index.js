@@ -31,7 +31,7 @@ timer(
 timer(
     document.getElementById('skin-banner'),
     "Apr 08, 2025 00:00 UTC-0800",
-    "./assets/images/coalition/lhhv9mh6h0oe1.webp",
+    "./assets/images/timer/lhhv9mh6h0oe1.webp",
     //{onEnd: timer.bind(null,
     //    document.getElementById('skin-banner'),
     //    "",

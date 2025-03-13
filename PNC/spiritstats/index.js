@@ -47,6 +47,13 @@ const SPIRIT_SAVE = new (class {
 })();
 
 //#region Spirits
+/** @param {string} name */
+function getSpirit(name) {
+    for (const SPIRIT of SPIRIT_DATA)
+        if (SPIRIT.name === name)
+            return SPIRIT;
+}    
+
 const SPIRIT_DATA = await SPIRIT_PROMISE;
 const SPIRIT_DIALOG = (() => {
     /** @type {HTMLDialogElement} */ const DIALOG = document.querySelector("#spirit-option");
@@ -55,12 +62,6 @@ const SPIRIT_DIALOG = (() => {
         if (clickedOutside(this.firstElementChild, event)) this.close(SPIRIT_BUTTON.value);
     })
 
-    /** @param {string} name */
-    function getSpirit(name) {
-        for (const SPIRIT of SPIRIT_DATA)
-            if (SPIRIT.name === name)
-                return SPIRIT;
-    }    
     DIALOG.addEventListener("close", function(event) {
         if (SPIRIT_BUTTON.value === this.returnValue) return;
         const SPIRIT = getSpirit(this.returnValue);
