@@ -341,7 +341,8 @@ const CARDS = [
         answer: `${List.unordered(
             fragment(anchor('Gamepress units guide.', 'https://gamepress.gg/girlsfrontline/protocol-assimilation-units'), " Use the search bar if a certain PA unit is unavailable in the page."),
             anchor("u/CheneyQWER's tier list.", 'https://redd.it/uirvxz'),
-            anchor("Matsuda tips.", "https://gfl.matsuda.tips/captures/")
+            anchor("Matsuda tips.", "https://gfl.matsuda.tips/captures/"),
+            details("Updated tier list.", image(IMG_ASSET+"PAGuideList.png", "Latest guide + tier list."))  //https://old.reddit.com/r/girlsfrontline/comments/1fitby1/weekly_commanders_lounge_september_17_2024/lo2987b/
         )}`,
         tags: [dtag.PA, dtag.COALITION, dtag.TIER]
     },
@@ -928,7 +929,7 @@ const CARDS = [
     {
         id: 69,
         question: `What's the drop rate for farmable dolls?`,
-        answer: `Limited dolls on Combat Missions reportdely known to have 0.8% drop rate on normal and 1% on emergency, with 5${STAR} seemingly have rates way below 1%. Their droprates Chapter 10 onwards are reported to have higher rates. If you do plan to farm a 5${STAR} doll, just do Productions. You'll get more chances there.<br>
+        answer: `Limited dolls on Combat Missions reportedly known to have 0.8% drop rate on normal and 1% on emergency, with 5${STAR} seemingly have rates way below 1%. Their droprates Chapter 10 onwards are reported to have higher rates. If you do plan to farm a 5${STAR} doll, just do Productions. You'll get more chances there.<br>
         Event farms have maybe around 1%, which also carries over to their respective campaign missions. Higher difficulties also get higher rates.<br>
         As for SPEQs, probably 1% too.`,
         tags: [dtag.TDOLL, dtag.MAIN, dtag.SPEQ, dtag.MAJOR, dtag.CAMPAIGN, dtag.SEASON, dtag.COLLAB]
@@ -1841,7 +1842,7 @@ const CARDS = [
     {
         id: 182,
         question: `What's the uncensor recipe?`,
-        answer: `522/320/404/137 for EN, 666/666/666/666 everywhere else... probably.`,
+        answer: `522M/320A/404R/137P for EN, 666/666/666/666 everywhere else... probably.`,
         tags: [dtag.TDOLL, dtag.SKIN]
     },
     {
@@ -4535,6 +4536,20 @@ const CARDS = [
         question: `What are the things I should know regarding skill activations?`,
         answer: `${Embed.reddit("rl9oul/weekly_commanders_lounge_december_21_2021/hq64qh3")}`,
         tags: [dtag.SKILL, dtag.BATTLE]
+    },
+    {
+        id: 558,
+        question: `If I didn't get the unit I want from the Assimilation pool, can I still get them later?`,
+        answer: `Yes.`,
+        tags: [dtag.PA, dtag.COALITION]
+    },
+    {
+        id: 559,
+        question: `Are oaths actually used for metagaming purposes?`,
+        answer: `${List.unordered(
+            anchor("Importance in Theater.", "https://old.reddit.com/r/girlsfrontline/comments/1fitby1/weekly_commanders_lounge_september_17_2024/lnqemgw/")
+        )}`,
+        tags: [dtag.OATH, dtag.THEATER]
     },
     //{
     //    id: 0,

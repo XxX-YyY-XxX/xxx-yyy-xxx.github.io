@@ -56,7 +56,15 @@ input {
 }
 
 #skills label {
-    display: inline-grid;
+    --dialog-pad: 5px;
+    border-radius: 10px;
+    padding: var(--dialog-pad);
+    background-color: slategrey;
+    /* border color? */
+    /* border style? */
+
+    /*display: inline-grid;*/
+    display: grid;
     grid-template-areas: 
     "name"
     "desc";
@@ -64,4 +72,8 @@ input {
 
 #skills label:has(input:checked) {
     background-color: red;
+}
+
+#skills label:has(input:disabled) {
+    background-color: blue;
 }

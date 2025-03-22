@@ -1929,7 +1929,7 @@
         "name": "Lind",
         "class": "Warrior",
         "reference": {"AA-12": "https://iopwiki.com/wiki/AA-12"},
-        "fragments": ["Neural Kits", "Intimacy"],
+        "fragments": ["Neural Kits", "Intimacy", "Exercise Handbook - Blemish"],
         "base": {
             "hp": 19331,
             "atk": 630,

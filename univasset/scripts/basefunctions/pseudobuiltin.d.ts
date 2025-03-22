@@ -36,9 +36,9 @@ export function classtype(instance: object): string;
 export function setattr<T extends Object>(base: T, attributes: {[ObjectAttributes: string]: any}): T;
 // in keyof T
 
-/** Iterates items per index in groups. */
+/** Iterates items per index in groups. By default, stops when one of the iterables is exhausted. */
 export function zip<T0, T1>(iter0: Iterable<T0>, iter1: Iterable<T1>, extend?: boolean): Generator<[T0, T1], void, unknown>;
-/** Iterates items per index in groups. */
+/** Iterates items per index in groups. By default, stops when one of the iterables is exhausted. */
 export function zip<T0, T1, T2>(iter0: Iterable<T0>, iter1: Iterable<T1>, iter2: Iterable<T2>, extend?: boolean): Generator<[T0, T1, T2], void, unknown>;
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
