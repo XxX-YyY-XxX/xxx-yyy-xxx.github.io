@@ -1,3 +1,5 @@
+const GAMEKEY = "PNC";
+
 export const KEY = {
-    spirit: "spirit"
+    spirit: GAMEKEY + "spirit"
 }

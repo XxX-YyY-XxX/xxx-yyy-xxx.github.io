@@ -3,6 +3,7 @@ import {brJoin, clickedOutside} from "../../univasset/scripts/html/helper.js";
 import {template} from "../../univasset/scripts/html/index.js";
 import {STAT_KEYS_TYPENAME} from "../unitstats/typing.js";
 import {KEY} from "../general.js";
+import {retrieve, store} from "../../main.js";
 
 //#region Promises
 /** @type {Promise<Spirit[]>} */ const SPIRIT_PROMISE = fetch("../spirits.json").then(response => response.json());
@@ -12,18 +13,16 @@ import {KEY} from "../general.js";
 /** @typedef {[[string, string, string], [string, string, string], [string, string, string]]} SpiritSets */
 
 const SPIRIT_SAVE = new (class {
-    #KEY = KEY.spirit;
-
     #TEST = {}
 
     /** @returns {{[SpiritName: string]: SpiritSets | undefined}} */
     get #savedata() {
-        //return JSON.parse(localStorage.getItem(this.#KEY) ?? "{}");
+        //return retrieve(KEY.spirit) ?? {};
         return this.#TEST
     }
 
     set #savedata(value) {
-        //localStorage.setItem(this.#KEY, JSON.stringify(value))
+        //store(KEY.spirit, value);
         this.#TEST = value
     }
     

@@ -2,8 +2,8 @@ import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
 timer(
    document.getElementById("event"),
-   "Mar 11, 2025 00:00 UTC-0800",
-   "./assets/images/timer/h6wg8i6u7vje1.webp"
+   "Apr 01, 2025 00:00 UTC-0800",
+   "./assets/images/timer/hrzv4z75gdoe1.webp"
 );
 
 timer(
@@ -12,8 +12,8 @@ timer(
     "./assets/images/timer/j6wuor1gpthe1.webp",
     {onEnd: timer.bind(null,
         document.getElementById("battlepass"),
-        "",
-        "",
+        "Apr 28, 2025 00:00 UTC-0800",
+        "./assets/images/timer/uviizmqrzcpe1.webp",
     )}
 );
 
