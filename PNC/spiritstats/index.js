@@ -32,10 +32,11 @@ const SPIRIT_SAVE = new (class {
     /** @param {string} name @param {0 | 1 | 2} set */
     get(name, set) {
         const OUTPUT = (this.#savedata[name] ?? this.#emptyarray)[set]
+        console.log("Saved skills:", OUTPUT)
         return {
             /** Empty slots represented by empty strings. */
             skills: OUTPUT,
-            /** True if all skill slots are filled. */
+            /** True if all 3 skill slots are filled. */
             full: OUTPUT.every(x => x)
         };
     }
@@ -60,9 +61,13 @@ function getSpirit(name) {
     for (const SPIRIT of SPIRIT_DATA)
         if (SPIRIT.name === name)
             return SPIRIT;
-}    
+}
 
-const SPIRIT_DATA = await SPIRIT_PROMISE;
+/** @param {string} spirit_name */
+function spiritImage(spirit_name) {
+    return `../assets/images/spirits/${spirit_name}.png`;
+}
+
 const SPIRIT_DIALOG = (() => {
     /** @type {HTMLDialogElement} */ const DIALOG = document.querySelector("#spirit-option");
 
@@ -74,7 +79,7 @@ const SPIRIT_DIALOG = (() => {
         if (SPIRIT_BUTTON.value === this.returnValue) return;
         const SPIRIT = getSpirit(this.returnValue);
         SPIRIT_BUTTON.value = SPIRIT.name;
-        setattr(SPIRIT_BUTTON.querySelector("img"), {src: `../assets/images/spirits/${SPIRIT.name}.png`, alt: SPIRIT.name});
+        setattr(SPIRIT_BUTTON.querySelector("img"), {src: spiritImage(SPIRIT.name), alt: SPIRIT.name});
         SPIRIT_BUTTON.querySelector("span").innerText = SPIRIT.name;
         SPIRIT_BUTTON.querySelector("div").replaceChildren(brJoin(Object.keys(SPIRIT.attributes).map(x => STAT_KEYS_TYPENAME[x])));
         SKILLS_LIST.load({spirit: SPIRIT.name});
@@ -83,6 +88,7 @@ const SPIRIT_DIALOG = (() => {
     return DIALOG;
 })();
 
+const SPIRIT_DATA = await SPIRIT_PROMISE;
 const SPIRIT_BUTTON = (() => {
     const spiritButton = template("#spirit-button-template");
 
@@ -92,7 +98,7 @@ const SPIRIT_BUTTON = (() => {
             const CLONE = spiritButton();
 
             CLONE.querySelector("button").value = name;
-            setattr(CLONE.querySelector("img"), {src: `../assets/images/spirits/${name}.png`, alt: name});
+            setattr(CLONE.querySelector("img"), {src: spiritImage(name), alt: name});
             CLONE.querySelector("span").innerText = name;
             CLONE.querySelector("div").appendChild(brJoin(Object.keys(attributes).map(x => STAT_KEYS_TYPENAME[x])));
 
@@ -115,7 +121,7 @@ const SPIRIT_BUTTON = (() => {
     BUTTON.type = "button";
     BUTTON.addEventListener("click", spiritOptionModal);
 
-    setattr(CLONE.querySelector("img"), {src: `../assets/images/spirits/${name}.png`, alt: name});
+    setattr(CLONE.querySelector("img"), {src: spiritImage(name), alt: name});
     CLONE.querySelector("span").innerText = name;
     CLONE.querySelector("div").appendChild(brJoin(Object.keys(attributes).map(x => STAT_KEYS_TYPENAME[x])));
 
@@ -222,3 +228,11 @@ const SKILLS_LIST = new (class {
         }
     }
 })(await SKILLS_PROMISE);
+
+//might make into preload image function
+(async function() {
+    for (const {name} of SPIRIT_DATA.slice(1)) {
+        const IMAGE = new Image();
+        IMAGE.src = spiritImage(name);
+    }
+})()

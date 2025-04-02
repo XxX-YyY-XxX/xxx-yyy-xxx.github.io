@@ -9,6 +9,10 @@ input {
     flex-wrap: wrap;
 }*/
 
+#set-options {
+    height: fit-content;
+}
+
 .spirit-button {
     --gridsize: 100px;
     display: inline-grid;
@@ -35,25 +39,24 @@ input {
 }
 
 
-/*#skill-sets {
+#set-options {
     display: flex;
-    flex-wrap: wrap;
-
-}*/
+    justify-content: space-around;
+}
 
 
 #sets {
-    display: flex;
+    display: inline-grid;
+    height: 100%;
+    /* vertical */
     /*display: inline-block;*/
     /*width: fit-content;*/
 }
 
-
-
-#skills {
+/*#skills {
     display: inline-block;
     width: 100%;
-}
+}*/
 
 #skills label {
     --dialog-pad: 5px;
