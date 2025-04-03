@@ -32,19 +32,21 @@ const SPIRIT_SAVE = new (class {
     /** @param {string} name @param {0 | 1 | 2} set */
     get(name, set) {
         const OUTPUT = (this.#savedata[name] ?? this.#emptyarray)[set]
+
         console.log("Saved skills:", OUTPUT)
+
         return {
-            /** Empty slots represented by empty strings. */
-            skills: OUTPUT,
+            /** Empty slots represented by empty strings.
+             * @type {[string, string, string]} */
+            skills: [...OUTPUT, "", "", ""].slice(0, 3),
             /** True if all 3 skill slots are filled. */
-            full: OUTPUT.every(x => x)
+            full: OUTPUT.length === 3
         };
     }
     
     /** @param {string} name @param {0 | 1 | 2} set @param {string[]} skills Maximum 3. */
     set(name, set, skills) {
         if (skills.length > 3) throw new Error("Too many skills.");
-        else if (skills.length < 3) skills = skills.fill("", skills.length, 2)
 
         const DATA = this.#savedata;
         DATA[name] ??= this.#emptyarray;

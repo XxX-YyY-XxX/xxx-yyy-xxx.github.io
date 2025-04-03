@@ -41,21 +41,23 @@ input {
 
 #set-options {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
-
 
 #sets {
     display: inline-grid;
     height: 100%;
-    /* vertical */
-    /*display: inline-block;*/
-    /*width: fit-content;*/
+
+    grid-template-rows: 35%;
+}
+
+#sets label {
+    aspect-ratio: 1;
+    background-color: green;
 }
 
 /*#skills {
-    display: inline-block;
-    width: 100%;
+    disp
 }*/
 
 #skills label {
@@ -71,6 +73,8 @@ input {
     grid-template-areas: 
     "name"
     "desc";
+
+    margin-top: 5px;
 }
 
 #skills label:has(input:checked) {

@@ -20,7 +20,7 @@ timer(
 timer(
     document.getElementById("coalition"),
     "Apr 29, 2025 00:00 UTC-0800",
-    "./assets/images/coalition/18HunterNightfallMoth.webp"
+    "./assets/images/coalition/05Destroyer.webp"
     //{onEnd: timer.bind(null,
     //    document.getElementById("coalition"),
     //    "Mar 04, 2025 00:00 UTC-0800",
