@@ -26,8 +26,8 @@ const SPIRIT_SAVE = new (class {
         this.#TEST = value
     }
     
-    /** @returns {SpiritSets} */
-    get #emptyarray() {return [["", "", ""], ["", "", ""], ["", "", ""]]}
+    /** @returns {[[], [], []]} */
+    get #emptyarray() {return [[], [], []]}
 
     /** @param {string} name @param {0 | 1 | 2} set */
     get(name, set) {
