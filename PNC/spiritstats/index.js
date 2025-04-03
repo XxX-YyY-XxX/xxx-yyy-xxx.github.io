@@ -46,6 +46,9 @@ const SPIRIT_SAVE = new (class {
     
     /** @param {string} name @param {0 | 1 | 2} set @param {string[]} skills Maximum 3. */
     set(name, set, skills) {
+
+        console.log("Before save:", this.#savedata)
+
         if (skills.length > 3) throw new Error("Too many skills.");
 
         const DATA = this.#savedata;
@@ -53,7 +56,7 @@ const SPIRIT_SAVE = new (class {
         DATA[name][set] = skills;
         this.#savedata = DATA;
 
-        console.log(this.#savedata)
+        console.log("After save:", this.#savedata)
     }
 })();
 
