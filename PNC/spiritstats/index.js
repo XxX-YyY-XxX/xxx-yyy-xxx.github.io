@@ -182,7 +182,11 @@ const SKILLS_LIST = new (class {
         } else
             for (const SKILL of SKILLS_LIST.DIV.querySelectorAll("input:disabled"))
                 SKILL.disabled = false;
-        SPIRIT_SAVE.set(SKILLS_LIST.#spirit, SKILLS_LIST.#set, Array.from(document.querySelectorAll("#skills input:checked")).map(x => x.value));
+        SPIRIT_SAVE.set(
+            SKILLS_LIST.#spirit,
+            SKILLS_LIST.#set,
+            Array.from(SKILLS_LIST.DIV.querySelectorAll("input:checked")).map((/** @type {HTMLInputElement} */ x) => x.value)
+        );
     }
 
     /** @type {{[SpiritNames: string]: [HTMLLabelElement, HTMLLabelElement, HTMLLabelElement, HTMLLabelElement]?}} */ #SPECIFIC_SKILLS = {}

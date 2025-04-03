@@ -56,9 +56,9 @@ input {
     background-color: green;
 }
 
-/*#skills {
-    disp
-}*/
+#sets label:has(input:checked) {
+    background-color: red;
+}
 
 #skills label {
     --dialog-pad: 5px;
