@@ -30,8 +30,8 @@ timer(
 
 timer(
     document.getElementById('skin-banner'),
-    "Apr 08, 2025 00:00 UTC-0800",
-    "./assets/images/timer/lhhv9mh6h0oe1.webp",
+    "May 06, 2025 00:00 UTC-0800",
+    "https://iopwiki.com/images/thumb/4/4e/SPAS-15_costume4_D.png/600px-SPAS-15_costume4_D.png",
     //{onEnd: timer.bind(null,
     //    document.getElementById('skin-banner'),
     //    "",
@@ -39,8 +39,8 @@ timer(
     //)}
 );
 
-//timer(
-//   document.getElementById('mini-event'),
-//   "Apr 01, 2025 00:00 UTC-0800",
-//   "./assets/images/timer/lpd293btksme1.webp"
-//);
+timer(
+   document.getElementById('mini-event'),
+   "Apr 29, 2025 00:00 UTC-0800",
+   "./assets/images/timer/ihigds1j7dse1.webp"
+);

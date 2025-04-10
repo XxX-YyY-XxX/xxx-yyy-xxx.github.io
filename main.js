@@ -1,4 +1,4 @@
-const WEBSITESTORAGEKEY = "RandomScraps";
+const WEBSITESTORAGEKEY = "oKugGgc4ITbQAJsWPZSD";
 
 /** @param {string} key @returns {object | undefined} */
 export function retrieve(key) {

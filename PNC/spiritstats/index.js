@@ -207,7 +207,7 @@ const SKILLS_LIST = new (class {
     }
 
     #spirit = SPIRIT_BUTTON.value;
-    #set = 0;
+    /** @type {0 | 1 | 2} */ #set = Number.parseInt(document.querySelector(`[name="set"]:checked`).value);
     /**
      * @param {object} param0 
      * @param {string?} param0.spirit
@@ -238,10 +238,17 @@ const SKILLS_LIST = new (class {
     }
 })(await SKILLS_PROMISE);
 
-//might make into preload image function
-(async function() {
-    for (const {name} of SPIRIT_DATA.slice(1)) {
-        const IMAGE = new Image();
-        IMAGE.src = spiritImage(name);
-    }
-})()
+//(async function() {
+//    for (const {name} of SPIRIT_DATA.slice(1)) {
+//        const IMAGE = new Image();
+//        IMAGE.src = spiritImage(name);
+//    }
+//})()
+
+/** @param  {...string} links */
+async function imagePreload(...links) {
+    for (const link of links)
+        new Image().src = link;
+}
+
+imagePreload(...SPIRIT_DATA.slice(1).map(({name}) => spiritImage(name)));
