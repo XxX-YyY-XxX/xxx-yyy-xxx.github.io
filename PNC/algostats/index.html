@@ -26,46 +26,36 @@
 
         <link rel="icon" type="image/png" href="/univasset/images/favicon.png" />
 
-        <title>PNC Spirit Stats | Random Scraps</title>
+        <title>PNC Algorithm Stats | Random Scraps</title>
     </head>
 
     <body>
-        <include src="/univasset/scripts/pageheader/header.html" description="Stats comparison and algo builder"></include>
+        <include src="/univasset/scripts/pageheader/header.html" description="Algorithm builder"></include>
 
         <div class="container">
             <section id="main_content">
-                <div id="set-options">
-                    <span id="spirit-a"></span>
-                    <span id="sets">
-                        <label><input type="radio" name="set" value="0" checked>1</label>
-                        <label><input type="radio" name="set" value="1">2</label>
-                        <label><input type="radio" name="set" value="2">3</label>
-                    </span>
+                <div id="filter">
+                    <!-- company -->
+                    <!-- class -->
+                    <!-- algos equipped -->
+                    <!-- has arma -->
                 </div>
-                <div id="skills"></div>
+                <div id="units-list"></div>
             </section>
         </div>
     </body>
 
-    <dialog id="spirit-option">
-        <form method="dialog"></form>
+    <dialog id="unit-status">
+        <form method="dialog">
+            <!-- "algo tab" or "algo button to dialog" -->
+        </form>
     </dialog>
 </html>
 
 <!-- Template readable outside of html tag -->
-<template id="spirit-button-template">
-    <button class="spirit-button" type="submit" value="">
-        <img src="" alt="" />
-        <span></span>   <!-- name -->
-        <div></div>     <!-- stat bonuses -->
+<template id="unit-button-template">
+    <button class="" type="button" value="">
+        <img src="" alt="">
+        <span></span>
     </button>
-</template>
-
-<template id="skill-block">
-    <label>
-        <input type="checkbox" name="skill" value="" />
-        <!--<img src="" alt="">-->
-        <span></span>   <!-- name -->
-        <div></div> <!-- description -->
-    </label>
 </template>

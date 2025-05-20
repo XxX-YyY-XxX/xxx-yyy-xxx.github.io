@@ -1,9 +1,11 @@
-import {cmp, iter, setattr, zip} from "../../univasset/scripts/basefunctions/index.js";
+import {cmp, enumerate, iter, setattr, zip} from "../../univasset/scripts/basefunctions/index.js";
 import {Async} from "../../univasset/scripts/externaljavascript.js";
 
+//#region Promises
 /** @type {Promise<string[]>} */ const BANNERS_PROMISE = Async.getJSON("./banners.json");
 /** @type {Promise<SkinData[]>} */ const SKINS_PROMISE = Async.getJSON("./skins.json");
 /** @type {Promise<UnitObject[]>} */ const UNITS_PROMISE = Async.getJSON("../units.json");
+//#endregion
 
 const MARKER_SAVE = new (class {})();
 
@@ -35,11 +37,12 @@ const MATRIX = new (class {
 
 class Header {
     /** @param {string} name */
-    constructor(name) {
+    constructor(name, index) {
         this.name = name;
 
         this.html = document.createElement("th");
         this.html.textContent = name;
+        //this.html.dataset.index = index;
         // this.html.addEventListener("click", this);
     }
 
@@ -51,7 +54,7 @@ class Header {
 
 class Leader {
     /** @param {string} name */
-    constructor(name) {
+    constructor(name, index) {
         this.name = name;
 
         this.html = document.createElement("td");
@@ -134,9 +137,24 @@ class Skin {
 
 
 
+const BANNERS = await BANNERS_PROMISE;
 
-const HEADERS = (await BANNERS_PROMISE).map(x => new Header(x));
-const LEADERS = (await UNITS_PROMISE).filter(x => x.id).sort(cmp({key: x => x.id})).map(x => new Leader(x.name));
+
+const HEADERS = BANNERS.map((x, i) => new Header(x, i));
+const LEADERS = (await UNITS_PROMISE).sort(cmp({key: x => x.id})).map(x => new Leader(x.name));
+
+const SKINS_TABLE = new (class {
+    table = document.querySelector(`#table table`);
+
+    constructor() {
+        
+    }
+
+    #cell_table = [];
+    get(unit, set) {
+
+    }
+})();
 
 document.querySelector("thead > tr").append(...HEADERS.map(x => x.html));
 
@@ -153,4 +171,76 @@ for (const [LEAD, ARR = []] of zip(LEADERS, MATRIX, true)) {
     for (const [, SKIN] of zip(HEADERS, ARR, true))
         TR.appendChild(SKIN?.html ?? document.createElement("td"))
     TBODY.appendChild(TR);
+}
+
+
+
+
+
+
+
+/**
+ * @template T
+ */
+class Table {
+    /** @type {T[][]} */ #TABLE = [];
+
+    constructor() {
+
+    }
+
+    /** @returns {[number, number]} [x, y] */
+    get size() {
+        if (!this.#TABLE.length)
+            return [0, 0];
+        return [this.#TABLE[0].length, this.#TABLE.length];
+    }
+
+    /**
+     * @param {number} x 
+     * @param {number} y 
+     * @returns {T | undefined} */
+    get(x, y) {
+        const ROW = this.#TABLE[y];
+        if (ROW === undefined)
+            return undefined;
+        return ROW[x];
+    }
+
+    /** @param {number} x @param {number} y @param {T} value */
+    set(x, y, value) {
+        (this.#TABLE[y] ??= [])[x] = value;
+    }
+
+    /**
+     * @param {T} value 
+     * @returns {[number, number] | null} [x, y], null if not present. */
+    index(value) {
+        for (const [Y_AXIS, ARRAY] of enumerate(this.#TABLE)) {
+            const X_AXIS = ARRAY.indexOf(value);
+            if (X_AXIS !== -1)
+                return [X_AXIS, Y_AXIS];
+        }
+        return null;
+    }
+
+    /**
+     * @param {T} value 
+     * @returns {boolean} true if value was present, false otherwise.*/
+    delete(value) {
+        const POSITION = this.index(value);
+        if (POSITION === [-1, -1])
+            return false;
+        this.set(...POSITION, undefined);
+        return true;
+    }
+
+    clear() {
+        this.#TABLE = [];
+    }
+
+    *[Symbol.iterator]() {
+        for (const ARRAY of this.#TABLE)
+            yield iter(ARRAY);
+    }
 }

@@ -643,7 +643,7 @@ const CARDS = [
                 'Available when a new skin banner is released. Rate up dolls are those who are present in the banner.',
                 'Available during weekends when a new doll batch enters construction.'
             ],
-            'General Rate Up' : ['January, May, September.']
+            'General Rate Up' : [getID("Explanation.", 150), 'January, May, September.']
         })}`,
         tags: [dtag.PROD, dtag.IMPT, dtag.TECH]
     },  //@Visual
@@ -1581,13 +1581,13 @@ const CARDS = [
         As for how to download it, check the sidebar of ${anchor('this', 'https://www.reddit.com/r/girlsfrontline/')} link under Downloads.<br>
         Try downloading from Qooapp or ${anchor("APKpure", "https://apkpure.com/")}`,
         tags: [dtag.MISC]
-    },  //@Totally gonna fix
+    },  //@Totally gonna fix TM
     {
         id: 150,
         question: `How do general rate-ups work?`,
         answer: `There are 2 sets of rate-ups per general rate-up.<br>
         First is the HOC rate-up, where every 2 days is a specific FST's day for rate-up. Note that only that FST's rate is increased within the Central Data pool. The core data rate remains the same.<br>
-        Second is the tried amd tested Production rate-up. Goes from Normal Doll, Normal Equip, Heavy Doll. Pulling chance for all 4${STAR} and 5${STAR} are increased. IOP equipment crafts are also affected.`,
+        Second is the tried and tested Production rate-up. Goes from Normal Doll, Normal Equip, Heavy Doll. Pulling chance for all 4${STAR} and 5${STAR} are increased. IOP equipment crafts are also affected.`,
         tags: [dtag.PROD, dtag.HOC, dtag.FST, dtag.TDOLL, dtag.EQUIP]
     },  //@Check for errors, HOC part may be outdated
     {
@@ -2976,7 +2976,7 @@ const CARDS = [
     {
         id: 350,
         question: `Is it a good idea to get duplicate Ringleaders and Manticores (aka one-link units) for linking/PVA?`,
-        answer: `Good? Yes. Necessary? For RLs, not really, since they would be powerful enough already. For mooks though, they'd need it.`,
+        answer: `Good? Yes. Necessary? For RLs, not really, since they would be powerful enough already. For mooks though, they'll appreciate it very much.`,
         tags: [dtag.PA, dtag.COALITION]
     },
     {

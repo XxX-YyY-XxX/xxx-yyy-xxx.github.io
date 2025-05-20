@@ -417,7 +417,7 @@
         "added": [301, 353],
         "updated": [462],
         "deleted": [],
-        "others": ["Updated \"starter guide\"."]
+        "others": ["Updated \"Starter Guide\"."]
     },
     {
         "date": "June 30, 2024",
@@ -565,5 +565,12 @@
         "updated": [15],
         "deleted": [],
         "others": []
+    },
+    {
+        "date": "May 21, 2025",
+        "added": [],
+        "updated": [350, 32],
+        "deleted": [],
+        "others": ["Updated \"Starter Guide\"."]
     }
 ]
