@@ -1,8 +1,8 @@
 // uses history
 
-import {removeHTMLTag, getTemplateCloner} from "../externaljavascript.js";
+import {removeHTMLTag} from "../externaljavascript.js";
 import {Random, cmp, groupby, setattr} from "../basefunctions/index.js";
-import {anchor, fragment, slider} from "../html/index.js";
+import {anchor, fragment, slider, template} from "../html/index.js";
 
 window.addEventListener("popstate", event => {
     // Inputs reset.
@@ -61,7 +61,7 @@ export function queryFunc() {
     /** @type {Tag} */ const TAG_DICT = window.tags;
     //let a = groupby(Object.values(TAG_DICT), x => x.name[0])
     const TAGS_FIELD = document.querySelector("#Tags div");
-    const _tagsearchCloner = getTemplateCloner("#query-tag");
+    const _tagsearchCloner = template("#query-tag");
     for (const {name, description} of Object.values(TAG_DICT).sort(cmp({key: x => x.name}))) {
         const FRAGMENT = _tagsearchCloner();
 
@@ -158,7 +158,7 @@ function searchFilter(value) {
 
 /** @type {function(): DocumentFragment} */ var _fieldsetCloner;
 /** @param {Card} */ function setQuestionBoxes({id, question, answer, tags}) {
-    const CLONE = (_fieldsetCloner ??= getTemplateCloner("#faq-card"))();
+    const CLONE = (_fieldsetCloner ??= template("#faq-card"))();
 
     CLONE.querySelector("label").append(id);
     CLONE.querySelector("input").value = id;
