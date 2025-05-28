@@ -19,7 +19,7 @@ export const dtag = {
         CAMPAIGN : {name: 'CampaignMissions', description: 'Permanent Major Events.'},
         THEATER : {name: 'Theater', description: 'Backstab central.'},
         GZ : {name: 'GrayZoneExploration', description: 'SPEQ and Limited doll reruns, SPEQ sets, tank and mech parts.'},    
-        //#endregion
+    //#endregion
     //#region Armory Tabs
         TDOLL : {name: 'TacticalDolls', description: 'Anything T-Doll related. Use as secondary tag.'},
             LEDOLL : {name: 'CycleDropDolls', description: 'Reward dolls that now wander the rerun hell.'},

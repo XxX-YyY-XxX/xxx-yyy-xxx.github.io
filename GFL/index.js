@@ -1,21 +1,26 @@
 import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
-//timer(
-//   document.getElementById("event"),
-//   "May 20, 2025 00:00 UTC-0800",
-//   "./assets/images/timer/2z2pyq61arxe1.webp"
-//);
+timer(
+   document.getElementById("event"),
+   "Jun 17, 2025 00:00 UTC-0800",
+   "./assets/images/timer/dz94kjpln93f1.webp"
+);
 
 timer(
     document.getElementById("battlepass"),
     "Jun 02, 2025 00:00 UTC-0800",
     "./assets/images/timer/0x9eo0abm3we1.webp",
+    {onEnd: timer.bind(null,
+        document.getElementById("battlepass"),
+        "Jul 07, 2025 00:00 UTC-0800",
+        //"./assets/images/timer/0x9eo0abm3we1.webp", M14
+    )}
 );
 
 timer(
     document.getElementById("coalition"),
-    "May 27, 2025 00:00 UTC-0800",
-    "./assets/images/coalition/27Gray.webp"
+    "Jun 17, 2025 00:00 UTC-0800",
+    "./assets/images/coalition/28Beluga.webp"
 );
 
 timer(
