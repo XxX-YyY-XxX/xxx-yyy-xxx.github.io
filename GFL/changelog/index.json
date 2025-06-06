@@ -572,5 +572,12 @@
         "updated": [350, 32],
         "deleted": [],
         "others": ["Updated \"Starter Guide\"."]
+    },
+    {
+        "date": "Jun 06, 2025",
+        "added": [560],
+        "updated": [494, 549],
+        "deleted": [],
+        "others": ["Added tag CareerQuest."]
     }
 ]

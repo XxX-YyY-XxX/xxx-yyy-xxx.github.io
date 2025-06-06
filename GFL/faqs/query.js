@@ -7,46 +7,46 @@ const IMG_ASSET = "../assets/images/query/";
 
 export const dtag = {
     //#region Combat Tabs
-        LORE : {name: 'Story/Lore', description: 'Main meat of the series.'},
-            MAJOR : {name: 'MajorEvents', description: 'Main story. Added to Campaign after a while.'},
-                RANK : {name: 'RankingMaps', description: 'Endgame for the megasweats.'},
-            SEASON : {name: 'SeasonalEvents', description: 'Happens every New Year, X-mas, Halloween, etc.'},
-            COLLAB : {name: 'Collaboration', description: 'Reason: "He liked it."'},
-        MAIN : {name: 'CombatMissions', description: 'Main missions aka Chapters 0-13.'},
-            AUTO : {name: 'AutoBattles', description: 'Lazy farming.'},
-        LOGI : {name: 'Logistics', description: 'Main source of MARP and tickets.'},
-        SIMS : {name: 'CombatSimulations', description: 'Place to get upgrade materials.'},
-        CAMPAIGN : {name: 'CampaignMissions', description: 'Permanent Major Events.'},
-        THEATER : {name: 'Theater', description: 'Backstab central.'},
-        GZ : {name: 'GrayZoneExploration', description: 'SPEQ and Limited doll reruns, SPEQ sets, tank and mech parts.'},    
+    LORE : {name: 'Story/Lore', description: 'Main meat of the series.'},
+        MAJOR : {name: 'MajorEvents', description: 'Main story. Added to Campaign after a while.'},
+            RANK : {name: 'RankingMaps', description: 'Endgame for the megasweats.'},
+        SEASON : {name: 'SeasonalEvents', description: 'Happens every New Year, X-mas, Halloween, etc.'},
+        COLLAB : {name: 'Collaboration', description: 'Reason: "He liked it."'},
+    MAIN : {name: 'CombatMissions', description: 'Main missions aka Chapters 0-13.'},
+        AUTO : {name: 'AutoBattles', description: 'Lazy farming.'},
+    LOGI : {name: 'Logistics', description: 'Main source of MARP and tickets.'},
+    SIMS : {name: 'CombatSimulations', description: 'Place to get upgrade materials.'},
+    CAMPAIGN : {name: 'CampaignMissions', description: 'Permanent Major Events.'},
+    THEATER : {name: 'Theater', description: 'Backstab central.'},
+    GZ : {name: 'GrayZoneExploration', description: 'SPEQ and Limited doll reruns, SPEQ sets, tank and mech parts.'},    
     //#endregion
     //#region Armory Tabs
-        TDOLL : {name: 'TacticalDolls', description: 'Anything T-Doll related. Use as secondary tag.'},
-            LEDOLL : {name: 'CycleDropDolls', description: 'Reward dolls that now wander the rerun hell.'},
-        COALITION : {name: 'CoalitionUnits', description: 'PA counterpart of Tactical Dolls.'},
-        FAIRY : {name: 'Fairies', description: 'Sixth man of the team.'},
-        FST : {name: 'FireSupportTeam', description: 'Rockets and mortars, the first of the HOC.'},
-        MA : {name: 'MobileArmor', description: 'Warthunder/Armored Core in my gun waifu game? No way.'},        
-        EQUIP : {name: 'Equipments', description: 'Gun attachments, FST chips, PA chips, MA parts.'},
-            SPEQ : {name: 'SpecialEquipments', description: 'Equipments specific to a doll.'},
-        ITEM : {name: 'ConsumableItems', description: 'Tickets, cores, shop items...'},
-            TCM : {name: 'TrueCoreMask', description: `Used to redeem 5${STAR} prod dolls.`},
-            GEMS : {name: 'Gems', description: 'Kalina demands you spend these on her.'},
-            BATTERY : {name: 'Battery', description: 'Currency for upgrading facilities.'},
-            CORE : {name: 'DummyCore', description: 'Used for dummy-linking, neural upgrades, and fairy/SG crafts.'},
+    TDOLL : {name: 'TacticalDolls', description: 'Anything T-Doll related. Use as secondary tag.'},
+        LEDOLL : {name: 'CycleDropDolls', description: 'Reward dolls that now wander the rerun hell.'},
+    COALITION : {name: 'CoalitionUnits', description: 'PA counterpart of Tactical Dolls.'},
+    FAIRY : {name: 'Fairies', description: 'Sixth man of the team.'},
+    FST : {name: 'FireSupportTeam', description: 'Rockets and mortars, the first of the HOC.'},
+    MA : {name: 'MobileArmor', description: 'Warthunder/Armored Core in my gun waifu game? No way.'},        
+    EQUIP : {name: 'Equipments', description: 'Gun attachments, FST chips, PA chips, MA parts.'},
+        SPEQ : {name: 'SpecialEquipments', description: 'Equipments specific to a doll.'},
+    ITEM : {name: 'ConsumableItems', description: 'Tickets, cores, shop items...'},
+        TCM : {name: 'TrueCoreMask', description: `Used to redeem 5${STAR} prod dolls.`},
+        GEMS : {name: 'Gems', description: 'Kalina demands you spend these on her.'},
+        BATTERY : {name: 'Battery', description: 'Currency for upgrading facilities.'},
+        CORE : {name: 'DummyCore', description: 'Used for dummy-linking, neural upgrades, and fairy/SG crafts.'},
     //#endregion
     //#region Facilities
-        ECH : {name: 'EchelonFormation', description: 'Deployable teams.'},
-        PROD : {name: 'FactoryProduction', description: 'Ancient Unit Gacha.'},
-        MOD : {name: 'NeuralUpgrade', description: 'Extra limit break.'},
-        DORM : {name: 'Dormitories', description: 'Battery charger.'},
-            RESUPPLY : {name: 'Resupply', description: 'Dorm gacha.'},
-            SKIN : {name: 'Costumes', description: 'True money sink.'},
-            FURN : {name: 'Furniture', description: '"Dorm Equipments."'},
-        HOC : {name: 'HeavyOrdnanceCorps', description: 'Shelling support.'},
-        EXPED : {name: 'ForwardBasecamp', description: "Casual's dream QOL."},
-            BM : {name: 'BlackMarket', description: "Forward Basecamp's exclusive shop."},
-        PA : {name: 'ProtocolAssimilation', description: 'PA pulling and coalition drills.'},
+    ECH : {name: 'EchelonFormation', description: 'Deployable teams.'},
+    PROD : {name: 'FactoryProduction', description: 'Ancient Unit Gacha.'},
+    MOD : {name: 'NeuralUpgrade', description: 'Extra limit break.'},
+    DORM : {name: 'Dormitories', description: 'Battery charger.'},
+        RESUPPLY : {name: 'Resupply', description: 'Dorm gacha.'},
+        SKIN : {name: 'Costumes', description: 'True money sink.'},
+        FURN : {name: 'Furniture', description: '"Dorm Equipments."'},
+    HOC : {name: 'HeavyOrdnanceCorps', description: 'Shelling support.'},
+    EXPED : {name: 'ForwardBasecamp', description: "Casual's dream QOL."},
+        BM : {name: 'BlackMarket', description: "Forward Basecamp's exclusive shop."},
+    PA : {name: 'ProtocolAssimilation', description: 'PA pulling and coalition drills.'},
     //#endregion
     //#region Devices
     APPLE : {name: 'AppleDevices', description: 'iOS exclusive features.'},
@@ -89,6 +89,7 @@ export const dtag = {
     OJ : {name: 'LuffberryChess', description: 'PVP sidegame.'},
     CE : {name: 'CombatEffectiveness', description: 'Clutch metric.'},
     KALINA : {name: 'Kalina', description: 'Overworked logistics officer.'},
+    CAREER : {name: 'CareerQuests', description: 'Milestone and Tutorial System.'},
 };
 window.tags = dtag;
 
@@ -1751,7 +1752,7 @@ const CARDS = [
         answer: `${figure(image(IMG_ASSET+"SkinLocation.png", "Gifts Tab."), 'Dorms > Warehouse > Gifts')}<br>
         You get Black Cards here by ${getID("gifting the extra skins", 390)}.`,
         tags: [dtag.TDOLL, dtag.SKIN]
-    },
+    },  //#Update
     {
         id: 173,
         question: `What should I do during a collab?`,
@@ -4068,9 +4069,9 @@ const CARDS = [
     {
         id: 494,
         question: `How do I know if a SPEQ gives additional skills?`,
-        answer: `If the equipment has an "Enhances Skill" as a stat or if it can only be equipped by a Neurally Upgraded doll.`,
+        answer: `If the equipment has an ${getID("orange marker on the top-left", 549)} or if it has a darkish image on the top-right.`,
         tags: [dtag.EQUIP, dtag.SPEQ, dtag.GZ, dtag.MOD]
-    },  //@Visual, Update = Enhances Skill to image
+    },  //Visual
     {
         id: 495,
         question: `How do you set L2Ds for adjutants?`,
@@ -4483,9 +4484,9 @@ const CARDS = [
     },
     {
         id: 549,
-        question: `What does the orange marker in some special equipments mean?`,
+        question: `What does the orange marker on the top-left in some special equipments mean?`,
         answer: `${image(IMG_ASSET+"SPEQSkill.png", "Special Equipment with skill.")}<br>
-        Equipping the equipment grants additional skills. You can read the skills in the character's index.`,
+        Equipping the equipment grants additional skills. You can read the skills in the character's index. Checking its effects (like how you do to dolls) will show the appended skill.`,
         tags: [dtag.EQUIP, dtag.SPEQ, dtag.SKILL, dtag.TDOLL]
     },
     {
@@ -4551,6 +4552,12 @@ const CARDS = [
         )}`,
         tags: [dtag.OATH, dtag.THEATER]
     },
+    {
+        id: 560,
+        question: `The Career Quest says it has an unclaimed reward even though the graph is complete? Where can I even see it?`,
+        answer: `In the HOC side of the graph, there's an arrow near it.`,
+        tags: [dtag.CAREER]
+    },  //#Visual
     //{
     //    id: 0,
     //    question: ``,

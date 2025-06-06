@@ -460,15 +460,13 @@ https://old.reddit.com/r/girlsfrontline/comments/1elc2eo/weekly_commanders_loung
 <!--https://old.reddit.com/r/girlsfrontline/comments/1fyulaw/weekly_commanders_lounge_october_08_2024/lrph283/-->
 <!--https://old.reddit.com/r/girlsfrontline/comments/1g42ltc/weekly_commanders_lounge_october_15_2024/lsnx9a6/-->
 <!--https://old.reddit.com/r/girlsfrontline/comments/1g42ltc/weekly_commanders_lounge_october_15_2024/lsbnrwi/-->
+<!--https://old.reddit.com/r/girlsfrontline/comments/1gus7pc/weekly_commanders_lounge_november_19_2024/lyfji3v/-->
+<!--https://old.reddit.com/r/girlsfrontline/comments/1h06siz/weekly_commanders_lounge_november_26_2024/lzfhlfp/-->
 
 <!--XD-->
 <!--https://old.reddit.com/r/girlsfrontline/comments/1gepcln/weekly_commanders_lounge_october_29_2024/lue37y0/-->
 <!--https://old.reddit.com/r/girlsfrontline/comments/1gepcln/weekly_commanders_lounge_october_29_2024/luo4ryk/-->
 
-<!--https://old.reddit.com/r/girlsfrontline/comments/1gk1rfo/weekly_commanders_lounge_november_05_2024/-->
-<!--https://old.reddit.com/r/girlsfrontline/comments/1gpftas/weekly_commanders_lounge_november_12_2024/-->
-<!--https://old.reddit.com/r/girlsfrontline/comments/1gus7pc/weekly_commanders_lounge_november_19_2024/-->
-<!--https://old.reddit.com/r/girlsfrontline/comments/1h06siz/weekly_commanders_lounge_november_26_2024/-->
 
 <!--https://old.reddit.com/r/girlsfrontline/comments/1h5ii8b/weekly_commanders_lounge_december_03_2024/-->
 <!--https://old.reddit.com/r/girlsfrontline/comments/1hawwse/weekly_commanders_lounge_december_10_2024/-->
@@ -496,3 +494,4 @@ https://old.reddit.com/r/girlsfrontline/comments/1elc2eo/weekly_commanders_loung
 <!--https://old.reddit.com/r/girlsfrontline/comments/1kllcvg/weekly_commanders_lounge_may_13_2025/-->
 <!--https://old.reddit.com/r/girlsfrontline/comments/1kr4akd/weekly_commanders_lounge_may_20_2025/-->
 <!--https://old.reddit.com/r/girlsfrontline/comments/1kwmof3/weekly_commanders_lounge_may_27_2025/-->
+<!--https://old.reddit.com/r/girlsfrontline/comments/1l0oeu3/monthly_commanders_lounge_june_01_2025/-->
