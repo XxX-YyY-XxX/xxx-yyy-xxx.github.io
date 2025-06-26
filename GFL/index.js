@@ -19,8 +19,8 @@ timer(
 
 timer(
     document.getElementById("coalition"),
-    "Jun 24, 2025 00:00 UTC-0800",
-    "./assets/images/coalition/28Beluga.webp"
+    "Jul 22, 2025 00:00 UTC-0800",
+    "./assets/images/coalition/19Cerberus.webp"
 );
 
 timer(
