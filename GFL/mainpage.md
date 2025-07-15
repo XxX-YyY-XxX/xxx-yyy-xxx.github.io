@@ -500,3 +500,4 @@ https://old.reddit.com/r/girlsfrontline/comments/1elc2eo/weekly_commanders_loung
 <!--https://old.reddit.com/r/girlsfrontline/comments/1kwmof3/weekly_commanders_lounge_may_27_2025/-->
 
 <!--https://old.reddit.com/r/girlsfrontline/comments/1l0oeu3/monthly_commanders_lounge_june_01_2025/-->
+<!--https://old.reddit.com/r/girlsfrontline/comments/1lp13bs/monthly_commanders_lounge_july_01_2025/-->
