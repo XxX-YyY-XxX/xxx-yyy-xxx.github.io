@@ -2,8 +2,8 @@ import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
 timer(
    document.getElementById("event"),
-   "Jul 22, 2025 00:00 UTC-0800",
-   "./assets/images/timer/89rccpe2yraf1.png"
+   "Aug 12, 2025 00:00 UTC-0800",
+   "./assets/images/timer/xpxk4atoicdf1.png"
 );
 
 timer(
@@ -14,8 +14,8 @@ timer(
 
 timer(
     document.getElementById("coalition"),
-    "Jul 22, 2025 00:00 UTC-0800",
-    "./assets/images/coalition/19Cerberus.webp" //Gager vmw
+    "Aug 19, 2025 00:00 UTC-0800",
+    "./assets/images/coalition/29GagerVWVModel.webp"
 );
 
 timer(
