@@ -14,8 +14,8 @@ timer(
 
 timer(
     document.getElementById("coalition"),
-    "Aug 19, 2025 00:00 UTC-0800",
-    "./assets/images/coalition/29GagerVWVModel.webp"
+    "Sep 16, 2025 00:00 UTC-0800",
+    "./assets/images/coalition/20AlinaMosasaurRider.webp"
 );
 
 //timer(
