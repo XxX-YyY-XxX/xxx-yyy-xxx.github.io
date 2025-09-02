@@ -1,10 +1,10 @@
 import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
-//timer(
-//   document.getElementById("event"),
-//   "Aug 12, 2025 00:00 UTC-0800",
-//   "./assets/images/timer/xpxk4atoicdf1.webp"
-//);
+timer(
+   document.getElementById("event"),
+   "Sep 23, 2025 00:00 UTC-0800",
+   "./assets/images/timer/.webp"
+);
 
 timer(
     document.getElementById("battlepass"),
@@ -18,11 +18,11 @@ timer(
     "./assets/images/coalition/20AlinaMosasaurRider.webp"
 );
 
-//timer(
-//    document.getElementById('skin-banner'),
-//    "Aug 12, 2025 00:00 UTC-0800",
-//    "https://iopwiki.com/images/thumb/e/e1/Hanyang_Type_88_costume8_D.png/600px-Hanyang_Type_88_costume8_D.png"
-//);
+timer(
+    document.getElementById('skin-banner'),
+    "Sep 30, 2025 00:00 UTC-0800",
+    "https://iopwiki.com/images/thumb/7/78/MK3A1_costume3_D.png/600px-MK3A1_costume3_D.png"
+);
 
 //timer(
 //   document.getElementById('mini-event'),
