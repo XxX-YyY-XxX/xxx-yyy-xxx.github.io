@@ -9,7 +9,12 @@ timer(
 timer(
     document.getElementById("battlepass"),
     "Sep 15, 2025 00:00 UTC-0800",
-    "./assets/images/timer/xvni6edoa4hf1.webp"
+    "./assets/images/timer/xvni6edoa4hf1.webp",
+    {onEnd: timer.bind(null,
+        document.getElementById("battlepass"),
+        "Oct 20, 2025 00:00 UTC-0800",
+        "./assets/images/timer/0x6c9jqo39of1.webp",
+    )}
 );
 
 timer(
