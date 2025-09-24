@@ -1,26 +1,26 @@
 import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
-timer(
-   document.getElementById("event"),
-   "Sep 23, 2025 00:00 UTC-0800",
-   "./assets/images/timer/gp6qlw3cbqmf1.webp"
-);
+//timer(
+//   document.getElementById("event"),
+//   "Sep 23, 2025 00:00 UTC-0800",
+//   "./assets/images/timer/gp6qlw3cbqmf1.webp"
+//);
 
 timer(
     document.getElementById("battlepass"),
-    "Sep 15, 2025 00:00 UTC-0800",
-    "./assets/images/timer/xvni6edoa4hf1.webp",
-    {onEnd: timer.bind(null,
-        document.getElementById("battlepass"),
-        "Oct 20, 2025 00:00 UTC-0800",
-        "./assets/images/timer/0x6c9jqo39of1.webp",
-    )}
+    "Oct 20, 2025 00:00 UTC-0800",
+    "./assets/images/timer/0x6c9jqo39of1.webp",
+    //{onEnd: timer.bind(null,
+    //    document.getElementById("battlepass"),
+    //    "Oct 20, 2025 00:00 UTC-0800",
+    //    "./assets/images/timer/0x6c9jqo39of1.webp",
+    //)}
 );
 
 timer(
     document.getElementById("coalition"),
-    "Sep 16, 2025 00:00 UTC-0800",
-    "./assets/images/coalition/20AlinaMosasaurRider.webp"
+    "Oct 14, 2025 00:00 UTC-0800",
+    "./assets/images/coalition/02Executioner.webp"
 );
 
 timer(
