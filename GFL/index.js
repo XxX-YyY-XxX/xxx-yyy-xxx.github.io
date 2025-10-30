@@ -2,19 +2,14 @@ import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
 timer(
    document.getElementById("event"),
-   "Oct 28, 2025 00:00 UTC-0800",
-   "./assets/images/timer/G3N3IvubEAAFkwr.jpg"
+   "Nov 11, 2025 00:00 UTC-0800",
+   "./assets/images/timer/s7wmtddxtkwf1.jpg"
 );
 
 timer(
     document.getElementById("battlepass"),
-    "Oct 20, 2025 00:00 UTC-0800",
-    "./assets/images/timer/0x6c9jqo39of1.webp",
-    {onEnd: timer.bind(null,
-        document.getElementById("battlepass"),
-        "Nov 24, 2025 00:00 UTC-0800",
-        "./assets/images/timer/.webp", //stg
-    )}
+    "Nov 24, 2025 00:00 UTC-0800",
+    "./assets/images/timer/7a8kaeyzx6vf1.webp",
 );
 
 timer(
