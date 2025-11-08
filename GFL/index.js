@@ -3,7 +3,7 @@ import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 timer(
    document.getElementById("event"),
    "Nov 11, 2025 00:00 UTC-0800",
-   "./assets/images/timer/s7wmtddxtkwf1.jpg"
+   "./assets/images/timer/s7wmtddxtkwf1.webp"
 );
 
 timer(
