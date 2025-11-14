@@ -503,3 +503,5 @@ https://old.reddit.com/r/girlsfrontline/comments/1elc2eo/weekly_commanders_loung
 <!--https://old.reddit.com/r/girlsfrontline/comments/1lp13bs/monthly_commanders_lounge_july_01_2025/-->
 <!--https://old.reddit.com/r/girlsfrontline/comments/1mevx1s/monthly_commanders_lounge_august_01_2025/-->
 <!--https://old.reddit.com/r/girlsfrontline/comments/1n5o50d/monthly_commanders_lounge_september_01_2025/-->
+<!--https://old.reddit.com/r/girlsfrontline/comments/1nv7kp8/monthly_commanders_lounge_october_01_2025/-->
+<!--https://old.reddit.com/r/girlsfrontline/comments/1oln9hc/monthly_commanders_lounge_november_01_2025/-->
