@@ -1,3 +1,4 @@
+import { Random } from "../univasset/scripts/basefunctions/index.js";
 import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
 timer(
@@ -9,7 +10,7 @@ timer(
 timer(
     document.getElementById("battlepass"),
     "Apr 13, 2026 00:00 UTC-0800",
-    "./assets/images/time/rt5qp3pfp3rmg1.webp",
+    "./assets/images/time/t5qp3pfp3rmg1.webp",
     //{onEnd: timer.bind(null,
     //    document.getElementById("battlepass"),
     //    "Apr 13, 2026 00:00 UTC-0800",
@@ -22,6 +23,8 @@ timer(
     "Mar 31, 2026 00:00 UTC-0800",
     "./assets/images/coalition/18HunterNightfallMoth.webp"
 );
+
+//Random.iterable(["18HunterNightfallMoth", ""]).next().value
 
 //timer(
 //    document.getElementById('skin-banner'),
