@@ -10,11 +10,11 @@ timer(
 timer(
     document.getElementById("battlepass"),
     "Apr 13, 2026 00:00 UTC-0800",
-    "./assets/images/time/t5qp3pfp3rmg1.webp",
+    "./assets/images/timer/t5qp3pfp3rmg1.webp",
     //{onEnd: timer.bind(null,
     //    document.getElementById("battlepass"),
     //    "Apr 13, 2026 00:00 UTC-0800",
-    //    "./assets/images/time/rt5qp3pfp3rmg1.webp"
+    //    "./assets/images/timer/rt5qp3pfp3rmg1.webp"
     //)}
 );
 
