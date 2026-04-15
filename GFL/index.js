@@ -1,16 +1,17 @@
 import { Random } from "../univasset/scripts/basefunctions/index.js";
 import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
-timer(
-   document.getElementById("event"),
-   "Mar 31, 2026 00:00 UTC-0800",
-   "./assets/images/timer/HDDB82NaMAInzI-.jpg"
-);
+//timer(
+//   document.getElementById("event"),
+//   "Mar 31, 2026 00:00 UTC-0800",
+//   "./assets/images/timer/HDDB82NaMAInzI-.jpg"
+//);
 
 timer(
     document.getElementById("battlepass"),
-    "Apr 13, 2026 00:00 UTC-0800",
-    "./assets/images/timer/t5qp3pfp3rmg1.webp",
+    "May 18, 2026 00:00 UTC-0800",
+    //"./assets/images/timer/t5qp3pfp3rmg1.webp",
+    "https://iopwiki.com/images/thumb/3/32/JS_9_costume5_D.png/600px-JS_9_costume5_D.png"
     //{onEnd: timer.bind(null,
     //    document.getElementById("battlepass"),
     //    "Apr 13, 2026 00:00 UTC-0800",
@@ -18,13 +19,15 @@ timer(
     //)}
 );
 
+var COALITION = Random.iterable(["08Alchemist", "25Narciss"])
+
 timer(
     document.getElementById("coalition"),
-    "Mar 31, 2026 00:00 UTC-0800",
-    "./assets/images/coalition/18HunterNightfallMoth.webp"
+    "Apr 28, 2026 00:00 UTC-0800",
+    `./assets/images/coalition/${COALITION.next().value}.webp`
 );
 
-//Random.iterable(["18HunterNightfallMoth", ""]).next().value
+
 
 //timer(
 //    document.getElementById('skin-banner'),
