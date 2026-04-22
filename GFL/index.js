@@ -35,6 +35,6 @@ timer(
 
 timer(
    document.getElementById('mini-event'),
-   "May 05, 2025 00:00 UTC-0800",
+   "May 05, 2026 00:00 UTC-0800",
    "./assets/images/timer/q2t5uu7sxavg1.webp"
 );
