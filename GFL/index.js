@@ -1,11 +1,11 @@
 import { Random } from "../univasset/scripts/basefunctions/index.js";
 import {timer} from "../univasset/scripts/htmlgenerator/htmlgenerator.js";
 
-//timer(
-//   document.getElementById("event"),
-//   "Mar 31, 2026 00:00 UTC-0800",
-//   "./assets/images/timer/HDDB82NaMAInzI-.jpg"
-//);
+timer(
+   document.getElementById("event"),
+   "May 12, 2026 00:00 UTC-0800",
+   "./assets/images/timer/3by6k4ew0ovg1.webp"
+);
 
 timer(
     document.getElementById("battlepass"),
@@ -27,16 +27,14 @@ timer(
     `./assets/images/coalition/${COALITION.next().value}.webp`
 );
 
-
-
 //timer(
 //    document.getElementById('skin-banner'),
 //    "Feb 10, 2026 00:00 UTC-0800",
 //    "https://iopwiki.com/images/thumb/a/ad/Howa_Type_64_costume3_D.png/600px-Howa_Type_64_costume3_D.png"
 //);
 
-//timer(
-//   document.getElementById('mini-event'),
-//   "Dec 23, 2025 00:00 UTC-0800",
-//   "./assets/images/timer/78bh0schsq3g1.webp"
-//);
+timer(
+   document.getElementById('mini-event'),
+   "May 05, 2025 00:00 UTC-0800",
+   "./assets/images/timer/q2t5uu7sxavg1.webp"
+);
