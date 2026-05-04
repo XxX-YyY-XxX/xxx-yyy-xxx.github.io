@@ -19,22 +19,27 @@ timer(
     //)}
 );
 
-var COALITION = Random.iterable(["08Alchemist", "25Narciss"])
+var COALITION = Random.iterable(["01Scarecrow", "10Gager", "28Beluga"])
 
 timer(
     document.getElementById("coalition"),
-    "Apr 28, 2026 00:00 UTC-0800",
+    "May 16, 2026 00:00 UTC-0800",
     `./assets/images/coalition/${COALITION.next().value}.webp`
 );
 
-//timer(
-//    document.getElementById('skin-banner'),
-//    "Feb 10, 2026 00:00 UTC-0800",
-//    "https://iopwiki.com/images/thumb/a/ad/Howa_Type_64_costume3_D.png/600px-Howa_Type_64_costume3_D.png"
-//);
+timer(
+    document.getElementById('skin-banner'),
+    "Jun 09, 2026 00:00 UTC-0800",
+    "https://iopwiki.com/images/thumb/d/df/HK433_costume4_D.png/600px-HK433_costume4_D.png"
+);
 
 timer(
    document.getElementById('mini-event'),
    "May 05, 2026 00:00 UTC-0800",
-   "./assets/images/timer/q2t5uu7sxavg1.webp"
+   "./assets/images/timer/q2t5uu7sxavg1.webp",
+   {onEnd: timer.bind(
+        document.getElementById('mini-event'),
+        "May 19, 2026 00:00 UTC-0800",
+        "./assets/images/timer/mimn9fs3voxg1.webp"
+    )}
 );
